@@ -54,6 +54,7 @@ members = [
     "consensus/consensus-types",
     "consensus/safety-rules",
     "crates/aptos",
+    "crates/libra2",
     "crates/aptos-admin-service",
     "crates/aptos-api-tester",
     "crates/aptos-bcs-utils",
@@ -298,7 +299,7 @@ rust-version = "1.78.0"
 [workspace.dependencies]
 # Internal crate dependencies.
 # Please do not add any test features here: they should be declared by the individual crate.
-libra2 = { path = "crates/aptos" }
+libra2 = { path = "crates/libra2" }
 aptos = { path = "crates/aptos" }
 aptos-accumulator = { path = "storage/accumulator" }
 aptos-admin-service = { path = "crates/aptos-admin-service" }
