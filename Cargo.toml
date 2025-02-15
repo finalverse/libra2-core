@@ -46,6 +46,7 @@ members = [
     "aptos-move/script-composer",
     "aptos-move/vm-genesis",
     "aptos-node",
+    "libra2-node",
     "aptos-utils",
     "config",
     "config/global-constants",
@@ -267,9 +268,11 @@ members = [
 #
 # For more, see the "Conditional compilation for tests" section in documentation/coding_guidelines.md.
 default-members = [
+    "libra2-node",
     "aptos-node",
     "consensus/safety-rules",
     "crates/aptos",
+    "crates/libra2",
     "crates/aptos-debugger",
     "crates/aptos-faucet/service",
     "crates/aptos-keygen",
@@ -295,6 +298,7 @@ rust-version = "1.78.0"
 [workspace.dependencies]
 # Internal crate dependencies.
 # Please do not add any test features here: they should be declared by the individual crate.
+libra2 = { path = "crates/aptos" }
 aptos = { path = "crates/aptos" }
 aptos-accumulator = { path = "storage/accumulator" }
 aptos-admin-service = { path = "crates/aptos-admin-service" }
@@ -405,6 +409,7 @@ aptos-network-checker = { path = "crates/aptos-network-checker" }
 aptos-network-discovery = { path = "network/discovery" }
 aptos-nft-metadata-crawler = { path = "ecosystem/nft-metadata-crawler" }
 aptos-node = { path = "aptos-node" }
+libra2-node = { path = "libra2-node" }
 aptos-node-checker = { path = "ecosystem/node-checker" }
 aptos-node-identity = { path = "crates/aptos-node-identity" }
 aptos-node-resource-metrics = { path = "crates/node-resource-metrics" }
@@ -515,7 +520,7 @@ version-compare = "0.1.1"
 bitvec = "1.0.1"
 blake2 = "0.10.4"
 blake2-rfc = "0.2.18"
-blst = "0.3.11"
+blst = "0.3.13"
 # The __private_bench feature exposes the Fp12 type which we need to implement a multi-threaded multi-pairing.
 blstrs = { version = "0.7.1", features = ["serde", "__private_bench"] }
 bollard = "0.15"
@@ -772,8 +777,8 @@ smallbitvec = "2.5.1"
 smallvec = "1.8.0"
 static_assertions = "1.1.0"
 status-line = "0.2.0"
-strum = "0.24.1"
-strum_macros = "0.24.2"
+strum = "0.25.0"
+strum_macros = "0.25.3"
 sugars = "3.0.1"
 syn = { version = "1.0.92", features = ["derive", "extra-traits"] }
 sysinfo = "0.28.4"
