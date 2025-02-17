@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-use libra2_node::{utils::ERROR_MSG_BAD_FEATURE_FLAGS, AptosNodeArgs};
+use libra2_node::{utils::ERROR_MSG_BAD_FEATURE_FLAGS, Libra2NodeArgs};
 use clap::Parser;
 
 #[cfg(unix)]
@@ -16,5 +16,5 @@ fn main() {
     aptos_vm::natives::assert_no_test_natives(ERROR_MSG_BAD_FEATURE_FLAGS);
 
     // Start the node
-    AptosNodeArgs::parse().run()
+    Libra2NodeArgs::parse().run()
 }

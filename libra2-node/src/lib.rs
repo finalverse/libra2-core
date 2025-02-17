@@ -46,8 +46,8 @@ const EPOCH_LENGTH_SECS: u64 = 60;
 
 /// Runs an Aptos validator or fullnode
 #[derive(Clone, Debug, Parser)]
-#[clap(name = "Aptos Node", author, version)]
-pub struct AptosNodeArgs {
+#[clap(name = "Libra2 Node", author, version)]
+pub struct Libra2NodeArgs {
     /// Path to node configuration file (or template for local test mode).
     #[clap(
         short = 'f',
@@ -106,7 +106,7 @@ pub struct AptosNodeArgs {
     stacktrace: bool,
 }
 
-impl AptosNodeArgs {
+impl Libra2NodeArgs {
     /// Runs an Aptos node based on the given command line arguments and config flags
     pub fn run(self) {
         #[cfg(target_os = "linux")]
@@ -344,7 +344,7 @@ pub fn start_test_environment_node(
     println!("Completed generating configuration:");
     println!("\tLog file: {:?}", log_file);
     println!("\tTest dir: {:?}", test_dir);
-    println!("\tAptos root key path: {:?}", aptos_root_key_path);
+    println!("\tLibra2 root key path: {:?}", aptos_root_key_path);
     println!("\tWaypoint: {}", config.base.waypoint.genesis_waypoint());
     println!("\tChainId: {}", ChainId::test().id());
     println!("\tREST API endpoint: http://{}", &config.api.address);
@@ -353,7 +353,7 @@ pub fn start_test_environment_node(
         &config.inspection_service.address, &config.inspection_service.port
     );
     println!(
-        "\tAptosnet fullnode network endpoint: {}",
+        "\tLibra2net fullnode network endpoint: {}",
         &config.full_node_networks[0].listen_address
     );
     if config.indexer_grpc.enabled {
@@ -365,7 +365,7 @@ pub fn start_test_environment_node(
     if enable_lazy_mode {
         println!("\tLazy mode is enabled");
     }
-    println!("\nAptos is running, press ctrl-c to exit\n");
+    println!("\nLibra2 is running, press ctrl-c to exit\n");
 
     start(config, Some(log_file), false)
 }
@@ -798,5 +798,5 @@ pub fn setup_environment_and_start_node(
 #[test]
 fn verify_tool() {
     use clap::CommandFactory;
-    AptosNodeArgs::command().debug_assert()
+    Libra2NodeArgs::command().debug_assert()
 }
