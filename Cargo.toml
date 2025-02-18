@@ -179,6 +179,7 @@ members = [
     "state-sync/storage-service/types",
     "storage/accumulator",
     "storage/aptosdb",
+    "storage/libra2db",
     "storage/backup/backup-cli",
     "storage/backup/backup-service",
     "storage/db-tool",
@@ -329,6 +330,7 @@ aptos-crypto-derive = { path = "crates/aptos-crypto-derive" }
 aptos-data-client = { path = "state-sync/aptos-data-client" }
 aptos-data-streaming-service = { path = "state-sync/data-streaming-service" }
 aptos-db = { path = "storage/aptosdb" }
+libra2-db = { path = "storage/libra2db" }
 aptos-db-indexer = { path = "storage/indexer" }
 aptos-db-indexer-schemas = { path = "storage/indexer_schemas" }
 aptos-db-tool = { path = "storage/db-tool" }
