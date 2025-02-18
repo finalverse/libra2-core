@@ -1032,17 +1032,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-crash-handler"
-version = "0.1.0"
-dependencies = [
- "aptos-logger",
- "backtrace",
- "move-core-types",
- "serde",
- "toml 0.7.8",
-]
-
-[[package]]
 name = "aptos-crypto"
 version = "0.0.3"
 dependencies = [
@@ -3192,7 +3181,6 @@ dependencies = [
  "aptos-config",
  "aptos-consensus",
  "aptos-consensus-notifications",
- "aptos-crash-handler",
  "aptos-crypto",
  "aptos-data-client",
  "aptos-data-streaming-service",
@@ -3239,6 +3227,7 @@ dependencies = [
  "futures",
  "hex",
  "jemallocator",
+ "libra2-crash-handler",
  "libra2-infallible",
  "num_cpus",
  "rand 0.7.3",
@@ -10677,6 +10666,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-crash-handler"
+version = "0.1.0"
+dependencies = [
+ "aptos-logger",
+ "backtrace",
+ "move-core-types",
+ "serde",
+ "toml 0.7.8",
+]
+
+[[package]]
 name = "libra2-db"
 version = "0.1.0"
 dependencies = [
@@ -10760,7 +10760,6 @@ dependencies = [
  "aptos-config",
  "aptos-consensus",
  "aptos-consensus-notifications",
- "aptos-crash-handler",
  "aptos-crypto",
  "aptos-data-client",
  "aptos-data-streaming-service",
@@ -10807,6 +10806,7 @@ dependencies = [
  "futures",
  "hex",
  "jemallocator",
+ "libra2-crash-handler",
  "libra2-infallible",
  "num_cpus",
  "rand 0.7.3",

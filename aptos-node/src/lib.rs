@@ -229,7 +229,7 @@ pub fn start_and_report_ports(
     indexer_grpc_port_tx: Option<oneshot::Sender<u16>>,
 ) -> anyhow::Result<()> {
     // Setup panic handler
-    aptos_crash_handler::setup_panic_handler();
+    libra2_crash_handler::setup_panic_handler();
 
     // Create global rayon thread pool
     utils::create_global_rayon_pool(create_global_rayon_pool);

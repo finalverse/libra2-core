@@ -326,7 +326,7 @@ aptos-consensus = { path = "consensus" }
 aptos-consensus-notifications = { path = "state-sync/inter-component/consensus-notifications" }
 aptos-consensus-types = { path = "consensus/consensus-types" }
 aptos-config = { path = "config" }
-aptos-crash-handler = { path = "crates/crash-handler" }
+libra2-crash-handler = { path = "crates/crash-handler" }
 aptos-crypto = { path = "crates/aptos-crypto" }
 aptos-crypto-derive = { path = "crates/aptos-crypto-derive" }
 aptos-data-client = { path = "state-sync/aptos-data-client" }
