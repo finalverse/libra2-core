@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 aptos-crypto = { workspace = true }
-aptos-infallible = { workspace = true }
+libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-temppath = { workspace = true }
 aptos-time-service = { workspace = true }

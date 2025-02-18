@@ -4,7 +4,7 @@
 #![forbid(unsafe_code)]
 
 use anyhow::Result;
-use aptos_infallible::{RwLock, RwLockWriteGuard};
+use libra2_infallible::{RwLock, RwLockWriteGuard};
 use aptos_logger::{info, sample, sample::SampleRate, warn};
 use aptos_sdk::{
     move_types::account_address::AccountAddress,

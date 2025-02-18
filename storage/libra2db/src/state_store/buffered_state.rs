@@ -9,7 +9,7 @@ use crate::{
         persisted_state::PersistedState, state_snapshot_committer::StateSnapshotCommitter, StateDb,
     },
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_metrics_core::TimerHelper;
 use aptos_storage_interface::{
     state_store::state_with_summary::{LedgerStateWithSummary, StateWithSummary},

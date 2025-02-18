@@ -7,7 +7,7 @@ use aptos_consensus_types::{
     common::Author,
     pipeline::{commit_decision::CommitDecision, commit_vote::CommitVote},
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_reliable_broadcast::{BroadcastStatus, RBMessage, RBNetworkSender};
 use aptos_types::{validator_verifier::ValidatorVerifier, PeerId};
 use async_trait::async_trait;

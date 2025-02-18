@@ -28,7 +28,7 @@ use crate::{
 use aptos_channels::{self, aptos_channel, message_queues::QueueStyle};
 use aptos_config::{config::ConsensusConfig, network_id::NetworkId};
 use aptos_consensus_types::{proposal_msg::ProposalMsg, utils::PayloadTxnsSize};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},
     peer_manager::{ConnectionRequestSender, PeerManagerRequestSender},

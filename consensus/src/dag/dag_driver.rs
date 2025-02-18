@@ -32,7 +32,7 @@ use aptos_consensus_types::{
     utils::PayloadTxnsSize,
 };
 use aptos_crypto::hash::CryptoHash;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{debug, error};
 use aptos_reliable_broadcast::{DropGuard, ReliableBroadcast};
 use aptos_time_service::{TimeService, TimeServiceTrait};

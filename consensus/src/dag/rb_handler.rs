@@ -20,7 +20,7 @@ use crate::{
 use anyhow::{bail, ensure};
 use aptos_config::config::DagPayloadConfig;
 use aptos_consensus_types::common::{Author, Round};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{debug, error};
 use aptos_types::{
     epoch_state::EpochState,

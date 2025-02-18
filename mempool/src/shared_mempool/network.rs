@@ -20,7 +20,7 @@ use aptos_config::{
     config::{MempoolConfig, NodeType},
     network_id::PeerNetworkId,
 };
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::prelude::*;
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_network::{

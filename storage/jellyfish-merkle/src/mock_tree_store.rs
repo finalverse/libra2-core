@@ -6,7 +6,7 @@ use crate::{
     node_type::{LeafNode, Node, NodeKey},
     NodeBatch, Result, StaleNodeIndex, TreeReader, TreeUpdateBatch, TreeWriter,
 };
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError};
 use aptos_types::transaction::Version;
 use std::collections::{hash_map::Entry, BTreeSet, HashMap};

@@ -17,7 +17,7 @@ use crate::consensus_observer::{
     publisher::consensus_publisher::ConsensusPublisher,
 };
 use aptos_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{info, warn};
 use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadata};
 use aptos_storage_interface::DbReader;

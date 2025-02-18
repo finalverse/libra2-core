@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::metrics::{BIG_QUERY_REQUEST_FAILURES_TOTAL, BIG_QUERY_REQUEST_TOTAL};
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_types::{chain_id::ChainId, PeerId};
 use gcp_bigquery_client::{
     model::{query_request::QueryRequest, query_response::ResultSet},

@@ -4,7 +4,7 @@
 use crate::{create_single_node_test_config, network};
 use aptos_config::config::{NodeConfig, WaypointConfig};
 use aptos_event_notifications::EventSubscriptionService;
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_storage_interface::{DbReader, DbReaderWriter, DbWriter};
 use aptos_temppath::TempPath;
 use aptos_types::{chain_id::ChainId, waypoint::Waypoint};

@@ -7,7 +7,7 @@ use aptos_consensus_types::{
     common::{Author, Round},
 };
 use aptos_crypto::HashValue;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{error, warn, SecurityEvent};
 use std::{cmp::Ordering, sync::Arc};
 

@@ -6,7 +6,7 @@ use crate::{
     logging::NetworkSchema,
 };
 use aptos_config::network_id::NetworkContext;
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::error;
 use aptos_types::PeerId;
 use maplit::hashset;

@@ -17,7 +17,7 @@ use anyhow::{ensure, Result};
 use aptos_bitvec::BitVec;
 use aptos_consensus_types::common::{Author, Round};
 use aptos_crypto::HashValue;
-use aptos_infallible::{Mutex, MutexGuard};
+use libra2_infallible::{Mutex, MutexGuard};
 use aptos_logger::prelude::*;
 use aptos_storage_interface::DbReader;
 use aptos_types::{

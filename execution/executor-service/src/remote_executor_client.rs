@@ -57,13 +57,13 @@ pub fn get_coordinator_address() -> SocketAddr {
 
 pub static REMOTE_SHARDED_BLOCK_EXECUTOR: Lazy<
     Arc<
-        aptos_infallible::Mutex<
+        libra2_infallible::Mutex<
             ShardedBlockExecutor<CachedStateView, RemoteExecutorClient<CachedStateView>>,
         >,
     >,
 > = Lazy::new(|| {
     info!("REMOTE_SHARDED_BLOCK_EXECUTOR created");
-    Arc::new(aptos_infallible::Mutex::new(
+    Arc::new(libra2_infallible::Mutex::new(
         RemoteExecutorClient::create_remote_sharded_block_executor(
             get_coordinator_address(),
             get_remote_addresses(),

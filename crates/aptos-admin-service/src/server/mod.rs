@@ -5,7 +5,7 @@ use aptos_config::config::{AuthenticationConfig, NodeConfig};
 use aptos_consensus::{
     persistent_liveness_storage::StorageWriteProxy, quorum_store::quorum_store_db::QuorumStoreDB,
 };
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::info;
 use aptos_mempool::MempoolClientSender;
 use aptos_storage_interface::DbReaderWriter;

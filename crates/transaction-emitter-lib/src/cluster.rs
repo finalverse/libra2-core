@@ -42,7 +42,7 @@ impl Cluster {
 
         let mut instance_states = Vec::new();
         let mut errors = Vec::new();
-        let fetch_timestamp = aptos_infallible::duration_since_epoch().as_secs();
+        let fetch_timestamp = libra2_infallible::duration_since_epoch().as_secs();
         let futures = FuturesUnordered::new();
         for url in &peers {
             let instance = Instance::new(

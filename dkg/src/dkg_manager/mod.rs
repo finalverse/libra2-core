@@ -10,7 +10,7 @@ use crate::{
 use anyhow::{anyhow, bail, ensure, Result};
 use aptos_channels::{aptos_channel, message_queues::QueueStyle};
 use aptos_crypto::Uniform;
-use aptos_infallible::duration_since_epoch;
+use libra2_infallible::duration_since_epoch;
 use aptos_logger::{debug, error, info, warn};
 use aptos_types::{
     dkg::{

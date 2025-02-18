@@ -4,7 +4,7 @@
 use crate::proof_of_store::{BatchInfo, ProofOfStore};
 use anyhow::ensure;
 use aptos_executor_types::ExecutorResult;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_types::{transaction::SignedTransaction, PeerId};
 use core::fmt;
 use futures::{

@@ -22,7 +22,7 @@ use aptos_consensus_types::{
 };
 use aptos_crypto::{bls12381::PrivateKey, HashValue};
 use aptos_executor_types::ExecutorResult;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::prelude::*;
 use aptos_types::{
     epoch_state::EpochState,

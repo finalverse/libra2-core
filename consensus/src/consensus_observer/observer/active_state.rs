@@ -17,7 +17,7 @@ use crate::{
 };
 use aptos_config::config::NodeConfig;
 use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{error, info, warn};
 use aptos_storage_interface::DbReader;
 use aptos_types::{

@@ -27,7 +27,7 @@ use aptos_crypto::HashValue;
 use aptos_executor_types::{
     state_compute_result::StateComputeResult, BlockExecutorTrait, ExecutorResult,
 };
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::prelude::*;
 use aptos_metrics_core::IntGauge;
 use aptos_types::{
@@ -515,7 +515,7 @@ async fn test_commit_sync_race() {
     };
     use aptos_config::config::transaction_filter_type::Filter;
     use aptos_consensus_notifications::Error;
-    use aptos_infallible::Mutex;
+    use libra2_infallible::Mutex;
     use aptos_types::{
         aggregate_signature::AggregateSignature,
         block_executor::partitioner::ExecutableBlock,

@@ -8,7 +8,7 @@ use aptos_crypto::{
     noise::{self, NoiseConfig},
     x25519,
 };
-use aptos_infallible::{Mutex, RwLock};
+use libra2_infallible::{Mutex, RwLock};
 use aptos_logger::debug;
 use aptos_telemetry_service::types::{
     auth::{AuthRequest, AuthResponse},

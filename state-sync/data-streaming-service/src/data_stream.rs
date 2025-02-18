@@ -32,7 +32,7 @@ use aptos_data_client::{
     },
 };
 use aptos_id_generator::{IdGenerator, U64IdGenerator};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::prelude::*;
 use aptos_time_service::{TimeService, TimeServiceTrait};
 use futures::{channel::mpsc, stream::FusedStream, SinkExt, Stream};

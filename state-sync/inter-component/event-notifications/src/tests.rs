@@ -10,7 +10,7 @@ use crate::{
 };
 use aptos_db::AptosDB;
 use aptos_executor_test_helpers::bootstrap_genesis;
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_storage_interface::DbReaderWriter;
 use aptos_types::{
     account_address::AccountAddress,

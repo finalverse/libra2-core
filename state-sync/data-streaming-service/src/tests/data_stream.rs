@@ -39,7 +39,7 @@ use aptos_data_client::{
     interface::{Response, ResponseContext, ResponsePayload},
 };
 use aptos_id_generator::U64IdGenerator;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_storage_service_types::responses::CompleteDataRange;
 use aptos_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{

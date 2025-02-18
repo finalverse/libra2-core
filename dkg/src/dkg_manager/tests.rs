@@ -12,7 +12,7 @@ use aptos_crypto::{
     bls12381::{PrivateKey, PublicKey},
     Uniform,
 };
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_types::{
     dkg::{
         dummy_dkg::DummyDKG, DKGSessionMetadata, DKGStartEvent, DKGTrait, DKGTranscript,

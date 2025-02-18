@@ -24,7 +24,7 @@ use aptos_config::{
     network_id::PeerNetworkId,
 };
 use aptos_id_generator::{IdGenerator, U64IdGenerator};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{info, sample, sample::SampleRate, trace, warn};
 use aptos_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},

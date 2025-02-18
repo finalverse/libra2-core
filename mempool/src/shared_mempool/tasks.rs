@@ -23,7 +23,7 @@ use anyhow::Result;
 use aptos_config::network_id::PeerNetworkId;
 use aptos_consensus_types::common::RejectedTransactionSummary;
 use aptos_crypto::HashValue;
-use aptos_infallible::{Mutex, RwLock};
+use libra2_infallible::{Mutex, RwLock};
 use aptos_logger::prelude::*;
 use aptos_mempool_notifications::CommittedTransaction;
 use aptos_metrics_core::HistogramTimer;
@@ -564,7 +564,7 @@ pub(crate) fn process_quorum_store_request<NetworkClient, TransactionValidator>(
                     );
                     // gc before pulling block as extra protection against txns that may expire in consensus
                     // Note: this gc operation relies on the fact that consensus uses the system time to determine block timestamp
-                    let curr_time = aptos_infallible::duration_since_epoch();
+                    let curr_time = libra2_infallible::duration_since_epoch();
                     mempool.gc_by_expiration_time(curr_time);
                 }
 

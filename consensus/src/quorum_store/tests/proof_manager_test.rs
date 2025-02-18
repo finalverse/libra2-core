@@ -61,7 +61,7 @@ async fn get_proposal(
         max_inline_txns: PayloadTxnsSize::new(max(max_txns / 2, 1), 100000),
         filter: PayloadFilter::InQuorumStore(filter_set),
         callback: callback_tx,
-        block_timestamp: aptos_infallible::duration_since_epoch(),
+        block_timestamp: libra2_infallible::duration_since_epoch(),
         return_non_full: true,
         maybe_optqs_payload_pull_params: None,
     });

@@ -21,7 +21,7 @@ use aptos_config::{
     network_id::{NetworkContext, NetworkId},
 };
 use aptos_crypto::{noise, x25519};
-use aptos_infallible::{duration_since_epoch, RwLock};
+use libra2_infallible::{duration_since_epoch, RwLock};
 use aptos_logger::{error, trace};
 use aptos_short_hex_str::{AsShortHexStr, ShortHexStr};
 use aptos_types::PeerId;

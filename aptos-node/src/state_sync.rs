@@ -14,7 +14,7 @@ use aptos_event_notifications::{
     ReconfigNotificationListener,
 };
 use aptos_executor::chunk_executor::ChunkExecutor;
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{
     interface::{NetworkClient, NetworkClientInterface, NetworkServiceEvents},

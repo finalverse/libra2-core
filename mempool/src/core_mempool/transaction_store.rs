@@ -690,7 +690,7 @@ impl TransactionStore {
                     } else {
                         batch.push((
                             txn.txn.clone(),
-                            aptos_infallible::duration_since_epoch_at(
+                            libra2_infallible::duration_since_epoch_at(
                                 &txn.insertion_info.ready_time,
                             )
                             .as_millis() as u64,
@@ -742,7 +742,7 @@ impl TransactionStore {
                     .map(|txn| {
                         (
                             txn.txn.clone(),
-                            aptos_infallible::duration_since_epoch_at(
+                            libra2_infallible::duration_since_epoch_at(
                                 &txn.insertion_info.ready_time,
                             )
                             .as_millis() as u64,

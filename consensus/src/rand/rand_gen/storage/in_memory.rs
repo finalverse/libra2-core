@@ -5,7 +5,7 @@ use crate::rand::rand_gen::{
     storage::interface::RandStorage,
     types::{AugData, AugDataId, CertifiedAugData, TAugmentedData},
 };
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use std::collections::HashMap;
 
 pub struct InMemRandDb<D> {

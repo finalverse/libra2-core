@@ -10,7 +10,7 @@ use aptos_crypto::{
     hash::{CryptoHasher, HexyHasher, HOT_STATE_PLACE_HOLDER_HASH},
     HashValue,
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use itertools::Itertools;
 use proptest::{collection::vec, prelude::*};
 use std::{

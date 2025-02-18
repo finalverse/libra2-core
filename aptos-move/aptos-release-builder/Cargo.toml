@@ -22,7 +22,7 @@ aptos-gas-profiling = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 aptos-gas-schedule-updator = { workspace = true }
 aptos-genesis = { workspace = true }
-aptos-infallible = { workspace = true }
+libra2-infallible = { workspace = true }
 aptos-keygen = { workspace = true }
 aptos-language-e2e-tests = { workspace = true }
 aptos-move-debugger = { workspace = true }

@@ -15,7 +15,7 @@ use aptos_config::{
     network_id::NetworkId,
 };
 use aptos_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
-use aptos_infallible::{Mutex, RwLock};
+use libra2_infallible::{Mutex, RwLock};
 use aptos_mempool_notifications::{self, MempoolNotifier};
 use aptos_network::{
     application::{

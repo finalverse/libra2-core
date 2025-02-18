@@ -13,7 +13,7 @@ use aptos_consensus_types::{
     proof_of_store::{BatchId, ProofOfStore, SignedBatchInfo},
 };
 use aptos_crypto::HashValue;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_types::{
     aggregate_signature::PartialSignatures,
     block_info::BlockInfo,

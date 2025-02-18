@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::utils;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_telemetry_service::types::telemetry::TelemetryEvent;
 use once_cell::sync::Lazy;
 use std::collections::BTreeMap;

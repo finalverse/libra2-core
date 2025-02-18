@@ -38,7 +38,7 @@ async fn test_block_request_no_txns() {
             return_non_full: true,
             filter: PayloadFilter::DirectMempool(vec![]),
             callback: consensus_callback,
-            block_timestamp: aptos_infallible::duration_since_epoch(),
+            block_timestamp: libra2_infallible::duration_since_epoch(),
             maybe_optqs_payload_pull_params: None,
         }))
         .unwrap();

@@ -266,13 +266,13 @@ impl SignedBatchInfo {
         }
 
         if self.expiration()
-            > aptos_infallible::duration_since_epoch().as_micros() as u64
+            > libra2_infallible::duration_since_epoch().as_micros() as u64
                 + max_batch_expiry_gap_usecs
         {
             bail!(
                 "Batch expiration too far in future: {} > {}",
                 self.expiration(),
-                aptos_infallible::duration_since_epoch().as_micros() as u64
+                libra2_infallible::duration_since_epoch().as_micros() as u64
                     + max_batch_expiry_gap_usecs
             );
         }

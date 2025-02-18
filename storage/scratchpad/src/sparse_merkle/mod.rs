@@ -92,7 +92,7 @@ use aptos_crypto::{
     HashValue,
 };
 use aptos_drop_helper::ArcAsyncDrop;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_metrics_core::IntGaugeHelper;
 use aptos_types::{
     nibble::{nibble_path::NibblePath, Nibble},

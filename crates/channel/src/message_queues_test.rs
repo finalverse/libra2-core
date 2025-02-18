@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::message_queues::{PerKeyQueue, QueueStyle};
-use aptos_infallible::NonZeroUsize;
+use libra2_infallible::NonZeroUsize;
 use aptos_types::account_address::AccountAddress;
 
 /// This represents a proposal message from a validator

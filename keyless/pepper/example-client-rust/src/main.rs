@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
-use aptos_infallible::duration_since_epoch;
+use libra2_infallible::duration_since_epoch;
 use aptos_keyless_pepper_common::{
     account_recovery_db::AccountRecoveryDbEntry,
     jwt,

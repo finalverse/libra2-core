@@ -43,7 +43,7 @@ use aptos_consensus_types::{
 use aptos_crypto::{bls12381, Genesis};
 use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use aptos_executor_types::state_compute_result::StateComputeResult;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{debug, error, info, warn};
 use aptos_network::{
     application::interface::NetworkClient, protocols::wire::handshake::v1::ProtocolId,

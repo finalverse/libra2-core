@@ -14,7 +14,7 @@ use aptos_crypto::HashValue;
 use aptos_executor_types::{
     state_compute_result::StateComputeResult, BlockExecutorTrait, ExecutorResult,
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_types::{
     block_executor::{config::BlockExecutorConfigFromOnchain, partitioner::ExecutableBlock},
     contract_event::ContractEvent,

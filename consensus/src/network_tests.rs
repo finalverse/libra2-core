@@ -18,7 +18,7 @@ use aptos_consensus_types::{
     vote_data::VoteData,
     vote_msg::VoteMsg,
 };
-use aptos_infallible::{Mutex, RwLock};
+use libra2_infallible::{Mutex, RwLock};
 use aptos_network::{
     application::storage::PeersAndMetadata,
     peer_manager::{ConnectionRequestSender, PeerManagerRequest, PeerManagerRequestSender},

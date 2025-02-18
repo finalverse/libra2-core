@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::state_merkle_db::Node;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_jellyfish_merkle::node_type::NodeKey;
 use aptos_types::{nibble::nibble_path::NibblePath, transaction::Version};
 use lru::LruCache;

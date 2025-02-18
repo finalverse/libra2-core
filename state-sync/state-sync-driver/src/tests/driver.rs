@@ -22,7 +22,7 @@ use aptos_event_notifications::{
 };
 use aptos_executor::chunk_executor::ChunkExecutor;
 use aptos_executor_test_helpers::bootstrap_genesis;
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
 use aptos_storage_interface::DbReaderWriter;

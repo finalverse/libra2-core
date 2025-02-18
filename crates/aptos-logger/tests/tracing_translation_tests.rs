@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::{aptos_logger::AptosData, Writer};
 use std::sync::Arc;
 use tracing::Level;

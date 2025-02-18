@@ -10,7 +10,7 @@ use crate::consensus_observer::{
     observer::payload_store::BlockPayloadStore,
 };
 use aptos_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{info, warn};
 use aptos_types::block_info::Round;
 use std::{

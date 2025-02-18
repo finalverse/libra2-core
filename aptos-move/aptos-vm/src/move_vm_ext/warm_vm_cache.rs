@@ -6,7 +6,7 @@
 use crate::{counters::TIMER, move_vm_ext::AptosMoveResolver};
 use aptos_framework::natives::code::PackageRegistry;
 use aptos_gas_schedule::AptosGasParameters;
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_metrics_core::TimerHelper;
 use aptos_native_interface::SafeNativeBuilder;
 use aptos_types::{on_chain_config::OnChainConfig, state_store::state_key::StateKey};

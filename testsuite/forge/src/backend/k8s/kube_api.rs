@@ -73,7 +73,7 @@ where
 pub mod mocks {
     use super::ReadWrite;
     use crate::Result;
-    use aptos_infallible::Mutex;
+    use libra2_infallible::Mutex;
     use async_trait::async_trait;
     use hyper::StatusCode;
     use k8s_openapi::Metadata;

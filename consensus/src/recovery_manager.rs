@@ -17,7 +17,7 @@ use aptos_channels::aptos_channel;
 use aptos_consensus_types::{
     common::Author, proposal_msg::ProposalMsg, sync_info::SyncInfo, vote_msg::VoteMsg,
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::prelude::*;
 use aptos_types::{block_info::Round, epoch_state::EpochState};
 use futures::{FutureExt, StreamExt};

@@ -4,7 +4,7 @@
 // Suppress incorrect warning, as without mut the take_counts method stops compiling.
 #![allow(unused_mut)]
 
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use crossbeam::utils::CachePadded;
 use rayon::prelude::*;
 use std::sync::atomic::{AtomicUsize, Ordering};

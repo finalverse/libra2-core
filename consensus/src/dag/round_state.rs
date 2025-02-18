@@ -7,7 +7,7 @@ use crate::dag::{
 };
 use anyhow::ensure;
 use aptos_consensus_types::common::Round;
-use aptos_infallible::{duration_since_epoch, Mutex};
+use libra2_infallible::{duration_since_epoch, Mutex};
 use aptos_types::epoch_state::EpochState;
 use std::{cmp::Ordering, sync::Arc, time::Duration};
 use tokio::task::JoinHandle;

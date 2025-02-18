@@ -23,7 +23,7 @@ aptos-db = { workspace = true }
 aptos-framework = { workspace = true }
 aptos-genesis = { workspace = true }
 aptos-global-constants = { workspace = true }
-aptos-infallible = { workspace = true }
+libra2-infallible = { workspace = true }
 aptos-inspection-service = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-rest-client = { workspace = true }

@@ -11,7 +11,7 @@ use aptos_config::{
     config::{NodeConfig, NodeType},
     network_id::NetworkId,
 };
-use aptos_infallible::{Mutex, RwLock};
+use libra2_infallible::{Mutex, RwLock};
 use aptos_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},
     protocols::wire::handshake::v1::ProtocolId::MempoolDirectSend,

@@ -74,7 +74,7 @@ fn test_nil_block() {
     let nil_block_child = Block::new_proposal(
         Payload::empty(false, true),
         2,
-        aptos_infallible::duration_since_epoch().as_micros() as u64,
+        libra2_infallible::duration_since_epoch().as_micros() as u64,
         nil_block_qc,
         &signer,
         Vec::new(),
@@ -95,7 +95,7 @@ fn test_block_relation() {
     let next_block = Block::new_proposal(
         payload.clone(),
         1,
-        aptos_infallible::duration_since_epoch().as_micros() as u64,
+        libra2_infallible::duration_since_epoch().as_micros() as u64,
         quorum_cert,
         &signer,
         Vec::new(),
@@ -119,7 +119,7 @@ fn test_same_qc_different_authors() {
     let genesis_qc = certificate_for_genesis();
     let round = 1;
     let payload = Payload::empty(false, true);
-    let current_timestamp = aptos_infallible::duration_since_epoch().as_micros() as u64;
+    let current_timestamp = libra2_infallible::duration_since_epoch().as_micros() as u64;
     let block_round_1 = Block::new_proposal(
         payload.clone(),
         round,
@@ -182,7 +182,7 @@ fn test_block_metadata_bitvec() {
     );
     let payload = Payload::empty(false, true);
     let start_round = 1;
-    let start_timestamp = aptos_infallible::duration_since_epoch().as_micros() as u64;
+    let start_timestamp = libra2_infallible::duration_since_epoch().as_micros() as u64;
 
     let block_1 = Block::new_proposal(
         payload.clone(),

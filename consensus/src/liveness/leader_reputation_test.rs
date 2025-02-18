@@ -14,7 +14,7 @@ use crate::liveness::{
 use aptos_bitvec::BitVec;
 use aptos_consensus_types::common::{Author, Round};
 use aptos_crypto::{bls12381, HashValue};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_keygen::KeyGen;
 use aptos_storage_interface::DbReader;
 use aptos_types::{

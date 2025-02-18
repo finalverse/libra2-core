@@ -10,7 +10,7 @@ use crate::{
 };
 use anyhow::Result;
 use aptos_crypto::{hash::CryptoHasher, HashValue};
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use bytes::Bytes;
 use hashbrown::HashMap;
 use move_core_types::{

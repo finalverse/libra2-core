@@ -12,7 +12,7 @@ use aptos_data_client::{
         SubscriptionRequestMetadata,
     },
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::Level;
 use aptos_storage_service_types::{
     requests::{

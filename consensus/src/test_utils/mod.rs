@@ -39,7 +39,7 @@ use crate::{
 };
 use aptos_consensus_types::{block::block_test_utils::gen_test_certificate, common::Payload};
 use aptos_crypto::ed25519::{Ed25519PrivateKey, Ed25519Signature};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_types::{
     block_info::BlockInfo,
     chain_id::ChainId,

@@ -40,7 +40,7 @@ use aptos_config::{
     network_id::NetworkContext,
 };
 use aptos_crypto::x25519;
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::prelude::*;
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_num_variants::NumVariants;

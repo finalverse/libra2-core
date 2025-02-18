@@ -17,7 +17,7 @@ use aptos_block_executor::{
     txn_provider::TxnProvider,
     types::InputOutputKey,
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_types::{
     block_executor::{
         config::BlockExecutorConfig, transaction_slice_metadata::TransactionSliceMetadata,

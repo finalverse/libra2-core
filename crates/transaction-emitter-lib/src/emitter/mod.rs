@@ -1063,7 +1063,7 @@ async fn wait_for_accounts_sequence(
             },
         }
 
-        if aptos_infallible::duration_since_epoch().as_secs() >= txn_expiration_ts_secs + 240 {
+        if libra2_infallible::duration_since_epoch().as_secs() >= txn_expiration_ts_secs + 240 {
             sample!(
                 SampleRate::Duration(Duration::from_secs(15)),
                 error!(

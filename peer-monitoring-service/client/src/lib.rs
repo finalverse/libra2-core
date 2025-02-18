@@ -9,7 +9,7 @@ use aptos_config::{
     network_id::PeerNetworkId,
 };
 use aptos_id_generator::U64IdGenerator;
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::{info, warn};
 use aptos_network::application::{
     interface::NetworkClient, metadata::PeerMetadata, storage::PeersAndMetadata,

@@ -1,6 +1,6 @@
 [package]
-name = "aptos-infallible"
-description = "Aptos utilities for infallible types"
+name = "libra2-infallible"
+description = "Libra2 utilities for infallible types"
 version = "0.1.0"
 
 # Workspace inherited keys

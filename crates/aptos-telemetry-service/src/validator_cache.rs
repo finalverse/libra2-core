@@ -8,7 +8,7 @@ use crate::{
     types::common::{ChainCommonName, EpochedPeerStore},
 };
 use aptos_config::config::{Peer, PeerRole, PeerSet};
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_rest_client::Response;
 use aptos_types::{
     account_config::CORE_CODE_ADDRESS, chain_id::ChainId, on_chain_config::ValidatorSet, PeerId,
@@ -182,7 +182,7 @@ mod tests {
         test_utils::KeyPair,
         Uniform,
     };
-    use aptos_infallible::RwLock;
+    use libra2_infallible::RwLock;
     use aptos_rest_client::aptos_api_types::*;
     use aptos_types::{
         chain_id::ChainId, network_address::NetworkAddress, on_chain_config::ValidatorSet,

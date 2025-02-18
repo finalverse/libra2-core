@@ -174,8 +174,8 @@ Error handling suggestions follow the [Rust book guidance](https://doc.rust-lang
 
 _Fallible functions_
 
-- `duration_since_epoch()` - to obtain the Unix time, call the function provided by `aptos-infallible`.
-- `RwLock` and `Mutex` - Instead of calling `unwrap()` on the standard library implementations of these functions, use the infallible equivalent types that we provide in `aptos-infallible`.
+- `duration_since_epoch()` - to obtain the Unix time, call the function provided by `libra2-infallible`.
+- `RwLock` and `Mutex` - Instead of calling `unwrap()` on the standard library implementations of these functions, use the infallible equivalent types that we provide in `libra2-infallible`.
 
 _Panic_
 

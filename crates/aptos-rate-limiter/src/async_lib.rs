@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::rate_limit::{Bucket, SharedBucket};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use futures::{
     io::AsyncRead,
     ready,

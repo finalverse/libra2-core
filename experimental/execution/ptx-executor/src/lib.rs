@@ -23,7 +23,7 @@ use crate::{
 };
 use aptos_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvider};
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_metrics_core::TimerHelper;
 use aptos_types::{
     block_executor::{

@@ -14,7 +14,7 @@ use crate::dag::{
     CertifiedNode,
 };
 use aptos_consensus_types::common::{Author, Round};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_types::{epoch_state::EpochState, validator_verifier::random_validator_verifier};
 use async_trait::async_trait;
 use futures_channel::mpsc::{unbounded, UnboundedReceiver, UnboundedSender};

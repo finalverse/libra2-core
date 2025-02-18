@@ -10,7 +10,7 @@ use crate::{
     state_store::{buffered_state::CommitMessage, persisted_state::PersistedState, StateDb},
 };
 use anyhow::{anyhow, ensure, Result};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_jellyfish_merkle::node_type::NodeKey;
 use aptos_logger::{info, trace};
 use aptos_metrics_core::TimerHelper;

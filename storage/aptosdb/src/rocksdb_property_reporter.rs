@@ -19,7 +19,7 @@ use crate::{
     state_merkle_db::StateMerkleDb,
 };
 use anyhow::Result;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::prelude::*;
 use aptos_metrics_core::IntGaugeVec;
 use aptos_schemadb::DB;

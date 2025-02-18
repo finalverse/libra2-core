@@ -42,7 +42,7 @@ use aptos_channels::{
 };
 use aptos_config::config::DagConsensusConfig;
 use aptos_consensus_types::common::{Author, Round};
-use aptos_infallible::{Mutex, RwLock};
+use libra2_infallible::{Mutex, RwLock};
 use aptos_logger::{debug, info};
 use aptos_reliable_broadcast::{RBNetworkSender, ReliableBroadcast};
 use aptos_types::{

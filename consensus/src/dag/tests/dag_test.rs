@@ -11,7 +11,7 @@ use crate::dag::{
 };
 use aptos_consensus_types::common::Author;
 use aptos_crypto::HashValue;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_types::{
     epoch_state::EpochState, ledger_info::LedgerInfoWithSignatures,
     validator_signer::ValidatorSigner, validator_verifier::random_validator_verifier,

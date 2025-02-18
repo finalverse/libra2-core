@@ -7,7 +7,7 @@ use aptos_collections::BoundedVecDeque;
 use aptos_consensus_types::{
     common::Author, payload_pull_params::OptQSPayloadPullParams, round_timeout::RoundTimeoutReason,
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::warn;
 use aptos_short_hex_str::AsShortHexStr;
 use std::{collections::HashSet, sync::Arc};

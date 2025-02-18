@@ -18,7 +18,7 @@ use aptos_data_client::client::AptosDataClient;
 use aptos_data_streaming_service::streaming_client::StreamingServiceClient;
 use aptos_event_notifications::{EventNotificationSender, EventSubscriptionService};
 use aptos_executor_types::ChunkExecutorTrait;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_mempool_notifications::MempoolNotificationSender;
 use aptos_storage_interface::DbReaderWriter;
 use aptos_storage_service_notifications::StorageServiceNotificationSender;

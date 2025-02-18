@@ -15,7 +15,7 @@ use aptos_config::{
 };
 use aptos_crypto::{x25519::PrivateKey, Uniform};
 use aptos_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
-use aptos_infallible::{Mutex, MutexGuard, RwLock};
+use libra2_infallible::{Mutex, MutexGuard, RwLock};
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_network::{
     application::{

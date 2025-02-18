@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::info;
 use aptos_storage_interface::state_store::state_view::cached_state_view::CachedStateView;
 use aptos_vm::{

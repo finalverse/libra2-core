@@ -18,7 +18,7 @@ use aptos_data_streaming_service::{
     data_stream::DataStreamListener,
     streaming_client::{DataStreamingClient, Epoch, NotificationAndFeedback, NotificationFeedback},
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{prelude::*, sample, sample::SampleRate};
 use aptos_storage_interface::DbReader;
 use aptos_types::{

@@ -19,7 +19,7 @@ use aptos_data_streaming_service::{
     streaming_client::{DataStreamingClient, NotificationAndFeedback},
 };
 use aptos_event_notifications::EventSubscriptionService;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::prelude::*;
 use aptos_mempool_notifications::MempoolNotificationSender;
 use aptos_storage_interface::DbReader;

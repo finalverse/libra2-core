@@ -10,7 +10,7 @@ use aptos_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature},
     hash::CryptoHash,
 };
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_time_service::{TimeService, TimeServiceTrait};
 use aptos_vault_client::Client;
 #[cfg(any(test, feature = "testing"))]

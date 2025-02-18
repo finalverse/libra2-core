@@ -10,7 +10,7 @@ use aptos_channels::{aptos_channel, message_queues::QueueStyle};
 use aptos_config::network_id::NetworkId;
 use aptos_consensus_types::common::Author;
 #[cfg(test)]
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::warn;
 use aptos_network::{
     application::interface::{NetworkClient, NetworkServiceEvents},

@@ -17,7 +17,7 @@ use crate::consensus_observer::{
 };
 use aptos_channels::aptos_channel::Receiver;
 use aptos_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::{error, info, warn};
 use aptos_network::application::interface::NetworkClient;
 use futures::StreamExt;

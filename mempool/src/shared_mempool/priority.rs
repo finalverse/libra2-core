@@ -7,7 +7,7 @@ use aptos_config::{
     config::{MempoolConfig, NodeType},
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::prelude::*;
 use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
 use aptos_time_service::{TimeService, TimeServiceTrait};

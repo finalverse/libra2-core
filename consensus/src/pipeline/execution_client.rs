@@ -36,7 +36,7 @@ use aptos_consensus_types::{
 };
 use aptos_crypto::bls12381::PrivateKey;
 use aptos_executor_types::ExecutorResult;
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::prelude::*;
 use aptos_network::{application::interface::NetworkClient, protocols::network::Event};
 use aptos_types::{

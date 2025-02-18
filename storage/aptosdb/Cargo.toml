@@ -21,7 +21,7 @@ aptos-db-indexer = { workspace = true }
 aptos-db-indexer-schemas = { workspace = true, features = ["fuzzing"] }
 aptos-executor-types = { workspace = true }
 aptos-experimental-runtimes = { workspace = true }
-aptos-infallible = { workspace = true }
+libra2-infallible = { workspace = true }
 aptos-jellyfish-merkle = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-metrics-core = { workspace = true }

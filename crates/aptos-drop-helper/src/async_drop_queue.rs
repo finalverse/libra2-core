@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::metrics::TIMER;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_metrics_core::TimerHelper;
 use std::sync::mpsc::{channel, Receiver, Sender};
 use threadpool::ThreadPool;

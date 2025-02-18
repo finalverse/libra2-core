@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 # This is to avoid ever having a circular dependency with the aptos-speculative crate.
 [dependencies]
 anyhow = { workspace = true }
-aptos-infallible = { workspace = true }
+libra2-infallible = { workspace = true }
 crossbeam = { workspace = true }
 rayon = { workspace = true }
 

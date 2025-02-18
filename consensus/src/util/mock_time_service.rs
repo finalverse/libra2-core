@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::util::time_service::{ScheduledTask, TimeService};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::prelude::*;
 use async_trait::async_trait;
 use futures::future::AbortHandle;

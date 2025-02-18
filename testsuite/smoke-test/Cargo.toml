@@ -67,7 +67,7 @@ walkdir = { workspace = true }
 aptos-backup-cli = { workspace = true }
 aptos-db-indexer = { workspace = true, features = ["fuzzing"] }
 aptos-genesis = { workspace = true }
-aptos-infallible = { workspace = true }
+libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-secure-storage = { workspace = true }
 aptos-time-service = { workspace = true }

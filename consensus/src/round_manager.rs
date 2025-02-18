@@ -55,7 +55,7 @@ use aptos_consensus_types::{
     wrapped_ledger_info::WrappedLedgerInfo,
 };
 use aptos_crypto::{hash::CryptoHash, HashValue};
-use aptos_infallible::{checked, Mutex};
+use libra2_infallible::{checked, Mutex};
 use aptos_logger::prelude::*;
 #[cfg(test)]
 use aptos_safety_rules::ConsensusState;

@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 ahash = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-drop-helper = { workspace = true }
-aptos-infallible = { workspace = true }
+libra2-infallible = { workspace = true }
 aptos-metrics-core = { workspace = true }
 bitvec = "1.0.1"
 itertools = { workspace = true }

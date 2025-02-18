@@ -11,7 +11,7 @@ use crate::consensus_observer::{
 };
 use aptos_config::config::ConsensusObserverConfig;
 use aptos_consensus_types::{common::Round, pipelined_block::PipelinedBlock};
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::{error, warn};
 use aptos_types::epoch_state::EpochState;
 use std::{

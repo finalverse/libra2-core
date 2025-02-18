@@ -22,7 +22,7 @@ use aptos_executor_types::{
     ExecutorError::{DataNotFound, InternalError},
     *,
 };
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::prelude::*;
 use aptos_types::{transaction::SignedTransaction, PeerId};
 use async_trait::async_trait;

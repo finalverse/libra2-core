@@ -75,7 +75,7 @@ members = [
     "crates/aptos-genesis",
     "crates/aptos-github-client",
     "crates/aptos-id-generator",
-    "crates/aptos-infallible",
+    "crates/libra2-infallible",
     "crates/aptos-inspection-service",
     "crates/aptos-jwk-consensus",
     "crates/aptos-keygen",
@@ -385,7 +385,7 @@ aptos-indexer-test-transactions = { path = "ecosystem/indexer-grpc/indexer-test-
 aptos-indexer-grpc-utils = { path = "ecosystem/indexer-grpc/indexer-grpc-utils" }
 aptos-indexer-grpc-server-framework = { path = "ecosystem/indexer-grpc/indexer-grpc-server-framework" }
 aptos-indexer-transaction-generator = { path = "ecosystem/indexer-grpc/indexer-transaction-generator" }
-aptos-infallible = { path = "crates/aptos-infallible" }
+libra2-infallible = { path = "crates/libra2-infallible" }
 aptos-inspection-service = { path = "crates/aptos-inspection-service" }
 aptos-jellyfish-merkle = { path = "storage/jellyfish-merkle" }
 aptos-jwk-consensus = { path = "crates/aptos-jwk-consensus" }

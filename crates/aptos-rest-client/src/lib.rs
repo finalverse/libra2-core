@@ -799,7 +799,7 @@ impl Client {
             }
 
             if let Some(max_server_lag_wait_duration) = max_server_lag_wait {
-                if aptos_infallible::duration_since_epoch().as_secs()
+                if libra2_infallible::duration_since_epoch().as_secs()
                     > expiration_timestamp_secs + max_server_lag_wait_duration.as_secs()
                 {
                     return Err(anyhow!(
@@ -832,7 +832,7 @@ impl Client {
                         if let Some(timestamp_usecs) = chain_timestamp_usecs {
                             format!(
                                 "{}s behind current time",
-                                aptos_infallible::duration_since_epoch()
+                                libra2_infallible::duration_since_epoch()
                                     .saturating_sub(Duration::from_micros(timestamp_usecs))
                                     .as_secs()
                             )

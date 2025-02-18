@@ -7,7 +7,7 @@ use crate::{
     Error, LogEntry, LogEvent, LogSchema,
 };
 use aptos_config::{config::NodeMonitoringConfig, network_id::PeerNetworkId};
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_logger::warn;
 use aptos_network::application::metadata::PeerMetadata;
 use aptos_peer_monitoring_service_types::{

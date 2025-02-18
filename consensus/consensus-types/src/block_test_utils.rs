@@ -45,7 +45,7 @@ prop_compose! {
         Block::new_proposal(
             Payload::empty(false, true),
             round,
-            aptos_infallible::duration_since_epoch().as_micros() as u64,
+            libra2_infallible::duration_since_epoch().as_micros() as u64,
             parent_qc,
             &signer,
             Vec::new(),
@@ -92,7 +92,7 @@ prop_compose! {
                     block.author().unwrap(),
                     (*block.block_data().failed_authors().unwrap()).clone(),
                     block.round(),
-                    aptos_infallible::duration_since_epoch().as_micros() as u64,
+                    libra2_infallible::duration_since_epoch().as_micros() as u64,
                     block.quorum_cert().clone(),
                 ),
                 signature: Some(block.signature().unwrap().clone()),

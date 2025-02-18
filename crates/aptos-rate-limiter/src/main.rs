@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_rate_limiter::{
     async_lib::AsyncRateLimiter,
     rate_limit::{Bucket, SharedBucket},

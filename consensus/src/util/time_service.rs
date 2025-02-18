@@ -126,7 +126,7 @@ impl TimeService for ClockTimeService {
     }
 
     fn get_current_timestamp(&self) -> Duration {
-        aptos_infallible::duration_since_epoch()
+        libra2_infallible::duration_since_epoch()
     }
 
     async fn sleep(&self, t: Duration) {

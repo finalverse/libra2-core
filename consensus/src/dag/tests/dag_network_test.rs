@@ -8,7 +8,7 @@ use crate::dag::{
 };
 use anyhow::{anyhow, bail};
 use aptos_consensus_types::common::Author;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_reliable_broadcast::RBNetworkSender;
 use aptos_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::validator_verifier::random_validator_verifier;

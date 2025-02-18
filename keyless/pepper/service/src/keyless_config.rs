@@ -3,7 +3,7 @@
 
 use crate::watcher::{unhexlify_api_bytes, ExternalResource};
 use anyhow::{anyhow, Result};
-use aptos_infallible::RwLock;
+use libra2_infallible::RwLock;
 use aptos_types::keyless::Configuration;
 use once_cell::sync::Lazy;
 use serde::{Deserialize, Serialize};

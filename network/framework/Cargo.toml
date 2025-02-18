@@ -20,7 +20,7 @@ aptos-compression = { workspace = true }
 aptos-config = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-id-generator = { workspace = true }
-aptos-infallible = { workspace = true }
+libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-memsocket = { workspace = true, optional = true }
 aptos-metrics-core = { workspace = true }

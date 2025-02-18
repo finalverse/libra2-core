@@ -20,7 +20,7 @@ use aptos_crypto::{
 };
 use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use aptos_enum_conversion_derive::EnumConversion;
-use aptos_infallible::Mutex;
+use libra2_infallible::Mutex;
 use aptos_logger::debug;
 use aptos_reliable_broadcast::{BroadcastStatus, RBMessage};
 use aptos_types::{

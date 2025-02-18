@@ -17,7 +17,7 @@ use aptos_consensus_types::common::{
     RejectedTransactionSummary, TransactionInProgress, TransactionSummary,
 };
 use aptos_crypto::HashValue;
-use aptos_infallible::{Mutex, RwLock};
+use libra2_infallible::{Mutex, RwLock};
 use aptos_network::application::interface::NetworkClientInterface;
 use aptos_storage_interface::DbReader;
 use aptos_types::{
