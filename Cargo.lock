@@ -922,7 +922,6 @@ dependencies = [
  "aptos-executor-test-helpers",
  "aptos-executor-types",
  "aptos-experimental-runtimes",
- "aptos-fallible",
  "aptos-keygen",
  "aptos-logger",
  "aptos-mempool",
@@ -957,6 +956,7 @@ dependencies = [
  "futures-channel",
  "hex",
  "itertools 0.13.0",
+ "libra2-fallible",
  "libra2-infallible",
  "lru 0.7.8",
  "maplit",
@@ -1691,13 +1691,6 @@ dependencies = [
  "num_cpus",
  "once_cell",
  "rayon",
-]
-
-[[package]]
-name = "aptos-fallible"
-version = "0.1.0"
-dependencies = [
- "thiserror",
 ]
 
 [[package]]
@@ -10731,6 +10724,13 @@ dependencies = [
  "static_assertions",
  "status-line",
  "tokio",
+]
+
+[[package]]
+name = "libra2-fallible"
+version = "0.1.0"
+dependencies = [
+ "thiserror",
 ]
 
 [[package]]
