@@ -79,6 +79,7 @@ members = [
     "crates/aptos-inspection-service",
     "crates/aptos-jwk-consensus",
     "crates/aptos-keygen",
+    "crates/libra2-keygen",
     "crates/aptos-ledger",
     "crates/aptos-localnet",
     "crates/aptos-log-derive",
@@ -278,6 +279,7 @@ default-members = [
     "crates/aptos-debugger",
     "crates/aptos-faucet/service",
     "crates/aptos-keygen",
+    "crates/libra2-keygen",
     "crates/aptos-rate-limiter",
     "crates/aptos-rosetta",
     "crates/transaction-emitter",
@@ -389,6 +391,7 @@ aptos-jellyfish-merkle = { path = "storage/jellyfish-merkle" }
 aptos-jwk-consensus = { path = "crates/aptos-jwk-consensus" }
 aptos-jwk-utils = { path = "crates/jwk-utils" }
 aptos-keygen = { path = "crates/aptos-keygen" }
+libra2-keygen = { path = "crates/libra2-keygen" }
 aptos-language-e2e-tests = { path = "aptos-move/e2e-tests" }
 aptos-ledger = { path = "crates/aptos-ledger" }
 aptos-localnet = { path = "crates/aptos-localnet" }

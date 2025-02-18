@@ -10738,6 +10738,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-keygen"
+version = "0.1.0"
+dependencies = [
+ "aptos-crypto",
+ "aptos-types",
+ "rand 0.7.3",
+]
+
+[[package]]
 name = "libra2-node"
 version = "0.0.0-main"
 dependencies = [
