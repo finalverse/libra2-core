@@ -4,7 +4,7 @@
 #![allow(clippy::ptr_arg)]
 #![allow(clippy::needless_borrow)]
 
-use aptos_dkg::{
+use libra2_dkg::{
     pvss,
     pvss::{
         test_utils,

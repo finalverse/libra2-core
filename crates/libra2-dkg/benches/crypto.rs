@@ -3,7 +3,7 @@
 
 #![allow(clippy::useless_conversion)]
 
-use aptos_dkg::{
+use libra2_dkg::{
     algebra::{
         evaluation_domain::{BatchEvaluationDomain, EvaluationDomain},
         fft::fft_assign,

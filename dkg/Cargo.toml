@@ -1,6 +1,6 @@
 [package]
-name = "aptos-dkg-runtime"
-description = "Aptos DKG runtime"
+name = "libra2-dkg-runtime"
+description = "Libra2 DKG runtime"
 version = "0.1.0"
 
 # Workspace inherited keys

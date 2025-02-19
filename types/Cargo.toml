@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 libra2-bitvec = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-crypto-derive = { workspace = true }
-aptos-dkg = { workspace = true }
+libra2-dkg = { workspace = true }
 libra2-infallible = { workspace = true }
 arbitrary = { workspace = true, features = ["derive"], optional = true }
 ark-bn254 = { workspace = true }

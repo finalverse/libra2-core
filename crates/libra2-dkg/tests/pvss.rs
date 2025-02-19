@@ -7,7 +7,7 @@
 
 //! PVSS scheme-independent testing
 use aptos_crypto::hash::CryptoHash;
-use aptos_dkg::{
+use libra2_dkg::{
     constants::{G1_PROJ_NUM_BYTES, G2_PROJ_NUM_BYTES},
     pvss::{
         das,

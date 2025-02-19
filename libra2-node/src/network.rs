@@ -11,7 +11,7 @@ use aptos_consensus::{
     consensus_observer, consensus_observer::network::observer_message::ConsensusObserverMessage,
     network_interface::ConsensusMsg,
 };
-use aptos_dkg_runtime::DKGMessage;
+use libra2_dkg_runtime::DKGMessage;
 use aptos_event_notifications::EventSubscriptionService;
 use aptos_jwk_consensus::types::JWKConsensusMsg;
 use aptos_logger::debug;
@@ -74,8 +74,8 @@ pub fn consensus_network_configuration(node_config: &NodeConfig) -> NetworkAppli
 /// Returns the network application config for the DKG client and service
 pub fn dkg_network_configuration(node_config: &NodeConfig) -> NetworkApplicationConfig {
     let direct_send_protocols: Vec<ProtocolId> =
-        aptos_dkg_runtime::network_interface::DIRECT_SEND.into();
-    let rpc_protocols: Vec<ProtocolId> = aptos_dkg_runtime::network_interface::RPC.into();
+        libra2_dkg_runtime::network_interface::DIRECT_SEND.into();
+    let rpc_protocols: Vec<ProtocolId> = libra2_dkg_runtime::network_interface::RPC.into();
 
     let network_client_config =
         NetworkClientConfig::new(direct_send_protocols.clone(), rpc_protocols.clone());

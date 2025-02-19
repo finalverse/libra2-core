@@ -4,7 +4,7 @@
 #![allow(clippy::ptr_arg)]
 #![allow(clippy::needless_borrow)]
 
-use aptos_dkg::pvss::{
+use libra2_dkg::pvss::{
     test_utils::get_weighted_configs_for_benchmarking, traits::SecretSharingConfig,
 };
 use rand::thread_rng;

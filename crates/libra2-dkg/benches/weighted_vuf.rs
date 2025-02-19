@@ -6,7 +6,7 @@
 #![allow(clippy::extra_unused_type_parameters)]
 #![allow(clippy::needless_borrow)]
 
-use aptos_dkg::{
+use libra2_dkg::{
     pvss::{
         das,
         dealt_secret_key::g1::DealtSecretKey,

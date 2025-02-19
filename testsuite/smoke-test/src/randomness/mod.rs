@@ -4,7 +4,7 @@
 use crate::utils;
 use anyhow::{anyhow, ensure, Result};
 use aptos_crypto::{compat::Sha3_256, Uniform};
-use aptos_dkg::weighted_vuf::traits::WeightedVUF;
+use libra2_dkg::weighted_vuf::traits::WeightedVUF;
 use aptos_forge::LocalSwarm;
 use aptos_logger::info;
 use aptos_rest_client::Client;

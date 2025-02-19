@@ -22,7 +22,7 @@ use aptos_consensus::{
     network_interface::ConsensusMsg,
 };
 use aptos_consensus_notifications::ConsensusNotifier;
-use aptos_dkg_runtime::{start_dkg_runtime, DKGMessage};
+use libra2_dkg_runtime::{start_dkg_runtime, DKGMessage};
 use aptos_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };

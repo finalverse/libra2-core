@@ -1,5 +1,5 @@
 [package]
-name = "aptos-dkg"
+name = "libra2-dkg"
 version = "0.1.0"
 edition = "2021"
 license = { workspace = true }

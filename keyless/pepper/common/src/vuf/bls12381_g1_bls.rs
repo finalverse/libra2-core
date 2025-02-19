@@ -5,7 +5,7 @@ use crate::vuf::VUF;
 use anyhow::{anyhow, ensure};
 use aptos_crypto::hash::CryptoHash;
 use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
-use aptos_dkg::utils::multi_pairing;
+use libra2_dkg::utils::multi_pairing;
 use aptos_types::keyless::Pepper;
 use ark_bls12_381::{Bls12_381, Fq12, Fr, G1Affine, G2Affine, G2Projective};
 use ark_ec::{

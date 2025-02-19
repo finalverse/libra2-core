@@ -29,7 +29,7 @@ aptos-data-client = { workspace = true }
 aptos-data-streaming-service = { workspace = true }
 aptos-db = { workspace = true }
 aptos-db-indexer = { workspace = true }
-aptos-dkg-runtime = { workspace = true }
+libra2-dkg-runtime = { workspace = true }
 aptos-event-notifications = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-framework = { workspace = true }
@@ -94,7 +94,7 @@ default = []
 failpoints = ["fail/failpoints", "aptos-consensus/failpoints", "aptos-executor/failpoints", "aptos-mempool/failpoints", "aptos-api/failpoints", "libra2-config/failpoints"]
 indexer = ["aptos-indexer"]
 tokio-console = ["aptos-logger/tokio-console", "libra2-config/tokio-console"]
-smoke-test = ["aptos-jwk-consensus/smoke-test", "aptos-dkg-runtime/smoke-test"]
+smoke-test = ["aptos-jwk-consensus/smoke-test", "libra2-dkg-runtime/smoke-test"]
 
 [package.metadata.cargo-machete]
 ignored = ["aptos-crypto"]

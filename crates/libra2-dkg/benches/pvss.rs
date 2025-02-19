@@ -5,7 +5,7 @@
 #![allow(clippy::needless_borrow)]
 
 use aptos_crypto::Uniform;
-use aptos_dkg::{
+use libra2_dkg::{
     algebra::evaluation_domain::BatchEvaluationDomain,
     pvss,
     pvss::{
