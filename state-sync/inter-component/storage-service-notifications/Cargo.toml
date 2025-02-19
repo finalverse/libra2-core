@@ -13,7 +13,7 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-channels = { workspace = true }
+libra2-channels = { workspace = true }
 async-trait = { workspace = true }
 futures = { workspace = true }
 serde = { workspace = true }

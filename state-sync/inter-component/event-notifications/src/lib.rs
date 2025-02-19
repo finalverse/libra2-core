@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 use anyhow::{anyhow, Result};
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_id_generator::{IdGenerator, U64IdGenerator};
 use libra2_infallible::RwLock;
 use aptos_storage_interface::{
@@ -118,7 +118,7 @@ impl EventSubscriptionService {
         }
 
         let (notification_sender, notification_receiver) =
-            aptos_channel::new(QueueStyle::KLAST, EVENT_NOTIFICATION_CHANNEL_SIZE, None);
+            libra2_channel::new(QueueStyle::KLAST, EVENT_NOTIFICATION_CHANNEL_SIZE, None);
 
         // Create a new event subscription
         let subscription_id = self.get_new_subscription_id();
@@ -173,7 +173,7 @@ impl EventSubscriptionService {
         &mut self,
     ) -> Result<ReconfigNotificationListener<DbBackedOnChainConfig>, Error> {
         let (notification_sender, notification_receiver) =
-            aptos_channel::new(QueueStyle::KLAST, RECONFIG_NOTIFICATION_CHANNEL_SIZE, None);
+            libra2_channel::new(QueueStyle::KLAST, RECONFIG_NOTIFICATION_CHANNEL_SIZE, None);
 
         // Create a new reconfiguration subscription
         let subscription_id = self.get_new_subscription_id();
@@ -339,7 +339,7 @@ type SubscriptionId = u64;
 #[derive(Debug)]
 struct EventSubscription {
     pub event_buffer: Vec<ContractEvent>,
-    pub notification_sender: aptos_channels::aptos_channel::Sender<(), EventNotification>,
+    pub notification_sender: libra2_channels::libra2_channel::Sender<(), EventNotification>,
 }
 
 impl EventSubscription {
@@ -363,7 +363,7 @@ impl EventSubscription {
 /// corresponding notifications.
 struct ReconfigSubscription {
     pub notification_sender:
-        aptos_channels::aptos_channel::Sender<(), ReconfigNotification<DbBackedOnChainConfig>>,
+        libra2_channels::libra2_channel::Sender<(), ReconfigNotification<DbBackedOnChainConfig>>,
 }
 
 impl ReconfigSubscription {
@@ -442,7 +442,7 @@ pub type ReconfigNotificationListener<P> = NotificationListener<ReconfigNotifica
 /// The component responsible for listening to subscription notifications.
 #[derive(Debug)]
 pub struct NotificationListener<T> {
-    pub notification_receiver: aptos_channels::aptos_channel::Receiver<(), T>,
+    pub notification_receiver: libra2_channels::libra2_channel::Receiver<(), T>,
 }
 
 impl<T> Stream for NotificationListener<T> {

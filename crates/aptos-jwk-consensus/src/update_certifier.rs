@@ -5,7 +5,7 @@ use crate::{
     observation_aggregation::ObservationAggregationState,
     types::{JWKConsensusMsg, ObservedUpdateRequest},
 };
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_logger::info;
 use aptos_reliable_broadcast::ReliableBroadcast;
 use aptos_types::{
@@ -25,7 +25,7 @@ pub trait TUpdateCertifier: Send + Sync {
         &self,
         epoch_state: Arc<EpochState>,
         payload: ProviderJWKs,
-        qc_update_tx: aptos_channel::Sender<Issuer, QuorumCertifiedUpdate>,
+        qc_update_tx: libra2_channel::Sender<Issuer, QuorumCertifiedUpdate>,
     ) -> AbortHandle;
 }
 
@@ -46,7 +46,7 @@ impl TUpdateCertifier for UpdateCertifier {
         &self,
         epoch_state: Arc<EpochState>,
         payload: ProviderJWKs,
-        qc_update_tx: aptos_channel::Sender<Issuer, QuorumCertifiedUpdate>,
+        qc_update_tx: libra2_channel::Sender<Issuer, QuorumCertifiedUpdate>,
     ) -> AbortHandle {
         let version = payload.version;
         info!(

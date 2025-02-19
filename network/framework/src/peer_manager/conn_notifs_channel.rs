@@ -10,14 +10,14 @@
 //! and `conn_notifs_channel::Sender` which behave similarly to existing mpsc data structures.
 
 use crate::peer_manager::ConnectionNotification;
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_types::PeerId;
 
-pub type Sender = aptos_channel::Sender<PeerId, ConnectionNotification>;
-pub type Receiver = aptos_channel::Receiver<PeerId, ConnectionNotification>;
+pub type Sender = libra2_channel::Sender<PeerId, ConnectionNotification>;
+pub type Receiver = libra2_channel::Receiver<PeerId, ConnectionNotification>;
 
 pub fn new() -> (Sender, Receiver) {
-    aptos_channel::new(QueueStyle::LIFO, 1, None)
+    libra2_channel::new(QueueStyle::LIFO, 1, None)
 }
 
 #[cfg(test)]

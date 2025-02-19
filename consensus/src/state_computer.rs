@@ -76,8 +76,8 @@ pub struct ExecutionProxy {
     executor: Arc<dyn BlockExecutorTrait>,
     txn_notifier: Arc<dyn TxnNotifier>,
     state_sync_notifier: Arc<dyn ConsensusNotificationSender>,
-    pre_commit_notifier: aptos_channels::Sender<NotificationType>,
-    commit_notifier: aptos_channels::Sender<NotificationType>,
+    pre_commit_notifier: libra2_channels::Sender<NotificationType>,
+    commit_notifier: libra2_channels::Sender<NotificationType>,
     write_mutex: AsyncMutex<LogicalTime>,
     transaction_filter: Arc<TransactionFilter>,
     execution_pipeline: ExecutionPipeline,
@@ -120,8 +120,8 @@ impl ExecutionProxy {
         handle: &tokio::runtime::Handle,
         name: &'static str,
         pending_notifications_gauge: &IntGauge,
-    ) -> aptos_channels::Sender<NotificationType> {
-        let (tx, mut rx) = aptos_channels::new::<NotificationType>(10, pending_notifications_gauge);
+    ) -> libra2_channels::Sender<NotificationType> {
+        let (tx, mut rx) = libra2_channels::new::<NotificationType>(10, pending_notifications_gauge);
         let _join_handle = handle.spawn(async move {
             while let Some(fut) = rx.next().await {
                 fut.await

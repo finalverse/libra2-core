@@ -10,7 +10,7 @@ use crate::{
 };
 use anyhow::{anyhow, Result};
 use aptos_bounded_executor::BoundedExecutor;
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::config::{ReliableBroadcastConfig, SafetyRulesConfig};
 use aptos_event_notifications::{
     EventNotification, EventNotificationListener, ReconfigNotification,
@@ -46,13 +46,13 @@ pub struct EpochManager<P: OnChainConfigProvider> {
 
     // Msgs to DKG manager
     dkg_rpc_msg_tx:
-        Option<aptos_channel::Sender<AccountAddress, (AccountAddress, IncomingRpcRequest)>>,
+        Option<libra2_channel::Sender<AccountAddress, (AccountAddress, IncomingRpcRequest)>>,
     dkg_manager_close_tx: Option<oneshot::Sender<oneshot::Sender<()>>>,
-    dkg_start_event_tx: Option<aptos_channel::Sender<(), DKGStartEvent>>,
+    dkg_start_event_tx: Option<libra2_channel::Sender<(), DKGStartEvent>>,
     vtxn_pool: VTxnPoolState,
 
     // Network utils
-    self_sender: aptos_channels::Sender<Event<DKGMessage>>,
+    self_sender: libra2_channels::Sender<Event<DKGMessage>>,
     network_sender: DKGNetworkClient<NetworkClient<DKGMessage>>,
     rb_config: ReliableBroadcastConfig,
 
@@ -68,7 +68,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         my_addr: AccountAddress,
         reconfig_events: ReconfigNotificationListener<P>,
         dkg_start_events: EventNotificationListener,
-        self_sender: aptos_channels::Sender<Event<DKGMessage>>,
+        self_sender: libra2_channels::Sender<Event<DKGMessage>>,
         network_sender: DKGNetworkClient<NetworkClient<DKGMessage>>,
         vtxn_pool: VTxnPoolState,
         rb_config: ReliableBroadcastConfig,
@@ -221,10 +221,10 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
             let agg_trx_producer = AggTranscriptProducer::new(rb);
 
             let (dkg_start_event_tx, dkg_start_event_rx) =
-                aptos_channel::new(QueueStyle::KLAST, 1, None);
+                libra2_channel::new(QueueStyle::KLAST, 1, None);
             self.dkg_start_event_tx = Some(dkg_start_event_tx);
 
-            let (dkg_rpc_msg_tx, dkg_rpc_msg_rx) = aptos_channel::new::<
+            let (dkg_rpc_msg_tx, dkg_rpc_msg_rx) = libra2_channel::new::<
                 AccountAddress,
                 (AccountAddress, IncomingRpcRequest),
             >(QueueStyle::FIFO, 100, None);

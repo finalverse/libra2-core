@@ -8,7 +8,7 @@ use crate::{
     PeerMonitoringServiceNetworkEvents, PeerMonitoringServiceServer, MAX_DISTANCE_FROM_VALIDATORS,
     PEER_MONITORING_SERVER_VERSION,
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::{
     config::{BaseConfig, NodeConfig, PeerMonitoringServiceConfig, PeerRole, RoleType},
     network_id::{NetworkId, PeerNetworkId},
@@ -469,7 +469,7 @@ async fn verify_node_information(
 /// mock client requests to a peer monitoring service server.
 struct MockClient {
     peer_manager_notifiers:
-        HashMap<NetworkId, aptos_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>>,
+        HashMap<NetworkId, libra2_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>>,
 }
 
 impl MockClient {
@@ -500,7 +500,7 @@ impl MockClient {
         let mut network_and_events = HashMap::new();
         let mut peer_manager_notifiers = HashMap::new();
         for network_id in network_ids {
-            let queue_cfg = aptos_channel::Config::new(
+            let queue_cfg = libra2_channel::Config::new(
                 peer_monitoring_config.max_network_channel_size as usize,
             )
             .queue_style(QueueStyle::FIFO)

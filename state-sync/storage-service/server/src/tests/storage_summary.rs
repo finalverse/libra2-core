@@ -10,7 +10,7 @@ use crate::{
         utils,
     },
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::config::StorageServiceConfig;
 use aptos_storage_service_notifications::StorageServiceNotificationSender;
 use aptos_storage_service_types::{
@@ -55,7 +55,7 @@ async fn test_refresh_cached_storage_summary() {
 
     // Create the cached summary update notifier
     let (cached_summary_update_notifier, mut cached_summary_update_listener) =
-        aptos_channel::new(QueueStyle::FIFO, 1, None);
+        libra2_channel::new(QueueStyle::FIFO, 1, None);
 
     // Refresh the storage summary cache
     refresh_cached_storage_summary(

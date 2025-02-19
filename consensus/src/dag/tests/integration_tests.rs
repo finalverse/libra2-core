@@ -11,7 +11,7 @@ use crate::{
     pipeline::{buffer_manager::OrderedBlocks, execution_client::DummyExecutionClient},
     test_utils::{consensus_runtime, MockPayloadManager, MockStorage},
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::network_id::{NetworkId, PeerNetworkId};
 use aptos_consensus_types::common::Author;
 use aptos_logger::debug;
@@ -45,9 +45,9 @@ use tokio::task::JoinHandle;
 struct DagBootstrapUnit {
     nh_task_handle: JoinHandle<SyncOutcome>,
     df_task_handle: JoinHandle<()>,
-    dag_rpc_tx: aptos_channel::Sender<Author, IncomingDAGRequest>,
+    dag_rpc_tx: libra2_channel::Sender<Author, IncomingDAGRequest>,
     network_events: Box<
-        Select<NetworkEvents<ConsensusMsg>, aptos_channels::UnboundedReceiver<Event<ConsensusMsg>>>,
+        Select<NetworkEvents<ConsensusMsg>, libra2_channels::UnboundedReceiver<Event<ConsensusMsg>>>,
     >,
 }
 
@@ -62,7 +62,7 @@ impl DagBootstrapUnit {
         network_events: Box<
             Select<
                 NetworkEvents<ConsensusMsg>,
-                aptos_channels::UnboundedReceiver<Event<ConsensusMsg>>,
+                libra2_channels::UnboundedReceiver<Event<ConsensusMsg>>,
             >,
         >,
         all_signers: Vec<ValidatorSigner>,
@@ -137,13 +137,13 @@ fn create_network(
 ) -> (
     NetworkSender,
     Box<
-        Select<NetworkEvents<ConsensusMsg>, aptos_channels::UnboundedReceiver<Event<ConsensusMsg>>>,
+        Select<NetworkEvents<ConsensusMsg>, libra2_channels::UnboundedReceiver<Event<ConsensusMsg>>>,
     >,
 ) {
-    let (network_reqs_tx, network_reqs_rx) = aptos_channel::new(QueueStyle::FIFO, 8, None);
-    let (connection_reqs_tx, _) = aptos_channel::new(QueueStyle::FIFO, 8, None);
-    let (consensus_tx, consensus_rx) = aptos_channel::new(QueueStyle::FIFO, 8, None);
-    let (_conn_mgr_reqs_tx, conn_mgr_reqs_rx) = aptos_channels::new_test(8);
+    let (network_reqs_tx, network_reqs_rx) = libra2_channel::new(QueueStyle::FIFO, 8, None);
+    let (connection_reqs_tx, _) = libra2_channel::new(QueueStyle::FIFO, 8, None);
+    let (consensus_tx, consensus_rx) = libra2_channel::new(QueueStyle::FIFO, 8, None);
+    let (_conn_mgr_reqs_tx, conn_mgr_reqs_rx) = libra2_channels::new_test(8);
     let network_sender = network::NetworkSender::new(
         PeerManagerRequestSender::new(network_reqs_tx),
         ConnectionRequestSender::new(connection_reqs_tx),
@@ -157,7 +157,7 @@ fn create_network(
     let consensus_network_client = ConsensusNetworkClient::new(network_client);
     let network_events = NetworkEvents::new(consensus_rx, None, true);
 
-    let (self_sender, self_receiver) = aptos_channels::new_unbounded_test();
+    let (self_sender, self_receiver) = libra2_channels::new_unbounded_test();
     let network = NetworkSender::new(author, consensus_network_client, self_sender, validators);
 
     let twin_id = TwinId { id, author };

@@ -11,7 +11,7 @@ use crate::{
     tests::common::{self, TestTransaction},
     MempoolClientRequest, MempoolClientSender, MempoolSyncMsg, QuorumStoreRequest,
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::{
     config::NodeConfig,
     network_id::{NetworkId, PeerNetworkId},
@@ -583,9 +583,9 @@ fn setup_network(
     InboundNetworkHandle,
     OutboundMessageReceiver,
 ) {
-    let (reqs_inbound_sender, reqs_inbound_receiver) = aptos_channel();
-    let (reqs_outbound_sender, reqs_outbound_receiver) = aptos_channel();
-    let (connection_outbound_sender, _connection_outbound_receiver) = aptos_channel();
+    let (reqs_inbound_sender, reqs_inbound_receiver) = libra2_channel();
+    let (reqs_outbound_sender, reqs_outbound_receiver) = libra2_channel();
+    let (connection_outbound_sender, _connection_outbound_receiver) = libra2_channel();
 
     // Create the network sender and events
     let network_sender = NetworkSender::new(
@@ -606,10 +606,10 @@ fn setup_network(
 }
 
 /// A generic FIFO Aptos channel
-fn aptos_channel<K: Eq + Hash + Clone, T>(
-) -> (aptos_channel::Sender<K, T>, aptos_channel::Receiver<K, T>) {
+fn libra2_channel<K: Eq + Hash + Clone, T>(
+) -> (libra2_channel::Sender<K, T>, libra2_channel::Receiver<K, T>) {
     static MAX_QUEUE_SIZE: usize = 8;
-    aptos_channel::new(QueueStyle::FIFO, MAX_QUEUE_SIZE, None)
+    libra2_channel::new(QueueStyle::FIFO, MAX_QUEUE_SIZE, None)
 }
 
 /// Creates a full [`SharedMempool`] and mocks all of the database information.
@@ -634,7 +634,7 @@ fn setup_mempool(
     let vm_validator = Arc::new(RwLock::new(MockVMValidator));
     let db_ro = Arc::new(MockDbReaderWriter);
 
-    let (reconfig_sender, reconfig_events) = aptos_channel::new(QueueStyle::LIFO, 1, None);
+    let (reconfig_sender, reconfig_events) = libra2_channel::new(QueueStyle::LIFO, 1, None);
     let reconfig_event_subscriber = ReconfigNotificationListener {
         notification_receiver: reconfig_events,
     };

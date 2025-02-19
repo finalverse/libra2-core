@@ -8,7 +8,7 @@ use crate::{
     update_certifier::TUpdateCertifier,
 };
 use libra2_bitvec::BitVec;
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_crypto::{
     bls12381::{PrivateKey, PublicKey, Signature},
     hash::CryptoHash,
@@ -477,7 +477,7 @@ impl TUpdateCertifier for DummyUpdateCertifier {
         &self,
         epoch_state: Arc<EpochState>,
         payload: ProviderJWKs,
-        _agg_node_tx: aptos_channel::Sender<Issuer, QuorumCertifiedUpdate>,
+        _agg_node_tx: libra2_channel::Sender<Issuer, QuorumCertifiedUpdate>,
     ) -> AbortHandle {
         self.invocations.lock().push((epoch_state, payload));
         let (abort_handle, _) = AbortHandle::new_pair();

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{TransactionFilter, VTxnPoolState};
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_crypto::hash::CryptoHash;
 use aptos_types::{
     dkg::DKGTranscript,
@@ -92,7 +92,7 @@ async fn per_txn_pull_notification() {
     let pool = VTxnPoolState::default();
     let txn_0 = ValidatorTransaction::ObservedJWKUpdate(QuorumCertifiedUpdate::dummy());
     let txn_1 = ValidatorTransaction::DKGResult(DKGTranscript::dummy());
-    let (tx, mut rx) = aptos_channel::new(QueueStyle::KLAST, 1, None);
+    let (tx, mut rx) = libra2_channel::new(QueueStyle::KLAST, 1, None);
     let _guard_0 = pool.put(
         Topic::JWK_CONSENSUS(dummy_issuer()),
         Arc::new(txn_0.clone()),

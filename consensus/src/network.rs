@@ -20,7 +20,7 @@ use crate::{
     },
 };
 use anyhow::{anyhow, bail, ensure};
-use aptos_channels::{self, aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use aptos_config::network_id::NetworkId;
 use aptos_consensus_types::{
     block_retrieval::{BlockRetrievalRequest, BlockRetrievalRequestV1, BlockRetrievalResponse},
@@ -176,15 +176,15 @@ impl IncomingRpcRequest {
 /// Will be returned by the NetworkTask upon startup.
 pub struct NetworkReceivers {
     /// Provide a LIFO buffer for each (Author, MessageType) key
-    pub consensus_messages: aptos_channel::Receiver<
+    pub consensus_messages: libra2_channel::Receiver<
         (AccountAddress, Discriminant<ConsensusMsg>),
         (AccountAddress, ConsensusMsg),
     >,
-    pub quorum_store_messages: aptos_channel::Receiver<
+    pub quorum_store_messages: libra2_channel::Receiver<
         (AccountAddress, Discriminant<ConsensusMsg>),
         (AccountAddress, ConsensusMsg),
     >,
-    pub rpc_rx: aptos_channel::Receiver<
+    pub rpc_rx: libra2_channel::Receiver<
         (AccountAddress, Discriminant<IncomingRpcRequest>),
         (AccountAddress, IncomingRpcRequest),
     >,
@@ -219,7 +219,7 @@ pub struct NetworkSender {
     pub(crate) consensus_network_client: ConsensusNetworkClient<NetworkClient<ConsensusMsg>>,
     // Self sender and self receivers provide a shortcut for sending the messages to itself.
     // (self sending is not supported by the networking API).
-    self_sender: aptos_channels::UnboundedSender<Event<ConsensusMsg>>,
+    self_sender: libra2_channels::UnboundedSender<Event<ConsensusMsg>>,
     validators: Arc<ValidatorVerifier>,
     time_service: aptos_time_service::TimeService,
 }
@@ -228,7 +228,7 @@ impl NetworkSender {
     pub fn new(
         author: Author,
         consensus_network_client: ConsensusNetworkClient<NetworkClient<ConsensusMsg>>,
-        self_sender: aptos_channels::UnboundedSender<Event<ConsensusMsg>>,
+        self_sender: libra2_channels::UnboundedSender<Event<ConsensusMsg>>,
         validators: Arc<ValidatorVerifier>,
     ) -> Self {
         NetworkSender {
@@ -651,15 +651,15 @@ impl ProofNotifier for NetworkSender {
 }
 
 pub struct NetworkTask {
-    consensus_messages_tx: aptos_channel::Sender<
+    consensus_messages_tx: libra2_channel::Sender<
         (AccountAddress, Discriminant<ConsensusMsg>),
         (AccountAddress, ConsensusMsg),
     >,
-    quorum_store_messages_tx: aptos_channel::Sender<
+    quorum_store_messages_tx: libra2_channel::Sender<
         (AccountAddress, Discriminant<ConsensusMsg>),
         (AccountAddress, ConsensusMsg),
     >,
-    rpc_tx: aptos_channel::Sender<
+    rpc_tx: libra2_channel::Sender<
         (AccountAddress, Discriminant<IncomingRpcRequest>),
         (AccountAddress, IncomingRpcRequest),
     >,
@@ -670,21 +670,21 @@ impl NetworkTask {
     /// Establishes the initial connections with the peers and returns the receivers.
     pub fn new(
         network_service_events: NetworkServiceEvents<ConsensusMsg>,
-        self_receiver: aptos_channels::UnboundedReceiver<Event<ConsensusMsg>>,
+        self_receiver: libra2_channels::UnboundedReceiver<Event<ConsensusMsg>>,
     ) -> (NetworkTask, NetworkReceivers) {
-        let (consensus_messages_tx, consensus_messages) = aptos_channel::new(
+        let (consensus_messages_tx, consensus_messages) = libra2_channel::new(
             QueueStyle::FIFO,
             10,
             Some(&counters::CONSENSUS_CHANNEL_MSGS),
         );
-        let (quorum_store_messages_tx, quorum_store_messages) = aptos_channel::new(
+        let (quorum_store_messages_tx, quorum_store_messages) = libra2_channel::new(
             QueueStyle::FIFO,
             // TODO: tune this value based on quorum store messages with backpressure
             50,
             Some(&counters::QUORUM_STORE_CHANNEL_MSGS),
         );
         let (rpc_tx, rpc_rx) =
-            aptos_channel::new(QueueStyle::FIFO, 10, Some(&counters::RPC_CHANNEL_MSGS));
+            libra2_channel::new(QueueStyle::FIFO, 10, Some(&counters::RPC_CHANNEL_MSGS));
 
         // Verify the network events have been constructed correctly
         let network_and_events = network_service_events.into_network_and_events();
@@ -717,7 +717,7 @@ impl NetworkTask {
     fn push_msg(
         peer_id: AccountAddress,
         msg: ConsensusMsg,
-        tx: &aptos_channel::Sender<
+        tx: &libra2_channel::Sender<
             (AccountAddress, Discriminant<ConsensusMsg>),
             (AccountAddress, ConsensusMsg),
         >,

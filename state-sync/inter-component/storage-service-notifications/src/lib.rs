@@ -3,7 +3,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_channels::{self, aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use async_trait::async_trait;
 use futures::{stream::FusedStream, Stream};
 use serde::{Deserialize, Serialize};
@@ -42,7 +42,7 @@ pub trait StorageServiceNotificationSender: Send + Clone + Sync + 'static {
 pub fn new_storage_service_notifier_listener_pair(
 ) -> (StorageServiceNotifier, StorageServiceNotificationListener) {
     // Create a dedicated channel for notifications
-    let (notification_sender, notification_receiver) = aptos_channel::new(
+    let (notification_sender, notification_receiver) = libra2_channel::new(
         QueueStyle::LIFO,
         STORAGE_SERVICE_NOTIFICATION_CHANNEL_SIZE,
         None,
@@ -58,12 +58,12 @@ pub fn new_storage_service_notifier_listener_pair(
 /// The state sync driver component responsible for notifying the storage service
 #[derive(Clone, Debug)]
 pub struct StorageServiceNotifier {
-    notification_sender: aptos_channel::Sender<(), StorageServiceCommitNotification>,
+    notification_sender: libra2_channel::Sender<(), StorageServiceCommitNotification>,
 }
 
 impl StorageServiceNotifier {
     fn new(
-        notification_sender: aptos_channel::Sender<(), StorageServiceCommitNotification>,
+        notification_sender: libra2_channel::Sender<(), StorageServiceCommitNotification>,
     ) -> Self {
         Self {
             notification_sender,
@@ -98,12 +98,12 @@ impl StorageServiceNotificationSender for StorageServiceNotifier {
 /// The storage service component responsible for handling state sync notifications
 #[derive(Debug)]
 pub struct StorageServiceNotificationListener {
-    notification_receiver: aptos_channel::Receiver<(), StorageServiceCommitNotification>,
+    notification_receiver: libra2_channel::Receiver<(), StorageServiceCommitNotification>,
 }
 
 impl StorageServiceNotificationListener {
     fn new(
-        notification_receiver: aptos_channel::Receiver<(), StorageServiceCommitNotification>,
+        notification_receiver: libra2_channel::Receiver<(), StorageServiceCommitNotification>,
     ) -> Self {
         StorageServiceNotificationListener {
             notification_receiver,

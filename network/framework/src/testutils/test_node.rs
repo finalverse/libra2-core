@@ -25,14 +25,14 @@ use std::{collections::HashMap, sync::Arc, time::Duration};
 
 /// A sender to a node to mock an inbound network message from [`PeerManager`]
 pub type InboundMessageSender =
-    aptos_channels::aptos_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>;
+    libra2_channels::libra2_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>;
 
 /// A sender to a node to mock an inbound connection from [`PeerManager`]
 pub type ConnectionUpdateSender = crate::peer_manager::conn_notifs_channel::Sender;
 
 /// A receiver to get outbound network messages to [`PeerManager`]
 pub type OutboundMessageReceiver =
-    aptos_channels::aptos_channel::Receiver<(PeerId, ProtocolId), PeerManagerRequest>;
+    libra2_channels::libra2_channel::Receiver<(PeerId, ProtocolId), PeerManagerRequest>;
 
 /// A connection handle describing the network for a node.
 ///

@@ -6,7 +6,7 @@ use crate::{
     StorageServiceServer,
 };
 use anyhow::Result;
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::{
     config::{StateSyncConfig, StorageServiceConfig},
     network_id::{NetworkId, PeerNetworkId},
@@ -60,7 +60,7 @@ const MAX_RESPONSE_TIMEOUT_SECS: u64 = 60;
 /// mock client requests to a [`StorageServiceServer`].
 pub struct MockClient {
     peer_manager_notifiers:
-        HashMap<NetworkId, aptos_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>>,
+        HashMap<NetworkId, libra2_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>>,
 }
 
 impl MockClient {
@@ -92,7 +92,7 @@ impl MockClient {
         let mut network_and_events = HashMap::new();
         let mut peer_manager_notifiers = HashMap::new();
         for network_id in network_ids.clone() {
-            let queue_cfg = aptos_channel::Config::new(
+            let queue_cfg = libra2_channel::Config::new(
                 storage_service_config.max_network_channel_size as usize,
             )
             .queue_style(QueueStyle::FIFO)

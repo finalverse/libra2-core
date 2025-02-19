@@ -6,7 +6,7 @@ use crate::{
     types::JWKConsensusMsg,
 };
 use anyhow::bail;
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::network_id::NetworkId;
 use aptos_consensus_types::common::Author;
 #[cfg(test)]
@@ -39,14 +39,14 @@ pub struct IncomingRpcRequest {
 pub struct NetworkSender {
     author: AccountAddress,
     jwk_network_client: JWKConsensusNetworkClient<NetworkClient<JWKConsensusMsg>>,
-    self_sender: aptos_channels::Sender<Event<JWKConsensusMsg>>,
+    self_sender: libra2_channels::Sender<Event<JWKConsensusMsg>>,
 }
 
 impl NetworkSender {
     pub fn new(
         author: AccountAddress,
         jwk_network_client: JWKConsensusNetworkClient<NetworkClient<JWKConsensusMsg>>,
-        self_sender: aptos_channels::Sender<Event<JWKConsensusMsg>>,
+        self_sender: libra2_channels::Sender<Event<JWKConsensusMsg>>,
     ) -> Self {
         Self {
             author,
@@ -152,21 +152,21 @@ impl RpcResponseSender for DummyRpcResponseSender {
 }
 
 pub struct NetworkReceivers {
-    pub rpc_rx: aptos_channel::Receiver<AccountAddress, (AccountAddress, IncomingRpcRequest)>,
+    pub rpc_rx: libra2_channel::Receiver<AccountAddress, (AccountAddress, IncomingRpcRequest)>,
 }
 
 pub struct NetworkTask {
     all_events: Box<dyn Stream<Item = Event<JWKConsensusMsg>> + Send + Unpin>,
-    rpc_tx: aptos_channel::Sender<AccountAddress, (AccountAddress, IncomingRpcRequest)>,
+    rpc_tx: libra2_channel::Sender<AccountAddress, (AccountAddress, IncomingRpcRequest)>,
 }
 
 impl NetworkTask {
     /// Establishes the initial connections with the peers and returns the receivers.
     pub fn new(
         network_service_events: NetworkServiceEvents<JWKConsensusMsg>,
-        self_receiver: aptos_channels::Receiver<Event<JWKConsensusMsg>>,
+        self_receiver: libra2_channels::Receiver<Event<JWKConsensusMsg>>,
     ) -> (NetworkTask, NetworkReceivers) {
-        let (rpc_tx, rpc_rx) = aptos_channel::new(QueueStyle::FIFO, 10, None);
+        let (rpc_tx, rpc_rx) = libra2_channel::new(QueueStyle::FIFO, 10, None);
 
         let network_and_events = network_service_events.into_network_and_events();
         if (network_and_events.values().len() != 1)

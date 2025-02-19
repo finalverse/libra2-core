@@ -318,7 +318,7 @@ aptos-block-executor = { path = "aptos-move/block-executor" }
 libra2-bitvec = { path = "crates/libra2-bitvec" }
 aptos-build-info = { path = "crates/aptos-build-info" }
 aptos-cached-packages = { path = "aptos-move/framework/cached-packages" }
-aptos-channels = { path = "crates/channel" }
+libra2-channels = { path = "crates/channel" }
 aptos-cli-common = { path = "crates/aptos-cli-common" }
 aptos-collections = { path = "crates/aptos-collections" }
 aptos-compression = { path = "crates/aptos-compression" }

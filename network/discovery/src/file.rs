@@ -57,7 +57,7 @@ fn load_file(path: &Path) -> Result<PeerSet, DiscoveryError> {
 mod tests {
     use super::*;
     use crate::DiscoveryChangeListener;
-    use aptos_channels::Receiver;
+    use libra2_channels::Receiver;
     use aptos_config::{
         config::{Peer, PeerRole},
         network_id::NetworkContext,
@@ -74,7 +74,7 @@ mod tests {
         let check_interval = Duration::from_millis(5);
         // TODO: Figure out why mock time doesn't work right
         let time_service = TimeService::real();
-        let (conn_mgr_reqs_tx, conn_mgr_reqs_rx) = aptos_channels::new(
+        let (conn_mgr_reqs_tx, conn_mgr_reqs_rx) = libra2_channels::new(
             1,
             &aptos_network::counters::PENDING_CONNECTIVITY_MANAGER_REQUESTS,
         );

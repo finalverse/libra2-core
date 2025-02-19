@@ -1,5 +1,5 @@
 [package]
-name = "aptos-channels"
+name = "libra2-channels"
 description = "An implementation of a channel with configurable QoS"
 version = "0.1.0"
 

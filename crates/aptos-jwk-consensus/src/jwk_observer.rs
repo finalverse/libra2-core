@@ -3,7 +3,7 @@
 
 use crate::counters::OBSERVATION_SECONDS;
 use anyhow::{anyhow, Result};
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_jwk_utils::{fetch_jwks_from_jwks_uri, fetch_jwks_uri_from_openid_config};
 use aptos_logger::{debug, info};
 use aptos_types::jwks::{jwk::JWK, Issuer};
@@ -25,7 +25,7 @@ impl JWKObserver {
         issuer: String,
         config_url: String,
         fetch_interval: Duration,
-        observation_tx: aptos_channel::Sender<(), (Issuer, Vec<JWK>)>,
+        observation_tx: libra2_channel::Sender<(), (Issuer, Vec<JWK>)>,
     ) -> Self {
         let (close_tx, close_rx) = oneshot::channel();
         let join_handle = tokio::spawn(Self::start(
@@ -53,7 +53,7 @@ impl JWKObserver {
         my_addr: AccountAddress,
         issuer: String,
         open_id_config_url: String,
-        observation_tx: aptos_channel::Sender<(), (Issuer, Vec<JWK>)>,
+        observation_tx: libra2_channel::Sender<(), (Issuer, Vec<JWK>)>,
         close_rx: oneshot::Receiver<()>,
     ) {
         let mut interval = tokio::time::interval(fetch_interval);

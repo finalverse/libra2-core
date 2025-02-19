@@ -22,7 +22,7 @@ use crate::{
     streaming_client::{NotificationFeedback, StreamRequest},
     streaming_service::StreamUpdateNotification,
 };
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
 use aptos_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary},
@@ -82,7 +82,7 @@ pub struct DataStream<T> {
 
     // The stream update notifier (to notify the streaming service that
     // the stream has been updated, e.g., data is now ready to be processed).
-    stream_update_notifier: aptos_channel::Sender<(), StreamUpdateNotification>,
+    stream_update_notifier: libra2_channel::Sender<(), StreamUpdateNotification>,
 
     // The current queue of data client requests and pending responses. When the
     // request at the head of the queue completes (i.e., we receive a response),
@@ -131,7 +131,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
         data_stream_config: DataStreamingServiceConfig,
         data_stream_id: DataStreamId,
         stream_request: &StreamRequest,
-        stream_update_notifier: aptos_channel::Sender<(), StreamUpdateNotification>,
+        stream_update_notifier: libra2_channel::Sender<(), StreamUpdateNotification>,
         aptos_data_client: T,
         notification_id_generator: Arc<U64IdGenerator>,
         advertised_data: &AdvertisedData,
@@ -1404,7 +1404,7 @@ fn spawn_request_task<T: AptosDataClientInterface + Send + Clone + 'static>(
     aptos_data_client: T,
     pending_response: PendingClientResponse,
     request_timeout_ms: u64,
-    stream_update_notifier: aptos_channel::Sender<(), StreamUpdateNotification>,
+    stream_update_notifier: libra2_channel::Sender<(), StreamUpdateNotification>,
 ) -> JoinHandle<()> {
     // Update the requests sent counter
     increment_counter(
@@ -1727,7 +1727,7 @@ async fn subscribe_to_transactions_or_outputs_with_proof<
 mod test {
     use super::*;
     use crate::tests::utils::MockAptosDataClient;
-    use aptos_channels::message_queues::QueueStyle;
+    use libra2_channels::message_queues::QueueStyle;
     use futures::StreamExt;
     use tokio::time::timeout;
 
@@ -1749,7 +1749,7 @@ mod test {
 
         // Create a stream update notifier and listener
         let (stream_update_notifier, mut stream_update_listener) =
-            aptos_channel::new(QueueStyle::LIFO, 1, None);
+            libra2_channel::new(QueueStyle::LIFO, 1, None);
 
         // Verify the request is still pending (the request hasn't been sent yet)
         assert!(pending_client_response.lock().client_response.is_none());

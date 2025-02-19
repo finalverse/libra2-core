@@ -58,7 +58,7 @@ use crate::{
     ProtocolId,
 };
 use anyhow::anyhow;
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_config::network_id::NetworkContext;
 use aptos_id_generator::{IdGenerator, U32IdGenerator};
 use aptos_logger::prelude::*;
@@ -205,7 +205,7 @@ impl InboundRpcs {
     /// Handle a new inbound `RpcRequest` message off the wire.
     pub fn handle_inbound_request(
         &mut self,
-        peer_notifs_tx: &aptos_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>,
+        peer_notifs_tx: &libra2_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>,
         mut request: ReceivedMessage,
     ) -> Result<(), RpcError> {
         let network_context = &self.network_context;
@@ -324,7 +324,7 @@ impl InboundRpcs {
     /// the outbound write queue.
     pub fn send_outbound_response(
         &mut self,
-        write_reqs_tx: &mut aptos_channel::Sender<(), NetworkMessage>,
+        write_reqs_tx: &mut libra2_channel::Sender<(), NetworkMessage>,
         maybe_response: Result<(RpcResponse, ProtocolId), RpcError>,
     ) -> Result<(), RpcError> {
         let network_context = &self.network_context;
@@ -434,7 +434,7 @@ impl OutboundRpcs {
     pub fn handle_outbound_request(
         &mut self,
         request: OutboundRpcRequest,
-        write_reqs_tx: &mut aptos_channel::Sender<(), NetworkMessage>,
+        write_reqs_tx: &mut libra2_channel::Sender<(), NetworkMessage>,
     ) -> Result<(), RpcError> {
         let network_context = &self.network_context;
         let peer_id = &self.remote_peer_id;

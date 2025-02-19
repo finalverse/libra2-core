@@ -5,7 +5,7 @@
 //! Integration tests for validator_network.
 
 use crate::builder::NetworkBuilder;
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_config::{
     config::{Peer, PeerRole, PeerSet, RoleType, NETWORK_CHANNEL_SIZE},
     network_id::{NetworkContext, NetworkId, PeerNetworkId},
@@ -44,7 +44,7 @@ pub fn dummy_network_config() -> NetworkApplicationConfig {
     let network_service_config = NetworkServiceConfig::new(
         direct_send_protocols,
         rpc_protocls,
-        aptos_channel::Config::new(NETWORK_CHANNEL_SIZE),
+        libra2_channel::Config::new(NETWORK_CHANNEL_SIZE),
     );
     NetworkApplicationConfig::new(network_client_config, network_service_config)
 }

@@ -7,7 +7,7 @@ use crate::{
     peer_manager::{conn_notifs_channel, ConnectionNotification, ConnectionRequest},
     transport::ConnectionMetadata,
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::{
     config::{Peer, PeerRole, PeerSet, HANDSHAKE_VERSION},
     network_id::NetworkId,
@@ -77,9 +77,9 @@ struct TestHarness {
     network_context: NetworkContext,
     peers_and_metadata: Arc<PeersAndMetadata>,
     mock_time: MockTimeService,
-    connection_reqs_rx: aptos_channel::Receiver<PeerId, ConnectionRequest>,
+    connection_reqs_rx: libra2_channel::Receiver<PeerId, ConnectionRequest>,
     connection_notifs_tx: conn_notifs_channel::Sender,
-    conn_mgr_reqs_tx: aptos_channels::Sender<ConnectivityRequest>,
+    conn_mgr_reqs_tx: libra2_channels::Sender<ConnectivityRequest>,
 }
 
 impl TestHarness {
@@ -87,9 +87,9 @@ impl TestHarness {
         let network_context = NetworkContext::mock();
         let time_service = TimeService::mock();
         let (connection_reqs_tx, connection_reqs_rx) =
-            aptos_channel::new(QueueStyle::FIFO, 1, None);
+            libra2_channel::new(QueueStyle::FIFO, 1, None);
         let (connection_notifs_tx, connection_notifs_rx) = conn_notifs_channel::new();
-        let (conn_mgr_reqs_tx, conn_mgr_reqs_rx) = aptos_channels::new_test(0);
+        let (conn_mgr_reqs_tx, conn_mgr_reqs_rx) = libra2_channels::new_test(0);
         let peers_and_metadata = PeersAndMetadata::new(&[network_context.network_id()]);
 
         let conn_mgr = ConnectivityManager::new(

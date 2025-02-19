@@ -11,7 +11,7 @@ use crate::{
         StreamRequest, StreamRequestMessage, StreamingServiceListener, TerminateStreamRequest,
     },
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
 use aptos_data_client::{
     global_summary::{GlobalDataSummary, OptimalChunkSizes},
@@ -74,10 +74,10 @@ pub struct DataStreamingService<T> {
     // The stream update notifier that notifies the streaming service to check
     // the progress of the data streams. This provides a way for data streams
     // to immediately notify the streaming service when new data is ready.
-    stream_update_notifier: aptos_channel::Sender<(), StreamUpdateNotification>,
+    stream_update_notifier: libra2_channel::Sender<(), StreamUpdateNotification>,
 
     // The stream update listener to listen for data stream update notifications
-    stream_update_listener: aptos_channel::Receiver<(), StreamUpdateNotification>,
+    stream_update_listener: libra2_channel::Receiver<(), StreamUpdateNotification>,
 
     // Unique ID generators to maintain unique IDs across streams
     stream_id_generator: U64IdGenerator,
@@ -97,7 +97,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStreamingService<
     ) -> Self {
         // Create the stream update notifier and listener
         let (stream_update_notifier, stream_update_listener) =
-            aptos_channel::new(QueueStyle::LIFO, STREAM_PROGRESS_UPDATE_CHANNEL_SIZE, None);
+            libra2_channel::new(QueueStyle::LIFO, STREAM_PROGRESS_UPDATE_CHANNEL_SIZE, None);
 
         // Create the streaming service
         Self {
@@ -163,7 +163,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStreamingService<
     fn handle_stream_request_message(
         &mut self,
         request_message: StreamRequestMessage,
-        stream_update_notifier: aptos_channel::Sender<(), StreamUpdateNotification>,
+        stream_update_notifier: libra2_channel::Sender<(), StreamUpdateNotification>,
     ) {
         if let StreamRequest::TerminateStream(request) = request_message.stream_request {
             // Process the feedback request
@@ -255,7 +255,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStreamingService<
     fn process_new_stream_request(
         &mut self,
         request_message: &StreamRequestMessage,
-        stream_update_notifier: aptos_channel::Sender<(), StreamUpdateNotification>,
+        stream_update_notifier: libra2_channel::Sender<(), StreamUpdateNotification>,
     ) -> Result<DataStreamListener, Error> {
         // Increment the stream creation counter
         metrics::increment_counter(
@@ -512,7 +512,7 @@ mod streaming_service_tests {
             },
         },
     };
-    use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+    use libra2_channels::{libra2_channel, message_queues::QueueStyle};
     use aptos_config::config::DataStreamingServiceConfig;
     use futures::{
         channel::{oneshot, oneshot::Receiver},
@@ -844,8 +844,8 @@ mod streaming_service_tests {
     }
 
     /// Creates a returns a new stream update notifier (dropping the listener)
-    fn create_stream_update_notifier() -> aptos_channel::Sender<(), StreamUpdateNotification> {
-        let (stream_update_notifier, _) = aptos_channel::new(QueueStyle::LIFO, 1, None);
+    fn create_stream_update_notifier() -> libra2_channel::Sender<(), StreamUpdateNotification> {
+        let (stream_update_notifier, _) = libra2_channel::new(QueueStyle::LIFO, 1, None);
         stream_update_notifier
     }
 }

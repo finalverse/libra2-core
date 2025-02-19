@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_crypto::{hash::CryptoHash, HashValue};
 use libra2_infallible::Mutex;
 use aptos_types::validator_txn::{Topic, ValidatorTransaction};
@@ -59,7 +59,7 @@ impl VTxnPoolState {
         &self,
         topic: Topic,
         txn: Arc<ValidatorTransaction>,
-        pull_notification_tx: Option<aptos_channel::Sender<(), Arc<ValidatorTransaction>>>,
+        pull_notification_tx: Option<libra2_channel::Sender<(), Arc<ValidatorTransaction>>>,
     ) -> TxnGuard {
         let mut pool = self.inner.lock();
         let seq_num = pool.next_seq_num;
@@ -105,7 +105,7 @@ impl VTxnPoolState {
 struct PoolItem {
     topic: Topic,
     txn: Arc<ValidatorTransaction>,
-    pull_notification_tx: Option<aptos_channel::Sender<(), Arc<ValidatorTransaction>>>,
+    pull_notification_tx: Option<libra2_channel::Sender<(), Arc<ValidatorTransaction>>>,
 }
 
 /// PoolState invariants.

@@ -3,7 +3,7 @@
 
 use crate::protocols::wire::messaging::v1::{MultiplexMessage, NetworkMessage};
 use anyhow::{bail, ensure};
-use aptos_channels::Sender;
+use libra2_channels::Sender;
 use aptos_id_generator::{IdGenerator, U32IdGenerator};
 use futures_util::SinkExt;
 #[cfg(any(test, feature = "fuzzing"))]

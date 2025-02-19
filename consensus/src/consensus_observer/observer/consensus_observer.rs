@@ -31,7 +31,7 @@ use crate::{
     network_interface::CommitMessage,
     pipeline::{execution_client::TExecutionClient, pipeline_builder::PipelineBuilder},
 };
-use aptos_channels::{aptos_channel, aptos_channel::Receiver, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, libra2_channel::Receiver, message_queues::QueueStyle};
 use aptos_config::{
     config::{ConsensusObserverConfig, NodeConfig},
     network_id::PeerNetworkId,
@@ -1004,7 +1004,7 @@ impl ConsensusObserver {
         let signer = Arc::new(ValidatorSigner::new(AccountAddress::ZERO, sk.clone()));
         let dummy_signer = Arc::new(DagCommitSigner::new(signer.clone()));
         let (_, rand_msg_rx) =
-            aptos_channel::new::<AccountAddress, IncomingRandGenRequest>(QueueStyle::FIFO, 1, None);
+            libra2_channel::new::<AccountAddress, IncomingRandGenRequest>(QueueStyle::FIFO, 1, None);
         self.execution_client
             .start_epoch(
                 sk,

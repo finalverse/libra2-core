@@ -15,7 +15,7 @@ use crate::consensus_observer::{
         },
     },
 };
-use aptos_channels::aptos_channel::Receiver;
+use libra2_channels::libra2_channel::Receiver;
 use aptos_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use libra2_infallible::RwLock;
 use aptos_logger::{error, info, warn};

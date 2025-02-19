@@ -36,8 +36,8 @@ use crate::{
     pipeline::{buffer_manager::OrderedBlocks, execution_client::TExecutionClient},
 };
 use aptos_bounded_executor::BoundedExecutor;
-use aptos_channels::{
-    aptos_channel::{self, Receiver},
+use libra2_channels::{
+    libra2_channel::{self, Receiver},
     message_queues::QueueStyle,
 };
 use aptos_config::config::DagConsensusConfig;
@@ -744,7 +744,7 @@ pub(super) fn bootstrap_dag_for_test(
 ) -> (
     JoinHandle<SyncOutcome>,
     JoinHandle<()>,
-    aptos_channel::Sender<Author, IncomingDAGRequest>,
+    libra2_channel::Sender<Author, IncomingDAGRequest>,
     UnboundedReceiver<OrderedBlocks>,
 ) {
     let (ordered_nodes_tx, ordered_nodes_rx) = futures_channel::mpsc::unbounded();
@@ -773,7 +773,7 @@ pub(super) fn bootstrap_dag_for_test(
 
     let (_base_state, handler, fetch_service) = bootstraper.full_bootstrap();
 
-    let (dag_rpc_tx, dag_rpc_rx) = aptos_channel::new(QueueStyle::FIFO, 64, None);
+    let (dag_rpc_tx, dag_rpc_rx) = libra2_channel::new(QueueStyle::FIFO, 64, None);
 
     let dh_handle = tokio::spawn(async move {
         let mut dag_rpc_rx = dag_rpc_rx;

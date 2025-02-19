@@ -13,7 +13,7 @@ use crate::{
     round_manager::VerifiedEvent,
 };
 use anyhow::{anyhow, ensure, Context, Result};
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_consensus_types::{
     common::Author, proposal_msg::ProposalMsg, sync_info::SyncInfo, vote_msg::VoteMsg,
 };
@@ -114,7 +114,7 @@ impl RecoveryManager {
 
     pub async fn start(
         mut self,
-        mut event_rx: aptos_channel::Receiver<
+        mut event_rx: libra2_channel::Receiver<
             (Author, Discriminant<VerifiedEvent>),
             (Author, VerifiedEvent),
         >,

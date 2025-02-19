@@ -14,7 +14,7 @@ use crate::{
     pipeline::execution_client::TExecutionClient,
 };
 use anyhow::{bail, ensure};
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_consensus_types::common::{Author, Round};
 use aptos_logger::{debug, error};
 use aptos_time_service::TimeService;
@@ -286,7 +286,7 @@ impl SyncModeMessageHandler {
 
     pub(crate) async fn run(
         mut self,
-        dag_rpc_rx: &mut aptos_channel::Receiver<Author, IncomingDAGRequest>,
+        dag_rpc_rx: &mut libra2_channel::Receiver<Author, IncomingDAGRequest>,
         buffer: &mut Vec<DAGMessage>,
     ) -> Option<CertifiedNodeMessage> {
         while let Some(msg) = dag_rpc_rx.next().await {

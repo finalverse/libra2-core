@@ -42,7 +42,7 @@ pub enum DiscoveryError {
 pub struct DiscoveryChangeListener<P: OnChainConfigProvider> {
     discovery_source: DiscoverySource,
     network_context: NetworkContext,
-    update_channel: aptos_channels::Sender<ConnectivityRequest>,
+    update_channel: libra2_channels::Sender<ConnectivityRequest>,
     source_stream: DiscoveryChangeStream<P>,
 }
 
@@ -67,7 +67,7 @@ impl<P: OnChainConfigProvider> Stream for DiscoveryChangeStream<P> {
 impl<P: OnChainConfigProvider> DiscoveryChangeListener<P> {
     pub fn validator_set(
         network_context: NetworkContext,
-        update_channel: aptos_channels::Sender<ConnectivityRequest>,
+        update_channel: libra2_channels::Sender<ConnectivityRequest>,
         expected_pubkey: x25519::PublicKey,
         reconfig_events: ReconfigNotificationListener<P>,
     ) -> Self {
@@ -86,7 +86,7 @@ impl<P: OnChainConfigProvider> DiscoveryChangeListener<P> {
 
     pub fn file(
         network_context: NetworkContext,
-        update_channel: aptos_channels::Sender<ConnectivityRequest>,
+        update_channel: libra2_channels::Sender<ConnectivityRequest>,
         file_path: &Path,
         interval_duration: Duration,
         time_service: TimeService,
@@ -106,7 +106,7 @@ impl<P: OnChainConfigProvider> DiscoveryChangeListener<P> {
 
     pub fn rest(
         network_context: NetworkContext,
-        update_channel: aptos_channels::Sender<ConnectivityRequest>,
+        update_channel: libra2_channels::Sender<ConnectivityRequest>,
         rest_url: url::Url,
         interval_duration: Duration,
         time_service: TimeService,

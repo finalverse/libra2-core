@@ -25,7 +25,7 @@ use crate::{
     util::time_service::ClockTimeService,
 };
 use aptos_bounded_executor::BoundedExecutor;
-use aptos_channels::aptos_channel::Receiver;
+use libra2_channels::libra2_channel::Receiver;
 use aptos_config::config::NodeConfig;
 use aptos_consensus_notifications::ConsensusNotificationSender;
 use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
@@ -76,9 +76,9 @@ pub fn start_consensus(
     let time_service = Arc::new(ClockTimeService::new(runtime.handle().clone()));
 
     let (timeout_sender, timeout_receiver) =
-        aptos_channels::new(1_024, &counters::PENDING_ROUND_TIMEOUTS);
+        libra2_channels::new(1_024, &counters::PENDING_ROUND_TIMEOUTS);
     let (self_sender, self_receiver) =
-        aptos_channels::new_unbounded(&counters::PENDING_SELF_MESSAGES);
+        libra2_channels::new_unbounded(&counters::PENDING_SELF_MESSAGES);
     let consensus_network_client = ConsensusNetworkClient::new(network_client);
     let bounded_executor = BoundedExecutor::new(
         node_config.consensus.num_bounded_executor_tasks as usize,
@@ -141,7 +141,7 @@ pub fn start_consensus_observer(
 ) {
     // Create the (dummy) consensus network client
     let (self_sender, _self_receiver) =
-        aptos_channels::new_unbounded(&counters::PENDING_SELF_MESSAGES);
+        libra2_channels::new_unbounded(&counters::PENDING_SELF_MESSAGES);
     let consensus_network_client = ConsensusNetworkClient::new(NetworkClient::new(
         vec![],
         vec![],

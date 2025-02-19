@@ -3,7 +3,7 @@
 
 use crate::{network::ApplicationNetworkInterfaces, services};
 use aptos_admin_service::AdminService;
-use aptos_channels::aptos_channel::Receiver;
+use libra2_channels::libra2_channel::Receiver;
 use aptos_config::config::NodeConfig;
 use aptos_consensus::{
     consensus_observer::{

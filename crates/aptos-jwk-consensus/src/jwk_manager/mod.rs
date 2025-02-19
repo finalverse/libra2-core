@@ -8,7 +8,7 @@ use crate::{
     update_certifier::TUpdateCertifier,
 };
 use anyhow::{anyhow, bail, Result};
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_crypto::{bls12381::PrivateKey, SigningKey};
 use aptos_logger::{debug, error, info, warn};
 use aptos_types::{
@@ -54,8 +54,8 @@ pub struct JWKManager {
     /// Whether a CLOSE command has been received.
     stopped: bool,
 
-    qc_update_tx: aptos_channel::Sender<Issuer, QuorumCertifiedUpdate>,
-    qc_update_rx: aptos_channel::Receiver<Issuer, QuorumCertifiedUpdate>,
+    qc_update_tx: libra2_channel::Sender<Issuer, QuorumCertifiedUpdate>,
+    qc_update_rx: libra2_channel::Receiver<Issuer, QuorumCertifiedUpdate>,
     jwk_observers: Vec<JWKObserver>,
 }
 
@@ -67,7 +67,7 @@ impl JWKManager {
         update_certifier: Arc<dyn TUpdateCertifier>,
         vtxn_pool: VTxnPoolState,
     ) -> Self {
-        let (qc_update_tx, qc_update_rx) = aptos_channel::new(QueueStyle::KLAST, 1, None);
+        let (qc_update_tx, qc_update_rx) = libra2_channel::new(QueueStyle::KLAST, 1, None);
         Self {
             consensus_key,
             my_addr,
@@ -86,8 +86,8 @@ impl JWKManager {
         mut self,
         oidc_providers: Option<SupportedOIDCProviders>,
         observed_jwks: Option<ObservedJWKs>,
-        mut jwk_updated_rx: aptos_channel::Receiver<(), ObservedJWKsUpdated>,
-        mut rpc_req_rx: aptos_channel::Receiver<
+        mut jwk_updated_rx: libra2_channel::Receiver<(), ObservedJWKsUpdated>,
+        mut rpc_req_rx: libra2_channel::Receiver<
             AccountAddress,
             (AccountAddress, IncomingRpcRequest),
         >,
@@ -97,7 +97,7 @@ impl JWKManager {
             .unwrap();
 
         let (local_observation_tx, mut local_observation_rx) =
-            aptos_channel::new(QueueStyle::KLAST, 100, None);
+            libra2_channel::new(QueueStyle::KLAST, 100, None);
 
         self.jwk_observers = oidc_providers
             .unwrap_or_default()

@@ -35,7 +35,7 @@ use crate::{
     },
     ProtocolId,
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::network_id::{NetworkContext, PeerNetworkId};
 use aptos_logger::prelude::*;
 use aptos_short_hex_str::AsShortHexStr;
@@ -72,7 +72,7 @@ pub fn health_checker_network_config() -> NetworkApplicationConfig {
     let network_service_config = NetworkServiceConfig::new(
         direct_send_protocols,
         rpc_protocols,
-        aptos_channel::Config::new(NETWORK_CHANNEL_SIZE)
+        libra2_channel::Config::new(NETWORK_CHANNEL_SIZE)
             .queue_style(QueueStyle::LIFO)
             .counters(&counters::PENDING_HEALTH_CHECKER_NETWORK_EVENTS),
     );

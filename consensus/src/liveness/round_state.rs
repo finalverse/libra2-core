@@ -155,7 +155,7 @@ pub struct RoundState {
     // Service for timer
     time_service: Arc<dyn TimeService>,
     // To send local timeout events to the subscriber (e.g., SMR)
-    timeout_sender: aptos_channels::Sender<Round>,
+    timeout_sender: libra2_channels::Sender<Round>,
     // Votes received for the current round.
     pending_votes: PendingVotes,
     // Vote sent locally for the current round.
@@ -191,7 +191,7 @@ impl RoundState {
     pub fn new(
         time_interval: Box<dyn RoundTimeInterval>,
         time_service: Arc<dyn TimeService>,
-        timeout_sender: aptos_channels::Sender<Round>,
+        timeout_sender: libra2_channels::Sender<Round>,
     ) -> Self {
         // Our counters are initialized lazily, so they're not going to appear in
         // Prometheus if some conditions never happen. Invoking get() function enforces creation.

@@ -25,7 +25,7 @@ use crate::{
     },
 };
 use aptos_bounded_executor::BoundedExecutor;
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::{config::ConsensusObserverConfig, network_id::NetworkId};
 use aptos_consensus_types::{
     block::block_test_utils::certificate_for_genesis, pipelined_block::PipelinedBlock,
@@ -63,8 +63,8 @@ pub fn prepare_buffer_manager(
     BufferManager,
     Sender<OrderedBlocks>,
     Sender<ResetRequest>,
-    aptos_channel::Sender<AccountAddress, (AccountAddress, IncomingCommitRequest)>,
-    aptos_channels::UnboundedReceiver<Event<ConsensusMsg>>,
+    libra2_channel::Sender<AccountAddress, (AccountAddress, IncomingCommitRequest)>,
+    libra2_channels::UnboundedReceiver<Event<ConsensusMsg>>,
     PipelinePhase<ExecutionSchedulePhase>,
     PipelinePhase<ExecutionWaitPhase>,
     PipelinePhase<SigningPhase>,
@@ -99,8 +99,8 @@ pub fn prepare_buffer_manager(
     let mut safety_rules = MetricsSafetyRules::new(safety_rules_manager.client(), storage);
     safety_rules.perform_initialize().unwrap();
 
-    let (network_reqs_tx, _network_reqs_rx) = aptos_channel::new(QueueStyle::FIFO, 8, None);
-    let (connection_reqs_tx, _) = aptos_channel::new(QueueStyle::FIFO, 8, None);
+    let (network_reqs_tx, _network_reqs_rx) = libra2_channel::new(QueueStyle::FIFO, 8, None);
+    let (connection_reqs_tx, _) = libra2_channel::new(QueueStyle::FIFO, 8, None);
     let network_sender = network::NetworkSender::new(
         PeerManagerRequestSender::new(network_reqs_tx),
         ConnectionRequestSender::new(connection_reqs_tx),
@@ -113,7 +113,7 @@ pub fn prepare_buffer_manager(
     );
     let consensus_network_client = ConsensusNetworkClient::new(network_client);
 
-    let (self_loop_tx, self_loop_rx) = aptos_channels::new_unbounded_test();
+    let (self_loop_tx, self_loop_rx) = libra2_channels::new_unbounded_test();
     let validators = Arc::new(validators);
     let network = NetworkSender::new(
         author,
@@ -122,7 +122,7 @@ pub fn prepare_buffer_manager(
         validators.clone(),
     );
 
-    let (msg_tx, msg_rx) = aptos_channel::new::<
+    let (msg_tx, msg_rx) = libra2_channel::new::<
         AccountAddress,
         (AccountAddress, IncomingCommitRequest),
     >(QueueStyle::FIFO, channel_size, None);
@@ -184,8 +184,8 @@ pub fn prepare_buffer_manager(
 pub fn launch_buffer_manager() -> (
     Sender<OrderedBlocks>,
     Sender<ResetRequest>,
-    aptos_channel::Sender<AccountAddress, (AccountAddress, IncomingCommitRequest)>,
-    aptos_channels::UnboundedReceiver<Event<ConsensusMsg>>,
+    libra2_channel::Sender<AccountAddress, (AccountAddress, IncomingCommitRequest)>,
+    libra2_channels::UnboundedReceiver<Event<ConsensusMsg>>,
     HashValue,
     Runtime,
     Vec<ValidatorSigner>,
@@ -232,7 +232,7 @@ pub fn launch_buffer_manager() -> (
 
 async fn loopback_commit_vote(
     msg: Event<ConsensusMsg>,
-    msg_tx: &aptos_channel::Sender<AccountAddress, (AccountAddress, IncomingCommitRequest)>,
+    msg_tx: &libra2_channel::Sender<AccountAddress, (AccountAddress, IncomingCommitRequest)>,
     verifier: &ValidatorVerifier,
 ) {
     match msg {

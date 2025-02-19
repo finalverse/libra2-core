@@ -127,7 +127,7 @@ pub struct BufferManager {
 
     // message received from the network
     commit_msg_rx: Option<
-        aptos_channels::aptos_channel::Receiver<
+        libra2_channels::libra2_channel::Receiver<
             AccountAddress,
             (AccountAddress, IncomingCommitRequest),
         >,
@@ -187,7 +187,7 @@ impl BufferManager {
         signing_phase_tx: Sender<CountedRequest<SigningRequest>>,
         signing_phase_rx: Receiver<SigningResponse>,
         commit_msg_tx: Arc<NetworkSender>,
-        commit_msg_rx: aptos_channels::aptos_channel::Receiver<
+        commit_msg_rx: libra2_channels::libra2_channel::Receiver<
             AccountAddress,
             (AccountAddress, IncomingCommitRequest),
         >,

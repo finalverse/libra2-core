@@ -57,7 +57,7 @@ use crate::{
 };
 use anyhow::{anyhow, bail, ensure, Context};
 use aptos_bounded_executor::BoundedExecutor;
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::config::{ConsensusConfig, DagConsensusConfig, ExecutionConfig, NodeConfig};
 use aptos_consensus_types::{
     block_retrieval::BlockRetrievalRequest,
@@ -135,9 +135,9 @@ pub struct EpochManager<P: OnChainConfigProvider> {
     execution_config: ExecutionConfig,
     randomness_override_seq_num: u64,
     time_service: Arc<dyn TimeService>,
-    self_sender: aptos_channels::UnboundedSender<Event<ConsensusMsg>>,
+    self_sender: libra2_channels::UnboundedSender<Event<ConsensusMsg>>,
     network_sender: ConsensusNetworkClient<NetworkClient<ConsensusMsg>>,
-    timeout_sender: aptos_channels::Sender<Round>,
+    timeout_sender: libra2_channels::Sender<Round>,
     quorum_store_enabled: bool,
     quorum_store_to_mempool_sender: Sender<QuorumStoreRequest>,
     execution_client: Arc<dyn TExecutionClient>,
@@ -146,27 +146,27 @@ pub struct EpochManager<P: OnChainConfigProvider> {
     vtxn_pool: VTxnPoolState,
     reconfig_events: ReconfigNotificationListener<P>,
     // channels to rand manager
-    rand_manager_msg_tx: Option<aptos_channel::Sender<AccountAddress, IncomingRandGenRequest>>,
+    rand_manager_msg_tx: Option<libra2_channel::Sender<AccountAddress, IncomingRandGenRequest>>,
     // channels to round manager
     round_manager_tx: Option<
-        aptos_channel::Sender<(Author, Discriminant<VerifiedEvent>), (Author, VerifiedEvent)>,
+        libra2_channel::Sender<(Author, Discriminant<VerifiedEvent>), (Author, VerifiedEvent)>,
     >,
-    buffered_proposal_tx: Option<aptos_channel::Sender<Author, VerifiedEvent>>,
+    buffered_proposal_tx: Option<libra2_channel::Sender<Author, VerifiedEvent>>,
     round_manager_close_tx: Option<oneshot::Sender<oneshot::Sender<()>>>,
     epoch_state: Option<Arc<EpochState>>,
     block_retrieval_tx:
-        Option<aptos_channel::Sender<AccountAddress, IncomingBlockRetrievalRequest>>,
-    quorum_store_msg_tx: Option<aptos_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
+        Option<libra2_channel::Sender<AccountAddress, IncomingBlockRetrievalRequest>>,
+    quorum_store_msg_tx: Option<libra2_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
     quorum_store_coordinator_tx: Option<Sender<CoordinatorCommand>>,
     quorum_store_storage: Arc<dyn QuorumStoreStorage>,
     batch_retrieval_tx:
-        Option<aptos_channel::Sender<AccountAddress, IncomingBatchRetrievalRequest>>,
+        Option<libra2_channel::Sender<AccountAddress, IncomingBatchRetrievalRequest>>,
     bounded_executor: BoundedExecutor,
     // recovery_mode is set to true when the recovery manager is spawned
     recovery_mode: bool,
 
     aptos_time_service: aptos_time_service::TimeService,
-    dag_rpc_tx: Option<aptos_channel::Sender<AccountAddress, IncomingDAGRequest>>,
+    dag_rpc_tx: Option<libra2_channel::Sender<AccountAddress, IncomingDAGRequest>>,
     dag_shutdown_tx: Option<oneshot::Sender<oneshot::Sender<()>>>,
     dag_config: DagConsensusConfig,
     payload_manager: Arc<dyn TPayloadManager>,
@@ -182,9 +182,9 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
     pub(crate) fn new(
         node_config: &NodeConfig,
         time_service: Arc<dyn TimeService>,
-        self_sender: aptos_channels::UnboundedSender<Event<ConsensusMsg>>,
+        self_sender: libra2_channels::UnboundedSender<Event<ConsensusMsg>>,
         network_sender: ConsensusNetworkClient<NetworkClient<ConsensusMsg>>,
-        timeout_sender: aptos_channels::Sender<Round>,
+        timeout_sender: libra2_channels::Sender<Round>,
         quorum_store_to_mempool_sender: Sender<QuorumStoreRequest>,
         execution_client: Arc<dyn TExecutionClient>,
         storage: Arc<dyn PersistentLivenessStorage>,
@@ -262,7 +262,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
     fn create_round_state(
         &self,
         time_service: Arc<dyn TimeService>,
-        timeout_sender: aptos_channels::Sender<Round>,
+        timeout_sender: libra2_channels::Sender<Round>,
     ) -> RoundState {
         let time_interval = Box::new(ExponentialTimeInterval::new(
             Duration::from_millis(self.config.round_initial_timeout_ms),
@@ -563,7 +563,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         block_store: Arc<BlockStore>,
         max_blocks_allowed: u64,
     ) {
-        let (request_tx, mut request_rx) = aptos_channel::new::<_, IncomingBlockRetrievalRequest>(
+        let (request_tx, mut request_rx) = libra2_channel::new::<_, IncomingBlockRetrievalRequest>(
             QueueStyle::KLAST,
             10,
             Some(&counters::BLOCK_RETRIEVAL_TASK_MSGS),
@@ -675,7 +675,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         epoch_state: Arc<EpochState>,
         network_sender: Arc<NetworkSender>,
     ) {
-        let (recovery_manager_tx, recovery_manager_rx) = aptos_channel::new(
+        let (recovery_manager_tx, recovery_manager_rx) = libra2_channel::new(
             QueueStyle::KLAST,
             10,
             Some(&counters::ROUND_MANAGER_CHANNEL_MSGS),
@@ -795,7 +795,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         payload_manager: Arc<dyn TPayloadManager>,
         rand_config: Option<RandConfig>,
         fast_rand_config: Option<RandConfig>,
-        rand_msg_rx: aptos_channel::Receiver<AccountAddress, IncomingRandGenRequest>,
+        rand_msg_rx: libra2_channel::Receiver<AccountAddress, IncomingRandGenRequest>,
     ) {
         let epoch = epoch_state.epoch;
         info!(
@@ -922,13 +922,13 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
                 .allow_batches_without_pos_in_proposal,
             opt_qs_payload_param_provider,
         );
-        let (round_manager_tx, round_manager_rx) = aptos_channel::new(
+        let (round_manager_tx, round_manager_rx) = libra2_channel::new(
             QueueStyle::KLAST,
             10,
             Some(&counters::ROUND_MANAGER_CHANNEL_MSGS),
         );
 
-        let (buffered_proposal_tx, buffered_proposal_rx) = aptos_channel::new(
+        let (buffered_proposal_tx, buffered_proposal_rx) = libra2_channel::new(
             QueueStyle::KLAST,
             10,
             Some(&counters::ROUND_MANAGER_CHANNEL_MSGS),
@@ -1237,7 +1237,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
             )
             .await;
 
-        let (rand_msg_tx, rand_msg_rx) = aptos_channel::new::<AccountAddress, IncomingRandGenRequest>(
+        let (rand_msg_tx, rand_msg_rx) = libra2_channel::new::<AccountAddress, IncomingRandGenRequest>(
             QueueStyle::KLAST,
             10,
             None,
@@ -1329,7 +1329,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         payload_manager: Arc<dyn TPayloadManager>,
         rand_config: Option<RandConfig>,
         fast_rand_config: Option<RandConfig>,
-        rand_msg_rx: aptos_channel::Receiver<AccountAddress, IncomingRandGenRequest>,
+        rand_msg_rx: libra2_channel::Receiver<AccountAddress, IncomingRandGenRequest>,
     ) {
         match self.storage.start(consensus_config.order_vote_enabled()) {
             LivenessStorageData::FullRecoveryData(initial_data) => {
@@ -1377,7 +1377,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         payload_manager: Arc<dyn TPayloadManager>,
         rand_config: Option<RandConfig>,
         fast_rand_config: Option<RandConfig>,
-        rand_msg_rx: aptos_channel::Receiver<AccountAddress, IncomingRandGenRequest>,
+        rand_msg_rx: libra2_channel::Receiver<AccountAddress, IncomingRandGenRequest>,
     ) {
         let epoch = epoch_state.epoch;
         let signer = Arc::new(ValidatorSigner::new(
@@ -1457,7 +1457,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
                 .allow_batches_without_pos_in_proposal,
         );
 
-        let (dag_rpc_tx, dag_rpc_rx) = aptos_channel::new(QueueStyle::FIFO, 10, None);
+        let (dag_rpc_tx, dag_rpc_rx) = libra2_channel::new(QueueStyle::FIFO, 10, None);
         self.dag_rpc_tx = Some(dag_rpc_tx);
         let (dag_shutdown_tx, dag_shutdown_rx) = oneshot::channel();
         self.dag_shutdown_tx = Some(dag_shutdown_tx);
@@ -1642,7 +1642,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
     }
 
     fn forward_event_to<K: Eq + Hash + Clone, V>(
-        mut maybe_tx: Option<aptos_channel::Sender<K, V>>,
+        mut maybe_tx: Option<libra2_channel::Sender<K, V>>,
         key: K,
         value: V,
     ) -> anyhow::Result<()> {
@@ -1654,11 +1654,11 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
     }
 
     fn forward_event(
-        quorum_store_msg_tx: Option<aptos_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
+        quorum_store_msg_tx: Option<libra2_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
         round_manager_tx: Option<
-            aptos_channel::Sender<(Author, Discriminant<VerifiedEvent>), (Author, VerifiedEvent)>,
+            libra2_channel::Sender<(Author, Discriminant<VerifiedEvent>), (Author, VerifiedEvent)>,
         >,
-        buffered_proposal_tx: Option<aptos_channel::Sender<Author, VerifiedEvent>>,
+        buffered_proposal_tx: Option<libra2_channel::Sender<Author, VerifiedEvent>>,
         peer_id: AccountAddress,
         event: VerifiedEvent,
         payload_manager: Arc<dyn TPayloadManager>,
@@ -1807,7 +1807,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
 
     pub async fn start(
         mut self,
-        mut round_timeout_sender_rx: aptos_channels::Receiver<Round>,
+        mut round_timeout_sender_rx: libra2_channels::Receiver<Round>,
         mut network_receivers: NetworkReceivers,
     ) {
         // initial start of the processor

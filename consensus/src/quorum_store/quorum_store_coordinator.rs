@@ -9,7 +9,7 @@ use crate::{
     },
     round_manager::VerifiedEvent,
 };
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_consensus_types::{common::Author, proof_of_store::BatchInfo};
 use aptos_logger::prelude::*;
 use aptos_types::{account_address::AccountAddress, PeerId};
@@ -27,7 +27,7 @@ pub struct QuorumStoreCoordinator {
     remote_batch_coordinator_cmd_tx: Vec<mpsc::Sender<BatchCoordinatorCommand>>,
     proof_coordinator_cmd_tx: mpsc::Sender<ProofCoordinatorCommand>,
     proof_manager_cmd_tx: mpsc::Sender<ProofManagerCommand>,
-    quorum_store_msg_tx: aptos_channel::Sender<AccountAddress, (Author, VerifiedEvent)>,
+    quorum_store_msg_tx: libra2_channel::Sender<AccountAddress, (Author, VerifiedEvent)>,
 }
 
 impl QuorumStoreCoordinator {
@@ -37,7 +37,7 @@ impl QuorumStoreCoordinator {
         remote_batch_coordinator_cmd_tx: Vec<mpsc::Sender<BatchCoordinatorCommand>>,
         proof_coordinator_cmd_tx: mpsc::Sender<ProofCoordinatorCommand>,
         proof_manager_cmd_tx: mpsc::Sender<ProofManagerCommand>,
-        quorum_store_msg_tx: aptos_channel::Sender<AccountAddress, (Author, VerifiedEvent)>,
+        quorum_store_msg_tx: libra2_channel::Sender<AccountAddress, (Author, VerifiedEvent)>,
     ) -> Self {
         Self {
             my_peer_id,

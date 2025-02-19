@@ -24,7 +24,7 @@ use crate::{
     },
     round_manager::VerifiedEvent,
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::config::QuorumStoreConfig;
 use aptos_consensus_types::{
     common::Author, proof_of_store::ProofCache, request_response::GetPayloadCommand,
@@ -52,7 +52,7 @@ impl QuorumStoreBuilder {
         consensus_publisher: Option<Arc<ConsensusPublisher>>,
     ) -> (
         Arc<dyn TPayloadManager>,
-        Option<aptos_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
+        Option<libra2_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
     ) {
         match self {
             QuorumStoreBuilder::DirectMempool(inner) => inner.init_payload_manager(),
@@ -66,7 +66,7 @@ impl QuorumStoreBuilder {
         self,
     ) -> Option<(
         Sender<CoordinatorCommand>,
-        aptos_channel::Sender<AccountAddress, IncomingBatchRetrievalRequest>,
+        libra2_channel::Sender<AccountAddress, IncomingBatchRetrievalRequest>,
     )> {
         match self {
             QuorumStoreBuilder::DirectMempool(inner) => {
@@ -101,7 +101,7 @@ impl DirectMempoolInnerBuilder {
         &mut self,
     ) -> (
         Arc<dyn TPayloadManager>,
-        Option<aptos_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
+        Option<libra2_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
     ) {
         (Arc::from(DirectMempoolPayloadManager::new()), None)
     }
@@ -140,8 +140,8 @@ pub struct InnerBuilder {
     back_pressure_tx: tokio::sync::mpsc::Sender<BackPressure>,
     back_pressure_rx: Option<tokio::sync::mpsc::Receiver<BackPressure>>,
     quorum_store_storage: Arc<dyn QuorumStoreStorage>,
-    quorum_store_msg_tx: aptos_channel::Sender<AccountAddress, (Author, VerifiedEvent)>,
-    quorum_store_msg_rx: Option<aptos_channel::Receiver<AccountAddress, (Author, VerifiedEvent)>>,
+    quorum_store_msg_tx: libra2_channel::Sender<AccountAddress, (Author, VerifiedEvent)>,
+    quorum_store_msg_rx: Option<libra2_channel::Receiver<AccountAddress, (Author, VerifiedEvent)>>,
     remote_batch_coordinator_cmd_tx: Vec<tokio::sync::mpsc::Sender<BatchCoordinatorCommand>>,
     remote_batch_coordinator_cmd_rx: Vec<tokio::sync::mpsc::Receiver<BatchCoordinatorCommand>>,
     batch_store: Option<Arc<BatchStore>>,
@@ -177,7 +177,7 @@ impl InnerBuilder {
             tokio::sync::mpsc::channel(config.channel_size);
         let (back_pressure_tx, back_pressure_rx) = tokio::sync::mpsc::channel(config.channel_size);
         let (quorum_store_msg_tx, quorum_store_msg_rx) =
-            aptos_channel::new::<AccountAddress, (Author, VerifiedEvent)>(
+            libra2_channel::new::<AccountAddress, (Author, VerifiedEvent)>(
                 QueueStyle::FIFO,
                 config.channel_size,
                 None,
@@ -268,7 +268,7 @@ impl InnerBuilder {
         mut self,
     ) -> (
         Sender<CoordinatorCommand>,
-        aptos_channel::Sender<AccountAddress, IncomingBatchRetrievalRequest>,
+        libra2_channel::Sender<AccountAddress, IncomingBatchRetrievalRequest>,
     ) {
         // TODO: parameter? bring back back-off?
         let interval = tokio::time::interval(Duration::from_millis(
@@ -385,7 +385,7 @@ impl InnerBuilder {
         let batch_store = self.batch_store.clone().unwrap();
         let epoch = self.epoch;
         let (batch_retrieval_tx, mut batch_retrieval_rx) =
-            aptos_channel::new::<AccountAddress, IncomingBatchRetrievalRequest>(
+            libra2_channel::new::<AccountAddress, IncomingBatchRetrievalRequest>(
                 QueueStyle::LIFO,
                 10,
                 Some(&counters::BATCH_RETRIEVAL_TASK_MSGS),
@@ -432,7 +432,7 @@ impl InnerBuilder {
         consensus_publisher: Option<Arc<ConsensusPublisher>>,
     ) -> (
         Arc<dyn TPayloadManager>,
-        Option<aptos_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
+        Option<libra2_channel::Sender<AccountAddress, (Author, VerifiedEvent)>>,
     ) {
         let batch_reader = monitor!("qs_create_batch_store", self.create_batch_store());
 
@@ -453,7 +453,7 @@ impl InnerBuilder {
         self,
     ) -> (
         Sender<CoordinatorCommand>,
-        aptos_channel::Sender<AccountAddress, IncomingBatchRetrievalRequest>,
+        libra2_channel::Sender<AccountAddress, IncomingBatchRetrievalRequest>,
     ) {
         self.spawn_quorum_store()
     }

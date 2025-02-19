@@ -19,7 +19,7 @@ aptos-api = { workspace = true }
 aptos-backup-service = { workspace = true }
 aptos-build-info = { workspace = true }
 aptos-cached-packages = { workspace = true }
-aptos-channels = { workspace = true }
+libra2-channels = { workspace = true }
 aptos-config = { workspace = true }
 aptos-consensus = { workspace = true }
 aptos-consensus-notifications = { workspace = true }

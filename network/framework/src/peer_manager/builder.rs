@@ -17,7 +17,7 @@ use crate::{
     transport::{self, AptosNetTransport, Connection, APTOS_TCP_TRANSPORT},
     ProtocolId,
 };
-use aptos_channels::{self, aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use aptos_config::{config::HANDSHAKE_VERSION, network_id::NetworkContext};
 use aptos_crypto::x25519;
 use aptos_logger::prelude::*;
@@ -63,14 +63,14 @@ impl TransportContext {
 
 struct PeerManagerContext {
     // TODO(philiphayes): better support multiple listening addrs
-    pm_reqs_tx: aptos_channel::Sender<(PeerId, ProtocolId), PeerManagerRequest>,
-    pm_reqs_rx: aptos_channel::Receiver<(PeerId, ProtocolId), PeerManagerRequest>,
-    connection_reqs_tx: aptos_channel::Sender<PeerId, ConnectionRequest>,
-    connection_reqs_rx: aptos_channel::Receiver<PeerId, ConnectionRequest>,
+    pm_reqs_tx: libra2_channel::Sender<(PeerId, ProtocolId), PeerManagerRequest>,
+    pm_reqs_rx: libra2_channel::Receiver<(PeerId, ProtocolId), PeerManagerRequest>,
+    connection_reqs_tx: libra2_channel::Sender<PeerId, ConnectionRequest>,
+    connection_reqs_rx: libra2_channel::Receiver<PeerId, ConnectionRequest>,
 
     peers_and_metadata: Arc<PeersAndMetadata>,
     upstream_handlers:
-        HashMap<ProtocolId, aptos_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>>,
+        HashMap<ProtocolId, libra2_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>>,
     connection_event_handlers: Vec<conn_notifs_channel::Sender>,
 
     channel_size: usize,
@@ -83,15 +83,15 @@ struct PeerManagerContext {
 impl PeerManagerContext {
     #[allow(clippy::too_many_arguments)]
     fn new(
-        pm_reqs_tx: aptos_channel::Sender<(PeerId, ProtocolId), PeerManagerRequest>,
-        pm_reqs_rx: aptos_channel::Receiver<(PeerId, ProtocolId), PeerManagerRequest>,
-        connection_reqs_tx: aptos_channel::Sender<PeerId, ConnectionRequest>,
-        connection_reqs_rx: aptos_channel::Receiver<PeerId, ConnectionRequest>,
+        pm_reqs_tx: libra2_channel::Sender<(PeerId, ProtocolId), PeerManagerRequest>,
+        pm_reqs_rx: libra2_channel::Receiver<(PeerId, ProtocolId), PeerManagerRequest>,
+        connection_reqs_tx: libra2_channel::Sender<PeerId, ConnectionRequest>,
+        connection_reqs_rx: libra2_channel::Receiver<PeerId, ConnectionRequest>,
 
         peers_and_metadata: Arc<PeersAndMetadata>,
         upstream_handlers: HashMap<
             ProtocolId,
-            aptos_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>,
+            libra2_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>,
         >,
         connection_event_handlers: Vec<conn_notifs_channel::Sender>,
 
@@ -122,7 +122,7 @@ impl PeerManagerContext {
     fn add_upstream_handler(
         &mut self,
         protocol_id: ProtocolId,
-        channel: aptos_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>,
+        channel: libra2_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>,
     ) -> &mut Self {
         self.upstream_handlers.insert(protocol_id, channel);
         self
@@ -175,14 +175,14 @@ impl PeerManagerBuilder {
         tcp_buffer_cfg: TCPBufferCfg,
     ) -> Self {
         // Setup channel to send requests to peer manager.
-        let (pm_reqs_tx, pm_reqs_rx) = aptos_channel::new(
+        let (pm_reqs_tx, pm_reqs_rx) = libra2_channel::new(
             QueueStyle::FIFO,
             channel_size,
             Some(&counters::PENDING_PEER_MANAGER_REQUESTS),
         );
         // Setup channel to send connection requests to peer manager.
         let (connection_reqs_tx, connection_reqs_rx) =
-            aptos_channel::new(QueueStyle::FIFO, channel_size, None);
+            libra2_channel::new(QueueStyle::FIFO, channel_size, None);
 
         Self {
             network_context,
@@ -217,7 +217,7 @@ impl PeerManagerBuilder {
         self.listen_address.clone()
     }
 
-    pub fn connection_reqs_tx(&self) -> aptos_channel::Sender<PeerId, ConnectionRequest> {
+    pub fn connection_reqs_tx(&self) -> libra2_channel::Sender<PeerId, ConnectionRequest> {
         self.peer_manager_context
             .as_ref()
             .expect("Cannot access connection_reqs once PeerManager has been built")
@@ -411,7 +411,7 @@ impl PeerManagerBuilder {
     pub fn add_service(
         &mut self,
         config: &NetworkServiceConfig,
-    ) -> aptos_channel::Receiver<(PeerId, ProtocolId), ReceivedMessage> {
+    ) -> libra2_channel::Receiver<(PeerId, ProtocolId), ReceivedMessage> {
         // Register the direct send and rpc protocols
         self.transport_context()
             .add_protocols(&config.direct_send_protocols_and_preferences);

@@ -8,7 +8,7 @@ use crate::{
     DKGMessage,
 };
 use anyhow::{anyhow, bail, ensure, Result};
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_crypto::Uniform;
 use libra2_infallible::duration_since_epoch;
 use aptos_logger::{debug, error, info, warn};
@@ -58,11 +58,11 @@ pub struct DKGManager<DKG: DKGTrait> {
 
     vtxn_pool: VTxnPoolState,
     agg_trx_producer: Arc<dyn TAggTranscriptProducer<DKG>>,
-    agg_trx_tx: Option<aptos_channel::Sender<(), DKG::Transcript>>,
+    agg_trx_tx: Option<libra2_channel::Sender<(), DKG::Transcript>>,
 
     // When we put vtxn in the pool, we also put a copy of this so later pool can notify us.
-    pull_notification_tx: aptos_channel::Sender<(), Arc<ValidatorTransaction>>,
-    pull_notification_rx: aptos_channel::Receiver<(), Arc<ValidatorTransaction>>,
+    pull_notification_tx: libra2_channel::Sender<(), Arc<ValidatorTransaction>>,
+    pull_notification_rx: libra2_channel::Receiver<(), Arc<ValidatorTransaction>>,
 
     // Control states.
     stopped: bool,
@@ -98,7 +98,7 @@ impl<DKG: DKGTrait> DKGManager<DKG> {
         vtxn_pool: VTxnPoolState,
     ) -> Self {
         let (pull_notification_tx, pull_notification_rx) =
-            aptos_channel::new(QueueStyle::KLAST, 1, None);
+            libra2_channel::new(QueueStyle::KLAST, 1, None);
         Self {
             dealer_sk,
             my_addr,
@@ -117,8 +117,8 @@ impl<DKG: DKGTrait> DKGManager<DKG> {
     pub async fn run(
         mut self,
         in_progress_session: Option<DKGSessionState>,
-        mut dkg_start_event_rx: aptos_channel::Receiver<(), DKGStartEvent>,
-        mut rpc_msg_rx: aptos_channel::Receiver<
+        mut dkg_start_event_rx: libra2_channel::Receiver<(), DKGStartEvent>,
+        mut rpc_msg_rx: libra2_channel::Receiver<
             AccountAddress,
             (AccountAddress, IncomingRpcRequest),
         >,
@@ -131,7 +131,7 @@ impl<DKG: DKGTrait> DKGManager<DKG> {
         );
         let mut interval = tokio::time::interval(Duration::from_millis(5000));
 
-        let (agg_trx_tx, mut agg_trx_rx) = aptos_channel::new(QueueStyle::KLAST, 1, None);
+        let (agg_trx_tx, mut agg_trx_rx) = libra2_channel::new(QueueStyle::KLAST, 1, None);
         self.agg_trx_tx = Some(agg_trx_tx);
 
         if let Some(session_state) = in_progress_session {

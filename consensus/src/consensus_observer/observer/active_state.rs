@@ -345,7 +345,7 @@ mod test {
     use crate::consensus_observer::network::observer_message::{
         BlockPayload, BlockTransactionPayload, OrderedBlock,
     };
-    use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+    use libra2_channels::{libra2_channel, message_queues::QueueStyle};
     use aptos_consensus_types::{
         block::Block,
         block_data::{BlockData, BlockType},
@@ -612,11 +612,11 @@ mod test {
 
     /// Creates and returns a reconfig notifier and listener
     fn create_reconfig_notifier_and_listener() -> (
-        aptos_channel::Sender<(), ReconfigNotification<DbBackedOnChainConfig>>,
+        libra2_channel::Sender<(), ReconfigNotification<DbBackedOnChainConfig>>,
         ReconfigNotificationListener<DbBackedOnChainConfig>,
     ) {
         let (notification_sender, notification_receiver) =
-            aptos_channel::new(QueueStyle::LIFO, 1, None);
+            libra2_channel::new(QueueStyle::LIFO, 1, None);
         let reconfig_notification_listener = ReconfigNotificationListener {
             notification_receiver,
         };

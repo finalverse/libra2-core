@@ -154,7 +154,7 @@ pub(crate) fn extract_validator_set_updates(
 mod tests {
     use super::*;
     use crate::DiscoveryChangeListener;
-    use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+    use libra2_channels::{libra2_channel, message_queues::QueueStyle};
     use aptos_config::config::HANDSHAKE_VERSION;
     use aptos_crypto::{bls12381, x25519::PrivateKey, PrivateKey as PK, Uniform};
     use aptos_event_notifications::ReconfigNotification;
@@ -184,8 +184,8 @@ mod tests {
         let peer_id = aptos_types::account_address::from_identity_public_key(pubkey);
 
         // Build up the Reconfig Listener
-        let (conn_mgr_reqs_tx, _rx) = aptos_channels::new_test(1);
-        let (mut reconfig_sender, reconfig_events) = aptos_channel::new(QueueStyle::LIFO, 1, None);
+        let (conn_mgr_reqs_tx, _rx) = libra2_channels::new_test(1);
+        let (mut reconfig_sender, reconfig_events) = libra2_channel::new(QueueStyle::LIFO, 1, None);
         let reconfig_listener = ReconfigNotificationListener {
             notification_receiver: reconfig_events,
         };
@@ -239,7 +239,7 @@ mod tests {
         peer_id: PeerId,
         consensus_pubkey: bls12381::PublicKey,
         pubkey: x25519::PublicKey,
-        reconfig_tx: &mut aptos_channels::aptos_channel::Sender<
+        reconfig_tx: &mut libra2_channels::libra2_channel::Sender<
             (),
             ReconfigNotification<InMemoryOnChainConfig>,
         >,

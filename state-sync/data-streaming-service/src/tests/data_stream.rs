@@ -30,7 +30,7 @@ use crate::{
         MIN_ADVERTISED_TRANSACTION, MIN_ADVERTISED_TRANSACTION_OUTPUT,
     },
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::config::{
     AptosDataClientConfig, DataStreamingServiceConfig, DynamicPrefetchingConfig,
 };
@@ -3550,8 +3550,8 @@ fn create_optimal_chunk_sizes(chunk_sizes: u64) -> OptimalChunkSizes {
 }
 
 /// Creates a returns a new stream update notifier (dropping the listener)
-fn create_stream_update_notifier() -> aptos_channel::Sender<(), StreamUpdateNotification> {
-    let (stream_update_notifier, _) = aptos_channel::new(QueueStyle::LIFO, 1, None);
+fn create_stream_update_notifier() -> libra2_channel::Sender<(), StreamUpdateNotification> {
+    let (stream_update_notifier, _) = libra2_channel::new(QueueStyle::LIFO, 1, None);
     stream_update_notifier
 }
 

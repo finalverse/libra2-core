@@ -16,7 +16,7 @@ use crate::{
     util::time_service::ClockTimeService,
 };
 use aptos_bounded_executor::BoundedExecutor;
-use aptos_channels::{self, aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use aptos_config::{
     config::{NodeConfig, WaypointConfig},
     generator::{self, ValidatorSwarm},
@@ -83,10 +83,10 @@ impl SMRNode {
         let _entered_runtime = runtime.enter();
 
         // Setup the network and SMR node
-        let (network_reqs_tx, network_reqs_rx) = aptos_channel::new(QueueStyle::FIFO, 8, None);
-        let (connection_reqs_tx, _) = aptos_channel::new(QueueStyle::FIFO, 8, None);
-        let (consensus_tx, consensus_rx) = aptos_channel::new(QueueStyle::FIFO, 8, None);
-        let (_conn_mgr_reqs_tx, conn_mgr_reqs_rx) = aptos_channels::new_test(8);
+        let (network_reqs_tx, network_reqs_rx) = libra2_channel::new(QueueStyle::FIFO, 8, None);
+        let (connection_reqs_tx, _) = libra2_channel::new(QueueStyle::FIFO, 8, None);
+        let (consensus_tx, consensus_rx) = libra2_channel::new(QueueStyle::FIFO, 8, None);
+        let (_conn_mgr_reqs_tx, conn_mgr_reqs_rx) = libra2_channels::new_test(8);
         let network_sender = network::NetworkSender::new(
             PeerManagerRequestSender::new(network_reqs_tx),
             ConnectionRequestSender::new(connection_reqs_tx),
@@ -114,7 +114,7 @@ impl SMRNode {
             ordered_blocks_tx,
             Arc::clone(&storage),
         ));
-        let (reconfig_sender, reconfig_events) = aptos_channel::new(QueueStyle::LIFO, 1, None);
+        let (reconfig_sender, reconfig_events) = libra2_channel::new(QueueStyle::LIFO, 1, None);
         let reconfig_listener = ReconfigNotificationListener {
             notification_receiver: reconfig_events,
         };
@@ -141,9 +141,9 @@ impl SMRNode {
         let time_service = Arc::new(ClockTimeService::new(runtime.handle().clone()));
 
         let (timeout_sender, timeout_receiver) =
-            aptos_channels::new(1_024, &counters::PENDING_ROUND_TIMEOUTS);
+            libra2_channels::new(1_024, &counters::PENDING_ROUND_TIMEOUTS);
         let (self_sender, self_receiver) =
-            aptos_channels::new_unbounded(&counters::PENDING_SELF_MESSAGES);
+            libra2_channels::new_unbounded(&counters::PENDING_SELF_MESSAGES);
 
         let quorum_store_storage = Arc::new(MockQuorumStoreDB::new());
         let bounded_executor = BoundedExecutor::new(2, playground.handle());

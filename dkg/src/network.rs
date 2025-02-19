@@ -6,7 +6,7 @@ use crate::{
     DKGMessage,
 };
 use anyhow::bail;
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::network_id::NetworkId;
 use libra2_infallible::RwLock;
 use aptos_logger::warn;
@@ -40,14 +40,14 @@ pub struct NetworkSender {
     dkg_network_client: DKGNetworkClient<NetworkClient<DKGMessage>>,
     // Self sender and self receivers provide a shortcut for sending the messages to itself.
     // (self sending is not supported by the networking API).
-    self_sender: aptos_channels::Sender<Event<DKGMessage>>,
+    self_sender: libra2_channels::Sender<Event<DKGMessage>>,
 }
 
 impl NetworkSender {
     pub fn new(
         author: AccountAddress,
         dkg_network_client: DKGNetworkClient<NetworkClient<DKGMessage>>,
-        self_sender: aptos_channels::Sender<Event<DKGMessage>>,
+        self_sender: libra2_channels::Sender<Event<DKGMessage>>,
     ) -> Self {
         NetworkSender {
             author,
@@ -124,21 +124,21 @@ impl RBNetworkSender<DKGMessage> for NetworkSender {
 }
 
 pub struct NetworkReceivers {
-    pub rpc_rx: aptos_channel::Receiver<AccountAddress, (AccountAddress, IncomingRpcRequest)>,
+    pub rpc_rx: libra2_channel::Receiver<AccountAddress, (AccountAddress, IncomingRpcRequest)>,
 }
 
 pub struct NetworkTask {
     all_events: Box<dyn Stream<Item = Event<DKGMessage>> + Send + Unpin>,
-    rpc_tx: aptos_channel::Sender<AccountAddress, (AccountAddress, IncomingRpcRequest)>,
+    rpc_tx: libra2_channel::Sender<AccountAddress, (AccountAddress, IncomingRpcRequest)>,
 }
 
 impl NetworkTask {
     /// Establishes the initial connections with the peers and returns the receivers.
     pub fn new(
         network_service_events: NetworkServiceEvents<DKGMessage>,
-        self_receiver: aptos_channels::Receiver<Event<DKGMessage>>,
+        self_receiver: libra2_channels::Receiver<Event<DKGMessage>>,
     ) -> (NetworkTask, NetworkReceivers) {
-        let (rpc_tx, rpc_rx) = aptos_channel::new(QueueStyle::FIFO, 10, None);
+        let (rpc_tx, rpc_rx) = libra2_channel::new(QueueStyle::FIFO, 10, None);
 
         let network_and_events = network_service_events.into_network_and_events();
         if (network_and_events.values().len() != 1)

@@ -15,7 +15,7 @@ use crate::{
     test_utils::mock_storage::MockStorage,
 };
 use anyhow::{anyhow, format_err, Result};
-use aptos_channels::aptos_channel;
+use libra2_channels::libra2_channel;
 use aptos_consensus_types::{
     common::{Payload, Round},
     pipelined_block::PipelinedBlock,
@@ -106,7 +106,7 @@ impl TExecutionClient for MockExecutionClient {
         _onchain_randomness_config: &OnChainRandomnessConfig,
         _rand_config: Option<RandConfig>,
         _fast_rand_config: Option<RandConfig>,
-        _rand_msg_rx: aptos_channel::Receiver<AccountAddress, IncomingRandGenRequest>,
+        _rand_msg_rx: libra2_channel::Receiver<AccountAddress, IncomingRandGenRequest>,
         _highest_committed_round: Round,
     ) {
     }

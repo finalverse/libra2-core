@@ -12,7 +12,7 @@ use crate::{
     testutils::fake_socket::ReadOnlyTestSocketVec,
     transport::{Connection, ConnectionId, ConnectionMetadata},
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::{config::PeerRole, network_id::NetworkContext};
 use aptos_memsocket::MemorySocket;
 use aptos_netcore::transport::ConnectionOrigin;
@@ -88,10 +88,10 @@ pub fn fuzz(data: &[u8]) {
     );
     let connection = Connection { socket, metadata };
 
-    let (connection_notifs_tx, connection_notifs_rx) = aptos_channels::new_test(8);
+    let (connection_notifs_tx, connection_notifs_rx) = libra2_channels::new_test(8);
     let channel_size = 8;
 
-    let (peer_reqs_tx, peer_reqs_rx) = aptos_channel::new(QueueStyle::FIFO, channel_size, None);
+    let (peer_reqs_tx, peer_reqs_rx) = libra2_channel::new(QueueStyle::FIFO, channel_size, None);
     let upstream_handlers = Arc::new(HashMap::new());
 
     // Spin up a new `Peer` actor

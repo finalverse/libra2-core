@@ -9,7 +9,7 @@ use crate::{
     MempoolClientSender, QuorumStoreRequest,
 };
 use anyhow::{format_err, Result};
-use aptos_channels::{self, aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use aptos_config::{
     config::{NetworkConfig, NodeConfig},
     network_id::NetworkId,
@@ -119,9 +119,9 @@ impl MockSharedMempool {
         config.validator_network = Some(NetworkConfig::network_with_id(NetworkId::Validator));
 
         let mempool = Arc::new(Mutex::new(CoreMempool::new(&config)));
-        let (network_reqs_tx, _network_reqs_rx) = aptos_channel::new(QueueStyle::FIFO, 8, None);
-        let (connection_reqs_tx, _) = aptos_channel::new(QueueStyle::FIFO, 8, None);
-        let (_network_notifs_tx, network_notifs_rx) = aptos_channel::new(QueueStyle::FIFO, 8, None);
+        let (network_reqs_tx, _network_reqs_rx) = libra2_channel::new(QueueStyle::FIFO, 8, None);
+        let (connection_reqs_tx, _) = libra2_channel::new(QueueStyle::FIFO, 8, None);
+        let (_network_notifs_tx, network_notifs_rx) = libra2_channel::new(QueueStyle::FIFO, 8, None);
         let network_sender = NetworkSender::new(
             PeerManagerRequestSender::new(network_reqs_tx),
             ConnectionRequestSender::new(connection_reqs_tx),
@@ -131,7 +131,7 @@ impl MockSharedMempool {
         let (quorum_store_sender, quorum_store_receiver) = mpsc::channel(1_024);
         let (mempool_notifier, mempool_listener) =
             aptos_mempool_notifications::new_mempool_notifier_listener_pair(100);
-        let (reconfig_sender, reconfig_events) = aptos_channel::new(QueueStyle::LIFO, 1, None);
+        let (reconfig_sender, reconfig_events) = libra2_channel::new(QueueStyle::LIFO, 1, None);
         let reconfig_event_subscriber = ReconfigNotificationListener {
             notification_receiver: reconfig_events,
         };

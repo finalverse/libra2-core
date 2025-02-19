@@ -8,7 +8,7 @@ use crate::{
     shared_mempool::{start_shared_mempool, types::SharedMempoolNotification},
     tests::common::TestTransaction,
 };
-use aptos_channels::{aptos_channel, message_queues::QueueStyle};
+use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use aptos_config::{
     config::{Identity, NodeConfig, PeerRole, RoleType},
     network_id::{NetworkId, PeerNetworkId},
@@ -466,9 +466,9 @@ impl Node {
 /// Allows us to mock out the network without dealing with the details
 pub struct NodeNetworkInterface {
     /// Peer request receiver for messages
-    pub(crate) network_reqs_rx: aptos_channel::Receiver<(PeerId, ProtocolId), PeerManagerRequest>,
+    pub(crate) network_reqs_rx: libra2_channel::Receiver<(PeerId, ProtocolId), PeerManagerRequest>,
     /// Peer notification sender for sending outgoing messages to other peers
-    pub(crate) network_notifs_tx: aptos_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>,
+    pub(crate) network_notifs_tx: libra2_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>,
 }
 
 impl NodeNetworkInterface {
@@ -537,10 +537,10 @@ fn setup_node_network_interface(
     // Create the network sender and events receiver
     static MAX_QUEUE_SIZE: usize = 8;
     let (network_reqs_tx, network_reqs_rx) =
-        aptos_channel::new(QueueStyle::FIFO, MAX_QUEUE_SIZE, None);
-    let (connection_reqs_tx, _) = aptos_channel::new(QueueStyle::FIFO, MAX_QUEUE_SIZE, None);
+        libra2_channel::new(QueueStyle::FIFO, MAX_QUEUE_SIZE, None);
+    let (connection_reqs_tx, _) = libra2_channel::new(QueueStyle::FIFO, MAX_QUEUE_SIZE, None);
     let (network_notifs_tx, network_notifs_rx) =
-        aptos_channel::new(QueueStyle::FIFO, MAX_QUEUE_SIZE, None);
+        libra2_channel::new(QueueStyle::FIFO, MAX_QUEUE_SIZE, None);
     let network_sender = NetworkSender::new(
         PeerManagerRequestSender::new(network_reqs_tx),
         ConnectionRequestSender::new(connection_reqs_tx),
@@ -573,7 +573,7 @@ fn start_node_mempool(
     let (_quorum_store_sender, quorum_store_receiver) = mpsc::channel(1_024);
     let (_mempool_notifier, mempool_listener) =
         aptos_mempool_notifications::new_mempool_notifier_listener_pair(100);
-    let (reconfig_sender, reconfig_events) = aptos_channel::new(QueueStyle::LIFO, 1, None);
+    let (reconfig_sender, reconfig_events) = libra2_channel::new(QueueStyle::LIFO, 1, None);
     let reconfig_event_subscriber = ReconfigNotificationListener {
         notification_receiver: reconfig_events,
     };
