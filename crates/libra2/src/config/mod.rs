@@ -12,7 +12,7 @@ use crate::{
     genesis::git::{from_yaml, to_yaml},
     Tool,
 };
-use aptos_cli_common::generate_cli_completions;
+use libra2_cli_common::generate_cli_completions;
 use async_trait::async_trait;
 use clap::{Parser, ValueEnum};
 use clap_complete::Shell;

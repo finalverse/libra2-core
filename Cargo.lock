@@ -297,7 +297,6 @@ dependencies = [
  "aptos-backup-cli",
  "aptos-build-info",
  "aptos-cached-packages",
- "aptos-cli-common",
  "aptos-crypto",
  "aptos-faucet-core",
  "aptos-framework",
@@ -345,6 +344,7 @@ dependencies = [
  "itertools 0.13.0",
  "jemallocator",
  "libra2-bitvec",
+ "libra2-cli-common",
  "libra2-config",
  "libra2-global-constants",
  "maplit",
@@ -778,15 +778,6 @@ dependencies = [
  "log",
  "reqwest 0.11.23",
  "url",
-]
-
-[[package]]
-name = "aptos-cli-common"
-version = "1.0.0"
-dependencies = [
- "anstyle",
- "clap 4.5.21",
- "clap_complete",
 ]
 
 [[package]]
@@ -1623,7 +1614,6 @@ dependencies = [
  "anyhow",
  "aptos",
  "aptos-cached-packages",
- "aptos-cli-common",
  "aptos-db",
  "aptos-framework",
  "aptos-genesis",
@@ -1649,6 +1639,7 @@ dependencies = [
  "json-patch",
  "k8s-openapi",
  "kube",
+ "libra2-cli-common",
  "libra2-config",
  "libra2-global-constants",
  "libra2-infallible",
@@ -10356,7 +10347,6 @@ dependencies = [
  "aptos-backup-cli",
  "aptos-build-info",
  "aptos-cached-packages",
- "aptos-cli-common",
  "aptos-crypto",
  "aptos-faucet-core",
  "aptos-framework",
@@ -10404,6 +10394,7 @@ dependencies = [
  "itertools 0.13.0",
  "jemallocator",
  "libra2-bitvec",
+ "libra2-cli-common",
  "libra2-config",
  "libra2-global-constants",
  "libra2-node",
@@ -10480,6 +10471,15 @@ dependencies = [
  "libra2-infallible",
  "libra2-metrics-core",
  "tokio",
+]
+
+[[package]]
+name = "libra2-cli-common"
+version = "1.0.0"
+dependencies = [
+ "anstyle",
+ "clap 4.5.21",
+ "clap_complete",
 ]
 
 [[package]]

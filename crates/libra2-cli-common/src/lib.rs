@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 /// A style for the CLI that closely resembles the Clap v3 color scheme
-pub fn aptos_cli_style() -> clap::builder::Styles {
+pub fn libra2_cli_style() -> clap::builder::Styles {
     use anstyle::{AnsiColor, Color::Ansi, Style};
     use clap::builder::Styles;
 

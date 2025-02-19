@@ -44,7 +44,7 @@ Then it must also be added to the top level command structure:
 ```rust
 /// Command Line Interface (CLI) for developing and interacting with the Libra2 blockchain
 #[derive(Parser)]
-#[clap(name = "libra2", author, version, propagate_version = true, styles = aptos_cli_common::aptos_cli_style())]
+#[clap(name = "libra2", author, version, propagate_version = true, styles = libra2_cli_common::libra2_cli_style())]
 pub enum Tool {
     #[clap(subcommand)]
     Account(account::AccountTool),

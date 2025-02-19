@@ -19,7 +19,7 @@ aptos-backup-cli = { workspace = true }
 libra2-bitvec = { workspace = true }
 aptos-build-info = { workspace = true }
 aptos-cached-packages = { workspace = true }
-aptos-cli-common = { workspace = true }
+libra2-cli-common = { workspace = true }
 libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-faucet-core = { workspace = true }

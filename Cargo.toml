@@ -319,7 +319,7 @@ libra2-bitvec = { path = "crates/libra2-bitvec" }
 aptos-build-info = { path = "crates/aptos-build-info" }
 aptos-cached-packages = { path = "aptos-move/framework/cached-packages" }
 libra2-channels = { path = "crates/channel" }
-aptos-cli-common = { path = "crates/aptos-cli-common" }
+libra2-cli-common = { path = "crates/libra2-cli-common" }
 aptos-collections = { path = "crates/aptos-collections" }
 aptos-compression = { path = "crates/aptos-compression" }
 aptos-consensus = { path = "consensus" }
