@@ -14,7 +14,7 @@ use crate::{
     },
 };
 use aptos_api::context::Context;
-use aptos_config::config::{IndexerConfig, NodeConfig};
+use libra2_config::config::{IndexerConfig, NodeConfig};
 use aptos_logger::{error, info};
 use aptos_mempool::MempoolClientSender;
 use aptos_storage_interface::DbReader;

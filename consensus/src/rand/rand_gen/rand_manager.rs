@@ -18,9 +18,9 @@ use crate::{
         types::{FastShare, PathType, RandConfig, RequestShare, TAugmentedData, TShare},
     },
 };
-use aptos_bounded_executor::BoundedExecutor;
+use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::libra2_channel;
-use aptos_config::config::ReliableBroadcastConfig;
+use libra2_config::config::ReliableBroadcastConfig;
 use aptos_consensus_types::common::{Author, Round};
 use libra2_infallible::Mutex;
 use aptos_logger::{error, info, spawn_named, trace, warn};

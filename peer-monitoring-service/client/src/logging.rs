@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::Error;
-use aptos_config::network_id::PeerNetworkId;
+use libra2_config::network_id::PeerNetworkId;
 use aptos_logger::Schema;
 use aptos_peer_monitoring_service_types::request::PeerMonitoringServiceRequest;
 use serde::Serialize;

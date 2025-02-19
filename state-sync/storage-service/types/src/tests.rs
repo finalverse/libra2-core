@@ -13,7 +13,7 @@ use crate::{
     responses::{CompleteDataRange, DataSummary, ProtocolMetadata},
     Epoch, StorageServiceRequest,
 };
-use aptos_config::config::AptosDataClientConfig;
+use libra2_config::config::AptosDataClientConfig;
 use aptos_crypto::hash::HashValue;
 use aptos_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{

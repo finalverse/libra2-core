@@ -162,7 +162,7 @@ impl GRPCNetworkMessageServiceClientWrapper {
 
 #[test]
 fn basic_test() {
-    use aptos_config::utils;
+    use libra2_config::utils;
     use std::{
         net::{IpAddr, Ipv4Addr},
         thread,

@@ -23,7 +23,7 @@ use crate::{
     streaming_service::StreamUpdateNotification,
 };
 use libra2_channels::libra2_channel;
-use aptos_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
+use libra2_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
 use aptos_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary},
     interface::{

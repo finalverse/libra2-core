@@ -4,7 +4,7 @@
 
 //! The purpose of this crate is to offer a single source of truth for the definitions of shared
 //! constants within the codebase. This is useful because many different components within
-//! Aptos often require access to global constant definitions (e.g., Safety Rules,
+//! Libra2 often require access to global constant definitions (e.g., Safety Rules,
 //! Key Manager, and Secure Storage). To avoid duplicating these definitions across crates
 //! (and better allow these constants to be updated in a single location), we define them here.
 #![forbid(unsafe_code)]

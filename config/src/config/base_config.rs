@@ -99,7 +99,7 @@ impl WaypointConfig {
             WaypointConfig::FromStorage(backend) => {
                 let storage: Storage = backend.into();
                 let waypoint = storage
-                    .get::<Waypoint>(aptos_global_constants::WAYPOINT)
+                    .get::<Waypoint>(libra2_global_constants::WAYPOINT)
                     .expect("Unable to read waypoint")
                     .value;
                 Some(waypoint)
@@ -114,7 +114,7 @@ impl WaypointConfig {
             WaypointConfig::FromStorage(backend) => {
                 let storage: Storage = backend.into();
                 storage
-                    .get::<Waypoint>(aptos_global_constants::GENESIS_WAYPOINT)
+                    .get::<Waypoint>(libra2_global_constants::GENESIS_WAYPOINT)
                     .expect("Unable to read waypoint")
                     .value
             },

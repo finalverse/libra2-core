@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_config::network_id::PeerNetworkId;
+use libra2_config::network_id::PeerNetworkId;
 use aptos_network::{
     application::{interface::NetworkClientInterface, storage::PeersAndMetadata},
     protocols::network::RpcError,

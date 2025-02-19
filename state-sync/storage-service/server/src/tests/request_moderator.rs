@@ -5,7 +5,7 @@ use crate::{
     moderator::UnhealthyPeerState,
     tests::{mock::MockClient, utils},
 };
-use aptos_config::{
+use libra2_config::{
     config::{PeerRole, StorageServiceConfig},
     network_id::{NetworkId, PeerNetworkId},
 };

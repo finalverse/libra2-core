@@ -9,7 +9,7 @@ use aptos::node::local_testnet::{
     node::{build_node_config, NodeManager},
     traits::ServiceManager,
 };
-use aptos_config::config::DEFAULT_GRPC_STREAM_PORT;
+use libra2_config::config::DEFAULT_GRPC_STREAM_PORT;
 use aptos_faucet_core::server::{FunderKeyEnum, RunConfig};
 use rand::{rngs::StdRng, SeedableRng};
 use std::{collections::HashSet, net::Ipv4Addr, path::PathBuf};

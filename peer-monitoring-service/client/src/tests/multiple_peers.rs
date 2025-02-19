@@ -21,7 +21,7 @@ use crate::{
     },
     PeerState,
 };
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, PeerMonitoringServiceConfig, PeerRole},
     network_id::NetworkId,
 };

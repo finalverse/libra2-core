@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{driver_factory::DriverFactory, metadata_storage::PersistentMetadataStorage};
-use aptos_config::{
+use libra2_config::{
     config::{
         RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS,
         DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD, NO_OP_STORAGE_PRUNER_CONFIG,

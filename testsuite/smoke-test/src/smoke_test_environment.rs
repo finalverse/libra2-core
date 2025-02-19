@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos::test::CliTestFramework;
-use aptos_config::{config::NodeConfig, keys::ConfigKey, utils::get_available_port};
+use libra2_config::{config::NodeConfig, keys::ConfigKey, utils::get_available_port};
 use aptos_crypto::ed25519::Ed25519PrivateKey;
 use aptos_faucet_core::server::{FunderKeyEnum, RunConfig};
 use aptos_forge::{ActiveNodesGuard, Factory, LocalFactory, LocalSwarm, Node};

@@ -9,7 +9,7 @@ use crate::{
 };
 use aptos_consensus_types::{common::Author, safety_data::SafetyData};
 use aptos_crypto::{bls12381, PrivateKey};
-use aptos_global_constants::{CONSENSUS_KEY, OWNER_ACCOUNT, SAFETY_DATA, WAYPOINT};
+use libra2_global_constants::{CONSENSUS_KEY, OWNER_ACCOUNT, SAFETY_DATA, WAYPOINT};
 use aptos_logger::prelude::*;
 use aptos_secure_storage::{KVStorage, Storage};
 use aptos_types::waypoint::Waypoint;

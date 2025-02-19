@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-channels = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-id-generator = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
@@ -34,7 +34,7 @@ tokio = { workspace = true }
 
 [dev-dependencies]
 aptos-build-info = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true, features = ["fuzzing"] }
 aptos-peer-monitoring-service-server = { workspace = true }

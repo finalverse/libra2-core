@@ -6,7 +6,7 @@ use crate::server::{
     utils,
     utils::{CONTENT_TYPE_JSON, CONTENT_TYPE_TEXT},
 };
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use hyper::{Body, StatusCode};
 use prometheus::TextEncoder;
 

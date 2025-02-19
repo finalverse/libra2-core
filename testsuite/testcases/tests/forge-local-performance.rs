@@ -20,7 +20,7 @@ fn main() -> Result<()> {
         .with_emit_job(
             EmitJobRequest::default()
                 .mode(EmitJobMode::ConstTps { tps: 30 })
-                .gas_price(aptos_global_constants::GAS_UNIT_PRICE),
+                .gas_price(libra2_global_constants::GAS_UNIT_PRICE),
         )
         .with_success_criteria(SuccessCriteria::new(20).add_chain_progress(
             StateProgressThreshold {

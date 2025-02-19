@@ -9,7 +9,7 @@ use crate::consensus_observer::{
     },
     network::observer_message::{BlockPayload, OrderedBlock},
 };
-use aptos_config::config::ConsensusObserverConfig;
+use libra2_config::config::ConsensusObserverConfig;
 use aptos_consensus_types::{common::Round, pipelined_block::PipelinedBlock};
 use libra2_infallible::Mutex;
 use aptos_logger::{error, warn};

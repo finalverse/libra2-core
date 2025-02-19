@@ -27,7 +27,7 @@ use crate::{
     state_store::StateStore,
     transaction_store::TransactionStore,
 };
-use aptos_config::config::{
+use libra2_config::config::{
     PrunerConfig, RocksdbConfig, RocksdbConfigs, StorageDirPaths, NO_OP_STORAGE_PRUNER_CONFIG,
 };
 use aptos_crypto::HashValue;

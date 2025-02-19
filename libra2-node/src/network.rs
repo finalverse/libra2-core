@@ -3,7 +3,7 @@
 
 use crate::services::start_netbench_service;
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
-use aptos_config::{
+use libra2_config::{
     config::{NetworkConfig, NodeConfig},
     network_id::NetworkId,
 };

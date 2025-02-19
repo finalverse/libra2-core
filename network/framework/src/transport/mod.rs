@@ -10,7 +10,7 @@ use crate::{
         wire::handshake::v1::{HandshakeMsg, MessagingProtocolVersion, ProtocolIdSet},
     },
 };
-use aptos_config::{
+use libra2_config::{
     config::{PeerRole, HANDSHAKE_VERSION},
     network_id::{NetworkContext, NetworkId},
 };

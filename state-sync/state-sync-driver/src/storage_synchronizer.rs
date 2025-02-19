@@ -13,7 +13,7 @@ use crate::{
     },
     utils,
 };
-use aptos_config::config::StateSyncDriverConfig;
+use libra2_config::config::StateSyncDriverConfig;
 use aptos_data_streaming_service::data_notification::NotificationId;
 use aptos_event_notifications::EventSubscriptionService;
 use aptos_executor_types::{ChunkCommitNotification, ChunkExecutorTrait};

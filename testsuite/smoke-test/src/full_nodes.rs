@@ -9,7 +9,7 @@ use crate::{
         MAX_CATCH_UP_WAIT_SECS, MAX_CONNECTIVITY_WAIT_SECS, MAX_HEALTHY_WAIT_SECS,
     },
 };
-use aptos_config::{
+use libra2_config::{
     config::{DiscoveryMethod, NodeConfig, OverrideNodeConfig, PeerRole},
     network_id::NetworkId,
 };

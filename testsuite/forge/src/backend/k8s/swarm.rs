@@ -16,7 +16,7 @@ use crate::{
 };
 use ::aptos_logger::*;
 use anyhow::{anyhow, bail, format_err};
-use aptos_config::config::{NodeConfig, OverrideNodeConfig};
+use libra2_config::config::{NodeConfig, OverrideNodeConfig};
 use aptos_retrier::fixed_retry_strategy;
 use aptos_sdk::{
     crypto::ed25519::Ed25519PrivateKey,

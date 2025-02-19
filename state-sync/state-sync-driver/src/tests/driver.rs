@@ -11,7 +11,7 @@ use crate::{
         verify_commit_notification,
     },
 };
-use aptos_config::config::{NodeConfig, RoleType, StateSyncDriverConfig};
+use libra2_config::config::{NodeConfig, RoleType, StateSyncDriverConfig};
 use aptos_consensus_notifications::{ConsensusNotificationSender, ConsensusNotifier};
 use aptos_data_client::client::AptosDataClient;
 use aptos_data_streaming_service::streaming_client::new_streaming_service_client_listener_pair;

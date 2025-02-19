@@ -13,5 +13,5 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 rocksdb = { workspace = true }

@@ -8,7 +8,7 @@ use crate::{
     VALIDATOR_0_STATEFUL_SET_NAME,
 };
 use anyhow::Context;
-use aptos_config::{
+use libra2_config::{
     config::{
         ApiConfig, BaseConfig, DiscoveryMethod, ExecutionConfig, NetworkConfig, NodeConfig,
         OverrideNodeConfig, RoleType, WaypointConfig,
@@ -52,7 +52,7 @@ const GENESIS_CONFIG_VOLUME_PATH: &str = "/opt/aptos/genesis";
 const GENESIS_CONFIG_WRITABLE_VOLUME_NAME: &str = "writable-genesis";
 
 // the path where the config file is mounted in the fullnode
-const APTOS_CONFIG_VOLUME_NAME: &str = "aptos-config";
+const APTOS_CONFIG_VOLUME_NAME: &str = "libra2-config";
 const APTOS_CONFIG_VOLUME_PATH: &str = "/opt/aptos/etc";
 
 // the path where the data volume is mounted in the fullnode
@@ -514,7 +514,7 @@ pub async fn install_public_fullnode<'a>(
 mod tests {
     use super::*;
     use crate::MockK8sResourceApi;
-    use aptos_config::config::Identity;
+    use libra2_config::config::Identity;
     use aptos_sdk::crypto::{x25519::PrivateKey, Uniform};
     use k8s_openapi::apimachinery::pkg::api::resource::Quantity;
 

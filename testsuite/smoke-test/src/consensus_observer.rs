@@ -7,7 +7,7 @@ use crate::{
     state_sync_utils::enable_consensus_observer,
     utils::{add_node_to_seeds, create_test_accounts, execute_transactions, wait_for_all_nodes},
 };
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, OverrideNodeConfig, PeerRole},
     network_id::NetworkId,
 };

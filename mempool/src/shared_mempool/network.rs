@@ -16,7 +16,7 @@ use crate::{
         },
     },
 };
-use aptos_config::{
+use libra2_config::{
     config::{MempoolConfig, NodeType},
     network_id::PeerNetworkId,
 };

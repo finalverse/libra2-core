@@ -5,7 +5,7 @@ use crate::{
     epoch_manager::EpochManager, network::NetworkTask,
     network_interface::JWKConsensusNetworkClient, types::JWKConsensusMsg,
 };
-use aptos_config::config::SafetyRulesConfig;
+use libra2_config::config::SafetyRulesConfig;
 use aptos_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };

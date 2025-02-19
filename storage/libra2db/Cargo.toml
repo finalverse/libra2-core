@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 aptos-accumulator = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-db-indexer = { workspace = true }
 aptos-db-indexer-schemas = { workspace = true, features = ["fuzzing"] }

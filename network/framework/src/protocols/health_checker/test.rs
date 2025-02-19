@@ -20,7 +20,7 @@ use crate::{
     ProtocolId,
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_config::network_id::NetworkId;
+use libra2_config::network_id::NetworkId;
 use aptos_time_service::{MockTimeService, TimeService};
 use futures::future;
 use maplit::hashmap;

@@ -5,7 +5,7 @@ use crate::{
     client::AptosDataClient, error::Error, interface::AptosDataClientInterface,
     priority::PeerPriority, tests::mock::MockNetwork,
 };
-use aptos_config::{
+use libra2_config::{
     config::{AptosDataClientConfig, BaseConfig, RoleType},
     network_id::{NetworkId, PeerNetworkId},
 };

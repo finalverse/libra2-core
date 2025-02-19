@@ -35,7 +35,7 @@ use crate::{
     peer_manager::{self, conn_notifs_channel, ConnectionRequestSender, PeerManagerError},
     transport::ConnectionMetadata,
 };
-use aptos_config::{
+use libra2_config::{
     config::{Peer, PeerRole, PeerSet},
     network_id::NetworkContext,
 };

@@ -5,7 +5,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_config::config::{ApiConfig, DEFAULT_MAX_PAGE_SIZE};
+use libra2_config::config::{ApiConfig, DEFAULT_MAX_PAGE_SIZE};
 use aptos_logger::prelude::*;
 use aptos_node::AptosNodeArgs;
 use aptos_rosetta::{bootstrap, common::native_coin, types::Currency};

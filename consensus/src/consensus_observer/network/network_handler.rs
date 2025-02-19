@@ -15,7 +15,7 @@ use libra2_channels::{
     libra2_channel::{Receiver, Sender},
     message_queues::QueueStyle,
 };
-use aptos_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
+use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use aptos_logger::{error, info, warn};
 use futures::StreamExt;
 
@@ -246,7 +246,7 @@ mod test {
         },
     };
     use libra2_channels::{libra2_channel, libra2_channel::Receiver, message_queues::QueueStyle};
-    use aptos_config::{
+    use libra2_config::{
         config::ConsensusObserverConfig,
         network_id::{NetworkId, PeerNetworkId},
     };

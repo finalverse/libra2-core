@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::driver::DriverConfiguration;
-use aptos_config::config::{ConsensusObserverConfig, RoleType, StateSyncDriverConfig};
+use libra2_config::config::{ConsensusObserverConfig, RoleType, StateSyncDriverConfig};
 use aptos_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519Signature},
     HashValue, PrivateKey, Uniform,

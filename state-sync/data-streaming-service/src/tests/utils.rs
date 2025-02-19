@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{data_notification::DataNotification, data_stream::DataStreamListener, error::Error};
-use aptos_config::config::AptosDataClientConfig;
+use libra2_config::config::AptosDataClientConfig;
 use aptos_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
 use aptos_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary, OptimalChunkSizes},

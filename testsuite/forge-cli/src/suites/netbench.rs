@@ -4,7 +4,7 @@
 
 use super::multi_region::wrap_with_two_region_env;
 use crate::{suites::ungrouped::Delay, KILOBYTE, MEGABYTE};
-use aptos_config::config::NetbenchConfig;
+use libra2_config::config::NetbenchConfig;
 use aptos_forge::ForgeConfig;
 use std::{num::NonZeroUsize, sync::Arc};
 

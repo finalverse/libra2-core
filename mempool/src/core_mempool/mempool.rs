@@ -17,7 +17,7 @@ use crate::{
         MempoolSenderBucket, MultiBucketTimelineIndexIds, TimelineIndexIdentifier,
     },
 };
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_consensus_types::common::{TransactionInProgress, TransactionSummary};
 use aptos_crypto::HashValue;
 use aptos_logger::prelude::*;

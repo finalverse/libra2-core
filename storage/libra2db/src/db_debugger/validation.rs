@@ -4,7 +4,7 @@
 use crate::{
     schema::state_value_by_key_hash::StateValueByKeyHashSchema, state_kv_db::StateKvDb, Libra2DB,
 };
-use aptos_config::config::{RocksdbConfig, StorageDirPaths};
+use libra2_config::config::{RocksdbConfig, StorageDirPaths};
 use aptos_crypto::{hash::CryptoHash, HashValue};
 use aptos_db_indexer::db_ops::open_internal_indexer_db;
 use aptos_db_indexer_schemas::schema::{

@@ -13,7 +13,7 @@ use crate::{
     utils,
     utils::{OutputFallbackHandler, SpeculativeStreamState, PENDING_DATA_LOG_FREQ_SECS},
 };
-use aptos_config::config::BootstrappingMode;
+use libra2_config::config::BootstrappingMode;
 use aptos_data_client::global_summary::GlobalDataSummary;
 use aptos_data_streaming_service::{
     data_notification::{DataNotification, DataPayload, NotificationId},

@@ -8,7 +8,7 @@ use crate::{
     transport::ConnectionMetadata,
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_config::{
+use libra2_config::{
     config::{Peer, PeerRole, PeerSet, HANDSHAKE_VERSION},
     network_id::NetworkId,
 };

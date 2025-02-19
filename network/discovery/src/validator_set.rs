@@ -6,7 +6,7 @@ use crate::{
     counters::{DISCOVERY_COUNTS, EVENT_PROCESSING_LOOP_BUSY_DURATION_S, NETWORK_KEY_MISMATCH},
     DiscoveryError,
 };
-use aptos_config::{
+use libra2_config::{
     config::{Peer, PeerRole, PeerSet},
     network_id::NetworkContext,
 };
@@ -155,7 +155,7 @@ mod tests {
     use super::*;
     use crate::DiscoveryChangeListener;
     use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-    use aptos_config::config::HANDSHAKE_VERSION;
+    use libra2_config::config::HANDSHAKE_VERSION;
     use aptos_crypto::{bls12381, x25519::PrivateKey, PrivateKey as PK, Uniform};
     use aptos_event_notifications::ReconfigNotification;
     use aptos_types::{

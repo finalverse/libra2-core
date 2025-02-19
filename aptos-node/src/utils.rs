@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::anyhow;
-use aptos_config::config::{NodeConfig, DEFAULT_EXECUTION_CONCURRENCY_LEVEL};
+use libra2_config::config::{NodeConfig, DEFAULT_EXECUTION_CONCURRENCY_LEVEL};
 #[cfg(unix)]
 use aptos_logger::prelude::*;
 use aptos_storage_interface::{

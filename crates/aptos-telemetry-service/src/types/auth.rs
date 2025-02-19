@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::common::NodeType;
-use aptos_config::config::RoleType;
+use libra2_config::config::RoleType;
 use aptos_crypto::x25519;
 use aptos_types::{chain_id::ChainId, PeerId};
 use serde::{Deserialize, Serialize};

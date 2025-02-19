@@ -12,7 +12,7 @@ use crate::{
     },
     Error, PeerMonitoringServiceClient,
 };
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, PeerMonitoringServiceConfig},
     network_id::PeerNetworkId,
 };

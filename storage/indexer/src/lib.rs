@@ -12,7 +12,7 @@ mod metrics;
 pub mod utils;
 
 use crate::db::INDEX_DB_NAME;
-use aptos_config::config::RocksdbConfig;
+use libra2_config::config::RocksdbConfig;
 use aptos_db_indexer_schemas::{
     metadata::{MetadataKey, MetadataValue},
     schema::{

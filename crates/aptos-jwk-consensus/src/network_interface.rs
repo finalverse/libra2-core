@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::types::JWKConsensusMsg;
-use aptos_config::network_id::{NetworkId, PeerNetworkId};
+use libra2_config::network_id::{NetworkId, PeerNetworkId};
 use aptos_network::{
     application::{error::Error, interface::NetworkClientInterface},
     ProtocolId,

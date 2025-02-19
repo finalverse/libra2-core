@@ -12,7 +12,7 @@ use crate::{
     test_utils::{consensus_runtime, MockPayloadManager, MockStorage},
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_config::network_id::{NetworkId, PeerNetworkId};
+use libra2_config::network_id::{NetworkId, PeerNetworkId};
 use aptos_consensus_types::common::Author;
 use aptos_logger::debug;
 use aptos_network::{

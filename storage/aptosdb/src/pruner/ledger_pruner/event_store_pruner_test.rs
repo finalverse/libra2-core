@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{AptosDB, EventStore, LedgerPrunerManager, PrunerManager};
-use aptos_config::config::LedgerPrunerConfig;
+use libra2_config::config::LedgerPrunerConfig;
 use aptos_proptest_helpers::Index;
 use aptos_schemadb::SchemaBatch;
 use aptos_temppath::TempPath;

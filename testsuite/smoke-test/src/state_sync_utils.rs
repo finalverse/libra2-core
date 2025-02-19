@@ -8,7 +8,7 @@ use crate::{
         wait_for_all_nodes, MAX_HEALTHY_WAIT_SECS,
     },
 };
-use aptos_config::config::{BootstrappingMode, NodeConfig, OverrideNodeConfig};
+use libra2_config::config::{BootstrappingMode, NodeConfig, OverrideNodeConfig};
 use aptos_db::AptosDB;
 use aptos_forge::{LocalNode, LocalSwarm, Node, NodeExt, Swarm};
 use aptos_inspection_service::inspection_client::InspectionClient;
@@ -46,10 +46,10 @@ pub async fn create_fullnode(full_node_config: NodeConfig, swarm: &mut LocalSwar
 pub fn enable_consensus_observer(use_consensus_observer: bool, node_config: &mut NodeConfig) {
     if use_consensus_observer {
         match node_config.base.role {
-            aptos_config::config::RoleType::Validator => {
+            libra2_config::config::RoleType::Validator => {
                 node_config.consensus_observer.publisher_enabled = true;
             },
-            aptos_config::config::RoleType::FullNode => {
+            libra2_config::config::RoleType::FullNode => {
                 node_config.consensus_observer.observer_enabled = true;
                 node_config.consensus_observer.publisher_enabled = true;
             },

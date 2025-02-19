@@ -9,7 +9,7 @@ use crate::{
         pruner_worker::PrunerWorker,
     },
 };
-use aptos_config::config::LedgerPrunerConfig;
+use libra2_config::config::LedgerPrunerConfig;
 use aptos_db_indexer::db_indexer::InternalIndexerDB;
 use libra2_infallible::Mutex;
 use aptos_storage_interface::Result;

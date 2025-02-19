@@ -18,11 +18,11 @@ anyhow = { workspace = true, features = ["backtrace"] }
 aptos = { workspace = true }
 aptos-cached-packages = { workspace = true }
 aptos-cli-common = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-db = { workspace = true }
 aptos-framework = { workspace = true }
 aptos-genesis = { workspace = true }
-aptos-global-constants = { workspace = true }
+libra2-global-constants = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-inspection-service = { workspace = true }
 aptos-logger = { workspace = true }
@@ -71,4 +71,4 @@ serde_merge = { workspace = true }
 
 [features]
 default = []
-testing = ["aptos-global-constants/testing"]
+testing = ["libra2-global-constants/testing"]

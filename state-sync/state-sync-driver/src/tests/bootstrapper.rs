@@ -20,7 +20,7 @@ use crate::{
     },
     utils::OutputFallbackHandler,
 };
-use aptos_config::config::BootstrappingMode;
+use libra2_config::config::BootstrappingMode;
 use aptos_data_client::global_summary::GlobalDataSummary;
 use aptos_data_streaming_service::{
     data_notification::{DataNotification, DataPayload, NotificationId},

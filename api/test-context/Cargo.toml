@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 aptos-api = { workspace = true }
 aptos-api-types = { workspace = true }
 aptos-cached-packages = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-db = { workspace = true, features = ["fuzzing"] }
 aptos-executor = { workspace = true }

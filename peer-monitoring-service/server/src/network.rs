@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_config::network_id::{NetworkId, PeerNetworkId};
+use libra2_config::network_id::{NetworkId, PeerNetworkId};
 use aptos_network::{
     application::interface::NetworkServiceEvents,
     protocols::network::{Event, RpcError},

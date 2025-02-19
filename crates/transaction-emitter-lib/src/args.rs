@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{bail, format_err, Result};
-use aptos_config::keys::ConfigKey;
+use libra2_config::keys::ConfigKey;
 use aptos_crypto::{ed25519::Ed25519PrivateKey, encoding_type::EncodingType};
 use aptos_sdk::types::chain_id::ChainId;
 use aptos_transaction_generator_lib::AccountType;

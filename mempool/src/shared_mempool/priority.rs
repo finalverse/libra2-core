@@ -3,7 +3,7 @@
 
 use super::types::MempoolSenderBucket;
 use crate::{counters, network::BroadcastPeerPriority};
-use aptos_config::{
+use libra2_config::{
     config::{MempoolConfig, NodeType},
     network_id::{NetworkId, PeerNetworkId},
 };
@@ -560,7 +560,7 @@ fn compare_validator_distance(
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_config::{
+    use libra2_config::{
         config::{MempoolConfig, NodeType},
         network_id::{NetworkId, PeerNetworkId},
     };

@@ -5,7 +5,7 @@ use crate::{
     remote_executor_client::RemoteExecutorClient, test_utils,
     thread_executor_service::ThreadExecutorService,
 };
-use aptos_config::utils;
+use libra2_config::utils;
 use aptos_language_e2e_tests::data_store::FakeDataStore;
 use aptos_secure_net::network_controller::NetworkController;
 use aptos_vm::sharded_block_executor::ShardedBlockExecutor;

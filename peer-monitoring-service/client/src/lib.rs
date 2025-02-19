@@ -4,7 +4,7 @@
 #![forbid(unsafe_code)]
 
 use crate::logging::{LogEntry, LogEvent, LogSchema};
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, PeerMonitoringServiceConfig},
     network_id::PeerNetworkId,
 };

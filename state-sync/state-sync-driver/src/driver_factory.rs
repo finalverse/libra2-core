@@ -12,7 +12,7 @@ use crate::{
     },
     storage_synchronizer::StorageSynchronizer,
 };
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_consensus_notifications::ConsensusNotificationListener;
 use aptos_data_client::client::AptosDataClient;
 use aptos_data_streaming_service::streaming_client::StreamingServiceClient;

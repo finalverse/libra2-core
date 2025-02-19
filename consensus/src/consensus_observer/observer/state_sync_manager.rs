@@ -11,7 +11,7 @@ use crate::{
     },
     pipeline::execution_client::TExecutionClient,
 };
-use aptos_config::config::ConsensusObserverConfig;
+use libra2_config::config::ConsensusObserverConfig;
 use aptos_logger::{error, info};
 use aptos_reliable_broadcast::DropGuard;
 use aptos_types::ledger_info::LedgerInfoWithSignatures;

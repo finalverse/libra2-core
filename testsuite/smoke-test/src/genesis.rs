@@ -14,7 +14,7 @@ use crate::{
     workspace_builder::workspace_root,
 };
 use anyhow::anyhow;
-use aptos_config::{
+use libra2_config::{
     config::{AdminServiceConfig, InitialSafetyRulesConfig, NodeConfig},
     network_id::NetworkId,
 };

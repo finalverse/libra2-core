@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::consensus_observer::{common::error::Error, observer::subscription_utils};
-use aptos_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
+use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use aptos_network::application::metadata::PeerMetadata;
 use aptos_storage_interface::DbReader;
 use aptos_time_service::{TimeService, TimeServiceTrait};
@@ -235,7 +235,7 @@ impl ConsensusObserverSubscription {
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_config::config::PeerRole;
+    use libra2_config::config::PeerRole;
     use aptos_netcore::transport::ConnectionOrigin;
     use aptos_network::{
         protocols::wire::handshake::v1::{MessagingProtocolVersion, ProtocolIdSet},

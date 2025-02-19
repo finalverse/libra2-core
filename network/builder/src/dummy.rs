@@ -6,7 +6,7 @@
 
 use crate::builder::NetworkBuilder;
 use libra2_channels::libra2_channel;
-use aptos_config::{
+use libra2_config::{
     config::{Peer, PeerRole, PeerSet, RoleType, NETWORK_CHANNEL_SIZE},
     network_id::{NetworkContext, NetworkId, PeerNetworkId},
 };

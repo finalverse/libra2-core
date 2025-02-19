@@ -13,7 +13,7 @@ pub mod types;
 use crate::{
     epoch_manager::EpochManager, network::NetworkTask, network_interface::DKGNetworkClient,
 };
-use aptos_config::config::{ReliableBroadcastConfig, SafetyRulesConfig};
+use libra2_config::config::{ReliableBroadcastConfig, SafetyRulesConfig};
 use aptos_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };

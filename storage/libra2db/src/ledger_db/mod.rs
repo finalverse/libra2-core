@@ -23,7 +23,7 @@ use crate::{
     },
     schema::db_metadata::{DbMetadataKey, DbMetadataSchema},
 };
-use aptos_config::config::{RocksdbConfig, RocksdbConfigs};
+use libra2_config::config::{RocksdbConfig, RocksdbConfigs};
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use aptos_logger::prelude::info;
 use aptos_rocksdb_options::gen_rocksdb_options;

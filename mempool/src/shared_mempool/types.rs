@@ -9,7 +9,7 @@ use crate::{
     shared_mempool::use_case_history::UseCaseHistory,
 };
 use anyhow::Result;
-use aptos_config::{
+use libra2_config::{
     config::{MempoolConfig, NodeType},
     network_id::PeerNetworkId,
 };

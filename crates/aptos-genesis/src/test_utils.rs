@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::builder::InitGenesisConfigFn;
-use aptos_config::config::{IdentityBlob, NodeConfig};
+use libra2_config::config::{IdentityBlob, NodeConfig};
 use aptos_crypto::ed25519::Ed25519PrivateKey;
 use aptos_temppath::TempPath;
 use aptos_types::on_chain_config::Features;
@@ -51,7 +51,7 @@ pub fn test_config_with_custom_onchain(
     let config = config.override_config_mut();
     config.set_data_dir(path.path().to_path_buf());
 
-    let mut sr_test = aptos_config::config::SafetyRulesTestConfig::new(account_address.unwrap());
+    let mut sr_test = libra2_config::config::SafetyRulesTestConfig::new(account_address.unwrap());
     sr_test.consensus_key(consensus_private_key.unwrap());
     config.consensus.safety_rules.test = Some(sr_test);
 

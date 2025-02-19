@@ -26,4 +26,4 @@ tonic = { workspace = true }
 tonic-reflection = { workspace = true }
 
 [dev-dependencies]
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }

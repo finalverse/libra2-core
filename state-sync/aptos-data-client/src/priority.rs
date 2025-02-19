@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::utils;
-use aptos_config::{
+use libra2_config::{
     config::BaseConfig,
     network_id::{NetworkId, PeerNetworkId},
 };
@@ -141,7 +141,7 @@ pub fn is_high_priority_peer(
 #[cfg(test)]
 mod tests {
     use crate::priority::{get_peer_priority, is_high_priority_peer, PeerPriority};
-    use aptos_config::{
+    use libra2_config::{
         config::{BaseConfig, Peer, PeerRole, RoleType},
         network_id::{NetworkId, PeerNetworkId},
     };

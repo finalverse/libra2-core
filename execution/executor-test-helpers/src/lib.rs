@@ -4,7 +4,7 @@
 
 pub mod integration_test_impl;
 
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     HashValue,

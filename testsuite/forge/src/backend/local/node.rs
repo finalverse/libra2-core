@@ -4,7 +4,7 @@
 
 use crate::{FullNode, HealthCheckError, LocalVersion, Node, NodeExt, Validator, Version};
 use anyhow::{anyhow, ensure, Context, Result};
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, SECURE_STORAGE_FILENAME},
     keys::ConfigKey,
 };

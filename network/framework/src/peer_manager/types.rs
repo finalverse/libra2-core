@@ -7,7 +7,7 @@ use crate::{
     protocols::{direct_send::Message, rpc::OutboundRpcRequest},
     transport::{Connection, ConnectionMetadata},
 };
-use aptos_config::network_id::NetworkId;
+use libra2_config::network_id::NetworkId;
 use aptos_types::{network_address::NetworkAddress, PeerId};
 use futures::channel::oneshot;
 use serde::Serialize;

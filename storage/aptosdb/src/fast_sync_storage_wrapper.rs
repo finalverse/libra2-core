@@ -3,7 +3,7 @@
 
 use crate::AptosDB;
 use anyhow::anyhow;
-use aptos_config::config::{NodeConfig, StorageDirPaths};
+use libra2_config::config::{NodeConfig, StorageDirPaths};
 use aptos_crypto::HashValue;
 use aptos_db_indexer::db_indexer::InternalIndexerDB;
 use libra2_infallible::RwLock;

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_api::context::Context;
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_mempool::mocks::MockSharedMempool;
 use aptos_storage_interface::mock::MockDbReaderWriter;
 use aptos_types::chain_id::ChainId;

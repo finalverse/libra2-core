@@ -53,14 +53,14 @@ crate::gas_schedule::macros::define_gas_parameters!(
         [
             maximum_number_of_gas_units: Gas,
             "maximum_number_of_gas_units",
-            aptos_global_constants::MAX_GAS_AMOUNT
+            libra2_global_constants::MAX_GAS_AMOUNT
         ],
         // The minimum gas price that a transaction can be submitted with.
         // TODO(Gas): should probably change this to something > 0
         [
             min_price_per_gas_unit: FeePerGasUnit,
             "min_price_per_gas_unit",
-            aptos_global_constants::GAS_UNIT_PRICE
+            libra2_global_constants::GAS_UNIT_PRICE
         ],
         // The maximum gas unit price that a transaction can be submitted with.
         [

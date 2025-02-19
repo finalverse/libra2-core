@@ -3,7 +3,7 @@
 
 use crate::{common::IP_LOCAL_HOST, no_panic_println};
 use anyhow::{bail, Result};
-use aptos_config::config::{NodeConfig, TableInfoServiceMode};
+use libra2_config::config::{NodeConfig, TableInfoServiceMode};
 use aptos_localnet::health_checker::HealthChecker;
 use aptos_node::{load_node_config, start_and_report_ports};
 use aptos_types::network_address::{NetworkAddress, Protocol};

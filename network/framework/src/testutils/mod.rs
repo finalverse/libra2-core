@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::application::storage::PeersAndMetadata;
-use aptos_config::network_id::NetworkContext;
+use libra2_config::network_id::NetworkContext;
 use aptos_crypto::x25519::PublicKey;
 use aptos_types::PeerId;
 use std::sync::Arc;

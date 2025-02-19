@@ -11,7 +11,7 @@ use crate::{
     },
     QuorumStoreRequest,
 };
-use aptos_config::config::{NodeConfig, NodeType};
+use libra2_config::config::{NodeConfig, NodeType};
 use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use libra2_infallible::{Mutex, RwLock};
 use aptos_logger::Level;

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::network::ApplicationNetworkInterfaces;
-use aptos_config::config::{NodeConfig, StateSyncConfig};
+use libra2_config::config::{NodeConfig, StateSyncConfig};
 use aptos_consensus_notifications::ConsensusNotifier;
 use aptos_data_client::{client::AptosDataClient, poller};
 use aptos_data_streaming_service::{

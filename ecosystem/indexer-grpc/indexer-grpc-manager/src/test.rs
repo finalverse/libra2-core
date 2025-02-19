@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::config::{CacheConfig, IndexerGrpcManagerConfig, ServiceConfig};
-use aptos_config::utils::get_available_port;
+use libra2_config::utils::get_available_port;
 use aptos_indexer_grpc_server_framework::RunnableConfig;
 use aptos_indexer_grpc_utils::{
     config::IndexerGrpcFileStoreConfig,

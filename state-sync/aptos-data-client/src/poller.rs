@@ -12,7 +12,7 @@ use crate::{
     metrics::{set_gauge, DataType, PRIORITIZED_PEER, REGULAR_PEER},
     utils,
 };
-use aptos_config::{
+use libra2_config::{
     config::{AptosDataClientConfig, AptosDataPollerConfig},
     network_id::PeerNetworkId,
 };

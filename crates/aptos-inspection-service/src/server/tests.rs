@@ -10,7 +10,7 @@ use crate::{
     CONFIGURATION_PATH, FORGE_METRICS_PATH, INDEX_PATH, JSON_METRICS_PATH, METRICS_PATH,
     PEER_INFORMATION_PATH, SYSTEM_INFORMATION_PATH,
 };
-use aptos_config::config::{AptosDataClientConfig, BaseConfig, NodeConfig};
+use libra2_config::config::{AptosDataClientConfig, BaseConfig, NodeConfig};
 use aptos_data_client::client::AptosDataClient;
 use aptos_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
 use aptos_storage_interface::DbReader;

@@ -516,7 +516,7 @@ impl NetworkStream {
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_config::utils;
+    use libra2_config::utils;
     use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
     /// Read, Write, Connect timeout in milliseconds.

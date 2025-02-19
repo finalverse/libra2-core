@@ -20,7 +20,7 @@ libra2-bitvec = { workspace = true }
 aptos-build-info = { workspace = true }
 aptos-cached-packages = { workspace = true }
 aptos-cli-common = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-faucet-core = { workspace = true }
 aptos-framework = { workspace = true }
@@ -28,7 +28,7 @@ aptos-gas-profiling = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 aptos-genesis = { workspace = true }
 aptos-github-client = { workspace = true }
-aptos-global-constants = { workspace = true }
+libra2-global-constants = { workspace = true }
 aptos-indexer-grpc-server-framework = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }
 aptos-keygen = { workspace = true }

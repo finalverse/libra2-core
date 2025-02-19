@@ -6,7 +6,7 @@ use crate::{
     logging::{LogEntry, LogEvent, LogSchema},
     metrics,
 };
-use aptos_config::config::AptosDataClientConfig;
+use libra2_config::config::AptosDataClientConfig;
 use aptos_logger::{info, sample, sample::SampleRate, warn};
 use aptos_storage_interface::DbReader;
 use aptos_time_service::{TimeService, TimeServiceTrait};
@@ -355,7 +355,7 @@ mod tests {
         },
         tests::mock::{create_mock_data_client, create_mock_db_reader},
     };
-    use aptos_config::config::AptosDataClientConfig;
+    use libra2_config::config::AptosDataClientConfig;
     use aptos_time_service::{TimeService, TimeServiceTrait};
     use std::{sync::Arc, time::Duration};
 

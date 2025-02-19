@@ -8,7 +8,7 @@ use crate::{
     utils::{MAX_CONNECTIVITY_WAIT_SECS, MAX_HEALTHY_WAIT_SECS},
 };
 use aptos::test::CliTestFramework;
-use aptos_config::{
+use libra2_config::{
     config::{
         DiscoveryMethod, FileDiscovery, Identity, NetworkConfig, NodeConfig, OverrideNodeConfig,
         Peer, PeerSet, RestDiscovery,

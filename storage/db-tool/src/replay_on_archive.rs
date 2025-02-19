@@ -5,7 +5,7 @@
 use anyhow::{bail, Error, Ok, Result};
 use aptos_backup_cli::utils::{ReplayConcurrencyLevelOpt, RocksdbOpt};
 use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
-use aptos_config::config::{
+use libra2_config::config::{
     StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS, DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD,
     NO_OP_STORAGE_PRUNER_CONFIG,
 };

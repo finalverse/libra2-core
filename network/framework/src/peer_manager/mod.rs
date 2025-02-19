@@ -23,7 +23,7 @@ use crate::{
     ProtocolId,
 };
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
-use aptos_config::network_id::{NetworkContext, PeerNetworkId};
+use libra2_config::network_id::{NetworkContext, PeerNetworkId};
 use aptos_logger::prelude::*;
 use aptos_netcore::transport::{ConnectionOrigin, Transport};
 use aptos_short_hex_str::AsShortHexStr;
@@ -58,7 +58,7 @@ use crate::{
     peer_manager::transport::{TransportHandler, TransportRequest},
     protocols::network::{ReceivedMessage, SerializedRequest},
 };
-use aptos_config::config::PeerRole;
+use libra2_config::config::PeerRole;
 use aptos_types::account_address::AccountAddress;
 pub use senders::*;
 pub use types::*;

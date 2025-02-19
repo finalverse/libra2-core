@@ -3,7 +3,7 @@
 
 use crate::{PeerMonitorState, PeerMonitoringServiceClient, StreamExt};
 use libra2_channels::{libra2_channel, libra2_channel::Receiver, message_queues::QueueStyle};
-use aptos_config::{
+use libra2_config::{
     config::PeerRole,
     network_id::{NetworkId, PeerNetworkId},
 };

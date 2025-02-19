@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_config::config::transaction_filter_type::Filter;
+use libra2_config::config::transaction_filter_type::Filter;
 use aptos_crypto::HashValue;
 use aptos_types::transaction::SignedTransaction;
 
@@ -33,7 +33,7 @@ impl TransactionFilter {
 #[cfg(test)]
 mod test {
     use crate::transaction_filter::TransactionFilter;
-    use aptos_config::config::transaction_filter_type::Filter;
+    use libra2_config::config::transaction_filter_type::Filter;
     use aptos_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
     use aptos_types::{
         chain_id::ChainId,

@@ -4,7 +4,7 @@
 
 use crate::shared_mempool::types::{MempoolMessageId, QuorumStoreRequest};
 use anyhow::Error;
-use aptos_config::network_id::{NetworkId, PeerNetworkId};
+use libra2_config::network_id::{NetworkId, PeerNetworkId};
 use aptos_logger::Schema;
 use aptos_mempool_notifications::MempoolCommitNotification;
 use aptos_types::account_address::AccountAddress;

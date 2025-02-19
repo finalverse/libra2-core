@@ -11,7 +11,7 @@ use crate::{
         create_vec_signed_transactions_with_gas,
     },
 };
-use aptos_config::config::QuorumStoreConfig;
+use libra2_config::config::QuorumStoreConfig;
 use aptos_consensus_types::{
     common::{TransactionInProgress, TransactionSummary},
     proof_of_store::{BatchId, SignedBatchInfo},

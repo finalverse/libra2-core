@@ -6,7 +6,7 @@ use crate::{
     priority::PeerPriority,
     tests::{mock::MockNetwork, utils, utils::NUM_SELECTION_ITERATIONS},
 };
-use aptos_config::{
+use libra2_config::{
     config::{AptosDataClientConfig, AptosDataMultiFetchConfig},
     network_id::NetworkId,
 };

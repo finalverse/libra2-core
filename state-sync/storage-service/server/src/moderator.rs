@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{error::Error, logging::LogEntry, metrics, utils, LogSchema};
-use aptos_config::{
+use libra2_config::{
     config::{AptosDataClientConfig, StorageServiceConfig},
     network_id::{NetworkId, PeerNetworkId},
 };

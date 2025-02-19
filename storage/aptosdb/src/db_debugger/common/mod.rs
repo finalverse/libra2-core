@@ -5,7 +5,7 @@ use crate::{
     db_debugger::ShardingConfig, ledger_db::LedgerDb, state_kv_db::StateKvDb,
     state_merkle_db::StateMerkleDb,
 };
-use aptos_config::config::{RocksdbConfigs, StorageDirPaths};
+use libra2_config::config::{RocksdbConfigs, StorageDirPaths};
 use aptos_storage_interface::Result;
 use aptos_types::nibble::{nibble_path::NibblePath, Nibble};
 use clap::Parser;

@@ -513,7 +513,7 @@ async fn test_commit_sync_race() {
         transaction_deduper::create_transaction_deduper,
         transaction_shuffler::create_transaction_shuffler,
     };
-    use aptos_config::config::transaction_filter_type::Filter;
+    use libra2_config::config::transaction_filter_type::Filter;
     use aptos_consensus_notifications::Error;
     use libra2_infallible::Mutex;
     use aptos_types::{

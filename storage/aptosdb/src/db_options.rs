@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::schema::*;
-use aptos_config::config::RocksdbConfig;
+use libra2_config::config::RocksdbConfig;
 use aptos_schemadb::{
     BlockBasedOptions, Cache, ColumnFamilyDescriptor, ColumnFamilyName, DBCompressionType, Options,
     SliceTransform, DEFAULT_COLUMN_FAMILY_NAME,

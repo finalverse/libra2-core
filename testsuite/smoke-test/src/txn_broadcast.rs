@@ -8,7 +8,7 @@ use crate::{
         MAX_CONNECTIVITY_WAIT_SECS, MAX_HEALTHY_WAIT_SECS,
     },
 };
-use aptos_config::config::{NodeConfig, OverrideNodeConfig};
+use libra2_config::config::{NodeConfig, OverrideNodeConfig};
 use aptos_forge::{NodeExt, Swarm, SwarmExt};
 use std::{
     sync::Arc,

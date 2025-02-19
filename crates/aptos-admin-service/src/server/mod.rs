@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_config::config::{AuthenticationConfig, NodeConfig};
+use libra2_config::config::{AuthenticationConfig, NodeConfig};
 use aptos_consensus::{
     persistent_liveness_storage::StorageWriteProxy, quorum_store::quorum_store_db::QuorumStoreDB,
 };

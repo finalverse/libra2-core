@@ -15,9 +15,9 @@ use crate::{
     test_utils::{mock_execution_client::MockExecutionClient, MockStorage},
     util::time_service::ClockTimeService,
 };
-use aptos_bounded_executor::BoundedExecutor;
+use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, WaypointConfig},
     generator::{self, ValidatorSwarm},
     network_id::{NetworkId, PeerNetworkId},

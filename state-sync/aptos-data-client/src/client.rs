@@ -19,7 +19,7 @@ use crate::{
     priority::PeerPriority,
     utils,
 };
-use aptos_config::{
+use libra2_config::{
     config::{AptosDataClientConfig, BaseConfig},
     network_id::PeerNetworkId,
 };

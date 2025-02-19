@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_crypto::{hash::HashValue, SigningKey};
 use aptos_mempool::mocks::MockSharedMempool;
 use aptos_protos::extractor::v1::Transaction as TransactionPB;
@@ -30,7 +30,7 @@ use storage_interface::DbReaderWriter;
 use crate::tests::{golden_output::GoldenOutputs, pretty};
 use aptos_api::{context::Context, index};
 use aptos_api_types::HexEncodedBytes;
-use aptos_config::keys::ConfigKey;
+use libra2_config::keys::ConfigKey;
 use aptos_crypto::ed25519::Ed25519PrivateKey;
 use aptos_types::aggregated_signature::AggregatedSignature;
 use bytes::Bytes;

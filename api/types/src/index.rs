@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{LedgerInfo, U64};
-use aptos_config::config::RoleType;
+use libra2_config::config::RoleType;
 use poem_openapi::Object as PoemObject;
 use serde::{Deserialize, Serialize};
 

@@ -8,7 +8,7 @@ use aptos_api_types::{
     X_APTOS_LEDGER_TIMESTAMP, X_APTOS_LEDGER_VERSION,
 };
 use aptos_cached_packages::aptos_stdlib;
-use aptos_config::{
+use libra2_config::{
     config::{
         NodeConfig, RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS_FOR_TEST,
         DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD, NO_OP_STORAGE_PRUNER_CONFIG,

@@ -9,7 +9,7 @@ use crate::{
     storage::StorageReader,
     tests::{mock, utils},
 };
-use aptos_config::{
+use libra2_config::{
     config::{AptosDataClientConfig, StorageServiceConfig},
     network_id::PeerNetworkId,
 };

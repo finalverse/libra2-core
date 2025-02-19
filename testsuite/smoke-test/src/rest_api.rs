@@ -7,10 +7,10 @@ use crate::{
     txn_emitter::generate_traffic,
 };
 use aptos_cached_packages::aptos_stdlib;
-use aptos_config::config::GasEstimationConfig;
+use libra2_config::config::GasEstimationConfig;
 use aptos_crypto::ed25519::Ed25519Signature;
 use aptos_forge::{LocalSwarm, NodeExt, Swarm, TransactionType};
-use aptos_global_constants::{DEFAULT_BUCKETS, GAS_UNIT_PRICE};
+use libra2_global_constants::{DEFAULT_BUCKETS, GAS_UNIT_PRICE};
 use aptos_rest_client::{
     aptos_api_types::{MoveModuleId, TransactionData, ViewFunction, ViewRequest},
     Client,

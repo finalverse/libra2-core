@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::protocols::wire::handshake::v1::ProtocolId;
-use aptos_config::network_id::NetworkContext;
+use libra2_config::network_id::NetworkContext;
 use libra2_metrics_core::{
     exponential_buckets, register_histogram_vec, register_int_counter_vec, register_int_gauge,
     register_int_gauge_vec, Histogram, HistogramTimer, HistogramVec, IntCounter, IntCounterVec,

@@ -7,7 +7,7 @@ use crate::{
     middleware::NUM_OUTSTANDING_TRANSACTIONS,
 };
 use anyhow::{anyhow, Context, Result};
-use aptos_config::keys::ConfigKey;
+use libra2_config::keys::ConfigKey;
 use aptos_logger::{
     error, info,
     prelude::{sample, SampleRate},

@@ -3,7 +3,7 @@
 
 use crate::generate_traffic;
 use anyhow::Context;
-use aptos_config::config::OverrideNodeConfig;
+use libra2_config::config::OverrideNodeConfig;
 use aptos_forge::{NetworkContextSynchronizer, NetworkTest, Result, Test};
 use aptos_logger::info;
 use async_trait::async_trait;

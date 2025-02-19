@@ -10,7 +10,7 @@ use aptos_block_partitioner::{
     },
     v2::config::PartitionerV2Config,
 };
-use aptos_config::config::{
+use libra2_config::config::{
     EpochSnapshotPrunerConfig, LedgerPrunerConfig, PrunerConfig, StateMerklePrunerConfig,
 };
 use aptos_executor_benchmark::{

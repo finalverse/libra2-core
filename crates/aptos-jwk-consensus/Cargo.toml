@@ -15,9 +15,9 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 libra2-bitvec = { workspace = true }
-aptos-bounded-executor = { workspace = true }
+libra2-bounded-executor = { workspace = true }
 libra2-channels = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-consensus-types = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-enum-conversion-derive = { workspace = true }

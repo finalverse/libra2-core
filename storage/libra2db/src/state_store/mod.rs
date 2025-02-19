@@ -459,7 +459,7 @@ impl StateStore {
         state_merkle_db: Arc<StateMerkleDb>,
         state_kv_db: Arc<StateKvDb>,
     ) -> Result<Option<Version>> {
-        use aptos_config::config::NO_OP_STORAGE_PRUNER_CONFIG;
+        use libra2_config::config::NO_OP_STORAGE_PRUNER_CONFIG;
 
         let state_merkle_pruner = StateMerklePrunerManager::new(
             Arc::clone(&state_merkle_db),

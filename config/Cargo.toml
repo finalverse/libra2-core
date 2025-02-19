@@ -1,6 +1,6 @@
 [package]
-name = "aptos-config"
-description = "Aptos config"
+name = "libra2-config"
+description = "Libra2 config"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 aptos-crypto = { workspace = true }
-aptos-global-constants = { workspace = true }
+libra2-global-constants = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-secure-storage = { workspace = true }
 aptos-short-hex-str = { workspace = true }

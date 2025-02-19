@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::tests::{mock, mock::MockClient, utils};
-use aptos_config::{
+use libra2_config::{
     config::StorageServiceConfig,
     network_id::{NetworkId, PeerNetworkId},
 };

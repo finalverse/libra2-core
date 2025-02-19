@@ -5,7 +5,7 @@
 use crate::{bootstrap_genesis, gen_block_id, gen_ledger_info_with_sigs};
 use anyhow::{ensure, Result};
 use aptos_cached_packages::aptos_stdlib;
-use aptos_config::config::DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD;
+use libra2_config::config::DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD;
 use aptos_consensus_types::block::Block;
 use aptos_db::AptosDB;
 use aptos_executor::block_executor::BlockExecutor;

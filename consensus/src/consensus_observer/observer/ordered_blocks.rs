@@ -8,7 +8,7 @@ use crate::consensus_observer::{
     },
     network::observer_message::{CommitDecision, OrderedBlock},
 };
-use aptos_config::config::ConsensusObserverConfig;
+use libra2_config::config::ConsensusObserverConfig;
 use aptos_consensus_types::{common::Round, pipelined_block::PipelinedBlock};
 use aptos_logger::{debug, warn};
 use aptos_types::ledger_info::LedgerInfoWithSignatures;

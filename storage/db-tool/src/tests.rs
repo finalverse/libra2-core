@@ -287,7 +287,7 @@ mod dbtool_tests {
         new_db_dir: PathBuf,
         force_sharding: bool,
     ) -> (Runtime, String) {
-        use aptos_config::config::{
+        use libra2_config::config::{
             RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS_FOR_TEST,
             NO_OP_STORAGE_PRUNER_CONFIG,
         };

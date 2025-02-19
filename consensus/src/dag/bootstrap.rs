@@ -35,12 +35,12 @@ use crate::{
     payload_manager::TPayloadManager,
     pipeline::{buffer_manager::OrderedBlocks, execution_client::TExecutionClient},
 };
-use aptos_bounded_executor::BoundedExecutor;
+use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::{
     libra2_channel::{self, Receiver},
     message_queues::QueueStyle,
 };
-use aptos_config::config::DagConsensusConfig;
+use libra2_config::config::DagConsensusConfig;
 use aptos_consensus_types::common::{Author, Round};
 use libra2_infallible::{Mutex, RwLock};
 use aptos_logger::{debug, info};

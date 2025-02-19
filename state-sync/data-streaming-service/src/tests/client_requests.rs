@@ -9,7 +9,7 @@ use crate::{
     },
     tests::utils::create_ledger_info,
 };
-use aptos_config::config::{DataStreamingServiceConfig, DynamicPrefetchingConfig};
+use libra2_config::config::{DataStreamingServiceConfig, DynamicPrefetchingConfig};
 use aptos_data_client::global_summary::GlobalDataSummary;
 use aptos_id_generator::U64IdGenerator;
 use aptos_storage_service_types::responses::CompleteDataRange;

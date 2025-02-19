@@ -25,7 +25,7 @@ use crate::{
 };
 use anyhow::{bail, ensure};
 use aptos_collections::BoundedVecDeque;
-use aptos_config::config::DagPayloadConfig;
+use libra2_config::config::DagPayloadConfig;
 use aptos_consensus_types::{
     common::{Author, Payload, PayloadFilter},
     payload_pull_params::PayloadPullParameters,

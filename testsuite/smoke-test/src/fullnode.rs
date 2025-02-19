@@ -9,7 +9,7 @@ use crate::{
 };
 use anyhow::bail;
 use aptos_cached_packages::aptos_stdlib;
-use aptos_config::config::{BootstrappingMode, NodeConfig, OverrideNodeConfig};
+use libra2_config::config::{BootstrappingMode, NodeConfig, OverrideNodeConfig};
 use aptos_db_indexer_schemas::{
     metadata::MetadataKey,
     schema::{indexer_metadata::InternalIndexerMetadataSchema, state_keys::StateKeysSchema},

@@ -77,7 +77,7 @@ impl<'t> AptosContext<'t> {
     }
 
     pub fn transaction_factory(&self) -> TransactionFactory {
-        let unit_price = std::cmp::max(aptos_global_constants::GAS_UNIT_PRICE, 1);
+        let unit_price = std::cmp::max(libra2_global_constants::GAS_UNIT_PRICE, 1);
         TransactionFactory::new(self.chain_id()).with_gas_unit_price(unit_price)
     }
 
@@ -223,7 +223,7 @@ impl AptosPublicInfo {
     }
 
     pub fn transaction_factory(&self) -> TransactionFactory {
-        let unit_price = std::cmp::max(aptos_global_constants::GAS_UNIT_PRICE, 1);
+        let unit_price = std::cmp::max(libra2_global_constants::GAS_UNIT_PRICE, 1);
         TransactionFactory::new(self.chain_id).with_gas_unit_price(unit_price)
     }
 

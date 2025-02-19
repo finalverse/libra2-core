@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_global_constants::DEFAULT_BUCKETS;
+use libra2_global_constants::DEFAULT_BUCKETS;
 use libra2_metrics_core::{
     exponential_buckets, register_histogram_vec, register_int_counter_vec, register_int_gauge,
     HistogramVec, IntCounterVec, IntGauge,

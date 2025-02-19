@@ -20,7 +20,7 @@ aptos-backup-service = { workspace = true }
 aptos-build-info = { workspace = true }
 aptos-cached-packages = { workspace = true }
 libra2-channels = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-consensus = { workspace = true }
 aptos-consensus-notifications = { workspace = true }
 libra2-crash-handler = { workspace = true }
@@ -91,9 +91,9 @@ assert-private-keys-not-cloneable = ["aptos-crypto/assert-private-keys-not-clone
 check-vm-features = []
 consensus-only-perf-test = ["aptos-executor/consensus-only-perf-test", "aptos-mempool/consensus-only-perf-test", "aptos-db/consensus-only-perf-test"]
 default = []
-failpoints = ["fail/failpoints", "aptos-consensus/failpoints", "aptos-executor/failpoints", "aptos-mempool/failpoints", "aptos-api/failpoints", "aptos-config/failpoints"]
+failpoints = ["fail/failpoints", "aptos-consensus/failpoints", "aptos-executor/failpoints", "aptos-mempool/failpoints", "aptos-api/failpoints", "libra2-config/failpoints"]
 indexer = ["aptos-indexer"]
-tokio-console = ["aptos-logger/tokio-console", "aptos-config/tokio-console"]
+tokio-console = ["aptos-logger/tokio-console", "libra2-config/tokio-console"]
 smoke-test = ["aptos-jwk-consensus/smoke-test", "aptos-dkg-runtime/smoke-test"]
 
 [package.metadata.cargo-machete]

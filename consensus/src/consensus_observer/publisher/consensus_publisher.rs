@@ -16,7 +16,7 @@ use crate::consensus_observer::{
     },
 };
 use libra2_channels::libra2_channel::Receiver;
-use aptos_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
+use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use libra2_infallible::RwLock;
 use aptos_logger::{error, info, warn};
 use aptos_network::application::interface::NetworkClient;
@@ -355,7 +355,7 @@ mod test {
     use crate::consensus_observer::network::{
         network_events::ResponseSender, observer_message::BlockTransactionPayload,
     };
-    use aptos_config::network_id::NetworkId;
+    use libra2_config::network_id::NetworkId;
     use aptos_crypto::HashValue;
     use aptos_network::{
         application::{metadata::ConnectionState, storage::PeersAndMetadata},

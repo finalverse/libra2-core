@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::tests::{mock, mock::MockClient, utils};
-use aptos_config::config::StorageServiceConfig;
+use libra2_config::config::StorageServiceConfig;
 use aptos_crypto::hash::HashValue;
 use aptos_storage_service_types::responses::{DataResponse, StorageServiceResponse};
 use aptos_types::{

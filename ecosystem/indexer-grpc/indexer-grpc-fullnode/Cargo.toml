@@ -32,7 +32,7 @@ tonic-reflection = { workspace = true }
 aptos-api = { workspace = true }
 aptos-api-types = { workspace = true }
 libra2-bitvec = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-mempool = { workspace = true }
@@ -57,7 +57,7 @@ aptos-executor = { workspace = true }
 aptos-executor-types = { workspace = true }
 aptos-framework = { workspace = true }
 aptos-genesis = { workspace = true }
-aptos-global-constants = { workspace = true }
+libra2-global-constants = { workspace = true }
 aptos-mempool = { workspace = true }
 aptos-mempool-notifications = { workspace = true }
 aptos-proptest-helpers = { workspace = true }

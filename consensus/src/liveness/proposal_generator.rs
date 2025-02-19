@@ -18,7 +18,7 @@ use crate::{
     util::time_service::TimeService,
 };
 use anyhow::{bail, ensure, format_err, Context};
-use aptos_config::config::{
+use libra2_config::config::{
     ChainHealthBackoffValues, ExecutionBackpressureConfig, PipelineBackpressureValues,
 };
 use aptos_consensus_types::{

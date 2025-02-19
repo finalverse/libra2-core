@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{utils, utils::sum_all_histogram_counts};
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_state_sync_driver::metrics::StorageSynchronizerOperations;
 use aptos_telemetry_service::types::telemetry::TelemetryEvent;
 use prometheus::core::Collector;

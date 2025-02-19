@@ -3,7 +3,7 @@
 
 use crate::mpsc::Receiver;
 use aptos_build_info::build_information;
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_logger::{
     aptos_logger::FileWriter, info, telemetry_log_writer::TelemetryLog, LoggerFilterUpdater,
 };

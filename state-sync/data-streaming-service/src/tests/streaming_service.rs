@@ -19,7 +19,7 @@ use crate::{
         MIN_ADVERTISED_TRANSACTION, MIN_ADVERTISED_TRANSACTION_OUTPUT, TOTAL_NUM_STATE_VALUES,
     },
 };
-use aptos_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
+use libra2_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
 use aptos_time_service::TimeService;
 use aptos_types::{
     ledger_info::LedgerInfoWithSignatures,

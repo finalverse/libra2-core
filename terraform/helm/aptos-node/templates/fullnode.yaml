@@ -187,7 +187,7 @@ spec:
           value: "0"
       {{- end }}
         volumeMounts:
-        - name: aptos-config
+        - name: libra2-config
           mountPath: /opt/aptos/etc
         - name: writable-genesis
           mountPath: /opt/aptos/genesis
@@ -245,7 +245,7 @@ spec:
           type: RuntimeDefault
       {{- end }}
       volumes:
-      - name: aptos-config
+      - name: libra2-config
         configMap:
           name: {{ include "aptos-validator.fullname" $ }}-{{$i}}
       - name: genesis-config

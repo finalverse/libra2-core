@@ -15,7 +15,7 @@ use crate::{
     },
     state_replication::StateComputerCommitCallBackType,
 };
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use libra2_infallible::Mutex;
 use aptos_logger::{error, info, warn};

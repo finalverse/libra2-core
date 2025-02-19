@@ -8,7 +8,7 @@ use crate::{
     test_utils::{self, consensus_runtime, placeholder_ledger_info, timed_block_on},
 };
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
-use aptos_config::network_id::{NetworkId, PeerNetworkId};
+use libra2_config::network_id::{NetworkId, PeerNetworkId};
 use aptos_consensus_types::{
     block::{block_test_utils::certificate_for_genesis, Block},
     common::Author,
@@ -533,7 +533,7 @@ mod tests {
         network::{IncomingRpcRequest, NetworkTask},
         network_interface::{DIRECT_SEND, RPC},
     };
-    use aptos_config::network_id::{NetworkId, PeerNetworkId};
+    use libra2_config::network_id::{NetworkId, PeerNetworkId};
     use aptos_consensus_types::{
         block_retrieval::{BlockRetrievalRequestV1, BlockRetrievalResponse, BlockRetrievalStatus},
         common::Payload,

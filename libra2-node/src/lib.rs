@@ -21,7 +21,7 @@ use anyhow::anyhow;
 use aptos_admin_service::AdminService;
 use aptos_api::bootstrap as bootstrap_api;
 use aptos_build_info::build_information;
-use aptos_config::config::{merge_node_config, NodeConfig, PersistableConfig};
+use libra2_config::config::{merge_node_config, NodeConfig, PersistableConfig};
 use aptos_framework::ReleaseBundle;
 use aptos_logger::{prelude::*, telemetry_log_writer::TelemetryLog, Level, LoggerFilterUpdater};
 use aptos_state_sync_driver::driver_factory::StateSyncRuntimes;
@@ -600,7 +600,7 @@ where
         genesis_waypoint.to_string().as_bytes(),
     )?;
 
-    aptos_config::config::sanitize_node_config(validators[0].config.override_config_mut())?;
+    libra2_config::config::sanitize_node_config(validators[0].config.override_config_mut())?;
 
     let mut node_config = validators[0].config.override_config().clone();
 

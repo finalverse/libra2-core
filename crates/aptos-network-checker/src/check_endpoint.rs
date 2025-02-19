@@ -3,7 +3,7 @@
 
 use crate::args::CheckEndpointArgs;
 use anyhow::{bail, Context, Result};
-use aptos_config::{
+use libra2_config::{
     config::{Error, RoleType, HANDSHAKE_VERSION},
     network_id::{NetworkContext, NetworkId},
 };

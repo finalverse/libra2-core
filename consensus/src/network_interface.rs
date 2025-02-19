@@ -10,7 +10,7 @@ use crate::{
     quorum_store::types::{Batch, BatchMsg, BatchRequest, BatchResponse},
     rand::rand_gen::network_messages::RandGenMessage,
 };
-use aptos_config::network_id::{NetworkId, PeerNetworkId};
+use libra2_config::network_id::{NetworkId, PeerNetworkId};
 use aptos_consensus_types::{
     block_retrieval::{BlockRetrievalRequest, BlockRetrievalRequestV1, BlockRetrievalResponse},
     epoch_retrieval::EpochRetrievalRequest,

@@ -6,7 +6,7 @@
 /// function.
 /// Obsolete once rust-lang/rust#31436 is resolved and try is stable.
 #[macro_export]
-macro_rules! aptos_try {
+macro_rules! libra2_try {
     ($e:expr) => {
         (|| $e)()
     };

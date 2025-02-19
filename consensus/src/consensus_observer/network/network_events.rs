@@ -4,7 +4,7 @@
 use crate::consensus_observer::network::observer_message::{
     ConsensusObserverMessage, ConsensusObserverResponse,
 };
-use aptos_config::network_id::{NetworkId, PeerNetworkId};
+use libra2_config::network_id::{NetworkId, PeerNetworkId};
 use aptos_network::{
     application::interface::NetworkServiceEvents,
     protocols::{

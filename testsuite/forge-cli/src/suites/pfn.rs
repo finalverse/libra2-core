@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::ungrouped::RELIABLE_PROGRESS_THRESHOLD;
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_forge::{
     success_criteria::{LatencyType, SuccessCriteria},
     EmitJobMode, EmitJobRequest, ForgeConfig, OverrideNodeConfigFn,

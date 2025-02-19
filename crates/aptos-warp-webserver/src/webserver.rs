@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_config::config::ApiConfig;
+use libra2_config::config::ApiConfig;
 use std::{convert::Infallible, net::SocketAddr};
 use warp::{Filter, Reply};
 

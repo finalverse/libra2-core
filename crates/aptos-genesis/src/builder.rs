@@ -7,7 +7,7 @@ use crate::{
     GenesisInfo,
 };
 use anyhow::ensure;
-use aptos_config::{
+use libra2_config::{
     config::{
         DiscoveryMethod, Identity, IdentityBlob, InitialSafetyRulesConfig, NetworkConfig,
         NodeConfig, OnDiskStorageConfig, OverrideNodeConfig, PeerRole, PersistableConfig, RoleType,
@@ -591,7 +591,7 @@ impl Builder {
             if let Some(template_fullnode_config) = config.full_node_networks.first() {
                 template_fullnode_config.listen_address.clone()
             } else {
-                aptos_config::utils::get_available_port_in_multiaddr(true)
+                libra2_config::utils::get_available_port_in_multiaddr(true)
             };
 
         let fullnode_network = NetworkConfig {
@@ -605,7 +605,7 @@ impl Builder {
 
         // VFN has the same credentials as the public full node identity
         let vfn_network = NetworkConfig {
-            listen_address: aptos_config::utils::get_available_port_in_multiaddr(true),
+            listen_address: libra2_config::utils::get_available_port_in_multiaddr(true),
             network_id: NetworkId::Vfn,
             max_outbound_connections: 0,
             identity: Identity::from_file(vfn_identity_path),

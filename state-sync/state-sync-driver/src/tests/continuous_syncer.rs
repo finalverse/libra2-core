@@ -18,7 +18,7 @@ use crate::{
     },
     utils::OutputFallbackHandler,
 };
-use aptos_config::config::ContinuousSyncingMode;
+use libra2_config::config::ContinuousSyncingMode;
 use aptos_consensus_notifications::{
     ConsensusSyncDurationNotification, ConsensusSyncTargetNotification,
 };

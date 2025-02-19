@@ -107,7 +107,7 @@ impl TryFrom<PersistedValue> for Batch {
 
 #[cfg(test)]
 mod tests {
-    use aptos_config::config;
+    use libra2_config::config;
 
     #[test]
     fn test_batch_payload_padding() {

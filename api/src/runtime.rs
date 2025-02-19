@@ -19,7 +19,7 @@ use crate::{
     view_function::ViewFunctionApi,
 };
 use anyhow::{anyhow, Context as AnyhowContext};
-use aptos_config::config::{ApiConfig, NodeConfig};
+use libra2_config::config::{ApiConfig, NodeConfig};
 use aptos_logger::info;
 use aptos_mempool::MempoolClientSender;
 use aptos_storage_interface::DbReader;
@@ -300,7 +300,7 @@ mod tests {
     use super::bootstrap;
     use crate::runtime::get_max_runtime_workers;
     use aptos_api_test_context::{new_test_context, TestContext};
-    use aptos_config::config::{ApiConfig, NodeConfig};
+    use libra2_config::config::{ApiConfig, NodeConfig};
     use aptos_types::chain_id::ChainId;
     use std::time::Duration;
 

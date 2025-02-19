@@ -7,7 +7,7 @@ use crate::{
     metrics::{VALIDATOR_SET_UPDATE_FAILED_COUNT, VALIDATOR_SET_UPDATE_SUCCESS_COUNT},
     types::common::{ChainCommonName, EpochedPeerStore},
 };
-use aptos_config::config::{Peer, PeerRole, PeerSet};
+use libra2_config::config::{Peer, PeerRole, PeerSet};
 use libra2_infallible::RwLock;
 use aptos_rest_client::Response;
 use aptos_types::{

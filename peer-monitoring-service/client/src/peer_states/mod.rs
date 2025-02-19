@@ -5,7 +5,7 @@ use crate::{
     metrics, Error, LogEntry, LogEvent, LogSchema, PeerMonitorState, PeerMonitoringServiceClient,
     PeerState,
 };
-use aptos_config::{config::PeerMonitoringServiceConfig, network_id::PeerNetworkId};
+use libra2_config::{config::PeerMonitoringServiceConfig, network_id::PeerNetworkId};
 use aptos_logger::{info, sample, sample::SampleRate};
 use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadata};
 use aptos_peer_monitoring_service_types::PeerMonitoringServiceMessage;

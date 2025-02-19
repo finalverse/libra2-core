@@ -80,7 +80,7 @@ use aptos_types::{
     },
     vm_status::{AbortLocation, StatusCode, VMStatus},
 };
-use aptos_utils::aptos_try;
+use libra2_utils::libra2_try;
 use aptos_vm_environment::environment::AptosEnvironment;
 use aptos_vm_logging::{log_schema::AdapterLogSchema, speculative_error, speculative_log};
 use aptos_vm_types::{
@@ -1129,7 +1129,7 @@ impl AptosVM {
             Some(multisig_payload) => {
                 match multisig_payload {
                     MultisigTransactionPayload::EntryFunction(entry_function) => {
-                        aptos_try!({
+                        libra2_try!({
                             let user_session_change_set = self.execute_multisig_entry_function(
                                 resolver,
                                 module_storage,

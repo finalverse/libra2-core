@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 aptos-backup-service = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-db = { workspace = true }
 aptos-db-indexer-schemas = { workspace = true }
@@ -60,7 +60,7 @@ tokio-util = { workspace = true }
 
 [dev-dependencies]
 aptos-backup-service = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-db = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }
 aptos-proptest-helpers = { workspace = true }

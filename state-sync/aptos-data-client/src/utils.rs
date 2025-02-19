@@ -5,7 +5,7 @@ use crate::{
     error::Error,
     logging::{LogEntry, LogEvent, LogSchema},
 };
-use aptos_config::{config::AptosDataClientConfig, network_id::PeerNetworkId};
+use libra2_config::{config::AptosDataClientConfig, network_id::PeerNetworkId};
 use aptos_logger::{sample, sample::SampleRate, warn};
 use aptos_network::application::{metadata::PeerMetadata, storage::PeersAndMetadata};
 use maplit::hashset;
@@ -292,7 +292,7 @@ fn log_warning_with_sample(log: LogSchema) {
 #[cfg(test)]
 mod tests {
     use crate::utils::{choose_random_peer, choose_random_peers, choose_random_peers_by_weight};
-    use aptos_config::network_id::{NetworkId, PeerNetworkId};
+    use libra2_config::network_id::{NetworkId, PeerNetworkId};
     use aptos_types::PeerId;
     use maplit::hashset;
     use std::collections::{HashMap, HashSet};

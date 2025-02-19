@@ -16,7 +16,7 @@ use crate::{
     logging::NetworkSchema,
     noise::{error::NoiseHandshakeError, stream::NoiseStream},
 };
-use aptos_config::{
+use libra2_config::{
     config::{Peer, PeerRole},
     network_id::{NetworkContext, NetworkId},
 };
@@ -510,7 +510,7 @@ impl NoiseUpgrader {
 mod test {
     use super::*;
     use crate::{testutils, testutils::fake_socket::ReadWriteTestSocket};
-    use aptos_config::config::{Peer, PeerRole, RoleType};
+    use libra2_config::config::{Peer, PeerRole, RoleType};
     use aptos_crypto::{
         test_utils::TEST_SEED,
         traits::Uniform as _,

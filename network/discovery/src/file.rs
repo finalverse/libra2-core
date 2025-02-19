@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::DiscoveryError;
-use aptos_config::config::PeerSet;
+use libra2_config::config::PeerSet;
 #[cfg(test)]
 use aptos_logger::spawn_named;
 use aptos_time_service::{Interval, TimeService, TimeServiceTrait};
@@ -58,7 +58,7 @@ mod tests {
     use super::*;
     use crate::DiscoveryChangeListener;
     use libra2_channels::Receiver;
-    use aptos_config::{
+    use libra2_config::{
         config::{Peer, PeerRole},
         network_id::NetworkContext,
     };

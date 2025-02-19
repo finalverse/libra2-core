@@ -7,7 +7,7 @@ use crate::{
     SwarmExt, Validator, Version,
 };
 use anyhow::{anyhow, bail, Result};
-use aptos_config::{
+use libra2_config::{
     config::{NetworkConfig, NodeConfig, OverrideNodeConfig, PersistableConfig},
     keys::ConfigKey,
     network_id::NetworkId,

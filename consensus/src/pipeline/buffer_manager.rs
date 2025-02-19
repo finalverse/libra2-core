@@ -24,8 +24,8 @@ use crate::{
     },
     state_replication::StateComputerCommitCallBackType,
 };
-use aptos_bounded_executor::BoundedExecutor;
-use aptos_config::config::ConsensusObserverConfig;
+use libra2_bounded_executor::BoundedExecutor;
+use libra2_config::config::ConsensusObserverConfig;
 use aptos_consensus_types::{
     common::{Author, Round},
     pipeline::commit_vote::CommitVote,

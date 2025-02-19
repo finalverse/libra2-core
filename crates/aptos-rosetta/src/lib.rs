@@ -11,7 +11,7 @@ use crate::{
     error::{ApiError, ApiResult},
     types::Currency,
 };
-use aptos_config::config::ApiConfig;
+use libra2_config::config::ApiConfig;
 use aptos_logger::debug;
 use aptos_types::{account_address::AccountAddress, chain_id::ChainId};
 use aptos_warp_webserver::{logger, Error, WebServer};

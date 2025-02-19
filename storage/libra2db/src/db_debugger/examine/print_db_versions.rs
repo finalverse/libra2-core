@@ -17,7 +17,7 @@ use crate::{
     },
     Libra2DB,
 };
-use aptos_config::config::{RocksdbConfigs, StorageDirPaths};
+use libra2_config::config::{RocksdbConfigs, StorageDirPaths};
 use aptos_schemadb::{schema::Schema, DB};
 use aptos_storage_interface::Result;
 use aptos_types::transaction::Version;

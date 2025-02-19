@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_mempool::MempoolClientSender;
 use aptos_storage_interface::DbReader;
 use aptos_types::chain_id::ChainId;

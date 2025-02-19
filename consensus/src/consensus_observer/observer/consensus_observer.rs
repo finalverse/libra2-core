@@ -32,7 +32,7 @@ use crate::{
     pipeline::{execution_client::TExecutionClient, pipeline_builder::PipelineBuilder},
 };
 use libra2_channels::{libra2_channel, libra2_channel::Receiver, message_queues::QueueStyle};
-use aptos_config::{
+use libra2_config::{
     config::{ConsensusObserverConfig, NodeConfig},
     network_id::PeerNetworkId,
 };

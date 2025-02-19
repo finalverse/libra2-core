@@ -9,7 +9,7 @@ use crate::{
     tests::common::{batch_add_signed_txn, TestTransaction},
     QuorumStoreRequest,
 };
-use aptos_config::config::MempoolConfig;
+use libra2_config::config::MempoolConfig;
 use aptos_consensus_types::common::RejectedTransactionSummary;
 use aptos_mempool_notifications::MempoolNotificationSender;
 use aptos_types::{transaction::Transaction, vm_status::DiscardedVMStatus};

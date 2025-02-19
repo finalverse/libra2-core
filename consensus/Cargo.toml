@@ -15,10 +15,10 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 libra2-bitvec = { workspace = true }
-aptos-bounded-executor = { workspace = true }
+libra2-bounded-executor = { workspace = true }
 libra2-channels = { workspace = true }
 aptos-collections = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-consensus-notifications = { workspace = true }
 aptos-consensus-types = { workspace = true }
 aptos-crypto = { workspace = true }
@@ -87,7 +87,7 @@ tokio-stream = { workspace = true }
 
 [dev-dependencies]
 aptos-cached-packages = { workspace = true }
-aptos-config = { workspace = true, features = ["fuzzing"] }
+libra2-config = { workspace = true, features = ["fuzzing"] }
 aptos-consensus-types = { workspace = true, features = ["fuzzing"] }
 aptos-executor-test-helpers = { workspace = true }
 aptos-keygen = { workspace = true }
@@ -108,7 +108,7 @@ tempfile = { workspace = true }
 default = []
 fuzzing = [
     "aptos-consensus-types/fuzzing",
-    "aptos-config/fuzzing",
+    "libra2-config/fuzzing",
     "aptos-crypto/fuzzing",
     "aptos-mempool/fuzzing",
     "aptos-types/fuzzing",

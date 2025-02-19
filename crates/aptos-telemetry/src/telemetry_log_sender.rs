@@ -96,7 +96,7 @@ mod tests {
         sender::TelemetrySender,
         telemetry_log_sender::{TelemetryLogSender, MAX_BYTES},
     };
-    use aptos_config::config::NodeConfig;
+    use libra2_config::config::NodeConfig;
     use aptos_types::chain_id::ChainId;
     use reqwest::Url;
 

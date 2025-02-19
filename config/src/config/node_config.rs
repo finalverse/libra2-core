@@ -27,7 +27,7 @@ use std::{
     path::{Path, PathBuf},
 };
 
-/// The node configuration defines the configuration for a single Aptos
+/// The node configuration defines the configuration for a single Libra2
 /// node (i.e., validator or fullnode). It is composed of module
 /// configurations for each of the modules that the node uses (e.g.,
 /// the API, indexer, mempool, state sync, etc.).

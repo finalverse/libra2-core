@@ -9,9 +9,9 @@ use crate::{
     update_certifier::UpdateCertifier,
 };
 use anyhow::{anyhow, Result};
-use aptos_bounded_executor::BoundedExecutor;
+use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_config::config::SafetyRulesConfig;
+use libra2_config::config::SafetyRulesConfig;
 use aptos_consensus_types::common::Author;
 use aptos_event_notifications::{
     EventNotification, EventNotificationListener, ReconfigNotification,

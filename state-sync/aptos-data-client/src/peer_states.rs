@@ -7,7 +7,7 @@ use crate::{
     logging::{LogEntry, LogEvent, LogSchema},
     metrics,
 };
-use aptos_config::{
+use libra2_config::{
     config::AptosDataClientConfig,
     network_id::{NetworkId, PeerNetworkId},
 };

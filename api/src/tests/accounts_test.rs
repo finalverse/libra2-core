@@ -102,7 +102,7 @@ async fn test_get_module_with_entry_functions() {
 // Unstable due to framework changes
 #[ignore]
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
-async fn test_get_module_aptos_config() {
+async fn test_get_module_libra2_config() {
     let mut context = new_test_context(current_function_name!());
     let address = "0x1";
 

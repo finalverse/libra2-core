@@ -312,7 +312,7 @@ mod test {
     };
     use aptos_api_test_context::new_test_context;
     use aptos_api_types::{LedgerInfo as APILedgerInfo, Transaction, U64};
-    use aptos_config::config::NodeConfig;
+    use libra2_config::config::NodeConfig;
     use diesel::RunQueryDsl;
     use serde_json::json;
 

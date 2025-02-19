@@ -18,7 +18,7 @@ use crate::{
     monitor,
     network::{IncomingDAGRequest, RpcResponder},
 };
-use aptos_bounded_executor::{concurrent_map, BoundedExecutor};
+use libra2_bounded_executor::{concurrent_map, BoundedExecutor};
 use libra2_channels::libra2_channel;
 use aptos_consensus_types::common::{Author, Round};
 use aptos_logger::{debug, error, warn};

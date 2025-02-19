@@ -17,10 +17,10 @@ anyhow = { workspace = true }
 aptos-api-types = { workspace = true }
 aptos-bcs-utils = { workspace = true }
 aptos-build-info = { workspace = true }
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-gas-schedule = { workspace = true }
-aptos-global-constants = { workspace = true }
+libra2-global-constants = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }

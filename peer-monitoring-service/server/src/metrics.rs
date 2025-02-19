@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_config::network_id::NetworkId;
+use libra2_config::network_id::NetworkId;
 use libra2_metrics_core::{
     register_histogram_vec, register_int_counter_vec, HistogramTimer, HistogramVec, IntCounterVec,
 };

@@ -7,7 +7,7 @@ pub mod telemetry;
 pub mod common {
 
     use crate::types::auth::Claims;
-    use aptos_config::config::PeerSet;
+    use libra2_config::config::PeerSet;
     use aptos_types::{chain_id::ChainId, PeerId};
     use serde::{Deserialize, Serialize};
     use std::{collections::HashMap, fmt};

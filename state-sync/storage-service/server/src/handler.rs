@@ -16,7 +16,7 @@ use crate::{
     subscription::{SubscriptionRequest, SubscriptionStreamRequests},
     utils,
 };
-use aptos_config::{config::StorageServiceConfig, network_id::PeerNetworkId};
+use libra2_config::{config::StorageServiceConfig, network_id::PeerNetworkId};
 use aptos_logger::{debug, sample, sample::SampleRate, trace, warn};
 use aptos_network::protocols::wire::handshake::v1::ProtocolId;
 use aptos_storage_service_types::{

@@ -4,7 +4,7 @@
 
 use crate::{consensusdb::ConsensusDB, epoch_manager::LivenessStorageData, error::DbError};
 use anyhow::{format_err, Context, Result};
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_consensus_types::{
     block::Block, quorum_cert::QuorumCert, timeout_2chain::TwoChainTimeoutCertificate, vote::Vote,
     vote_data::VoteData, wrapped_ledger_info::WrappedLedgerInfo,

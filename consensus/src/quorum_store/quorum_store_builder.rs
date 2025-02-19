@@ -25,7 +25,7 @@ use crate::{
     round_manager::VerifiedEvent,
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_config::config::QuorumStoreConfig;
+use libra2_config::config::QuorumStoreConfig;
 use aptos_consensus_types::{
     common::Author, proof_of_store::ProofCache, request_response::GetPayloadCommand,
 };

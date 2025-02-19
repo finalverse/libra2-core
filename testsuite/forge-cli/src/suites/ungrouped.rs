@@ -14,7 +14,7 @@ use super::{
 };
 use anyhow::Result;
 use aptos_cached_packages::aptos_stdlib;
-use aptos_config::config::{ConsensusConfig, MempoolConfig, NodeConfig};
+use libra2_config::config::{ConsensusConfig, MempoolConfig, NodeConfig};
 use aptos_forge::{
     args::TransactionTypeArg,
     emitter::NumAccountsMode,
@@ -408,7 +408,7 @@ fn background_emit_request(high_gas_price: bool) -> EmitJobRequest {
         .num_accounts_mode(NumAccountsMode::TransactionsPerAccount(1))
         .mode(EmitJobMode::ConstTps { tps: 10 });
     if high_gas_price {
-        result = result.gas_price(5 * aptos_global_constants::GAS_UNIT_PRICE);
+        result = result.gas_price(5 * libra2_global_constants::GAS_UNIT_PRICE);
     }
     result
 }

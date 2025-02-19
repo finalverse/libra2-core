@@ -20,7 +20,7 @@ use crate::{
     utils,
     utils::{OutputFallbackHandler, PENDING_DATA_LOG_FREQ_SECS},
 };
-use aptos_config::config::{ConsensusObserverConfig, RoleType, StateSyncDriverConfig};
+use libra2_config::config::{ConsensusObserverConfig, RoleType, StateSyncDriverConfig};
 use aptos_consensus_notifications::{
     ConsensusCommitNotification, ConsensusNotification, ConsensusSyncDurationNotification,
     ConsensusSyncTargetNotification,

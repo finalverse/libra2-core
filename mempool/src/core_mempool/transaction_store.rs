@@ -18,7 +18,7 @@ use crate::{
         MempoolSenderBucket, MultiBucketTimelineIndexIds, TimelineIndexIdentifier,
     },
 };
-use aptos_config::config::MempoolConfig;
+use libra2_config::config::MempoolConfig;
 use aptos_crypto::HashValue;
 use aptos_logger::{prelude::*, Level};
 use aptos_types::{

@@ -6,7 +6,7 @@ use crate::{
     success_criteria::{MetricsThreshold, SuccessCriteria, SystemMetricsThreshold},
     *,
 };
-use aptos_config::config::{NodeConfig, OverrideNodeConfig};
+use libra2_config::config::{NodeConfig, OverrideNodeConfig};
 use aptos_framework::ReleaseBundle;
 use std::{num::NonZeroUsize, sync::Arc};
 

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_cached_packages::aptos_stdlib;
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, Peer, PeerRole, HANDSHAKE_VERSION},
     network_id::NetworkId,
 };
@@ -285,7 +285,7 @@ pub async fn get_on_chain_resource<T: OnChainConfig>(rest_client: &Client) -> T 
 
 #[cfg(test)]
 pub mod swarm_utils {
-    use aptos_config::config::{NodeConfig, SecureBackend, WaypointConfig};
+    use libra2_config::config::{NodeConfig, SecureBackend, WaypointConfig};
     use aptos_secure_storage::{KVStorage, Storage};
     use aptos_types::waypoint::Waypoint;
 
@@ -295,10 +295,10 @@ pub mod swarm_utils {
         let f = |backend: &SecureBackend| {
             let mut storage: Storage = backend.into();
             storage
-                .set(aptos_global_constants::WAYPOINT, waypoint)
+                .set(libra2_global_constants::WAYPOINT, waypoint)
                 .expect("Unable to write waypoint");
             storage
-                .set(aptos_global_constants::GENESIS_WAYPOINT, waypoint)
+                .set(libra2_global_constants::GENESIS_WAYPOINT, waypoint)
                 .expect("Unable to write waypoint");
         };
         let backend = &node_config.consensus.safety_rules.backend;

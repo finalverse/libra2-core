@@ -141,7 +141,7 @@ spec:
         - name: RUST_BACKTRACE
           value: "0"
         volumeMounts:
-        - name: aptos-config
+        - name: libra2-config
           mountPath: /opt/aptos/etc
         - name: aptos-genesis
           mountPath: /opt/aptos/genesis
@@ -213,7 +213,7 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       volumes:
-      - name: aptos-config
+      - name: libra2-config
         configMap:
           name: {{ include "aptos-fullnode.fullname" . }}
       - name: aptos-genesis

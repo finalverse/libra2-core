@@ -39,7 +39,7 @@ spec:
             memory: pfn-memory
         volumeMounts:
         - mountPath: /opt/aptos/etc
-          name: aptos-config
+          name: libra2-config
         - mountPath: /opt/aptos/genesis
           name: genesis-config
         - mountPath: /opt/aptos/data
@@ -47,7 +47,7 @@ spec:
       volumes:
       - configMap:
           name: pfn-name-pfn-configmap
-        name: aptos-config
+        name: libra2-config
       - configMap:
           name: genesis-artifiact-configmap-pangu
         name: genesis-config

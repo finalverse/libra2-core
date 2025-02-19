@@ -9,7 +9,7 @@ use crate::{
 };
 use anyhow::format_err;
 use libra2_channels::{self};
-use aptos_config::network_id::NetworkContext;
+use libra2_config::network_id::NetworkContext;
 use aptos_logger::prelude::*;
 use aptos_netcore::transport::{ConnectionOrigin, Transport};
 use aptos_short_hex_str::AsShortHexStr;

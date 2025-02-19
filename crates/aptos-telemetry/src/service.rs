@@ -9,7 +9,7 @@ use crate::{
     system_information::create_system_info_telemetry_event,
     telemetry_log_sender::TelemetryLogSender, utils::create_build_info_telemetry_event,
 };
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_logger::{
     aptos_logger::RUST_LOG_TELEMETRY, prelude::*, telemetry_log_writer::TelemetryLog,
     LoggerFilterUpdater,

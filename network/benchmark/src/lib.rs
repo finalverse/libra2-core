@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_config::{
+use libra2_config::{
     config::NodeConfig,
     network_id::{NetworkId, PeerNetworkId},
 };

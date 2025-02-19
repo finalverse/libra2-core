@@ -3,7 +3,7 @@
 
 use crate::metrics::{self, increment_log_ingest_failures_by, increment_log_ingest_successes_by};
 use anyhow::{anyhow, Error, Result};
-use aptos_config::config::{NodeConfig, RoleType};
+use libra2_config::config::{NodeConfig, RoleType};
 use aptos_crypto::{
     noise::{self, NoiseConfig},
     x25519,

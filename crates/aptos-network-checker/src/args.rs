@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{bail, Context, Result};
-use aptos_config::network_id::NetworkId;
+use libra2_config::network_id::NetworkId;
 use aptos_types::{chain_id::ChainId, network_address::NetworkAddress};
 use clap::Parser;
 use serde::{Deserialize, Serialize};

@@ -6,7 +6,7 @@ use crate::{
     AptosPublicInfo, ChainInfo, FullNode, NodeExt, Result, SwarmChaos, Validator, Version,
 };
 use anyhow::{anyhow, bail};
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, OverrideNodeConfig},
     network_id::NetworkId,
 };

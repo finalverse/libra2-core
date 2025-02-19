@@ -18,7 +18,7 @@ use crate::{
     ProtocolId,
 };
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
-use aptos_config::{config::HANDSHAKE_VERSION, network_id::NetworkContext};
+use libra2_config::{config::HANDSHAKE_VERSION, network_id::NetworkContext};
 use aptos_crypto::x25519;
 use aptos_logger::prelude::*;
 #[cfg(any(test, feature = "testing", feature = "fuzzing"))]

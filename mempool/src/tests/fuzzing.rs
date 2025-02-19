@@ -7,7 +7,7 @@ use crate::{
     network::{BroadcastPeerPriority, MempoolSyncMsg},
     shared_mempool::{tasks, types::SharedMempool},
 };
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, NodeType},
     network_id::NetworkId,
 };

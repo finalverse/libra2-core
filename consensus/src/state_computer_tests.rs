@@ -7,7 +7,7 @@ use crate::{
     transaction_filter::TransactionFilter, transaction_shuffler::NoOpShuffler,
     txn_notifier::TxnNotifier,
 };
-use aptos_config::config::transaction_filter_type::Filter;
+use libra2_config::config::transaction_filter_type::Filter;
 use aptos_consensus_notifications::{ConsensusNotificationSender, Error};
 use aptos_consensus_types::{block::Block, block_data::BlockData};
 use aptos_crypto::HashValue;

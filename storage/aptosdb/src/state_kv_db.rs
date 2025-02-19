@@ -16,7 +16,7 @@ use crate::{
         ShardedStateKvSchemaBatch,
     },
 };
-use aptos_config::config::{RocksdbConfig, RocksdbConfigs, StorageDirPaths};
+use libra2_config::config::{RocksdbConfig, RocksdbConfigs, StorageDirPaths};
 use aptos_crypto::hash::CryptoHash;
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use aptos_logger::prelude::info;

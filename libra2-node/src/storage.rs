@@ -3,7 +3,7 @@
 
 use anyhow::{anyhow, Result};
 use aptos_backup_service::start_backup_service;
-use aptos_config::{config::NodeConfig, utils::get_genesis_txn};
+use libra2_config::{config::NodeConfig, utils::get_genesis_txn};
 use aptos_db::{fast_sync_storage_wrapper::FastSyncStorageWrapper, AptosDB};
 use aptos_db_indexer::db_indexer::InternalIndexerDB;
 use aptos_executor::db_bootstrapper::maybe_bootstrap;

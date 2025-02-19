@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{error::Error, metrics::increment_network_frame_overflow};
-use aptos_config::config::StorageServiceConfig;
+use libra2_config::config::StorageServiceConfig;
 use aptos_logger::debug;
 use aptos_storage_interface::{AptosDbError, DbReader, Result as StorageResult};
 use aptos_storage_service_types::responses::{

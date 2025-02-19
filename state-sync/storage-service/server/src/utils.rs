@@ -6,7 +6,7 @@ use crate::{
     optimistic_fetch::OptimisticFetchRequest, storage::StorageReaderInterface,
     subscription::SubscriptionStreamRequests,
 };
-use aptos_config::network_id::PeerNetworkId;
+use libra2_config::network_id::PeerNetworkId;
 use libra2_metrics_core::HistogramVec;
 use aptos_storage_service_types::{
     requests::{DataRequest, EpochEndingLedgerInfoRequest, StorageServiceRequest},

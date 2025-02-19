@@ -56,9 +56,9 @@ use crate::{
     util::time_service::TimeService,
 };
 use anyhow::{anyhow, bail, ensure, Context};
-use aptos_bounded_executor::BoundedExecutor;
+use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_config::config::{ConsensusConfig, DagConsensusConfig, ExecutionConfig, NodeConfig};
+use libra2_config::config::{ConsensusConfig, DagConsensusConfig, ExecutionConfig, NodeConfig};
 use aptos_consensus_types::{
     block_retrieval::BlockRetrievalRequest,
     common::{Author, Round},

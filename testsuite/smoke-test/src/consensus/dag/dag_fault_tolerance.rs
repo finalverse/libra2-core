@@ -5,7 +5,7 @@ use crate::{
     consensus::consensus_fault_tolerance::{start_traffic, ActiveTrafficGuard},
     smoke_test_environment::SwarmBuilder,
 };
-use aptos_config::config::DagFetcherConfig;
+use libra2_config::config::DagFetcherConfig;
 use aptos_forge::{
     test_utils::consensus_utils::{
         no_failure_injection, test_consensus_fault_tolerance, FailPointFailureInjection, NodeState,

@@ -13,7 +13,7 @@ use crate::{
     noise::{stream::NoiseStream, AntiReplayTimestamps, HandshakeAuthMode, NoiseUpgrader},
     testutils::fake_socket::{ReadOnlyTestSocket, ReadWriteTestSocket},
 };
-use aptos_config::network_id::NetworkContext;
+use libra2_config::network_id::NetworkContext;
 use aptos_crypto::{noise::NoiseSession, test_utils::TEST_SEED, x25519, Uniform as _};
 use futures::{executor::block_on, future::join};
 use futures_util::io::AsyncReadExt;

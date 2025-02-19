@@ -12,7 +12,7 @@ use crate::consensus_observer::{
     observer::subscription::ConsensusObserverSubscription,
     publisher::consensus_publisher::ConsensusPublisher,
 };
-use aptos_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
+use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use aptos_logger::{error, info, warn};
 use aptos_network::{
     application::{interface::NetworkClient, metadata::PeerMetadata},
@@ -359,7 +359,7 @@ fn supports_consensus_observer(peer_metadata: &PeerMetadata) -> bool {
 mod tests {
     use super::*;
     use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-    use aptos_config::{config::PeerRole, network_id::NetworkId};
+    use libra2_config::{config::PeerRole, network_id::NetworkId};
     use aptos_netcore::transport::ConnectionOrigin;
     use aptos_network::{
         application::storage::PeersAndMetadata,

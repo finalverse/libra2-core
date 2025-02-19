@@ -13,7 +13,7 @@ use crate::{
     middleware::middleware_log,
 };
 use anyhow::{anyhow, Context, Result};
-use aptos_config::keys::ConfigKey;
+use libra2_config::keys::ConfigKey;
 use aptos_faucet_metrics_server::{run_metrics_server, MetricsServerConfig};
 use aptos_logger::info;
 use aptos_sdk::{
@@ -430,7 +430,7 @@ mod test {
 
         // Spawn server.
         let runtime_handle = tokio::runtime::Handle::current();
-        let port = aptos_config::utils::get_available_port();
+        let port = libra2_config::utils::get_available_port();
         let join_handle = runtime_handle.spawn(async move { run_config.run_test(port).await });
 
         // Wait for the server to startup.

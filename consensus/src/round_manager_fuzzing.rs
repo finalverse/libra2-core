@@ -26,7 +26,7 @@ use crate::{
     util::{mock_time_service::SimulatedTimeService, time_service::TimeService},
 };
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
-use aptos_config::{config::ConsensusConfig, network_id::NetworkId};
+use libra2_config::{config::ConsensusConfig, network_id::NetworkId};
 use aptos_consensus_types::{proposal_msg::ProposalMsg, utils::PayloadTxnsSize};
 use libra2_infallible::Mutex;
 use aptos_network::{

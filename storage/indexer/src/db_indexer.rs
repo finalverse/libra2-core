@@ -5,7 +5,7 @@ use crate::{
     event_v2_translator::EventV2TranslationEngine, metrics::TIMER,
     utils::PrefixedStateValueIterator,
 };
-use aptos_config::config::internal_indexer_db_config::InternalIndexerDBConfig;
+use libra2_config::config::internal_indexer_db_config::InternalIndexerDBConfig;
 use aptos_db_indexer_schemas::{
     metadata::{MetadataKey, MetadataValue, StateSnapshotProgress},
     schema::{

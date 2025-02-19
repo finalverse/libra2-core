@@ -102,7 +102,7 @@ impl ShardedDbPathConfig {
     }
 }
 
-/// Port selected RocksDB options for tuning underlying rocksdb instance of AptosDB.
+/// Port selected RocksDB options for tuning underlying rocksdb instance of Libra2DB.
 /// see <https://github.com/facebook/rocksdb/blob/master/include/rocksdb/options.h>
 /// for detailed explanations.
 #[derive(Clone, Copy, Debug, Deserialize, PartialEq, Eq, Serialize)]
@@ -181,7 +181,7 @@ pub struct StorageConfig {
     /// Subdirectory for storage in tests only
     #[serde(skip)]
     data_dir: PathBuf,
-    /// AptosDB persists the state authentication structure off the critical path
+    /// Libra2DB persists the state authentication structure off the critical path
     /// of transaction execution and batch up recent changes for performance. Once
     /// the number of buffered state updates exceeds this config, a dump of all
     /// buffered values into a snapshot is triggered. (Alternatively, if too many

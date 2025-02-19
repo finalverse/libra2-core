@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::ungrouped::changing_working_quorum_test_helper;
-use aptos_config::config::{BootstrappingMode, ContinuousSyncingMode, StateSyncConfig};
+use libra2_config::config::{BootstrappingMode, ContinuousSyncingMode, StateSyncConfig};
 use aptos_forge::{
     args::TransactionTypeArg, success_criteria::SuccessCriteria, EmitJobMode, EmitJobRequest,
     ForgeConfig,

@@ -8,7 +8,7 @@ use crate::tests::{
     new_test_context_with_sharding_and_delayed_internal_indexer,
 };
 use aptos_api_test_context::{assert_json, current_function_name, pretty, TestContext};
-use aptos_config::config::{GasEstimationStaticOverride, NodeConfig};
+use libra2_config::config::{GasEstimationStaticOverride, NodeConfig};
 use aptos_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519Signature},
     multi_ed25519::{MultiEd25519PrivateKey, MultiEd25519PublicKey},

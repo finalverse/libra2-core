@@ -16,7 +16,7 @@
 use crate::counters::{start_serialization_timer, DESERIALIZATION_LABEL, SERIALIZATION_LABEL};
 use anyhow::anyhow;
 use aptos_compression::client::CompressionClient;
-use aptos_config::{config::MAX_APPLICATION_MESSAGE_SIZE, network_id::NetworkId};
+use libra2_config::{config::MAX_APPLICATION_MESSAGE_SIZE, network_id::NetworkId};
 use aptos_types::chain_id::ChainId;
 #[cfg(any(test, feature = "fuzzing"))]
 use proptest_derive::Arbitrary;

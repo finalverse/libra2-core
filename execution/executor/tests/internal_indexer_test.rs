@@ -140,7 +140,7 @@ fn test_db_indexer_data() {
     let total_version = aptos_db.expect_synced_version();
     assert_eq!(total_version, 11);
     let temp_path = TempPath::new();
-    let mut node_config = aptos_config::config::NodeConfig::default();
+    let mut node_config = libra2_config::config::NodeConfig::default();
     node_config.storage.dir = temp_path.path().to_path_buf();
     node_config.indexer_db_config.enable_event = true;
     node_config.indexer_db_config.enable_transaction = true;

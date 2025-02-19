@@ -31,7 +31,7 @@ use crate::{
     util::time_service::{ClockTimeService, TimeService},
 };
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
-use aptos_config::{
+use libra2_config::{
     config::ConsensusConfig,
     network_id::{NetworkId, PeerNetworkId},
 };

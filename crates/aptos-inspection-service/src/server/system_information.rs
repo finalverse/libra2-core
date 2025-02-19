@@ -3,7 +3,7 @@
 
 use crate::server::utils::{CONTENT_TYPE_JSON, CONTENT_TYPE_TEXT};
 use aptos_build_info::build_information;
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use hyper::{Body, StatusCode};
 
 // The message to display when the system information endpoint is disabled

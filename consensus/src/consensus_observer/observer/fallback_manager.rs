@@ -5,7 +5,7 @@ use crate::consensus_observer::common::{
     error::Error,
     logging::{LogEntry, LogSchema},
 };
-use aptos_config::config::ConsensusObserverConfig;
+use libra2_config::config::ConsensusObserverConfig;
 use aptos_logger::warn;
 use aptos_storage_interface::DbReader;
 use aptos_time_service::{TimeService, TimeServiceTrait};

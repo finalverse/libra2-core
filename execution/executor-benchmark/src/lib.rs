@@ -22,7 +22,7 @@ use crate::{
 use aptos_block_executor::counters::{
     self as block_executor_counters, GasType, BLOCK_EXECUTOR_INNER_EXECUTE_BLOCK,
 };
-use aptos_config::config::{NodeConfig, PrunerConfig, NO_OP_STORAGE_PRUNER_CONFIG};
+use libra2_config::config::{NodeConfig, PrunerConfig, NO_OP_STORAGE_PRUNER_CONFIG};
 use aptos_db::AptosDB;
 use aptos_executor::{
     block_executor::BlockExecutor,
@@ -920,7 +920,7 @@ mod tests {
         transaction_generator::TransactionGenerator,
         BenchmarkWorkload,
     };
-    use aptos_config::config::NO_OP_STORAGE_PRUNER_CONFIG;
+    use libra2_config::config::NO_OP_STORAGE_PRUNER_CONFIG;
     use aptos_crypto::HashValue;
     use aptos_executor::block_executor::BlockExecutor;
     use aptos_executor_types::BlockExecutorTrait;

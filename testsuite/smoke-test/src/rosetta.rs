@@ -9,7 +9,7 @@ use aptos::{
     test::{CliTestFramework, INVALID_ACCOUNT},
 };
 use aptos_cached_packages::aptos_stdlib;
-use aptos_config::{config::ApiConfig, utils::get_available_port};
+use libra2_config::{config::ApiConfig, utils::get_available_port};
 use aptos_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519Signature},
     HashValue, PrivateKey,
@@ -17,7 +17,7 @@ use aptos_crypto::{
 use aptos_forge::{AptosPublicInfo, LocalSwarm, Node, NodeExt, Swarm};
 use aptos_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
 use aptos_genesis::builder::InitConfigFn;
-use aptos_global_constants::GAS_UNIT_PRICE;
+use libra2_global_constants::GAS_UNIT_PRICE;
 use aptos_rest_client::{
     aptos_api_types::{TransactionOnChainData, UserTransaction},
     Response, Transaction,

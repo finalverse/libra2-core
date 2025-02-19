@@ -15,7 +15,7 @@ use crate::dag::{
     types::NodeCertificate,
     NodeId, RpcHandler, Vote,
 };
-use aptos_config::config::DagPayloadConfig;
+use libra2_config::config::DagPayloadConfig;
 use aptos_types::{
     aggregate_signature::PartialSignatures,
     epoch_state::EpochState,

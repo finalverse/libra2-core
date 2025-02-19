@@ -14,7 +14,7 @@ use crate::{
         },
     },
 };
-use aptos_config::{
+use libra2_config::{
     config::{NodeConfig, PeerRole},
     network_id::{NetworkId, PeerNetworkId},
 };

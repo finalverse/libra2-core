@@ -20,7 +20,7 @@ use crate::{
     QuorumStoreRequest, QuorumStoreResponse, SubmissionStatus,
 };
 use anyhow::Result;
-use aptos_config::network_id::PeerNetworkId;
+use libra2_config::network_id::PeerNetworkId;
 use aptos_consensus_types::common::RejectedTransactionSummary;
 use aptos_crypto::HashValue;
 use libra2_infallible::{Mutex, RwLock};

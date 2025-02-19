@@ -9,8 +9,8 @@ use crate::{
     network::PeerMonitoringServiceNetworkEvents,
     storage::StorageReaderInterface,
 };
-use aptos_bounded_executor::BoundedExecutor;
-use aptos_config::{
+use libra2_bounded_executor::BoundedExecutor;
+use libra2_config::{
     config::{BaseConfig, NodeConfig},
     network_id::NetworkId,
 };

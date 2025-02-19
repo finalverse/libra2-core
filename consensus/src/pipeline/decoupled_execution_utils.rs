@@ -15,9 +15,9 @@ use crate::{
     },
     state_replication::StateComputer,
 };
-use aptos_bounded_executor::BoundedExecutor;
+use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::libra2_channel::Receiver;
-use aptos_config::config::ConsensusObserverConfig;
+use libra2_config::config::ConsensusObserverConfig;
 use aptos_consensus_types::common::Author;
 use aptos_types::{account_address::AccountAddress, epoch_state::EpochState};
 use futures::channel::mpsc::UnboundedReceiver;

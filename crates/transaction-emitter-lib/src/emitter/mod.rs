@@ -18,7 +18,7 @@ use crate::emitter::{
 };
 use again::RetryPolicy;
 use anyhow::{ensure, format_err, Result};
-use aptos_config::config::DEFAULT_MAX_SUBMIT_TRANSACTION_BATCH_SIZE;
+use libra2_config::config::DEFAULT_MAX_SUBMIT_TRANSACTION_BATCH_SIZE;
 use aptos_crypto::ed25519::Ed25519PrivateKey;
 use aptos_logger::{error, info, sample, sample::SampleRate, warn};
 use aptos_rest_client::{aptos_api_types::AptosErrorCode, error::RestError, Client as RestClient};
@@ -211,8 +211,8 @@ impl Default for EmitJobRequest {
                 mempool_backlog: 3000,
             },
             transaction_mix_per_phase: vec![vec![(TransactionType::default(), 1)]],
-            max_gas_per_txn: aptos_global_constants::MAX_GAS_AMOUNT,
-            gas_price: aptos_global_constants::GAS_UNIT_PRICE,
+            max_gas_per_txn: libra2_global_constants::MAX_GAS_AMOUNT,
+            gas_price: libra2_global_constants::GAS_UNIT_PRICE,
             init_max_gas_per_txn: None,
             init_gas_price_multiplier: 2,
             mint_to_root: false,

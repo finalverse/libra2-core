@@ -6,7 +6,7 @@ use crate::{
     peer_states::{key_value::StateValueInterface, request_tracker::RequestTracker},
     Error, LogEntry, LogEvent, LogSchema,
 };
-use aptos_config::{config::NodeMonitoringConfig, network_id::PeerNetworkId};
+use libra2_config::{config::NodeMonitoringConfig, network_id::PeerNetworkId};
 use libra2_infallible::RwLock;
 use aptos_logger::warn;
 use aptos_network::application::metadata::PeerMetadata;
@@ -144,7 +144,7 @@ impl Display for NodeInfoState {
 #[cfg(test)]
 mod test {
     use crate::peer_states::{key_value::StateValueInterface, node_info::NodeInfoState};
-    use aptos_config::{
+    use libra2_config::{
         config::{NodeMonitoringConfig, PeerRole},
         network_id::PeerNetworkId,
     };

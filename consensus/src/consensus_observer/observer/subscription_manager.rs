@@ -16,7 +16,7 @@ use crate::consensus_observer::{
     observer::{subscription::ConsensusObserverSubscription, subscription_utils},
     publisher::consensus_publisher::ConsensusPublisher,
 };
-use aptos_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
+use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use libra2_infallible::Mutex;
 use aptos_logger::{info, warn};
 use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadata};
@@ -422,7 +422,7 @@ fn update_total_subscription_metrics(active_subscription_peers: &[PeerNetworkId]
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_config::{config::PeerRole, network_id::NetworkId};
+    use libra2_config::{config::PeerRole, network_id::NetworkId};
     use aptos_netcore::transport::ConnectionOrigin;
     use aptos_network::{
         application::storage::PeersAndMetadata,

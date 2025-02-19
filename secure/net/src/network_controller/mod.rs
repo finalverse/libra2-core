@@ -168,7 +168,7 @@ impl NetworkController {
 #[cfg(test)]
 mod tests {
     use crate::network_controller::{Message, NetworkController};
-    use aptos_config::utils;
+    use libra2_config::utils;
     use std::{
         net::{IpAddr, Ipv4Addr, SocketAddr},
         thread,

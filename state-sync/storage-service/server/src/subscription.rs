@@ -11,7 +11,7 @@ use crate::{
     storage::StorageReaderInterface,
     utils, LogEntry, LogSchema,
 };
-use aptos_config::{
+use libra2_config::{
     config::StorageServiceConfig,
     network_id::{NetworkId, PeerNetworkId},
 };

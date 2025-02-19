@@ -6,7 +6,7 @@ use crate::{
     ServiceContext,
 };
 use aptos_api::context::Context;
-use aptos_config::config::NodeConfig;
+use libra2_config::config::NodeConfig;
 use aptos_logger::info;
 use aptos_mempool::MempoolClientSender;
 use aptos_protos::{

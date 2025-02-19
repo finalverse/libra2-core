@@ -13,7 +13,7 @@ use crate::{
     transport::ConnectionMetadata,
     ProtocolId,
 };
-use aptos_config::{
+use libra2_config::{
     config::{PeerRole, RoleType},
     network_id::{NetworkId, PeerNetworkId},
 };

@@ -26,7 +26,7 @@ use aptos_crypto::{
     x25519, PrivateKey, ValidCryptoMaterialStringExt,
 };
 use aptos_framework::chunked_publish::{CHUNK_SIZE_IN_BYTES, LARGE_PACKAGES_MODULE_ADDRESS};
-use aptos_global_constants::adjust_gas_headroom;
+use libra2_global_constants::adjust_gas_headroom;
 use aptos_keygen::KeyGen;
 use aptos_logger::Level;
 use aptos_move_debugger::aptos_debugger::AptosDebugger;
@@ -173,8 +173,8 @@ impl From<RestError> for CliError {
     }
 }
 
-impl From<aptos_config::config::Error> for CliError {
-    fn from(e: aptos_config::config::Error) -> Self {
+impl From<libra2_config::config::Error> for CliError {
+    fn from(e: libra2_config::config::Error) -> Self {
         CliError::UnexpectedError(e.to_string())
     }
 }

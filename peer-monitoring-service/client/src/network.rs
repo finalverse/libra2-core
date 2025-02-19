@@ -5,7 +5,7 @@ use crate::{
     logging::{LogEntry, LogEvent, LogSchema},
     metrics, Error,
 };
-use aptos_config::network_id::PeerNetworkId;
+use libra2_config::network_id::PeerNetworkId;
 use aptos_logger::{trace, warn};
 use aptos_network::application::{
     interface::{NetworkClient, NetworkClientInterface},

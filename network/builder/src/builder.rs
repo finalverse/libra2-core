@@ -10,7 +10,7 @@
 //! authentication -- a network end-point running with remote authentication enabled will
 //! connect to or accept connections from an end-point running in authenticated mode as
 //! long as the latter is in its trusted peers set.
-use aptos_config::{
+use libra2_config::{
     config::{
         DiscoveryMethod, NetworkConfig, Peer, PeerRole, PeerSet, RoleType, CONNECTION_BACKOFF_BASE,
         CONNECTIVITY_CHECK_INTERVAL_MS, MAX_CONNECTION_DELAY_MS, MAX_FRAME_SIZE,

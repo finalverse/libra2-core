@@ -7,7 +7,7 @@ use crate::{
     NetworkLoadTest,
 };
 use anyhow::Error;
-use aptos_config::config::{NodeConfig, OverrideNodeConfig};
+use libra2_config::config::{NodeConfig, OverrideNodeConfig};
 use aptos_forge::{
     NetworkContext, NetworkContextSynchronizer, NetworkTest, OverrideNodeConfigFn, Result, Swarm,
     SwarmChaos, SwarmCpuStress, SwarmNetEm, Test,

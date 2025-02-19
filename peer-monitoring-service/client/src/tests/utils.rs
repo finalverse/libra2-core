@@ -7,7 +7,7 @@ use crate::{
     tests::mock::MockMonitoringServer,
     PeerMonitorState, PeerMonitoringServiceClient, PeerState,
 };
-use aptos_config::{
+use libra2_config::{
     config::{
         LatencyMonitoringConfig, NetworkMonitoringConfig, NodeConfig, NodeMonitoringConfig,
         PeerMonitoringServiceConfig, PeerRole,

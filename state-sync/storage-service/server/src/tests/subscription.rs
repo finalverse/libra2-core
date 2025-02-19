@@ -10,7 +10,7 @@ use crate::{
     subscription::{SubscriptionRequest, SubscriptionStreamRequests},
     tests::{mock, mock::MockClient, utils},
 };
-use aptos_config::{
+use libra2_config::{
     config::{AptosDataClientConfig, StorageServiceConfig},
     network_id::PeerNetworkId,
 };

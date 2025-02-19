@@ -6,7 +6,7 @@ use crate::{
     PrunerManager, TransactionStore,
 };
 use aptos_accumulator::HashReader;
-use aptos_config::config::LedgerPrunerConfig;
+use libra2_config::config::LedgerPrunerConfig;
 use aptos_schemadb::SchemaBatch;
 use aptos_storage_interface::DbReader;
 use aptos_temppath::TempPath;

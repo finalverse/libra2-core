@@ -10,7 +10,7 @@ use crate::{
     priority::PeerPriority,
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_config::{
+use libra2_config::{
     config::{AptosDataClientConfig, BaseConfig, RoleType},
     network_id::{NetworkId, PeerNetworkId},
 };

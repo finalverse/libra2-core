@@ -6,7 +6,7 @@ use crate::{
     internal_indexer_db_service::InternalIndexerDBService, table_info_service::TableInfoService,
 };
 use aptos_api::context::Context;
-use aptos_config::config::{NodeConfig, TableInfoServiceMode};
+use libra2_config::config::{NodeConfig, TableInfoServiceMode};
 use aptos_db_indexer::{
     db_indexer::{DBIndexer, InternalIndexerDB},
     db_ops::open_db,

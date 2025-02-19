@@ -12,7 +12,7 @@ use crate::{
     },
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
+use libra2_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
 use aptos_data_client::{
     global_summary::{GlobalDataSummary, OptimalChunkSizes},
     interface::AptosDataClientInterface,
@@ -513,7 +513,7 @@ mod streaming_service_tests {
         },
     };
     use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-    use aptos_config::config::DataStreamingServiceConfig;
+    use libra2_config::config::DataStreamingServiceConfig;
     use futures::{
         channel::{oneshot, oneshot::Receiver},
         FutureExt, StreamExt,

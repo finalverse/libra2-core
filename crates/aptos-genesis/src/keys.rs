@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_config::{config::IdentityBlob, keys::ConfigKey};
+use libra2_config::{config::IdentityBlob, keys::ConfigKey};
 use aptos_crypto::{
     bls12381,
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},

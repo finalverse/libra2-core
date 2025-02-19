@@ -8,7 +8,7 @@ use crate::{
     tests::mock::{MockClient, MockDatabaseReader},
     StorageServiceServer,
 };
-use aptos_config::{
+use libra2_config::{
     config::StorageServiceConfig,
     network_id::{NetworkId, PeerNetworkId},
 };

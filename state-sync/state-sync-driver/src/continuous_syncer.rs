@@ -12,7 +12,7 @@ use crate::{
     utils,
     utils::{OutputFallbackHandler, SpeculativeStreamState, PENDING_DATA_LOG_FREQ_SECS},
 };
-use aptos_config::config::ContinuousSyncingMode;
+use libra2_config::config::ContinuousSyncingMode;
 use aptos_data_streaming_service::{
     data_notification::{DataNotification, DataPayload, NotificationId},
     data_stream::DataStreamListener,

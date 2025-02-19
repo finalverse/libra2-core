@@ -30,7 +30,7 @@ tokio-stream = { workspace = true }
 warp = { workspace = true }
 
 [dev-dependencies]
-aptos-config = { workspace = true }
+libra2-config = { workspace = true }
 aptos-db = { workspace = true, features = ["fuzzing"] }
 aptos-temppath = { workspace = true }
 reqwest = { workspace = true }

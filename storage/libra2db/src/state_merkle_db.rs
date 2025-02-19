@@ -14,7 +14,7 @@ use crate::{
     utils::truncation_helper::{get_state_merkle_commit_progress, truncate_state_merkle_db_shards},
     versioned_node_cache::VersionedNodeCache,
 };
-use aptos_config::config::{RocksdbConfig, RocksdbConfigs, StorageDirPaths};
+use libra2_config::config::{RocksdbConfig, RocksdbConfigs, StorageDirPaths};
 use aptos_crypto::HashValue;
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use aptos_jellyfish_merkle::{
