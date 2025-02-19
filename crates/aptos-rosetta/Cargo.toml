@@ -24,7 +24,7 @@ aptos-rest-client = { workspace = true }
 aptos-runtimes = { workspace = true }
 aptos-sdk = { workspace = true }
 aptos-types = { workspace = true }
-aptos-warp-webserver = { workspace = true }
+libra2-warp-webserver = { workspace = true }
 bcs = { workspace = true }
 clap = { workspace = true }
 futures = { workspace = true }

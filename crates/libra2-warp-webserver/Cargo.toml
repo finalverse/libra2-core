@@ -1,6 +1,6 @@
 [package]
-name = "aptos-warp-webserver"
-description = "Aptos warp based webserver API"
+name = "libra2-warp-webserver"
+description = "Libra2 warp based webserver API"
 version = "0.1.0"
 
 # Workspace inherited keys

@@ -67,7 +67,7 @@ impl SystemMetrics {
 pub async fn fetch_error_metrics(
     swarm: Arc<tokio::sync::RwLock<Box<dyn Swarm>>>,
 ) -> anyhow::Result<i64> {
-    let error_query = r#"aptos_error_log_count{role=~"validator"}"#;
+    let error_query = r#"libra2_error_log_count{role=~"validator"}"#;
 
     let result = swarm
         .read()

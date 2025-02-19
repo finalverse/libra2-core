@@ -154,7 +154,7 @@ groups:
       "
   # Logging alerts
   - alert: Logs Being Dropped
-    expr: 1 < (rate(aptos_struct_log_queue_error[1m]) + rate(aptos_struct_log_send_error[1m]))
+    expr: 1 < (rate(libra2_struct_log_queue_error[1m]) + rate(libra2_struct_log_send_error[1m]))
     for: 5m
     labels:
       severity: warning
