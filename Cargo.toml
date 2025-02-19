@@ -90,7 +90,7 @@ members = [
     "crates/aptos-openapi",
     "crates/libra2-profiler",
     "crates/aptos-proptest-helpers",
-    "crates/aptos-push-metrics",
+    "crates/libra2-push-metrics",
     "crates/libra2-rate-limiter",
     "crates/aptos-rest-client",
     "crates/libra2-retrier",
@@ -432,7 +432,7 @@ libra2-profiler = { path = "crates/libra2-profiler" }
 aptos-proptest-helpers = { path = "crates/aptos-proptest-helpers" }
 aptos-protos = { path = "protos/rust" }
 libra2-proxy = { path = "crates/proxy" }
-aptos-push-metrics = { path = "crates/aptos-push-metrics" }
+libra2-push-metrics = { path = "crates/libra2-push-metrics" }
 libra2-rate-limiter = { path = "crates/libra2-rate-limiter" }
 aptos-release-builder = { path = "aptos-move/aptos-release-builder" }
 aptos-reliable-broadcast = { path = "crates/reliable-broadcast" }

@@ -18,7 +18,7 @@ aptos-api-types = { workspace = true }
 aptos-cached-packages = { workspace = true }
 aptos-framework = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-push-metrics = { workspace = true }
+libra2-push-metrics = { workspace = true }
 aptos-rest-client = { workspace = true }
 aptos-sdk = { workspace = true }
 aptos-types = { workspace = true }

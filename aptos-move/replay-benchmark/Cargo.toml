@@ -19,7 +19,7 @@ aptos-framework = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 libra2-logger = { workspace = true }
 aptos-move-debugger = { workspace = true }
-aptos-push-metrics = { workspace = true }
+libra2-push-metrics = { workspace = true }
 aptos-rest-client = { workspace = true }
 aptos-types = { workspace = true }
 aptos-vm = { workspace = true }

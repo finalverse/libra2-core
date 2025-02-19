@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_metrics_core::{register_int_counter_vec, IntCounterVec};
-use aptos_push_metrics::{
+use libra2_push_metrics::{
     exponential_buckets, register_histogram_vec, register_int_gauge, HistogramVec, IntGauge,
 };
 use once_cell::sync::Lazy;

@@ -1,6 +1,6 @@
 [package]
-name = "aptos-push-metrics"
-description = "Aptos push metrics"
+name = "libra2-push-metrics"
+description = "Libra2 push metrics"
 version = "0.1.0"
 
 # Workspace inherited keys

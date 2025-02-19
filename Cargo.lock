@@ -547,12 +547,12 @@ dependencies = [
  "aptos-api-types",
  "aptos-cached-packages",
  "aptos-framework",
- "aptos-push-metrics",
  "aptos-rest-client",
  "aptos-sdk",
  "aptos-types",
  "futures",
  "libra2-logger",
+ "libra2-push-metrics",
  "move-core-types",
  "once_cell",
  "prometheus",
@@ -607,7 +607,6 @@ dependencies = [
  "aptos-indexer-grpc-table-info",
  "aptos-jellyfish-merkle",
  "aptos-proptest-helpers",
- "aptos-push-metrics",
  "aptos-storage-interface",
  "aptos-types",
  "aptos-vm",
@@ -623,6 +622,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-push-metrics",
  "libra2-temppath",
  "move-binary-format",
  "move-bytecode-verifier",
@@ -1188,10 +1188,10 @@ dependencies = [
  "aptos-consensus",
  "aptos-db-tool",
  "aptos-move-debugger",
- "aptos-push-metrics",
  "clap 4.5.21",
  "jemallocator",
  "libra2-logger",
+ "libra2-push-metrics",
  "tokio",
 ]
 
@@ -1300,7 +1300,6 @@ dependencies = [
  "aptos-genesis",
  "aptos-jellyfish-merkle",
  "aptos-mvhashmap",
- "aptos-push-metrics",
  "aptos-sdk",
  "aptos-storage-interface",
  "aptos-transaction-generator-lib",
@@ -1325,6 +1324,7 @@ dependencies = [
  "libra2-metrics-core",
  "libra2-node-resource-metrics",
  "libra2-profiler",
+ "libra2-push-metrics",
  "libra2-temppath",
  "move-core-types",
  "move-vm-types",
@@ -1345,7 +1345,6 @@ dependencies = [
  "aptos-block-executor",
  "aptos-block-partitioner",
  "aptos-language-e2e-tests",
- "aptos-push-metrics",
  "aptos-secure-net",
  "aptos-storage-interface",
  "aptos-types",
@@ -1361,6 +1360,7 @@ dependencies = [
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-node-resource-metrics",
+ "libra2-push-metrics",
  "num_cpus",
  "once_cell",
  "rayon",
@@ -3159,17 +3159,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-push-metrics"
-version = "0.1.0"
-dependencies = [
- "libra2-logger",
- "libra2-metrics-core",
- "rand 0.7.3",
- "ureq",
- "url",
-]
-
-[[package]]
 name = "aptos-release-builder"
 version = "0.1.0"
 dependencies = [
@@ -3250,7 +3239,6 @@ dependencies = [
  "aptos-framework",
  "aptos-gas-schedule",
  "aptos-move-debugger",
- "aptos-push-metrics",
  "aptos-rest-client",
  "aptos-types",
  "aptos-vm",
@@ -3260,6 +3248,7 @@ dependencies = [
  "clap 4.5.21",
  "colored",
  "libra2-logger",
+ "libra2-push-metrics",
  "move-core-types",
  "move-vm-runtime",
  "parking_lot 0.12.1",
@@ -3831,7 +3820,6 @@ dependencies = [
  "aptos-block-partitioner",
  "aptos-crypto",
  "aptos-language-e2e-tests",
- "aptos-push-metrics",
  "aptos-types",
  "aptos-vm",
  "aptos-vm-logging",
@@ -3842,6 +3830,7 @@ dependencies = [
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-node-resource-metrics",
+ "libra2-push-metrics",
  "num_cpus",
  "proptest",
 ]
@@ -10727,6 +10716,17 @@ name = "libra2-proxy"
 version = "0.1.0"
 dependencies = [
  "ipnet",
+]
+
+[[package]]
+name = "libra2-push-metrics"
+version = "0.1.0"
+dependencies = [
+ "libra2-logger",
+ "libra2-metrics-core",
+ "rand 0.7.3",
+ "ureq",
+ "url",
 ]
 
 [[package]]

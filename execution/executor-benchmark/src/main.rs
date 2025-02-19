@@ -33,7 +33,7 @@ use aptos_experimental_ptx_executor::PtxBlockExecutor;
 use aptos_experimental_runtimes::thread_manager::{ThreadConfigStrategy, ThreadManagerBuilder};
 use libra2_metrics_core::{register_int_gauge, IntGauge};
 use libra2_profiler::{ProfilerConfig, ProfilerHandler};
-use aptos_push_metrics::MetricsPusher;
+use libra2_push_metrics::MetricsPusher;
 use aptos_transaction_generator_lib::WorkflowProgress;
 use aptos_transaction_workloads_lib::args::TransactionTypeArg;
 use aptos_types::on_chain_config::{FeatureFlag, Features};

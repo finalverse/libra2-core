@@ -16,7 +16,7 @@ mod macros;
 use crate::utils::{NetworkName, TestName};
 use anyhow::Result;
 use libra2_logger::{info, Level, Logger};
-use aptos_push_metrics::MetricsPusher;
+use libra2_push_metrics::MetricsPusher;
 use consts::{NETWORK_NAME, NUM_THREADS, STACK_SIZE};
 use futures::future::join_all;
 use std::time::{SystemTime, UNIX_EPOCH};

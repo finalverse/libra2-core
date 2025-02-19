@@ -3,7 +3,7 @@
 
 use libra2_logger::{Level, Logger};
 use aptos_move_debugger::aptos_debugger::AptosDebugger;
-use aptos_push_metrics::MetricsPusher;
+use libra2_push_metrics::MetricsPusher;
 use aptos_rest_client::{AptosBaseUrl, Client};
 pub use benchmark::BenchmarkCommand;
 use clap::Parser;

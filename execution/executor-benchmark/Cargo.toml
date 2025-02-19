@@ -31,7 +31,7 @@ libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-mvhashmap = { workspace = true }
 libra2-node-resource-metrics = { workspace = true }
-aptos-push-metrics =  { workspace = true }
+libra2-push-metrics =  { workspace = true }
 aptos-sdk = { workspace = true }
 aptos-storage-interface = { workspace = true }
 aptos-transaction-generator-lib = { workspace = true }

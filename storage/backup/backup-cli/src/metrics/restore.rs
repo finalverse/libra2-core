@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_push_metrics::{register_int_gauge, IntGauge};
+use libra2_push_metrics::{register_int_gauge, IntGauge};
 use once_cell::sync::Lazy;
 
 pub static COORDINATOR_TARGET_VERSION: Lazy<IntGauge> = Lazy::new(|| {
