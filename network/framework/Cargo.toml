@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-bitvec = { workspace = true }
+libra2-bitvec = { workspace = true }
 aptos-channels = { workspace = true }
 aptos-compression = { workspace = true }
 aptos-config = { workspace = true }
@@ -60,7 +60,7 @@ tokio-stream = { workspace = true }
 tokio-util = { workspace = true }
 
 [dev-dependencies]
-aptos-bitvec = { workspace = true, features = ["fuzzing"] }
+libra2-bitvec = { workspace = true, features = ["fuzzing"] }
 aptos-config = { workspace = true, features = ["testing"] }
 aptos-memsocket = { workspace = true }
 aptos-netcore = { workspace = true, features = ["testing"] }
@@ -73,7 +73,7 @@ rand_core = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["aptos-bitvec/fuzzing", "aptos-config/fuzzing", "aptos-crypto/fuzzing", "aptos-types/fuzzing", "aptos-proptest-helpers", "aptos-time-service/testing", "aptos-types/fuzzing", "aptos-memsocket/testing", "aptos-netcore/fuzzing", "proptest", "proptest-derive"]
+fuzzing = ["libra2-bitvec/fuzzing", "aptos-config/fuzzing", "aptos-crypto/fuzzing", "aptos-types/fuzzing", "aptos-proptest-helpers", "aptos-time-service/testing", "aptos-types/fuzzing", "aptos-memsocket/testing", "aptos-netcore/fuzzing", "proptest", "proptest-derive"]
 testing = ["aptos-config/testing", "aptos-time-service/testing", "aptos-memsocket/testing", "aptos-netcore/testing"]
 
 [package.metadata.cargo-machete]

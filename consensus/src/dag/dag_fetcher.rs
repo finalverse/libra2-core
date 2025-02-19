@@ -10,7 +10,7 @@ use crate::dag::{
     RpcHandler, RpcWithFallback,
 };
 use anyhow::{bail, ensure};
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_config::config::DagFetcherConfig;
 use aptos_consensus_types::common::{Author, Round};
 use aptos_logger::{debug, error, info};

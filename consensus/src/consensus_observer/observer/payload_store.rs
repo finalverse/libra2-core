@@ -278,7 +278,7 @@ impl BlockPayloadStore {
 mod test {
     use super::*;
     use crate::consensus_observer::network::observer_message::BlockTransactionPayload;
-    use aptos_bitvec::BitVec;
+    use libra2_bitvec::BitVec;
     use aptos_consensus_types::{
         block::Block,
         block_data::{BlockData, BlockType},

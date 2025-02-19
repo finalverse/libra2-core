@@ -8,7 +8,7 @@ use crate::{
     },
     payload_manager::TPayloadManager,
 };
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_consensus_types::{
     block::Block,
     common::{Author, Payload, Round},

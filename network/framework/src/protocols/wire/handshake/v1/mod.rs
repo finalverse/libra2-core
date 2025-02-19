@@ -287,7 +287,7 @@ impl fmt::Display for ProtocolId {
 /// use on a new AptosNet connection.
 #[derive(Clone, Debug, Default, Deserialize, Eq, PartialEq, Serialize)]
 #[cfg_attr(any(test, feature = "fuzzing"), derive(Arbitrary))]
-pub struct ProtocolIdSet(aptos_bitvec::BitVec);
+pub struct ProtocolIdSet(libra2_bitvec::BitVec);
 
 impl ProtocolIdSet {
     pub fn empty() -> Self {

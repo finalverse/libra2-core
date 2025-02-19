@@ -13,7 +13,7 @@ use crate::{
         proposer_election::ProposerElection,
     },
 };
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_collections::BoundedVecDeque;
 use aptos_consensus_types::common::{Author, Round};
 use aptos_crypto::HashValue;

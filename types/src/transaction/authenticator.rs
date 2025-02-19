@@ -372,7 +372,7 @@ impl TransactionAuthenticator {
                         .iter()
                         .map(|sig| AnySignature::ed25519(sig.clone()))
                         .collect();
-                    let signatures_bitmap = aptos_bitvec::BitVec::from(signature.bitmap().to_vec());
+                    let signatures_bitmap = libra2_bitvec::BitVec::from(signature.bitmap().to_vec());
                     let authenticator = MultiKeyAuthenticator {
                         public_keys,
                         signatures,
@@ -874,7 +874,7 @@ impl fmt::Display for AuthenticationKey {
 pub struct MultiKeyAuthenticator {
     public_keys: MultiKey,
     signatures: Vec<AnySignature>,
-    signatures_bitmap: aptos_bitvec::BitVec,
+    signatures_bitmap: libra2_bitvec::BitVec,
 }
 
 impl MultiKeyAuthenticator {
@@ -885,7 +885,7 @@ impl MultiKeyAuthenticator {
             public_keys.len(),
         );
 
-        let mut signatures_bitmap = aptos_bitvec::BitVec::with_num_bits(public_keys.len() as u16);
+        let mut signatures_bitmap = libra2_bitvec::BitVec::with_num_bits(public_keys.len() as u16);
         let mut any_signatures = vec![];
 
         for (idx, signature) in signatures {

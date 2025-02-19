@@ -9,7 +9,7 @@
 //! Votes are automatically dropped when the structure goes out of scope.
 
 use crate::counters;
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_consensus_types::{
     common::Author,
     quorum_cert::QuorumCert,

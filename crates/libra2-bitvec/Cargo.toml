@@ -1,6 +1,6 @@
 [package]
-name = "aptos-bitvec"
-description = "Aptos safe bitvec implementation"
+name = "libra2-bitvec"
+description = "Libra2 safe bitvec implementation"
 version = "0.1.0"
 
 # Workspace inherited keys

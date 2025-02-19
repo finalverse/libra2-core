@@ -7,7 +7,7 @@ use crate::{
     types::{JWKConsensusMsg, ObservedUpdate, ObservedUpdateRequest, ObservedUpdateResponse},
     update_certifier::TUpdateCertifier,
 };
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_channels::aptos_channel;
 use aptos_crypto::{
     bls12381::{PrivateKey, PublicKey, Signature},

@@ -31,7 +31,7 @@ tonic-reflection = { workspace = true }
 
 aptos-api = { workspace = true }
 aptos-api-types = { workspace = true }
-aptos-bitvec = { workspace = true }
+libra2-bitvec = { workspace = true }
 aptos-config = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }
 aptos-logger = { workspace = true }

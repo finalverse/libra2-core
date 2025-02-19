@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::tests::{mock, mock::MockClient, utils};
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_config::config::StorageServiceConfig;
 use aptos_crypto::HashValue;
 use aptos_storage_service_types::{

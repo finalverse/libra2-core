@@ -11,7 +11,7 @@ use crate::{
     quorum_cert::QuorumCert,
     vote_data::VoteData,
 };
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_crypto::hash::HashValue;
 use aptos_types::{
     account_address::AccountAddress,

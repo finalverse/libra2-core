@@ -42,7 +42,7 @@ const MAX_BUCKETS: usize = 8192;
 ///
 /// # Examples:
 /// ```
-/// use aptos_bitvec::BitVec;
+/// use libra2_bitvec::BitVec;
 /// use std::ops::BitAnd;
 ///
 /// let mut bv = BitVec::default();

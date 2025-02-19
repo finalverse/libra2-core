@@ -9,7 +9,7 @@ use crate::{
     ledger_info::SignatureWithStatus, on_chain_config::ValidatorSet,
 };
 use anyhow::{ensure, Result};
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_crypto::{
     bls12381,
     bls12381::{bls12381_keys, PublicKey},

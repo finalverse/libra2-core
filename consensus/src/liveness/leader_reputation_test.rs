@@ -11,7 +11,7 @@ use crate::liveness::{
     },
     proposer_election::{choose_index, ProposerElection},
 };
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_consensus_types::common::{Author, Round};
 use aptos_crypto::{bls12381, HashValue};
 use libra2_infallible::Mutex;

@@ -11,7 +11,7 @@ use aptos_api_types::{
     SingleKeySignature, Transaction, TransactionInfo, TransactionPayload, TransactionSignature,
     WriteSet, WriteSetChange,
 };
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_logger::warn;
 use aptos_protos::{
     transaction::v1::{

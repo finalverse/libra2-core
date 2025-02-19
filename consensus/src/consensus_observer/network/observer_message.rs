@@ -942,7 +942,7 @@ fn verify_batch(
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_bitvec::BitVec;
+    use libra2_bitvec::BitVec;
     use aptos_consensus_types::{
         block::Block,
         block_data::{BlockData, BlockType},

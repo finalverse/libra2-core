@@ -18,7 +18,7 @@ use crate::{
     util::time_service::TimeService,
 };
 use anyhow::{bail, ensure, format_err, Context};
-use aptos_bitvec::BitVec;
+use libra2_bitvec::BitVec;
 use aptos_consensus_types::{
     block::Block,
     common::Round,

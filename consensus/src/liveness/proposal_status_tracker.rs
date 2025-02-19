@@ -164,7 +164,7 @@ impl TOptQSPullParamsProvider for OptQSPullParamsProvider {
 mod tests {
     use super::ExponentialWindowFailureTracker;
     use crate::liveness::round_state::NewRoundReason;
-    use aptos_bitvec::BitVec;
+    use libra2_bitvec::BitVec;
     use aptos_consensus_types::round_timeout::RoundTimeoutReason;
     use aptos_types::validator_verifier::random_validator_verifier;
 
