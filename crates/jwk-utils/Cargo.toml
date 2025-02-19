@@ -1,5 +1,5 @@
 [package]
-name = "aptos-jwk-utils"
+name = "libra2-jwk-utils"
 description = "JWK utils"
 version = "0.1.0"
 
