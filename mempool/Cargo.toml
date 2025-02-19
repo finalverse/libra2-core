@@ -51,7 +51,7 @@ tokio-stream = { workspace = true }
 [dev-dependencies]
 libra2-compression = { workspace = true }
 libra2-config = { workspace = true }
-aptos-id-generator = { workspace = true }
+libra2-id-generator = { workspace = true }
 aptos-network = { workspace = true, features = ["fuzzing"] }
 aptos-storage-interface = { workspace = true, features = ["fuzzing"] }
 libra2-time-service = { workspace = true, features = ["testing"] }

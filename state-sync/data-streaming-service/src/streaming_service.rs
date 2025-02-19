@@ -17,7 +17,7 @@ use aptos_data_client::{
     global_summary::{GlobalDataSummary, OptimalChunkSizes},
     interface::AptosDataClientInterface,
 };
-use aptos_id_generator::{IdGenerator, U64IdGenerator};
+use libra2_id_generator::{IdGenerator, U64IdGenerator};
 use aptos_logger::prelude::*;
 use libra2_time_service::TimeService;
 use arc_swap::ArcSwap;

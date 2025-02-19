@@ -16,7 +16,7 @@ use libra2_config::{
     config::{NodeConfig, PeerMonitoringServiceConfig},
     network_id::PeerNetworkId,
 };
-use aptos_id_generator::{IdGenerator, U64IdGenerator};
+use libra2_id_generator::{IdGenerator, U64IdGenerator};
 use libra2_infallible::RwLock;
 use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadata};
 use aptos_peer_monitoring_service_types::{

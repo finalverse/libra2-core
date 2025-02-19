@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
-aptos-id-generator = { workspace = true }
+libra2-id-generator = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }

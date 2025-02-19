@@ -1002,7 +1002,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-crypto",
- "aptos-id-generator",
  "aptos-logger",
  "aptos-netcore",
  "aptos-network",
@@ -1021,6 +1020,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-channels",
  "libra2-config",
+ "libra2-id-generator",
  "libra2-infallible",
  "libra2-metrics-core",
  "libra2-time-service",
@@ -1039,7 +1039,6 @@ version = "0.1.0"
 dependencies = [
  "aptos-crypto",
  "aptos-data-client",
- "aptos-id-generator",
  "aptos-logger",
  "aptos-storage-service-types",
  "aptos-types",
@@ -1050,6 +1049,7 @@ dependencies = [
  "futures",
  "libra2-channels",
  "libra2-config",
+ "libra2-id-generator",
  "libra2-infallible",
  "libra2-metrics-core",
  "libra2-time-service",
@@ -1224,7 +1224,6 @@ dependencies = [
  "aptos-crypto",
  "aptos-db",
  "aptos-executor-test-helpers",
- "aptos-id-generator",
  "aptos-storage-interface",
  "aptos-types",
  "aptos-vm",
@@ -1233,6 +1232,7 @@ dependencies = [
  "claims",
  "futures",
  "libra2-channels",
+ "libra2-id-generator",
  "libra2-infallible",
  "libra2-temppath",
  "move-binary-format",
@@ -1857,10 +1857,6 @@ dependencies = [
  "thiserror",
  "ureq",
 ]
-
-[[package]]
-name = "aptos-id-generator"
-version = "0.1.0"
 
 [[package]]
 name = "aptos-indexer"
@@ -2574,7 +2570,6 @@ dependencies = [
  "aptos-consensus-types",
  "aptos-crypto",
  "aptos-event-notifications",
- "aptos-id-generator",
  "aptos-logger",
  "aptos-mempool-notifications",
  "aptos-netcore",
@@ -2593,6 +2588,7 @@ dependencies = [
  "libra2-channels",
  "libra2-compression",
  "libra2-config",
+ "libra2-id-generator",
  "libra2-infallible",
  "libra2-metrics-core",
  "libra2-short-hex-str",
@@ -2782,7 +2778,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-crypto",
- "aptos-id-generator",
  "aptos-logger",
  "aptos-memsocket",
  "aptos-netcore",
@@ -2801,6 +2796,7 @@ dependencies = [
  "libra2-channels",
  "libra2-compression",
  "libra2-config",
+ "libra2-id-generator",
  "libra2-infallible",
  "libra2-metrics-core",
  "libra2-num-variants",
@@ -3085,7 +3081,6 @@ dependencies = [
 name = "aptos-peer-monitoring-service-client"
 version = "0.1.0"
 dependencies = [
- "aptos-id-generator",
  "aptos-logger",
  "aptos-netcore",
  "aptos-network",
@@ -3098,6 +3093,7 @@ dependencies = [
  "libra2-build-info",
  "libra2-channels",
  "libra2-config",
+ "libra2-id-generator",
  "libra2-infallible",
  "libra2-metrics-core",
  "libra2-time-service",
@@ -10576,6 +10572,10 @@ dependencies = [
 
 [[package]]
 name = "libra2-global-constants"
+version = "0.1.0"
+
+[[package]]
+name = "libra2-id-generator"
 version = "0.1.0"
 
 [[package]]

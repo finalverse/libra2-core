@@ -32,7 +32,7 @@ use aptos_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary},
     interface::ResponsePayload,
 };
-use aptos_id_generator::{IdGenerator, U64IdGenerator};
+use libra2_id_generator::{IdGenerator, U64IdGenerator};
 use aptos_logger::prelude::*;
 use aptos_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
 use enum_dispatch::enum_dispatch;

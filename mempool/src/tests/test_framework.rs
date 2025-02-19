@@ -17,7 +17,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use aptos_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
-use aptos_id_generator::U32IdGenerator;
+use libra2_id_generator::U32IdGenerator;
 use libra2_infallible::{Mutex, RwLock};
 use aptos_mempool_notifications::MempoolNotifier;
 use aptos_network::{

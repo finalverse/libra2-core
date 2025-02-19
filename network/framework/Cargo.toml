@@ -19,7 +19,7 @@ libra2-channels = { workspace = true }
 libra2-compression = { workspace = true }
 libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
-aptos-id-generator = { workspace = true }
+libra2-id-generator = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-memsocket = { workspace = true, optional = true }

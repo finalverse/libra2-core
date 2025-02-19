@@ -31,7 +31,7 @@ use aptos_data_client::{
         SubscriptionRequestMetadata,
     },
 };
-use aptos_id_generator::{IdGenerator, U64IdGenerator};
+use libra2_id_generator::{IdGenerator, U64IdGenerator};
 use libra2_infallible::Mutex;
 use aptos_logger::prelude::*;
 use libra2_time_service::{TimeService, TimeServiceTrait};

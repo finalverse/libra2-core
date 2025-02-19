@@ -38,7 +38,7 @@ use aptos_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary, OptimalChunkSizes},
     interface::{Response, ResponseContext, ResponsePayload},
 };
-use aptos_id_generator::U64IdGenerator;
+use libra2_id_generator::U64IdGenerator;
 use libra2_infallible::Mutex;
 use aptos_storage_service_types::responses::CompleteDataRange;
 use libra2_time_service::{TimeService, TimeServiceTrait};

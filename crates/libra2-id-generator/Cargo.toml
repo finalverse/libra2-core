@@ -1,6 +1,6 @@
 [package]
-name = "aptos-id-generator"
-description = "Aptos id-generator. A common id generator for Aptos"
+name = "libra2-id-generator"
+description = "Libra2 id-generator. A common id generator for Libra2"
 version = "0.1.0"
 
 # Workspace inherited keys
