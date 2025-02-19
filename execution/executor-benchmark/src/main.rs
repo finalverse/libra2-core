@@ -576,7 +576,7 @@ fn main() {
         .build_global()
         .expect("Failed to build rayon global thread pool.");
 
-    aptos_node_resource_metrics::register_node_metrics_collector();
+    libra2_node_resource_metrics::register_node_metrics_collector();
     let _mp = MetricsPusher::start_for_local_run("executor-benchmark");
 
     let execution_threads = opt.execution_threads();

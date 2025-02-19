@@ -1476,7 +1476,6 @@ dependencies = [
  "aptos-jellyfish-merkle",
  "aptos-logger",
  "aptos-mvhashmap",
- "aptos-node-resource-metrics",
  "aptos-profiler 0.1.0",
  "aptos-push-metrics",
  "aptos-sdk",
@@ -1500,6 +1499,7 @@ dependencies = [
  "itertools 0.13.0",
  "jemallocator",
  "libra2-metrics-core",
+ "libra2-node-resource-metrics",
  "move-core-types",
  "move-vm-types",
  "num_cpus",
@@ -1521,7 +1521,6 @@ dependencies = [
  "aptos-config",
  "aptos-language-e2e-tests",
  "aptos-logger",
- "aptos-node-resource-metrics",
  "aptos-push-metrics",
  "aptos-secure-net",
  "aptos-storage-interface",
@@ -1535,6 +1534,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-infallible",
  "libra2-metrics-core",
+ "libra2-node-resource-metrics",
  "num_cpus",
  "once_cell",
  "rayon",
@@ -3248,21 +3248,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-node-resource-metrics"
-version = "0.1.0"
-dependencies = [
- "aptos-build-info",
- "aptos-logger",
- "cfg-if",
- "libra2-infallible",
- "libra2-metrics-core",
- "once_cell",
- "procfs",
- "prometheus",
- "sysinfo",
-]
-
-[[package]]
 name = "aptos-num-variants"
 version = "0.1.0"
 dependencies = [
@@ -4075,7 +4060,6 @@ dependencies = [
  "aptos-logger",
  "aptos-mempool",
  "aptos-network",
- "aptos-node-resource-metrics",
  "aptos-runtimes",
  "aptos-state-sync-driver",
  "aptos-telemetry-service",
@@ -4085,6 +4069,7 @@ dependencies = [
  "httpmock",
  "libra2-infallible",
  "libra2-metrics-core",
+ "libra2-node-resource-metrics",
  "once_cell",
  "prometheus",
  "rand 0.7.3",
@@ -4202,7 +4187,6 @@ dependencies = [
  "aptos-crypto",
  "aptos-language-e2e-tests",
  "aptos-logger",
- "aptos-node-resource-metrics",
  "aptos-push-metrics",
  "aptos-types",
  "aptos-vm",
@@ -4212,6 +4196,7 @@ dependencies = [
  "criterion-cpu-time",
  "libra2-bitvec",
  "libra2-metrics-core",
+ "libra2-node-resource-metrics",
  "num_cpus",
  "proptest",
 ]
@@ -10818,6 +10803,21 @@ dependencies = [
  "serde_yaml 0.8.26",
  "tokio",
  "url",
+]
+
+[[package]]
+name = "libra2-node-resource-metrics"
+version = "0.1.0"
+dependencies = [
+ "aptos-build-info",
+ "aptos-logger",
+ "cfg-if",
+ "libra2-infallible",
+ "libra2-metrics-core",
+ "once_cell",
+ "procfs",
+ "prometheus",
+ "sysinfo",
 ]
 
 [[package]]

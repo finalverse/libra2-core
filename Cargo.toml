@@ -418,7 +418,7 @@ aptos-node = { path = "aptos-node" }
 libra2-node = { path = "libra2-node" }
 aptos-node-checker = { path = "ecosystem/node-checker" }
 aptos-node-identity = { path = "crates/aptos-node-identity" }
-aptos-node-resource-metrics = { path = "crates/node-resource-metrics" }
+libra2-node-resource-metrics = { path = "crates/node-resource-metrics" }
 aptos-num-variants = { path = "crates/num-variants" }
 aptos-openapi = { path = "crates/aptos-openapi" }
 aptos-package-builder = { path = "aptos-move/package-builder" }

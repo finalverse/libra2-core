@@ -1,5 +1,5 @@
 [package]
-name = "aptos-node-resource-metrics"
+name = "libra2-node-resource-metrics"
 description = "System resource metrics collector"
 version = "0.1.0"
 
