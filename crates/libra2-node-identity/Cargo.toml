@@ -1,5 +1,5 @@
 [package]
-name = "aptos-node-identity"
+name = "libra2-node-identity"
 description = "Provides identifying information about the running node"
 version = "0.1.0"
 

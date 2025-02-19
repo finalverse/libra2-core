@@ -2565,7 +2565,6 @@ name = "aptos-logger"
 version = "0.1.0"
 dependencies = [
  "aptos-log-derive",
- "aptos-node-identity",
  "backtrace",
  "chrono",
  "console-subscriber",
@@ -2573,6 +2572,7 @@ dependencies = [
  "futures",
  "hostname",
  "libra2-infallible",
+ "libra2-node-identity",
  "once_cell",
  "pretty_assertions",
  "prometheus",
@@ -3005,7 +3005,6 @@ dependencies = [
  "aptos-network",
  "aptos-network-benchmark",
  "aptos-network-builder",
- "aptos-node-identity",
  "aptos-peer-monitoring-service-client",
  "aptos-peer-monitoring-service-server",
  "aptos-peer-monitoring-service-types",
@@ -3035,6 +3034,7 @@ dependencies = [
  "libra2-crash-handler",
  "libra2-dkg-runtime",
  "libra2-infallible",
+ "libra2-node-identity",
  "num_cpus",
  "rand 0.7.3",
  "rayon",
@@ -3074,16 +3074,6 @@ dependencies = [
  "thiserror",
  "tokio",
  "url",
-]
-
-[[package]]
-name = "aptos-node-identity"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-types",
- "claims",
- "once_cell",
 ]
 
 [[package]]
@@ -10731,7 +10721,6 @@ dependencies = [
  "aptos-network",
  "aptos-network-benchmark",
  "aptos-network-builder",
- "aptos-node-identity",
  "aptos-peer-monitoring-service-client",
  "aptos-peer-monitoring-service-server",
  "aptos-peer-monitoring-service-types",
@@ -10761,6 +10750,7 @@ dependencies = [
  "libra2-crash-handler",
  "libra2-dkg-runtime",
  "libra2-infallible",
+ "libra2-node-identity",
  "num_cpus",
  "rand 0.7.3",
  "rayon",
@@ -10771,6 +10761,16 @@ dependencies = [
  "serde_yaml 0.8.26",
  "tokio",
  "url",
+]
+
+[[package]]
+name = "libra2-node-identity"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-types",
+ "claims",
+ "once_cell",
 ]
 
 [[package]]

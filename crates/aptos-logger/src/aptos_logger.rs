@@ -210,8 +210,8 @@ impl LogEntry {
 
         #[cfg(node_identity)]
         {
-            peer_id = aptos_node_identity::peer_id_as_str();
-            chain_id = aptos_node_identity::chain_id().map(|chain_id| chain_id.id());
+            peer_id = libra2_node_identity::peer_id_as_str();
+            chain_id = libra2_node_identity::chain_id().map(|chain_id| chain_id.id());
         }
 
         #[cfg(not(node_identity))]

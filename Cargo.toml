@@ -86,7 +86,7 @@ members = [
     "crates/aptos-logger",
     "crates/libra2-metrics-core",
     "crates/aptos-network-checker",
-    "crates/aptos-node-identity",
+    "crates/libra2-node-identity",
     "crates/aptos-openapi",
     "crates/aptos-profiler",
     "crates/aptos-proptest-helpers",
@@ -417,7 +417,7 @@ aptos-nft-metadata-crawler = { path = "ecosystem/nft-metadata-crawler" }
 aptos-node = { path = "aptos-node" }
 libra2-node = { path = "libra2-node" }
 aptos-node-checker = { path = "ecosystem/node-checker" }
-aptos-node-identity = { path = "crates/aptos-node-identity" }
+libra2-node-identity = { path = "crates/libra2-node-identity" }
 libra2-node-resource-metrics = { path = "crates/node-resource-metrics" }
 libra2-num-variants = { path = "crates/num-variants" }
 aptos-openapi = { path = "crates/aptos-openapi" }

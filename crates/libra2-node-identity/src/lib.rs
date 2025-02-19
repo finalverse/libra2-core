@@ -70,7 +70,7 @@ mod tests {
     use claims::{assert_err, assert_ok};
 
     #[test]
-    fn test_aptos_node_identity() {
+    fn test_libra2_node_identity() {
         // Should return None before init is called
         assert_eq!(super::peer_id(), None);
         assert_eq!(super::chain_id(), None);
