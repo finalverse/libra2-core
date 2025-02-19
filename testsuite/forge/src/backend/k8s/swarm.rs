@@ -17,7 +17,7 @@ use crate::{
 use ::aptos_logger::*;
 use anyhow::{anyhow, bail, format_err};
 use libra2_config::config::{NodeConfig, OverrideNodeConfig};
-use aptos_retrier::fixed_retry_strategy;
+use libra2_retrier::fixed_retry_strategy;
 use aptos_sdk::{
     crypto::ed25519::Ed25519PrivateKey,
     move_types::account_address::AccountAddress,
@@ -675,7 +675,7 @@ pub async fn nodes_healthcheck(nodes: Vec<&K8sNode>) -> Result<Vec<String>> {
     for node in nodes {
         // perform healthcheck with retry, returning unhealthy
         let node_name = node.name().to_string();
-        let check = aptos_retrier::retry_async(k8s_wait_nodes_strategy(), || {
+        let check = libra2_retrier::retry_async(k8s_wait_nodes_strategy(), || {
             Box::pin(async move {
                 match node.rest_client().get_ledger_information().await {
                     Ok(res) => {

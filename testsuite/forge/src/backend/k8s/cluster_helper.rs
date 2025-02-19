@@ -191,7 +191,7 @@ async fn wait_node_haproxy(
     kube_namespace: &str,
     num_haproxy: usize,
 ) -> Result<()> {
-    aptos_retrier::retry_async(k8s_wait_nodes_strategy(), || {
+    libra2_retrier::retry_async(k8s_wait_nodes_strategy(), || {
         let deployments_api: Api<Deployment> = Api::namespaced(kube_client.clone(), kube_namespace);
         Box::pin(async move {
             for i in 0..num_haproxy {

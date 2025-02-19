@@ -1,6 +1,6 @@
 [package]
-name = "aptos-rate-limiter"
-description = "Token bucket rate limiter"
+name = "libra2-retrier"
+description = "Generic retry and exponential backoff"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -13,11 +13,6 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
-libra2-metrics-core = { workspace = true }
-futures = { workspace = true }
-pin-project = { workspace = true }
 tokio = { workspace = true }
-tokio-util = { workspace = true }
 

@@ -282,7 +282,7 @@ pub async fn check_for_container_restart(
     kube_namespace: &str,
     sts_name: &str,
 ) -> Result<()> {
-    aptos_retrier::retry_async(k8s_wait_nodes_strategy(), || {
+    libra2_retrier::retry_async(k8s_wait_nodes_strategy(), || {
         let pod_api: Api<Pod> = Api::namespaced(kube_client.clone(), kube_namespace);
         Box::pin(async move {
             // Get the StatefulSet's Pod status

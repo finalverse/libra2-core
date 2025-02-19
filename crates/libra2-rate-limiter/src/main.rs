@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_infallible::Mutex;
-use aptos_rate_limiter::{
+use libra2_rate_limiter::{
     async_lib::AsyncRateLimiter,
     rate_limit::{Bucket, SharedBucket},
 };
