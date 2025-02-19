@@ -1301,7 +1301,6 @@ dependencies = [
  "aptos-jellyfish-merkle",
  "aptos-logger",
  "aptos-mvhashmap",
- "aptos-profiler 0.1.0",
  "aptos-push-metrics",
  "aptos-sdk",
  "aptos-storage-interface",
@@ -1325,6 +1324,7 @@ dependencies = [
  "libra2-config",
  "libra2-metrics-core",
  "libra2-node-resource-metrics",
+ "libra2-profiler",
  "libra2-temppath",
  "move-core-types",
  "move-vm-types",
@@ -3152,18 +3152,6 @@ dependencies = [
 [[package]]
 name = "aptos-profiler"
 version = "0.1.0"
-dependencies = [
- "anyhow",
- "backtrace",
- "jemalloc-sys",
- "jemallocator",
- "pprof",
- "regex",
-]
-
-[[package]]
-name = "aptos-profiler"
-version = "0.1.0"
 source = "git+https://github.com/aptos-labs/aptos-core.git?rev=202bdccff2b2d333a385ae86a4fcf23e89da9f62#202bdccff2b2d333a385ae86a4fcf23e89da9f62"
 dependencies = [
  "anyhow",
@@ -3728,7 +3716,7 @@ version = "0.1.0"
 source = "git+https://github.com/aptos-labs/aptos-core.git?rev=202bdccff2b2d333a385ae86a4fcf23e89da9f62#202bdccff2b2d333a385ae86a4fcf23e89da9f62"
 dependencies = [
  "anyhow",
- "aptos-profiler 0.1.0 (git+https://github.com/aptos-labs/aptos-core.git?rev=202bdccff2b2d333a385ae86a4fcf23e89da9f62)",
+ "aptos-profiler",
  "async-mutex",
  "http 0.2.11",
  "hyper 0.14.28",
@@ -10723,6 +10711,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-profiler"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "backtrace",
+ "jemalloc-sys",
+ "jemallocator",
+ "pprof",
+ "regex",
+]
+
+[[package]]
 name = "libra2-proxy"
 version = "0.1.0"
 dependencies = [
@@ -10781,11 +10781,11 @@ name = "libra2-system-utils"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-profiler 0.1.0",
  "async-mutex",
  "http 0.2.11",
  "hyper 0.14.28",
  "lazy_static",
+ "libra2-profiler",
  "mime",
  "pprof",
  "regex",

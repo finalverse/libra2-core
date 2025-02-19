@@ -91,7 +91,7 @@ pub async fn start_cpu_profiling(
     let lock = CPU_PROFILE_MUTEX.try_lock();
     ensure!(lock.is_some(), "A profiling task is already running.");
 
-    // TODO(grao): Consolidate the code with aptos-profiler crate.
+    // TODO(grao): Consolidate the code with libra2-profiler crate.
     let guard = pprof::ProfilerGuard::new(frequency)
         .map_err(|e| anyhow!("Failed to start cpu profiling: {e:?}."))?;
 

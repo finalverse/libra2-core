@@ -56,7 +56,7 @@ impl Profiler for MemProfiler {
 
         // TODO: Run jeprof commands from within Rust, current tries give unresolved errors
         Command::new("python3")
-            .arg("./crates/aptos-profiler/src/jeprof.py")
+            .arg("./crates/libra2-profiler/src/jeprof.py")
             .arg(self.txt_result_path.to_string_lossy().as_ref())
             .arg(self.svg_result_path.to_string_lossy().as_ref())
             .arg(binary_path)
@@ -106,7 +106,7 @@ impl Profiler for MemProfiler {
 
         // TODO: Run jeprof commands from within Rust, current tries give unresolved errors
         Command::new("python3")
-            .arg("./crates/aptos-profiler/src/jeprof.py")
+            .arg("./crates/libra2-profiler/src/jeprof.py")
             .arg(self.txt_result_path.to_string_lossy().as_ref())
             .arg(self.svg_result_path.to_string_lossy().as_ref())
             .arg(binary_path)
