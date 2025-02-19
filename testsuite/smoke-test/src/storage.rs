@@ -14,7 +14,7 @@ use crate::{
 use anyhow::{bail, Result};
 use aptos_backup_cli::metadata::view::BackupStorageState;
 use aptos_forge::{reconfig, AptosPublicInfo, Node, NodeExt, Swarm, SwarmExt};
-use aptos_logger::info;
+use libra2_logger::info;
 use libra2_temppath::TempPath;
 use aptos_types::{transaction::Version, waypoint::Waypoint};
 use itertools::Itertools;
@@ -34,7 +34,7 @@ const LINE: &str = "----------";
 #[tokio::test]
 async fn test_db_restore() {
     // pre-build tools
-    ::aptos_logger::Logger::new().init();
+    ::libra2_logger::Logger::new().init();
     info!("---------- 0. test_db_restore started.");
     workspace_builder::get_bin("aptos-debugger");
     info!("---------- 1. pre-building finished.");
@@ -498,7 +498,7 @@ async fn do_transfers_and_reconfigs(mut info: AptosPublicInfo, quit_flag: Arc<At
 
 #[tokio::test(flavor = "multi_thread", worker_threads = 10)]
 async fn test_db_restart() {
-    ::aptos_logger::Logger::new().init();
+    ::libra2_logger::Logger::new().init();
 
     info!("{LINE} Test started.");
     let mut swarm = SwarmBuilder::new_local(4).with_aptos().build().await;

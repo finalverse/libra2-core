@@ -24,7 +24,7 @@ libra2-enum-conversion-derive = { workspace = true }
 aptos-event-notifications = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-jwk-utils = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
 aptos-reliable-broadcast = { workspace = true }

@@ -15,7 +15,7 @@ use libra2_config::{
     },
     network_id::NetworkId,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_sdk::types::PeerId;
 use libra2_short_hex_str::AsShortHexStr;
 use k8s_openapi::{

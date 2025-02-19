@@ -10,7 +10,7 @@ use crate::rand::rand_gen::{
 };
 use anyhow::ensure;
 use aptos_consensus_types::common::Author;
-use aptos_logger::error;
+use libra2_logger::error;
 use aptos_types::validator_signer::ValidatorSigner;
 use std::{collections::HashMap, sync::Arc};
 

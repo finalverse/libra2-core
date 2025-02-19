@@ -6,7 +6,7 @@
 
 use anyhow::{bail, format_err, Context, Result};
 use aptos_forge::{config::ForgeConfig, Options, *};
-use aptos_logger::Level;
+use libra2_logger::Level;
 use clap::{Parser, Subcommand};
 use futures::{future, FutureExt};
 use rand::{rngs::ThreadRng, seq::SliceRandom, Rng};
@@ -233,7 +233,7 @@ fn random_namespace<R: Rng>(dictionary: Vec<String>, rng: &mut R) -> Result<Stri
 }
 
 fn main() -> Result<()> {
-    let mut logger = aptos_logger::Logger::new();
+    let mut logger = libra2_logger::Logger::new();
     logger.channel_size(1000).is_async(false).level(Level::Info);
     logger.build();
 

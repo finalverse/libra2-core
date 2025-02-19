@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{metrics::increment_log_ingest_too_large_by, sender::TelemetrySender};
-use aptos_logger::{prelude::*, telemetry_log_writer::TelemetryLog};
+use libra2_logger::{prelude::*, telemetry_log_writer::TelemetryLog};
 use futures::{channel::mpsc, StreamExt};
 use std::time::Duration;
 use tokio::time::interval;

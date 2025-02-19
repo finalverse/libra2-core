@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::{
     on_chain_config::TransactionShufflerType,
     transaction::{

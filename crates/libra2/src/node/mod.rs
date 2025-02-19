@@ -27,7 +27,7 @@ use aptos_backup_cli::{
 use aptos_cached_packages::aptos_stdlib;
 use aptos_crypto::{bls12381, bls12381::PublicKey, x25519, ValidCryptoMaterialStringExt};
 use aptos_genesis::config::{HostAndPort, OperatorConfiguration};
-use aptos_logger::Level;
+use libra2_logger::Level;
 use aptos_network_checker::args::{
     validate_address, CheckEndpointArgs, HandshakeArgs, NodeAddressArgs,
 };

@@ -34,7 +34,7 @@ async fn main() -> Result<()> {
     let version = args.version;
 
     // Initialize the debugger
-    aptos_logger::Logger::new().init();
+    libra2_logger::Logger::new().init();
     AptosVM::set_concurrency_level_once(1);
 
     let debugger = match args.target {

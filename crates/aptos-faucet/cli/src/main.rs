@@ -17,8 +17,8 @@ use std::{collections::HashSet, str::FromStr};
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    aptos_logger::Logger::new()
-        .level(aptos_logger::Level::Warn)
+    libra2_logger::Logger::new()
+        .level(libra2_logger::Level::Warn)
         .init();
     let args: FaucetCliArgs = FaucetCliArgs::parse();
     args.run().await

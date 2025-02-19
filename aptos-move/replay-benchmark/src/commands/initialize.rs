@@ -8,7 +8,7 @@ use crate::{
     workload::TransactionBlock,
 };
 use anyhow::anyhow;
-use aptos_logger::Level;
+use libra2_logger::Level;
 use aptos_types::on_chain_config::FeatureFlag;
 use clap::Parser;
 use std::path::PathBuf;

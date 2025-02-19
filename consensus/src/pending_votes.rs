@@ -20,7 +20,7 @@ use aptos_consensus_types::{
     vote::Vote,
 };
 use aptos_crypto::{bls12381, hash::CryptoHash, HashValue};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_types::{
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures, SignatureAggregator},
     validator_verifier::{ValidatorVerifier, VerifyError},
@@ -589,7 +589,7 @@ mod tests {
     #[test]
     /// Verify that votes are properly aggregated to QC based on their LedgerInfo digest
     fn test_qc_aggregation() {
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         // set up 4 validators
         let (signers, validator_verifier) = random_validator_verifier(4, Some(2), false);
@@ -659,7 +659,7 @@ mod tests {
 
     #[test]
     fn test_qc_aggregation_with_unverified_votes() {
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         // set up 4 validators
         let (signers, validator_verifier) = random_validator_verifier(7, Some(3), false);
@@ -791,7 +791,7 @@ mod tests {
 
     #[test]
     fn test_2chain_tc_aggregation() {
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         // set up 4 validators
         let (signers, validator_verifier) = random_validator_verifier(4, None, false);

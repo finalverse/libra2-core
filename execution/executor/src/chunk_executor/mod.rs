@@ -21,7 +21,7 @@ use aptos_executor_types::{
 };
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_infallible::{Mutex, RwLock};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use libra2_metrics_core::{IntGaugeHelper, TimerHelper};
 use aptos_storage_interface::{
     state_store::{

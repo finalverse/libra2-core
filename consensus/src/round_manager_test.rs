@@ -53,7 +53,7 @@ use aptos_consensus_types::{
 };
 use aptos_crypto::HashValue;
 use libra2_infallible::Mutex;
-use aptos_logger::prelude::info;
+use libra2_logger::prelude::info;
 use aptos_network::{
     application::interface::NetworkClient,
     peer_manager::{ConnectionRequestSender, PeerManagerRequestSender},

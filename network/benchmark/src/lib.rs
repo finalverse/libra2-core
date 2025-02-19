@@ -5,7 +5,7 @@ use libra2_config::{
     config::NodeConfig,
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_logger::{
+use libra2_logger::{
     debug, info,
     prelude::{sample, SampleRate},
     warn,

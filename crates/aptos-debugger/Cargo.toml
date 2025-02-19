@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 anyhow = { workspace = true }
 aptos-consensus = { workspace = true }
 aptos-db-tool = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-move-debugger = { workspace = true }
 aptos-push-metrics = { workspace = true }
 clap = { workspace = true }

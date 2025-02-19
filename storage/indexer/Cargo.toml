@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 anyhow = { workspace = true }
 libra2-config = { workspace = true }
 aptos-db-indexer-schemas = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-resource-viewer = { workspace = true }
 aptos-rocksdb-options = { workspace = true }

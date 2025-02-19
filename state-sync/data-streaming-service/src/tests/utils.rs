@@ -13,7 +13,7 @@ use aptos_data_client::{
     },
 };
 use libra2_infallible::Mutex;
-use aptos_logger::Level;
+use libra2_logger::Level;
 use aptos_storage_service_types::{
     requests::{
         DataRequest, EpochEndingLedgerInfoRequest, NewTransactionOutputsWithProofRequest,
@@ -1040,7 +1040,7 @@ async fn determine_target_ledger_info(
 
 /// Initializes the Aptos logger for tests
 pub fn initialize_logger() {
-    aptos_logger::Logger::builder()
+    libra2_logger::Logger::builder()
         .is_async(false)
         .level(Level::Info)
         .build();

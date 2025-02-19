@@ -14,7 +14,7 @@ use aptos_consensus::{
 use libra2_dkg_runtime::DKGMessage;
 use aptos_event_notifications::EventSubscriptionService;
 use aptos_jwk_consensus::types::JWKConsensusMsg;
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_mempool::network::MempoolSyncMsg;
 use aptos_network::{
     application::{

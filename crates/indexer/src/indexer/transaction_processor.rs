@@ -52,7 +52,7 @@ pub trait TransactionProcessor: Send + Sync + Debug {
                 },
                 Err(err) => {
                     UNABLE_TO_GET_CONNECTION.inc();
-                    aptos_logger::error!(
+                    libra2_logger::error!(
                         "Could not get DB connection from pool, will retry in {:?}. Err: {:?}",
                         pool.connection_timeout(),
                         err
@@ -92,7 +92,7 @@ pub trait TransactionProcessor: Send + Sync + Debug {
 
     /// Writes that a version has been started for this `TransactionProcessor` to the DB
     fn mark_versions_started(&self, start_version: u64, end_version: u64) {
-        aptos_logger::debug!(
+        libra2_logger::debug!(
             "[{}] Marking processing versions started from versions {} to {}",
             self.name(),
             start_version,
@@ -110,7 +110,7 @@ pub trait TransactionProcessor: Send + Sync + Debug {
 
     /// Writes that a version has been completed successfully for this `TransactionProcessor` to the DB
     fn update_status_success(&self, processing_result: &ProcessingResult) {
-        aptos_logger::debug!(
+        libra2_logger::debug!(
             "[{}] Marking processing version OK from versions {} to {}",
             self.name(),
             processing_result.start_version,
@@ -132,7 +132,7 @@ pub trait TransactionProcessor: Send + Sync + Debug {
 
     /// Writes that a version has errored for this `TransactionProcessor` to the DB
     fn update_status_err(&self, tpe: &TransactionProcessingError) {
-        aptos_logger::debug!(
+        libra2_logger::debug!(
             "[{}] Marking processing version Err: {:?}",
             self.name(),
             tpe

@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_logger::{Level, Logger};
+use libra2_logger::{Level, Logger};
 use aptos_move_debugger::aptos_debugger::AptosDebugger;
 use aptos_push_metrics::MetricsPusher;
 use aptos_rest_client::{AptosBaseUrl, Client};

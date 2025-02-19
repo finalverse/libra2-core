@@ -6,7 +6,7 @@ use aptos_forge::{
     GroupCpuStress, NetworkContext, NetworkContextSynchronizer, NetworkTest, Swarm, SwarmChaos,
     SwarmCpuStress, SwarmExt, Test,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::PeerId;
 use async_trait::async_trait;
 use rand::Rng;

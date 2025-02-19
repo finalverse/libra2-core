@@ -4,7 +4,7 @@
 use crate::server::utils::CONTENT_TYPE_TEXT;
 use libra2_config::config::NodeConfig;
 use aptos_data_client::client::AptosDataClient;
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_network::application::storage::PeersAndMetadata;
 use hyper::{
     service::{make_service_fn, service_fn},

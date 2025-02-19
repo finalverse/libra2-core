@@ -12,7 +12,7 @@
 use anyhow::bail;
 use aptos_framework::{natives::code::PackageRegistry, BuildOptions, BuiltPackage};
 use aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION;
-use aptos_logger::error;
+use libra2_logger::error;
 use aptos_types::{
     on_chain_config::{FeatureFlag, Features, GasScheduleV2, OnChainConfig},
     state_store::{state_key::StateKey, state_value::StateValue, StateView},

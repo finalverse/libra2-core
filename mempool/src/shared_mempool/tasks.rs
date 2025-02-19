@@ -24,7 +24,7 @@ use libra2_config::network_id::PeerNetworkId;
 use aptos_consensus_types::common::RejectedTransactionSummary;
 use aptos_crypto::HashValue;
 use libra2_infallible::{Mutex, RwLock};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_mempool_notifications::CommittedTransaction;
 use libra2_metrics_core::HistogramTimer;
 use aptos_network::application::interface::NetworkClientInterface;

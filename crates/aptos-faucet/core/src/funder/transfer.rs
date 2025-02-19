@@ -13,7 +13,7 @@ use crate::{
     middleware::TRANSFER_FUNDER_ACCOUNT_BALANCE,
 };
 use anyhow::{Context, Result};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_sdk::{
     crypto::{ed25519::Ed25519PrivateKey, PrivateKey},
     rest_client::Client,

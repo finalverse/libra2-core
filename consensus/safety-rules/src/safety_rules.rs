@@ -23,7 +23,7 @@ use aptos_consensus_types::{
     vote_proposal::VoteProposal,
 };
 use aptos_crypto::{bls12381, hash::CryptoHash};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_types::{
     epoch_change::EpochChangeProof,
     epoch_state::EpochState,

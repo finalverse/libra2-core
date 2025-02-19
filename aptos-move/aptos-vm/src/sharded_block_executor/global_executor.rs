@@ -4,7 +4,7 @@
 use crate::sharded_block_executor::{
     local_executor_shard::GlobalCrossShardClient, sharded_executor_service::ShardedExecutorService,
 };
-use aptos_logger::trace;
+use libra2_logger::trace;
 use aptos_types::{
     block_executor::{
         config::{BlockExecutorConfig, BlockExecutorConfigFromOnchain, BlockExecutorLocalConfig},

@@ -19,7 +19,7 @@ aptos-crypto = { workspace = true }
 aptos-crypto-derive = { workspace = true }
 aptos-executor-types = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-short-hex-str = { workspace = true }
 aptos-types = { workspace = true }
 bcs = { workspace = true }

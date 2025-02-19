@@ -5,7 +5,7 @@
 mod diag;
 
 use anyhow::{Context, Result};
-use aptos_logger::{Level, Logger};
+use libra2_logger::{Level, Logger};
 use aptos_transaction_emitter_lib::{
     create_accounts_command, emit_transactions, Cluster, ClusterArgs, CreateAccountsArgs, EmitArgs,
 };

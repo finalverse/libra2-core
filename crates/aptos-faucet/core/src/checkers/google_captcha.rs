@@ -4,7 +4,7 @@
 use super::{CheckerData, CheckerTrait};
 use crate::endpoints::{AptosTapError, AptosTapErrorCode, RejectionReason, RejectionReasonCode};
 use anyhow::Result;
-use aptos_logger::debug;
+use libra2_logger::debug;
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
 use std::{env, str::FromStr};

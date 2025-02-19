@@ -330,7 +330,7 @@ async fn create_driver_for_tests(
     TimeService,
 ) {
     // Initialize the logger for tests
-    aptos_logger::Logger::init_for_testing();
+    libra2_logger::Logger::init_for_testing();
 
     // Create test aptos database
     let db_path = libra2_temppath::TempPath::new();

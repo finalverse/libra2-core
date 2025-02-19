@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::transaction_validation::APTOS_TRANSACTION_VALIDATION;
-use aptos_logger::{enabled, Level};
+use libra2_logger::{enabled, Level};
 use aptos_types::transaction::TransactionStatus;
 use aptos_vm_logging::{log_schema::AdapterLogSchema, prelude::*};
 use aptos_vm_types::output::VMOutput;

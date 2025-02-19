@@ -13,7 +13,7 @@ use aptos_consensus_types::{
     request_response::{GetPayloadCommand, GetPayloadResponse},
     utils::PayloadTxnsSize,
 };
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_types::PeerId;
 use futures::StreamExt;
 use futures_channel::mpsc::Receiver;

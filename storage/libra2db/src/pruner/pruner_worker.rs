@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::pruner::db_pruner::DBPruner;
-use aptos_logger::{
+use libra2_logger::{
     error,
     prelude::{sample, SampleRate},
 };

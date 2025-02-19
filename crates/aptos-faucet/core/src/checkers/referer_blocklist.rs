@@ -7,7 +7,7 @@ use crate::{
     endpoints::{AptosTapError, RejectionReason, RejectionReasonCode},
 };
 use anyhow::Result;
-use aptos_logger::info;
+use libra2_logger::info;
 use async_trait::async_trait;
 use poem::http::header::REFERER;
 

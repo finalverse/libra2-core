@@ -6,7 +6,7 @@ use crate::{
     metadata_storage::database_schema::{MetadataKey, MetadataSchema, MetadataValue},
 };
 use anyhow::{anyhow, Result};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_schemadb::{
     batch::SchemaBatch,
     define_schema,

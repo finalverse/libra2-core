@@ -6,7 +6,7 @@ use crate::{metrics::TIMER, pipeline::LedgerUpdateMessage};
 use aptos_crypto::hash::HashValue;
 use aptos_executor::block_executor::BlockExecutor;
 use aptos_executor_types::BlockExecutorTrait;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::block_executor::{
     config::BlockExecutorConfigFromOnchain, partitioner::ExecutableBlock,
 };

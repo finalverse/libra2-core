@@ -13,7 +13,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use aptos_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
-use aptos_logger::Level;
+use libra2_logger::Level;
 use aptos_network::protocols::network::RpcError;
 use aptos_storage_service_notifications::{
     StorageServiceNotificationSender, StorageServiceNotifier,
@@ -509,7 +509,7 @@ pub async fn get_transactions_with_proof(
 
 /// Initializes the Aptos logger for tests
 pub fn initialize_logger() {
-    aptos_logger::Logger::builder()
+    libra2_logger::Logger::builder()
         .is_async(false)
         .level(Level::Debug)
         .build();

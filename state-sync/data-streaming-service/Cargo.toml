@@ -19,7 +19,7 @@ aptos-crypto = { workspace = true }
 aptos-data-client = { workspace = true }
 libra2-id-generator = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 libra2-time-service = { workspace = true }
 aptos-types = { workspace = true }

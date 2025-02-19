@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_logger::debug;
+use libra2_logger::debug;
 use std::{
     cmp::min,
     future::Future,

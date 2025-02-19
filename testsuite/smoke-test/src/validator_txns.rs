@@ -6,7 +6,7 @@ use crate::{
     utils::{get_current_consensus_config, get_current_version},
 };
 use aptos_forge::{NodeExt, SwarmExt};
-use aptos_logger::{debug, info};
+use libra2_logger::{debug, info};
 use aptos_rest_client::Client;
 use aptos_types::on_chain_config::OnChainRandomnessConfig;
 use futures::future::join_all;

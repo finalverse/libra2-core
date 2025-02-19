@@ -10,7 +10,7 @@ use libra2_config::config::{
     NO_OP_STORAGE_PRUNER_CONFIG,
 };
 use aptos_db::{backup::backup_handler::BackupHandler, AptosDB};
-use aptos_logger::{error, info};
+use libra2_logger::{error, info};
 use aptos_storage_interface::{
     state_store::state_view::db_state_view::DbStateViewAtVersion, AptosDbError, DbReader,
 };

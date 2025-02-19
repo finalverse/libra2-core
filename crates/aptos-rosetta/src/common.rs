@@ -10,7 +10,7 @@ use crate::{
     RosettaContext,
 };
 use aptos_crypto::{ValidCryptoMaterial, ValidCryptoMaterialStringExt};
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_rest_client::{Account, Response};
 use aptos_sdk::move_types::{
     ident_str,

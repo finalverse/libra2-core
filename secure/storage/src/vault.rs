@@ -77,7 +77,7 @@ impl VaultStorage {
                     let next_renewal = now + (ttl as u64) / 2;
                     self.next_renewal.store(next_renewal, Ordering::Relaxed);
                 } else if let Err(e) = result {
-                    aptos_logger::error!("Unable to renew lease: {}", e.to_string());
+                    libra2_logger::error!("Unable to renew lease: {}", e.to_string());
                 }
             }
         }

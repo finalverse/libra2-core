@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{Context, Result};
-use aptos_logger::{debug, info};
+use libra2_logger::{debug, info};
 use aptos_rest_client::Client;
 use aptos_types::{account_address::AccountAddress, chain_id::ChainId};
 use clap::Parser;
@@ -20,7 +20,7 @@ pub struct Args {
 // start given we had nothing at all prior to this.
 #[tokio::main]
 async fn main() -> Result<()> {
-    aptos_logger::Logger::new().init();
+    libra2_logger::Logger::new().init();
 
     let args = Args::parse();
     debug!("Running with args: {:#?}", args);

@@ -8,7 +8,7 @@ use aptos_forge::{
     EmitJobRequest, NetworkContextSynchronizer, NetworkTest, Result, SwarmExt, Test, TxnEmitter,
     TxnStats, Version,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_sdk::types::{LocalAccount, PeerId};
 use async_trait::async_trait;
 use rand::SeedableRng;

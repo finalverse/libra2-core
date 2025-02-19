@@ -18,7 +18,7 @@ use crate::consensus_observer::{
 use libra2_channels::libra2_channel::Receiver;
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use libra2_infallible::RwLock;
-use aptos_logger::{error, info, warn};
+use libra2_logger::{error, info, warn};
 use aptos_network::application::interface::NetworkClient;
 use futures::StreamExt;
 use futures_channel::mpsc;

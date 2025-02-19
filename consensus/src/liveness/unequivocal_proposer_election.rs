@@ -8,7 +8,7 @@ use aptos_consensus_types::{
 };
 use aptos_crypto::HashValue;
 use libra2_infallible::Mutex;
-use aptos_logger::{error, warn, SecurityEvent};
+use libra2_logger::{error, warn, SecurityEvent};
 use std::{cmp::Ordering, sync::Arc};
 
 // Wrapper around ProposerElection.

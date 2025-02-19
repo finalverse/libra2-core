@@ -68,7 +68,7 @@ aptos-backup-cli = { workspace = true }
 aptos-db-indexer = { workspace = true, features = ["fuzzing"] }
 aptos-genesis = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-secure-storage = { workspace = true }
 libra2-time-service = { workspace = true }
 aptos-vault-client = { workspace = true }

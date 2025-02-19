@@ -6,7 +6,7 @@ use crate::{
     logging::{LogEntry, LogEvent, LogSchema},
 };
 use libra2_config::{config::AptosDataClientConfig, network_id::PeerNetworkId};
-use aptos_logger::{sample, sample::SampleRate, warn};
+use libra2_logger::{sample, sample::SampleRate, warn};
 use aptos_network::application::{metadata::PeerMetadata, storage::PeersAndMetadata};
 use maplit::hashset;
 use ordered_float::OrderedFloat;

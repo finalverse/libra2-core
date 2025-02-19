@@ -7,7 +7,7 @@ use super::{
 };
 use crate::{maybe_create_k8s_resource, wait_log_job, K8sApi, ReadWrite, Result};
 use again::RetryPolicy;
-use aptos_logger::info;
+use libra2_logger::info;
 use k8s_openapi::api::{
     batch::v1::Job,
     core::v1::{ConfigMap, Namespace, ServiceAccount},

@@ -12,7 +12,7 @@ use crate::{
     scheduler::PtxSchedulerClient,
     state_view::OverlayedStateView,
 };
-use aptos_logger::trace;
+use libra2_logger::trace;
 use libra2_metrics_core::TimerHelper;
 use aptos_types::{
     state_store::{state_key::StateKey, state_value::StateValue, StateView},

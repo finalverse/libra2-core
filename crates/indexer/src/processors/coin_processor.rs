@@ -77,7 +77,7 @@ fn insert_to_db(
     coin_supply: Vec<CoinSupply>,
     account_transactions: Vec<AccountTransaction>,
 ) -> Result<(), diesel::result::Error> {
-    aptos_logger::trace!(
+    libra2_logger::trace!(
         name = name,
         start_version = start_version,
         end_version = end_version,

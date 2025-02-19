@@ -13,7 +13,7 @@ use std::{
 
 extern crate itertools;
 use crate::metrics::{REMOTE_EXECUTOR_REMOTE_KV_COUNT, REMOTE_EXECUTOR_TIMER};
-use aptos_logger::trace;
+use libra2_logger::trace;
 use aptos_types::{
     block_executor::partitioner::ShardId,
     state_store::{

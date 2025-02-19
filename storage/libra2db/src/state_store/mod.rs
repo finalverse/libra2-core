@@ -42,7 +42,7 @@ use aptos_db_indexer_schemas::{
 };
 use libra2_infallible::Mutex;
 use aptos_jellyfish_merkle::iterator::JellyfishMerkleIterator;
-use aptos_logger::info;
+use libra2_logger::info;
 use libra2_metrics_core::TimerHelper;
 use aptos_schemadb::batch::{NativeBatch, SchemaBatch, WriteBatch};
 use aptos_scratchpad::SparseMerkleTree;

@@ -56,7 +56,7 @@ use aptos_crypto::{
 use aptos_framework::chunked_publish::{CHUNK_SIZE_IN_BYTES, LARGE_PACKAGES_MODULE_ADDRESS};
 use aptos_genesis::config::HostAndPort;
 use aptos_keygen::KeyGen;
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_rest_client::{
     aptos_api_types::{MoveStructTag, MoveType},
     Transaction,

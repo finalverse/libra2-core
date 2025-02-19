@@ -33,7 +33,7 @@ use aptos_consensus_types::{
     sync_info::SyncInfo,
     vote_msg::VoteMsg,
 };
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_network::{
     application::interface::{NetworkClient, NetworkServiceEvents},
     protocols::{network::Event, rpc::error::RpcError},

@@ -3,7 +3,7 @@
 
 use crate::error::Error;
 use libra2_config::network_id::PeerNetworkId;
-use aptos_logger::Schema;
+use libra2_logger::Schema;
 use aptos_storage_service_types::requests::StorageServiceRequest;
 use serde::Serialize;
 

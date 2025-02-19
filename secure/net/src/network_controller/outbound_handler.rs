@@ -7,7 +7,7 @@ use crate::{
         inbound_handler::InboundHandler, metrics::NETWORK_HANDLER_TIMER, Message, MessageType,
     },
 };
-use aptos_logger::{info, warn};
+use libra2_logger::{info, warn};
 use crossbeam_channel::{unbounded, Receiver, Select, Sender};
 use std::{
     collections::{HashMap, HashSet},

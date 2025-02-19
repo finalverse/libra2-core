@@ -14,7 +14,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use aptos_crypto::HashValue;
-use aptos_logger::Level;
+use libra2_logger::Level;
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_network::{
     application::{
@@ -588,7 +588,7 @@ impl MockClient {
 
 /// Initializes the Aptos logger for tests
 pub fn initialize_logger() {
-    aptos_logger::Logger::builder()
+    libra2_logger::Logger::builder()
         .is_async(false)
         .level(Level::Debug)
         .build();

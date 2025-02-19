@@ -5,7 +5,7 @@
 use crate::counters;
 use aptos_consensus_types::{common::Author, order_vote::OrderVote, quorum_cert::QuorumCert};
 use aptos_crypto::{hash::CryptoHash, HashValue};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_types::{
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures, SignatureAggregator},
     validator_verifier::{ValidatorVerifier, VerifyError},
@@ -200,7 +200,7 @@ mod tests {
 
     #[test]
     fn order_vote_aggregation() {
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
         // set up 4 validators
         let (signers, verifier) = random_validator_verifier(4, Some(2), false);
 
@@ -273,7 +273,7 @@ mod tests {
 
     #[test]
     fn order_vote_aggregation_with_unverified_votes() {
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         let (signers, verifier) = random_validator_verifier(5, Some(3), false);
         let mut pending_order_votes = PendingOrderVotes::new();

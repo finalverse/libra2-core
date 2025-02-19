@@ -14,7 +14,7 @@ use crate::{
     types::{AccountBalanceRequest, AccountBalanceResponse, Amount, Currency, *},
     RosettaContext,
 };
-use aptos_logger::{debug, trace, warn};
+use libra2_logger::{debug, trace, warn};
 use aptos_rest_client::{
     aptos_api_types::{AptosError, AptosErrorCode, ViewFunction},
     error::{AptosErrorResponse, RestError},

@@ -236,7 +236,7 @@ async fn test_certified_node_handler() {
 
 #[tokio::test]
 async fn test_dag_driver_drop() {
-    aptos_logger::Logger::init_for_testing();
+    libra2_logger::Logger::init_for_testing();
 
     let (signers, validator_verifier) = random_validator_verifier(4, None, false);
     let (tx, rx) = oneshot::channel();

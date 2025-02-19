@@ -5,7 +5,7 @@ use crate::{
     ObjectPool, ReliableTransactionSubmitter, RootAccountHandle, TransactionGenerator,
     TransactionGeneratorCreator, WorkflowProgress,
 };
-use aptos_logger::{info, sample, sample::SampleRate};
+use libra2_logger::{info, sample, sample::SampleRate};
 use aptos_sdk::{
     transaction_builder::TransactionFactory,
     types::{transaction::SignedTransaction, LocalAccount},

@@ -11,7 +11,7 @@ use libra2_config::{
     network_id::PeerNetworkId,
 };
 use libra2_infallible::RwLock;
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_network::application::metadata::PeerMetadata;
 use aptos_peer_monitoring_service_types::{
     request::PeerMonitoringServiceRequest,

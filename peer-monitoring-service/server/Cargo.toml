@@ -17,7 +17,7 @@ libra2-bounded-executor = { workspace = true }
 libra2-build-info = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true }

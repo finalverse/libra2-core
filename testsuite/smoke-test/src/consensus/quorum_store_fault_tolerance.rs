@@ -11,7 +11,7 @@ use aptos_forge::{
     args::TransactionTypeArg, reconfig, wait_for_all_nodes_to_catchup, NodeExt, Swarm, SwarmExt,
     TransactionType,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_rest_client::Client;
 use aptos_types::{
     on_chain_config::{ConsensusConfigV1, OnChainConsensusConfig},

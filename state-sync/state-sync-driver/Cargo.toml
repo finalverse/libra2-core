@@ -22,7 +22,7 @@ aptos-data-streaming-service = { workspace = true }
 aptos-event-notifications = { workspace = true }
 aptos-executor-types = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-mempool-notifications = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-runtimes = { workspace = true }

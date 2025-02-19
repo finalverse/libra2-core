@@ -18,7 +18,7 @@ aptos-cached-packages = { workspace = true }
 libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
 libra2-global-constants = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-node = { workspace = true }
 aptos-rest-client = { workspace = true }
 aptos-runtimes = { workspace = true }

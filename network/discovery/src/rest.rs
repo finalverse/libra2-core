@@ -3,7 +3,7 @@
 
 use crate::{validator_set::extract_validator_set_updates, DiscoveryError};
 use libra2_config::{config::PeerSet, network_id::NetworkContext};
-use aptos_logger::info;
+use libra2_logger::info;
 use libra2_time_service::{Interval, TimeService, TimeServiceTrait};
 use aptos_types::{account_address::AccountAddress, on_chain_config::ValidatorSet};
 use futures::{executor::block_on, Stream};

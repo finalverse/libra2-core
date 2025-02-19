@@ -12,7 +12,7 @@ use crate::sharded_block_executor::{
     sharded_executor_service::ShardedExecutorService,
     ExecutorShardCommand, ShardedBlockExecutor,
 };
-use aptos_logger::trace;
+use libra2_logger::trace;
 use aptos_types::{
     block_executor::{
         config::BlockExecutorConfigFromOnchain,

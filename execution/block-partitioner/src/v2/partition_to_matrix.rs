@@ -8,7 +8,7 @@ use crate::v2::{
     types::{PrePartitionedTxnIdx, SenderIdx},
     PartitionerV2,
 };
-use aptos_logger::trace;
+use libra2_logger::trace;
 use aptos_types::block_executor::partitioner::{RoundId, TxnIndex};
 use dashmap::DashMap;
 use rayon::{

@@ -18,7 +18,7 @@ aptos-block-executor = { workspace = true }
 aptos-consensus = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-gas-profiling = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-rest-client = { workspace = true }
 aptos-types = { workspace = true }
 aptos-validator-interface = { workspace = true }

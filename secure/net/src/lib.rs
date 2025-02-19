@@ -19,7 +19,7 @@
 pub mod grpc_network_service;
 pub mod network_controller;
 
-use aptos_logger::{info, trace, warn, Schema};
+use libra2_logger::{info, trace, warn, Schema};
 use libra2_metrics_core::{register_int_counter_vec, IntCounterVec};
 use once_cell::sync::Lazy;
 use serde::Serialize;

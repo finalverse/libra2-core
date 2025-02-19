@@ -28,7 +28,7 @@ use anyhow::{anyhow, ensure, Result};
 use aptos_db::backup::restore_handler::RestoreHandler;
 use aptos_executor::chunk_executor::ChunkExecutor;
 use aptos_executor_types::{ChunkExecutorTrait, TransactionReplayer, VerifyExecutionMode};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
 use aptos_storage_interface::DbReaderWriter;
 use aptos_types::{

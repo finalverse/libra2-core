@@ -33,7 +33,7 @@ use aptos_data_client::{
 };
 use libra2_id_generator::{IdGenerator, U64IdGenerator};
 use libra2_infallible::Mutex;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use futures::{channel::mpsc, stream::FusedStream, SinkExt, Stream};
 use std::{

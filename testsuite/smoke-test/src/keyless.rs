@@ -8,7 +8,7 @@ use aptos_crypto::{
     ed25519::Ed25519PrivateKey, poseidon_bn254::keyless::fr_to_bytes_le, PrivateKey, SigningKey,
 };
 use aptos_forge::{AptosPublicInfo, LocalSwarm, NodeExt, Swarm, SwarmExt};
-use aptos_logger::{debug, info};
+use libra2_logger::{debug, info};
 use aptos_rest_client::Client;
 use aptos_sdk::types::{
     EphemeralKeyPair, EphemeralPrivateKey, FederatedKeylessAccount, KeylessAccount, LocalAccount,

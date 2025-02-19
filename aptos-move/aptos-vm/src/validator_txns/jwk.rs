@@ -15,7 +15,7 @@ use crate::{
     },
     AptosVM,
 };
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_types::{
     jwks,
     jwks::{Issuer, ObservedJWKs, ProviderJWKs, QuorumCertifiedUpdate},

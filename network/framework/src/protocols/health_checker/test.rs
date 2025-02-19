@@ -42,7 +42,7 @@ impl TestHarness {
     fn new_permissive(
         ping_failures_tolerated: u64,
     ) -> (Self, HealthChecker<NetworkClient<HealthCheckerMsg>>) {
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
         let mock_time = TimeService::mock();
 
         let (peer_mgr_reqs_tx, peer_mgr_reqs_rx) = libra2_channel::new(QueueStyle::FIFO, 1, None);

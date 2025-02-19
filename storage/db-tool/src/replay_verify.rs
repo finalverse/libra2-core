@@ -14,7 +14,7 @@ use libra2_config::config::{
 };
 use aptos_db::{get_restore_handler::GetRestoreHandler, AptosDB};
 use aptos_executor_types::VerifyExecutionMode;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::transaction::Version;
 use clap::Parser;
 use std::{path::PathBuf, process, sync::Arc};

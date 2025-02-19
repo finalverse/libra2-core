@@ -6,7 +6,7 @@ use crate::{
     types::{JWKConsensusMsg, ObservedUpdateRequest},
 };
 use libra2_channels::libra2_channel;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_reliable_broadcast::ReliableBroadcast;
 use aptos_types::{
     epoch_state::EpochState,

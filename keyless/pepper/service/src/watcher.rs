@@ -3,7 +3,7 @@
 
 use anyhow::{anyhow, ensure, Result};
 use libra2_infallible::RwLock;
-use aptos_logger::{debug, info, warn};
+use libra2_logger::{debug, info, warn};
 use serde::de::DeserializeOwned;
 use std::{sync::Arc, time::Duration};
 

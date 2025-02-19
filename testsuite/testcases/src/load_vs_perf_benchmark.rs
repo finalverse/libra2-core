@@ -11,7 +11,7 @@ use aptos_forge::{
     EmitJob, EmitJobMode, EmitJobRequest, NetworkContext, NetworkContextSynchronizer, NetworkTest,
     Result, Test, TxnStats, WorkflowProgress,
 };
-use aptos_logger::{error, info};
+use libra2_logger::{error, info};
 use async_trait::async_trait;
 use rand::SeedableRng;
 use std::{fmt::Debug, ops::DerefMut, time::Duration};

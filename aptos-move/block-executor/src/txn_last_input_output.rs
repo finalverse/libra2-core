@@ -8,7 +8,7 @@ use crate::{
     task::{ExecutionStatus, TransactionOutput},
     types::{InputOutputKey, ReadWriteSummary},
 };
-use aptos_logger::error;
+use libra2_logger::error;
 use aptos_mvhashmap::types::TxnIndex;
 use aptos_types::{
     error::{code_invariant_error, PanicError},

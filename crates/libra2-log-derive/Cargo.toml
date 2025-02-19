@@ -1,5 +1,5 @@
 [package]
-name = "aptos-log-derive"
+name = "libra2-log-derive"
 description = "Aptos structured log type macros"
 version = "0.1.0"
 

@@ -16,7 +16,7 @@ use crate::{
 };
 use anyhow::{ensure, Context, Result};
 use aptos_api::context::Context as ApiContext;
-use aptos_logger::{debug, info};
+use libra2_logger::{debug, info};
 use chrono::ParseError;
 use diesel::{
     pg::upsert::excluded,

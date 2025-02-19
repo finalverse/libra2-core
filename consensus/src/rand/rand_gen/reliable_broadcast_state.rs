@@ -15,7 +15,7 @@ use crate::{
 use anyhow::ensure;
 use aptos_consensus_types::common::Author;
 use libra2_infallible::Mutex;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_reliable_broadcast::BroadcastStatus;
 use aptos_types::{
     aggregate_signature::PartialSignatures, epoch_state::EpochState, randomness::RandMetadata,

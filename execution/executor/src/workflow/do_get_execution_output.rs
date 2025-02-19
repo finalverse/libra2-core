@@ -21,7 +21,7 @@ use aptos_executor_types::{
     transactions_with_output::{TransactionsToKeep, TransactionsWithOutput},
 };
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
 use aptos_storage_interface::state_store::{
     state::LedgerState, state_view::cached_state_view::CachedStateView,

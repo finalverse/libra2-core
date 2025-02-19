@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 anyhow = { workspace = true }
 libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-network = { workspace = true }
 aptos-types = { workspace = true }
 clap = { workspace = true }

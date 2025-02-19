@@ -112,7 +112,7 @@ fn insert_to_db(
     ),
     object_core: (Vec<Object>, Vec<CurrentObject>),
 ) -> Result<(), diesel::result::Error> {
-    aptos_logger::trace!(
+    libra2_logger::trace!(
         name = name,
         start_version = start_version,
         end_version = end_version,

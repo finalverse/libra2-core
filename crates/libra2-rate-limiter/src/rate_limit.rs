@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_infallible::{Mutex, RwLock};
-use aptos_logger::debug;
+use libra2_logger::debug;
 use libra2_metrics_core::HistogramVec;
 use std::{cmp::min, collections::HashMap, fmt::Debug, hash::Hash, sync::Arc, time::Instant};
 use tokio::time::Duration;

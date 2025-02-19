@@ -12,7 +12,7 @@ use crate::{
     helpers::extract_network_address,
 };
 use anyhow::{Context, Result};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_sdk::{
     rest_client::Client as AptosClient,
     types::{

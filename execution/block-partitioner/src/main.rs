@@ -4,7 +4,7 @@
 use aptos_block_partitioner::{
     test_utils::P2PBlockGenerator, v2::config::PartitionerV2Config, PartitionerConfig,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use clap::Parser;
 use rand::thread_rng;
 use std::time::Instant;
@@ -29,7 +29,7 @@ struct Args {
 }
 
 fn main() {
-    aptos_logger::Logger::new().init();
+    libra2_logger::Logger::new().init();
     info!("Starting the block partitioning benchmark");
     let args = Args::parse();
     let block_gen = P2PBlockGenerator::new(args.num_accounts);

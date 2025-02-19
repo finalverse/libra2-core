@@ -3,7 +3,7 @@
 
 use anyhow::Result;
 use aptos_debugger::Cmd;
-use aptos_logger::{Level, Logger};
+use libra2_logger::{Level, Logger};
 use aptos_push_metrics::MetricsPusher;
 use clap::Parser;
 

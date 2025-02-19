@@ -49,7 +49,7 @@ struct RunStats {
 
 /// A main function for testing rate limiting throughput and backpressure
 fn main() {
-    aptos_logger::Logger::init_for_testing();
+    libra2_logger::Logger::init_for_testing();
     println!("Starting experiments");
     println!(
         "Bytes to test: {}, Expected Throughput(actions/s): {}, Expected Throughput(bytes/s): {}",

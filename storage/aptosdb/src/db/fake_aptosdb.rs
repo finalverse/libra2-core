@@ -13,7 +13,7 @@ use aptos_crypto::{
     HashValue,
 };
 use libra2_infallible::Mutex;
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_scratchpad::SparseMerkleTree;
 use aptos_storage_interface::{
     db_ensure as ensure,

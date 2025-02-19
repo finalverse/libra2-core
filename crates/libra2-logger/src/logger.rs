@@ -49,9 +49,9 @@ pub fn set_global_logger(logger: Arc<dyn Logger>, tokio_console_port: Option<u16
     }
 
     // If tokio-console is enabled, all tracing::log events are captured by the
-    // tokio-tracing infrastructure. Otherwise, aptos-logger intercepts all
-    // tracing::log events. In both scenarios *all* aptos-logger::log events are
-    // captured by the aptos-logger (as usual).
+    // tokio-tracing infrastructure. Otherwise, libra2-logger intercepts all
+    // tracing::log events. In both scenarios *all* libra2-logger::log events are
+    // captured by the libra2-logger (as usual).
     #[cfg(feature = "tokio-console")]
     {
         if let Some(tokio_console_port) = tokio_console_port {

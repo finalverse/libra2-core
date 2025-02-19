@@ -11,7 +11,7 @@ use libra2_config::network_id::NetworkId;
 use aptos_consensus_types::common::Author;
 #[cfg(test)]
 use libra2_infallible::RwLock;
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_network::{
     application::interface::{NetworkClient, NetworkServiceEvents},
     protocols::network::{Event, RpcError},

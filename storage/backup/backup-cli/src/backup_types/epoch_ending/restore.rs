@@ -15,7 +15,7 @@ use crate::{
     },
 };
 use anyhow::{anyhow, ensure, Result};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_types::{
     epoch_change::Verifier,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},

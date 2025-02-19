@@ -6,7 +6,7 @@ use anyhow::{anyhow, ensure, Result};
 use aptos_crypto::{compat::Sha3_256, Uniform};
 use libra2_dkg::weighted_vuf::traits::WeightedVUF;
 use aptos_forge::LocalSwarm;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_rest_client::Client;
 use aptos_types::{
     dkg::{DKGSessionState, DKGState, DKGTrait, DefaultDKG},

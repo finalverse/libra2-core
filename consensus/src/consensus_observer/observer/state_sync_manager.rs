@@ -12,7 +12,7 @@ use crate::{
     pipeline::execution_client::TExecutionClient,
 };
 use libra2_config::config::ConsensusObserverConfig;
-use aptos_logger::{error, info};
+use libra2_logger::{error, info};
 use aptos_reliable_broadcast::DropGuard;
 use aptos_types::ledger_info::LedgerInfoWithSignatures;
 use futures::future::{AbortHandle, Abortable};

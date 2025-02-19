@@ -5,7 +5,7 @@ use crate::counters::OBSERVATION_SECONDS;
 use anyhow::{anyhow, Result};
 use libra2_channels::libra2_channel;
 use libra2_jwk_utils::{fetch_jwks_from_jwks_uri, fetch_jwks_uri_from_openid_config};
-use aptos_logger::{debug, info};
+use libra2_logger::{debug, info};
 use aptos_types::jwks::{jwk::JWK, Issuer};
 use futures::{FutureExt, StreamExt};
 use move_core_types::account_address::AccountAddress;

@@ -4,7 +4,7 @@
 
 use crate::Result;
 use anyhow::{bail, Context};
-use aptos_logger::info;
+use libra2_logger::info;
 use serde::Deserialize;
 use std::{
     env, fs,

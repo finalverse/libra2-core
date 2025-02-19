@@ -3,7 +3,7 @@
 
 use super::run::RunConfig;
 use anyhow::{Context, Result};
-use aptos_logger::info;
+use libra2_logger::info;
 use clap::Parser;
 use std::{fs::File, io::BufReader, path::PathBuf};
 

@@ -10,7 +10,7 @@ use libra2_config::{
 };
 use libra2_id_generator::U64IdGenerator;
 use libra2_infallible::RwLock;
-use aptos_logger::{info, warn};
+use libra2_logger::{info, warn};
 use aptos_network::application::{
     interface::NetworkClient, metadata::PeerMetadata, storage::PeersAndMetadata,
 };

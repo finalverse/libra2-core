@@ -13,7 +13,7 @@ use aptos_consensus_notifications::{
 use aptos_data_streaming_service::data_notification::NotificationId;
 use aptos_event_notifications::{EventNotificationSender, EventSubscriptionService};
 use libra2_infallible::Mutex;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_mempool_notifications::MempoolNotificationSender;
 use aptos_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_time_service::{TimeService, TimeServiceTrait};

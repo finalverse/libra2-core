@@ -6,7 +6,7 @@ use aptos_consensus::{
     persistent_liveness_storage::StorageWriteProxy, quorum_store::quorum_store_db::QuorumStoreDB,
 };
 use libra2_infallible::RwLock;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_mempool::MempoolClientSender;
 use aptos_storage_interface::DbReaderWriter;
 use libra2_system_utils::utils::reply_with_status;

@@ -5,7 +5,7 @@
 use super::{FunderHealthMessage, FunderTrait};
 use crate::endpoints::{AptosTapError, AptosTapErrorCode};
 use anyhow::{Context, Result};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_sdk::{
     crypto::ed25519::Ed25519PublicKey,
     rest_client::Client,

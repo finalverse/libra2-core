@@ -6,7 +6,7 @@
 //!
 //! Example:
 //! ```
-//! use aptos_logger::info;
+//! use libra2_logger::info;
 //! info!(
 //!   key = "value"
 //! );

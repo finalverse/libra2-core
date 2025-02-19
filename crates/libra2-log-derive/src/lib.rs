@@ -64,10 +64,10 @@ pub fn derive(input: TokenStream) -> TokenStream {
 
     // Calls to visit_pair
     let visitor = format_ident!("visitor");
-    let from_serde = quote! { ::aptos_logger::Value::from_serde };
-    let from_display = quote! { ::aptos_logger::Value::from_display };
-    let from_debug = quote! { ::aptos_logger::Value::from_debug };
-    let key_new = quote! { ::aptos_logger::Key::new };
+    let from_serde = quote! { ::libra2_logger::Value::from_serde };
+    let from_display = quote! { ::libra2_logger::Value::from_display };
+    let from_debug = quote! { ::libra2_logger::Value::from_debug };
+    let key_new = quote! { ::libra2_logger::Key::new };
     let visits = fields.iter().map(|f| {
         let ident = f.ident.as_ref().unwrap();
         let ident_str = ident.to_string();
@@ -96,8 +96,8 @@ pub fn derive(input: TokenStream) -> TokenStream {
             #(#setters)*
         }
 
-        impl #impl_generics ::aptos_logger::Schema for #name #ty_generics #where_clause {
-            fn visit(&self, visitor: &mut dyn ::aptos_logger::Visitor) {
+        impl #impl_generics ::libra2_logger::Schema for #name #ty_generics #where_clause {
+            fn visit(&self, visitor: &mut dyn ::libra2_logger::Visitor) {
                 #(#visits)*
             }
         }

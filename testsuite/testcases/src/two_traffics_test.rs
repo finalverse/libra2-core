@@ -9,7 +9,7 @@ use aptos_forge::{
     success_criteria::{SuccessCriteria, SuccessCriteriaChecker},
     EmitJobRequest, NetworkContextSynchronizer, NetworkTest, Result, Swarm, Test, TestReport,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use async_trait::async_trait;
 use std::{sync::Arc, time::Duration};
 

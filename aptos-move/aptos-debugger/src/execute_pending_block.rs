@@ -4,7 +4,7 @@
 use crate::{aptos_debugger::AptosDebugger, common::Opts};
 use anyhow::Result;
 use aptos_crypto::HashValue;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_rest_client::Client;
 use clap::Parser;
 use std::path::PathBuf;

@@ -4,7 +4,7 @@
 
 use crate::{storage::command_adapter::config::EnvVar, utils::error_notes::ErrorNotes};
 use anyhow::{bail, ensure, Result};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use futures::{
     future::BoxFuture,
     task::{Context, Poll},

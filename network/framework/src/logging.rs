@@ -7,7 +7,7 @@
 //!
 //! ```
 //! use libra2_config::network_id::NetworkContext;
-//! use aptos_logger::info;
+//! use libra2_logger::info;
 //! use aptos_types::{PeerId, network_address::NetworkAddress};
 //! use aptos_network::logging::NetworkSchema;
 //!
@@ -26,7 +26,7 @@ use crate::{
     transport::{ConnectionId, ConnectionMetadata},
 };
 use libra2_config::network_id::NetworkContext;
-use aptos_logger::Schema;
+use libra2_logger::Schema;
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_types::{network_address::NetworkAddress, PeerId};
 

@@ -13,7 +13,7 @@ use aptos_indexer_grpc_utils::{
     constants::MESSAGE_SIZE_LIMIT,
     counters::{log_grpc_step_fullnode, IndexerGrpcStep},
 };
-use aptos_logger::{error, info, sample, sample::SampleRate};
+use libra2_logger::{error, info, sample, sample::SampleRate};
 use aptos_protos::{
     internal::fullnode::v1::{
         transactions_from_node_response, TransactionsFromNodeResponse, TransactionsOutput,

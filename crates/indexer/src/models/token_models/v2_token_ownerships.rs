@@ -294,7 +294,7 @@ impl TokenOwnershipV2 {
                     ) {
                         Ok(nft) => nft,
                         Err(_) => {
-                            aptos_logger::error!(
+                            libra2_logger::error!(
                                 transaction_version = txn_version,
                                 lookup_key = &token_address,
                                 "Failed to find NFT for burned token. You probably should backfill db."
@@ -478,7 +478,7 @@ impl TokenOwnershipV2 {
                     )
                 },
                 None => {
-                    aptos_logger::warn!(
+                    libra2_logger::warn!(
                         transaction_version = txn_version,
                         table_handle = table_handle,
                         "Missing table handle metadata for TokenStore. {:?}",
@@ -564,7 +564,7 @@ impl TokenOwnershipV2 {
                     )
                 },
                 None => {
-                    aptos_logger::warn!(
+                    libra2_logger::warn!(
                         transaction_version = txn_version,
                         table_handle = table_handle,
                         "Missing table handle metadata for TokenStore. {:?}",

@@ -20,7 +20,7 @@ use aptos_consensus_types::{
     sync_info::SyncInfo,
 };
 use aptos_crypto::{HashValue, PrivateKey, Uniform};
-use aptos_logger::Level;
+use libra2_logger::Level;
 use aptos_types::{ledger_info::LedgerInfo, validator_signer::ValidatorSigner};
 use std::{future::Future, sync::Arc, time::Duration};
 use tokio::{runtime, time::timeout};
@@ -227,7 +227,7 @@ fn nocapture() -> bool {
 
 pub fn consensus_runtime() -> runtime::Runtime {
     if nocapture() {
-        ::aptos_logger::Logger::new().level(Level::Debug).init();
+        ::libra2_logger::Logger::new().level(Level::Debug).init();
     }
 
     aptos_runtimes::spawn_named_runtime("consensus".into(), None)

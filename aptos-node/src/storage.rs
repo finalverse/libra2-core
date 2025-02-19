@@ -8,7 +8,7 @@ use aptos_db::{fast_sync_storage_wrapper::FastSyncStorageWrapper, AptosDB};
 use aptos_db_indexer::db_indexer::InternalIndexerDB;
 use aptos_executor::db_bootstrapper::maybe_bootstrap;
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
-use aptos_logger::{debug, info};
+use libra2_logger::{debug, info};
 use aptos_storage_interface::{DbReader, DbReaderWriter};
 use aptos_types::{
     ledger_info::LedgerInfoWithSignatures, transaction::Version, waypoint::Waypoint,

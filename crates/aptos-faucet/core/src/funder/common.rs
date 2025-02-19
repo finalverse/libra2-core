@@ -8,7 +8,7 @@ use crate::{
 };
 use anyhow::{anyhow, Context, Result};
 use libra2_config::keys::ConfigKey;
-use aptos_logger::{
+use libra2_logger::{
     error, info,
     prelude::{sample, SampleRate},
     warn,

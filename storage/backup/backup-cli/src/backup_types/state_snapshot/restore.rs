@@ -25,7 +25,7 @@ use crate::{
 use anyhow::{anyhow, ensure, Result};
 use aptos_db::state_restore::StateSnapshotRestoreMode;
 use libra2_infallible::Mutex;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_storage_interface::StateSnapshotReceiver;
 use aptos_types::{
     access_path::Path,

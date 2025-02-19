@@ -9,7 +9,7 @@ use crate::{
 use libra2_config::{config::PeerSet, network_id::NetworkContext};
 use aptos_crypto::x25519;
 use aptos_event_notifications::ReconfigNotificationListener;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_network::{
     connectivity_manager::{ConnectivityRequest, DiscoverySource},
     counters::inc_by_with_context,

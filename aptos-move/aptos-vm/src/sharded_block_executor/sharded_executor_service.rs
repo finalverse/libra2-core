@@ -19,7 +19,7 @@ use crate::{
 use aptos_block_executor::{
     code_cache_global_manager::AptosModuleCacheManager, txn_provider::default::DefaultTxnProvider,
 };
-use aptos_logger::{info, trace};
+use libra2_logger::{info, trace};
 use aptos_types::{
     block_executor::{
         config::{BlockExecutorConfig, BlockExecutorLocalConfig},

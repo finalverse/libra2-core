@@ -21,7 +21,7 @@ use aptos_crypto::{
 use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use libra2_enum_conversion_derive::EnumConversion;
 use libra2_infallible::Mutex;
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_reliable_broadcast::{BroadcastStatus, RBMessage};
 use aptos_types::{
     aggregate_signature::{AggregateSignature, PartialSignatures},

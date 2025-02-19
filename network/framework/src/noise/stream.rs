@@ -10,7 +10,7 @@
 //! [handshake]: crate::noise::handshake
 
 use aptos_crypto::{noise, x25519};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use futures::{
     io::{AsyncRead, AsyncWrite},
     ready,

@@ -5,7 +5,7 @@ use crate::{
     client::CompressionClient,
     Error::{CompressionError, DecompressionError},
 };
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use lz4::block::CompressionMode;
 use std::time::Instant;
 use thiserror::Error;

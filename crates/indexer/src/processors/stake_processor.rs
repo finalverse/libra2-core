@@ -81,7 +81,7 @@ fn insert_to_db(
     delegator_pool_balances: Vec<DelegatorPoolBalance>,
     current_delegator_pool_balances: Vec<CurrentDelegatorPoolBalance>,
 ) -> Result<(), diesel::result::Error> {
-    aptos_logger::trace!(
+    libra2_logger::trace!(
         name = name,
         start_version = start_version,
         end_version = end_version,

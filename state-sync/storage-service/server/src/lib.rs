@@ -14,7 +14,7 @@ use libra2_config::{
     config::{StateSyncConfig, StorageServiceConfig},
     network_id::PeerNetworkId,
 };
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_network::application::storage::PeersAndMetadata;
 use aptos_storage_service_notifications::StorageServiceNotificationListener;
 use aptos_storage_service_types::{

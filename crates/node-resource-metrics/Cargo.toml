@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 libra2-build-info = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 cfg-if = { workspace = true }
 once_cell = { workspace = true }

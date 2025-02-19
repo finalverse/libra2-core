@@ -22,7 +22,7 @@ use aptos_api_types::ViewFunction;
 use aptos_cached_packages::aptos_stdlib;
 use aptos_crypto::HashValue;
 use aptos_framework::{BuildOptions, BuiltPackage, ReleasePackage};
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_rest_client::{
     aptos_api_types::{Address, HexEncodedBytes, U128, U64},
     Client, Transaction,

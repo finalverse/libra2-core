@@ -8,6 +8,6 @@ use clap::Parser;
 
 #[tokio::main]
 async fn main() {
-    aptos_logger::Logger::new().init();
+    libra2_logger::Logger::new().init();
     AptosTelemetryServiceArgs::parse().run().await;
 }

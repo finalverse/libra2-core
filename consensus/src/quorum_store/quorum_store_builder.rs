@@ -30,7 +30,7 @@ use aptos_consensus_types::{
     common::Author, proof_of_store::ProofCache, request_response::GetPayloadCommand,
 };
 use aptos_crypto::bls12381::PrivateKey;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_mempool::QuorumStoreRequest;
 use aptos_storage_interface::DbReader;
 use aptos_types::{

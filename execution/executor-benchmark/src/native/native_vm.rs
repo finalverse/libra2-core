@@ -21,7 +21,7 @@ use aptos_block_executor::{
     txn_commit_hook::NoOpTransactionCommitHook,
     txn_provider::default::DefaultTxnProvider,
 };
-use aptos_logger::error;
+use libra2_logger::error;
 use aptos_mvhashmap::types::TxnIndex;
 use aptos_types::{
     account_address::AccountAddress,

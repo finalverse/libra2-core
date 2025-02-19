@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 libra2-global-constants = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-sdk = { workspace = true }
 aptos-transaction-emitter-lib = { workspace = true }
 aptos-transaction-workloads-lib = { workspace = true }

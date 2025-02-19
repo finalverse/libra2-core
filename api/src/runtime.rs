@@ -20,7 +20,7 @@ use crate::{
 };
 use anyhow::{anyhow, Context as AnyhowContext};
 use libra2_config::config::{ApiConfig, NodeConfig};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_mempool::MempoolClientSender;
 use aptos_storage_interface::DbReader;
 use aptos_types::{chain_id::ChainId, indexer::indexer_db_reader::IndexerReader};

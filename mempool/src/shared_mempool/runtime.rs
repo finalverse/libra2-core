@@ -14,7 +14,7 @@ use crate::{
 use libra2_config::config::{NodeConfig, NodeType};
 use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use libra2_infallible::{Mutex, RwLock};
-use aptos_logger::Level;
+use libra2_logger::Level;
 use aptos_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{
     interface::{NetworkClient, NetworkServiceEvents},
@@ -79,7 +79,7 @@ pub(crate) fn start_shared_mempool<TransactionValidator, ConfigProvider>(
         config.mempool.system_transaction_gc_interval_ms,
     ));
 
-    if aptos_logger::enabled!(Level::Trace) {
+    if libra2_logger::enabled!(Level::Trace) {
         executor.spawn(snapshot_job(
             mempool,
             config.mempool.mempool_snapshot_interval_secs,

@@ -25,7 +25,7 @@ use crate::{
 };
 use libra2_config::config::{RocksdbConfig, RocksdbConfigs};
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
-use aptos_logger::prelude::info;
+use libra2_logger::prelude::info;
 use aptos_rocksdb_options::gen_rocksdb_options;
 use aptos_schemadb::{batch::SchemaBatch, ColumnFamilyDescriptor, ColumnFamilyName, DB};
 use aptos_storage_interface::Result;

@@ -15,7 +15,7 @@ use crate::{
 use anyhow::{anyhow, Context, Result};
 use libra2_config::keys::ConfigKey;
 use aptos_faucet_metrics_server::{run_metrics_server, MetricsServerConfig};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_sdk::{
     crypto::ed25519::Ed25519PrivateKey,
     types::{account_config::aptos_test_root_address, chain_id::ChainId},

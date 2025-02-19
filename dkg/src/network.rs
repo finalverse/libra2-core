@@ -9,7 +9,7 @@ use anyhow::bail;
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::network_id::NetworkId;
 use libra2_infallible::RwLock;
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_network::{
     application::interface::{NetworkClient, NetworkServiceEvents},
     protocols::network::{Event, RpcError},

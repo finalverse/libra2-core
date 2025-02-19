@@ -6,7 +6,7 @@ use crate::{
     metrics, Error,
 };
 use libra2_config::network_id::PeerNetworkId;
-use aptos_logger::{trace, warn};
+use libra2_logger::{trace, warn};
 use aptos_network::application::{
     interface::{NetworkClient, NetworkClientInterface},
     storage::PeersAndMetadata,

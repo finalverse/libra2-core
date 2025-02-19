@@ -20,7 +20,7 @@ use again::RetryPolicy;
 use anyhow::{ensure, format_err, Result};
 use libra2_config::config::DEFAULT_MAX_SUBMIT_TRANSACTION_BATCH_SIZE;
 use aptos_crypto::ed25519::Ed25519PrivateKey;
-use aptos_logger::{error, info, sample, sample::SampleRate, warn};
+use libra2_logger::{error, info, sample, sample::SampleRate, warn};
 use aptos_rest_client::{aptos_api_types::AptosErrorCode, error::RestError, Client as RestClient};
 use aptos_sdk::{
     move_types::account_address::AccountAddress,

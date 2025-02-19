@@ -31,7 +31,7 @@ use aptos_genesis::{
     mainnet::MainnetGenesisInfo,
     GenesisInfo,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::{
     account_address::{AccountAddress, AccountAddressWithChecks},
     on_chain_config::{OnChainConsensusConfig, OnChainExecutionConfig},

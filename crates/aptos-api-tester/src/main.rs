@@ -15,7 +15,7 @@ mod macros;
 
 use crate::utils::{NetworkName, TestName};
 use anyhow::Result;
-use aptos_logger::{info, Level, Logger};
+use libra2_logger::{info, Level, Logger};
 use aptos_push_metrics::MetricsPusher;
 use consts::{NETWORK_NAME, NUM_THREADS, STACK_SIZE};
 use futures::future::join_all;

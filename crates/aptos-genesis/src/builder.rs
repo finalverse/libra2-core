@@ -24,7 +24,7 @@ use aptos_crypto::{
 };
 use aptos_framework::ReleaseBundle;
 use aptos_keygen::KeyGen;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_types::{
     chain_id::ChainId,
     jwks::patch::IssuerJWK,

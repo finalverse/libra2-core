@@ -196,7 +196,7 @@ fn execute(opt: ExecuteOpt) {
 }
 
 fn main() {
-    aptos_logger::Logger::new().init();
+    libra2_logger::Logger::new().init();
     START_TIME.set(
         SystemTime::now()
             .duration_since(UNIX_EPOCH)

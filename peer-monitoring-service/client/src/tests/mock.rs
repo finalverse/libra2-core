@@ -41,7 +41,7 @@ impl MockMonitoringServer {
         TimeService,
     ) {
         // Setup the test logger (if it hasn't already been initialized)
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         // Setup the request channels and the network sender for each network
         let mut network_senders = HashMap::new();

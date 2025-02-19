@@ -17,7 +17,7 @@ use aptos_executor_types::{
     state_compute_result::StateComputeResult, ExecutorError, ExecutorResult,
 };
 use libra2_infallible::Mutex;
-use aptos_logger::{error, info, warn};
+use libra2_logger::{error, info, warn};
 use aptos_types::{
     block_info::BlockInfo,
     contract_event::ContractEvent,

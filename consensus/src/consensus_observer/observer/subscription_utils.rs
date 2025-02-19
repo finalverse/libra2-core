@@ -13,7 +13,7 @@ use crate::consensus_observer::{
     publisher::consensus_publisher::ConsensusPublisher,
 };
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
-use aptos_logger::{error, info, warn};
+use libra2_logger::{error, info, warn};
 use aptos_network::{
     application::{interface::NetworkClient, metadata::PeerMetadata},
     ProtocolId,

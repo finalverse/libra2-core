@@ -12,7 +12,7 @@ use aptos_db::{
     common::{LEDGER_DB_NAME, STATE_MERKLE_DB_NAME},
     fast_sync_storage_wrapper::SECONDARY_DB_DIR,
 };
-use aptos_logger::{debug, info};
+use libra2_logger::{debug, info};
 use aptos_sdk::{
     crypto::ed25519::Ed25519PrivateKey,
     types::{account_address::AccountAddress, PeerId},

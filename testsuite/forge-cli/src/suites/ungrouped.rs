@@ -25,7 +25,7 @@ use aptos_forge::{
     AdminContext, AdminTest, AptosContext, AptosTest, EmitJobMode, EmitJobRequest, ForgeConfig,
     NetworkContext, NetworkContextSynchronizer, NetworkTest, Test, WorkflowProgress,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_rest_client::Client as RestClient;
 use aptos_sdk::move_types::account_address::AccountAddress;
 use aptos_testcases::{

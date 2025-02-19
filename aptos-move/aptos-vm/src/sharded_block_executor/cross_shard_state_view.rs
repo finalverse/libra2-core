@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 use crate::sharded_block_executor::remote_state_value::RemoteStateValue;
 use anyhow::Result;
-use aptos_logger::trace;
+use libra2_logger::trace;
 use aptos_types::{
     block_executor::partitioner::TransactionWithDependencies,
     state_store::{

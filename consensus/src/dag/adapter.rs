@@ -27,7 +27,7 @@ use aptos_consensus_types::{
 use aptos_crypto::HashValue;
 use aptos_executor_types::state_compute_result::StateComputeResult;
 use libra2_infallible::RwLock;
-use aptos_logger::{error, info};
+use libra2_logger::{error, info};
 use aptos_storage_interface::DbReader;
 use aptos_types::{
     account_config::NewBlockEvent,

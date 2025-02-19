@@ -15,7 +15,7 @@ use crate::{
 };
 use again::RetryPolicy;
 use anyhow::{anyhow, bail, format_err};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_sdk::types::PeerId;
 use k8s_openapi::api::{
     apps::v1::{Deployment, StatefulSet},

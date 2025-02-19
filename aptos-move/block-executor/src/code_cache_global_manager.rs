@@ -41,7 +41,7 @@ macro_rules! alert_or_println {
         } else {
 
             use aptos_vm_logging::{alert, prelude::CRITICAL_ERRORS};
-            use aptos_logger::error;
+            use libra2_logger::error;
             alert!($($arg)*);
         }
     };

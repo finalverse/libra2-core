@@ -17,7 +17,7 @@ use aptos_genesis::builder::{
     FullnodeNodeConfig, InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn,
 };
 use libra2_infallible::Mutex;
-use aptos_logger::{info, warn};
+use libra2_logger::{info, warn};
 use aptos_sdk::{
     crypto::{ed25519::Ed25519PrivateKey, encoding_type::EncodingType},
     types::{

@@ -4,7 +4,7 @@
 
 use crate::metrics::{HISTOGRAM, POST_BODY_BYTES, REQUEST_SOURCE_CLIENT, RESPONSE_STATUS};
 use aptos_api_types::X_APTOS_CLIENT;
-use aptos_logger::{
+use libra2_logger::{
     debug, info,
     prelude::{sample, SampleRate},
     warn, Schema,

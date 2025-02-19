@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_crypto::HashValue;
-use aptos_logger::Schema;
+use libra2_logger::Schema;
 use aptos_types::{state_store::StateViewId, transaction::Version};
 use serde::Serialize;
 

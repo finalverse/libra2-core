@@ -4,7 +4,7 @@
 
 use crate::{aptos_vm::AptosVM, block_executor::AptosTransactionOutput};
 use aptos_block_executor::task::{ExecutionStatus, ExecutorTask};
-use aptos_logger::{enabled, Level};
+use libra2_logger::{enabled, Level};
 use aptos_mvhashmap::types::TxnIndex;
 use aptos_types::{
     state_store::{StateView, StateViewId},

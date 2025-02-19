@@ -16,7 +16,7 @@ use libra2_config::{
 };
 use aptos_crypto::x25519;
 use libra2_id_generator::{IdGenerator, U32IdGenerator};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 // Re-exposed for aptos-network-checker
 pub use aptos_netcore::transport::tcp::{resolve_and_connect, TCPBufferCfg, TcpSocket};
 use aptos_netcore::transport::{proxy_protocol, tcp, ConnectionOrigin, Transport};

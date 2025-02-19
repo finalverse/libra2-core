@@ -19,7 +19,7 @@ use aptos_data_streaming_service::{
     streaming_client::{DataStreamingClient, Epoch, NotificationAndFeedback, NotificationFeedback},
 };
 use libra2_infallible::Mutex;
-use aptos_logger::{prelude::*, sample, sample::SampleRate};
+use libra2_logger::{prelude::*, sample, sample::SampleRate};
 use aptos_storage_interface::DbReader;
 use aptos_types::{
     ledger_info::LedgerInfoWithSignatures,

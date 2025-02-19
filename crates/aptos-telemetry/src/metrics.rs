@@ -77,27 +77,27 @@ pub(crate) fn increment_telemetry_service_failures(event_name: &str) {
 }
 
 /// Counter for successful log ingest events sent to Telemetry Service
-pub(crate) static APTOS_LOG_INGEST_SUCCESS: Lazy<IntCounter> = Lazy::new(|| {
+pub(crate) static LIBRA2_LOG_INGEST_SUCCESS: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_log_ingest_success",
+        "libra2_log_ingest_success",
         "Number of log ingest events successfully sent"
     )
     .unwrap()
 });
 
 /// Counter for successful log ingest events sent to Telemetry Service
-pub(crate) static APTOS_LOG_INGEST_TOO_LARGE: Lazy<IntCounter> = Lazy::new(|| {
+pub(crate) static LIBRA2_LOG_INGEST_TOO_LARGE: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_log_ingest_too_large",
+        "libra2_log_ingest_too_large",
         "Number of log ingest events that were too large"
     )
     .unwrap()
 });
 
 /// Counter for failed log ingest events sent to Telemetry Service
-pub(crate) static APTOS_LOG_INGEST_FAILURE: Lazy<IntCounter> = Lazy::new(|| {
+pub(crate) static LIBRA2_LOG_INGEST_FAILURE: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_log_ingest_failure",
+        "libra2_log_ingest_failure",
         "Number of log ingest events that failed to send"
     )
     .unwrap()
@@ -105,15 +105,15 @@ pub(crate) static APTOS_LOG_INGEST_FAILURE: Lazy<IntCounter> = Lazy::new(|| {
 
 /// Increments the number of successful log ingest events sent to Telemetry Service
 pub(crate) fn increment_log_ingest_successes_by(v: u64) {
-    APTOS_LOG_INGEST_SUCCESS.inc_by(v);
+    LIBRA2_LOG_INGEST_SUCCESS.inc_by(v);
 }
 
 /// Increments the number of ignored log ingest events because too large
 pub(crate) fn increment_log_ingest_too_large_by(v: u64) {
-    APTOS_LOG_INGEST_TOO_LARGE.inc_by(v);
+    LIBRA2_LOG_INGEST_TOO_LARGE.inc_by(v);
 }
 
 /// Increments the number of failed log ingest events
 pub(crate) fn increment_log_ingest_failures_by(v: u64) {
-    APTOS_LOG_INGEST_FAILURE.inc_by(v);
+    LIBRA2_LOG_INGEST_FAILURE.inc_by(v);
 }

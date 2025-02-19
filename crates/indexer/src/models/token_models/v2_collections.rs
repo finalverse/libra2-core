@@ -218,7 +218,7 @@ impl CollectionV2 {
                             match CollectionData::get_collection_creator(conn, &table_handle) {
                                 Ok(creator) => creator,
                                 Err(_) => {
-                                    aptos_logger::error!(
+                                    libra2_logger::error!(
                                         transaction_version = txn_version,
                                         lookup_key = &table_handle,
                                         "Failed to get collection v2 creator for table handle. You probably should backfill db."

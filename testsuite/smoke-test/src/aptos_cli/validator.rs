@@ -20,7 +20,7 @@ use aptos_crypto::{bls12381, ed25519::Ed25519PrivateKey, x25519, ValidCryptoMate
 use aptos_forge::{reconfig, wait_for_all_nodes_to_catchup, LocalSwarm, NodeExt, Swarm, SwarmExt};
 use aptos_genesis::config::HostAndPort;
 use aptos_keygen::KeyGen;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_rest_client::{Client, State};
 use aptos_types::{
     account_config::CORE_CODE_ADDRESS,

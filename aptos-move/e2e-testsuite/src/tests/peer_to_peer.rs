@@ -13,7 +13,7 @@ use std::{convert::TryFrom, time::Instant};
 
 #[test]
 fn single_peer_to_peer_with_event() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let mut executor = FakeExecutor::from_head_genesis();
     // create and publish a sender with 1_000_000 coins and a receiver with 100_000 coins
     let sender = executor.create_raw_account_data(1_000_000, 10);

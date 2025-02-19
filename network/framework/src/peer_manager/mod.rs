@@ -24,7 +24,7 @@ use crate::{
 };
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use libra2_config::network_id::{NetworkContext, PeerNetworkId};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_netcore::transport::{ConnectionOrigin, Transport};
 use libra2_short_hex_str::AsShortHexStr;
 use libra2_time_service::{TimeService, TimeServiceTrait};

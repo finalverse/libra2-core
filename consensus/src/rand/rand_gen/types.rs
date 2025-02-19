@@ -10,7 +10,7 @@ use libra2_dkg::{
     weighted_vuf::traits::WeightedVUF,
 };
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_types::{
     aggregate_signature::AggregateSignature,
     randomness::{

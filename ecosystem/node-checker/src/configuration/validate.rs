@@ -4,7 +4,7 @@
 use super::{read_configuration_from_file, BaselineConfiguration};
 use crate::checker::build_checkers;
 use anyhow::{Context, Result};
-use aptos_logger::debug;
+use libra2_logger::debug;
 use clap::Parser;
 use std::path::PathBuf;
 

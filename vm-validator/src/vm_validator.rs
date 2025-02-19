@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_storage_interface::{
     state_store::state_view::{
         cached_state_view::CachedDbStateView,

@@ -7,7 +7,7 @@ use crate::{
 };
 use aptos_api::context::Context;
 use libra2_config::config::NodeConfig;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_mempool::MempoolClientSender;
 use aptos_protos::{
     indexer::v1::{

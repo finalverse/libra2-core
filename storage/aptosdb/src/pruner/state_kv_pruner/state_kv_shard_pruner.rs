@@ -9,7 +9,7 @@ use crate::{
         state_value_by_key_hash::StateValueByKeyHashSchema,
     },
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_schemadb::{batch::SchemaBatch, DB};
 use aptos_storage_interface::Result;
 use aptos_types::transaction::Version;

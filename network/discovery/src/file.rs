@@ -5,7 +5,7 @@
 use crate::DiscoveryError;
 use libra2_config::config::PeerSet;
 #[cfg(test)]
-use aptos_logger::spawn_named;
+use libra2_logger::spawn_named;
 use libra2_time_service::{Interval, TimeService, TimeServiceTrait};
 use futures::Stream;
 use std::{

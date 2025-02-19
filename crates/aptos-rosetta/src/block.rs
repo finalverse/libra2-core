@@ -10,7 +10,7 @@ use crate::{
     types::{Block, BlockIdentifier, BlockRequest, BlockResponse, Transaction},
     RosettaContext,
 };
-use aptos_logger::{debug, trace};
+use libra2_logger::{debug, trace};
 use aptos_types::chain_id::ChainId;
 use std::sync::Arc;
 use warp::Filter;

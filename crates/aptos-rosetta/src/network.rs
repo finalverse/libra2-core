@@ -10,7 +10,7 @@ use crate::{
     },
     RosettaContext, NODE_VERSION, ROSETTA_VERSION,
 };
-use aptos_logger::{debug, trace};
+use libra2_logger::{debug, trace};
 use warp::Filter;
 
 pub fn list_route(

@@ -3,7 +3,7 @@
 
 use anyhow::Result;
 use aptos_faucet_core::server::Server;
-use aptos_logger::info;
+use libra2_logger::info;
 use clap::Parser;
 
 #[derive(Clone, Debug, Parser)]
@@ -22,8 +22,8 @@ impl Args {
 async fn main() -> Result<()> {
     let root_args = Args::parse();
 
-    aptos_logger::Logger::builder()
-        .level(aptos_logger::Level::Info)
+    libra2_logger::Logger::builder()
+        .level(libra2_logger::Level::Info)
         .build();
 
     info!("Running with root args: {:#?}", root_args);

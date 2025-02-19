@@ -11,7 +11,7 @@ use aptos_block_partitioner::v2::config::PartitionerV2Config;
 use aptos_crypto::HashValue;
 use aptos_executor::block_executor::BlockExecutor;
 use aptos_executor_types::{state_compute_result::StateComputeResult, BlockExecutorTrait};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::{
     block_executor::partitioner::ExecutableBlock,
     transaction::{Transaction, Version},

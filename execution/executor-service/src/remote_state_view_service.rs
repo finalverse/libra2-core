@@ -10,7 +10,7 @@ use std::{
 
 extern crate itertools;
 use crate::metrics::REMOTE_EXECUTOR_TIMER;
-use aptos_logger::trace;
+use libra2_logger::trace;
 use aptos_types::state_store::{StateView, TStateView};
 use itertools::Itertools;
 

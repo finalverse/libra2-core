@@ -6,7 +6,7 @@
 #![forbid(unsafe_code)]
 
 use libra2_config::config::{ApiConfig, DEFAULT_MAX_PAGE_SIZE};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_node::AptosNodeArgs;
 use aptos_rosetta::{bootstrap, common::native_coin, types::Currency};
 use aptos_sdk::move_types::language_storage::StructTag;
@@ -83,7 +83,7 @@ async fn main() {
         Some(runtime)
     } else {
         // If we aren't running a full node, set up the logger now
-        aptos_logger::Logger::new().init();
+        libra2_logger::Logger::new().init();
         None
     };
 

@@ -17,7 +17,7 @@ use aptos_consensus_types::{
     proof_of_store::{BatchId, BatchInfo},
 };
 use aptos_experimental_runtimes::thread_manager::optimal_min_len;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_mempool::QuorumStoreRequest;
 use aptos_types::{transaction::SignedTransaction, PeerId};
 use futures_channel::mpsc::Sender;

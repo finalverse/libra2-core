@@ -55,8 +55,8 @@
 /crates/aptos-faucet @banool @gregnazario
 /crates/aptos-genesis @gregnazario
 
-# Owners for the aptos-logger crate
-/crates/aptos-logger @gregnazario @joshlind
+# Owners for the libra2-logger crate
+/crates/libra2-logger @gregnazario @joshlind
 
 /crates/aptos-open-api @banool @gregnazario
 

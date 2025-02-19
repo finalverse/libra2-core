@@ -7,7 +7,7 @@ use crate::{
     utils::{get_current_consensus_config, get_on_chain_resource},
 };
 use aptos_forge::{Node, Swarm, SwarmExt};
-use aptos_logger::{debug, info};
+use libra2_logger::{debug, info};
 use aptos_types::{
     dkg::DKGState, on_chain_config::OnChainRandomnessConfig, randomness::PerBlockRandomness,
 };

@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_config::network_id::NetworkContext;
 use libra2_infallible::RwLock;
-use aptos_logger::error;
+use libra2_logger::error;
 use aptos_types::PeerId;
 use maplit::hashset;
 use ordered_float::OrderedFloat;

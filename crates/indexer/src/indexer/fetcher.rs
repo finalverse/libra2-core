@@ -4,7 +4,7 @@
 use crate::counters::{FETCHED_TRANSACTION, UNABLE_TO_FETCH_TRANSACTION};
 use aptos_api::Context;
 use aptos_api_types::{AsConverter, LedgerInfo, Transaction, TransactionOnChainData};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use futures::{channel::mpsc, SinkExt};
 use std::{sync::Arc, time::Duration};
 use tokio::task::JoinHandle;
@@ -67,7 +67,7 @@ impl Fetcher {
             } else {
                 sample!(
                     SampleRate::Frequency(10),
-                    aptos_logger::info!(
+                    libra2_logger::info!(
                         highest_known_version = self.highest_known_version,
                         "Found new highest known version",
                     )

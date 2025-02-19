@@ -18,7 +18,7 @@ use libra2_bitvec::BitVec;
 use aptos_consensus_types::common::{Author, Round};
 use aptos_crypto::HashValue;
 use libra2_infallible::{Mutex, MutexGuard};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_storage_interface::DbReader;
 use aptos_types::{
     account_config::NewBlockEvent, epoch_change::EpochChangeProof, epoch_state::EpochState,

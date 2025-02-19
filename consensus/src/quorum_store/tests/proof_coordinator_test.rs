@@ -46,7 +46,7 @@ impl BatchReader for MockBatchReader {
 
 #[tokio::test(flavor = "multi_thread")]
 async fn test_proof_coordinator_basic() {
-    aptos_logger::Logger::init_for_testing();
+    libra2_logger::Logger::init_for_testing();
     let (signers, verifier) = random_validator_verifier(4, None, true);
     let (tx, _rx) = channel(100);
     let proof_cache = Cache::builder().build();
@@ -97,7 +97,7 @@ async fn test_proof_coordinator_basic() {
 // This is testing the bad path where some of the signatures in signed batch infos are bad.
 #[tokio::test(flavor = "multi_thread")]
 async fn test_proof_coordinator_with_unverified_signatures() {
-    aptos_logger::Logger::init_for_testing();
+    libra2_logger::Logger::init_for_testing();
     let (signers, verifier) = random_validator_verifier(10, Some(4), true);
     let verifier = Arc::new(verifier);
     let (tx, _rx) = channel(100);

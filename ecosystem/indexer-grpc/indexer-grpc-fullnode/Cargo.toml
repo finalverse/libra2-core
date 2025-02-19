@@ -34,7 +34,7 @@ aptos-api-types = { workspace = true }
 libra2-bitvec = { workspace = true }
 libra2-config = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-moving-average = { workspace = true }

@@ -56,7 +56,7 @@ use aptos_consensus_types::{
 };
 use aptos_crypto::{hash::CryptoHash, HashValue};
 use libra2_infallible::{checked, Mutex};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 #[cfg(test)]
 use aptos_safety_rules::ConsensusState;
 use aptos_safety_rules::TSafetyRules;

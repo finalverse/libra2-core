@@ -1,6 +1,6 @@
 [package]
-name = "aptos-logger"
-description = "Aptos logger"
+name = "libra2-logger"
+description = "Libra2 logger"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -13,10 +13,10 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 # Do NOT add any inter-project dependencies.
-# This is to avoid ever having a circular dependency with the aptos-logger crate.
+# This is to avoid ever having a circular dependency with the libra2-logger crate.
 [dependencies]
 libra2-infallible = { workspace = true }
-aptos-log-derive = { workspace = true }
+libra2-log-derive = { workspace = true }
 libra2-node-identity = { workspace = true, optional = true }
 backtrace = { workspace = true }
 chrono = { workspace = true }

@@ -15,7 +15,7 @@ use aptos::{
     move_tool::MemberId,
 };
 use aptos_forge::{Swarm, SwarmExt};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::on_chain_config::OnChainRandomnessConfig;
 use std::{str::FromStr, sync::Arc, time::Duration};
 

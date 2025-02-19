@@ -34,7 +34,7 @@ use aptos_executor::{
 use aptos_jellyfish_merkle::metrics::{
     APTOS_JELLYFISH_INTERNAL_ENCODED_BYTES, APTOS_JELLYFISH_LEAF_ENCODED_BYTES,
 };
-use aptos_logger::{info, warn};
+use libra2_logger::{info, warn};
 use libra2_metrics_core::Histogram;
 use aptos_sdk::types::LocalAccount;
 use aptos_storage_interface::{
@@ -308,7 +308,7 @@ pub fn run_benchmark<V>(
     }
 
     // Assert there were no error log lines in the run.
-    assert_eq!(0, aptos_logger::ERROR_LOG_COUNT.get());
+    assert_eq!(0, libra2_logger::ERROR_LOG_COUNT.get());
 }
 
 fn init_workload<V>(
@@ -476,7 +476,7 @@ fn add_accounts_impl<V>(
     );
 
     // Assert there were no error log lines in the run.
-    assert_eq!(0, aptos_logger::ERROR_LOG_COUNT.get());
+    assert_eq!(0, libra2_logger::ERROR_LOG_COUNT.get());
 
     log_total_supply(&db.reader);
 
@@ -817,7 +817,7 @@ pub fn run_single_with_default_params(
     concurrency_level: usize,
     mode: SingleRunMode,
 ) {
-    aptos_logger::Logger::new().init();
+    libra2_logger::Logger::new().init();
 
     AptosVM::set_num_shards_once(1);
     AptosVM::set_concurrency_level_once(concurrency_level);
@@ -1003,7 +1003,7 @@ mod tests {
         features: Features,
         txn_payload_f: impl Fn(AccountAddress) -> TransactionPayload,
     ) {
-        aptos_logger::Logger::new().init();
+        libra2_logger::Logger::new().init();
 
         let db_dir = TempPath::new();
 
@@ -1157,7 +1157,7 @@ mod tests {
     ) where
         E: VMBlockExecutor + 'static,
     {
-        aptos_logger::Logger::new().init();
+        libra2_logger::Logger::new().init();
 
         let storage_dir = TempPath::new();
         let checkpoint_dir = TempPath::new();

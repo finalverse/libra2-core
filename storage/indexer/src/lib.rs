@@ -19,7 +19,7 @@ use aptos_db_indexer_schemas::{
         column_families, indexer_metadata::IndexerMetadataSchema, table_info::TableInfoSchema,
     },
 };
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_resource_viewer::{AnnotatedMoveValue, AptosValueAnnotator};
 use aptos_rocksdb_options::gen_rocksdb_options;
 use aptos_schemadb::{batch::SchemaBatch, DB};
@@ -126,12 +126,12 @@ impl Indexer {
         match table_info_parser.finish(&mut batch) {
             Ok(_) => {},
             Err(err) => {
-                aptos_logger::error!(first_version = first_version, end_version = end_version, error = ?&err);
+                libra2_logger::error!(first_version = first_version, end_version = end_version, error = ?&err);
                 write_sets
                     .iter()
                     .enumerate()
                     .for_each(|(i, write_set)| {
-                        aptos_logger::error!(version = first_version as usize + i, write_set = ?write_set);
+                        libra2_logger::error!(version = first_version as usize + i, write_set = ?write_set);
                     });
                 db_other_bail!("Failed to parse table info: {:?}", err);
             },

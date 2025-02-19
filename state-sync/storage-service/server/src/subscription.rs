@@ -16,7 +16,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_infallible::Mutex;
-use aptos_logger::{error, warn};
+use libra2_logger::{error, warn};
 use aptos_storage_service_types::{
     requests::{
         DataRequest, StorageServiceRequest, SubscriptionStreamMetadata,

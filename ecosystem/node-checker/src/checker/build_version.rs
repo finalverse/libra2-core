@@ -16,7 +16,7 @@ use crate::{
     },
 };
 use anyhow::{anyhow, Result};
-use aptos_logger::debug;
+use libra2_logger::debug;
 use serde::{Deserialize, Serialize};
 
 // TODO: Use the key in crates/aptos-telemetry/src/build_information.rs

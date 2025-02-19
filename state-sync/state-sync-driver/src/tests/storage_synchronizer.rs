@@ -887,7 +887,7 @@ fn create_storage_synchronizer(
     StorageSynchronizer<MockChunkExecutor, PersistentMetadataStorage>,
     StorageSynchronizerHandles,
 ) {
-    aptos_logger::Logger::init_for_testing();
+    libra2_logger::Logger::init_for_testing();
 
     // Create the notification channels
     let (commit_notification_sender, commit_notification_listener) =

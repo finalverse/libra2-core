@@ -28,7 +28,7 @@ use aptos_executor_types::{
     state_compute_result::StateComputeResult, BlockExecutorTrait, ExecutorResult,
 };
 use libra2_infallible::RwLock;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use libra2_metrics_core::IntGauge;
 use aptos_types::{
     account_address::AccountAddress, block_executor::config::BlockExecutorConfigFromOnchain,

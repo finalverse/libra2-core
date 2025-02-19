@@ -6,7 +6,7 @@ use aptos_forge::{
     GroupNetEm, NetworkContext, NetworkContextSynchronizer, NetworkTest, Swarm, SwarmChaos,
     SwarmNetEm, Test,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::PeerId;
 use async_trait::async_trait;
 use itertools::{self, EitherOrBoth, Itertools};
@@ -385,7 +385,7 @@ mod tests {
 
     #[test]
     fn test_create_multi_region_swarm_network_chaos() {
-        aptos_logger::Logger::new().init();
+        libra2_logger::Logger::new().init();
 
         // Create a config with 8 peers and multiple regions
         let all_peers: Vec<_> = (0..8).map(|_| vec![PeerId::random()]).collect();

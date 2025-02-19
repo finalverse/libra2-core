@@ -11,7 +11,7 @@ use aptos_consensus_types::{
     request_response::{GetPayloadCommand, GetPayloadRequest, GetPayloadResponse},
     utils::PayloadTxnsSize,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use fail::fail_point;
 use futures::future::BoxFuture;
 use futures_channel::{mpsc, oneshot};

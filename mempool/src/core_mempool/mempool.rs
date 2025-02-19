@@ -20,7 +20,7 @@ use crate::{
 use libra2_config::config::NodeConfig;
 use aptos_consensus_types::common::{TransactionInProgress, TransactionSummary};
 use aptos_crypto::HashValue;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_types::{
     account_address::AccountAddress,
     mempool_status::{MempoolStatus, MempoolStatusCode},

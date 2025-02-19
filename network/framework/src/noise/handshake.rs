@@ -22,7 +22,7 @@ use libra2_config::{
 };
 use aptos_crypto::{noise, x25519};
 use libra2_infallible::{duration_since_epoch, RwLock};
-use aptos_logger::{error, trace};
+use libra2_logger::{error, trace};
 use libra2_short_hex_str::{AsShortHexStr, ShortHexStr};
 use aptos_types::PeerId;
 use futures::io::{AsyncRead, AsyncReadExt, AsyncWrite, AsyncWriteExt};
@@ -773,7 +773,7 @@ mod test {
 
     #[test]
     fn test_handshake_client_peerid_mismatch_fails_server_only_auth() {
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         let ((mut client, _), (server, server_public_key)) = build_peers(false, None);
         client.network_context = NetworkContext::mock_with_peer_id(PeerId::random());
@@ -814,7 +814,7 @@ mod test {
     #[test]
     fn test_handshake_peer_roles_pfn_dials_vfn() {
         // Initialize the logger
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         // Create a peers and metadata struct
         let network_ids = vec![NetworkId::Vfn, NetworkId::Public];
@@ -878,7 +878,7 @@ mod test {
     #[test]
     fn test_handshake_peer_roles_validator_dials_validator() {
         // Initialize the logger
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         // Create a client and server with mutual auth enabled
         let ((client, _), (server, server_public_key)) = build_peers(true, None);
@@ -916,7 +916,7 @@ mod test {
     #[test]
     fn test_handshake_peer_roles_vfn_dials_validator() {
         // Initialize the logger
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         // Create a peers and metadata struct with no trusted peers
         let network_ids = vec![NetworkId::Validator, NetworkId::Vfn];
@@ -980,7 +980,7 @@ mod test {
     #[test]
     fn test_handshake_peer_roles_vfn_dials_vfn() {
         // Initialize the logger
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         // Create a peers and metadata struct with no trusted peers
         let network_ids = vec![NetworkId::Vfn, NetworkId::Public];

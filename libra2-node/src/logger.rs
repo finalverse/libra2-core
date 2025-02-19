@@ -4,8 +4,8 @@
 use crate::mpsc::Receiver;
 use libra2_build_info::build_information;
 use libra2_config::config::NodeConfig;
-use aptos_logger::{
-    aptos_logger::FileWriter, info, telemetry_log_writer::TelemetryLog, LoggerFilterUpdater,
+use libra2_logger::{
+    libra2_logger::FileWriter, info, telemetry_log_writer::TelemetryLog, LoggerFilterUpdater,
 };
 use futures::channel::mpsc;
 use std::path::PathBuf;
@@ -32,7 +32,7 @@ pub fn create_logger(
     log_file: Option<PathBuf>,
 ) -> (Option<Receiver<TelemetryLog>>, LoggerFilterUpdater) {
     // Create the logger builder
-    let mut logger_builder = aptos_logger::Logger::builder();
+    let mut logger_builder = libra2_logger::Logger::builder();
     let mut remote_log_receiver = None;
     logger_builder
         .channel_size(node_config.logger.chan_size)

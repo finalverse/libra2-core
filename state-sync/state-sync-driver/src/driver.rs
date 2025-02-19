@@ -31,7 +31,7 @@ use aptos_data_streaming_service::streaming_client::{
 };
 use aptos_event_notifications::EventSubscriptionService;
 use libra2_infallible::Mutex;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_mempool_notifications::MempoolNotificationSender;
 use aptos_storage_interface::DbReader;
 use aptos_storage_service_notifications::StorageServiceNotificationSender;

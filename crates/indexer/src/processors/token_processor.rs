@@ -68,7 +68,7 @@ impl TokenTransactionProcessor {
         ans_contract_address: Option<String>,
         nft_points_contract: Option<String>,
     ) -> Self {
-        aptos_logger::info!(
+        libra2_logger::info!(
             ans_contract_address = ans_contract_address,
             "init TokenTransactionProcessor"
         );
@@ -188,7 +188,7 @@ fn insert_to_db(
         Vec<CurrentTokenV2Metadata>,
     ),
 ) -> Result<(), diesel::result::Error> {
-    aptos_logger::trace!(
+    libra2_logger::trace!(
         name = name,
         start_version = start_version,
         end_version = end_version,

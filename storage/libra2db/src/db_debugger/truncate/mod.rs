@@ -184,7 +184,7 @@ mod test {
         #[test]
         fn test_truncation(input in arb_blocks_to_commit_with_block_nums(80, 120)) {
             use libra2_config::config::DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD;
-            aptos_logger::Logger::new().init();
+            libra2_logger::Logger::new().init();
             let sharding_config = ShardingConfig {
                 enable_storage_sharding: input.1,
             };

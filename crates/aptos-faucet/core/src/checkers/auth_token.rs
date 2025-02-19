@@ -8,7 +8,7 @@ use crate::{
     firebase_jwt::X_IS_JWT_HEADER,
 };
 use anyhow::Result;
-use aptos_logger::info;
+use libra2_logger::info;
 use async_trait::async_trait;
 use poem::http::header::AUTHORIZATION;
 

@@ -33,7 +33,7 @@ pub async fn check_endpoint(
     });
     let (peer_id, public_key) = private_key_to_public_info(&private_key);
     let timeout = Duration::from_secs(args.handshake_args.timeout_seconds);
-    aptos_logger::debug!(
+    libra2_logger::debug!(
         "Connecting with peer ID {} and pubkey {} to {} with timeout: {:?}",
         peer_id,
         public_key,

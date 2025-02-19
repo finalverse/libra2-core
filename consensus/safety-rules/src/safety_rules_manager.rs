@@ -15,7 +15,7 @@ use libra2_config::config::{InitialSafetyRulesConfig, SafetyRulesConfig, SafetyR
 use aptos_crypto::bls12381::PublicKey;
 use libra2_global_constants::CONSENSUS_KEY;
 use libra2_infallible::RwLock;
-use aptos_logger::{info, warn};
+use libra2_logger::{info, warn};
 use aptos_secure_storage::{KVStorage, Storage};
 use std::{net::SocketAddr, sync::Arc, time::Instant};
 

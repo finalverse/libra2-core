@@ -3,7 +3,7 @@
 
 use crate::consensus_observer::common::error::Error;
 use libra2_config::network_id::PeerNetworkId;
-use aptos_logger::Schema;
+use libra2_logger::Schema;
 use serde::Serialize;
 
 #[derive(Schema)]

@@ -222,7 +222,7 @@ impl TokenDataV2 {
                     },
                 )));
             } else {
-                aptos_logger::warn!(
+                libra2_logger::warn!(
                     transaction_version = txn_version,
                     key_type = table_item_data.key_type,
                     key = table_item_data.key,

@@ -18,7 +18,7 @@ use aptos_indexer_grpc_fullnode::runtime::bootstrap as bootstrap_indexer_grpc;
 use aptos_indexer_grpc_table_info::runtime::{
     bootstrap as bootstrap_indexer_table_info, bootstrap_internal_indexer_db,
 };
-use aptos_logger::{debug, telemetry_log_writer::TelemetryLog, LoggerFilterUpdater};
+use libra2_logger::{debug, telemetry_log_writer::TelemetryLog, LoggerFilterUpdater};
 use aptos_mempool::{
     network::MempoolSyncMsg, MempoolClientRequest, MempoolClientSender, QuorumStoreRequest,
 };

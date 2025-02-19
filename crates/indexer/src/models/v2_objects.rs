@@ -128,7 +128,7 @@ impl Object {
                 match Self::get_object_owner(conn, &resource.address) {
                     Ok(owner) => owner,
                     Err(_) => {
-                        aptos_logger::error!(
+                        libra2_logger::error!(
                             transaction_version = txn_version,
                             lookup_key = &resource.address,
                             "Missing object owner for object. You probably should backfill db.",

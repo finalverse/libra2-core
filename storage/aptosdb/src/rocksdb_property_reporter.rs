@@ -20,7 +20,7 @@ use crate::{
 };
 use anyhow::Result;
 use libra2_infallible::Mutex;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use libra2_metrics_core::IntGaugeVec;
 use aptos_schemadb::DB;
 use aptos_storage_interface::state_store::NUM_STATE_SHARDS;

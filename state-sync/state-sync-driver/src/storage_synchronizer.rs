@@ -18,7 +18,7 @@ use aptos_data_streaming_service::data_notification::NotificationId;
 use aptos_event_notifications::EventSubscriptionService;
 use aptos_executor_types::{ChunkCommitNotification, ChunkExecutorTrait};
 use libra2_infallible::Mutex;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_mempool_notifications::MempoolNotificationSender;
 use libra2_metrics_core::HistogramTimer;
 use aptos_storage_interface::{DbReader, DbReaderWriter, StateSnapshotReceiver};

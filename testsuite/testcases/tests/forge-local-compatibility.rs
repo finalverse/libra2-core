@@ -7,7 +7,7 @@ use aptos_testcases::compatibility_test::SimpleValidatorUpgrade;
 use std::num::NonZeroUsize;
 
 fn main() -> Result<()> {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
 
     let tests = ForgeConfig::default()
         .with_initial_validator_count(NonZeroUsize::new(4).unwrap())

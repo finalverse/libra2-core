@@ -14,7 +14,7 @@ use crate::{
     FullNode, K8sApi, Node, Result, Swarm, SwarmChaos, Validator, Version, HAPROXY_SERVICE_SUFFIX,
     REST_API_HAPROXY_SERVICE_PORT, REST_API_SERVICE_PORT,
 };
-use ::aptos_logger::*;
+use ::libra2_logger::*;
 use anyhow::{anyhow, bail, format_err};
 use libra2_config::config::{NodeConfig, OverrideNodeConfig};
 use libra2_retrier::fixed_retry_strategy;

@@ -3,7 +3,7 @@
 
 use crate::check::SingleCheck;
 use anyhow::{bail, Context, Result};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_sdk::types::account_address::AccountAddress;
 use clap::Parser;
 use gcp_bigquery_client::{

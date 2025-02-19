@@ -7,7 +7,7 @@ use crate::{
     state_view::{ReadSet, ReadSetCapturingStateView},
     workload::{TransactionBlock, Workload},
 };
-use aptos_logger::error;
+use libra2_logger::error;
 use aptos_move_debugger::aptos_debugger::AptosDebugger;
 use aptos_types::transaction::Version;
 use aptos_vm::{aptos_vm::AptosVMBlockExecutor, data_cache::AsMoveResolver, VMBlockExecutor};

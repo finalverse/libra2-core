@@ -11,7 +11,7 @@ use crate::{
 use anyhow::Result;
 use aptos_consensus_types::proof_of_store::BatchId;
 use aptos_crypto::HashValue;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_schemadb::{batch::SchemaBatch, Options, DB};
 use std::{collections::HashMap, path::Path, time::Instant};
 

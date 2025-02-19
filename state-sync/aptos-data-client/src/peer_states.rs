@@ -11,7 +11,7 @@ use libra2_config::{
     config::AptosDataClientConfig,
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServerSummary,
 };

@@ -10,7 +10,7 @@ use crate::consensus_observer::{
 };
 use libra2_config::config::ConsensusObserverConfig;
 use aptos_consensus_types::{common::Round, pipelined_block::PipelinedBlock};
-use aptos_logger::{debug, warn};
+use libra2_logger::{debug, warn};
 use aptos_types::ledger_info::LedgerInfoWithSignatures;
 use std::{collections::BTreeMap, sync::Arc};
 

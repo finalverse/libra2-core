@@ -25,8 +25,8 @@ pub struct RootArgs {
 async fn main() -> Result<()> {
     let root_args = RootArgs::parse();
 
-    aptos_logger::Logger::builder()
-        .level(aptos_logger::Level::Info)
+    libra2_logger::Logger::builder()
+        .level(libra2_logger::Level::Info)
         .build();
 
     let command = root_args.command;

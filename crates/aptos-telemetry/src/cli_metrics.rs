@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{service, utils};
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_telemetry_service::types::telemetry::TelemetryEvent;
 use std::{collections::BTreeMap, time::Duration};
 

@@ -13,6 +13,6 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 tokio = { workspace = true }
 

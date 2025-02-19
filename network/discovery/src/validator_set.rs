@@ -12,7 +12,7 @@ use libra2_config::{
 };
 use aptos_crypto::x25519;
 use aptos_event_notifications::ReconfigNotificationListener;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_network::{counters::inc_by_with_context, logging::NetworkSchema};
 use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::on_chain_config::{OnChainConfigPayload, OnChainConfigProvider, ValidatorSet};
@@ -175,7 +175,7 @@ mod tests {
 
     #[test]
     fn metric_if_key_mismatch() {
-        aptos_logger::Logger::init_for_testing();
+        libra2_logger::Logger::init_for_testing();
         let runtime = Runtime::new().unwrap();
         let consensus_private_key = bls12381::PrivateKey::generate_for_testing();
         let consensus_pubkey = consensus_private_key.public_key();

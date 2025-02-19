@@ -15,7 +15,7 @@ use aptos_consensus_types::{
     vote::Vote,
 };
 use aptos_crypto::HashValue;
-use aptos_logger::{prelude::*, Schema};
+use libra2_logger::{prelude::*, Schema};
 use aptos_types::validator_verifier::ValidatorVerifier;
 use futures::future::AbortHandle;
 use serde::Serialize;

@@ -19,7 +19,7 @@ libra2-config = { workspace = true }
 aptos-db-indexer  = { workspace = true }
 aptos-indexer-grpc-fullnode = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-runtimes = { workspace = true }

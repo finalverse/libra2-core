@@ -4,7 +4,7 @@
 use crate::config::{
     config_optimizer::ConfigOptimizer, node_config_loader::NodeType, Error, NodeConfig,
 };
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_types::chain_id::ChainId;
 use serde::{Deserialize, Serialize};
 use serde_yaml::Value;

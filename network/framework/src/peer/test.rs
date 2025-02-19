@@ -26,7 +26,7 @@ use crate::{
 };
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use libra2_config::{config::PeerRole, network_id::NetworkContext};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_memsocket::MemorySocket;
 use aptos_netcore::transport::ConnectionOrigin;
 use libra2_time_service::{MockTimeService, TimeService};
@@ -203,7 +203,7 @@ impl PeerHandle {
 // Sending an outbound DirectSend should write it to the wire.
 #[test]
 fn peer_send_message() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let upstream_handlers = Arc::new(HashMap::new());
     let (peer, mut peer_handle, mut connection, _connection_notifs_rx) = build_test_peer(
@@ -258,7 +258,7 @@ fn test_upstream_handlers() -> (
 // an inbound DirectSend.
 #[test]
 fn peer_recv_message() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let (upstream_handlers, mut receiver) = test_upstream_handlers();
     let (peer, _peer_handle, connection, _connection_notifs_rx) = build_test_peer(
@@ -310,7 +310,7 @@ fn peer_recv_message() {
 // other and then shutdown gracefully.
 #[test]
 fn peers_send_message_concurrent() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let (upstream_handlers_a, mut prot_a_rx) = test_upstream_handlers();
     let (upstream_handlers_b, mut prot_b_rx) = test_upstream_handlers();
@@ -385,7 +385,7 @@ fn peers_send_message_concurrent() {
 
 #[test]
 fn peer_recv_rpc() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let (upstream_handlers, mut prot_rx) = test_upstream_handlers();
     let (peer, _peer_handle, mut connection, _connection_notifs_rx) = build_test_peer(
@@ -456,7 +456,7 @@ fn peer_recv_rpc() {
 
 #[test]
 fn peer_recv_rpc_concurrent() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let (upstream_handlers, mut prot_rx) = test_upstream_handlers();
     let (peer, _peer_handle, mut connection, _connection_notifs_rx) = build_test_peer(
@@ -522,7 +522,7 @@ fn peer_recv_rpc_concurrent() {
 
 #[test]
 fn peer_recv_rpc_timeout() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let mock_time = MockTimeService::new();
     let (upstream_handlers, mut prot_rx) = test_upstream_handlers();
@@ -580,7 +580,7 @@ fn peer_recv_rpc_timeout() {
 
 #[test]
 fn peer_recv_rpc_cancel() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let (upstream_handlers, mut prot_rx) = test_upstream_handlers();
     let (peer, _peer_handle, mut connection, _connection_notifs_rx) = build_test_peer(
@@ -633,7 +633,7 @@ fn peer_recv_rpc_cancel() {
 
 #[test]
 fn peer_send_rpc() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let upstream_handlers = Arc::new(HashMap::new());
     let (peer, mut peer_handle, mut connection, _connection_notifs_rx) = build_test_peer(
@@ -693,7 +693,7 @@ fn peer_send_rpc() {
 
 #[test]
 fn peer_send_rpc_concurrent() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let upstream_handlers = Arc::new(HashMap::new());
     let (peer, peer_handle, mut connection, _connection_notifs_rx) = build_test_peer(
@@ -763,7 +763,7 @@ fn peer_send_rpc_concurrent() {
 
 #[test]
 fn peer_send_rpc_cancel() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let upstream_handlers = Arc::new(HashMap::new());
     let (peer, peer_handle, mut connection, _connection_notifs_rx) = build_test_peer(
@@ -824,7 +824,7 @@ fn peer_send_rpc_cancel() {
 
 #[test]
 fn peer_send_rpc_timeout() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let mock_time = MockTimeService::new();
     let upstream_handlers = Arc::new(HashMap::new());
@@ -890,7 +890,7 @@ fn peer_send_rpc_timeout() {
 // PeerManager can request a Peer to shutdown.
 #[test]
 fn peer_disconnect_request() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let upstream_handlers = Arc::new(HashMap::new());
     let (peer, peer_handle, _connection, mut connection_notifs_rx) = build_test_peer(
@@ -917,7 +917,7 @@ fn peer_disconnect_request() {
 // Peer will shutdown if the underlying connection is lost.
 #[test]
 fn peer_disconnect_connection_lost() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let upstream_handlers = Arc::new(HashMap::new());
     let (peer, _peer_handle, mut connection, mut connection_notifs_rx) = build_test_peer(
@@ -942,7 +942,7 @@ fn peer_disconnect_connection_lost() {
 
 #[test]
 fn peer_terminates_when_request_tx_has_dropped() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let upstream_handlers = Arc::new(HashMap::new());
     let (peer, peer_handle, _connection, _connection_notifs_rx) = build_test_peer(
@@ -961,7 +961,7 @@ fn peer_terminates_when_request_tx_has_dropped() {
 
 #[test]
 fn peers_send_multiplex() {
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
     let rt = Runtime::new().unwrap();
     let (upstream_handlers_a, mut prot_a_rx) = test_upstream_handlers();
     let (upstream_handlers_b, mut prot_b_rx) = test_upstream_handlers();

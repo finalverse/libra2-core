@@ -8,7 +8,7 @@ use aptos_gas_schedule::{
     gas_feature_versions::RELEASE_V1_13, gas_params::txn::KEYLESS_BASE_COST, AptosGasParameters,
     VMGasParameters,
 };
-use aptos_logger::{enabled, Level};
+use libra2_logger::{enabled, Level};
 use aptos_memory_usage_tracker::MemoryTrackedGasMeter;
 use aptos_types::on_chain_config::Features;
 use aptos_vm_logging::{log_schema::AdapterLogSchema, speculative_log, speculative_warn};

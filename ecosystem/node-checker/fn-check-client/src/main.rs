@@ -9,7 +9,7 @@ mod helpers;
 
 use crate::big_query::write_to_big_query;
 use anyhow::{Context, Result};
-use aptos_logger::info;
+use libra2_logger::info;
 use big_query::BigQueryArgs;
 use check::NodeHealthCheckerArgs;
 use clap::{Parser, Subcommand};

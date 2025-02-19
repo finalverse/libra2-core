@@ -140,7 +140,7 @@ impl NodeAddress {
             );
         }
         if socket_addrs.len() > 1 {
-            aptos_logger::warn!(
+            libra2_logger::warn!(
                 "NodeAddress {} resolved to multiple SocketAddrs, but we're only checking the first one: {:?}",
                 self.url,
                 socket_addrs,

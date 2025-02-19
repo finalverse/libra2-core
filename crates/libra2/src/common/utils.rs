@@ -15,7 +15,7 @@ use crate::{
 use libra2_build_info::build_information;
 use aptos_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
 use aptos_keygen::KeyGen;
-use aptos_logger::{debug, Level};
+use libra2_logger::{debug, Level};
 use aptos_rest_client::{aptos_api_types::HashValue, Account, Client, FaucetClient, State};
 use aptos_telemetry::service::telemetry_is_disabled;
 use aptos_types::{
@@ -490,7 +490,7 @@ pub async fn wait_for_transactions(
 }
 
 pub fn start_logger(level: Level) {
-    let mut logger = aptos_logger::Logger::new();
+    let mut logger = libra2_logger::Logger::new();
     logger.channel_size(1000).is_async(false).level(level);
     logger.build();
 }

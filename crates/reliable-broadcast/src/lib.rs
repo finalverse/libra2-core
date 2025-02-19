@@ -3,7 +3,7 @@
 
 use libra2_bounded_executor::BoundedExecutor;
 use aptos_consensus_types::common::Author;
-use aptos_logger::{debug, sample, sample::SampleRate, warn};
+use libra2_logger::{debug, sample, sample::SampleRate, warn};
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use async_trait::async_trait;
 use bytes::Bytes;

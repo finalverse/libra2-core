@@ -28,7 +28,7 @@ use aptos_crypto::{
 use aptos_framework::chunked_publish::{CHUNK_SIZE_IN_BYTES, LARGE_PACKAGES_MODULE_ADDRESS};
 use libra2_global_constants::adjust_gas_headroom;
 use aptos_keygen::KeyGen;
-use aptos_logger::Level;
+use libra2_logger::Level;
 use aptos_move_debugger::aptos_debugger::AptosDebugger;
 use aptos_rest_client::{
     aptos_api_types::{EntryFunctionId, HashValue, MoveType, ViewRequest},

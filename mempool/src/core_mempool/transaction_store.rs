@@ -20,7 +20,7 @@ use crate::{
 };
 use libra2_config::config::MempoolConfig;
 use aptos_crypto::HashValue;
-use aptos_logger::{prelude::*, Level};
+use libra2_logger::{prelude::*, Level};
 use aptos_types::{
     account_address::AccountAddress,
     mempool_status::{MempoolStatus, MempoolStatusCode},
@@ -558,7 +558,7 @@ impl TransactionStore {
             txns.clear();
             txns.append(&mut active);
 
-            let mut rm_txns = match aptos_logger::enabled!(Level::Trace) {
+            let mut rm_txns = match libra2_logger::enabled!(Level::Trace) {
                 true => TxnsLog::new(),
                 false => TxnsLog::new_with_max(10),
             };
@@ -607,7 +607,7 @@ impl TransactionStore {
             }
             self.index_remove(&txn_to_remove);
 
-            if aptos_logger::enabled!(Level::Trace) {
+            if libra2_logger::enabled!(Level::Trace) {
                 let mut txns_log = TxnsLog::new();
                 txns_log.add(
                     txn_to_remove.get_sender(),
@@ -816,7 +816,7 @@ impl TransactionStore {
         gc_txns.sort_by_key(|key| (key.address, key.sequence_number));
         let mut gc_iter = gc_txns.iter().peekable();
 
-        let mut gc_txns_log = match aptos_logger::enabled!(Level::Trace) {
+        let mut gc_txns_log = match libra2_logger::enabled!(Level::Trace) {
             true => TxnsLog::new(),
             false => TxnsLog::new_with_max(10),
         };

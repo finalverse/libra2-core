@@ -3,7 +3,7 @@
 
 use super::common::NAMESPACE;
 use crate::collectors::common::MeasureLatency;
-use aptos_logger::warn;
+use libra2_logger::warn;
 use libra2_metrics_core::const_metric::ConstMetric;
 use procfs::{DiskStat, KernelStats};
 use prometheus::{

@@ -45,7 +45,7 @@ impl PeerLocationUpdater {
                         *peer_locations = locations;
                     },
                     Err(e) => {
-                        aptos_logger::error!("Failed to query peer locations: {}", e);
+                        libra2_logger::error!("Failed to query peer locations: {}", e);
                     },
                 }
                 tokio::time::sleep(Duration::from_secs(3600)).await; // 1 hour
@@ -60,7 +60,7 @@ fn get_chain_id() -> ChainId {
         Ok(val) if val == "aptos-telemetry-svc-mainnet" => ChainId::mainnet(),
         Ok(val) if val == "aptos-telemetry-svc-dev" => ChainId::testnet(),
         _ => {
-            aptos_logger::warn!("Unknown GCP_METADATA_PROJECT_ID, defaulting to test");
+            libra2_logger::warn!("Unknown GCP_METADATA_PROJECT_ID, defaulting to test");
             ChainId::test()
         },
     }
@@ -111,7 +111,7 @@ pub async fn query_peer_locations(
         .await
         .map_err(|e| {
             BIG_QUERY_REQUEST_FAILURES_TOTAL.inc();
-            aptos_logger::error!("Failed to query peer locations: {}", e);
+            libra2_logger::error!("Failed to query peer locations: {}", e);
             e
         })?;
 

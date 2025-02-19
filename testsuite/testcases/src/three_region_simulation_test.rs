@@ -6,7 +6,7 @@ use aptos_forge::{
     GroupNetworkBandwidth, GroupNetworkDelay, NetworkContext, NetworkContextSynchronizer,
     NetworkTest, SwarmChaos, SwarmNetworkBandwidth, SwarmNetworkDelay, Test,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::account_address::AccountAddress;
 use async_trait::async_trait;
 

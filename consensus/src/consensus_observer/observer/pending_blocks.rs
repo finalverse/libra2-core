@@ -11,7 +11,7 @@ use crate::consensus_observer::{
 };
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use libra2_infallible::Mutex;
-use aptos_logger::{info, warn};
+use libra2_logger::{info, warn};
 use aptos_types::block_info::Round;
 use std::{
     collections::{btree_map::Entry, BTreeMap},

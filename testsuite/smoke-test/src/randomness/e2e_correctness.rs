@@ -7,7 +7,7 @@ use crate::{
     utils::get_on_chain_resource,
 };
 use aptos_forge::{NodeExt, SwarmExt};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_types::{dkg::DKGState, on_chain_config::OnChainRandomnessConfig};
 use std::{sync::Arc, time::Duration};
 

@@ -20,7 +20,7 @@ use aptos_consensus_types::{
         SignedBatchInfoMsg,
     },
 };
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::{
     ledger_info::SignatureAggregator, validator_verifier::ValidatorVerifier, PeerId,

@@ -6,7 +6,7 @@ use aptos_consensus_types::{
     common::{TransactionInProgress, TransactionSummary},
     proof_of_store::{BatchId, BatchInfo},
 };
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_mempool::{QuorumStoreRequest, QuorumStoreResponse};
 use aptos_types::{transaction::SignedTransaction, PeerId};
 use chrono::Utc;

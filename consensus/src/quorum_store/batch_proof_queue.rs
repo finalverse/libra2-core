@@ -12,7 +12,7 @@ use aptos_consensus_types::{
     proof_of_store::{BatchInfo, ProofOfStore},
     utils::PayloadTxnsSize,
 };
-use aptos_logger::{info, sample, sample::SampleRate, warn};
+use libra2_logger::{info, sample, sample::SampleRate, warn};
 use libra2_metrics_core::TimerHelper;
 use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::{transaction::SignedTransaction, PeerId};

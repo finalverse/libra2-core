@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_logger::{
+use libra2_logger::{
     debug, error,
     prelude::{sample, SampleRate},
     Schema,

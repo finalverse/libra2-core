@@ -25,7 +25,7 @@ aptos-executor-types = { workspace = true }
 aptos-indexer-grpc-table-info = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-jellyfish-merkle = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-proptest-helpers = { workspace = true }
 aptos-push-metrics = { workspace = true }

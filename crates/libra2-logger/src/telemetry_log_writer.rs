@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use crate::counters::{APTOS_LOG_INGEST_WRITER_DISCONNECTED, APTOS_LOG_INGEST_WRITER_FULL};
+use crate::counters::{LIBRA2_LOG_INGEST_WRITER_DISCONNECTED, LIBRA2_LOG_INGEST_WRITER_FULL};
 use futures::channel;
 use std::{
     io::{Error, ErrorKind},
@@ -32,10 +32,10 @@ impl TelemetryLogWriter {
             Ok(_) => Ok(len),
             Err(err) => {
                 if err.is_full() {
-                    APTOS_LOG_INGEST_WRITER_FULL.inc_by(len as u64);
+                    LIBRA2_LOG_INGEST_WRITER_FULL.inc_by(len as u64);
                     Err(Error::new(ErrorKind::WouldBlock, "Channel full"))
                 } else {
-                    APTOS_LOG_INGEST_WRITER_DISCONNECTED.inc_by(len as u64);
+                    LIBRA2_LOG_INGEST_WRITER_DISCONNECTED.inc_by(len as u64);
                     Err(Error::new(ErrorKind::ConnectionRefused, "Disconnected"))
                 }
             },

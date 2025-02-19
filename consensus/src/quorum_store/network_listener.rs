@@ -10,7 +10,7 @@ use crate::{
     round_manager::VerifiedEvent,
 };
 use libra2_channels::libra2_channel;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_types::PeerId;
 use futures::StreamExt;
 use tokio::sync::mpsc::Sender;

@@ -16,7 +16,7 @@ use crate::dag::{
 };
 use aptos_consensus_types::common::Round;
 use libra2_infallible::Mutex;
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_types::epoch_state::EpochState;
 use std::sync::Arc;
 

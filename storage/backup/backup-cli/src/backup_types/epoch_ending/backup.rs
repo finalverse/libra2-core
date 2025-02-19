@@ -12,7 +12,7 @@ use crate::{
     },
 };
 use anyhow::{anyhow, ensure, Result};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_types::{ledger_info::LedgerInfoWithSignatures, waypoint::Waypoint};
 use clap::Parser;
 use once_cell::sync::Lazy;

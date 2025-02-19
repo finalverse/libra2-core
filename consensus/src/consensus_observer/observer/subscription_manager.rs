@@ -18,7 +18,7 @@ use crate::consensus_observer::{
 };
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use libra2_infallible::Mutex;
-use aptos_logger::{info, warn};
+use libra2_logger::{info, warn};
 use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadata};
 use aptos_storage_interface::DbReader;
 use libra2_time_service::TimeService;

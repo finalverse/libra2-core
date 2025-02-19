@@ -23,7 +23,7 @@ aptos-executor-types = { workspace = true }
 aptos-experimental-runtimes = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-jellyfish-merkle = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-proptest-helpers = { workspace = true, optional = true }
 aptos-resource-viewer = { workspace = true }

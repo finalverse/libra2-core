@@ -17,7 +17,7 @@ libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-event-notifications = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true }
 aptos-network-discovery = { workspace = true }

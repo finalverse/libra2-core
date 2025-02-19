@@ -213,7 +213,7 @@ impl CurrentDelegatorBalance {
                     ) {
                         Ok(pool) => pool,
                         Err(_) => {
-                            aptos_logger::error!(
+                            libra2_logger::error!(
                                 transaction_version = txn_version,
                                 lookup_key = &inactive_pool_handle,
                                 "Failed to get staking pool address from inactive share handle. You probably should backfill db.",

@@ -8,7 +8,7 @@ use aptos_forge::{
     FORGE_KEY_SEED,
 };
 use aptos_keygen::KeyGen;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_release_builder::ReleaseConfig;
 use aptos_sdk::crypto::{ed25519::Ed25519PrivateKey, PrivateKey};
 use libra2_temppath::TempPath;

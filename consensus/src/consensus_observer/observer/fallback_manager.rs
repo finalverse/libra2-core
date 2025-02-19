@@ -6,7 +6,7 @@ use crate::consensus_observer::common::{
     logging::{LogEntry, LogSchema},
 };
 use libra2_config::config::ConsensusObserverConfig;
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_storage_interface::DbReader;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};

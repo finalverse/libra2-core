@@ -27,7 +27,7 @@ use aptos_keyless_pepper_common::{
     },
     PepperInput, PepperRequest, PepperResponse, SignatureResponse, VerifyRequest, VerifyResponse,
 };
-use aptos_logger::{info, warn};
+use libra2_logger::{info, warn};
 use aptos_types::{
     account_address::AccountAddress,
     keyless::{

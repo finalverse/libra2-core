@@ -10,7 +10,7 @@ use crate::{
 };
 use anyhow::ensure;
 use aptos_consensus_types::common::{Author, Round};
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_types::randomness::{FullRandMetadata, RandMetadata, Randomness};
 use itertools::Either;
 use std::collections::{BTreeMap, HashMap, HashSet};

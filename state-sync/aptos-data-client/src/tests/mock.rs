@@ -62,7 +62,7 @@ impl MockNetwork {
         networks: Option<Vec<NetworkId>>,
     ) -> (Self, MockTimeService, AptosDataClient, DataSummaryPoller) {
         // Initialize the logger for testing
-        ::aptos_logger::Logger::init_for_testing();
+        ::libra2_logger::Logger::init_for_testing();
 
         // Setup the network IDs
         let networks = networks

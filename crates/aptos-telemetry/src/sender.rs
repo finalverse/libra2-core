@@ -9,7 +9,7 @@ use aptos_crypto::{
     x25519,
 };
 use libra2_infallible::{Mutex, RwLock};
-use aptos_logger::debug;
+use libra2_logger::debug;
 use aptos_telemetry_service::types::{
     auth::{AuthRequest, AuthResponse},
     response::IndexResponse,

@@ -393,7 +393,7 @@ fn main() {
     // Assert there were no error log lines in the run.
     assert_eq!(
         0,
-        aptos_logger::ERROR_LOG_COUNT.get(),
+        libra2_logger::ERROR_LOG_COUNT.get(),
         "Error logs were found in the run."
     );
 }

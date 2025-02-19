@@ -18,7 +18,7 @@ use aptos_data_client::{
     interface::AptosDataClientInterface,
 };
 use libra2_id_generator::{IdGenerator, U64IdGenerator};
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use libra2_time_service::TimeService;
 use arc_swap::ArcSwap;
 use futures::StreamExt;

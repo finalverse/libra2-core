@@ -18,7 +18,7 @@ libra2-bounded-executor = { workspace = true }
 aptos-consensus-types = { workspace = true }
 libra2-enum-conversion-derive = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-time-service = { workspace = true }
 aptos-types = { workspace = true }
 async-trait = { workspace = true }

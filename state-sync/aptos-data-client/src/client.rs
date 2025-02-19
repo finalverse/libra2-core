@@ -25,7 +25,7 @@ use libra2_config::{
 };
 use libra2_id_generator::{IdGenerator, U64IdGenerator};
 use libra2_infallible::Mutex;
-use aptos_logger::{info, sample, sample::SampleRate, trace, warn};
+use libra2_logger::{info, sample, sample::SampleRate, trace, warn};
 use aptos_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},
     protocols::network::RpcError,

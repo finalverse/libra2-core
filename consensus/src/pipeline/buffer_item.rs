@@ -13,7 +13,7 @@ use aptos_consensus_types::{
 };
 use aptos_crypto::{bls12381, HashValue};
 use aptos_executor_types::ExecutorResult;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_reliable_broadcast::DropGuard;
 use aptos_types::{
     block_info::BlockInfo,

@@ -9,7 +9,7 @@ mod jwk_consensus_provider_change_mind;
 use crate::smoke_test_environment::SwarmBuilder;
 use aptos::{common::types::TransactionSummary, test::CliTestFramework};
 use aptos_forge::{NodeExt, Swarm, SwarmExt};
-use aptos_logger::{debug, info};
+use libra2_logger::{debug, info};
 use aptos_rest_client::Client;
 use aptos_types::{
     jwks::{

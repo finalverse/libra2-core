@@ -8,7 +8,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_infallible::RwLock;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use itertools::Itertools;

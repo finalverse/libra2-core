@@ -33,7 +33,7 @@ use aptos_consensus_types::{
 };
 use aptos_crypto::hash::CryptoHash;
 use libra2_infallible::Mutex;
-use aptos_logger::{debug, error};
+use libra2_logger::{debug, error};
 use aptos_reliable_broadcast::{DropGuard, ReliableBroadcast};
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{block_info::Round, epoch_state::EpochState};

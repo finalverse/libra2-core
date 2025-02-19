@@ -15,7 +15,7 @@ fn invariant_violation_error() {
     let _scenario = fail::FailScenario::setup();
     fail::cfg("aptos_vm::execute_script_or_entry_function", "100%return").unwrap();
 
-    ::aptos_logger::Logger::init_for_testing();
+    ::libra2_logger::Logger::init_for_testing();
 
     let mut executor = FakeExecutor::from_head_genesis();
 

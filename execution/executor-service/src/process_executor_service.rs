@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::remote_executor_service::ExecutorService;
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_push_metrics::MetricsPusher;
 use aptos_types::block_executor::partitioner::ShardId;
 use aptos_vm::AptosVM;

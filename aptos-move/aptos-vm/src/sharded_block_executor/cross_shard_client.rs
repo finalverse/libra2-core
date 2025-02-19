@@ -9,7 +9,7 @@ use crate::{
     },
 };
 use aptos_block_executor::txn_commit_hook::TransactionCommitHook;
-use aptos_logger::trace;
+use libra2_logger::trace;
 use aptos_mvhashmap::types::TxnIndex;
 use aptos_types::{
     block_executor::partitioner::{RoundId, ShardId, SubBlock, GLOBAL_ROUND_ID},

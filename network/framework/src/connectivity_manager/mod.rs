@@ -41,7 +41,7 @@ use libra2_config::{
 };
 use aptos_crypto::x25519;
 use libra2_infallible::RwLock;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_netcore::transport::ConnectionOrigin;
 use libra2_num_variants::NumVariants;
 use libra2_short_hex_str::AsShortHexStr;

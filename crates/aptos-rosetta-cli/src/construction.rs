@@ -3,7 +3,7 @@
 
 use crate::common::{format_output, NetworkArgs, UrlArgs};
 use aptos::common::types::{EncodingOptions, PrivateKeyInputOptions, ProfileOptions};
-use aptos_logger::info;
+use libra2_logger::info;
 use aptos_rosetta::types::{Currency, TransactionIdentifier};
 use aptos_types::account_address::AccountAddress;
 use clap::{Parser, Subcommand};

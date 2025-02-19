@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 aptos-block-executor = { workspace = true }
 aptos-experimental-runtimes = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-types = { workspace = true }
 aptos-vm = { workspace = true }

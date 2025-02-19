@@ -32,7 +32,7 @@ use aptos_consensus_types::{
 };
 use aptos_crypto::{hash::CryptoHash, HashValue};
 use libra2_infallible::Mutex;
-use aptos_logger::{error, sample, sample::SampleRate, warn};
+use libra2_logger::{error, sample, sample::SampleRate, warn};
 use aptos_types::{on_chain_config::ValidatorTxnConfig, validator_txn::ValidatorTransaction};
 use aptos_validator_transaction_pool as vtxn_pool;
 use futures::future::BoxFuture;

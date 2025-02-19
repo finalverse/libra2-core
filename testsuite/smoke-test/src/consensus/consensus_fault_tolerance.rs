@@ -11,7 +11,7 @@ use aptos_forge::{
     },
     LocalSwarm, NodeExt, Swarm, SwarmExt,
 };
-use aptos_logger::info;
+use libra2_logger::info;
 use rand::{self, rngs::SmallRng, Rng, SeedableRng};
 use std::{
     sync::{

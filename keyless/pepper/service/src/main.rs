@@ -16,7 +16,7 @@ use aptos_keyless_pepper_service::{
     ProcessingFailure::{BadRequest, InternalError},
     V0FetchHandler, V0SignatureHandler, V0VerifyHandler,
 };
-use aptos_logger::{error, info};
+use libra2_logger::{error, info};
 use aptos_types::keyless::test_utils::get_sample_iss;
 use hyper::{
     header::{
@@ -83,7 +83,7 @@ async fn main() {
     {
         let _db = ACCOUNT_RECOVERY_DB.get_or_init(init_account_db).await;
     }
-    aptos_logger::Logger::new().init();
+    libra2_logger::Logger::new().init();
     start_metric_server();
     if let Ok(url) = std::env::var("ONCHAIN_GROTH16_VK_URL") {
         start_external_resource_refresh_loop(

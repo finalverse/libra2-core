@@ -10,7 +10,7 @@ use aptos_consensus_types::{
     vote_data::VoteData, wrapped_ledger_info::WrappedLedgerInfo,
 };
 use aptos_crypto::HashValue;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_storage_interface::DbReader;
 use aptos_types::{
     block_info::Round, epoch_change::EpochChangeProof, ledger_info::LedgerInfoWithSignatures,

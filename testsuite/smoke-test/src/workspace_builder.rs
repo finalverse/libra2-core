@@ -7,7 +7,7 @@
 //! This utility is to only be used inside of smoke test.
 
 use aptos_forge::cargo_build_common_args;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use once_cell::sync::Lazy;
 use std::{env, path::PathBuf, process::Command};
 

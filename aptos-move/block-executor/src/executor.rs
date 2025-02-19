@@ -27,7 +27,7 @@ use aptos_aggregator::{
     delta_change_set::serialize,
 };
 use libra2_drop_helper::DEFAULT_DROPPER;
-use aptos_logger::{debug, error, info};
+use libra2_logger::{debug, error, info};
 use aptos_mvhashmap::{
     types::{Incarnation, MVDelayedFieldsError, TxnIndex, ValueWithLayout},
     unsync_map::UnsyncMap,

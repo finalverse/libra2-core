@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{errors::*, view::LatestView};
-use aptos_logger::error;
+use libra2_logger::error;
 use aptos_mvhashmap::types::ValueWithLayout;
 use aptos_types::{
     contract_event::TransactionEvent,

@@ -10,7 +10,7 @@ use crate::error::DbError;
 use anyhow::Result;
 use aptos_consensus_types::{block::Block, quorum_cert::QuorumCert};
 use aptos_crypto::HashValue;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_schemadb::{batch::SchemaBatch, schema::Schema, Options, DB, DEFAULT_COLUMN_FAMILY_NAME};
 use aptos_storage_interface::AptosDbError;
 pub use schema::{

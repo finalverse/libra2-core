@@ -40,7 +40,7 @@ aptos-indexer-grpc-table-info = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-inspection-service = { workspace = true }
 aptos-jwk-consensus = { workspace = true }
-aptos-logger = { workspace = true, features = ["node-identity"] }
+libra2-logger = { workspace = true, features = ["node-identity"] }
 aptos-mempool = { workspace = true }
 aptos-mempool-notifications = { workspace = true }
 aptos-network = { workspace = true }
@@ -93,7 +93,7 @@ consensus-only-perf-test = ["aptos-executor/consensus-only-perf-test", "aptos-me
 default = []
 failpoints = ["fail/failpoints", "aptos-consensus/failpoints", "aptos-executor/failpoints", "aptos-mempool/failpoints", "aptos-api/failpoints", "libra2-config/failpoints"]
 indexer = ["aptos-indexer"]
-tokio-console = ["aptos-logger/tokio-console", "libra2-config/tokio-console"]
+tokio-console = ["libra2-logger/tokio-console", "libra2-config/tokio-console"]
 smoke-test = ["aptos-jwk-consensus/smoke-test", "libra2-dkg-runtime/smoke-test"]
 
 [package.metadata.cargo-machete]

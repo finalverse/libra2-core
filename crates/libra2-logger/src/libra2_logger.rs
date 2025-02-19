@@ -747,7 +747,7 @@ impl Writer for FileWriter {
 /// Converts a record into a string representation:
 /// UNIX_TIMESTAMP LOG_LEVEL [thread_name] FILE:LINE MESSAGE JSON_DATA
 /// Example:
-/// 2020-03-07 05:03:03 INFO [thread_name] common/aptos-logger/src/lib.rs:261 Hello { "world": true }
+/// 2020-03-07 05:03:03 INFO [thread_name] common/libra2-logger/src/lib.rs:261 Hello { "world": true }
 fn text_format(entry: &LogEntry) -> Result<String, fmt::Error> {
     use std::fmt::Write;
 
@@ -824,7 +824,7 @@ impl LoggerFilterUpdater {
 mod tests {
     use super::{text_format, AptosData, LogEntry};
     use crate::{
-        aptos_logger::{json_format, TruncatedLogString, RUST_LOG_TELEMETRY},
+        libra2_logger::{json_format, TruncatedLogString, RUST_LOG_TELEMETRY},
         debug, error, info,
         logger::Logger,
         telemetry_log_writer::TelemetryLog,
@@ -968,7 +968,7 @@ mod tests {
         line_num += 1;
         let thread_name = thread::current().name().map(|s| s.to_string()).unwrap();
 
-        let expected = format!("{{\"level\":\"INFO\",\"source\":{{\"package\":\"aptos_logger\",\"file\":\"crates/aptos-logger/src/aptos_logger.rs:{line_num}\"}},\"thread_name\":\"{thread_name}\",\"hostname\":\"test-host\",\"timestamp\":\"2022-07-24T23:42:29.540278Z\",\"message\":\"This is a log\",\"data\":{{\"bar\":\"foo_bar\",\"category\":\"name\",\"display\":\"12345\",\"foo\":5,\"test\":true}}}}");
+        let expected = format!("{{\"level\":\"INFO\",\"source\":{{\"package\":\"libra2_logger\",\"file\":\"crates/libra2-logger/src/libra2_logger.rs:{line_num}\"}},\"thread_name\":\"{thread_name}\",\"hostname\":\"test-host\",\"timestamp\":\"2022-07-24T23:42:29.540278Z\",\"message\":\"This is a log\",\"data\":{{\"bar\":\"foo_bar\",\"category\":\"name\",\"display\":\"12345\",\"foo\":5,\"test\":true}}}}");
 
         assert_eq!(json_format(&entry).unwrap(), expected);
 

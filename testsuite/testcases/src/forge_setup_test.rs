@@ -5,7 +5,7 @@ use crate::generate_traffic;
 use anyhow::Context;
 use libra2_config::config::OverrideNodeConfig;
 use aptos_forge::{NetworkContextSynchronizer, NetworkTest, Result, Test};
-use aptos_logger::info;
+use libra2_logger::info;
 use async_trait::async_trait;
 use rand::{
     rngs::{OsRng, StdRng},

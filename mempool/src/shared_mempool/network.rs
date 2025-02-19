@@ -21,7 +21,7 @@ use libra2_config::{
     network_id::PeerNetworkId,
 };
 use libra2_infallible::RwLock;
-use aptos_logger::prelude::*;
+use libra2_logger::prelude::*;
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_network::{
     application::{error::Error, interface::NetworkClientInterface, metadata::PeerMetadata},

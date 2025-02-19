@@ -4,7 +4,7 @@
 #![forbid(unsafe_code)]
 
 // Re-export counter types from prometheus crate
-use aptos_logger::{error, info, warn};
+use libra2_logger::{error, info, warn};
 pub use libra2_metrics_core::{
     exponential_buckets, register_histogram, register_histogram_vec, register_int_counter,
     register_int_counter_vec, register_int_gauge, register_int_gauge_vec, Histogram,

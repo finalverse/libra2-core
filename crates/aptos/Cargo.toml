@@ -34,7 +34,7 @@ aptos-indexer-grpc-utils = { workspace = true }
 aptos-keygen = { workspace = true }
 aptos-ledger = { workspace = true }
 aptos-localnet = { workspace = true }
-aptos-logger = { workspace = true }
+libra2-logger = { workspace = true }
 aptos-move-debugger = { workspace = true }
 aptos-network-checker = { workspace = true }
 aptos-node = { workspace = true }

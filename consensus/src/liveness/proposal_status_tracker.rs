@@ -8,7 +8,7 @@ use aptos_consensus_types::{
     common::Author, payload_pull_params::OptQSPayloadPullParams, round_timeout::RoundTimeoutReason,
 };
 use libra2_infallible::Mutex;
-use aptos_logger::warn;
+use libra2_logger::warn;
 use libra2_short_hex_str::AsShortHexStr;
 use std::{collections::HashSet, sync::Arc};
 

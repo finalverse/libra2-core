@@ -7,7 +7,7 @@ use crate::{
     serializer::{SafetyRulesInput, SerializerClient, SerializerService, TSerializerClient},
     Error, SafetyRules, TSafetyRules,
 };
-use aptos_logger::warn;
+use libra2_logger::warn;
 use aptos_secure_net::{NetworkClient, NetworkServer};
 use std::net::SocketAddr;
 

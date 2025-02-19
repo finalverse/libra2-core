@@ -8,7 +8,7 @@ use crate::{
     workload::TransactionBlock,
 };
 use anyhow::{anyhow, bail};
-use aptos_logger::Level;
+use libra2_logger::Level;
 use aptos_vm_environment::prod_configs::set_paranoid_type_checks;
 use clap::Parser;
 use std::path::PathBuf;
