@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_metrics_core::{register_int_counter, register_int_gauge, IntCounter, IntGauge};
+use libra2_metrics_core::{register_int_counter, register_int_gauge, IntCounter, IntGauge};
 use once_cell::sync::Lazy;
 
 pub static APTOS_JELLYFISH_LEAF_ENCODED_BYTES: Lazy<IntCounter> = Lazy::new(|| {

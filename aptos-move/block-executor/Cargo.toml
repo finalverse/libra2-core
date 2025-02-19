@@ -19,7 +19,7 @@ aptos-aggregator = { workspace = true }
 aptos-drop-helper = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
-aptos-metrics-core = { workspace = true }
+libra2-metrics-core = { workspace = true }
 aptos-mvhashmap = { workspace = true }
 aptos-types = { workspace = true }
 aptos-vm-environment = { workspace = true }

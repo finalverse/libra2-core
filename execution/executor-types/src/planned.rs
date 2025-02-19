@@ -3,7 +3,7 @@
 
 use crate::metrics::TIMER;
 use libra2_infallible::Mutex;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use once_cell::sync::OnceCell;
 use rayon::ThreadPool;
 use std::{ops::Deref, sync::mpsc::Receiver};

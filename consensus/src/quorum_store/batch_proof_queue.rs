@@ -13,7 +13,7 @@ use aptos_consensus_types::{
     utils::PayloadTxnsSize,
 };
 use aptos_logger::{info, sample, sample::SampleRate, warn};
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_short_hex_str::AsShortHexStr;
 use aptos_types::{transaction::SignedTransaction, PeerId};
 use rand::{prelude::SliceRandom, thread_rng};

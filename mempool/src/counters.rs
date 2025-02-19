@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_config::network_id::{NetworkId, PeerNetworkId};
-use aptos_metrics_core::{
+use libra2_metrics_core::{
     exponential_buckets, histogram_opts, op_counters::DurationHistogram, register_histogram,
     register_histogram_vec, register_int_counter, register_int_counter_vec, register_int_gauge,
     register_int_gauge_vec, Histogram, HistogramTimer, HistogramVec, IntCounter, IntCounterVec,

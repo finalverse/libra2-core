@@ -93,7 +93,7 @@ use aptos_crypto::{
 };
 use aptos_drop_helper::ArcAsyncDrop;
 use libra2_infallible::Mutex;
-use aptos_metrics_core::IntGaugeHelper;
+use libra2_metrics_core::IntGaugeHelper;
 use aptos_types::{
     nibble::{nibble_path::NibblePath, Nibble},
     proof::SparseMerkleProofExt,

@@ -15,7 +15,7 @@ use crate::{
 use anyhow::{anyhow, ensure, Result};
 use aptos_crypto::{hash::CryptoHash, HashValue};
 use aptos_logger::prelude::*;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_types::{
     ledger_info::LedgerInfoWithSignatures,
     proof::TransactionInfoWithProof,

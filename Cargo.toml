@@ -84,7 +84,7 @@ members = [
     "crates/aptos-localnet",
     "crates/aptos-log-derive",
     "crates/aptos-logger",
-    "crates/aptos-metrics-core",
+    "crates/libra2-metrics-core",
     "crates/aptos-network-checker",
     "crates/aptos-node-identity",
     "crates/aptos-openapi",
@@ -401,7 +401,7 @@ aptos-memory-usage-tracker = { path = "aptos-move/aptos-memory-usage-tracker" }
 aptos-mempool = { path = "mempool" }
 aptos-mempool-notifications = { path = "state-sync/inter-component/mempool-notifications" }
 aptos-memsocket = { path = "network/memsocket" }
-aptos-metrics-core = { path = "crates/aptos-metrics-core" }
+libra2-metrics-core = { path = "crates/libra2-metrics-core" }
 aptos-move-debugger = { path = "aptos-move/aptos-debugger" }
 aptos-move-examples = { path = "aptos-move/move-examples" }
 aptos-move-e2e-benchmark = { path = "aptos-move/e2e-benchmark" }

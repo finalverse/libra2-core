@@ -11,7 +11,7 @@
 use crate::message_queues::{PerKeyQueue, QueueStyle};
 use anyhow::{ensure, Result};
 use libra2_infallible::{Mutex, NonZeroUsize};
-use aptos_metrics_core::IntCounterVec;
+use libra2_metrics_core::IntCounterVec;
 use futures::{
     channel::oneshot,
     stream::{FusedStream, Stream},

@@ -4,7 +4,7 @@
 
 use libra2_infallible::{Mutex, RwLock};
 use aptos_logger::debug;
-use aptos_metrics_core::HistogramVec;
+use libra2_metrics_core::HistogramVec;
 use std::{cmp::min, collections::HashMap, fmt::Debug, hash::Hash, sync::Arc, time::Instant};
 use tokio::time::Duration;
 

@@ -17,7 +17,7 @@ ahash = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-drop-helper = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-metrics-core = { workspace = true }
+libra2-metrics-core = { workspace = true }
 bitvec = "1.0.1"
 itertools = { workspace = true }
 once_cell = { workspace = true }

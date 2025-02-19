@@ -5,7 +5,7 @@
 use crate::handlers::bytes_sender;
 use aptos_db::{backup::backup_handler::BackupHandler, metrics::BACKUP_TIMER};
 use aptos_logger::prelude::*;
-use aptos_metrics_core::{
+use libra2_metrics_core::{
     register_histogram_vec, register_int_counter_vec, HistogramVec, IntCounterVec, TimerHelper,
 };
 use aptos_storage_interface::Result as DbResult;

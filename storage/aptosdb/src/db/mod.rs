@@ -34,7 +34,7 @@ use aptos_crypto::HashValue;
 use aptos_db_indexer::{db_indexer::InternalIndexerDB, Indexer};
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use aptos_logger::prelude::*;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_resource_viewer::AptosValueAnnotator;
 use aptos_schemadb::batch::SchemaBatch;
 use aptos_storage_interface::{

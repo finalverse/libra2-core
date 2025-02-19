@@ -11,7 +11,7 @@ use crate::{
 use anyhow::Result;
 use aptos_crypto::{hash::HOT_STATE_PLACE_HOLDER_HASH, HashValue};
 use aptos_experimental_layered_map::LayeredMap;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use itertools::Itertools;
 use std::sync::Arc;
 

@@ -3,7 +3,7 @@
 
 use crate::collectors::common::{MeasureLatency, NAMESPACE};
 use libra2_infallible::Mutex;
-use aptos_metrics_core::const_metric::ConstMetric;
+use libra2_metrics_core::const_metric::ConstMetric;
 use prometheus::{
     core::{Collector, Desc, Describer},
     proto::MetricFamily,

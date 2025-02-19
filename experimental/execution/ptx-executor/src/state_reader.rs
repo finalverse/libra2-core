@@ -8,7 +8,7 @@
 use crate::{common::BASE_VERSION, metrics::TIMER, scheduler::PtxSchedulerClient};
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use aptos_logger::trace;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_types::state_store::{state_key::StateKey, StateView};
 use rayon::Scope;
 use std::sync::mpsc::{channel, Receiver, Sender};

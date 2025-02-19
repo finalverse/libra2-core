@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-metrics-core = { workspace = true }
+libra2-metrics-core = { workspace = true }
 aptos-protos = { workspace = true }
 aptos-transaction-filter = { workspace = true }
 async-trait = { workspace = true }

@@ -67,7 +67,7 @@ mod transaction_shuffler;
 pub use transaction_shuffler::transaction_shuffler_fuzzing;
 mod txn_hash_and_authenticator_deduper;
 
-use aptos_metrics_core::IntGauge;
+use libra2_metrics_core::IntGauge;
 pub use consensusdb::create_checkpoint;
 /// Required by the smoke tests
 pub use consensusdb::CONSENSUS_DB_NAME;

@@ -29,7 +29,7 @@ use aptos_executor_types::{
 };
 use libra2_infallible::RwLock;
 use aptos_logger::prelude::*;
-use aptos_metrics_core::IntGauge;
+use libra2_metrics_core::IntGauge;
 use aptos_types::{
     account_address::AccountAddress, block_executor::config::BlockExecutorConfigFromOnchain,
     epoch_state::EpochState, ledger_info::LedgerInfoWithSignatures, randomness::Randomness,

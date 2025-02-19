@@ -12,7 +12,7 @@ use aptos_consensus_types::{block::Block, pipelined_block::PipelinedBlock};
 use aptos_crypto::HashValue;
 use aptos_executor_types::{state_compute_result::StateComputeResult, ExecutorError};
 use aptos_logger::prelude::{error, warn};
-use aptos_metrics_core::{
+use libra2_metrics_core::{
     exponential_buckets, op_counters::DurationHistogram, register_avg_counter, register_counter,
     register_gauge, register_gauge_vec, register_histogram, register_histogram_vec,
     register_int_counter, register_int_counter_vec, register_int_gauge, register_int_gauge_vec,
@@ -40,8 +40,8 @@ pub const TXN_COMMIT_RETRY_LABEL: &str = "retry";
 //////////////////////
 
 /// Monitor counters, used by monitor! macro
-pub static OP_COUNTERS: Lazy<aptos_metrics_core::op_counters::OpMetrics> =
-    Lazy::new(|| aptos_metrics_core::op_counters::OpMetrics::new_and_registered("consensus"));
+pub static OP_COUNTERS: Lazy<libra2_metrics_core::op_counters::OpMetrics> =
+    Lazy::new(|| libra2_metrics_core::op_counters::OpMetrics::new_and_registered("consensus"));
 
 /// Counts the total number of errors
 pub static ERROR_COUNT: Lazy<IntGauge> = Lazy::new(|| {

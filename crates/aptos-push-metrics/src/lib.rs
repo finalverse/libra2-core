@@ -5,12 +5,12 @@
 
 // Re-export counter types from prometheus crate
 use aptos_logger::{error, info, warn};
-pub use aptos_metrics_core::{
+pub use libra2_metrics_core::{
     exponential_buckets, register_histogram, register_histogram_vec, register_int_counter,
     register_int_counter_vec, register_int_gauge, register_int_gauge_vec, Histogram,
     HistogramTimer, HistogramVec, IntCounter, IntCounterVec, IntGauge, IntGaugeVec,
 };
-use aptos_metrics_core::{Encoder, TextEncoder};
+use libra2_metrics_core::{Encoder, TextEncoder};
 use std::{
     env,
     ops::Sub,
@@ -41,7 +41,7 @@ impl MetricsPusher {
     ) {
         let mut buffer = Vec::new();
 
-        if let Err(e) = TextEncoder::new().encode(&aptos_metrics_core::gather(), &mut buffer) {
+        if let Err(e) = TextEncoder::new().encode(&libra2_metrics_core::gather(), &mut buffer) {
             error!("Failed to encode push metrics: {}.", e.to_string());
         } else {
             let mut request = ureq::post(push_metrics_endpoint);

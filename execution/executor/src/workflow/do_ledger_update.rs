@@ -9,7 +9,7 @@ use aptos_executor_types::{
     transactions_with_output::TransactionsWithOutput, LedgerUpdateOutput,
 };
 use aptos_experimental_runtimes::thread_manager::optimal_min_len;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_types::{
     proof::accumulator::{InMemoryEventAccumulator, InMemoryTransactionAccumulator},
     transaction::{TransactionInfo, TransactionOutput},

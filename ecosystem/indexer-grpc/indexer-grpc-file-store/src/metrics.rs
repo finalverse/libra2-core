@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_metrics_core::{register_int_counter, IntCounter};
+use libra2_metrics_core::{register_int_counter, IntCounter};
 use once_cell::sync::Lazy;
 
 /// Number of transactions that have been stored.

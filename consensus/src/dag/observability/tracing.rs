@@ -3,7 +3,7 @@
 
 use crate::dag::observability::counters;
 use libra2_infallible::duration_since_epoch;
-use aptos_metrics_core::HistogramVec;
+use libra2_metrics_core::HistogramVec;
 use std::time::Duration;
 
 #[derive(strum_macros::AsRefStr)]

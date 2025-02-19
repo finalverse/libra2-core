@@ -407,7 +407,7 @@ impl DBIndexer {
 
     /// Process a batch of transactions that is within the range of  `start_version` to `end_version`. Left inclusive, right exclusive.
     pub fn process_a_batch(&self, start_version: Version, end_version: Version) -> Result<Version> {
-        let _timer: aptos_metrics_core::HistogramTimer =
+        let _timer: libra2_metrics_core::HistogramTimer =
             TIMER.with_label_values(&["process_a_batch"]).start_timer();
         let mut version = start_version;
         let num_transactions = self.get_num_of_transactions(version, end_version)?;

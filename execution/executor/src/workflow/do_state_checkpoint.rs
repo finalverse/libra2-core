@@ -7,7 +7,7 @@ use aptos_crypto::HashValue;
 use aptos_executor_types::{
     execution_output::ExecutionOutput, state_checkpoint_output::StateCheckpointOutput,
 };
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_storage_interface::state_store::state_summary::{
     LedgerStateSummary, ProvableStateSummary,
 };

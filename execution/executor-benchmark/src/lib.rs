@@ -35,7 +35,7 @@ use aptos_jellyfish_merkle::metrics::{
     APTOS_JELLYFISH_INTERNAL_ENCODED_BYTES, APTOS_JELLYFISH_LEAF_ENCODED_BYTES,
 };
 use aptos_logger::{info, warn};
-use aptos_metrics_core::Histogram;
+use libra2_metrics_core::Histogram;
 use aptos_sdk::types::LocalAccount;
 use aptos_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReader, DbReaderWriter,

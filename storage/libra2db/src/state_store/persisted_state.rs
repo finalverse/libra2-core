@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::metrics::OTHER_TIMERS_SECONDS;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_scratchpad::SUBTREE_DROPPER;
 use aptos_storage_interface::state_store::state_with_summary::StateWithSummary;
 use std::ops::Deref;

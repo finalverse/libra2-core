@@ -18,7 +18,7 @@ aptos-build-info = { workspace = true }
 libra2-channels = { workspace = true }
 aptos-config = { workspace = true }
 aptos-logger = { workspace = true }
-aptos-metrics-core = { workspace = true }
+libra2-metrics-core = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true }
 aptos-peer-monitoring-service-types = { workspace = true }

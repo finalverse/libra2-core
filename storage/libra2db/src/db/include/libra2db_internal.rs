@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::metrics::CONCURRENCY_GAUGE;
-use aptos_metrics_core::IntGaugeHelper;
+use libra2_metrics_core::IntGaugeHelper;
 use aptos_storage_interface::block_info::BlockInfo;
 
 impl Libra2DB {

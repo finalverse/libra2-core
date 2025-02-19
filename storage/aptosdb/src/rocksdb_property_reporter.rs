@@ -21,7 +21,7 @@ use crate::{
 use anyhow::Result;
 use libra2_infallible::Mutex;
 use aptos_logger::prelude::*;
-use aptos_metrics_core::IntGaugeVec;
+use libra2_metrics_core::IntGaugeVec;
 use aptos_schemadb::DB;
 use aptos_storage_interface::state_store::NUM_STATE_SHARDS;
 use once_cell::sync::Lazy;

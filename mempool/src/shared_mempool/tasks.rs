@@ -26,7 +26,7 @@ use aptos_crypto::HashValue;
 use libra2_infallible::{Mutex, RwLock};
 use aptos_logger::prelude::*;
 use aptos_mempool_notifications::CommittedTransaction;
-use aptos_metrics_core::HistogramTimer;
+use libra2_metrics_core::HistogramTimer;
 use aptos_network::application::interface::NetworkClientInterface;
 use aptos_storage_interface::state_store::state_view::db_state_view::LatestDbStateCheckpointView;
 use aptos_types::{

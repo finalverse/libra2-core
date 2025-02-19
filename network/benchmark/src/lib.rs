@@ -10,7 +10,7 @@ use aptos_logger::{
     prelude::{sample, SampleRate},
     warn,
 };
-use aptos_metrics_core::{register_int_counter_vec, IntCounter, IntCounterVec};
+use libra2_metrics_core::{register_int_counter_vec, IntCounter, IntCounterVec};
 use aptos_network::{
     application::interface::{NetworkClient, NetworkClientInterface, NetworkServiceEvents},
     peer_manager::ConnectionNotification,

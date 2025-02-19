@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_logger::{error, warn};
-use aptos_metrics_core::{register_int_counter_vec, IntCounterVec};
+use libra2_metrics_core::{register_int_counter_vec, IntCounterVec};
 use once_cell::sync::Lazy;
 use prometheus::{
     proto::{MetricFamily, MetricType},
@@ -16,7 +16,7 @@ pub const CONTENT_TYPE_TEXT: &str = "text/plain";
 
 /// Counter for the number of metrics in various states
 pub static NUM_METRICS: Lazy<IntCounterVec> = Lazy::new(|| {
-    register_int_counter_vec!("aptos_metrics", "Number of metrics in certain states", &[
+    register_int_counter_vec!("libra2_metrics", "Number of metrics in certain states", &[
         "type"
     ])
     .unwrap()
@@ -48,7 +48,7 @@ pub fn get_encoded_metrics(encoder: impl Encoder) -> Vec<u8> {
 
 /// A simple utility function that returns all metric families
 fn get_metric_families() -> Vec<MetricFamily> {
-    let metric_families = aptos_metrics_core::gather();
+    let metric_families = libra2_metrics_core::gather();
     let mut total: u64 = 0;
     let mut families_over_1000: u64 = 0;
 

@@ -30,7 +30,7 @@ use crate::{
 };
 use anyhow::format_err;
 use aptos_logger::prelude::*;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_storage_interface::{AptosDbError, Result as DbResult};
 use batch::{IntoRawBatch, NativeBatch, WriteBatch};
 use iterator::{ScanDirection, SchemaIterator};

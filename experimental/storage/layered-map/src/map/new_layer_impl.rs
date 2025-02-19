@@ -9,7 +9,7 @@ use crate::{
     Key, KeyHash, LayeredMap, MapLayer, Value,
 };
 use aptos_drop_helper::ArcAsyncDrop;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use itertools::Itertools;
 use std::collections::BTreeMap;
 

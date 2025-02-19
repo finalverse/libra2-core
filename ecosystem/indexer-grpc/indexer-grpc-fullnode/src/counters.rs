@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_metrics_core::{register_int_counter, register_int_gauge_vec, IntCounter, IntGaugeVec};
+use libra2_metrics_core::{register_int_counter, register_int_gauge_vec, IntCounter, IntGaugeVec};
 use once_cell::sync::Lazy;
 
 /// Number of times the indexer has been unable to fetch a transaction. Ideally zero.

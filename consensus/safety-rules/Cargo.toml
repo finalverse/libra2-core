@@ -19,7 +19,7 @@ aptos-crypto = { workspace = true }
 aptos-global-constants = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
-aptos-metrics-core = { workspace = true }
+libra2-metrics-core = { workspace = true }
 aptos-secure-net = { workspace = true }
 aptos-secure-storage = { workspace = true }
 aptos-types = { workspace = true }

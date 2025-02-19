@@ -20,7 +20,7 @@ aptos-data-client = { workspace = true }
 aptos-id-generator = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
-aptos-metrics-core = { workspace = true }
+libra2-metrics-core = { workspace = true }
 aptos-time-service = { workspace = true }
 aptos-types = { workspace = true }
 arc-swap = { workspace = true }

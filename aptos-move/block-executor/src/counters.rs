@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_metrics_core::{
+use libra2_metrics_core::{
     exponential_buckets, register_avg_counter_vec, register_histogram, register_histogram_vec,
     register_int_counter, register_int_counter_vec, register_int_gauge, Histogram, HistogramVec,
     IntCounter, IntCounterVec, IntGauge,

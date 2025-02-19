@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_metrics_core::{
+use libra2_metrics_core::{
     exponential_buckets, register_histogram_vec, register_int_gauge_vec, HistogramVec, IntGaugeVec,
 };
 use once_cell::sync::Lazy;

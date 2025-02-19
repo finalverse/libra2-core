@@ -1,6 +1,6 @@
 [package]
-name = "aptos-metrics-core"
-description = "Aptos metrics shortcuts"
+name = "libra2-metrics-core"
+description = "Libra2 metrics shortcuts"
 version = "0.1.0"
 
 # Workspace inherited keys

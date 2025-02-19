@@ -7,7 +7,7 @@ use crate::{
     ColumnFamilyName, DB,
 };
 use aptos_drop_helper::DropHelper;
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_storage_interface::Result as DbResult;
 use std::{
     collections::HashMap,

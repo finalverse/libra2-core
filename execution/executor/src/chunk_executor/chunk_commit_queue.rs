@@ -12,7 +12,7 @@ use crate::{
     },
 };
 use anyhow::{anyhow, ensure, Result};
-use aptos_metrics_core::TimerHelper;
+use libra2_metrics_core::TimerHelper;
 use aptos_storage_interface::{
     state_store::{state::LedgerState, state_summary::LedgerStateSummary},
     DbReader, LedgerSummary,

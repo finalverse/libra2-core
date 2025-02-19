@@ -7,7 +7,7 @@ use crate::{
     subscription::SubscriptionStreamRequests,
 };
 use aptos_config::network_id::PeerNetworkId;
-use aptos_metrics_core::HistogramVec;
+use libra2_metrics_core::HistogramVec;
 use aptos_storage_service_types::{
     requests::{DataRequest, EpochEndingLedgerInfoRequest, StorageServiceRequest},
     responses::{DataResponse, StorageServerSummary, StorageServiceResponse},
