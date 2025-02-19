@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 libra2-bitvec = { workspace = true }
 libra2-bounded-executor = { workspace = true }
 libra2-channels = { workspace = true }
-aptos-collections = { workspace = true }
+libra2-collections = { workspace = true }
 libra2-config = { workspace = true }
 aptos-consensus-notifications = { workspace = true }
 aptos-consensus-types = { workspace = true }

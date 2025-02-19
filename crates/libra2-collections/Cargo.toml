@@ -1,6 +1,6 @@
 [package]
-name = "aptos-collections"
-description = "Aptos Collections Library" 
+name = "libra2-collections"
+description = "Libra2 Collections Library"
 version = "0.1.0"
 
 # Workspace inherited keys

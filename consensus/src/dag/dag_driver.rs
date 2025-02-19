@@ -24,7 +24,7 @@ use crate::{
     payload_client::PayloadClient,
 };
 use anyhow::{bail, ensure};
-use aptos_collections::BoundedVecDeque;
+use libra2_collections::BoundedVecDeque;
 use libra2_config::config::DagPayloadConfig;
 use aptos_consensus_types::{
     common::{Author, Payload, PayloadFilter},

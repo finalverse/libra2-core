@@ -3,7 +3,7 @@
 
 use super::round_state::NewRoundReason;
 use crate::counters;
-use aptos_collections::BoundedVecDeque;
+use libra2_collections::BoundedVecDeque;
 use aptos_consensus_types::{
     common::Author, payload_pull_params::OptQSPayloadPullParams, round_timeout::RoundTimeoutReason,
 };

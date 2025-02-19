@@ -781,10 +781,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-collections"
-version = "0.1.0"
-
-[[package]]
 name = "aptos-comparison-testing"
 version = "0.1.0"
 dependencies = [
@@ -834,7 +830,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-collections",
  "aptos-consensus-notifications",
  "aptos-consensus-types",
  "aptos-crypto",
@@ -880,6 +875,7 @@ dependencies = [
  "libra2-bitvec",
  "libra2-bounded-executor",
  "libra2-channels",
+ "libra2-collections",
  "libra2-config",
  "libra2-dkg",
  "libra2-enum-conversion-derive",
@@ -10481,6 +10477,10 @@ dependencies = [
  "clap 4.5.21",
  "clap_complete",
 ]
+
+[[package]]
+name = "libra2-collections"
+version = "0.1.0"
 
 [[package]]
 name = "libra2-config"

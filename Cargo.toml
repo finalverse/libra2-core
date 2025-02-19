@@ -60,7 +60,7 @@ members = [
     "crates/aptos-bcs-utils",
     "crates/libra2-bitvec",
     "crates/aptos-build-info",
-    "crates/aptos-collections",
+    "crates/libra2-collections",
     "crates/aptos-compression",
     "crates/aptos-crypto",
     "crates/aptos-crypto-derive",
@@ -320,7 +320,7 @@ aptos-build-info = { path = "crates/aptos-build-info" }
 aptos-cached-packages = { path = "aptos-move/framework/cached-packages" }
 libra2-channels = { path = "crates/channel" }
 libra2-cli-common = { path = "crates/libra2-cli-common" }
-aptos-collections = { path = "crates/aptos-collections" }
+libra2-collections = { path = "crates/libra2-collections" }
 aptos-compression = { path = "crates/aptos-compression" }
 aptos-consensus = { path = "consensus" }
 aptos-consensus-notifications = { path = "state-sync/inter-component/consensus-notifications" }
