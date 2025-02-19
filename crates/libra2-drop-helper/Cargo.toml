@@ -1,6 +1,6 @@
 [package]
-name = "aptos-drop-helper"
-description = "Aptos Drop Helper"
+name = "libra2-drop-helper"
+description = "Libra2 Drop Helper"
 version = "0.1.0"
 
 # Workspace inherited keys

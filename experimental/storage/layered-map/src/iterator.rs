@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::node::{InternalNode, NodeRef, NodeStrongRef};
-use aptos_drop_helper::ArcAsyncDrop;
+use libra2_drop_helper::ArcAsyncDrop;
 use std::sync::Arc;
 
 pub(crate) struct DescendantIterator<'a, K: ArcAsyncDrop, V: ArcAsyncDrop> {

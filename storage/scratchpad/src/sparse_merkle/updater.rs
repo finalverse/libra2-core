@@ -14,7 +14,7 @@ use aptos_crypto::{
     hash::{CryptoHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
-use aptos_drop_helper::ArcAsyncDrop;
+use libra2_drop_helper::ArcAsyncDrop;
 use aptos_types::proof::{definition::NodeInProof, SparseMerkleLeafNode, SparseMerkleProofExt};
 use aptos_vm::AptosVM;
 use once_cell::sync::Lazy;

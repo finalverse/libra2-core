@@ -14,7 +14,7 @@ use crate::{
 use anyhow::{anyhow, ensure, Result};
 use aptos_consensus_types::block::Block as ConsensusBlock;
 use aptos_crypto::HashValue;
-use aptos_drop_helper::DEFAULT_DROPPER;
+use libra2_drop_helper::DEFAULT_DROPPER;
 use aptos_executor_types::ExecutorError;
 use libra2_infallible::Mutex;
 use aptos_logger::{debug, info};

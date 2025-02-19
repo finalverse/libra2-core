@@ -26,7 +26,7 @@ use aptos_aggregator::{
     delayed_change::{ApplyBase, DelayedChange},
     delta_change_set::serialize,
 };
-use aptos_drop_helper::DEFAULT_DROPPER;
+use libra2_drop_helper::DEFAULT_DROPPER;
 use aptos_logger::{debug, error, info};
 use aptos_mvhashmap::{
     types::{Incarnation, MVDelayedFieldsError, TxnIndex, ValueWithLayout},

@@ -4,7 +4,7 @@
 mod new_layer_impl;
 
 use crate::{iterator::DescendantIterator, node::NodeStrongRef, Key, KeyHash, MapLayer, Value};
-use aptos_drop_helper::ArcAsyncDrop;
+use libra2_drop_helper::ArcAsyncDrop;
 use std::marker::PhantomData;
 
 pub(crate) type DefaultHashBuilder = core::hash::BuildHasherDefault<ahash::AHasher>;

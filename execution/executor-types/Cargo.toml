@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 aptos-crypto = { workspace = true }
-aptos-drop-helper = { workspace = true }
+libra2-drop-helper = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-scratchpad = { workspace = true }

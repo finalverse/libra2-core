@@ -66,7 +66,7 @@ members = [
     "crates/aptos-crypto-derive",
     "crates/aptos-debugger",
     "crates/libra2-dkg",
-    "crates/aptos-drop-helper",
+    "crates/libra2-drop-helper",
     "crates/libra2-enum-conversion-derive",
     "crates/aptos-faucet/cli",
     "crates/aptos-faucet/core",
@@ -339,7 +339,7 @@ aptos-db-tool = { path = "storage/db-tool" }
 aptos-debugger = { path = "crates/aptos-debugger" }
 libra2-dkg = { path = "crates/libra2-dkg" }
 libra2-dkg-runtime = { path = "dkg" }
-aptos-drop-helper = { path = "crates/aptos-drop-helper" }
+libra2-drop-helper = { path = "crates/libra2-drop-helper" }
 aptos-event-notifications = { path = "state-sync/inter-component/event-notifications" }
 aptos-executor = { path = "execution/executor" }
 aptos-block-partitioner = { path = "execution/block-partitioner" }

@@ -3,7 +3,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_drop_helper::async_concurrent_dropper::AsyncConcurrentDropper;
+use libra2_drop_helper::async_concurrent_dropper::AsyncConcurrentDropper;
 use once_cell::sync::Lazy;
 
 pub(crate) static DROPPER: Lazy<AsyncConcurrentDropper> =
