@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_proxy::Proxy;
+use libra2_proxy::Proxy;
 use serde::{Deserialize, Serialize};
 use serde_json::json;
 use thiserror::Error;

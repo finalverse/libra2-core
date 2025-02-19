@@ -25,4 +25,4 @@ Libra2 is an AI driven layer 1 blockchain bringing a paradigm shift to digital a
 
 You can learn more about contributing to the Libra2 project by reading our [Contribution Guide](https://github.com/finalverse/libra2/blob/main/CONTRIBUTING.md) and by viewing our [Code of Conduct](https://github.com/finalverse/libra2/blob/main/CODE_OF_CONDUCT.md).
 
-Aptos Core is licensed under [Apache 2.0](https://github.com/finalverse/libra2/blob/main/LICENSE).
+Libra2 Core is licensed under [Apache 2.0](https://github.com/finalverse/libra2/blob/main/LICENSE).

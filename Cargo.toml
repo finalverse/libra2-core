@@ -431,7 +431,7 @@ aptos-keyless-pepper-service = { path = "keyless/pepper/service" }
 aptos-profiler = { path = "crates/aptos-profiler" }
 aptos-proptest-helpers = { path = "crates/aptos-proptest-helpers" }
 aptos-protos = { path = "protos/rust" }
-aptos-proxy = { path = "crates/proxy" }
+libra2-proxy = { path = "crates/proxy" }
 aptos-push-metrics = { path = "crates/aptos-push-metrics" }
 aptos-rate-limiter = { path = "crates/aptos-rate-limiter" }
 aptos-release-builder = { path = "aptos-move/aptos-release-builder" }

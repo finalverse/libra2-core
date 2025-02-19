@@ -4,7 +4,7 @@
 
 //! TCP Transport
 use crate::transport::Transport;
-use aptos_proxy::Proxy;
+use libra2_proxy::Proxy;
 use aptos_types::{
     network_address::{parse_dns_tcp, parse_ip_tcp, parse_tcp, IpFilter, NetworkAddress},
     PeerId,

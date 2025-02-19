@@ -2024,8 +2024,8 @@ dependencies = [
 name = "aptos-github-client"
 version = "0.1.0"
 dependencies = [
- "aptos-proxy",
  "base64 0.13.1",
+ "libra2-proxy",
  "serde",
  "serde_json",
  "thiserror",
@@ -2957,10 +2957,10 @@ name = "aptos-netcore"
 version = "0.1.0"
 dependencies = [
  "aptos-memsocket",
- "aptos-proxy",
  "aptos-types",
  "bytes",
  "futures",
+ "libra2-proxy",
  "pin-project 1.1.3",
  "serde",
  "tokio",
@@ -3408,13 +3408,6 @@ dependencies = [
  "prost 0.13.4",
  "serde",
  "tonic 0.12.3",
-]
-
-[[package]]
-name = "aptos-proxy"
-version = "0.1.0"
-dependencies = [
- "ipnet",
 ]
 
 [[package]]
@@ -10818,6 +10811,13 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "libra2-proxy"
+version = "0.1.0"
+dependencies = [
+ "ipnet",
 ]
 
 [[package]]
