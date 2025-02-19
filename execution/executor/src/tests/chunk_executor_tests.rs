@@ -25,14 +25,14 @@ use aptos_types::{
 use rand::Rng;
 
 pub struct TestExecutor {
-    _path: aptos_temppath::TempPath,
+    _path: libra2_temppath::TempPath,
     pub db: DbReaderWriter,
     pub executor: ChunkExecutor<MockVM>,
 }
 
 impl TestExecutor {
     pub fn new() -> TestExecutor {
-        let path = aptos_temppath::TempPath::new();
+        let path = libra2_temppath::TempPath::new();
         path.create_as_dir().unwrap();
         let db = DbReaderWriter::new(AptosDB::new_for_test(path.path()));
         let genesis = aptos_vm_genesis::test_genesis_transaction();

@@ -911,7 +911,7 @@ fn create_storage_synchronizer(
         StorageServiceNotificationHandler::new(storage_service_notifier);
 
     // Create the metadata storage
-    let db_path = aptos_temppath::TempPath::new();
+    let db_path = libra2_temppath::TempPath::new();
     let metadata_storage = PersistentMetadataStorage::new(db_path.path());
 
     // Create the storage synchronizer

@@ -85,7 +85,7 @@ mod dbtool_tests {
         test_execution_with_storage_impl, test_execution_with_storage_impl_inner,
     };
     use aptos_storage_interface::DbReader;
-    use aptos_temppath::TempPath;
+    use libra2_temppath::TempPath;
     use aptos_types::{
         state_store::state_key::{inner::StateKeyTag::AccessPath, prefix::StateKeyPrefix},
         transaction::Version,

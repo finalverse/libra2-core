@@ -74,14 +74,14 @@ fn execute_and_commit_block(
 }
 
 struct TestExecutor {
-    _path: aptos_temppath::TempPath,
+    _path: libra2_temppath::TempPath,
     db: DbReaderWriter,
     executor: BlockExecutor<MockVM>,
 }
 
 impl TestExecutor {
     fn new() -> TestExecutor {
-        let path = aptos_temppath::TempPath::new();
+        let path = libra2_temppath::TempPath::new();
         path.create_as_dir().unwrap();
         let db = DbReaderWriter::new(AptosDB::new_for_test(path.path()));
         let genesis = aptos_vm_genesis::test_genesis_transaction();

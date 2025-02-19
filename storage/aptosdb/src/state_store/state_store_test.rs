@@ -14,7 +14,7 @@ use aptos_jellyfish_merkle::{
     TreeReader,
 };
 use aptos_storage_interface::{DbReader, DbWriter, StateSnapshotReceiver};
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::{
     account_address::AccountAddress,
     account_config::{AccountResource, ChainIdResource, CoinInfoResource, CoinStoreResource},

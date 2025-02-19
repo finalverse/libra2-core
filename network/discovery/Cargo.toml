@@ -35,5 +35,5 @@ url = { workspace = true }
 [dev-dependencies]
 libra2-config = { workspace = true, features = ["testing"] }
 aptos-netcore = { workspace = true, features = ["fuzzing"] }
-aptos-temppath = { workspace = true }
+libra2-temppath = { workspace = true }
 rand = { workspace = true }

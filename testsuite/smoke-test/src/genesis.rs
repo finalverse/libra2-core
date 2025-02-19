@@ -22,7 +22,7 @@ use aptos_forge::{
     get_highest_synced_version, get_highest_synced_version_and_epoch,
     wait_for_all_nodes_to_catchup, LocalNode, LocalSwarm, Node, NodeExt, SwarmExt, Validator,
 };
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::{transaction::Transaction, waypoint::Waypoint};
 use move_core_types::language_storage::CORE_CODE_ADDRESS;
 use regex::Regex;

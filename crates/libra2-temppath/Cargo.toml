@@ -1,5 +1,5 @@
 [package]
-name = "aptos-temppath"
+name = "libra2-temppath"
 description = "Temporary path utilities"
 version = "0.1.0"
 

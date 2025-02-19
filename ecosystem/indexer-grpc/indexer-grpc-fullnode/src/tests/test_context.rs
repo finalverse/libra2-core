@@ -11,7 +11,7 @@ use aptos_sdk::{
         account_config::aptos_test_root_address, transaction::SignedTransaction, LocalAccount,
     },
 };
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::{
     account_address::AccountAddress,
     block_info::BlockInfo,

@@ -18,7 +18,7 @@ use aptos_executor_types::BlockExecutorTrait;
 use aptos_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReaderWriter,
 };
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::{
     account_address::AccountAddress,
     account_config::{

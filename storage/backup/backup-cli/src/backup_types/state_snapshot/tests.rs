@@ -17,7 +17,7 @@ use crate::{
 };
 use aptos_db::{state_restore::StateSnapshotRestoreMode, AptosDB};
 use aptos_storage_interface::DbReader;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use std::{convert::TryInto, sync::Arc};
 use tokio::time::Duration;
 

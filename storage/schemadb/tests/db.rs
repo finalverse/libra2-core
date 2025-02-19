@@ -89,19 +89,19 @@ fn get_cfds() -> Vec<ColumnFamilyDescriptor> {
         .collect()
 }
 
-fn open_db(dir: &aptos_temppath::TempPath) -> DB {
+fn open_db(dir: &libra2_temppath::TempPath) -> DB {
     let mut db_opts = rocksdb::Options::default();
     db_opts.create_if_missing(true);
     db_opts.create_missing_column_families(true);
     DB::open(dir.path(), "test", get_column_families(), &db_opts).expect("Failed to open DB.")
 }
 
-fn open_db_read_only(dir: &aptos_temppath::TempPath) -> DB {
+fn open_db_read_only(dir: &libra2_temppath::TempPath) -> DB {
     DB::open_cf_readonly(&rocksdb::Options::default(), dir.path(), "test", get_cfds())
         .expect("Failed to open DB.")
 }
 
-fn open_db_as_secondary(dir: &aptos_temppath::TempPath, dir_sec: &aptos_temppath::TempPath) -> DB {
+fn open_db_as_secondary(dir: &libra2_temppath::TempPath, dir_sec: &libra2_temppath::TempPath) -> DB {
     DB::open_cf_as_secondary(
         &rocksdb::Options::default(),
         dir.path(),
@@ -113,13 +113,13 @@ fn open_db_as_secondary(dir: &aptos_temppath::TempPath, dir_sec: &aptos_temppath
 }
 
 struct TestDB {
-    _tmpdir: aptos_temppath::TempPath,
+    _tmpdir: libra2_temppath::TempPath,
     db: DB,
 }
 
 impl TestDB {
     fn new() -> Self {
-        let tmpdir = aptos_temppath::TempPath::new();
+        let tmpdir = libra2_temppath::TempPath::new();
         let db = open_db(&tmpdir);
 
         TestDB {
@@ -276,7 +276,7 @@ fn test_two_schema_batches() {
 
 #[test]
 fn test_reopen() {
-    let tmpdir = aptos_temppath::TempPath::new();
+    let tmpdir = libra2_temppath::TempPath::new();
     {
         let db = open_db(&tmpdir);
         db.put::<TestSchema1>(&TestField(0), &TestField(0)).unwrap();
@@ -296,7 +296,7 @@ fn test_reopen() {
 
 #[test]
 fn test_open_read_only() {
-    let tmpdir = aptos_temppath::TempPath::new();
+    let tmpdir = libra2_temppath::TempPath::new();
     {
         let db = open_db(&tmpdir);
         db.put::<TestSchema1>(&TestField(0), &TestField(0)).unwrap();
@@ -313,8 +313,8 @@ fn test_open_read_only() {
 
 #[test]
 fn test_open_as_secondary() {
-    let tmpdir = aptos_temppath::TempPath::new();
-    let tmpdir_sec = aptos_temppath::TempPath::new();
+    let tmpdir = libra2_temppath::TempPath::new();
+    let tmpdir_sec = libra2_temppath::TempPath::new();
 
     let db = open_db(&tmpdir);
     db.put::<TestSchema1>(&TestField(0), &TestField(0)).unwrap();
@@ -363,8 +363,8 @@ fn test_report_size() {
 
 #[test]
 fn test_checkpoint() {
-    let tmpdir = aptos_temppath::TempPath::new();
-    let checkpoint = aptos_temppath::TempPath::new();
+    let tmpdir = libra2_temppath::TempPath::new();
+    let checkpoint = libra2_temppath::TempPath::new();
     {
         let db = open_db(&tmpdir);
         db.put::<TestSchema1>(&TestField(0), &TestField(0)).unwrap();
@@ -393,7 +393,7 @@ fn test_checkpoint() {
 
 #[test]
 fn test_unrecognised_column_family() {
-    let tmpdir = aptos_temppath::TempPath::new();
+    let tmpdir = libra2_temppath::TempPath::new();
 
     let mut opts = rocksdb::Options::default();
     opts.create_if_missing(true);

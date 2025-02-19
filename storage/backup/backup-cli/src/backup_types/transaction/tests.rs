@@ -18,7 +18,7 @@ use crate::{
 use aptos_db::AptosDB;
 use aptos_executor_types::VerifyExecutionMode;
 use aptos_storage_interface::DbReader;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::transaction::Version;
 use itertools::zip_eq;
 use std::{convert::TryInto, mem::size_of, sync::Arc};

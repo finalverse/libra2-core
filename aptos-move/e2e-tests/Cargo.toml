@@ -26,7 +26,7 @@ aptos-gas-profiling = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 aptos-keygen = { workspace = true }
 aptos-proptest-helpers = { workspace = true }
-aptos-temppath = { workspace = true }
+libra2-temppath = { workspace = true }
 aptos-types = { workspace = true }
 aptos-vm = { workspace = true }
 aptos-vm-environment = { workspace = true }

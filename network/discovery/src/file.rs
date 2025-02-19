@@ -64,7 +64,7 @@ mod tests {
     };
     use aptos_event_notifications::DbBackedOnChainConfig;
     use aptos_network::connectivity_manager::{ConnectivityRequest, DiscoverySource};
-    use aptos_temppath::TempPath;
+    use libra2_temppath::TempPath;
     use aptos_types::{network_address::NetworkAddress, PeerId};
     use futures::StreamExt;
     use std::{collections::HashSet, str::FromStr, sync::Arc};

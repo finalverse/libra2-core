@@ -9,7 +9,7 @@ use aptos_cached_packages::aptos_stdlib;
 use aptos_framework::{BuildOptions, BuiltPackage};
 use aptos_gas_algebra::GasQuantity;
 use aptos_proptest_helpers::Index;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::transaction::{
     EntryFunction, ExecutionStatus, SignedTransaction, TransactionStatus,
 };

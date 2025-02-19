@@ -6,7 +6,7 @@ use libra2_config::config::{NodeConfig, WaypointConfig};
 use aptos_event_notifications::EventSubscriptionService;
 use libra2_infallible::RwLock;
 use aptos_storage_interface::{DbReader, DbReaderWriter, DbWriter};
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::{chain_id::ChainId, waypoint::Waypoint};
 use rand::SeedableRng;
 use std::{fs, sync::Arc};
@@ -54,7 +54,7 @@ fn test_aptos_vm_does_not_have_test_natives() {
 fn test_create_single_node_test_config() {
     // Create a test config override and merge it with the default config.
     // This will get cleaned up by the tempdir when it goes out of scope.
-    let test_dir = aptos_temppath::TempPath::new().as_ref().to_path_buf();
+    let test_dir = libra2_temppath::TempPath::new().as_ref().to_path_buf();
     fs::DirBuilder::new()
         .recursive(true)
         .create(&test_dir)

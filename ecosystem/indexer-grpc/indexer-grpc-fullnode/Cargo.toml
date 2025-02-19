@@ -63,6 +63,6 @@ aptos-mempool-notifications = { workspace = true }
 aptos-proptest-helpers = { workspace = true }
 aptos-sdk = { workspace = true }
 aptos-secure-storage = { workspace = true }
-aptos-temppath = { workspace = true }
+libra2-temppath = { workspace = true }
 aptos-vm = { workspace = true }
 aptos-vm-validator = { workspace = true }

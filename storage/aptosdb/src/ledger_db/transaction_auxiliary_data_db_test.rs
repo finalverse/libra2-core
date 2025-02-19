@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{db::test_helper::put_transaction_auxiliary_data, AptosDB};
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::transaction::TransactionAuxiliaryData;
 use proptest::{collection::vec, prelude::*};
 

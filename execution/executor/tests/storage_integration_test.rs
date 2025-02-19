@@ -29,7 +29,7 @@ use std::sync::Arc;
 
 #[test]
 fn test_genesis() {
-    let path = aptos_temppath::TempPath::new();
+    let path = libra2_temppath::TempPath::new();
     path.create_as_dir().unwrap();
     let genesis = aptos_vm_genesis::test_genesis_transaction();
     let (_, db, _executor, waypoint) = create_db_and_executor(path.path(), &genesis, false);
@@ -71,7 +71,7 @@ fn test_reconfiguration() {
     // When executing a transaction emits a validator set change,
     // storage should propagate the new validator set
 
-    let path = aptos_temppath::TempPath::new();
+    let path = libra2_temppath::TempPath::new();
     path.create_as_dir().unwrap();
     let (genesis, validators) = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
     let genesis_key = &aptos_vm_genesis::GENESIS_KEYPAIR.0;

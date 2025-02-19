@@ -243,7 +243,7 @@ async fn main() -> anyhow::Result<()> {
             let config =
                 aptos_release_builder::ReleaseConfig::load_config(release_config.as_path())?;
 
-            let root_key_path = aptos_temppath::TempPath::new();
+            let root_key_path = libra2_temppath::TempPath::new();
             root_key_path.create_as_file()?;
 
             let mut network_config = match input_option {

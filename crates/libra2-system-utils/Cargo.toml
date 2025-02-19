@@ -1,5 +1,5 @@
 [package]
-name = "aptos-system-utils"
+name = "libra2-system-utils"
 description = "System related utils."
 version = "0.1.0"
 

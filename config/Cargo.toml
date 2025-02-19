@@ -19,7 +19,7 @@ libra2-global-constants = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-secure-storage = { workspace = true }
 libra2-short-hex-str = { workspace = true }
-aptos-temppath = { workspace = true }
+libra2-temppath = { workspace = true }
 aptos-types = { workspace = true }
 arr_macro = { workspace = true }
 bcs = { workspace = true }

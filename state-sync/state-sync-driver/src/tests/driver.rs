@@ -333,7 +333,7 @@ async fn create_driver_for_tests(
     aptos_logger::Logger::init_for_testing();
 
     // Create test aptos database
-    let db_path = aptos_temppath::TempPath::new();
+    let db_path = libra2_temppath::TempPath::new();
     db_path.create_as_dir().unwrap();
     let (_, db_rw) = DbReaderWriter::wrap(AptosDB::new_for_test(db_path.path()));
 

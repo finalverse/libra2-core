@@ -9,7 +9,7 @@ use aptos_accumulator::HashReader;
 use libra2_config::config::LedgerPrunerConfig;
 use aptos_schemadb::SchemaBatch;
 use aptos_storage_interface::DbReader;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::{
     account_address::AccountAddress,
     block_metadata::BlockMetadata,

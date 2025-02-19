@@ -11,7 +11,7 @@ use aptos_keygen::KeyGen;
 use aptos_logger::info;
 use aptos_release_builder::ReleaseConfig;
 use aptos_sdk::crypto::{ed25519::Ed25519PrivateKey, PrivateKey};
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::transaction::authenticator::AuthenticationKey;
 use async_trait::async_trait;
 use std::{ops::DerefMut, path::Path};

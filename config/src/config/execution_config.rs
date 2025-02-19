@@ -234,7 +234,7 @@ impl ConfigOptimizer for ExecutionConfig {
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_temppath::TempPath;
+    use libra2_temppath::TempPath;
     use aptos_types::{
         transaction::{ChangeSet, Transaction, WriteSetPayload},
         write_set::WriteSetMut,

@@ -292,7 +292,7 @@ vault:
 
     #[test]
     fn test_token_reading() {
-        let temppath = aptos_temppath::TempPath::new();
+        let temppath = libra2_temppath::TempPath::new();
         temppath.create_as_file().unwrap();
         let mut file = File::create(temppath.path()).unwrap();
         file.write_all(b"disk_token").unwrap();

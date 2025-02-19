@@ -28,7 +28,7 @@ aptos-mempool = { workspace = true, features = ["fuzzing"] }
 aptos-mempool-notifications = { workspace = true }
 aptos-sdk = { workspace = true }
 aptos-storage-interface = { workspace = true }
-aptos-temppath = { workspace = true }
+libra2-temppath = { workspace = true }
 aptos-types = { workspace = true }
 aptos-vm = { workspace = true }
 aptos-vm-logging = { workspace = true }

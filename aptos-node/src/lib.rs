@@ -400,7 +400,7 @@ where
 {
     // If there wasn't a test directory specified, create a temporary one
     let test_dir =
-        test_dir.unwrap_or_else(|| aptos_temppath::TempPath::new().as_ref().to_path_buf());
+        test_dir.unwrap_or_else(|| libra2_temppath::TempPath::new().as_ref().to_path_buf());
 
     // Create the directories for the node
     fs::DirBuilder::new().recursive(true).create(&test_dir)?;

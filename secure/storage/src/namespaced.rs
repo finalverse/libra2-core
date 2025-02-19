@@ -137,7 +137,7 @@ impl<S: CryptoStorage> CryptoStorage for Namespaced<S> {
 mod test {
     use super::*;
     use crate::OnDiskStorage;
-    use aptos_temppath::TempPath;
+    use libra2_temppath::TempPath;
 
     #[test]
     fn test_different_namespaces() {

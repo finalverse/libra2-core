@@ -25,7 +25,7 @@ rand = { workspace = true }
 rocksdb = { workspace = true }
 
 [dev-dependencies]
-aptos-temppath = { workspace = true }
+libra2-temppath = { workspace = true }
 byteorder = { workspace = true }
 proptest = { workspace = true }
 

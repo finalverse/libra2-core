@@ -11,7 +11,7 @@ use aptos::{
 };
 use aptos_crypto::ed25519::Ed25519PrivateKey;
 use aptos_genesis::keys::PrivateIdentity;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::account_address::AccountAddress;
 use clap::Parser;
 use std::{
@@ -120,7 +120,7 @@ impl NetworkConfig {
 
     /// Change the time for a network to resolve governance proposal
     pub async fn set_fast_resolve(&self, resolution_time: u64) -> Result<()> {
-        let fast_resolve_script = aptos_temppath::TempPath::new();
+        let fast_resolve_script = libra2_temppath::TempPath::new();
         fast_resolve_script.create_as_file()?;
         let mut fas_script_path = fast_resolve_script.path().to_path_buf();
         fas_script_path.set_extension("move");

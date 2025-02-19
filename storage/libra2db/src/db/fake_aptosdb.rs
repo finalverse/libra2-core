@@ -975,7 +975,7 @@ mod tests {
     use aptos_storage_interface::{
         state_store::state_view::cached_state_view::ShardedStateCache, DbReader, DbWriter,
     };
-    use aptos_temppath::TempPath;
+    use libra2_temppath::TempPath;
     use aptos_types::{
         account_address::AccountAddress,
         ledger_info::LedgerInfoWithSignatures,

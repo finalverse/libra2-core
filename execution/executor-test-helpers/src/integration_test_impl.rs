@@ -42,7 +42,7 @@ use rand::SeedableRng;
 use std::{path::Path, sync::Arc};
 
 pub fn test_execution_with_storage_impl() -> Arc<AptosDB> {
-    let path = aptos_temppath::TempPath::new();
+    let path = libra2_temppath::TempPath::new();
     path.create_as_dir().unwrap();
     test_execution_with_storage_impl_inner(false, path.path())
 }

@@ -25,7 +25,7 @@ once_cell = { workspace = true }
 [dev-dependencies]
 anyhow = { workspace = true }
 aptos-schemadb = { workspace = true }
-aptos-temppath = { workspace = true }
+libra2-temppath = { workspace = true }
 criterion = { workspace = true }
 itertools = { workspace = true }
 jemallocator = { workspace = true }

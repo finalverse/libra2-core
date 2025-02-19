@@ -32,7 +32,7 @@ warp = { workspace = true }
 [dev-dependencies]
 libra2-config = { workspace = true }
 aptos-db = { workspace = true, features = ["fuzzing"] }
-aptos-temppath = { workspace = true }
+libra2-temppath = { workspace = true }
 reqwest = { workspace = true }
 
 [features]

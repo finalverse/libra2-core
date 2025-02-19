@@ -24,7 +24,7 @@ use aptos_db::{state_restore::StateSnapshotRestoreMode, AptosDB};
 use aptos_executor_test_helpers::integration_test_impl::test_execution_with_storage_impl;
 use aptos_executor_types::VerifyExecutionMode;
 use aptos_storage_interface::DbReader;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::transaction::Version;
 use proptest::{prelude::*, sample::Index};
 use std::{convert::TryInto, sync::Arc};

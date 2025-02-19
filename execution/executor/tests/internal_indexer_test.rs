@@ -14,7 +14,7 @@ use aptos_sdk::{
     types::{AccountKey, LocalAccount},
 };
 use aptos_storage_interface::DbReader;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::{
     account_address::AccountAddress,
     account_config::aptos_test_root_address,
@@ -37,7 +37,7 @@ const B: u64 = 1_000_000_000;
 #[cfg(test)]
 pub fn create_test_db() -> (Arc<AptosDB>, LocalAccount) {
     // create test db
-    let path = aptos_temppath::TempPath::new();
+    let path = libra2_temppath::TempPath::new();
     let (genesis, validators) = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
     let genesis_txn = Transaction::GenesisTransaction(WriteSetPayload::Direct(genesis));
     let core_resources_account: LocalAccount = LocalAccount::new(

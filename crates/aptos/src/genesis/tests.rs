@@ -28,7 +28,7 @@ use aptos_genesis::{
     keys::PublicIdentity,
 };
 use aptos_keygen::KeyGen;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::{account_address::AccountAddress, chain_id::ChainId};
 use aptos_vm_genesis::{AccountBalance, TestValidator};
 use std::{

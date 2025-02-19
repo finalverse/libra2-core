@@ -925,7 +925,7 @@ mod tests {
     use aptos_executor::block_executor::BlockExecutor;
     use aptos_executor_types::BlockExecutorTrait;
     use aptos_sdk::{transaction_builder::aptos_stdlib, types::LocalAccount};
-    use aptos_temppath::TempPath;
+    use libra2_temppath::TempPath;
     use aptos_transaction_generator_lib::WorkflowProgress;
     use aptos_transaction_workloads_lib::args::TransactionTypeArg;
     use aptos_types::{

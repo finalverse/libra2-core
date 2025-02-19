@@ -18,7 +18,7 @@ use aptos_release_builder::{
     },
     ReleaseEntry,
 };
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::on_chain_config::{FeatureFlag as AptosFeatureFlag, OnChainConsensusConfig};
 use move_binary_format::file_format_common::VERSION_DEFAULT_LANG_V2;
 use std::{fs, path::PathBuf, process::Command, sync::Arc};

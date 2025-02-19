@@ -4,7 +4,7 @@
 use crate::{ledger_db::WriteSetDb, AptosDB};
 use aptos_schemadb::batch::SchemaBatch;
 use aptos_storage_interface::Result;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::{
     transaction::{ExecutionStatus, TransactionAuxiliaryData, TransactionOutput, Version},
     write_set::WriteSet,

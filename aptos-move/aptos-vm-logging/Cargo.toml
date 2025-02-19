@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-speculative-state-helper = { workspace = true }
+libra2-speculative-state-helper = { workspace = true }
 aptos-types = { workspace = true }
 arc-swap = { workspace = true }
 once_cell = { workspace = true }

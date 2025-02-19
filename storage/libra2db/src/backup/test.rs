@@ -4,7 +4,7 @@
 
 use crate::db::{test_helper::arb_blocks_to_commit, Libra2DB};
 use anyhow::Result;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use aptos_types::transaction::Version;
 use proptest::prelude::*;
 

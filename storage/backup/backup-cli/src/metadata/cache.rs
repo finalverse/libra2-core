@@ -10,7 +10,7 @@ use crate::{
 };
 use anyhow::{anyhow, Context, Result};
 use aptos_logger::prelude::*;
-use aptos_temppath::TempPath;
+use libra2_temppath::TempPath;
 use async_trait::async_trait;
 use clap::Parser;
 use std::{
