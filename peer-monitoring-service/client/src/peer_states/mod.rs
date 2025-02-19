@@ -9,7 +9,7 @@ use libra2_config::{config::PeerMonitoringServiceConfig, network_id::PeerNetwork
 use aptos_logger::{info, sample, sample::SampleRate};
 use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadata};
 use aptos_peer_monitoring_service_types::PeerMonitoringServiceMessage;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use key_value::PeerStateKey;
 use std::{collections::HashMap, time::Duration};
 use tokio::runtime::Handle;

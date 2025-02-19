@@ -1,5 +1,5 @@
 [package]
-name = "aptos-time-service"
+name = "libra2-time-service"
 description = "Time Service for mocking time with tokio"
 version = "0.1.0"
 

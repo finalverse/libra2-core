@@ -27,7 +27,7 @@ use aptos_netcore::transport::{
     tcp::{TCPBufferCfg, TcpSocket, TcpTransport},
     Transport,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::{chain_id::ChainId, network_address::NetworkAddress, PeerId};
 use std::{clone::Clone, collections::HashMap, fmt::Debug, sync::Arc};
 use tokio::runtime::Handle;

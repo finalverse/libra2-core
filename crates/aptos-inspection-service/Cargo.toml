@@ -24,7 +24,7 @@ aptos-runtimes = { workspace = true }
 aptos-storage-interface = { workspace = true }
 aptos-storage-service-client = { workspace = true }
 aptos-telemetry = { workspace = true }
-aptos-time-service = { workspace = true }
+libra2-time-service = { workspace = true }
 futures = { workspace = true }
 hyper = { workspace = true }
 once_cell = { workspace = true }
@@ -34,6 +34,6 @@ serde_json = { workspace = true }
 tokio = { workspace = true }
 
 [dev-dependencies]
-aptos-time-service = { workspace = true, features = ["testing"] }
+libra2-time-service = { workspace = true, features = ["testing"] }
 assert_approx_eq = { workspace = true }
 rusty-fork = { workspace = true }

@@ -28,7 +28,7 @@ use aptos_network::application::{interface::NetworkClient, storage::PeersAndMeta
 use aptos_storage_interface::DbReaderWriter;
 use aptos_storage_service_client::StorageServiceClient;
 use aptos_storage_service_notifications::StorageServiceNotificationListener;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::{
     event::EventKey,
     transaction::{Transaction, WriteSetPayload},

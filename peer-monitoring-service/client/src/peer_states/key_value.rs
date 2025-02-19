@@ -15,7 +15,7 @@ use aptos_peer_monitoring_service_types::{
     request::{LatencyPingRequest, PeerMonitoringServiceRequest},
     response::PeerMonitoringServiceResponse,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use enum_dispatch::enum_dispatch;
 use std::{fmt::Display, sync::Arc};
 

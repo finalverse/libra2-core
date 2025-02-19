@@ -49,7 +49,7 @@ use aptos_network::{
     application::interface::NetworkClient, protocols::wire::handshake::v1::ProtocolId,
 };
 use aptos_storage_interface::DbReader;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::{
     block_info::{BlockInfo, Round},
     epoch_state::EpochState,

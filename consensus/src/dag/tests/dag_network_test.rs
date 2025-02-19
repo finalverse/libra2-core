@@ -10,7 +10,7 @@ use anyhow::{anyhow, bail};
 use aptos_consensus_types::common::Author;
 use libra2_infallible::Mutex;
 use aptos_reliable_broadcast::RBNetworkSender;
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::validator_verifier::random_validator_verifier;
 use async_trait::async_trait;
 use bytes::Bytes;

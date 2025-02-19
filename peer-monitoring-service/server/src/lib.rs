@@ -24,7 +24,7 @@ use aptos_peer_monitoring_service_types::{
     },
     PeerMonitoringServiceError, Result, MAX_DISTANCE_FROM_VALIDATORS,
 };
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use error::Error;
 use futures::stream::StreamExt;
 use std::{cmp::min, sync::Arc, time::Instant};

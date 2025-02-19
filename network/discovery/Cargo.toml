@@ -23,7 +23,7 @@ libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
 aptos-rest-client = { workspace = true }
 libra2-short-hex-str = { workspace = true }
-aptos-time-service = { workspace = true }
+libra2-time-service = { workspace = true }
 aptos-types = { workspace = true }
 bcs = { workspace = true }
 futures = { workspace = true }

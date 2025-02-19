@@ -16,7 +16,7 @@ use aptos_network::{
     peer_manager::ConnectionNotification,
     protocols::{network::Event, rpc::error::RpcError, wire::handshake::v1::ProtocolId},
 };
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{account_address::AccountAddress, PeerId};
 use bytes::Bytes;
 use futures::{

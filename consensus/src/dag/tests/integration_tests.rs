@@ -25,7 +25,7 @@ use aptos_network::{
     transport::ConnectionMetadata,
     ProtocolId,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::{
     epoch_state::EpochState,
     ledger_info::generate_ledger_info_with_sig,
@@ -202,7 +202,7 @@ fn bootstrap_nodes(
                 signer.clone(),
                 storage,
                 network,
-                aptos_time_service::TimeService::real(),
+                libra2_time_service::TimeService::real(),
                 network_events,
                 signers.clone(),
             )

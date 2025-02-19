@@ -25,7 +25,7 @@ use aptos_storage_service_types::{
     },
     responses::{DataResponse, StorageServerSummary, StorageServiceResponse},
 };
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
 use arc_swap::ArcSwap;
 use dashmap::DashMap;

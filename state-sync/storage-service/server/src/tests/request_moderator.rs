@@ -20,7 +20,7 @@ use aptos_storage_service_types::{
     responses::StorageServiceResponse,
     StorageServiceError,
 };
-use aptos_time_service::MockTimeService;
+use libra2_time_service::MockTimeService;
 use aptos_types::{account_address::AccountAddress, network_address::NetworkAddress, PeerId};
 use claims::assert_matches;
 use dashmap::DashMap;

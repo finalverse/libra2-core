@@ -10,7 +10,7 @@ use libra2_config::{
 use libra2_infallible::RwLock;
 use aptos_logger::prelude::*;
 use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use itertools::Itertools;
 use std::{
     cmp::{max, min, Ordering},

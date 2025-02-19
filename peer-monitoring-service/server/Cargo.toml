@@ -23,7 +23,7 @@ aptos-netcore = { workspace = true }
 aptos-network = { workspace = true }
 aptos-peer-monitoring-service-types = { workspace = true }
 aptos-storage-interface = { workspace = true }
-aptos-time-service = { workspace = true }
+libra2-time-service = { workspace = true }
 aptos-types = { workspace = true }
 bcs = { workspace = true }
 bytes = { workspace = true }
@@ -37,7 +37,7 @@ tokio = { workspace = true }
 anyhow = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-network = { workspace = true, features = ["fuzzing"] }
-aptos-time-service = { workspace = true, features = ["testing"] }
+libra2-time-service = { workspace = true, features = ["testing"] }
 claims = { workspace = true }
 maplit = { workspace = true }
 mockall = { workspace = true }

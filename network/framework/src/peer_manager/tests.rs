@@ -31,7 +31,7 @@ use aptos_memsocket::MemorySocket;
 use aptos_netcore::transport::{
     boxed::BoxedTransport, memory::MemoryTransport, ConnectionOrigin, TransportExt,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::{network_address::NetworkAddress, PeerId};
 use bytes::Bytes;
 use futures::{channel::oneshot, io::AsyncWriteExt, stream::StreamExt};

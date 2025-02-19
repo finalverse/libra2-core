@@ -102,7 +102,7 @@ members = [
     "crates/aptos-telemetry",
     "crates/aptos-telemetry-service",
     "crates/libra2-temppath",
-    "crates/aptos-time-service",
+    "crates/libra2-time-service",
     "crates/aptos-warp-webserver",
     "crates/bounded-executor",
     "crates/channel",
@@ -465,7 +465,7 @@ aptos-telemetry = { path = "crates/aptos-telemetry" }
 aptos-telemetry-service = { path = "crates/aptos-telemetry-service" }
 libra2-temppath = { path = "crates/libra2-temppath" }
 aptos-testcases = { path = "testsuite/testcases" }
-aptos-time-service = { path = "crates/aptos-time-service", features = [
+libra2-time-service = { path = "crates/libra2-time-service", features = [
     "async",
 ] }
 aptos-transaction-emitter-lib = { path = "crates/transaction-emitter-lib" }

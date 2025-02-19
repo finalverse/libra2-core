@@ -19,7 +19,7 @@ aptos-consensus-types = { workspace = true }
 libra2-enum-conversion-derive = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
-aptos-time-service = { workspace = true }
+libra2-time-service = { workspace = true }
 aptos-types = { workspace = true }
 async-trait = { workspace = true }
 bytes = { workspace = true }
@@ -31,7 +31,7 @@ tokio-retry = { workspace = true }
 
 [dev-dependencies]
 aptos-consensus-types = { workspace = true, features = ["fuzzing"] }
-aptos-time-service = { workspace = true, features = ["testing"] }
+libra2-time-service = { workspace = true, features = ["testing"] }
 
 [features]
 default = []

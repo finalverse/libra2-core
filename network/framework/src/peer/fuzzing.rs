@@ -17,7 +17,7 @@ use libra2_config::{config::PeerRole, network_id::NetworkContext};
 use aptos_memsocket::MemorySocket;
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_proptest_helpers::ValueGenerator;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::{network_address::NetworkAddress, PeerId};
 use futures::{executor::block_on, future, io::AsyncReadExt, sink::SinkExt, stream::StreamExt};
 use proptest::{arbitrary::any, collection::vec};

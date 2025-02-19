@@ -22,7 +22,7 @@ use crate::{
 use aptos_consensus_types::common::{Author, Round};
 use aptos_crypto::HashValue;
 use aptos_reliable_broadcast::RBNetworkSender;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,

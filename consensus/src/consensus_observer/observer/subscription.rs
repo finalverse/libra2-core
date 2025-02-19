@@ -5,7 +5,7 @@ use crate::consensus_observer::{common::error::Error, observer::subscription_uti
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use aptos_network::application::metadata::PeerMetadata;
 use aptos_storage_interface::DbReader;
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use std::{
     collections::{HashMap, HashSet},
     sync::Arc,

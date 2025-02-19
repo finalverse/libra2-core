@@ -165,7 +165,7 @@ pub struct EpochManager<P: OnChainConfigProvider> {
     // recovery_mode is set to true when the recovery manager is spawned
     recovery_mode: bool,
 
-    aptos_time_service: aptos_time_service::TimeService,
+    libra2_time_service: libra2_time_service::TimeService,
     dag_rpc_tx: Option<libra2_channel::Sender<AccountAddress, IncomingDAGRequest>>,
     dag_shutdown_tx: Option<oneshot::Sender<oneshot::Sender<()>>>,
     dag_config: DagConsensusConfig,
@@ -191,7 +191,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         quorum_store_storage: Arc<dyn QuorumStoreStorage>,
         reconfig_events: ReconfigNotificationListener<P>,
         bounded_executor: BoundedExecutor,
-        aptos_time_service: aptos_time_service::TimeService,
+        libra2_time_service: libra2_time_service::TimeService,
         vtxn_pool: VTxnPoolState,
         rand_storage: Arc<dyn RandStorage<AugmentedData>>,
         consensus_publisher: Option<Arc<ConsensusPublisher>>,
@@ -234,7 +234,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
             recovery_mode: false,
             dag_rpc_tx: None,
             dag_shutdown_tx: None,
-            aptos_time_service,
+            libra2_time_service,
             dag_config,
             payload_manager: Arc::new(DirectMempoolPayloadManager::new()),
             rand_storage,
@@ -1440,7 +1440,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
             network_sender_arc.clone(),
             network_sender_arc.clone(),
             network_sender_arc,
-            self.aptos_time_service.clone(),
+            self.libra2_time_service.clone(),
             payload_manager,
             payload_client,
             self.execution_client

@@ -11,7 +11,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use aptos_storage_service_types::requests::{DataRequest, StorageServiceRequest};
-use aptos_time_service::TimeServiceTrait;
+use libra2_time_service::TimeServiceTrait;
 use maplit::hashset;
 use ordered_float::OrderedFloat;
 use rand::Rng;

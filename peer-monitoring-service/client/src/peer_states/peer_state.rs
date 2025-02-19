@@ -22,7 +22,7 @@ use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadat
 use aptos_peer_monitoring_service_types::{
     response::PeerMonitoringServiceResponse, PeerMonitoringMetadata, PeerMonitoringServiceMessage,
 };
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use rand::{rngs::OsRng, Rng};
 use std::{
     collections::HashMap,

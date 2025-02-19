@@ -3,7 +3,7 @@
 
 use crate::{metrics, stream_engine::StreamEngine};
 use libra2_config::config::{DataStreamingServiceConfig, DynamicPrefetchingConfig};
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use std::{
     cmp::{max, min},
     time::{Duration, Instant},

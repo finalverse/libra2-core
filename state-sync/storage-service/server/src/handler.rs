@@ -30,7 +30,7 @@ use aptos_storage_service_types::{
     },
     StorageServiceError,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::transaction::Version;
 use arc_swap::ArcSwap;
 use dashmap::{mapref::entry::Entry, DashMap};

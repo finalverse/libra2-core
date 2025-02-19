@@ -221,7 +221,7 @@ pub struct NetworkSender {
     // (self sending is not supported by the networking API).
     self_sender: libra2_channels::UnboundedSender<Event<ConsensusMsg>>,
     validators: Arc<ValidatorVerifier>,
-    time_service: aptos_time_service::TimeService,
+    time_service: libra2_time_service::TimeService,
 }
 
 impl NetworkSender {
@@ -236,7 +236,7 @@ impl NetworkSender {
             consensus_network_client,
             self_sender,
             validators,
-            time_service: aptos_time_service::TimeService::real(),
+            time_service: libra2_time_service::TimeService::real(),
         }
     }
 

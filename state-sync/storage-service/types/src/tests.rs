@@ -15,7 +15,7 @@ use crate::{
 };
 use libra2_config::config::AptosDataClientConfig;
 use aptos_crypto::hash::HashValue;
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,

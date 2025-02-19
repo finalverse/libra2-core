@@ -31,7 +31,7 @@ use aptos_network_benchmark::NetbenchMessage;
 use aptos_network_builder::builder::NetworkBuilder;
 use aptos_peer_monitoring_service_types::PeerMonitoringServiceMessage;
 use aptos_storage_service_types::StorageServiceMessage;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::chain_id::ChainId;
 use serde::{Deserialize, Serialize};
 use std::{collections::HashMap, sync::Arc};

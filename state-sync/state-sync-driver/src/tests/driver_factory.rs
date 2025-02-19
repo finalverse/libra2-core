@@ -23,7 +23,7 @@ use aptos_network::application::{interface::NetworkClient, storage::PeersAndMeta
 use aptos_storage_interface::DbReaderWriter;
 use aptos_storage_service_client::StorageServiceClient;
 use libra2_temppath::TempPath;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;
 use futures::{FutureExt, StreamExt};
 use std::{collections::HashMap, sync::Arc};

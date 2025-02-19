@@ -14,7 +14,7 @@ use aptos_peer_monitoring_service_types::{
     request::{LatencyPingRequest, PeerMonitoringServiceRequest},
     response::PeerMonitoringServiceResponse,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use std::{
     collections::BTreeMap,
     fmt,
@@ -249,7 +249,7 @@ mod test {
         request::{LatencyPingRequest, PeerMonitoringServiceRequest},
         response::{LatencyPingResponse, PeerMonitoringServiceResponse},
     };
-    use aptos_time_service::TimeService;
+    use libra2_time_service::TimeService;
     use aptos_types::{network_address::NetworkAddress, PeerId};
     use rand::{rngs::OsRng, Rng};
     use std::{cmp::min, str::FromStr};

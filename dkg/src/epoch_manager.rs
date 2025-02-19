@@ -214,7 +214,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
                     .max_delay(Duration::from_millis(
                         self.rb_config.backoff_policy_max_delay_ms,
                     )),
-                aptos_time_service::TimeService::real(),
+                libra2_time_service::TimeService::real(),
                 Duration::from_millis(self.rb_config.rpc_timeout_ms),
                 BoundedExecutor::new(8, tokio::runtime::Handle::current()),
             );

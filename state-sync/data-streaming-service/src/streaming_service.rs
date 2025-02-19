@@ -19,7 +19,7 @@ use aptos_data_client::{
 };
 use aptos_id_generator::{IdGenerator, U64IdGenerator};
 use aptos_logger::prelude::*;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use arc_swap::ArcSwap;
 use futures::StreamExt;
 use std::{collections::HashMap, ops::Deref, sync::Arc, time::Duration};

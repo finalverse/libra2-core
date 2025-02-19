@@ -25,7 +25,7 @@ use aptos_storage_service_types::{
         StorageServiceResponse,
     },
 };
-use aptos_time_service::MockTimeService;
+use libra2_time_service::MockTimeService;
 use aptos_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,

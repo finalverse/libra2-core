@@ -39,7 +39,7 @@ use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::network_id::{NetworkContext, PeerNetworkId};
 use aptos_logger::prelude::*;
 use libra2_short_hex_str::AsShortHexStr;
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::PeerId;
 use bytes::Bytes;
 use futures::{

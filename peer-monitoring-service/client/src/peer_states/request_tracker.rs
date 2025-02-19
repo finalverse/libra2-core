@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use std::{
     ops::Add,
     time::{Duration, Instant},
@@ -107,7 +107,7 @@ impl RequestTracker {
 #[cfg(test)]
 mod test {
     use crate::peer_states::request_tracker::RequestTracker;
-    use aptos_time_service::{TimeService, TimeServiceTrait};
+    use libra2_time_service::{TimeService, TimeServiceTrait};
     use std::time::Duration;
 
     #[test]

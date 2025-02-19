@@ -9,7 +9,7 @@ use crate::{
     peer_manager::{conn_notifs_channel, ConnectionRequestSender},
 };
 use libra2_config::{config::PeerSet, network_id::NetworkContext};
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use std::{sync::Arc, time::Duration};
 use tokio::runtime::Handle;
 use tokio_retry::strategy::ExponentialBackoff;

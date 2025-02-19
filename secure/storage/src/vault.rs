@@ -11,7 +11,7 @@ use aptos_crypto::{
     hash::CryptoHash,
 };
 use libra2_infallible::RwLock;
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_vault_client::Client;
 #[cfg(any(test, feature = "testing"))]
 use aptos_vault_client::ReadResponse;

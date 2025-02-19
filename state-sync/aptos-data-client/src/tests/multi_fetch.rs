@@ -13,7 +13,7 @@ use libra2_config::{
 use aptos_storage_service_types::requests::{
     DataRequest, StorageServiceRequest, TransactionOutputsWithProofRequest,
 };
-use aptos_time_service::TimeServiceTrait;
+use libra2_time_service::TimeServiceTrait;
 use maplit::hashset;
 use std::collections::{HashMap, HashSet};
 

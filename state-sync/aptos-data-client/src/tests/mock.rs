@@ -33,7 +33,7 @@ use aptos_storage_service_server::network::{NetworkRequest, ResponseSender};
 use aptos_storage_service_types::{
     responses::TransactionOrOutputListWithProof, Epoch, StorageServiceMessage,
 };
-use aptos_time_service::{MockTimeService, TimeService};
+use libra2_time_service::{MockTimeService, TimeService};
 use aptos_types::{
     ledger_info::LedgerInfoWithSignatures,
     state_store::state_value::StateValueChunkWithProof,

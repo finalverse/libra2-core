@@ -18,7 +18,7 @@ libra2-config = { workspace = true }
 aptos-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
-aptos-time-service = { workspace = true }
+libra2-time-service = { workspace = true }
 aptos-types = { workspace = true }
 async-channel = { workspace = true }
 bytes = { workspace = true }

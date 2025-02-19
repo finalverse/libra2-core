@@ -15,7 +15,7 @@ use aptos_logger::prelude::*;
 use aptos_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServerSummary,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use dashmap::DashMap;
 use std::{
     cmp::min,

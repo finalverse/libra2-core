@@ -8,7 +8,7 @@ use crate::consensus_observer::common::{
 use libra2_config::config::ConsensusObserverConfig;
 use aptos_logger::warn;
 use aptos_storage_interface::DbReader;
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
 use std::{
     sync::Arc,

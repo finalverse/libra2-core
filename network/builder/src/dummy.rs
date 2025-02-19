@@ -20,7 +20,7 @@ use aptos_network::{
     },
     ProtocolId,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::{chain_id::ChainId, network_address::NetworkAddress, PeerId};
 use futures::executor::block_on;
 use maplit::hashmap;

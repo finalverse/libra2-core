@@ -15,7 +15,7 @@ use crate::consensus_observer::{
 use libra2_config::network_id::PeerNetworkId;
 use aptos_logger::{debug, warn};
 use aptos_network::application::{interface::NetworkClientInterface, storage::PeersAndMetadata};
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use bytes::Bytes;
 use rand::Rng;
 use std::{sync::Arc, time::Duration};

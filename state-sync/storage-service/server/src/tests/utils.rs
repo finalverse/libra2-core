@@ -28,7 +28,7 @@ use aptos_storage_service_types::{
     responses::{CompleteDataRange, DataResponse, StorageServerSummary, StorageServiceResponse},
     Epoch, StorageServiceError,
 };
-use aptos_time_service::{MockTimeService, TimeService};
+use libra2_time_service::{MockTimeService, TimeService};
 use aptos_types::{
     account_address::AccountAddress,
     aggregate_signature::AggregateSignature,

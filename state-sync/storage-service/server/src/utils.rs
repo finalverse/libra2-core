@@ -12,7 +12,7 @@ use aptos_storage_service_types::{
     requests::{DataRequest, EpochEndingLedgerInfoRequest, StorageServiceRequest},
     responses::{DataResponse, StorageServerSummary, StorageServiceResponse},
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::ledger_info::LedgerInfoWithSignatures;
 use arc_swap::ArcSwap;
 use dashmap::DashMap;

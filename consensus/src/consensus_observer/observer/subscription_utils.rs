@@ -19,7 +19,7 @@ use aptos_network::{
     ProtocolId,
 };
 use aptos_storage_interface::DbReader;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use ordered_float::OrderedFloat;
 use std::{
     collections::{BTreeMap, HashMap},

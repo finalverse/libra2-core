@@ -70,7 +70,7 @@ aptos-genesis = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }
 aptos-secure-storage = { workspace = true }
-aptos-time-service = { workspace = true }
+libra2-time-service = { workspace = true }
 aptos-vault-client = { workspace = true }
 base64 = { workspace = true }
 futures = { workspace = true }

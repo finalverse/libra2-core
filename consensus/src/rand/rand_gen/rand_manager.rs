@@ -26,7 +26,7 @@ use libra2_infallible::Mutex;
 use aptos_logger::{error, info, spawn_named, trace, warn};
 use aptos_network::{protocols::network::RpcError, ProtocolId};
 use aptos_reliable_broadcast::{DropGuard, ReliableBroadcast};
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::{
     epoch_state::EpochState,
     randomness::{FullRandMetadata, RandMetadata, Randomness},

@@ -21,7 +21,7 @@ use libra2_infallible::Mutex;
 use aptos_logger::{info, warn};
 use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadata};
 use aptos_storage_interface::DbReader;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use itertools::Itertools;
 use std::{collections::HashMap, sync::Arc};
 use tokio::task::JoinHandle;

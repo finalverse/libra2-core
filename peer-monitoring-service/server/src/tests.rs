@@ -38,7 +38,7 @@ use aptos_peer_monitoring_service_types::{
     PeerMonitoringMetadata, PeerMonitoringServiceError, PeerMonitoringServiceMessage,
 };
 use aptos_storage_interface::{DbReader, LedgerSummary, Order};
-use aptos_time_service::{MockTimeService, TimeService};
+use libra2_time_service::{MockTimeService, TimeService};
 use aptos_types::{
     account_address::AccountAddress,
     aggregate_signature::AggregateSignature,

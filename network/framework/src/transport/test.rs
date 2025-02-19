@@ -14,7 +14,7 @@ use aptos_netcore::{
     framing::{read_u16frame, write_u16frame},
     transport::{memory, ConnectionOrigin, Transport},
 };
-use aptos_time_service::MockTimeService;
+use libra2_time_service::MockTimeService;
 use aptos_types::{
     account_address::AccountAddress,
     chain_id::ChainId,

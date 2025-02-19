@@ -34,7 +34,7 @@ use aptos_logger::prelude::*;
 use aptos_mempool::QuorumStoreRequest;
 use aptos_network::application::interface::{NetworkClient, NetworkServiceEvents};
 use aptos_storage_interface::DbReaderWriter;
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_validator_transaction_pool::VTxnPoolState;
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;
 use futures::channel::mpsc;
@@ -110,7 +110,7 @@ pub fn start_consensus(
         quorum_store_db.clone(),
         reconfig_events,
         bounded_executor,
-        aptos_time_service::TimeService::real(),
+        libra2_time_service::TimeService::real(),
         vtxn_pool,
         rand_storage,
         consensus_publisher,

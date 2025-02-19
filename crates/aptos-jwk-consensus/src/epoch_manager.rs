@@ -204,7 +204,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
                 epoch_state.verifier.get_ordered_account_addresses(),
                 Arc::new(network_sender),
                 ExponentialBackoff::from_millis(5),
-                aptos_time_service::TimeService::real(),
+                libra2_time_service::TimeService::real(),
                 Duration::from_millis(1000),
                 BoundedExecutor::new(8, tokio::runtime::Handle::current()),
             );

@@ -29,7 +29,7 @@ use aptos_peer_monitoring_service_types::{
     request::PeerMonitoringServiceRequest,
     response::{LatencyPingResponse, PeerMonitoringServiceResponse},
 };
-use aptos_time_service::TimeServiceTrait;
+use libra2_time_service::TimeServiceTrait;
 use std::sync::Arc;
 use tokio::sync::RwLock;
 

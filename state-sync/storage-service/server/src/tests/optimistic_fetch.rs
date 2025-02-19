@@ -21,7 +21,7 @@ use aptos_storage_service_types::{
     },
     responses::StorageServerSummary,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::epoch_change::EpochChangeProof;
 use arc_swap::ArcSwap;
 use dashmap::DashMap;

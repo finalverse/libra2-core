@@ -21,7 +21,7 @@ use aptos_storage_service_types::{
     requests::StorageServiceRequest,
     responses::{ProtocolMetadata, StorageServerSummary, StorageServiceResponse},
 };
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use arc_swap::ArcSwap;
 use dashmap::DashMap;
 use error::Error;

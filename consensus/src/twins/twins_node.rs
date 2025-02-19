@@ -160,7 +160,7 @@ impl SMRNode {
             quorum_store_storage,
             reconfig_listener,
             bounded_executor,
-            aptos_time_service::TimeService::real(),
+            libra2_time_service::TimeService::real(),
             vtxn_pool,
             Arc::new(InMemRandDb::new()),
             None,

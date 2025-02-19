@@ -28,7 +28,7 @@ use aptos_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServiceResponse, StorageServiceError,
     StorageServiceMessage,
 };
-use aptos_time_service::{MockTimeService, TimeService};
+use libra2_time_service::{MockTimeService, TimeService};
 use aptos_types::{
     account_address::AccountAddress,
     contract_event::EventWithVersion,

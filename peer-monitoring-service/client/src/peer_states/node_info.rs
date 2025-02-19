@@ -14,7 +14,7 @@ use aptos_peer_monitoring_service_types::{
     request::PeerMonitoringServiceRequest,
     response::{NodeInformationResponse, PeerMonitoringServiceResponse},
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use std::{
     fmt,
     fmt::{Display, Formatter},
@@ -158,7 +158,7 @@ mod test {
         request::PeerMonitoringServiceRequest,
         response::{NodeInformationResponse, PeerMonitoringServiceResponse},
     };
-    use aptos_time_service::TimeService;
+    use libra2_time_service::TimeService;
     use aptos_types::network_address::NetworkAddress;
     use std::{str::FromStr, time::Duration};
 

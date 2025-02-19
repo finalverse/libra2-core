@@ -23,7 +23,7 @@ aptos-network = { workspace = true }
 aptos-storage-interface = { workspace = true }
 aptos-storage-service-notifications = { workspace = true }
 aptos-storage-service-types = { workspace = true }
-aptos-time-service = { workspace = true }
+libra2-time-service = { workspace = true }
 aptos-types = { workspace = true }
 arc-swap = { workspace = true }
 bcs = { workspace = true }
@@ -43,7 +43,7 @@ libra2-config = { workspace = true, features = ["fuzzing"] }
 aptos-crypto = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-storage-interface = { workspace = true }
-aptos-time-service = { workspace = true, features = ["async", "testing"] }
+libra2-time-service = { workspace = true, features = ["async", "testing"] }
 aptos-types = { workspace = true }
 claims = { workspace = true }
 maplit = { workspace = true }

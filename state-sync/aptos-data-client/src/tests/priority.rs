@@ -14,7 +14,7 @@ use aptos_storage_service_types::{
     requests::{DataRequest, StorageServiceRequest},
     responses::NUM_MICROSECONDS_IN_SECOND,
 };
-use aptos_time_service::TimeServiceTrait;
+use libra2_time_service::TimeServiceTrait;
 use maplit::hashset;
 use std::{cmp::Ordering, collections::HashSet};
 

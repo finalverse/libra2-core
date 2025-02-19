@@ -18,7 +18,7 @@ use aptos_peer_monitoring_service_types::{
     response::{NetworkInformationResponse, PeerMonitoringServiceResponse},
     MAX_DISTANCE_FROM_VALIDATORS,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use std::{
     fmt,
     fmt::{Display, Formatter},
@@ -221,7 +221,7 @@ mod test {
         request::PeerMonitoringServiceRequest,
         response::{NetworkInformationResponse, PeerMonitoringServiceResponse},
     };
-    use aptos_time_service::TimeService;
+    use libra2_time_service::TimeService;
     use aptos_types::{network_address::NetworkAddress, PeerId};
     use std::str::FromStr;
 

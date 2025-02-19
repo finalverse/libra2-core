@@ -13,7 +13,7 @@ use libra2_config::network_id::NetworkContext;
 use aptos_logger::prelude::*;
 use aptos_netcore::transport::{ConnectionOrigin, Transport};
 use libra2_short_hex_str::AsShortHexStr;
-use aptos_time_service::{TimeService, TimeServiceTrait};
+use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{network_address::NetworkAddress, PeerId};
 use futures::{
     channel::oneshot,

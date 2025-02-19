@@ -15,7 +15,7 @@ use aptos_network::{
     counters::inc_by_with_context,
     logging::NetworkSchema,
 };
-use aptos_time_service::TimeService;
+use libra2_time_service::TimeService;
 use aptos_types::on_chain_config::OnChainConfigProvider;
 use futures::{Stream, StreamExt};
 use std::{
