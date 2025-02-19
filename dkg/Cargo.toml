@@ -20,7 +20,7 @@ libra2-config = { workspace = true }
 aptos-consensus-types = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-crypto-derive = { workspace = true }
-aptos-enum-conversion-derive = { workspace = true }
+libra2-enum-conversion-derive = { workspace = true }
 aptos-event-notifications = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-logger = { workspace = true }

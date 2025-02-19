@@ -1,5 +1,5 @@
 [package]
-name = "aptos-enum-conversion-derive"
+name = "libra2-enum-conversion-derive"
 description = "Derives for enum types"
 version = "0.0.3"
 

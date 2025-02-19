@@ -109,8 +109,5 @@
 # Owners for the `/terraform` directory and all its subdirectories.
 /terraform/ @aptos-labs/prod-eng
 
-# Owners for the `aptos-dkg` crate.
-/crates/aptos-dkg @alinush @rex1fernando
-
 /types/src/keyless/ @alinush @heliuchuan
 /types/src/transaction/authenticator.rs @alinush @mstraka100

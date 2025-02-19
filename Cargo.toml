@@ -67,7 +67,7 @@ members = [
     "crates/aptos-debugger",
     "crates/libra2-dkg",
     "crates/aptos-drop-helper",
-    "crates/aptos-enum-conversion-derive",
+    "crates/libra2-enum-conversion-derive",
     "crates/aptos-faucet/cli",
     "crates/aptos-faucet/core",
     "crates/aptos-faucet/metrics-server",
@@ -343,7 +343,7 @@ aptos-drop-helper = { path = "crates/aptos-drop-helper" }
 aptos-event-notifications = { path = "state-sync/inter-component/event-notifications" }
 aptos-executor = { path = "execution/executor" }
 aptos-block-partitioner = { path = "execution/block-partitioner" }
-aptos-enum-conversion-derive = { path = "crates/aptos-enum-conversion-derive" }
+libra2-enum-conversion-derive = { path = "crates/libra2-enum-conversion-derive" }
 aptos-executor-service = { path = "execution/executor-service" }
 aptos-executor-test-helpers = { path = "execution/executor-test-helpers" }
 aptos-executor-types = { path = "execution/executor-types" }

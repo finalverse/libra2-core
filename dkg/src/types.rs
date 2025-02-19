@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_crypto_derive::CryptoHasher;
-use aptos_enum_conversion_derive::EnumConversion;
+use libra2_enum_conversion_derive::EnumConversion;
 use aptos_reliable_broadcast::RBMessage;
 pub use aptos_types::dkg::DKGTranscript;
 use serde::{Deserialize, Serialize};

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_crypto::bls12381::Signature;
-use aptos_enum_conversion_derive::EnumConversion;
+use libra2_enum_conversion_derive::EnumConversion;
 use aptos_reliable_broadcast::RBMessage;
 use aptos_types::{
     account_address::AccountAddress,

@@ -848,7 +848,6 @@ dependencies = [
  "aptos-consensus-types",
  "aptos-crypto",
  "aptos-crypto-derive",
- "aptos-enum-conversion-derive",
  "aptos-event-notifications",
  "aptos-executor",
  "aptos-executor-test-helpers",
@@ -892,6 +891,7 @@ dependencies = [
  "libra2-channels",
  "libra2-config",
  "libra2-dkg",
+ "libra2-enum-conversion-derive",
  "libra2-fallible",
  "libra2-infallible",
  "libra2-metrics-core",
@@ -1269,16 +1269,6 @@ dependencies = [
  "serde_json",
  "wasm-bindgen",
  "wasm-bindgen-futures",
-]
-
-[[package]]
-name = "aptos-enum-conversion-derive"
-version = "0.0.3"
-dependencies = [
- "anyhow",
- "quote",
- "syn 1.0.109",
- "trybuild",
 ]
 
 [[package]]
@@ -2383,7 +2373,6 @@ dependencies = [
  "anyhow",
  "aptos-consensus-types",
  "aptos-crypto",
- "aptos-enum-conversion-derive",
  "aptos-event-notifications",
  "aptos-logger",
  "aptos-network",
@@ -2402,6 +2391,7 @@ dependencies = [
  "libra2-bounded-executor",
  "libra2-channels",
  "libra2-config",
+ "libra2-enum-conversion-derive",
  "libra2-infallible",
  "libra2-jwk-utils",
  "libra2-metrics-core",
@@ -3363,7 +3353,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus-types",
- "aptos-enum-conversion-derive",
  "aptos-logger",
  "aptos-time-service",
  "aptos-types",
@@ -3373,6 +3362,7 @@ dependencies = [
  "futures",
  "futures-channel",
  "libra2-bounded-executor",
+ "libra2-enum-conversion-derive",
  "libra2-infallible",
  "tokio",
  "tokio-retry",
@@ -10634,7 +10624,6 @@ dependencies = [
  "aptos-consensus-types",
  "aptos-crypto",
  "aptos-crypto-derive",
- "aptos-enum-conversion-derive",
  "aptos-event-notifications",
  "aptos-logger",
  "aptos-network",
@@ -10654,6 +10643,7 @@ dependencies = [
  "libra2-bounded-executor",
  "libra2-channels",
  "libra2-config",
+ "libra2-enum-conversion-derive",
  "libra2-infallible",
  "libra2-metrics-core",
  "move-core-types",
@@ -10662,6 +10652,16 @@ dependencies = [
  "serde",
  "tokio",
  "tokio-retry",
+]
+
+[[package]]
+name = "libra2-enum-conversion-derive"
+version = "0.0.3"
+dependencies = [
+ "anyhow",
+ "quote",
+ "syn 1.0.109",
+ "trybuild",
 ]
 
 [[package]]
