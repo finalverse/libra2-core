@@ -62,7 +62,7 @@ use libra2_channels::libra2_channel;
 use libra2_config::network_id::NetworkContext;
 use aptos_id_generator::{IdGenerator, U32IdGenerator};
 use aptos_logger::prelude::*;
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use aptos_time_service::{timeout, TimeService, TimeServiceTrait};
 use aptos_types::PeerId;
 use bytes::Bytes;

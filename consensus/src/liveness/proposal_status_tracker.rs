@@ -9,7 +9,7 @@ use aptos_consensus_types::{
 };
 use libra2_infallible::Mutex;
 use aptos_logger::warn;
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use std::{collections::HashSet, sync::Arc};
 
 pub trait TPastProposalStatusTracker: Send + Sync {

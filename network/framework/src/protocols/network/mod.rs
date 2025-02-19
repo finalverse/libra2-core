@@ -15,7 +15,7 @@ use crate::{
 use libra2_channels::libra2_channel;
 use libra2_config::network_id::PeerNetworkId;
 use aptos_logger::prelude::*;
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::{network_address::NetworkAddress, PeerId};
 use bytes::Bytes;
 use futures::{

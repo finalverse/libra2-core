@@ -12,7 +12,7 @@ use crate::{
 };
 use aptos_crypto::{x25519, Uniform};
 use aptos_secure_storage::{CryptoStorage, KVStorage, Storage};
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::{
     account_address::from_identity_public_key, network_address::NetworkAddress,
     transaction::authenticator::AuthenticationKey, PeerId,

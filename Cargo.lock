@@ -850,7 +850,6 @@ dependencies = [
  "aptos-safety-rules",
  "aptos-schemadb",
  "aptos-secure-storage",
- "aptos-short-hex-str",
  "aptos-storage-interface",
  "aptos-temppath",
  "aptos-time-service",
@@ -882,6 +881,7 @@ dependencies = [
  "libra2-fallible",
  "libra2-infallible",
  "libra2-metrics-core",
+ "libra2-short-hex-str",
  "lru 0.7.8",
  "maplit",
  "mini-moka",
@@ -935,7 +935,6 @@ dependencies = [
  "aptos-crypto-derive",
  "aptos-executor-types",
  "aptos-logger",
- "aptos-short-hex-str",
  "aptos-types",
  "bcs 0.1.4",
  "derivative",
@@ -944,6 +943,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-bitvec",
  "libra2-infallible",
+ "libra2-short-hex-str",
  "mini-moka",
  "mirai-annotations",
  "once_cell",
@@ -1619,7 +1619,6 @@ dependencies = [
  "aptos-retrier",
  "aptos-runtimes",
  "aptos-sdk",
- "aptos-short-hex-str",
  "aptos-state-sync-driver",
  "aptos-transaction-emitter-lib",
  "aptos-transaction-generator-lib",
@@ -1639,6 +1638,7 @@ dependencies = [
  "libra2-config",
  "libra2-global-constants",
  "libra2-infallible",
+ "libra2-short-hex-str",
  "num_cpus",
  "once_cell",
  "prometheus-http-query",
@@ -2613,7 +2613,6 @@ dependencies = [
  "aptos-network",
  "aptos-peer-monitoring-service-types",
  "aptos-runtimes",
- "aptos-short-hex-str",
  "aptos-storage-interface",
  "aptos-time-service",
  "aptos-types",
@@ -2628,6 +2627,7 @@ dependencies = [
  "libra2-config",
  "libra2-infallible",
  "libra2-metrics-core",
+ "libra2-short-hex-str",
  "maplit",
  "num_cpus",
  "once_cell",
@@ -2820,7 +2820,6 @@ dependencies = [
  "aptos-netcore",
  "aptos-peer-monitoring-service-types",
  "aptos-proptest-helpers",
- "aptos-short-hex-str",
  "aptos-time-service",
  "aptos-types",
  "arc-swap",
@@ -2837,6 +2836,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-metrics-core",
  "libra2-num-variants",
+ "libra2-short-hex-str",
  "maplit",
  "once_cell",
  "ordered-float 3.9.2",
@@ -2924,7 +2924,6 @@ dependencies = [
  "aptos-netcore",
  "aptos-network",
  "aptos-rest-client",
- "aptos-short-hex-str",
  "aptos-temppath",
  "aptos-time-service",
  "aptos-types",
@@ -2933,6 +2932,7 @@ dependencies = [
  "libra2-channels",
  "libra2-config",
  "libra2-metrics-core",
+ "libra2-short-hex-str",
  "once_cell",
  "rand 0.7.3",
  "serde_yaml 0.8.26",
@@ -3634,18 +3634,6 @@ dependencies = [
  "rand 0.7.3",
  "serde",
  "serde_json",
- "thiserror",
-]
-
-[[package]]
-name = "aptos-short-hex-str"
-version = "0.1.0"
-dependencies = [
- "hex",
- "mirai-annotations",
- "proptest",
- "serde",
- "static_assertions",
  "thiserror",
 ]
 
@@ -10490,7 +10478,6 @@ dependencies = [
  "aptos-crypto",
  "aptos-logger",
  "aptos-secure-storage",
- "aptos-short-hex-str",
  "aptos-temppath",
  "aptos-types",
  "arr_macro",
@@ -10499,6 +10486,7 @@ dependencies = [
  "cfg-if",
  "get_if_addrs",
  "libra2-global-constants",
+ "libra2-short-hex-str",
  "maplit",
  "num_cpus",
  "poem-openapi",
@@ -10814,6 +10802,18 @@ name = "libra2-proxy"
 version = "0.1.0"
 dependencies = [
  "ipnet",
+]
+
+[[package]]
+name = "libra2-short-hex-str"
+version = "0.1.0"
+dependencies = [
+ "hex",
+ "mirai-annotations",
+ "proptest",
+ "serde",
+ "static_assertions",
+ "thiserror",
 ]
 
 [[package]]

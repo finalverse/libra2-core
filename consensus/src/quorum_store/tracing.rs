@@ -5,7 +5,7 @@
 use crate::quorum_store::counters;
 use aptos_consensus_types::common::Author;
 use libra2_infallible::duration_since_epoch;
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use std::time::Duration;
 
 pub struct BatchStage;

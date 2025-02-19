@@ -5,7 +5,7 @@
 use crate::common::{Author, Round};
 use anyhow::{ensure, Context};
 use aptos_crypto::{bls12381, CryptoMaterialError};
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::{
     block_info::BlockInfo,
     ledger_info::{LedgerInfo, SignatureWithStatus},

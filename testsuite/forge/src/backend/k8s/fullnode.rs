@@ -17,7 +17,7 @@ use libra2_config::{
 };
 use aptos_logger::info;
 use aptos_sdk::types::PeerId;
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use k8s_openapi::{
     api::{
         apps::v1::{StatefulSet, StatefulSetSpec},

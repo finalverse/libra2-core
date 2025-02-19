@@ -10,7 +10,7 @@ use libra2_metrics_core::{
     IntGauge, IntGaugeVec,
 };
 use aptos_netcore::transport::ConnectionOrigin;
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::PeerId;
 use once_cell::sync::Lazy;
 

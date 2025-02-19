@@ -14,7 +14,7 @@ use aptos_crypto::x25519;
 use aptos_event_notifications::ReconfigNotificationListener;
 use aptos_logger::prelude::*;
 use aptos_network::{counters::inc_by_with_context, logging::NetworkSchema};
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::on_chain_config::{OnChainConfigPayload, OnChainConfigProvider, ValidatorSet};
 use futures::Stream;
 use std::{

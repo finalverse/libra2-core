@@ -9,7 +9,7 @@ use libra2_metrics_core::{
     register_int_gauge_vec, Histogram, HistogramTimer, HistogramVec, IntCounter, IntCounterVec,
     IntGauge, IntGaugeVec,
 };
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use once_cell::sync::Lazy;
 use std::time::Duration;
 

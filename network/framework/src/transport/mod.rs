@@ -20,7 +20,7 @@ use aptos_logger::prelude::*;
 // Re-exposed for aptos-network-checker
 pub use aptos_netcore::transport::tcp::{resolve_and_connect, TCPBufferCfg, TcpSocket};
 use aptos_netcore::transport::{proxy_protocol, tcp, ConnectionOrigin, Transport};
-use aptos_short_hex_str::AsShortHexStr;
+use libra2_short_hex_str::AsShortHexStr;
 use aptos_time_service::{timeout, TimeService, TimeServiceTrait};
 use aptos_types::{
     chain_id::ChainId,
