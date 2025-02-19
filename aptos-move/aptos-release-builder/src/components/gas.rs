@@ -92,7 +92,7 @@ pub fn generate_gas_upgrade_proposal(
     emitln!(
         writer,
         "// Source commit hash: {}",
-        aptos_build_info::get_git_hash()
+        libra2_build_info::get_git_hash()
     );
     emitln!(writer);
 

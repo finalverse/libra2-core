@@ -258,7 +258,7 @@ impl<T: StorageReaderInterface> Handler<T> {
 
     fn get_node_information(&self) -> Result<PeerMonitoringServiceResponse, Error> {
         // Get the node information
-        let build_information = aptos_build_info::get_build_information();
+        let build_information = libra2_build_info::get_build_information();
         let current_time: Instant = self.time_service.now();
         let uptime = current_time.duration_since(self.start_time);
         let (highest_synced_epoch, highest_synced_version) =

@@ -17,7 +17,7 @@ use aptos_api_types::{
     AptosErrorCode, AsConverter, MoveValue, ViewFunction, ViewRequest, MAX_RECURSIVE_TYPES_ALLOWED,
     U64,
 };
-use aptos_bcs_utils::serialize_uleb128;
+use libra2_bcs_utils::serialize_uleb128;
 use aptos_vm::AptosVM;
 use itertools::Itertools;
 use move_core_types::language_storage::TypeTag;

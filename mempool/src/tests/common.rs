@@ -7,7 +7,7 @@ use crate::{
     network::{BroadcastPeerPriority, MempoolSyncMsg},
 };
 use anyhow::{format_err, Result};
-use aptos_compression::client::CompressionClient;
+use libra2_compression::client::CompressionClient;
 use libra2_config::config::{NodeConfig, MAX_APPLICATION_MESSAGE_SIZE};
 use aptos_consensus_types::common::{TransactionInProgress, TransactionSummary};
 use aptos_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
@@ -263,7 +263,7 @@ impl ConsensusMock {
 /// Decompresses and deserializes the raw message bytes into a message struct
 pub fn decompress_and_deserialize(message_bytes: &Vec<u8>) -> MempoolSyncMsg {
     bcs::from_bytes(
-        &aptos_compression::decompress(
+        &libra2_compression::decompress(
             message_bytes,
             CompressionClient::Mempool,
             MAX_APPLICATION_MESSAGE_SIZE,

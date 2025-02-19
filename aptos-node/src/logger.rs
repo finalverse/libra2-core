@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::mpsc::Receiver;
-use aptos_build_info::build_information;
+use libra2_build_info::build_information;
 use libra2_config::config::NodeConfig;
 use aptos_logger::{
     aptos_logger::FileWriter, info, telemetry_log_writer::TelemetryLog, LoggerFilterUpdater,

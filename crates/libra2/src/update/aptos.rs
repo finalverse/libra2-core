@@ -15,7 +15,7 @@ use crate::common::{
     utils::cli_build_information,
 };
 use anyhow::{anyhow, Context, Result};
-use aptos_build_info::BUILD_OS;
+use libra2_build_info::BUILD_OS;
 use async_trait::async_trait;
 use clap::Parser;
 use self_update::{

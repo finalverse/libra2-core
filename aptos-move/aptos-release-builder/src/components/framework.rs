@@ -55,7 +55,7 @@ pub fn generate_upgrade_proposals(
         repository.checkout_tree(&commit, None)?;
         commit_info
     } else {
-        aptos_build_info::get_git_hash()
+        libra2_build_info::get_git_hash()
     };
 
     // For generating multi-step proposal files, we need to generate them in the reverse order since
@@ -132,7 +132,7 @@ pub fn generate_upgrade_proposals(
         let mut script = format!(
             "// Framework commit hash: {}\n// Builder commit hash: {}\n",
             commit_info,
-            aptos_build_info::get_git_hash()
+            libra2_build_info::get_git_hash()
         );
 
         script.push_str(&std::fs::read_to_string(move_script_path.as_path())?);

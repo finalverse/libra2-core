@@ -26,10 +26,10 @@ pub const BUILD_USING_TOKIO_UNSTABLE: &str = "build_using_tokio_unstable";
 #[macro_export]
 macro_rules! build_information {
     () => {{
-        let mut build_information = aptos_build_info::get_build_information();
+        let mut build_information = libra2_build_info::get_build_information();
 
         build_information.insert(
-            aptos_build_info::BUILD_PKG_VERSION.into(),
+            libra2_build_info::BUILD_PKG_VERSION.into(),
             env!("CARGO_PKG_VERSION").into(),
         );
 
@@ -45,7 +45,7 @@ macro_rules! build_information {
 /// and `bench` profiles. See the SO link above for more details.
 fn get_build_profile_name() -> String {
     // The profile name is always the 3rd last part of the path (with 1 based indexing).
-    // e.g. /code/core/target/debug/build/aptos-build-info-9f91ba6f99d7a061/out
+    // e.g. /code/core/target/debug/build/libra2-build-info-9f91ba6f99d7a061/out
     std::env!("OUT_DIR")
         .split(std::path::MAIN_SEPARATOR)
         .nth_back(3)

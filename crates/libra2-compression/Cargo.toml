@@ -1,6 +1,6 @@
 [package]
-name = "aptos-compression"
-description = "A unified compression interface and implementation offered by Aptos"
+name = "libra2-compression"
+description = "A unified compression interface and implementation offered by Libra2"
 version = "0.1.0"
 
 # Workspace inherited keys

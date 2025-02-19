@@ -40,7 +40,7 @@ impl IndexApi {
                 let index_response = IndexResponse::new(
                     ledger_info.clone(),
                     node_role,
-                    Some(aptos_build_info::get_git_hash()),
+                    Some(libra2_build_info::get_git_hash()),
                 );
                 BasicResponse::try_from_json((
                     index_response,

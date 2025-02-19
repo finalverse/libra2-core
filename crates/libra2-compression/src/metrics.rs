@@ -18,7 +18,7 @@ pub const RAW_BYTES: &str = "raw_bytes";
 /// Counters for tracking the data compression ratio (i.e., total byte counts)
 pub static BYTE_COUNTS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_compression_byte_count",
+        "libra2_compression_byte_count",
         "Counters for tracking the data compression ratio",
         &["operation", "data_type", "client"]
     )
@@ -28,7 +28,7 @@ pub static BYTE_COUNTS: Lazy<IntCounterVec> = Lazy::new(|| {
 /// Counters for tracking compression/decompression errors
 pub static ERROR_COUNTS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_compression_error_count",
+        "libra2_compression_error_count",
         "Counters for tracking the data compression errors",
         &["operation", "client"]
     )
@@ -38,7 +38,7 @@ pub static ERROR_COUNTS: Lazy<IntCounterVec> = Lazy::new(|| {
 /// Time it takes to perform a compression/decompression operation
 pub static OPERATION_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_compression_operation_latency",
+        "libra2_compression_operation_latency",
         "Time it takes to perform a compression/decompression operation",
         &["operation", "client"],
         exponential_buckets(/*start=*/ 1e-6, /*factor=*/ 2.0, /*count=*/ 30).unwrap(),

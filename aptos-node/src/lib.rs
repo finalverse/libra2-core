@@ -20,7 +20,7 @@ use crate::utils::ensure_max_open_files_limit;
 use anyhow::anyhow;
 use aptos_admin_service::AdminService;
 use aptos_api::bootstrap as bootstrap_api;
-use aptos_build_info::build_information;
+use libra2_build_info::build_information;
 use libra2_config::config::{merge_node_config, NodeConfig, PersistableConfig};
 use aptos_framework::ReleaseBundle;
 use aptos_logger::{prelude::*, telemetry_log_writer::TelemetryLog, Level, LoggerFilterUpdater};

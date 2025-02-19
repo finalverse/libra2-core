@@ -10,7 +10,7 @@ use crate::{
     },
 };
 use anyhow::{Context, Result};
-use aptos_build_info::BUILD_OS;
+use libra2_build_info::BUILD_OS;
 use async_trait::async_trait;
 use clap::Parser;
 use move_prover_boogie_backend::options::{

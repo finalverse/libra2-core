@@ -1,5 +1,5 @@
 [package]
-name = "aptos-bcs-utils"
+name = "libra2-bcs-utils"
 version = "0.1.0"
 
 # Workspace inherited keys

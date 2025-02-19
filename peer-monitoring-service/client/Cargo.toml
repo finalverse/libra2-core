@@ -33,7 +33,7 @@ thiserror = { workspace = true }
 tokio = { workspace = true }
 
 [dev-dependencies]
-aptos-build-info = { workspace = true }
+libra2-build-info = { workspace = true }
 libra2-config = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true, features = ["fuzzing"] }

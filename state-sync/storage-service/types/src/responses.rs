@@ -13,7 +13,7 @@ use crate::{
     responses::Error::DegenerateRangeError,
     Epoch, StorageServiceRequest, COMPRESSION_SUFFIX_LABEL,
 };
-use aptos_compression::{client::CompressionClient, CompressedData};
+use libra2_compression::{client::CompressionClient, CompressedData};
 use libra2_config::config::{
     AptosDataClientConfig, StorageServiceConfig, MAX_APPLICATION_MESSAGE_SIZE,
 };
@@ -47,8 +47,8 @@ pub enum Error {
     UnexpectedResponseError(String),
 }
 
-impl From<aptos_compression::Error> for Error {
-    fn from(error: aptos_compression::Error) -> Self {
+impl From<libra2_compression::Error> for Error {
+    fn from(error: libra2_compression::Error) -> Self {
         Error::UnexpectedErrorEncountered(error.to_string())
     }
 }
@@ -68,7 +68,7 @@ impl StorageServiceResponse {
             // Serialize and compress the raw data
             let raw_data = bcs::to_bytes(&data_response)
                 .map_err(|error| Error::UnexpectedErrorEncountered(error.to_string()))?;
-            let compressed_data = aptos_compression::compress(
+            let compressed_data = libra2_compression::compress(
                 raw_data,
                 CompressionClient::StateSync,
                 MAX_APPLICATION_MESSAGE_SIZE,
@@ -89,7 +89,7 @@ impl StorageServiceResponse {
     pub fn get_data_response(&self) -> Result<DataResponse, Error> {
         match self {
             StorageServiceResponse::CompressedResponse(_, compressed_data) => {
-                let raw_data = aptos_compression::decompress(
+                let raw_data = libra2_compression::decompress(
                     compressed_data,
                     CompressionClient::StateSync,
                     MAX_APPLICATION_MESSAGE_SIZE,

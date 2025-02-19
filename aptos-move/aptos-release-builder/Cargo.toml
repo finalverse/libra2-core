@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 aptos = { workspace = true, features = [ "no-upload-proposal" ] }
-aptos-build-info = { workspace = true }
+libra2-build-info = { workspace = true }
 aptos-crypto = { workspace = true }
 aptos-framework = { workspace = true }
 aptos-gas-profiling = { workspace = true }

@@ -455,7 +455,7 @@ async fn verify_node_information(
     // Verify the response is correct
     let expected_response =
         PeerMonitoringServiceResponse::NodeInformation(NodeInformationResponse {
-            build_information: aptos_build_info::get_build_information(),
+            build_information: libra2_build_info::get_build_information(),
             highest_synced_epoch,
             highest_synced_version,
             ledger_timestamp_usecs,

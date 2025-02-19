@@ -1403,7 +1403,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "aptos_compression_operation_latency_sum{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\",kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}/aptos_compression_operation_latency_count{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\",kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}",
+              "expr": "libra2_compression_operation_latency_sum{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\",kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}/libra2_compression_operation_latency_count{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\",kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}",
               "hide": false,
               "legendFormat": "{{kubernetes_pod_name}}-{{role}}-{{client}}",
               "range": true,
@@ -1455,7 +1455,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "aptos_compression_operation_latency_sum{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\",kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}/aptos_compression_operation_latency_count{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\",kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}",
+              "expr": "libra2_compression_operation_latency_sum{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\",kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}/libra2_compression_operation_latency_count{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\",kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}",
               "hide": false,
               "legendFormat": "{{kubernetes_pod_name}}-{{role}}-{{client}}",
               "range": true,
@@ -1507,7 +1507,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "histogram_quantile(0.99, sum(rate(aptos_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}[$__rate_interval])) by (le))",
+              "expr": "histogram_quantile(0.99, sum(rate(libra2_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}[$__rate_interval])) by (le))",
               "hide": false,
               "legendFormat": "P99",
               "range": true,
@@ -1516,7 +1516,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "histogram_quantile(0.70, sum(rate(aptos_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}[$__rate_interval])) by (le))",
+              "expr": "histogram_quantile(0.70, sum(rate(libra2_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}[$__rate_interval])) by (le))",
               "hide": false,
               "legendFormat": "P70",
               "range": true,
@@ -1525,7 +1525,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "histogram_quantile(0.90, sum(rate(aptos_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}[$__rate_interval])) by (le))",
+              "expr": "histogram_quantile(0.90, sum(rate(libra2_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"compress\"}[$__rate_interval])) by (le))",
               "hide": false,
               "legendFormat": "P90",
               "range": true,
@@ -1577,7 +1577,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "histogram_quantile(0.99, sum(rate(aptos_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}[$__rate_interval])) by (le))",
+              "expr": "histogram_quantile(0.99, sum(rate(libra2_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}[$__rate_interval])) by (le))",
               "hide": false,
               "legendFormat": "P99",
               "range": true,
@@ -1586,7 +1586,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "histogram_quantile(0.70, sum(rate(aptos_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}[$__rate_interval])) by (le))",
+              "expr": "histogram_quantile(0.70, sum(rate(libra2_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}[$__rate_interval])) by (le))",
               "hide": false,
               "legendFormat": "P70",
               "range": true,
@@ -1595,7 +1595,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "histogram_quantile(0.90, sum(rate(aptos_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}[$__rate_interval])) by (le))",
+              "expr": "histogram_quantile(0.90, sum(rate(libra2_compression_operation_latency_bucket{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\",operation=\"decompress\"}[$__rate_interval])) by (le))",
               "hide": false,
               "legendFormat": "P90",
               "range": true,
@@ -1647,7 +1647,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "sum by (kubernetes_pod_name, role, client) (aptos_compression_byte_count{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\", data_type=\"compressed_bytes\"}) / sum by (kubernetes_pod_name, role, client) (aptos_compression_byte_count{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\", data_type=\"raw_bytes\"}) * 100",
+              "expr": "sum by (kubernetes_pod_name, role, client) (libra2_compression_byte_count{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\", data_type=\"compressed_bytes\"}) / sum by (kubernetes_pod_name, role, client) (libra2_compression_byte_count{metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",chain_name=~\"$chain_name\", cluster=~\"$cluster\", data_type=\"raw_bytes\"}) * 100",
               "hide": false,
               "legendFormat": "{{kubernetes_pod_name}}-{{role}}-{{client}}",
               "range": true,

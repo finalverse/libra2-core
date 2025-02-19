@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::server::utils::{CONTENT_TYPE_JSON, CONTENT_TYPE_TEXT};
-use aptos_build_info::build_information;
+use libra2_build_info::build_information;
 use libra2_config::config::NodeConfig;
 use hyper::{Body, StatusCode};
 

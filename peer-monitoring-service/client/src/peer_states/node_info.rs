@@ -178,7 +178,7 @@ mod test {
         // Handle several valid node info responses and verify the state
         for i in 0..10 {
             // Generate the test data
-            let build_information = aptos_build_info::get_build_information();
+            let build_information = libra2_build_info::get_build_information();
             let highest_synced_epoch = i;
             let highest_synced_version = (i + 1) * 100;
             let ledger_timestamp_usecs = (i + 1) * 200;

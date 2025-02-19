@@ -1,6 +1,6 @@
 [package]
-name = "aptos-build-info"
-description = "Aptos build information provider"
+name = "libra2-build-info"
+description = "Libra2 build information provider"
 version = "0.1.0"
 
 # Workspace inherited keys

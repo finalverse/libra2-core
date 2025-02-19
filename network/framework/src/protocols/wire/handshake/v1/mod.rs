@@ -15,7 +15,7 @@
 
 use crate::counters::{start_serialization_timer, DESERIALIZATION_LABEL, SERIALIZATION_LABEL};
 use anyhow::anyhow;
-use aptos_compression::client::CompressionClient;
+use libra2_compression::client::CompressionClient;
 use libra2_config::{config::MAX_APPLICATION_MESSAGE_SIZE, network_id::NetworkId};
 use aptos_types::chain_id::ChainId;
 #[cfg(any(test, feature = "fuzzing"))]
@@ -204,7 +204,7 @@ impl ProtocolId {
             Encoding::CompressedBcs(limit) => {
                 let compression_client = self.get_compression_client();
                 let bcs_bytes = self.bcs_encode(value, limit)?;
-                aptos_compression::compress(
+                libra2_compression::compress(
                     bcs_bytes,
                     compression_client,
                     MAX_APPLICATION_MESSAGE_SIZE,
@@ -233,7 +233,7 @@ impl ProtocolId {
             Encoding::Bcs(limit) => self.bcs_decode(bytes, limit),
             Encoding::CompressedBcs(limit) => {
                 let compression_client = self.get_compression_client();
-                let raw_bytes = aptos_compression::decompress(
+                let raw_bytes = libra2_compression::decompress(
                     &bytes.to_vec(),
                     compression_client,
                     MAX_APPLICATION_MESSAGE_SIZE,

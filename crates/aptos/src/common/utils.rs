@@ -12,7 +12,7 @@ use crate::{
     config::GlobalConfig,
     CliResult,
 };
-use aptos_build_info::build_information;
+use libra2_build_info::build_information;
 use aptos_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
 use aptos_keygen::KeyGen;
 use aptos_logger::{debug, Level};

@@ -71,7 +71,7 @@ impl Collector for BasicNodeInfoCollector {
         let host_name_metrics =
             ConstMetric::new_gauge(self.hostname.clone(), 1.0, Some(&[hostname])).unwrap();
 
-        let git_hash = aptos_build_info::get_git_hash();
+        let git_hash = libra2_build_info::get_git_hash();
         let release_metrics =
             ConstMetric::new_gauge(self.release.clone(), 1.0, Some(&[git_hash])).unwrap();
 

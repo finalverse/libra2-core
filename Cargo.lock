@@ -295,7 +295,6 @@ dependencies = [
  "anyhow",
  "aptos-api-types",
  "aptos-backup-cli",
- "aptos-build-info",
  "aptos-cached-packages",
  "aptos-crypto",
  "aptos-faucet-core",
@@ -344,6 +343,7 @@ dependencies = [
  "itertools 0.13.0",
  "jemallocator",
  "libra2-bitvec",
+ "libra2-build-info",
  "libra2-cli-common",
  "libra2-config",
  "libra2-global-constants",
@@ -457,8 +457,6 @@ dependencies = [
  "anyhow",
  "aptos-api-test-context",
  "aptos-api-types",
- "aptos-bcs-utils",
- "aptos-build-info",
  "aptos-cached-packages",
  "aptos-crypto",
  "aptos-framework",
@@ -479,6 +477,8 @@ dependencies = [
  "futures",
  "hex",
  "itertools 0.13.0",
+ "libra2-bcs-utils",
+ "libra2-build-info",
  "libra2-config",
  "libra2-global-constants",
  "libra2-metrics-core",
@@ -669,14 +669,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-bcs-utils"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "hex",
-]
-
-[[package]]
 name = "aptos-block-executor"
 version = "0.1.0"
 dependencies = [
@@ -742,13 +734,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-build-info"
-version = "0.1.0"
-dependencies = [
- "shadow-rs",
-]
-
-[[package]]
 name = "aptos-cached-packages"
 version = "0.1.0"
 dependencies = [
@@ -806,22 +791,6 @@ dependencies = [
  "tempfile",
  "tokio",
  "url",
-]
-
-[[package]]
-name = "aptos-compression"
-version = "0.1.0"
-dependencies = [
- "aptos-crypto",
- "aptos-logger",
- "aptos-types",
- "bcs 0.1.4",
- "libra2-metrics-core",
- "lz4",
- "once_cell",
- "rand 0.7.3",
- "serde",
- "thiserror",
 ]
 
 [[package]]
@@ -2291,7 +2260,6 @@ name = "aptos-inspection-service"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-build-info",
  "aptos-data-client",
  "aptos-logger",
  "aptos-network",
@@ -2303,6 +2271,7 @@ dependencies = [
  "assert_approx_eq",
  "futures",
  "hyper 0.14.28",
+ "libra2-build-info",
  "libra2-config",
  "libra2-metrics-core",
  "once_cell",
@@ -2602,7 +2571,6 @@ name = "aptos-mempool"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-compression",
  "aptos-consensus-types",
  "aptos-crypto",
  "aptos-event-notifications",
@@ -2624,6 +2592,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-bounded-executor",
  "libra2-channels",
+ "libra2-compression",
  "libra2-config",
  "libra2-infallible",
  "libra2-metrics-core",
@@ -2812,7 +2781,6 @@ name = "aptos-network"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-compression",
  "aptos-crypto",
  "aptos-id-generator",
  "aptos-logger",
@@ -2832,6 +2800,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-bitvec",
  "libra2-channels",
+ "libra2-compression",
  "libra2-config",
  "libra2-infallible",
  "libra2-metrics-core",
@@ -2981,7 +2950,6 @@ dependencies = [
  "aptos-admin-service",
  "aptos-api",
  "aptos-backup-service",
- "aptos-build-info",
  "aptos-cached-packages",
  "aptos-consensus",
  "aptos-consensus-notifications",
@@ -3029,6 +2997,7 @@ dependencies = [
  "futures",
  "hex",
  "jemallocator",
+ "libra2-build-info",
  "libra2-channels",
  "libra2-config",
  "libra2-crash-handler",
@@ -3116,7 +3085,6 @@ dependencies = [
 name = "aptos-peer-monitoring-service-client"
 version = "0.1.0"
 dependencies = [
- "aptos-build-info",
  "aptos-id-generator",
  "aptos-logger",
  "aptos-netcore",
@@ -3128,6 +3096,7 @@ dependencies = [
  "bcs 0.1.4",
  "enum_dispatch",
  "futures",
+ "libra2-build-info",
  "libra2-channels",
  "libra2-config",
  "libra2-infallible",
@@ -3147,7 +3116,6 @@ name = "aptos-peer-monitoring-service-server"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-build-info",
  "aptos-crypto",
  "aptos-logger",
  "aptos-netcore",
@@ -3161,6 +3129,7 @@ dependencies = [
  "claims",
  "futures",
  "libra2-bounded-executor",
+ "libra2-build-info",
  "libra2-channels",
  "libra2-config",
  "libra2-metrics-core",
@@ -3269,7 +3238,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos",
- "aptos-build-info",
  "aptos-crypto",
  "aptos-framework",
  "aptos-gas-profiling",
@@ -3292,6 +3260,7 @@ dependencies = [
  "git2 0.16.1",
  "handlebars",
  "hex",
+ "libra2-build-info",
  "libra2-infallible",
  "move-binary-format",
  "move-bytecode-verifier",
@@ -3778,12 +3747,12 @@ dependencies = [
 name = "aptos-storage-service-types"
 version = "0.1.0"
 dependencies = [
- "aptos-compression",
  "aptos-crypto",
  "aptos-time-service",
  "aptos-types",
  "bcs 0.1.4",
  "claims",
+ "libra2-compression",
  "libra2-config",
  "num-traits",
  "proptest",
@@ -10319,7 +10288,6 @@ dependencies = [
  "anyhow",
  "aptos-api-types",
  "aptos-backup-cli",
- "aptos-build-info",
  "aptos-cached-packages",
  "aptos-crypto",
  "aptos-faucet-core",
@@ -10368,6 +10336,7 @@ dependencies = [
  "itertools 0.13.0",
  "jemallocator",
  "libra2-bitvec",
+ "libra2-build-info",
  "libra2-cli-common",
  "libra2-config",
  "libra2-global-constants",
@@ -10415,6 +10384,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-bcs-utils"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "hex",
+]
+
+[[package]]
 name = "libra2-bitvec"
 version = "0.1.0"
 dependencies = [
@@ -10433,6 +10410,13 @@ dependencies = [
  "futures",
  "rustversion",
  "tokio",
+]
+
+[[package]]
+name = "libra2-build-info"
+version = "0.1.0"
+dependencies = [
+ "shadow-rs",
 ]
 
 [[package]]
@@ -10459,6 +10443,22 @@ dependencies = [
 [[package]]
 name = "libra2-collections"
 version = "0.1.0"
+
+[[package]]
+name = "libra2-compression"
+version = "0.1.0"
+dependencies = [
+ "aptos-crypto",
+ "aptos-logger",
+ "aptos-types",
+ "bcs 0.1.4",
+ "libra2-metrics-core",
+ "lz4",
+ "once_cell",
+ "rand 0.7.3",
+ "serde",
+ "thiserror",
+]
 
 [[package]]
 name = "libra2-config"
@@ -10697,7 +10697,6 @@ dependencies = [
  "aptos-admin-service",
  "aptos-api",
  "aptos-backup-service",
- "aptos-build-info",
  "aptos-cached-packages",
  "aptos-consensus",
  "aptos-consensus-notifications",
@@ -10745,6 +10744,7 @@ dependencies = [
  "futures",
  "hex",
  "jemallocator",
+ "libra2-build-info",
  "libra2-channels",
  "libra2-config",
  "libra2-crash-handler",
@@ -10777,9 +10777,9 @@ dependencies = [
 name = "libra2-node-resource-metrics"
 version = "0.1.0"
 dependencies = [
- "aptos-build-info",
  "aptos-logger",
  "cfg-if",
+ "libra2-build-info",
  "libra2-infallible",
  "libra2-metrics-core",
  "once_cell",

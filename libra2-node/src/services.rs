@@ -3,7 +3,7 @@
 
 use crate::{bootstrap_api, indexer, mpsc::Receiver, network::ApplicationNetworkInterfaces};
 use aptos_admin_service::AdminService;
-use aptos_build_info::build_information;
+use libra2_build_info::build_information;
 use libra2_config::config::NodeConfig;
 use aptos_consensus::{
     consensus_observer::publisher::consensus_publisher::ConsensusPublisher,

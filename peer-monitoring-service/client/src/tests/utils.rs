@@ -321,7 +321,7 @@ pub fn create_random_network_info_response() -> NetworkInformationResponse {
 /// Creates a new network info response with random values
 pub fn create_random_node_info_response() -> NodeInformationResponse {
     // Create the random values
-    let build_information = aptos_build_info::get_build_information();
+    let build_information = libra2_build_info::get_build_information();
     let highest_synced_epoch = get_random_u64();
     let highest_synced_version = get_random_u64();
     let ledger_timestamp_usecs = get_random_u64();

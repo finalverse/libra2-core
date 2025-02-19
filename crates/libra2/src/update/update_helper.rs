@@ -6,7 +6,7 @@ use crate::{
     update::{get_additional_binaries_dir, UpdateRequiredInfo},
 };
 use anyhow::{anyhow, bail, Context, Result};
-use aptos_build_info::BUILD_OS;
+use libra2_build_info::BUILD_OS;
 use self_update::{backends::github::Update, update::ReleaseUpdate};
 use std::path::PathBuf;
 

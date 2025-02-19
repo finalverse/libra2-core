@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-bounded-executor = { workspace = true }
-aptos-build-info = { workspace = true }
+libra2-build-info = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
 aptos-logger = { workspace = true }
