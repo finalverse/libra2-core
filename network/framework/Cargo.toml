@@ -25,7 +25,7 @@ aptos-logger = { workspace = true }
 aptos-memsocket = { workspace = true, optional = true }
 libra2-metrics-core = { workspace = true }
 aptos-netcore = { workspace = true }
-aptos-num-variants = { workspace = true }
+libra2-num-variants = { workspace = true }
 aptos-peer-monitoring-service-types = { workspace = true }
 aptos-proptest-helpers = { workspace = true, optional = true }
 aptos-short-hex-str = { workspace = true }

@@ -2980,7 +2980,6 @@ dependencies = [
  "aptos-logger",
  "aptos-memsocket",
  "aptos-netcore",
- "aptos-num-variants",
  "aptos-peer-monitoring-service-types",
  "aptos-proptest-helpers",
  "aptos-short-hex-str",
@@ -2998,6 +2997,7 @@ dependencies = [
  "libra2-channels",
  "libra2-infallible",
  "libra2-metrics-core",
+ "libra2-num-variants",
  "maplit",
  "once_cell",
  "ordered-float 3.9.2",
@@ -3245,15 +3245,6 @@ dependencies = [
  "aptos-types",
  "claims",
  "once_cell",
-]
-
-[[package]]
-name = "aptos-num-variants"
-version = "0.1.0"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 1.0.109",
 ]
 
 [[package]]
@@ -10818,6 +10809,15 @@ dependencies = [
  "procfs",
  "prometheus",
  "sysinfo",
+]
+
+[[package]]
+name = "libra2-num-variants"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
 ]
 
 [[package]]

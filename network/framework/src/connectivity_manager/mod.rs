@@ -43,7 +43,7 @@ use aptos_crypto::x25519;
 use libra2_infallible::RwLock;
 use aptos_logger::prelude::*;
 use aptos_netcore::transport::ConnectionOrigin;
-use aptos_num_variants::NumVariants;
+use libra2_num_variants::NumVariants;
 use aptos_short_hex_str::AsShortHexStr;
 use aptos_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{account_address::AccountAddress, network_address::NetworkAddress, PeerId};
