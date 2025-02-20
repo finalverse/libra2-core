@@ -20,7 +20,7 @@
 
 use crate::schema::{ensure_slice_len_eq, ensure_slice_len_gt, STALE_STATE_VALUE_INDEX_CF_NAME};
 use anyhow::Result;
-use aptos_schemadb::{
+use libra2_schemadb::{
     define_schema,
     schema::{KeyCodec, SeekKeyCodec, ValueCodec},
 };

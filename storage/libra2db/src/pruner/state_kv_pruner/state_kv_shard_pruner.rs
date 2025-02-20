@@ -10,7 +10,7 @@ use crate::{
     },
 };
 use libra2_logger::info;
-use aptos_schemadb::{batch::SchemaBatch, DB};
+use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::Result;
 use libra2_types::transaction::Version;
 use std::sync::Arc;

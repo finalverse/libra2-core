@@ -814,7 +814,6 @@ dependencies = [
  "aptos-reliable-broadcast",
  "aptos-runtimes",
  "aptos-safety-rules",
- "aptos-schemadb",
  "aptos-validator-transaction-pool",
  "aptos-vm",
  "aptos-vm-validator",
@@ -845,6 +844,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-schemadb",
  "libra2-secure-storage",
  "libra2-short-hex-str",
  "libra2-storage-interface",
@@ -1003,8 +1003,6 @@ dependencies = [
  "aptos-proptest-helpers",
  "aptos-resource-viewer",
  "aptos-rocksdb-options",
- "aptos-schemadb",
- "aptos-scratchpad",
  "arc-swap",
  "arr_macro",
  "bcs 0.1.4",
@@ -1022,6 +1020,8 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-schemadb",
+ "libra2-scratchpad",
  "libra2-storage-interface",
  "libra2-temppath",
  "libra2-types",
@@ -1048,13 +1048,13 @@ dependencies = [
  "aptos-proptest-helpers",
  "aptos-resource-viewer",
  "aptos-rocksdb-options",
- "aptos-schemadb",
  "bcs 0.1.4",
  "bytes",
  "dashmap",
  "libra2-config",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-schemadb",
  "libra2-storage-interface",
  "libra2-types",
  "move-core-types",
@@ -1068,10 +1068,10 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-proptest-helpers",
- "aptos-schemadb",
  "bcs 0.1.4",
  "byteorder",
  "libra2-crypto",
+ "libra2-schemadb",
  "libra2-storage-interface",
  "libra2-types",
  "proptest",
@@ -1322,7 +1322,6 @@ name = "aptos-executor-types"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-scratchpad",
  "bcs 0.1.4",
  "criterion",
  "derive_more 0.99.17",
@@ -1331,6 +1330,7 @@ dependencies = [
  "libra2-drop-helper",
  "libra2-infallible",
  "libra2-metrics-core",
+ "libra2-scratchpad",
  "libra2-secure-net",
  "libra2-storage-interface",
  "libra2-types",
@@ -1364,7 +1364,6 @@ version = "0.1.0"
 dependencies = [
  "ahash 0.8.11",
  "anyhow",
- "aptos-schemadb",
  "bitvec 1.0.1",
  "criterion",
  "itertools 0.13.0",
@@ -1373,6 +1372,7 @@ dependencies = [
  "libra2-drop-helper",
  "libra2-infallible",
  "libra2-metrics-core",
+ "libra2-schemadb",
  "libra2-temppath",
  "once_cell",
  "proptest",
@@ -3316,45 +3316,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-schemadb"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "byteorder",
- "dunce",
- "libra2-drop-helper",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-storage-interface",
- "libra2-temppath",
- "once_cell",
- "proptest",
- "rand 0.7.3",
- "rocksdb",
-]
-
-[[package]]
-name = "aptos-scratchpad"
-version = "0.1.0"
-dependencies = [
- "aptos-vm",
- "bitvec 1.0.1",
- "criterion",
- "itertools 0.13.0",
- "jemallocator",
- "libra2-crypto",
- "libra2-drop-helper",
- "libra2-infallible",
- "libra2-metrics-core",
- "libra2-types",
- "once_cell",
- "proptest",
- "rand 0.7.3",
- "rayon",
- "thiserror",
-]
-
-[[package]]
 name = "aptos-sdk"
 version = "0.0.3"
 dependencies = [
@@ -3420,7 +3381,6 @@ dependencies = [
  "aptos-mempool-notifications",
  "aptos-network",
  "aptos-runtimes",
- "aptos-schemadb",
  "aptos-storage-service-client",
  "aptos-storage-service-notifications",
  "aptos-storage-service-types",
@@ -3436,6 +3396,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-schemadb",
  "libra2-storage-interface",
  "libra2-temppath",
  "libra2-time-service",
@@ -10209,8 +10170,6 @@ dependencies = [
  "aptos-proptest-helpers",
  "aptos-resource-viewer",
  "aptos-rocksdb-options",
- "aptos-schemadb",
- "aptos-scratchpad",
  "arc-swap",
  "arr_macro",
  "bcs 0.1.4",
@@ -10228,6 +10187,8 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-schemadb",
+ "libra2-scratchpad",
  "libra2-storage-interface",
  "libra2-temppath",
  "libra2-types",
@@ -10581,6 +10542,45 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-schemadb"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "byteorder",
+ "dunce",
+ "libra2-drop-helper",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-storage-interface",
+ "libra2-temppath",
+ "once_cell",
+ "proptest",
+ "rand 0.7.3",
+ "rocksdb",
+]
+
+[[package]]
+name = "libra2-scratchpad"
+version = "0.1.0"
+dependencies = [
+ "aptos-vm",
+ "bitvec 1.0.1",
+ "criterion",
+ "itertools 0.13.0",
+ "jemallocator",
+ "libra2-crypto",
+ "libra2-drop-helper",
+ "libra2-infallible",
+ "libra2-metrics-core",
+ "libra2-types",
+ "once_cell",
+ "proptest",
+ "rand 0.7.3",
+ "rayon",
+ "thiserror",
+]
+
+[[package]]
 name = "libra2-secure-net"
 version = "0.1.0"
 dependencies = [
@@ -10651,7 +10651,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-experimental-layered-map",
- "aptos-scratchpad",
  "arr_macro",
  "bcs 0.1.4",
  "dashmap",
@@ -10659,6 +10658,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-crypto",
  "libra2-metrics-core",
+ "libra2-scratchpad",
  "libra2-secure-net",
  "libra2-types",
  "once_cell",
@@ -16116,7 +16116,6 @@ dependencies = [
  "aptos-release-builder",
  "aptos-rest-client",
  "aptos-rosetta",
- "aptos-schemadb",
  "aptos-sdk",
  "aptos-vm",
  "base64 0.13.1",
@@ -16134,6 +16133,7 @@ dependencies = [
  "libra2-global-constants",
  "libra2-infallible",
  "libra2-logger",
+ "libra2-schemadb",
  "libra2-secure-storage",
  "libra2-storage-interface",
  "libra2-temppath",

@@ -13,7 +13,7 @@ use crate::{
 use libra2_crypto::hash::{CryptoHash, HashValue};
 use aptos_db_indexer_schemas::schema::transaction_by_account::TransactionByAccountSchema;
 use libra2_metrics_core::TimerHelper;
-use aptos_schemadb::{
+use libra2_schemadb::{
     batch::{NativeBatch, SchemaBatch, WriteBatch},
     DB,
 };

@@ -17,7 +17,7 @@ use crate::schema::{
 };
 use anyhow::Result;
 use aptos_jellyfish_merkle::{node_type::NodeKey, StaleNodeIndex};
-use aptos_schemadb::{
+use libra2_schemadb::{
     define_schema,
     schema::{KeyCodec, SeekKeyCodec, ValueCodec},
 };

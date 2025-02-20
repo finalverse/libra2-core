@@ -6,7 +6,7 @@ use crate::state_store::{
     state_summary::{LedgerStateSummary, StateSummary},
 };
 use libra2_crypto::HashValue;
-use aptos_scratchpad::SparseMerkleTree;
+use libra2_scratchpad::SparseMerkleTree;
 use libra2_types::{state_store::state_storage_usage::StateStorageUsage, transaction::Version};
 use derive_more::{Deref, DerefMut};
 

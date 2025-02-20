@@ -44,8 +44,8 @@ use libra2_infallible::Mutex;
 use aptos_jellyfish_merkle::iterator::JellyfishMerkleIterator;
 use libra2_logger::info;
 use libra2_metrics_core::TimerHelper;
-use aptos_schemadb::batch::{NativeBatch, SchemaBatch, WriteBatch};
-use aptos_scratchpad::SparseMerkleTree;
+use libra2_schemadb::batch::{NativeBatch, SchemaBatch, WriteBatch};
+use libra2_scratchpad::SparseMerkleTree;
 use libra2_storage_interface::{
     db_ensure as ensure, db_other_bail as bail,
     state_store::{
@@ -1243,7 +1243,7 @@ impl StateValueWriter<StateKey, StateValue> for StateStore {
 mod test_only {
     use crate::state_store::StateStore;
     use libra2_crypto::HashValue;
-    use aptos_schemadb::batch::SchemaBatch;
+    use libra2_schemadb::batch::SchemaBatch;
     use libra2_storage_interface::state_store::{
         state_summary::ProvableStateSummary, state_update_refs::StateUpdateRefs,
         state_with_summary::LedgerStateWithSummary,

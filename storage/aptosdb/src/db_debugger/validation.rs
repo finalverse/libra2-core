@@ -11,7 +11,7 @@ use aptos_db_indexer_schemas::schema::{
     event_by_key::EventByKeySchema, event_by_version::EventByVersionSchema,
     state_keys::StateKeysSchema, transaction_by_account::TransactionByAccountSchema,
 };
-use aptos_schemadb::{ReadOptions, DB};
+use libra2_schemadb::{ReadOptions, DB};
 use libra2_storage_interface::{DbReader, Result};
 use libra2_types::{
     contract_event::ContractEvent,

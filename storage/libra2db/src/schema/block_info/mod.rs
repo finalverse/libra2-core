@@ -10,7 +10,7 @@
 
 use crate::schema::{ensure_slice_len_eq, BLOCK_INFO_CF_NAME};
 use anyhow::Result;
-use aptos_schemadb::{
+use libra2_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},
 };

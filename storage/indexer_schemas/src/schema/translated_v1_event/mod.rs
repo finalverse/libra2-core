@@ -13,7 +13,7 @@
 
 use crate::schema::{ensure_slice_len_eq, TRANSLATED_V1_EVENT_CF_NAME};
 use anyhow::Result;
-use aptos_schemadb::{
+use libra2_schemadb::{
     define_pub_schema,
     schema::{KeyCodec, ValueCodec},
 };

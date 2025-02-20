@@ -3,7 +3,7 @@
 
 use crate::metrics::OTHER_TIMERS_SECONDS;
 use libra2_metrics_core::TimerHelper;
-use aptos_scratchpad::SUBTREE_DROPPER;
+use libra2_scratchpad::SUBTREE_DROPPER;
 use libra2_storage_interface::state_store::state_with_summary::StateWithSummary;
 use std::ops::Deref;
 

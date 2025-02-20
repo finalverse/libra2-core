@@ -18,7 +18,7 @@ use crate::{
     Libra2DB,
 };
 use libra2_config::config::{RocksdbConfigs, StorageDirPaths};
-use aptos_schemadb::{schema::Schema, DB};
+use libra2_schemadb::{schema::Schema, DB};
 use libra2_storage_interface::Result;
 use libra2_types::transaction::Version;
 use clap::Parser;

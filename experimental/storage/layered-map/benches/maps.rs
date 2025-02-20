@@ -4,7 +4,7 @@
 use anyhow::Result;
 use libra2_crypto::HashValue;
 use aptos_experimental_layered_map::{LayeredMap, MapLayer};
-use aptos_schemadb::{
+use libra2_schemadb::{
     batch::WriteBatch,
     define_schema,
     schema::{KeyCodec, ValueCodec},

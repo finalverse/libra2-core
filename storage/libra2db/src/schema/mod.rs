@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 //! This module defines representation of Aptos core data structures at physical level via schemas
-//! that implement [`aptos_schemadb::schema::Schema`].
+//! that implement [`libra2_schemadb::schema::Schema`].
 //!
 //! All schemas are `pub(crate)` so not shown in rustdoc, refer to the source code to see details.
 
@@ -30,7 +30,7 @@ pub(crate) mod version_data;
 pub(crate) mod write_set;
 
 use anyhow::{ensure, Result};
-use aptos_schemadb::ColumnFamilyName;
+use libra2_schemadb::ColumnFamilyName;
 
 pub const BLOCK_BY_VERSION_CF_NAME: ColumnFamilyName = "block_by_version";
 pub const BLOCK_INFO_CF_NAME: ColumnFamilyName = "block_info";
@@ -83,7 +83,7 @@ fn ensure_slice_len_gt(data: &[u8], len: usize) -> Result<()> {
 
 #[cfg(feature = "fuzzing")]
 pub mod fuzzing {
-    use aptos_schemadb::schema::fuzzing::assert_no_panic_decoding;
+    use libra2_schemadb::schema::fuzzing::assert_no_panic_decoding;
 
     pub fn fuzz_decode(data: &[u8]) {
         #[allow(unused_must_use)]

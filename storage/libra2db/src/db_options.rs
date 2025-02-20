@@ -3,7 +3,7 @@
 
 use crate::schema::*;
 use libra2_config::config::RocksdbConfig;
-use aptos_schemadb::{
+use libra2_schemadb::{
     BlockBasedOptions, Cache, ColumnFamilyDescriptor, ColumnFamilyName, DBCompressionType, Options,
     SliceTransform, DEFAULT_COLUMN_FAMILY_NAME,
 };

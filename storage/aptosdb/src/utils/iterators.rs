@@ -5,7 +5,7 @@ use crate::{
     schema::{event::EventSchema, ledger_info::LedgerInfoSchema, state_value::StateValueSchema},
     state_kv_db::StateKvDb,
 };
-use aptos_schemadb::{iterator::SchemaIterator, ReadOptions};
+use libra2_schemadb::{iterator::SchemaIterator, ReadOptions};
 use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
 use libra2_types::{
     contract_event::ContractEvent,

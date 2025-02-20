@@ -14,7 +14,7 @@ use libra2_crypto::{
 };
 use libra2_infallible::Mutex;
 use libra2_logger::debug;
-use aptos_scratchpad::SparseMerkleTree;
+use libra2_scratchpad::SparseMerkleTree;
 use libra2_storage_interface::{
     db_ensure as ensure,
     state_store::{

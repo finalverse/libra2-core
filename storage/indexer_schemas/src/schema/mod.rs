@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 //! This module defines representation of AptosDB indexer data structures at physical level via schemas
-//! that implement [`aptos_schemadb::schema::Schema`].
+//! that implement [`libra2_schemadb::schema::Schema`].
 //!
 //! All schemas are `pub(crate)` so not shown in rustdoc, refer to the source code to see details.
 
@@ -16,7 +16,7 @@ pub mod transaction_by_account;
 pub mod translated_v1_event;
 
 use anyhow::ensure;
-use aptos_schemadb::ColumnFamilyName;
+use libra2_schemadb::ColumnFamilyName;
 
 pub const DEFAULT_COLUMN_FAMILY_NAME: ColumnFamilyName = "default";
 pub const INDEXER_METADATA_CF_NAME: ColumnFamilyName = "indexer_metadata";

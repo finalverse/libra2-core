@@ -9,7 +9,7 @@ use libra2_crypto::{
     hash::{CryptoHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
-use aptos_scratchpad::SparseMerkleTree;
+use libra2_scratchpad::SparseMerkleTree;
 use libra2_storage_interface::{DbReader, Order, Result};
 use libra2_temppath::TempPath;
 use libra2_types::{

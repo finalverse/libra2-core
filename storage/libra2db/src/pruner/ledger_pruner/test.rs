@@ -7,7 +7,7 @@ use crate::{
 };
 use aptos_accumulator::HashReader;
 use libra2_config::config::LedgerPrunerConfig;
-use aptos_schemadb::SchemaBatch;
+use libra2_schemadb::SchemaBatch;
 use libra2_storage_interface::DbReader;
 use libra2_temppath::TempPath;
 use libra2_types::{

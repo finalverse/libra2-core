@@ -138,7 +138,7 @@ groups:
         4. See if changes in recent releases can cause this issue.
       "
   - alert: RocksDB Read Latency
-    expr: sum by (kubernetes_pod_name) (rate(aptos_schemadb_get_latency_seconds_sum[1m])) / sum by (kubernetes_pod_name) (rate(aptos_schemadb_get_latency_seconds_count[1m])) > 0.001  # 1 millisecond
+    expr: sum by (kubernetes_pod_name) (rate(libra2_schemadb_get_latency_seconds_sum[1m])) / sum by (kubernetes_pod_name) (rate(libra2_schemadb_get_latency_seconds_count[1m])) > 0.001  # 1 millisecond
     for: 5m
     labels:
       severity: warning

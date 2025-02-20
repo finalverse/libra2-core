@@ -12,7 +12,7 @@ use anyhow::Result;
 use aptos_consensus_types::proof_of_store::BatchId;
 use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
-use aptos_schemadb::{batch::SchemaBatch, Options, DB};
+use libra2_schemadb::{batch::SchemaBatch, Options, DB};
 use std::{collections::HashMap, path::Path, time::Instant};
 
 pub trait QuorumStoreStorage: Sync + Send {

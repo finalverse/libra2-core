@@ -31,7 +31,7 @@ use crate::{
 };
 use aptos_jellyfish_merkle::{node_type::NodeKey, StaleNodeIndex};
 use libra2_logger::info;
-use aptos_schemadb::{
+use libra2_schemadb::{
     batch::SchemaBatch,
     schema::{Schema, SeekKeyCodec},
     DB,

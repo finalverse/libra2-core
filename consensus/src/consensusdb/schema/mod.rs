@@ -26,7 +26,7 @@ macro_rules! define_schema {
         #[derive(Debug)]
         pub struct $schema_type;
 
-        impl aptos_schemadb::schema::Schema for $schema_type {
+        impl libra2_schemadb::schema::Schema for $schema_type {
             type Key = $key_type;
             type Value = $value_type;
 

@@ -12,7 +12,7 @@ use libra2_crypto::{
     hash::{CryptoHash, TransactionAccumulatorHasher},
     HashValue,
 };
-use aptos_schemadb::{batch::SchemaBatch, DB};
+use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::Result;
 use libra2_types::{
     proof::{

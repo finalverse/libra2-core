@@ -13,7 +13,7 @@ use crate::{
     utils::{get_progress, iterators::EpochEndingLedgerInfoIter},
 };
 use anyhow::anyhow;
-use aptos_schemadb::{batch::SchemaBatch, DB};
+use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::{block_info::BlockInfo, db_ensure as ensure, AptosDbError, Result};
 use libra2_types::{
     account_config::NewBlockEvent, block_info::BlockHeight, contract_event::ContractEvent,

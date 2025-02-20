@@ -6,7 +6,7 @@ use crate::schema::{
     stale_node_index_cross_epoch::StaleNodeIndexCrossEpochSchema,
 };
 use aptos_jellyfish_merkle::StaleNodeIndex;
-use aptos_schemadb::schema::{KeyCodec, Schema};
+use libra2_schemadb::schema::{KeyCodec, Schema};
 
 pub trait StaleNodeIndexSchemaTrait: Schema<Key = StaleNodeIndex>
 where

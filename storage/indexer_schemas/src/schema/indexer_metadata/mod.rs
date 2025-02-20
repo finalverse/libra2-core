@@ -10,7 +10,7 @@ use crate::{
     schema::INDEXER_METADATA_CF_NAME,
 };
 use anyhow::Result;
-use aptos_schemadb::{
+use libra2_schemadb::{
     define_pub_schema,
     schema::{KeyCodec, ValueCodec},
 };

@@ -5,7 +5,7 @@ use crate::schema::{
     db_metadata::{DbMetadataKey, DbMetadataSchema, DbMetadataValue},
     version_data::VersionDataSchema,
 };
-use aptos_schemadb::{batch::SchemaBatch, DB};
+use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::{AptosDbError, Result};
 use libra2_types::transaction::Version;
 use std::sync::Arc;

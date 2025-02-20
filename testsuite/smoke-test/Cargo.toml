@@ -37,7 +37,7 @@ aptos-move-debugger = { workspace = true }
 aptos-release-builder = { workspace = true }
 aptos-rest-client = { workspace = true }
 aptos-rosetta = { workspace = true }
-aptos-schemadb = { workspace = true }
+libra2-schemadb = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }

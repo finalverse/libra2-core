@@ -17,7 +17,7 @@ use aptos_db_indexer_schemas::{
 use aptos_forge::{NodeExt, Result, Swarm, SwarmExt};
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
 use aptos_rest_client::Client as RestClient;
-use aptos_schemadb::DB;
+use libra2_schemadb::DB;
 use libra2_types::{account_address::AccountAddress, state_store::state_key::StateKey};
 use std::{
     collections::HashSet,
@@ -184,10 +184,10 @@ fn check_indexer_db(vfn_config: &NodeConfig) {
 
 fn get_indexer_db_content<T, U>(internal_indexer_db: Arc<DB>) -> HashSet<U>
 where
-    T: aptos_schemadb::schema::Schema,
-    U: aptos_schemadb::schema::KeyCodec<T> + std::cmp::Ord + std::fmt::Debug,
+    T: libra2_schemadb::schema::Schema,
+    U: libra2_schemadb::schema::KeyCodec<T> + std::cmp::Ord + std::fmt::Debug,
     std::collections::HashSet<U>:
-        std::iter::FromIterator<<T as aptos_schemadb::schema::Schema>::Key>,
+        std::iter::FromIterator<<T as libra2_schemadb::schema::Schema>::Key>,
 {
     let mut indexer_db_iter = internal_indexer_db.iter::<T>().unwrap();
     indexer_db_iter.seek_to_first();

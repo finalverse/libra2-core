@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_schemadb::{
+use libra2_schemadb::{
     define_schema,
     iterator::SchemaIterator,
     schema::{KeyCodec, Schema, SeekKeyCodec, ValueCodec},

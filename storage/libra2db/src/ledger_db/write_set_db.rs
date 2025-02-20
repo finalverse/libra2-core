@@ -10,7 +10,7 @@ use crate::{
     utils::iterators::ExpectContinuousVersions,
 };
 use libra2_metrics_core::TimerHelper;
-use aptos_schemadb::{
+use libra2_schemadb::{
     batch::{SchemaBatch, WriteBatch},
     DB,
 };

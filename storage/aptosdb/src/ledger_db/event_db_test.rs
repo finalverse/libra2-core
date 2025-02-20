@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::db::AptosDB;
-use aptos_schemadb::batch::SchemaBatch;
+use libra2_schemadb::batch::SchemaBatch;
 use libra2_storage_interface::Result;
 use libra2_temppath::TempPath;
 use libra2_types::contract_event::ContractEvent;

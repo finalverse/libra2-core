@@ -23,12 +23,12 @@ use aptos_jellyfish_merkle::{
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
 use aptos_rocksdb_options::gen_rocksdb_options;
-use aptos_schemadb::{
+use libra2_schemadb::{
     batch::{IntoRawBatch, RawBatch, SchemaBatch, WriteBatch},
     DB,
 };
 #[cfg(test)]
-use aptos_scratchpad::get_state_shard_id;
+use libra2_scratchpad::get_state_shard_id;
 use libra2_storage_interface::{
     db_ensure as ensure, state_store::NUM_STATE_SHARDS, AptosDbError, Result,
 };

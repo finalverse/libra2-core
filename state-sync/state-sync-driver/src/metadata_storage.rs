@@ -7,7 +7,7 @@ use crate::{
 };
 use anyhow::{anyhow, Result};
 use libra2_logger::prelude::*;
-use aptos_schemadb::{
+use libra2_schemadb::{
     batch::SchemaBatch,
     define_schema,
     schema::{KeyCodec, ValueCodec},

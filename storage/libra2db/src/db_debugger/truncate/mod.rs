@@ -11,7 +11,7 @@ use crate::{
     },
 };
 use libra2_config::config::{RocksdbConfigs, StorageDirPaths};
-use aptos_schemadb::batch::SchemaBatch;
+use libra2_schemadb::batch::SchemaBatch;
 use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
 use claims::assert_le;
 use clap::Parser;

@@ -14,7 +14,7 @@ use crate::define_schema;
 use anyhow::Result;
 use aptos_consensus_types::quorum_cert::QuorumCert;
 use libra2_crypto::HashValue;
-use aptos_schemadb::{
+use libra2_schemadb::{
     schema::{KeyCodec, ValueCodec},
     ColumnFamilyName,
 };

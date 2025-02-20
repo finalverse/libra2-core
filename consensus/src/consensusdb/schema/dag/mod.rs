@@ -11,7 +11,7 @@ use crate::{
 };
 use anyhow::Result;
 use libra2_crypto::HashValue;
-use aptos_schemadb::{
+use libra2_schemadb::{
     schema::{KeyCodec, ValueCodec},
     ColumnFamilyName,
 };

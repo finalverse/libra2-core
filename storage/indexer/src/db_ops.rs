@@ -5,7 +5,7 @@ use anyhow::Result;
 use libra2_config::config::RocksdbConfig;
 use aptos_db_indexer_schemas::schema::{column_families, internal_indexer_column_families};
 use aptos_rocksdb_options::gen_rocksdb_options;
-use aptos_schemadb::DB;
+use libra2_schemadb::DB;
 use std::{mem, path::Path};
 
 const INTERNAL_INDEXER_DB_NAME: &str = "internal_indexer_db";

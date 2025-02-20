@@ -1,6 +1,6 @@
 [package]
-name = "aptos-schemadb"
-description = "Aptos schemadb"
+name = "libra2-schemadb"
+description = "Libra2 schemadb"
 version = "0.1.0"
 
 # Workspace inherited keys

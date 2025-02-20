@@ -12,7 +12,7 @@ use aptos_db_indexer_schemas::{
     schema::indexer_metadata::InternalIndexerMetadataSchema,
 };
 use libra2_logger::info;
-use aptos_schemadb::batch::SchemaBatch;
+use libra2_schemadb::batch::SchemaBatch;
 use libra2_storage_interface::Result;
 use libra2_types::transaction::Version;
 use std::sync::Arc;

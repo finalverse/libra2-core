@@ -18,7 +18,7 @@ use libra2_crypto::{
 use aptos_db_indexer_schemas::schema::{
     event_by_key::EventByKeySchema, event_by_version::EventByVersionSchema,
 };
-use aptos_schemadb::{
+use libra2_schemadb::{
     batch::{SchemaBatch, WriteBatch},
     DB,
 };

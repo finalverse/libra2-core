@@ -444,8 +444,8 @@ aptos-rocksdb-options = { path = "storage/rocksdb-options" }
 aptos-rosetta = { path = "crates/aptos-rosetta" }
 aptos-runtimes = { path = "crates/aptos-runtimes" }
 aptos-safety-rules = { path = "consensus/safety-rules" }
-aptos-schemadb = { path = "storage/schemadb" }
-aptos-scratchpad = { path = "storage/scratchpad" }
+libra2-schemadb = { path = "storage/schemadb" }
+libra2-scratchpad = { path = "storage/scratchpad" }
 aptos-script-composer = { path = "aptos-move/script-composer" }
 aptos-sdk = { path = "sdk" }
 aptos-sdk-builder = { path = "aptos-move/aptos-sdk-builder" }

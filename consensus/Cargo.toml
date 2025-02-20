@@ -39,7 +39,7 @@ aptos-peer-monitoring-service-types = { workspace = true }
 aptos-reliable-broadcast = { workspace = true }
 aptos-runtimes = { workspace = true }
 aptos-safety-rules = { workspace = true }
-aptos-schemadb = { workspace = true }
+libra2-schemadb = { workspace = true }
 libra2-secure-storage = { workspace = true }
 libra2-short-hex-str = { workspace = true }
 libra2-storage-interface = { workspace = true }

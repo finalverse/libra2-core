@@ -20,7 +20,7 @@ libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-resource-viewer = { workspace = true }
 aptos-rocksdb-options = { workspace = true }
-aptos-schemadb = { workspace = true }
+libra2-schemadb = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }
 bcs = { workspace = true }
@@ -31,10 +31,10 @@ once_cell = { workspace = true }
 
 [dev-dependencies]
 aptos-proptest-helpers = { workspace = true }
-aptos-schemadb = { workspace = true, features = ["fuzzing"] }
+libra2-schemadb = { workspace = true, features = ["fuzzing"] }
 libra2-types = { workspace = true, features = ["fuzzing"] }
 rand = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["libra2-types/fuzzing", "aptos-schemadb/fuzzing"]
+fuzzing = ["libra2-types/fuzzing", "libra2-schemadb/fuzzing"]

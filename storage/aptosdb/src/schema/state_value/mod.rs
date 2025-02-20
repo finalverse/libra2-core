@@ -16,7 +16,7 @@
 
 use crate::schema::{ensure_slice_len_gt, STATE_VALUE_CF_NAME};
 use anyhow::Result;
-use aptos_schemadb::{
+use libra2_schemadb::{
     define_schema,
     schema::{KeyCodec, SeekKeyCodec, ValueCodec},
 };

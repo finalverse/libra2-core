@@ -14,7 +14,7 @@ use libra2_infallible::Mutex;
 use aptos_jellyfish_merkle::node_type::NodeKey;
 use libra2_logger::{info, trace};
 use libra2_metrics_core::TimerHelper;
-use aptos_schemadb::batch::RawBatch;
+use libra2_schemadb::batch::RawBatch;
 use libra2_storage_interface::state_store::{state::State, state_with_summary::StateWithSummary};
 use std::sync::{mpsc::Receiver, Arc};
 

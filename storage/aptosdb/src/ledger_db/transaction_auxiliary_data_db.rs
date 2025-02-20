@@ -8,7 +8,7 @@ use crate::{
     },
     utils::iterators::ExpectContinuousVersions,
 };
-use aptos_schemadb::{batch::SchemaBatch, DB};
+use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::Result;
 use libra2_types::transaction::{TransactionAuxiliaryData, Version};
 use std::{path::Path, sync::Arc};

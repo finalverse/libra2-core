@@ -36,7 +36,7 @@ use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
 use aptos_resource_viewer::AptosValueAnnotator;
-use aptos_schemadb::batch::SchemaBatch;
+use libra2_schemadb::batch::SchemaBatch;
 use libra2_storage_interface::{
     db_ensure as ensure, db_other_bail as bail, AptosDbError, DbReader, DbWriter, LedgerSummary,
     Order, Result, StateSnapshotReceiver, MAX_REQUEST_LIMIT,

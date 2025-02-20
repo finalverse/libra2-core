@@ -1,6 +1,6 @@
 [package]
-name = "aptos-scratchpad"
-description = "Aptos scratchpad"
+name = "libra2-scratchpad"
+description = "Libra2 scratchpad"
 version = "0.1.0"
 
 # Workspace inherited keys
