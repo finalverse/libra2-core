@@ -39,7 +39,7 @@ def main():
     os.mkdir("local")
     subprocess.run(
         [
-            "target/release/aptos-debugger",
+            "target/release/libra2-debugger",
             "aptos-db",
             "backup",
             "verify",

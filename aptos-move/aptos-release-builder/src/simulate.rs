@@ -29,7 +29,7 @@ use libra2_crypto::HashValue;
 use aptos_gas_profiling::GasProfiler;
 use aptos_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
 use aptos_language_e2e_tests::account::AccountData;
-use aptos_move_debugger::aptos_debugger::AptosDebugger;
+use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use aptos_rest_client::Client;
 use libra2_types::{
     account_address::AccountAddress,
@@ -544,7 +544,7 @@ pub async fn simulate_multistep_proposal(
     // Set up the simulation state view.
     let client = Client::new(remote_url);
     let debugger =
-        AptosDebugger::rest_client(client.clone()).context("failed to create AptosDebugger")?;
+        Libra2Debugger::rest_client(client.clone()).context("failed to create Libra2Debugger")?;
     let state = client.get_ledger_information().await?.into_inner();
 
     let state_view = SimulationStateView {

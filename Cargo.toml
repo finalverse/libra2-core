@@ -8,7 +8,7 @@ members = [
     "api/types",
     "aptos-move/aptos-abstract-gas-usage",
     "aptos-move/aptos-aggregator",
-    "aptos-move/aptos-debugger",
+    "aptos-move/libra2-debugger",
     "aptos-move/aptos-e2e-comparison-testing",
     "aptos-move/aptos-gas-algebra",
     "aptos-move/aptos-gas-calibration",
@@ -64,7 +64,7 @@ members = [
     "crates/libra2-compression",
     "crates/libra2-crypto",
     "crates/libra2-crypto-derive",
-    "crates/aptos-debugger",
+    "crates/libra2-debugger",
     "crates/libra2-dkg",
     "crates/libra2-drop-helper",
     "crates/libra2-enum-conversion-derive",
@@ -276,7 +276,7 @@ default-members = [
     "consensus/safety-rules",
     "crates/aptos",
     "crates/libra2",
-    "crates/aptos-debugger",
+    "crates/libra2-debugger",
     "crates/aptos-faucet/service",
     "crates/aptos-keygen",
     "crates/libra2-keygen",
@@ -336,7 +336,7 @@ libra2-db = { path = "storage/libra2db" }
 libra2-db-indexer = { path = "storage/indexer" }
 libra2-db-indexer-schemas = { path = "storage/indexer_schemas" }
 libra2-db-tool = { path = "storage/db-tool" }
-aptos-debugger = { path = "crates/aptos-debugger" }
+libra2-debugger = { path = "crates/libra2-debugger" }
 libra2-dkg = { path = "crates/libra2-dkg" }
 libra2-dkg-runtime = { path = "dkg" }
 libra2-drop-helper = { path = "crates/libra2-drop-helper" }
@@ -402,7 +402,7 @@ libra2-mempool = { path = "mempool" }
 libra2-mempool-notifications = { path = "state-sync/inter-component/mempool-notifications" }
 libra2-memsocket = { path = "network/memsocket" }
 libra2-metrics-core = { path = "crates/libra2-metrics-core" }
-aptos-move-debugger = { path = "aptos-move/aptos-debugger" }
+libra2-move-debugger = { path = "aptos-move/libra2-debugger" }
 aptos-move-examples = { path = "aptos-move/move-examples" }
 aptos-move-e2e-benchmark = { path = "aptos-move/e2e-benchmark" }
 aptos-mvhashmap = { path = "aptos-move/mvhashmap" }

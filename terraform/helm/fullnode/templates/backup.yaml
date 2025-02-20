@@ -48,7 +48,7 @@ spec:
         imagePullPolicy: {{ .Values.backup.image.pullPolicy }}
         resources:
           {{- toYaml .Values.backup.resources | nindent 10 }}
-        command: ["/usr/local/bin/aptos-debugger"]
+        command: ["/usr/local/bin/libra2-debugger"]
         args:
         - "aptos-db"
         - "backup"

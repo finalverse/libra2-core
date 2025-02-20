@@ -8,7 +8,7 @@ use crate::{
     workload::{TransactionBlock, Workload},
 };
 use libra2_logger::error;
-use aptos_move_debugger::aptos_debugger::AptosDebugger;
+use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_types::transaction::Version;
 use aptos_vm::{aptos_vm::AptosVMBlockExecutor, data_cache::AsMoveResolver, VMBlockExecutor};
 use aptos_vm_environment::environment::AptosEnvironment;
@@ -26,14 +26,14 @@ use std::{
 };
 
 pub struct InputOutputDiffGenerator {
-    debugger: AptosDebugger,
+    debugger: Libra2Debugger,
     override_config: OverrideConfig,
 }
 
 impl InputOutputDiffGenerator {
     /// Generates a sequence of inputs (pre-block states) for benchmarking or comparison.
     pub(crate) async fn generate(
-        debugger: AptosDebugger,
+        debugger: Libra2Debugger,
         override_config: OverrideConfig,
         txn_blocks: Vec<TransactionBlock>,
     ) -> anyhow::Result<Vec<ReadSet>> {

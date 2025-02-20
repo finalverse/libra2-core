@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_logger::{Level, Logger};
-use aptos_move_debugger::aptos_debugger::AptosDebugger;
+use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_push_metrics::MetricsPusher;
 use aptos_rest_client::{AptosBaseUrl, Client};
 pub use benchmark::BenchmarkCommand;
@@ -28,14 +28,14 @@ pub(crate) fn init_logger_and_metrics(log_level: Level) {
 pub(crate) fn build_debugger(
     rest_endpoint: String,
     api_key: Option<String>,
-) -> anyhow::Result<AptosDebugger> {
+) -> anyhow::Result<Libra2Debugger> {
     let builder = Client::builder(AptosBaseUrl::Custom(Url::parse(&rest_endpoint)?));
     let client = if let Some(api_key) = api_key {
         builder.api_key(&api_key)?.build()
     } else {
         builder.build()
     };
-    AptosDebugger::rest_client(client)
+    Libra2Debugger::rest_client(client)
 }
 
 #[derive(Parser)]

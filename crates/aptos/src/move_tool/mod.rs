@@ -41,7 +41,7 @@ use aptos_framework::{
     BuildOptions, BuiltPackage,
 };
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters};
-use aptos_move_debugger::aptos_debugger::AptosDebugger;
+use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use aptos_rest_client::{
     aptos_api_types::{EntryFunctionId, HexEncodedBytes, IdentifierWrapper, MoveModuleId},
     error::RestError,
@@ -2262,7 +2262,7 @@ impl CliCommand<TransactionSummary> for Replay {
             client.build()
         };
 
-        let debugger = AptosDebugger::rest_client(client)?;
+        let debugger = Libra2Debugger::rest_client(client)?;
 
         // Fetch the transaction to replay.
         let (txn, txn_info) = debugger

@@ -45,13 +45,13 @@ use std::{
 /// 1. Start a 4 node validator network, including 2 VFNs.
 /// 2. Use consensus `sync_only` mode to force all nodes to stop at the same version (i.e., emulate a halt).
 /// 3. Use the aptos CLI to generate a genesis transaction that removes the last validator from the set.
-/// 4. Use the aptos-debugger to manually apply the genesis transaction to all remaining validators.
+/// 4. Use the libra2-debugger to manually apply the genesis transaction to all remaining validators.
 /// 5. Verify that the network is able to resume consensus and that the last validator is no longer in the set.
-/// 6. Use the aptos-debugger to manually apply the genesis transaction to all VFNs.
+/// 6. Use the libra2-debugger to manually apply the genesis transaction to all VFNs.
 /// 7. Verify that the VFNs are able to sync with the rest of the network.
 async fn test_fullnode_genesis_transaction_flow() {
     println!("0. Building the Aptos CLI and debugger!");
-    let aptos_debugger = workspace_builder::get_bin("aptos-debugger");
+    let libra2_debugger = workspace_builder::get_bin("libra2-debugger");
     let aptos_cli = workspace_builder::get_bin("aptos");
 
     println!("1. Starting a 4 node validator network with 2 VFNs!");
@@ -97,7 +97,7 @@ async fn test_fullnode_genesis_transaction_flow() {
     println!("6. Applying the genesis transaction to the first validator!");
     let first_validator_config = swarm.validators_mut().next().unwrap().config().clone();
     let first_validator_storage_dir = first_validator_config.storage.dir();
-    let output = Command::new(aptos_debugger.as_path())
+    let output = Command::new(libra2_debugger.as_path())
         .current_dir(workspace_root())
         .args(&vec![
             "aptos-db",
@@ -191,12 +191,12 @@ async fn test_fullnode_genesis_transaction_flow() {
 /// 2. Enable consensus `sync_only` mode for the last validator and verify that it can sync.
 /// 3. Use consensus `sync_only` mode to force all nodes to stop at the same version (i.e., emulate a halt).
 /// 4. Use the aptos CLI to generate a genesis transaction that removes the last validator from the set.
-/// 5. Use the aptos-debugger to manually apply the genesis transaction to all remaining validators.
+/// 5. Use the libra2-debugger to manually apply the genesis transaction to all remaining validators.
 /// 6. Verify that the network is able to resume consensus and that the last validator is no longer in the set.
 /// 7. Verify that a failed validator node is able to db-restore and rejoin the network.
 async fn test_validator_genesis_transaction_and_db_restore_flow() {
     println!("0. Building the Aptos CLI and debugger!");
-    let aptos_debugger = workspace_builder::get_bin("aptos-debugger");
+    let libra2_debugger = workspace_builder::get_bin("libra2-debugger");
     let aptos_cli = workspace_builder::get_bin("aptos");
 
     println!("1. Starting a 5 node validator network!");
@@ -234,7 +234,7 @@ async fn test_validator_genesis_transaction_and_db_restore_flow() {
     println!("7. Applying the genesis transaction to the first validator!");
     let first_validator_config = swarm.validators_mut().next().unwrap().config().clone();
     let first_validator_storage_dir = first_validator_config.storage.dir();
-    let output = Command::new(aptos_debugger.as_path())
+    let output = Command::new(libra2_debugger.as_path())
         .current_dir(workspace_root())
         .args(&vec![
             "aptos-db",
@@ -528,7 +528,7 @@ fn parse_waypoint(bootstrap_command_output: &str) -> Waypoint {
         .unwrap()
         .captures(bootstrap_command_output)
         .ok_or_else(|| {
-            anyhow!("Failed to parse `aptos-debugger aptos-db bootstrap` waypoint output!")
+            anyhow!("Failed to parse `libra2-debugger aptos-db bootstrap` waypoint output!")
         });
     Waypoint::from_str(waypoint.unwrap()[1].into()).unwrap()
 }

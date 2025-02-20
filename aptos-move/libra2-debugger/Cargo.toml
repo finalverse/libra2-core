@@ -1,5 +1,5 @@
 [package]
-name = "aptos-move-debugger"
+name = "libra2-move-debugger"
 version = "0.1.0"
 description = "A tool to replay transactions on chain and to execute transactions locally."
 

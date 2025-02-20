@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{bail, Result};
-use aptos_move_debugger::aptos_debugger::AptosDebugger;
+use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use aptos_rest_client::Client;
 use libra2_types::transaction::Transaction;
 use aptos_vm::AptosVM;
@@ -39,9 +39,9 @@ async fn main() -> Result<()> {
 
     let debugger = match args.target {
         Target::Rest { endpoint } => {
-            AptosDebugger::rest_client(Client::new(Url::parse(&endpoint)?))?
+            Libra2Debugger::rest_client(Client::new(Url::parse(&endpoint)?))?
         },
-        Target::DB { path } => AptosDebugger::db(path)?,
+        Target::DB { path } => Libra2Debugger::db(path)?,
     };
 
     // Execute the transaction w/ the gas profiler

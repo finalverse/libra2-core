@@ -25,7 +25,7 @@ aptos-genesis = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-keygen = { workspace = true }
 aptos-language-e2e-tests = { workspace = true }
-aptos-move-debugger = { workspace = true }
+libra2-move-debugger = { workspace = true }
 aptos-rest-client = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }

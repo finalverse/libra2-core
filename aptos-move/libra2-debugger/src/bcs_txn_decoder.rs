@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use crate::aptos_debugger::AptosDebugger;
+use crate::libra2_debugger::Libra2Debugger;
 use anyhow::Result;
 use aptos_rest_client::Client;
 use libra2_types::transaction::SignedTransaction;
@@ -48,7 +48,7 @@ impl Command {
         println!("Network: {}", network);
 
         let endpoint = format!("https://{}.aptoslabs.com/v1", network);
-        let debugger = AptosDebugger::rest_client(Client::new(Url::parse(&endpoint)?))?;
+        let debugger = Libra2Debugger::rest_client(Client::new(Url::parse(&endpoint)?))?;
         let version = debugger
             .get_version_by_account_sequence(txn.sender(), txn.sequence_number())
             .await?

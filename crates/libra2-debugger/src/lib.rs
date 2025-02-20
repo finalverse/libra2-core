@@ -9,12 +9,12 @@ pub enum Cmd {
     #[clap(subcommand)]
     AptosDb(libra2_db_tool::DBTool),
 
-    Decode(aptos_move_debugger::bcs_txn_decoder::Command),
+    Decode(libra2_move_debugger::bcs_txn_decoder::Command),
 
     DumpPendingTxns(aptos_consensus::util::db_tool::Command),
 
     #[clap(subcommand)]
-    Move(aptos_move_debugger::common::Command),
+    Move(libra2_move_debugger::common::Command),
 }
 
 impl Cmd {

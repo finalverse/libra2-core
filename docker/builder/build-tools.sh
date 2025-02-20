@@ -19,7 +19,7 @@ cargo build --locked --profile=$PROFILE \
     -p aptos-openapi-spec-generator \
     -p aptos-telemetry-service \
     -p libra2-keyless-pepper-service \
-    -p aptos-debugger \
+    -p libra2-debugger \
     -p aptos-transaction-emitter \
     -p aptos-api-tester \
     "$@"
@@ -33,7 +33,7 @@ BINS=(
     aptos-telemetry-service
     libra2-keyless-pepper-service
     aptos-fn-check-client
-    aptos-debugger
+    libra2-debugger
     aptos-transaction-emitter
     aptos-api-tester
 )

@@ -35,7 +35,7 @@ spec:
             {{- end }}
             imagePullPolicy: {{ .Values.backup.image.pullPolicy }}
             command:
-            - /usr/local/bin/aptos-debugger
+            - /usr/local/bin/libra2-debugger
             - aptos-db
             - backup-maintenance
             - compact

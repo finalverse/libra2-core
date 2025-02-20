@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_debugger::Cmd;
+use libra2_debugger::Cmd;
 use libra2_logger::{Level, Logger};
 use libra2_push_metrics::MetricsPusher;
 use clap::Parser;

@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use crate::{aptos_debugger::AptosDebugger, common::Opts};
+use crate::{libra2_debugger::Libra2Debugger, common::Opts};
 use anyhow::Result;
 use libra2_crypto::HashValue;
 use libra2_logger::info;
@@ -42,9 +42,9 @@ pub struct Command {
 impl Command {
     pub async fn run(self) -> Result<()> {
         let debugger = if let Some(rest_endpoint) = self.opts.target.rest_endpoint {
-            AptosDebugger::rest_client(Client::new(Url::parse(&rest_endpoint)?))?
+            Libra2Debugger::rest_client(Client::new(Url::parse(&rest_endpoint)?))?
         } else if let Some(db_path) = self.opts.target.db_path {
-            AptosDebugger::db(db_path)?
+            Libra2Debugger::db(db_path)?
         } else {
             unreachable!("Must provide one target.");
         };

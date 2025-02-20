@@ -4,7 +4,7 @@
 use crate::common::types::{CliError, CliTypedResult};
 use libra2_crypto::HashValue;
 use aptos_gas_profiling::FrameName;
-use aptos_move_debugger::aptos_debugger::AptosDebugger;
+use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_types::transaction::SignedTransaction;
 use aptos_vm::{data_cache::AsMoveResolver, AptosVM};
 use aptos_vm_environment::environment::AptosEnvironment;
@@ -16,7 +16,7 @@ use move_core_types::vm_status::VMStatus;
 use std::{path::Path, time::Instant};
 
 pub fn run_transaction_using_debugger(
-    debugger: &AptosDebugger,
+    debugger: &Libra2Debugger,
     version: u64,
     transaction: SignedTransaction,
     _hash: HashValue,
@@ -36,7 +36,7 @@ pub fn run_transaction_using_debugger(
 }
 
 pub fn benchmark_transaction_using_debugger(
-    debugger: &AptosDebugger,
+    debugger: &Libra2Debugger,
     version: u64,
     transaction: SignedTransaction,
     _hash: HashValue,
@@ -108,7 +108,7 @@ pub fn benchmark_transaction_using_debugger(
 }
 
 pub fn profile_transaction_using_debugger(
-    debugger: &AptosDebugger,
+    debugger: &Libra2Debugger,
     version: u64,
     transaction: SignedTransaction,
     hash: HashValue,

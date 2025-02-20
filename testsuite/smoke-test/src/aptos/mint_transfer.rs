@@ -4,7 +4,7 @@
 use crate::smoke_test_environment::new_local_swarm_with_aptos;
 use aptos_cached_packages::aptos_stdlib;
 use aptos_forge::Swarm;
-use aptos_move_debugger::aptos_debugger::AptosDebugger;
+use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_types::transaction::{ExecutionStatus, TransactionStatus};
 
 #[tokio::test(flavor = "multi_thread", worker_threads = 1)]
@@ -69,9 +69,9 @@ async fn test_mint_transfer() {
     );
     info.client().submit_and_wait(&mint_txn).await.unwrap();
 
-    // Testing the AptosDebugger by reexecuting the transaction that has been published.
+    // Testing the Libra2Debugger by reexecuting the transaction that has been published.
     println!("Testing....");
-    let debugger = AptosDebugger::rest_client(info.client().clone()).unwrap();
+    let debugger = Libra2Debugger::rest_client(info.client().clone()).unwrap();
 
     let txn_ver = debugger
         .get_version_by_account_sequence(account1.address(), 0)

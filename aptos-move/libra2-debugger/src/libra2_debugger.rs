@@ -32,11 +32,11 @@ use aptos_vm_types::{module_and_script_storage::AsAptosCodeStorage, output::VMOu
 use itertools::Itertools;
 use std::{path::Path, sync::Arc, time::Instant};
 
-pub struct AptosDebugger {
+pub struct Libra2Debugger {
     debugger: Arc<dyn AptosValidatorInterface + Send>,
 }
 
-impl AptosDebugger {
+impl Libra2Debugger {
     pub fn new(debugger: Arc<dyn AptosValidatorInterface + Send>) -> Self {
         Self { debugger }
     }

@@ -306,7 +306,6 @@ dependencies = [
  "aptos-keygen",
  "aptos-ledger",
  "aptos-localnet",
- "aptos-move-debugger",
  "aptos-node",
  "aptos-protos 1.3.1",
  "aptos-rest-client",
@@ -343,6 +342,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-global-constants",
  "libra2-logger",
+ "libra2-move-debugger",
  "libra2-network-checker",
  "libra2-storage-interface",
  "libra2-temppath",
@@ -868,21 +868,6 @@ dependencies = [
  "serde",
  "static_assertions",
  "status-line",
- "tokio",
-]
-
-[[package]]
-name = "aptos-debugger"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-consensus",
- "aptos-move-debugger",
- "clap 4.5.21",
- "jemallocator",
- "libra2-db-tool",
- "libra2-logger",
- "libra2-push-metrics",
  "tokio",
 ]
 
@@ -2082,32 +2067,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-move-debugger"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-block-executor",
- "aptos-consensus",
- "aptos-gas-profiling",
- "aptos-rest-client",
- "aptos-validator-interface",
- "aptos-vm",
- "aptos-vm-environment",
- "aptos-vm-logging",
- "aptos-vm-types",
- "bcs 0.1.4",
- "clap 4.5.21",
- "itertools 0.13.0",
- "libra2-crypto",
- "libra2-logger",
- "libra2-types",
- "regex",
- "reqwest 0.11.23",
- "tokio",
- "url",
-]
-
-[[package]]
 name = "aptos-move-e2e-benchmark"
 version = "0.1.0"
 dependencies = [
@@ -2427,7 +2386,6 @@ dependencies = [
  "aptos-genesis",
  "aptos-keygen",
  "aptos-language-e2e-tests",
- "aptos-move-debugger",
  "aptos-rest-client",
  "aptos-vm",
  "aptos-vm-environment",
@@ -2442,6 +2400,7 @@ dependencies = [
  "libra2-build-info",
  "libra2-crypto",
  "libra2-infallible",
+ "libra2-move-debugger",
  "libra2-temppath",
  "libra2-types",
  "move-binary-format",
@@ -2493,7 +2452,6 @@ dependencies = [
  "aptos-block-executor",
  "aptos-framework",
  "aptos-gas-schedule",
- "aptos-move-debugger",
  "aptos-rest-client",
  "aptos-vm",
  "aptos-vm-environment",
@@ -2503,6 +2461,7 @@ dependencies = [
  "colored",
  "libra2-crypto",
  "libra2-logger",
+ "libra2-move-debugger",
  "libra2-push-metrics",
  "libra2-types",
  "move-core-types",
@@ -9077,7 +9036,6 @@ dependencies = [
  "aptos-keygen",
  "aptos-ledger",
  "aptos-localnet",
- "aptos-move-debugger",
  "aptos-node",
  "aptos-protos 1.3.1",
  "aptos-rest-client",
@@ -9114,6 +9072,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-global-constants",
  "libra2-logger",
+ "libra2-move-debugger",
  "libra2-network-checker",
  "libra2-node",
  "libra2-storage-interface",
@@ -9639,6 +9598,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-debugger"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-consensus",
+ "clap 4.5.21",
+ "jemallocator",
+ "libra2-db-tool",
+ "libra2-logger",
+ "libra2-move-debugger",
+ "libra2-push-metrics",
+ "tokio",
+]
+
+[[package]]
 name = "libra2-dkg"
 version = "0.1.0"
 dependencies = [
@@ -10017,6 +9991,32 @@ dependencies = [
  "anyhow",
  "claims",
  "prometheus",
+]
+
+[[package]]
+name = "libra2-move-debugger"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-block-executor",
+ "aptos-consensus",
+ "aptos-gas-profiling",
+ "aptos-rest-client",
+ "aptos-validator-interface",
+ "aptos-vm",
+ "aptos-vm-environment",
+ "aptos-vm-logging",
+ "aptos-vm-types",
+ "bcs 0.1.4",
+ "clap 4.5.21",
+ "itertools 0.13.0",
+ "libra2-crypto",
+ "libra2-logger",
+ "libra2-types",
+ "regex",
+ "reqwest 0.11.23",
+ "tokio",
+ "url",
 ]
 
 [[package]]
@@ -16109,7 +16109,6 @@ dependencies = [
  "aptos-indexer-grpc-table-info",
  "aptos-inspection-service",
  "aptos-keygen",
- "aptos-move-debugger",
  "aptos-release-builder",
  "aptos-rest-client",
  "aptos-rosetta",
@@ -16133,6 +16132,7 @@ dependencies = [
  "libra2-global-constants",
  "libra2-infallible",
  "libra2-logger",
+ "libra2-move-debugger",
  "libra2-schemadb",
  "libra2-secure-storage",
  "libra2-storage-interface",

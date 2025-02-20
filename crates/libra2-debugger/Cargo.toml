@@ -1,5 +1,5 @@
 [package]
-name = "aptos-debugger"
+name = "libra2-debugger"
 version = "0.1.0"
 description = "Debugging tools."
 
@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 aptos-consensus = { workspace = true }
 libra2-db-tool = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-move-debugger = { workspace = true }
+libra2-move-debugger = { workspace = true }
 libra2-push-metrics = { workspace = true }
 clap = { workspace = true }
 jemallocator = { workspace = true }

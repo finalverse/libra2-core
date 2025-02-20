@@ -29,7 +29,7 @@ use aptos_framework::chunked_publish::{CHUNK_SIZE_IN_BYTES, LARGE_PACKAGES_MODUL
 use libra2_global_constants::adjust_gas_headroom;
 use aptos_keygen::KeyGen;
 use libra2_logger::Level;
-use aptos_move_debugger::aptos_debugger::AptosDebugger;
+use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use aptos_rest_client::{
     aptos_api_types::{EntryFunctionId, HashValue, MoveType, ViewRequest},
     error::RestError,
@@ -1948,7 +1948,7 @@ impl TransactionOptions {
     ) -> CliTypedResult<TransactionSummary>
     where
         F: FnOnce(
-            &AptosDebugger,
+            &Libra2Debugger,
             u64,
             SignedTransaction,
             libra2_crypto::HashValue,
@@ -1994,7 +1994,7 @@ impl TransactionOptions {
             sender_account.sign_with_transaction_builder(transaction_factory.payload(payload));
         let hash = transaction.committed_hash();
 
-        let debugger = AptosDebugger::rest_client(client).unwrap();
+        let debugger = Libra2Debugger::rest_client(client).unwrap();
         let (vm_status, vm_output) = execute(&debugger, version, transaction, hash)?;
 
         let success = match vm_output.status() {
