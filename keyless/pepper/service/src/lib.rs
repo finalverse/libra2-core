@@ -16,7 +16,7 @@ use libra2_crypto::{
     ed25519::Ed25519PublicKey,
 };
 use libra2_infallible::duration_since_epoch;
-use aptos_keyless_pepper_common::{
+use libra2_keyless_pepper_common::{
     account_recovery_db::AccountRecoveryDbEntry,
     jwt::Claims,
     vuf::{
@@ -328,7 +328,7 @@ async fn process_common(
         },
     };
 
-    let claims = aptos_keyless_pepper_common::jwt::parse(jwt.as_str())
+    let claims = libra2_keyless_pepper_common::jwt::parse(jwt.as_str())
         .map_err(|e| BadRequest(format!("JWT decoding error: {e}")))?;
     let now_secs = SystemTime::now()
         .duration_since(UNIX_EPOCH)

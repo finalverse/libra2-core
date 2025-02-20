@@ -27,7 +27,7 @@ use std::{
 /// ACCOUNT_MANAGER_2B_ISSUER=https://accounts.facebook.com \
 /// ACCOUNT_MANAGER_2B_AUD=9876543210 \
 /// VUF_KEY_SEED_HEX=ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff \
-/// cargo run -p aptos-keyless-pepper-service
+/// cargo run -p libra2-keyless-pepper-service
 /// ```
 pub static ACCOUNT_MANAGERS: Lazy<HashSet<(String, String)>> = Lazy::new(|| {
     let re_issuer = Regex::new(r"ACCOUNT_MANAGER_(\w+)_ISSUER").unwrap();

@@ -1,8 +1,8 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_keyless_pepper_common::BadPepperRequestError;
-use aptos_keyless_pepper_service::{
+use libra2_keyless_pepper_common::BadPepperRequestError;
+use libra2_keyless_pepper_service::{
     about::ABOUT_JSON,
     account_db::{init_account_db, ACCOUNT_RECOVERY_DB},
     account_managers::ACCOUNT_MANAGERS,

@@ -1,6 +1,6 @@
 [package]
-name = "aptos-keyless-pepper-common"
-description = "Aptos Keyless pepper library"
+name = "libra2-keyless-pepper-common"
+description = "Libra2 Keyless pepper library"
 version = "0.1.0"
 
 # Workspace inherited keys

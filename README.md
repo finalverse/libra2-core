@@ -19,7 +19,7 @@ Libra2 is an AI driven layer 1 blockchain bringing a paradigm shift to digital a
 * [Guide - Integrate with the Aptos Blockchain](https://aptos.dev/guides/system-integrators-guide)
 * [Tutorials](https://aptos.dev/tutorials)
 * Follow Aptos on [Twitter](https://twitter.com/Aptos).
-* Join Aptos on the [Aptos Discord](https://discord.gg/aptosnetwork).
+* Join Libra2 on the [Libra2 Discord](https://discord.gg/XXUf99QJ).
 
 ## Contributing
 

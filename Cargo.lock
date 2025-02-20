@@ -1990,90 +1990,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-keyless-pepper-common"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "ark-bls12-381",
- "ark-ec",
- "ark-ff",
- "ark-serialize",
- "ark-std",
- "bcs 0.1.4",
- "blstrs",
- "derivation-path",
- "ed25519-dalek 1.0.1",
- "hex",
- "hmac 0.12.1",
- "jsonwebtoken 8.3.0",
- "libra2-crypto",
- "libra2-crypto-derive",
- "libra2-dkg",
- "libra2-types",
- "once_cell",
- "rand 0.7.3",
- "regex",
- "serde",
- "serde-big-array",
- "sha2 0.10.8",
-]
-
-[[package]]
-name = "aptos-keyless-pepper-example-client-rust"
-version = "0.1.0"
-dependencies = [
- "aptos-keyless-pepper-common",
- "ark-bls12-381",
- "ark-serialize",
- "bcs 0.1.4",
- "firestore",
- "hex",
- "libra2-crypto",
- "libra2-infallible",
- "libra2-types",
- "reqwest 0.11.23",
- "serde_json",
- "tokio",
-]
-
-[[package]]
-name = "aptos-keyless-pepper-service"
-version = "0.1.0"
-dependencies = [
- "aes-gcm",
- "anyhow",
- "aptos-inspection-service",
- "aptos-keyless-pepper-common",
- "ark-bls12-381",
- "ark-bn254",
- "ark-ec",
- "ark-ff",
- "ark-groth16",
- "ark-serialize",
- "bcs 0.1.4",
- "dashmap",
- "firestore",
- "hex",
- "hyper 0.14.28",
- "jsonwebtoken 8.3.0",
- "jwt",
- "libra2-crypto",
- "libra2-infallible",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-types",
- "once_cell",
- "rand 0.7.3",
- "regex",
- "reqwest 0.11.23",
- "serde",
- "serde_json",
- "sha3 0.9.1",
- "tokio",
- "uuid",
-]
-
-[[package]]
 name = "aptos-language-e2e-tests"
 version = "0.1.0"
 dependencies = [
@@ -10147,6 +10063,90 @@ dependencies = [
  "libra2-crypto",
  "libra2-types",
  "rand 0.7.3",
+]
+
+[[package]]
+name = "libra2-keyless-pepper-common"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "ark-bls12-381",
+ "ark-ec",
+ "ark-ff",
+ "ark-serialize",
+ "ark-std",
+ "bcs 0.1.4",
+ "blstrs",
+ "derivation-path",
+ "ed25519-dalek 1.0.1",
+ "hex",
+ "hmac 0.12.1",
+ "jsonwebtoken 8.3.0",
+ "libra2-crypto",
+ "libra2-crypto-derive",
+ "libra2-dkg",
+ "libra2-types",
+ "once_cell",
+ "rand 0.7.3",
+ "regex",
+ "serde",
+ "serde-big-array",
+ "sha2 0.10.8",
+]
+
+[[package]]
+name = "libra2-keyless-pepper-example-client-rust"
+version = "0.1.0"
+dependencies = [
+ "ark-bls12-381",
+ "ark-serialize",
+ "bcs 0.1.4",
+ "firestore",
+ "hex",
+ "libra2-crypto",
+ "libra2-infallible",
+ "libra2-keyless-pepper-common",
+ "libra2-types",
+ "reqwest 0.11.23",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-keyless-pepper-service"
+version = "0.1.0"
+dependencies = [
+ "aes-gcm",
+ "anyhow",
+ "aptos-inspection-service",
+ "ark-bls12-381",
+ "ark-bn254",
+ "ark-ec",
+ "ark-ff",
+ "ark-groth16",
+ "ark-serialize",
+ "bcs 0.1.4",
+ "dashmap",
+ "firestore",
+ "hex",
+ "hyper 0.14.28",
+ "jsonwebtoken 8.3.0",
+ "jwt",
+ "libra2-crypto",
+ "libra2-infallible",
+ "libra2-keyless-pepper-common",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-types",
+ "once_cell",
+ "rand 0.7.3",
+ "regex",
+ "reqwest 0.11.23",
+ "serde",
+ "serde_json",
+ "sha3 0.9.1",
+ "tokio",
+ "uuid",
 ]
 
 [[package]]

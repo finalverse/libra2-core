@@ -35,21 +35,21 @@ export ACCOUNT_MANAGER_0_AUD=407408718192.apps.googleusercontent.com
 export VUF_KEY_SEED_HEX=ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
 # Start the pepper service.
-cargo run -p aptos-keyless-pepper-service
+cargo run -p libra2-keyless-pepper-service
 ```
 
 Run the example client in terminal 2.
 ```bash
 # In addition to sending a pepper request and verify the response,
 # the example client also connects to the account recovery DB and verifies that it was correctly updated by the pepper service.
-# So here it relies on the same firestore-related parameters as `aptos-keyless-pepper-service` does.
+# So here it relies on the same firestore-related parameters as `libra2-keyless-pepper-service` does.
 export FIRESTORE_EMULATOR_HOST=localhost:8081
 export GOOGLE_APPLICATION_CREDENTIALS="<path-to-your-service-account-credential>"
 export PROJECT_ID=$(gcloud config get-value project)
 export DATABASE_ID='(default)' # the default name of a local firestore emulator
 
 # Start the example client.
-cargo run -p aptos-keyless-pepper-example-client-rust
+cargo run -p libra2-keyless-pepper-example-client-rust
 ```
 This is an interactive console program.
 Follow the instruction to manually complete a session with the pepper service.
@@ -69,7 +69,7 @@ In terminal 0, run the pepper service.
 export VUF_KEY_SEED_HEX=ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 export ONCHAIN_GROTH16_VK_URL=http://localhost:4444/groth16_vk.json
 export ONCHAIN_KEYLESS_CONFIG_URL=http://localhost:4444/keyless_config.json
-cargo run -p aptos-keyless-pepper-service
+cargo run -p libra2-keyless-pepper-service
 ```
 
 In terminal 1, peek the cached resources, they should currently give 404.
