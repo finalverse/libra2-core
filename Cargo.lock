@@ -829,9 +829,6 @@ dependencies = [
  "aptos-netcore",
  "aptos-network",
  "aptos-peer-monitoring-service-types",
- "aptos-storage-service-client",
- "aptos-storage-service-server",
- "aptos-storage-service-types",
  "arc-swap",
  "async-trait",
  "bcs 0.1.4",
@@ -847,6 +844,9 @@ dependencies = [
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-storage-interface",
+ "libra2-storage-service-client",
+ "libra2-storage-service-server",
+ "libra2-storage-service-types",
  "libra2-time-service",
  "libra2-types",
  "maplit",
@@ -863,7 +863,6 @@ name = "aptos-data-streaming-service"
 version = "0.1.0"
 dependencies = [
  "aptos-data-client",
- "aptos-storage-service-types",
  "arc-swap",
  "async-trait",
  "claims",
@@ -876,6 +875,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-storage-service-types",
  "libra2-time-service",
  "libra2-types",
  "once_cell",
@@ -1990,7 +1990,6 @@ dependencies = [
  "aptos-data-client",
  "aptos-network",
  "aptos-runtimes",
- "aptos-storage-service-client",
  "aptos-telemetry",
  "assert_approx_eq",
  "futures",
@@ -2000,6 +1999,7 @@ dependencies = [
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-storage-interface",
+ "libra2-storage-service-client",
  "libra2-time-service",
  "once_cell",
  "prometheus",
@@ -2636,9 +2636,6 @@ dependencies = [
  "aptos-peer-monitoring-service-types",
  "aptos-runtimes",
  "aptos-state-sync-driver",
- "aptos-storage-service-client",
- "aptos-storage-service-server",
- "aptos-storage-service-types",
  "aptos-telemetry",
  "aptos-validator-transaction-pool",
  "aptos-vm",
@@ -2664,7 +2661,10 @@ dependencies = [
  "libra2-logger",
  "libra2-node-identity",
  "libra2-storage-interface",
+ "libra2-storage-service-client",
  "libra2-storage-service-notifications",
+ "libra2-storage-service-server",
+ "libra2-storage-service-types",
  "libra2-temppath",
  "libra2-time-service",
  "libra2-types",
@@ -3145,8 +3145,6 @@ dependencies = [
  "aptos-mempool-notifications",
  "aptos-network",
  "aptos-runtimes",
- "aptos-storage-service-client",
- "aptos-storage-service-types",
  "aptos-vm",
  "aptos-vm-genesis",
  "async-trait",
@@ -3163,7 +3161,9 @@ dependencies = [
  "libra2-metrics-core",
  "libra2-schemadb",
  "libra2-storage-interface",
+ "libra2-storage-service-client",
  "libra2-storage-service-notifications",
+ "libra2-storage-service-types",
  "libra2-temppath",
  "libra2-time-service",
  "libra2-types",
@@ -3176,69 +3176,6 @@ dependencies = [
  "thiserror",
  "tokio",
  "tokio-stream",
-]
-
-[[package]]
-name = "aptos-storage-service-client"
-version = "0.1.0"
-dependencies = [
- "aptos-network",
- "aptos-storage-service-types",
- "libra2-config",
- "thiserror",
-]
-
-[[package]]
-name = "aptos-storage-service-server"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-netcore",
- "aptos-network",
- "aptos-storage-service-types",
- "arc-swap",
- "bcs 0.1.4",
- "bytes",
- "claims",
- "dashmap",
- "futures",
- "libra2-bitvec",
- "libra2-channels",
- "libra2-config",
- "libra2-crypto",
- "libra2-infallible",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-storage-interface",
- "libra2-storage-service-notifications",
- "libra2-time-service",
- "libra2-types",
- "maplit",
- "mini-moka",
- "mockall",
- "once_cell",
- "rand 0.7.3",
- "serde",
- "thiserror",
- "tokio",
-]
-
-[[package]]
-name = "aptos-storage-service-types"
-version = "0.1.0"
-dependencies = [
- "bcs 0.1.4",
- "claims",
- "libra2-compression",
- "libra2-config",
- "libra2-crypto",
- "libra2-time-service",
- "libra2-types",
- "num-traits",
- "proptest",
- "rand 0.7.3",
- "serde",
- "thiserror",
 ]
 
 [[package]]
@@ -10390,9 +10327,6 @@ dependencies = [
  "aptos-peer-monitoring-service-types",
  "aptos-runtimes",
  "aptos-state-sync-driver",
- "aptos-storage-service-client",
- "aptos-storage-service-server",
- "aptos-storage-service-types",
  "aptos-telemetry",
  "aptos-validator-transaction-pool",
  "aptos-vm",
@@ -10418,7 +10352,10 @@ dependencies = [
  "libra2-logger",
  "libra2-node-identity",
  "libra2-storage-interface",
+ "libra2-storage-service-client",
  "libra2-storage-service-notifications",
+ "libra2-storage-service-server",
+ "libra2-storage-service-types",
  "libra2-temppath",
  "libra2-time-service",
  "libra2-types",
@@ -10658,6 +10595,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-storage-service-client"
+version = "0.1.0"
+dependencies = [
+ "aptos-network",
+ "libra2-config",
+ "libra2-storage-service-types",
+ "thiserror",
+]
+
+[[package]]
 name = "libra2-storage-service-notifications"
 version = "0.1.0"
 dependencies = [
@@ -10669,6 +10616,59 @@ dependencies = [
  "serde",
  "thiserror",
  "tokio",
+]
+
+[[package]]
+name = "libra2-storage-service-server"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-netcore",
+ "aptos-network",
+ "arc-swap",
+ "bcs 0.1.4",
+ "bytes",
+ "claims",
+ "dashmap",
+ "futures",
+ "libra2-bitvec",
+ "libra2-channels",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-storage-interface",
+ "libra2-storage-service-notifications",
+ "libra2-storage-service-types",
+ "libra2-time-service",
+ "libra2-types",
+ "maplit",
+ "mini-moka",
+ "mockall",
+ "once_cell",
+ "rand 0.7.3",
+ "serde",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-storage-service-types"
+version = "0.1.0"
+dependencies = [
+ "bcs 0.1.4",
+ "claims",
+ "libra2-compression",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-time-service",
+ "libra2-types",
+ "num-traits",
+ "proptest",
+ "rand 0.7.3",
+ "serde",
+ "thiserror",
 ]
 
 [[package]]

@@ -28,9 +28,9 @@ use aptos_peer_monitoring_service_types::{
     response::NetworkInformationResponse, PeerMonitoringMetadata,
 };
 use libra2_storage_interface::DbReader;
-use aptos_storage_service_client::StorageServiceClient;
-use aptos_storage_service_server::network::{NetworkRequest, ResponseSender};
-use aptos_storage_service_types::{
+use libra2_storage_service_client::StorageServiceClient;
+use libra2_storage_service_server::network::{NetworkRequest, ResponseSender};
+use libra2_storage_service_types::{
     responses::TransactionOrOutputListWithProof, Epoch, StorageServiceMessage,
 };
 use libra2_time_service::{MockTimeService, TimeService};

@@ -31,8 +31,8 @@ use aptos_network::{
     protocols::network::RpcError,
 };
 use libra2_storage_interface::DbReader;
-use aptos_storage_service_client::StorageServiceClient;
-use aptos_storage_service_types::{
+use libra2_storage_service_client::StorageServiceClient;
+use libra2_storage_service_types::{
     requests::{
         DataRequest, EpochEndingLedgerInfoRequest, NewTransactionOutputsWithProofRequest,
         NewTransactionsOrOutputsWithProofRequest, NewTransactionsWithProofRequest,
@@ -818,7 +818,7 @@ impl AptosDataClient {
                 // data client errors. Also categorize the error type for scoring
                 // purposes.
                 let client_error = match error {
-                    aptos_storage_service_client::Error::RpcError(rpc_error) => match rpc_error {
+                    libra2_storage_service_client::Error::RpcError(rpc_error) => match rpc_error {
                         RpcError::NotConnected(_) => {
                             Error::DataIsUnavailable(rpc_error.to_string())
                         },
@@ -827,7 +827,7 @@ impl AptosDataClient {
                         },
                         _ => Error::UnexpectedErrorEncountered(rpc_error.to_string()),
                     },
-                    aptos_storage_service_client::Error::StorageServiceError(err) => {
+                    libra2_storage_service_client::Error::StorageServiceError(err) => {
                         Error::UnexpectedErrorEncountered(err.to_string())
                     },
                     _ => Error::UnexpectedErrorEncountered(error.to_string()),

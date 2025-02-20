@@ -26,7 +26,7 @@ use libra2_infallible::RwLock;
 use aptos_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
 use libra2_storage_interface::DbReaderWriter;
-use aptos_storage_service_client::StorageServiceClient;
+use libra2_storage_service_client::StorageServiceClient;
 use libra2_storage_service_notifications::StorageServiceNotificationListener;
 use libra2_time_service::TimeService;
 use libra2_types::{

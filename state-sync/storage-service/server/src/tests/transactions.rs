@@ -3,7 +3,7 @@
 
 use crate::tests::{mock, mock::MockClient, utils};
 use libra2_config::config::StorageServiceConfig;
-use aptos_storage_service_types::{responses::DataResponse, StorageServiceError};
+use libra2_storage_service_types::{responses::DataResponse, StorageServiceError};
 use claims::assert_matches;
 use mockall::{predicate::eq, Sequence};
 

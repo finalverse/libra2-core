@@ -10,7 +10,7 @@ use libra2_config::{
     config::{AptosDataClientConfig, AptosDataMultiFetchConfig},
     network_id::NetworkId,
 };
-use aptos_storage_service_types::requests::{
+use libra2_storage_service_types::requests::{
     DataRequest, StorageServiceRequest, TransactionOutputsWithProofRequest,
 };
 use libra2_time_service::TimeServiceTrait;

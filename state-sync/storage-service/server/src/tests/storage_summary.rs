@@ -13,7 +13,7 @@ use crate::{
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::config::StorageServiceConfig;
 use libra2_storage_service_notifications::StorageServiceNotificationSender;
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::DataRequest,
     responses::{
         CompleteDataRange, DataResponse, DataSummary, ProtocolMetadata, StorageServerSummary,

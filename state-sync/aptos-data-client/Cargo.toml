@@ -22,8 +22,8 @@ libra2-metrics-core = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true }
 libra2-storage-interface = { workspace = true }
-aptos-storage-service-client = { workspace = true }
-aptos-storage-service-types = { workspace = true }
+libra2-storage-service-client = { workspace = true }
+libra2-storage-service-types = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
 arc-swap = { workspace = true }
@@ -49,7 +49,7 @@ anyhow = { workspace = true }
 libra2-channels = { workspace = true }
 aptos-network = { workspace = true, features = ["fuzzing"] }
 aptos-peer-monitoring-service-types = { workspace = true }
-aptos-storage-service-server = { workspace = true }
+libra2-storage-service-server = { workspace = true }
 libra2-time-service = { workspace = true, features = ["async", "testing"] }
 async-trait = { workspace = true }
 bcs = { workspace = true }

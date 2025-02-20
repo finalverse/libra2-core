@@ -11,7 +11,7 @@ use crate::{
     tests::{mock::MockNetwork, utils},
 };
 use libra2_config::{config::AptosDataClientConfig, network_id::PeerNetworkId};
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::{DataRequest, TransactionsWithProofRequest},
     responses::{CompleteDataRange, DataResponse, StorageServerSummary, StorageServiceResponse},
 };

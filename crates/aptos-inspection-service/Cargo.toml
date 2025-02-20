@@ -22,7 +22,7 @@ libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
 aptos-runtimes = { workspace = true }
 libra2-storage-interface = { workspace = true }
-aptos-storage-service-client = { workspace = true }
+libra2-storage-service-client = { workspace = true }
 aptos-telemetry = { workspace = true }
 libra2-time-service = { workspace = true }
 futures = { workspace = true }

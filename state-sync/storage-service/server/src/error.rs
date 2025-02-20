@@ -28,8 +28,8 @@ impl Error {
     }
 }
 
-impl From<aptos_storage_service_types::responses::Error> for Error {
-    fn from(error: aptos_storage_service_types::responses::Error) -> Self {
+impl From<libra2_storage_service_types::responses::Error> for Error {
+    fn from(error: libra2_storage_service_types::responses::Error) -> Self {
         Error::UnexpectedErrorEncountered(error.to_string())
     }
 }

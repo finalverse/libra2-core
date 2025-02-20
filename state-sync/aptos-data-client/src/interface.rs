@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{error, error::Error, global_summary::GlobalDataSummary};
-use aptos_storage_service_types::{responses::TransactionOrOutputListWithProof, Epoch};
+use libra2_storage_service_types::{responses::TransactionOrOutputListWithProof, Epoch};
 use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     state_store::state_value::StateValueChunkWithProof,

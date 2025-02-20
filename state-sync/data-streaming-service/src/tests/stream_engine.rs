@@ -18,7 +18,7 @@ use aptos_data_client::{
     interface::ResponsePayload,
 };
 use libra2_id_generator::U64IdGenerator;
-use aptos_storage_service_types::responses::CompleteDataRange;
+use libra2_storage_service_types::responses::CompleteDataRange;
 use claims::{assert_matches, assert_ok};
 use std::{cmp, sync::Arc};
 

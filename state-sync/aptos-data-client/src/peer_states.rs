@@ -12,7 +12,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_logger::prelude::*;
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServerSummary,
 };
 use libra2_time_service::TimeService;

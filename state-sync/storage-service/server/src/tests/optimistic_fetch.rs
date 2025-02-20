@@ -13,7 +13,7 @@ use libra2_config::{
     config::{AptosDataClientConfig, StorageServiceConfig},
     network_id::PeerNetworkId,
 };
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::{
         DataRequest, NewTransactionOutputsWithProofRequest,
         NewTransactionsOrOutputsWithProofRequest, NewTransactionsWithProofRequest,

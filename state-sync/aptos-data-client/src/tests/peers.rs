@@ -14,8 +14,8 @@ use libra2_config::{
     config::{AptosDataClientConfig, AptosDataMultiFetchConfig},
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_storage_service_server::network::NetworkRequest;
-use aptos_storage_service_types::{
+use libra2_storage_service_server::network::NetworkRequest;
+use libra2_storage_service_types::{
     requests::DataRequest,
     responses::{CompleteDataRange, DataResponse, StorageServerSummary, StorageServiceResponse},
     StorageServiceError,

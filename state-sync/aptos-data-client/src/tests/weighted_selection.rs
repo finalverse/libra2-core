@@ -10,7 +10,7 @@ use libra2_config::{
     config::{AptosDataClientConfig, AptosDataMultiFetchConfig, AptosLatencyFilteringConfig},
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_storage_service_types::requests::{DataRequest, StorageServiceRequest};
+use libra2_storage_service_types::requests::{DataRequest, StorageServiceRequest};
 use libra2_time_service::TimeServiceTrait;
 use maplit::hashset;
 use ordered_float::OrderedFloat;

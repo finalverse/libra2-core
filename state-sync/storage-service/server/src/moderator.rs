@@ -8,7 +8,7 @@ use libra2_config::{
 };
 use libra2_logger::warn;
 use aptos_network::application::storage::PeersAndMetadata;
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServerSummary,
 };
 use libra2_time_service::{TimeService, TimeServiceTrait};

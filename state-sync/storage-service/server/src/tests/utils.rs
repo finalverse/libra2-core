@@ -18,7 +18,7 @@ use aptos_network::protocols::network::RpcError;
 use libra2_storage_service_notifications::{
     StorageServiceNotificationSender, StorageServiceNotifier,
 };
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::{
         DataRequest, StateValuesWithProofRequest, StorageServiceRequest,
         SubscribeTransactionOutputsWithProofRequest,

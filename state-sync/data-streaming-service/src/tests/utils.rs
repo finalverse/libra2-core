@@ -14,7 +14,7 @@ use aptos_data_client::{
 };
 use libra2_infallible::Mutex;
 use libra2_logger::Level;
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::{
         DataRequest, EpochEndingLedgerInfoRequest, NewTransactionOutputsWithProofRequest,
         NewTransactionsOrOutputsWithProofRequest, NewTransactionsWithProofRequest,

@@ -24,7 +24,7 @@ use aptos_network::{
 };
 use libra2_storage_interface::{DbReader, LedgerSummary, Order};
 use libra2_storage_service_notifications::StorageServiceNotifier;
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServiceResponse, StorageServiceError,
     StorageServiceMessage,
 };

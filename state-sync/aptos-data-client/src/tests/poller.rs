@@ -12,7 +12,7 @@ use libra2_config::{
     config::{AptosDataClientConfig, AptosDataPollerConfig},
     network_id::PeerNetworkId,
 };
-use aptos_storage_service_types::StorageServiceError;
+use libra2_storage_service_types::StorageServiceError;
 use claims::assert_matches;
 use maplit::hashset;
 use std::{

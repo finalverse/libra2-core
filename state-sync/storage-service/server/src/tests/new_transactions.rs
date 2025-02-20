@@ -6,7 +6,7 @@ use libra2_config::{
     config::StorageServiceConfig,
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_storage_service_types::requests::{
+use libra2_storage_service_types::requests::{
     DataRequest, NewTransactionsWithProofRequest, StorageServiceRequest,
 };
 use libra2_types::{epoch_change::EpochChangeProof, PeerId};

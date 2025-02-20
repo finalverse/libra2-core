@@ -15,7 +15,7 @@ use aptos_network::{
     protocols::wire::handshake::v1::{MessagingProtocolVersion, ProtocolIdSet},
     transport::{ConnectionId, ConnectionMetadata},
 };
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::{DataRequest, StorageServiceRequest, TransactionsWithProofRequest},
     responses::StorageServiceResponse,
     StorageServiceError,

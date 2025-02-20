@@ -1,6 +1,6 @@
 [package]
-name = "aptos-storage-service-types"
-description = "Common types offered by the Aptos storage service"
+name = "libra2-storage-service-types"
+description = "Common types offered by the Libra2 storage service"
 version = "0.1.0"
 
 # Workspace inherited keys

@@ -12,7 +12,7 @@ use crate::{
 use libra2_config::config::{DataStreamingServiceConfig, DynamicPrefetchingConfig};
 use aptos_data_client::global_summary::GlobalDataSummary;
 use libra2_id_generator::U64IdGenerator;
-use aptos_storage_service_types::responses::CompleteDataRange;
+use libra2_storage_service_types::responses::CompleteDataRange;
 use std::sync::Arc;
 
 #[test]

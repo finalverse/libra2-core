@@ -1,6 +1,6 @@
 [package]
-name = "aptos-storage-service-server"
-description = "The Aptos storage service (server-side)"
+name = "libra2-storage-service-server"
+description = "The Libra2 storage service (server-side)"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -22,7 +22,7 @@ libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-storage-service-notifications = { workspace = true }
-aptos-storage-service-types = { workspace = true }
+libra2-storage-service-types = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
 arc-swap = { workspace = true }

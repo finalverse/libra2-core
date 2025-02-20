@@ -11,8 +11,8 @@ use libra2_config::{
 };
 use libra2_crypto::HashValue;
 use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
-use aptos_storage_service_server::network::NetworkRequest;
-use aptos_storage_service_types::{
+use libra2_storage_service_server::network::NetworkRequest;
+use libra2_storage_service_types::{
     requests::{
         DataRequest, NewTransactionOutputsWithProofRequest,
         NewTransactionsOrOutputsWithProofRequest, NewTransactionsWithProofRequest,

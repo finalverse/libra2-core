@@ -25,12 +25,12 @@ use aptos_state_sync_driver::{
     metadata_storage::PersistentMetadataStorage,
 };
 use libra2_storage_interface::{DbReader, DbReaderWriter};
-use aptos_storage_service_client::StorageServiceClient;
+use libra2_storage_service_client::StorageServiceClient;
 use libra2_storage_service_notifications::StorageServiceNotificationListener;
-use aptos_storage_service_server::{
+use libra2_storage_service_server::{
     network::StorageServiceNetworkEvents, storage::StorageReader, StorageServiceServer,
 };
-use aptos_storage_service_types::StorageServiceMessage;
+use libra2_storage_service_types::StorageServiceMessage;
 use libra2_time_service::TimeService;
 use libra2_types::waypoint::Waypoint;
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;

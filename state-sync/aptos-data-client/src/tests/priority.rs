@@ -10,7 +10,7 @@ use libra2_config::{
     config::{AptosDataClientConfig, AptosDataMultiFetchConfig},
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::{DataRequest, StorageServiceRequest},
     responses::NUM_MICROSECONDS_IN_SECOND,
 };

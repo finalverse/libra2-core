@@ -34,7 +34,7 @@ tokio = { workspace = true }
 tokio-stream = { workspace = true }
 
 [dev-dependencies]
-aptos-storage-service-types = { workspace = true }
+libra2-storage-service-types = { workspace = true }
 libra2-time-service = { workspace = true, features = ["testing"] }
 libra2-types = { workspace = true, features = ["fuzzing"] }
 claims = { workspace = true }

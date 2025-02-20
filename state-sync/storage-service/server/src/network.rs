@@ -8,7 +8,7 @@ use aptos_network::{
     protocols::network::{Event, RpcError},
     ProtocolId,
 };
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServiceResponse, Result,
     StorageServiceMessage,
 };

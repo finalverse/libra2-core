@@ -5,7 +5,7 @@ use crate::tests::{mock, mock::MockClient, utils};
 use libra2_bitvec::BitVec;
 use libra2_config::config::StorageServiceConfig;
 use libra2_crypto::HashValue;
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::{DataRequest, EpochEndingLedgerInfoRequest, StorageServiceRequest},
     responses::DataResponse,
     Epoch, StorageServiceError,

@@ -8,7 +8,7 @@ use crate::{
 };
 use libra2_config::network_id::PeerNetworkId;
 use libra2_metrics_core::HistogramVec;
-use aptos_storage_service_types::{
+use libra2_storage_service_types::{
     requests::{DataRequest, EpochEndingLedgerInfoRequest, StorageServiceRequest},
     responses::{DataResponse, StorageServerSummary, StorageServiceResponse},
 };
@@ -31,7 +31,7 @@ pub fn get_epoch_ending_ledger_info<T: StorageReaderInterface>(
     peer_network_id: &PeerNetworkId,
     storage: T,
     time_service: TimeService,
-) -> aptos_storage_service_types::Result<LedgerInfoWithSignatures, Error> {
+) -> libra2_storage_service_types::Result<LedgerInfoWithSignatures, Error> {
     // Create a new storage request for the epoch ending ledger info
     let data_request = DataRequest::GetEpochEndingLedgerInfos(EpochEndingLedgerInfoRequest {
         start_epoch: epoch,
@@ -95,7 +95,7 @@ pub fn notify_peer_of_new_data<T: StorageReaderInterface>(
     missing_data_request: StorageServiceRequest,
     target_ledger_info: LedgerInfoWithSignatures,
     response_sender: ResponseSender,
-) -> aptos_storage_service_types::Result<DataResponse, Error> {
+) -> libra2_storage_service_types::Result<DataResponse, Error> {
     // Handle the storage service request to fetch the missing data
     let use_compression = missing_data_request.use_compression;
     let handler = Handler::new(

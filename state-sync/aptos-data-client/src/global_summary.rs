@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_storage_service_types::{responses::CompleteDataRange, Epoch};
+use libra2_storage_service_types::{responses::CompleteDataRange, Epoch};
 use libra2_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
 use itertools::Itertools;
 use std::{fmt, fmt::Display};

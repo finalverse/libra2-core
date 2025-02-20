@@ -30,7 +30,7 @@ use aptos_network::{
 use aptos_network_benchmark::NetbenchMessage;
 use aptos_network_builder::builder::NetworkBuilder;
 use aptos_peer_monitoring_service_types::PeerMonitoringServiceMessage;
-use aptos_storage_service_types::StorageServiceMessage;
+use libra2_storage_service_types::StorageServiceMessage;
 use libra2_time_service::TimeService;
 use libra2_types::chain_id::ChainId;
 use serde::{Deserialize, Serialize};
@@ -160,7 +160,7 @@ pub fn storage_service_network_configuration(node_config: &NodeConfig) -> Networ
         libra2_channel::Config::new(max_network_channel_size)
             .queue_style(QueueStyle::FIFO)
             .counters(
-                &aptos_storage_service_server::metrics::PENDING_STORAGE_SERVER_NETWORK_EVENTS,
+                &libra2_storage_service_server::metrics::PENDING_STORAGE_SERVER_NETWORK_EVENTS,
             ),
     );
     NetworkApplicationConfig::new(network_client_config, network_service_config)
