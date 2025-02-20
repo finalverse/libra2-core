@@ -3,7 +3,7 @@
 
 use crate::consensus_observer::{common::error::Error, observer::subscription_utils};
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
-use aptos_network::application::metadata::PeerMetadata;
+use libra2_network::application::metadata::PeerMetadata;
 use libra2_storage_interface::DbReader;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use std::{
@@ -237,7 +237,7 @@ mod test {
     use super::*;
     use libra2_config::config::PeerRole;
     use libra2_netcore::transport::ConnectionOrigin;
-    use aptos_network::{
+    use libra2_network::{
         protocols::wire::handshake::v1::{MessagingProtocolVersion, ProtocolIdSet},
         transport::{ConnectionId, ConnectionMetadata},
         ProtocolId,

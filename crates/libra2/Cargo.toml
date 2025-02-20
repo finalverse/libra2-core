@@ -36,7 +36,7 @@ aptos-ledger = { workspace = true }
 aptos-localnet = { workspace = true }
 libra2-logger = { workspace = true }
 aptos-move-debugger = { workspace = true }
-aptos-network-checker = { workspace = true }
+libra2-network-checker = { workspace = true }
 aptos-node = { workspace = true }
 libra2-node = { workspace = true }
 aptos-protos = { workspace = true }

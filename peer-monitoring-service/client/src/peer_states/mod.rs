@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_config::{config::PeerMonitoringServiceConfig, network_id::PeerNetworkId};
 use libra2_logger::{info, sample, sample::SampleRate};
-use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadata};
+use libra2_network::application::{interface::NetworkClient, metadata::PeerMetadata};
 use libra2_peer_monitoring_service_types::PeerMonitoringServiceMessage;
 use libra2_time_service::TimeService;
 use key_value::PeerStateKey;

@@ -17,7 +17,7 @@ use libra2_config::{
 use libra2_crypto::x25519;
 use libra2_id_generator::{IdGenerator, U32IdGenerator};
 use libra2_logger::prelude::*;
-// Re-exposed for aptos-network-checker
+// Re-exposed for libra2-network-checker
 pub use libra2_netcore::transport::tcp::{resolve_and_connect, TCPBufferCfg, TcpSocket};
 use libra2_netcore::transport::{proxy_protocol, tcp, ConnectionOrigin, Transport};
 use libra2_short_hex_str::AsShortHexStr;

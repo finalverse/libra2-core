@@ -9,7 +9,7 @@ use libra2_config::{
 use libra2_data_client::{
     client::AptosDataClient, interface::AptosDataClientInterface, peer_states,
 };
-use aptos_network::application::storage::PeersAndMetadata;
+use libra2_network::application::storage::PeersAndMetadata;
 use hyper::{Body, StatusCode};
 use std::{collections::BTreeMap, ops::Deref, sync::Arc};
 

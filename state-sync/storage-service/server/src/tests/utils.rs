@@ -14,7 +14,7 @@ use libra2_config::{
 };
 use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
 use libra2_logger::Level;
-use aptos_network::protocols::network::RpcError;
+use libra2_network::protocols::network::RpcError;
 use libra2_storage_service_notifications::{
     StorageServiceNotificationSender, StorageServiceNotifier,
 };
@@ -570,7 +570,7 @@ pub async fn subscribe_to_transactions_or_outputs(
     max_num_output_reductions: u64,
     stream_id: u64,
     stream_index: u64,
-) -> Receiver<Result<bytes::Bytes, aptos_network::protocols::network::RpcError>> {
+) -> Receiver<Result<bytes::Bytes, libra2_network::protocols::network::RpcError>> {
     subscribe_to_transactions_or_outputs_for_peer(
         mock_client,
         known_version,
@@ -798,7 +798,7 @@ pub fn verify_active_stream_id_for_peer(
 /// and that the response contains the correct data.
 pub async fn verify_new_transaction_outputs_with_proof(
     mock_client: &mut MockClient,
-    receiver: Receiver<Result<bytes::Bytes, aptos_network::protocols::network::RpcError>>,
+    receiver: Receiver<Result<bytes::Bytes, libra2_network::protocols::network::RpcError>>,
     output_list_with_proof: TransactionOutputListWithProof,
     expected_ledger_info: LedgerInfoWithSignatures,
 ) {

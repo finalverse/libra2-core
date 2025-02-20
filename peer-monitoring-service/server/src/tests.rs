@@ -16,7 +16,7 @@ use libra2_config::{
 use libra2_crypto::HashValue;
 use libra2_logger::Level;
 use libra2_netcore::transport::ConnectionOrigin;
-use aptos_network::{
+use libra2_network::{
     application::{
         interface::NetworkServiceEvents, metadata::ConnectionState, storage::PeersAndMetadata,
     },

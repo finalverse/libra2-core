@@ -86,7 +86,7 @@ pub fn connections_rejected(
 
 pub static APTOS_NETWORK_PEER_CONNECTED: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_network_peer_connected",
+        "libra2_network_peer_connected",
         "Indicates if we are connected to a particular peer",
         &["role_type", "network_id", "peer_id", "remote_peer_id"]
     )
@@ -125,7 +125,7 @@ pub fn inc_by_with_context(
 
 pub static APTOS_NETWORK_PENDING_CONNECTION_UPGRADES: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_network_pending_connection_upgrades",
+        "libra2_network_pending_connection_upgrades",
         "Number of concurrent inbound or outbound connections we're currently negotiating",
         &["role_type", "network_id", "peer_id", "direction"]
     )
@@ -147,7 +147,7 @@ pub fn pending_connection_upgrades(
 /// A simple counter for tracking network connection operations
 pub static APTOS_NETWORK_CONNECTION_OPERATIONS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_connection_operations",
+        "libra2_network_connection_operations",
         "Counter for tracking connection operations",
         &["network_id", "operation", "label"]
     )
@@ -167,7 +167,7 @@ pub fn update_network_connection_operation_metrics(
 
 pub static APTOS_NETWORK_CONNECTION_UPGRADE_TIME: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_connection_upgrade_time_seconds",
+        "libra2_network_connection_upgrade_time_seconds",
         "Time to complete a new inbound or outbound connection upgrade",
         &["role_type", "network_id", "peer_id", "direction", "state"]
     )
@@ -198,7 +198,7 @@ pub static APTOS_NETWORK_DISCOVERY_NOTES: Lazy<IntGaugeVec> = Lazy::new(|| {
 });
 
 pub static APTOS_NETWORK_RPC_MESSAGES: Lazy<IntCounterVec> = Lazy::new(|| {
-    register_int_counter_vec!("aptos_network_rpc_messages", "Number of RPC messages", &[
+    register_int_counter_vec!("libra2_network_rpc_messages", "Number of RPC messages", &[
         "role_type",
         "network_id",
         "peer_id",
@@ -227,7 +227,7 @@ pub fn rpc_messages(
 
 pub static APTOS_NETWORK_RPC_BYTES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_rpc_bytes",
+        "libra2_network_rpc_bytes",
         "Number of RPC bytes transferred",
         &[
             "role_type",
@@ -259,7 +259,7 @@ pub fn rpc_bytes(
 
 pub static INVALID_NETWORK_MESSAGES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_invalid_messages",
+        "libra2_network_invalid_messages",
         "Number of invalid messages (RPC/direct_send)",
         &["role_type", "network_id", "peer_id", "type"]
     )
@@ -268,7 +268,7 @@ pub static INVALID_NETWORK_MESSAGES: Lazy<IntCounterVec> = Lazy::new(|| {
 
 pub static PEER_SEND_FAILURES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_peer_send_failures",
+        "libra2_network_peer_send_failures",
         "Number of messages failed to send to peer",
         &["role_type", "network_id", "peer_id", "protocol_id"]
     )
@@ -277,7 +277,7 @@ pub static PEER_SEND_FAILURES: Lazy<IntCounterVec> = Lazy::new(|| {
 
 pub static APTOS_NETWORK_OUTBOUND_RPC_REQUEST_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_outbound_rpc_request_latency_seconds",
+        "libra2_network_outbound_rpc_request_latency_seconds",
         "Outbound RPC request latency in seconds",
         &["role_type", "network_id", "peer_id", "protocol_id"]
     )
@@ -298,7 +298,7 @@ pub fn outbound_rpc_request_latency(
 
 pub static APTOS_NETWORK_INBOUND_RPC_HANDLER_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_inbound_rpc_handler_latency_seconds",
+        "libra2_network_inbound_rpc_handler_latency_seconds",
         "Inbound RPC request application handler latency in seconds",
         &["role_type", "network_id", "peer_id", "protocol_id"]
     )
@@ -319,7 +319,7 @@ pub fn inbound_rpc_handler_latency(
 
 pub static APTOS_NETWORK_DIRECT_SEND_MESSAGES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_direct_send_messages",
+        "libra2_network_direct_send_messages",
         "Number of direct send messages",
         &["role_type", "network_id", "peer_id", "state"]
     )
@@ -340,7 +340,7 @@ pub fn direct_send_messages(
 
 pub static APTOS_NETWORK_DIRECT_SEND_BYTES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_direct_send_bytes",
+        "libra2_network_direct_send_bytes",
         "Number of direct send bytes transferred",
         &["role_type", "network_id", "peer_id", "state"]
     )
@@ -363,7 +363,7 @@ pub fn direct_send_bytes(
 /// DirectSends.
 pub static PENDING_NETWORK_NOTIFICATIONS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_pending_network_notifications",
+        "libra2_network_pending_network_notifications",
         "Number of pending inbound network notifications by state",
         &["state"]
     )
@@ -373,7 +373,7 @@ pub static PENDING_NETWORK_NOTIFICATIONS: Lazy<IntCounterVec> = Lazy::new(|| {
 /// Counter of pending requests in Network Provider
 pub static PENDING_NETWORK_REQUESTS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_pending_requests",
+        "libra2_network_pending_requests",
         "Number of pending outbound network requests by state",
         &["state"]
     )
@@ -383,7 +383,7 @@ pub static PENDING_NETWORK_REQUESTS: Lazy<IntCounterVec> = Lazy::new(|| {
 /// Counter of pending network events to Health Checker.
 pub static PENDING_HEALTH_CHECKER_NETWORK_EVENTS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_pending_health_check_events",
+        "libra2_network_pending_health_check_events",
         "Number of pending health check events by state",
         &["state"]
     )
@@ -393,7 +393,7 @@ pub static PENDING_HEALTH_CHECKER_NETWORK_EVENTS: Lazy<IntCounterVec> = Lazy::ne
 /// Counter of pending network events to Discovery.
 pub static PENDING_DISCOVERY_NETWORK_EVENTS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_pending_discovery_events",
+        "libra2_network_pending_discovery_events",
         "Number of pending discovery events by state",
         &["state"]
     )
@@ -403,7 +403,7 @@ pub static PENDING_DISCOVERY_NETWORK_EVENTS: Lazy<IntCounterVec> = Lazy::new(|| 
 /// Counter of pending requests in Peer Manager
 pub static PENDING_PEER_MANAGER_REQUESTS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_pending_peer_manager_requests",
+        "libra2_network_pending_peer_manager_requests",
         "Number of pending peer manager requests by state",
         &["state"]
     )
@@ -417,7 +417,7 @@ pub static PENDING_PEER_MANAGER_REQUESTS: Lazy<IntCounterVec> = Lazy::new(|| {
 /// Counter of pending requests in Connectivity Manager
 pub static PENDING_CONNECTIVITY_MANAGER_REQUESTS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_connectivity_manager_requests",
+        "libra2_network_pending_connectivity_manager_requests",
         "Number of pending connectivity manager requests"
     )
     .unwrap()
@@ -426,7 +426,7 @@ pub static PENDING_CONNECTIVITY_MANAGER_REQUESTS: Lazy<IntGauge> = Lazy::new(|| 
 /// Counter of pending Connection Handler notifications to PeerManager.
 pub static PENDING_CONNECTION_HANDLER_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_connection_handler_notifications",
+        "libra2_network_pending_connection_handler_notifications",
         "Number of pending connection handler notifications"
     )
     .unwrap()
@@ -435,7 +435,7 @@ pub static PENDING_CONNECTION_HANDLER_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(
 /// Counter of pending dial requests in Peer Manager
 pub static PENDING_PEER_MANAGER_DIAL_REQUESTS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_peer_manager_dial_requests",
+        "libra2_network_pending_peer_manager_dial_requests",
         "Number of pending peer manager dial requests"
     )
     .unwrap()
@@ -444,7 +444,7 @@ pub static PENDING_PEER_MANAGER_DIAL_REQUESTS: Lazy<IntGauge> = Lazy::new(|| {
 /// Counter of messages pending in queue to be sent out on the wire.
 pub static PENDING_WIRE_MESSAGES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_pending_wire_messages",
+        "libra2_network_pending_wire_messages",
         "Number of pending wire messages",
         &["state"],
     )
@@ -454,7 +454,7 @@ pub static PENDING_WIRE_MESSAGES: Lazy<IntCounterVec> = Lazy::new(|| {
 /// Counter of messages pending in queue to be sent out on the multiplex channel
 pub static PENDING_MULTIPLEX_MESSAGE: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_multiplex_messages",
+        "libra2_network_pending_multiplex_messages",
         "Number of pending multiplex messages"
     )
     .unwrap()
@@ -463,7 +463,7 @@ pub static PENDING_MULTIPLEX_MESSAGE: Lazy<IntGauge> = Lazy::new(|| {
 /// Counter of stream messages pending in queue to be sent out on the multiplex channel
 pub static PENDING_MULTIPLEX_STREAM: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_multiplex_stream",
+        "libra2_network_pending_multiplex_stream",
         "Number of pending multiplex stream messages"
     )
     .unwrap()
@@ -472,7 +472,7 @@ pub static PENDING_MULTIPLEX_STREAM: Lazy<IntGauge> = Lazy::new(|| {
 /// Counter of pending requests in Direct Send
 pub static PENDING_DIRECT_SEND_REQUESTS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_direct_send_requests",
+        "libra2_network_pending_direct_send_requests",
         "Number of pending direct send requests"
     )
     .unwrap()
@@ -481,7 +481,7 @@ pub static PENDING_DIRECT_SEND_REQUESTS: Lazy<IntGauge> = Lazy::new(|| {
 /// Counter of pending Direct Send notifications to Network Provider
 pub static PENDING_DIRECT_SEND_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_direct_send_notifications",
+        "libra2_network_pending_direct_send_notifications",
         "Number of pending direct send notifications"
     )
     .unwrap()
@@ -490,7 +490,7 @@ pub static PENDING_DIRECT_SEND_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
 /// Counter of pending requests in RPC
 pub static PENDING_RPC_REQUESTS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_rpc_requests",
+        "libra2_network_pending_rpc_requests",
         "Number of pending rpc requests"
     )
     .unwrap()
@@ -499,7 +499,7 @@ pub static PENDING_RPC_REQUESTS: Lazy<IntGauge> = Lazy::new(|| {
 /// Counter of pending RPC notifications to Network Provider
 pub static PENDING_RPC_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_rpc_notifications",
+        "libra2_network_pending_rpc_notifications",
         "Number of pending rpc notifications"
     )
     .unwrap()
@@ -508,7 +508,7 @@ pub static PENDING_RPC_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
 /// Counter of pending requests for each remote peer
 pub static PENDING_PEER_REQUESTS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_peer_requests",
+        "libra2_network_pending_peer_requests",
         "Number of pending peer requests"
     )
     .unwrap()
@@ -517,7 +517,7 @@ pub static PENDING_PEER_REQUESTS: Lazy<IntGauge> = Lazy::new(|| {
 /// Counter of pending RPC events from Peer to Rpc actor.
 pub static PENDING_PEER_RPC_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_peer_rpc_notifications",
+        "libra2_network_pending_peer_rpc_notifications",
         "Number of pending peer rpc notifications"
     )
     .unwrap()
@@ -526,7 +526,7 @@ pub static PENDING_PEER_RPC_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
 /// Counter of pending DirectSend events from Peer to DirectSend actor..
 pub static PENDING_PEER_DIRECT_SEND_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_peer_direct_send_notifications",
+        "libra2_network_pending_peer_direct_send_notifications",
         "Number of pending peer direct send notifications"
     )
     .unwrap()
@@ -535,7 +535,7 @@ pub static PENDING_PEER_DIRECT_SEND_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(||
 /// Counter of pending connection notifications from Peer to NetworkProvider.
 pub static PENDING_PEER_NETWORK_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_network_pending_peer_network_notifications",
+        "libra2_network_pending_peer_network_notifications",
         "Number of pending peer network notifications"
     )
     .unwrap()
@@ -543,7 +543,7 @@ pub static PENDING_PEER_NETWORK_NOTIFICATIONS: Lazy<IntGauge> = Lazy::new(|| {
 
 pub static NETWORK_RATE_LIMIT_METRICS: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_rate_limit",
+        "libra2_network_rate_limit",
         "Network Rate Limiting Metrics",
         &["direction", "metric"]
     )
@@ -552,7 +552,7 @@ pub static NETWORK_RATE_LIMIT_METRICS: Lazy<HistogramVec> = Lazy::new(|| {
 
 pub static NETWORK_APPLICATION_INBOUND_METRIC: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_app_inbound_traffic",
+        "libra2_network_app_inbound_traffic",
         "Network Inbound Traffic by application",
         &[
             "role_type",
@@ -583,7 +583,7 @@ pub fn network_application_inbound_traffic(
 
 pub static NETWORK_APPLICATION_OUTBOUND_METRIC: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_app_outbound_traffic",
+        "libra2_network_app_outbound_traffic",
         "Network Outbound Traffic by application",
         &[
             "role_type",
@@ -615,7 +615,7 @@ pub fn network_application_outbound_traffic(
 /// Time it takes to perform message serialization and deserialization
 pub static NETWORK_APPLICATION_SERIALIZATION_METRIC: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_serialization_metric",
+        "libra2_network_serialization_metric",
         "Time it takes to perform message serialization and deserialization",
         &["protocol_id", "operation"],
         exponential_buckets(/*start=*/ 1e-6, /*factor=*/ 2.0, /*count=*/ 30).unwrap(),
@@ -633,7 +633,7 @@ pub fn start_serialization_timer(protocol_id: ProtocolId, operation: &str) -> Hi
 /// Counters related to peer ping times (before and after dialing)
 pub static NETWORK_PEER_PING_TIMES: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_peer_ping_times",
+        "libra2_network_peer_ping_times",
         "Counters related to peer ping times (before and after dialing)",
         &["network_id", "label"],
     )
@@ -659,7 +659,7 @@ fn observe_ping_time(network_context: &NetworkContext, ping_latency_secs: f64, l
 
 pub static OP_MEASURE: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_measure",
+        "libra2_network_measure",
         "Measures the time and count of an operation",
         &["op"]
     )
@@ -668,7 +668,7 @@ pub static OP_MEASURE: Lazy<HistogramVec> = Lazy::new(|| {
 
 pub static INBOUND_QUEUE_DELAY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_network_inbound_queue_time",
+        "libra2_network_inbound_queue_time",
         "Time a message sits in queue between peer socket and app code",
         &["protocol_id"],
         exponential_buckets(/*start=*/ 1e-6, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),

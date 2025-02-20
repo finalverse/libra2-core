@@ -85,7 +85,7 @@ members = [
     "crates/libra2-log-derive",
     "crates/libra2-logger",
     "crates/libra2-metrics-core",
-    "crates/aptos-network-checker",
+    "crates/libra2-network-checker",
     "crates/libra2-node-identity",
     "crates/aptos-openapi",
     "crates/libra2-profiler",
@@ -408,10 +408,10 @@ aptos-move-e2e-benchmark = { path = "aptos-move/e2e-benchmark" }
 aptos-mvhashmap = { path = "aptos-move/mvhashmap" }
 aptos-native-interface = { path = "aptos-move/aptos-native-interface" }
 libra2-netcore = { path = "network/netcore" }
-aptos-network = { path = "network/framework" }
+libra2-network = { path = "network/framework" }
 libra2-network-benchmark = { path = "network/benchmark" }
 libra2-network-builder = { path = "network/builder" }
-aptos-network-checker = { path = "crates/aptos-network-checker" }
+libra2-network-checker = { path = "crates/libra2-network-checker" }
 libra2-network-discovery = { path = "network/discovery" }
 aptos-nft-metadata-crawler = { path = "ecosystem/nft-metadata-crawler" }
 aptos-node = { path = "aptos-node" }

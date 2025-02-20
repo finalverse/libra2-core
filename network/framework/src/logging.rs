@@ -9,7 +9,7 @@
 //! use libra2_config::network_id::NetworkContext;
 //! use libra2_logger::info;
 //! use libra2_types::{PeerId, network_address::NetworkAddress};
-//! use aptos_network::logging::NetworkSchema;
+//! use libra2_network::logging::NetworkSchema;
 //!
 //! info!(
 //!   NetworkSchema::new(&NetworkContext::mock())

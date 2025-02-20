@@ -9,7 +9,7 @@ use libra2_config::config::SafetyRulesConfig;
 use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };
-use aptos_network::application::interface::{NetworkClient, NetworkServiceEvents};
+use libra2_network::application::interface::{NetworkClient, NetworkServiceEvents};
 use libra2_types::account_address::AccountAddress;
 use aptos_validator_transaction_pool::VTxnPoolState;
 use tokio::runtime::Runtime;

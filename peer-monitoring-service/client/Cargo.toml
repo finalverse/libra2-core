@@ -19,7 +19,7 @@ libra2-id-generator = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 libra2-peer-monitoring-service-types = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
@@ -36,7 +36,7 @@ tokio = { workspace = true }
 libra2-build-info = { workspace = true }
 libra2-config = { workspace = true }
 libra2-netcore = { workspace = true }
-aptos-network = { workspace = true, features = ["fuzzing"] }
+libra2-network = { workspace = true, features = ["fuzzing"] }
 libra2-peer-monitoring-service-server = { workspace = true }
 bcs = { workspace = true }
 maplit = { workspace = true }

@@ -25,7 +25,7 @@ use libra2_event_notifications::ReconfigNotificationListener;
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::prelude::*;
 use libra2_mempool_notifications::{MempoolCommitNotification, MempoolNotificationListener};
-use aptos_network::{
+use libra2_network::{
     application::{
         interface::{NetworkClientInterface, NetworkServiceEvents},
         storage::PeersAndMetadata,

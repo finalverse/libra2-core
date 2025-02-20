@@ -367,8 +367,8 @@ mod tests {
         assert_eq!(expected_query, new_query);
 
         // test when multiple queries and labels
-        let original_query = "sum(rate(aptos_connections{role_type='validator'}[1m])) / sum(aptos_network_peers{role_type='validator'})";
-        let expected_query = r#"sum(rate(aptos_connections{a="a",some_label="blabla",role_type='validator'}[1m])) / sum(aptos_network_peers{a="a",some_label="blabla",role_type='validator'})"#;
+        let original_query = "sum(rate(aptos_connections{role_type='validator'}[1m])) / sum(libra2_network_peers{role_type='validator'})";
+        let expected_query = r#"sum(rate(aptos_connections{a="a",some_label="blabla",role_type='validator'}[1m])) / sum(libra2_network_peers{a="a",some_label="blabla",role_type='validator'})"#;
         let new_query = construct_query_with_extra_labels(original_query, &labels_map);
         assert_eq!(expected_query, new_query);
     }

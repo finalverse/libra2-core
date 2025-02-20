@@ -14,7 +14,7 @@ use crate::consensus_observer::{
 };
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use libra2_logger::{error, info, warn};
-use aptos_network::{
+use libra2_network::{
     application::{interface::NetworkClient, metadata::PeerMetadata},
     ProtocolId,
 };
@@ -361,7 +361,7 @@ mod tests {
     use libra2_channels::{libra2_channel, message_queues::QueueStyle};
     use libra2_config::{config::PeerRole, network_id::NetworkId};
     use libra2_netcore::transport::ConnectionOrigin;
-    use aptos_network::{
+    use libra2_network::{
         application::storage::PeersAndMetadata,
         peer_manager::{ConnectionRequestSender, PeerManagerRequest, PeerManagerRequestSender},
         protocols::{

@@ -22,11 +22,11 @@ aptos_chains:
     waypoint_txt_url: https://devnet.aptoslabs.com/waypoint.txt
     genesis_blob_url: https://devnet.aptoslabs.com/genesis.blob
   testnet:
-    waypoint_txt_url: https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/testnet/genesis_waypoint.txt
-    genesis_blob_url: https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/testnet/genesis.blob
+    waypoint_txt_url: https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/testnet/genesis_waypoint.txt
+    genesis_blob_url: https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/testnet/genesis.blob
   mainnet:
-    waypoint_txt_url: https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/mainnet/waypoint.txt
-    genesis_blob_url: https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/mainnet/genesis.blob
+    waypoint_txt_url: https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/mainnet/waypoint.txt
+    genesis_blob_url: https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/mainnet/genesis.blob
 
 fullnode:
   # -- Fullnode configuration. See NodeConfig https://github.com/aptos-labs/aptos-core/blob/main/config/src/config/mod.rs

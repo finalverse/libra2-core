@@ -28,7 +28,7 @@ use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::{bls12381, bls12381::PublicKey, x25519, ValidCryptoMaterialStringExt};
 use aptos_genesis::config::{HostAndPort, OperatorConfiguration};
 use libra2_logger::Level;
-use aptos_network_checker::args::{
+use libra2_network_checker::args::{
     validate_address, CheckEndpointArgs, HandshakeArgs, NodeAddressArgs,
 };
 use aptos_rest_client::{aptos_api_types::VersionedEvent, Client, State};
@@ -1398,7 +1398,7 @@ impl CliCommand<String> for CheckNetworkConnectivity {
         };
 
         // Check the endpoint
-        aptos_network_checker::check_endpoint(&check_endpoint_args, None)
+        libra2_network_checker::check_endpoint(&check_endpoint_args, None)
             .await
             .map_err(|error| CliError::UnexpectedError(error.to_string()))
     }

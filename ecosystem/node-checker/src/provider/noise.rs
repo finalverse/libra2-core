@@ -10,7 +10,7 @@ use super::{
     CommonProviderConfig,
 };
 use anyhow::Result;
-use aptos_network_checker::{
+use libra2_network_checker::{
     args::{CheckEndpointArgs, HandshakeArgs, NodeAddressArgs},
     check_endpoint::check_endpoint,
 };

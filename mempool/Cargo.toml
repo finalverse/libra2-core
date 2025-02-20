@@ -25,7 +25,7 @@ libra2-logger = { workspace = true }
 libra2-mempool-notifications = { workspace = true }
 libra2-metrics-core = { workspace = true }
 libra2-netcore = { workspace = true }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 libra2-peer-monitoring-service-types = { workspace = true }
 aptos-runtimes = { workspace = true }
 libra2-short-hex-str = { workspace = true }
@@ -52,7 +52,7 @@ tokio-stream = { workspace = true }
 libra2-compression = { workspace = true }
 libra2-config = { workspace = true }
 libra2-id-generator = { workspace = true }
-aptos-network = { workspace = true, features = ["fuzzing"] }
+libra2-network = { workspace = true, features = ["fuzzing"] }
 libra2-storage-interface = { workspace = true, features = ["fuzzing"] }
 libra2-time-service = { workspace = true, features = ["testing"] }
 enum_dispatch = { workspace = true }

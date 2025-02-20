@@ -23,7 +23,7 @@ libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 libra2-node-resource-metrics = { workspace = true }
 aptos-runtimes = { workspace = true }
 libra2-state-sync-driver = { workspace = true }

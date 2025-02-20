@@ -18,7 +18,7 @@ use crate::{
 };
 use libra2_config::{config::StorageServiceConfig, network_id::PeerNetworkId};
 use libra2_logger::{debug, sample, sample::SampleRate, trace, warn};
-use aptos_network::protocols::wire::handshake::v1::ProtocolId;
+use libra2_network::protocols::wire::handshake::v1::ProtocolId;
 use libra2_storage_service_types::{
     requests::{
         DataRequest, EpochEndingLedgerInfoRequest, StateValuesWithProofRequest,

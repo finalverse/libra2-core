@@ -45,7 +45,7 @@ use libra2_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationList
 use aptos_executor_types::state_compute_result::StateComputeResult;
 use libra2_infallible::Mutex;
 use libra2_logger::{debug, error, info, warn};
-use aptos_network::{
+use libra2_network::{
     application::interface::NetworkClient, protocols::wire::handshake::v1::ProtocolId,
 };
 use libra2_storage_interface::DbReader;

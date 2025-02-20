@@ -3,7 +3,7 @@
 
 use crate::types::JWKConsensusMsg;
 use libra2_config::network_id::{NetworkId, PeerNetworkId};
-use aptos_network::{
+use libra2_network::{
     application::{error::Error, interface::NetworkClientInterface},
     ProtocolId,
 };

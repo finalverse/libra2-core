@@ -8,7 +8,7 @@ use libra2_config::{
     network_id::{NetworkContext, NetworkId},
 };
 use libra2_crypto::x25519::{self, PRIVATE_KEY_SIZE};
-use aptos_network::{
+use libra2_network::{
     noise::{HandshakeAuthMode, NoiseUpgrader},
     protocols::wire::handshake::v1::ProtocolIdSet,
     transport::{

@@ -12,7 +12,7 @@ use libra2_config::{
     network_id::NetworkId,
 };
 use libra2_infallible::{Mutex, RwLock};
-use aptos_network::{
+use libra2_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},
     protocols::wire::handshake::v1::ProtocolId::MempoolDirectSend,
 };

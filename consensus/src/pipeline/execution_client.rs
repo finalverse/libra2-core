@@ -38,7 +38,7 @@ use libra2_crypto::bls12381::PrivateKey;
 use aptos_executor_types::ExecutorResult;
 use libra2_infallible::RwLock;
 use libra2_logger::prelude::*;
-use aptos_network::{application::interface::NetworkClient, protocols::network::Event};
+use libra2_network::{application::interface::NetworkClient, protocols::network::Event};
 use libra2_types::{
     epoch_state::EpochState,
     ledger_info::LedgerInfoWithSignatures,

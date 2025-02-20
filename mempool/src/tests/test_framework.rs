@@ -20,7 +20,7 @@ use libra2_event_notifications::{ReconfigNotification, ReconfigNotificationListe
 use libra2_id_generator::U32IdGenerator;
 use libra2_infallible::{Mutex, RwLock};
 use libra2_mempool_notifications::MempoolNotifier;
-use aptos_network::{
+use libra2_network::{
     application::{
         interface::{NetworkClient, NetworkServiceEvents},
         storage::PeersAndMetadata,

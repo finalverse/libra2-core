@@ -511,7 +511,7 @@ async fn get_new_transactions_or_outputs_with_proof(
     known_epoch: u64,
     include_events: bool,
     max_num_output_reductions: u64,
-) -> Receiver<Result<bytes::Bytes, aptos_network::protocols::network::RpcError>> {
+) -> Receiver<Result<bytes::Bytes, libra2_network::protocols::network::RpcError>> {
     get_new_transactions_or_outputs_with_proof_for_peer(
         mock_client,
         known_version,
@@ -531,7 +531,7 @@ async fn get_new_transactions_or_outputs_with_proof_for_peer(
     include_events: bool,
     max_num_output_reductions: u64,
     peer_network_id: Option<PeerNetworkId>,
-) -> Receiver<Result<bytes::Bytes, aptos_network::protocols::network::RpcError>> {
+) -> Receiver<Result<bytes::Bytes, libra2_network::protocols::network::RpcError>> {
     // Create the data request
     let data_request = DataRequest::GetNewTransactionsOrOutputsWithProof(
         NewTransactionsOrOutputsWithProofRequest {

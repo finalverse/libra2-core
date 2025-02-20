@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-pub use aptos_network::protocols::rpc::error::RpcError;
+pub use libra2_network::protocols::rpc::error::RpcError;
 pub mod builder;
 
 // TODO:  This module should be test-only, e.g., #[cfg(any(feature = "testing", test))]

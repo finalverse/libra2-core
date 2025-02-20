@@ -1,6 +1,6 @@
 [package]
 name = "libra2-network-benchmark"
-description = "Aptos network benchmark"
+description = "Libra2 network benchmark"
 version = "0.1.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -17,7 +17,7 @@ rust-version = { workspace = true }
 libra2-config = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
 async-channel = { workspace = true }

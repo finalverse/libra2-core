@@ -21,7 +21,7 @@ use libra2_config::{
 use libra2_event_notifications::{DbBackedOnChainConfig, EventSubscriptionService};
 use libra2_logger::prelude::*;
 use libra2_netcore::transport::tcp::TCPBufferCfg;
-use aptos_network::{
+use libra2_network::{
     application::storage::PeersAndMetadata,
     connectivity_manager::{builder::ConnectivityManagerBuilder, ConnectivityRequest},
     constants::MAX_MESSAGE_SIZE,

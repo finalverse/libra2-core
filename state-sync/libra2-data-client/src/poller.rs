@@ -17,7 +17,7 @@ use libra2_config::{
     network_id::PeerNetworkId,
 };
 use libra2_logger::{debug, error, info, sample, sample::SampleRate, warn};
-use aptos_network::application::storage::PeersAndMetadata;
+use libra2_network::application::storage::PeersAndMetadata;
 use libra2_storage_interface::DbReader;
 use libra2_storage_service_types::{
     requests::{DataRequest, StorageServiceRequest},

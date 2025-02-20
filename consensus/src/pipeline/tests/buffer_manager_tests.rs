@@ -33,7 +33,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::{hash::ACCUMULATOR_PLACEHOLDER_HASH, HashValue};
 use libra2_infallible::Mutex;
-use aptos_network::{
+use libra2_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},
     peer_manager::{ConnectionRequestSender, PeerManagerRequestSender},
     protocols::{

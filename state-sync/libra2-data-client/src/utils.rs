@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_config::{config::AptosDataClientConfig, network_id::PeerNetworkId};
 use libra2_logger::{sample, sample::SampleRate, warn};
-use aptos_network::application::{metadata::PeerMetadata, storage::PeersAndMetadata};
+use libra2_network::application::{metadata::PeerMetadata, storage::PeersAndMetadata};
 use maplit::hashset;
 use ordered_float::OrderedFloat;
 use rand::seq::{IteratorRandom, SliceRandom};

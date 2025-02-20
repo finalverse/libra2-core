@@ -26,7 +26,7 @@ libra2-infallible = { workspace = true }
 libra2-jwk-utils = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 aptos-reliable-broadcast = { workspace = true }
 aptos-runtimes = { workspace = true }
 aptos-safety-rules = { workspace = true }

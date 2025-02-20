@@ -25,7 +25,7 @@ use libra2_config::{
 use aptos_consensus_types::common::{Author, Round};
 use libra2_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
 use libra2_mempool::mocks::MockSharedMempool;
-use aptos_network::{
+use libra2_network::{
     application::interface::{NetworkClient, NetworkServiceEvents},
     peer_manager::{ConnectionRequestSender, PeerManagerRequestSender},
     protocols::{

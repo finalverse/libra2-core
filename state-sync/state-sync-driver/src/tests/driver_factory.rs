@@ -19,7 +19,7 @@ use aptos_executor_test_helpers::bootstrap_genesis;
 use aptos_genesis::test_utils::test_config;
 use libra2_infallible::RwLock;
 use libra2_mempool_notifications::new_mempool_notifier_listener_pair;
-use aptos_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
+use libra2_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
 use libra2_storage_interface::DbReaderWriter;
 use libra2_storage_service_client::StorageServiceClient;
 use libra2_temppath::TempPath;

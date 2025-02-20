@@ -6,7 +6,7 @@ use libra2_crypto::{
     traits::Uniform,
     x25519::{PrivateKey, PublicKey},
 };
-use aptos_network::protocols::wire::{handshake, messaging};
+use libra2_network::protocols::wire::{handshake, messaging};
 use libra2_types::network_address as address;
 use rand::{rngs::StdRng, SeedableRng};
 use serde_reflection::{Registry, Result, Samples, Tracer, TracerConfig};

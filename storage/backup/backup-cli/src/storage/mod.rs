@@ -226,7 +226,7 @@ pub struct DBToolStorageOpt {
         help = "Select the CommandAdapter backup storage type, which reads shell commands with which \
     it communicates with either a local file system or a remote cloud storage. Compression or other \
     fitlers can be added as part of the commands. See a sample config here: \
-    https://github.com/aptos-labs/aptos-networks/tree/main/testnet/backups "
+    https://github.com/aptos-labs/libra2-networks/tree/main/testnet/backups "
     )]
     command_adapter_config: Option<CommandAdapterOpt>,
 }

@@ -19,7 +19,7 @@ use crate::consensus_observer::{
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use libra2_infallible::Mutex;
 use libra2_logger::{info, warn};
-use aptos_network::application::{interface::NetworkClient, metadata::PeerMetadata};
+use libra2_network::application::{interface::NetworkClient, metadata::PeerMetadata};
 use libra2_storage_interface::DbReader;
 use libra2_time_service::TimeService;
 use itertools::Itertools;
@@ -424,7 +424,7 @@ mod test {
     use super::*;
     use libra2_config::{config::PeerRole, network_id::NetworkId};
     use libra2_netcore::transport::ConnectionOrigin;
-    use aptos_network::{
+    use libra2_network::{
         application::storage::PeersAndMetadata,
         protocols::wire::handshake::v1::{MessagingProtocolVersion, ProtocolId, ProtocolIdSet},
         transport::{ConnectionId, ConnectionMetadata},

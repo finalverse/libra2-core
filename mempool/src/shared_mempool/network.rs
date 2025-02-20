@@ -23,7 +23,7 @@ use libra2_config::{
 use libra2_infallible::RwLock;
 use libra2_logger::prelude::*;
 use libra2_netcore::transport::ConnectionOrigin;
-use aptos_network::{
+use libra2_network::{
     application::{error::Error, interface::NetworkClientInterface, metadata::PeerMetadata},
     transport::ConnectionMetadata,
 };

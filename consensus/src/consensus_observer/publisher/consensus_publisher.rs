@@ -19,7 +19,7 @@ use libra2_channels::libra2_channel::Receiver;
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use libra2_infallible::RwLock;
 use libra2_logger::{error, info, warn};
-use aptos_network::application::interface::NetworkClient;
+use libra2_network::application::interface::NetworkClient;
 use futures::StreamExt;
 use futures_channel::mpsc;
 use std::{collections::HashSet, sync::Arc, time::Duration};
@@ -357,7 +357,7 @@ mod test {
     };
     use libra2_config::network_id::NetworkId;
     use libra2_crypto::HashValue;
-    use aptos_network::{
+    use libra2_network::{
         application::{metadata::ConnectionState, storage::PeersAndMetadata},
         transport::ConnectionMetadata,
     };

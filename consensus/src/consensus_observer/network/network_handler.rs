@@ -251,7 +251,7 @@ mod test {
         network_id::{NetworkId, PeerNetworkId},
     };
     use libra2_crypto::HashValue;
-    use aptos_network::{
+    use libra2_network::{
         application::{
             interface::{NetworkClient, NetworkServiceEvents},
             storage::PeersAndMetadata,

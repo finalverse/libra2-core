@@ -24,7 +24,7 @@ use aptos_executor::chunk_executor::ChunkExecutor;
 use aptos_executor_test_helpers::bootstrap_genesis;
 use libra2_infallible::RwLock;
 use libra2_mempool_notifications::MempoolNotificationListener;
-use aptos_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
+use libra2_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
 use libra2_storage_interface::DbReaderWriter;
 use libra2_storage_service_client::StorageServiceClient;
 use libra2_storage_service_notifications::StorageServiceNotificationListener;

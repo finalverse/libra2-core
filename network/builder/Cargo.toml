@@ -19,7 +19,7 @@ libra2-crypto = { workspace = true }
 libra2-event-notifications = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-netcore = { workspace = true }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 libra2-network-discovery = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }

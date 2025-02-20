@@ -12,7 +12,7 @@ use libra2_config::{
 };
 use libra2_crypto::{test_utils::TEST_SEED, x25519, Uniform};
 use libra2_netcore::transport::ConnectionOrigin;
-use aptos_network::{
+use libra2_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},
     peer_manager::{builder::AuthenticationMode, ConnectionNotification},
     protocols::network::{

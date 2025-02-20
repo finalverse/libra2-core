@@ -12,7 +12,7 @@
 //! Usage example:
 //!
 //! ```
-//! use aptos_network::noise::{AntiReplayTimestamps, HandshakeAuthMode, NoiseUpgrader};
+//! use libra2_network::noise::{AntiReplayTimestamps, HandshakeAuthMode, NoiseUpgrader};
 //! use futures::{executor, future, io::{AsyncReadExt, AsyncWriteExt}};
 //! use libra2_memsocket::MemorySocket;
 //! use libra2_config::{config::{Peer, PeerRole}, network_id::{NetworkContext, NetworkId}};
@@ -22,7 +22,7 @@
 //! use libra2_types::PeerId;
 //! use std::{collections::{HashSet, HashMap}, io, sync::Arc};
 //! use libra2_config::config::RoleType;
-//! use aptos_network::application::storage::PeersAndMetadata;
+//! use libra2_network::application::storage::PeersAndMetadata;
 //!
 //! fn example() -> io::Result<()> {
 //! // create client and server NoiseUpgrader

@@ -10,7 +10,7 @@ use crate::{
 };
 use libra2_config::{config::NodeConfig, network_id::PeerNetworkId};
 use libra2_infallible::RwLock;
-use aptos_network::application::metadata::PeerMetadata;
+use libra2_network::application::metadata::PeerMetadata;
 use libra2_peer_monitoring_service_types::{
     request::{LatencyPingRequest, PeerMonitoringServiceRequest},
     response::PeerMonitoringServiceResponse,

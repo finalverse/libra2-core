@@ -11,7 +11,7 @@ use libra2_config::{
 use libra2_id_generator::U64IdGenerator;
 use libra2_infallible::RwLock;
 use libra2_logger::{info, warn};
-use aptos_network::application::{
+use libra2_network::application::{
     interface::NetworkClient, metadata::PeerMetadata, storage::PeersAndMetadata,
 };
 use libra2_peer_monitoring_service_types::{PeerMonitoringMetadata, PeerMonitoringServiceMessage};

@@ -14,6 +14,6 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-config = { workspace = true }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 libra2-storage-service-types = { workspace = true }
 thiserror = { workspace = true }

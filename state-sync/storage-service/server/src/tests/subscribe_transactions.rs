@@ -6,7 +6,7 @@ use libra2_config::{
     config::StorageServiceConfig,
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_network::protocols::network::RpcError;
+use libra2_network::protocols::network::RpcError;
 use libra2_types::{
     epoch_change::EpochChangeProof, ledger_info::LedgerInfoWithSignatures,
     transaction::TransactionListWithProof, PeerId,

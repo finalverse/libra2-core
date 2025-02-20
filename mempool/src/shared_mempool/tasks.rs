@@ -27,7 +27,7 @@ use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::prelude::*;
 use libra2_mempool_notifications::CommittedTransaction;
 use libra2_metrics_core::HistogramTimer;
-use aptos_network::application::interface::NetworkClientInterface;
+use libra2_network::application::interface::NetworkClientInterface;
 use libra2_storage_interface::state_store::state_view::db_state_view::LatestDbStateCheckpointView;
 use libra2_types::{
     account_address::AccountAddress,

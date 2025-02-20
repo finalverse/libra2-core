@@ -80,7 +80,7 @@ groups:
 
   # Networking alerts
   - alert: Validator Connected Peers
-    expr: 0 == min(aptos_network_peers{state="connected", role_type="validator", role="validator"})
+    expr: 0 == min(libra2_network_peers{state="connected", role_type="validator", role="validator"})
     for: 15m
     labels:
       severity: error

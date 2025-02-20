@@ -12,7 +12,7 @@ use aptos_consensus_types::common::Author;
 #[cfg(test)]
 use libra2_infallible::RwLock;
 use libra2_logger::warn;
-use aptos_network::{
+use libra2_network::{
     application::interface::{NetworkClient, NetworkServiceEvents},
     protocols::network::{Event, RpcError},
     ProtocolId,

@@ -48,7 +48,7 @@ aptos-db = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }
 aptos-genesis = { workspace = true, features = ["testing"] }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 libra2-storage-service-client = { workspace = true }
 libra2-storage-service-types = { workspace = true }
 libra2-temppath = { workspace = true }

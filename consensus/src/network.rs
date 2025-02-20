@@ -34,7 +34,7 @@ use aptos_consensus_types::{
     vote_msg::VoteMsg,
 };
 use libra2_logger::prelude::*;
-use aptos_network::{
+use libra2_network::{
     application::interface::{NetworkClient, NetworkServiceEvents},
     protocols::{network::Event, rpc::error::RpcError},
     ProtocolId,

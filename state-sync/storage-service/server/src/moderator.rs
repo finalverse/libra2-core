@@ -7,7 +7,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_logger::warn;
-use aptos_network::application::storage::PeersAndMetadata;
+use libra2_network::application::storage::PeersAndMetadata;
 use libra2_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServerSummary,
 };

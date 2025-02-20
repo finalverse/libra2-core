@@ -11,7 +11,7 @@ use libra2_logger::{
     warn,
 };
 use libra2_metrics_core::{register_int_counter_vec, IntCounter, IntCounterVec};
-use aptos_network::{
+use libra2_network::{
     application::interface::{NetworkClient, NetworkClientInterface, NetworkServiceEvents},
     peer_manager::ConnectionNotification,
     protocols::{network::Event, rpc::error::RpcError, wire::handshake::v1::ProtocolId},

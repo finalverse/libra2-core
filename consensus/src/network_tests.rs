@@ -19,7 +19,7 @@ use aptos_consensus_types::{
     vote_msg::VoteMsg,
 };
 use libra2_infallible::{Mutex, RwLock};
-use aptos_network::{
+use libra2_network::{
     application::storage::PeersAndMetadata,
     peer_manager::{ConnectionRequestSender, PeerManagerRequest, PeerManagerRequestSender},
     protocols::{
@@ -201,7 +201,7 @@ impl NetworkPlayground {
         twin_id: TwinId,
         consensus_tx: libra2_channel::Sender<(PeerId, ProtocolId), ReceivedMessage>,
         network_reqs_rx: libra2_channel::Receiver<(PeerId, ProtocolId), PeerManagerRequest>,
-        conn_mgr_reqs_rx: libra2_channels::Receiver<aptos_network::ConnectivityRequest>,
+        conn_mgr_reqs_rx: libra2_channels::Receiver<libra2_network::ConnectivityRequest>,
     ) {
         self.node_consensus_txs.lock().insert(twin_id, consensus_tx);
         self.drop_config.write().add_node(twin_id);
@@ -539,7 +539,7 @@ mod tests {
         common::Payload,
     };
     use libra2_crypto::HashValue;
-    use aptos_network::{
+    use libra2_network::{
         application::{
             interface::{NetworkClient, NetworkServiceEvents},
             storage::PeersAndMetadata,

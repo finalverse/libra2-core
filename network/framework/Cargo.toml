@@ -1,5 +1,5 @@
 [package]
-name = "aptos-network"
+name = "libra2-network"
 description = "Libra2 networking stack"
 version = "0.1.0"
 

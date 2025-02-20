@@ -20,7 +20,7 @@ libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 libra2-netcore = { workspace = true }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-storage-service-client = { workspace = true }
 libra2-storage-service-types = { workspace = true }
@@ -47,7 +47,7 @@ tokio = { workspace = true }
 [dev-dependencies]
 anyhow = { workspace = true }
 libra2-channels = { workspace = true }
-aptos-network = { workspace = true, features = ["fuzzing"] }
+libra2-network = { workspace = true, features = ["fuzzing"] }
 libra2-peer-monitoring-service-types = { workspace = true }
 libra2-storage-service-server = { workspace = true }
 libra2-time-service = { workspace = true, features = ["async", "testing"] }

@@ -16,7 +16,7 @@ use libra2_event_notifications::EventSubscriptionService;
 use aptos_jwk_consensus::types::JWKConsensusMsg;
 use libra2_logger::debug;
 use libra2_mempool::network::MempoolSyncMsg;
-use aptos_network::{
+use libra2_network::{
     application::{
         interface::{NetworkClient, NetworkServiceEvents},
         storage::PeersAndMetadata,

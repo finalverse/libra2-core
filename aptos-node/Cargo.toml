@@ -43,7 +43,7 @@ aptos-jwk-consensus = { workspace = true }
 libra2-logger = { workspace = true, features = ["node-identity"] }
 libra2-mempool = { workspace = true }
 libra2-mempool-notifications = { workspace = true }
-aptos-network = { workspace = true }
+libra2-network = { workspace = true }
 libra2-network-benchmark = { workspace = true }
 libra2-network-builder = { workspace = true }
 libra2-node-identity = { workspace = true }

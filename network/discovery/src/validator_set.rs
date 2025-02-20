@@ -13,7 +13,7 @@ use libra2_config::{
 use libra2_crypto::x25519;
 use libra2_event_notifications::ReconfigNotificationListener;
 use libra2_logger::prelude::*;
-use aptos_network::{counters::inc_by_with_context, logging::NetworkSchema};
+use libra2_network::{counters::inc_by_with_context, logging::NetworkSchema};
 use libra2_short_hex_str::AsShortHexStr;
 use libra2_types::on_chain_config::{OnChainConfigPayload, OnChainConfigProvider, ValidatorSet};
 use futures::Stream;

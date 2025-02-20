@@ -15,7 +15,7 @@ use libra2_config::{
     network_id::NetworkId,
 };
 use libra2_logger::prelude::*;
-use aptos_network::application::storage::PeersAndMetadata;
+use libra2_network::application::storage::PeersAndMetadata;
 use libra2_peer_monitoring_service_types::{
     request::{LatencyPingRequest, PeerMonitoringServiceRequest},
     response::{

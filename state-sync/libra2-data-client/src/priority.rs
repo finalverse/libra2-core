@@ -6,7 +6,7 @@ use libra2_config::{
     config::BaseConfig,
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_network::application::storage::PeersAndMetadata;
+use libra2_network::application::storage::PeersAndMetadata;
 use itertools::Itertools;
 use std::sync::Arc;
 
@@ -146,7 +146,7 @@ mod tests {
         network_id::{NetworkId, PeerNetworkId},
     };
     use libra2_netcore::transport::ConnectionOrigin;
-    use aptos_network::{application::storage::PeersAndMetadata, transport::ConnectionMetadata};
+    use libra2_network::{application::storage::PeersAndMetadata, transport::ConnectionMetadata};
     use libra2_types::PeerId;
     use maplit::hashmap;
     use std::{assert_eq, sync::Arc};

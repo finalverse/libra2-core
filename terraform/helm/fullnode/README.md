@@ -7,7 +7,7 @@
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| aptos_chains | object | `{"devnet":{"genesis_blob_url":"https://devnet.aptoslabs.com/genesis.blob","waypoint_txt_url":"https://devnet.aptoslabs.com/waypoint.txt"},"mainnet":{"genesis_blob_url":"https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/mainnet/genesis.blob","waypoint_txt_url":"https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/mainnet/waypoint.txt"},"testnet":{"genesis_blob_url":"https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/testnet/genesis.blob","waypoint_txt_url":"https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/testnet/genesis_waypoint.txt"}}` | For each supported chain, specify the URLs from which to download the genesis.blob and waypoint.txt |
+| aptos_chains | object | `{"devnet":{"genesis_blob_url":"https://devnet.aptoslabs.com/genesis.blob","waypoint_txt_url":"https://devnet.aptoslabs.com/waypoint.txt"},"mainnet":{"genesis_blob_url":"https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/mainnet/genesis.blob","waypoint_txt_url":"https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/mainnet/waypoint.txt"},"testnet":{"genesis_blob_url":"https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/testnet/genesis.blob","waypoint_txt_url":"https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/testnet/genesis_waypoint.txt"}}` | For each supported chain, specify the URLs from which to download the genesis.blob and waypoint.txt |
 | backup.affinity | object | `{}` |  |
 | backup.config.azure.account | string | `nil` |  |
 | backup.config.azure.container | string | `nil` |  |

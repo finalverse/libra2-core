@@ -13,8 +13,8 @@ proposals:
       - Gas:
           new: current
           # replace with below for actual release, above "current" is needed for compat tests:
-          # old: https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/gas/vX.WW.Z.json
-          # new: https://raw.githubusercontent.com/aptos-labs/aptos-networks/main/gas/vX.YY.Z.json
+          # old: https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/gas/vX.WW.Z.json
+          # new: https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/gas/vX.YY.Z.json
       - Framework:
           bytecode_version: 7
           git_hash: ~

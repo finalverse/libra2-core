@@ -11,7 +11,7 @@ use crate::{
     provider::{noise::NoiseProvider, ProviderCollection},
 };
 use anyhow::Result;
-use aptos_network_checker::args::HandshakeArgs;
+use libra2_network_checker::args::HandshakeArgs;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
