@@ -21,7 +21,7 @@ tracing = { workspace = true }
 version-compare = { workspace = true }
 
 aptos-protos = { workspace = true }
-aptos-rest-client = { workspace = true }
+libra2-rest-client = { workspace = true }
 diesel = { workspace = true, features = [
     "postgres_backend",
 ] }

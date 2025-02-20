@@ -11,7 +11,7 @@ use crate::common::{
 use aptos_api_types::ViewFunction;
 use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::HashValue;
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{HexEncodedBytes, WriteResource, WriteSetChange},
     Transaction,
 };

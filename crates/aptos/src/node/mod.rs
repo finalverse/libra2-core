@@ -31,7 +31,7 @@ use libra2_logger::Level;
 use libra2_network_checker::args::{
     validate_address, CheckEndpointArgs, HandshakeArgs, NodeAddressArgs,
 };
-use aptos_rest_client::{aptos_api_types::VersionedEvent, Client, State};
+use libra2_rest_client::{aptos_api_types::VersionedEvent, Client, State};
 use libra2_types::{
     account_address::AccountAddress,
     account_config::{BlockResource, CORE_CODE_ADDRESS},

@@ -6,7 +6,7 @@ use crate::smoke_test_environment::new_local_swarm_with_aptos;
 use aptos_cached_packages::aptos_stdlib;
 use aptos_forge::Swarm;
 use aptos_keygen::KeyGen;
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{EntryFunctionPayload, TransactionPayload},
     Transaction,
 };

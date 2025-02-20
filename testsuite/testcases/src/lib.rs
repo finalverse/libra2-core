@@ -33,7 +33,7 @@ use aptos_forge::{
     Result, Swarm, SwarmExt, Test, TestReport, TxnEmitter, TxnStats, Version,
 };
 use libra2_logger::info;
-use aptos_rest_client::Client as RestClient;
+use libra2_rest_client::Client as RestClient;
 use aptos_sdk::{transaction_builder::TransactionFactory, types::PeerId};
 use async_trait::async_trait;
 use futures::future::join_all;

@@ -34,7 +34,7 @@ async fn dkg_with_validator_join_leave() {
 
     println!("Wait for a moment when DKG is not running.");
     let client_endpoint = swarm.validators().nth(1).unwrap().rest_api_endpoint();
-    let client = aptos_rest_client::Client::new(client_endpoint.clone());
+    let client = libra2_rest_client::Client::new(client_endpoint.clone());
     let dkg_session_1 = wait_for_dkg_finish(&client, None, time_limit_secs).await;
     println!(
         "Current epoch is {}. Number of validators: {}.",

@@ -280,7 +280,7 @@ async fn main() -> anyhow::Result<()> {
             network_config.framework_git_rev = framework_git_rev;
 
             if mint_to_validator {
-                let chain_id = aptos_rest_client::Client::new(endpoint)
+                let chain_id = libra2_rest_client::Client::new(endpoint)
                     .get_ledger_information()
                     .await?
                     .inner()
@@ -330,7 +330,7 @@ async fn main() -> anyhow::Result<()> {
         } => {
             use libra2_types::on_chain_config::*;
 
-            let client = aptos_rest_client::Client::new(endpoint);
+            let client = libra2_rest_client::Client::new(endpoint);
 
             macro_rules! print_configs {
                 ($($type:ty), *) => {
@@ -381,7 +381,7 @@ async fn main() -> anyhow::Result<()> {
             package_name,
             print_json,
         } => {
-            let client = aptos_rest_client::Client::new(endpoint);
+            let client = libra2_rest_client::Client::new(endpoint);
             let address = AccountAddress::from_str_strict(&package_address)?;
             let packages = client
                 .get_account_resource_bcs::<PackageRegistry>(address, "0x1::code::PackageRegistry")

@@ -4,7 +4,7 @@
 
 use super::{ChainInfo, CoreContext, Test};
 use crate::{Result, TestReport};
-use aptos_rest_client::Client as RestClient;
+use libra2_rest_client::Client as RestClient;
 use aptos_sdk::types::LocalAccount;
 use reqwest::Url;
 

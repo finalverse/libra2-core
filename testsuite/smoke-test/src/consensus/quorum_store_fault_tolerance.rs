@@ -12,7 +12,7 @@ use aptos_forge::{
     TransactionType,
 };
 use libra2_logger::info;
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use libra2_types::{
     on_chain_config::{ConsensusConfigV1, OnChainConsensusConfig},
     PeerId,

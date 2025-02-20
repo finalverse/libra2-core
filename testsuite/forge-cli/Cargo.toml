@@ -19,7 +19,7 @@ libra2-config = { workspace = true }
 aptos-forge = { workspace = true }
 libra2-global-constants = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-rest-client = { workspace = true }
+libra2-rest-client = { workspace = true }
 aptos-sdk = { workspace = true }
 aptos-testcases = { workspace = true }
 async-trait = { workspace = true }

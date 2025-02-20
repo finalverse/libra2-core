@@ -8,7 +8,7 @@ use crate::{
 use anyhow::Result;
 use aptos_framework::natives::code::PackageMetadata;
 use aptos_language_e2e_tests::data_store::FakeDataStore;
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use libra2_types::transaction::Version;
 use aptos_validator_interface::{AptosValidatorInterface, FilterCondition, RestDebuggerInterface};
 use move_core_types::account_address::AccountAddress;

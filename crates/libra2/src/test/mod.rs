@@ -57,7 +57,7 @@ use aptos_framework::chunked_publish::{CHUNK_SIZE_IN_BYTES, LARGE_PACKAGES_MODUL
 use aptos_genesis::config::HostAndPort;
 use aptos_keygen::KeyGen;
 use libra2_logger::warn;
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{MoveStructTag, MoveType},
     Transaction,
 };
@@ -154,7 +154,7 @@ impl CliTestFramework {
 
     async fn check_account_exists(&self, index: usize) -> bool {
         // Create account if it doesn't exist (and there's a faucet)
-        let client = aptos_rest_client::Client::new(self.endpoint.clone());
+        let client = libra2_rest_client::Client::new(self.endpoint.clone());
         let address = self.account_id(index);
         client.get_account(address).await.is_ok()
     }
@@ -708,7 +708,7 @@ impl CliTestFramework {
     }
 
     async fn last_n_transactions_details(&self, count: u16) -> String {
-        let result = aptos_rest_client::Client::new(self.endpoint.clone())
+        let result = libra2_rest_client::Client::new(self.endpoint.clone())
             .get_transactions(None, Some(count))
             .await;
         if let Err(e) = result {

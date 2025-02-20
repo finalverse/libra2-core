@@ -26,7 +26,7 @@ libra2-global-constants = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-inspection-service = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-rest-client = { workspace = true }
+libra2-rest-client = { workspace = true }
 libra2-retrier = { workspace = true }
 aptos-runtimes = { workspace = true }
 aptos-sdk = { workspace = true }

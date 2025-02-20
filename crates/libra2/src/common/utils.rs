@@ -16,7 +16,7 @@ use libra2_build_info::build_information;
 use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
 use aptos_keygen::KeyGen;
 use libra2_logger::{debug, Level};
-use aptos_rest_client::{aptos_api_types::HashValue, Account, Client, FaucetClient, State};
+use libra2_rest_client::{aptos_api_types::HashValue, Account, Client, FaucetClient, State};
 use aptos_telemetry::service::telemetry_is_disabled;
 use libra2_types::{
     account_address::create_multisig_account_address,
@@ -259,7 +259,7 @@ pub fn append_file_extension(
 
 /// Retrieves account resource from the rest client
 pub async fn get_account(
-    client: &aptos_rest_client::Client,
+    client: &libra2_rest_client::Client,
     address: AccountAddress,
 ) -> CliTypedResult<Account> {
     let account_response = client
@@ -271,7 +271,7 @@ pub async fn get_account(
 
 /// Retrieves account resource from the rest client
 pub async fn get_account_with_state(
-    client: &aptos_rest_client::Client,
+    client: &libra2_rest_client::Client,
     address: AccountAddress,
 ) -> CliTypedResult<(Account, State)> {
     let account_response = client
@@ -283,7 +283,7 @@ pub async fn get_account_with_state(
 
 /// Retrieves sequence number from the rest client
 pub async fn get_sequence_number(
-    client: &aptos_rest_client::Client,
+    client: &libra2_rest_client::Client,
     address: AccountAddress,
 ) -> CliTypedResult<u64> {
     Ok(get_account(client, address).await?.sequence_number)
@@ -291,7 +291,7 @@ pub async fn get_sequence_number(
 
 /// Retrieves the auth key from the rest client
 pub async fn get_auth_key(
-    client: &aptos_rest_client::Client,
+    client: &libra2_rest_client::Client,
     address: AccountAddress,
 ) -> CliTypedResult<AuthenticationKey> {
     Ok(get_account(client, address).await?.authentication_key)
@@ -468,7 +468,7 @@ pub async fn fund_account(
 
 /// Wait for transactions, returning an error if any of them fail.
 pub async fn wait_for_transactions(
-    client: &aptos_rest_client::Client,
+    client: &libra2_rest_client::Client,
     hashes: Vec<HashValue>,
 ) -> CliTypedResult<()> {
     let sys_time = SystemTime::now()

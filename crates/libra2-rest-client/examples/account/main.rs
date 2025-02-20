@@ -3,7 +3,7 @@
 
 use anyhow::{Context, Result};
 use libra2_logger::{debug, info};
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use libra2_types::{account_address::AccountAddress, chain_id::ChainId};
 use clap::Parser;
 use reqwest::Url;

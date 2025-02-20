@@ -4,7 +4,7 @@
 
 use crate::AptosPublicInfo;
 use anyhow::Result;
-use aptos_rest_client::Client as RestClient;
+use libra2_rest_client::Client as RestClient;
 use aptos_sdk::{
     transaction_builder::TransactionFactory,
     types::{chain_id::ChainId, LocalAccount},

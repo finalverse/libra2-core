@@ -6,7 +6,7 @@ use crate::{CoreContext, Result, TestReport};
 use anyhow::anyhow;
 use aptos_cached_packages::aptos_stdlib;
 use libra2_logger::info;
-use aptos_rest_client::{Client as RestClient, PendingTransaction, State, Transaction};
+use libra2_rest_client::{Client as RestClient, PendingTransaction, State, Transaction};
 use aptos_sdk::{
     crypto::ed25519::Ed25519PublicKey,
     move_types::identifier::Identifier,

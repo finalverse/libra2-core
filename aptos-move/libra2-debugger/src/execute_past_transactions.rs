@@ -3,7 +3,7 @@
 
 use crate::{libra2_debugger::Libra2Debugger, common::Opts};
 use anyhow::Result;
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use clap::Parser;
 use url::Url;
 

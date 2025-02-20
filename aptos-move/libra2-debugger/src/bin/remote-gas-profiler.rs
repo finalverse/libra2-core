@@ -3,7 +3,7 @@
 
 use anyhow::{bail, Result};
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use libra2_types::transaction::Transaction;
 use aptos_vm::AptosVM;
 use clap::{Parser, Subcommand};

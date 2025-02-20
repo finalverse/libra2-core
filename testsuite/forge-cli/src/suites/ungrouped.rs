@@ -26,7 +26,7 @@ use aptos_forge::{
     NetworkContext, NetworkContextSynchronizer, NetworkTest, Test, WorkflowProgress,
 };
 use libra2_logger::info;
-use aptos_rest_client::Client as RestClient;
+use libra2_rest_client::Client as RestClient;
 use aptos_sdk::move_types::account_address::AccountAddress;
 use aptos_testcases::{
     self,

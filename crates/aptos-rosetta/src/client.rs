@@ -21,7 +21,7 @@ use anyhow::anyhow;
 use libra2_crypto::{
     ed25519::Ed25519PrivateKey, PrivateKey, SigningKey, ValidCryptoMaterialStringExt,
 };
-use aptos_rest_client::aptos_api_types::mime_types::JSON;
+use libra2_rest_client::aptos_api_types::mime_types::JSON;
 use libra2_types::{account_address::AccountAddress, transaction::RawTransaction};
 use reqwest::{header::CONTENT_TYPE, Client as ReqwestClient};
 use serde::{de::DeserializeOwned, Serialize};

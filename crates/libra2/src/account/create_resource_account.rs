@@ -6,7 +6,7 @@ use crate::{
     common::types::{CliCommand, CliTypedResult, TransactionOptions, TransactionSummary},
 };
 use aptos_cached_packages::aptos_stdlib::resource_account_create_resource_account;
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{WriteResource, WriteSetChange},
     Transaction,
 };

@@ -57,7 +57,7 @@ async fn main() {
         let runtime = thread::spawn(move || node_args.run());
 
         // Wait and ensure the node is running on the URL
-        let client = aptos_rest_client::Client::new(online_args.rest_api_url.clone());
+        let client = libra2_rest_client::Client::new(online_args.rest_api_url.clone());
         let start = Instant::now();
         loop {
             match client.get_index_bcs().await {
@@ -111,7 +111,7 @@ trait ServerArgs {
     fn api_config(&self) -> ApiConfig;
 
     /// Retrieve the optional rest client for the local server
-    fn rest_client(&self) -> Option<aptos_rest_client::Client>;
+    fn rest_client(&self) -> Option<libra2_rest_client::Client>;
 
     /// Retrieve the chain id
     fn chain_id(&self) -> ChainId;
@@ -143,7 +143,7 @@ impl ServerArgs for CommandArgs {
         }
     }
 
-    fn rest_client(&self) -> Option<aptos_rest_client::Client> {
+    fn rest_client(&self) -> Option<libra2_rest_client::Client> {
         match self {
             CommandArgs::OnlineRemote(args) => args.rest_client(),
             CommandArgs::Offline(args) => args.rest_client(),
@@ -230,7 +230,7 @@ impl ServerArgs for OfflineArgs {
         }
     }
 
-    fn rest_client(&self) -> Option<aptos_rest_client::Client> {
+    fn rest_client(&self) -> Option<libra2_rest_client::Client> {
         None
     }
 
@@ -290,8 +290,8 @@ impl ServerArgs for OnlineRemoteArgs {
         self.offline_args.api_config()
     }
 
-    fn rest_client(&self) -> Option<aptos_rest_client::Client> {
-        Some(aptos_rest_client::Client::new(self.rest_api_url.clone()))
+    fn rest_client(&self) -> Option<libra2_rest_client::Client> {
+        Some(libra2_rest_client::Client::new(self.rest_api_url.clone()))
     }
 
     fn chain_id(&self) -> ChainId {
@@ -316,8 +316,8 @@ impl ServerArgs for OnlineLocalArgs {
         self.online_args.offline_args.api_config()
     }
 
-    fn rest_client(&self) -> Option<aptos_rest_client::Client> {
-        Some(aptos_rest_client::Client::new(
+    fn rest_client(&self) -> Option<libra2_rest_client::Client> {
+        Some(libra2_rest_client::Client::new(
             self.online_args.rest_api_url.clone(),
         ))
     }

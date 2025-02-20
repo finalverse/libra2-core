@@ -4,7 +4,7 @@
 use crate::{wait_for_all_nodes_to_catchup_to_version, AptosPublicInfo};
 use anyhow::{bail, Context, Result};
 use libra2_config::config::DEFAULT_MAX_PAGE_SIZE;
-use aptos_rest_client::Client as RestClient;
+use libra2_rest_client::Client as RestClient;
 use async_trait::async_trait;
 use chrono::Utc;
 use core::time;

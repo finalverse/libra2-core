@@ -15,7 +15,7 @@ use crate::{
     RosettaContext,
 };
 use libra2_logger::{debug, trace, warn};
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{AptosError, AptosErrorCode, ViewFunction},
     error::{AptosErrorResponse, RestError},
     Client,
@@ -87,7 +87,7 @@ async fn account_balance(
         metadata: AccountBalanceMetadata {
             sequence_number: sequence_number.into(),
             operators,
-            lockup_expiration_time_utc: aptos_rest_client::aptos_api_types::U64(lockup_expiration),
+            lockup_expiration_time_utc: libra2_rest_client::aptos_api_types::U64(lockup_expiration),
         },
     })
 }

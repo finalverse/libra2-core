@@ -24,7 +24,7 @@ async fn test_mint_transfer() {
     // NOTE(Gas): For some reason, there needs to be a lot of funds in the account in order for the
     //            test to pass.
     //            Is this caused by us increasing the default max gas amount in
-    //            testsuite/forge/src/interface/aptos.rs?
+    //            testsuite/forge/src/interface/libra2?
     info.mint(account1.address(), 100_000_000_000)
         .await
         .unwrap();

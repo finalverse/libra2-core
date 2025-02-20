@@ -50,7 +50,7 @@ impl HealthChecker {
                 Ok(())
             },
             HealthChecker::NodeApi(url) => {
-                aptos_rest_client::Client::new(Url::clone(url))
+                libra2_rest_client::Client::new(Url::clone(url))
                     .get_index()
                     .await?;
                 Ok(())

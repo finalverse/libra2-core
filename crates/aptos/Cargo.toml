@@ -39,7 +39,7 @@ libra2-move-debugger = { workspace = true }
 libra2-network-checker = { workspace = true }
 aptos-node = { workspace = true }
 aptos-protos = { workspace = true }
-aptos-rest-client = { workspace = true }
+libra2-rest-client = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 aptos-telemetry = { workspace = true }

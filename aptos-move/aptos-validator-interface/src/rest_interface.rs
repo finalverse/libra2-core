@@ -8,7 +8,7 @@ use aptos_framework::{
     natives::code::{PackageMetadata, PackageRegistry},
     APTOS_PACKAGES,
 };
-use aptos_rest_client::{
+use libra2_rest_client::{
     error::{AptosErrorResponse, RestError},
     Client,
 };

@@ -30,7 +30,7 @@ use libra2_global_constants::adjust_gas_headroom;
 use aptos_keygen::KeyGen;
 use libra2_logger::Level;
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{EntryFunctionId, HashValue, MoveType, ViewRequest},
     error::RestError,
     AptosBaseUrl, Client, Transaction,

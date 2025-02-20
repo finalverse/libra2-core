@@ -14,7 +14,7 @@ use aptos::governance::GenerateExecutionHash;
 use libra2_crypto::HashValue;
 use aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION;
 use libra2_infallible::duration_since_epoch;
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use libra2_temppath::TempPath;
 use libra2_types::{
     account_config::CORE_CODE_ADDRESS,

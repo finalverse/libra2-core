@@ -19,7 +19,7 @@ use crate::{
 };
 use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, ValidCryptoMaterialStringExt};
 use aptos_ledger;
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{AptosError, AptosErrorCode},
     error::{AptosErrorResponse, RestError},
 };
@@ -274,7 +274,7 @@ impl CliCommand<()> for InitTool {
                 .expect("Must have rest client as created above"),
         )
         .map_err(|err| CliError::UnableToParse("rest_url", err.to_string()))?;
-        let client = aptos_rest_client::Client::new(rest_url);
+        let client = libra2_rest_client::Client::new(rest_url);
 
         // lookup the address from onchain instead of deriving it
         // if this is the rotated key, deriving it will outputs an incorrect address

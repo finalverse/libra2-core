@@ -92,7 +92,7 @@ members = [
     "crates/libra2-proptest-helpers",
     "crates/libra2-push-metrics",
     "crates/libra2-rate-limiter",
-    "crates/aptos-rest-client",
+    "crates/libra2-rest-client",
     "crates/libra2-retrier",
     "crates/aptos-rosetta",
     "crates/aptos-rosetta-cli",
@@ -438,7 +438,7 @@ aptos-release-builder = { path = "aptos-move/aptos-release-builder" }
 aptos-reliable-broadcast = { path = "crates/reliable-broadcast" }
 aptos-replay-benchmark = { path = "aptos-move/replay-benchmark" }
 aptos-resource-viewer = { path = "aptos-move/aptos-resource-viewer" }
-aptos-rest-client = { path = "crates/aptos-rest-client" }
+libra2-rest-client = { path = "crates/libra2-rest-client" }
 libra2-retrier = { path = "crates/libra2-retrier" }
 libra2-rocksdb-options = { path = "storage/rocksdb-options" }
 aptos-rosetta = { path = "crates/aptos-rosetta" }

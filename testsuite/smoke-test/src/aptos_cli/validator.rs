@@ -21,7 +21,7 @@ use aptos_forge::{reconfig, wait_for_all_nodes_to_catchup, LocalSwarm, NodeExt, 
 use aptos_genesis::config::HostAndPort;
 use aptos_keygen::KeyGen;
 use libra2_logger::info;
-use aptos_rest_client::{Client, State};
+use libra2_rest_client::{Client, State};
 use libra2_types::{
     account_config::CORE_CODE_ADDRESS,
     network_address::DnsName,

@@ -42,7 +42,7 @@ use aptos_framework::{
 };
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters};
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{EntryFunctionId, HexEncodedBytes, IdentifierWrapper, MoveModuleId},
     error::RestError,
     AptosBaseUrl, Client,

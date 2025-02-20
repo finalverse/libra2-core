@@ -8,7 +8,7 @@ use crate::{
 use anyhow::{format_err, Result};
 use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
 use aptos_framework::natives::code::PackageMetadata;
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use libra2_types::{
     state_store::{state_key::StateKey, state_value::StateValue, TStateView},
     transaction::{

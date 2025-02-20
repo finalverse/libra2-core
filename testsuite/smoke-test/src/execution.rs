@@ -8,7 +8,7 @@ use crate::{
 };
 use aptos::test::CliTestFramework;
 use aptos_forge::{NodeExt, Swarm, SwarmExt};
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use libra2_types::on_chain_config::{
     BlockGasLimitType, ExecutionConfigV4, OnChainExecutionConfig, TransactionDeduperType,
     TransactionShufflerType,

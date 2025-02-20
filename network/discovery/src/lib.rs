@@ -35,7 +35,7 @@ mod validator_set;
 pub enum DiscoveryError {
     IO(std::io::Error),
     Parsing(String),
-    Rest(aptos_rest_client::error::RestError),
+    Rest(libra2_rest_client::error::RestError),
 }
 
 /// A union type for all implementations of `DiscoveryChangeListenerTrait`

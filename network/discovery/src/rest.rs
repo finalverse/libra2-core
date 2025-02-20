@@ -17,7 +17,7 @@ use std::{
 /// set nodes.  Useful for when genesis is significantly far behind in time
 pub struct RestStream {
     network_context: NetworkContext,
-    rest_client: aptos_rest_client::Client,
+    rest_client: libra2_rest_client::Client,
     interval: Pin<Box<Interval>>,
 }
 
@@ -30,7 +30,7 @@ impl RestStream {
     ) -> Self {
         RestStream {
             network_context,
-            rest_client: aptos_rest_client::Client::new(rest_url),
+            rest_client: libra2_rest_client::Client::new(rest_url),
             interval: Box::pin(time_service.interval(interval_duration)),
         }
     }

@@ -8,7 +8,7 @@ use libra2_crypto::{
     test_utils::KeyPair,
 };
 use libra2_logger::{info, warn};
-use aptos_rest_client::{Client as RestClient, State};
+use libra2_rest_client::{Client as RestClient, State};
 use aptos_sdk::types::{chain_id::ChainId, AccountKey, LocalAccount};
 use futures::{stream::FuturesUnordered, StreamExt};
 use rand::seq::SliceRandom;

@@ -5,7 +5,7 @@ use super::fetch_metadata::ValidatorInfo;
 use anyhow::Result;
 use libra2_bitvec::BitVec;
 use libra2_logger::error;
-use aptos_rest_client::VersionedNewBlockEvent;
+use libra2_rest_client::VersionedNewBlockEvent;
 use libra2_storage_interface::{DbReader, Order};
 use libra2_types::{
     account_address::AccountAddress,

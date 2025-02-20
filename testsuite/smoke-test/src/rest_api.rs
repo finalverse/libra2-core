@@ -11,7 +11,7 @@ use libra2_config::config::GasEstimationConfig;
 use libra2_crypto::ed25519::Ed25519Signature;
 use aptos_forge::{LocalSwarm, NodeExt, Swarm, TransactionType};
 use libra2_global_constants::{DEFAULT_BUCKETS, GAS_UNIT_PRICE};
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{MoveModuleId, TransactionData, ViewFunction, ViewRequest},
     Client,
 };
@@ -47,7 +47,7 @@ async fn test_basic_client() {
     // NOTE(Gas): For some reason, there needs to be a lot of funds in the account in order for the
     //            test to pass.
     //            Is this caused by us increasing the default max gas amount in
-    //            testsuite/forge/src/interface/aptos.rs?
+    //            testsuite/forge/src/interface/libra2?
     let account1 = info
         .create_and_fund_user_account(10_000_000_000)
         .await

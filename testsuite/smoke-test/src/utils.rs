@@ -8,7 +8,7 @@ use libra2_config::{
     network_id::NetworkId,
 };
 use aptos_forge::{reconfig, LocalSwarm, NodeExt, Swarm, SwarmExt};
-use aptos_rest_client::{Client as RestClient, Client};
+use libra2_rest_client::{Client as RestClient, Client};
 use aptos_sdk::{
     transaction_builder::TransactionFactory,
     types::{transaction::SignedTransaction, LocalAccount},

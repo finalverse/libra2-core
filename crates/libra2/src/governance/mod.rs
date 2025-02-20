@@ -23,7 +23,7 @@ use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::HashValue;
 use aptos_framework::{BuildOptions, BuiltPackage, ReleasePackage};
 use libra2_logger::warn;
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{Address, HexEncodedBytes, U128, U64},
     Client, Transaction,
 };
@@ -269,7 +269,7 @@ impl CliCommand<VerifyProposalResponse> for VerifyProposal {
 }
 
 async fn get_proposal(
-    client: &aptos_rest_client::Client,
+    client: &libra2_rest_client::Client,
     voting_table: AccountAddress,
     proposal_id: u64,
 ) -> CliTypedResult<JsonProposal> {
@@ -1241,7 +1241,7 @@ impl From<JsonProposal> for Proposal {
 struct JsonProposal {
     creation_time_secs: U64,
     early_resolution_vote_threshold: JsonEarlyResolutionThreshold,
-    execution_hash: aptos_rest_client::aptos_api_types::HashValue,
+    execution_hash: libra2_rest_client::aptos_api_types::HashValue,
     expiration_secs: U64,
     is_resolved: bool,
     min_vote_threshold: U128,

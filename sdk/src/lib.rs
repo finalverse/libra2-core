@@ -33,7 +33,7 @@ pub mod move_types {
 }
 
 pub mod rest_client {
-    pub use aptos_rest_client::*;
+    pub use libra2_rest_client::*;
 }
 
 pub mod transaction_builder;

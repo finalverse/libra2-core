@@ -18,7 +18,7 @@ aptos-api-types = { workspace = true }
 libra2-config = { workspace = true }
 aptos-db = { workspace = true }
 aptos-framework = { workspace = true }
-aptos-rest-client = { workspace = true }
+libra2-rest-client = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }
 async-recursion = { workspace = true }

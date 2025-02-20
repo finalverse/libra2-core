@@ -4,7 +4,7 @@
 use libra2_logger::{Level, Logger};
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_push_metrics::MetricsPusher;
-use aptos_rest_client::{AptosBaseUrl, Client};
+use libra2_rest_client::{AptosBaseUrl, Client};
 pub use benchmark::BenchmarkCommand;
 use clap::Parser;
 pub use diff::DiffCommand;

@@ -235,7 +235,7 @@ async fn construction_hash(
 /// Fills in the operator for actions that require it but don't have one on an [InternalOperation]
 /// TODO: move this onto [InternalOperation] and not in this file
 async fn fill_in_operator(
-    rest_client: &aptos_rest_client::Client,
+    rest_client: &libra2_rest_client::Client,
     mut internal_operation: InternalOperation,
 ) -> ApiResult<InternalOperation> {
     // TODO: Refactor so there's not duplicate code below
@@ -310,7 +310,7 @@ async fn fill_in_operator(
 ///
 /// Will only estimate gas price
 async fn simulate_transaction(
-    rest_client: &aptos_rest_client::Client,
+    rest_client: &libra2_rest_client::Client,
     chain_id: ChainId,
     options: &MetadataOptions,
     internal_operation: &InternalOperation,

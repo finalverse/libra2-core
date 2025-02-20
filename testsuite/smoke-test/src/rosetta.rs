@@ -18,7 +18,7 @@ use aptos_forge::{AptosPublicInfo, LocalSwarm, Node, NodeExt, Swarm};
 use aptos_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
 use aptos_genesis::builder::InitConfigFn;
 use libra2_global_constants::GAS_UNIT_PRICE;
-use aptos_rest_client::{
+use libra2_rest_client::{
     aptos_api_types::{TransactionOnChainData, UserTransaction},
     Response, Transaction,
 };
@@ -110,7 +110,7 @@ async fn setup_test(
     let _rosetta = aptos_rosetta::bootstrap_async(
         swarm.chain_id(),
         api_config,
-        Some(aptos_rest_client::Client::new(
+        Some(libra2_rest_client::Client::new(
             validator.rest_api_endpoint(),
         )),
         HashSet::new(),
@@ -2071,7 +2071,7 @@ where
 
 struct NodeClients<'a> {
     pub rosetta_client: &'a RosettaClient,
-    pub rest_client: &'a aptos_rest_client::Client,
+    pub rest_client: &'a libra2_rest_client::Client,
     pub network: &'a NetworkIdentifier,
 }
 
@@ -2332,7 +2332,7 @@ async fn submit_transaction<
     Fut: Future<Output = anyhow::Result<TransactionIdentifier>>,
     F: FnOnce(u64) -> Fut,
 >(
-    rest_client: &aptos_rest_client::Client,
+    rest_client: &libra2_rest_client::Client,
     txn_expiry_duration: Duration,
     transaction_builder: F,
 ) -> Result<UserTransaction, ErrorWrapper> {
@@ -2348,7 +2348,7 @@ async fn submit_transaction<
 }
 
 async fn wait_for_transaction(
-    rest_client: &aptos_rest_client::Client,
+    rest_client: &libra2_rest_client::Client,
     expiry_time: Duration,
     txn_hash: String,
 ) -> Result<UserTransaction, UserTransaction> {
@@ -2393,7 +2393,7 @@ fn expiry_time(txn_expiry_duration: Duration) -> Duration {
 
 async fn add_delegated_stake_and_wait(
     rosetta_client: &RosettaClient,
-    rest_client: &aptos_rest_client::Client,
+    rest_client: &libra2_rest_client::Client,
     network_identifier: &NetworkIdentifier,
     sender_key: &Ed25519PrivateKey,
     pool_address: AccountAddress,
@@ -2426,7 +2426,7 @@ async fn add_delegated_stake_and_wait(
 
 async fn unlock_delegated_stake_and_wait(
     rosetta_client: &RosettaClient,
-    rest_client: &aptos_rest_client::Client,
+    rest_client: &libra2_rest_client::Client,
     network_identifier: &NetworkIdentifier,
     sender_key: &Ed25519PrivateKey,
     pool_address: AccountAddress,
@@ -2458,7 +2458,7 @@ async fn unlock_delegated_stake_and_wait(
 
 async fn withdraw_undelegated_stake_and_wait(
     rosetta_client: &RosettaClient,
-    rest_client: &aptos_rest_client::Client,
+    rest_client: &libra2_rest_client::Client,
     network_identifier: &NetworkIdentifier,
     sender_key: &Ed25519PrivateKey,
     pool_address: AccountAddress,

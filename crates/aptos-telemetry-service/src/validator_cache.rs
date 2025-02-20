@@ -9,7 +9,7 @@ use crate::{
 };
 use libra2_config::config::{Peer, PeerRole, PeerSet};
 use libra2_infallible::RwLock;
-use aptos_rest_client::Response;
+use libra2_rest_client::Response;
 use libra2_types::{
     account_config::CORE_CODE_ADDRESS, chain_id::ChainId, on_chain_config::ValidatorSet, PeerId,
 };
@@ -81,7 +81,7 @@ impl PeerSetCacheUpdater {
         chain_name: &ChainCommonName,
         url: &str,
     ) -> Result<(), ValidatorCacheUpdateError> {
-        let client = aptos_rest_client::Client::new(Url::parse(url).map_err(|e| {
+        let client = libra2_rest_client::Client::new(Url::parse(url).map_err(|e| {
             error!("invalid url for chain_id {}: {}", chain_name, e);
             ValidatorCacheUpdateError::InvalidUrl
         })?);
@@ -183,7 +183,7 @@ mod tests {
         Uniform,
     };
     use libra2_infallible::RwLock;
-    use aptos_rest_client::aptos_api_types::*;
+    use libra2_rest_client::aptos_api_types::*;
     use libra2_types::{
         chain_id::ChainId, network_address::NetworkAddress, on_chain_config::ValidatorSet,
         validator_config::ValidatorConfig, validator_info::ValidatorInfo, PeerId,

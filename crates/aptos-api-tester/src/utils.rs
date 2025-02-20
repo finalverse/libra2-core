@@ -13,7 +13,7 @@ use crate::{
 use anyhow::{anyhow, Error, Result};
 use aptos_api_types::U64;
 use libra2_logger::{error, info};
-use aptos_rest_client::{error::RestError, Client, FaucetClient};
+use libra2_rest_client::{error::RestError, Client, FaucetClient};
 use aptos_sdk::types::LocalAccount;
 use libra2_types::account_address::AccountAddress;
 use std::{env, fmt::Display, num::ParseIntError, str::FromStr};

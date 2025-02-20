@@ -14,7 +14,7 @@ use libra2_crypto::{
     PrivateKey, SigningKey,
 };
 use aptos_ledger;
-use aptos_rest_client::{error::RestError, Client};
+use libra2_rest_client::{error::RestError, Client};
 use libra2_types::{
     account_address::AccountAddress,
     account_config::{RotationProofChallenge, CORE_CODE_ADDRESS},

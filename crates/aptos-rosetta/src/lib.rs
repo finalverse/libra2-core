@@ -42,7 +42,7 @@ pub const ROSETTA_VERSION: &str = "1.4.12";
 #[derive(Clone, Debug)]
 pub struct RosettaContext {
     /// A rest client to connect to a fullnode
-    rest_client: Option<Arc<aptos_rest_client::Client>>,
+    rest_client: Option<Arc<libra2_rest_client::Client>>,
     /// ChainId of the chain to connect to
     pub chain_id: ChainId,
     /// Block index cache
@@ -53,7 +53,7 @@ pub struct RosettaContext {
 
 impl RosettaContext {
     pub async fn new(
-        rest_client: Option<Arc<aptos_rest_client::Client>>,
+        rest_client: Option<Arc<libra2_rest_client::Client>>,
         chain_id: ChainId,
         block_cache: Option<Arc<BlockRetriever>>,
         mut currencies: HashSet<Currency>,
@@ -76,7 +76,7 @@ impl RosettaContext {
         }
     }
 
-    fn rest_client(&self) -> ApiResult<Arc<aptos_rest_client::Client>> {
+    fn rest_client(&self) -> ApiResult<Arc<libra2_rest_client::Client>> {
         if let Some(ref client) = self.rest_client {
             Ok(client.clone())
         } else {
@@ -97,7 +97,7 @@ impl RosettaContext {
 pub fn bootstrap(
     chain_id: ChainId,
     api_config: ApiConfig,
-    rest_client: Option<aptos_rest_client::Client>,
+    rest_client: Option<libra2_rest_client::Client>,
     supported_currencies: HashSet<Currency>,
 ) -> anyhow::Result<tokio::runtime::Runtime> {
     let runtime = aptos_runtimes::spawn_named_runtime("rosetta".into(), None);
@@ -117,7 +117,7 @@ pub fn bootstrap(
 pub async fn bootstrap_async(
     chain_id: ChainId,
     api_config: ApiConfig,
-    rest_client: Option<aptos_rest_client::Client>,
+    rest_client: Option<libra2_rest_client::Client>,
     supported_currencies: HashSet<Currency>,
 ) -> anyhow::Result<JoinHandle<()>> {
     debug!("Starting up Rosetta server with {:?}", api_config);

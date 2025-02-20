@@ -6,7 +6,7 @@ use aptos_framework::{
     natives::code::{ModuleMetadata, PackageMetadata, PackageRegistry, UpgradePolicy},
     unzip_metadata_str,
 };
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use libra2_types::account_address::AccountAddress;
 use move_package::compilation::package_layout::CompiledPackageLayout;
 use reqwest::Url;

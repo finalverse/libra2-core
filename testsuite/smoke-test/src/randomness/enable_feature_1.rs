@@ -42,7 +42,7 @@ async fn enable_feature_1() {
     let decrypt_key_map = decrypt_key_map(&swarm);
 
     let client_endpoint = swarm.validators().nth(1).unwrap().rest_api_endpoint();
-    let client = aptos_rest_client::Client::new(client_endpoint.clone());
+    let client = libra2_rest_client::Client::new(client_endpoint.clone());
 
     swarm
         .wait_for_all_nodes_to_catchup_to_epoch(3, Duration::from_secs(epoch_duration_secs * 2))

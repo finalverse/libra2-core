@@ -5,7 +5,7 @@ use anyhow::Result;
 use aptos_comparison_testing::{
     prepare_aptos_packages, DataCollection, Execution, ExecutionMode, OnlineExecutor, APTOS_COMMONS,
 };
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use clap::{Parser, Subcommand};
 use move_core_types::account_address::AccountAddress;
 use std::path::PathBuf;

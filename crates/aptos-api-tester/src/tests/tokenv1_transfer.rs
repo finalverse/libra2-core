@@ -24,7 +24,7 @@ use crate::{
 };
 use aptos_api_types::U64;
 use libra2_logger::error;
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use aptos_sdk::types::LocalAccount;
 use libra2_types::account_address::AccountAddress;
 

@@ -21,7 +21,7 @@ use crate::{
 };
 use anyhow::anyhow;
 use aptos_api_types::HexEncodedBytes;
-use aptos_rest_client::Client;
+use libra2_rest_client::Client;
 use aptos_sdk::types::LocalAccount;
 use libra2_types::account_address::AccountAddress;
 use futures::Future;
