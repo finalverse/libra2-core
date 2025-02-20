@@ -17,7 +17,7 @@ use aptos_schemadb::{
     define_pub_schema,
     schema::{KeyCodec, ValueCodec},
 };
-use aptos_types::{account_address::AccountAddress, transaction::Version};
+use libra2_types::{account_address::AccountAddress, transaction::Version};
 use byteorder::{BigEndian, ReadBytesExt, WriteBytesExt};
 use std::{convert::TryFrom, mem::size_of};
 

@@ -22,7 +22,7 @@ libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 libra2-time-service = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 arc-swap = { workspace = true }
 async-trait = { workspace = true }
 enum_dispatch = { workspace = true }
@@ -36,7 +36,7 @@ tokio-stream = { workspace = true }
 [dev-dependencies]
 aptos-storage-service-types = { workspace = true }
 libra2-time-service = { workspace = true, features = ["testing"] }
-aptos-types = { workspace = true, features = ["fuzzing"] }
+libra2-types = { workspace = true, features = ["fuzzing"] }
 claims = { workspace = true }
 rand = { workspace = true }
 tokio = { workspace = true }

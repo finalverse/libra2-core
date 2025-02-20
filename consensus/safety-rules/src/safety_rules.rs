@@ -24,7 +24,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::{bls12381, hash::CryptoHash};
 use libra2_logger::prelude::*;
-use aptos_types::{
+use libra2_types::{
     epoch_change::EpochChangeProof,
     epoch_state::EpochState,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},

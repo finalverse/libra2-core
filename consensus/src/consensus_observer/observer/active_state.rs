@@ -20,7 +20,7 @@ use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListe
 use libra2_infallible::Mutex;
 use libra2_logger::{error, info, warn};
 use aptos_storage_interface::DbReader;
-use aptos_types::{
+use libra2_types::{
     block_info::Round,
     epoch_state::EpochState,
     ledger_info::LedgerInfoWithSignatures,
@@ -354,7 +354,7 @@ mod test {
     };
     use libra2_crypto::HashValue;
     use aptos_event_notifications::ReconfigNotification;
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::AggregateSignature, block_info::BlockInfo, ledger_info::LedgerInfo,
         transaction::Version,
     };

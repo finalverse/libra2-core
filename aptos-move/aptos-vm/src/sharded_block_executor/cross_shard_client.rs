@@ -11,7 +11,7 @@ use crate::{
 use aptos_block_executor::txn_commit_hook::TransactionCommitHook;
 use libra2_logger::trace;
 use aptos_mvhashmap::types::TxnIndex;
-use aptos_types::{
+use libra2_types::{
     block_executor::partitioner::{RoundId, ShardId, SubBlock, GLOBAL_ROUND_ID},
     state_store::{state_key::StateKey, StateView},
     transaction::analyzed_transaction::AnalyzedTransaction,

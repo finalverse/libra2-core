@@ -7,7 +7,7 @@ use aptos_schemadb::{
     BlockBasedOptions, Cache, ColumnFamilyDescriptor, ColumnFamilyName, DBCompressionType, Options,
     SliceTransform, DEFAULT_COLUMN_FAMILY_NAME,
 };
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 
 const VERSION_SIZE: usize = std::mem::size_of::<Version>();
 

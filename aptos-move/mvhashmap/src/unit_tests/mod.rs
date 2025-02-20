@@ -16,7 +16,7 @@ use aptos_aggregator::{
     delta_change_set::{delta_add, delta_sub, DeltaOp},
     delta_math::DeltaHistory,
 };
-use aptos_types::{
+use libra2_types::{
     on_chain_config::CurrentTimeMicroseconds,
     state_store::state_value::{StateValue, StateValueMetadata},
     write_set::WriteOpKind,

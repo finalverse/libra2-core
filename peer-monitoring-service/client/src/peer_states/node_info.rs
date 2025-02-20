@@ -159,7 +159,7 @@ mod test {
         response::{NodeInformationResponse, PeerMonitoringServiceResponse},
     };
     use libra2_time_service::TimeService;
-    use aptos_types::network_address::NetworkAddress;
+    use libra2_types::network_address::NetworkAddress;
     use std::{str::FromStr, time::Duration};
 
     // Useful test constants

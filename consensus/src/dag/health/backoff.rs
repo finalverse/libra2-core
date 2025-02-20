@@ -4,7 +4,7 @@
 use super::{pipeline_health::TPipelineHealth, TChainHealth};
 use libra2_config::config::DagPayloadConfig;
 use aptos_consensus_types::common::Round;
-use aptos_types::epoch_state::EpochState;
+use libra2_types::epoch_state::EpochState;
 use std::{sync::Arc, time::Duration};
 
 #[derive(Clone)]

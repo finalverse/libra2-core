@@ -17,7 +17,7 @@ use aptos_consensus_types::{
     vote_data::VoteData,
 };
 use libra2_crypto::HashValue;
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},

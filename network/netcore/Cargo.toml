@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 aptos-memsocket = { workspace = true }
 libra2-proxy = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 bytes = { workspace = true }
 futures = { workspace = true }
 pin-project = { workspace = true }
@@ -26,9 +26,9 @@ url = { workspace = true }
 
 [dev-dependencies]
 aptos-memsocket = { workspace = true }
-aptos-types = { workspace = true, features = ["fuzzing"] }
+libra2-types = { workspace = true, features = ["fuzzing"] }
 
 [features]
 default = []
-fuzzing = ["aptos-memsocket/fuzzing", "aptos-types/fuzzing"]
+fuzzing = ["aptos-memsocket/fuzzing", "libra2-types/fuzzing"]
 testing = ["aptos-memsocket/testing"]

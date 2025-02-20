@@ -19,7 +19,7 @@ aptos-gas-schedule = { workspace = true }
 aptos-move-stdlib = { workspace = true }
 aptos-native-interface = { workspace = true }
 aptos-table-natives = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 aptos-vm-types = { workspace = true }
 bcs = { workspace = true }
 move-binary-format = { workspace = true }
@@ -31,5 +31,5 @@ once_cell = { workspace = true }
 sha3 = { workspace = true }
 
 [dev-dependencies]
-aptos-types = { workspace = true, features = ["testing", "fuzzing"] }
+libra2-types = { workspace = true, features = ["testing", "fuzzing"] }
 serde = { workspace = true }

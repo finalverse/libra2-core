@@ -4,7 +4,7 @@
 use crate::error::QuorumStoreError;
 use aptos_consensus_types::{common::Payload, payload_pull_params::PayloadPullParameters};
 #[cfg(test)]
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 use futures::future::BoxFuture;
 #[cfg(test)]
 use std::time::Duration;

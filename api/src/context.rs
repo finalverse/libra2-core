@@ -27,7 +27,7 @@ use aptos_storage_interface::{
     },
     AptosDbError, DbReader, Order, MAX_REQUEST_LIMIT,
 };
-use aptos_types::{
+use libra2_types::{
     access_path::{AccessPath, Path},
     account_address::AccountAddress,
     account_config::{AccountResource, NewBlockEvent},

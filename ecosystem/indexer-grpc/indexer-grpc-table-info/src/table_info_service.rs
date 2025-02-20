@@ -13,7 +13,7 @@ use aptos_indexer_grpc_fullnode::stream_coordinator::{
 };
 use aptos_indexer_grpc_utils::counters::{log_grpc_step, IndexerGrpcStep};
 use libra2_logger::{debug, error, info, sample, sample::SampleRate};
-use aptos_types::write_set::WriteSet;
+use libra2_types::write_set::WriteSet;
 use itertools::Itertools;
 use std::{cmp::Ordering, sync::Arc, time::Duration};
 

@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::transaction::{
+use libra2_types::transaction::{
     ArgumentABI, EntryABI, EntryFunctionABI, TransactionScriptABI, TypeArgumentABI,
 };
 use heck::ToUpperCamelCase;
@@ -126,8 +126,8 @@ pub(crate) fn mangle_type(type_tag: &TypeTag) -> String {
     }
 }
 
-pub(crate) fn get_external_definitions(aptos_types: &str) -> serde_generate::ExternalDefinitions {
-    let definitions = vec![(aptos_types, vec![
+pub(crate) fn get_external_definitions(libra2_types: &str) -> serde_generate::ExternalDefinitions {
+    let definitions = vec![(libra2_types, vec![
         "AccountAddress",
         "TypeTag",
         "Script",

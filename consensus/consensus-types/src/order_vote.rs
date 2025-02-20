@@ -6,7 +6,7 @@ use crate::common::Author;
 use anyhow::{ensure, Context};
 use libra2_crypto::{bls12381, HashValue};
 use libra2_short_hex_str::AsShortHexStr;
-use aptos_types::{
+use libra2_types::{
     ledger_info::{LedgerInfo, SignatureWithStatus},
     validator_verifier::ValidatorVerifier,
 };

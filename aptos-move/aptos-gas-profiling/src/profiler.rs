@@ -7,7 +7,7 @@ use crate::log::{
 };
 use aptos_gas_algebra::{Fee, FeePerGasUnit, InternalGas, NumArgs, NumBytes, NumTypeNodes};
 use aptos_gas_meter::{AptosGasMeter, GasAlgebra};
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent, state_store::state_key::StateKey, write_set::WriteOpSize,
 };
 use aptos_vm_types::{

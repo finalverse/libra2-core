@@ -25,7 +25,7 @@ use libra2_crypto::{
 use aptos_framework::ReleaseBundle;
 use aptos_keygen::KeyGen;
 use libra2_logger::prelude::*;
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId,
     jwks::patch::IssuerJWK,
     keyless::Groth16VerificationKey,
@@ -403,7 +403,7 @@ fn set_identity_for_network(network: &mut NetworkConfig) -> anyhow::Result<()> {
     if let Identity::None = network.identity {
         let mut keygen = KeyGen::from_os_rng();
         let key = keygen.generate_x25519_private_key()?;
-        let peer_id = aptos_types::account_address::from_identity_public_key(key.public_key());
+        let peer_id = libra2_types::account_address::from_identity_public_key(key.public_key());
         network.identity = Identity::from_config(key, peer_id);
     }
     Ok(())

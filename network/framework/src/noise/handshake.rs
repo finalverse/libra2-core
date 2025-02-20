@@ -24,7 +24,7 @@ use libra2_crypto::{noise, x25519};
 use libra2_infallible::{duration_since_epoch, RwLock};
 use libra2_logger::{error, trace};
 use libra2_short_hex_str::{AsShortHexStr, ShortHexStr};
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use futures::io::{AsyncRead, AsyncReadExt, AsyncWrite, AsyncWriteExt};
 use std::{collections::HashMap, convert::TryFrom as _, fmt::Debug, sync::Arc};
 
@@ -393,7 +393,7 @@ impl NoiseUpgrader {
                         // The peer is not in the trusted peer set. Verify that the Peer ID is
                         // constructed correctly from the public key.
                         let derived_remote_peer_id =
-                            aptos_types::account_address::from_identity_public_key(
+                            libra2_types::account_address::from_identity_public_key(
                                 remote_public_key,
                             );
                         if derived_remote_peer_id != remote_peer_id {
@@ -517,7 +517,7 @@ mod test {
         x25519::{PrivateKey, PublicKey},
     };
     use aptos_memsocket::MemorySocket;
-    use aptos_types::account_address::AccountAddress;
+    use libra2_types::account_address::AccountAddress;
     use futures::{executor::block_on, future::join};
     use rand::{prelude::StdRng, SeedableRng as _};
 

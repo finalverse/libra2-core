@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, assert_vm_status, tests::common, MoveHarness};
-use aptos_types::{account_address::AccountAddress, vm_status::StatusCode};
+use libra2_types::{account_address::AccountAddress, vm_status::StatusCode};
 use serde::{Deserialize, Serialize};
 
 /// Mimics `0xcafe::test::ModuleData`

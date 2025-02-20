@@ -5,7 +5,7 @@
 use crate::{Address, Bytecode, IdentifierWrapper, VerifyInput, VerifyInputWithRecursion};
 use anyhow::{bail, format_err};
 use aptos_resource_viewer::{AnnotatedMoveStruct, AnnotatedMoveValue};
-use aptos_types::{account_config::CORE_CODE_ADDRESS, event::EventKey, transaction::Module};
+use libra2_types::{account_config::CORE_CODE_ADDRESS, event::EventKey, transaction::Module};
 use move_binary_format::{
     access::ModuleAccess,
     file_format::{CompiledModule, CompiledScript, StructTypeParameter, Visibility},
@@ -1223,7 +1223,7 @@ pub fn verify_identifier(identifier: &str) -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aptos_types::account_address::AccountAddress;
+    use libra2_types::account_address::AccountAddress;
     use move_core_types::{
         ability::AbilitySet,
         identifier::Identifier,

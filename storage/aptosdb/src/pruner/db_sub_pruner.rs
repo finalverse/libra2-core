@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_storage_interface::Result;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 /// Defines the trait for sub-pruner of a parent DB pruner
 pub trait DBSubPruner {
     /// Returns the name of the sub pruner.

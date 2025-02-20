@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::workload::Workload;
-use aptos_types::{
+use libra2_types::{
     block_executor::config::{
         BlockExecutorConfig, BlockExecutorConfigFromOnchain, BlockExecutorLocalConfig,
         BlockExecutorModuleCacheLocalConfig,

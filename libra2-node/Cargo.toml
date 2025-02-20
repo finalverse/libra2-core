@@ -60,7 +60,7 @@ aptos-storage-service-types = { workspace = true }
 aptos-telemetry = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-time-service = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 aptos-validator-transaction-pool = { workspace = true }
 aptos-vm = { workspace = true }
 aptos-vm-environment = { workspace = true }

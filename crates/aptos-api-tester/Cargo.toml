@@ -21,7 +21,7 @@ libra2-logger = { workspace = true }
 libra2-push-metrics = { workspace = true }
 aptos-rest-client = { workspace = true }
 aptos-sdk = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 futures = { workspace = true }
 move-core-types = { workspace = true }
 once_cell = { workspace = true }

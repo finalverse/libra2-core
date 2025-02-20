@@ -6,7 +6,7 @@ license = { workspace = true }
 
 [dependencies]
 aptos-framework = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 arbitrary = { workspace = true }
 base64 = "0.21.7"
 bcs = { workspace = true }

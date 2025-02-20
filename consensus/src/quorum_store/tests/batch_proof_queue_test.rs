@@ -10,7 +10,7 @@ use aptos_consensus_types::{
     utils::PayloadTxnsSize,
 };
 use libra2_crypto::HashValue;
-use aptos_types::{aggregate_signature::AggregateSignature, PeerId};
+use libra2_types::{aggregate_signature::AggregateSignature, PeerId};
 use maplit::hashset;
 use std::{collections::HashSet, time::Duration};
 

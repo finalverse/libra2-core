@@ -18,7 +18,7 @@ use aptos_executor_types::{
 };
 use libra2_infallible::Mutex;
 use libra2_logger::{error, info, warn};
-use aptos_types::{
+use libra2_types::{
     block_info::BlockInfo,
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,

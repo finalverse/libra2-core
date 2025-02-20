@@ -3,7 +3,7 @@
 
 use crate::DbReader;
 use libra2_crypto::HashValue;
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfo,
     state_store::{
         errors::StateViewError, state_key::StateKey, state_storage_usage::StateStorageUsage,

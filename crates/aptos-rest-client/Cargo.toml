@@ -22,7 +22,7 @@ aptos-api-types = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 bcs = { workspace = true }
 bytes = { workspace = true }
 hex = { workspace = true }

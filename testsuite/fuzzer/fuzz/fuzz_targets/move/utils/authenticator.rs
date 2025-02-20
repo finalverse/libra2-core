@@ -4,7 +4,7 @@
 #![allow(dead_code)]
 
 use super::helpers::UserAccount;
-use aptos_types::keyless::{AnyKeylessPublicKey, EphemeralCertificate};
+use libra2_types::keyless::{AnyKeylessPublicKey, EphemeralCertificate};
 use arbitrary::Arbitrary;
 use serde::{Deserialize, Serialize};
 use serde_json;
@@ -122,7 +122,7 @@ pub struct TransactionState {
 
 pub(crate) mod miscellaneous {
     use libra2_crypto::{ed25519::ed25519_keys::Ed25519PrivateKey, PrivateKey, Uniform};
-    use aptos_types::{
+    use libra2_types::{
         jwks::rsa::INSECURE_TEST_RSA_KEY_PAIR,
         keyless::{Configuration, OpenIdSig, Pepper},
         transaction::authenticator::EphemeralPublicKey,

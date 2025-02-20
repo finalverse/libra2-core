@@ -3,7 +3,7 @@
 
 use crate::db_debugger::common::{DbDir, PAGE_SIZE};
 use anyhow::Result;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use clap::Parser;
 
 #[derive(Parser)]

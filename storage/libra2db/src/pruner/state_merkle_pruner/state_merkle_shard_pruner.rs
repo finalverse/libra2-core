@@ -15,7 +15,7 @@ use anyhow::Result;
 use aptos_jellyfish_merkle::StaleNodeIndex;
 use libra2_logger::info;
 use aptos_schemadb::{batch::SchemaBatch, schema::KeyCodec, DB};
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use std::{marker::PhantomData, sync::Arc};
 
 pub(in crate::pruner) struct StateMerkleShardPruner<S> {

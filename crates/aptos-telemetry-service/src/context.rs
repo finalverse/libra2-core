@@ -9,7 +9,7 @@ use crate::{
 };
 use libra2_crypto::{noise, x25519};
 use libra2_infallible::RwLock;
-use aptos_types::{chain_id::ChainId, PeerId};
+use libra2_types::{chain_id::ChainId, PeerId};
 use jsonwebtoken::{Algorithm, DecodingKey, EncodingKey, TokenData, Validation};
 use serde::{de::DeserializeOwned, Serialize};
 use std::{

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::resolver::{ResourceGroupSize, ResourceGroupView, TResourceGroupView, TResourceView};
-use aptos_types::{
+use libra2_types::{
     error::code_invariant_error, serde_helper::bcs_utils::bcs_size_of_byte_array,
     state_store::state_key::StateKey,
 };
@@ -73,7 +73,7 @@ pub fn group_size_as_sum<T: Serialize + Clone + Debug>(
 
 #[test]
 fn test_group_size_same_as_bcs() {
-    use aptos_types::PeerId;
+    use libra2_types::PeerId;
     use move_core_types::identifier::Identifier;
 
     let reused_vec = Bytes::from(vec![5; 20000]);
@@ -376,7 +376,7 @@ pub fn check_size_and_existence_match(
 mod tests {
     use super::*;
     use crate::tests::utils::{mock_tag_0, mock_tag_1, mock_tag_2};
-    use aptos_types::state_store::{
+    use libra2_types::state_store::{
         errors::StateViewError, state_storage_usage::StateStorageUsage, state_value::StateValue,
         TStateView,
     };

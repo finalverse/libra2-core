@@ -19,7 +19,7 @@ use aptos_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},
 };
-use aptos_types::transaction::{TransactionAuxiliaryData, Version};
+use libra2_types::transaction::{TransactionAuxiliaryData, Version};
 use byteorder::{BigEndian, ReadBytesExt};
 use std::mem::size_of;
 

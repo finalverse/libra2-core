@@ -8,7 +8,7 @@ pub mod view;
 use crate::storage::{FileHandle, ShellSafeName, TextLine};
 use anyhow::{ensure, Result};
 use libra2_crypto::HashValue;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use serde::{Deserialize, Serialize};
 use std::{cmp::Ordering, collections::HashMap, convert::TryInto};
 

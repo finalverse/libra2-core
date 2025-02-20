@@ -5,7 +5,7 @@ use aptos_gas_algebra::{
     AbstractValueSize, Fee, FeePerGasUnit, InternalGas, NumArgs, NumBytes, NumTypeNodes,
 };
 use aptos_gas_meter::AptosGasMeter;
-use aptos_types::{
+use libra2_types::{
     account_config::CORE_CODE_ADDRESS, contract_event::ContractEvent,
     state_store::state_key::StateKey, write_set::WriteOpSize,
 };

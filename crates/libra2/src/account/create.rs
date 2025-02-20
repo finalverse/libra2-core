@@ -3,7 +3,7 @@
 
 use crate::common::types::{CliCommand, CliTypedResult, TransactionOptions, TransactionSummary};
 use aptos_cached_packages::aptos_stdlib;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use async_trait::async_trait;
 use clap::Parser;
 

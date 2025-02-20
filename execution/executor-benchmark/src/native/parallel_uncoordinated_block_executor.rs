@@ -11,7 +11,7 @@ use anyhow::{bail, Result};
 use aptos_block_executor::{
     counters::BLOCK_EXECUTOR_INNER_EXECUTE_BLOCK, txn_provider::default::DefaultTxnProvider,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{
         primary_apt_store, AccountResource, CoinDeposit, CoinInfoResource, CoinRegister,

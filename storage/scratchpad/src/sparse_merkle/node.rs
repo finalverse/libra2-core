@@ -27,7 +27,7 @@ use libra2_crypto::{
     HashValue,
 };
 use libra2_drop_helper::ArcAsyncDrop;
-use aptos_types::proof::{SparseMerkleInternalNode, SparseMerkleLeafNode};
+use libra2_types::proof::{SparseMerkleInternalNode, SparseMerkleLeafNode};
 use std::sync::{Arc, Weak};
 
 #[derive(Clone, Debug)]

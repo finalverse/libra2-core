@@ -6,7 +6,7 @@ use libra2_bitvec::BitVec;
 use aptos_consensus_types::{
     quorum_cert::QuorumCert, round_timeout::RoundTimeoutReason, timeout_2chain::TwoChainTimeout,
 };
-use aptos_types::validator_verifier::{
+use libra2_types::validator_verifier::{
     random_validator_verifier, random_validator_verifier_with_voting_power,
 };
 use itertools::Itertools;

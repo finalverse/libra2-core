@@ -7,7 +7,7 @@ use aptos_language_e2e_tests::{
     account::{Account, TransactionBuilder},
     transaction_status_eq,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::CoinStoreResource,
     move_utils::MemberId,

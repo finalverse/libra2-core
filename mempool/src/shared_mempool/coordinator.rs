@@ -32,7 +32,7 @@ use aptos_network::{
     },
     protocols::network::Event,
 };
-use aptos_types::{
+use libra2_types::{
     on_chain_config::{OnChainConfigPayload, OnChainConfigProvider},
     transaction::SignedTransaction,
     PeerId,

@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 aptos-framework = { workspace = true }
 aptos-gas-schedule = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 aptos-vm ={ workspace = true, features = ["testing"] }
 clap = { workspace = true }
 move-cli = { workspace = true }

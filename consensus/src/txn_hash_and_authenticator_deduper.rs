@@ -6,7 +6,7 @@ use crate::{
     transaction_deduper::TransactionDeduper,
 };
 use aptos_experimental_runtimes::thread_manager::optimal_min_len;
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 use rayon::prelude::*;
 use std::collections::{HashMap, HashSet};
 
@@ -109,7 +109,7 @@ mod tests {
     use aptos_cached_packages::aptos_stdlib;
     use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
     use aptos_keygen::KeyGen;
-    use aptos_types::{
+    use libra2_types::{
         chain_id::ChainId,
         transaction::{RawTransaction, Script, SignedTransaction, TransactionPayload},
     };
@@ -131,7 +131,7 @@ mod tests {
         }
 
         pub fn with_keypair(privkey: Ed25519PrivateKey, pubkey: Ed25519PublicKey) -> Self {
-            let addr = aptos_types::account_address::from_public_key(&pubkey);
+            let addr = libra2_types::account_address::from_public_key(&pubkey);
             Account {
                 addr,
                 privkey,

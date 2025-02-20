@@ -5,7 +5,7 @@ module.exports = {
     "^(\\.{1,2}/.*)\\.js$": "$1",
   },
   testEnvironment: "node",
-  coveragePathIgnorePatterns: ["generated/*", "transaction_builder/aptos_types/*"],
+  coveragePathIgnorePatterns: ["generated/*", "transaction_builder/libra2_types/*"],
   testPathIgnorePatterns: ["dist/*"],
   collectCoverage: true,
   setupFiles: ["dotenv/config"],

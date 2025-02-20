@@ -8,7 +8,7 @@ use super::{
 };
 use crate::types::ValueWithLayout;
 use aptos_aggregator::delta_change_set::{delta_add, delta_sub, DeltaOp};
-use aptos_types::{
+use libra2_types::{
     state_store::state_value::StateValue,
     write_set::{TransactionWrite, WriteOpKind},
 };

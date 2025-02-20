@@ -14,7 +14,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::HashValue;
 use libra2_infallible::Mutex;
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::PartialSignatures,
     block_info::BlockInfo,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},

@@ -8,7 +8,7 @@ use aptos_aggregator::{
     resolver::{TAggregatorV1View, TDelayedFieldView},
     types::{DelayedFieldValue, DelayedFieldsSpeculativeError},
 };
-use aptos_types::{
+use libra2_types::{
     error::{code_invariant_error, expect_ok, PanicError, PanicOr},
     state_store::{
         errors::StateViewError,
@@ -344,7 +344,7 @@ mod test {
     };
     use aptos_aggregator::delta_change_set::{delta_add, serialize};
     use aptos_language_e2e_tests::data_store::FakeDataStore;
-    use aptos_types::{account_address::AccountAddress, write_set::WriteOp};
+    use libra2_types::{account_address::AccountAddress, write_set::WriteOp};
     use aptos_vm_types::abstract_write_op::GroupWrite;
     use move_core_types::{
         identifier::Identifier,

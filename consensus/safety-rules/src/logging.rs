@@ -5,7 +5,7 @@
 use crate::Error;
 use aptos_consensus_types::common::{Author, Round};
 use libra2_logger::Schema;
-use aptos_types::waypoint::Waypoint;
+use libra2_types::waypoint::Waypoint;
 use serde::Serialize;
 
 #[derive(Schema)]

@@ -6,7 +6,7 @@ use aptos_language_e2e_tests::{
     account::AccountData, compile::compile_script, current_function_name,
     data_store::FakeDataStore, executor::FakeExecutor,
 };
-use aptos_types::transaction::{
+use libra2_types::transaction::{
     ExecutionStatus, SignedTransaction, Transaction, TransactionStatus,
 };
 use claims::assert_matches;

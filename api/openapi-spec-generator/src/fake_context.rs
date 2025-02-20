@@ -5,7 +5,7 @@ use aptos_api::context::Context;
 use libra2_config::config::NodeConfig;
 use aptos_mempool::mocks::MockSharedMempool;
 use aptos_storage_interface::mock::MockDbReaderWriter;
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 use std::sync::Arc;
 
 // This is necessary for building the API with how the code is structured currently.

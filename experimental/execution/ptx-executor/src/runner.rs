@@ -14,7 +14,7 @@ use crate::{
 };
 use libra2_logger::trace;
 use libra2_metrics_core::TimerHelper;
-use aptos_types::{
+use libra2_types::{
     state_store::{state_key::StateKey, state_value::StateValue, StateView},
     transaction::signature_verified_transaction::SignatureVerifiedTransaction,
     write_set::TransactionWrite,

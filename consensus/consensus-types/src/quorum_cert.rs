@@ -6,7 +6,7 @@ use crate::{vote_data::VoteData, wrapped_ledger_info::WrappedLedgerInfo};
 use anyhow::{ensure, Context};
 use libra2_bitvec::BitVec;
 use libra2_crypto::{hash::CryptoHash, HashValue};
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},

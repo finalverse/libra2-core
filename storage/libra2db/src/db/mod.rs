@@ -41,7 +41,7 @@ use aptos_storage_interface::{
     db_ensure as ensure, db_other_bail as bail, AptosDbError, DbReader, DbWriter, LedgerSummary,
     Order, Result, StateSnapshotReceiver, MAX_REQUEST_LIMIT,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{new_block_event_key, NewBlockEvent},
     contract_event::{ContractEvent, EventWithVersion},

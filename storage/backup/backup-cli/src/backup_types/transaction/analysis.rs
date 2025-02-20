@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     transaction::{Transaction, TransactionInfo, Version},
     write_set::{TransactionWrite, WriteSet},

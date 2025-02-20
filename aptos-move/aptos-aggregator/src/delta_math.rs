@@ -8,7 +8,7 @@ use crate::{
         DeltaHistoryMergeOffsetFailureReason,
     },
 };
-use aptos_types::error::{expect_ok, PanicOr};
+use libra2_types::error::{expect_ok, PanicOr};
 
 /// Tracks values seen by aggregator. In particular, stores information about
 /// the biggest and the smallest deltas that were applied successfully during

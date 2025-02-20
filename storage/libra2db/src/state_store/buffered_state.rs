@@ -15,7 +15,7 @@ use aptos_storage_interface::{
     state_store::state_with_summary::{LedgerStateWithSummary, StateWithSummary},
     Result,
 };
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use std::{
     sync::{
         mpsc,

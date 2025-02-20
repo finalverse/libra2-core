@@ -4,7 +4,7 @@
 //! Types and identifiers for parsing Move pub structs and types
 
 use crate::AccountAddress;
-use aptos_types::event::EventHandle;
+use libra2_types::event::EventHandle;
 use serde::{Deserialize, Serialize};
 
 pub const ACCOUNT_MODULE: &str = "account";

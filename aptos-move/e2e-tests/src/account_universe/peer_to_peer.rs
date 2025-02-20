@@ -6,7 +6,7 @@ use crate::{
     account_universe::{AUTransactionGen, AccountPair, AccountPairGen, AccountUniverse},
     common_transactions::peer_to_peer_txn,
 };
-use aptos_types::{
+use libra2_types::{
     transaction::{ExecutionStatus, SignedTransaction, TransactionStatus},
     vm_status::StatusCode,
 };

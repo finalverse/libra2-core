@@ -13,7 +13,7 @@ use crate::{
 };
 use anyhow::{anyhow, ensure, Result};
 use libra2_logger::prelude::*;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use clap::Parser;
 use once_cell::sync::Lazy;
 use std::{convert::TryInto, str::FromStr, sync::Arc};

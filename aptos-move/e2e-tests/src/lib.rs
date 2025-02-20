@@ -8,7 +8,7 @@
 //!
 //! This crate contains helpers for executing tests against the Aptos VM.
 
-use aptos_types::{transaction::TransactionStatus, vm_status::KeptVMStatus};
+use libra2_types::{transaction::TransactionStatus, vm_status::KeptVMStatus};
 
 pub mod account;
 pub mod account_universe;

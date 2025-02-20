@@ -9,7 +9,7 @@ use aptos_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,
 };
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use move_binary_format::errors::PartialVMError;
 use move_core_types::vm_status::StatusCode;
 use move_vm_runtime::native_functions::NativeFunction;

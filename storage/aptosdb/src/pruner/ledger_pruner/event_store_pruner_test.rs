@@ -6,7 +6,7 @@ use libra2_config::config::LedgerPrunerConfig;
 use aptos_proptest_helpers::Index;
 use aptos_schemadb::SchemaBatch;
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     proptest_types::{AccountInfoUniverse, ContractEventGen},
     transaction::Version,

@@ -9,7 +9,7 @@ use crate::{
 use aptos_aggregator::{
     delayed_change::DelayedChange, delta_change_set::DeltaOp, resolver::AggregatorV1Resolver,
 };
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     error::{code_invariant_error, PanicError},
     fee_statement::FeeStatement,

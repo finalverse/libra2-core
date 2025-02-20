@@ -12,7 +12,7 @@ use libra2_crypto::{bls12381, PrivateKey};
 use libra2_global_constants::{CONSENSUS_KEY, OWNER_ACCOUNT, SAFETY_DATA, WAYPOINT};
 use libra2_logger::prelude::*;
 use libra2_secure_storage::{KVStorage, Storage};
-use aptos_types::waypoint::Waypoint;
+use libra2_types::waypoint::Waypoint;
 
 /// SafetyRules needs an abstract storage interface to act as a common utility for storing
 /// persistent data to local disk, cloud, secrets managers, or even memory (for tests)
@@ -196,7 +196,7 @@ mod tests {
     use crate::counters;
     use libra2_crypto::hash::HashValue;
     use libra2_secure_storage::InMemoryStorage;
-    use aptos_types::{
+    use libra2_types::{
         block_info::BlockInfo, epoch_state::EpochState, ledger_info::LedgerInfo,
         transaction::Version, validator_signer::ValidatorSigner, waypoint::Waypoint,
     };

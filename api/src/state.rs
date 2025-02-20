@@ -18,7 +18,7 @@ use aptos_api_types::{
     MoveModuleBytecode, MoveResource, MoveStructTag, MoveValue, RawStateValueRequest,
     RawTableItemRequest, TableItemRequest, VerifyInput, VerifyInputWithRecursion, U64,
 };
-use aptos_types::state_store::{state_key::StateKey, table::TableHandle, TStateView};
+use libra2_types::state_store::{state_key::StateKey, table::TableHandle, TStateView};
 use move_core_types::language_storage::StructTag;
 use poem_openapi::{
     param::{Path, Query},

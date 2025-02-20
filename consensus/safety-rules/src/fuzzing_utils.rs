@@ -22,7 +22,7 @@ use libra2_crypto::{
     test_utils::TEST_SEED,
     traits::{SigningKey, Uniform},
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     epoch_change::EpochChangeProof,
     epoch_state::EpochState,
@@ -274,7 +274,7 @@ pub mod fuzzing {
         timeout_2chain::TwoChainTimeout, vote::Vote, vote_proposal::VoteProposal,
     };
     use libra2_crypto::bls12381;
-    use aptos_types::epoch_change::EpochChangeProof;
+    use libra2_types::epoch_change::EpochChangeProof;
 
     pub fn fuzz_initialize(proof: EpochChangeProof) -> Result<(), Error> {
         let mut safety_rules = test_utils::test_safety_rules_uninitialized();

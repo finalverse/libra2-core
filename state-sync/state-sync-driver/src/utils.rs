@@ -25,7 +25,7 @@ use aptos_mempool_notifications::MempoolNotificationSender;
 use aptos_storage_interface::DbReader;
 use aptos_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_time_service::{TimeService, TimeServiceTrait};
-use aptos_types::{
+use libra2_types::{
     epoch_change::Verifier,
     epoch_state::EpochState,
     ledger_info::LedgerInfoWithSignatures,

@@ -8,7 +8,7 @@ use crate::{
 use anyhow::anyhow;
 use aptos_aggregator::types::DelayedFieldValue;
 use libra2_crypto::hash::HashValue;
-use aptos_types::{
+use libra2_types::{
     error::{code_invariant_error, PanicError},
     executable::ModulePath,
     vm::modules::AptosModuleExtension,
@@ -244,7 +244,7 @@ impl<
         v: V,
         maybe_layout: Option<Arc<MoveTypeLayout>>,
     ) -> Result<(), PanicError> {
-        use aptos_types::write_set::WriteOpKind::*;
+        use libra2_types::write_set::WriteOpKind::*;
         use std::collections::hash_map::Entry::*;
         match (
             self.group_cache

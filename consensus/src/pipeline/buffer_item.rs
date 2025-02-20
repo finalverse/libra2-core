@@ -15,7 +15,7 @@ use libra2_crypto::{bls12381, HashValue};
 use aptos_executor_types::ExecutorResult;
 use libra2_logger::prelude::*;
 use aptos_reliable_broadcast::DropGuard;
-use aptos_types::{
+use libra2_types::{
     block_info::BlockInfo,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures, SignatureAggregator},
     validator_verifier::ValidatorVerifier,
@@ -480,7 +480,7 @@ mod test {
     use aptos_consensus_types::{block::Block, block_data::BlockData};
     use libra2_crypto::HashValue;
     use aptos_executor_types::state_compute_result::StateComputeResult;
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::AggregateSignature,
         ledger_info::LedgerInfo,
         validator_signer::ValidatorSigner,

@@ -21,7 +21,7 @@ use aptos_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},
 };
-use aptos_types::{state_store::state_value::StateValue, transaction::Version};
+use libra2_types::{state_store::state_value::StateValue, transaction::Version};
 use byteorder::{BigEndian, ReadBytesExt, WriteBytesExt};
 use std::{io::Write, mem::size_of};
 

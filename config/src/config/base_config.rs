@@ -6,7 +6,7 @@ use crate::config::{
     SecureBackend,
 };
 use libra2_secure_storage::{KVStorage, Storage};
-use aptos_types::{chain_id::ChainId, waypoint::Waypoint};
+use libra2_types::{chain_id::ChainId, waypoint::Waypoint};
 use poem_openapi::Enum as PoemEnum;
 use serde::{Deserialize, Serialize};
 use std::{fmt, fs, path::PathBuf, str::FromStr};

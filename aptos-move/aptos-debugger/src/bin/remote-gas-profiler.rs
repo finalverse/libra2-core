@@ -4,7 +4,7 @@
 use anyhow::{bail, Result};
 use aptos_move_debugger::aptos_debugger::AptosDebugger;
 use aptos_rest_client::Client;
-use aptos_types::transaction::Transaction;
+use libra2_types::transaction::Transaction;
 use aptos_vm::AptosVM;
 use clap::{Parser, Subcommand};
 use std::path::{Path, PathBuf};

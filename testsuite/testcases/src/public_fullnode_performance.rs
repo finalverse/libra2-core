@@ -14,7 +14,7 @@ use aptos_forge::{
 };
 use libra2_logger::info;
 use aptos_sdk::move_types::account_address::AccountAddress;
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use async_trait::async_trait;
 use itertools::{EitherOrBoth, Itertools};
 use rand::{

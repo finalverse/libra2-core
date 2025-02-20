@@ -10,7 +10,7 @@ use crate::{
 };
 use libra2_crypto::HashValue;
 use aptos_storage_interface::Result;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use rand::{rngs::StdRng, SeedableRng};
 use std::{collections::BTreeMap, sync::Arc};
 

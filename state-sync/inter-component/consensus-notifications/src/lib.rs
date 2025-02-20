@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent, ledger_info::LedgerInfoWithSignatures, transaction::Transaction,
 };
 use async_trait::async_trait;
@@ -406,7 +406,7 @@ impl ConsensusSyncTargetNotification {
 mod tests {
     use crate::{ConsensusNotification, ConsensusNotificationSender, Error};
     use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
-    use aptos_types::{
+    use libra2_types::{
         account_address::AccountAddress,
         aggregate_signature::AggregateSignature,
         block_info::BlockInfo,

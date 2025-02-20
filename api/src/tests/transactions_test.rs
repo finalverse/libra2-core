@@ -15,7 +15,7 @@ use libra2_crypto::{
     PrivateKey, SigningKey, Uniform,
 };
 use aptos_sdk::types::{AccountKey, LocalAccount};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::aptos_test_root_address,
     transaction::{

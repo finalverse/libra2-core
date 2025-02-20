@@ -5,7 +5,7 @@ use crate::smoke_test_environment::new_local_swarm_with_aptos;
 use aptos_cached_packages::aptos_stdlib;
 use aptos_forge::{AptosPublicInfo, Swarm};
 use aptos_sdk::{transaction_builder::TransactionBuilder, types::LocalAccount};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress, account_config::aptos_test_root_address, chain_id::ChainId,
 };
 

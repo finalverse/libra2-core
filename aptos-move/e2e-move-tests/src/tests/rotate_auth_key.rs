@@ -13,7 +13,7 @@ use libra2_crypto::{
     Signature, SigningKey, Uniform, ValidCryptoMaterial,
 };
 use aptos_language_e2e_tests::account::Account;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{RotationProofChallenge, CORE_CODE_ADDRESS},
     state_store::{state_key::StateKey, table::TableHandle},

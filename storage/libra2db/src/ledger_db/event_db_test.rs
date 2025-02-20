@@ -5,7 +5,7 @@ use crate::db::Libra2DB;
 use aptos_schemadb::batch::SchemaBatch;
 use aptos_storage_interface::Result;
 use libra2_temppath::TempPath;
-use aptos_types::contract_event::ContractEvent;
+use libra2_types::contract_event::ContractEvent;
 use proptest::{collection::vec, prelude::*, proptest};
 
 proptest! {

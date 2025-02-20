@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use serde::{de::Error as _, Deserialize, Deserializer, Serialize, Serializer};
 use std::{fmt, str::FromStr};
 
@@ -102,7 +102,7 @@ impl<'de> Deserialize<'de> for Address {
 #[cfg(test)]
 mod tests {
     use crate::address::Address;
-    use aptos_types::account_address::AccountAddress;
+    use libra2_types::account_address::AccountAddress;
     use serde_json::{json, Value};
 
     #[test]

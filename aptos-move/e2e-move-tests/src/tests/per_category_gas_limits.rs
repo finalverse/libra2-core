@@ -6,7 +6,7 @@ use crate::{
 };
 use aptos_gas_algebra::{Gas, GasQuantity};
 use aptos_language_e2e_tests::account::Account;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     state_store::{state_key::StateKey, table::TableHandle},
     transaction::TransactionStatus,

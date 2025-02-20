@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-crypto = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 hex = { workspace = true }
 ledger-apdu = "0.10.0"
 ledger-transport-hid = "0.10.0"

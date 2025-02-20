@@ -6,7 +6,7 @@ use crate::{
     resolver::BlockSynchronizationKillSwitch,
 };
 use ambassador::Delegate;
-use aptos_types::{
+use libra2_types::{
     error::PanicError,
     state_store::{state_key::StateKey, state_value::StateValueMetadata, StateView, TStateView},
     vm::modules::AptosModuleExtension,

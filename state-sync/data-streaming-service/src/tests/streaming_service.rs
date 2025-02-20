@@ -21,7 +21,7 @@ use crate::{
 };
 use libra2_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
 use libra2_time_service::TimeService;
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     transaction::{TransactionListWithProof, TransactionOutputListWithProof},
 };

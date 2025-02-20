@@ -5,7 +5,7 @@
 use aptos_consensus_types::common::Author;
 use libra2_crypto::HashValue;
 use libra2_logger::Schema;
-use aptos_types::block_info::Round;
+use libra2_types::block_info::Round;
 use serde::Serialize;
 
 #[derive(Schema)]

@@ -23,7 +23,7 @@ use aptos_mempool_notifications::MempoolNotificationSender;
 use libra2_metrics_core::HistogramTimer;
 use aptos_storage_interface::{DbReader, DbReaderWriter, StateSnapshotReceiver};
 use aptos_storage_service_notifications::StorageServiceNotificationSender;
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     state_store::{
         state_key::StateKey,

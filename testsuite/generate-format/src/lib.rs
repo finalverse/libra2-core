@@ -6,7 +6,7 @@
 //! See API documentation with `cargo doc -p serde-reflection --open`
 
 use libra2_crypto::ed25519::{Ed25519PublicKey, Ed25519Signature};
-use aptos_types::{
+use libra2_types::{
     keyless,
     keyless::{EphemeralCertificate, Groth16Proof, IdCommitment, Pepper, ZeroKnowledgeSig},
     transaction::authenticator::{EphemeralPublicKey, EphemeralSignature},

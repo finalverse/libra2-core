@@ -18,7 +18,7 @@ use aptos_network::{
     ProtocolId,
 };
 use aptos_reliable_broadcast::RBNetworkSender;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use bytes::Bytes;
 use futures::Stream;
 use futures_channel::oneshot;

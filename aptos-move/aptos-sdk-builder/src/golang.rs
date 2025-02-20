@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::common;
-use aptos_types::transaction::{
+use libra2_types::transaction::{
     ArgumentABI, EntryABI, EntryFunctionABI, TransactionScriptABI, TypeArgumentABI,
 };
 use heck::ToUpperCamelCase;
@@ -114,12 +114,12 @@ where
     T: Write,
 {
     fn output_script_call_enum_with_imports(&mut self, abis: &[EntryABI]) -> Result<()> {
-        let aptos_types_package = match &self.aptos_module_path {
+        let libra2_types_package = match &self.aptos_module_path {
             Some(path) => format!("{}/aptostypes", path),
             None => "aptostypes".into(),
         };
         let mut external_definitions =
-            crate::common::get_external_definitions(&aptos_types_package);
+            crate::common::get_external_definitions(&libra2_types_package);
         // We need BCS for argument encoding and decoding
         external_definitions.insert(
             "github.com/aptos-labs/serde-reflection/serde-generate/runtime/golang/bcs".to_string(),

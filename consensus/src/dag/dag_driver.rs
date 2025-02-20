@@ -36,7 +36,7 @@ use libra2_infallible::Mutex;
 use libra2_logger::{debug, error};
 use aptos_reliable_broadcast::{DropGuard, ReliableBroadcast};
 use libra2_time_service::{TimeService, TimeServiceTrait};
-use aptos_types::{block_info::Round, epoch_state::EpochState};
+use libra2_types::{block_info::Round, epoch_state::EpochState};
 use aptos_validator_transaction_pool as vtxn_pool;
 use async_trait::async_trait;
 use futures::{

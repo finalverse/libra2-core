@@ -7,7 +7,7 @@ use aptos_gas_schedule::{
     gas_feature_versions::*,
     gas_params::{instr::*, txn::*},
 };
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent, state_store::state_key::StateKey, write_set::WriteOpSize,
 };
 use move_binary_format::{

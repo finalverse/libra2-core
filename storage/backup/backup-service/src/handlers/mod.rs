@@ -11,7 +11,7 @@ use crate::handlers::utils::{
 };
 use libra2_crypto::hash::HashValue;
 use aptos_db::backup::backup_handler::BackupHandler;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use warp::{filters::BoxedFilter, reply::Reply, Filter};
 
 static DB_STATE: &str = "db_state";

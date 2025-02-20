@@ -27,7 +27,7 @@ use aptos_db::state_restore::StateSnapshotRestoreMode;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use aptos_storage_interface::StateSnapshotReceiver;
-use aptos_types::{
+use libra2_types::{
     access_path::Path,
     ledger_info::LedgerInfoWithSignatures,
     on_chain_config::Features,

@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use clap::Parser;
 use std::collections::BTreeMap;
 

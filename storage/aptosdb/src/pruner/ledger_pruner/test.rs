@@ -10,7 +10,7 @@ use libra2_config::config::LedgerPrunerConfig;
 use aptos_schemadb::SchemaBatch;
 use aptos_storage_interface::DbReader;
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     block_metadata::BlockMetadata,
     proof::position::Position,

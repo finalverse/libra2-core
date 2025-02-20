@@ -5,7 +5,7 @@ use crate::tests::{mock, mock::MockClient, utils};
 use libra2_config::config::StorageServiceConfig;
 use libra2_crypto::hash::HashValue;
 use aptos_storage_service_types::responses::{DataResponse, StorageServiceResponse};
-use aptos_types::{
+use libra2_types::{
     proof::definition::SparseMerkleRangeProof, state_store::state_value::StateValueChunkWithProof,
 };
 use mockall::{

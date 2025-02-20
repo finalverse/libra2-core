@@ -7,7 +7,7 @@ use aptos_forge::{
     NetworkTest, SwarmChaos, SwarmNetworkBandwidth, SwarmNetworkDelay, Test,
 };
 use libra2_logger::info;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use async_trait::async_trait;
 
 /// Represents a test that simulates a network with 3 regions, all in the same cloud.

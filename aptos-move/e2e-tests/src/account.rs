@@ -7,7 +7,7 @@
 use crate::gas_costs;
 use libra2_crypto::ed25519::*;
 use aptos_keygen::KeyGen;
-use aptos_types::{
+use libra2_types::{
     access_path::AccessPath,
     account_address::AccountAddress,
     account_config::{
@@ -124,7 +124,7 @@ impl Account {
     /// Like with [`Account::new`], the account returned by this constructor is a purely logical
     /// entity.
     pub fn with_keypair(privkey: Ed25519PrivateKey, pubkey: Ed25519PublicKey) -> Self {
-        let addr = aptos_types::account_address::from_public_key(&pubkey);
+        let addr = libra2_types::account_address::from_public_key(&pubkey);
         Account {
             addr,
             privkey,

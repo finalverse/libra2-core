@@ -10,7 +10,7 @@ use crate::{
 };
 use aptos_consensus_types::proof_of_store::BatchId;
 use libra2_temppath::TempPath;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use claims::assert_ok;
 
 #[test]

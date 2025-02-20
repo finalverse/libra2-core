@@ -19,7 +19,7 @@ use aptos_storage_interface::{
     state_store::state_view::db_state_view::{DbStateViewAtVersion, VerifiedStateViewAtVersion},
     DbReaderWriter,
 };
-use aptos_types::{
+use libra2_types::{
     account_config::{aptos_test_root_address, AccountResource, CoinStoreResource},
     block_metadata::BlockMetadata,
     chain_id::ChainId,
@@ -66,7 +66,7 @@ pub fn test_execution_with_storage_impl_inner(
         create_db_and_executor(db_path, &genesis_txn, force_sharding);
 
     let parent_block_id = executor.committed_block_id();
-    let signer = aptos_types::validator_signer::ValidatorSigner::new(
+    let signer = libra2_types::validator_signer::ValidatorSigner::new(
         validators[0].data.owner_address,
         Arc::new(validators[0].consensus_key.clone()),
     );

@@ -5,7 +5,7 @@ use crate::{metrics::JWK_FETCH_SECONDS, Issuer, KeyID};
 use anyhow::{anyhow, Result};
 use aptos_keyless_pepper_common::jwt::parse;
 use libra2_logger::warn;
-use aptos_types::jwks::rsa::RSA_JWK;
+use libra2_types::jwks::rsa::RSA_JWK;
 use dashmap::DashMap;
 use jsonwebtoken::DecodingKey;
 use once_cell::sync::Lazy;

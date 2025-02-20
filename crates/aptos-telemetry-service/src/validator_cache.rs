@@ -10,7 +10,7 @@ use crate::{
 use libra2_config::config::{Peer, PeerRole, PeerSet};
 use libra2_infallible::RwLock;
 use aptos_rest_client::Response;
-use aptos_types::{
+use libra2_types::{
     account_config::CORE_CODE_ADDRESS, chain_id::ChainId, on_chain_config::ValidatorSet, PeerId,
 };
 use std::{collections::HashMap, sync::Arc, time::Duration};
@@ -184,7 +184,7 @@ mod tests {
     };
     use libra2_infallible::RwLock;
     use aptos_rest_client::aptos_api_types::*;
-    use aptos_types::{
+    use libra2_types::{
         chain_id::ChainId, network_address::NetworkAddress, on_chain_config::ValidatorSet,
         validator_config::ValidatorConfig, validator_info::ValidatorInfo, PeerId,
     };

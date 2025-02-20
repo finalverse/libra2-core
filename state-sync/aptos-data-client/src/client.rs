@@ -46,7 +46,7 @@ use aptos_storage_service_types::{
     Epoch, StorageServiceMessage,
 };
 use libra2_time_service::TimeService;
-use aptos_types::{
+use libra2_types::{
     epoch_change::EpochChangeProof,
     ledger_info::LedgerInfoWithSignatures,
     state_store::state_value::StateValueChunkWithProof,

@@ -10,7 +10,7 @@ use crate::{
     VersionedData,
 };
 use anyhow::{anyhow, bail};
-use aptos_types::{
+use libra2_types::{
     error::{code_invariant_error, PanicError},
     write_set::{TransactionWrite, WriteOpKind},
 };

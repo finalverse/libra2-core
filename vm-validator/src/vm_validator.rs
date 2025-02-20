@@ -11,7 +11,7 @@ use aptos_storage_interface::{
     },
     DbReader,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::AccountResource,
     state_store::{state_key::StateKey, MoveResourceExt, StateView},
@@ -356,7 +356,7 @@ impl TransactionValidation for PooledVMValidator {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aptos_types::state_store::{state_value::StateValue, MockStateView};
+    use libra2_types::state_store::{state_value::StateValue, MockStateView};
     use move_binary_format::file_format::empty_module_with_dependencies_and_friends;
     use move_core_types::ident_str;
     use move_vm_runtime::ModuleStorage;

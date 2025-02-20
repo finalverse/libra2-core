@@ -10,7 +10,7 @@ use aptos_consensus_types::{
     block::block_test_utils::random_payload, common::Payload,
     payload_pull_params::PayloadPullParameters, request_response::GetPayloadCommand,
 };
-use aptos_types::{
+use libra2_types::{
     transaction::{ExecutionStatus, TransactionStatus},
     validator_txn::ValidatorTransaction,
     vm_status::StatusCode,

@@ -9,7 +9,7 @@ use crate::{
 use aptos_forge::{NodeExt, SwarmExt};
 use libra2_logger::{debug, info};
 use aptos_rest_client::Client;
-use aptos_types::{dkg::DKGState, on_chain_config::OnChainRandomnessConfig};
+use libra2_types::{dkg::DKGState, on_chain_config::OnChainRandomnessConfig};
 use futures::future::join_all;
 use std::{sync::Arc, time::Duration};
 

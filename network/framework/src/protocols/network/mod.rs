@@ -16,7 +16,7 @@ use libra2_channels::libra2_channel;
 use libra2_config::network_id::PeerNetworkId;
 use libra2_logger::prelude::*;
 use libra2_short_hex_str::AsShortHexStr;
-use aptos_types::{network_address::NetworkAddress, PeerId};
+use libra2_types::{network_address::NetworkAddress, PeerId};
 use bytes::Bytes;
 use futures::{
     channel::oneshot,

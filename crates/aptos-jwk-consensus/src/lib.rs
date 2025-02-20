@@ -10,7 +10,7 @@ use aptos_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };
 use aptos_network::application::interface::{NetworkClient, NetworkServiceEvents};
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use aptos_validator_transaction_pool::VTxnPoolState;
 use tokio::runtime::Runtime;
 

@@ -10,7 +10,7 @@ use aptos_executor::db_bootstrapper::maybe_bootstrap;
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
 use libra2_logger::{debug, info};
 use aptos_storage_interface::{DbReader, DbReaderWriter};
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures, transaction::Version, waypoint::Waypoint,
 };
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;

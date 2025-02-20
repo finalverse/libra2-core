@@ -5,7 +5,7 @@ use aptos_gas_schedule::gas_params::natives::aptos_framework::*;
 use aptos_native_interface::{
     RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeResult,
 };
-use aptos_types::{state_store::state_key::StateKey, vm_status::StatusCode};
+use libra2_types::{state_store::state_key::StateKey, vm_status::StatusCode};
 use aptos_vm_types::resolver::StateStorageView;
 use better_any::{Tid, TidAble};
 use move_binary_format::errors::PartialVMError;

@@ -4,7 +4,7 @@
 use aptos_executor_types::should_forward_to_subscription_service;
 #[cfg(feature = "bench")]
 use aptos_executor_types::should_forward_to_subscription_service_old;
-use aptos_types::contract_event::ContractEvent;
+use libra2_types::contract_event::ContractEvent;
 use criterion::{criterion_group, criterion_main, Criterion};
 
 fn default_targets(c: &mut Criterion) {

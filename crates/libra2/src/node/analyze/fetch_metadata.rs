@@ -6,7 +6,7 @@ use aptos_rest_client::{
     aptos_api_types::{IdentifierWrapper, MoveResource, WriteSetChange},
     Client as RestClient, Transaction, VersionedNewBlockEvent,
 };
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use std::str::FromStr;
 
 const MAX_FETCH_BATCH_SIZE: u16 = 1000;

@@ -4,7 +4,7 @@
 use crate::change_set::WriteOpInfo;
 use aptos_gas_algebra::{Fee, NumSlots};
 use aptos_gas_schedule::TransactionGasParameters;
-use aptos_types::{
+use libra2_types::{
     account_config::AccountResource, contract_event::ContractEvent, on_chain_config::Features,
     state_store::state_key::StateKey, write_set::WriteOpSize,
 };
@@ -245,7 +245,7 @@ const ACCOUNT_RESOURCE_BYTES_OVER_ESTIMATE: u64 = 300;
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aptos_types::{
+    use libra2_types::{
         on_chain_config::CurrentTimeMicroseconds, state_store::state_value::StateValueMetadata,
     };
 

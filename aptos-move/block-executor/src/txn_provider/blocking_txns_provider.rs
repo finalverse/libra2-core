@@ -3,7 +3,7 @@
 
 use crate::txn_provider::TxnProvider;
 use aptos_mvhashmap::types::TxnIndex;
-use aptos_types::transaction::BlockExecutableTransaction as Transaction;
+use libra2_types::transaction::BlockExecutableTransaction as Transaction;
 use once_cell::sync::OnceCell;
 
 pub struct BlockingTxnProvider<T: Transaction + std::fmt::Debug> {

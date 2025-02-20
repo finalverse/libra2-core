@@ -13,7 +13,7 @@ use aptos_schemadb::{
     schema::{KeyCodec, ValueCodec},
     ColumnFamilyName, Options, DB,
 };
-use aptos_types::ledger_info::LedgerInfoWithSignatures;
+use libra2_types::ledger_info::LedgerInfoWithSignatures;
 use serde::{Deserialize, Serialize};
 use std::{path::Path, sync::Arc, time::Instant};
 

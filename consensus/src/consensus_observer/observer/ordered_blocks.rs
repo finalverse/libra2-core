@@ -11,7 +11,7 @@ use crate::consensus_observer::{
 use libra2_config::config::ConsensusObserverConfig;
 use aptos_consensus_types::{common::Round, pipelined_block::PipelinedBlock};
 use libra2_logger::{debug, warn};
-use aptos_types::ledger_info::LedgerInfoWithSignatures;
+use libra2_types::ledger_info::LedgerInfoWithSignatures;
 use std::{collections::BTreeMap, sync::Arc};
 
 /// A simple struct to store ordered blocks
@@ -216,7 +216,7 @@ mod test {
         quorum_cert::QuorumCert,
     };
     use libra2_crypto::HashValue;
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::AggregateSignature, block_info::BlockInfo, ledger_info::LedgerInfo,
         transaction::Version,
     };
@@ -701,7 +701,7 @@ mod test {
             // Create a new block info
             let block_info = BlockInfo::new(
                 epoch,
-                i as aptos_types::block_info::Round,
+                i as libra2_types::block_info::Round,
                 HashValue::random(),
                 HashValue::random(),
                 i as Version,

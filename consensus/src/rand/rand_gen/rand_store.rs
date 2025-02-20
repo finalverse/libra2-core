@@ -11,7 +11,7 @@ use crate::{
 use anyhow::ensure;
 use aptos_consensus_types::common::{Author, Round};
 use libra2_logger::warn;
-use aptos_types::randomness::{FullRandMetadata, RandMetadata, Randomness};
+use libra2_types::randomness::{FullRandMetadata, RandMetadata, Randomness};
 use itertools::Either;
 use std::collections::{BTreeMap, HashMap, HashSet};
 
@@ -344,7 +344,7 @@ mod tests {
         pvss::{traits::Transcript, Player, WeightedConfig},
         weighted_vuf::traits::WeightedVUF,
     };
-    use aptos_types::{
+    use libra2_types::{
         dkg::{real_dkg::maybe_dk_from_bls_sk, DKGSessionMetadata, DKGTrait, DefaultDKG},
         on_chain_config::OnChainRandomnessConfig,
         randomness::{FullRandMetadata, RandKeys, WvufPP, WVUF},

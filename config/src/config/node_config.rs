@@ -18,7 +18,7 @@ use crate::{
 use libra2_crypto::x25519;
 use libra2_logger::info;
 use libra2_temppath::TempPath;
-use aptos_types::account_address::AccountAddress as PeerId;
+use libra2_types::account_address::AccountAddress as PeerId;
 use rand::{prelude::StdRng, SeedableRng};
 use serde::{Deserialize, Serialize};
 use std::{

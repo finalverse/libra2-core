@@ -12,7 +12,7 @@ use aptos_consensus_types::{
     vote_proposal::VoteProposal,
 };
 use libra2_crypto::bls12381;
-use aptos_types::{
+use libra2_types::{
     epoch_change::EpochChangeProof,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},
 };

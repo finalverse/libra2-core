@@ -11,7 +11,7 @@ use crate::{
 };
 use libra2_channels::libra2_channel;
 use libra2_logger::prelude::*;
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use futures::StreamExt;
 use tokio::sync::mpsc::Sender;
 

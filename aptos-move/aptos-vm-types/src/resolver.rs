@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_aggregator::resolver::{TAggregatorV1View, TDelayedFieldView};
-use aptos_types::{
+use libra2_types::{
     serde_helper::bcs_utils::size_u32_as_uleb128,
     state_store::{
         errors::StateViewError,

@@ -17,7 +17,7 @@ use crate::{
     },
 };
 use anyhow::{Context, Result};
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 use std::{
     str::FromStr,
     time::{SystemTime, UNIX_EPOCH},

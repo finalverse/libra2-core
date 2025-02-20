@@ -3,7 +3,7 @@
 
 use crate::{assert_success, assert_vm_status, tests::common, MoveHarness};
 use aptos_package_builder::PackageBuilder;
-use aptos_types::{account_address::AccountAddress, on_chain_config::FeatureFlag};
+use libra2_types::{account_address::AccountAddress, on_chain_config::FeatureFlag};
 use move_core_types::{language_storage::TypeTag, vm_status::StatusCode};
 use serde::{Deserialize, Serialize};
 use std::str::FromStr;

@@ -9,7 +9,7 @@ pub use crate::{
 };
 use aptos_framework::{BuildOptions, BuiltPackage};
 use aptos_package_builder::PackageBuilder;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     transaction::{EntryFunction, TransactionPayload},
     AptosCoinType, CoinType,

@@ -3,7 +3,7 @@
 
 use crate::txn_provider::TxnProvider;
 use aptos_mvhashmap::types::TxnIndex;
-use aptos_types::transaction::BlockExecutableTransaction as Transaction;
+use libra2_types::transaction::BlockExecutableTransaction as Transaction;
 
 pub struct DefaultTxnProvider<T: Transaction> {
     pub txns: Vec<T>,

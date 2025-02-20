@@ -13,7 +13,7 @@ use libra2_crypto::{
 use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
 use aptos_language_e2e_tests::data_store::{FakeDataStore, GENESIS_CHANGE_SET_HEAD};
 use aptos_resource_viewer::{AnnotatedMoveValue, AptosValueAnnotator};
-use aptos_types::{
+use libra2_types::{
     account_config::{aptos_test_root_address, AccountResource, CoinStoreResource},
     block_metadata::BlockMetadata,
     chain_id::ChainId,

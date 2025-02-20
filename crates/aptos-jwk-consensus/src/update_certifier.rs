@@ -8,7 +8,7 @@ use crate::{
 use libra2_channels::libra2_channel;
 use libra2_logger::info;
 use aptos_reliable_broadcast::ReliableBroadcast;
-use aptos_types::{
+use libra2_types::{
     epoch_state::EpochState,
     jwks::{Issuer, ProviderJWKs, QuorumCertifiedUpdate},
 };

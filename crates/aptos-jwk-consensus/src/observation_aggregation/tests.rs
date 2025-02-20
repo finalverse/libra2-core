@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_crypto::{bls12381, SigningKey, Uniform};
 use aptos_reliable_broadcast::BroadcastStatus;
-use aptos_types::{
+use libra2_types::{
     epoch_state::EpochState,
     jwks::{
         jwk::{JWKMoveStruct, JWK},

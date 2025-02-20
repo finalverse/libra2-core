@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent, state_store::state_key::StateKey, write_set::WriteOpSize,
 };
 use aptos_vm_types::{

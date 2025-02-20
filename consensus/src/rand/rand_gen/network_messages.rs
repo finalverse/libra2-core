@@ -15,7 +15,7 @@ use aptos_consensus_types::common::Author;
 use libra2_enum_conversion_derive::EnumConversion;
 use aptos_network::{protocols::network::RpcError, ProtocolId};
 use aptos_reliable_broadcast::RBMessage;
-use aptos_types::epoch_state::EpochState;
+use libra2_types::epoch_state::EpochState;
 use bytes::Bytes;
 use futures_channel::oneshot;
 use serde::{Deserialize, Serialize};

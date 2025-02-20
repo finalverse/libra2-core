@@ -19,7 +19,7 @@ use libra2_config::config::{LedgerPrunerConfig, StateMerklePrunerConfig};
 use libra2_crypto::{hash::CryptoHash, HashValue};
 use aptos_storage_interface::{state_store::NUM_STATE_SHARDS, DbReader};
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     state_store::{
         state_key::StateKey,
         state_value::{StaleStateValueByKeyHashIndex, StaleStateValueIndex, StateValue},

@@ -9,7 +9,7 @@ use aptos_consensus_types::{
     common::Payload, payload_pull_params::PayloadPullParameters, utils::PayloadTxnsSize,
 };
 use libra2_logger::debug;
-use aptos_types::{on_chain_config::ValidatorTxnConfig, validator_txn::ValidatorTransaction};
+use libra2_types::{on_chain_config::ValidatorTxnConfig, validator_txn::ValidatorTransaction};
 use aptos_validator_transaction_pool::TransactionFilter;
 use fail::fail_point;
 use futures::future::BoxFuture;
@@ -39,7 +39,7 @@ impl MixedPayloadClient {
     /// When enabled in smoke tests, generate 2 random validator transactions, 1 valid, 1 invalid.
     fn extra_test_only_vtxns(&self) -> Vec<ValidatorTransaction> {
         fail_point!("mixed_payload_client::extra_test_only_vtxns", |_| {
-            use aptos_types::dkg::{DKGTranscript, DKGTranscriptMetadata};
+            use libra2_types::dkg::{DKGTranscript, DKGTranscriptMetadata};
             use move_core_types::account_address::AccountAddress;
 
             vec![ValidatorTransaction::DKGResult(DKGTranscript {
@@ -118,7 +118,7 @@ mod tests {
         common::{Payload, PayloadFilter},
         payload_pull_params::PayloadPullParameters,
     };
-    use aptos_types::{on_chain_config::ValidatorTxnConfig, validator_txn::ValidatorTransaction};
+    use libra2_types::{on_chain_config::ValidatorTxnConfig, validator_txn::ValidatorTransaction};
     use aptos_validator_transaction_pool as vtxn_pool;
     use std::{collections::HashSet, sync::Arc, time::Duration};
 

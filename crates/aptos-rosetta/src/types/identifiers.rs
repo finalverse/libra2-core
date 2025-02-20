@@ -9,7 +9,7 @@ use crate::{
     common::{to_hex_lower, BlockHash, BLOCKCHAIN},
     error::{ApiError, ApiResult},
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress, chain_id::ChainId, transaction::TransactionInfo,
 };
 use serde::{Deserialize, Serialize};

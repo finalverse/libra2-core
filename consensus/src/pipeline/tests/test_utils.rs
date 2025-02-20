@@ -18,7 +18,7 @@ use aptos_safety_rules::{
     PersistentSafetyStorage, SafetyRulesManager,
 };
 use libra2_secure_storage::Storage;
-use aptos_types::{
+use libra2_types::{
     ledger_info::{generate_ledger_info_with_sig, LedgerInfo, LedgerInfoWithSignatures},
     validator_signer::ValidatorSigner,
     validator_verifier::random_validator_verifier,

@@ -7,7 +7,7 @@ use aptos_event_notifications::EventSubscriptionService;
 use libra2_infallible::RwLock;
 use aptos_storage_interface::{DbReader, DbReaderWriter, DbWriter};
 use libra2_temppath::TempPath;
-use aptos_types::{chain_id::ChainId, waypoint::Waypoint};
+use libra2_types::{chain_id::ChainId, waypoint::Waypoint};
 use rand::SeedableRng;
 use std::{fs, sync::Arc};
 

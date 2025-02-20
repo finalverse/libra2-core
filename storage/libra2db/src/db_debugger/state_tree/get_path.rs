@@ -12,7 +12,7 @@ use aptos_jellyfish_merkle::{
     TreeReader,
 };
 use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
-use aptos_types::{
+use libra2_types::{
     nibble::{nibble_path::NibblePath, Nibble},
     transaction::Version,
 };

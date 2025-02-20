@@ -7,7 +7,7 @@ use crate::{
     unlock_stake, withdraw_stake, MoveHarness,
 };
 use aptos_cached_packages::aptos_stdlib;
-use aptos_types::account_address::{default_stake_pool_address, AccountAddress};
+use libra2_types::account_address::{default_stake_pool_address, AccountAddress};
 use once_cell::sync::Lazy;
 use std::collections::BTreeMap;
 

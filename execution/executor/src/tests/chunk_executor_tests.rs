@@ -17,7 +17,7 @@ use libra2_crypto::HashValue;
 use aptos_db::AptosDB;
 use aptos_executor_types::{BlockExecutorTrait, ChunkExecutorTrait};
 use aptos_storage_interface::DbReaderWriter;
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     test_helpers::transaction_test_helpers::{block, TEST_BLOCK_EXECUTOR_ONCHAIN_CONFIG},
     transaction::{TransactionListWithProof, Version},
@@ -261,7 +261,7 @@ fn test_executor_execute_and_commit_chunk_local_result_mismatch() {
 #[cfg(feature = "consensus-only-perf-test")]
 #[test]
 fn test_executor_execute_and_commit_chunk_without_verify() {
-    use aptos_types::block_executor::config::BlockExecutorConfigFromOnchain;
+    use libra2_types::block_executor::config::BlockExecutorConfigFromOnchain;
 
     let first_batch_size = 10;
     let second_batch_size = 10;

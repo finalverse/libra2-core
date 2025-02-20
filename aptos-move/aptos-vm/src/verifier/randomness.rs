@@ -3,7 +3,7 @@
 
 use crate::move_vm_ext::{AptosMoveResolver, SessionExt};
 use aptos_framework::{KnownAttribute, RandomnessAnnotation};
-use aptos_types::transaction::EntryFunction;
+use libra2_types::transaction::EntryFunction;
 use aptos_vm_types::module_and_script_storage::module_storage::AptosModuleStorage;
 use move_binary_format::errors::VMResult;
 

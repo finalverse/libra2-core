@@ -12,7 +12,7 @@ use aptos_rest_client::{
     error::{AptosErrorResponse, RestError},
     Client,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     state_store::{state_key::StateKey, state_value::StateValue},
     transaction::{
@@ -284,7 +284,7 @@ impl AptosValidatorInterface for RestDebuggerInterface {
                 TransactionPayload::Multisig(multi_sig)
                     if multi_sig.transaction_payload.is_some() =>
                 {
-                    let aptos_types::transaction::MultisigTransactionPayload::EntryFunction(e) =
+                    let libra2_types::transaction::MultisigTransactionPayload::EntryFunction(e) =
                         multi_sig.transaction_payload.clone().unwrap();
                     Some(e.clone())
                 },

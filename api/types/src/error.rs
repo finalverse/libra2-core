@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::vm_status::StatusCode;
+use libra2_types::vm_status::StatusCode;
 use poem_openapi::{Enum, Object};
 use serde::{Deserialize, Serialize};
 use std::fmt::Formatter;
@@ -123,7 +123,7 @@ fn test_serialize_deserialize() {
     let with_code = AptosError::new_with_vm_status(
         "Invalid transaction",
         AptosErrorCode::VmError,
-        aptos_types::vm_status::StatusCode::UNKNOWN_MODULE,
+        libra2_types::vm_status::StatusCode::UNKNOWN_MODULE,
     );
     let _: AptosError = bcs::from_bytes(&bcs::to_bytes(&with_code).unwrap()).unwrap();
     let _: AptosError = serde_json::from_str(&serde_json::to_string(&with_code).unwrap()).unwrap();

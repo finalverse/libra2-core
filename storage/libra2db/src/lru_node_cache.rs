@@ -4,7 +4,7 @@
 use crate::state_merkle_db::Node;
 use libra2_infallible::Mutex;
 use aptos_jellyfish_merkle::node_type::NodeKey;
-use aptos_types::{nibble::nibble_path::NibblePath, transaction::Version};
+use libra2_types::{nibble::nibble_path::NibblePath, transaction::Version};
 use lru::LruCache;
 use std::fmt;
 

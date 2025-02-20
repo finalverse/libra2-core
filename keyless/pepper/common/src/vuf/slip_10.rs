@@ -5,7 +5,7 @@ pub extern crate derivation_path;
 pub extern crate ed25519_dalek;
 
 use anyhow::{bail, Result};
-use aptos_types::keyless::Pepper;
+use libra2_types::keyless::Pepper;
 use core::fmt;
 pub use derivation_path::{ChildIndex, DerivationPath};
 pub use ed25519_dalek::{PublicKey, SecretKey};

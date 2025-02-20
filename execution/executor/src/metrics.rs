@@ -8,7 +8,7 @@ use libra2_metrics_core::{
     register_int_counter_vec, register_int_gauge_vec, Histogram, HistogramVec, IntCounter,
     IntCounterVec, IntGaugeVec,
 };
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     transaction::{
         authenticator::AccountAuthenticator, signature_verified_transaction::TransactionProvider,
@@ -431,12 +431,12 @@ pub fn update_counters_for_processed_chunk<T>(
             }
 
             match user_txn.payload() {
-                aptos_types::transaction::TransactionPayload::Script(_script) => {
+                libra2_types::transaction::TransactionPayload::Script(_script) => {
                     PROCESSED_USER_TXNS_BY_PAYLOAD
                         .with_label_values(&[process_type, "script", state])
                         .inc();
                 },
-                aptos_types::transaction::TransactionPayload::EntryFunction(function) => {
+                libra2_types::transaction::TransactionPayload::EntryFunction(function) => {
                     PROCESSED_USER_TXNS_BY_PAYLOAD
                         .with_label_values(&[process_type, "function", state])
                         .inc();
@@ -468,14 +468,14 @@ pub fn update_counters_for_processed_chunk<T>(
                             .inc();
                     }
                 },
-                aptos_types::transaction::TransactionPayload::Multisig(_) => {
+                libra2_types::transaction::TransactionPayload::Multisig(_) => {
                     PROCESSED_USER_TXNS_BY_PAYLOAD
                         .with_label_values(&[process_type, "multisig", state])
                         .inc();
                 },
 
                 // Deprecated.
-                aptos_types::transaction::TransactionPayload::ModuleBundle(_) => {
+                libra2_types::transaction::TransactionPayload::ModuleBundle(_) => {
                     PROCESSED_USER_TXNS_BY_PAYLOAD
                         .with_label_values(&[process_type, "deprecated_module_bundle", state])
                         .inc();

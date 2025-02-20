@@ -31,7 +31,7 @@ libra2-metrics-core = { workspace = true }
 aptos-mvhashmap = { workspace = true }
 aptos-native-interface = { workspace = true }
 aptos-table-natives = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 libra2-utils = { workspace = true }
 aptos-vm-environment = { workspace = true }
 aptos-vm-logging = { workspace = true }
@@ -64,7 +64,7 @@ serde = { workspace = true }
 aptos-aggregator = { workspace = true, features = ["testing"] }
 aptos-block-executor = { workspace = true, features = ["testing"] }
 aptos-language-e2e-tests = { workspace = true }
-aptos-types = { workspace = true, features = ["fuzzing", "testing"] }
+libra2-types = { workspace = true, features = ["fuzzing", "testing"] }
 claims = { workspace = true }
 move-vm-types = { workspace = true, features = ["testing"] }
 proptest = { workspace = true }
@@ -72,6 +72,6 @@ rand_core = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["move-core-types/fuzzing", "move-binary-format/fuzzing", "move-vm-types/fuzzing", "aptos-framework/fuzzing", "aptos-types/fuzzing"]
+fuzzing = ["move-core-types/fuzzing", "move-binary-format/fuzzing", "move-vm-types/fuzzing", "aptos-framework/fuzzing", "libra2-types/fuzzing"]
 failpoints = ["fail/failpoints", "move-vm-runtime/failpoints"]
 testing = ["move-unit-test", "aptos-framework/testing"]

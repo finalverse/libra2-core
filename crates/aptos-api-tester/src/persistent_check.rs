@@ -23,7 +23,7 @@ use anyhow::anyhow;
 use aptos_api_types::HexEncodedBytes;
 use aptos_rest_client::Client;
 use aptos_sdk::types::LocalAccount;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use futures::Future;
 use tokio::time::{sleep, Instant};
 

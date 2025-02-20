@@ -12,7 +12,7 @@ use libra2_config::{
     network_id::NetworkId,
 };
 use aptos_forge::{LocalNode, NodeExt, Swarm};
-use aptos_types::on_chain_config::{
+use libra2_types::on_chain_config::{
     ConsensusAlgorithmConfig, OnChainConsensusConfig, ValidatorTxnConfig, DEFAULT_WINDOW_SIZE,
 };
 use std::sync::Arc;

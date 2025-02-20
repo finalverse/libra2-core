@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::state_store::state_value::StateValue;
+use libra2_types::state_store::state_value::StateValue;
 use std::sync::{Arc, Condvar, Mutex};
 
 #[derive(Clone)]

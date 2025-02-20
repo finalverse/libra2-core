@@ -3,7 +3,7 @@
 
 use crate::{process_common, ProcessingFailure};
 use libra2_crypto::ed25519::Ed25519PublicKey;
-use aptos_types::{
+use libra2_types::{
     keyless::{
         circuit_testcases::{
             sample_jwt_payload_json_overrides, SAMPLE_EXP_DATE, SAMPLE_JWT_EXTRA_FIELD,

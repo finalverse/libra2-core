@@ -11,7 +11,7 @@ use crate::{
     RosettaContext,
 };
 use libra2_logger::{debug, trace};
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 use std::sync::Arc;
 use warp::Filter;
 

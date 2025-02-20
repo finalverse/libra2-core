@@ -33,7 +33,7 @@ use libra2_crypto::bls12381::PrivateKey;
 use libra2_logger::prelude::*;
 use aptos_mempool::QuorumStoreRequest;
 use aptos_storage_interface::DbReader;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress, validator_signer::ValidatorSigner,
     validator_verifier::ValidatorVerifier,
 };

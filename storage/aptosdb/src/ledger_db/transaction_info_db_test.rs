@@ -5,7 +5,7 @@
 use crate::{db::test_helper::put_transaction_infos, AptosDB};
 use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_temppath::TempPath;
-use aptos_types::transaction::{TransactionInfo, Version};
+use libra2_types::transaction::{TransactionInfo, Version};
 use proptest::{collection::vec, prelude::*};
 
 fn verify(

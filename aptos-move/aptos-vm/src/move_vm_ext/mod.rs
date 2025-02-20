@@ -14,8 +14,8 @@ pub use crate::move_vm_ext::{
     session::{convert_modules_into_write_ops, SessionExt},
     vm::{GenesisMoveVM, GenesisRuntimeBuilder, MoveVmExt},
 };
-use aptos_types::state_store::state_key::StateKey;
-pub use aptos_types::transaction::user_transaction_context::UserTransactionContext;
+use libra2_types::state_store::state_key::StateKey;
+pub use libra2_types::transaction::user_transaction_context::UserTransactionContext;
 use move_binary_format::errors::{PartialVMError, PartialVMResult};
 use move_core_types::{
     account_address::AccountAddress, language_storage::StructTag, vm_status::StatusCode,

@@ -15,7 +15,7 @@ use aptos_schemadb::{
     define_pub_schema,
     schema::{KeyCodec, ValueCodec},
 };
-use aptos_types::state_store::table::{TableHandle, TableInfo};
+use libra2_types::state_store::table::{TableHandle, TableInfo};
 
 define_pub_schema!(TableInfoSchema, TableHandle, TableInfo, TABLE_INFO_CF_NAME);
 

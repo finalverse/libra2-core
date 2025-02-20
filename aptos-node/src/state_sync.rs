@@ -32,7 +32,7 @@ use aptos_storage_service_server::{
 };
 use aptos_storage_service_types::StorageServiceMessage;
 use libra2_time_service::TimeService;
-use aptos_types::waypoint::Waypoint;
+use libra2_types::waypoint::Waypoint;
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;
 use std::sync::Arc;
 use tokio::runtime::Runtime;

@@ -23,7 +23,7 @@ aptos-mempool = { workspace = true }
 aptos-runtimes = { workspace = true }
 aptos-storage-interface = { workspace = true }
 libra2-system-utils = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 bcs = { workspace = true }
 futures-channel = { workspace = true }
 http = { workspace = true }

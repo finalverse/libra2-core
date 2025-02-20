@@ -40,7 +40,7 @@ use aptos_network::{
     ProtocolId,
 };
 use aptos_reliable_broadcast::{RBMessage, RBNetworkSender};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress, epoch_change::EpochChangeProof,
     ledger_info::LedgerInfoWithSignatures, validator_verifier::ValidatorVerifier,
 };

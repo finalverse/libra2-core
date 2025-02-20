@@ -12,7 +12,7 @@ use crate::{
 };
 use libra2_config::config::{BootstrappingMode, ContinuousSyncingMode, NodeConfig};
 use aptos_forge::{LocalSwarm, NodeExt};
-use aptos_types::on_chain_config::{
+use libra2_types::on_chain_config::{
     ConsensusConfigV1, LeaderReputationType, OnChainConsensusConfig, ProposerAndVoterConfig,
     ProposerElectionType,
 };

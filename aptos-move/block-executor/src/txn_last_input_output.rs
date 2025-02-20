@@ -10,7 +10,7 @@ use crate::{
 };
 use libra2_logger::error;
 use aptos_mvhashmap::types::TxnIndex;
-use aptos_types::{
+use libra2_types::{
     error::{code_invariant_error, PanicError},
     fee_statement::FeeStatement,
     state_store::state_value::StateValueMetadata,

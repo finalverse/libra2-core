@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::{state_store::state_value::StateValue, transaction::Version};
+use libra2_types::{state_store::state_value::StateValue, transaction::Version};
 
 #[derive(Clone, Debug)]
 pub struct StateUpdate {

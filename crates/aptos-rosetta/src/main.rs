@@ -10,7 +10,7 @@ use libra2_logger::prelude::*;
 use aptos_node::AptosNodeArgs;
 use aptos_rosetta::{bootstrap, common::native_coin, types::Currency};
 use aptos_sdk::move_types::language_storage::StructTag;
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 use clap::Parser;
 use std::{
     collections::HashSet,

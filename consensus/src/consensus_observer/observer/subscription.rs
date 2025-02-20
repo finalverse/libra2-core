@@ -244,7 +244,7 @@ mod test {
     };
     use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
     use aptos_storage_interface::Result;
-    use aptos_types::{network_address::NetworkAddress, transaction::Version};
+    use libra2_types::{network_address::NetworkAddress, transaction::Version};
     use claims::assert_matches;
     use mockall::mock;
 

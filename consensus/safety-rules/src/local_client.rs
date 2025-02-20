@@ -13,7 +13,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::bls12381;
 use libra2_infallible::RwLock;
-use aptos_types::{
+use libra2_types::{
     epoch_change::EpochChangeProof,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},
 };

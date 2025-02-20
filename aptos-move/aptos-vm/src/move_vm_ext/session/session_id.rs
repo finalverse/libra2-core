@@ -4,7 +4,7 @@
 use crate::transaction_metadata::TransactionMetadata;
 use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
-use aptos_types::{
+use libra2_types::{
     block_metadata::BlockMetadata, block_metadata_ext::BlockMetadataExt,
     validator_txn::ValidatorTransaction,
 };

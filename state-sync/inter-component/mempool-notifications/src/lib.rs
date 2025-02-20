@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     transaction::{
         use_case::{UseCaseAwareTransaction, UseCaseKey},
@@ -184,7 +184,7 @@ impl fmt::Display for CommittedTransaction {
 mod tests {
     use crate::{CommittedTransaction, Error, MempoolNotificationSender};
     use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
-    use aptos_types::{
+    use libra2_types::{
         account_address::AccountAddress,
         block_metadata::BlockMetadata,
         chain_id::ChainId,

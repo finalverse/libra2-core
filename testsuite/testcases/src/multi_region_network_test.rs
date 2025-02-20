@@ -7,7 +7,7 @@ use aptos_forge::{
     SwarmNetEm, Test,
 };
 use libra2_logger::info;
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use async_trait::async_trait;
 use itertools::{self, EitherOrBoth, Itertools};
 use std::{collections::BTreeMap, sync::Arc};
@@ -380,7 +380,7 @@ impl NetworkTest for MultiRegionNetworkEmulationTest {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aptos_types::account_address::AccountAddress;
+    use libra2_types::account_address::AccountAddress;
     use std::vec;
 
     #[test]

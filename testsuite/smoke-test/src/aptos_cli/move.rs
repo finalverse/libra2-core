@@ -5,7 +5,7 @@ use crate::smoke_test_environment::SwarmBuilder;
 use aptos::test::CliTestFramework;
 use aptos_framework::{BuildOptions, BuiltPackage};
 use libra2_logger::info;
-use aptos_types::move_utils::MemberId;
+use libra2_types::move_utils::MemberId;
 use move_core_types::account_address::AccountAddress;
 use move_package::source_package::manifest_parser::parse_move_manifest_from_file;
 use std::{collections::BTreeMap, path::PathBuf, str::FromStr};

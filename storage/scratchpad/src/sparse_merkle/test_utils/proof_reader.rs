@@ -4,7 +4,7 @@
 
 use crate::ProofRead;
 use libra2_crypto::HashValue;
-use aptos_types::proof::SparseMerkleProofExt;
+use libra2_types::proof::SparseMerkleProofExt;
 use std::collections::HashMap;
 
 #[derive(Default)]

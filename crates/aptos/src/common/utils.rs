@@ -18,7 +18,7 @@ use aptos_keygen::KeyGen;
 use libra2_logger::{debug, Level};
 use aptos_rest_client::{aptos_api_types::HashValue, Account, Client, FaucetClient, State};
 use aptos_telemetry::service::telemetry_is_disabled;
-use aptos_types::{
+use libra2_types::{
     account_address::create_multisig_account_address,
     chain_id::ChainId,
     on_chain_config::{FeatureFlag, Features},

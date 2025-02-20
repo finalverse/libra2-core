@@ -7,7 +7,7 @@ use crate::{
     data_stream::{DataStreamId, DataStreamListener},
     error::Error,
 };
-use aptos_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
+use libra2_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
 use async_trait::async_trait;
 use futures::{
     channel::{mpsc, oneshot},

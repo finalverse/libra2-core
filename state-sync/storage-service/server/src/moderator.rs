@@ -249,7 +249,7 @@ impl RequestModerator {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aptos_types::PeerId;
+    use libra2_types::PeerId;
 
     #[test]
     fn test_unhealthy_peer_ignored() {

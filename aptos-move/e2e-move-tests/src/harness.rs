@@ -12,7 +12,7 @@ use aptos_language_e2e_tests::{
     account::{Account, TransactionBuilder},
     executor::FakeExecutor,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{
         fungible_store::FungibleStoreResource, object::ObjectGroupResource, AccountResource,
@@ -798,7 +798,7 @@ impl MoveHarness {
         .unwrap_or(0)
             + self
                 .read_resource_from_resource_group::<FungibleStoreResource>(
-                    &aptos_types::account_config::fungible_store::primary_apt_store(*addr),
+                    &libra2_types::account_config::fungible_store::primary_apt_store(*addr),
                     ObjectGroupResource::struct_tag(),
                     FungibleStoreResource::struct_tag(),
                 )
@@ -1101,14 +1101,14 @@ impl MoveHarness {
 #[macro_export]
 macro_rules! assert_success {
     ($s:expr $(,)?) => {{
-        assert_eq!($s, aptos_types::transaction::TransactionStatus::Keep(
-            aptos_types::transaction::ExecutionStatus::Success))
+        assert_eq!($s, libra2_types::transaction::TransactionStatus::Keep(
+            libra2_types::transaction::ExecutionStatus::Success))
     }};
     ($s:expr, $($arg:tt)+) => {{
         assert_eq!(
             $s,
-            aptos_types::transaction::TransactionStatus::Keep(
-                aptos_types::transaction::ExecutionStatus::Success),
+            libra2_types::transaction::TransactionStatus::Keep(
+                libra2_types::transaction::ExecutionStatus::Success),
             $($arg)+
         )
     }};
@@ -1118,14 +1118,14 @@ macro_rules! assert_success {
 #[macro_export]
 macro_rules! assert_out_of_gas {
     ($s:expr $(,)?) => {{
-        assert_eq!($s, aptos_types::transaction::TransactionStatus::Keep(
-            aptos_types::transaction::ExecutionStatus::OutOfGas))
+        assert_eq!($s, libra2_types::transaction::TransactionStatus::Keep(
+            libra2_types::transaction::ExecutionStatus::OutOfGas))
     }};
     ($s:expr, $($arg:tt)+) => {{
         assert_eq!(
             $s,
-            aptos_types::transaction::TransactionStatus::Keep(
-                aptos_types::transaction::ExecutionStatus::OutOfGas),
+            libra2_types::transaction::TransactionStatus::Keep(
+                libra2_types::transaction::ExecutionStatus::OutOfGas),
             $($arg)+
         )
     }};
@@ -1142,8 +1142,8 @@ macro_rules! assert_abort {
     ($s:expr, $c:ident $(,)?) => {{
         assert!(matches!(
             $s,
-            aptos_types::transaction::TransactionStatus::Keep(
-                aptos_types::transaction::ExecutionStatus::MoveAbort { code, .. }
+            libra2_types::transaction::TransactionStatus::Keep(
+                libra2_types::transaction::ExecutionStatus::MoveAbort { code, .. }
             )
             if code == $c,
         ));
@@ -1151,8 +1151,8 @@ macro_rules! assert_abort {
     ($s:expr, $c:pat $(,)?) => {{
         assert!(matches!(
             $s,
-            aptos_types::transaction::TransactionStatus::Keep(
-                aptos_types::transaction::ExecutionStatus::MoveAbort { code: $c, .. }
+            libra2_types::transaction::TransactionStatus::Keep(
+                libra2_types::transaction::ExecutionStatus::MoveAbort { code: $c, .. }
             ),
         ));
     }};
@@ -1160,8 +1160,8 @@ macro_rules! assert_abort {
         assert!(
             matches!(
                 $s,
-                aptos_types::transaction::TransactionStatus::Keep(
-                    aptos_types::transaction::ExecutionStatus::MoveAbort { code, .. }
+                libra2_types::transaction::TransactionStatus::Keep(
+                    libra2_types::transaction::ExecutionStatus::MoveAbort { code, .. }
                 )
                 if code == $c,
             ),
@@ -1172,8 +1172,8 @@ macro_rules! assert_abort {
         assert!(
             matches!(
                 $s,
-                aptos_types::transaction::TransactionStatus::Keep(
-                    aptos_types::transaction::ExecutionStatus::MoveAbort { code: $c, .. }
+                libra2_types::transaction::TransactionStatus::Keep(
+                    libra2_types::transaction::ExecutionStatus::MoveAbort { code: $c, .. }
                 ),
             ),
             $($arg)+
@@ -1192,8 +1192,8 @@ macro_rules! assert_abort_ref {
     ($s:expr, $c:ident $(,)?) => {{
         claims::assert_matches!(
             $s,
-            &aptos_types::transaction::TransactionStatus::Keep(
-                aptos_types::transaction::ExecutionStatus::MoveAbort { code, .. }
+            &libra2_types::transaction::TransactionStatus::Keep(
+                libra2_types::transaction::ExecutionStatus::MoveAbort { code, .. }
             )
             if code == $c,
         );
@@ -1201,16 +1201,16 @@ macro_rules! assert_abort_ref {
     ($s:expr, $c:pat $(,)?) => {{
         claims::assert_matches!(
             $s,
-            &aptos_types::transaction::TransactionStatus::Keep(
-                aptos_types::transaction::ExecutionStatus::MoveAbort { code: $c, .. }
+            &libra2_types::transaction::TransactionStatus::Keep(
+                libra2_types::transaction::ExecutionStatus::MoveAbort { code: $c, .. }
             )
         );
     }};
     ($s:expr, $c:ident, $($arg:tt)+) => {{
         claims::assert_matches!(
             $s,
-            &aptos_types::transaction::TransactionStatus::Keep(
-                aptos_types::transaction::ExecutionStatus::MoveAbort { code, .. }
+            &libra2_types::transaction::TransactionStatus::Keep(
+                libra2_types::transaction::ExecutionStatus::MoveAbort { code, .. }
             )
             if code == $c,
             $($arg)+
@@ -1219,8 +1219,8 @@ macro_rules! assert_abort_ref {
     ($s:expr, $c:pat, $($arg:tt)+) => {{
         claims::assert_matches!(
             $s,
-            &aptos_types::transaction::TransactionStatus::Keep(
-                aptos_types::transaction::ExecutionStatus::MoveAbort { code: $c, .. }
+            &libra2_types::transaction::TransactionStatus::Keep(
+                libra2_types::transaction::ExecutionStatus::MoveAbort { code: $c, .. }
             ),
             $($arg)+
         );
@@ -1231,14 +1231,14 @@ macro_rules! assert_abort_ref {
 #[macro_export]
 macro_rules! assert_vm_status {
     ($s:expr, $c:expr $(,)?) => {{
-        use aptos_types::transaction::*;
+        use libra2_types::transaction::*;
         assert_eq!(
             $s,
             TransactionStatus::Keep(ExecutionStatus::MiscellaneousError(Some($c)))
         );
     }};
     ($s:expr, $c:expr, $($arg:tt)+) => {{
-        use aptos_types::transaction::*;
+        use libra2_types::transaction::*;
         assert_eq!(
             $s,
             TransactionStatus::Keep(ExecutionStatus::MiscellaneousError(Some($c))),
@@ -1250,7 +1250,7 @@ macro_rules! assert_vm_status {
 #[macro_export]
 macro_rules! assert_move_abort {
     ($s:expr, $c:ident $(,)?) => {{
-        use aptos_types::transaction::*;
+        use libra2_types::transaction::*;
         assert!(match $s {
             TransactionStatus::Keep(ExecutionStatus::MoveAbort {
                 location: _,
@@ -1261,7 +1261,7 @@ macro_rules! assert_move_abort {
         });
     }};
     ($s:expr, $c:ident, $($arg:tt)+) => {{
-        use aptos_types::transaction::*;
+        use libra2_types::transaction::*;
         assert!(
             match $s {
                 TransactionStatus::Keep(ExecutionStatus::MoveAbort {
@@ -1278,7 +1278,7 @@ macro_rules! assert_move_abort {
 
 #[cfg(test)]
 mod tests {
-    use aptos_types::transaction::{ExecutionStatus, TransactionStatus};
+    use libra2_types::transaction::{ExecutionStatus, TransactionStatus};
     use move_core_types::vm_status::AbortLocation;
 
     #[test]

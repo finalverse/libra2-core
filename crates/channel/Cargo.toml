@@ -19,5 +19,5 @@ libra2-metrics-core = { workspace = true }
 futures = { workspace = true }
 
 [dev-dependencies]
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 tokio = { workspace = true }

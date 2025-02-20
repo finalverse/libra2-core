@@ -3,7 +3,7 @@
 
 use aptos_framework::extended_checks;
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEATURE_VERSION};
-use aptos_types::on_chain_config::{Features, TimedFeaturesBuilder};
+use libra2_types::on_chain_config::{Features, TimedFeaturesBuilder};
 use aptos_vm::natives;
 use move_vm_runtime::native_functions::NativeFunctionTable;
 

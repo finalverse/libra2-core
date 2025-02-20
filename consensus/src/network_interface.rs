@@ -26,7 +26,7 @@ use aptos_network::{
     application::{error::Error, interface::NetworkClientInterface},
     ProtocolId,
 };
-use aptos_types::{epoch_change::EpochChangeProof, PeerId};
+use libra2_types::{epoch_change::EpochChangeProof, PeerId};
 use bytes::Bytes;
 pub use pipeline::commit_reliable_broadcast::CommitMessage;
 use serde::{Deserialize, Serialize};

@@ -5,7 +5,7 @@ use crate::{components::get_signer_arg, utils::*};
 use anyhow::Result;
 use libra2_crypto::HashValue;
 use aptos_framework::generate_blob_as_hex_string;
-use aptos_types::on_chain_config::OnChainExecutionConfig;
+use libra2_types::on_chain_config::OnChainExecutionConfig;
 use move_model::{code_writer::CodeWriter, emit, emitln, model::Loc};
 
 pub fn generate_execution_config_upgrade_proposal(

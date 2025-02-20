@@ -9,7 +9,7 @@ use libra2_crypto::{
 };
 use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use aptos_storage_interface::jmt_update_refs;
-use aptos_types::{
+use libra2_types::{
     proof::{SparseMerkleInternalNode, SparseMerkleRangeProof},
     transaction::Version,
 };

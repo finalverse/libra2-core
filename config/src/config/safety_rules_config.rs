@@ -13,7 +13,7 @@ use crate::{
 };
 use anyhow::bail;
 use libra2_crypto::{bls12381, Uniform};
-use aptos_types::{chain_id::ChainId, network_address::NetworkAddress, waypoint::Waypoint, PeerId};
+use libra2_types::{chain_id::ChainId, network_address::NetworkAddress, waypoint::Waypoint, PeerId};
 use rand::rngs::StdRng;
 use serde::{Deserialize, Serialize};
 use std::{

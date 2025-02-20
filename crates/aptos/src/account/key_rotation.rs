@@ -15,7 +15,7 @@ use libra2_crypto::{
 };
 use aptos_ledger;
 use aptos_rest_client::{error::RestError, Client};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{RotationProofChallenge, CORE_CODE_ADDRESS},
     transaction::authenticator::AuthenticationKey,

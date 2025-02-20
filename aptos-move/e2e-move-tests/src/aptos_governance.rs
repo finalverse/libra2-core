@@ -4,7 +4,7 @@
 use crate::harness::MoveHarness;
 use aptos_cached_packages::aptos_stdlib;
 use aptos_language_e2e_tests::account::Account;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress, move_utils::MemberId, state_store::table::TableHandle,
     transaction::TransactionStatus,
 };

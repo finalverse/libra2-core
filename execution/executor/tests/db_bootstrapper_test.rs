@@ -19,7 +19,7 @@ use aptos_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReaderWriter,
 };
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{
         aptos_test_root_address, new_block_event_key, CoinStoreResource, NewBlockEvent,

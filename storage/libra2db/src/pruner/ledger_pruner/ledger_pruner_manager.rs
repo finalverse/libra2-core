@@ -13,7 +13,7 @@ use libra2_config::config::LedgerPrunerConfig;
 use aptos_db_indexer::db_indexer::InternalIndexerDB;
 use libra2_infallible::Mutex;
 use aptos_storage_interface::Result;
-use aptos_types::transaction::{AtomicVersion, Version};
+use libra2_types::transaction::{AtomicVersion, Version};
 use std::sync::{atomic::Ordering, Arc};
 
 /// The `PrunerManager` for `LedgerPruner`.

@@ -10,7 +10,7 @@ use aptos_aggregator::{
     delayed_change::DelayedChange,
     delta_change_set::{delta_add, DeltaOp},
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     contract_event::ContractEvent,
     fee_statement::FeeStatement,

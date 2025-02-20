@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-keyless-pepper-common = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 ark-bls12-381 = { workspace = true }
 ark-serialize = { workspace = true }
 bcs = { workspace = true }

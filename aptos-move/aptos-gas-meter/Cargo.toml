@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 aptos-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 aptos-vm-types = { workspace = true }
 move-binary-format = { workspace = true }
 move-core-types = { workspace = true }

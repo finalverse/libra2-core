@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::state_store::{state::LedgerState, state_summary::LedgerStateSummary};
-use aptos_types::{
+use libra2_types::{
     proof::accumulator::{InMemoryAccumulator, InMemoryTransactionAccumulator},
     transaction::Version,
 };

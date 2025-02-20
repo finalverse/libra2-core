@@ -37,7 +37,7 @@ use aptos_schemadb::{
     DB,
 };
 use aptos_storage_interface::Result;
-use aptos_types::{proof::position::Position, transaction::Version};
+use libra2_types::{proof::position::Position, transaction::Version};
 use claims::assert_ge;
 use rayon::prelude::*;
 use status_line::StatusLine;

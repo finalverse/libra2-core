@@ -34,7 +34,7 @@ use aptos_data_client::{
 };
 use libra2_id_generator::{IdGenerator, U64IdGenerator};
 use libra2_logger::prelude::*;
-use aptos_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
+use libra2_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
 use enum_dispatch::enum_dispatch;
 use std::{cmp, cmp::min, sync::Arc};
 

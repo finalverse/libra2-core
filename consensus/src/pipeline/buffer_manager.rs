@@ -37,7 +37,7 @@ use libra2_logger::prelude::*;
 use aptos_network::protocols::{rpc::error::RpcError, wire::handshake::v1::ProtocolId};
 use aptos_reliable_broadcast::{DropGuard, ReliableBroadcast};
 use libra2_time_service::TimeService;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress, epoch_state::EpochState, ledger_info::LedgerInfoWithSignatures,
 };
 use bytes::Bytes;

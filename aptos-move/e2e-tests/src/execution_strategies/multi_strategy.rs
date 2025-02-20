@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 use crate::execution_strategies::types::{Block, Executor, ExecutorResult};
-use aptos_types::transaction::TransactionOutput;
+use libra2_types::transaction::TransactionOutput;
 use std::{collections::BTreeMap, error::Error, fmt};
 
 #[derive(Debug)]

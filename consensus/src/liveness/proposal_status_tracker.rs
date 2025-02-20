@@ -166,7 +166,7 @@ mod tests {
     use crate::liveness::round_state::NewRoundReason;
     use libra2_bitvec::BitVec;
     use aptos_consensus_types::round_timeout::RoundTimeoutReason;
-    use aptos_types::validator_verifier::random_validator_verifier;
+    use libra2_types::validator_verifier::random_validator_verifier;
 
     #[test]
     fn test_exponential_window_failure_tracker() {

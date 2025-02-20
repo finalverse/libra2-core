@@ -27,7 +27,7 @@ use libra2_logger::{error, info, spawn_named, trace, warn};
 use aptos_network::{protocols::network::RpcError, ProtocolId};
 use aptos_reliable_broadcast::{DropGuard, ReliableBroadcast};
 use libra2_time_service::TimeService;
-use aptos_types::{
+use libra2_types::{
     epoch_state::EpochState,
     randomness::{FullRandMetadata, RandMetadata, Randomness},
     validator_signer::ValidatorSigner,

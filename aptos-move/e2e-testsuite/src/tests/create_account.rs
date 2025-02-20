@@ -6,7 +6,7 @@ use aptos_language_e2e_tests::{
     account::Account, common_transactions::create_account_txn, current_function_name,
     executor::FakeExecutor,
 };
-use aptos_types::transaction::{ExecutionStatus, TransactionStatus};
+use libra2_types::transaction::{ExecutionStatus, TransactionStatus};
 
 #[test]
 fn create_account() {

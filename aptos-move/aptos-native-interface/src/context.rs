@@ -6,7 +6,7 @@ use aptos_gas_algebra::{
     AbstractValueSize, DynamicExpression, GasExpression, GasQuantity, InternalGasUnit,
 };
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters};
-use aptos_types::on_chain_config::{Features, TimedFeatureFlag, TimedFeatures};
+use libra2_types::on_chain_config::{Features, TimedFeatureFlag, TimedFeatures};
 use move_core_types::gas_algebra::InternalGas;
 use move_vm_runtime::native_functions::NativeContext;
 use move_vm_types::values::Value;

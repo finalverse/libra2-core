@@ -13,7 +13,7 @@ use crate::{
 use anyhow::{bail, Result};
 use aptos_consensus_types::{block::Block, common::Payload};
 use libra2_crypto::HashValue;
-use aptos_types::transaction::{SignedTransaction, Transaction};
+use libra2_types::transaction::{SignedTransaction, Transaction};
 use clap::Parser;
 use std::{collections::HashMap, path::PathBuf};
 

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::bounded_math::SignedU128;
-use aptos_types::error::{code_invariant_error, NonPanic, PanicError, PanicOr};
+use libra2_types::error::{code_invariant_error, NonPanic, PanicError, PanicOr};
 use move_binary_format::errors::PartialVMError;
 use move_core_types::{
     value::{IdentifierMappingKind, MoveTypeLayout},

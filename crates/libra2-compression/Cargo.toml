@@ -21,7 +21,7 @@ thiserror = { workspace = true }
 
 [dev-dependencies]
 libra2-crypto = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 bcs = { workspace = true }
 rand = { workspace = true }
 serde = { workspace = true }

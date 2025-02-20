@@ -44,7 +44,7 @@ use aptos_transaction_generator_lib::{
     create_txn_generator_creator, AlwaysApproveRootAccountHandle, TransactionGeneratorCreator,
     TransactionType::{self, CoinTransfer},
 };
-use aptos_types::on_chain_config::{FeatureFlag, Features};
+use libra2_types::on_chain_config::{FeatureFlag, Features};
 use aptos_vm::{aptos_vm::AptosVMBlockExecutor, AptosVM, VMBlockExecutor};
 use db_generator::create_db_with_accounts;
 use db_reliable_submitter::DbReliableTransactionSubmitter;
@@ -928,7 +928,7 @@ mod tests {
     use libra2_temppath::TempPath;
     use aptos_transaction_generator_lib::WorkflowProgress;
     use aptos_transaction_workloads_lib::args::TransactionTypeArg;
-    use aptos_types::{
+    use libra2_types::{
         access_path::Path,
         account_address::AccountAddress,
         on_chain_config::{FeatureFlag, Features},

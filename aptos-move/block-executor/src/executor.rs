@@ -34,7 +34,7 @@ use aptos_mvhashmap::{
     versioned_delayed_fields::CommitError,
     MVHashMap,
 };
-use aptos_types::{
+use libra2_types::{
     block_executor::config::BlockExecutorConfig,
     error::{code_invariant_error, expect_ok, PanicError, PanicOr},
     on_chain_config::BlockGasLimitType,

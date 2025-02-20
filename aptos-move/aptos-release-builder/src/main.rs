@@ -11,7 +11,7 @@ use aptos_release_builder::{
     simulate::simulate_all_proposals,
     validate::{DEFAULT_RESOLUTION_TIME, FAST_RESOLUTION_TIME},
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     chain_id::ChainId,
     jwks::{ObservedJWKs, SupportedOIDCProviders},
@@ -328,7 +328,7 @@ async fn main() -> anyhow::Result<()> {
             endpoint,
             print_gas_schedule,
         } => {
-            use aptos_types::on_chain_config::*;
+            use libra2_types::on_chain_config::*;
 
             let client = aptos_rest_client::Client::new(endpoint);
 

@@ -19,7 +19,7 @@ use libra2_crypto::{
     bls12381, ed25519, encoding_type::EncodingType, x25519, PrivateKey, ValidCryptoMaterial,
 };
 use aptos_genesis::config::HostAndPort;
-use aptos_types::account_address::{
+use libra2_types::account_address::{
     create_multisig_account_address, from_identity_public_key, AccountAddress,
 };
 use async_trait::async_trait;

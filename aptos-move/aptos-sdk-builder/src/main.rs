@@ -34,13 +34,13 @@ struct Options {
 
     /// Also install the aptos types described by the given YAML file, along with the BCS runtime.
     #[clap(long)]
-    with_aptos_types: Option<PathBuf>,
+    with_libra2_types: Option<PathBuf>,
 
     /// Module name for the transaction builders installed in the `target_source_dir`.
     /// * Rust crates may contain a version number, e.g. "test:1.2.0".
     /// * In Java, this is expected to be a package name, e.g. "com.test" to create Java files in `com/test`.
     /// * In Go, this is expected to be of the format "go_module/path/go_package_name",
-    /// and `aptos_types` is assumed to be in "go_module/path/aptos_types".
+    /// and `libra2_types` is assumed to be in "go_module/path/libra2_types".
     #[clap(long)]
     module_name: Option<String>,
 
@@ -48,12 +48,12 @@ struct Options {
     #[clap(long)]
     serde_package_name: Option<String>,
 
-    /// Optional version number for the `aptos_types` module (useful in Rust).
-    /// If `--with-aptos-types` is passed, this will be the version of the generated `aptos_types` module.
+    /// Optional version number for the `libra2_types` module (useful in Rust).
+    /// If `--with-libra2-types` is passed, this will be the version of the generated `libra2_types` module.
     #[clap(long, default_value = "0.1.0")]
     aptos_version_number: String,
 
-    /// Optional package name (Python) or module path (Go) of the `aptos_types` dependency.
+    /// Optional package name (Python) or module path (Go) of the `libra2_types` dependency.
     #[clap(long)]
     package_name: Option<String>,
 }
@@ -90,7 +90,7 @@ fn main() {
     };
 
     // Aptos types
-    if let Some(registry_file) = options.with_aptos_types {
+    if let Some(registry_file) = options.with_libra2_types {
         let installer: Box<dyn serdegen::SourceInstaller<Error = Box<dyn std::error::Error>>> =
             match options.language {
                 Language::Rust => Box::new(serdegen::rust::Installer::new(install_dir.clone())),
@@ -111,11 +111,11 @@ fn main() {
         let (package_name, _package_path) = match options.language {
             Language::Rust => (
                 if options.aptos_version_number == "0.1.0" {
-                    "aptos-types".to_string()
+                    "libra2-types".to_string()
                 } else {
-                    format!("aptos-types:{}", options.aptos_version_number)
+                    format!("libra2-types:{}", options.aptos_version_number)
                 },
-                vec!["aptos-types"],
+                vec!["libra2-types"],
             ),
             Language::Go => ("aptostypes".to_string(), vec!["aptostypes"]),
         };

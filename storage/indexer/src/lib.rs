@@ -27,7 +27,7 @@ use aptos_storage_interface::{
     db_ensure, db_other_bail, state_store::state_view::db_state_view::DbStateViewAtVersion,
     AptosDbError, DbReader, Result,
 };
-use aptos_types::{
+use libra2_types::{
     access_path::Path,
     account_address::AccountAddress,
     state_store::{

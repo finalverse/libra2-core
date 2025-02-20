@@ -21,7 +21,7 @@ smallvec = { workspace = true }
 
 aptos-gas-algebra = { workspace = true }
 aptos-gas-meter = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 aptos-vm-types = { workspace = true }
 
 move-binary-format = { workspace = true }

@@ -3,7 +3,7 @@
 
 use super::*;
 use aptos_schemadb::{schema::fuzzing::assert_encode_decode, test_no_panic_decoding};
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use proptest::prelude::*;
 
 proptest! {

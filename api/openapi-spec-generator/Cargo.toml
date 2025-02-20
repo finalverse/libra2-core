@@ -18,5 +18,5 @@ aptos-api = { workspace = true }
 libra2-config = { workspace = true }
 aptos-mempool = { workspace = true, features = ["fuzzing"] }
 aptos-storage-interface = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 clap = { workspace = true }

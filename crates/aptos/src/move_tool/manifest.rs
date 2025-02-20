@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::common::types::load_manifest_account_arg;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use std::collections::BTreeMap;
 

@@ -59,7 +59,7 @@ use aptos_storage_interface::{
     },
     AptosDbError, DbReader, Result, StateSnapshotReceiver,
 };
-use aptos_types::{
+use libra2_types::{
     proof::{definition::LeafCount, SparseMerkleProofExt, SparseMerkleRangeProof},
     state_store::{
         state_key::{prefix::StateKeyPrefix, StateKey},
@@ -1248,7 +1248,7 @@ mod test_only {
         state_summary::ProvableStateSummary, state_update_refs::StateUpdateRefs,
         state_with_summary::LedgerStateWithSummary,
     };
-    use aptos_types::{
+    use libra2_types::{
         state_store::{state_key::StateKey, state_value::StateValue},
         transaction::Version,
     };

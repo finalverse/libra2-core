@@ -12,7 +12,7 @@ use libra2_crypto::{
     HashValue,
 };
 use aptos_storage_interface::Result;
-use aptos_types::{
+use libra2_types::{
     nibble::{nibble_path::NibblePath, Nibble},
     proof::{definition::NodeInProof, SparseMerkleInternalNode, SparseMerkleLeafNode},
     transaction::Version,

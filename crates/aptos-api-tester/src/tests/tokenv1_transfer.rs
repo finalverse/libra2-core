@@ -26,7 +26,7 @@ use aptos_api_types::U64;
 use libra2_logger::error;
 use aptos_rest_client::Client;
 use aptos_sdk::types::LocalAccount;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 
 const COLLECTION_NAME: &str = "test collection";
 const TOKEN_NAME: &str = "test token";

@@ -19,8 +19,8 @@ use anyhow::{Context, Result};
 use libra2_crypto::{ed25519::Ed25519Signature, secp256r1_ecdsa, HashValue, PrivateKey, SigningKey};
 use aptos_ledger::AptosLedgerError;
 use aptos_rest_client::{aptos_api_types::MoveStructTag, Client, PepperRequest, ProverRequest};
-pub use aptos_types::*;
-use aptos_types::{
+pub use libra2_types::*;
+use libra2_types::{
     event::EventKey,
     function_info::FunctionInfo,
     keyless::{

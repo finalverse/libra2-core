@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{tests::common, MoveHarness};
-use aptos_types::{account_address::AccountAddress, transaction::TransactionStatus};
+use libra2_types::{account_address::AccountAddress, transaction::TransactionStatus};
 use move_core_types::vm_status::StatusCode;
 
 #[test]

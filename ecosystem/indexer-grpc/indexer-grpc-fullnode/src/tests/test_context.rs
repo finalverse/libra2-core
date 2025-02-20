@@ -12,7 +12,7 @@ use aptos_sdk::{
     },
 };
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     block_info::BlockInfo,
     block_metadata::BlockMetadata,
@@ -32,7 +32,7 @@ use aptos_api::{context::Context, index};
 use aptos_api_types::HexEncodedBytes;
 use libra2_config::keys::ConfigKey;
 use libra2_crypto::ed25519::Ed25519PrivateKey;
-use aptos_types::aggregated_signature::AggregatedSignature;
+use libra2_types::aggregated_signature::AggregatedSignature;
 use bytes::Bytes;
 use hyper::Response;
 use rand::SeedableRng;

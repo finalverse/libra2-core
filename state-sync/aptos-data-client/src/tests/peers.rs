@@ -20,7 +20,7 @@ use aptos_storage_service_types::{
     responses::{CompleteDataRange, DataResponse, StorageServerSummary, StorageServiceResponse},
     StorageServiceError,
 };
-use aptos_types::transaction::TransactionListWithProof;
+use libra2_types::transaction::TransactionListWithProof;
 use claims::{assert_err, assert_matches, assert_ok};
 use maplit::hashset;
 use rand::{rngs::OsRng, Rng};

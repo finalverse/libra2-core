@@ -18,7 +18,7 @@ use libra2_config::config::{
 use libra2_crypto::{hash::CryptoHash, HashValue};
 use aptos_storage_interface::{DbReader, Order};
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     proof::SparseMerkleLeafNode,
     state_store::{state_key::StateKey, state_value::StateValue},

@@ -6,7 +6,7 @@ use crate::{common::Author, quorum_cert::QuorumCert};
 use anyhow::ensure;
 use libra2_crypto::{bls12381, CryptoMaterialError};
 use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     aggregate_signature::{AggregateSignature, PartialSignatures},
     block_info::Round,
@@ -403,7 +403,7 @@ mod tests {
     fn test_2chain_timeout_certificate() {
         use crate::vote_data::VoteData;
         use libra2_crypto::hash::CryptoHash;
-        use aptos_types::{
+        use libra2_types::{
             aggregate_signature::PartialSignatures,
             block_info::BlockInfo,
             ledger_info::{LedgerInfo, LedgerInfoWithVerifiedSignatures},

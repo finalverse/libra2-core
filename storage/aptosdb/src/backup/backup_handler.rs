@@ -12,7 +12,7 @@ use crate::{
 };
 use libra2_crypto::hash::HashValue;
 use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,
     proof::{SparseMerkleRangeProof, TransactionAccumulatorRangeProof, TransactionInfoWithProof},

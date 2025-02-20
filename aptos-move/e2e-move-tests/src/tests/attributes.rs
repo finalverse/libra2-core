@@ -5,7 +5,7 @@ use crate::{assert_success, assert_vm_status, build_package, MoveHarness};
 use aptos_cached_packages::aptos_stdlib;
 use aptos_framework::BuildOptions;
 use aptos_package_builder::PackageBuilder;
-use aptos_types::{account_address::AccountAddress, on_chain_config::FeatureFlag};
+use libra2_types::{account_address::AccountAddress, on_chain_config::FeatureFlag};
 use move_binary_format::CompiledModule;
 use move_core_types::{metadata::Metadata, vm_status::StatusCode};
 use serde::Serialize;

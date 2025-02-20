@@ -10,7 +10,7 @@ use aptos_executor_types::{
 };
 use aptos_experimental_runtimes::thread_manager::optimal_min_len;
 use libra2_metrics_core::TimerHelper;
-use aptos_types::{
+use libra2_types::{
     proof::accumulator::{InMemoryEventAccumulator, InMemoryTransactionAccumulator},
     transaction::{TransactionInfo, TransactionOutput},
 };

@@ -6,7 +6,7 @@ use aptos_rosetta::{
     common::native_coin,
     types::{AccountBalanceRequest, AccountBalanceResponse, AccountIdentifier},
 };
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use clap::{Parser, Subcommand};
 
 /// Account APIs

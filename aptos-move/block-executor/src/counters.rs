@@ -7,7 +7,7 @@ use libra2_metrics_core::{
     IntCounter, IntCounterVec, IntGauge,
 };
 use aptos_mvhashmap::BlockStateStats;
-use aptos_types::fee_statement::FeeStatement;
+use libra2_types::fee_statement::FeeStatement;
 use once_cell::sync::Lazy;
 
 pub struct GasType;

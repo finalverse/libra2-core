@@ -26,7 +26,7 @@ use aptos_jellyfish_merkle::{node_type::NodeKey, StaleNodeIndex};
 use libra2_logger::info;
 use aptos_schemadb::{schema::KeyCodec, DB};
 use aptos_storage_interface::Result;
-use aptos_types::transaction::{AtomicVersion, Version};
+use libra2_types::transaction::{AtomicVersion, Version};
 use rayon::prelude::*;
 use std::{
     marker::PhantomData,

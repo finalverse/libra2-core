@@ -40,7 +40,7 @@ use libra2_crypto::{
 use libra2_global_constants::adjust_gas_headroom;
 use libra2_logger::debug;
 use aptos_sdk::{move_types::language_storage::TypeTag, transaction_builder::TransactionFactory};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     chain_id::ChainId,
     transaction::{

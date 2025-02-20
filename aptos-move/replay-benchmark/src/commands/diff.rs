@@ -10,7 +10,7 @@ use crate::{
 };
 use anyhow::{anyhow, bail};
 use libra2_logger::Level;
-use aptos_types::transaction::TransactionOutput;
+use libra2_types::transaction::TransactionOutput;
 use aptos_vm::{aptos_vm::AptosVMBlockExecutor, move_vm_ext::flush_warm_vm_cache, VMBlockExecutor};
 use clap::Parser;
 use std::path::PathBuf;

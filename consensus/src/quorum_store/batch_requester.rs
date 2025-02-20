@@ -14,7 +14,7 @@ use libra2_crypto::HashValue;
 use aptos_executor_types::*;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
-use aptos_types::{transaction::SignedTransaction, validator_verifier::ValidatorVerifier, PeerId};
+use libra2_types::{transaction::SignedTransaction, validator_verifier::ValidatorVerifier, PeerId};
 use futures::{stream::FuturesUnordered, StreamExt};
 use rand::Rng;
 use std::{sync::Arc, time::Duration};

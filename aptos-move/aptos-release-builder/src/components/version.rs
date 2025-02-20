@@ -4,7 +4,7 @@
 use crate::{components::get_signer_arg, utils::*};
 use anyhow::Result;
 use libra2_crypto::HashValue;
-use aptos_types::on_chain_config::AptosVersion;
+use libra2_types::on_chain_config::AptosVersion;
 use move_model::{code_writer::CodeWriter, emitln, model::Loc};
 
 pub fn generate_version_upgrade_proposal(

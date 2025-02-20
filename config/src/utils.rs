@@ -5,7 +5,7 @@
 use crate::config::NodeConfig;
 use libra2_crypto::_once_cell::sync::Lazy;
 use libra2_logger::prelude::*;
-use aptos_types::{
+use libra2_types::{
     network_address::{NetworkAddress, Protocol},
     transaction::Transaction,
 };

@@ -8,7 +8,7 @@ use aptos_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,
 };
-use aptos_types::{
+use libra2_types::{
     move_any::Any, on_chain_config::OnChainConfig, transaction::ModuleBundle, vm_status::StatusCode,
 };
 use better_any::{Tid, TidAble};

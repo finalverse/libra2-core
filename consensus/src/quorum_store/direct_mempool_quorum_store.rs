@@ -9,7 +9,7 @@ use aptos_consensus_types::{
 };
 use libra2_logger::prelude::*;
 use aptos_mempool::{QuorumStoreRequest, QuorumStoreResponse};
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 use futures::{
     channel::{
         mpsc::{Receiver, Sender},

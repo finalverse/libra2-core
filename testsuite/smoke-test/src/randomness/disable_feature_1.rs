@@ -8,7 +8,7 @@ use crate::{
 };
 use aptos_forge::{Node, Swarm, SwarmExt};
 use libra2_logger::{debug, info};
-use aptos_types::{
+use libra2_types::{
     dkg::DKGState, on_chain_config::OnChainRandomnessConfig, randomness::PerBlockRandomness,
 };
 use std::{sync::Arc, time::Duration};

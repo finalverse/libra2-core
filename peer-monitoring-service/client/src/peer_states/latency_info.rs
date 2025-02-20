@@ -250,7 +250,7 @@ mod test {
         response::{LatencyPingResponse, PeerMonitoringServiceResponse},
     };
     use libra2_time_service::TimeService;
-    use aptos_types::{network_address::NetworkAddress, PeerId};
+    use libra2_types::{network_address::NetworkAddress, PeerId};
     use rand::{rngs::OsRng, Rng};
     use std::{cmp::min, str::FromStr};
 

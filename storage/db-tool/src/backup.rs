@@ -20,7 +20,7 @@ use aptos_backup_cli::{
         ConcurrentDownloadsOpt, GlobalBackupOpt, TrustedWaypointOpt,
     },
 };
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use clap::{Parser, Subcommand};
 use std::{path::PathBuf, sync::Arc};
 

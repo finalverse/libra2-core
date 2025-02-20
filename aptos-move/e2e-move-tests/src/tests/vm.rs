@@ -3,7 +3,7 @@
 
 use crate::MoveHarness;
 use aptos_cached_packages::aptos_stdlib::aptos_account_transfer;
-use aptos_types::{
+use libra2_types::{
     state_store::state_key::StateKey, transaction::ExecutionStatus, write_set::WriteOp,
 };
 use aptos_vm::AptosVM;

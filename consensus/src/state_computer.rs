@@ -30,7 +30,7 @@ use aptos_executor_types::{
 use libra2_infallible::RwLock;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::IntGauge;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress, block_executor::config::BlockExecutorConfigFromOnchain,
     epoch_state::EpochState, ledger_info::LedgerInfoWithSignatures, randomness::Randomness,
     validator_signer::ValidatorSigner,
@@ -516,7 +516,7 @@ async fn test_commit_sync_race() {
     use libra2_config::config::transaction_filter_type::Filter;
     use aptos_consensus_notifications::Error;
     use libra2_infallible::Mutex;
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::AggregateSignature,
         block_executor::partitioner::ExecutableBlock,
         block_info::BlockInfo,

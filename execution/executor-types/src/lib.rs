@@ -6,7 +6,7 @@
 use anyhow::Result;
 use libra2_crypto::HashValue;
 use aptos_scratchpad::SparseMerkleTree;
-use aptos_types::{
+use libra2_types::{
     account_config::{NEW_EPOCH_EVENT_MOVE_TYPE_TAG, NEW_EPOCH_EVENT_V2_MOVE_TYPE_TAG},
     block_executor::{config::BlockExecutorConfigFromOnchain, partitioner::ExecutableBlock},
     contract_event::ContractEvent,

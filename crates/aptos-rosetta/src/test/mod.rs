@@ -14,7 +14,7 @@ use libra2_crypto::{
     HashValue, PrivateKey, Uniform,
 };
 use aptos_rest_client::aptos_api_types::{ResourceGroup, TransactionOnChainData};
-use aptos_types::{
+use libra2_types::{
     account_config::{
         fungible_store::FungibleStoreResource, DepositFAEvent, ObjectCoreResource, WithdrawFAEvent,
     },
@@ -62,8 +62,8 @@ fn test_transaction(
 
     TransactionOnChainData {
         version,
-        transaction: aptos_types::transaction::Transaction::UserTransaction(
-            aptos_types::transaction::SignedTransaction::new(
+        transaction: libra2_types::transaction::Transaction::UserTransaction(
+            libra2_types::transaction::SignedTransaction::new(
                 get_test_raw_transaction(
                     sender,
                     0,         // Sequence number doesn't matter for this

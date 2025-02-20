@@ -12,7 +12,7 @@ use crate::{
 use libra2_logger::info;
 use aptos_schemadb::{batch::SchemaBatch, DB};
 use aptos_storage_interface::Result;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use std::sync::Arc;
 
 // This pruner is only used when enable_sharding flag is true

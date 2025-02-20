@@ -16,7 +16,7 @@ use crate::dag::{
     NodeId, RpcHandler, Vote,
 };
 use libra2_config::config::DagPayloadConfig;
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::PartialSignatures,
     epoch_state::EpochState,
     on_chain_config::{OnChainJWKConsensusConfig, OnChainRandomnessConfig, ValidatorTxnConfig},

@@ -8,7 +8,7 @@ use crate::{
     resolver::{TAggregatorV1View, TDelayedFieldView},
     types::{DelayedFieldValue, DelayedFieldsSpeculativeError},
 };
-use aptos_types::{
+use libra2_types::{
     error::{code_invariant_error, expect_ok, PanicError, PanicOr},
     state_store::{
         state_key::StateKey,

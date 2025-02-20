@@ -7,7 +7,7 @@ use crate::{
 };
 use aptos::test::CliTestFramework;
 use aptos_forge::{Node, Swarm};
-use aptos_types::on_chain_config::OnChainRandomnessConfig;
+use libra2_types::on_chain_config::OnChainRandomnessConfig;
 use std::sync::Arc;
 
 #[tokio::test]

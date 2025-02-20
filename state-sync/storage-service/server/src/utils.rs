@@ -13,7 +13,7 @@ use aptos_storage_service_types::{
     responses::{DataResponse, StorageServerSummary, StorageServiceResponse},
 };
 use libra2_time_service::TimeService;
-use aptos_types::ledger_info::LedgerInfoWithSignatures;
+use libra2_types::ledger_info::LedgerInfoWithSignatures;
 use arc_swap::ArcSwap;
 use dashmap::DashMap;
 use mini_moka::sync::Cache;

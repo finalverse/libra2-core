@@ -5,7 +5,7 @@ use crate::move_vm_ext::{warm_vm_cache::WarmVmCache, AptosMoveResolver, SessionE
 use libra2_crypto::HashValue;
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEATURE_VERSION};
 use aptos_native_interface::SafeNativeBuilder;
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId,
     on_chain_config::{Features, TimedFeaturesBuilder},
     transaction::user_transaction_context::UserTransactionContext,

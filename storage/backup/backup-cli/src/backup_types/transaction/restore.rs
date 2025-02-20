@@ -31,7 +31,7 @@ use aptos_executor_types::{ChunkExecutorTrait, TransactionReplayer, VerifyExecut
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
 use aptos_storage_interface::DbReaderWriter;
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,
     proof::{TransactionAccumulatorRangeProof, TransactionInfoListWithProof},

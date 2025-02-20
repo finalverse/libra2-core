@@ -8,7 +8,7 @@ use crate::{
 use aptos_framework::BuildOptions;
 use aptos_language_e2e_tests::executor::ExecutorMode;
 use aptos_package_builder::PackageBuilder;
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 use claims::{assert_ok, assert_some};
 use move_core_types::parser::parse_struct_tag;
 use serde::{Deserialize, Serialize};

@@ -17,7 +17,7 @@ use aptos_storage_interface::{
     state_store::{state::LedgerState, state_summary::LedgerStateSummary},
     DbReader, LedgerSummary,
 };
-use aptos_types::{proof::accumulator::InMemoryTransactionAccumulator, transaction::Version};
+use libra2_types::{proof::accumulator::InMemoryTransactionAccumulator, transaction::Version};
 use std::{collections::VecDeque, sync::Arc};
 
 pub(crate) struct ChunkToUpdateLedger {

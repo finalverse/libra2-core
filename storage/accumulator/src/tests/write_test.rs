@@ -8,7 +8,7 @@ use crate::test_helpers::{
     MockHashStore, TestAccumulator,
 };
 use libra2_crypto::hash::ACCUMULATOR_PLACEHOLDER_HASH;
-use aptos_types::proof::definition::LeafCount;
+use libra2_types::proof::definition::LeafCount;
 
 #[test]
 fn test_append_empty_on_empty() {

@@ -5,7 +5,7 @@ use crate::{
     delta_change_set::{DeltaOp, DeltaWithMax},
     types::{DelayedFieldValue, DelayedFieldsSpeculativeError},
 };
-use aptos_types::{
+use libra2_types::{
     delayed_fields::SnapshotToStringFormula,
     error::{code_invariant_error, PanicOr},
 };

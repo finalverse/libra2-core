@@ -18,7 +18,7 @@ use libra2_config::config::StateMerklePrunerConfig;
 use aptos_jellyfish_merkle::StaleNodeIndex;
 use aptos_schemadb::schema::KeyCodec;
 use aptos_storage_interface::Result;
-use aptos_types::transaction::{AtomicVersion, Version};
+use libra2_types::transaction::{AtomicVersion, Version};
 use std::{
     marker::PhantomData,
     sync::{atomic::Ordering, Arc},

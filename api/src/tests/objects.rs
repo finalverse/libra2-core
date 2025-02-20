@@ -3,7 +3,7 @@
 
 use super::new_test_context;
 use aptos_api_test_context::{current_function_name, TestContext};
-use aptos_types::account_address::{self, AccountAddress};
+use libra2_types::account_address::{self, AccountAddress};
 use serde_json::{json, Value};
 use std::{collections::BTreeMap, path::PathBuf};
 

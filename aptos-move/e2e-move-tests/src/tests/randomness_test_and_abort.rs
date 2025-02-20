@@ -4,7 +4,7 @@
 use crate::{assert_abort, assert_success, build_package, tests::common, MoveHarness};
 use aptos_framework::BuiltPackage;
 use aptos_language_e2e_tests::account::{Account, TransactionBuilder};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     on_chain_config::OnChainConfig,
     randomness::PerBlockRandomness,

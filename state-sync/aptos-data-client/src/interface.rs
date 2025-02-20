@@ -3,7 +3,7 @@
 
 use crate::{error, error::Error, global_summary::GlobalDataSummary};
 use aptos_storage_service_types::{responses::TransactionOrOutputListWithProof, Epoch};
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     state_store::state_value::StateValueChunkWithProof,
     transaction::{TransactionListWithProof, TransactionOutputListWithProof, Version},

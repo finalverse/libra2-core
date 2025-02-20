@@ -16,7 +16,7 @@ use anyhow::{anyhow, ensure, Result};
 use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     proof::TransactionInfoWithProof,
     state_store::{state_key::StateKey, state_value::StateValue},

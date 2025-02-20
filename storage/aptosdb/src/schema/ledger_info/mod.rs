@@ -20,7 +20,7 @@ use aptos_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},
 };
-use aptos_types::ledger_info::LedgerInfoWithSignatures;
+use libra2_types::ledger_info::LedgerInfoWithSignatures;
 use byteorder::{BigEndian, ReadBytesExt};
 use std::mem::size_of;
 

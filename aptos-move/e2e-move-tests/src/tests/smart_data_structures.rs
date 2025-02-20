@@ -6,7 +6,7 @@ use crate::{
     tests::{common, gas::print_gas_cost},
     MoveHarness,
 };
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 
 /// Run with `cargo test test_smart_data_structures_gas -- --nocapture` to see output.
 #[test]

@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use futures::channel::{mpsc::SendError, oneshot::Canceled};
 use serde::{Deserialize, Serialize};
 use thiserror::Error;

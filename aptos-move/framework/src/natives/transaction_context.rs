@@ -5,7 +5,7 @@ use aptos_gas_schedule::gas_params::natives::aptos_framework::*;
 use aptos_native_interface::{
     RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError, SafeNativeResult,
 };
-use aptos_types::{
+use libra2_types::{
     error,
     transaction::{
         authenticator::AuthenticationKey,

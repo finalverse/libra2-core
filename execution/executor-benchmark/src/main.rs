@@ -36,7 +36,7 @@ use libra2_profiler::{ProfilerConfig, ProfilerHandler};
 use libra2_push_metrics::MetricsPusher;
 use aptos_transaction_generator_lib::WorkflowProgress;
 use aptos_transaction_workloads_lib::args::TransactionTypeArg;
-use aptos_types::on_chain_config::{FeatureFlag, Features};
+use libra2_types::on_chain_config::{FeatureFlag, Features};
 use aptos_vm::{aptos_vm::AptosVMBlockExecutor, AptosVM, VMBlockExecutor};
 use aptos_vm_environment::prod_configs::set_paranoid_type_checks;
 use clap::{Parser, Subcommand, ValueEnum};
@@ -490,8 +490,8 @@ where
             enable_feature,
             disable_feature,
         } => {
-            // aptos_types::on_chain_config::hack_enable_default_features_for_genesis(enable_feature);
-            // aptos_types::on_chain_config::hack_disable_default_features_for_genesis(
+            // libra2_types::on_chain_config::hack_enable_default_features_for_genesis(enable_feature);
+            // libra2_types::on_chain_config::hack_disable_default_features_for_genesis(
             //     disable_feature,
             // );
 

@@ -19,7 +19,7 @@ use aptos_executor_types::ExecutorError;
 use libra2_infallible::Mutex;
 use libra2_logger::{debug, info};
 use aptos_storage_interface::DbReader;
-use aptos_types::{ledger_info::LedgerInfo, proof::definition::LeafCount};
+use libra2_types::{ledger_info::LedgerInfo, proof::definition::LeafCount};
 use std::{
     collections::{hash_map::Entry, HashMap},
     sync::{mpsc::Receiver, Arc, Weak},

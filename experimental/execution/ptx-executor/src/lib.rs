@@ -25,7 +25,7 @@ use aptos_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvide
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_infallible::Mutex;
 use libra2_metrics_core::TimerHelper;
-use aptos_types::{
+use libra2_types::{
     block_executor::{
         config::BlockExecutorConfigFromOnchain, partitioner::PartitionedTransactions,
         transaction_slice_metadata::TransactionSliceMetadata,

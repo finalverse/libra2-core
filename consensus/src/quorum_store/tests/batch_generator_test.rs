@@ -17,7 +17,7 @@ use aptos_consensus_types::{
     proof_of_store::{BatchId, SignedBatchInfo},
 };
 use aptos_mempool::{QuorumStoreRequest, QuorumStoreResponse};
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 use futures::{
     channel::mpsc::{channel, Receiver},
     StreamExt,

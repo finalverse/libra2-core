@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, build_package, tests::common, MoveHarness};
-use aptos_types::account_address::create_resource_address;
+use libra2_types::account_address::create_resource_address;
 use move_core_types::account_address::AccountAddress;
 
 #[test]

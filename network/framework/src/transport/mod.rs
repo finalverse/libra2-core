@@ -22,7 +22,7 @@ pub use aptos_netcore::transport::tcp::{resolve_and_connect, TCPBufferCfg, TcpSo
 use aptos_netcore::transport::{proxy_protocol, tcp, ConnectionOrigin, Transport};
 use libra2_short_hex_str::AsShortHexStr;
 use libra2_time_service::{timeout, TimeService, TimeServiceTrait};
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId,
     network_address::{parse_dns_tcp, parse_ip_tcp, parse_memory, NetworkAddress},
     PeerId,
@@ -476,7 +476,7 @@ where
     fn parse_dial_addr(
         addr: &NetworkAddress,
     ) -> io::Result<(NetworkAddress, x25519::PublicKey, u8)> {
-        use aptos_types::network_address::Protocol::*;
+        use libra2_types::network_address::Protocol::*;
 
         let protos = addr.as_slice();
 

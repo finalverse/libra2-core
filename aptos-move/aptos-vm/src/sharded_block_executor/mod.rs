@@ -10,7 +10,7 @@ use crate::sharded_block_executor::{
     executor_client::ExecutorClient,
 };
 use libra2_logger::info;
-use aptos_types::{
+use libra2_types::{
     block_executor::{
         config::BlockExecutorConfigFromOnchain,
         partitioner::{PartitionedTransactions, SubBlocksForShard},

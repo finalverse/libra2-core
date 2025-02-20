@@ -9,7 +9,7 @@ use aptos_keyless_pepper_common::{
     vuf::{self, VUF},
     PepperInput, PepperRequest, PepperResponse, PepperV0VufPubKey, SignatureResponse,
 };
-use aptos_types::{
+use libra2_types::{
     keyless::{Configuration, OpenIdSig},
     transaction::authenticator::EphemeralPublicKey,
 };

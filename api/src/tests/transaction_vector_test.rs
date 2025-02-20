@@ -22,7 +22,7 @@ use libra2_crypto::{
     SigningKey, Uniform,
 };
 use aptos_proptest_helpers::ValueGenerator;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     chain_id::ChainId,
     transaction::{EntryFunction, RawTransaction, Script, SignedTransaction, TransactionArgument},

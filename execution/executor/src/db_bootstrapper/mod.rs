@@ -15,7 +15,7 @@ use aptos_storage_interface::{
     state_store::state_view::cached_state_view::CachedStateView, DbReaderWriter, DbWriter,
     LedgerSummary,
 };
-use aptos_types::{
+use libra2_types::{
     account_config::CORE_CODE_ADDRESS,
     aggregate_signature::AggregateSignature,
     block_executor::{

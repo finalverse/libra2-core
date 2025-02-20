@@ -36,7 +36,7 @@ use aptos_network::{
     transport::ConnectionMetadata,
     ProtocolId,
 };
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     on_chain_config::{
         ConsensusConfigV1, InMemoryOnChainConfig, OnChainConfig, OnChainConfigPayload,

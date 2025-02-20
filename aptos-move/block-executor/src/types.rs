@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::transaction::BlockExecutableTransaction as Transaction;
+use libra2_types::transaction::BlockExecutableTransaction as Transaction;
 use move_vm_types::delayed_values::delayed_field_id::DelayedFieldID;
 use std::{collections::HashSet, fmt};
 

@@ -34,7 +34,7 @@ use aptos_rosetta::{
     ROSETTA_VERSION,
 };
 use aptos_sdk::{transaction_builder::TransactionFactory, types::LocalAccount};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::CORE_CODE_ADDRESS,
     chain_id::ChainId,
@@ -1065,13 +1065,13 @@ async fn parse_block_transactions(
                 assert_eq!(0, cur_version);
                 assert!(matches!(
                     actual_txn.transaction,
-                    aptos_types::transaction::Transaction::GenesisTransaction(_)
+                    libra2_types::transaction::Transaction::GenesisTransaction(_)
                 ));
             },
             TransactionType::User => {
                 assert!(matches!(
                     actual_txn.transaction,
-                    aptos_types::transaction::Transaction::UserTransaction(_)
+                    libra2_types::transaction::Transaction::UserTransaction(_)
                 ));
                 // Must have a gas fee
                 assert!(!transaction.operations.is_empty());
@@ -1079,35 +1079,35 @@ async fn parse_block_transactions(
             TransactionType::BlockMetadata => {
                 assert!(matches!(
                     actual_txn.transaction,
-                    aptos_types::transaction::Transaction::BlockMetadata(_)
+                    libra2_types::transaction::Transaction::BlockMetadata(_)
                 ));
                 assert!(transaction.operations.is_empty());
             },
             TransactionType::BlockMetadataExt => {
                 assert!(matches!(
                     actual_txn.transaction,
-                    aptos_types::transaction::Transaction::BlockMetadataExt(_)
+                    libra2_types::transaction::Transaction::BlockMetadataExt(_)
                 ));
                 assert!(transaction.operations.is_empty());
             },
             TransactionType::StateCheckpoint => {
                 assert!(matches!(
                     actual_txn.transaction,
-                    aptos_types::transaction::Transaction::StateCheckpoint(_)
+                    libra2_types::transaction::Transaction::StateCheckpoint(_)
                 ));
                 assert!(transaction.operations.is_empty());
             },
             TransactionType::BlockEpilogue => {
                 assert!(matches!(
                     actual_txn.transaction,
-                    aptos_types::transaction::Transaction::BlockEpilogue(_)
+                    libra2_types::transaction::Transaction::BlockEpilogue(_)
                 ));
                 assert!(transaction.operations.is_empty());
             },
             TransactionType::Validator => {
                 assert!(matches!(
                     actual_txn.transaction,
-                    aptos_types::transaction::Transaction::ValidatorTransaction(_)
+                    libra2_types::transaction::Transaction::ValidatorTransaction(_)
                 ));
                 assert!(transaction.operations.is_empty());
             },
@@ -1284,10 +1284,10 @@ async fn parse_operations(
                 }
 
                 // Check that operator was set the same
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {
@@ -1334,10 +1334,10 @@ async fn parse_operations(
                 }
 
                 // Check that voter was set the same
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {
@@ -1376,7 +1376,7 @@ async fn parse_operations(
                 let new_balance = *latest_balance + delta;
                 account_balances.insert(block_height, new_balance);
                 match actual_txn.transaction {
-                    aptos_types::transaction::Transaction::UserTransaction(ref txn) => {
+                    libra2_types::transaction::Transaction::UserTransaction(ref txn) => {
                         assert_eq!(
                             actual_txn
                                 .info
@@ -1407,10 +1407,10 @@ async fn parse_operations(
                 }
 
                 // Check that reset lockup was set the same
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {
@@ -1441,10 +1441,10 @@ async fn parse_operations(
                 }
 
                 // Check that update commmission was set the same
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {
@@ -1495,10 +1495,10 @@ async fn parse_operations(
                 }
 
                 // Check that reset lockup was set the same
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {
@@ -1544,10 +1544,10 @@ async fn parse_operations(
                 }
 
                 // Check that unlock stake was set the same
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {
@@ -1583,10 +1583,10 @@ async fn parse_operations(
                 }
 
                 // Check that distribute was set the same
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {
@@ -1622,10 +1622,10 @@ async fn parse_operations(
                 }
 
                 // Check that add stake was set the same
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {
@@ -1680,10 +1680,10 @@ async fn parse_operations(
                 }
 
                 // Check that unlock stake was set the same
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {
@@ -1736,10 +1736,10 @@ async fn parse_operations(
                         "Failed transaction should have failed distribute operation"
                     );
                 }
-                if let aptos_types::transaction::Transaction::UserTransaction(ref txn) =
+                if let libra2_types::transaction::Transaction::UserTransaction(ref txn) =
                     actual_txn.transaction
                 {
-                    if let aptos_types::transaction::TransactionPayload::EntryFunction(
+                    if let libra2_types::transaction::TransactionPayload::EntryFunction(
                         ref payload,
                     ) = txn.payload()
                     {

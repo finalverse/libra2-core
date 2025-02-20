@@ -16,7 +16,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::HashValue;
 use libra2_logger::{prelude::*, Schema};
-use aptos_types::validator_verifier::ValidatorVerifier;
+use libra2_types::validator_verifier::ValidatorVerifier;
 use futures::future::AbortHandle;
 use serde::Serialize;
 use std::{fmt, sync::Arc, time::Duration};

@@ -3,7 +3,7 @@
 
 use libra2_logger::info;
 use aptos_mempool_notifications::CommittedTransaction;
-use aptos_types::transaction::use_case::UseCaseKey;
+use libra2_types::transaction::use_case::UseCaseKey;
 use std::{
     cmp::Ordering,
     collections::{BinaryHeap, HashMap, VecDeque},
@@ -119,7 +119,7 @@ impl PartialOrd for UseCaseByCount {
 
 #[test]
 fn test_use_case_history() {
-    use aptos_types::account_address::AccountAddress;
+    use libra2_types::account_address::AccountAddress;
     let ct = |use_case: UseCaseKey| -> CommittedTransaction {
         CommittedTransaction {
             sender: AccountAddress::ONE,

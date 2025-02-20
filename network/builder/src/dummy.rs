@@ -21,7 +21,7 @@ use aptos_network::{
     ProtocolId,
 };
 use libra2_time_service::TimeService;
-use aptos_types::{chain_id::ChainId, network_address::NetworkAddress, PeerId};
+use libra2_types::{chain_id::ChainId, network_address::NetworkAddress, PeerId};
 use futures::executor::block_on;
 use maplit::hashmap;
 use rand::{rngs::StdRng, SeedableRng};

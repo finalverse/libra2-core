@@ -27,7 +27,7 @@ use aptos_schemadb::{
     ReadOptions, DB,
 };
 use aptos_storage_interface::{state_store::NUM_STATE_SHARDS, Result};
-use aptos_types::{
+use libra2_types::{
     state_store::{state_key::StateKey, state_value::StateValue},
     transaction::Version,
 };

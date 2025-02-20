@@ -20,7 +20,7 @@ use aptos_rest_client::{
     error::{AptosErrorResponse, RestError},
     Client,
 };
-use aptos_types::{account_address::AccountAddress, account_config::AccountResource};
+use libra2_types::{account_address::AccountAddress, account_config::AccountResource};
 use move_core_types::{
     ident_str,
     language_storage::{ModuleId, StructTag, TypeTag},

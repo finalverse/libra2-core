@@ -11,7 +11,7 @@ use aptos_consensus_types::{
     utils::PayloadTxnsSize,
 };
 use libra2_crypto::HashValue;
-use aptos_types::{aggregate_signature::AggregateSignature, PeerId};
+use libra2_types::{aggregate_signature::AggregateSignature, PeerId};
 use futures::channel::oneshot;
 use std::{cmp::max, collections::HashSet};
 

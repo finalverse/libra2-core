@@ -4,7 +4,7 @@
 
 use crate::{aptos_vm::fetch_module_metadata_for_struct_tag, move_vm_ext::AptosMoveResolver};
 use libra2_crypto::ed25519::Ed25519PublicKey;
-use aptos_types::{
+use libra2_types::{
     invalid_signature,
     jwks::{jwk::JWK, AllProvidersJWKs, FederatedJWKs, PatchedJWKs},
     keyless::{

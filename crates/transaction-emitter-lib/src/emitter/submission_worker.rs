@@ -493,7 +493,7 @@ pub async fn submit_transactions(
                 sample!(SampleRate::Duration(Duration::from_secs(60)), {
                     let first_failed_txn = &txns[failure.transaction_index];
                     let sender = first_failed_txn.sender();
-                    use aptos_types::transaction::TransactionPayload::*;
+                    use libra2_types::transaction::TransactionPayload::*;
                     let payload = match first_failed_txn.payload() {
                         Script(_) => "script".to_string(),
                         ModuleBundle(_) => "module_bundle".to_string(),

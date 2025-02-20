@@ -24,7 +24,7 @@ use aptos_storage_service_types::{
     StorageServiceError,
 };
 use libra2_time_service::TimeService;
-use aptos_types::epoch_change::EpochChangeProof;
+use libra2_types::epoch_change::EpochChangeProof;
 use arc_swap::ArcSwap;
 use claims::assert_matches;
 use dashmap::DashMap;

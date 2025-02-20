@@ -15,7 +15,7 @@ use crate::{
 use anyhow::Result;
 use libra2_config::config::{PeerRole, RoleType};
 use libra2_crypto::{noise, x25519};
-use aptos_types::{chain_id::ChainId, PeerId};
+use libra2_types::{chain_id::ChainId, PeerId};
 use reqwest::header::AUTHORIZATION;
 use warp::{filters::BoxedFilter, reject, reply, Filter, Rejection, Reply};
 
@@ -88,7 +88,7 @@ pub async fn handle_auth(context: Context, body: AuthRequest) -> Result<impl Rep
                 None => {
                     // if not, verify that their peerid is constructed correctly from their public key
                     let derived_remote_peer_id =
-                        aptos_types::account_address::from_identity_public_key(remote_public_key);
+                        libra2_types::account_address::from_identity_public_key(remote_public_key);
                     if derived_remote_peer_id != body.peer_id {
                         return Err(reject::custom(ServiceError::forbidden(
                             ServiceErrorCode::AuthError(

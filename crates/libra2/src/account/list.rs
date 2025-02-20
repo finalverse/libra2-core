@@ -4,7 +4,7 @@
 use crate::common::types::{
     CliCommand, CliConfig, CliError, CliTypedResult, ConfigSearchMode, ProfileOptions, RestOptions,
 };
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use async_trait::async_trait;
 use clap::{Parser, ValueEnum};
 use serde_json::json;

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{Address, HexEncodedBytes, MoveStructTag, U64};
-use aptos_types::account_config::AccountResource;
+use libra2_types::account_config::AccountResource;
 use poem_openapi::Object;
 use serde::{de::Error, Deserialize, Deserializer, Serialize, Serializer};
 use std::{fmt::Debug, str::FromStr};

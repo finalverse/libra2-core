@@ -6,7 +6,7 @@ use aptos_language_e2e_tests::{
     account::Account,
     executor::{assert_outputs_equal, ExecutorMode, FakeExecutor},
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     on_chain_config::FeatureFlag,
     transaction::{SignedTransaction, TransactionOutput},

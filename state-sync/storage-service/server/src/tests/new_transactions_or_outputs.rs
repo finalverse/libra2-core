@@ -9,7 +9,7 @@ use libra2_config::{
 use aptos_storage_service_types::requests::{
     DataRequest, NewTransactionsOrOutputsWithProofRequest, StorageServiceRequest,
 };
-use aptos_types::{epoch_change::EpochChangeProof, PeerId};
+use libra2_types::{epoch_change::EpochChangeProof, PeerId};
 use claims::assert_none;
 use futures::channel::oneshot::Receiver;
 

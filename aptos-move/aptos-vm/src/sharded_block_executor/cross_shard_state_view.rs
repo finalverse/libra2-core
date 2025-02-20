@@ -3,7 +3,7 @@
 use crate::sharded_block_executor::remote_state_value::RemoteStateValue;
 use anyhow::Result;
 use libra2_logger::trace;
-use aptos_types::{
+use libra2_types::{
     block_executor::partitioner::TransactionWithDependencies,
     state_store::{
         errors::StateViewError, state_key::StateKey, state_storage_usage::StateStorageUsage,
@@ -89,7 +89,7 @@ impl<'a, S: StateView + Sync + Send> TStateView for CrossShardStateView<'a, S> {
 #[cfg(test)]
 mod tests {
     use crate::sharded_block_executor::cross_shard_state_view::CrossShardStateView;
-    use aptos_types::state_store::{
+    use libra2_types::state_store::{
         errors::StateViewError, state_key::StateKey, state_storage_usage::StateStorageUsage,
         state_value::StateValue, TStateView,
     };

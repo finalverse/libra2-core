@@ -25,7 +25,7 @@ use aptos_schemadb::{batch::SchemaBatch, DB};
 use aptos_storage_interface::{
     db_ensure as ensure, db_other_bail as bail, AptosDbError, DbReader, Result,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{BURN_TYPE, MINT_TYPE},
     contract_event::{ContractEvent, ContractEventV1, ContractEventV2, EventWithVersion},

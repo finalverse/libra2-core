@@ -32,7 +32,7 @@ aptos-schemadb = { workspace = true }
 aptos-scratchpad = { workspace = true }
 aptos-storage-interface = { workspace = true, features = ["fuzzing"] }
 libra2-temppath = { workspace = true, optional = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 arc-swap = { workspace = true }
 arr_macro = { workspace = true }
 bcs = { workspace = true }
@@ -64,13 +64,13 @@ aptos-proptest-helpers = { workspace = true }
 aptos-schemadb = { workspace = true, features = ["fuzzing"] }
 aptos-scratchpad = { workspace = true, features = ["fuzzing"] }
 libra2-temppath = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 proptest = { workspace = true }
 proptest-derive = { workspace = true }
 rand = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["proptest", "proptest-derive", "aptos-proptest-helpers", "libra2-temppath", "libra2-crypto/fuzzing", "aptos-jellyfish-merkle/fuzzing", "aptos-types/fuzzing", "aptos-executor-types/fuzzing", "aptos-schemadb/fuzzing", "aptos-scratchpad/fuzzing"]
+fuzzing = ["proptest", "proptest-derive", "aptos-proptest-helpers", "libra2-temppath", "libra2-crypto/fuzzing", "aptos-jellyfish-merkle/fuzzing", "libra2-types/fuzzing", "aptos-executor-types/fuzzing", "aptos-schemadb/fuzzing", "aptos-scratchpad/fuzzing"]
 consensus-only-perf-test = []
 db-debugger = ["libra2-temppath", "clap", "crossbeam-channel", "owo-colors", "indicatif"]

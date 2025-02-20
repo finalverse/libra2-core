@@ -15,7 +15,7 @@ use aptos_sdk::{
 };
 use aptos_storage_interface::DbReader;
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::aptos_test_root_address,
     block_metadata::BlockMetadata,
@@ -52,7 +52,7 @@ pub fn create_test_db() -> (Arc<AptosDB>, LocalAccount) {
     // This generates accounts that do not overlap with genesis
     let seed = [3u8; 32];
     let mut rng = ::rand::rngs::StdRng::from_seed(seed);
-    let signer = aptos_types::validator_signer::ValidatorSigner::new(
+    let signer = libra2_types::validator_signer::ValidatorSigner::new(
         validators[0].data.owner_address,
         Arc::new(validators[0].consensus_key.clone()),
     );

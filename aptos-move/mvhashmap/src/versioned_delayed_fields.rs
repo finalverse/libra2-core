@@ -6,7 +6,7 @@ use aptos_aggregator::{
     delayed_change::{ApplyBase, DelayedApplyEntry, DelayedEntry},
     types::{DelayedFieldValue, ReadPosition},
 };
-use aptos_types::error::{code_invariant_error, PanicError, PanicOr};
+use libra2_types::error::{code_invariant_error, PanicError, PanicOr};
 use claims::assert_matches;
 use crossbeam::utils::CachePadded;
 use dashmap::DashMap;
@@ -743,7 +743,7 @@ mod test {
     use aptos_aggregator::{
         bounded_math::SignedU128, delta_change_set::DeltaOp, delta_math::DeltaHistory,
     };
-    use aptos_types::delayed_fields::SnapshotToStringFormula;
+    use libra2_types::delayed_fields::SnapshotToStringFormula;
     use claims::{assert_err_eq, assert_ok_eq, assert_some};
     use move_vm_types::delayed_values::delayed_field_id::DelayedFieldID;
     use test_case::test_case;

@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::{
+use libra2_types::{
     account_config::CoinStoreResource,
     contract_event::ContractEvent,
     fee_statement::FeeStatement,
@@ -310,7 +310,7 @@ impl TransactionDiffBuilder {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aptos_types::{
+    use libra2_types::{
         on_chain_config::CurrentTimeMicroseconds,
         state_store::state_value::StateValueMetadata,
         transaction::{TransactionAuxiliaryData, TransactionStatus},

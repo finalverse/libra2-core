@@ -21,7 +21,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::HashValue;
 use aptos_executor_types::{state_compute_result::StateComputeResult, ExecutorError};
-use aptos_types::{ledger_info::LedgerInfo, validator_verifier::random_validator_verifier};
+use libra2_types::{ledger_info::LedgerInfo, validator_verifier::random_validator_verifier};
 use async_trait::async_trait;
 use std::sync::{
     atomic::{AtomicBool, AtomicU64},

@@ -6,7 +6,7 @@ use aptos_rosetta::{
     client::RosettaClient,
     types::{NetworkIdentifier, NetworkRequest, PartialBlockIdentifier},
 };
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 use clap::Parser;
 use serde::Serialize;
 

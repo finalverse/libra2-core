@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::MoveHarness;
-use aptos_types::{
+use libra2_types::{
     on_chain_config::{CurrentTimeMicroseconds, FeatureFlag},
     state_store::state_value::StateValueMetadata,
 };

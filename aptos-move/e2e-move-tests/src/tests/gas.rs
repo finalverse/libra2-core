@@ -21,7 +21,7 @@ use aptos_transaction_generator_lib::{
     publishing::publish_util::PackageHandler,
 };
 use aptos_transaction_workloads_lib::{EntryPoints, LoopType};
-use aptos_types::{
+use libra2_types::{
     account_address::{default_stake_pool_address, AccountAddress},
     account_config::CORE_CODE_ADDRESS,
     fee_statement::FeeStatement,

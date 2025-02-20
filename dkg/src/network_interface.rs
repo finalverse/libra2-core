@@ -7,7 +7,7 @@ use aptos_network::{
     application::{error::Error, interface::NetworkClientInterface},
     ProtocolId,
 };
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use bytes::Bytes;
 use std::{collections::HashMap, time::Duration};
 

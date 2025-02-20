@@ -3,7 +3,7 @@
 
 use crate::metrics::{BIG_QUERY_REQUEST_FAILURES_TOTAL, BIG_QUERY_REQUEST_TOTAL};
 use libra2_infallible::RwLock;
-use aptos_types::{chain_id::ChainId, PeerId};
+use libra2_types::{chain_id::ChainId, PeerId};
 use gcp_bigquery_client::{
     model::{query_request::QueryRequest, query_response::ResultSet},
     Client as BigQueryClient,

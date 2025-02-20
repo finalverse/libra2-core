@@ -40,7 +40,7 @@ use aptos_network::{
 };
 use aptos_network_discovery::DiscoveryChangeListener;
 use libra2_time_service::TimeService;
-use aptos_types::{chain_id::ChainId, network_address::NetworkAddress};
+use libra2_types::{chain_id::ChainId, network_address::NetworkAddress};
 use std::{clone::Clone, collections::HashSet, sync::Arc, time::Duration};
 use tokio::runtime::Handle;
 

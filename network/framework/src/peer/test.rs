@@ -30,7 +30,7 @@ use libra2_logger::info;
 use aptos_memsocket::MemorySocket;
 use aptos_netcore::transport::ConnectionOrigin;
 use libra2_time_service::{MockTimeService, TimeService};
-use aptos_types::{network_address::NetworkAddress, PeerId};
+use libra2_types::{network_address::NetworkAddress, PeerId};
 use bytes::Bytes;
 use futures::{
     channel::oneshot,

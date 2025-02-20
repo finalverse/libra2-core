@@ -19,7 +19,7 @@
 //! use libra2_crypto::{x25519, ed25519, Uniform, PrivateKey, test_utils::TEST_SEED};
 //! use libra2_infallible::RwLock;
 //! use rand::{rngs::StdRng, SeedableRng};
-//! use aptos_types::PeerId;
+//! use libra2_types::PeerId;
 //! use std::{collections::{HashSet, HashMap}, io, sync::Arc};
 //! use libra2_config::config::RoleType;
 //! use aptos_network::application::storage::PeersAndMetadata;

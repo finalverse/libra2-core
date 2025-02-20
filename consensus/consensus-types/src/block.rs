@@ -11,7 +11,7 @@ use anyhow::{bail, ensure, format_err};
 use libra2_bitvec::BitVec;
 use libra2_crypto::{bls12381, hash::CryptoHash, HashValue};
 use libra2_infallible::duration_since_epoch;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     block_info::BlockInfo,
     block_metadata::BlockMetadata,

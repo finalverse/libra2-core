@@ -9,7 +9,7 @@ use aptos::common::types::GasOptions;
 use libra2_config::config::{OverrideNodeConfig, PersistableConfig};
 use aptos_forge::{NodeExt, Swarm, SwarmExt};
 use libra2_logger::{debug, info};
-use aptos_types::{on_chain_config::OnChainRandomnessConfig, randomness::PerBlockRandomness};
+use libra2_types::{on_chain_config::OnChainRandomnessConfig, randomness::PerBlockRandomness};
 use std::{
     ops::Add,
     sync::Arc,

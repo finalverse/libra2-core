@@ -29,7 +29,7 @@ use aptos_executor_types::state_compute_result::StateComputeResult;
 use libra2_infallible::RwLock;
 use libra2_logger::{error, info};
 use aptos_storage_interface::DbReader;
-use aptos_types::{
+use libra2_types::{
     account_config::NewBlockEvent,
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,

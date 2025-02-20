@@ -3,7 +3,7 @@
 
 use crate::{counters, types::ReadWriteSummary};
 use libra2_logger::info;
-use aptos_types::{
+use libra2_types::{
     fee_statement::FeeStatement,
     on_chain_config::BlockGasLimitType,
     transaction::{block_epilogue::BlockEndInfo, BlockExecutableTransaction as Transaction},

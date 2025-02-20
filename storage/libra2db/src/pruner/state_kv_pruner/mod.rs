@@ -20,7 +20,7 @@ use anyhow::anyhow;
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::info;
 use aptos_storage_interface::Result;
-use aptos_types::transaction::{AtomicVersion, Version};
+use libra2_types::transaction::{AtomicVersion, Version};
 use rayon::prelude::*;
 use std::{
     cmp::min,

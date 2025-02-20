@@ -16,7 +16,7 @@ use aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION;
 use libra2_infallible::duration_since_epoch;
 use aptos_rest_client::Client;
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     account_config::CORE_CODE_ADDRESS,
     on_chain_config::{
         AptosVersion, ExecutionConfigV1, FeatureFlag as AptosFeatureFlag, GasScheduleV2,
@@ -308,7 +308,7 @@ impl ReleaseEntry {
                 if let Some(client) = client {
                     let features = block_on(async {
                         client
-                            .get_account_resource_bcs::<aptos_types::on_chain_config::Features>(
+                            .get_account_resource_bcs::<libra2_types::on_chain_config::Features>(
                                 CORE_CODE_ADDRESS,
                                 "0x1::features::Features",
                             )
@@ -467,7 +467,7 @@ impl ReleaseEntry {
             ReleaseEntry::FeatureFlag(features) => {
                 let on_chain_features = block_on(async {
                     client
-                        .get_account_resource_bcs::<aptos_types::on_chain_config::Features>(
+                        .get_account_resource_bcs::<libra2_types::on_chain_config::Features>(
                             CORE_CODE_ADDRESS,
                             "0x1::features::Features",
                         )

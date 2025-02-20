@@ -12,7 +12,7 @@ use crate::{
 };
 use libra2_crypto::HashValue;
 use aptos_storage_interface::{DbReader, Result};
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,
     proof::definition::LeafCount,

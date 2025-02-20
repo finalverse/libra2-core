@@ -10,7 +10,7 @@ use aptos_language_e2e_tests::{
     assert_prologue_disparity, assert_prologue_parity, common_transactions::EMPTY_SCRIPT,
     current_function_name, executor::FakeExecutor, transaction_status_eq,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config,
     chain_id::ChainId,

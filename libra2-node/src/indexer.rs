@@ -4,7 +4,7 @@
 use libra2_config::config::NodeConfig;
 use aptos_mempool::MempoolClientSender;
 use aptos_storage_interface::DbReader;
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 use std::sync::Arc;
 use tokio::runtime::Runtime;
 

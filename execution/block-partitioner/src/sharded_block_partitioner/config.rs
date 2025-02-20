@@ -4,7 +4,7 @@
 use crate::{
     sharded_block_partitioner::ShardedBlockPartitioner, BlockPartitioner, PartitionerConfig,
 };
-use aptos_types::block_executor::partitioner::RoundId;
+use libra2_types::block_executor::partitioner::RoundId;
 use clap::Parser;
 
 /// The configuration for `aptos_block_partitioner::sharded_block_partitioner::ShardedBlockPartitioner`,

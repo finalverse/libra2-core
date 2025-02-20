@@ -5,7 +5,7 @@ use anyhow::{bail, format_err};
 use aptos_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvider};
 use aptos_gas_profiling::{GasProfiler, TransactionGasLog};
 use aptos_rest_client::Client;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     block_executor::{
         config::{BlockExecutorConfig, BlockExecutorConfigFromOnchain, BlockExecutorLocalConfig},

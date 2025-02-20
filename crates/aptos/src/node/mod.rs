@@ -32,7 +32,7 @@ use aptos_network_checker::args::{
     validate_address, CheckEndpointArgs, HandshakeArgs, NodeAddressArgs,
 };
 use aptos_rest_client::{aptos_api_types::VersionedEvent, Client, State};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{BlockResource, CORE_CODE_ADDRESS},
     chain_id::ChainId,
@@ -947,7 +947,7 @@ impl From<&ValidatorInfoSummary> for ValidatorInfo {
         ValidatorInfo::new(
             summary.account_address,
             summary.consensus_voting_power,
-            aptos_types::validator_config::ValidatorConfig::new(
+            libra2_types::validator_config::ValidatorConfig::new(
                 PublicKey::from_encoded_string(&config.consensus_public_key).unwrap(),
                 bcs::to_bytes(&config.validator_network_addresses).unwrap(),
                 bcs::to_bytes(&config.fullnode_network_addresses).unwrap(),

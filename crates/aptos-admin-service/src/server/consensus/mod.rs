@@ -9,7 +9,7 @@ use aptos_consensus::{
 use libra2_crypto::HashValue;
 use libra2_logger::info;
 use libra2_system_utils::utils::{reply_with, reply_with_status, spawn_blocking};
-use aptos_types::transaction::Transaction;
+use libra2_types::transaction::Transaction;
 use http::header::{HeaderValue, CONTENT_LENGTH};
 use hyper::{Body, Request, Response, StatusCode};
 use std::{collections::HashMap, sync::Arc};

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::anyhow;
-use aptos_types::{
+use libra2_types::{
     on_chain_config::{Features, OnChainConfig},
     state_store::{state_key::StateKey, StateView},
 };

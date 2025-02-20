@@ -31,7 +31,7 @@ aptos-reliable-broadcast = { workspace = true }
 aptos-runtimes = { workspace = true }
 aptos-safety-rules = { workspace = true }
 libra2-time-service = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 aptos-validator-transaction-pool = { workspace = true }
 async-trait = { workspace = true }
 bytes = { workspace = true }
@@ -45,7 +45,7 @@ tokio = { workspace = true }
 tokio-retry = { workspace = true }
 
 [dev-dependencies]
-aptos-types = { workspace = true, features = ["fuzzing"] }
+libra2-types = { workspace = true, features = ["fuzzing"] }
 aptos-validator-transaction-pool = { workspace = true, features = ["fuzzing"] }
 [features]
 smoke-test = []

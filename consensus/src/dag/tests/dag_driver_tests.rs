@@ -29,7 +29,7 @@ use aptos_consensus_types::common::{Author, Round};
 use libra2_infallible::Mutex;
 use aptos_reliable_broadcast::{RBNetworkSender, ReliableBroadcast};
 use libra2_time_service::TimeService;
-use aptos_types::{
+use libra2_types::{
     epoch_state::EpochState,
     ledger_info::{generate_ledger_info_with_sig, LedgerInfo, LedgerInfoWithSignatures},
     validator_signer::ValidatorSigner,

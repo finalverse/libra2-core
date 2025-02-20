@@ -8,7 +8,7 @@ use super::*;
 use crate::{ledger_db::transaction_db_test::init_db, Libra2DB};
 use aptos_proptest_helpers::Index;
 use libra2_temppath::TempPath;
-use aptos_types::proptest_types::{AccountInfoUniverse, SignatureCheckedTransactionGen};
+use libra2_types::proptest_types::{AccountInfoUniverse, SignatureCheckedTransactionGen};
 use proptest::{collection::vec, prelude::*};
 use std::collections::BTreeMap;
 

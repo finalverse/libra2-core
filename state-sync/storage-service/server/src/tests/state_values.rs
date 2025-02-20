@@ -13,7 +13,7 @@ use aptos_storage_service_types::{
     responses::{DataResponse, StorageServiceResponse},
     StorageServiceError,
 };
-use aptos_types::{
+use libra2_types::{
     proof::definition::SparseMerkleRangeProof,
     state_store::{
         state_key::StateKey,

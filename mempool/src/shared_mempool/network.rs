@@ -28,7 +28,7 @@ use aptos_network::{
     transport::ConnectionMetadata,
 };
 use libra2_time_service::TimeService;
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 use aptos_vm_validator::vm_validator::TransactionValidation;
 use fail::fail_point;
 use serde::{Deserialize, Serialize};

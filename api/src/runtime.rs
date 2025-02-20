@@ -23,7 +23,7 @@ use libra2_config::config::{ApiConfig, NodeConfig};
 use libra2_logger::info;
 use aptos_mempool::MempoolClientSender;
 use aptos_storage_interface::DbReader;
-use aptos_types::{chain_id::ChainId, indexer::indexer_db_reader::IndexerReader};
+use libra2_types::{chain_id::ChainId, indexer::indexer_db_reader::IndexerReader};
 use futures::channel::oneshot;
 use poem::{
     handler,
@@ -301,7 +301,7 @@ mod tests {
     use crate::runtime::get_max_runtime_workers;
     use aptos_api_test_context::{new_test_context, TestContext};
     use libra2_config::config::{ApiConfig, NodeConfig};
-    use aptos_types::chain_id::ChainId;
+    use libra2_types::chain_id::ChainId;
     use std::time::Duration;
 
     // TODO: Unignore this when I figure out why this only works when being

@@ -6,7 +6,7 @@ use crate::{
     state_store::{versioned_state_value::StateUpdateRef, NUM_STATE_SHARDS},
 };
 use libra2_metrics_core::TimerHelper;
-use aptos_types::{
+use libra2_types::{
     state_store::{state_key::StateKey, state_value::StateValue},
     transaction::Version,
     write_set::WriteSet,

@@ -12,7 +12,7 @@ use aptos_consensus_types::{
 use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
 use aptos_storage_interface::DbReader;
-use aptos_types::{
+use libra2_types::{
     block_info::Round, epoch_change::EpochChangeProof, ledger_info::LedgerInfoWithSignatures,
     proof::TransactionAccumulatorSummary, transaction::Version,
 };

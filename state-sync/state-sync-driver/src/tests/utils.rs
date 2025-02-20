@@ -16,7 +16,7 @@ use aptos_event_notifications::EventNotificationListener;
 use aptos_mempool_notifications::{CommittedTransaction, MempoolNotificationListener};
 use aptos_storage_service_notifications::StorageServiceNotificationListener;
 use aptos_storage_service_types::responses::CompleteDataRange;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::NEW_EPOCH_EVENT_V2_MOVE_TYPE_TAG,
     aggregate_signature::AggregateSignature,

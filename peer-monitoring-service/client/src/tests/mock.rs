@@ -20,7 +20,7 @@ use aptos_network::{
 use aptos_peer_monitoring_service_server::network::{NetworkRequest, ResponseSender};
 use aptos_peer_monitoring_service_types::PeerMonitoringServiceMessage;
 use libra2_time_service::TimeService;
-use aptos_types::account_address::{AccountAddress as PeerId, AccountAddress};
+use libra2_types::account_address::{AccountAddress as PeerId, AccountAddress};
 use futures::FutureExt;
 use std::{collections::HashMap, sync::Arc};
 

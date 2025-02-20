@@ -12,7 +12,7 @@ use aptos_forge::{
     EntryPoints, NodeExt, Result, Swarm, TransactionType, TxnEmitter, TxnStats, WorkflowProgress,
 };
 use aptos_sdk::{transaction_builder::TransactionFactory, types::PeerId};
-use aptos_types::keyless::test_utils::{get_sample_esk, get_sample_exp_date, get_sample_jwt_token};
+use libra2_types::keyless::test_utils::{get_sample_esk, get_sample_exp_date, get_sample_jwt_token};
 use once_cell::sync::Lazy;
 use rand::{rngs::OsRng, SeedableRng};
 use std::{sync::Arc, time::Duration};

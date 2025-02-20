@@ -10,7 +10,7 @@ use libra2_crypto::{
     HashValue,
 };
 use aptos_storage_interface::chunk_to_commit::ChunkToCommit;
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     epoch_state::EpochState,
     proof::{accumulator::InMemoryTransactionAccumulator, AccumulatorExtensionProof},

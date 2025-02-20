@@ -5,7 +5,7 @@
 use aptos_language_e2e_tests::{
     account::Account, common_transactions::peer_to_peer_txn, executor::FakeExecutor,
 };
-use aptos_types::{
+use libra2_types::{
     account_config::{DepositEvent, WithdrawEvent},
     transaction::{ExecutionStatus, SignedTransaction, TransactionOutput, TransactionStatus},
 };

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_logger::info;
-use aptos_types::{
+use libra2_types::{
     on_chain_config::TransactionShufflerType,
     transaction::{
         signature_verified_transaction::SignatureVerifiedTransaction, SignedTransaction,

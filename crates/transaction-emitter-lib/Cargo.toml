@@ -23,7 +23,7 @@ libra2-logger = { workspace = true }
 aptos-rest-client = { workspace = true }
 aptos-sdk = { workspace = true }
 aptos-transaction-generator-lib = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 async-trait = { workspace = true }
 base64 = { workspace = true }
 clap = { workspace = true }

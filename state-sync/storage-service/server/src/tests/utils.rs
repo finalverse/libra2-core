@@ -29,7 +29,7 @@ use aptos_storage_service_types::{
     Epoch, StorageServiceError,
 };
 use libra2_time_service::{MockTimeService, TimeService};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,

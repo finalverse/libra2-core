@@ -36,7 +36,7 @@ use aptos_mempool_notifications::MempoolNotificationSender;
 use aptos_storage_interface::DbReader;
 use aptos_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_time_service::{TimeService, TimeServiceTrait};
-use aptos_types::{contract_event::ContractEvent, waypoint::Waypoint};
+use libra2_types::{contract_event::ContractEvent, waypoint::Waypoint};
 use futures::StreamExt;
 use std::{sync::Arc, time::Instant};
 use tokio::{

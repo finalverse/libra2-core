@@ -7,7 +7,7 @@ use crate::{
 use libra2_channels::libra2_channel::Sender;
 use libra2_logger::info;
 use aptos_reliable_broadcast::ReliableBroadcast;
-use aptos_types::{dkg::DKGTrait, epoch_state::EpochState};
+use libra2_types::{dkg::DKGTrait, epoch_state::EpochState};
 use futures::future::AbortHandle;
 use futures_util::future::Abortable;
 use move_core_types::account_address::AccountAddress;

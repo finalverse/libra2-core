@@ -12,7 +12,7 @@ use aptos_db::AptosDB;
 use aptos_executor_test_helpers::bootstrap_genesis;
 use libra2_infallible::RwLock;
 use aptos_storage_interface::DbReaderWriter;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::NEW_EPOCH_EVENT_V2_MOVE_TYPE_TAG,
     contract_event::ContractEvent,

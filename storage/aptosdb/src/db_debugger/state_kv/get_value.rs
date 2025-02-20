@@ -3,7 +3,7 @@
 
 use crate::db_debugger::common::DbDir;
 use aptos_storage_interface::Result;
-use aptos_types::{state_store::state_key::StateKey, transaction::Version};
+use libra2_types::{state_store::state_key::StateKey, transaction::Version};
 use clap::Parser;
 use owo_colors::OwoColorize;
 

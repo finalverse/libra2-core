@@ -192,7 +192,7 @@ mod test_utils {
         account::AccountData, common_transactions::peer_to_peer_txn, data_store::FakeDataStore,
         executor::FakeExecutor,
     };
-    use aptos_types::{
+    use libra2_types::{
         block_executor::{
             config::BlockExecutorConfigFromOnchain, partitioner::PartitionedTransactions,
         },

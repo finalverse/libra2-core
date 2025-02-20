@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{format_err, Result};
-use aptos_types::{chain_id::ChainId, PeerId};
+use libra2_types::{chain_id::ChainId, PeerId};
 use once_cell::sync::OnceCell;
 use std::sync::Arc;
 
@@ -66,7 +66,7 @@ pub fn chain_id() -> Option<ChainId> {
 
 #[cfg(test)]
 mod tests {
-    use aptos_types::{chain_id::ChainId, PeerId};
+    use libra2_types::{chain_id::ChainId, PeerId};
     use claims::{assert_err, assert_ok};
 
     #[test]

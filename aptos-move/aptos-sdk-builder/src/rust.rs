@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::common;
-use aptos_types::transaction::{
+use libra2_types::transaction::{
     ArgumentABI, EntryABI, EntryFunctionABI, TransactionScriptABI, TypeArgumentABI,
 };
 use heck::{ToShoutySnakeCase, ToSnakeCase, ToUpperCamelCase};
@@ -262,14 +262,14 @@ impl EntryFunctionCall {
                     "ModuleId", "TypeTag",
                 ]),
                 ("move_core_types", vec!["ident_str"]),
-                ("aptos_types::transaction", vec![
+                ("libra2_types::transaction", vec![
                     "TransactionPayload",
                     "EntryFunction",
                 ]),
-                ("aptos_types::account_address", vec!["AccountAddress"]),
+                ("libra2_types::account_address", vec!["AccountAddress"]),
             ]
         } else {
-            vec![("aptos_types", vec![
+            vec![("libra2_types", vec![
                 "AccountAddress",
                 "TypeTag",
                 "Script",
@@ -916,14 +916,14 @@ fn decode_{}_argument(arg: TransactionArgument) -> Option<{}> {{
 
 pub struct Installer {
     install_dir: PathBuf,
-    aptos_types_version: String,
+    libra2_types_version: String,
 }
 
 impl Installer {
-    pub fn new(install_dir: PathBuf, aptos_types_version: String) -> Self {
+    pub fn new(install_dir: PathBuf, libra2_types_version: String) -> Self {
         Installer {
             install_dir,
-            aptos_types_version,
+            libra2_types_version,
         }
     }
 }
@@ -958,9 +958,9 @@ edition = "2021"
 once_cell = "1.10.0"
 serde = {{ version = "1.0", features = ["derive"] }}
 serde_bytes = "0.11.6"
-aptos-types = {{ path = "../aptos-types", version = "{}" }}
+libra2-types = {{ path = "../libra2-types", version = "{}" }}
 "#,
-            name, version, self.aptos_types_version,
+            name, version, self.libra2_types_version,
         )?;
         std::fs::create_dir(dir_path.join("src"))?;
         let source_path = dir_path.join("src/lib.rs");

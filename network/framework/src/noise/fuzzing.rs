@@ -39,13 +39,13 @@ pub static KEYPAIRS: Lazy<(
     let initiator_private_key = x25519::PrivateKey::generate(&mut rng);
     let initiator_public_key = initiator_private_key.public_key();
     let initiator_peer_id =
-        aptos_types::account_address::from_identity_public_key(initiator_public_key);
+        libra2_types::account_address::from_identity_public_key(initiator_public_key);
     let initiator_network_context = NetworkContext::mock_with_peer_id(initiator_peer_id);
 
     let responder_private_key = x25519::PrivateKey::generate(&mut rng);
     let responder_public_key = responder_private_key.public_key();
     let responder_peer_id =
-        aptos_types::account_address::from_identity_public_key(responder_public_key);
+        libra2_types::account_address::from_identity_public_key(responder_public_key);
     let responder_network_context = NetworkContext::mock_with_peer_id(responder_peer_id);
     assert_eq!(
         initiator_network_context.network_id(),

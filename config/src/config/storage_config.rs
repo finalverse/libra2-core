@@ -11,7 +11,7 @@ use crate::{
 };
 use anyhow::{bail, ensure, Result};
 use libra2_logger::warn;
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 use arr_macro::arr;
 use serde::{Deserialize, Serialize};
 use serde_yaml::Value;
@@ -633,7 +633,7 @@ mod test {
         config_optimizer::ConfigOptimizer, NodeConfig, NodeType, PrunerConfig, ShardPathConfig,
         ShardedDbPathConfig, StorageConfig,
     };
-    use aptos_types::chain_id::ChainId;
+    use libra2_types::chain_id::ChainId;
 
     #[test]
     pub fn test_default_prune_window() {

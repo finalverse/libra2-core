@@ -15,7 +15,7 @@ use aptos_rest_client::{
     aptos_api_types::{HexEncodedBytes, WriteResource, WriteSetChange},
     Transaction,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     transaction::{Multisig, MultisigTransactionPayload, TransactionPayload},
 };

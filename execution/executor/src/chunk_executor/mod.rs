@@ -30,7 +30,7 @@ use aptos_storage_interface::{
     },
     DbReaderWriter,
 };
-use aptos_types::{
+use libra2_types::{
     block_executor::{
         config::BlockExecutorConfigFromOnchain,
         transaction_slice_metadata::TransactionSliceMetadata,

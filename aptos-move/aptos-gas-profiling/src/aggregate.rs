@@ -113,7 +113,7 @@ impl ExecutionAndIOCosts {
         }
 
         for write in &self.write_set_transient {
-            use aptos_types::state_store::state_key::inner::StateKeyInner::*;
+            use libra2_types::state_store::state_key::inner::StateKeyInner::*;
 
             let key = match write.key.inner() {
                 AccessPath(ap) => format!("{}", Render(&ap.get_path())),

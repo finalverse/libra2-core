@@ -10,7 +10,7 @@ use crate::{
     utils,
 };
 use libra2_logger::{Level, CHANNEL_SIZE};
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 use serde::{Deserialize, Serialize};
 use serde_yaml::Value;
 

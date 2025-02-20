@@ -5,7 +5,7 @@ use crate::common::{format_output, NetworkArgs, UrlArgs};
 use aptos::common::types::{EncodingOptions, PrivateKeyInputOptions, ProfileOptions};
 use libra2_logger::info;
 use aptos_rosetta::types::{Currency, TransactionIdentifier};
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use clap::{Parser, Subcommand};
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 

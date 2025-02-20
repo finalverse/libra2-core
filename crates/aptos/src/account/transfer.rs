@@ -7,7 +7,7 @@ use aptos_rest_client::{
     aptos_api_types::{HashValue, WriteResource, WriteSetChange},
     Transaction,
 };
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use async_trait::async_trait;
 use clap::Parser;
 use serde::Serialize;

@@ -11,7 +11,7 @@ use libra2_dkg::{
 };
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::debug;
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::AggregateSignature,
     randomness::{
         Delta, PKShare, ProofShare, RandKeys, RandMetadata, Randomness, WvufPP, APK, WVUF,

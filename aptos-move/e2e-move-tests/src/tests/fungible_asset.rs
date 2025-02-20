@@ -7,7 +7,7 @@ use aptos_language_e2e_tests::{
     account::Account,
     executor::{ExecutorMode, FakeExecutor},
 };
-use aptos_types::{
+use libra2_types::{
     account_address::{self, AccountAddress},
     on_chain_config::FeatureFlag,
 };

@@ -14,7 +14,7 @@ use aptos_framework::{
     BuildOptions, BuiltPackage,
 };
 use aptos_language_e2e_tests::account::Account;
-use aptos_types::{
+use libra2_types::{
     object_address::create_object_code_deployment_address,
     transaction::{AbortInfo, TransactionPayload, TransactionStatus},
 };

@@ -11,7 +11,7 @@ use libra2_crypto::{
     PrivateKey,
 };
 use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
-use aptos_types::{
+use libra2_types::{
     block_metadata_ext::BlockMetadataExt,
     contract_event, event,
     state_store::{state_key::StateKey, state_value::PersistedStateValueMetadata},
@@ -104,7 +104,7 @@ pub fn get_registry() -> Result<Registry> {
     tracer.trace_type::<transaction::authenticator::AnyPublicKey>(&samples)?;
     tracer.trace_type::<transaction::authenticator::AnySignature>(&samples)?;
     tracer.trace_type::<transaction::webauthn::AssertionSignature>(&samples)?;
-    tracer.trace_type::<aptos_types::keyless::EphemeralCertificate>(&samples)?;
+    tracer.trace_type::<libra2_types::keyless::EphemeralCertificate>(&samples)?;
     tracer.trace_type::<write_set::WriteOp>(&samples)?;
     tracer.trace_type::<PersistedStateValueMetadata>(&samples)?;
 

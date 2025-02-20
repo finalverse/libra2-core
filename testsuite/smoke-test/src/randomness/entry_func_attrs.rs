@@ -16,7 +16,7 @@ use aptos::{
 };
 use aptos_forge::{Swarm, SwarmExt};
 use libra2_logger::info;
-use aptos_types::on_chain_config::OnChainRandomnessConfig;
+use libra2_types::on_chain_config::OnChainRandomnessConfig;
 use std::{str::FromStr, sync::Arc, time::Duration};
 
 #[derive(Clone, Copy, Debug)]

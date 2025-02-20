@@ -13,7 +13,7 @@ use aptos_gas_schedule::gas_params::natives::{aptos_framework::*, move_stdlib::*
 use aptos_native_interface::{
     safely_pop_arg, SafeNativeContext, SafeNativeError, SafeNativeResult,
 };
-use aptos_types::on_chain_config::FeatureFlag;
+use libra2_types::on_chain_config::FeatureFlag;
 use ark_ec::hashing::HashToCurve;
 use either::Either;
 use move_core_types::gas_algebra::{InternalGas, NumBytes};

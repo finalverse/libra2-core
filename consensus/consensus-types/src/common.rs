@@ -15,7 +15,7 @@ use libra2_crypto_derive::CryptoHasher;
 use aptos_executor_types::ExecutorResult;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress, transaction::SignedTransaction,
     validator_verifier::ValidatorVerifier, vm_status::DiscardedVMStatus, PeerId,
 };

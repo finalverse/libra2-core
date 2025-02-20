@@ -3,7 +3,7 @@
 
 use crate::pipeline::signing_phase::CommitSignerProvider;
 use libra2_crypto::bls12381;
-use aptos_types::validator_signer::ValidatorSigner;
+use libra2_types::validator_signer::ValidatorSigner;
 use std::sync::Arc;
 
 pub struct DagCommitSigner {
@@ -19,8 +19,8 @@ impl DagCommitSigner {
 impl CommitSignerProvider for DagCommitSigner {
     fn sign_commit_vote(
         &self,
-        _ledger_info: aptos_types::ledger_info::LedgerInfoWithSignatures,
-        new_ledger_info: aptos_types::ledger_info::LedgerInfo,
+        _ledger_info: libra2_types::ledger_info::LedgerInfoWithSignatures,
+        new_ledger_info: libra2_types::ledger_info::LedgerInfo,
     ) -> Result<bls12381::Signature, aptos_safety_rules::Error> {
         let signature = self
             .signer

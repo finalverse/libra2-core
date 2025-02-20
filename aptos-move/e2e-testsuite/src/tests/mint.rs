@@ -4,7 +4,7 @@
 
 use aptos_cached_packages::aptos_stdlib;
 use aptos_language_e2e_tests::{account::Account, executor::FakeExecutor};
-use aptos_types::transaction::{ExecutionStatus, TransactionStatus};
+use libra2_types::transaction::{ExecutionStatus, TransactionStatus};
 
 #[test]
 fn mint_to_new_account() {

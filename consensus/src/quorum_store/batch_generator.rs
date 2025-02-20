@@ -19,7 +19,7 @@ use aptos_consensus_types::{
 use aptos_experimental_runtimes::thread_manager::optimal_min_len;
 use libra2_logger::prelude::*;
 use aptos_mempool::QuorumStoreRequest;
-use aptos_types::{transaction::SignedTransaction, PeerId};
+use libra2_types::{transaction::SignedTransaction, PeerId};
 use futures_channel::mpsc::Sender;
 use rayon::prelude::*;
 use std::{

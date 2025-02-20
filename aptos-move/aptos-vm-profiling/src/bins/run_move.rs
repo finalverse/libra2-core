@@ -6,7 +6,7 @@ use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEAT
 use aptos_move_stdlib::natives::all_natives;
 use aptos_native_interface::SafeNativeBuilder;
 use aptos_table_natives::NativeTableContext;
-use aptos_types::on_chain_config::{Features, TimedFeaturesBuilder};
+use libra2_types::on_chain_config::{Features, TimedFeaturesBuilder};
 use move_binary_format::CompiledModule;
 use move_core_types::{
     account_address::AccountAddress, ident_str, identifier::Identifier, language_storage::ModuleId,

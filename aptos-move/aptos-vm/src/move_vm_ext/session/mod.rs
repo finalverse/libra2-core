@@ -18,7 +18,7 @@ use aptos_framework::natives::{
     transaction_context::NativeTransactionContext,
 };
 use aptos_table_natives::{NativeTableContext, TableChangeSet};
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId, contract_event::ContractEvent, on_chain_config::Features,
     state_store::state_key::StateKey,
     transaction::user_transaction_context::UserTransactionContext, write_set::WriteOp,

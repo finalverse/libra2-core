@@ -162,10 +162,10 @@ async fn warn_detailed_error(
     call_name: &str,
     rest_client: &RestClient,
     txn: &SignedTransaction,
-    err: Result<&aptos_types::transaction::TransactionInfo, &RestError>,
+    err: Result<&libra2_types::transaction::TransactionInfo, &RestError>,
 ) {
     let sender = txn.sender();
-    use aptos_types::transaction::TransactionPayload::*;
+    use libra2_types::transaction::TransactionPayload::*;
     let payload = match txn.payload() {
         Script(_) => "script".to_string(),
         ModuleBundle(_) => "module_bundle".to_string(),

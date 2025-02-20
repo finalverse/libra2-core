@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_gas_algebra::{Fee, GasScalingFactor, InternalGas, NumBytes};
-use aptos_types::state_store::state_key::StateKey;
+use libra2_types::state_store::state_key::StateKey;
 use move_binary_format::{file_format::CodeOffset, file_format_common::Opcodes};
 use move_core_types::{
     account_address::AccountAddress,

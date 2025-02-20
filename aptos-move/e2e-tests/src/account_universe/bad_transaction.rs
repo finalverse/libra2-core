@@ -14,7 +14,7 @@ use libra2_crypto::{
 use aptos_gas_algebra::{FeePerGasUnit, Gas, GasExpression};
 use aptos_gas_schedule::{AptosGasParameters, InitialGasSchedule, LATEST_GAS_FEATURE_VERSION};
 use aptos_proptest_helpers::Index;
-use aptos_types::{
+use libra2_types::{
     transaction::{Script, SignedTransaction, TransactionStatus},
     vm_status::StatusCode,
 };

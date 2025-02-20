@@ -7,7 +7,7 @@ use aptos_framework::{
     unzip_metadata_str,
 };
 use aptos_rest_client::Client;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use move_package::compilation::package_layout::CompiledPackageLayout;
 use reqwest::Url;
 use std::{collections::BTreeMap, fmt, fs, path::Path};

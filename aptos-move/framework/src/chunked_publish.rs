@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::transaction::{EntryFunction, TransactionPayload};
+use libra2_types::transaction::{EntryFunction, TransactionPayload};
 use move_core_types::{account_address::AccountAddress, ident_str, language_storage::ModuleId};
 
 /// The default address where the `large_packages.move` module is deployed.

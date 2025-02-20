@@ -3,7 +3,7 @@
 
 use crate::{components::get_signer_arg, utils::generate_governance_proposal};
 use libra2_crypto::HashValue;
-use aptos_types::on_chain_config::OnChainJWKConsensusConfig;
+use libra2_types::on_chain_config::OnChainJWKConsensusConfig;
 use move_model::{code_writer::CodeWriter, emitln, model::Loc};
 
 pub fn generate_jwk_consensus_config_update_proposal(

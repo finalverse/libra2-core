@@ -5,7 +5,7 @@ use crate::transcript_aggregation::TranscriptAggregationState;
 use libra2_crypto::{bls12381::bls12381_keys, Uniform};
 use libra2_infallible::duration_since_epoch;
 use aptos_reliable_broadcast::BroadcastStatus;
-use aptos_types::{
+use libra2_types::{
     dkg::{
         dummy_dkg::{DummyDKG, DummyDKGTranscript},
         DKGSessionMetadata, DKGTrait, DKGTranscript, DKGTranscriptMetadata,

@@ -3,7 +3,7 @@
 
 use libra2_config::config::transaction_filter_type::Filter;
 use libra2_crypto::HashValue;
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 
 pub struct TransactionFilter {
     filter: Filter,
@@ -35,7 +35,7 @@ mod test {
     use crate::transaction_filter::TransactionFilter;
     use libra2_config::config::transaction_filter_type::Filter;
     use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
-    use aptos_types::{
+    use libra2_types::{
         chain_id::ChainId,
         move_utils::MemberId,
         transaction::{EntryFunction, RawTransaction, SignedTransaction, TransactionPayload},

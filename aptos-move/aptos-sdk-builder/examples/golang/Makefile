@@ -9,7 +9,7 @@ test:
 	cargo run -p aptos-sdk-builder -- \
 		--language go --module-name aptosstdlib \
 		--package-name testing \
-		--with-aptos-types "../../../../testsuite/generate-format/tests/staged/aptos.yaml" \
+		--with-libra2-types "../../../../testsuite/generate-format/tests/staged/aptos.yaml" \
 		--target-source-dir . \
 		"../../../framework/aptos-framework/build/AptosFramework"
 	- go mod init testing

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{change_set::WriteOpInfo, resolver::ExecutorView};
-use aptos_types::{
+use libra2_types::{
     state_store::state_key::StateKey,
     write_set::{TransactionWrite, WriteOp, WriteOpSize},
 };

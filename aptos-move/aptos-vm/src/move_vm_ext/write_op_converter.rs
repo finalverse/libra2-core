@@ -3,7 +3,7 @@
 
 use crate::move_vm_ext::{session::BytesWithResourceLayout, AptosMoveResolver};
 use aptos_aggregator::delta_change_set::serialize;
-use aptos_types::{
+use libra2_types::{
     on_chain_config::{CurrentTimeMicroseconds, OnChainConfig},
     state_store::{state_key::StateKey, state_value::StateValueMetadata},
     write_set::WriteOp,
@@ -296,7 +296,7 @@ mod tests {
         data_cache::{tests::as_resolver_with_group_size_kind, AsMoveResolver},
         move_vm_ext::resolver::ResourceGroupResolver,
     };
-    use aptos_types::{
+    use libra2_types::{
         account_address::AccountAddress,
         state_store::{state_value::StateValue, MockStateView},
         write_set::TransactionWrite,

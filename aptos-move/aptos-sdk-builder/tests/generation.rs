@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_sdk_builder as buildgen;
-use aptos_types::transaction::EntryABI;
+use libra2_types::transaction::EntryABI;
 use serde_generate as serdegen;
 use serde_generate::SourceInstaller as _;
 use serde_reflection::Registry;
@@ -24,7 +24,7 @@ fn test_rust(abis: &[EntryABI], demo_file: &str, expected_output: &str) {
     let dir = tempdir().unwrap();
 
     let installer = serdegen::rust::Installer::new(dir.path().to_path_buf());
-    let config = serdegen::CodeGeneratorConfig::new("aptos-types".to_string());
+    let config = serdegen::CodeGeneratorConfig::new("libra2-types".to_string());
     installer.install_module(&config, &registry).unwrap();
 
     let stdlib_dir_path = dir.path().join("framework");
@@ -39,7 +39,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-aptos-types = {{ path = "../aptos-types", version = "0.1.0" }}
+libra2-types = {{ path = "../libra2-types", version = "0.1.0" }}
 serde_bytes = "0.11.6"
 serde = {{ version = "1.0.114", features = ["derive"] }}
 bcs = {{ git = "https://github.com/aptos-labs/bcs", rev = "2cde3e8446c460cb17b0c1d6bac7e27e964ac169" }}

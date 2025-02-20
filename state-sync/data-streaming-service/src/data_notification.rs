@@ -4,7 +4,7 @@
 
 use crate::streaming_client::Epoch;
 use aptos_data_client::interface::{Response, ResponsePayload};
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     state_store::state_value::StateValueChunkWithProof,
     transaction::{TransactionListWithProof, TransactionOutputListWithProof, Version},

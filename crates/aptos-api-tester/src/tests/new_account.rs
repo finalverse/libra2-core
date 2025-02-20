@@ -15,7 +15,7 @@ use aptos_api_types::U64;
 use libra2_logger::error;
 use aptos_rest_client::{Account, Client, FaucetClient};
 use aptos_sdk::types::LocalAccount;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 
 /// Tests new account creation. Checks that:
 ///   - account data exists

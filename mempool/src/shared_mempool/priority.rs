@@ -567,7 +567,7 @@ mod test {
     use aptos_peer_monitoring_service_types::{
         response::NetworkInformationResponse, PeerMonitoringMetadata,
     };
-    use aptos_types::PeerId;
+    use libra2_types::PeerId;
     use core::cmp::Ordering;
     use std::collections::BTreeMap;
 

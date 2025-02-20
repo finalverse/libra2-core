@@ -20,7 +20,7 @@ use aptos_api_types::{ViewRequest, U64};
 use libra2_logger::error;
 use aptos_rest_client::Client;
 use aptos_sdk::types::LocalAccount;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 
 /// Tests view function use. Checks that:
 ///  - view function returns correct value

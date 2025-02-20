@@ -29,7 +29,7 @@ use aptos_data_streaming_service::{
 use libra2_infallible::Mutex;
 use aptos_storage_service_types::Epoch;
 use libra2_time_service::TimeService;
-use aptos_types::transaction::{TransactionOutputListWithProof, Version};
+use libra2_types::transaction::{TransactionOutputListWithProof, Version};
 use claims::assert_matches;
 use futures::SinkExt;
 use mockall::{predicate::eq, Sequence};

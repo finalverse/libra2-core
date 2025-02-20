@@ -6968,7 +6968,7 @@ paths:
         looks the transaction up by hash in the mempool (pending, not yet committed).
 
         To create a transaction hash by yourself, do the following:
-        1. Hash message bytes: "RawTransaction" bytes + BCS bytes of [Transaction](https://aptos-labs.github.io/aptos-core/aptos_types/transaction/enum.Transaction.html).
+        1. Hash message bytes: "RawTransaction" bytes + BCS bytes of [Transaction](https://aptos-labs.github.io/aptos-core/libra2_types/transaction/enum.Transaction.html).
         2. Apply hash algorithm `SHA3-256` to the hash message bytes.
         3. Hex-encode the hash bytes with `0x` prefix.
       parameters:
@@ -11287,8 +11287,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/BlockMetadataExtension'
           - description: |-
-              If some, it means the internal txn type is `aptos_types::transaction::Transaction::BlockMetadataExt`.
-              Otherwise, it is `aptos_types::transaction::Transaction::BlockMetadata`.
+              If some, it means the internal txn type is `libra2_types::transaction::Transaction::BlockMetadataExt`.
+              Otherwise, it is `libra2_types::transaction::Transaction::BlockMetadata`.
 
               NOTE: we could have introduced a new APT txn type to represent the corresponding internal type,
               but that is a breaking change to the ecosystem.
@@ -11540,7 +11540,7 @@ components:
           $ref: '#/components/schemas/Address'
     ExportedAggregateSignature:
       type: object
-      description: A more API-friendly representation of the on-chain `aptos_types::aggregate_signature::AggregateSignature`.
+      description: A more API-friendly representation of the on-chain `libra2_types::aggregate_signature::AggregateSignature`.
       required:
       - signer_indices
       properties:
@@ -11566,7 +11566,7 @@ components:
           $ref: '#/components/schemas/HexEncodedBytes'
     ExportedProviderJWKs:
       type: object
-      description: A more API-friendly representation of the on-chain `aptos_types::jwks::ProviderJWKs`.
+      description: A more API-friendly representation of the on-chain `libra2_types::jwks::ProviderJWKs`.
       required:
       - issuer
       - version
@@ -11583,7 +11583,7 @@ components:
             $ref: '#/components/schemas/JWK'
     ExportedQuorumCertifiedUpdate:
       type: object
-      description: A more API-friendly representation of the on-chain `aptos_types::jwks::QuorumCertifiedUpdate`.
+      description: A more API-friendly representation of the on-chain `libra2_types::jwks::QuorumCertifiedUpdate`.
       required:
       - update
       - multi_sig

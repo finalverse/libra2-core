@@ -23,7 +23,7 @@ use anyhow::{anyhow, ensure, Result};
 use aptos_db::backup::backup_handler::DbState;
 use libra2_infallible::duration_since_epoch;
 use libra2_logger::prelude::*;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use clap::Parser;
 use futures::{stream, Future, StreamExt};
 use std::{

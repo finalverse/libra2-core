@@ -5,7 +5,7 @@ use crate::storage::{
     change_set_configs::ChangeSetConfigs, io_pricing::IoPricing, space_pricing::DiskSpacePricing,
 };
 use aptos_gas_schedule::{AptosGasParameters, InitialGasSchedule, LATEST_GAS_FEATURE_VERSION};
-use aptos_types::{
+use libra2_types::{
     on_chain_config::{ConfigStorage, Features},
     state_store::state_key::StateKey,
 };

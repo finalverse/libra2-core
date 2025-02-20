@@ -9,7 +9,7 @@ use aptos_consensus_types::{
 };
 use libra2_infallible::Mutex;
 use aptos_reliable_broadcast::{BroadcastStatus, RBMessage, RBNetworkSender};
-use aptos_types::{validator_verifier::ValidatorVerifier, PeerId};
+use libra2_types::{validator_verifier::ValidatorVerifier, PeerId};
 use async_trait::async_trait;
 use bytes::Bytes;
 use serde::{Deserialize, Serialize};

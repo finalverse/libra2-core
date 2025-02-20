@@ -5,7 +5,7 @@
 //! Support for mocking the Aptos data store.
 
 use crate::account::AccountData;
-use aptos_types::{
+use libra2_types::{
     account_config::CoinInfoResource,
     chain_id::ChainId,
     on_chain_config::{Features, OnChainConfig},
@@ -159,7 +159,7 @@ impl TStateView for FakeDataStore {
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_types::on_chain_config::{FeatureFlag, Features};
+    use libra2_types::on_chain_config::{FeatureFlag, Features};
     use claims::*;
 
     #[test]

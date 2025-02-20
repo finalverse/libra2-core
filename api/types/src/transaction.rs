@@ -15,7 +15,7 @@ use libra2_crypto::{
     secp256r1_ecdsa::PUBLIC_KEY_LENGTH,
     ValidCryptoMaterial,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     aggregate_signature::AggregateSignature,
     block_metadata::BlockMetadata,
@@ -79,7 +79,7 @@ impl TransactionData {
     ) -> Result<Self> {
         if txn.version > latest_ledger_version {
             match txn.transaction {
-                aptos_types::transaction::Transaction::UserTransaction(txn) => {
+                libra2_types::transaction::Transaction::UserTransaction(txn) => {
                     Ok(Self::Pending(Box::new(txn)))
                 },
                 _ => bail!("convert non-user onchain transaction to pending shouldn't exist"),
@@ -104,15 +104,15 @@ pub struct TransactionOnChainData {
     /// The ledger version of the transaction
     pub version: u64,
     /// The transaction submitted
-    pub transaction: aptos_types::transaction::Transaction,
+    pub transaction: libra2_types::transaction::Transaction,
     /// Information about the transaction
-    pub info: aptos_types::transaction::TransactionInfo,
+    pub info: libra2_types::transaction::TransactionInfo,
     /// Events emitted by the transaction
     pub events: Vec<ContractEvent>,
     /// The accumulator root hash at this version
     pub accumulator_root_hash: libra2_crypto::HashValue,
     /// Final state of resources changed by the transaction
-    pub changes: aptos_types::write_set::WriteSet,
+    pub changes: libra2_types::write_set::WriteSet,
 }
 
 impl From<(TransactionWithProof, libra2_crypto::HashValue)> for TransactionOnChainData {
@@ -156,21 +156,21 @@ impl
 impl
     From<(
         u64,
-        aptos_types::transaction::Transaction,
-        aptos_types::transaction::TransactionInfo,
+        libra2_types::transaction::Transaction,
+        libra2_types::transaction::TransactionInfo,
         Vec<ContractEvent>,
         libra2_crypto::HashValue,
-        aptos_types::write_set::WriteSet,
+        libra2_types::write_set::WriteSet,
     )> for TransactionOnChainData
 {
     fn from(
         (version, transaction, info, events, accumulator_root_hash, write_set): (
             u64,
-            aptos_types::transaction::Transaction,
-            aptos_types::transaction::TransactionInfo,
+            libra2_types::transaction::Transaction,
+            libra2_types::transaction::TransactionInfo,
             Vec<ContractEvent>,
             libra2_crypto::HashValue,
-            aptos_types::write_set::WriteSet,
+            libra2_types::write_set::WriteSet,
         ),
     ) -> Self {
         Self {
@@ -560,8 +560,8 @@ pub struct BlockMetadataTransaction {
     pub failed_proposer_indices: Vec<u32>,
     pub timestamp: U64,
 
-    /// If some, it means the internal txn type is `aptos_types::transaction::Transaction::BlockMetadataExt`.
-    /// Otherwise, it is `aptos_types::transaction::Transaction::BlockMetadata`.
+    /// If some, it means the internal txn type is `libra2_types::transaction::Transaction::BlockMetadataExt`.
+    /// Otherwise, it is `libra2_types::transaction::Transaction::BlockMetadata`.
     ///
     /// NOTE: we could have introduced a new APT txn type to represent the corresponding internal type,
     /// but that is a breaking change to the ecosystem.
@@ -703,7 +703,7 @@ impl ValidatorTransaction {
 
 impl
     From<(
-        aptos_types::validator_txn::ValidatorTransaction,
+        libra2_types::validator_txn::ValidatorTransaction,
         TransactionInfo,
         Vec<Event>,
         u64,
@@ -711,14 +711,14 @@ impl
 {
     fn from(
         (txn, info, events, timestamp): (
-            aptos_types::validator_txn::ValidatorTransaction,
+            libra2_types::validator_txn::ValidatorTransaction,
             TransactionInfo,
             Vec<Event>,
             u64,
         ),
     ) -> Self {
         match txn {
-            aptos_types::validator_txn::ValidatorTransaction::DKGResult(dkg_transcript) => {
+            libra2_types::validator_txn::ValidatorTransaction::DKGResult(dkg_transcript) => {
                 Self::DkgResult(DKGResultTransaction {
                     info,
                     events,
@@ -726,7 +726,7 @@ impl
                     dkg_transcript: dkg_transcript.into(),
                 })
             },
-            aptos_types::validator_txn::ValidatorTransaction::ObservedJWKUpdate(
+            libra2_types::validator_txn::ValidatorTransaction::ObservedJWKUpdate(
                 quorum_certified_update,
             ) => Self::ObservedJwkUpdate(JWKUpdateTransaction {
                 info,
@@ -748,7 +748,7 @@ pub struct JWKUpdateTransaction {
     pub quorum_certified_update: ExportedQuorumCertifiedUpdate,
 }
 
-/// A more API-friendly representation of the on-chain `aptos_types::jwks::QuorumCertifiedUpdate`.
+/// A more API-friendly representation of the on-chain `libra2_types::jwks::QuorumCertifiedUpdate`.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize, Object)]
 pub struct ExportedQuorumCertifiedUpdate {
     pub update: ExportedProviderJWKs,
@@ -765,7 +765,7 @@ impl From<QuorumCertifiedUpdate> for ExportedQuorumCertifiedUpdate {
     }
 }
 
-/// A more API-friendly representation of the on-chain `aptos_types::aggregate_signature::AggregateSignature`.
+/// A more API-friendly representation of the on-chain `libra2_types::aggregate_signature::AggregateSignature`.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize, Object)]
 pub struct ExportedAggregateSignature {
     pub signer_indices: Vec<usize>,
@@ -785,7 +785,7 @@ impl From<AggregateSignature> for ExportedAggregateSignature {
     }
 }
 
-/// A more API-friendly representation of the on-chain `aptos_types::jwks::ProviderJWKs`.
+/// A more API-friendly representation of the on-chain `libra2_types::jwks::ProviderJWKs`.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize, Object)]
 pub struct ExportedProviderJWKs {
     pub issuer: String,

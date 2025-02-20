@@ -28,7 +28,7 @@ use aptos_network::{
     },
     ProtocolId,
 };
-use aptos_types::{transaction::SignedTransaction, PeerId};
+use libra2_types::{transaction::SignedTransaction, PeerId};
 use maplit::btreemap;
 use rand::{rngs::StdRng, SeedableRng};
 use std::collections::HashMap;

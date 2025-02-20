@@ -13,7 +13,7 @@ use aptos_consensus_types::{
     vote_proposal::VoteProposal,
 };
 use libra2_crypto::{bls12381, hash::CryptoHash, HashValue};
-use aptos_types::{block_info::BlockInfo, ledger_info::LedgerInfo};
+use libra2_types::{block_info::BlockInfo, ledger_info::LedgerInfo};
 
 /// 2-chain safety rules implementation
 impl SafetyRules {

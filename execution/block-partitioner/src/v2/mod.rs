@@ -4,7 +4,7 @@
 use crate::{
     pre_partition::PrePartitioner, v2::counters::BLOCK_PARTITIONING_SECONDS, BlockPartitioner,
 };
-use aptos_types::{
+use libra2_types::{
     block_executor::partitioner::{PartitionedTransactions, RoundId},
     transaction::analyzed_transaction::AnalyzedTransaction,
 };

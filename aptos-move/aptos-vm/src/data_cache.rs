@@ -13,7 +13,7 @@ use aptos_aggregator::{
     types::{DelayedFieldValue, DelayedFieldsSpeculativeError},
 };
 use aptos_table_natives::{TableHandle, TableResolver};
-use aptos_types::{
+use libra2_types::{
     error::{PanicError, PanicOr},
     on_chain_config::{ConfigStorage, Features, OnChainConfig},
     state_store::{

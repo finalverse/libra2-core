@@ -18,7 +18,7 @@ use libra2_crypto::{
 };
 use libra2_logger::info;
 use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
-use aptos_types::{
+use libra2_types::{
     nibble::{
         nibble_path::{NibbleIterator, NibblePath},
         ExpectNibble, Nibble,

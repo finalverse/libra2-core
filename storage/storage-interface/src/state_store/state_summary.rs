@@ -16,7 +16,7 @@ use libra2_crypto::{
 };
 use libra2_metrics_core::TimerHelper;
 use aptos_scratchpad::{ProofRead, SparseMerkleTree};
-use aptos_types::{
+use libra2_types::{
     proof::SparseMerkleProofExt, state_store::state_value::StateValue, transaction::Version,
 };
 use derive_more::Deref;

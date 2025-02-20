@@ -16,7 +16,7 @@ use aptos_schemadb::{
     define_pub_schema,
     schema::{KeyCodec, ValueCodec},
 };
-use aptos_types::event::EventKey;
+use libra2_types::event::EventKey;
 
 define_pub_schema!(
     EventSequenceNumberSchema,

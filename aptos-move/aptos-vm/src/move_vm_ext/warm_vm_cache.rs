@@ -9,7 +9,7 @@ use aptos_gas_schedule::AptosGasParameters;
 use libra2_infallible::RwLock;
 use libra2_metrics_core::TimerHelper;
 use aptos_native_interface::SafeNativeBuilder;
-use aptos_types::{on_chain_config::OnChainConfig, state_store::state_key::StateKey};
+use libra2_types::{on_chain_config::OnChainConfig, state_store::state_key::StateKey};
 use aptos_vm_environment::environment::AptosEnvironment;
 use bytes::Bytes;
 use move_binary_format::errors::{Location, PartialVMError, VMResult};

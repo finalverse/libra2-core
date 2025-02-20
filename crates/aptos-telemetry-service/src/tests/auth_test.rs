@@ -15,7 +15,7 @@ use libra2_crypto::{
     noise::{InitiatorHandshakeState, NoiseConfig},
     x25519, Uniform,
 };
-use aptos_types::{
+use libra2_types::{
     account_address,
     chain_id::ChainId,
     network_address::{

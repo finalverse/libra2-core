@@ -8,7 +8,7 @@ use aptos_consensus_types::common::Author;
 use libra2_enum_conversion_derive::EnumConversion;
 use libra2_infallible::Mutex;
 use libra2_time_service::TimeService;
-use aptos_types::validator_verifier::random_validator_verifier;
+use libra2_types::validator_verifier::random_validator_verifier;
 use async_trait::async_trait;
 use bytes::Bytes;
 use claims::assert_ok_eq;

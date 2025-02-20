@@ -22,7 +22,7 @@ libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
 aptos-peer-monitoring-service-types = { workspace = true }
 libra2-time-service = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 enum_dispatch = { workspace = true }
 futures = { workspace = true }
 once_cell = { workspace = true }

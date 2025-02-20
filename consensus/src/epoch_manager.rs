@@ -79,7 +79,7 @@ use aptos_network::{application::interface::NetworkClient, protocols::network::E
 use aptos_safety_rules::{
     safety_rules_manager, Error, PersistentSafetyStorage, SafetyRulesManager,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     dkg::{real_dkg::maybe_dk_from_bls_sk, DKGState, DKGTrait, DefaultDKG},
     epoch_change::EpochChangeProof,

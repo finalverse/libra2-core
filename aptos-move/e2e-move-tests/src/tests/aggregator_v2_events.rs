@@ -7,7 +7,7 @@ use crate::{
     BlockSplit, SUCCESS,
 };
 use aptos_language_e2e_tests::{account::Account, executor::ExecutorMode};
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 use claims::{assert_none, assert_ok, assert_some};
 use move_core_types::{language_storage::TypeTag, parser::parse_struct_tag};
 use serde::{Deserialize, Serialize};

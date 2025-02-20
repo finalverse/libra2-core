@@ -29,7 +29,7 @@ use aptos_network::{
     },
 };
 use aptos_storage_interface::{mock::MockDbReaderWriter, DbReaderWriter};
-use aptos_types::{
+use libra2_types::{
     mempool_status::MempoolStatusCode,
     on_chain_config::{InMemoryOnChainConfig, OnChainConfigPayload},
     transaction::SignedTransaction,

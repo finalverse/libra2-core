@@ -7,7 +7,7 @@ use libra2_crypto::{
     x25519::{PrivateKey, PublicKey},
 };
 use aptos_network::protocols::wire::{handshake, messaging};
-use aptos_types::network_address as address;
+use libra2_types::network_address as address;
 use rand::{rngs::StdRng, SeedableRng};
 use serde_reflection::{Registry, Result, Samples, Tracer, TracerConfig};
 use std::str::FromStr;

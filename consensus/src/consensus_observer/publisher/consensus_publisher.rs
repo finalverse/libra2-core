@@ -361,7 +361,7 @@ mod test {
         application::{metadata::ConnectionState, storage::PeersAndMetadata},
         transport::ConnectionMetadata,
     };
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::AggregateSignature,
         block_info::BlockInfo,
         ledger_info::{LedgerInfo, LedgerInfoWithSignatures},

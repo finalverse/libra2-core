@@ -4,7 +4,7 @@
 
 use crate::message_queues::{PerKeyQueue, QueueStyle};
 use libra2_infallible::NonZeroUsize;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 
 /// This represents a proposal message from a validator
 #[derive(Debug, PartialEq, Eq)]

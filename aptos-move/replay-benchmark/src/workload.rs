@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
-use aptos_types::{
+use libra2_types::{
     block_executor::transaction_slice_metadata::TransactionSliceMetadata,
     transaction::{
         signature_verified_transaction::{

@@ -7,7 +7,7 @@ use crate::{
 };
 use aptos_schemadb::{iterator::SchemaIterator, ReadOptions};
 use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,
     state_store::{

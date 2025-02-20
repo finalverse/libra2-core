@@ -3,7 +3,7 @@
 
 use libra2_crypto::noise::NoiseError;
 use aptos_rest_client::error::RestError;
-use aptos_types::{chain_id::ChainId, PeerId};
+use libra2_types::{chain_id::ChainId, PeerId};
 use debug_ignore::DebugIgnore;
 use gcp_bigquery_client::{
     error::BQError,

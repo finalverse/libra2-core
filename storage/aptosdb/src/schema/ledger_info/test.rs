@@ -4,7 +4,7 @@
 
 use super::*;
 use aptos_schemadb::{schema::fuzzing::assert_encode_decode, test_no_panic_decoding};
-use aptos_types::ledger_info::LedgerInfoWithSignatures;
+use libra2_types::ledger_info::LedgerInfoWithSignatures;
 use proptest::prelude::*;
 
 proptest! {

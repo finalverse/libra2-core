@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{governance::*, *};
-use aptos_types::on_chain_config::FeatureFlag;
+use libra2_types::on_chain_config::FeatureFlag;
 
 pub fn vote_to_string(vote: bool) -> &'static str {
     if vote {

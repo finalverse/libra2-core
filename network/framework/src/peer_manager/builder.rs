@@ -28,7 +28,7 @@ use aptos_netcore::transport::{
     Transport,
 };
 use libra2_time_service::TimeService;
-use aptos_types::{chain_id::ChainId, network_address::NetworkAddress, PeerId};
+use libra2_types::{chain_id::ChainId, network_address::NetworkAddress, PeerId};
 use std::{clone::Clone, collections::HashMap, fmt::Debug, sync::Arc};
 use tokio::runtime::Handle;
 
@@ -240,7 +240,7 @@ impl PeerManagerBuilder {
     /// Create the configured transport and start PeerManager.
     /// Return the actual NetworkAddress over which this peer is listening.
     pub fn build(&mut self, executor: &Handle) -> &mut Self {
-        use aptos_types::network_address::Protocol::*;
+        use libra2_types::network_address::Protocol::*;
 
         let transport_context = self
             .transport_context

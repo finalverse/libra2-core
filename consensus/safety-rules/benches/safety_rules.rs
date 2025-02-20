@@ -7,7 +7,7 @@
 use aptos_consensus_types::block::block_test_utils;
 use aptos_safety_rules::{test_utils, PersistentSafetyStorage, SafetyRulesManager, TSafetyRules};
 use libra2_secure_storage::{InMemoryStorage, KVStorage, OnDiskStorage, Storage, VaultStorage};
-use aptos_types::validator_signer::ValidatorSigner;
+use libra2_types::validator_signer::ValidatorSigner;
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use tempfile::NamedTempFile;
 

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{
         AccountResource, CoinInfoResource, CoinStoreResource, ConcurrentSupplyResource,

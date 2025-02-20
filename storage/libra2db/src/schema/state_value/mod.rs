@@ -20,7 +20,7 @@ use aptos_schemadb::{
     define_schema,
     schema::{KeyCodec, SeekKeyCodec, ValueCodec},
 };
-use aptos_types::{
+use libra2_types::{
     state_store::{
         state_key::{prefix::StateKeyPrefix, StateKey},
         state_value::StateValue,

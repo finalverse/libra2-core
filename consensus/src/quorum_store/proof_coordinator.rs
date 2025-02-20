@@ -22,7 +22,7 @@ use aptos_consensus_types::{
 };
 use libra2_logger::prelude::*;
 use libra2_short_hex_str::AsShortHexStr;
-use aptos_types::{
+use libra2_types::{
     ledger_info::SignatureAggregator, validator_verifier::ValidatorVerifier, PeerId,
 };
 use std::{

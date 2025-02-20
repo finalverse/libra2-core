@@ -15,7 +15,7 @@ use crate::{
 use anyhow::anyhow;
 use aptos_schemadb::{batch::SchemaBatch, DB};
 use aptos_storage_interface::{block_info::BlockInfo, db_ensure as ensure, AptosDbError, Result};
-use aptos_types::{
+use libra2_types::{
     account_config::NewBlockEvent, block_info::BlockHeight, contract_event::ContractEvent,
     epoch_state::EpochState, ledger_info::LedgerInfoWithSignatures,
     state_store::state_storage_usage::StateStorageUsage, transaction::Version,

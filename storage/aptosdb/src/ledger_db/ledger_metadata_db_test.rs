@@ -5,7 +5,7 @@ use crate::{ledger_db::ledger_metadata_db::LedgerMetadataDb, AptosDB};
 use aptos_schemadb::batch::SchemaBatch;
 use aptos_storage_interface::AptosDbError;
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::events::new_block::{new_block_event_key, NewBlockEvent},
     contract_event::ContractEvent,

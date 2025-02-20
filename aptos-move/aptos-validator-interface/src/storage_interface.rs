@@ -11,7 +11,7 @@ use libra2_config::config::{
 use aptos_db::AptosDB;
 use aptos_framework::natives::code::PackageMetadata;
 use aptos_storage_interface::DbReader;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     state_store::{state_key::StateKey, state_value::StateValue},
     transaction::{Transaction, TransactionInfo, Version},

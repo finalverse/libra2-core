@@ -11,7 +11,7 @@ use libra2_metrics_core::{
 };
 use aptos_netcore::transport::ConnectionOrigin;
 use libra2_short_hex_str::AsShortHexStr;
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use once_cell::sync::Lazy;
 
 // some type labels

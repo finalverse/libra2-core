@@ -17,7 +17,7 @@ use aptos_schemadb::{
     define_pub_schema,
     schema::{KeyCodec, ValueCodec},
 };
-use aptos_types::{contract_event::ContractEventV1, transaction::Version};
+use libra2_types::{contract_event::ContractEventV1, transaction::Version};
 use byteorder::{BigEndian, ReadBytesExt, WriteBytesExt};
 use std::mem::size_of;
 

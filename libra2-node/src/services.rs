@@ -32,7 +32,7 @@ use aptos_peer_monitoring_service_server::{
 use aptos_peer_monitoring_service_types::PeerMonitoringServiceMessage;
 use aptos_storage_interface::{DbReader, DbReaderWriter};
 use libra2_time_service::TimeService;
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId, indexer::indexer_db_reader::IndexerReader, transaction::Version,
 };
 use aptos_validator_transaction_pool::VTxnPoolState;

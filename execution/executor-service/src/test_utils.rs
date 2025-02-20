@@ -7,7 +7,7 @@ use aptos_language_e2e_tests::{
     account::AccountData, common_transactions::peer_to_peer_txn, data_store::FakeDataStore,
     executor::FakeExecutor,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     block_executor::{
         config::BlockExecutorConfigFromOnchain, partitioner::PartitionedTransactions,

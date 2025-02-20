@@ -12,7 +12,7 @@ use libra2_metrics_core::TimerHelper;
 use aptos_storage_interface::state_store::{
     state::LedgerState, state_view::cached_state_view::CachedStateView,
 };
-use aptos_types::{
+use libra2_types::{
     block_executor::{
         config::BlockExecutorConfigFromOnchain,
         transaction_slice_metadata::TransactionSliceMetadata,

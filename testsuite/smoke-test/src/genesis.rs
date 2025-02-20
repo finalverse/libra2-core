@@ -23,7 +23,7 @@ use aptos_forge::{
     wait_for_all_nodes_to_catchup, LocalNode, LocalSwarm, Node, NodeExt, SwarmExt, Validator,
 };
 use libra2_temppath::TempPath;
-use aptos_types::{transaction::Transaction, waypoint::Waypoint};
+use libra2_types::{transaction::Transaction, waypoint::Waypoint};
 use move_core_types::language_storage::CORE_CODE_ADDRESS;
 use regex::Regex;
 use reqwest::Client;

@@ -15,7 +15,7 @@ use aptos_telemetry_service::types::{
     response::IndexResponse,
     telemetry::TelemetryDump,
 };
-use aptos_types::{chain_id::ChainId, PeerId};
+use libra2_types::{chain_id::ChainId, PeerId};
 use flate2::{write::GzEncoder, Compression};
 use prometheus::{default_registry, Registry};
 use reqwest::{header::CONTENT_ENCODING, Response, StatusCode, Url};

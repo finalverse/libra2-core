@@ -16,7 +16,7 @@ use aptos_sdk::move_types::{
     ident_str,
     language_storage::{StructTag, TypeTag},
 };
-use aptos_types::{account_address::AccountAddress, chain_id::ChainId};
+use libra2_types::{account_address::AccountAddress, chain_id::ChainId};
 use futures::future::BoxFuture;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
 use std::{collections::HashSet, convert::Infallible, fmt::LowerHex, future::Future, str::FromStr};
@@ -411,7 +411,7 @@ pub fn parse_coin_currency(
 #[cfg(test)]
 mod test {
     use crate::common::BlockHash;
-    use aptos_types::chain_id::{ChainId, NamedChain};
+    use libra2_types::chain_id::{ChainId, NamedChain};
     use std::str::FromStr;
 
     #[test]

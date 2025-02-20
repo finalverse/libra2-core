@@ -31,7 +31,7 @@ aptos-proptest-helpers = { workspace = true }
 libra2-push-metrics = { workspace = true }
 aptos-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 aptos-vm = { workspace = true }
 aptos-vm-environment = { workspace = true }
 async-trait = { workspace = true }

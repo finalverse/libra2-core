@@ -16,7 +16,7 @@ use aptos_gas_schedule::{
 use aptos_native_interface::{
     safely_pop_arg, SafeNativeContext, SafeNativeError, SafeNativeResult,
 };
-use aptos_types::on_chain_config::FeatureFlag;
+use libra2_types::on_chain_config::FeatureFlag;
 use ark_ec::CurveGroup;
 use ark_ff::Field;
 use ark_serialize::{CanonicalDeserialize, CanonicalSerialize};

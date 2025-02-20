@@ -4,7 +4,7 @@
 
 use libra2_crypto::HashValue;
 use libra2_logger::Schema;
-use aptos_types::{state_store::StateViewId, transaction::Version};
+use libra2_types::{state_store::StateViewId, transaction::Version};
 use serde::Serialize;
 
 #[derive(Schema, Clone)]

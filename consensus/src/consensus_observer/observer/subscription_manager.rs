@@ -432,7 +432,7 @@ mod test {
     use aptos_peer_monitoring_service_types::{
         response::NetworkInformationResponse, PeerMonitoringMetadata,
     };
-    use aptos_types::{network_address::NetworkAddress, transaction::Version, PeerId};
+    use libra2_types::{network_address::NetworkAddress, transaction::Version, PeerId};
     use claims::assert_matches;
     use maplit::hashmap;
     use mockall::mock;

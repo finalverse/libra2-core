@@ -10,7 +10,7 @@ use crate::{
     AccountAddress, ApiError,
 };
 use aptos_rest_client::aptos_api_types::U64;
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId,
     transaction::{RawTransaction, SignedTransaction},
 };
@@ -120,7 +120,7 @@ pub struct BlockResponse {
 }
 
 /// Request to combine signatures and an unsigned transaction for submission as a
-/// [`aptos_types::transaction::SignedTransaction`]
+/// [`libra2_types::transaction::SignedTransaction`]
 ///
 /// This should be able to run without a running full node connection
 ///
@@ -129,7 +129,7 @@ pub struct BlockResponse {
 pub struct ConstructionCombineRequest {
     /// Network identifier describing the blockchain and the chain id
     pub network_identifier: NetworkIdentifier,
-    /// A hex encoded, BCS encoded, [`aptos_types::transaction::RawTransaction`]
+    /// A hex encoded, BCS encoded, [`libra2_types::transaction::RawTransaction`]
     pub unsigned_transaction: String,
     /// Set of signatures with SigningPayloads to combine
     pub signatures: Vec<Signature>,
@@ -140,7 +140,7 @@ pub struct ConstructionCombineRequest {
 /// [API Spec](https://www.rosetta-api.org/docs/models/ConstructionCombineResponse.html)
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct ConstructionCombineResponse {
-    /// A hex encoded, BCS encoded, [`aptos_types::transaction::SignedTransaction`]
+    /// A hex encoded, BCS encoded, [`libra2_types::transaction::SignedTransaction`]
     pub signed_transaction: String,
 }
 
@@ -155,7 +155,7 @@ pub struct ConstructionCombineResponse {
 pub struct ConstructionDeriveRequest {
     /// Network identifier describing the blockchain and the chain id
     pub network_identifier: NetworkIdentifier,
-    /// Public key to derive an [`aptos_types::account_address::AccountAddress`] from
+    /// Public key to derive an [`libra2_types::account_address::AccountAddress`] from
     pub public_key: PublicKey,
 }
 
@@ -164,7 +164,7 @@ pub struct ConstructionDeriveRequest {
 /// [API Spec](https://www.rosetta-api.org/docs/models/ConstructionDeriveResponse.html)
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct ConstructionDeriveResponse {
-    /// The account identifier of the account if the [`aptos_types::account_address::AccountAddress`] can be derived.
+    /// The account identifier of the account if the [`libra2_types::account_address::AccountAddress`] can be derived.
     ///
     /// This will always return a value, though it might not match onchain information.
     pub account_identifier: AccountIdentifier,
@@ -177,7 +177,7 @@ pub struct ConstructionDeriveResponse {
 pub struct ConstructionHashRequest {
     /// Network identifier describing the blockchain and the chain id
     pub network_identifier: NetworkIdentifier,
-    /// A hex encoded, BCS encoded, [`aptos_types::transaction::SignedTransaction`]
+    /// A hex encoded, BCS encoded, [`libra2_types::transaction::SignedTransaction`]
     pub signed_transaction: String,
 }
 
@@ -269,11 +269,11 @@ pub struct ConstructionMetadata {
 pub struct ConstructionParseRequest {
     /// Network identifier describing the blockchain and the chain id
     pub network_identifier: NetworkIdentifier,
-    /// Whether the transaction is a [`aptos_types::transaction::SignedTransaction`]
-    /// or a [`aptos_types::transaction::RawTransaction`]
+    /// Whether the transaction is a [`libra2_types::transaction::SignedTransaction`]
+    /// or a [`libra2_types::transaction::RawTransaction`]
     pub signed: bool,
-    /// A hex encoded, BCS encoded [`aptos_types::transaction::SignedTransaction`]
-    /// or a [`aptos_types::transaction::RawTransaction`]
+    /// A hex encoded, BCS encoded [`libra2_types::transaction::SignedTransaction`]
+    /// or a [`libra2_types::transaction::RawTransaction`]
     pub transaction: String,
 }
 
@@ -284,7 +284,7 @@ pub struct ConstructionParseRequest {
 pub struct ConstructionParseResponse {
     /// The set of [`Operation`] that happened during the transaction
     pub operations: Vec<Operation>,
-    /// The signers of the transaction, if it was a [`aptos_types::transaction::SignedTransaction`]
+    /// The signers of the transaction, if it was a [`libra2_types::transaction::SignedTransaction`]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub account_identifier_signers: Option<Vec<AccountIdentifier>>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -310,10 +310,10 @@ pub struct ConstructionPayloadsRequest {
     pub network_identifier: NetworkIdentifier,
     /// The set of [`Operation`] that describes the [`InternalOperation`] to execute
     pub operations: Vec<Operation>,
-    /// Required information for building a [`aptos_types::transaction::RawTransaction`]
+    /// Required information for building a [`libra2_types::transaction::RawTransaction`]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub metadata: Option<ConstructionMetadata>,
-    /// Public keys of those who will sign the eventual [`aptos_types::transaction::SignedTransaction`]
+    /// Public keys of those who will sign the eventual [`libra2_types::transaction::SignedTransaction`]
     #[serde(skip_serializing_if = "Option::is_none")]
     pub public_keys: Option<Vec<PublicKey>>,
 }
@@ -323,7 +323,7 @@ pub struct ConstructionPayloadsRequest {
 /// [API Spec](https://www.rosetta-api.org/docs/models/ConstructionPayloadsResponse.html)
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct ConstructionPayloadsResponse {
-    /// A hex encoded, BCS encoded [`aptos_types::transaction::RawTransaction`]
+    /// A hex encoded, BCS encoded [`libra2_types::transaction::RawTransaction`]
     /// containing the [`Operation`]s
     pub unsigned_transaction: String,
     /// Payloads describing who and what to sign
@@ -455,7 +455,7 @@ pub struct ConstructionPreprocessResponse {
 pub struct ConstructionSubmitRequest {
     /// Network identifier describing the blockchain and the chain id
     pub network_identifier: NetworkIdentifier,
-    /// A hex encoded, BCS encoded [`aptos_types::transaction::SignedTransaction`]
+    /// A hex encoded, BCS encoded [`libra2_types::transaction::SignedTransaction`]
     pub signed_transaction: String,
 }
 
@@ -464,7 +464,7 @@ pub struct ConstructionSubmitRequest {
 /// [API Spec](https://www.rosetta-api.org/docs/models/ConstructionSubmitResponse.html)
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct ConstructionSubmitResponse {
-    /// Hash of the submitted [`aptos_types::transaction::SignedTransaction`]
+    /// Hash of the submitted [`libra2_types::transaction::SignedTransaction`]
     pub transaction_identifier: TransactionIdentifier,
 }
 

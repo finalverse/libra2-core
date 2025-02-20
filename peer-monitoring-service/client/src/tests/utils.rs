@@ -24,7 +24,7 @@ use aptos_peer_monitoring_service_types::{
     PeerMonitoringServiceMessage,
 };
 use libra2_time_service::{MockTimeService, TimeService, TimeServiceTrait};
-use aptos_types::{network_address::NetworkAddress, PeerId};
+use libra2_types::{network_address::NetworkAddress, PeerId};
 use maplit::btreemap;
 use rand::{rngs::OsRng, Rng};
 use std::{

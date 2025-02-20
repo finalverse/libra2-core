@@ -7,7 +7,7 @@ use crate::{
     versioned_delayed_fields::VersionedDelayedFields, versioned_group_data::VersionedGroupData,
     versioned_modules::VersionedModules,
 };
-use aptos_types::{
+use libra2_types::{
     executable::{ExecutableTestType, ModulePath},
     vm::modules::AptosModuleExtension,
     write_set::TransactionWrite,

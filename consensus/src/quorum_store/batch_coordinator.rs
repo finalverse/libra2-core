@@ -17,7 +17,7 @@ use anyhow::ensure;
 use aptos_consensus_types::payload::TDataInfo;
 use libra2_logger::prelude::*;
 use libra2_short_hex_str::AsShortHexStr;
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use std::sync::Arc;
 use tokio::sync::{
     mpsc::{Receiver, Sender},

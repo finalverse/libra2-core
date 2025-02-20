@@ -15,7 +15,7 @@ use aptos_event_notifications::ReconfigNotificationListener;
 use libra2_logger::prelude::*;
 use aptos_network::{counters::inc_by_with_context, logging::NetworkSchema};
 use libra2_short_hex_str::AsShortHexStr;
-use aptos_types::on_chain_config::{OnChainConfigPayload, OnChainConfigProvider, ValidatorSet};
+use libra2_types::on_chain_config::{OnChainConfigPayload, OnChainConfigProvider, ValidatorSet};
 use futures::Stream;
 use std::{
     collections::HashSet,
@@ -158,7 +158,7 @@ mod tests {
     use libra2_config::config::HANDSHAKE_VERSION;
     use libra2_crypto::{bls12381, x25519::PrivateKey, PrivateKey as PK, Uniform};
     use aptos_event_notifications::ReconfigNotification;
-    use aptos_types::{
+    use libra2_types::{
         network_address::NetworkAddress,
         on_chain_config::{InMemoryOnChainConfig, OnChainConfig},
         validator_config::ValidatorConfig,
@@ -181,7 +181,7 @@ mod tests {
         let consensus_pubkey = consensus_private_key.public_key();
         let pubkey = test_pubkey([0u8; 32]);
         let different_pubkey = test_pubkey([1u8; 32]);
-        let peer_id = aptos_types::account_address::from_identity_public_key(pubkey);
+        let peer_id = libra2_types::account_address::from_identity_public_key(pubkey);
 
         // Build up the Reconfig Listener
         let (conn_mgr_reqs_tx, _rx) = libra2_channels::new_test(1);

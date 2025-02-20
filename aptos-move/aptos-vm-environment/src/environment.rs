@@ -12,7 +12,7 @@ use crate::{
 use aptos_gas_algebra::DynamicExpression;
 use aptos_gas_schedule::{AptosGasParameters, MiscGasParameters, NativeGasParameters};
 use aptos_native_interface::SafeNativeBuilder;
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId,
     on_chain_config::{
         ConfigurationResource, Features, OnChainConfig, TimedFeatures, TimedFeaturesBuilder,
@@ -272,7 +272,7 @@ fn fetch_config_and_update_hash<T: OnChainConfig>(
 #[cfg(test)]
 pub mod tests {
     use super::*;
-    use aptos_types::{
+    use libra2_types::{
         on_chain_config::{FeatureFlag, GasScheduleV2},
         state_store::{state_key::StateKey, state_value::StateValue, MockStateView},
     };

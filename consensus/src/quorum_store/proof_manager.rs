@@ -14,7 +14,7 @@ use aptos_consensus_types::{
     utils::PayloadTxnsSize,
 };
 use libra2_logger::prelude::*;
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use futures::StreamExt;
 use futures_channel::mpsc::Receiver;
 use std::{cmp::min, collections::HashSet, sync::Arc, time::Duration};

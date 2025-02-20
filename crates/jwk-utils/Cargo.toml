@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 http = { workspace = true }
 move-core-types = { workspace = true }
 reqwest = { workspace = true }

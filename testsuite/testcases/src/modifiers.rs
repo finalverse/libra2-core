@@ -7,7 +7,7 @@ use aptos_forge::{
     SwarmCpuStress, SwarmExt, Test,
 };
 use libra2_logger::info;
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use async_trait::async_trait;
 use rand::Rng;
 use std::sync::Arc;

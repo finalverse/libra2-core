@@ -18,7 +18,7 @@ use libra2_config::config::{IndexerConfig, NodeConfig};
 use libra2_logger::{error, info};
 use aptos_mempool::MempoolClientSender;
 use aptos_storage_interface::DbReader;
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 use std::{collections::VecDeque, sync::Arc};
 use tokio::runtime::Runtime;
 

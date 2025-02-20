@@ -22,7 +22,7 @@ use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_logger::{sample, sample::SampleRate};
 use aptos_resource_viewer::AptosValueAnnotator;
 use aptos_storage_interface::DbReader;
-use aptos_types::{
+use libra2_types::{
     access_path::{AccessPath, Path},
     chain_id::ChainId,
     contract_event::{ContractEvent, EventWithVersion},
@@ -181,7 +181,7 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
         timestamp: u64,
         data: TransactionOnChainData,
     ) -> Result<Transaction> {
-        use aptos_types::transaction::Transaction::{
+        use libra2_types::transaction::Transaction::{
             BlockEpilogue, BlockMetadata, BlockMetadataExt, GenesisTransaction, StateCheckpoint,
             UserTransaction,
         };
@@ -240,7 +240,7 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
                     },
                 })
             },
-            aptos_types::transaction::Transaction::ValidatorTransaction(txn) => {
+            libra2_types::transaction::Transaction::ValidatorTransaction(txn) => {
                 Transaction::ValidatorTransaction((txn, info, events, timestamp).into())
             },
         })
@@ -249,9 +249,9 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
     pub fn into_transaction_info(
         &self,
         version: u64,
-        info: &aptos_types::transaction::TransactionInfo,
+        info: &libra2_types::transaction::TransactionInfo,
         accumulator_root_hash: HashValue,
-        write_set: aptos_types::write_set::WriteSet,
+        write_set: libra2_types::write_set::WriteSet,
         txn_aux_data: Option<TransactionAuxiliaryData>,
     ) -> TransactionInfo {
         TransactionInfo {
@@ -277,9 +277,9 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
 
     pub fn try_into_transaction_payload(
         &self,
-        payload: aptos_types::transaction::TransactionPayload,
+        payload: libra2_types::transaction::TransactionPayload,
     ) -> Result<TransactionPayload> {
-        use aptos_types::transaction::TransactionPayload::*;
+        use libra2_types::transaction::TransactionPayload::*;
         let ret = match payload {
             Script(s) => {
                 let (code, ty_args, args) = s.into_inner();
@@ -330,7 +330,7 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
             Multisig(multisig) => {
                 let transaction_payload = if let Some(payload) = multisig.transaction_payload {
                     match payload {
-                        aptos_types::transaction::MultisigTransactionPayload::EntryFunction(
+                        libra2_types::transaction::MultisigTransactionPayload::EntryFunction(
                             entry_function,
                         ) => {
                             let (module, function, ty_args, args) = entry_function.into_inner();
@@ -380,9 +380,9 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
 
     pub fn try_into_write_set_payload(
         &self,
-        payload: aptos_types::transaction::WriteSetPayload,
+        payload: libra2_types::transaction::WriteSetPayload,
     ) -> Result<WriteSetPayload> {
-        use aptos_types::transaction::WriteSetPayload::*;
+        use libra2_types::transaction::WriteSetPayload::*;
         let ret = match payload {
             Script { execute_as, script } => WriteSetPayload {
                 write_set: WriteSet::ScriptWriteSet(ScriptWriteSet {
@@ -674,8 +674,8 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
     pub fn try_into_aptos_core_transaction_payload(
         &self,
         payload: TransactionPayload,
-    ) -> Result<aptos_types::transaction::TransactionPayload> {
-        use aptos_types::transaction::TransactionPayload as Target;
+    ) -> Result<libra2_types::transaction::TransactionPayload> {
+        use libra2_types::transaction::TransactionPayload as Target;
 
         let ret = match payload {
             TransactionPayload::EntryFunctionPayload(entry_func_payload) => {
@@ -771,7 +771,7 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
                                 .map(bcs::to_bytes)
                                 .collect::<Result<_, bcs::Error>>()?;
                             Some(
-                                aptos_types::transaction::MultisigTransactionPayload::EntryFunction(
+                                libra2_types::transaction::MultisigTransactionPayload::EntryFunction(
                                     EntryFunction::new(
                                         module.into(),
                                         function.name.into(),

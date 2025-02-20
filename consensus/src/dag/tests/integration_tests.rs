@@ -26,7 +26,7 @@ use aptos_network::{
     ProtocolId,
 };
 use libra2_time_service::TimeService;
-use aptos_types::{
+use libra2_types::{
     epoch_state::EpochState,
     ledger_info::generate_ledger_info_with_sig,
     validator_signer::ValidatorSigner,

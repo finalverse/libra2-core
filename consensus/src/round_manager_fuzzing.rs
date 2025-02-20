@@ -35,7 +35,7 @@ use aptos_network::{
     protocols::{network, network::NewNetworkSender},
 };
 use aptos_safety_rules::{test_utils, SafetyRules, TSafetyRules};
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::AggregateSignature,
     epoch_change::EpochChangeProof,
     epoch_state::EpochState,

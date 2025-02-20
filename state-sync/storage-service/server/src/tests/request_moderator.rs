@@ -21,7 +21,7 @@ use aptos_storage_service_types::{
     StorageServiceError,
 };
 use libra2_time_service::MockTimeService;
-use aptos_types::{account_address::AccountAddress, network_address::NetworkAddress, PeerId};
+use libra2_types::{account_address::AccountAddress, network_address::NetworkAddress, PeerId};
 use claims::assert_matches;
 use dashmap::DashMap;
 use std::{str::FromStr, sync::Arc, time::Duration};

@@ -10,7 +10,7 @@ use libra2_infallible::RwLock;
 use aptos_storage_interface::{
     state_store::state_view::db_state_view::DbStateViewAtVersion, DbReader, DbReaderWriter,
 };
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     event::EventKey,
     on_chain_config::{

@@ -9,7 +9,7 @@ use crate::{
 };
 use anyhow::anyhow;
 use libra2_logger::Level;
-use aptos_types::on_chain_config::FeatureFlag;
+use libra2_types::on_chain_config::FeatureFlag;
 use clap::Parser;
 use std::path::PathBuf;
 use tokio::fs;

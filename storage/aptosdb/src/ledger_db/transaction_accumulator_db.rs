@@ -14,7 +14,7 @@ use libra2_crypto::{
 };
 use aptos_schemadb::{batch::SchemaBatch, DB};
 use aptos_storage_interface::Result;
-use aptos_types::{
+use libra2_types::{
     proof::{
         definition::LeafCount, position::Position, AccumulatorConsistencyProof,
         TransactionAccumulatorProof, TransactionAccumulatorRangeProof,

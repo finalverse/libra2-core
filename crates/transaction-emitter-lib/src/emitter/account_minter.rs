@@ -17,7 +17,7 @@ use aptos_sdk::{
 use aptos_transaction_generator_lib::{
     CounterState, ReliableTransactionSubmitter, RootAccountHandle,
 };
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use core::result::Result::{Err, Ok};
 use futures::{future::try_join_all, StreamExt};
 use rand::{rngs::StdRng, Rng, SeedableRng};

@@ -6,7 +6,7 @@ use crate::{
     remote_cross_shard_client::RemoteCrossShardClient, remote_state_view::RemoteStateViewClient,
 };
 use libra2_secure_net::network_controller::NetworkController;
-use aptos_types::block_executor::partitioner::ShardId;
+use libra2_types::block_executor::partitioner::ShardId;
 use aptos_vm::sharded_block_executor::sharded_executor_service::ShardedExecutorService;
 use std::{net::SocketAddr, sync::Arc, thread};
 

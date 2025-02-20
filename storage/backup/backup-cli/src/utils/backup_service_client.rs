@@ -10,7 +10,7 @@ use anyhow::Result;
 use libra2_crypto::HashValue;
 use aptos_db::backup::backup_handler::DbState;
 use libra2_metrics_core::{IntCounterHelper, TimerHelper};
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use clap::Parser;
 use futures::TryStreamExt;
 use tokio::{

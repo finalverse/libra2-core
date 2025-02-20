@@ -16,12 +16,12 @@ rust-version = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 futures-util = { workspace = true }
 tokio = { workspace = true }
 
 [dev-dependencies]
-aptos-types = { workspace = true, features = ["fuzzing"] }
+libra2-types = { workspace = true, features = ["fuzzing"] }
 
 [features]
 fuzzing = []

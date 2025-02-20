@@ -13,7 +13,7 @@ use crate::{
 };
 use aptos_schemadb::batch::SchemaBatch;
 use aptos_storage_interface::Result;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use std::sync::Arc;
 
 pub(in crate::pruner) struct StateKvMetadataPruner {

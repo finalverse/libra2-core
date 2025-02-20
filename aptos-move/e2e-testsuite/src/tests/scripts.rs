@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_language_e2e_tests::{current_function_name, executor::FakeExecutor};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config,
     transaction::{ExecutionStatus, Script, TransactionStatus},

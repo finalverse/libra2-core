@@ -4,7 +4,7 @@
 
 //! Support for compiling scripts and modules in tests.
 
-use aptos_types::transaction::{Module, Script};
+use libra2_types::transaction::{Module, Script};
 use move_binary_format::CompiledModule;
 use move_ir_compiler::Compiler;
 

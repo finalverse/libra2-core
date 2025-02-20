@@ -4,7 +4,7 @@
 use crate::{TransactionFilter, VTxnPoolState};
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_crypto::hash::CryptoHash;
-use aptos_types::{
+use libra2_types::{
     dkg::DKGTranscript,
     jwks::{dummy_issuer, QuorumCertifiedUpdate},
     validator_txn::{Topic, ValidatorTransaction},

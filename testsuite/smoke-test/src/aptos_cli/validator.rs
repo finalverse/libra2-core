@@ -22,7 +22,7 @@ use aptos_genesis::config::HostAndPort;
 use aptos_keygen::KeyGen;
 use libra2_logger::info;
 use aptos_rest_client::{Client, State};
-use aptos_types::{
+use libra2_types::{
     account_config::CORE_CODE_ADDRESS,
     network_address::DnsName,
     on_chain_config::{
@@ -496,11 +496,11 @@ async fn assert_reordering(swarm: &mut dyn Swarm, expected_reordering: bool) {
     let mut block_txns = vec![];
     for txn in committed_order {
         match txn.transaction {
-            aptos_types::transaction::Transaction::UserTransaction(txn) => {
+            libra2_types::transaction::Transaction::UserTransaction(txn) => {
                 info!("from {}, seq_num {}", txn.sender(), txn.sequence_number());
                 block_txns.push(txn);
             },
-            aptos_types::transaction::Transaction::BlockMetadata(b) => {
+            libra2_types::transaction::Transaction::BlockMetadata(b) => {
                 info!("block metadata {}", b.round());
 
                 let senders = accounts.iter().map(|a| a.address()).collect::<HashSet<_>>();

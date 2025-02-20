@@ -21,7 +21,7 @@ use aptos_consensus_types::{
     payload_pull_params::OptQSPayloadPullParams,
     utils::PayloadTxnsSize,
 };
-use aptos_types::{on_chain_config::ValidatorTxnConfig, validator_signer::ValidatorSigner};
+use libra2_types::{on_chain_config::ValidatorTxnConfig, validator_signer::ValidatorSigner};
 use futures::{future::BoxFuture, FutureExt};
 use std::{sync::Arc, time::Duration};
 

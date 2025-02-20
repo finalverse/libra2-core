@@ -21,7 +21,7 @@ use aptos_db::AptosDB;
 use aptos_framework::ReleaseBundle;
 use aptos_storage_interface::DbReaderWriter;
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId,
     jwks::patch::IssuerJWK,
     keyless::Groth16VerificationKey,

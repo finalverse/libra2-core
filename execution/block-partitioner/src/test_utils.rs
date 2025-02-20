@@ -11,20 +11,20 @@ use libra2_crypto::hash::TestOnlyHash;
 use libra2_crypto::HashValue;
 use libra2_crypto::{ed25519::ed25519_keys::Ed25519PrivateKey, PrivateKey, SigningKey, Uniform};
 #[cfg(test)]
-use aptos_types::block_executor::partitioner::PartitionedTransactions;
+use libra2_types::block_executor::partitioner::PartitionedTransactions;
 #[cfg(test)]
-use aptos_types::block_executor::partitioner::RoundId;
+use libra2_types::block_executor::partitioner::RoundId;
 #[cfg(test)]
-use aptos_types::block_executor::partitioner::ShardId;
+use libra2_types::block_executor::partitioner::ShardId;
 #[cfg(test)]
-use aptos_types::block_executor::partitioner::TransactionWithDependencies;
+use libra2_types::block_executor::partitioner::TransactionWithDependencies;
 #[cfg(test)]
-use aptos_types::block_executor::partitioner::GLOBAL_ROUND_ID;
+use libra2_types::block_executor::partitioner::GLOBAL_ROUND_ID;
 #[cfg(test)]
-use aptos_types::block_executor::partitioner::GLOBAL_SHARD_ID;
+use libra2_types::block_executor::partitioner::GLOBAL_SHARD_ID;
 #[cfg(test)]
-use aptos_types::state_store::state_key::StateKey;
-use aptos_types::{
+use libra2_types::state_store::state_key::StateKey;
+use libra2_types::{
     chain_id::ChainId,
     transaction::{
         analyzed_transaction::AnalyzedTransaction, EntryFunction, RawTransaction,

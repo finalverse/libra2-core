@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::validator_txn::ValidatorTransaction;
+use libra2_types::validator_txn::ValidatorTransaction;
 use aptos_validator_transaction_pool as vtxn_pool;
 use aptos_validator_transaction_pool::VTxnPoolState;
 use std::{

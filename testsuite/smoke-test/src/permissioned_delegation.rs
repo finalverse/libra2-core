@@ -6,7 +6,7 @@ use aptos::move_tool::MemberId;
 use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::SigningKey;
 use aptos_forge::Swarm;
-use aptos_types::function_info::FunctionInfo;
+use libra2_types::function_info::FunctionInfo;
 use move_core_types::account_address::AccountAddress;
 use std::{str::FromStr, sync::Arc};
 

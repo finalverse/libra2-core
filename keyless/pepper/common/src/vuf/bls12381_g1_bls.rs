@@ -6,7 +6,7 @@ use anyhow::{anyhow, ensure};
 use libra2_crypto::hash::CryptoHash;
 use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use libra2_dkg::utils::multi_pairing;
-use aptos_types::keyless::Pepper;
+use libra2_types::keyless::Pepper;
 use ark_bls12_381::{Bls12_381, Fq12, Fr, G1Affine, G2Affine, G2Projective};
 use ark_ec::{
     hashing::HashToCurve, pairing::Pairing, short_weierstrass::Projective, AffineRepr, CurveGroup,

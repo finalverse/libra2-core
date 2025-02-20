@@ -16,9 +16,9 @@ use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEAT
 use aptos_native_interface::SafeNativeBuilder;
 #[cfg(feature = "testing")]
 use aptos_table_natives::{TableHandle, TableResolver};
-use aptos_types::on_chain_config::{Features, TimedFeatures, TimedFeaturesBuilder};
+use libra2_types::on_chain_config::{Features, TimedFeatures, TimedFeaturesBuilder};
 #[cfg(feature = "testing")]
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId,
     error::{PanicError, PanicOr},
     state_store::{

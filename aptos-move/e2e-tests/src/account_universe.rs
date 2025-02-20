@@ -23,7 +23,7 @@ use crate::{
     executor::FakeExecutor,
     gas_costs, transaction_status_eq,
 };
-use aptos_types::{
+use libra2_types::{
     transaction::{ExecutionStatus, SignedTransaction, TransactionStatus},
     vm_status::{known_locations, StatusCode},
 };

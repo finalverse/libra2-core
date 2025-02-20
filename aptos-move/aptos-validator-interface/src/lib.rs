@@ -8,7 +8,7 @@ mod storage_interface;
 pub use crate::{rest_interface::RestDebuggerInterface, storage_interface::DBDebuggerInterface};
 use anyhow::Result;
 use aptos_framework::natives::code::PackageMetadata;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     state_store::{
         state_key::StateKey, state_storage_usage::StateStorageUsage, state_value::StateValue,

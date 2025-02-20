@@ -33,7 +33,7 @@ use libra2_infallible::{Mutex, RwLock};
 use aptos_mempool_notifications::MempoolNotificationListener;
 use aptos_storage_interface::{AptosDbError, DbReaderWriter};
 use aptos_storage_service_notifications::StorageServiceNotificationListener;
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     transaction::{TransactionOutputListWithProof, Version},
 };

@@ -15,7 +15,7 @@ use crate::{
     AptosVM,
 };
 use aptos_gas_algebra::Fee;
-use aptos_types::{
+use libra2_types::{
     fee_statement::FeeStatement,
     transaction::{ExecutionStatus, TransactionStatus},
 };

@@ -19,7 +19,7 @@ aptos-experimental-layered-map = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-scratchpad = { workspace = true }
 libra2-secure-net = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 arr_macro = { workspace = true }
 bcs = { workspace = true }
 dashmap = { workspace = true }
@@ -35,11 +35,11 @@ serde = { workspace = true }
 thiserror = { workspace = true }
 
 [dev-dependencies]
-aptos-types = { workspace = true, features = ["fuzzing"] }
+libra2-types = { workspace = true, features = ["fuzzing"] }
 
 [features]
 default = []
-fuzzing = ["aptos-types/fuzzing"]
+fuzzing = ["libra2-types/fuzzing"]
 
 [package.metadata.cargo-machete]
 ignored = ["proptest"]

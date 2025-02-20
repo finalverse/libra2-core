@@ -18,7 +18,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use aptos_netcore::transport::ConnectionOrigin;
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use async_trait::async_trait;
 use futures::StreamExt;
 use std::{collections::HashMap, sync::Arc, time::Duration};

@@ -28,7 +28,7 @@ use aptos_rest_client::{
     Client, Transaction,
 };
 use aptos_sdk::move_types::language_storage::CORE_CODE_ADDRESS;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::is_aptos_governance_create_proposal_event,
     event::EventHandle,

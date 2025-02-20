@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_crypto::HashValue;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     transaction::{SignedTransaction, TransactionPayload},
 };

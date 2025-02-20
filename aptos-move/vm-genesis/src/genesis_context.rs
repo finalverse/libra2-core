@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_types::{
+use libra2_types::{
     executable::ModulePath,
     state_store::{
         errors::StateViewError, state_key::StateKey, state_storage_usage::StateStorageUsage,

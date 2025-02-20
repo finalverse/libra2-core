@@ -30,7 +30,7 @@ use aptos_sdk::{
 use aptos_transaction_generator_lib::{
     create_txn_generator_creator, AccountType, TransactionType, SEND_AMOUNT,
 };
-use aptos_types::account_config::aptos_test_root_address;
+use libra2_types::account_config::aptos_test_root_address;
 use futures::future::{try_join_all, FutureExt};
 use once_cell::sync::Lazy;
 use rand::{

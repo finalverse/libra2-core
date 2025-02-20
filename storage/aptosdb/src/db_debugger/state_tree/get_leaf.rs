@@ -5,7 +5,7 @@ use crate::{db_debugger::common::DbDir, schema::jellyfish_merkle_node::Jellyfish
 use libra2_crypto::hash::CryptoHash;
 use aptos_jellyfish_merkle::{iterator::JellyfishMerkleIterator, node_type::NodeKey};
 use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use clap::Parser;
 use owo_colors::OwoColorize;
 use std::sync::Arc;

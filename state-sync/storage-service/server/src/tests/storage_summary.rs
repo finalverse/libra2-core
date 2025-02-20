@@ -21,7 +21,7 @@ use aptos_storage_service_types::{
     },
     StorageServiceError,
 };
-use aptos_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
+use libra2_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
 use arc_swap::ArcSwap;
 use futures::StreamExt;
 use std::{ops::Deref, sync::Arc, time::Duration};

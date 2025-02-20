@@ -21,7 +21,7 @@ use aptos_aggregator::{
     delayed_change::{DelayedApplyChange, DelayedChange},
     delta_change_set::DeltaWithMax,
 };
-use aptos_types::{
+use libra2_types::{
     delayed_fields::SnapshotToStringFormula,
     error::PanicError,
     state_store::{state_key::StateKey, state_value::StateValueMetadata},

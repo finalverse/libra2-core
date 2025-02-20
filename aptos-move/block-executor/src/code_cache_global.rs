@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::error::PanicError;
+use libra2_types::error::PanicError;
 use hashbrown::HashMap;
 use move_vm_types::code::{ModuleCode, WithSize};
 use std::{

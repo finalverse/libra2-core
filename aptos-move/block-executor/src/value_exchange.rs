@@ -7,7 +7,7 @@ use aptos_aggregator::{
     types::{DelayedFieldValue, ReadPosition},
 };
 use aptos_mvhashmap::{types::TxnIndex, versioned_delayed_fields::TVersionedDelayedFieldView};
-use aptos_types::{
+use libra2_types::{
     error::{code_invariant_error, PanicError},
     state_store::{state_value::StateValueMetadata, TStateView},
     transaction::BlockExecutableTransaction as Transaction,

@@ -6,7 +6,7 @@ use aptos_native_interface::{
     safely_assert_eq, safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext,
     SafeNativeResult,
 };
-use aptos_types::transaction::authenticator::AuthenticationKey;
+use libra2_types::transaction::authenticator::AuthenticationKey;
 use better_any::{Tid, TidAble};
 use move_core_types::{
     account_address::AccountAddress,

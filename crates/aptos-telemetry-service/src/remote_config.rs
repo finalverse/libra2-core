@@ -37,7 +37,7 @@ async fn handle_telemetry_log_env(
 mod tests {
     use crate::{jwt_auth::create_jwt_token, tests::test_context, types::common::NodeType};
     use libra2_config::config::PeerSet;
-    use aptos_types::{chain_id::ChainId, PeerId};
+    use libra2_types::{chain_id::ChainId, PeerId};
     use std::collections::HashMap;
     use uuid::Uuid;
 

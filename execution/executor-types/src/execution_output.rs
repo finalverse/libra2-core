@@ -12,7 +12,7 @@ use libra2_drop_helper::DropHelper;
 use aptos_storage_interface::state_store::{
     state::LedgerState, state_view::cached_state_view::ShardedStateCache,
 };
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     epoch_state::EpochState,
     transaction::{

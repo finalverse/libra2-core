@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::error::PanicError;
+use libra2_types::error::PanicError;
 
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub(crate) enum ParallelBlockExecutionError {

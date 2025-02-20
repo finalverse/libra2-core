@@ -16,7 +16,7 @@ use aptos_language_e2e_tests::{
         types::Executor,
     },
 };
-use aptos_types::{
+use libra2_types::{
     transaction::{ExecutionStatus, SignedTransaction, TransactionStatus},
     vm_status::VMStatus,
 };

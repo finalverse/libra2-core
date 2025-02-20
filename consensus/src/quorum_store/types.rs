@@ -7,7 +7,7 @@ use aptos_consensus_types::{
     proof_of_store::{BatchId, BatchInfo},
 };
 use libra2_crypto::{hash::CryptoHash, HashValue};
-use aptos_types::{ledger_info::LedgerInfoWithSignatures, transaction::SignedTransaction, PeerId};
+use libra2_types::{ledger_info::LedgerInfoWithSignatures, transaction::SignedTransaction, PeerId};
 use serde::{Deserialize, Serialize};
 use std::{
     fmt::{Display, Formatter},

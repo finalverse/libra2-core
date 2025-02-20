@@ -8,7 +8,7 @@ use aptos_storage_interface::{AptosDbError, DbReader, Result as StorageResult};
 use aptos_storage_service_types::responses::{
     CompleteDataRange, DataResponse, DataSummary, TransactionOrOutputListWithProof,
 };
-use aptos_types::{
+use libra2_types::{
     epoch_change::EpochChangeProof,
     ledger_info::LedgerInfoWithSignatures,
     state_store::state_value::StateValueChunkWithProof,

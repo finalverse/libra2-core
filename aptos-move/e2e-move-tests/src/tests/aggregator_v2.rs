@@ -10,7 +10,7 @@ use crate::{
     BlockSplit, SUCCESS,
 };
 use aptos_language_e2e_tests::executor::ExecutorMode;
-use aptos_types::{transaction::ExecutionStatus, vm_status::StatusCode};
+use libra2_types::{transaction::ExecutionStatus, vm_status::StatusCode};
 use claims::assert_ok_eq;
 use proptest::prelude::*;
 use test_case::test_case;

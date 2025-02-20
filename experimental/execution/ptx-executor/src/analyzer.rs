@@ -8,7 +8,7 @@
 use crate::{metrics::TIMER, sorter::PtxSorterClient};
 use libra2_logger::trace;
 use libra2_metrics_core::TimerHelper;
-use aptos_types::transaction::signature_verified_transaction::SignatureVerifiedTransaction;
+use libra2_types::transaction::signature_verified_transaction::SignatureVerifiedTransaction;
 use rayon::Scope;
 use std::sync::mpsc::{channel, Sender};
 

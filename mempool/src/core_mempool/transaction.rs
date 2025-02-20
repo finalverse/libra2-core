@@ -4,7 +4,7 @@
 
 use crate::{core_mempool::TXN_INDEX_ESTIMATED_BYTES, counters, network::BroadcastPeerPriority};
 use libra2_crypto::HashValue;
-use aptos_types::{account_address::AccountAddress, transaction::SignedTransaction};
+use libra2_types::{account_address::AccountAddress, transaction::SignedTransaction};
 use serde::{Deserialize, Serialize};
 use std::{
     mem::size_of,
@@ -159,7 +159,7 @@ mod test {
         network::BroadcastPeerPriority,
     };
     use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, SigningKey, Uniform};
-    use aptos_types::{
+    use libra2_types::{
         account_address::AccountAddress,
         chain_id::ChainId,
         transaction::{RawTransaction, Script, SignedTransaction, TransactionPayload},

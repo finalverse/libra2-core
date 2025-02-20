@@ -13,7 +13,7 @@ use crate::{
 };
 use libra2_logger::trace;
 use libra2_metrics_core::TimerHelper;
-use aptos_types::{
+use libra2_types::{
     state_store::state_key::StateKey, transaction::analyzed_transaction::AnalyzedTransaction,
 };
 use rayon::Scope;

@@ -10,7 +10,7 @@ use crate::{
 };
 use aptos_schemadb::{batch::SchemaBatch, DB};
 use aptos_storage_interface::Result;
-use aptos_types::transaction::{TransactionAuxiliaryData, Version};
+use libra2_types::transaction::{TransactionAuxiliaryData, Version};
 use std::{path::Path, sync::Arc};
 
 #[derive(Debug)]

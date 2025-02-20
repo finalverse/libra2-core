@@ -10,7 +10,7 @@ use crate::{
 };
 use aptos_aggregator::delta_change_set::serialize;
 use aptos_language_e2e_tests::data_store::FakeDataStore;
-use aptos_types::{
+use libra2_types::{
     state_store::state_key::StateKey, transaction::TransactionOutput, write_set::WriteOp,
 };
 use claims::{assert_err, assert_matches, assert_ok};

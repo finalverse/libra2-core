@@ -5,7 +5,7 @@ use crate::{
     RemoteExecutionRequest, RemoteExecutionResult,
 };
 use libra2_secure_net::network_controller::{Message, NetworkController};
-use aptos_types::{
+use libra2_types::{
     block_executor::partitioner::ShardId, state_store::state_key::StateKey,
     transaction::TransactionOutput, vm_status::VMStatus,
 };

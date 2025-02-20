@@ -16,7 +16,7 @@ use aptos_rest_client::{
     Client,
 };
 use aptos_sdk::move_types::language_storage::StructTag;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{AccountResource, CORE_CODE_ADDRESS},
     on_chain_config::{ExecutionConfigV2, OnChainExecutionConfig, TransactionShufflerType},

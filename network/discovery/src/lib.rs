@@ -16,7 +16,7 @@ use aptos_network::{
     logging::NetworkSchema,
 };
 use libra2_time_service::TimeService;
-use aptos_types::on_chain_config::OnChainConfigProvider;
+use libra2_types::on_chain_config::OnChainConfigProvider;
 use futures::{Stream, StreamExt};
 use std::{
     path::Path,

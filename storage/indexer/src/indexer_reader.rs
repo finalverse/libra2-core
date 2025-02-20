@@ -3,7 +3,7 @@
 
 use crate::{db_indexer::DBIndexer, db_v2::IndexerAsyncV2};
 use anyhow::anyhow;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     contract_event::{ContractEventV1, ContractEventV2, EventWithVersion},
     event::EventKey,

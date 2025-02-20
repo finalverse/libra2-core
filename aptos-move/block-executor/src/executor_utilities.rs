@@ -4,7 +4,7 @@
 use crate::{errors::*, view::LatestView};
 use libra2_logger::error;
 use aptos_mvhashmap::types::ValueWithLayout;
-use aptos_types::{
+use libra2_types::{
     contract_event::TransactionEvent,
     error::{code_invariant_error, PanicError},
     state_store::TStateView,

@@ -4,7 +4,7 @@
 
 use aptos_cached_packages::aptos_stdlib;
 use aptos_language_e2e_tests::{common_transactions::peer_to_peer_txn, executor::FakeExecutor};
-use aptos_types::{
+use libra2_types::{
     account_config::CORE_CODE_ADDRESS,
     on_chain_config::{AptosVersion, OnChainConfig},
     transaction::TransactionStatus,
@@ -15,7 +15,7 @@ use aptos_vm::data_cache::AsMoveResolver;
 fn initial_aptos_version() {
     let mut executor = FakeExecutor::from_head_genesis();
     let resolver = executor.get_state_view().as_move_resolver();
-    let version = aptos_types::on_chain_config::APTOS_MAX_KNOWN_VERSION;
+    let version = libra2_types::on_chain_config::APTOS_MAX_KNOWN_VERSION;
 
     assert_eq!(AptosVersion::fetch_config(&resolver).unwrap(), version);
     let account = executor.new_account_at(CORE_CODE_ADDRESS);
@@ -47,7 +47,7 @@ fn initial_aptos_version() {
 fn drop_txn_after_reconfiguration() {
     let mut executor = FakeExecutor::from_head_genesis();
     let resolver = executor.get_state_view().as_move_resolver();
-    let version = aptos_types::on_chain_config::APTOS_MAX_KNOWN_VERSION;
+    let version = libra2_types::on_chain_config::APTOS_MAX_KNOWN_VERSION;
     assert_eq!(AptosVersion::fetch_config(&resolver).unwrap(), version);
 
     let txn = executor

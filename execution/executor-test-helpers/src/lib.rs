@@ -12,7 +12,7 @@ use libra2_crypto::{
 use aptos_executor::db_bootstrapper::{generate_waypoint, maybe_bootstrap};
 use aptos_executor_types::state_compute_result::StateComputeResult;
 use aptos_storage_interface::DbReaderWriter;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     block_info::BlockInfo,
     ledger_info::{generate_ledger_info_with_sig, LedgerInfo, LedgerInfoWithSignatures},

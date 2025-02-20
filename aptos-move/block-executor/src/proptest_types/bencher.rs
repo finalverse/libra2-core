@@ -14,7 +14,7 @@ use crate::{
     txn_commit_hook::NoOpTransactionCommitHook,
     txn_provider::default::DefaultTxnProvider,
 };
-use aptos_types::{
+use libra2_types::{
     block_executor::config::BlockExecutorConfig, contract_event::TransactionEvent,
     state_store::MockStateView,
 };

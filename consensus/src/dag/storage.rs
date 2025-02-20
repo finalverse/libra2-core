@@ -5,7 +5,7 @@ use super::{types::Vote, NodeId};
 use crate::dag::{CertifiedNode, Node};
 use aptos_consensus_types::common::{Author, Round};
 use libra2_crypto::HashValue;
-use aptos_types::ledger_info::LedgerInfoWithSignatures;
+use libra2_types::ledger_info::LedgerInfoWithSignatures;
 use std::collections::HashMap;
 
 #[derive(Clone)]

@@ -8,7 +8,7 @@ use aptos_consensus_types::{
 };
 use libra2_logger::prelude::*;
 use aptos_mempool::{QuorumStoreRequest, QuorumStoreResponse};
-use aptos_types::{transaction::SignedTransaction, PeerId};
+use libra2_types::{transaction::SignedTransaction, PeerId};
 use chrono::Utc;
 use futures::channel::{mpsc::Sender, oneshot};
 use std::{

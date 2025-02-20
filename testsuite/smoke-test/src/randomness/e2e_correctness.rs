@@ -8,7 +8,7 @@ use crate::{
 };
 use aptos_forge::{NodeExt, SwarmExt};
 use libra2_logger::info;
-use aptos_types::{dkg::DKGState, on_chain_config::OnChainRandomnessConfig};
+use libra2_types::{dkg::DKGState, on_chain_config::OnChainRandomnessConfig};
 use std::{sync::Arc, time::Duration};
 
 /// Verify the correctness of DKG transcript and block-level randomness seed.

@@ -17,7 +17,7 @@ use aptos_keyless_pepper_service::{
     V0FetchHandler, V0SignatureHandler, V0VerifyHandler,
 };
 use libra2_logger::{error, info};
-use aptos_types::keyless::test_utils::get_sample_iss;
+use libra2_types::keyless::test_utils::get_sample_iss;
 use hyper::{
     header::{
         ACCESS_CONTROL_ALLOW_CREDENTIALS, ACCESS_CONTROL_ALLOW_HEADERS,

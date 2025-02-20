@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_abort, assert_success, tests::common, MoveHarness};
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 
 #[test]
 fn type_too_large() {

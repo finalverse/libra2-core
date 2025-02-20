@@ -4,7 +4,7 @@
 
 //! Names of modules, functions, and types used by Aptos System.
 
-use aptos_types::account_config;
+use libra2_types::account_config;
 use move_core_types::{ident_str, identifier::IdentStr, language_storage::ModuleId};
 use once_cell::sync::Lazy;
 

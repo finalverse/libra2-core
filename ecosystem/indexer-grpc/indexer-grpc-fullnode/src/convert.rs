@@ -24,7 +24,7 @@ use aptos_protos::{
     },
     util::timestamp,
 };
-use aptos_types::jwks::jwk::JWK;
+use libra2_types::jwks::jwk::JWK;
 use hex;
 use move_core_types::ability::Ability;
 use std::time::Duration;
@@ -493,7 +493,7 @@ pub fn convert_multisig_payload(
 }
 
 pub fn convert_event(event: &Event) -> transaction::Event {
-    let event_key: aptos_types::event::EventKey = event.guid.into();
+    let event_key: libra2_types::event::EventKey = event.guid.into();
     transaction::Event {
         key: Some(transaction::EventKey {
             creation_number: event_key.get_creation_number(),

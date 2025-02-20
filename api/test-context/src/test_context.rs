@@ -35,7 +35,7 @@ use aptos_storage_interface::{
     state_store::state_view::db_state_view::DbStateView, DbReaderWriter,
 };
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     account_address::{create_multisig_account_address, AccountAddress},
     aggregate_signature::AggregateSignature,
     block_executor::config::BlockExecutorConfigFromOnchain,

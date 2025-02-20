@@ -31,7 +31,7 @@ use aptos_network::{
     },
     ProtocolId,
 };
-use aptos_types::{block_info::BlockInfo, PeerId};
+use libra2_types::{block_info::BlockInfo, PeerId};
 use futures::{channel::mpsc, SinkExt, StreamExt};
 use std::{
     collections::{HashMap, HashSet},
@@ -550,7 +550,7 @@ mod tests {
         },
         transport::ConnectionMetadata,
     };
-    use aptos_types::validator_verifier::random_validator_verifier;
+    use libra2_types::validator_verifier::random_validator_verifier;
     use bytes::Bytes;
     use futures::{channel::oneshot, future};
     use maplit::hashmap;

@@ -19,7 +19,7 @@ use aptos_release_builder::{
     ReleaseEntry,
 };
 use libra2_temppath::TempPath;
-use aptos_types::on_chain_config::{FeatureFlag as AptosFeatureFlag, OnChainConsensusConfig};
+use libra2_types::on_chain_config::{FeatureFlag as AptosFeatureFlag, OnChainConsensusConfig};
 use move_binary_format::file_format_common::VERSION_DEFAULT_LANG_V2;
 use std::{fs, path::PathBuf, process::Command, sync::Arc};
 
@@ -53,7 +53,7 @@ async fn test_upgrade_flow() {
     let mut gas_parameters = AptosGasParameters::initial();
     gas_parameters.vm.txn.max_transaction_size_in_bytes = GasQuantity::new(100_000_000);
 
-    let gas_schedule = aptos_types::on_chain_config::GasScheduleV2 {
+    let gas_schedule = libra2_types::on_chain_config::GasScheduleV2 {
         feature_version: aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION,
         entries: gas_parameters
             .to_on_chain_gas_schedule(aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION),

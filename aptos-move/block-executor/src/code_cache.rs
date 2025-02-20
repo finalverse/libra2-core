@@ -8,7 +8,7 @@ use crate::{
 };
 use ambassador::delegate_to_methods;
 use aptos_mvhashmap::types::TxnIndex;
-use aptos_types::{
+use libra2_types::{
     executable::ModulePath,
     state_store::{state_value::StateValueMetadata, TStateView},
     transaction::BlockExecutableTransaction as Transaction,

@@ -12,7 +12,7 @@ use crate::{
 use libra2_config::config::MempoolConfig;
 use aptos_consensus_types::common::RejectedTransactionSummary;
 use aptos_mempool_notifications::MempoolNotificationSender;
-use aptos_types::{transaction::Transaction, vm_status::DiscardedVMStatus};
+use libra2_types::{transaction::Transaction, vm_status::DiscardedVMStatus};
 use futures::{channel::oneshot, sink::SinkExt};
 use tokio::time::timeout;
 

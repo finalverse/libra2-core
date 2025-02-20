@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::{state_store::state_key::StateKey, write_set::WriteOp};
+use libra2_types::{state_store::state_key::StateKey, write_set::WriteOp};
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Deserialize, Serialize)]

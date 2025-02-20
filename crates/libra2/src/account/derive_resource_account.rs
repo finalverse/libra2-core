@@ -3,7 +3,7 @@
 
 use crate::common::types::{CliCommand, CliError, CliTypedResult};
 use aptos_sdk::rest_client::aptos_api_types::HexEncodedBytes;
-use aptos_types::account_address::{create_resource_address, AccountAddress};
+use libra2_types::account_address::{create_resource_address, AccountAddress};
 use async_trait::async_trait;
 use clap::Parser;
 use std::{fmt::Formatter, str::FromStr};

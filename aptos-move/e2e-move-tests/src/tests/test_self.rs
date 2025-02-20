@@ -3,7 +3,7 @@
 
 use crate::{assert_success, tests::common, MoveHarness};
 use aptos_framework::BuildOptions;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 
 #[test]
 fn test_self() {

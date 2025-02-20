@@ -126,7 +126,7 @@ fn native_check_dispatch_type_compatibility_impl(
             && !rhs.is_friend_or_private()
             && (!context
                 .get_feature_flags()
-                .is_enabled(aptos_types::on_chain_config::FeatureFlag::DISALLOW_USER_NATIVES)
+                .is_enabled(libra2_types::on_chain_config::FeatureFlag::DISALLOW_USER_NATIVES)
                 || !rhs.is_native())
             && lhs_id != rhs_id
     )])

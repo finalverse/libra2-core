@@ -6,7 +6,7 @@ use crate::{
     workload::TransactionBlock,
 };
 use anyhow::{anyhow, bail};
-use aptos_types::transaction::{Transaction, Version};
+use libra2_types::transaction::{Transaction, Version};
 use clap::Parser;
 use std::path::PathBuf;
 use tokio::fs;
@@ -119,7 +119,7 @@ mod tests {
         ed25519::{Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature},
         HashValue, Uniform,
     };
-    use aptos_types::{
+    use libra2_types::{
         block_metadata::BlockMetadata,
         chain_id::ChainId,
         transaction::{EntryFunction, RawTransaction, SignedTransaction},

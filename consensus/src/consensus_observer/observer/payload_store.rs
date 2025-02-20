@@ -13,7 +13,7 @@ use libra2_config::config::ConsensusObserverConfig;
 use aptos_consensus_types::{common::Round, pipelined_block::PipelinedBlock};
 use libra2_infallible::Mutex;
 use libra2_logger::{error, warn};
-use aptos_types::epoch_state::EpochState;
+use libra2_types::epoch_state::EpochState;
 use std::{
     collections::{btree_map::Entry, BTreeMap},
     sync::Arc,
@@ -287,7 +287,7 @@ mod test {
         quorum_cert::QuorumCert,
     };
     use libra2_crypto::HashValue;
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::AggregateSignature,
         block_info::{BlockInfo, Round},
         ledger_info::{LedgerInfo, LedgerInfoWithSignatures},

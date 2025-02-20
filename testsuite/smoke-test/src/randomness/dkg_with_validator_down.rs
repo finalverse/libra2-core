@@ -6,7 +6,7 @@ use crate::{
     smoke_test_environment::SwarmBuilder,
 };
 use aptos_forge::NodeExt;
-use aptos_types::on_chain_config::OnChainRandomnessConfig;
+use libra2_types::on_chain_config::OnChainRandomnessConfig;
 use std::sync::Arc;
 
 #[tokio::test]

@@ -16,7 +16,7 @@ use aptos_db_indexer_schemas::schema::{
 };
 use aptos_schemadb::{batch::SchemaBatch, schema::ValueCodec, DB};
 use aptos_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError, Result};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{new_block_event_key, NewBlockEvent},
     contract_event::ContractEvent,

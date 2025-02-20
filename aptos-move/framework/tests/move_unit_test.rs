@@ -4,7 +4,7 @@
 
 use aptos_framework::{extended_checks, path_in_crate};
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEATURE_VERSION};
-use aptos_types::on_chain_config::{
+use libra2_types::on_chain_config::{
     aptos_test_feature_flags_genesis, Features, TimedFeaturesBuilder,
 };
 use aptos_vm::natives;

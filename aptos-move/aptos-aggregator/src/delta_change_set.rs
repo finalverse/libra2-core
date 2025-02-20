@@ -10,7 +10,7 @@ use crate::{
     delta_math::{merge_data_and_delta, merge_two_deltas, DeltaHistory},
     types::{DelayedFieldsSpeculativeError, DeltaApplicationFailureReason},
 };
-use aptos_types::error::{code_invariant_error, PanicOr};
+use libra2_types::error::{code_invariant_error, PanicOr};
 
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub struct DeltaWithMax {
@@ -217,7 +217,7 @@ mod test {
         types::DelayedFieldValue,
         FakeAggregatorView,
     };
-    use aptos_types::{
+    use libra2_types::{
         error::PanicError,
         state_store::{
             state_key::StateKey,

@@ -7,7 +7,7 @@ use aptos_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, AptosDbError, DbReader,
     Result,
 };
-use aptos_types::{
+use libra2_types::{
     account_config::{
         AccountResource, Burn, BurnEvent, BurnToken, BurnTokenEvent, CancelOffer, Claim,
         CoinDeposit, CoinRegister, CoinRegisterEvent, CoinStoreResource, CoinWithdraw,

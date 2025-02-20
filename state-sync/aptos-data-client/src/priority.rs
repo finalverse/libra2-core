@@ -147,7 +147,7 @@ mod tests {
     };
     use aptos_netcore::transport::ConnectionOrigin;
     use aptos_network::{application::storage::PeersAndMetadata, transport::ConnectionMetadata};
-    use aptos_types::PeerId;
+    use libra2_types::PeerId;
     use maplit::hashmap;
     use std::{assert_eq, sync::Arc};
 

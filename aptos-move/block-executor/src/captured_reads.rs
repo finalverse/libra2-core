@@ -16,7 +16,7 @@ use aptos_mvhashmap::{
     versioned_delayed_fields::TVersionedDelayedFieldView,
     versioned_group_data::VersionedGroupData,
 };
-use aptos_types::{
+use libra2_types::{
     error::{code_invariant_error, PanicError, PanicOr},
     executable::ModulePath,
     state_store::{state_value::StateValueMetadata, TStateView},

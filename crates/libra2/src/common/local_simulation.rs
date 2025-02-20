@@ -5,7 +5,7 @@ use crate::common::types::{CliError, CliTypedResult};
 use libra2_crypto::HashValue;
 use aptos_gas_profiling::FrameName;
 use aptos_move_debugger::aptos_debugger::AptosDebugger;
-use aptos_types::transaction::SignedTransaction;
+use libra2_types::transaction::SignedTransaction;
 use aptos_vm::{data_cache::AsMoveResolver, AptosVM};
 use aptos_vm_environment::environment::AptosEnvironment;
 use aptos_vm_logging::log_schema::AdapterLogSchema;

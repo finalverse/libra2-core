@@ -25,7 +25,7 @@ use aptos_framework::{BuildOptions, BuiltPackage};
 use libra2_logger::error;
 use aptos_rest_client::Client;
 use aptos_sdk::{bcs, types::LocalAccount};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     transaction::{EntryFunction, TransactionPayload},
 };
@@ -216,7 +216,7 @@ async fn publish_module(
     };
 
     // create payload
-    let payload: aptos_types::transaction::TransactionPayload =
+    let payload: libra2_types::transaction::TransactionPayload =
         EntryFunctionCall::CodePublishPackageTxn {
             metadata_serialized,
             code: blobs.clone(),

@@ -5,7 +5,7 @@
 //! Errors that originate from the PeerManager module
 
 use crate::protocols::wire::messaging::v1 as wire;
-use aptos_types::{network_address::NetworkAddress, PeerId};
+use libra2_types::{network_address::NetworkAddress, PeerId};
 use futures::channel::{mpsc, oneshot};
 use thiserror::Error;
 

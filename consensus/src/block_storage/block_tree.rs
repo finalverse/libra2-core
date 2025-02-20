@@ -15,7 +15,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
-use aptos_types::{
+use libra2_types::{
     block_info::{BlockInfo, Round},
     ledger_info::LedgerInfoWithSignatures,
 };

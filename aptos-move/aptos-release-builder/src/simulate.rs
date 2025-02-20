@@ -31,7 +31,7 @@ use aptos_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
 use aptos_language_e2e_tests::account::AccountData;
 use aptos_move_debugger::aptos_debugger::AptosDebugger;
 use aptos_rest_client::Client;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::ChainIdResource,
     on_chain_config::{ApprovedExecutionHashes, Features, GasScheduleV2, OnChainConfig},

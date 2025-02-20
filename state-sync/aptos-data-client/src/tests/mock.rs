@@ -34,7 +34,7 @@ use aptos_storage_service_types::{
     responses::TransactionOrOutputListWithProof, Epoch, StorageServiceMessage,
 };
 use libra2_time_service::{MockTimeService, TimeService};
-use aptos_types::{
+use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     state_store::state_value::StateValueChunkWithProof,
     transaction::{TransactionListWithProof, TransactionOutputListWithProof, Version},

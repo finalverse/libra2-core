@@ -32,7 +32,7 @@ use aptos_scratchpad::get_state_shard_id;
 use aptos_storage_interface::{
     db_ensure as ensure, state_store::NUM_STATE_SHARDS, AptosDbError, Result,
 };
-use aptos_types::{
+use libra2_types::{
     nibble::{nibble_path::NibblePath, ROOT_NIBBLE_HEIGHT},
     proof::{SparseMerkleProofExt, SparseMerkleRangeProof},
     state_store::state_key::StateKey,

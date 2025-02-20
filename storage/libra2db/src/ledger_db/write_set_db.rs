@@ -15,7 +15,7 @@ use aptos_schemadb::{
     DB,
 };
 use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
-use aptos_types::{
+use libra2_types::{
     transaction::{TransactionOutput, Version},
     write_set::WriteSet,
 };

@@ -4,7 +4,7 @@
 use libra2_crypto_derive::CryptoHasher;
 use libra2_enum_conversion_derive::EnumConversion;
 use aptos_reliable_broadcast::RBMessage;
-pub use aptos_types::dkg::DKGTranscript;
+pub use libra2_types::dkg::DKGTranscript;
 use serde::{Deserialize, Serialize};
 
 /// Once DKG starts, a validator should send this message to peers in order to collect DKG transcripts from peers.

@@ -29,7 +29,7 @@ use aptos_genesis::{
 };
 use aptos_keygen::KeyGen;
 use libra2_temppath::TempPath;
-use aptos_types::{account_address::AccountAddress, chain_id::ChainId};
+use libra2_types::{account_address::AccountAddress, chain_id::ChainId};
 use aptos_vm_genesis::{AccountBalance, TestValidator};
 use std::{
     collections::HashMap,

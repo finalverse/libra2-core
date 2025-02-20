@@ -17,7 +17,7 @@ use crate::counters::{start_serialization_timer, DESERIALIZATION_LABEL, SERIALIZ
 use anyhow::anyhow;
 use libra2_compression::client::CompressionClient;
 use libra2_config::{config::MAX_APPLICATION_MESSAGE_SIZE, network_id::NetworkId};
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 #[cfg(any(test, feature = "fuzzing"))]
 use proptest_derive::Arbitrary;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};

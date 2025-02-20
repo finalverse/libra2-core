@@ -6,7 +6,7 @@
 
 use crate::{errors::AptosDbError, DbReader, DbWriter, Result};
 use libra2_crypto::HashValue;
-use aptos_types::{
+use libra2_types::{
     proof::SparseMerkleProofExt,
     state_store::{
         state_key::{inner::StateKeyInner, StateKey},

@@ -8,7 +8,7 @@ use libra2_dkg::weighted_vuf::traits::WeightedVUF;
 use aptos_forge::LocalSwarm;
 use libra2_logger::info;
 use aptos_rest_client::Client;
-use aptos_types::{
+use libra2_types::{
     dkg::{DKGSessionState, DKGState, DKGTrait, DefaultDKG},
     on_chain_config::{OnChainConfig, OnChainConsensusConfig},
     randomness::{PerBlockRandomness, RandMetadata, WVUF},

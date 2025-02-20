@@ -47,7 +47,7 @@ use aptos_rest_client::{
     error::RestError,
     AptosBaseUrl, Client,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::{create_resource_address, AccountAddress},
     object_address::create_object_code_deployment_address,
     on_chain_config::aptos_test_feature_flags_genesis,
@@ -2776,7 +2776,7 @@ fn txn_arg_parser<T: serde::de::DeserializeOwned>(
 }
 
 /// Identifier of a module member (function or struct).
-/// Duplicated from aptos_types, as we also need to load_account_arg from the CLI.
+/// Duplicated from libra2_types, as we also need to load_account_arg from the CLI.
 #[derive(Debug, Clone)]
 pub struct MemberId {
     pub module_id: ModuleId,

@@ -30,7 +30,7 @@ use aptos_api_types::{
 };
 use libra2_crypto::HashValue;
 use libra2_logger::{debug, info, sample, sample::SampleRate};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{AccountResource, NewBlockEvent, CORE_CODE_ADDRESS},
     contract_event::EventWithVersion,

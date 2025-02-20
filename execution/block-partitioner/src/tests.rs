@@ -9,7 +9,7 @@ use crate::{
     v2::config::PartitionerV2Config,
     PartitionerConfig,
 };
-use aptos_types::{block_executor::partitioner::SubBlocksForShard, transaction::Transaction};
+use libra2_types::{block_executor::partitioner::SubBlocksForShard, transaction::Transaction};
 use move_core_types::account_address::AccountAddress;
 use rand::{rngs::OsRng, Rng};
 use std::{collections::HashMap, sync::Mutex};

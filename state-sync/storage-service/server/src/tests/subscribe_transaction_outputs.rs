@@ -6,7 +6,7 @@ use libra2_config::{
     config::StorageServiceConfig,
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_types::{epoch_change::EpochChangeProof, PeerId};
+use libra2_types::{epoch_change::EpochChangeProof, PeerId};
 use claims::assert_none;
 
 #[tokio::test(flavor = "multi_thread")]

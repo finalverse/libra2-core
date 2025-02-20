@@ -11,7 +11,7 @@ use crate::dag::{
 };
 use aptos_consensus_types::common::Payload;
 use libra2_crypto::HashValue;
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::AggregateSignature, validator_verifier::random_validator_verifier,
 };
 use claims::assert_ok;

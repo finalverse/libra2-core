@@ -39,7 +39,7 @@ use aptos_sdk::{
     transaction_builder::TransactionFactory,
     types::{HardwareWalletAccount, HardwareWalletType, LocalAccount, TransactionSigner},
 };
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId,
     transaction::{
         authenticator::AuthenticationKey, EntryFunction, MultisigTransactionPayload, Script,

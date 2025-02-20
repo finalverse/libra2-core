@@ -12,7 +12,7 @@ use aptos_forge::{
     },
     LocalSwarm, Swarm, SwarmExt,
 };
-use aptos_types::on_chain_config::{
+use libra2_types::on_chain_config::{
     ConsensusAlgorithmConfig, DagConsensusConfigV1, OnChainConsensusConfig, ValidatorTxnConfig,
     DEFAULT_WINDOW_SIZE,
 };

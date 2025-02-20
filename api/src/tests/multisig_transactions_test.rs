@@ -3,7 +3,7 @@
 
 use super::new_test_context;
 use aptos_api_test_context::{current_function_name, TestContext};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     transaction::{EntryFunction, MultisigTransactionPayload},
 };

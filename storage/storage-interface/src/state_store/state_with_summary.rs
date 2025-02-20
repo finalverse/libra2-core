@@ -7,7 +7,7 @@ use crate::state_store::{
 };
 use libra2_crypto::HashValue;
 use aptos_scratchpad::SparseMerkleTree;
-use aptos_types::{state_store::state_storage_usage::StateStorageUsage, transaction::Version};
+use libra2_types::{state_store::state_storage_usage::StateStorageUsage, transaction::Version};
 use derive_more::{Deref, DerefMut};
 
 #[derive(Clone, Debug, Deref)]

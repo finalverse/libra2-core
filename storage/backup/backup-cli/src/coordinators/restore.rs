@@ -20,7 +20,7 @@ use anyhow::{anyhow, bail, ensure, Result};
 use aptos_db::state_restore::StateSnapshotRestoreMode;
 use aptos_executor_types::VerifyExecutionMode;
 use libra2_logger::prelude::*;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use clap::Parser;
 use std::sync::Arc;
 

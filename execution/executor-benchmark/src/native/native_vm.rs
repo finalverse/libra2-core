@@ -23,7 +23,7 @@ use aptos_block_executor::{
 };
 use libra2_logger::error;
 use aptos_mvhashmap::types::TxnIndex;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{
         primary_apt_store, AccountResource, CoinDeposit, CoinInfoResource, CoinRegister,
@@ -161,7 +161,7 @@ impl ExecutorTask for NativeVMExecutorTask {
                 change_set,
                 ModuleWriteSet::empty(),
                 FeeStatement::new(gas_units, gas_units, 0, 0, 0),
-                TransactionStatus::Keep(aptos_types::transaction::ExecutionStatus::Success),
+                TransactionStatus::Keep(libra2_types::transaction::ExecutionStatus::Success),
             ))),
             Err(_) => ExecutionStatus::SpeculativeExecutionAbortError("something".to_string()),
         }

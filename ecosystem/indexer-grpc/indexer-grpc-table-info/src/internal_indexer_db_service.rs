@@ -11,7 +11,7 @@ use aptos_db_indexer::{
 };
 use aptos_indexer_grpc_utils::counters::{log_grpc_step, IndexerGrpcStep};
 use aptos_storage_interface::DbReader;
-use aptos_types::{indexer::indexer_db_reader::IndexerReader, transaction::Version};
+use libra2_types::{indexer::indexer_db_reader::IndexerReader, transaction::Version};
 use std::{
     path::{Path, PathBuf},
     sync::Arc,

@@ -8,7 +8,7 @@ use crate::config::{
     node_config_loader::NodeType, transaction_filter_type::Filter, utils::RootPath, Error,
     NodeConfig,
 };
-use aptos_types::{chain_id::ChainId, transaction::Transaction, waypoint::Waypoint};
+use libra2_types::{chain_id::ChainId, transaction::Transaction, waypoint::Waypoint};
 use serde::{Deserialize, Serialize};
 use serde_yaml::Value;
 use std::{
@@ -235,7 +235,7 @@ impl ConfigOptimizer for ExecutionConfig {
 mod test {
     use super::*;
     use libra2_temppath::TempPath;
-    use aptos_types::{
+    use libra2_types::{
         transaction::{ChangeSet, Transaction, WriteSetPayload},
         write_set::WriteSetMut,
     };

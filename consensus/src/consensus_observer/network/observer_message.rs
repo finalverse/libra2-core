@@ -9,7 +9,7 @@ use aptos_consensus_types::{
     proof_of_store::{BatchInfo, ProofCache, ProofOfStore},
 };
 use libra2_crypto::hash::CryptoHash;
-use aptos_types::{
+use libra2_types::{
     block_info::{BlockInfo, Round},
     epoch_change::Verifier,
     epoch_state::EpochState,
@@ -955,7 +955,7 @@ mod test {
         quorum_cert::QuorumCert,
     };
     use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::AggregateSignature,
         chain_id::ChainId,
         ledger_info::LedgerInfo,

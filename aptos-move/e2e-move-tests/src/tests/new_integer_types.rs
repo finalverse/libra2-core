@@ -3,7 +3,7 @@
 
 use crate::{assert_success, MoveHarness};
 use aptos_package_builder::PackageBuilder;
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use move_core_types::{u256::U256, value::MoveValue};
 
 #[test]

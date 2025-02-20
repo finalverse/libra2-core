@@ -11,7 +11,7 @@ use libra2_crypto::{
     hash::{CryptoHash, TestOnlyHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
-use aptos_types::{
+use libra2_types::{
     proof::{definition::NodeInProof, SparseMerkleLeafNode, SparseMerkleProofExt},
     state_store::state_value::StateValue,
 };
@@ -26,7 +26,7 @@ fn update_byte(original_key: &HashValue, n: usize, byte: u8) -> HashValue {
 }
 
 fn hash_internal(left_child: HashValue, right_child: HashValue) -> HashValue {
-    aptos_types::proof::SparseMerkleInternalNode::new(left_child, right_child).hash()
+    libra2_types::proof::SparseMerkleInternalNode::new(left_child, right_child).hash()
 }
 
 fn hash_leaf(key: HashValue, value_hash: HashValue) -> HashValue {

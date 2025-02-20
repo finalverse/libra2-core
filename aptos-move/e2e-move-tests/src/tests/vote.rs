@@ -5,7 +5,7 @@ use crate::{
     aptos_governance::*, assert_abort, assert_success, increase_lockup, setup_staking,
     tests::common, MoveHarness,
 };
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use move_core_types::transaction_argument::TransactionArgument;
 use once_cell::sync::Lazy;
 use std::collections::BTreeMap;

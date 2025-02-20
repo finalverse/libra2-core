@@ -11,7 +11,7 @@ use crate::{
     transaction_metadata::TransactionMetadata,
 };
 #[cfg(any(test, feature = "testing"))]
-use aptos_types::{state_store::StateView, transaction::SignedTransaction};
+use libra2_types::{state_store::StateView, transaction::SignedTransaction};
 #[cfg(any(test, feature = "testing"))]
 use aptos_vm_logging::log_schema::AdapterLogSchema;
 #[cfg(any(test, feature = "testing"))]

@@ -6,7 +6,7 @@ use crate::counters;
 use aptos_consensus_types::{common::Author, order_vote::OrderVote, quorum_cert::QuorumCert};
 use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_logger::prelude::*;
-use aptos_types::{
+use libra2_types::{
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures, SignatureAggregator},
     validator_verifier::{ValidatorVerifier, VerifyError},
 };
@@ -185,7 +185,7 @@ mod tests {
     use super::{OrderVoteReceptionResult, OrderVoteStatus, PendingOrderVotes};
     use aptos_consensus_types::{order_vote::OrderVote, quorum_cert::QuorumCert};
     use libra2_crypto::{bls12381, hash::CryptoHash, HashValue};
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::PartialSignatures, block_info::BlockInfo, ledger_info::LedgerInfo,
         validator_verifier::random_validator_verifier,
     };

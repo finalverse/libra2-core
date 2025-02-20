@@ -11,7 +11,7 @@ use crate::{
 };
 use aptos_schemadb::{batch::SchemaBatch, DB};
 use aptos_storage_interface::{AptosDbError, Result};
-use aptos_types::{
+use libra2_types::{
     proof::TransactionInfoWithProof,
     transaction::{TransactionInfo, Version},
 };

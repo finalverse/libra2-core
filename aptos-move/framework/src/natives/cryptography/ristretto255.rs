@@ -8,7 +8,7 @@ use aptos_native_interface::{
     safely_assert_eq, safely_pop_arg, safely_pop_vec_arg, RawSafeNative, SafeNativeBuilder,
     SafeNativeError, SafeNativeResult,
 };
-use aptos_types::vm_status::StatusCode;
+use libra2_types::vm_status::StatusCode;
 use curve25519_dalek::scalar::Scalar;
 use move_binary_format::errors::PartialVMError;
 use move_core_types::gas_algebra::{InternalGasUnit, NumArgs};

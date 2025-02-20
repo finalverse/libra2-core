@@ -3,7 +3,7 @@
 
 use crate::state_store::{state::State, versioned_state_value::StateUpdate, NUM_STATE_SHARDS};
 use aptos_experimental_layered_map::LayeredMap;
-use aptos_types::{state_store::state_key::StateKey, transaction::Version};
+use libra2_types::{state_store::state_key::StateKey, transaction::Version};
 use itertools::Itertools;
 use std::sync::Arc;
 

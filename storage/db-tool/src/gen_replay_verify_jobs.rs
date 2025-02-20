@@ -9,7 +9,7 @@ use aptos_backup_cli::{
     storage::DBToolStorageOpt,
     utils::ConcurrentDownloadsOpt,
 };
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use clap::Parser;
 use itertools::Itertools;
 use std::{

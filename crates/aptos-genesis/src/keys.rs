@@ -8,7 +8,7 @@ use libra2_crypto::{
     x25519, PrivateKey,
 };
 use aptos_keygen::KeyGen;
-use aptos_types::{account_address::AccountAddress, transaction::authenticator::AuthenticationKey};
+use libra2_types::{account_address::AccountAddress, transaction::authenticator::AuthenticationKey};
 use serde::{Deserialize, Serialize};
 
 /// Type for serializing private keys file

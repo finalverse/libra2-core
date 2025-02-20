@@ -7,7 +7,7 @@ use aptos_language_e2e_tests::{
     account::Account,
     executor::{ExecFuncTimerDynamicArgs, FakeExecutor, GasMeterType},
 };
-use aptos_types::{move_utils::MemberId, transaction::TransactionPayload};
+use libra2_types::{move_utils::MemberId, transaction::TransactionPayload};
 use move_binary_format::CompiledModule;
 use move_core_types::{account_address::AccountAddress, language_storage::ModuleId};
 use std::{fs::ReadDir, path::PathBuf, string::String, time::Instant};

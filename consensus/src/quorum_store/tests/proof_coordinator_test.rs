@@ -14,7 +14,7 @@ use aptos_consensus_types::proof_of_store::{BatchId, SignedBatchInfo, SignedBatc
 use libra2_crypto::HashValue;
 use aptos_executor_types::ExecutorResult;
 use libra2_infallible::Mutex;
-use aptos_types::{
+use libra2_types::{
     transaction::SignedTransaction, validator_verifier::random_validator_verifier, PeerId,
 };
 use mini_moka::sync::Cache;

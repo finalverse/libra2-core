@@ -28,7 +28,7 @@ use aptos_keyless_pepper_common::{
     PepperInput, PepperRequest, PepperResponse, SignatureResponse, VerifyRequest, VerifyResponse,
 };
 use libra2_logger::{info, warn};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     keyless::{
         get_public_inputs_hash, Configuration, EphemeralCertificate, Groth16ProofAndStatement,

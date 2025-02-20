@@ -8,7 +8,7 @@ use crate::{
     transport::{Connection, ConnectionMetadata},
 };
 use libra2_config::network_id::NetworkId;
-use aptos_types::{network_address::NetworkAddress, PeerId};
+use libra2_types::{network_address::NetworkAddress, PeerId};
 use futures::channel::oneshot;
 use serde::Serialize;
 use std::fmt;

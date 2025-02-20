@@ -15,7 +15,7 @@ use libra2_config::{
 use libra2_crypto::{test_utils::TEST_SEED, x25519, Uniform};
 use libra2_logger::info;
 use libra2_time_service::{MockTimeService, TimeService};
-use aptos_types::{account_address::AccountAddress, network_address::NetworkAddress};
+use libra2_types::{account_address::AccountAddress, network_address::NetworkAddress};
 use futures::{executor::block_on, future, SinkExt};
 use maplit::{hashmap, hashset};
 use rand::{rngs::StdRng, SeedableRng};

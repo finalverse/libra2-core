@@ -31,7 +31,7 @@ use aptos_mvhashmap::{
     versioned_delayed_fields::TVersionedDelayedFieldView,
     MVHashMap,
 };
-use aptos_types::{
+use libra2_types::{
     error::{code_invariant_error, expect_ok, PanicError, PanicOr},
     executable::{ExecutableTestType, ModulePath},
     state_store::{
@@ -1843,7 +1843,7 @@ mod test {
         versioned_delayed_fields::TVersionedDelayedFieldView,
         MVHashMap,
     };
-    use aptos_types::{
+    use libra2_types::{
         error::PanicOr,
         state_store::{state_value::StateValue, MockStateView},
         transaction::BlockExecutableTransaction,

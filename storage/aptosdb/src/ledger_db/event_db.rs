@@ -23,7 +23,7 @@ use aptos_schemadb::{
     DB,
 };
 use aptos_storage_interface::{AptosDbError, Result};
-use aptos_types::{
+use libra2_types::{
     account_config::new_block_event_key, contract_event::ContractEvent, transaction::Version,
 };
 use std::{path::Path, sync::Arc};

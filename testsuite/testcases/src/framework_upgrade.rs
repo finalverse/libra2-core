@@ -12,7 +12,7 @@ use libra2_logger::info;
 use aptos_release_builder::ReleaseConfig;
 use aptos_sdk::crypto::{ed25519::Ed25519PrivateKey, PrivateKey};
 use libra2_temppath::TempPath;
-use aptos_types::transaction::authenticator::AuthenticationKey;
+use libra2_types::transaction::authenticator::AuthenticationKey;
 use async_trait::async_trait;
 use std::{ops::DerefMut, path::Path};
 use tokio::{fs, time::Duration};

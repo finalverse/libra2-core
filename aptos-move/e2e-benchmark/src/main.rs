@@ -10,7 +10,7 @@ use aptos_transaction_generator_lib::{
     publishing::publish_util::{Package, PackageHandler},
 };
 use aptos_transaction_workloads_lib::{EntryPoints, LoopType, MapType};
-use aptos_types::{account_address::AccountAddress, transaction::TransactionPayload};
+use libra2_types::{account_address::AccountAddress, transaction::TransactionPayload};
 use rand::{rngs::StdRng, SeedableRng};
 use serde_json::json;
 use std::{collections::HashMap, fs, process::exit};

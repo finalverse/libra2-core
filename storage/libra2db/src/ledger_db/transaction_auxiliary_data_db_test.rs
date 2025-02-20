@@ -4,7 +4,7 @@
 
 use crate::{db::test_helper::put_transaction_auxiliary_data, Libra2DB};
 use libra2_temppath::TempPath;
-use aptos_types::transaction::TransactionAuxiliaryData;
+use libra2_types::transaction::TransactionAuxiliaryData;
 use proptest::{collection::vec, prelude::*};
 
 proptest! {

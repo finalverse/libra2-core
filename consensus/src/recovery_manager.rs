@@ -19,7 +19,7 @@ use aptos_consensus_types::{
 };
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
-use aptos_types::{block_info::Round, epoch_state::EpochState};
+use libra2_types::{block_info::Round, epoch_state::EpochState};
 use futures::{FutureExt, StreamExt};
 use futures_channel::oneshot;
 use std::{mem::Discriminant, process, sync::Arc};

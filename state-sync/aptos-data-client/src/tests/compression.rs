@@ -14,7 +14,7 @@ use aptos_storage_service_types::{
     requests::{DataRequest, TransactionsWithProofRequest},
     responses::{CompleteDataRange, DataResponse, StorageServiceResponse},
 };
-use aptos_types::transaction::TransactionListWithProof;
+use libra2_types::transaction::TransactionListWithProof;
 use claims::assert_matches;
 
 #[tokio::test]

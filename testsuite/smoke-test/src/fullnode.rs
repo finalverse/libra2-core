@@ -18,7 +18,7 @@ use aptos_forge::{NodeExt, Result, Swarm, SwarmExt};
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
 use aptos_rest_client::Client as RestClient;
 use aptos_schemadb::DB;
-use aptos_types::{account_address::AccountAddress, state_store::state_key::StateKey};
+use libra2_types::{account_address::AccountAddress, state_store::state_key::StateKey};
 use std::{
     collections::HashSet,
     sync::Arc,

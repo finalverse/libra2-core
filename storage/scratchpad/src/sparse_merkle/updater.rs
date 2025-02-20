@@ -15,7 +15,7 @@ use libra2_crypto::{
     HashValue,
 };
 use libra2_drop_helper::ArcAsyncDrop;
-use aptos_types::proof::{definition::NodeInProof, SparseMerkleLeafNode, SparseMerkleProofExt};
+use libra2_types::proof::{definition::NodeInProof, SparseMerkleLeafNode, SparseMerkleProofExt};
 use aptos_vm::AptosVM;
 use once_cell::sync::Lazy;
 use std::cmp::Ordering;

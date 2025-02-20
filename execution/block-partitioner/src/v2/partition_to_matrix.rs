@@ -9,7 +9,7 @@ use crate::v2::{
     PartitionerV2,
 };
 use libra2_logger::trace;
-use aptos_types::block_executor::partitioner::{RoundId, TxnIndex};
+use libra2_types::block_executor::partitioner::{RoundId, TxnIndex};
 use dashmap::DashMap;
 use rayon::{
     iter::ParallelIterator,

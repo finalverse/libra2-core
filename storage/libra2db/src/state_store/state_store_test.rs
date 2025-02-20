@@ -15,7 +15,7 @@ use aptos_jellyfish_merkle::{
 };
 use aptos_storage_interface::{DbReader, DbWriter, StateSnapshotReceiver};
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     account_config::{AccountResource, ChainIdResource, CoinInfoResource, CoinStoreResource},
     nibble::nibble_path::NibblePath,

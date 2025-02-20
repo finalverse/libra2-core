@@ -6,7 +6,7 @@ use crate::block::Block;
 use anyhow::ensure;
 use libra2_crypto::hash::HashValue;
 use libra2_short_hex_str::AsShortHexStr;
-use aptos_types::validator_verifier::ValidatorVerifier;
+use libra2_types::validator_verifier::ValidatorVerifier;
 use serde::{Deserialize, Serialize};
 use std::fmt;
 

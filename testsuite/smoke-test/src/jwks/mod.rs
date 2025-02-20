@@ -11,7 +11,7 @@ use aptos::{common::types::TransactionSummary, test::CliTestFramework};
 use aptos_forge::{NodeExt, Swarm, SwarmExt};
 use libra2_logger::{debug, info};
 use aptos_rest_client::Client;
-use aptos_types::{
+use libra2_types::{
     jwks::{
         jwk::{JWKMoveStruct, JWK},
         unsupported::UnsupportedJWK,

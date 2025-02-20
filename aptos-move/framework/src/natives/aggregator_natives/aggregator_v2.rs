@@ -13,7 +13,7 @@ use aptos_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,
 };
-use aptos_types::{
+use libra2_types::{
     delayed_fields::{
         calculate_width_for_constant_string, calculate_width_for_integer_embedded_string,
         SnapshotToStringFormula,

@@ -9312,7 +9312,7 @@
           "Transactions"
         ],
         "summary": "Get transaction by hash",
-        "description": "Look up a transaction by its hash. This is the same hash that is returned\nby the API when submitting a transaction (see PendingTransaction).\n\nWhen given a transaction hash, the server first looks for the transaction\nin storage (on-chain, committed). If no on-chain transaction is found, it\nlooks the transaction up by hash in the mempool (pending, not yet committed).\n\nTo create a transaction hash by yourself, do the following:\n1. Hash message bytes: \"RawTransaction\" bytes + BCS bytes of [Transaction](https://aptos-labs.github.io/aptos-core/aptos_types/transaction/enum.Transaction.html).\n2. Apply hash algorithm `SHA3-256` to the hash message bytes.\n3. Hex-encode the hash bytes with `0x` prefix.",
+        "description": "Look up a transaction by its hash. This is the same hash that is returned\nby the API when submitting a transaction (see PendingTransaction).\n\nWhen given a transaction hash, the server first looks for the transaction\nin storage (on-chain, committed). If no on-chain transaction is found, it\nlooks the transaction up by hash in the mempool (pending, not yet committed).\n\nTo create a transaction hash by yourself, do the following:\n1. Hash message bytes: \"RawTransaction\" bytes + BCS bytes of [Transaction](https://aptos-labs.github.io/aptos-core/libra2_types/transaction/enum.Transaction.html).\n2. Apply hash algorithm `SHA3-256` to the hash message bytes.\n3. Hex-encode the hash bytes with `0x` prefix.",
         "parameters": [
           {
             "name": "txn_hash",
@@ -15116,7 +15116,7 @@
                 "$ref": "#/components/schemas/BlockMetadataExtension"
               },
               {
-                "description": "If some, it means the internal txn type is `aptos_types::transaction::Transaction::BlockMetadataExt`.\nOtherwise, it is `aptos_types::transaction::Transaction::BlockMetadata`.\n\nNOTE: we could have introduced a new APT txn type to represent the corresponding internal type,\nbut that is a breaking change to the ecosystem.\n\nNOTE: `oai` does not support `flatten` together with `skip_serializing_if`.",
+                "description": "If some, it means the internal txn type is `libra2_types::transaction::Transaction::BlockMetadataExt`.\nOtherwise, it is `libra2_types::transaction::Transaction::BlockMetadata`.\n\nNOTE: we could have introduced a new APT txn type to represent the corresponding internal type,\nbut that is a breaking change to the ecosystem.\n\nNOTE: `oai` does not support `flatten` together with `skip_serializing_if`.",
                 "default": null
               }
             ]
@@ -15460,7 +15460,7 @@
       },
       "ExportedAggregateSignature": {
         "type": "object",
-        "description": "A more API-friendly representation of the on-chain `aptos_types::aggregate_signature::AggregateSignature`.",
+        "description": "A more API-friendly representation of the on-chain `libra2_types::aggregate_signature::AggregateSignature`.",
         "required": [
           "signer_indices"
         ],
@@ -15498,7 +15498,7 @@
       },
       "ExportedProviderJWKs": {
         "type": "object",
-        "description": "A more API-friendly representation of the on-chain `aptos_types::jwks::ProviderJWKs`.",
+        "description": "A more API-friendly representation of the on-chain `libra2_types::jwks::ProviderJWKs`.",
         "required": [
           "issuer",
           "version",
@@ -15522,7 +15522,7 @@
       },
       "ExportedQuorumCertifiedUpdate": {
         "type": "object",
-        "description": "A more API-friendly representation of the on-chain `aptos_types::jwks::QuorumCertifiedUpdate`.",
+        "description": "A more API-friendly representation of the on-chain `libra2_types::jwks::QuorumCertifiedUpdate`.",
         "required": [
           "update",
           "multi_sig"

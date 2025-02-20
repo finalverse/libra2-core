@@ -18,7 +18,7 @@ use aptos_block_executor::{
     types::InputOutputKey,
 };
 use libra2_infallible::Mutex;
-use aptos_types::{
+use libra2_types::{
     block_executor::{
         config::BlockExecutorConfig, transaction_slice_metadata::TransactionSliceMetadata,
     },

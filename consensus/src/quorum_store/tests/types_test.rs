@@ -7,7 +7,7 @@ use crate::{
 };
 use aptos_consensus_types::{common::BatchPayload, proof_of_store::BatchId};
 use libra2_crypto::{hash::CryptoHash, HashValue};
-use aptos_types::account_address::AccountAddress;
+use libra2_types::account_address::AccountAddress;
 use claims::{assert_err, assert_ok};
 
 #[test]

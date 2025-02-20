@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
-use aptos_types::{
+use libra2_types::{
     on_chain_config::{Features, GasSchedule, GasScheduleV2, OnChainConfig},
     state_store::StateView,
 };

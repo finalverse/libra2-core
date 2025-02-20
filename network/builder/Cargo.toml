@@ -22,7 +22,7 @@ aptos-netcore = { workspace = true }
 aptos-network = { workspace = true }
 aptos-network-discovery = { workspace = true }
 libra2-time-service = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 bcs = { workspace = true }
 futures = { workspace = true }
 maplit = { workspace = true }

@@ -15,7 +15,7 @@
 #![allow(clippy::too_many_arguments)]
 #![allow(clippy::arc_with_non_send_sync)]
 #![allow(clippy::get_first)]
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     transaction::{EntryFunction, TransactionPayload},
 };

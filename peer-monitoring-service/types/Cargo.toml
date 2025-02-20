@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-config = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 bcs = { workspace = true }
 serde = { workspace = true }
 thiserror = { workspace = true }

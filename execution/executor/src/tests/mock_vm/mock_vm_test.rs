@@ -4,7 +4,7 @@
 
 use super::{balance_ap, encode_mint_transaction, encode_transfer_transaction, seqnum_ap, MockVM};
 use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     bytes::NumToBytes,
     state_store::{state_key::StateKey, MockStateView},

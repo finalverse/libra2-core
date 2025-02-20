@@ -22,7 +22,7 @@ use aptos_storage_service_types::{
     responses::StorageServerSummary,
 };
 use libra2_time_service::TimeService;
-use aptos_types::epoch_change::EpochChangeProof;
+use libra2_types::epoch_change::EpochChangeProof;
 use arc_swap::ArcSwap;
 use dashmap::DashMap;
 use futures::channel::oneshot;

@@ -32,7 +32,7 @@ use aptos_genesis::{
     GenesisInfo,
 };
 use libra2_logger::info;
-use aptos_types::{
+use libra2_types::{
     account_address::{AccountAddress, AccountAddressWithChecks},
     on_chain_config::{OnChainConsensusConfig, OnChainExecutionConfig},
 };

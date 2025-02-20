@@ -5,7 +5,7 @@
 
 use libra2_crypto::HashValue;
 use aptos_proptest_helpers::ValueGenerator;
-use aptos_types::{
+use libra2_types::{
     access_path::AccessPath,
     account_config::AccountResource,
     state_store::state_key::{inner::StateKeyInner, registry::StateKeyRegistry, StateKey},

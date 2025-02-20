@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_types::jwks::jwk::JWK;
+use libra2_types::jwks::jwk::JWK;
 use http::header::COOKIE;
 use move_core_types::account_address::AccountAddress;
 use serde::{Deserialize, Serialize};

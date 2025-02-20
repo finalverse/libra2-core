@@ -17,7 +17,7 @@ use aptos_network::{
     protocols::{network::Event, rpc::error::RpcError, wire::handshake::v1::ProtocolId},
 };
 use libra2_time_service::{TimeService, TimeServiceTrait};
-use aptos_types::{account_address::AccountAddress, PeerId};
+use libra2_types::{account_address::AccountAddress, PeerId};
 use bytes::Bytes;
 use futures::{
     channel::oneshot::Sender,

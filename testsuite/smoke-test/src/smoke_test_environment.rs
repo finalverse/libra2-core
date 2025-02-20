@@ -11,7 +11,7 @@ use aptos_framework::ReleaseBundle;
 use aptos_genesis::builder::{InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn};
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
-use aptos_types::chain_id::ChainId;
+use libra2_types::chain_id::ChainId;
 use once_cell::sync::Lazy;
 use rand::rngs::OsRng;
 use std::{num::NonZeroUsize, sync::Arc};

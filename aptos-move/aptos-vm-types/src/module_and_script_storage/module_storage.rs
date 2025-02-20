@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_types::state_store::state_value::StateValueMetadata;
+use libra2_types::state_store::state_value::StateValueMetadata;
 use move_binary_format::errors::PartialVMResult;
 use move_core_types::{account_address::AccountAddress, identifier::IdentStr};
 use move_vm_runtime::ModuleStorage;

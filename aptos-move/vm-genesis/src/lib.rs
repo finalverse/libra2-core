@@ -16,7 +16,7 @@ use aptos_framework::{ReleaseBundle, ReleasePackage};
 use aptos_gas_schedule::{
     AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule, LATEST_GAS_FEATURE_VERSION,
 };
-use aptos_types::{
+use libra2_types::{
     account_config::{self, aptos_test_root_address, events::NewEpochEvent, CORE_CODE_ADDRESS},
     chain_id::ChainId,
     contract_event::{ContractEvent, ContractEventV1},
@@ -1366,7 +1366,7 @@ pub fn test_genesis_module_publishing() {
 
 #[test]
 pub fn test_mainnet_end_to_end() {
-    use aptos_types::{
+    use libra2_types::{
         account_address,
         on_chain_config::ValidatorSet,
         state_store::state_key::StateKey,

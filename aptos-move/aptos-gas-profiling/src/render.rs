@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::log::{FrameName, WriteOpType};
-use aptos_types::{
+use libra2_types::{
     access_path::Path,
     state_store::{state_key::StateKey, table::TableHandle},
 };
@@ -100,7 +100,7 @@ impl<'a> Display for TableKey<'a> {
 
 impl<'a> Display for Render<'a, StateKey> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        use aptos_types::state_store::state_key::inner::StateKeyInner::*;
+        use libra2_types::state_store::state_key::inner::StateKeyInner::*;
 
         match self.0.inner() {
             AccessPath(ap) => {

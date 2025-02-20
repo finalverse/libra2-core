@@ -95,7 +95,7 @@ macro_rules! generate_error_traits {
             fn [<$trait_name:snake _with_vm_status>]<Err: std::fmt::Display>(
                 err: Err,
                 error_code: aptos_api_types::AptosErrorCode,
-                vm_status: aptos_types::vm_status::StatusCode,
+                vm_status: libra2_types::vm_status::StatusCode,
                 ledger_info: &aptos_api_types::LedgerInfo
             ) -> Self where Self: Sized;
 
@@ -203,7 +203,7 @@ macro_rules! generate_error_response {
             fn [<$name:snake _with_vm_status>]<Err: std::fmt::Display>(
                 err: Err,
                 error_code: aptos_api_types::AptosErrorCode,
-                vm_status: aptos_types::vm_status::StatusCode,
+                vm_status: libra2_types::vm_status::StatusCode,
                 ledger_info: &aptos_api_types::LedgerInfo
             ) -> Self where Self: Sized {
                 let error = aptos_api_types::AptosError::new_with_vm_status(err, error_code, vm_status);
@@ -475,7 +475,7 @@ macro_rules! generate_success_response {
                )))
             }
 
-            pub fn with_cursor(mut self, new_cursor: Option<aptos_types::state_store::state_key::StateKey>) -> Self {
+            pub fn with_cursor(mut self, new_cursor: Option<libra2_types::state_store::state_key::StateKey>) -> Self {
                 match self {
                     $(
                     [<$enum_name>]::$name(_, _, _, _, _, _, _, _, _, ref mut cursor) => {

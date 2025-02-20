@@ -6,7 +6,7 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     x25519, CryptoMaterialError, PrivateKey, Uniform,
 };
-use aptos_types::{account_address::AccountAddress, transaction::authenticator::AuthenticationKey};
+use libra2_types::{account_address::AccountAddress, transaction::authenticator::AuthenticationKey};
 use rand::{
     rngs::{OsRng, StdRng},
     Rng, SeedableRng,

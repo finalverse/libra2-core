@@ -14,7 +14,7 @@ use crate::{
 use anyhow::Result;
 use aptos_jellyfish_merkle::StaleNodeIndex;
 use aptos_schemadb::{schema::KeyCodec, DB};
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 
 pub(crate) fn get_ledger_pruner_progress(ledger_db: &LedgerDb) -> Result<Version> {
     Ok(ledger_db.metadata_db().get_pruner_progress().unwrap_or(0))

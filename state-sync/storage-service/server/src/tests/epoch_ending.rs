@@ -10,7 +10,7 @@ use aptos_storage_service_types::{
     responses::DataResponse,
     Epoch, StorageServiceError,
 };
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,
     epoch_change::EpochChangeProof,

@@ -18,7 +18,7 @@ use aptos_schemadb::{
     DB,
 };
 use aptos_storage_interface::{AptosDbError, Result};
-use aptos_types::transaction::{Transaction, Version};
+use libra2_types::transaction::{Transaction, Version};
 use rayon::prelude::*;
 use std::{path::Path, sync::Arc};
 

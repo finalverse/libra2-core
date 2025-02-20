@@ -3,7 +3,7 @@
 
 use libra2_crypto::ValidCryptoMaterialStringExt;
 use libra2_keygen::KeyGen;
-use aptos_types::transaction::authenticator::AuthenticationKey;
+use libra2_types::transaction::authenticator::AuthenticationKey;
 
 fn main() {
     let mut keygen = KeyGen::from_os_rng();

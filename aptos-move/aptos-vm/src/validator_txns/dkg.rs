@@ -12,7 +12,7 @@ use crate::{
     },
     AptosVM,
 };
-use aptos_types::{
+use libra2_types::{
     dkg::{DKGState, DKGTrait, DKGTranscript, DefaultDKG},
     move_utils::as_move_value::AsMoveValue,
     on_chain_config::{ConfigurationResource, OnChainConfig},

@@ -9,7 +9,7 @@ use crate::{
 use anyhow::Result;
 use aptos_framework::APTOS_PACKAGES;
 use aptos_language_e2e_tests::{data_store::FakeDataStore, executor::FakeExecutor};
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     on_chain_config::{FeatureFlag, Features, OnChainConfig},
     transaction::{Transaction, Version},

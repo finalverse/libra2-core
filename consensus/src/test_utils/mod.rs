@@ -21,7 +21,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::{HashValue, PrivateKey, Uniform};
 use libra2_logger::Level;
-use aptos_types::{ledger_info::LedgerInfo, validator_signer::ValidatorSigner};
+use libra2_types::{ledger_info::LedgerInfo, validator_signer::ValidatorSigner};
 use std::{future::Future, sync::Arc, time::Duration};
 use tokio::{runtime, time::timeout};
 
@@ -40,7 +40,7 @@ use crate::{
 use aptos_consensus_types::{block::block_test_utils::gen_test_certificate, common::Payload};
 use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519Signature};
 use libra2_infallible::Mutex;
-use aptos_types::{
+use libra2_types::{
     block_info::BlockInfo,
     chain_id::ChainId,
     transaction::{RawTransaction, Script, SignedTransaction, TransactionPayload},

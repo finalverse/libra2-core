@@ -22,7 +22,7 @@ use aptos_data_streaming_service::{
 };
 use libra2_logger::{prelude::*, sample::SampleRate};
 use aptos_storage_interface::DbReader;
-use aptos_types::{
+use libra2_types::{
     epoch_change::Verifier,
     epoch_state::EpochState,
     ledger_info::LedgerInfoWithSignatures,

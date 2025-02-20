@@ -11,7 +11,7 @@
 
 use crate::peer_manager::ConnectionNotification;
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 
 pub type Sender = libra2_channel::Sender<PeerId, ConnectionNotification>;
 pub type Receiver = libra2_channel::Receiver<PeerId, ConnectionNotification>;

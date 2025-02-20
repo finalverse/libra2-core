@@ -13,7 +13,7 @@ use aptos_rest_client::Client;
 use aptos_sdk::types::{
     EphemeralKeyPair, EphemeralPrivateKey, FederatedKeylessAccount, KeylessAccount, LocalAccount,
 };
-use aptos_types::{
+use libra2_types::{
     jwks::{
         jwk::{JWKMoveStruct, JWK},
         rsa::RSA_JWK,

@@ -3,7 +3,7 @@
 
 use crate::txn_hash_and_authenticator_deduper::TxnHashAndAuthenticatorDeduper;
 use libra2_logger::info;
-use aptos_types::{on_chain_config::TransactionDeduperType, transaction::SignedTransaction};
+use libra2_types::{on_chain_config::TransactionDeduperType, transaction::SignedTransaction};
 use std::sync::Arc;
 
 /// Interface to dedup transactions. The dedup filters duplicate transactions within a block.

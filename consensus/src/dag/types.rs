@@ -23,7 +23,7 @@ use libra2_enum_conversion_derive::EnumConversion;
 use libra2_infallible::Mutex;
 use libra2_logger::debug;
 use aptos_reliable_broadcast::{BroadcastStatus, RBMessage};
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::{AggregateSignature, PartialSignatures},
     epoch_state::EpochState,
     ledger_info::LedgerInfoWithSignatures,

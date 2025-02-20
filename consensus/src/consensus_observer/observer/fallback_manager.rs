@@ -9,7 +9,7 @@ use libra2_config::config::ConsensusObserverConfig;
 use libra2_logger::warn;
 use aptos_storage_interface::DbReader;
 use libra2_time_service::{TimeService, TimeServiceTrait};
-use aptos_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
+use libra2_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
 use std::{
     sync::Arc,
     time::{Duration, Instant},
@@ -169,7 +169,7 @@ mod test {
     use super::*;
     use libra2_crypto::HashValue;
     use aptos_storage_interface::Result;
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::AggregateSignature, block_info::BlockInfo, ledger_info::LedgerInfo,
         transaction::Version,
     };

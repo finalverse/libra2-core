@@ -19,7 +19,7 @@ use aptos_api_types::{
     MoveModuleId, MoveResource, MoveStructTag, StateKeyWrapper, U64,
 };
 use aptos_sdk::types::{get_paired_fa_metadata_address, get_paired_fa_primary_store_address};
-use aptos_types::{
+use libra2_types::{
     account_config::{
         AccountResource, CoinStoreResourceUntyped, ConcurrentFungibleBalanceResource,
         FungibleStoreResource, ObjectGroupResource,

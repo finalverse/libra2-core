@@ -21,7 +21,7 @@ aptos-inspection-service = { workspace = true }
 aptos-keyless-pepper-common = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 ark-bls12-381 = { workspace = true }
 ark-bn254 = { workspace = true }
 ark-ec = { workspace = true }

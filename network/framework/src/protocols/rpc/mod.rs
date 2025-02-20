@@ -64,7 +64,7 @@ use libra2_id_generator::{IdGenerator, U32IdGenerator};
 use libra2_logger::prelude::*;
 use libra2_short_hex_str::AsShortHexStr;
 use libra2_time_service::{timeout, TimeService, TimeServiceTrait};
-use aptos_types::PeerId;
+use libra2_types::PeerId;
 use bytes::Bytes;
 use error::RpcError;
 use futures::{

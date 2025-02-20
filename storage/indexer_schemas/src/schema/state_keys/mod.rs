@@ -7,7 +7,7 @@ use aptos_schemadb::{
     define_pub_schema,
     schema::{KeyCodec, SeekKeyCodec, ValueCodec},
 };
-use aptos_types::state_store::state_key::{prefix::StateKeyPrefix, StateKey};
+use libra2_types::state_store::state_key::{prefix::StateKeyPrefix, StateKey};
 
 define_pub_schema!(StateKeysSchema, StateKey, (), STATE_KEYS_CF_NAME);
 

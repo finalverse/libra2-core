@@ -6,7 +6,7 @@ pub mod v2;
 
 pub mod test_utils;
 
-use aptos_types::{
+use libra2_types::{
     block_executor::partitioner::{PartitionedTransactions, ShardId},
     transaction::analyzed_transaction::{AnalyzedTransaction, StorageLocation},
 };

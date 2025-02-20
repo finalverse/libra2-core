@@ -15,7 +15,7 @@ use aptos_aggregator::{
     delta_change_set::{serialize, DeltaOp},
     resolver::AggregatorV1Resolver,
 };
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     error::{code_invariant_error, PanicError},
     state_store::{

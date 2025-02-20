@@ -12,7 +12,7 @@ use crate::{
 use libra2_channels::libra2_channel;
 use aptos_consensus_types::{common::Author, proof_of_store::BatchInfo};
 use libra2_logger::prelude::*;
-use aptos_types::{account_address::AccountAddress, PeerId};
+use libra2_types::{account_address::AccountAddress, PeerId};
 use futures::StreamExt;
 use tokio::sync::{mpsc, oneshot};
 

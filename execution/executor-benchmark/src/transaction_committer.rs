@@ -13,7 +13,7 @@ use aptos_executor::{
 };
 use aptos_executor_types::BlockExecutorTrait;
 use libra2_logger::prelude::*;
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},

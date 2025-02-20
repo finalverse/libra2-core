@@ -8,7 +8,7 @@ use crate::{
         STRUCT_NAME_INDEX_MAP_NUM_ENTRIES,
     },
 };
-use aptos_types::{
+use libra2_types::{
     block_executor::{
         config::BlockExecutorModuleCacheLocalConfig,
         transaction_slice_metadata::TransactionSliceMetadata,
@@ -270,7 +270,7 @@ impl<'a> AptosModuleCacheManagerGuard<'a> {
     /// environment. Use for testing only.
     #[cfg(test)]
     pub(crate) fn none() -> Self {
-        use aptos_types::state_store::MockStateView;
+        use libra2_types::state_store::MockStateView;
         AptosModuleCacheManagerGuard::None {
             environment: AptosEnvironment::new(&MockStateView::empty()),
             module_cache: GlobalModuleCache::empty(),
@@ -307,7 +307,7 @@ fn prefetch_aptos_framework<S: StateView>(
 mod test {
     use super::*;
     use aptos_language_e2e_tests::{data_store::FakeDataStore, executor::FakeExecutor};
-    use aptos_types::{
+    use libra2_types::{
         on_chain_config::{FeatureFlag, Features, OnChainConfig},
         state_store::{state_key::StateKey, state_value::StateValue, MockStateView},
     };

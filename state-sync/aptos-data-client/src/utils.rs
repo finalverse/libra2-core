@@ -293,7 +293,7 @@ fn log_warning_with_sample(log: LogSchema) {
 mod tests {
     use crate::utils::{choose_random_peer, choose_random_peers, choose_random_peers_by_weight};
     use libra2_config::network_id::{NetworkId, PeerNetworkId};
-    use aptos_types::PeerId;
+    use libra2_types::PeerId;
     use maplit::hashset;
     use std::collections::{HashMap, HashSet};
 

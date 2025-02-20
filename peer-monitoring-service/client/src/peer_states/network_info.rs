@@ -222,7 +222,7 @@ mod test {
         response::{NetworkInformationResponse, PeerMonitoringServiceResponse},
     };
     use libra2_time_service::TimeService;
-    use aptos_types::{network_address::NetworkAddress, PeerId};
+    use libra2_types::{network_address::NetworkAddress, PeerId};
     use std::str::FromStr;
 
     // Useful test constants

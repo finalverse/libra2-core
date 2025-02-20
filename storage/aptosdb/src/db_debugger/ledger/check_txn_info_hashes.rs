@@ -6,7 +6,7 @@ use crate::{
 };
 use libra2_crypto::hash::CryptoHash;
 use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
-use aptos_types::{proof::position::Position, transaction::Version};
+use libra2_types::{proof::position::Position, transaction::Version};
 use clap::Parser;
 use std::sync::Arc;
 

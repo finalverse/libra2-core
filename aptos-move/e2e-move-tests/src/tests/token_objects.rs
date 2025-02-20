@@ -3,7 +3,7 @@
 
 use crate::{assert_success, tests::common, MoveHarness};
 use aptos_language_e2e_tests::account::Account;
-use aptos_types::{
+use libra2_types::{
     account_address::{self, AccountAddress},
     account_config::ObjectCoreResource,
     event::EventHandle,

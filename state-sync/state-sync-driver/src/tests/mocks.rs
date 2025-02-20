@@ -19,7 +19,7 @@ use aptos_storage_interface::{
     chunk_to_commit::ChunkToCommit, DbReader, DbReaderWriter, DbWriter, LedgerSummary, Order,
     Result, StateSnapshotReceiver,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     contract_event::EventWithVersion,
     epoch_change::EpochChangeProof,

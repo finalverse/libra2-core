@@ -7,7 +7,7 @@ use libra2_crypto::hash::HashValue;
 use aptos_executor::block_executor::BlockExecutor;
 use aptos_executor_types::BlockExecutorTrait;
 use libra2_logger::info;
-use aptos_types::block_executor::{
+use libra2_types::block_executor::{
     config::BlockExecutorConfigFromOnchain, partitioner::ExecutableBlock,
 };
 use aptos_vm::VMBlockExecutor;

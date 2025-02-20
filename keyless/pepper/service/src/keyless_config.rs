@@ -4,7 +4,7 @@
 use crate::watcher::{unhexlify_api_bytes, ExternalResource};
 use anyhow::{anyhow, Result};
 use libra2_infallible::RwLock;
-use aptos_types::keyless::Configuration;
+use libra2_types::keyless::Configuration;
 use once_cell::sync::Lazy;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -22,7 +22,7 @@ pub struct OnChainKeylessConfiguration {
 }
 
 impl OnChainKeylessConfiguration {
-    pub fn to_rust_repr(&self) -> Result<aptos_types::keyless::Configuration> {
+    pub fn to_rust_repr(&self) -> Result<libra2_types::keyless::Configuration> {
         let training_wheels_pubkey = self
             .data
             .training_wheels_pubkey

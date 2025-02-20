@@ -13,7 +13,7 @@ use aptos_language_e2e_tests::{
     data_store::FakeDataStore,
     executor::FakeExecutor,
 };
-use aptos_types::{
+use libra2_types::{
     block_executor::{
         config::{BlockExecutorConfig, BlockExecutorConfigFromOnchain},
         partitioner::PartitionedTransactions,

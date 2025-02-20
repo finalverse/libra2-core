@@ -12,7 +12,7 @@ use aptos_gas_schedule::{
     AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule, LATEST_GAS_FEATURE_VERSION,
 };
 use aptos_package_builder::PackageBuilder;
-use aptos_types::on_chain_config::GasScheduleV2;
+use libra2_types::on_chain_config::GasScheduleV2;
 use clap::Parser;
 use move_core_types::account_address::AccountAddress;
 use move_model::{code_writer::CodeWriter, emit, emitln, model::Loc};

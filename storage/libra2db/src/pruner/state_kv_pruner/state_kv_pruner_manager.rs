@@ -11,7 +11,7 @@ use crate::{
 };
 use libra2_config::config::LedgerPrunerConfig;
 use aptos_storage_interface::Result;
-use aptos_types::transaction::{AtomicVersion, Version};
+use libra2_types::transaction::{AtomicVersion, Version};
 use std::sync::{atomic::Ordering, Arc};
 
 /// The `PrunerManager` for `StateKvPruner`.

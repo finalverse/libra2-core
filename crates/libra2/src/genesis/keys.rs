@@ -17,7 +17,7 @@ use aptos_genesis::{
     config::{HostAndPort, Layout, OperatorConfiguration, OwnerConfiguration},
     keys::{generate_key_objects, PublicIdentity},
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     transaction::{Script, Transaction, WriteSetPayload},
 };

@@ -7,7 +7,7 @@ use crate::{
     resolver::AggregatorV1Resolver,
     types::{DelayedFieldsSpeculativeError, DeltaApplicationFailureReason},
 };
-use aptos_types::{
+use libra2_types::{
     error::expect_ok,
     state_store::{state_key::StateKey, table::TableHandle},
     PeerId,

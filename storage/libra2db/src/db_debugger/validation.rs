@@ -13,7 +13,7 @@ use aptos_db_indexer_schemas::schema::{
 };
 use aptos_schemadb::{ReadOptions, DB};
 use aptos_storage_interface::{DbReader, Result};
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     event::EventKey,
     transaction::{Transaction::UserTransaction, TransactionListWithProof},

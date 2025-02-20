@@ -21,7 +21,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::{bls12381, hash::CryptoHash, HashValue};
 use libra2_logger::prelude::*;
-use aptos_types::{
+use libra2_types::{
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures, SignatureAggregator},
     validator_verifier::{ValidatorVerifier, VerifyError},
 };
@@ -566,7 +566,7 @@ mod tests {
         block::block_test_utils::certificate_for_genesis, vote::Vote, vote_data::VoteData,
     };
     use libra2_crypto::{bls12381, hash::CryptoHash, HashValue};
-    use aptos_types::{
+    use libra2_types::{
         aggregate_signature::PartialSignatures, block_info::BlockInfo, ledger_info::LedgerInfo,
         validator_verifier::random_validator_verifier,
     };

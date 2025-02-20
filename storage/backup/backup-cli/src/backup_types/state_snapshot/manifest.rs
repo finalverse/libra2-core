@@ -4,7 +4,7 @@
 
 use crate::storage::FileHandle;
 use libra2_crypto::HashValue;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use serde::{Deserialize, Serialize};
 
 /// A chunk of a state snapshot manifest, representing accounts in the key range

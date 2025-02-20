@@ -31,7 +31,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
-use aptos_types::{account_address::AccountAddress, PeerId};
+use libra2_types::{account_address::AccountAddress, PeerId};
 use futures_util::StreamExt;
 use maplit::hashmap;
 use serde::{Deserialize, Serialize};

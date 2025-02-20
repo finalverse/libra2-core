@@ -20,7 +20,7 @@ use aptos_executor_types::{
 };
 use aptos_experimental_runtimes::thread_manager::optimal_min_len;
 use libra2_logger::{debug, warn};
-use aptos_types::{
+use libra2_types::{
     block_executor::{config::BlockExecutorConfigFromOnchain, partitioner::ExecutableBlock},
     block_metadata_ext::BlockMetadataExt,
     transaction::{

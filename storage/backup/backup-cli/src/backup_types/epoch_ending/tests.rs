@@ -21,7 +21,7 @@ use libra2_config::utils::get_available_port;
 use aptos_db::AptosDB;
 use aptos_storage_interface::DbReader;
 use libra2_temppath::TempPath;
-use aptos_types::{
+use libra2_types::{
     aggregate_signature::AggregateSignature,
     ledger_info::LedgerInfoWithSignatures,
     proptest_types::{AccountInfoUniverse, LedgerInfoWithSignaturesGen},

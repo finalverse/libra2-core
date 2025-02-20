@@ -3,7 +3,7 @@
 
 use crate::CompressionClient;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, hash::HashValue, PrivateKey, SigningKey, Uniform};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,

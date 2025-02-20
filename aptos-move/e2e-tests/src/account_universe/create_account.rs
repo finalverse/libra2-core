@@ -13,7 +13,7 @@ use crate::{
     gas_costs,
 };
 use aptos_proptest_helpers::Index;
-use aptos_types::{
+use libra2_types::{
     transaction::{ExecutionStatus, SignedTransaction, TransactionStatus},
     vm_status::{AbortLocation, StatusCode},
 };

@@ -10,7 +10,7 @@ use aptos_gas_schedule::{
     },
     AptosGasParameters, VMGasParameters,
 };
-use aptos_types::{
+use libra2_types::{
     contract_event::ContractEvent,
     on_chain_config::{ConfigStorage, StorageGasSchedule},
     state_store::state_key::StateKey,
@@ -56,7 +56,7 @@ impl IoPricingV1 {
     }
 
     fn io_gas_per_write(&self, key: &StateKey, op_size: &WriteOpSize) -> InternalGas {
-        use aptos_types::write_set::WriteOpSize::*;
+        use libra2_types::write_set::WriteOpSize::*;
 
         let mut cost = self.write_data_per_op * NumArgs::new(1);
 
@@ -140,7 +140,7 @@ impl IoPricingV2 {
     }
 
     fn io_gas_per_write(&self, key: &StateKey, op_size: &WriteOpSize) -> InternalGas {
-        use aptos_types::write_set::WriteOpSize::*;
+        use libra2_types::write_set::WriteOpSize::*;
 
         match op_size {
             Creation { write_len } => {
@@ -244,7 +244,7 @@ impl IoPricing {
         gas_params: &AptosGasParameters,
         config_storage: &impl ConfigStorage,
     ) -> IoPricing {
-        use aptos_types::on_chain_config::OnChainConfig;
+        use libra2_types::on_chain_config::OnChainConfig;
         use IoPricing::*;
 
         match feature_version {

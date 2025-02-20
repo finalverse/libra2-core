@@ -26,7 +26,7 @@ use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::{ed25519::Ed25519PublicKey, ValidCryptoMaterialStringExt};
 use libra2_logger::warn;
 use aptos_rest_client::aptos_api_types::{ResourceGroup, TransactionOnChainData, U64};
-use aptos_types::{
+use libra2_types::{
     access_path::Path,
     account_address::AccountAddress,
     account_config::{
@@ -906,7 +906,7 @@ impl Transaction {
         txn: TransactionOnChainData,
     ) -> ApiResult<Transaction> {
         // Parses the events, changesets, and metadata out of each transaction
-        use aptos_types::transaction::Transaction::*;
+        use libra2_types::transaction::Transaction::*;
         let (txn_type, maybe_user_txn, txn_info, events) = match &txn.transaction {
             UserTransaction(user_txn) => {
                 (TransactionType::User, Some(user_txn), txn.info, txn.events)
@@ -1573,7 +1573,7 @@ fn parse_stake_pool_resource_changes(
                     events,
                     stakepool.add_stake_events.key(),
                     |event_key, event| {
-                        if let Ok(event) = bcs::from_bytes::<aptos_types::stake_pool::AddStakeEvent>(
+                        if let Ok(event) = bcs::from_bytes::<libra2_types::stake_pool::AddStakeEvent>(
                             event.event_data(),
                         ) {
                             Some(event)
@@ -1693,7 +1693,7 @@ fn parse_stake_pool_resource_changes(
                     events,
                     stakepool.set_operator_events.key(),
                     |event_key, event| {
-                        if let Ok(event) = bcs::from_bytes::<aptos_types::stake_pool::SetOperatorEvent>(
+                        if let Ok(event) = bcs::from_bytes::<libra2_types::stake_pool::SetOperatorEvent>(
                             event.event_data(),
                         ) {
                             Some(event)
@@ -2572,7 +2572,7 @@ impl InternalOperation {
 
     pub fn payload(
         &self,
-    ) -> ApiResult<(aptos_types::transaction::TransactionPayload, AccountAddress)> {
+    ) -> ApiResult<(libra2_types::transaction::TransactionPayload, AccountAddress)> {
         Ok(match self {
             InternalOperation::CreateAccount(create_account) => (
                 aptos_stdlib::aptos_account_create_account(create_account.new_account),

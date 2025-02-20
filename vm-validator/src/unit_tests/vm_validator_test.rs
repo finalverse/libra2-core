@@ -10,7 +10,7 @@ use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
 use aptos_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReaderWriter,
 };
-use aptos_types::{
+use libra2_types::{
     account_address, account_config,
     chain_id::ChainId,
     test_helpers::transaction_test_helpers,

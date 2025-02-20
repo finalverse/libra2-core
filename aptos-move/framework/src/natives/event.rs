@@ -7,10 +7,10 @@ use aptos_native_interface::{
     SafeNativeResult,
 };
 #[cfg(feature = "testing")]
-use aptos_types::account_address::AccountAddress;
-use aptos_types::contract_event::ContractEvent;
+use libra2_types::account_address::AccountAddress;
+use libra2_types::contract_event::ContractEvent;
 #[cfg(feature = "testing")]
-use aptos_types::event::EventKey;
+use libra2_types::event::EventKey;
 use better_any::{Tid, TidAble};
 use move_binary_format::errors::PartialVMError;
 use move_core_types::{language_storage::TypeTag, value::MoveTypeLayout, vm_status::StatusCode};

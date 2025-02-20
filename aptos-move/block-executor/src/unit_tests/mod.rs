@@ -27,7 +27,7 @@ use aptos_aggregator::{
     delta_math::DeltaHistory,
 };
 use aptos_mvhashmap::types::TxnIndex;
-use aptos_types::{
+use libra2_types::{
     block_executor::config::BlockExecutorConfig, contract_event::TransactionEvent,
     executable::ModulePath, state_store::state_value::StateValueMetadata, write_set::WriteOpKind,
 };

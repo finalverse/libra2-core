@@ -16,7 +16,7 @@ use aptos_network::{
         SUPPORTED_MESSAGING_PROTOCOL,
     },
 };
-use aptos_types::{account_address, chain_id::ChainId, network_address::NetworkAddress, PeerId};
+use libra2_types::{account_address, chain_id::ChainId, network_address::NetworkAddress, PeerId};
 use futures::{AsyncReadExt, AsyncWriteExt};
 use std::{collections::BTreeMap, sync::Arc};
 use tokio::time::Duration;

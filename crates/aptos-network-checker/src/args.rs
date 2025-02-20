@@ -3,7 +3,7 @@
 
 use anyhow::{bail, Context, Result};
 use libra2_config::network_id::NetworkId;
-use aptos_types::{chain_id::ChainId, network_address::NetworkAddress};
+use libra2_types::{chain_id::ChainId, network_address::NetworkAddress};
 use clap::Parser;
 use serde::{Deserialize, Serialize};
 use std::str::FromStr;

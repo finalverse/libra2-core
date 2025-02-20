@@ -3,7 +3,7 @@
 
 use crate::types::{Flag, MVModulesError, MVModulesOutput, TxnIndex};
 use libra2_crypto::hash::{DefaultHasher, HashValue};
-use aptos_types::{
+use libra2_types::{
     executable::{Executable, ExecutableDescriptor},
     write_set::TransactionWrite,
 };

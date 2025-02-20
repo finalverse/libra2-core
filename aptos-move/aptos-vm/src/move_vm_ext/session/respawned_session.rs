@@ -9,7 +9,7 @@ use crate::{
     },
     AptosVM,
 };
-use aptos_types::transaction::user_transaction_context::UserTransactionContext;
+use libra2_types::transaction::user_transaction_context::UserTransactionContext;
 use aptos_vm_types::{
     change_set::VMChangeSet, module_write_set::ModuleWriteSet,
     storage::change_set_configs::ChangeSetConfigs,

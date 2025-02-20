@@ -7,7 +7,7 @@ use crate::types::{
 };
 use anyhow::Result;
 use aptos_aggregator::delta_change_set::DeltaOp;
-use aptos_types::write_set::TransactionWrite;
+use libra2_types::write_set::TransactionWrite;
 use claims::assert_some;
 use crossbeam::utils::CachePadded;
 use dashmap::DashMap;

@@ -5,7 +5,7 @@
 
 mod utils;
 use aptos_language_e2e_tests::{data_store::GENESIS_CHANGE_SET_HEAD, executor::FakeExecutor};
-use aptos_types::{chain_id::ChainId, write_set::WriteSet};
+use libra2_types::{chain_id::ChainId, write_set::WriteSet};
 use aptos_vm::AptosVM;
 use libfuzzer_sys::{fuzz_target, Corpus};
 use move_binary_format::{

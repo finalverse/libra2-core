@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
-use aptos_types::block_info::BlockInfo;
+use libra2_types::block_info::BlockInfo;
 use serde::{Deserialize, Serialize};
 use std::fmt::{Display, Formatter};
 

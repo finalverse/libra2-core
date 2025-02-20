@@ -17,7 +17,7 @@ libra2-crypto = { workspace = true }
 libra2-drop-helper = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 aptos-vm = { workspace = true }
 bitvec = { workspace = true }
 criterion = { workspace = true, optional = true }
@@ -28,7 +28,7 @@ rayon = { workspace = true }
 thiserror = { workspace = true }
 
 [dev-dependencies]
-aptos-types = { workspace = true, features = ["fuzzing"] }
+libra2-types = { workspace = true, features = ["fuzzing"] }
 bitvec = { workspace = true }
 once_cell = { workspace = true }
 proptest = { workspace = true }
@@ -38,7 +38,7 @@ rand = { workspace = true }
 jemallocator = { workspace = true }
 
 [features]
-fuzzing = ["aptos-types/fuzzing", "proptest"]
+fuzzing = ["libra2-types/fuzzing", "proptest"]
 bench = ["proptest", "criterion"]
 
 [[bench]]

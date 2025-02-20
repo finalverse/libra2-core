@@ -25,7 +25,7 @@ use aptos_executor_test_helpers::integration_test_impl::test_execution_with_stor
 use aptos_executor_types::VerifyExecutionMode;
 use aptos_storage_interface::DbReader;
 use libra2_temppath::TempPath;
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use proptest::{prelude::*, sample::Index};
 use std::{convert::TryInto, sync::Arc};
 use tokio::time::Duration;

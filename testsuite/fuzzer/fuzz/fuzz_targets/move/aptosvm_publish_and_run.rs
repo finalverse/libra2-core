@@ -6,7 +6,7 @@
 use aptos_language_e2e_tests::{
     account::Account, data_store::GENESIS_CHANGE_SET_HEAD, executor::FakeExecutor,
 };
-use aptos_types::{
+use libra2_types::{
     chain_id::ChainId,
     transaction::{
         EntryFunction, ExecutionStatus, Script, TransactionArgument, TransactionPayload,

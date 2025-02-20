@@ -14,7 +14,7 @@ use crate::{
     },
     Sender,
 };
-use aptos_types::{
+use libra2_types::{
     block_executor::partitioner::{
         CrossShardDependencies, RoundId, ShardId, ShardedTxnIndex, SubBlock,
         TransactionWithDependencies,

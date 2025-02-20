@@ -18,7 +18,7 @@ use aptos_protos::{
     util::timestamp::FILE_DESCRIPTOR_SET as UTIL_TIMESTAMP_FILE_DESCRIPTOR_SET,
 };
 use aptos_storage_interface::DbReader;
-use aptos_types::{chain_id::ChainId, indexer::indexer_db_reader::IndexerReader};
+use libra2_types::{chain_id::ChainId, indexer::indexer_db_reader::IndexerReader};
 use futures::channel::oneshot;
 use std::sync::Arc;
 use tokio::{net::TcpListener, runtime::Runtime};

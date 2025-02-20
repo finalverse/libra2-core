@@ -10,7 +10,7 @@ use crate::{
     validator_cache::PeerSetCacheUpdater,
 };
 use libra2_crypto::{x25519, ValidCryptoMaterialStringExt};
-use aptos_types::{chain_id::ChainId, PeerId};
+use libra2_types::{chain_id::ChainId, PeerId};
 use clap::Parser;
 use context::GroupedMetricsClients;
 use gcp_bigquery_client::Client as BigQueryClient;

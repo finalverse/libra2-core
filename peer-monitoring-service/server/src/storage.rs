@@ -3,7 +3,7 @@
 
 use crate::Error;
 use aptos_storage_interface::DbReader;
-use aptos_types::ledger_info::LedgerInfo;
+use libra2_types::ledger_info::LedgerInfo;
 use std::sync::Arc;
 
 /// The interface into local storage (e.g., the Aptos DB) used by the peer

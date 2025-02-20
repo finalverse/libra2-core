@@ -4,7 +4,7 @@
 
 use libra2_crypto::HashValue;
 use aptos_storage_interface::AptosDbError;
-use aptos_types::{state_store::errors::StateViewError, transaction::Version};
+use libra2_types::{state_store::errors::StateViewError, transaction::Version};
 use serde::{Deserialize, Serialize};
 use std::fmt::Display;
 use thiserror::Error;

@@ -18,7 +18,7 @@ libra2-config = { workspace = true }
 aptos-faucet-core = { workspace = true }
 aptos-localnet = { workspace = true }
 aptos-node = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 
 # third party deps
 anyhow = { workspace = true }

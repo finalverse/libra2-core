@@ -16,7 +16,7 @@ use aptos_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},
 };
-use aptos_types::transaction::Version;
+use libra2_types::transaction::Version;
 use serde::{Deserialize, Serialize};
 
 type ShardId = usize;

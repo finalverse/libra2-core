@@ -374,7 +374,7 @@ mod tests {
         response::NetworkInformationResponse, PeerMonitoringMetadata,
     };
     use aptos_storage_interface::Result;
-    use aptos_types::{network_address::NetworkAddress, transaction::Version, PeerId};
+    use libra2_types::{network_address::NetworkAddress, transaction::Version, PeerId};
     use bytes::Bytes;
     use futures::StreamExt;
     use mockall::mock;

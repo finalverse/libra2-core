@@ -28,7 +28,7 @@ use aptos_api_types::{
     TransactionsBatchSubmissionResult, UserTransaction, VerifyInput, VerifyInputWithRecursion, U64,
 };
 use libra2_crypto::{hash::CryptoHash, signing_message};
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     mempool_status::MempoolStatusCode,
     transaction::{
@@ -186,7 +186,7 @@ impl TransactionsApi {
     /// looks the transaction up by hash in the mempool (pending, not yet committed).
     ///
     /// To create a transaction hash by yourself, do the following:
-    ///   1. Hash message bytes: "RawTransaction" bytes + BCS bytes of [Transaction](https://aptos-labs.github.io/aptos-core/aptos_types/transaction/enum.Transaction.html).
+    ///   1. Hash message bytes: "RawTransaction" bytes + BCS bytes of [Transaction](https://aptos-labs.github.io/aptos-core/libra2_types/transaction/enum.Transaction.html).
     ///   2. Apply hash algorithm `SHA3-256` to the hash message bytes.
     ///   3. Hex-encode the hash bytes with `0x` prefix.
     // TODO: Include a link to an example of how to do this ^
@@ -1365,7 +1365,7 @@ impl TransactionsApi {
         ))
     }
 
-    // TODO: This function leverages a lot of types from aptos_types, use the
+    // TODO: This function leverages a lot of types from libra2_types, use the
     // local API types and just return those directly, instead of converting
     // from these types in render_transactions.
     /// Simulate a transaction in the VM
@@ -1430,9 +1430,9 @@ impl TransactionsApi {
 
         // Build up a transaction from the outputs
         // All state hashes are invalid, and will be filled with 0s
-        let txn = aptos_types::transaction::Transaction::UserTransaction(txn);
+        let txn = libra2_types::transaction::Transaction::UserTransaction(txn);
         let zero_hash = libra2_crypto::HashValue::zero();
-        let info = aptos_types::transaction::TransactionInfo::new(
+        let info = libra2_types::transaction::TransactionInfo::new(
             txn.hash(),
             zero_hash,
             zero_hash,

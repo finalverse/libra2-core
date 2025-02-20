@@ -14,7 +14,7 @@ use aptos_jellyfish_merkle::{
     JellyfishMerkleTree, NodeBatch, TestKey, TestValue, TreeReader, TreeWriter,
 };
 use aptos_storage_interface::{Result, StateSnapshotReceiver};
-use aptos_types::{state_store::state_storage_usage::StateStorageUsage, transaction::Version};
+use libra2_types::{state_store::state_storage_usage::StateStorageUsage, transaction::Version};
 use proptest::{collection::btree_map, prelude::*};
 use std::{
     collections::{BTreeMap, HashMap},

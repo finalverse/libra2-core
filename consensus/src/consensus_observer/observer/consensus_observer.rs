@@ -50,7 +50,7 @@ use aptos_network::{
 };
 use aptos_storage_interface::DbReader;
 use libra2_time_service::TimeService;
-use aptos_types::{
+use libra2_types::{
     block_info::{BlockInfo, Round},
     epoch_state::EpochState,
     ledger_info::LedgerInfoWithSignatures,

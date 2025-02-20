@@ -16,7 +16,7 @@ use libra2_crypto::{
     hash::{CryptoHash, HashValue},
     PrivateKey, Uniform,
 };
-use aptos_types::{
+use libra2_types::{
     account_address::AccountAddress,
     block_info::BlockInfo,
     ledger_info::{generate_ledger_info_with_sig, LedgerInfo},

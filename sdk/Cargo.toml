@@ -19,7 +19,7 @@ libra2-crypto = { workspace = true }
 libra2-global-constants = { workspace = true }
 aptos-ledger = { workspace = true }
 aptos-rest-client = { workspace = true }
-aptos-types = { workspace = true }
+libra2-types = { workspace = true }
 base64 = { workspace = true }
 bcs = { workspace = true }
 ed25519-dalek-bip32 = { workspace = true }
