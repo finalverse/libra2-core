@@ -31,7 +31,7 @@ use aptos_executor::{
         PROCESSED_TXNS_OUTPUT_SIZE, UPDATE_LEDGER,
     },
 };
-use aptos_jellyfish_merkle::metrics::{
+use libra2_jellyfish_merkle::metrics::{
     APTOS_JELLYFISH_INTERNAL_ENCODED_BYTES, APTOS_JELLYFISH_LEAF_ENCODED_BYTES,
 };
 use libra2_logger::{info, warn};

@@ -12,7 +12,7 @@ echo "CARGO_TARGET_DIR: $CARGO_TARGET_DIR"
 # Build all the rust binaries
 cargo build --locked --profile=$PROFILE \
     -p aptos \
-    -p aptos-backup-cli \
+    -p libra2-backup-cli \
     -p aptos-faucet-service \
     -p aptos-fn-check-client \
     -p aptos-node-checker \

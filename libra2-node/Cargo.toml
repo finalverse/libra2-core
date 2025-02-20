@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 anyhow = { workspace = true }
 aptos-admin-service = { workspace = true }
 aptos-api = { workspace = true }
-aptos-backup-service = { workspace = true }
+libra2-backup-service = { workspace = true }
 libra2-build-info = { workspace = true }
 aptos-cached-packages = { workspace = true }
 libra2-channels = { workspace = true }
@@ -28,7 +28,7 @@ libra2-crypto = { workspace = true }
 aptos-data-client = { workspace = true }
 aptos-data-streaming-service = { workspace = true }
 aptos-db = { workspace = true }
-aptos-db-indexer = { workspace = true }
+libra2-db-indexer = { workspace = true }
 libra2-dkg-runtime = { workspace = true }
 aptos-event-notifications = { workspace = true }
 aptos-executor = { workspace = true }

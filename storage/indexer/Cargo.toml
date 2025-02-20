@@ -1,6 +1,6 @@
 [package]
-name = "aptos-db-indexer"
-description = "AptosDB Internal Indexer"
+name = "libra2-db-indexer"
+description = "Libra2DB Internal Indexer"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -15,11 +15,11 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 libra2-config = { workspace = true }
-aptos-db-indexer-schemas = { workspace = true }
+libra2-db-indexer-schemas = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-resource-viewer = { workspace = true }
-aptos-rocksdb-options = { workspace = true }
+libra2-rocksdb-options = { workspace = true }
 libra2-schemadb = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }

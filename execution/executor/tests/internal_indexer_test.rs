@@ -3,7 +3,7 @@
 
 use aptos_cached_packages::aptos_stdlib;
 use aptos_db::AptosDB;
-use aptos_db_indexer::db_indexer::DBIndexer;
+use libra2_db_indexer::db_indexer::DBIndexer;
 use aptos_executor_test_helpers::{
     gen_block_id, gen_ledger_info_with_sigs, integration_test_impl::create_db_and_executor,
 };

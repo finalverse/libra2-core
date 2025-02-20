@@ -1,6 +1,6 @@
 [package]
-name = "aptos-rocksdb-options"
-description = "Aptos RocksDb Options"
+name = "libra2-rocksdb-options"
+description = "Libra2 RocksDb Options"
 version = "0.1.0"
 
 # Workspace inherited keys

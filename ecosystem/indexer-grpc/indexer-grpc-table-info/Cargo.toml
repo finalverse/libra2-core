@@ -16,7 +16,7 @@ anyhow = { workspace = true }
 aptos-api = { workspace = true }
 aptos-api-types = { workspace = true }
 libra2-config = { workspace = true }
-aptos-db-indexer  = { workspace = true }
+libra2-db-indexer  = { workspace = true }
 aptos-indexer-grpc-fullnode = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }
 libra2-logger = { workspace = true }

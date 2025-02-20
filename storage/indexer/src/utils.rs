@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_db_indexer_schemas::schema::state_keys::StateKeysSchema;
+use libra2_db_indexer_schemas::schema::state_keys::StateKeysSchema;
 use libra2_schemadb::{iterator::SchemaIterator, ReadOptions, DB};
 use libra2_storage_interface::{DbReader, Result};
 use libra2_types::{

@@ -6,8 +6,8 @@ use crate::{
 };
 use libra2_config::config::{RocksdbConfig, StorageDirPaths};
 use libra2_crypto::{hash::CryptoHash, HashValue};
-use aptos_db_indexer::db_ops::open_internal_indexer_db;
-use aptos_db_indexer_schemas::schema::{
+use libra2_db_indexer::db_ops::open_internal_indexer_db;
+use libra2_db_indexer_schemas::schema::{
     event_by_key::EventByKeySchema, event_by_version::EventByVersionSchema,
     state_keys::StateKeysSchema, transaction_by_account::TransactionByAccountSchema,
 };

@@ -19,7 +19,7 @@ use crate::{
         fetch_metadata::FetchMetadata,
     },
 };
-use aptos_backup_cli::{
+use libra2_backup_cli::{
     coordinators::restore::{RestoreCoordinator, RestoreCoordinatorOpt},
     storage::DBToolStorageOpt,
     utils::GlobalRestoreOpt,

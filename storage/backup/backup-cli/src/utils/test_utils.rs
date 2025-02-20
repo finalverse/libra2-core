@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_backup_service::start_backup_service;
+use libra2_backup_service::start_backup_service;
 use libra2_config::utils::get_available_port;
 use aptos_db::{db::test_helper::arb_blocks_to_commit, AptosDB};
 use aptos_proptest_helpers::ValueGenerator;

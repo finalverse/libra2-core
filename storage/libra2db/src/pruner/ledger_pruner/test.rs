@@ -5,7 +5,7 @@ use crate::{
     schema::version_data::VersionDataSchema, Libra2DB, LedgerPrunerManager, LedgerStore,
     PrunerManager, TransactionStore,
 };
-use aptos_accumulator::HashReader;
+use libra2_accumulator::HashReader;
 use libra2_config::config::LedgerPrunerConfig;
 use libra2_schemadb::SchemaBatch;
 use libra2_storage_interface::DbReader;

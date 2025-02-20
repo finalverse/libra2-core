@@ -3,7 +3,7 @@
 
 use crate::utils::parse_maxable_u64;
 use anyhow::Result;
-use aptos_backup_cli::{
+use libra2_backup_cli::{
     backup_types::{
         epoch_ending::backup::{EpochEndingBackupController, EpochEndingBackupOpt},
         state_snapshot::backup::{StateSnapshotBackupController, StateSnapshotBackupOpt},

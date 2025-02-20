@@ -1,5 +1,5 @@
 [package]
-name = "aptos-db-tool"
+name = "libra2-db-tool"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -13,11 +13,11 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-backup-cli = { workspace = true }
+libra2-backup-cli = { workspace = true }
 aptos-block-executor = { workspace = true }
 libra2-config = { workspace = true }
 aptos-db = { workspace = true, features = ["db-debugger"] }
-aptos-db-indexer = { workspace = true }
+libra2-db-indexer = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-executor-types = { workspace = true }
 libra2-logger = { workspace = true }
@@ -33,7 +33,7 @@ serde_json = { workspace = true }
 tokio = { workspace = true }
 
 [dev-dependencies]
-aptos-backup-cli = { workspace = true, features = ["testing"] }
-aptos-backup-service = { workspace = true }
+libra2-backup-cli = { workspace = true, features = ["testing"] }
+libra2-backup-service = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }
 aptos-indexer-grpc-table-info = { workspace = true }

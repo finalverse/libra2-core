@@ -7,7 +7,7 @@ use crate::{
 };
 use aptos_api::context::Context;
 use libra2_config::config::{NodeConfig, TableInfoServiceMode};
-use aptos_db_indexer::{
+use libra2_db_indexer::{
     db_indexer::{DBIndexer, InternalIndexerDB},
     db_ops::open_db,
     db_v2::IndexerAsyncV2,

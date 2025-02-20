@@ -1,6 +1,6 @@
 [package]
-name = "aptos-db-indexer-schemas"
-description = "AptosDB Internal Indexer DB schemas"
+name = "libra2-db-indexer-schemas"
+description = "Libra2 Internal Indexer DB schemas"
 version = "0.1.0"
 
 # Workspace inherited keys

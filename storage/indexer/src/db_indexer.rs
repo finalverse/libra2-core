@@ -6,7 +6,7 @@ use crate::{
     utils::PrefixedStateValueIterator,
 };
 use libra2_config::config::internal_indexer_db_config::InternalIndexerDBConfig;
-use aptos_db_indexer_schemas::{
+use libra2_db_indexer_schemas::{
     metadata::{MetadataKey, MetadataValue, StateSnapshotProgress},
     schema::{
         event_by_key::EventByKeySchema, event_by_version::EventByVersionSchema,

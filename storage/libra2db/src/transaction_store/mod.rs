@@ -5,7 +5,7 @@
 //! This file defines transaction store APIs that are related to committed signed transactions.
 
 use crate::ledger_db::LedgerDb;
-use aptos_db_indexer_schemas::{
+use libra2_db_indexer_schemas::{
     schema::transaction_by_account::TransactionByAccountSchema,
     utils::AccountTransactionVersionIter,
 };

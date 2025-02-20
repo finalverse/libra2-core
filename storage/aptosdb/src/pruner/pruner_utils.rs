@@ -12,7 +12,7 @@ use crate::{
     utils::get_progress,
 };
 use anyhow::Result;
-use aptos_jellyfish_merkle::StaleNodeIndex;
+use libra2_jellyfish_merkle::StaleNodeIndex;
 use libra2_schemadb::{schema::KeyCodec, DB};
 use libra2_types::transaction::Version;
 

@@ -27,7 +27,7 @@ use crate::{
     transaction_store::TransactionStore,
 };
 use anyhow::anyhow;
-use aptos_db_indexer::db_indexer::InternalIndexerDB;
+use libra2_db_indexer::db_indexer::InternalIndexerDB;
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::info;
 use libra2_storage_interface::Result;

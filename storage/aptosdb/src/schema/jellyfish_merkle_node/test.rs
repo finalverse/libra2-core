@@ -4,7 +4,7 @@
 
 use super::*;
 use libra2_crypto::HashValue;
-use aptos_jellyfish_merkle::node_type::Node;
+use libra2_jellyfish_merkle::node_type::Node;
 use libra2_schemadb::{schema::fuzzing::assert_encode_decode, test_no_panic_decoding};
 use proptest::prelude::*;
 

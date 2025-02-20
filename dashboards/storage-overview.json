@@ -2656,14 +2656,14 @@
       {
         "current": { "selected": true, "text": ["All"], "value": ["$__all"] },
         "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-        "definition": "aptos_backup_service_latency_s_count",
+        "definition": "libra2_backup_service_latency_s_count",
         "hide": 0,
         "includeAll": true,
         "multi": true,
         "name": "backup_service_api_name",
         "options": [],
         "query": {
-          "query": "aptos_backup_service_latency_s_count",
+          "query": "libra2_backup_service_latency_s_count",
           "refId": "Prometheus-backup_service_api_name-Variable-Query"
         },
         "refresh": 1,

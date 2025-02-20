@@ -9,7 +9,7 @@ use crate::{
     state_restore::StateSnapshotRestore,
     AptosDB,
 };
-use aptos_jellyfish_merkle::{
+use libra2_jellyfish_merkle::{
     node_type::{Node, NodeKey},
     TreeReader,
 };

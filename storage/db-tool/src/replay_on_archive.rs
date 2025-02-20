@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{bail, Error, Ok, Result};
-use aptos_backup_cli::utils::{ReplayConcurrencyLevelOpt, RocksdbOpt};
+use libra2_backup_cli::utils::{ReplayConcurrencyLevelOpt, RocksdbOpt};
 use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
 use libra2_config::config::{
     StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS, DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD,

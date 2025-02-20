@@ -26,7 +26,7 @@ aptos-executor-types = { workspace = true }
 aptos-experimental-ptx-executor = { workspace = true }
 aptos-experimental-runtimes = { workspace = true }
 aptos-genesis = { workspace = true, features = ["testing"] }
-aptos-jellyfish-merkle = { workspace = true }
+libra2-jellyfish-merkle = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-mvhashmap = { workspace = true }

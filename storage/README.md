@@ -201,7 +201,7 @@ https://github.com/aptos-labs/aptos-core/tree/main/storage/backup/backup-cli/src
 $ cargo run -p aptos-debugger aptos-db backup continuously --help
     Finished dev [unoptimized + debuginfo] target(s) in 1.06s
      Running `target/debug/aptos-debugger aptos-db backup continuously --help`
-aptos-db-tool-backup-continuously 0.1.0
+libra2-db-tool-backup-continuously 0.1.0
 Run the backup coordinator which backs up blockchain data continuously off a Aptos Node.
 
 USAGE:

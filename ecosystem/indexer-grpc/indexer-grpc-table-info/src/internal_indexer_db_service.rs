@@ -4,7 +4,7 @@
 use crate::metrics::INDEXER_DB_LATENCY;
 use anyhow::Result;
 use libra2_config::config::{internal_indexer_db_config::InternalIndexerDBConfig, NodeConfig};
-use aptos_db_indexer::{
+use libra2_db_indexer::{
     db_indexer::{DBIndexer, InternalIndexerDB},
     db_ops::open_internal_indexer_db,
     indexer_reader::IndexerReaders,

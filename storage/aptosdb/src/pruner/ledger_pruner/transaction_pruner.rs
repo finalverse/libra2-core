@@ -10,8 +10,8 @@ use crate::{
     },
     transaction_store::TransactionStore,
 };
-use aptos_db_indexer::db_indexer::InternalIndexerDB;
-use aptos_db_indexer_schemas::{
+use libra2_db_indexer::db_indexer::InternalIndexerDB;
+use libra2_db_indexer_schemas::{
     metadata::{MetadataKey as IndexerMetadataKey, MetadataValue as IndexerMetadataValue},
     schema::indexer_metadata::InternalIndexerMetadataSchema,
 };

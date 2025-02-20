@@ -1,5 +1,5 @@
 [package]
-name = "aptos-backup-cli"
+name = "libra2-backup-cli"
 description = "Backup CLI"
 version = "0.1.0"
 
@@ -14,17 +14,17 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-backup-service = { workspace = true }
+libra2-backup-service = { workspace = true }
 libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
 aptos-db = { workspace = true }
-aptos-db-indexer-schemas = { workspace = true }
+libra2-db-indexer-schemas = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }
 aptos-executor-types = { workspace = true }
 aptos-indexer-grpc-table-info = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-jellyfish-merkle = { workspace = true }
+libra2-jellyfish-merkle = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-proptest-helpers = { workspace = true }
@@ -59,7 +59,7 @@ tokio-stream = { workspace = true, features = ["fs"] }
 tokio-util = { workspace = true }
 
 [dev-dependencies]
-aptos-backup-service = { workspace = true }
+libra2-backup-service = { workspace = true }
 libra2-config = { workspace = true }
 aptos-db = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }

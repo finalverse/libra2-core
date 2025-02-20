@@ -10,12 +10,12 @@ use crate::{
     },
     utils::iterators::EventsByVersionIter,
 };
-use aptos_accumulator::MerkleAccumulator;
+use libra2_accumulator::MerkleAccumulator;
 use libra2_crypto::{
     hash::{CryptoHash, EventAccumulatorHasher},
     HashValue,
 };
-use aptos_db_indexer_schemas::schema::{
+use libra2_db_indexer_schemas::schema::{
     event_by_key::EventByKeySchema, event_by_version::EventByVersionSchema,
 };
 use libra2_schemadb::{

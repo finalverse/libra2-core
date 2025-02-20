@@ -6,7 +6,7 @@ use crate::{
     schema::{state_value::StateValueSchema, state_value_by_key_hash::StateValueByKeyHashSchema},
 };
 use libra2_crypto::hash::CryptoHash;
-use aptos_jellyfish_merkle::iterator::JellyfishMerkleIterator;
+use libra2_jellyfish_merkle::iterator::JellyfishMerkleIterator;
 use libra2_schemadb::ReadOptions;
 use libra2_storage_interface::Result;
 use libra2_types::transaction::Version;

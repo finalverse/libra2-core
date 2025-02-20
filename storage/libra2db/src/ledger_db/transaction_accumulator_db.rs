@@ -7,7 +7,7 @@ use crate::schema::{
     transaction_accumulator_root_hash::TransactionAccumulatorRootHashSchema,
 };
 use anyhow::anyhow;
-use aptos_accumulator::{HashReader, MerkleAccumulator};
+use libra2_accumulator::{HashReader, MerkleAccumulator};
 use libra2_crypto::{
     hash::{CryptoHash, TransactionAccumulatorHasher},
     HashValue,

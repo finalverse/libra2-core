@@ -29,7 +29,7 @@ use crate::{
     transaction_store::TransactionStore,
     utils::get_progress,
 };
-use aptos_jellyfish_merkle::{node_type::NodeKey, StaleNodeIndex};
+use libra2_jellyfish_merkle::{node_type::NodeKey, StaleNodeIndex};
 use libra2_logger::info;
 use libra2_schemadb::{
     batch::SchemaBatch,

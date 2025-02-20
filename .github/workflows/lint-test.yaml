@@ -217,7 +217,7 @@ jobs:
     if: contains(github.event.pull_request.labels.*.name, 'CICD:build-consensus-only-image')
     steps:
       - uses: actions/checkout@v4
-      - run: cargo nextest run --locked --workspace --exclude smoke-test --exclude aptos-testcases --exclude aptos-api --exclude aptos-executor-benchmark --exclude aptos-backup-cli --retries 3 --no-fail-fast -F consensus-only-perf-test
+      - run: cargo nextest run --locked --workspace --exclude smoke-test --exclude aptos-testcases --exclude aptos-api --exclude aptos-executor-benchmark --exclude libra2-backup-cli --retries 3 --no-fail-fast -F consensus-only-perf-test
         env:
           RUST_MIN_STACK: 4297152
 

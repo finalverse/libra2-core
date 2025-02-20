@@ -1288,7 +1288,7 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "sum(irate(aptos_backup_service_sent_bytes{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\", endpoint=~\"$backup_service_api_name\"}[1m])) by(kubernetes_pod_name, kubernetes_pod_name) > 0",
+              "expr": "sum(irate(libra2_backup_service_sent_bytes{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\", endpoint=~\"$backup_service_api_name\"}[1m])) by(kubernetes_pod_name, kubernetes_pod_name) > 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} {{kubernetes_pod_name}}",
               "refId": "A"
@@ -1347,7 +1347,7 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "irate(aptos_backup_service_sent_bytes{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", endpoint=\"$backup_service_api_name\"}[1m]) and irate(aptos_backup_service_sent_bytes[1m]) > 0",
+              "expr": "irate(libra2_backup_service_sent_bytes{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", endpoint=\"$backup_service_api_name\"}[1m]) and irate(libra2_backup_service_sent_bytes[1m]) > 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} {{kubernetes_pod_name}}",
               "refId": "A"
@@ -2551,14 +2551,14 @@
       {
         "current": { "selected": false, "text": ["All"], "value": ["$__all"] },
         "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-        "definition": "aptos_backup_service_latency_s_count",
+        "definition": "libra2_backup_service_latency_s_count",
         "hide": 0,
         "includeAll": true,
         "multi": true,
         "name": "backup_service_api_name",
         "options": [],
         "query": {
-          "query": "aptos_backup_service_latency_s_count",
+          "query": "libra2_backup_service_latency_s_count",
           "refId": "Prometheus-backup_service_api_name-Variable-Query"
         },
         "refresh": 1,

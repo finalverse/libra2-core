@@ -5,9 +5,9 @@ use crate::state_restore::{
     StateSnapshotRestore, StateSnapshotRestoreMode, StateValueBatch, StateValueWriter,
 };
 use libra2_crypto::{hash::CryptoHash, HashValue};
-use aptos_db_indexer_schemas::metadata::StateSnapshotProgress;
+use libra2_db_indexer_schemas::metadata::StateSnapshotProgress;
 use libra2_infallible::RwLock;
-use aptos_jellyfish_merkle::{
+use libra2_jellyfish_merkle::{
     mock_tree_store::MockTreeStore,
     node_type::{LeafNode, Node, NodeKey},
     test_helper::{init_mock_db, ValueBlob},

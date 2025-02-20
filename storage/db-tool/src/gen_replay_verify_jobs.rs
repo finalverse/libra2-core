@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_backup_cli::{
+use libra2_backup_cli::{
     metadata::{
         cache::{sync_and_load, MetadataCacheOpt},
         StateSnapshotBackupMeta,

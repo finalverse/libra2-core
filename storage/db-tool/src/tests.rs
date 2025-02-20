@@ -7,7 +7,7 @@ use clap::Parser;
 #[test]
 fn test_various_cmd_parsing() {
     run_cmd(&[
-        "aptos-db-tool",
+        "libra2-db-tool",
         "restore",
         "oneoff",
         "epoch-ending",
@@ -19,7 +19,7 @@ fn test_various_cmd_parsing() {
         ".",
     ]);
     run_cmd(&[
-        "aptos-db-tool",
+        "libra2-db-tool",
         "backup",
         "oneoff",
         "transaction",
@@ -31,14 +31,14 @@ fn test_various_cmd_parsing() {
         ".",
     ]);
     run_cmd(&[
-        "aptos-db-tool",
+        "libra2-db-tool",
         "backup",
         "continuously",
         "--local-fs-dir",
         ".",
     ]);
     run_cmd(&[
-        "aptos-db-tool",
+        "libra2-db-tool",
         "debug",
         "state-tree",
         "get-snapshots",
@@ -46,9 +46,9 @@ fn test_various_cmd_parsing() {
         ".",
     ]);
 
-    run_cmd(&["aptos-db-tool", "backup", "verify", "--local-fs-dir", "."]);
+    run_cmd(&["libra2-db-tool", "backup", "verify", "--local-fs-dir", "."]);
     run_cmd(&[
-        "aptos-db-tool",
+        "libra2-db-tool",
         "replay-verify",
         "--target-db-dir",
         ".",
@@ -56,7 +56,7 @@ fn test_various_cmd_parsing() {
         ".",
     ]);
     run_cmd(&[
-        "aptos-db-tool",
+        "libra2-db-tool",
         "backup",
         "verify",
         "--local-fs-dir",
@@ -73,7 +73,7 @@ fn run_cmd(args: &[&str]) {
 #[cfg(test)]
 mod dbtool_tests {
     use crate::DBTool;
-    use aptos_backup_cli::{
+    use libra2_backup_cli::{
         coordinators::backup::BackupCompactor,
         metadata,
         metadata::{cache::MetadataCacheOpt, view::MetadataView},
@@ -126,7 +126,7 @@ mod dbtool_tests {
         // Backup the local_test DB
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -146,7 +146,7 @@ mod dbtool_tests {
 
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -166,7 +166,7 @@ mod dbtool_tests {
 
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -184,7 +184,7 @@ mod dbtool_tests {
 
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -201,7 +201,7 @@ mod dbtool_tests {
         .unwrap();
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -220,7 +220,7 @@ mod dbtool_tests {
         .unwrap();
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -292,7 +292,7 @@ mod dbtool_tests {
             NO_OP_STORAGE_PRUNER_CONFIG,
         };
         use aptos_db::utils::iterators::PrefixedStateValueIterator;
-        use aptos_db_indexer::utils::PrefixedStateValueIterator as IndexerPrefixedStateValueIterator;
+        use libra2_db_indexer::utils::PrefixedStateValueIterator as IndexerPrefixedStateValueIterator;
         use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
         use itertools::zip_eq;
         let db = test_execution_with_storage_impl_inner(false, old_db_dir.as_path());
@@ -301,7 +301,7 @@ mod dbtool_tests {
         // Backup the local_test DB
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -321,7 +321,7 @@ mod dbtool_tests {
 
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -341,7 +341,7 @@ mod dbtool_tests {
 
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -359,7 +359,7 @@ mod dbtool_tests {
 
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -377,7 +377,7 @@ mod dbtool_tests {
 
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -394,7 +394,7 @@ mod dbtool_tests {
         .unwrap();
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -413,7 +413,7 @@ mod dbtool_tests {
         .unwrap();
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "backup",
                 "oneoff",
                 "--backup-service-address",
@@ -434,7 +434,7 @@ mod dbtool_tests {
         let start_string = format!("{}", start);
         let end_string = format!("{}", end);
         let mut restore_args = vec![
-            "aptos-db-tool".to_string(),
+            "libra2-db-tool".to_string(),
             "restore".to_string(),
             "bootstrap-db".to_string(),
             "--ledger-history-start-version".to_string(),
@@ -639,7 +639,7 @@ mod dbtool_tests {
         // This only replays the txn from txn 17 to 18
         rt.block_on(
             DBTool::try_parse_from([
-                "aptos-db-tool",
+                "libra2-db-tool",
                 "restore",
                 "bootstrap-db",
                 "--ledger-history-start-version",

@@ -294,7 +294,6 @@ version = "6.1.1"
 dependencies = [
  "anyhow",
  "aptos-api-types",
- "aptos-backup-cli",
  "aptos-cached-packages",
  "aptos-faucet-core",
  "aptos-framework",
@@ -337,6 +336,7 @@ dependencies = [
  "indoc",
  "itertools 0.13.0",
  "jemallocator",
+ "libra2-backup-cli",
  "libra2-bitvec",
  "libra2-build-info",
  "libra2-cli-common",
@@ -399,17 +399,6 @@ dependencies = [
  "aptos-gas-schedule",
  "aptos-vm-types",
  "move-binary-format",
-]
-
-[[package]]
-name = "aptos-accumulator"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "libra2-crypto",
- "libra2-types",
- "proptest",
- "rand 0.7.3",
 ]
 
 [[package]]
@@ -590,82 +579,6 @@ dependencies = [
  "poem-openapi-derive",
  "serde",
  "serde_json",
-]
-
-[[package]]
-name = "aptos-backup-cli"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-backup-service",
- "aptos-db",
- "aptos-db-indexer-schemas",
- "aptos-executor",
- "aptos-executor-test-helpers",
- "aptos-executor-types",
- "aptos-indexer-grpc-table-info",
- "aptos-jellyfish-merkle",
- "aptos-proptest-helpers",
- "aptos-vm",
- "aptos-vm-environment",
- "async-trait",
- "bcs 0.1.4",
- "bytes",
- "clap 4.5.21",
- "csv",
- "futures",
- "itertools 0.13.0",
- "libra2-config",
- "libra2-crypto",
- "libra2-infallible",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-push-metrics",
- "libra2-storage-interface",
- "libra2-temppath",
- "libra2-types",
- "move-binary-format",
- "move-bytecode-verifier",
- "num_cpus",
- "once_cell",
- "pin-project 1.1.3",
- "proptest",
- "rand 0.7.3",
- "regex",
- "reqwest 0.11.23",
- "serde",
- "serde_json",
- "serde_yaml 0.8.26",
- "thiserror",
- "tokio",
- "tokio-io-timeout",
- "tokio-stream",
- "tokio-util 0.7.10",
- "warp",
-]
-
-[[package]]
-name = "aptos-backup-service"
-version = "0.1.0"
-dependencies = [
- "aptos-db",
- "aptos-runtimes",
- "bcs 0.1.4",
- "bytes",
- "hyper 0.14.28",
- "libra2-config",
- "libra2-crypto",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-storage-interface",
- "libra2-temppath",
- "libra2-types",
- "once_cell",
- "reqwest 0.11.23",
- "serde",
- "tokio",
- "tokio-stream",
- "warp",
 ]
 
 [[package]]
@@ -994,15 +907,10 @@ name = "aptos-db"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-accumulator",
- "aptos-db-indexer",
- "aptos-db-indexer-schemas",
  "aptos-executor-types",
  "aptos-experimental-runtimes",
- "aptos-jellyfish-merkle",
  "aptos-proptest-helpers",
  "aptos-resource-viewer",
- "aptos-rocksdb-options",
  "arc-swap",
  "arr_macro",
  "bcs 0.1.4",
@@ -1015,11 +923,16 @@ dependencies = [
  "hex",
  "indicatif 0.15.0",
  "itertools 0.13.0",
+ "libra2-accumulator",
  "libra2-config",
  "libra2-crypto",
+ "libra2-db-indexer",
+ "libra2-db-indexer-schemas",
  "libra2-infallible",
+ "libra2-jellyfish-merkle",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-rocksdb-options",
  "libra2-schemadb",
  "libra2-scratchpad",
  "libra2-storage-interface",
@@ -1040,84 +953,15 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-db-indexer"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-db-indexer-schemas",
- "aptos-proptest-helpers",
- "aptos-resource-viewer",
- "aptos-rocksdb-options",
- "bcs 0.1.4",
- "bytes",
- "dashmap",
- "libra2-config",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-schemadb",
- "libra2-storage-interface",
- "libra2-types",
- "move-core-types",
- "once_cell",
- "rand 0.7.3",
-]
-
-[[package]]
-name = "aptos-db-indexer-schemas"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-proptest-helpers",
- "bcs 0.1.4",
- "byteorder",
- "libra2-crypto",
- "libra2-schemadb",
- "libra2-storage-interface",
- "libra2-types",
- "proptest",
- "proptest-derive",
- "rand 0.7.3",
- "serde",
-]
-
-[[package]]
-name = "aptos-db-tool"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-backup-cli",
- "aptos-backup-service",
- "aptos-block-executor",
- "aptos-db",
- "aptos-db-indexer",
- "aptos-executor",
- "aptos-executor-test-helpers",
- "aptos-executor-types",
- "aptos-indexer-grpc-table-info",
- "aptos-vm",
- "bcs 0.1.4",
- "clap 4.5.21",
- "itertools 0.13.0",
- "libra2-config",
- "libra2-logger",
- "libra2-storage-interface",
- "libra2-temppath",
- "libra2-types",
- "rayon",
- "serde_json",
- "tokio",
-]
-
-[[package]]
 name = "aptos-debugger"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus",
- "aptos-db-tool",
  "aptos-move-debugger",
  "clap 4.5.21",
  "jemallocator",
+ "libra2-db-tool",
  "libra2-logger",
  "libra2-push-metrics",
  "tokio",
@@ -1178,7 +1022,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-consensus-types",
  "aptos-db",
- "aptos-db-indexer",
  "aptos-executor-service",
  "aptos-executor-test-helpers",
  "aptos-executor-types",
@@ -1195,6 +1038,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-config",
  "libra2-crypto",
+ "libra2-db-indexer",
  "libra2-drop-helper",
  "libra2-infallible",
  "libra2-logger",
@@ -1225,7 +1069,6 @@ dependencies = [
  "aptos-experimental-ptx-executor",
  "aptos-experimental-runtimes",
  "aptos-genesis",
- "aptos-jellyfish-merkle",
  "aptos-mvhashmap",
  "aptos-sdk",
  "aptos-transaction-generator-lib",
@@ -1246,6 +1089,7 @@ dependencies = [
  "jemallocator",
  "libra2-config",
  "libra2-crypto",
+ "libra2-jellyfish-merkle",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-node-resource-metrics",
@@ -2085,7 +1929,6 @@ dependencies = [
  "anyhow",
  "aptos-api",
  "aptos-api-types",
- "aptos-db-indexer",
  "aptos-indexer-grpc-fullnode",
  "aptos-indexer-grpc-utils",
  "aptos-mempool",
@@ -2096,6 +1939,7 @@ dependencies = [
  "hyper 0.14.28",
  "itertools 0.13.0",
  "libra2-config",
+ "libra2-db-indexer",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-storage-interface",
@@ -2204,35 +2048,6 @@ dependencies = [
  "rusty-fork",
  "serde_json",
  "tokio",
-]
-
-[[package]]
-name = "aptos-jellyfish-merkle"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-db",
- "aptos-experimental-runtimes",
- "arr_macro",
- "bcs 0.1.4",
- "byteorder",
- "itertools 0.13.0",
- "libra2-crypto",
- "libra2-crypto-derive",
- "libra2-infallible",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-storage-interface",
- "libra2-types",
- "num-derive",
- "num-traits",
- "once_cell",
- "proptest",
- "proptest-derive",
- "rand 0.7.3",
- "rayon",
- "serde",
- "thiserror",
 ]
 
 [[package]]
@@ -2839,14 +2654,12 @@ dependencies = [
  "anyhow",
  "aptos-admin-service",
  "aptos-api",
- "aptos-backup-service",
  "aptos-cached-packages",
  "aptos-consensus",
  "aptos-consensus-notifications",
  "aptos-data-client",
  "aptos-data-streaming-service",
  "aptos-db",
- "aptos-db-indexer",
  "aptos-event-notifications",
  "aptos-executor",
  "aptos-framework",
@@ -2881,11 +2694,13 @@ dependencies = [
  "futures",
  "hex",
  "jemallocator",
+ "libra2-backup-service",
  "libra2-build-info",
  "libra2-channels",
  "libra2-config",
  "libra2-crash-handler",
  "libra2-crypto",
+ "libra2-db-indexer",
  "libra2-dkg-runtime",
  "libra2-infallible",
  "libra2-logger",
@@ -3221,14 +3036,6 @@ dependencies = [
  "thiserror",
  "tokio",
  "url",
-]
-
-[[package]]
-name = "aptos-rocksdb-options"
-version = "0.1.0"
-dependencies = [
- "libra2-config",
- "rocksdb",
 ]
 
 [[package]]
@@ -9870,7 +9677,6 @@ version = "6.1.1"
 dependencies = [
  "anyhow",
  "aptos-api-types",
- "aptos-backup-cli",
  "aptos-cached-packages",
  "aptos-faucet-core",
  "aptos-framework",
@@ -9913,6 +9719,7 @@ dependencies = [
  "indoc",
  "itertools 0.13.0",
  "jemallocator",
+ "libra2-backup-cli",
  "libra2-bitvec",
  "libra2-build-info",
  "libra2-cli-common",
@@ -9964,6 +9771,93 @@ dependencies = [
  "tracing",
  "tracing-subscriber 0.3.18",
  "url",
+]
+
+[[package]]
+name = "libra2-accumulator"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "libra2-crypto",
+ "libra2-types",
+ "proptest",
+ "rand 0.7.3",
+]
+
+[[package]]
+name = "libra2-backup-cli"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-db",
+ "aptos-executor",
+ "aptos-executor-test-helpers",
+ "aptos-executor-types",
+ "aptos-indexer-grpc-table-info",
+ "aptos-proptest-helpers",
+ "aptos-vm",
+ "aptos-vm-environment",
+ "async-trait",
+ "bcs 0.1.4",
+ "bytes",
+ "clap 4.5.21",
+ "csv",
+ "futures",
+ "itertools 0.13.0",
+ "libra2-backup-service",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-db-indexer-schemas",
+ "libra2-infallible",
+ "libra2-jellyfish-merkle",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-push-metrics",
+ "libra2-storage-interface",
+ "libra2-temppath",
+ "libra2-types",
+ "move-binary-format",
+ "move-bytecode-verifier",
+ "num_cpus",
+ "once_cell",
+ "pin-project 1.1.3",
+ "proptest",
+ "rand 0.7.3",
+ "regex",
+ "reqwest 0.11.23",
+ "serde",
+ "serde_json",
+ "serde_yaml 0.8.26",
+ "thiserror",
+ "tokio",
+ "tokio-io-timeout",
+ "tokio-stream",
+ "tokio-util 0.7.10",
+ "warp",
+]
+
+[[package]]
+name = "libra2-backup-service"
+version = "0.1.0"
+dependencies = [
+ "aptos-db",
+ "aptos-runtimes",
+ "bcs 0.1.4",
+ "bytes",
+ "hyper 0.14.28",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-storage-interface",
+ "libra2-temppath",
+ "libra2-types",
+ "once_cell",
+ "reqwest 0.11.23",
+ "serde",
+ "tokio",
+ "tokio-stream",
+ "warp",
 ]
 
 [[package]]
@@ -10161,15 +10055,10 @@ name = "libra2-db"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-accumulator",
- "aptos-db-indexer",
- "aptos-db-indexer-schemas",
  "aptos-executor-types",
  "aptos-experimental-runtimes",
- "aptos-jellyfish-merkle",
  "aptos-proptest-helpers",
  "aptos-resource-viewer",
- "aptos-rocksdb-options",
  "arc-swap",
  "arr_macro",
  "bcs 0.1.4",
@@ -10182,11 +10071,16 @@ dependencies = [
  "hex",
  "indicatif 0.15.0",
  "itertools 0.13.0",
+ "libra2-accumulator",
  "libra2-config",
  "libra2-crypto",
+ "libra2-db-indexer",
+ "libra2-db-indexer-schemas",
  "libra2-infallible",
+ "libra2-jellyfish-merkle",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-rocksdb-options",
  "libra2-schemadb",
  "libra2-scratchpad",
  "libra2-storage-interface",
@@ -10203,6 +10097,75 @@ dependencies = [
  "serde",
  "static_assertions",
  "status-line",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-db-indexer"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-proptest-helpers",
+ "aptos-resource-viewer",
+ "bcs 0.1.4",
+ "bytes",
+ "dashmap",
+ "libra2-config",
+ "libra2-db-indexer-schemas",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-rocksdb-options",
+ "libra2-schemadb",
+ "libra2-storage-interface",
+ "libra2-types",
+ "move-core-types",
+ "once_cell",
+ "rand 0.7.3",
+]
+
+[[package]]
+name = "libra2-db-indexer-schemas"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-proptest-helpers",
+ "bcs 0.1.4",
+ "byteorder",
+ "libra2-crypto",
+ "libra2-schemadb",
+ "libra2-storage-interface",
+ "libra2-types",
+ "proptest",
+ "proptest-derive",
+ "rand 0.7.3",
+ "serde",
+]
+
+[[package]]
+name = "libra2-db-tool"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-block-executor",
+ "aptos-db",
+ "aptos-executor",
+ "aptos-executor-test-helpers",
+ "aptos-executor-types",
+ "aptos-indexer-grpc-table-info",
+ "aptos-vm",
+ "bcs 0.1.4",
+ "clap 4.5.21",
+ "itertools 0.13.0",
+ "libra2-backup-cli",
+ "libra2-backup-service",
+ "libra2-config",
+ "libra2-db-indexer",
+ "libra2-logger",
+ "libra2-storage-interface",
+ "libra2-temppath",
+ "libra2-types",
+ "rayon",
+ "serde_json",
  "tokio",
 ]
 
@@ -10317,6 +10280,35 @@ name = "libra2-infallible"
 version = "0.1.0"
 
 [[package]]
+name = "libra2-jellyfish-merkle"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-db",
+ "aptos-experimental-runtimes",
+ "arr_macro",
+ "bcs 0.1.4",
+ "byteorder",
+ "itertools 0.13.0",
+ "libra2-crypto",
+ "libra2-crypto-derive",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-storage-interface",
+ "libra2-types",
+ "num-derive",
+ "num-traits",
+ "once_cell",
+ "proptest",
+ "proptest-derive",
+ "rand 0.7.3",
+ "rayon",
+ "serde",
+ "thiserror",
+]
+
+[[package]]
 name = "libra2-jwk-utils"
 version = "0.1.0"
 dependencies = [
@@ -10389,14 +10381,12 @@ dependencies = [
  "anyhow",
  "aptos-admin-service",
  "aptos-api",
- "aptos-backup-service",
  "aptos-cached-packages",
  "aptos-consensus",
  "aptos-consensus-notifications",
  "aptos-data-client",
  "aptos-data-streaming-service",
  "aptos-db",
- "aptos-db-indexer",
  "aptos-event-notifications",
  "aptos-executor",
  "aptos-framework",
@@ -10431,11 +10421,13 @@ dependencies = [
  "futures",
  "hex",
  "jemallocator",
+ "libra2-backup-service",
  "libra2-build-info",
  "libra2-channels",
  "libra2-config",
  "libra2-crash-handler",
  "libra2-crypto",
+ "libra2-db-indexer",
  "libra2-dkg-runtime",
  "libra2-infallible",
  "libra2-logger",
@@ -10539,6 +10531,14 @@ version = "0.1.0"
 dependencies = [
  "libra2-logger",
  "tokio",
+]
+
+[[package]]
+name = "libra2-rocksdb-options"
+version = "0.1.0"
+dependencies = [
+ "libra2-config",
+ "rocksdb",
 ]
 
 [[package]]
@@ -16096,12 +16096,9 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos",
- "aptos-backup-cli",
  "aptos-cached-packages",
  "aptos-consensus",
  "aptos-db",
- "aptos-db-indexer",
- "aptos-db-indexer-schemas",
  "aptos-faucet-core",
  "aptos-forge",
  "aptos-framework",
@@ -16126,9 +16123,12 @@ dependencies = [
  "hex",
  "hyper 0.14.28",
  "itertools 0.13.0",
+ "libra2-backup-cli",
  "libra2-bitvec",
  "libra2-config",
  "libra2-crypto",
+ "libra2-db-indexer",
+ "libra2-db-indexer-schemas",
  "libra2-dkg",
  "libra2-global-constants",
  "libra2-infallible",

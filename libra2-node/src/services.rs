@@ -12,7 +12,7 @@ use aptos_consensus::{
 };
 use aptos_consensus_notifications::ConsensusNotifier;
 use aptos_data_client::client::AptosDataClient;
-use aptos_db_indexer::{db_indexer::InternalIndexerDB, indexer_reader::IndexerReaders};
+use libra2_db_indexer::{db_indexer::InternalIndexerDB, indexer_reader::IndexerReaders};
 use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use aptos_indexer_grpc_fullnode::runtime::bootstrap as bootstrap_indexer_grpc;
 use aptos_indexer_grpc_table_info::runtime::{

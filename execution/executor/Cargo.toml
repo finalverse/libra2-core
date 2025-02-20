@@ -42,7 +42,7 @@ serde = { workspace = true }
 aptos-cached-packages = { workspace = true }
 libra2-config = { workspace = true }
 aptos-db = { workspace = true }
-aptos-db-indexer = { workspace = true, features = ["fuzzing"] }
+libra2-db-indexer = { workspace = true, features = ["fuzzing"] }
 aptos-executor-test-helpers = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }

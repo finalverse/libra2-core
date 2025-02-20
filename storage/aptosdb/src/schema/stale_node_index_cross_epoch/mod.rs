@@ -16,7 +16,7 @@ use crate::schema::{
     ensure_slice_len_eq, ensure_slice_len_gt, STALE_NODE_INDEX_CROSS_EPOCH_CF_NAME,
 };
 use anyhow::Result;
-use aptos_jellyfish_merkle::{node_type::NodeKey, StaleNodeIndex};
+use libra2_jellyfish_merkle::{node_type::NodeKey, StaleNodeIndex};
 use libra2_schemadb::{
     define_schema,
     schema::{KeyCodec, SeekKeyCodec, ValueCodec},

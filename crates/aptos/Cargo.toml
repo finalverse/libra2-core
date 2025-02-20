@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 aptos-api-types = { workspace = true }
-aptos-backup-cli = { workspace = true }
+libra2-backup-cli = { workspace = true }
 libra2-bitvec = { workspace = true }
 libra2-build-info = { workspace = true }
 aptos-cached-packages = { workspace = true }

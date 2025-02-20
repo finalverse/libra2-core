@@ -13,7 +13,7 @@ pub mod verify;
 pub static OTHER_TIMERS_SECONDS: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
         // metric name
-        "aptos_backup_cli_other_timers_seconds",
+        "libra2_backup_cli_other_timers_seconds",
         // metric description
         "Various timers for performance analysis.",
         // metric labels (dimensions)

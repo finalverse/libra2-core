@@ -7,7 +7,7 @@ use crate::{
     state_merkle_db::StateMerkleDb,
 };
 use libra2_crypto::HashValue;
-use aptos_jellyfish_merkle::{
+use libra2_jellyfish_merkle::{
     node_type::{Child, Node, NodeKey, NodeType},
     TreeReader,
 };

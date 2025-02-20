@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_backup_cli::{
+use libra2_backup_cli::{
     backup_types::{
         epoch_ending::restore::{EpochEndingRestoreController, EpochEndingRestoreOpt},
         state_snapshot::restore::{StateSnapshotRestoreController, StateSnapshotRestoreOpt},

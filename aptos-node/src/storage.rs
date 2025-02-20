@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{anyhow, Result};
-use aptos_backup_service::start_backup_service;
+use libra2_backup_service::start_backup_service;
 use libra2_config::{config::NodeConfig, utils::get_genesis_txn};
 use aptos_db::{fast_sync_storage_wrapper::FastSyncStorageWrapper, AptosDB};
-use aptos_db_indexer::db_indexer::InternalIndexerDB;
+use libra2_db_indexer::db_indexer::InternalIndexerDB;
 use aptos_executor::db_bootstrapper::maybe_bootstrap;
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
 use libra2_logger::{debug, info};

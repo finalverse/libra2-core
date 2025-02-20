@@ -17,7 +17,7 @@ use warp::{reply::Response, Rejection, Reply};
 
 pub(super) static LATENCY_HISTOGRAM: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_backup_service_latency_s",
+        "libra2_backup_service_latency_s",
         "Backup service endpoint latency.",
         &["endpoint", "status"]
     )
@@ -26,7 +26,7 @@ pub(super) static LATENCY_HISTOGRAM: Lazy<HistogramVec> = Lazy::new(|| {
 
 pub(super) static THROUGHPUT_COUNTER: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_backup_service_sent_bytes",
+        "libra2_backup_service_sent_bytes",
         "Backup service throughput in bytes.",
         &["endpoint"]
     )

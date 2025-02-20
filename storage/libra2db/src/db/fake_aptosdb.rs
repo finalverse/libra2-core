@@ -7,7 +7,7 @@ use crate::{
     Libra2DB,
 };
 use anyhow::format_err;
-use aptos_accumulator::{HashReader, MerkleAccumulator};
+use libra2_accumulator::{HashReader, MerkleAccumulator};
 use libra2_crypto::{
     hash::{CryptoHash, TransactionAccumulatorHasher, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,

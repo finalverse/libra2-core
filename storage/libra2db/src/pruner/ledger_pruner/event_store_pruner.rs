@@ -6,8 +6,8 @@ use crate::{
     pruner::{db_sub_pruner::DBSubPruner, pruner_utils::get_or_initialize_subpruner_progress},
     schema::db_metadata::{DbMetadataKey, DbMetadataSchema, DbMetadataValue},
 };
-use aptos_db_indexer::db_indexer::InternalIndexerDB;
-use aptos_db_indexer_schemas::{
+use libra2_db_indexer::db_indexer::InternalIndexerDB;
+use libra2_db_indexer_schemas::{
     metadata::{MetadataKey as IndexerMetadataKey, MetadataValue as IndexerMetadataValue},
     schema::indexer_metadata::InternalIndexerMetadataSchema,
 };

@@ -7,7 +7,7 @@ use clap::Parser;
 #[derive(Parser)]
 pub enum Cmd {
     #[clap(subcommand)]
-    AptosDb(aptos_db_tool::DBTool),
+    AptosDb(libra2_db_tool::DBTool),
 
     Decode(aptos_move_debugger::bcs_txn_decoder::Command),
 

@@ -11,7 +11,7 @@ use crate::{
 };
 use anyhow::{anyhow, ensure, Result};
 use libra2_infallible::Mutex;
-use aptos_jellyfish_merkle::node_type::NodeKey;
+use libra2_jellyfish_merkle::node_type::NodeKey;
 use libra2_logger::{info, trace};
 use libra2_metrics_core::TimerHelper;
 use libra2_schemadb::batch::RawBatch;

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-backup-service"
+name = "libra2-backup-service"
 description = "Backup service"
 version = "0.1.0"
 

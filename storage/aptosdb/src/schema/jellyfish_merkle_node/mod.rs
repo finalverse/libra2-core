@@ -11,7 +11,7 @@
 
 use crate::schema::JELLYFISH_MERKLE_NODE_CF_NAME;
 use anyhow::Result;
-use aptos_jellyfish_merkle::node_type::NodeKey;
+use libra2_jellyfish_merkle::node_type::NodeKey;
 use libra2_schemadb::{
     define_schema,
     schema::{KeyCodec, SeekKeyCodec, ValueCodec},
@@ -20,7 +20,7 @@ use libra2_types::{state_store::state_key::StateKey, transaction::Version};
 use byteorder::{BigEndian, WriteBytesExt};
 use std::mem::size_of;
 
-type Node = aptos_jellyfish_merkle::node_type::Node<StateKey>;
+type Node = libra2_jellyfish_merkle::node_type::Node<StateKey>;
 
 define_schema!(
     JellyfishMerkleNodeSchema,

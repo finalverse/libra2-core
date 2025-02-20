@@ -1,6 +1,6 @@
 [package]
-name = "aptos-accumulator"
-description = "Aptos merkle tree accumulator"
+name = "libra2-accumulator"
+description = "Libra2 merkle tree accumulator"
 version = "0.1.0"
 
 # Workspace inherited keys

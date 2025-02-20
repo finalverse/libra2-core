@@ -17,12 +17,12 @@ use crate::{
 use libra2_config::config::{RocksdbConfig, RocksdbConfigs, StorageDirPaths};
 use libra2_crypto::HashValue;
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
-use aptos_jellyfish_merkle::{
+use libra2_jellyfish_merkle::{
     node_type::NodeKey, JellyfishMerkleTree, TreeReader, TreeUpdateBatch, TreeWriter,
 };
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
-use aptos_rocksdb_options::gen_rocksdb_options;
+use libra2_rocksdb_options::gen_rocksdb_options;
 use libra2_schemadb::{
     batch::{IntoRawBatch, RawBatch, SchemaBatch, WriteBatch},
     DB,
@@ -51,9 +51,9 @@ pub const STATE_MERKLE_DB_FOLDER_NAME: &str = "state_merkle_db";
 pub const STATE_MERKLE_DB_NAME: &str = "state_merkle_db";
 pub const STATE_MERKLE_METADATA_DB_NAME: &str = "state_merkle_metadata_db";
 
-pub(crate) type LeafNode = aptos_jellyfish_merkle::node_type::LeafNode<StateKey>;
-pub(crate) type Node = aptos_jellyfish_merkle::node_type::Node<StateKey>;
-type NodeBatch = aptos_jellyfish_merkle::NodeBatch<StateKey>;
+pub(crate) type LeafNode = libra2_jellyfish_merkle::node_type::LeafNode<StateKey>;
+pub(crate) type Node = libra2_jellyfish_merkle::node_type::Node<StateKey>;
+type NodeBatch = libra2_jellyfish_merkle::NodeBatch<StateKey>;
 
 #[derive(Debug)]
 pub struct StateMerkleDb {

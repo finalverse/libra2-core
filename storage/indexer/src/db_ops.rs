@@ -3,8 +3,8 @@
 
 use anyhow::Result;
 use libra2_config::config::RocksdbConfig;
-use aptos_db_indexer_schemas::schema::{column_families, internal_indexer_column_families};
-use aptos_rocksdb_options::gen_rocksdb_options;
+use libra2_db_indexer_schemas::schema::{column_families, internal_indexer_column_families};
+use libra2_rocksdb_options::gen_rocksdb_options;
 use libra2_schemadb::DB;
 use std::{mem, path::Path};
 

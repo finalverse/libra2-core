@@ -1,6 +1,6 @@
 [package]
-name = "aptos-jellyfish-merkle"
-description = "Aptos jellyfish merkle"
+name = "libra2-jellyfish-merkle"
+description = "Libra2 jellyfish merkle"
 version = "0.1.0"
 
 # Workspace inherited keys

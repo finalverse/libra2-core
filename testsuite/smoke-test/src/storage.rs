@@ -12,7 +12,7 @@ use crate::{
     workspace_builder::workspace_root,
 };
 use anyhow::{bail, Result};
-use aptos_backup_cli::metadata::view::BackupStorageState;
+use libra2_backup_cli::metadata::view::BackupStorageState;
 use aptos_forge::{reconfig, AptosPublicInfo, Node, NodeExt, Swarm, SwarmExt};
 use libra2_logger::info;
 use libra2_temppath::TempPath;

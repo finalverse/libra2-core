@@ -24,10 +24,10 @@ use aptos_db::{
         StateSnapshotRestore, StateSnapshotRestoreMode, StateValueBatch, StateValueWriter,
     },
 };
-use aptos_db_indexer_schemas::metadata::StateSnapshotProgress;
+use libra2_db_indexer_schemas::metadata::StateSnapshotProgress;
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
 use libra2_infallible::duration_since_epoch;
-use aptos_jellyfish_merkle::{NodeBatch, TreeWriter};
+use libra2_jellyfish_merkle::{NodeBatch, TreeWriter};
 use libra2_logger::info;
 use libra2_storage_interface::{AptosDbError, Result};
 use libra2_types::{

@@ -35,13 +35,13 @@ use libra2_crypto::{
     hash::{CryptoHash, CORRUPTION_SENTINEL, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
-use aptos_db_indexer::db_indexer::InternalIndexerDB;
-use aptos_db_indexer_schemas::{
+use libra2_db_indexer::db_indexer::InternalIndexerDB;
+use libra2_db_indexer_schemas::{
     metadata::{MetadataKey, MetadataValue, StateSnapshotProgress},
     schema::indexer_metadata::InternalIndexerMetadataSchema,
 };
 use libra2_infallible::Mutex;
-use aptos_jellyfish_merkle::iterator::JellyfishMerkleIterator;
+use libra2_jellyfish_merkle::iterator::JellyfishMerkleIterator;
 use libra2_logger::info;
 use libra2_metrics_core::TimerHelper;
 use libra2_schemadb::batch::{NativeBatch, SchemaBatch, WriteBatch};
@@ -1048,14 +1048,14 @@ impl StateStore {
     pub fn get_all_jmt_nodes_referenced(
         &self,
         version: Version,
-    ) -> Result<Vec<aptos_jellyfish_merkle::node_type::NodeKey>> {
-        aptos_jellyfish_merkle::JellyfishMerkleTree::new(self.state_merkle_db.as_ref())
+    ) -> Result<Vec<libra2_jellyfish_merkle::node_type::NodeKey>> {
+        libra2_jellyfish_merkle::JellyfishMerkleTree::new(self.state_merkle_db.as_ref())
             .get_all_nodes_referenced(version)
             .map_err(Into::into)
     }
 
     #[cfg(test)]
-    pub fn get_all_jmt_nodes(&self) -> Result<Vec<aptos_jellyfish_merkle::node_type::NodeKey>> {
+    pub fn get_all_jmt_nodes(&self) -> Result<Vec<libra2_jellyfish_merkle::node_type::NodeKey>> {
         let mut iter = self
             .state_db
             .state_merkle_db
@@ -1065,7 +1065,7 @@ impl StateStore {
 
         let all_rows = iter.collect::<Result<Vec<_>>>()?;
 
-        let mut keys: Vec<aptos_jellyfish_merkle::node_type::NodeKey> =
+        let mut keys: Vec<libra2_jellyfish_merkle::node_type::NodeKey> =
             all_rows.into_iter().map(|(k, _v)| k).collect();
         if self.state_merkle_db.sharding_enabled() {
             for i in 0..NUM_STATE_SHARDS as u8 {
