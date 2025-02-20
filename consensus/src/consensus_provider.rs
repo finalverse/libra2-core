@@ -27,8 +27,8 @@ use crate::{
 use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::libra2_channel::Receiver;
 use libra2_config::config::NodeConfig;
-use aptos_consensus_notifications::ConsensusNotificationSender;
-use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
+use libra2_consensus_notifications::ConsensusNotificationSender;
+use libra2_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use aptos_executor::block_executor::BlockExecutor;
 use libra2_logger::prelude::*;
 use aptos_mempool::QuorumStoreRequest;

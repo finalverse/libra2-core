@@ -6,7 +6,7 @@ use crate::{
     network_interface::JWKConsensusNetworkClient, types::JWKConsensusMsg,
 };
 use libra2_config::config::SafetyRulesConfig;
-use aptos_event_notifications::{
+use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };
 use aptos_network::application::interface::{NetworkClient, NetworkServiceEvents};

@@ -19,7 +19,7 @@ use crate::{
     utils::OutputFallbackHandler,
 };
 use libra2_config::config::ContinuousSyncingMode;
-use aptos_consensus_notifications::{
+use libra2_consensus_notifications::{
     ConsensusSyncDurationNotification, ConsensusSyncTargetNotification,
 };
 use aptos_data_streaming_service::{

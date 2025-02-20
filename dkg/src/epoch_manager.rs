@@ -12,7 +12,7 @@ use anyhow::{anyhow, Result};
 use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::config::{ReliableBroadcastConfig, SafetyRulesConfig};
-use aptos_event_notifications::{
+use libra2_event_notifications::{
     EventNotification, EventNotificationListener, ReconfigNotification,
     ReconfigNotificationListener,
 };

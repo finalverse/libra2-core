@@ -21,9 +21,9 @@ use aptos_consensus::{
     consensus_provider::start_consensus_observer,
     network_interface::ConsensusMsg,
 };
-use aptos_consensus_notifications::ConsensusNotifier;
+use libra2_consensus_notifications::ConsensusNotifier;
 use libra2_dkg_runtime::{start_dkg_runtime, DKGMessage};
-use aptos_event_notifications::{
+use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };
 use aptos_jwk_consensus::{start_jwk_consensus_runtime, types::JWKConsensusMsg};

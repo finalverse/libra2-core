@@ -21,7 +21,7 @@ libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
 libra2-storage-interface = { workspace = true }
-aptos-storage-service-notifications = { workspace = true }
+libra2-storage-service-notifications = { workspace = true }
 aptos-storage-service-types = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }

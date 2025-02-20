@@ -14,7 +14,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_crypto::{x25519::PrivateKey, Uniform};
-use aptos_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
+use libra2_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
 use libra2_infallible::{Mutex, MutexGuard, RwLock};
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_network::{

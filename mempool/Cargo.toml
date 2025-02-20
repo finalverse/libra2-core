@@ -19,7 +19,7 @@ libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
 aptos-consensus-types = { workspace = true }
 libra2-crypto = { workspace = true }
-aptos-event-notifications = { workspace = true }
+libra2-event-notifications = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 aptos-mempool-notifications = { workspace = true }

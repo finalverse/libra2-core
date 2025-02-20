@@ -16,7 +16,7 @@ use libra2_config::{
 };
 use libra2_logger::prelude::*;
 use aptos_network::application::storage::PeersAndMetadata;
-use aptos_storage_service_notifications::StorageServiceNotificationListener;
+use libra2_storage_service_notifications::StorageServiceNotificationListener;
 use aptos_storage_service_types::{
     requests::StorageServiceRequest,
     responses::{ProtocolMetadata, StorageServerSummary, StorageServiceResponse},

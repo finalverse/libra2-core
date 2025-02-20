@@ -14,7 +14,7 @@ use crate::{
     epoch_manager::EpochManager, network::NetworkTask, network_interface::DKGNetworkClient,
 };
 use libra2_config::config::{ReliableBroadcastConfig, SafetyRulesConfig};
-use aptos_event_notifications::{
+use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };
 use aptos_network::application::interface::{NetworkClient, NetworkServiceEvents};

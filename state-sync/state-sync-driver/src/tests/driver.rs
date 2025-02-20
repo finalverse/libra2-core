@@ -12,11 +12,11 @@ use crate::{
     },
 };
 use libra2_config::config::{NodeConfig, RoleType, StateSyncDriverConfig};
-use aptos_consensus_notifications::{ConsensusNotificationSender, ConsensusNotifier};
+use libra2_consensus_notifications::{ConsensusNotificationSender, ConsensusNotifier};
 use aptos_data_client::client::AptosDataClient;
 use aptos_data_streaming_service::streaming_client::new_streaming_service_client_listener_pair;
 use aptos_db::AptosDB;
-use aptos_event_notifications::{
+use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, EventSubscriptionService,
     ReconfigNotificationListener,
 };
@@ -27,7 +27,7 @@ use aptos_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
 use libra2_storage_interface::DbReaderWriter;
 use aptos_storage_service_client::StorageServiceClient;
-use aptos_storage_service_notifications::StorageServiceNotificationListener;
+use libra2_storage_service_notifications::StorageServiceNotificationListener;
 use libra2_time_service::TimeService;
 use libra2_types::{
     event::EventKey,
@@ -356,13 +356,13 @@ async fn create_driver_for_tests(
 
     // Create consensus and mempool notifiers and listeners
     let (consensus_notifier, consensus_listener) =
-        aptos_consensus_notifications::new_consensus_notifier_listener_pair(5000);
+        libra2_consensus_notifications::new_consensus_notifier_listener_pair(5000);
     let (mempool_notifier, mempool_listener) =
         aptos_mempool_notifications::new_mempool_notifier_listener_pair(100);
 
     // Create the storage service notifier and listener
     let (storage_service_notifier, storage_service_listener) =
-        aptos_storage_service_notifications::new_storage_service_notifier_listener_pair();
+        libra2_storage_service_notifications::new_storage_service_notifier_listener_pair();
 
     // Create the chunk executor
     let chunk_executor = Arc::new(ChunkExecutor::<AptosVMBlockExecutor>::new(db_rw.clone()));

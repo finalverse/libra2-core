@@ -16,7 +16,7 @@ use crate::{
     state_replication::StateComputerCommitCallBackType,
 };
 use libra2_config::config::NodeConfig;
-use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
+use libra2_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use libra2_infallible::Mutex;
 use libra2_logger::{error, info, warn};
 use libra2_storage_interface::DbReader;
@@ -353,7 +353,7 @@ mod test {
         quorum_cert::QuorumCert,
     };
     use libra2_crypto::HashValue;
-    use aptos_event_notifications::ReconfigNotification;
+    use libra2_event_notifications::ReconfigNotification;
     use libra2_types::{
         aggregate_signature::AggregateSignature, block_info::BlockInfo, ledger_info::LedgerInfo,
         transaction::Version,

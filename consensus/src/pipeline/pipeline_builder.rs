@@ -12,7 +12,7 @@ use crate::{
     IntGaugeGuard,
 };
 use anyhow::anyhow;
-use aptos_consensus_notifications::ConsensusNotificationSender;
+use libra2_consensus_notifications::ConsensusNotificationSender;
 use aptos_consensus_types::{
     block::Block,
     common::Round,

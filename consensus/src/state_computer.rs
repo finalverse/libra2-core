@@ -18,7 +18,7 @@ use crate::{
     txn_notifier::TxnNotifier,
 };
 use anyhow::Result;
-use aptos_consensus_notifications::ConsensusNotificationSender;
+use libra2_consensus_notifications::ConsensusNotificationSender;
 use aptos_consensus_types::{
     block::Block, common::Round, pipeline_execution_result::PipelineExecutionResult,
     pipelined_block::PipelinedBlock, quorum_cert::QuorumCert,
@@ -514,7 +514,7 @@ async fn test_commit_sync_race() {
         transaction_shuffler::create_transaction_shuffler,
     };
     use libra2_config::config::transaction_filter_type::Filter;
-    use aptos_consensus_notifications::Error;
+    use libra2_consensus_notifications::Error;
     use libra2_infallible::Mutex;
     use libra2_types::{
         aggregate_signature::AggregateSignature,

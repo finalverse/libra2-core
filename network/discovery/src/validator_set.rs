@@ -11,7 +11,7 @@ use libra2_config::{
     network_id::NetworkContext,
 };
 use libra2_crypto::x25519;
-use aptos_event_notifications::ReconfigNotificationListener;
+use libra2_event_notifications::ReconfigNotificationListener;
 use libra2_logger::prelude::*;
 use aptos_network::{counters::inc_by_with_context, logging::NetworkSchema};
 use libra2_short_hex_str::AsShortHexStr;
@@ -157,7 +157,7 @@ mod tests {
     use libra2_channels::{libra2_channel, message_queues::QueueStyle};
     use libra2_config::config::HANDSHAKE_VERSION;
     use libra2_crypto::{bls12381, x25519::PrivateKey, PrivateKey as PK, Uniform};
-    use aptos_event_notifications::ReconfigNotification;
+    use libra2_event_notifications::ReconfigNotification;
     use libra2_types::{
         network_address::NetworkAddress,
         on_chain_config::{InMemoryOnChainConfig, OnChainConfig},

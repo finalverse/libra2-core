@@ -62,7 +62,7 @@ mod tests {
         config::{Peer, PeerRole},
         network_id::NetworkContext,
     };
-    use aptos_event_notifications::DbBackedOnChainConfig;
+    use libra2_event_notifications::DbBackedOnChainConfig;
     use aptos_network::connectivity_manager::{ConnectivityRequest, DiscoverySource};
     use libra2_temppath::TempPath;
     use libra2_types::{network_address::NetworkAddress, PeerId};

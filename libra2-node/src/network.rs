@@ -12,7 +12,7 @@ use aptos_consensus::{
     network_interface::ConsensusMsg,
 };
 use libra2_dkg_runtime::DKGMessage;
-use aptos_event_notifications::EventSubscriptionService;
+use libra2_event_notifications::EventSubscriptionService;
 use aptos_jwk_consensus::types::JWKConsensusMsg;
 use libra2_logger::debug;
 use aptos_mempool::network::MempoolSyncMsg;

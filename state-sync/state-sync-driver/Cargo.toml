@@ -15,11 +15,11 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 libra2-config = { workspace = true }
-aptos-consensus-notifications = { workspace = true }
+libra2-consensus-notifications = { workspace = true }
 libra2-crypto = { workspace = true }
 aptos-data-client = { workspace = true }
 aptos-data-streaming-service = { workspace = true }
-aptos-event-notifications = { workspace = true }
+libra2-event-notifications = { workspace = true }
 aptos-executor-types = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
@@ -28,7 +28,7 @@ libra2-metrics-core = { workspace = true }
 aptos-runtimes = { workspace = true }
 libra2-schemadb = { workspace = true }
 libra2-storage-interface = { workspace = true }
-aptos-storage-service-notifications = { workspace = true }
+libra2-storage-service-notifications = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
 async-trait = { workspace = true }

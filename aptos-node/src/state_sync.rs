@@ -3,13 +3,13 @@
 
 use crate::network::ApplicationNetworkInterfaces;
 use libra2_config::config::{NodeConfig, StateSyncConfig};
-use aptos_consensus_notifications::ConsensusNotifier;
+use libra2_consensus_notifications::ConsensusNotifier;
 use aptos_data_client::{client::AptosDataClient, poller};
 use aptos_data_streaming_service::{
     streaming_client::{new_streaming_service_client_listener_pair, StreamingServiceClient},
     streaming_service::DataStreamingService,
 };
-use aptos_event_notifications::{
+use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, EventSubscriptionService,
     ReconfigNotificationListener,
 };
@@ -26,7 +26,7 @@ use aptos_state_sync_driver::{
 };
 use libra2_storage_interface::{DbReader, DbReaderWriter};
 use aptos_storage_service_client::StorageServiceClient;
-use aptos_storage_service_notifications::StorageServiceNotificationListener;
+use libra2_storage_service_notifications::StorageServiceNotificationListener;
 use aptos_storage_service_server::{
     network::StorageServiceNetworkEvents, storage::StorageReader, StorageServiceServer,
 };
@@ -163,13 +163,13 @@ pub fn start_state_sync_and_get_notification_handles(
                 .max_pending_mempool_notifications,
         );
     let (consensus_notifier, consensus_listener) =
-        aptos_consensus_notifications::new_consensus_notifier_listener_pair(
+        libra2_consensus_notifications::new_consensus_notifier_listener_pair(
             state_sync_config
                 .state_sync_driver
                 .commit_notification_timeout_ms,
         );
     let (storage_service_notifier, storage_service_listener) =
-        aptos_storage_service_notifications::new_storage_service_notifier_listener_pair();
+        libra2_storage_service_notifications::new_storage_service_notifier_listener_pair();
 
     // Start the state sync storage service
     let storage_service_runtime = setup_state_sync_storage_service(

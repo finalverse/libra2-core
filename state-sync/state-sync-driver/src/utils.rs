@@ -18,12 +18,12 @@ use aptos_data_streaming_service::{
     data_stream::{DataStreamId, DataStreamListener},
     streaming_client::{DataStreamingClient, NotificationAndFeedback},
 };
-use aptos_event_notifications::EventSubscriptionService;
+use libra2_event_notifications::EventSubscriptionService;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use aptos_mempool_notifications::MempoolNotificationSender;
 use libra2_storage_interface::DbReader;
-use aptos_storage_service_notifications::StorageServiceNotificationSender;
+use libra2_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use libra2_types::{
     epoch_change::Verifier,

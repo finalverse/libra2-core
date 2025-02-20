@@ -14,7 +14,7 @@ use libra2_config::{
     config::{NetworkConfig, NodeConfig},
     network_id::NetworkId,
 };
-use aptos_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
+use libra2_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
 use libra2_infallible::{Mutex, RwLock};
 use aptos_mempool_notifications::{self, MempoolNotifier};
 use aptos_network::{

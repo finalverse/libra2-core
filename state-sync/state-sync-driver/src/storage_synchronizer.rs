@@ -15,14 +15,14 @@ use crate::{
 };
 use libra2_config::config::StateSyncDriverConfig;
 use aptos_data_streaming_service::data_notification::NotificationId;
-use aptos_event_notifications::EventSubscriptionService;
+use libra2_event_notifications::EventSubscriptionService;
 use aptos_executor_types::{ChunkCommitNotification, ChunkExecutorTrait};
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use aptos_mempool_notifications::MempoolNotificationSender;
 use libra2_metrics_core::HistogramTimer;
 use libra2_storage_interface::{DbReader, DbReaderWriter, StateSnapshotReceiver};
-use aptos_storage_service_notifications::StorageServiceNotificationSender;
+use libra2_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     state_store::{

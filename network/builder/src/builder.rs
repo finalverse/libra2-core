@@ -18,7 +18,7 @@ use libra2_config::{
     },
     network_id::NetworkContext,
 };
-use aptos_event_notifications::{DbBackedOnChainConfig, EventSubscriptionService};
+use libra2_event_notifications::{DbBackedOnChainConfig, EventSubscriptionService};
 use libra2_logger::prelude::*;
 use aptos_netcore::transport::tcp::TCPBufferCfg;
 use aptos_network::{

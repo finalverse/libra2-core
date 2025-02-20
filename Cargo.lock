@@ -712,9 +712,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-consensus-notifications",
  "aptos-consensus-types",
- "aptos-event-notifications",
  "aptos-executor",
  "aptos-executor-test-helpers",
  "aptos-executor-types",
@@ -749,10 +747,12 @@ dependencies = [
  "libra2-channels",
  "libra2-collections",
  "libra2-config",
+ "libra2-consensus-notifications",
  "libra2-crypto",
  "libra2-crypto-derive",
  "libra2-dkg",
  "libra2-enum-conversion-derive",
+ "libra2-event-notifications",
  "libra2-fallible",
  "libra2-infallible",
  "libra2-logger",
@@ -790,22 +790,6 @@ dependencies = [
  "tokio",
  "tokio-retry",
  "tokio-stream",
-]
-
-[[package]]
-name = "aptos-consensus-notifications"
-version = "0.1.0"
-dependencies = [
- "aptos-runtimes",
- "async-trait",
- "claims",
- "futures",
- "libra2-crypto",
- "libra2-types",
- "move-core-types",
- "serde",
- "thiserror",
- "tokio",
 ]
 
 [[package]]
@@ -986,31 +970,6 @@ dependencies = [
  "serde_json",
  "wasm-bindgen",
  "wasm-bindgen-futures",
-]
-
-[[package]]
-name = "aptos-event-notifications"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-db",
- "aptos-executor-test-helpers",
- "aptos-vm",
- "aptos-vm-genesis",
- "bcs 0.1.4",
- "claims",
- "futures",
- "libra2-channels",
- "libra2-crypto",
- "libra2-id-generator",
- "libra2-infallible",
- "libra2-storage-interface",
- "libra2-temppath",
- "libra2-types",
- "move-binary-format",
- "move-core-types",
- "serde",
- "thiserror",
 ]
 
 [[package]]
@@ -2056,7 +2015,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus-types",
- "aptos-event-notifications",
  "aptos-network",
  "aptos-reliable-broadcast",
  "aptos-runtimes",
@@ -2073,6 +2031,7 @@ dependencies = [
  "libra2-config",
  "libra2-crypto",
  "libra2-enum-conversion-derive",
+ "libra2-event-notifications",
  "libra2-infallible",
  "libra2-jwk-utils",
  "libra2-logger",
@@ -2277,7 +2236,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus-types",
- "aptos-event-notifications",
  "aptos-mempool-notifications",
  "aptos-netcore",
  "aptos-network",
@@ -2294,6 +2252,7 @@ dependencies = [
  "libra2-compression",
  "libra2-config",
  "libra2-crypto",
+ "libra2-event-notifications",
  "libra2-id-generator",
  "libra2-infallible",
  "libra2-logger",
@@ -2553,7 +2512,6 @@ dependencies = [
 name = "aptos-network-builder"
 version = "0.1.0"
 dependencies = [
- "aptos-event-notifications",
  "aptos-netcore",
  "aptos-network",
  "aptos-network-discovery",
@@ -2562,6 +2520,7 @@ dependencies = [
  "libra2-channels",
  "libra2-config",
  "libra2-crypto",
+ "libra2-event-notifications",
  "libra2-logger",
  "libra2-time-service",
  "libra2-types",
@@ -2592,7 +2551,6 @@ name = "aptos-network-discovery"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-event-notifications",
  "aptos-netcore",
  "aptos-network",
  "aptos-rest-client",
@@ -2601,6 +2559,7 @@ dependencies = [
  "libra2-channels",
  "libra2-config",
  "libra2-crypto",
+ "libra2-event-notifications",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-short-hex-str",
@@ -2656,11 +2615,9 @@ dependencies = [
  "aptos-api",
  "aptos-cached-packages",
  "aptos-consensus",
- "aptos-consensus-notifications",
  "aptos-data-client",
  "aptos-data-streaming-service",
  "aptos-db",
- "aptos-event-notifications",
  "aptos-executor",
  "aptos-framework",
  "aptos-genesis",
@@ -2680,7 +2637,6 @@ dependencies = [
  "aptos-runtimes",
  "aptos-state-sync-driver",
  "aptos-storage-service-client",
- "aptos-storage-service-notifications",
  "aptos-storage-service-server",
  "aptos-storage-service-types",
  "aptos-telemetry",
@@ -2698,14 +2654,17 @@ dependencies = [
  "libra2-build-info",
  "libra2-channels",
  "libra2-config",
+ "libra2-consensus-notifications",
  "libra2-crash-handler",
  "libra2-crypto",
  "libra2-db-indexer",
  "libra2-dkg-runtime",
+ "libra2-event-notifications",
  "libra2-infallible",
  "libra2-logger",
  "libra2-node-identity",
  "libra2-storage-interface",
+ "libra2-storage-service-notifications",
  "libra2-temppath",
  "libra2-time-service",
  "libra2-types",
@@ -3176,11 +3135,9 @@ name = "aptos-state-sync-driver"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-consensus-notifications",
  "aptos-data-client",
  "aptos-data-streaming-service",
  "aptos-db",
- "aptos-event-notifications",
  "aptos-executor",
  "aptos-executor-test-helpers",
  "aptos-executor-types",
@@ -3189,7 +3146,6 @@ dependencies = [
  "aptos-network",
  "aptos-runtimes",
  "aptos-storage-service-client",
- "aptos-storage-service-notifications",
  "aptos-storage-service-types",
  "aptos-vm",
  "aptos-vm-genesis",
@@ -3199,12 +3155,15 @@ dependencies = [
  "futures",
  "libra2-channels",
  "libra2-config",
+ "libra2-consensus-notifications",
  "libra2-crypto",
+ "libra2-event-notifications",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-schemadb",
  "libra2-storage-interface",
+ "libra2-storage-service-notifications",
  "libra2-temppath",
  "libra2-time-service",
  "libra2-types",
@@ -3230,27 +3189,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-storage-service-notifications"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "claims",
- "futures",
- "libra2-channels",
- "libra2-crypto",
- "serde",
- "thiserror",
- "tokio",
-]
-
-[[package]]
 name = "aptos-storage-service-server"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-netcore",
  "aptos-network",
- "aptos-storage-service-notifications",
  "aptos-storage-service-types",
  "arc-swap",
  "bcs 0.1.4",
@@ -3266,6 +3210,7 @@ dependencies = [
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-storage-interface",
+ "libra2-storage-service-notifications",
  "libra2-time-service",
  "libra2-types",
  "maplit",
@@ -9968,6 +9913,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-consensus-notifications"
+version = "0.1.0"
+dependencies = [
+ "aptos-runtimes",
+ "async-trait",
+ "claims",
+ "futures",
+ "libra2-crypto",
+ "libra2-types",
+ "move-core-types",
+ "serde",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
 name = "libra2-crash-handler"
 version = "0.1.0"
 dependencies = [
@@ -10207,7 +10168,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus-types",
- "aptos-event-notifications",
  "aptos-network",
  "aptos-reliable-broadcast",
  "aptos-runtimes",
@@ -10226,6 +10186,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-crypto-derive",
  "libra2-enum-conversion-derive",
+ "libra2-event-notifications",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -10258,6 +10219,31 @@ dependencies = [
  "quote",
  "syn 1.0.109",
  "trybuild",
+]
+
+[[package]]
+name = "libra2-event-notifications"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-db",
+ "aptos-executor-test-helpers",
+ "aptos-vm",
+ "aptos-vm-genesis",
+ "bcs 0.1.4",
+ "claims",
+ "futures",
+ "libra2-channels",
+ "libra2-crypto",
+ "libra2-id-generator",
+ "libra2-infallible",
+ "libra2-storage-interface",
+ "libra2-temppath",
+ "libra2-types",
+ "move-binary-format",
+ "move-core-types",
+ "serde",
+ "thiserror",
 ]
 
 [[package]]
@@ -10383,11 +10369,9 @@ dependencies = [
  "aptos-api",
  "aptos-cached-packages",
  "aptos-consensus",
- "aptos-consensus-notifications",
  "aptos-data-client",
  "aptos-data-streaming-service",
  "aptos-db",
- "aptos-event-notifications",
  "aptos-executor",
  "aptos-framework",
  "aptos-genesis",
@@ -10407,7 +10391,6 @@ dependencies = [
  "aptos-runtimes",
  "aptos-state-sync-driver",
  "aptos-storage-service-client",
- "aptos-storage-service-notifications",
  "aptos-storage-service-server",
  "aptos-storage-service-types",
  "aptos-telemetry",
@@ -10425,14 +10408,17 @@ dependencies = [
  "libra2-build-info",
  "libra2-channels",
  "libra2-config",
+ "libra2-consensus-notifications",
  "libra2-crash-handler",
  "libra2-crypto",
  "libra2-db-indexer",
  "libra2-dkg-runtime",
+ "libra2-event-notifications",
  "libra2-infallible",
  "libra2-logger",
  "libra2-node-identity",
  "libra2-storage-interface",
+ "libra2-storage-service-notifications",
  "libra2-temppath",
  "libra2-time-service",
  "libra2-types",
@@ -10669,6 +10655,20 @@ dependencies = [
  "rayon",
  "serde",
  "thiserror",
+]
+
+[[package]]
+name = "libra2-storage-service-notifications"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "claims",
+ "futures",
+ "libra2-channels",
+ "libra2-crypto",
+ "serde",
+ "thiserror",
+ "tokio",
 ]
 
 [[package]]

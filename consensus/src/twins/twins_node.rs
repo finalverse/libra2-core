@@ -23,7 +23,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use aptos_consensus_types::common::{Author, Round};
-use aptos_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
+use libra2_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
 use aptos_mempool::mocks::MockSharedMempool;
 use aptos_network::{
     application::interface::{NetworkClient, NetworkServiceEvents},

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-event-notifications"
+name = "libra2-event-notifications"
 description = "The notification service offered by state sync for on-chain events"
 version = "0.1.0"
 

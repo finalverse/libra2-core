@@ -15,7 +15,7 @@ use libra2_config::{
 use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
 use libra2_logger::Level;
 use aptos_network::protocols::network::RpcError;
-use aptos_storage_service_notifications::{
+use libra2_storage_service_notifications::{
     StorageServiceNotificationSender, StorageServiceNotifier,
 };
 use aptos_storage_service_types::{

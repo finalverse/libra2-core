@@ -22,7 +22,7 @@ aptos-cached-packages = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
 aptos-consensus = { workspace = true }
-aptos-consensus-notifications = { workspace = true }
+libra2-consensus-notifications = { workspace = true }
 libra2-crash-handler = { workspace = true }
 libra2-crypto = { workspace = true }
 aptos-data-client = { workspace = true }
@@ -30,7 +30,7 @@ aptos-data-streaming-service = { workspace = true }
 aptos-db = { workspace = true }
 libra2-db-indexer = { workspace = true }
 libra2-dkg-runtime = { workspace = true }
-aptos-event-notifications = { workspace = true }
+libra2-event-notifications = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-framework = { workspace = true }
 aptos-genesis = { workspace = true }
@@ -54,7 +54,7 @@ aptos-runtimes = { workspace = true }
 aptos-state-sync-driver = { workspace = true }
 libra2-storage-interface = { workspace = true }
 aptos-storage-service-client = { workspace = true }
-aptos-storage-service-notifications = { workspace = true }
+libra2-storage-service-notifications = { workspace = true }
 aptos-storage-service-server = { workspace = true }
 aptos-storage-service-types = { workspace = true }
 aptos-telemetry = { workspace = true }

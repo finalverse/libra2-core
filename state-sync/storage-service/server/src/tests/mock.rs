@@ -23,7 +23,7 @@ use aptos_network::{
     },
 };
 use libra2_storage_interface::{DbReader, LedgerSummary, Order};
-use aptos_storage_service_notifications::StorageServiceNotifier;
+use libra2_storage_service_notifications::StorageServiceNotifier;
 use aptos_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServiceResponse, StorageServiceError,
     StorageServiceMessage,
@@ -108,7 +108,7 @@ impl MockClient {
 
         // Create the storage service notifier and listener
         let (storage_service_notifier, storage_service_listener) =
-            aptos_storage_service_notifications::new_storage_service_notifier_listener_pair();
+            libra2_storage_service_notifications::new_storage_service_notifier_listener_pair();
 
         // Create the storage service
         let peers_and_metadata = create_peers_and_metadata(network_ids);

@@ -21,7 +21,7 @@ use crate::{
 };
 use libra2_bounded_executor::BoundedExecutor;
 use libra2_config::network_id::{NetworkId, PeerNetworkId};
-use aptos_event_notifications::ReconfigNotificationListener;
+use libra2_event_notifications::ReconfigNotificationListener;
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::prelude::*;
 use aptos_mempool_notifications::{MempoolCommitNotification, MempoolNotificationListener};

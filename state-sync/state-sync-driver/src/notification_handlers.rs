@@ -6,16 +6,16 @@ use crate::{
     error::Error,
     logging::{LogEntry, LogSchema},
 };
-use aptos_consensus_notifications::{
+use libra2_consensus_notifications::{
     ConsensusCommitNotification, ConsensusNotification, ConsensusNotificationListener,
     ConsensusSyncDurationNotification, ConsensusSyncTargetNotification,
 };
 use aptos_data_streaming_service::data_notification::NotificationId;
-use aptos_event_notifications::{EventNotificationSender, EventSubscriptionService};
+use libra2_event_notifications::{EventNotificationSender, EventSubscriptionService};
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use aptos_mempool_notifications::MempoolNotificationSender;
-use aptos_storage_service_notifications::StorageServiceNotificationSender;
+use libra2_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use libra2_types::{
     contract_event::ContractEvent,
@@ -355,7 +355,7 @@ impl ConsensusNotificationHandler {
     ) -> Result<(), Error> {
         // Wrap the result in an error that consensus can process
         let result = result.map_err(|error| {
-            aptos_consensus_notifications::Error::UnexpectedErrorEncountered(format!("{:?}", error))
+            libra2_consensus_notifications::Error::UnexpectedErrorEncountered(format!("{:?}", error))
         });
 
         // Send the result
@@ -387,7 +387,7 @@ impl ConsensusNotificationHandler {
     ) -> Result<(), Error> {
         // Wrap the result in an error that consensus can process
         let result = result.map_err(|error| {
-            aptos_consensus_notifications::Error::UnexpectedErrorEncountered(format!("{:?}", error))
+            libra2_consensus_notifications::Error::UnexpectedErrorEncountered(format!("{:?}", error))
         });
 
         // Send the result
@@ -415,7 +415,7 @@ impl ConsensusNotificationHandler {
     ) -> Result<(), Error> {
         // Wrap the result in an error that consensus can process
         let result = result.map_err(|error| {
-            aptos_consensus_notifications::Error::UnexpectedErrorEncountered(format!("{:?}", error))
+            libra2_consensus_notifications::Error::UnexpectedErrorEncountered(format!("{:?}", error))
         });
 
         // Send the result

@@ -12,9 +12,9 @@ use aptos_data_client::global_summary::GlobalDataSummary;
 use aptos_data_streaming_service::{
     data_notification::DataNotification, data_stream::DataStreamListener, streaming_client::Epoch,
 };
-use aptos_event_notifications::EventNotificationListener;
+use libra2_event_notifications::EventNotificationListener;
 use aptos_mempool_notifications::{CommittedTransaction, MempoolNotificationListener};
-use aptos_storage_service_notifications::StorageServiceNotificationListener;
+use libra2_storage_service_notifications::StorageServiceNotificationListener;
 use aptos_storage_service_types::responses::CompleteDataRange;
 use libra2_types::{
     account_address::AccountAddress,

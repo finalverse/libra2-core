@@ -19,13 +19,13 @@ libra2-bounded-executor = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-collections = { workspace = true }
 libra2-config = { workspace = true }
-aptos-consensus-notifications = { workspace = true }
+libra2-consensus-notifications = { workspace = true }
 aptos-consensus-types = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-crypto-derive = { workspace = true }
 libra2-dkg = { workspace = true }
 libra2-enum-conversion-derive = { workspace = true }
-aptos-event-notifications = { workspace = true }
+libra2-event-notifications = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-executor-types = { workspace = true }
 aptos-experimental-runtimes = { workspace = true }

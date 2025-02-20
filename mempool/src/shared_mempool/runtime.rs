@@ -12,7 +12,7 @@ use crate::{
     QuorumStoreRequest,
 };
 use libra2_config::config::{NodeConfig, NodeType};
-use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
+use libra2_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::Level;
 use aptos_mempool_notifications::MempoolNotificationListener;
