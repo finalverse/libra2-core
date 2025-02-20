@@ -29,7 +29,7 @@ use aptos_schemadb::{
 };
 #[cfg(test)]
 use aptos_scratchpad::get_state_shard_id;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     db_ensure as ensure, state_store::NUM_STATE_SHARDS, AptosDbError, Result,
 };
 use libra2_types::{

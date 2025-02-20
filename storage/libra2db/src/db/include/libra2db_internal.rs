@@ -3,7 +3,7 @@
 
 use crate::metrics::CONCURRENCY_GAUGE;
 use libra2_metrics_core::IntGaugeHelper;
-use aptos_storage_interface::block_info::BlockInfo;
+use libra2_storage_interface::block_info::BlockInfo;
 
 impl Libra2DB {
     fn new_with_dbs(
@@ -129,7 +129,7 @@ impl Libra2DB {
         );
 
         if indexer.next_version() < ledger_next_version {
-            use aptos_storage_interface::state_store::state_view::db_state_view::DbStateViewAtVersion;
+            use libra2_storage_interface::state_store::state_view::db_state_view::DbStateViewAtVersion;
             let db: Arc<dyn DbReader> = self.state_store.clone();
 
             let state_view = db.state_view_at_version(Some(ledger_next_version - 1))?;

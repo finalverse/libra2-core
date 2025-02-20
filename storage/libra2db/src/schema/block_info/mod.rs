@@ -14,7 +14,7 @@ use aptos_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},
 };
-use aptos_storage_interface::block_info::BlockInfo;
+use libra2_storage_interface::block_info::BlockInfo;
 use libra2_types::block_info::BlockHeight;
 use byteorder::{BigEndian, ReadBytesExt};
 use std::mem::size_of;

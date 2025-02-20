@@ -7,7 +7,7 @@ use anyhow::Result;
 use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
 use libra2_crypto::{hash::SPARSE_MERKLE_PLACEHOLDER_HASH, HashValue};
 use aptos_executor_types::BlockExecutorTrait;
-use aptos_storage_interface::{chunk_to_commit::ChunkToCommit, DbReader, DbReaderWriter, DbWriter};
+use libra2_storage_interface::{chunk_to_commit::ChunkToCommit, DbReader, DbReaderWriter, DbWriter};
 use libra2_types::{
     block_executor::{
         config::BlockExecutorConfigFromOnchain, partitioner::PartitionedTransactions,
@@ -91,11 +91,11 @@ impl VMBlockExecutor for FakeVM {
 pub struct FakeDb;
 
 impl DbReader for FakeDb {
-    fn get_latest_ledger_info_version(&self) -> aptos_storage_interface::Result<Version> {
+    fn get_latest_ledger_info_version(&self) -> libra2_storage_interface::Result<Version> {
         Ok(self.get_latest_ledger_info()?.ledger_info().version())
     }
 
-    fn get_latest_commit_metadata(&self) -> aptos_storage_interface::Result<(Version, u64)> {
+    fn get_latest_commit_metadata(&self) -> libra2_storage_interface::Result<(Version, u64)> {
         let ledger_info_with_sig = self.get_latest_ledger_info()?;
         let ledger_info = ledger_info_with_sig.ledger_info();
         Ok((ledger_info.version(), ledger_info.timestamp_usecs()))
@@ -107,7 +107,7 @@ impl DbWriter for FakeDb {
         &self,
         _chunk: ChunkToCommit,
         _sync_commit: bool,
-    ) -> aptos_storage_interface::Result<()> {
+    ) -> libra2_storage_interface::Result<()> {
         Ok(())
     }
 
@@ -116,7 +116,7 @@ impl DbWriter for FakeDb {
         _version: Version,
         _ledger_info_with_sigs: Option<&LedgerInfoWithSignatures>,
         _chunk: Option<ChunkToCommit>,
-    ) -> aptos_storage_interface::Result<()> {
+    ) -> libra2_storage_interface::Result<()> {
         Ok(())
     }
 }

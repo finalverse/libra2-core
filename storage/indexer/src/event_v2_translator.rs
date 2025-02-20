@@ -3,7 +3,7 @@
 
 use aptos_db_indexer_schemas::schema::event_sequence_number::EventSequenceNumberSchema;
 use aptos_schemadb::DB;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, AptosDbError, DbReader,
     Result,
 };

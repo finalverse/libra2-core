@@ -15,7 +15,7 @@ use aptos_sdk::{
     transaction_builder::TransactionFactory,
     types::{AccountKey, LocalAccount},
 };
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::db_state_view::{DbStateViewAtVersion, VerifiedStateViewAtVersion},
     DbReaderWriter,
 };

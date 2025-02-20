@@ -3,7 +3,7 @@
 
 use crate::{ledger_db::ledger_metadata_db::LedgerMetadataDb, AptosDB};
 use aptos_schemadb::batch::SchemaBatch;
-use aptos_storage_interface::AptosDbError;
+use libra2_storage_interface::AptosDbError;
 use libra2_temppath::TempPath;
 use libra2_types::{
     account_address::AccountAddress,

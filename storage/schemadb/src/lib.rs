@@ -31,7 +31,7 @@ use crate::{
 use anyhow::format_err;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
-use aptos_storage_interface::{AptosDbError, Result as DbResult};
+use libra2_storage_interface::{AptosDbError, Result as DbResult};
 use batch::{IntoRawBatch, NativeBatch, WriteBatch};
 use iterator::{ScanDirection, SchemaIterator};
 use rocksdb::ErrorKind;
@@ -299,7 +299,7 @@ impl DB {
             .property_int_value_cf(self.get_cf_handle(cf_name)?, property_name)
             .into_db_res()?
             .ok_or_else(|| {
-                aptos_storage_interface::AptosDbError::Other(
+                libra2_storage_interface::AptosDbError::Other(
                     format!(
                         "Unable to get property \"{}\" of  column family \"{}\".",
                         property_name, cf_name,

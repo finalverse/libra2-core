@@ -3,7 +3,7 @@
 
 use libra2_infallible::Mutex;
 use libra2_logger::info;
-use aptos_storage_interface::state_store::state_view::cached_state_view::CachedStateView;
+use libra2_storage_interface::state_store::state_view::cached_state_view::CachedStateView;
 use aptos_vm::{
     sharded_block_executor::{local_executor_shard::LocalExecutorClient, ShardedBlockExecutor},
     AptosVM,

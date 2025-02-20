@@ -4,7 +4,7 @@
 
 use anyhow::Result;
 use libra2_logger::info;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::{
         cached_state_view::CachedDbStateView,
         db_state_view::{DbStateView, LatestDbStateCheckpointView},

@@ -1,8 +1,8 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_storage_interface::state_store::state::State;
-use aptos_storage_interface::state_store::state_summary::StateSummary;
+use libra2_storage_interface::state_store::state::State;
+use libra2_storage_interface::state_store::state_summary::StateSummary;
 use libra2_types::block_info::BlockHeight;
 
 impl DbReader for Libra2DB {

@@ -48,7 +48,7 @@ use libra2_logger::{debug, error, info, warn};
 use aptos_network::{
     application::interface::NetworkClient, protocols::wire::handshake::v1::ProtocolId,
 };
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_time_service::TimeService;
 use libra2_types::{
     block_info::{BlockInfo, Round},

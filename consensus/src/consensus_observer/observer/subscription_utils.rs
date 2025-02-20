@@ -18,7 +18,7 @@ use aptos_network::{
     application::{interface::NetworkClient, metadata::PeerMetadata},
     ProtocolId,
 };
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_time_service::TimeService;
 use ordered_float::OrderedFloat;
 use std::{
@@ -373,7 +373,7 @@ mod tests {
     use aptos_peer_monitoring_service_types::{
         response::NetworkInformationResponse, PeerMonitoringMetadata,
     };
-    use aptos_storage_interface::Result;
+    use libra2_storage_interface::Result;
     use libra2_types::{network_address::NetworkAddress, transaction::Version, PeerId};
     use bytes::Bytes;
     use futures::StreamExt;

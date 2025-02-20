@@ -8,7 +8,7 @@ use crate::{
 };
 use libra2_config::config::AptosDataClientConfig;
 use libra2_logger::{info, sample, sample::SampleRate, warn};
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use futures::StreamExt;
 use std::{

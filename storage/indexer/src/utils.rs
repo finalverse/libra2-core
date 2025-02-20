@@ -3,7 +3,7 @@
 
 use aptos_db_indexer_schemas::schema::state_keys::StateKeysSchema;
 use aptos_schemadb::{iterator::SchemaIterator, ReadOptions, DB};
-use aptos_storage_interface::{DbReader, Result};
+use libra2_storage_interface::{DbReader, Result};
 use libra2_types::{
     state_store::{
         state_key::{prefix::StateKeyPrefix, StateKey},

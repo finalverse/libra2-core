@@ -12,7 +12,7 @@ use aptos_sdk::{
     transaction_builder::{aptos_stdlib, TransactionFactory},
     types::LocalAccount,
 };
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReader, DbReaderWriter,
 };
 use libra2_types::{

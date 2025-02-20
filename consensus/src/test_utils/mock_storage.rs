@@ -14,7 +14,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::HashValue;
 use libra2_infallible::Mutex;
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_types::{
     aggregate_signature::AggregateSignature,
     epoch_change::EpochChangeProof,

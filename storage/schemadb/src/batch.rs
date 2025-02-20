@@ -8,7 +8,7 @@ use crate::{
 };
 use libra2_drop_helper::DropHelper;
 use libra2_metrics_core::TimerHelper;
-use aptos_storage_interface::Result as DbResult;
+use libra2_storage_interface::Result as DbResult;
 use std::{
     collections::HashMap,
     fmt::{Debug, Formatter},

@@ -11,7 +11,7 @@ use libra2_crypto::{
     hash::{CryptoHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::{
     nibble::{nibble_path::NibblePath, Nibble},
     proof::{definition::NodeInProof, SparseMerkleInternalNode, SparseMerkleLeafNode},

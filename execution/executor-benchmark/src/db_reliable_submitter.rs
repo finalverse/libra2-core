@@ -4,7 +4,7 @@
 
 use crate::db_access::DbAccessUtil;
 use anyhow::{Context, Result};
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReaderWriter,
 };
 use aptos_transaction_generator_lib::{CounterState, ReliableTransactionSubmitter};

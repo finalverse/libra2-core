@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use itertools::Itertools;
-use aptos_storage_interface::chunk_to_commit::ChunkToCommit;
+use libra2_storage_interface::chunk_to_commit::ChunkToCommit;
 
 impl DbWriter for AptosDB {
     fn pre_commit_ledger(

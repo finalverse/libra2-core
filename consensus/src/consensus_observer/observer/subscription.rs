@@ -4,7 +4,7 @@
 use crate::consensus_observer::{common::error::Error, observer::subscription_utils};
 use libra2_config::{config::ConsensusObserverConfig, network_id::PeerNetworkId};
 use aptos_network::application::metadata::PeerMetadata;
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use std::{
     collections::{HashMap, HashSet},
@@ -243,7 +243,7 @@ mod test {
         ProtocolId,
     };
     use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
-    use aptos_storage_interface::Result;
+    use libra2_storage_interface::Result;
     use libra2_types::{network_address::NetworkAddress, transaction::Version};
     use claims::assert_matches;
     use mockall::mock;

@@ -18,7 +18,7 @@ use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_infallible::Mutex;
 use libra2_logger::trace;
 use libra2_metrics_core::TimerHelper;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     jmt_update_refs, state_store::state_with_summary::StateWithSummary, Result,
 };
 use itertools::Itertools;

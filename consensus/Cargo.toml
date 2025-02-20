@@ -42,7 +42,7 @@ aptos-safety-rules = { workspace = true }
 aptos-schemadb = { workspace = true }
 libra2-secure-storage = { workspace = true }
 libra2-short-hex-str = { workspace = true }
-aptos-storage-interface = { workspace = true }
+libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }

@@ -19,7 +19,7 @@ use libra2_config::config::NodeConfig;
 use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use libra2_infallible::Mutex;
 use libra2_logger::{error, info, warn};
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_types::{
     block_info::Round,
     epoch_state::EpochState,

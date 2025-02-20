@@ -86,7 +86,7 @@ pub mod test_helper;
 use crate::metrics::{APTOS_JELLYFISH_LEAF_COUNT, APTOS_JELLYFISH_LEAF_DELETION_COUNT};
 use libra2_crypto::{hash::CryptoHash, HashValue};
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
-use aptos_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError, Result};
 use libra2_types::{
     nibble::{nibble_path::NibblePath, Nibble, ROOT_NIBBLE_HEIGHT},
     proof::{SparseMerkleProof, SparseMerkleProofExt, SparseMerkleRangeProof},

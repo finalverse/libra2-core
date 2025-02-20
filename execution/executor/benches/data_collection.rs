@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_storage_interface::state_store::NUM_STATE_SHARDS;
+use libra2_storage_interface::state_store::NUM_STATE_SHARDS;
 use libra2_types::{
     account_address::AccountAddress,
     account_config::AccountResource,

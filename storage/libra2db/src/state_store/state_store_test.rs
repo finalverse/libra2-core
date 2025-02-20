@@ -13,7 +13,7 @@ use aptos_jellyfish_merkle::{
     node_type::{Node, NodeKey},
     TreeReader,
 };
-use aptos_storage_interface::{DbReader, DbWriter, StateSnapshotReceiver};
+use libra2_storage_interface::{DbReader, DbWriter, StateSnapshotReceiver};
 use libra2_temppath::TempPath;
 use libra2_types::{
     account_address::AccountAddress,

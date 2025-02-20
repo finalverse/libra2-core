@@ -4,7 +4,7 @@
 use crate::metrics::TIMER;
 use anyhow::{ensure, Result};
 use libra2_metrics_core::TimerHelper;
-use aptos_storage_interface::state_store::state_update_refs::StateUpdateRefs;
+use libra2_storage_interface::state_store::state_update_refs::StateUpdateRefs;
 use libra2_types::transaction::{Transaction, TransactionOutput, Version};
 use itertools::izip;
 use std::{

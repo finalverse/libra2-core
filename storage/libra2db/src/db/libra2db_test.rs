@@ -16,7 +16,7 @@ use libra2_config::config::{
     DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD,
 };
 use libra2_crypto::{hash::CryptoHash, HashValue};
-use aptos_storage_interface::{DbReader, Order};
+use libra2_storage_interface::{DbReader, Order};
 use libra2_temppath::TempPath;
 use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,

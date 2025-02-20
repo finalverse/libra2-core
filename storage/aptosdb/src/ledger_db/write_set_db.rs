@@ -14,7 +14,7 @@ use aptos_schemadb::{
     batch::{SchemaBatch, WriteBatch},
     DB,
 };
-use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
 use libra2_types::{
     transaction::{TransactionOutput, Version},
     write_set::WriteSet,

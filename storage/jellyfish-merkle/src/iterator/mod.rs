@@ -15,7 +15,7 @@ use crate::{
     TreeReader,
 };
 use libra2_crypto::HashValue;
-use aptos_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError, Result};
 use libra2_types::{
     nibble::{nibble_path::NibblePath, Nibble, ROOT_NIBBLE_HEIGHT},
     transaction::Version,

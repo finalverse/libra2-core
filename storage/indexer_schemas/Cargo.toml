@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 anyhow = { workspace = true }
 libra2-crypto = { workspace = true }
 aptos-schemadb = { workspace = true }
-aptos-storage-interface = { workspace = true }
+libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }
 bcs = { workspace = true }
 byteorder = { workspace = true }

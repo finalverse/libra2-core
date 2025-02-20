@@ -7,7 +7,7 @@ use libra2_crypto::{hash::CryptoHash, HashValue};
 use aptos_db_indexer_schemas::metadata::StateSnapshotProgress;
 use libra2_infallible::Mutex;
 use aptos_jellyfish_merkle::{restore::JellyfishMerkleRestore, Key, TreeReader, TreeWriter, Value};
-use aptos_storage_interface::{Result, StateSnapshotReceiver};
+use libra2_storage_interface::{Result, StateSnapshotReceiver};
 use libra2_types::{
     proof::SparseMerkleRangeProof, state_store::state_storage_usage::StateStorageUsage,
     transaction::Version,

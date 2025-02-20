@@ -10,7 +10,7 @@ use crate::{
     state_kv_db::StateKvDb,
 };
 use libra2_config::config::LedgerPrunerConfig;
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::transaction::{AtomicVersion, Version};
 use std::sync::{atomic::Ordering, Arc};
 

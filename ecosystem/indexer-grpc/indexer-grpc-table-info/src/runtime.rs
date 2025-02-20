@@ -13,7 +13,7 @@ use aptos_db_indexer::{
     db_v2::IndexerAsyncV2,
 };
 use aptos_mempool::MempoolClientSender;
-use aptos_storage_interface::DbReaderWriter;
+use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{chain_id::ChainId, transaction::Version};
 use std::{sync::Arc, time::Instant};
 use tokio::{runtime::Runtime, sync::watch::Receiver as WatchReceiver};

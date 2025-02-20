@@ -4,7 +4,7 @@
 
 use crate::handlers::utils::THROUGHPUT_COUNTER;
 use libra2_metrics_core::IntCounterHelper;
-use aptos_storage_interface::{AptosDbError, Result as DbResult};
+use libra2_storage_interface::{AptosDbError, Result as DbResult};
 use bytes::{BufMut, Bytes, BytesMut};
 use serde::Serialize;
 

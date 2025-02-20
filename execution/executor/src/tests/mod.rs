@@ -12,7 +12,7 @@ use aptos_db::AptosDB;
 use aptos_executor_types::{
     BlockExecutorTrait, ChunkExecutorTrait, TransactionReplayer, VerifyExecutionMode,
 };
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::cached_state_view::CachedStateView, DbReaderWriter, LedgerSummary,
     Result,
 };

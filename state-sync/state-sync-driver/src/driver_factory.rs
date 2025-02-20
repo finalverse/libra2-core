@@ -20,7 +20,7 @@ use aptos_event_notifications::{EventNotificationSender, EventSubscriptionServic
 use aptos_executor_types::ChunkExecutorTrait;
 use libra2_infallible::Mutex;
 use aptos_mempool_notifications::MempoolNotificationSender;
-use aptos_storage_interface::DbReaderWriter;
+use libra2_storage_interface::DbReaderWriter;
 use aptos_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_time_service::TimeService;
 use libra2_types::waypoint::Waypoint;

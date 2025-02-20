@@ -11,7 +11,7 @@ use libra2_config::config::{
 };
 use aptos_db::{backup::backup_handler::BackupHandler, AptosDB};
 use libra2_logger::{error, info};
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::db_state_view::DbStateViewAtVersion, AptosDbError, DbReader,
 };
 use libra2_types::{

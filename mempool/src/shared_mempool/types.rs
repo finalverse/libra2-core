@@ -19,7 +19,7 @@ use aptos_consensus_types::common::{
 use libra2_crypto::HashValue;
 use libra2_infallible::{Mutex, RwLock};
 use aptos_network::application::interface::NetworkClientInterface;
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_types::{
     account_address::AccountAddress, mempool_status::MempoolStatus, transaction::SignedTransaction,
     vm_status::DiscardedVMStatus,

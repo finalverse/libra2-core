@@ -10,7 +10,7 @@ pub mod state_tree;
 pub mod truncate;
 pub mod validation;
 
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use clap::Parser;
 
 #[derive(Parser, Clone)]

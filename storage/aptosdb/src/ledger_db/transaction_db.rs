@@ -17,7 +17,7 @@ use aptos_schemadb::{
     batch::{NativeBatch, SchemaBatch, WriteBatch},
     DB,
 };
-use aptos_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{AptosDbError, Result};
 use libra2_types::transaction::{Transaction, Version};
 use rayon::prelude::*;
 use std::{path::Path, sync::Arc};

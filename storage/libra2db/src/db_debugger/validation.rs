@@ -12,7 +12,7 @@ use aptos_db_indexer_schemas::schema::{
     state_keys::StateKeysSchema, transaction_by_account::TransactionByAccountSchema,
 };
 use aptos_schemadb::{ReadOptions, DB};
-use aptos_storage_interface::{DbReader, Result};
+use libra2_storage_interface::{DbReader, Result};
 use libra2_types::{
     contract_event::ContractEvent,
     event::EventKey,

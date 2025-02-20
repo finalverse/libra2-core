@@ -28,7 +28,7 @@ use aptos_network::{
         wire::handshake::v1::ProtocolId::MempoolDirectSend,
     },
 };
-use aptos_storage_interface::{mock::MockDbReaderWriter, DbReaderWriter};
+use libra2_storage_interface::{mock::MockDbReaderWriter, DbReaderWriter};
 use libra2_types::{
     mempool_status::MempoolStatusCode,
     on_chain_config::{InMemoryOnChainConfig, OnChainConfigPayload},

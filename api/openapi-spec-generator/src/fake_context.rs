@@ -4,7 +4,7 @@
 use aptos_api::context::Context;
 use libra2_config::config::NodeConfig;
 use aptos_mempool::mocks::MockSharedMempool;
-use aptos_storage_interface::mock::MockDbReaderWriter;
+use libra2_storage_interface::mock::MockDbReaderWriter;
 use libra2_types::chain_id::ChainId;
 use std::sync::Arc;
 

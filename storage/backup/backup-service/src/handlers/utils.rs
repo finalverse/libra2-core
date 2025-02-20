@@ -8,7 +8,7 @@ use libra2_logger::prelude::*;
 use libra2_metrics_core::{
     register_histogram_vec, register_int_counter_vec, HistogramVec, IntCounterVec, TimerHelper,
 };
-use aptos_storage_interface::Result as DbResult;
+use libra2_storage_interface::Result as DbResult;
 use hyper::Body;
 use once_cell::sync::Lazy;
 use serde::Serialize;

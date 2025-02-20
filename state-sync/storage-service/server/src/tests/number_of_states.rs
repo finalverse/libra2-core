@@ -3,7 +3,7 @@
 
 use crate::tests::{mock, mock::MockClient, utils};
 use anyhow::format_err;
-use aptos_storage_interface::AptosDbError;
+use libra2_storage_interface::AptosDbError;
 use aptos_storage_service_types::{
     responses::{DataResponse, StorageServiceResponse},
     StorageServiceError,

@@ -17,7 +17,7 @@ use aptos_protos::{
     transaction::v1::FILE_DESCRIPTOR_SET as TRANSACTION_V1_TESTING_FILE_DESCRIPTOR_SET,
     util::timestamp::FILE_DESCRIPTOR_SET as UTIL_TIMESTAMP_FILE_DESCRIPTOR_SET,
 };
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_types::{chain_id::ChainId, indexer::indexer_db_reader::IndexerReader};
 use futures::channel::oneshot;
 use std::sync::Arc;

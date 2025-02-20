@@ -11,7 +11,7 @@ use crate::{
     state_store::StateStore,
 };
 use libra2_crypto::hash::HashValue;
-use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
 use libra2_types::{
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,

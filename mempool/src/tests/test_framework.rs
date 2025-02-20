@@ -44,7 +44,7 @@ use aptos_network::{
     },
     ProtocolId,
 };
-use aptos_storage_interface::mock::MockDbReaderWriter;
+use libra2_storage_interface::mock::MockDbReaderWriter;
 use libra2_types::{
     account_address::AccountAddress,
     mempool_status::MempoolStatusCode,

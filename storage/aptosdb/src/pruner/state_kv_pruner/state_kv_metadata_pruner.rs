@@ -12,7 +12,7 @@ use crate::{
     utils::get_progress,
 };
 use aptos_schemadb::batch::SchemaBatch;
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::transaction::Version;
 use std::sync::Arc;
 

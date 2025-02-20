@@ -13,7 +13,7 @@ use aptos_sdk::{
     transaction_builder::TransactionFactory,
     types::{AccountKey, LocalAccount},
 };
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_temppath::TempPath;
 use libra2_types::{
     account_address::AccountAddress,

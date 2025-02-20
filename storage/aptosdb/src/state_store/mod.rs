@@ -46,7 +46,7 @@ use libra2_logger::info;
 use libra2_metrics_core::TimerHelper;
 use aptos_schemadb::batch::{NativeBatch, SchemaBatch, WriteBatch};
 use aptos_scratchpad::SparseMerkleTree;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     db_ensure as ensure, db_other_bail as bail,
     state_store::{
         state::{LedgerState, State},
@@ -1244,7 +1244,7 @@ mod test_only {
     use crate::state_store::StateStore;
     use libra2_crypto::HashValue;
     use aptos_schemadb::batch::SchemaBatch;
-    use aptos_storage_interface::state_store::{
+    use libra2_storage_interface::state_store::{
         state_summary::ProvableStateSummary, state_update_refs::StateUpdateRefs,
         state_with_summary::LedgerStateWithSummary,
     };

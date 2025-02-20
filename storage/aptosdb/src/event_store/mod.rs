@@ -15,7 +15,7 @@ use aptos_db_indexer_schemas::schema::{
     event_by_key::EventByKeySchema, event_by_version::EventByVersionSchema,
 };
 use aptos_schemadb::{batch::SchemaBatch, schema::ValueCodec, DB};
-use aptos_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError, Result};
 use libra2_types::{
     account_address::AccountAddress,
     account_config::{new_block_event_key, NewBlockEvent},

@@ -21,7 +21,7 @@ use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use aptos_mempool_notifications::MempoolNotificationSender;
 use libra2_metrics_core::HistogramTimer;
-use aptos_storage_interface::{DbReader, DbReaderWriter, StateSnapshotReceiver};
+use libra2_storage_interface::{DbReader, DbReaderWriter, StateSnapshotReceiver};
 use aptos_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,

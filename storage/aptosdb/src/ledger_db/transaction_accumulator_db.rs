@@ -13,7 +13,7 @@ use libra2_crypto::{
     HashValue,
 };
 use aptos_schemadb::{batch::SchemaBatch, DB};
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::{
     proof::{
         definition::LeafCount, position::Position, AccumulatorConsistencyProof,

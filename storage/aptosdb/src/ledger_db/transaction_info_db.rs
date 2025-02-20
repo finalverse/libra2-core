@@ -10,7 +10,7 @@ use crate::{
     utils::iterators::ExpectContinuousVersions,
 };
 use aptos_schemadb::{batch::SchemaBatch, DB};
-use aptos_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{AptosDbError, Result};
 use libra2_types::{
     proof::TransactionInfoWithProof,
     transaction::{TransactionInfo, Version},

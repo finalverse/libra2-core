@@ -12,7 +12,7 @@ use libra2_config::{
 };
 use aptos_db::AptosDB;
 use aptos_executor::db_bootstrapper::{generate_waypoint, maybe_bootstrap};
-use aptos_storage_interface::DbReaderWriter;
+use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{
     jwks::{jwk::JWK, patch::IssuerJWK},
     keyless::{

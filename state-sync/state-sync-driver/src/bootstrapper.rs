@@ -21,7 +21,7 @@ use aptos_data_streaming_service::{
     streaming_client::{DataStreamingClient, NotificationAndFeedback, NotificationFeedback},
 };
 use libra2_logger::{prelude::*, sample::SampleRate};
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_types::{
     epoch_change::Verifier,
     epoch_state::EpochState,

@@ -6,7 +6,7 @@ use crate::{
     state_merkle_db::StateMerkleDb,
 };
 use libra2_config::config::{RocksdbConfigs, StorageDirPaths};
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::nibble::{nibble_path::NibblePath, Nibble};
 use clap::Parser;
 use core::default::Default;

@@ -23,7 +23,7 @@ use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::IntGaugeVec;
 use aptos_schemadb::DB;
-use aptos_storage_interface::state_store::NUM_STATE_SHARDS;
+use libra2_storage_interface::state_store::NUM_STATE_SHARDS;
 use once_cell::sync::Lazy;
 use std::{
     collections::HashMap,

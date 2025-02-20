@@ -22,7 +22,7 @@ use aptos_schemadb::{
     batch::{SchemaBatch, WriteBatch},
     DB,
 };
-use aptos_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{AptosDbError, Result};
 use libra2_types::{
     account_config::new_block_event_key, contract_event::ContractEvent, transaction::Version,
 };

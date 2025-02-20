@@ -18,7 +18,7 @@ use libra2_config::{
 };
 use libra2_logger::{debug, error, info, sample, sample::SampleRate, warn};
 use aptos_network::application::storage::PeersAndMetadata;
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use aptos_storage_service_types::{
     requests::{DataRequest, StorageServiceRequest},
     responses::StorageServerSummary,

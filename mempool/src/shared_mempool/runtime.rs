@@ -20,7 +20,7 @@ use aptos_network::application::{
     interface::{NetworkClient, NetworkServiceEvents},
     storage::PeersAndMetadata,
 };
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_types::on_chain_config::OnChainConfigProvider;
 use aptos_vm_validator::vm_validator::{PooledVMValidator, TransactionValidation};
 use futures::channel::mpsc::{Receiver, UnboundedSender};

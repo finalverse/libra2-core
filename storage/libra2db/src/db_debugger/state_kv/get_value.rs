@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::db_debugger::common::DbDir;
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::{state_store::state_key::StateKey, transaction::Version};
 use clap::Parser;
 use owo_colors::OwoColorize;

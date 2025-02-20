@@ -9,7 +9,7 @@ use libra2_config::config::{
 };
 use aptos_db::AptosDB;
 use aptos_executor::db_bootstrapper::calculate_genesis;
-use aptos_storage_interface::DbReaderWriter;
+use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{transaction::Transaction, waypoint::Waypoint};
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;
 use clap::Parser;

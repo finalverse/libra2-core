@@ -37,7 +37,7 @@ use aptos_jellyfish_merkle::metrics::{
 use libra2_logger::{info, warn};
 use libra2_metrics_core::Histogram;
 use aptos_sdk::types::LocalAccount;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReader, DbReaderWriter,
 };
 use aptos_transaction_generator_lib::{

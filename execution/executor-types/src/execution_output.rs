@@ -9,7 +9,7 @@ use crate::{
     transactions_with_output::{TransactionsToKeep, TransactionsWithOutput},
 };
 use libra2_drop_helper::DropHelper;
-use aptos_storage_interface::state_store::{
+use libra2_storage_interface::state_store::{
     state::LedgerState, state_view::cached_state_view::ShardedStateCache,
 };
 use libra2_types::{

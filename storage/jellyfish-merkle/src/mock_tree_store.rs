@@ -7,7 +7,7 @@ use crate::{
     NodeBatch, Result, StaleNodeIndex, TreeReader, TreeUpdateBatch, TreeWriter,
 };
 use libra2_infallible::RwLock;
-use aptos_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError};
+use libra2_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError};
 use libra2_types::transaction::Version;
 use std::collections::{hash_map::Entry, BTreeSet, HashMap};
 pub struct MockTreeStore<K> {

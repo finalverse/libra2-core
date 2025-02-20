@@ -9,7 +9,7 @@ use aptos_schemadb::{
     schema::{KeyCodec, Schema, ValueCodec},
     ColumnFamilyName, DB,
 };
-use aptos_storage_interface::AptosDbError;
+use libra2_storage_interface::AptosDbError;
 use byteorder::{LittleEndian, ReadBytesExt};
 use rocksdb::{ColumnFamilyDescriptor, DEFAULT_COLUMN_FAMILY_NAME};
 

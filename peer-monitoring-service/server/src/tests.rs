@@ -37,7 +37,7 @@ use aptos_peer_monitoring_service_types::{
     },
     PeerMonitoringMetadata, PeerMonitoringServiceError, PeerMonitoringServiceMessage,
 };
-use aptos_storage_interface::{DbReader, LedgerSummary, Order};
+use libra2_storage_interface::{DbReader, LedgerSummary, Order};
 use libra2_time_service::{MockTimeService, TimeService};
 use libra2_types::{
     account_address::AccountAddress,
@@ -616,7 +616,7 @@ pub fn create_mock_db_reader() -> MockDatabaseReader {
 // mock test crate to be shared across the codebase.
 mod database_mock {
     use super::*;
-    use aptos_storage_interface::Result;
+    use libra2_storage_interface::Result;
 
     mock! {
         pub DatabaseReader {}

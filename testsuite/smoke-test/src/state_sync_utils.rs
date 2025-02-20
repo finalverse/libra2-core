@@ -14,7 +14,7 @@ use aptos_forge::{LocalNode, LocalSwarm, Node, NodeExt, Swarm};
 use aptos_inspection_service::inspection_client::InspectionClient;
 use aptos_rest_client::Client as RestClient;
 use aptos_sdk::types::PeerId;
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use move_core_types::account_address::AccountAddress;
 use std::{
     sync::Arc,

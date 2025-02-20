@@ -32,7 +32,7 @@ use aptos_network::{
     transport::ConnectionMetadata,
     ProtocolId,
 };
-use aptos_storage_interface::mock::MockDbReaderWriter;
+use libra2_storage_interface::mock::MockDbReaderWriter;
 use libra2_types::{
     on_chain_config::{InMemoryOnChainConfig, OnChainConfigPayload},
     PeerId,

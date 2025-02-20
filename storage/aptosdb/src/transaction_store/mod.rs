@@ -10,7 +10,7 @@ use aptos_db_indexer_schemas::{
     utils::AccountTransactionVersionIter,
 };
 use aptos_schemadb::batch::SchemaBatch;
-use aptos_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{AptosDbError, Result};
 use libra2_types::{
     account_address::AccountAddress,
     transaction::{Transaction, Version},

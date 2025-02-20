@@ -11,7 +11,7 @@ use crate::{
     Libra2DB,
 };
 use libra2_crypto::HashValue;
-use aptos_storage_interface::{DbReader, Result};
+use libra2_storage_interface::{DbReader, Result};
 use libra2_types::{
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,

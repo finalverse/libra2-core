@@ -33,7 +33,7 @@ use aptos_executor::block_executor::BlockExecutor;
 use libra2_logger::prelude::*;
 use aptos_mempool::QuorumStoreRequest;
 use aptos_network::application::interface::{NetworkClient, NetworkServiceEvents};
-use aptos_storage_interface::DbReaderWriter;
+use libra2_storage_interface::DbReaderWriter;
 use libra2_time_service::TimeService;
 use aptos_validator_transaction_pool::VTxnPoolState;
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;

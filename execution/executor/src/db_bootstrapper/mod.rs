@@ -11,7 +11,7 @@ use crate::{
 use anyhow::{anyhow, ensure, format_err, Result};
 use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::cached_state_view::CachedStateView, DbReaderWriter, DbWriter,
     LedgerSummary,
 };

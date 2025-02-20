@@ -19,7 +19,7 @@ use libra2_config::config::{
 use libra2_crypto::ed25519::Ed25519PublicKey;
 use aptos_db::AptosDB;
 use aptos_framework::ReleaseBundle;
-use aptos_storage_interface::DbReaderWriter;
+use libra2_storage_interface::DbReaderWriter;
 use libra2_temppath::TempPath;
 use libra2_types::{
     chain_id::ChainId,

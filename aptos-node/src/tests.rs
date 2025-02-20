@@ -5,7 +5,7 @@ use crate::{create_single_node_test_config, network};
 use libra2_config::config::{NodeConfig, WaypointConfig};
 use aptos_event_notifications::EventSubscriptionService;
 use libra2_infallible::RwLock;
-use aptos_storage_interface::{DbReader, DbReaderWriter, DbWriter};
+use libra2_storage_interface::{DbReader, DbReaderWriter, DbWriter};
 use libra2_temppath::TempPath;
 use libra2_types::{chain_id::ChainId, waypoint::Waypoint};
 use rand::SeedableRng;

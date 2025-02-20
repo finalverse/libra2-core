@@ -6,7 +6,7 @@ use crate::{
     state_kv_db::StateKvDb,
 };
 use aptos_schemadb::{iterator::SchemaIterator, ReadOptions};
-use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
 use libra2_types::{
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,

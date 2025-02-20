@@ -27,7 +27,7 @@ aptos-indexer-grpc-table-info = { workspace = true }
 aptos-mempool = { workspace = true, features = ["fuzzing"] }
 aptos-mempool-notifications = { workspace = true }
 aptos-sdk = { workspace = true }
-aptos-storage-interface = { workspace = true }
+libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true }

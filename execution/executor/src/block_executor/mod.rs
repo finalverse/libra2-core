@@ -26,7 +26,7 @@ use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_infallible::RwLock;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::{IntGaugeHelper, TimerHelper};
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::{
         state_summary::ProvableStateSummary, state_view::cached_state_view::CachedStateView,
     },

@@ -5,7 +5,7 @@ use libra2_config::config::{BUFFERED_STATE_TARGET_ITEMS_FOR_TEST, DEFAULT_MAX_NU
 use std::default::Default;
 use libra2_types::transaction::{TransactionStatus, TransactionToCommit};
 use aptos_executor_types::transactions_with_output::TransactionsToKeep;
-use aptos_storage_interface::state_store::state_summary::ProvableStateSummary;
+use libra2_storage_interface::state_store::state_summary::ProvableStateSummary;
 
 impl AptosDB {
     /// This opens db in non-readonly mode, without the pruner.

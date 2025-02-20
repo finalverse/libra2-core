@@ -15,7 +15,7 @@ use libra2_crypto::{
 use libra2_infallible::Mutex;
 use libra2_logger::debug;
 use aptos_scratchpad::SparseMerkleTree;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     db_ensure as ensure,
     state_store::{
         state_delta::StateDelta, state_update_refs::BatchedStateUpdateRefs,
@@ -438,7 +438,7 @@ impl DbWriter for FakeAptosDB {
         &self,
         version: Version,
         expected_root_hash: HashValue,
-    ) -> Result<Box<dyn aptos_storage_interface::StateSnapshotReceiver<StateKey, StateValue>>> {
+    ) -> Result<Box<dyn libra2_storage_interface::StateSnapshotReceiver<StateKey, StateValue>>> {
         self.inner
             .get_state_snapshot_receiver(version, expected_root_hash)
     }
@@ -660,7 +660,7 @@ impl DbReader for FakeAptosDB {
         &self,
         event_key: &libra2_types::event::EventKey,
         start: u64,
-        order: aptos_storage_interface::Order,
+        order: libra2_storage_interface::Order,
         limit: u64,
         ledger_version: Version,
     ) -> Result<Vec<EventWithVersion>> {
@@ -972,7 +972,7 @@ mod tests {
     };
     use anyhow::{anyhow, ensure, Result};
     use libra2_crypto::{hash::CryptoHash, HashValue};
-    use aptos_storage_interface::{
+    use libra2_storage_interface::{
         state_store::state_view::cached_state_view::ShardedStateCache, DbReader, DbWriter,
     };
     use libra2_temppath::TempPath;

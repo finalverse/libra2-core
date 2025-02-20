@@ -13,7 +13,7 @@ use aptos_db_indexer_schemas::{
 };
 use libra2_logger::info;
 use aptos_schemadb::batch::SchemaBatch;
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::transaction::Version;
 use std::sync::Arc;
 

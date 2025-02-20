@@ -8,7 +8,7 @@ use crate::{
 use libra2_crypto::hash::CryptoHash;
 use aptos_jellyfish_merkle::iterator::JellyfishMerkleIterator;
 use aptos_schemadb::ReadOptions;
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::transaction::Version;
 use clap::Parser;
 use indicatif::{ProgressBar, ProgressStyle};

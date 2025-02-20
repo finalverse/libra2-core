@@ -5,7 +5,7 @@ use crate::{
     db_debugger::common::DbDir, schema::transaction_accumulator::TransactionAccumulatorSchema,
 };
 use libra2_crypto::hash::CryptoHash;
-use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
 use libra2_types::{proof::position::Position, transaction::Version};
 use clap::Parser;
 use std::sync::Arc;

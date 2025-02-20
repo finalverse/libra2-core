@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::pruner::db_pruner::DBPruner;
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::transaction::Version;
 
 /// This module provides `Pruner` which manages a thread pruning old data in the background and is
@@ -47,7 +47,7 @@ pub trait PrunerManager: Sync {
 
     #[cfg(test)]
     fn wait_for_pruner(&self) -> Result<()> {
-        use aptos_storage_interface::{db_other_bail, AptosDbError};
+        use libra2_storage_interface::{db_other_bail, AptosDbError};
         use std::{
             thread::sleep,
             time::{Duration, Instant},

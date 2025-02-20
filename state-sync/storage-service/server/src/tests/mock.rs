@@ -22,7 +22,7 @@ use aptos_network::{
         },
     },
 };
-use aptos_storage_interface::{DbReader, LedgerSummary, Order};
+use libra2_storage_interface::{DbReader, LedgerSummary, Order};
 use aptos_storage_service_notifications::StorageServiceNotifier;
 use aptos_storage_service_types::{
     requests::StorageServiceRequest, responses::StorageServiceResponse, StorageServiceError,
@@ -232,7 +232,7 @@ mock! {
             &self,
             start_epoch: u64,
             end_epoch: u64,
-        ) -> aptos_storage_interface::Result<EpochChangeProof>;
+        ) -> libra2_storage_interface::Result<EpochChangeProof>;
 
         fn get_transactions(
             &self,
@@ -240,32 +240,32 @@ mock! {
             batch_size: u64,
             ledger_version: Version,
             fetch_events: bool,
-        ) -> aptos_storage_interface::Result<TransactionListWithProof>;
+        ) -> libra2_storage_interface::Result<TransactionListWithProof>;
 
         fn get_transaction_by_hash(
             &self,
             hash: HashValue,
             ledger_version: Version,
             fetch_events: bool,
-        ) -> aptos_storage_interface::Result<Option<TransactionWithProof>>;
+        ) -> libra2_storage_interface::Result<Option<TransactionWithProof>>;
 
         fn get_transaction_by_version(
             &self,
             version: Version,
             ledger_version: Version,
             fetch_events: bool,
-        ) -> aptos_storage_interface::Result<TransactionWithProof>;
+        ) -> libra2_storage_interface::Result<TransactionWithProof>;
 
-        fn get_first_txn_version(&self) -> aptos_storage_interface::Result<Option<Version>>;
+        fn get_first_txn_version(&self) -> libra2_storage_interface::Result<Option<Version>>;
 
-        fn get_first_write_set_version(&self) -> aptos_storage_interface::Result<Option<Version>>;
+        fn get_first_write_set_version(&self) -> libra2_storage_interface::Result<Option<Version>>;
 
         fn get_transaction_outputs(
             &self,
             start_version: Version,
             limit: u64,
             ledger_version: Version,
-        ) -> aptos_storage_interface::Result<TransactionOutputListWithProof>;
+        ) -> libra2_storage_interface::Result<TransactionOutputListWithProof>;
 
         fn get_events(
             &self,
@@ -274,25 +274,25 @@ mock! {
             order: Order,
             limit: u64,
             ledger_version: Version,
-        ) -> aptos_storage_interface::Result<Vec<EventWithVersion>>;
+        ) -> libra2_storage_interface::Result<Vec<EventWithVersion>>;
 
-        fn get_block_timestamp(&self, version: u64) -> aptos_storage_interface::Result<u64>;
+        fn get_block_timestamp(&self, version: u64) -> libra2_storage_interface::Result<u64>;
 
         fn get_last_version_before_timestamp(
             &self,
             _timestamp: u64,
             _ledger_version: Version,
-        ) -> aptos_storage_interface::Result<Version>;
+        ) -> libra2_storage_interface::Result<Version>;
 
-        fn get_latest_ledger_info_option(&self) -> aptos_storage_interface::Result<Option<LedgerInfoWithSignatures>>;
+        fn get_latest_ledger_info_option(&self) -> libra2_storage_interface::Result<Option<LedgerInfoWithSignatures>>;
 
-        fn get_latest_ledger_info(&self) -> aptos_storage_interface::Result<LedgerInfoWithSignatures>;
+        fn get_latest_ledger_info(&self) -> libra2_storage_interface::Result<LedgerInfoWithSignatures>;
 
-        fn get_synced_version(&self) -> aptos_storage_interface::Result<Option<Version>>;
+        fn get_synced_version(&self) -> libra2_storage_interface::Result<Option<Version>>;
 
-        fn get_latest_ledger_info_version(&self) -> aptos_storage_interface::Result<Version>;
+        fn get_latest_ledger_info_version(&self) -> libra2_storage_interface::Result<Version>;
 
-        fn get_latest_commit_metadata(&self) -> aptos_storage_interface::Result<(Version, u64)>;
+        fn get_latest_commit_metadata(&self) -> libra2_storage_interface::Result<(Version, u64)>;
 
         fn get_account_transaction(
             &self,
@@ -300,7 +300,7 @@ mock! {
             seq_num: u64,
             include_events: bool,
             ledger_version: Version,
-        ) -> aptos_storage_interface::Result<Option<TransactionWithProof>>;
+        ) -> libra2_storage_interface::Result<Option<TransactionWithProof>>;
 
         fn get_account_transactions(
             &self,
@@ -309,51 +309,51 @@ mock! {
             limit: u64,
             include_events: bool,
             ledger_version: Version,
-        ) -> aptos_storage_interface::Result<AccountTransactionsWithProof>;
+        ) -> libra2_storage_interface::Result<AccountTransactionsWithProof>;
 
         fn get_state_proof_with_ledger_info(
             &self,
             known_version: u64,
             ledger_info: LedgerInfoWithSignatures,
-        ) -> aptos_storage_interface::Result<StateProof>;
+        ) -> libra2_storage_interface::Result<StateProof>;
 
-        fn get_state_proof(&self, known_version: u64) -> aptos_storage_interface::Result<StateProof>;
+        fn get_state_proof(&self, known_version: u64) -> libra2_storage_interface::Result<StateProof>;
 
         fn get_state_value_with_proof_by_version(
             &self,
             state_key: &StateKey,
             version: Version,
-        ) -> aptos_storage_interface::Result<(Option<StateValue>, SparseMerkleProof)>;
+        ) -> libra2_storage_interface::Result<(Option<StateValue>, SparseMerkleProof)>;
 
-        fn get_pre_committed_ledger_summary(&self) -> aptos_storage_interface::Result<LedgerSummary>;
+        fn get_pre_committed_ledger_summary(&self) -> libra2_storage_interface::Result<LedgerSummary>;
 
-        fn get_epoch_ending_ledger_info(&self, known_version: u64) ->aptos_storage_interface::Result<LedgerInfoWithSignatures>;
+        fn get_epoch_ending_ledger_info(&self, known_version: u64) ->libra2_storage_interface::Result<LedgerInfoWithSignatures>;
 
-        fn get_accumulator_root_hash(&self, _version: Version) -> aptos_storage_interface::Result<HashValue>;
+        fn get_accumulator_root_hash(&self, _version: Version) -> libra2_storage_interface::Result<HashValue>;
 
         fn get_accumulator_consistency_proof(
             &self,
             _client_known_version: Option<Version>,
             _ledger_version: Version,
-        ) -> aptos_storage_interface::Result<AccumulatorConsistencyProof>;
+        ) -> libra2_storage_interface::Result<AccumulatorConsistencyProof>;
 
         fn get_accumulator_summary(
             &self,
             ledger_version: Version,
-        ) -> aptos_storage_interface::Result<TransactionAccumulatorSummary>;
+        ) -> libra2_storage_interface::Result<TransactionAccumulatorSummary>;
 
-        fn get_state_item_count(&self, version: Version) -> aptos_storage_interface::Result<usize>;
+        fn get_state_item_count(&self, version: Version) -> libra2_storage_interface::Result<usize>;
 
         fn get_state_value_chunk_with_proof(
             &self,
             version: Version,
             start_idx: usize,
             chunk_size: usize,
-        ) -> aptos_storage_interface::Result<StateValueChunkWithProof>;
+        ) -> libra2_storage_interface::Result<StateValueChunkWithProof>;
 
-        fn get_epoch_snapshot_prune_window(&self) -> aptos_storage_interface::Result<usize>;
+        fn get_epoch_snapshot_prune_window(&self) -> libra2_storage_interface::Result<usize>;
 
-        fn is_state_merkle_pruner_enabled(&self) -> aptos_storage_interface::Result<bool>;
+        fn is_state_merkle_pruner_enabled(&self) -> libra2_storage_interface::Result<bool>;
     }
 }
 

@@ -31,7 +31,7 @@ use aptos_event_notifications::EventSubscriptionService;
 use aptos_executor_types::ChunkCommitNotification;
 use libra2_infallible::{Mutex, RwLock};
 use aptos_mempool_notifications::MempoolNotificationListener;
-use aptos_storage_interface::{AptosDbError, DbReaderWriter};
+use libra2_storage_interface::{AptosDbError, DbReaderWriter};
 use aptos_storage_service_notifications::StorageServiceNotificationListener;
 use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,

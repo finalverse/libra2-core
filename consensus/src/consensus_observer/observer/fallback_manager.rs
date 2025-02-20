@@ -7,7 +7,7 @@ use crate::consensus_observer::common::{
 };
 use libra2_config::config::ConsensusObserverConfig;
 use libra2_logger::warn;
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use libra2_types::{ledger_info::LedgerInfoWithSignatures, transaction::Version};
 use std::{
@@ -168,7 +168,7 @@ impl ObserverFallbackManager {
 mod test {
     use super::*;
     use libra2_crypto::HashValue;
-    use aptos_storage_interface::Result;
+    use libra2_storage_interface::Result;
     use libra2_types::{
         aggregate_signature::AggregateSignature, block_info::BlockInfo, ledger_info::LedgerInfo,
         transaction::Version,

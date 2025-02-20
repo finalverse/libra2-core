@@ -9,7 +9,7 @@ use crate::{
     JellyfishMerkleTree,
 };
 use libra2_crypto::HashValue;
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::transaction::Version;
 use rand::{rngs::StdRng, SeedableRng};
 use std::{collections::BTreeMap, sync::Arc};

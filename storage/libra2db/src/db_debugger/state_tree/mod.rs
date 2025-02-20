@@ -5,7 +5,7 @@ mod get_leaf;
 mod get_path;
 mod get_snapshots;
 
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 
 #[derive(clap::Subcommand)]
 pub enum Cmd {

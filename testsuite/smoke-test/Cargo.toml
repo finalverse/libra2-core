@@ -39,7 +39,7 @@ aptos-rest-client = { workspace = true }
 aptos-rosetta = { workspace = true }
 aptos-schemadb = { workspace = true }
 aptos-sdk = { workspace = true }
-aptos-storage-interface = { workspace = true }
+libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true }

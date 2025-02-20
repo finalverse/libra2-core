@@ -36,7 +36,7 @@ use aptos_schemadb::{
     schema::{Schema, SeekKeyCodec},
     DB,
 };
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 use libra2_types::{proof::position::Position, transaction::Version};
 use claims::assert_ge;
 use rayon::prelude::*;

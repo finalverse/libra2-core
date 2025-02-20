@@ -5,7 +5,7 @@ use anyhow::anyhow;
 use libra2_config::config::{NodeConfig, DEFAULT_EXECUTION_CONCURRENCY_LEVEL};
 #[cfg(unix)]
 use libra2_logger::prelude::*;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReaderWriter,
 };
 use libra2_types::{

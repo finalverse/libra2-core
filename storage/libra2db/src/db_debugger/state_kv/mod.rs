@@ -4,7 +4,7 @@
 mod get_value;
 mod scan_snapshot;
 
-use aptos_storage_interface::Result;
+use libra2_storage_interface::Result;
 
 #[derive(clap::Subcommand)]
 pub enum Cmd {

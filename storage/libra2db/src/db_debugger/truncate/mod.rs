@@ -12,7 +12,7 @@ use crate::{
 };
 use libra2_config::config::{RocksdbConfigs, StorageDirPaths};
 use aptos_schemadb::batch::SchemaBatch;
-use aptos_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
 use claims::assert_le;
 use clap::Parser;
 use std::{fs, path::PathBuf, sync::Arc};
@@ -174,7 +174,7 @@ mod test {
         },
         utils::truncation_helper::num_frozen_nodes_in_accumulator,
     };
-    use aptos_storage_interface::{state_store::NUM_STATE_SHARDS, DbReader};
+    use libra2_storage_interface::{state_store::NUM_STATE_SHARDS, DbReader};
     use libra2_temppath::TempPath;
     use proptest::prelude::*;
 

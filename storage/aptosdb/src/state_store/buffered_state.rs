@@ -11,7 +11,7 @@ use crate::{
 };
 use libra2_infallible::Mutex;
 use libra2_metrics_core::TimerHelper;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_with_summary::{LedgerStateWithSummary, StateWithSummary},
     Result,
 };

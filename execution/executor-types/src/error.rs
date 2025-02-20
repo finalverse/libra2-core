@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_crypto::HashValue;
-use aptos_storage_interface::AptosDbError;
+use libra2_storage_interface::AptosDbError;
 use libra2_types::{state_store::errors::StateViewError, transaction::Version};
 use serde::{Deserialize, Serialize};
 use std::fmt::Display;

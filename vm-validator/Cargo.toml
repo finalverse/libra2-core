@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-storage-interface = { workspace = true }
+libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true }
 aptos-vm-environment = { workspace = true }

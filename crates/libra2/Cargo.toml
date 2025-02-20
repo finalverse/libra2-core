@@ -42,7 +42,7 @@ libra2-node = { workspace = true }
 aptos-protos = { workspace = true }
 aptos-rest-client = { workspace = true }
 aptos-sdk = { workspace = true }
-aptos-storage-interface = { workspace = true }
+libra2-storage-interface = { workspace = true }
 aptos-telemetry = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }

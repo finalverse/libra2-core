@@ -18,7 +18,7 @@ use libra2_drop_helper::DEFAULT_DROPPER;
 use aptos_executor_types::ExecutorError;
 use libra2_infallible::Mutex;
 use libra2_logger::{debug, info};
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_types::{ledger_info::LedgerInfo, proof::definition::LeafCount};
 use std::{
     collections::{hash_map::Entry, HashMap},

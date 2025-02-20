@@ -15,7 +15,7 @@ use aptos_data_streaming_service::{
     streaming_client::{DataStreamingClient, Epoch, NotificationAndFeedback},
 };
 use aptos_executor_types::{ChunkCommitNotification, ChunkExecutorTrait};
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     chunk_to_commit::ChunkToCommit, DbReader, DbReaderWriter, DbWriter, LedgerSummary, Order,
     Result, StateSnapshotReceiver,
 };

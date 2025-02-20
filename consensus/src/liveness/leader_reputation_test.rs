@@ -16,7 +16,7 @@ use aptos_consensus_types::common::{Author, Round};
 use libra2_crypto::{bls12381, HashValue};
 use libra2_infallible::Mutex;
 use aptos_keygen::KeyGen;
-use aptos_storage_interface::DbReader;
+use libra2_storage_interface::DbReader;
 use libra2_types::{
     account_address::AccountAddress,
     account_config::{new_block_event_key, NewBlockEvent},
@@ -486,7 +486,7 @@ impl DbReader for MockDbReader {
     fn get_latest_block_events(
         &self,
         num_events: usize,
-    ) -> aptos_storage_interface::Result<Vec<EventWithVersion>> {
+    ) -> libra2_storage_interface::Result<Vec<EventWithVersion>> {
         *self.fetched.lock() += 1;
         let events = self.events.lock();
         // println!("Events {:?}", *events);
@@ -499,7 +499,7 @@ impl DbReader for MockDbReader {
     }
 
     /// Returns the latest version, error on on non-bootstrapped DB.
-    fn get_latest_ledger_info_version(&self) -> aptos_storage_interface::Result<Version> {
+    fn get_latest_ledger_info_version(&self) -> libra2_storage_interface::Result<Version> {
         let version = *self.idx.lock();
         let mut to_add = self.to_add_event_after_call.lock();
         if let Some((epoch, round)) = *to_add {
@@ -514,7 +514,7 @@ impl DbReader for MockDbReader {
     fn get_accumulator_root_hash(
         &self,
         _version: Version,
-    ) -> aptos_storage_interface::Result<HashValue> {
+    ) -> libra2_storage_interface::Result<HashValue> {
         Ok(HashValue::zero())
     }
 }

@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_logger::{info, trace};
 use libra2_secure_net::network_controller::{Message, NetworkController};
-use aptos_storage_interface::state_store::state_view::cached_state_view::CachedStateView;
+use libra2_storage_interface::state_store::state_view::cached_state_view::CachedStateView;
 use libra2_types::{
     block_executor::{
         config::BlockExecutorConfigFromOnchain, partitioner::PartitionedTransactions,

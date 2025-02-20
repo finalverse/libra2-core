@@ -7,7 +7,7 @@ use anyhow::{anyhow, Result};
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_id_generator::{IdGenerator, U64IdGenerator};
 use libra2_infallible::RwLock;
-use aptos_storage_interface::{
+use libra2_storage_interface::{
     state_store::state_view::db_state_view::DbStateViewAtVersion, DbReader, DbReaderWriter,
 };
 use libra2_types::{
