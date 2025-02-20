@@ -400,7 +400,7 @@ libra2-logger = { path = "crates/libra2-logger" }
 aptos-memory-usage-tracker = { path = "aptos-move/aptos-memory-usage-tracker" }
 libra2-mempool = { path = "mempool" }
 libra2-mempool-notifications = { path = "state-sync/inter-component/mempool-notifications" }
-aptos-memsocket = { path = "network/memsocket" }
+libra2-memsocket = { path = "network/memsocket" }
 libra2-metrics-core = { path = "crates/libra2-metrics-core" }
 aptos-move-debugger = { path = "aptos-move/aptos-debugger" }
 aptos-move-examples = { path = "aptos-move/move-examples" }

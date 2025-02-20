@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::transport::Transport;
-use aptos_memsocket::{MemoryListener, MemorySocket};
+use libra2_memsocket::{MemoryListener, MemorySocket};
 use libra2_types::{
     network_address::{parse_memory, NetworkAddress, Protocol},
     PeerId,

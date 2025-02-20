@@ -14,7 +14,7 @@
 //! ```
 //! use aptos_network::noise::{AntiReplayTimestamps, HandshakeAuthMode, NoiseUpgrader};
 //! use futures::{executor, future, io::{AsyncReadExt, AsyncWriteExt}};
-//! use aptos_memsocket::MemorySocket;
+//! use libra2_memsocket::MemorySocket;
 //! use libra2_config::{config::{Peer, PeerRole}, network_id::{NetworkContext, NetworkId}};
 //! use libra2_crypto::{x25519, ed25519, Uniform, PrivateKey, test_utils::TEST_SEED};
 //! use libra2_infallible::RwLock;

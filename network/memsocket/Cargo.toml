@@ -1,6 +1,6 @@
 [package]
-name = "aptos-memsocket"
-description = "Aptos memsocket"
+name = "libra2-memsocket"
+description = "Libra2 memsocket"
 version = "0.1.0"
 
 # Workspace inherited keys

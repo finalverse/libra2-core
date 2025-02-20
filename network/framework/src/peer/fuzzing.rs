@@ -14,7 +14,7 @@ use crate::{
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::{config::PeerRole, network_id::NetworkContext};
-use aptos_memsocket::MemorySocket;
+use libra2_memsocket::MemorySocket;
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_proptest_helpers::ValueGenerator;
 use libra2_time_service::TimeService;

@@ -7,7 +7,7 @@ use crate::{
     protocols::stream::{InboundStreamBuffer, OutboundStream, StreamFragment, StreamHeader},
     testutils::fake_socket::{ReadOnlyTestSocket, ReadWriteTestSocket},
 };
-use aptos_memsocket::MemorySocket;
+use libra2_memsocket::MemorySocket;
 use bcs::test_helpers::assert_canonical_encode_decode;
 use futures::{executor::block_on, future, sink::SinkExt, stream::StreamExt};
 use futures_util::stream::select;

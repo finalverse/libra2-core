@@ -516,7 +516,7 @@ mod test {
         traits::Uniform as _,
         x25519::{PrivateKey, PublicKey},
     };
-    use aptos_memsocket::MemorySocket;
+    use libra2_memsocket::MemorySocket;
     use libra2_types::account_address::AccountAddress;
     use futures::{executor::block_on, future::join};
     use rand::{prelude::StdRng, SeedableRng as _};

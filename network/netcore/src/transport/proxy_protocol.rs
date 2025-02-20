@@ -135,7 +135,7 @@ pub async fn read_header<T: AsyncRead + std::marker::Unpin>(
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_memsocket::MemorySocket;
+    use libra2_memsocket::MemorySocket;
     use futures::{executor::block_on, future::join, io::AsyncWriteExt};
     use std::net::ToSocketAddrs;
 

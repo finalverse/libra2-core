@@ -50,7 +50,7 @@ mod tests {
         ProtocolId,
     };
     use libra2_config::network_id::NetworkId;
-    use aptos_memsocket::MemorySocket;
+    use libra2_memsocket::MemorySocket;
     use libra2_types::chain_id::ChainId;
     use futures::{executor::block_on, future::join};
     use std::{collections::BTreeMap, iter::FromIterator};
