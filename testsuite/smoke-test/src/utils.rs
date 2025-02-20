@@ -286,7 +286,7 @@ pub async fn get_on_chain_resource<T: OnChainConfig>(rest_client: &Client) -> T 
 #[cfg(test)]
 pub mod swarm_utils {
     use libra2_config::config::{NodeConfig, SecureBackend, WaypointConfig};
-    use aptos_secure_storage::{KVStorage, Storage};
+    use libra2_secure_storage::{KVStorage, Storage};
     use aptos_types::waypoint::Waypoint;
 
     pub fn insert_waypoint(node_config: &mut NodeConfig, waypoint: Waypoint) {

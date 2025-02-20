@@ -449,8 +449,8 @@ aptos-scratchpad = { path = "storage/scratchpad" }
 aptos-script-composer = { path = "aptos-move/script-composer" }
 aptos-sdk = { path = "sdk" }
 aptos-sdk-builder = { path = "aptos-move/aptos-sdk-builder" }
-aptos-secure-net = { path = "secure/net" }
-aptos-secure-storage = { path = "secure/storage" }
+libra2-secure-net = { path = "secure/net" }
+libra2-secure-storage = { path = "secure/storage" }
 libra2-short-hex-str = { path = "crates/short-hex-str" }
 libra2-speculative-state-helper = { path = "crates/libra2-speculative-state-helper" }
 aptos-state-sync-driver = { path = "state-sync/state-sync-driver" }
@@ -476,7 +476,7 @@ aptos-types = { path = "types" }
 libra2-utils = { path = "libra2-utils" }
 aptos-validator-interface = { path = "aptos-move/aptos-validator-interface" }
 aptos-validator-transaction-pool = { path = "crates/validator-transaction-pool" }
-aptos-vault-client = { path = "secure/storage/vault" }
+libra2-vault-client = { path = "secure/storage/vault" }
 aptos-vm = { path = "aptos-move/aptos-vm" }
 aptos-vm-environment = { path = "aptos-move/aptos-vm-environment" }
 aptos-vm-logging = { path = "aptos-move/aptos-vm-logging" }

@@ -19,7 +19,7 @@ libra2-drop-helper = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-scratchpad = { workspace = true }
-aptos-secure-net = { workspace = true }
+libra2-secure-net = { workspace = true }
 aptos-storage-interface = { workspace = true }
 aptos-types = { workspace = true }
 bcs = { workspace = true }

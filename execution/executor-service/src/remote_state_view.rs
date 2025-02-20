@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 use crate::{RemoteKVRequest, RemoteKVResponse};
-use aptos_secure_net::network_controller::{Message, NetworkController};
+use libra2_secure_net::network_controller::{Message, NetworkController};
 use aptos_types::state_store::state_key::StateKey;
 use aptos_vm::sharded_block_executor::remote_state_value::RemoteStateValue;
 use crossbeam_channel::{Receiver, Sender};

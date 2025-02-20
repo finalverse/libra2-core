@@ -20,8 +20,8 @@ impl From<bcs::Error> for Error {
     }
 }
 
-impl From<aptos_secure_net::Error> for Error {
-    fn from(error: aptos_secure_net::Error) -> Self {
+impl From<libra2_secure_net::Error> for Error {
+    fn from(error: libra2_secure_net::Error) -> Self {
         Self::InternalError(error.to_string())
     }
 }

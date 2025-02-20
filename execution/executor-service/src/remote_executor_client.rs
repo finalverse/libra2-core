@@ -6,7 +6,7 @@ use crate::{
     RemoteExecutionResult,
 };
 use libra2_logger::{info, trace};
-use aptos_secure_net::network_controller::{Message, NetworkController};
+use libra2_secure_net::network_controller::{Message, NetworkController};
 use aptos_storage_interface::state_store::state_view::cached_state_view::CachedStateView;
 use aptos_types::{
     block_executor::{

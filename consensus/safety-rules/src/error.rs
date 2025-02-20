@@ -69,17 +69,17 @@ impl From<serde_json::Error> for Error {
     }
 }
 
-impl From<aptos_secure_net::Error> for Error {
+impl From<libra2_secure_net::Error> for Error {
     #[allow(clippy::fallible_impl_from)]
-    fn from(error: aptos_secure_net::Error) -> Self {
+    fn from(error: libra2_secure_net::Error) -> Self {
         Self::InternalError(error.to_string())
     }
 }
 
-impl From<aptos_secure_storage::Error> for Error {
-    fn from(error: aptos_secure_storage::Error) -> Self {
+impl From<libra2_secure_storage::Error> for Error {
+    fn from(error: libra2_secure_storage::Error) -> Self {
         match error {
-            aptos_secure_storage::Error::PermissionDenied => {
+            libra2_secure_storage::Error::PermissionDenied => {
                 // If a storage error is thrown that indicates a permission failure, we
                 // want to panic immediately to alert an operator that something has gone
                 // wrong. For example, this error is thrown when a storage (e.g., vault)
@@ -90,8 +90,8 @@ impl From<aptos_secure_storage::Error> for Error {
                     error
                 );
             },
-            aptos_secure_storage::Error::KeyVersionNotFound(_, _)
-            | aptos_secure_storage::Error::KeyNotSet(_) => {
+            libra2_secure_storage::Error::KeyVersionNotFound(_, _)
+            | libra2_secure_storage::Error::KeyNotSet(_) => {
                 Self::SecureStorageMissingDataError(error.to_string())
             },
             _ => Self::SecureStorageUnexpectedError(error.to_string()),

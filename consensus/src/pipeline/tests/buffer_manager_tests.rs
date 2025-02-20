@@ -42,7 +42,7 @@ use aptos_network::{
     },
 };
 use aptos_safety_rules::{PersistentSafetyStorage, SafetyRulesManager};
-use aptos_secure_storage::Storage;
+use libra2_secure_storage::Storage;
 use aptos_types::{
     account_address::AccountAddress,
     epoch_state::EpochState,
@@ -86,7 +86,7 @@ pub fn prepare_buffer_manager(
         Waypoint::new_epoch_boundary(&LedgerInfo::mock_genesis(Some(validator_set))).unwrap();
 
     let safety_storage = PersistentSafetyStorage::initialize(
-        Storage::from(aptos_secure_storage::InMemoryStorage::new()),
+        Storage::from(libra2_secure_storage::InMemoryStorage::new()),
         signer.author(),
         signer.private_key().clone(),
         waypoint,

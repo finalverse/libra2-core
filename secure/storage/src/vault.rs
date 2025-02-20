@@ -12,9 +12,9 @@ use libra2_crypto::{
 };
 use libra2_infallible::RwLock;
 use libra2_time_service::{TimeService, TimeServiceTrait};
-use aptos_vault_client::Client;
+use libra2_vault_client::Client;
 #[cfg(any(test, feature = "testing"))]
-use aptos_vault_client::ReadResponse;
+use libra2_vault_client::ReadResponse;
 use chrono::DateTime;
 use serde::{de::DeserializeOwned, Serialize};
 use std::{
@@ -103,7 +103,7 @@ impl VaultStorage {
         let keys = match self.client().list_keys() {
             Ok(keys) => keys,
             // No keys were found, so there's no need to reset.
-            Err(aptos_vault_client::Error::NotFound(_, _)) => return Ok(()),
+            Err(libra2_vault_client::Error::NotFound(_, _)) => return Ok(()),
             Err(e) => return Err(e.into()),
         };
         for key in keys {
@@ -311,7 +311,7 @@ impl CryptoStorage for VaultStorage {
 pub mod policy {
     use super::*;
     use crate::{Capability, Identity, Policy};
-    use aptos_vault_client as vault;
+    use libra2_vault_client as vault;
 
     const APTOS_DEFAULT: &str = "aptos_default";
 
@@ -340,7 +340,7 @@ pub mod policy {
         fn reset_policies(&self) -> Result<(), Error> {
             let policies = match self.client().list_policies() {
                 Ok(policies) => policies,
-                Err(aptos_vault_client::Error::NotFound(_, _)) => return Ok(()),
+                Err(libra2_vault_client::Error::NotFound(_, _)) => return Ok(()),
                 Err(e) => return Err(e.into()),
             };
 

@@ -69,9 +69,9 @@ aptos-db-indexer = { workspace = true, features = ["fuzzing"] }
 aptos-genesis = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-secure-storage = { workspace = true }
+libra2-secure-storage = { workspace = true }
 libra2-time-service = { workspace = true }
-aptos-vault-client = { workspace = true }
+libra2-vault-client = { workspace = true }
 base64 = { workspace = true }
 futures = { workspace = true }
 itertools = { workspace = true }

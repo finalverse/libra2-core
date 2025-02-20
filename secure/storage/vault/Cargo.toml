@@ -1,6 +1,6 @@
 [package]
-name = "aptos-vault-client"
-description = "Aptos's Restful Vault Client"
+name = "libra2-vault-client"
+description = "Libra2's Restful Vault Client"
 version = "0.1.0"
 
 # Workspace inherited keys

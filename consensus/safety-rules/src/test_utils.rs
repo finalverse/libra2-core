@@ -18,7 +18,7 @@ use aptos_consensus_types::{
     vote_proposal::VoteProposal,
 };
 use libra2_crypto::hash::{CryptoHash, TransactionAccumulatorHasher};
-use aptos_secure_storage::{InMemoryStorage, Storage};
+use libra2_secure_storage::{InMemoryStorage, Storage};
 use aptos_types::{
     aggregate_signature::{AggregateSignature, PartialSignatures},
     block_info::BlockInfo,

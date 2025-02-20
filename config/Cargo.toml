@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-global-constants = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-secure-storage = { workspace = true }
+libra2-secure-storage = { workspace = true }
 libra2-short-hex-str = { workspace = true }
 libra2-temppath = { workspace = true }
 aptos-types = { workspace = true }

@@ -20,10 +20,10 @@ libra2-global-constants = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-secure-net = { workspace = true }
-aptos-secure-storage = { workspace = true }
+libra2-secure-net = { workspace = true }
+libra2-secure-storage = { workspace = true }
 aptos-types = { workspace = true }
-aptos-vault-client = { workspace = true }
+libra2-vault-client = { workspace = true }
 hex = { workspace = true }
 once_cell = { workspace = true }
 proptest = { workspace = true, optional = true }
@@ -36,7 +36,7 @@ thiserror = { workspace = true }
 libra2-config = { workspace = true, features = ["fuzzing"] }
 aptos-consensus-types = { workspace = true, features = ["fuzzing"] }
 aptos-proptest-helpers = { workspace = true }
-aptos-secure-storage = { workspace = true, features = ["testing"] }
+libra2-secure-storage = { workspace = true, features = ["testing"] }
 claims = { workspace = true }
 criterion = { workspace = true }
 proptest = { workspace = true }
@@ -51,4 +51,4 @@ required-features = ["testing"]
 [features]
 default = []
 fuzzing = ["aptos-consensus-types/fuzzing", "libra2-config/fuzzing", "proptest"]
-testing = ["aptos-secure-storage/testing"]
+testing = ["libra2-secure-storage/testing"]

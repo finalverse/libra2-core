@@ -11,7 +11,7 @@ use crate::{
     utils,
 };
 use libra2_crypto::{x25519, Uniform};
-use aptos_secure_storage::{CryptoStorage, KVStorage, Storage};
+use libra2_secure_storage::{CryptoStorage, KVStorage, Storage};
 use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::{
     account_address::from_identity_public_key, network_address::NetworkAddress,

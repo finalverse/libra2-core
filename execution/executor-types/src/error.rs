@@ -73,8 +73,8 @@ impl From<bcs::Error> for ExecutorError {
     }
 }
 
-impl From<aptos_secure_net::Error> for ExecutorError {
-    fn from(error: aptos_secure_net::Error) -> Self {
+impl From<libra2_secure_net::Error> for ExecutorError {
+    fn from(error: libra2_secure_net::Error) -> Self {
         Self::InternalError {
             error: format!("{}", error),
         }

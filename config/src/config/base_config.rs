@@ -5,7 +5,7 @@ use crate::config::{
     config_sanitizer::ConfigSanitizer, node_config_loader::NodeType, Error, NodeConfig,
     SecureBackend,
 };
-use aptos_secure_storage::{KVStorage, Storage};
+use libra2_secure_storage::{KVStorage, Storage};
 use aptos_types::{chain_id::ChainId, waypoint::Waypoint};
 use poem_openapi::Enum as PoemEnum;
 use serde::{Deserialize, Serialize};

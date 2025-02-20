@@ -66,7 +66,7 @@ use aptos_network::{
     ProtocolId,
 };
 use aptos_safety_rules::{PersistentSafetyStorage, SafetyRulesManager};
-use aptos_secure_storage::Storage;
+use libra2_secure_storage::Storage;
 use aptos_types::{
     epoch_state::EpochState,
     jwks::QuorumCertifiedUpdate,
@@ -202,7 +202,7 @@ impl NodeSetup {
             let (initial_data, storage) = MockStorage::start_for_testing((&validators).into());
 
             let safety_storage = PersistentSafetyStorage::initialize(
-                Storage::from(aptos_secure_storage::InMemoryStorage::new()),
+                Storage::from(libra2_secure_storage::InMemoryStorage::new()),
                 signer.author(),
                 signer.private_key().clone(),
                 waypoint,
@@ -1782,7 +1782,7 @@ fn safety_rules_crash() {
 
     fn reset_safety_rules(node: &mut NodeSetup) {
         let safety_storage = PersistentSafetyStorage::initialize(
-            Storage::from(aptos_secure_storage::InMemoryStorage::new()),
+            Storage::from(libra2_secure_storage::InMemoryStorage::new()),
             node.signer.author(),
             node.signer.private_key().clone(),
             node.round_manager.consensus_state().waypoint(),

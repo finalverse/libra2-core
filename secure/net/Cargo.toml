@@ -1,6 +1,6 @@
 [package]
-name = "aptos-secure-net"
-description = "Aptos's Simple Network Substrate"
+name = "libra2-secure-net"
+description = "Libra2's Simple Network Substrate"
 version = "0.1.0"
 
 # Workspace inherited keys

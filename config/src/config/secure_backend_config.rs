@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::config::Error;
-use aptos_secure_storage::{InMemoryStorage, Namespaced, OnDiskStorage, Storage, VaultStorage};
+use libra2_secure_storage::{InMemoryStorage, Namespaced, OnDiskStorage, Storage, VaultStorage};
 use serde::{Deserialize, Serialize};
 use std::{
     fs::File,
