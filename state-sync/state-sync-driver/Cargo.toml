@@ -17,8 +17,8 @@ anyhow = { workspace = true }
 libra2-config = { workspace = true }
 libra2-consensus-notifications = { workspace = true }
 libra2-crypto = { workspace = true }
-aptos-data-client = { workspace = true }
-aptos-data-streaming-service = { workspace = true }
+libra2-data-client = { workspace = true }
+libra2-data-streaming-service = { workspace = true }
 libra2-event-notifications = { workspace = true }
 aptos-executor-types = { workspace = true }
 libra2-infallible = { workspace = true }

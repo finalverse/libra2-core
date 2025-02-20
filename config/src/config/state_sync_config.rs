@@ -27,7 +27,7 @@ const MAX_CONCURRENT_STATE_REQUESTS: u64 = 6;
 #[serde(default, deny_unknown_fields)]
 pub struct StateSyncConfig {
     pub data_streaming_service: DataStreamingServiceConfig,
-    pub aptos_data_client: AptosDataClientConfig,
+    pub libra2_data_client: AptosDataClientConfig,
     pub state_sync_driver: StateSyncDriverConfig,
     pub storage_service: StorageServiceConfig,
 }

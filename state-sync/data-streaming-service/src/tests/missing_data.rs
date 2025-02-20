@@ -21,7 +21,7 @@ use crate::{
 };
 use libra2_config::config::DataStreamingServiceConfig;
 use libra2_crypto::HashValue;
-use aptos_data_client::{global_summary::GlobalDataSummary, interface::ResponsePayload};
+use libra2_data_client::{global_summary::GlobalDataSummary, interface::ResponsePayload};
 use libra2_id_generator::U64IdGenerator;
 use libra2_storage_service_types::responses::CompleteDataRange;
 use libra2_types::{

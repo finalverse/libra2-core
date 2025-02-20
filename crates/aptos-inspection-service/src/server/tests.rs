@@ -11,7 +11,7 @@ use crate::{
     PEER_INFORMATION_PATH, SYSTEM_INFORMATION_PATH,
 };
 use libra2_config::config::{AptosDataClientConfig, BaseConfig, NodeConfig};
-use aptos_data_client::client::AptosDataClient;
+use libra2_data_client::client::AptosDataClient;
 use aptos_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
 use libra2_storage_interface::DbReader;
 use libra2_storage_service_client::StorageServiceClient;
@@ -257,7 +257,7 @@ async fn send_get_request_to_path(config: &NodeConfig, endpoint: &str) -> Respon
     // Create the data client
     let network_client =
         NetworkClient::new(vec![], vec![], HashMap::new(), peers_and_metadata.clone());
-    let (aptos_data_client, _) = AptosDataClient::new(
+    let (libra2_data_client, _) = AptosDataClient::new(
         AptosDataClientConfig::default(),
         BaseConfig::default(),
         TimeService::mock(),
@@ -274,7 +274,7 @@ async fn send_get_request_to_path(config: &NodeConfig, endpoint: &str) -> Respon
             .body(Body::from(""))
             .unwrap(),
         config.clone(),
-        aptos_data_client,
+        libra2_data_client,
         peers_and_metadata,
     )
     .await

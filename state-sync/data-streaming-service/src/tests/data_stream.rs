@@ -34,7 +34,7 @@ use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::config::{
     AptosDataClientConfig, DataStreamingServiceConfig, DynamicPrefetchingConfig,
 };
-use aptos_data_client::{
+use libra2_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary, OptimalChunkSizes},
     interface::{Response, ResponseContext, ResponsePayload},
 };
@@ -205,7 +205,7 @@ async fn test_stream_data_error() {
     });
     let pending_response = PendingClientResponse::new_with_response(
         client_request.clone(),
-        Err(aptos_data_client::error::Error::DataIsUnavailable(
+        Err(libra2_data_client::error::Error::DataIsUnavailable(
             "Missing data!".into(),
         )),
     );
@@ -3486,7 +3486,7 @@ fn create_data_stream(
     let advertised_data = create_advertised_data();
 
     // Create an aptos data client mock and notification generator
-    let aptos_data_client = MockAptosDataClient::new(data_client_config, true, false, true, false);
+    let libra2_data_client = MockAptosDataClient::new(data_client_config, true, false, true, false);
     let notification_generator = Arc::new(U64IdGenerator::new());
 
     // Create the data stream and listener pair
@@ -3497,7 +3497,7 @@ fn create_data_stream(
         create_random_u64(10000),
         &stream_request,
         create_stream_update_notifier(),
-        aptos_data_client,
+        libra2_data_client,
         notification_generator,
         &advertised_data,
         time_service.clone(),
@@ -3741,7 +3741,7 @@ fn set_failure_response_in_queue(data_stream: &mut DataStream<MockAptosDataClien
     set_response_in_queue(
         data_stream,
         index,
-        aptos_data_client::error::Error::UnexpectedErrorEncountered("Oops!".into()),
+        libra2_data_client::error::Error::UnexpectedErrorEncountered("Oops!".into()),
     );
 }
 
@@ -3762,7 +3762,7 @@ fn set_timeout_response_in_queue(data_stream: &mut DataStream<MockAptosDataClien
     set_response_in_queue(
         data_stream,
         index,
-        aptos_data_client::error::Error::TimeoutWaitingForResponse("Timed out!".into()),
+        libra2_data_client::error::Error::TimeoutWaitingForResponse("Timed out!".into()),
     );
 }
 
@@ -3770,7 +3770,7 @@ fn set_timeout_response_in_queue(data_stream: &mut DataStream<MockAptosDataClien
 fn set_response_in_queue(
     data_stream: &mut DataStream<MockAptosDataClient>,
     index: usize,
-    error_response: aptos_data_client::error::Error,
+    error_response: libra2_data_client::error::Error,
 ) {
     // Get the pending response at the specified index
     let (sent_requests, _) = data_stream.get_sent_requests_and_notifications();
@@ -3793,7 +3793,7 @@ async fn wait_for_data_client_to_respond(
         if let Some(client_response) = &pending_response.lock().client_response {
             if !matches!(
                 client_response,
-                Err(aptos_data_client::error::Error::TimeoutWaitingForResponse(
+                Err(libra2_data_client::error::Error::TimeoutWaitingForResponse(
                     _
                 ))
             ) {

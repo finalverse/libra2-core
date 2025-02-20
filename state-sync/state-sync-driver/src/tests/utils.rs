@@ -8,8 +8,8 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519Signature},
     HashValue, PrivateKey, Uniform,
 };
-use aptos_data_client::global_summary::GlobalDataSummary;
-use aptos_data_streaming_service::{
+use libra2_data_client::global_summary::GlobalDataSummary;
+use libra2_data_streaming_service::{
     data_notification::DataNotification, data_stream::DataStreamListener, streaming_client::Epoch,
 };
 use libra2_event_notifications::EventNotificationListener;

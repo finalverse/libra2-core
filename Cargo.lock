@@ -822,71 +822,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-data-client"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-netcore",
- "aptos-network",
- "aptos-peer-monitoring-service-types",
- "arc-swap",
- "async-trait",
- "bcs 0.1.4",
- "claims",
- "dashmap",
- "futures",
- "itertools 0.13.0",
- "libra2-channels",
- "libra2-config",
- "libra2-crypto",
- "libra2-id-generator",
- "libra2-infallible",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-storage-interface",
- "libra2-storage-service-client",
- "libra2-storage-service-server",
- "libra2-storage-service-types",
- "libra2-time-service",
- "libra2-types",
- "maplit",
- "mockall",
- "ordered-float 3.9.2",
- "rand 0.8.5",
- "serde",
- "thiserror",
- "tokio",
-]
-
-[[package]]
-name = "aptos-data-streaming-service"
-version = "0.1.0"
-dependencies = [
- "aptos-data-client",
- "arc-swap",
- "async-trait",
- "claims",
- "enum_dispatch",
- "futures",
- "libra2-channels",
- "libra2-config",
- "libra2-crypto",
- "libra2-id-generator",
- "libra2-infallible",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-storage-service-types",
- "libra2-time-service",
- "libra2-types",
- "once_cell",
- "rand 0.7.3",
- "serde",
- "thiserror",
- "tokio",
- "tokio-stream",
-]
-
-[[package]]
 name = "aptos-db"
 version = "0.1.0"
 dependencies = [
@@ -1987,7 +1922,6 @@ name = "aptos-inspection-service"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-data-client",
  "aptos-network",
  "aptos-runtimes",
  "aptos-telemetry",
@@ -1996,6 +1930,7 @@ dependencies = [
  "hyper 0.14.28",
  "libra2-build-info",
  "libra2-config",
+ "libra2-data-client",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-storage-interface",
@@ -2615,8 +2550,6 @@ dependencies = [
  "aptos-api",
  "aptos-cached-packages",
  "aptos-consensus",
- "aptos-data-client",
- "aptos-data-streaming-service",
  "aptos-db",
  "aptos-executor",
  "aptos-framework",
@@ -2653,6 +2586,8 @@ dependencies = [
  "libra2-consensus-notifications",
  "libra2-crash-handler",
  "libra2-crypto",
+ "libra2-data-client",
+ "libra2-data-streaming-service",
  "libra2-db-indexer",
  "libra2-dkg-runtime",
  "libra2-event-notifications",
@@ -9901,6 +9836,71 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-data-client"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-netcore",
+ "aptos-network",
+ "aptos-peer-monitoring-service-types",
+ "arc-swap",
+ "async-trait",
+ "bcs 0.1.4",
+ "claims",
+ "dashmap",
+ "futures",
+ "itertools 0.13.0",
+ "libra2-channels",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-id-generator",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-storage-interface",
+ "libra2-storage-service-client",
+ "libra2-storage-service-server",
+ "libra2-storage-service-types",
+ "libra2-time-service",
+ "libra2-types",
+ "maplit",
+ "mockall",
+ "ordered-float 3.9.2",
+ "rand 0.8.5",
+ "serde",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-data-streaming-service"
+version = "0.1.0"
+dependencies = [
+ "arc-swap",
+ "async-trait",
+ "claims",
+ "enum_dispatch",
+ "futures",
+ "libra2-channels",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-data-client",
+ "libra2-id-generator",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-storage-service-types",
+ "libra2-time-service",
+ "libra2-types",
+ "once_cell",
+ "rand 0.7.3",
+ "serde",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+]
+
+[[package]]
 name = "libra2-db"
 version = "0.1.0"
 dependencies = [
@@ -10258,8 +10258,6 @@ dependencies = [
  "aptos-api",
  "aptos-cached-packages",
  "aptos-consensus",
- "aptos-data-client",
- "aptos-data-streaming-service",
  "aptos-db",
  "aptos-executor",
  "aptos-framework",
@@ -10296,6 +10294,8 @@ dependencies = [
  "libra2-consensus-notifications",
  "libra2-crash-handler",
  "libra2-crypto",
+ "libra2-data-client",
+ "libra2-data-streaming-service",
  "libra2-db-indexer",
  "libra2-dkg-runtime",
  "libra2-event-notifications",
@@ -10525,8 +10525,6 @@ name = "libra2-state-sync-driver"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-data-client",
- "aptos-data-streaming-service",
  "aptos-db",
  "aptos-executor",
  "aptos-executor-test-helpers",
@@ -10545,6 +10543,8 @@ dependencies = [
  "libra2-config",
  "libra2-consensus-notifications",
  "libra2-crypto",
+ "libra2-data-client",
+ "libra2-data-streaming-service",
  "libra2-event-notifications",
  "libra2-infallible",
  "libra2-logger",

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-data-streaming-service"
+name = "libra2-data-streaming-service"
 description = "The data streaming service that sends data notifications to clients"
 version = "0.1.0"
 
@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
-aptos-data-client = { workspace = true }
+libra2-data-client = { workspace = true }
 libra2-id-generator = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }

@@ -25,8 +25,8 @@ use libra2_consensus_notifications::{
     ConsensusCommitNotification, ConsensusNotification, ConsensusSyncDurationNotification,
     ConsensusSyncTargetNotification,
 };
-use aptos_data_client::interface::AptosDataClientInterface;
-use aptos_data_streaming_service::streaming_client::{
+use libra2_data_client::interface::AptosDataClientInterface;
+use libra2_data_streaming_service::streaming_client::{
     DataStreamingClient, NotificationAndFeedback, NotificationFeedback,
 };
 use libra2_event_notifications::EventSubscriptionService;
@@ -106,7 +106,7 @@ pub struct StateSyncDriver<
     continuous_syncer: ContinuousSyncer<StorageSyncer, StreamingClient>,
 
     // The client for checking the global data summary of our peers
-    aptos_data_client: DataClient,
+    libra2_data_client: DataClient,
 
     // The configuration for the driver
     driver_configuration: DriverConfiguration,
@@ -167,7 +167,7 @@ impl<
             StorageServiceNotifier,
         >,
         storage_synchronizer: StorageSyncer,
-        aptos_data_client: DataClient,
+        libra2_data_client: DataClient,
         streaming_client: StreamingClient,
         storage: Arc<dyn DbReader>,
         time_service: TimeService,
@@ -196,7 +196,7 @@ impl<
             commit_notification_listener,
             consensus_notification_handler,
             continuous_syncer,
-            aptos_data_client,
+            libra2_data_client,
             driver_configuration,
             error_notification_listener,
             event_subscription_service,
@@ -659,7 +659,7 @@ impl<
         self.update_executing_component_metrics();
 
         // Fetch the global data summary and verify we have active peers
-        let global_data_summary = self.aptos_data_client.get_global_data_summary();
+        let global_data_summary = self.libra2_data_client.get_global_data_summary();
         if global_data_summary.is_empty() {
             trace!(LogSchema::new(LogEntry::Driver).message(
                 "The global data summary is empty! It's likely that we have no active peers."

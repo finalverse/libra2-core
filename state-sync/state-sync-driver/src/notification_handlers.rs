@@ -10,7 +10,7 @@ use libra2_consensus_notifications::{
     ConsensusCommitNotification, ConsensusNotification, ConsensusNotificationListener,
     ConsensusSyncDurationNotification, ConsensusSyncTargetNotification,
 };
-use aptos_data_streaming_service::data_notification::NotificationId;
+use libra2_data_streaming_service::data_notification::NotificationId;
 use libra2_event_notifications::{EventNotificationSender, EventSubscriptionService};
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;

@@ -43,7 +43,7 @@ async fn test_fullnode_output_sync_epoch_changes() {
         .state_sync
         .state_sync_driver
         .continuous_syncing_mode = ContinuousSyncingMode::ApplyTransactionOutputs;
-    vfn_config.state_sync.aptos_data_client.use_compression = true;
+    vfn_config.state_sync.libra2_data_client.use_compression = true;
 
     // Create the fullnode and test its ability to sync
     let vfn_peer_id = state_sync_utils::create_fullnode(vfn_config, &mut swarm).await;
@@ -63,7 +63,7 @@ async fn test_fullnode_output_sync_no_compression() {
         .state_sync
         .state_sync_driver
         .continuous_syncing_mode = ContinuousSyncingMode::ApplyTransactionOutputs;
-    vfn_config.state_sync.aptos_data_client.use_compression = false;
+    vfn_config.state_sync.libra2_data_client.use_compression = false;
 
     // Create the fullnode and test its ability to sync
     let vfn_peer_id = state_sync_utils::create_fullnode(vfn_config, &mut swarm).await;
@@ -83,7 +83,7 @@ async fn test_fullnode_output_sync_exponential_backoff() {
         .state_sync
         .state_sync_driver
         .continuous_syncing_mode = ContinuousSyncingMode::ApplyTransactionOutputs;
-    vfn_config.state_sync.aptos_data_client.response_timeout_ms = 1;
+    vfn_config.state_sync.libra2_data_client.response_timeout_ms = 1;
 
     // Create the fullnode and test its ability to sync
     let vfn_peer_id = state_sync_utils::create_fullnode(vfn_config, &mut swarm).await;
@@ -111,9 +111,9 @@ async fn test_fullnode_intelligent_sync_epoch_changes() {
         .continuous_syncing_mode = ContinuousSyncingMode::ExecuteTransactionsOrApplyOutputs;
     vfn_config
         .state_sync
-        .aptos_data_client
+        .libra2_data_client
         .max_num_output_reductions = 1;
-    vfn_config.state_sync.aptos_data_client.response_timeout_ms = 1;
+    vfn_config.state_sync.libra2_data_client.response_timeout_ms = 1;
 
     // Create the fullnode and test its ability to sync
     let vfn_peer_id = state_sync_utils::create_fullnode(vfn_config, &mut swarm).await;
@@ -141,9 +141,9 @@ async fn test_fullnode_fast_and_intelligent_sync_epoch_changes() {
         .continuous_syncing_mode = ContinuousSyncingMode::ExecuteTransactionsOrApplyOutputs;
     vfn_config
         .state_sync
-        .aptos_data_client
+        .libra2_data_client
         .max_num_output_reductions = 2;
-    vfn_config.state_sync.aptos_data_client.response_timeout_ms = 1;
+    vfn_config.state_sync.libra2_data_client.response_timeout_ms = 1;
 
     // Create the fullnode and test its ability to sync
     let vfn_peer_id = state_sync_utils::create_fullnode(vfn_config, &mut swarm).await;
@@ -163,7 +163,7 @@ async fn test_fullnode_execution_sync_epoch_changes() {
         .state_sync
         .state_sync_driver
         .continuous_syncing_mode = ContinuousSyncingMode::ExecuteTransactions;
-    vfn_config.state_sync.aptos_data_client.use_compression = true;
+    vfn_config.state_sync.libra2_data_client.use_compression = true;
 
     // Create the fullnode and test its ability to sync
     let vfn_peer_id = state_sync_utils::create_fullnode(vfn_config, &mut swarm).await;
@@ -335,7 +335,7 @@ async fn test_validator_fast_sync_no_compression() {
                 BootstrappingMode::DownloadLatestStates;
             config.state_sync.state_sync_driver.continuous_syncing_mode =
                 ContinuousSyncingMode::ApplyTransactionOutputs;
-            config.state_sync.aptos_data_client.use_compression = false;
+            config.state_sync.libra2_data_client.use_compression = false;
         }))
         .build()
         .await;
@@ -428,9 +428,9 @@ async fn test_validator_intelligent_sync_epoch_changes() {
             config.state_sync.storage_service.max_network_chunk_bytes = 10 * 1024;
             config
                 .state_sync
-                .aptos_data_client
+                .libra2_data_client
                 .max_num_output_reductions = 1;
-            config.state_sync.aptos_data_client.response_timeout_ms = 1;
+            config.state_sync.libra2_data_client.response_timeout_ms = 1;
         }))
         .build()
         .await;
@@ -490,7 +490,7 @@ async fn test_validator_output_sync_exponential_backoff() {
                 BootstrappingMode::ApplyTransactionOutputsFromGenesis;
             config.state_sync.state_sync_driver.continuous_syncing_mode =
                 ContinuousSyncingMode::ApplyTransactionOutputs;
-            config.state_sync.aptos_data_client.response_timeout_ms = 1;
+            config.state_sync.libra2_data_client.response_timeout_ms = 1;
         }))
         .build()
         .await;
@@ -509,7 +509,7 @@ async fn test_validator_execution_sync_no_compression() {
                 BootstrappingMode::ExecuteTransactionsFromGenesis;
             config.state_sync.state_sync_driver.continuous_syncing_mode =
                 ContinuousSyncingMode::ExecuteTransactions;
-            config.state_sync.aptos_data_client.use_compression = false;
+            config.state_sync.libra2_data_client.use_compression = false;
         }))
         .build()
         .await;
@@ -569,8 +569,8 @@ async fn test_validator_sync_exponential_backoff(epoch_changes: bool) {
                 BootstrappingMode::DownloadLatestStates;
             config.state_sync.state_sync_driver.continuous_syncing_mode =
                 ContinuousSyncingMode::ApplyTransactionOutputs;
-            config.state_sync.aptos_data_client.use_compression = false;
-            config.state_sync.aptos_data_client.response_timeout_ms = 1;
+            config.state_sync.libra2_data_client.use_compression = false;
+            config.state_sync.libra2_data_client.response_timeout_ms = 1;
         }))
         .with_init_genesis_config(Arc::new(|genesis_config| {
             genesis_config.epoch_duration_secs = 10_000; // Prevent epoch changes from occurring unnecessarily

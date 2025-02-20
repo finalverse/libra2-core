@@ -22,7 +22,7 @@ pub const TOTAL_COUNT_LABEL: &str = "TOTAL_COUNT";
 /// Counter for tracking sent requests
 pub static SENT_REQUESTS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_data_client_sent_requests",
+        "libra2_data_client_sent_requests",
         "Counters related to sent requests",
         &["request_types", "network"]
     )
@@ -32,7 +32,7 @@ pub static SENT_REQUESTS: Lazy<IntCounterVec> = Lazy::new(|| {
 /// Counter for tracking success responses
 pub static SUCCESS_RESPONSES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_data_client_success_responses",
+        "libra2_data_client_success_responses",
         "Counters related to success responses",
         &["response_type", "network"]
     )
@@ -42,7 +42,7 @@ pub static SUCCESS_RESPONSES: Lazy<IntCounterVec> = Lazy::new(|| {
 /// Counter for tracking error responses
 pub static ERROR_RESPONSES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_data_client_error_responses",
+        "libra2_data_client_error_responses",
         "Counters related to error responses",
         &["response_type", "network"]
     )
@@ -58,7 +58,7 @@ const MULTI_FETCH_BUCKETS: &[f64] = &[
 /// Counter for tracking the number of multi-fetches sent per request
 pub static MULTI_FETCHES_PER_REQUEST: Lazy<HistogramVec> = Lazy::new(|| {
     let histogram_opts = histogram_opts!(
-        "aptos_data_client_multi_fetches_per_request",
+        "libra2_data_client_multi_fetches_per_request",
         "Counters related to the number of multi-fetches sent per request",
         MULTI_FETCH_BUCKETS.to_vec()
     );
@@ -74,7 +74,7 @@ const REQUEST_LATENCY_BUCKETS_SECS: &[f64] = &[
 /// Counter for tracking request latencies
 pub static REQUEST_LATENCIES: Lazy<HistogramVec> = Lazy::new(|| {
     let histogram_opts = histogram_opts!(
-        "aptos_data_client_request_latencies",
+        "libra2_data_client_request_latencies",
         "Counters related to request latencies",
         REQUEST_LATENCY_BUCKETS_SECS.to_vec()
     );
@@ -84,7 +84,7 @@ pub static REQUEST_LATENCIES: Lazy<HistogramVec> = Lazy::new(|| {
 /// Gauge for tracking the number of in-flight polls
 pub static IN_FLIGHT_POLLS: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_data_client_in_flight_polls",
+        "libra2_data_client_in_flight_polls",
         "Gauge related to the number of in-flight polls",
         &["peer_type"]
     )
@@ -94,7 +94,7 @@ pub static IN_FLIGHT_POLLS: Lazy<IntGaugeVec> = Lazy::new(|| {
 /// Gauge for tracking the number of connected peers (priority and regular)
 pub static CONNECTED_PEERS: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_data_client_connected_peers",
+        "libra2_data_client_connected_peers",
         "Gauge related to the number of connected peers",
         &["peer_type"]
     )
@@ -104,7 +104,7 @@ pub static CONNECTED_PEERS: Lazy<IntGaugeVec> = Lazy::new(|| {
 /// Gauge for tracking the number of connected peers by priority
 pub static CONNECTED_PEERS_AND_PRIORITIES: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_data_client_connected_peers_and_priorities",
+        "libra2_data_client_connected_peers_and_priorities",
         "Gauge related to the number of connected peers by priority",
         &["peer_type"]
     )
@@ -114,7 +114,7 @@ pub static CONNECTED_PEERS_AND_PRIORITIES: Lazy<IntGaugeVec> = Lazy::new(|| {
 /// Gauge for the highest advertised data
 pub static HIGHEST_ADVERTISED_DATA: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_data_client_highest_advertised_data",
+        "libra2_data_client_highest_advertised_data",
         "Gauge related to the highest advertised data",
         &["data_type"]
     )
@@ -124,7 +124,7 @@ pub static HIGHEST_ADVERTISED_DATA: Lazy<IntGaugeVec> = Lazy::new(|| {
 /// Gauge for tracking the ignored peers (by network)
 pub static IGNORED_PEERS: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_data_client_ignored_peers",
+        "libra2_data_client_ignored_peers",
         "Gauge related to the number of ignored peers",
         &["network"]
     )
@@ -134,7 +134,7 @@ pub static IGNORED_PEERS: Lazy<IntGaugeVec> = Lazy::new(|| {
 /// Gauge for the lowest advertised data
 pub static LOWEST_ADVERTISED_DATA: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_data_client_lowest_advertised_data",
+        "libra2_data_client_lowest_advertised_data",
         "Gauge related to the lowest advertised data",
         &["data_type"]
     )
@@ -144,7 +144,7 @@ pub static LOWEST_ADVERTISED_DATA: Lazy<IntGaugeVec> = Lazy::new(|| {
 /// Gauge for the optimal chunk sizes
 pub static OPTIMAL_CHUNK_SIZES: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_data_client_optimal_chunk_sizes",
+        "libra2_data_client_optimal_chunk_sizes",
         "Gauge related to the optimal chunk sizes",
         &["data_type"]
     )
@@ -162,7 +162,7 @@ const SYNC_LATENCY_BUCKETS_SECS: &[f64] = &[
 /// Counter for tracking various sync latencies
 pub static SYNC_LATENCIES: Lazy<HistogramVec> = Lazy::new(|| {
     let histogram_opts = histogram_opts!(
-        "aptos_data_client_sync_latencies",
+        "libra2_data_client_sync_latencies",
         "Counters related to sync latencies",
         SYNC_LATENCY_BUCKETS_SECS.to_vec()
     );
@@ -172,7 +172,7 @@ pub static SYNC_LATENCIES: Lazy<HistogramVec> = Lazy::new(|| {
 /// Gauge for tracking the number of sent requests by peer buckets
 pub static SENT_REQUESTS_BY_PEER_BUCKET: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_data_client_sent_requests_by_peer_bucket",
+        "libra2_data_client_sent_requests_by_peer_bucket",
         "Gauge related to the sent requests by peer buckets",
         &["peer_bucket_id", "request_label"]
     )
@@ -182,7 +182,7 @@ pub static SENT_REQUESTS_BY_PEER_BUCKET: Lazy<IntGaugeVec> = Lazy::new(|| {
 /// Gauge for tracking the number of received responses by peer buckets
 pub static RECEIVED_RESPONSES_BY_PEER_BUCKET: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_data_client_received_responses_by_peer_bucket",
+        "libra2_data_client_received_responses_by_peer_bucket",
         "Gauge related to the received responses by peer buckets",
         &["peer_bucket_id", "request_label"]
     )

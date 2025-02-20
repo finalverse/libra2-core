@@ -3,7 +3,7 @@
 
 use crate::server::utils::CONTENT_TYPE_TEXT;
 use libra2_config::config::NodeConfig;
-use aptos_data_client::client::AptosDataClient;
+use libra2_data_client::client::AptosDataClient;
 use libra2_logger::debug;
 use aptos_network::application::storage::PeersAndMetadata;
 use hyper::{
@@ -47,7 +47,7 @@ pub const UNEXPECTED_ERROR_MESSAGE: &str = "An unexpected error was encountered!
 /// address and handles various endpoint requests.
 pub fn start_inspection_service(
     node_config: NodeConfig,
-    aptos_data_client: AptosDataClient,
+    libra2_data_client: AptosDataClient,
     peers_and_metadata: Arc<PeersAndMetadata>,
 ) {
     // Fetch the service port and address
@@ -74,14 +74,14 @@ pub fn start_inspection_service(
         // Create the service function that handles the endpoint requests
         let make_service = make_service_fn(move |_conn| {
             let node_config = node_config.clone();
-            let aptos_data_client = aptos_data_client.clone();
+            let libra2_data_client = libra2_data_client.clone();
             let peers_and_metadata = peers_and_metadata.clone();
             async move {
                 Ok::<_, Infallible>(service_fn(move |request| {
                     serve_requests(
                         request,
                         node_config.clone(),
-                        aptos_data_client.clone(),
+                        libra2_data_client.clone(),
                         peers_and_metadata.clone(),
                     )
                 }))
@@ -102,7 +102,7 @@ pub fn start_inspection_service(
 async fn serve_requests(
     req: Request<Body>,
     node_config: NodeConfig,
-    aptos_data_client: AptosDataClient,
+    libra2_data_client: AptosDataClient,
     peers_and_metadata: Arc<PeersAndMetadata>,
 ) -> Result<Response<Body>, hyper::Error> {
     // Process the request and get the response components
@@ -142,7 +142,7 @@ async fn serve_requests(
             // Exposes the peer information
             peer_information::handle_peer_information_request(
                 &node_config,
-                aptos_data_client,
+                libra2_data_client,
                 peers_and_metadata,
             )
         },

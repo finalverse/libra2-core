@@ -26,7 +26,7 @@ use crate::{
 };
 use anyhow::format_err;
 use libra2_config::config::StateSyncDriverConfig;
-use aptos_data_streaming_service::data_notification::NotificationId;
+use libra2_data_streaming_service::data_notification::NotificationId;
 use libra2_event_notifications::EventSubscriptionService;
 use aptos_executor_types::ChunkCommitNotification;
 use libra2_infallible::{Mutex, RwLock};

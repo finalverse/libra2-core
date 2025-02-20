@@ -103,7 +103,7 @@ impl UnhealthyPeerState {
 /// If a peer sends too many invalid requests, the moderator will mark the peer as
 /// "unhealthy" and will ignore requests from that peer for some time.
 pub struct RequestModerator {
-    aptos_data_client_config: AptosDataClientConfig,
+    libra2_data_client_config: AptosDataClientConfig,
     cached_storage_server_summary: Arc<ArcSwap<StorageServerSummary>>,
     peers_and_metadata: Arc<PeersAndMetadata>,
     storage_service_config: StorageServiceConfig,
@@ -113,14 +113,14 @@ pub struct RequestModerator {
 
 impl RequestModerator {
     pub fn new(
-        aptos_data_client_config: AptosDataClientConfig,
+        libra2_data_client_config: AptosDataClientConfig,
         cached_storage_server_summary: Arc<ArcSwap<StorageServerSummary>>,
         peers_and_metadata: Arc<PeersAndMetadata>,
         storage_service_config: StorageServiceConfig,
         time_service: TimeService,
     ) -> Self {
         Self {
-            aptos_data_client_config,
+            libra2_data_client_config,
             cached_storage_server_summary,
             unhealthy_peer_states: Arc::new(DashMap::new()),
             peers_and_metadata,
@@ -153,7 +153,7 @@ impl RequestModerator {
 
             // Verify the request is serviceable using the current storage server summary
             if !storage_server_summary.can_service(
-                &self.aptos_data_client_config,
+                &self.libra2_data_client_config,
                 self.time_service.clone(),
                 request,
             ) {

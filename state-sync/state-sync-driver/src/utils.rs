@@ -13,7 +13,7 @@ use crate::{
     },
     storage_synchronizer::{NotificationMetadata, StorageSynchronizerInterface},
 };
-use aptos_data_streaming_service::{
+use libra2_data_streaming_service::{
     data_notification::DataNotification,
     data_stream::{DataStreamId, DataStreamListener},
     streaming_client::{DataStreamingClient, NotificationAndFeedback},

@@ -29,8 +29,8 @@ impl Error {
     pub fn get_label(&self) -> &'static str {
         match self {
             Self::DataIsUnavailable(_) => "data_is_unavailable",
-            Self::AptosDataClientError(_) => "aptos_data_client_error",
-            Self::AptosDataClientResponseIsInvalid(_) => "aptos_data_client_response_is_invalid",
+            Self::AptosDataClientError(_) => "libra2_data_client_error",
+            Self::AptosDataClientResponseIsInvalid(_) => "libra2_data_client_response_is_invalid",
             Self::IntegerOverflow(_) => "integer_overflow",
             Self::NoDataToFetch(_) => "no_data_to_fetch",
             Self::UnexpectedErrorEncountered(_) => "unexpected_error_encountered",
@@ -39,8 +39,8 @@ impl Error {
     }
 }
 
-impl From<aptos_data_client::error::Error> for Error {
-    fn from(error: aptos_data_client::error::Error) -> Self {
+impl From<libra2_data_client::error::Error> for Error {
+    fn from(error: libra2_data_client::error::Error) -> Self {
         Error::AptosDataClientError(error.to_string())
     }
 }

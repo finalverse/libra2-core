@@ -10,7 +10,7 @@ use crate::{
     tests::utils::create_ledger_info,
 };
 use libra2_config::config::{DataStreamingServiceConfig, DynamicPrefetchingConfig};
-use aptos_data_client::global_summary::GlobalDataSummary;
+use libra2_data_client::global_summary::GlobalDataSummary;
 use libra2_id_generator::U64IdGenerator;
 use libra2_storage_service_types::responses::CompleteDataRange;
 use std::sync::Arc;

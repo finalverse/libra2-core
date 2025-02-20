@@ -28,7 +28,7 @@ use crate::{
     },
 };
 use libra2_config::config::DataStreamingServiceConfig;
-use aptos_data_client::{
+use libra2_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary},
     interface::ResponsePayload,
 };
@@ -95,7 +95,7 @@ pub trait DataStreamEngine {
     fn notify_new_data_request_error(
         &mut self,
         client_request: &DataClientRequest,
-        request_error: aptos_data_client::error::Error,
+        request_error: libra2_data_client::error::Error,
     ) -> Result<(), Error> {
         Err(Error::UnexpectedErrorEncountered(format!(
             "Received a new data request error notification but no request was sent! Reported error: {:?}, request: {:?}",
@@ -839,7 +839,7 @@ impl ContinuousTransactionStreamEngine {
     fn handle_optimistic_fetch_error(
         &mut self,
         client_request: &DataClientRequest,
-        request_error: aptos_data_client::error::Error,
+        request_error: libra2_data_client::error::Error,
     ) -> Result<(), Error> {
         // We should only receive an error notification if we sent an optimistic fetch request
         if !self.optimistic_fetch_requested {
@@ -906,7 +906,7 @@ impl ContinuousTransactionStreamEngine {
     fn handle_subscription_error(
         &mut self,
         client_request: &DataClientRequest,
-        request_error: aptos_data_client::error::Error,
+        request_error: libra2_data_client::error::Error,
     ) -> Result<(), Error> {
         // We should only receive an error notification if we have an active stream
         if self.active_subscription_stream.is_none() {
@@ -1284,7 +1284,7 @@ impl DataStreamEngine for ContinuousTransactionStreamEngine {
     fn notify_new_data_request_error(
         &mut self,
         client_request: &DataClientRequest,
-        request_error: aptos_data_client::error::Error,
+        request_error: libra2_data_client::error::Error,
     ) -> Result<(), Error> {
         // If subscription streaming is enabled, the timeout should be for
         // subscription data. Otherwise, it should be for optimistic fetch data.

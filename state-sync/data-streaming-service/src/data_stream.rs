@@ -24,7 +24,7 @@ use crate::{
 };
 use libra2_channels::libra2_channel;
 use libra2_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
-use aptos_data_client::{
+use libra2_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary},
     interface::{
         AptosDataClientInterface, Response, ResponseContext, ResponseError, ResponsePayload,
@@ -75,7 +75,7 @@ pub struct DataStream<T> {
     data_stream_id: DataStreamId,
 
     // The data client through which to fetch data from the Aptos network
-    aptos_data_client: T,
+    libra2_data_client: T,
 
     // The engine for this data stream
     stream_engine: StreamEngine,
@@ -132,7 +132,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
         data_stream_id: DataStreamId,
         stream_request: &StreamRequest,
         stream_update_notifier: libra2_channel::Sender<(), StreamUpdateNotification>,
-        aptos_data_client: T,
+        libra2_data_client: T,
         notification_id_generator: Arc<U64IdGenerator>,
         advertised_data: &AdvertisedData,
         time_service: TimeService,
@@ -154,7 +154,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
             data_client_config,
             streaming_service_config: data_stream_config,
             data_stream_id,
-            aptos_data_client,
+            libra2_data_client,
             stream_engine,
             stream_update_notifier,
             sent_data_requests: None,
@@ -382,7 +382,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
         let join_handle = spawn_request_task(
             self.data_stream_id,
             data_client_request,
-            self.aptos_data_client.clone(),
+            self.libra2_data_client.clone(),
             pending_client_response.clone(),
             request_timeout_ms,
             self.stream_update_notifier.clone(),
@@ -551,7 +551,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
         &mut self,
         global_data_summary: &GlobalDataSummary,
         response_payload: &ResponsePayload,
-    ) -> Result<(), aptos_data_client::error::Error> {
+    ) -> Result<(), libra2_data_client::error::Error> {
         // Get the highest version sent in the subscription response
         let highest_response_version = match response_payload {
             ResponsePayload::NewTransactionsWithProof((transactions_with_proof, _)) => {
@@ -561,7 +561,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
                         .saturating_add(num_transactions as u64)
                         .saturating_sub(1) // first_version + num_txns - 1
                 } else {
-                    return Err(aptos_data_client::error::Error::UnexpectedErrorEncountered(
+                    return Err(libra2_data_client::error::Error::UnexpectedErrorEncountered(
                         "The first transaction version is missing from the stream response!".into(),
                     ));
                 }
@@ -573,7 +573,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
                         .saturating_add(num_outputs as u64)
                         .saturating_sub(1) // first_version + num_outputs - 1
                 } else {
-                    return Err(aptos_data_client::error::Error::UnexpectedErrorEncountered(
+                    return Err(libra2_data_client::error::Error::UnexpectedErrorEncountered(
                         "The first output version is missing from the stream response!".into(),
                     ));
                 }
@@ -589,7 +589,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
             .highest_synced_ledger_info()
             .map(|ledger_info| ledger_info.ledger_info().version())
             .ok_or_else(|| {
-                aptos_data_client::error::Error::UnexpectedErrorEncountered(
+                libra2_data_client::error::Error::UnexpectedErrorEncountered(
                     "The highest synced ledger info is missing from the global data summary!"
                         .into(),
                 )
@@ -611,7 +611,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
                 .is_beyond_recovery(self.streaming_service_config, current_stream_lag)
             {
                 return Err(
-                    aptos_data_client::error::Error::SubscriptionStreamIsLagging(format!(
+                    libra2_data_client::error::Error::SubscriptionStreamIsLagging(format!(
                         "The subscription stream is beyond recovery! Current lag: {:?}, last lag: {:?},",
                         current_stream_lag, subscription_stream_lag.version_lag
                     )),
@@ -634,7 +634,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
     fn notify_new_data_request_error(
         &mut self,
         client_request: &DataClientRequest,
-        error: aptos_data_client::error::Error,
+        error: libra2_data_client::error::Error,
     ) -> Result<(), Error> {
         // Notify the stream engine and clear the requests queue
         self.stream_engine
@@ -711,7 +711,7 @@ impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
     fn handle_data_client_error(
         &mut self,
         data_client_request: &DataClientRequest,
-        data_client_error: &aptos_data_client::error::Error,
+        data_client_error: &libra2_data_client::error::Error,
     ) -> Result<(), Error> {
         // Log the error
         warn!(LogSchema::new(LogEntry::ReceivedDataResponse)
@@ -1401,7 +1401,7 @@ fn extract_response_error(
 fn spawn_request_task<T: AptosDataClientInterface + Send + Clone + 'static>(
     data_stream_id: DataStreamId,
     data_client_request: DataClientRequest,
-    aptos_data_client: T,
+    libra2_data_client: T,
     pending_response: PendingClientResponse,
     request_timeout_ms: u64,
     stream_update_notifier: libra2_channel::Sender<(), StreamUpdateNotification>,
@@ -1423,15 +1423,15 @@ fn spawn_request_task<T: AptosDataClientInterface + Send + Clone + 'static>(
         // Fetch the client response
         let client_response = match data_client_request {
             DataClientRequest::EpochEndingLedgerInfos(request) => {
-                get_epoch_ending_ledger_infos(aptos_data_client, request, request_timeout_ms).await
+                get_epoch_ending_ledger_infos(libra2_data_client, request, request_timeout_ms).await
             },
             DataClientRequest::NewTransactionsWithProof(request) => {
-                get_new_transactions_with_proof(aptos_data_client, request, request_timeout_ms)
+                get_new_transactions_with_proof(libra2_data_client, request, request_timeout_ms)
                     .await
             },
             DataClientRequest::NewTransactionOutputsWithProof(request) => {
                 get_new_transaction_outputs_with_proof(
-                    aptos_data_client,
+                    libra2_data_client,
                     request,
                     request_timeout_ms,
                 )
@@ -1439,25 +1439,25 @@ fn spawn_request_task<T: AptosDataClientInterface + Send + Clone + 'static>(
             },
             DataClientRequest::NewTransactionsOrOutputsWithProof(request) => {
                 get_new_transactions_or_outputs_with_proof(
-                    aptos_data_client,
+                    libra2_data_client,
                     request,
                     request_timeout_ms,
                 )
                 .await
             },
             DataClientRequest::NumberOfStates(request) => {
-                get_number_of_states(aptos_data_client, request, request_timeout_ms).await
+                get_number_of_states(libra2_data_client, request, request_timeout_ms).await
             },
             DataClientRequest::StateValuesWithProof(request) => {
-                get_states_values_with_proof(aptos_data_client, request, request_timeout_ms).await
+                get_states_values_with_proof(libra2_data_client, request, request_timeout_ms).await
             },
             DataClientRequest::SubscribeTransactionsWithProof(request) => {
-                subscribe_to_transactions_with_proof(aptos_data_client, request, request_timeout_ms)
+                subscribe_to_transactions_with_proof(libra2_data_client, request, request_timeout_ms)
                     .await
             },
             DataClientRequest::SubscribeTransactionOutputsWithProof(request) => {
                 subscribe_to_transaction_outputs_with_proof(
-                    aptos_data_client,
+                    libra2_data_client,
                     request,
                     request_timeout_ms,
                 )
@@ -1465,22 +1465,22 @@ fn spawn_request_task<T: AptosDataClientInterface + Send + Clone + 'static>(
             },
             DataClientRequest::SubscribeTransactionsOrOutputsWithProof(request) => {
                 subscribe_to_transactions_or_outputs_with_proof(
-                    aptos_data_client,
+                    libra2_data_client,
                     request,
                     request_timeout_ms,
                 )
                 .await
             },
             DataClientRequest::TransactionOutputsWithProof(request) => {
-                get_transaction_outputs_with_proof(aptos_data_client, request, request_timeout_ms)
+                get_transaction_outputs_with_proof(libra2_data_client, request, request_timeout_ms)
                     .await
             },
             DataClientRequest::TransactionsWithProof(request) => {
-                get_transactions_with_proof(aptos_data_client, request, request_timeout_ms).await
+                get_transactions_with_proof(libra2_data_client, request, request_timeout_ms).await
             },
             DataClientRequest::TransactionsOrOutputsWithProof(request) => {
                 get_transactions_or_outputs_with_proof(
-                    aptos_data_client,
+                    libra2_data_client,
                     request,
                     request_timeout_ms,
                 )
@@ -1511,11 +1511,11 @@ fn spawn_request_task<T: AptosDataClientInterface + Send + Clone + 'static>(
 }
 
 async fn get_states_values_with_proof<T: AptosDataClientInterface + Send + Clone + 'static>(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: StateValuesWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
-    let client_response = aptos_data_client.get_state_values_with_proof(
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
+    let client_response = libra2_data_client.get_state_values_with_proof(
         request.version,
         request.start_index,
         request.end_index,
@@ -1527,11 +1527,11 @@ async fn get_states_values_with_proof<T: AptosDataClientInterface + Send + Clone
 }
 
 async fn get_epoch_ending_ledger_infos<T: AptosDataClientInterface + Send + Clone + 'static>(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: EpochEndingLedgerInfosRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
-    let client_response = aptos_data_client.get_epoch_ending_ledger_infos(
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
+    let client_response = libra2_data_client.get_epoch_ending_ledger_infos(
         request.start_epoch,
         request.end_epoch,
         request_timeout_ms,
@@ -1544,11 +1544,11 @@ async fn get_epoch_ending_ledger_infos<T: AptosDataClientInterface + Send + Clon
 async fn get_new_transaction_outputs_with_proof<
     T: AptosDataClientInterface + Send + Clone + 'static,
 >(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: NewTransactionOutputsWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
-    let client_response = aptos_data_client.get_new_transaction_outputs_with_proof(
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
+    let client_response = libra2_data_client.get_new_transaction_outputs_with_proof(
         request.known_version,
         request.known_epoch,
         request_timeout_ms,
@@ -1559,11 +1559,11 @@ async fn get_new_transaction_outputs_with_proof<
 }
 
 async fn get_new_transactions_with_proof<T: AptosDataClientInterface + Send + Clone + 'static>(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: NewTransactionsWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
-    let client_response = aptos_data_client.get_new_transactions_with_proof(
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
+    let client_response = libra2_data_client.get_new_transactions_with_proof(
         request.known_version,
         request.known_epoch,
         request.include_events,
@@ -1577,11 +1577,11 @@ async fn get_new_transactions_with_proof<T: AptosDataClientInterface + Send + Cl
 async fn get_new_transactions_or_outputs_with_proof<
     T: AptosDataClientInterface + Send + Clone + 'static,
 >(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: NewTransactionsOrOutputsWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
-    let client_response = aptos_data_client.get_new_transactions_or_outputs_with_proof(
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
+    let client_response = libra2_data_client.get_new_transactions_or_outputs_with_proof(
         request.known_version,
         request.known_epoch,
         request.include_events,
@@ -1592,12 +1592,12 @@ async fn get_new_transactions_or_outputs_with_proof<
 }
 
 async fn get_number_of_states<T: AptosDataClientInterface + Send + Clone + 'static>(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: NumberOfStatesRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
     let client_response =
-        aptos_data_client.get_number_of_states(request.version, request_timeout_ms);
+        libra2_data_client.get_number_of_states(request.version, request_timeout_ms);
     client_response
         .await
         .map(|response| response.map(ResponsePayload::from))
@@ -1606,11 +1606,11 @@ async fn get_number_of_states<T: AptosDataClientInterface + Send + Clone + 'stat
 async fn get_transaction_outputs_with_proof<
     T: AptosDataClientInterface + Send + Clone + 'static,
 >(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: TransactionOutputsWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
-    let client_response = aptos_data_client.get_transaction_outputs_with_proof(
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
+    let client_response = libra2_data_client.get_transaction_outputs_with_proof(
         request.proof_version,
         request.start_version,
         request.end_version,
@@ -1622,11 +1622,11 @@ async fn get_transaction_outputs_with_proof<
 }
 
 async fn get_transactions_with_proof<T: AptosDataClientInterface + Send + Clone + 'static>(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: TransactionsWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
-    let client_response = aptos_data_client.get_transactions_with_proof(
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
+    let client_response = libra2_data_client.get_transactions_with_proof(
         request.proof_version,
         request.start_version,
         request.end_version,
@@ -1641,11 +1641,11 @@ async fn get_transactions_with_proof<T: AptosDataClientInterface + Send + Clone 
 async fn get_transactions_or_outputs_with_proof<
     T: AptosDataClientInterface + Send + Clone + 'static,
 >(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: TransactionsOrOutputsWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
-    let client_response = aptos_data_client.get_transactions_or_outputs_with_proof(
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
+    let client_response = libra2_data_client.get_transactions_or_outputs_with_proof(
         request.proof_version,
         request.start_version,
         request.end_version,
@@ -1659,17 +1659,17 @@ async fn get_transactions_or_outputs_with_proof<
 async fn subscribe_to_transactions_with_proof<
     T: AptosDataClientInterface + Send + Clone + 'static,
 >(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: SubscribeTransactionsWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
     let subscription_request_metadata = SubscriptionRequestMetadata {
         known_version_at_stream_start: request.known_version,
         known_epoch_at_stream_start: request.known_epoch,
         subscription_stream_id: request.subscription_stream_id,
         subscription_stream_index: request.subscription_stream_index,
     };
-    let client_response = aptos_data_client.subscribe_to_transactions_with_proof(
+    let client_response = libra2_data_client.subscribe_to_transactions_with_proof(
         subscription_request_metadata,
         request.include_events,
         request_timeout_ms,
@@ -1682,17 +1682,17 @@ async fn subscribe_to_transactions_with_proof<
 async fn subscribe_to_transaction_outputs_with_proof<
     T: AptosDataClientInterface + Send + Clone + 'static,
 >(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: SubscribeTransactionOutputsWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
     let subscription_request_metadata = SubscriptionRequestMetadata {
         known_version_at_stream_start: request.known_version,
         known_epoch_at_stream_start: request.known_epoch,
         subscription_stream_id: request.subscription_stream_id,
         subscription_stream_index: request.subscription_stream_index,
     };
-    let client_response = aptos_data_client.subscribe_to_transaction_outputs_with_proof(
+    let client_response = libra2_data_client.subscribe_to_transaction_outputs_with_proof(
         subscription_request_metadata,
         request_timeout_ms,
     );
@@ -1704,17 +1704,17 @@ async fn subscribe_to_transaction_outputs_with_proof<
 async fn subscribe_to_transactions_or_outputs_with_proof<
     T: AptosDataClientInterface + Send + Clone + 'static,
 >(
-    aptos_data_client: T,
+    libra2_data_client: T,
     request: SubscribeTransactionsOrOutputsWithProofRequest,
     request_timeout_ms: u64,
-) -> Result<Response<ResponsePayload>, aptos_data_client::error::Error> {
+) -> Result<Response<ResponsePayload>, libra2_data_client::error::Error> {
     let subscription_request_metadata = SubscriptionRequestMetadata {
         known_version_at_stream_start: request.known_version,
         known_epoch_at_stream_start: request.known_epoch,
         subscription_stream_id: request.subscription_stream_id,
         subscription_stream_index: request.subscription_stream_index,
     };
-    let client_response = aptos_data_client.subscribe_to_transactions_or_outputs_with_proof(
+    let client_response = libra2_data_client.subscribe_to_transactions_or_outputs_with_proof(
         subscription_request_metadata,
         request.include_events,
         request_timeout_ms,
@@ -1739,7 +1739,7 @@ mod test {
 
         // Create a mock data client
         let data_client_config = AptosDataClientConfig::default();
-        let aptos_data_client =
+        let libra2_data_client =
             MockAptosDataClient::new(data_client_config, true, false, true, true);
 
         // Create a new pending client response
@@ -1759,7 +1759,7 @@ mod test {
         let join_handle = spawn_request_task(
             data_stream_id,
             data_client_request,
-            aptos_data_client,
+            libra2_data_client,
             pending_client_response.clone(),
             1000,
             stream_update_notifier.clone(),

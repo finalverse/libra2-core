@@ -25,8 +25,8 @@ aptos-consensus = { workspace = true }
 libra2-consensus-notifications = { workspace = true }
 libra2-crash-handler = { workspace = true }
 libra2-crypto = { workspace = true }
-aptos-data-client = { workspace = true }
-aptos-data-streaming-service = { workspace = true }
+libra2-data-client = { workspace = true }
+libra2-data-streaming-service = { workspace = true }
 aptos-db = { workspace = true }
 libra2-db-indexer = { workspace = true }
 libra2-dkg-runtime = { workspace = true }

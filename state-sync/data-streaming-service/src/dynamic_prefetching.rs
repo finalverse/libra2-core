@@ -156,7 +156,7 @@ mod test {
     use crate::streaming_client::{
         GetAllStatesRequest, GetAllTransactionsOrOutputsRequest, StreamRequest,
     };
-    use aptos_data_client::global_summary::AdvertisedData;
+    use libra2_data_client::global_summary::AdvertisedData;
 
     #[test]
     fn test_initialize_prefetching_state() {

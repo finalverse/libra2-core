@@ -168,7 +168,7 @@ members = [
     "secure/net",
     "secure/storage",
     "secure/storage/vault",
-    "state-sync/aptos-data-client",
+    "state-sync/libra2-data-client",
     "state-sync/data-streaming-service",
     "state-sync/inter-component/consensus-notifications",
     "state-sync/inter-component/event-notifications",
@@ -329,8 +329,8 @@ libra2-config = { path = "config" }
 libra2-crash-handler = { path = "crates/crash-handler" }
 libra2-crypto = { path = "crates/libra2-crypto" }
 libra2-crypto-derive = { path = "crates/libra2-crypto-derive" }
-aptos-data-client = { path = "state-sync/aptos-data-client" }
-aptos-data-streaming-service = { path = "state-sync/data-streaming-service" }
+libra2-data-client = { path = "state-sync/libra2-data-client" }
+libra2-data-streaming-service = { path = "state-sync/data-streaming-service" }
 aptos-db = { path = "storage/aptosdb" }
 libra2-db = { path = "storage/libra2db" }
 libra2-db-indexer = { path = "storage/indexer" }

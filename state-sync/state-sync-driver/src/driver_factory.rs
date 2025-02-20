@@ -14,8 +14,8 @@ use crate::{
 };
 use libra2_config::config::NodeConfig;
 use libra2_consensus_notifications::ConsensusNotificationListener;
-use aptos_data_client::client::AptosDataClient;
-use aptos_data_streaming_service::streaming_client::StreamingServiceClient;
+use libra2_data_client::client::AptosDataClient;
+use libra2_data_streaming_service::streaming_client::StreamingServiceClient;
 use libra2_event_notifications::{EventNotificationSender, EventSubscriptionService};
 use aptos_executor_types::ChunkExecutorTrait;
 use libra2_infallible::Mutex;
@@ -55,7 +55,7 @@ impl DriverFactory {
         metadata_storage: MetadataStorage,
         consensus_listener: ConsensusNotificationListener,
         event_subscription_service: EventSubscriptionService,
-        aptos_data_client: AptosDataClient,
+        libra2_data_client: AptosDataClient,
         streaming_service_client: StreamingServiceClient,
         time_service: TimeService,
     ) -> Self {
@@ -70,7 +70,7 @@ impl DriverFactory {
             metadata_storage,
             consensus_listener,
             event_subscription_service,
-            aptos_data_client,
+            libra2_data_client,
             streaming_service_client,
             time_service,
         );
@@ -96,7 +96,7 @@ impl DriverFactory {
         metadata_storage: MetadataStorage,
         consensus_listener: ConsensusNotificationListener,
         mut event_subscription_service: EventSubscriptionService,
-        aptos_data_client: AptosDataClient,
+        libra2_data_client: AptosDataClient,
         streaming_service_client: StreamingServiceClient,
         time_service: TimeService,
     ) -> (Self, UnboundedSender<CommitNotification>) {
@@ -176,7 +176,7 @@ impl DriverFactory {
             metadata_storage,
             storage_service_notification_handler,
             storage_synchronizer,
-            aptos_data_client,
+            libra2_data_client,
             streaming_service_client,
             storage.reader,
             time_service,
@@ -208,7 +208,7 @@ impl DriverFactory {
 /// Note: it's useful to maintain separate runtimes because the logger
 /// can prepend all logs with the runtime thread name.
 pub struct StateSyncRuntimes {
-    _aptos_data_client: Runtime,
+    _libra2_data_client: Runtime,
     state_sync: DriverFactory,
     _storage_service: Runtime,
     _streaming_service: Runtime,
@@ -216,13 +216,13 @@ pub struct StateSyncRuntimes {
 
 impl StateSyncRuntimes {
     pub fn new(
-        aptos_data_client: Runtime,
+        libra2_data_client: Runtime,
         state_sync: DriverFactory,
         storage_service: Runtime,
         streaming_service: Runtime,
     ) -> Self {
         Self {
-            _aptos_data_client: aptos_data_client,
+            _libra2_data_client: libra2_data_client,
             state_sync,
             _storage_service: storage_service,
             _streaming_service: streaming_service,

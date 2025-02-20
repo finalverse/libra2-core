@@ -718,7 +718,7 @@ pub fn optimize_state_sync_for_throughput(node_config: &mut NodeConfig, max_chun
     let max_chunk_bytes = 40 * 1024 * 1024; // 10x the current limit (to prevent execution fallback)
 
     // Update the chunk sizes for the data client
-    let data_client_config = &mut node_config.state_sync.aptos_data_client;
+    let data_client_config = &mut node_config.state_sync.libra2_data_client;
     data_client_config.max_transaction_chunk_size = max_chunk_size;
     data_client_config.max_transaction_output_chunk_size = max_chunk_size;
 

@@ -21,8 +21,8 @@ use crate::{
     utils::OutputFallbackHandler,
 };
 use libra2_config::config::BootstrappingMode;
-use aptos_data_client::global_summary::GlobalDataSummary;
-use aptos_data_streaming_service::{
+use libra2_data_client::global_summary::GlobalDataSummary;
+use libra2_data_streaming_service::{
     data_notification::{DataNotification, DataPayload, NotificationId},
     streaming_client::{NotificationAndFeedback, NotificationFeedback},
 };

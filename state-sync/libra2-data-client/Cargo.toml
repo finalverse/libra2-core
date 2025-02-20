@@ -1,6 +1,6 @@
 [package]
-name = "aptos-data-client"
-description = "The Aptos data client"
+name = "libra2-data-client"
+description = "The Libra2 data client"
 version = "0.1.0"
 
 # Workspace inherited keys

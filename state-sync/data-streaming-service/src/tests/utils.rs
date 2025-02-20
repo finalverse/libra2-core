@@ -5,7 +5,7 @@
 use crate::{data_notification::DataNotification, data_stream::DataStreamListener, error::Error};
 use libra2_config::config::AptosDataClientConfig;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
-use aptos_data_client::{
+use libra2_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary, OptimalChunkSizes},
     interface::{
         AptosDataClientInterface, Response, ResponseCallback, ResponseContext, ResponseError,
@@ -83,7 +83,7 @@ pub const MAX_REAL_TRANSACTION_OUTPUT: u64 = MAX_REAL_TRANSACTION;
 /// A simple mock of the Aptos Data Client
 #[derive(Clone, Debug)]
 pub struct MockAptosDataClient {
-    pub aptos_data_client_config: AptosDataClientConfig,
+    pub libra2_data_client_config: AptosDataClientConfig,
     pub advertised_epoch_ending_ledger_infos: BTreeMap<Epoch, LedgerInfoWithSignatures>,
     pub advertised_synced_ledger_infos: Vec<LedgerInfoWithSignatures>,
     pub data_beyond_highest_advertised: bool, // If true, data exists beyond the highest advertised
@@ -96,7 +96,7 @@ pub struct MockAptosDataClient {
 
 impl MockAptosDataClient {
     pub fn new(
-        aptos_data_client_config: AptosDataClientConfig,
+        libra2_data_client_config: AptosDataClientConfig,
         data_beyond_highest_advertised: bool,
         limit_chunk_sizes: bool,
         skip_emulate_network_latencies: bool,
@@ -129,7 +129,7 @@ impl MockAptosDataClient {
         let data_request_counter = Arc::new(Mutex::new(HashMap::new()));
 
         Self {
-            aptos_data_client_config,
+            libra2_data_client_config,
             advertised_epoch_ending_ledger_infos,
             advertised_synced_ledger_infos,
             data_beyond_highest_advertised,
@@ -144,10 +144,10 @@ impl MockAptosDataClient {
     /// Clones the mock data client without timeout verification
     fn clone_without_timeout_verification(&self) -> Self {
         // Clone the mock data client and skip timeout verification
-        let mut aptos_data_client = self.clone();
-        aptos_data_client.skip_timeout_verification = true;
+        let mut libra2_data_client = self.clone();
+        libra2_data_client.skip_timeout_verification = true;
 
-        aptos_data_client
+        libra2_data_client
     }
 
     /// Emulates network latencies by sleeping for 10 -> 50 ms
@@ -158,12 +158,12 @@ impl MockAptosDataClient {
     }
 
     /// Emulates a timeout by sleeping for a long time and returning a timeout error
-    async fn emulate_network_request_timeout(&self) -> aptos_data_client::error::Error {
+    async fn emulate_network_request_timeout(&self) -> libra2_data_client::error::Error {
         // Sleep for a while
         tokio::time::sleep(Duration::from_secs(MAX_NOTIFICATION_TIMEOUT_SECS)).await;
 
         // Return a timeout error
-        aptos_data_client::error::Error::TimeoutWaitingForResponse("RPC timed out!".into())
+        libra2_data_client::error::Error::TimeoutWaitingForResponse("RPC timed out!".into())
     }
 
     /// Calculates the last index for the given start and end indices (with
@@ -212,13 +212,13 @@ impl MockAptosDataClient {
         if !self.skip_timeout_verification {
             // Verify the given timeout for the request
             let expected_timeout = if is_optimistic_fetch_request {
-                self.aptos_data_client_config.optimistic_fetch_timeout_ms
+                self.libra2_data_client_config.optimistic_fetch_timeout_ms
             } else if is_subscription_request {
-                self.aptos_data_client_config
+                self.libra2_data_client_config
                     .subscription_response_timeout_ms
             } else {
-                let min_timeout = self.aptos_data_client_config.response_timeout_ms;
-                let max_timeout = self.aptos_data_client_config.max_response_timeout_ms;
+                let min_timeout = self.libra2_data_client_config.response_timeout_ms;
+                let max_timeout = self.libra2_data_client_config.max_response_timeout_ms;
 
                 // Check how many times the given request has been made
                 // and update the request counter.
@@ -288,7 +288,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         start_index: u64,
         end_index: u64,
         request_timeout_ms: u64,
-    ) -> Result<Response<StateValueChunkWithProof>, aptos_data_client::error::Error> {
+    ) -> Result<Response<StateValueChunkWithProof>, libra2_data_client::error::Error> {
         // Verify the request timeout
         let data_request = DataRequest::GetStateValuesWithProof(StateValuesWithProofRequest {
             version,
@@ -332,7 +332,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         start_epoch: Epoch,
         end_epoch: Epoch,
         request_timeout_ms: u64,
-    ) -> Result<Response<Vec<LedgerInfoWithSignatures>>, aptos_data_client::error::Error> {
+    ) -> Result<Response<Vec<LedgerInfoWithSignatures>>, libra2_data_client::error::Error> {
         // Verify the request timeout
         let data_request = DataRequest::GetEpochEndingLedgerInfos(EpochEndingLedgerInfoRequest {
             start_epoch,
@@ -370,7 +370,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         request_timeout_ms: u64,
     ) -> Result<
         Response<(TransactionOutputListWithProof, LedgerInfoWithSignatures)>,
-        aptos_data_client::error::Error,
+        libra2_data_client::error::Error,
     > {
         // Verify the request timeout
         let data_request =
@@ -386,20 +386,20 @@ impl AptosDataClientInterface for MockAptosDataClient {
         // Attempt to fetch and serve the new data
         if self.data_beyond_highest_advertised && known_version < MAX_REAL_TRANSACTION_OUTPUT {
             // Create a mock data client without timeout verification (to handle the internal requests)
-            let aptos_data_client = self.clone_without_timeout_verification();
+            let libra2_data_client = self.clone_without_timeout_verification();
 
             // Determine the target ledger info
             let target_ledger_info =
-                determine_target_ledger_info(known_epoch, request_timeout_ms, &aptos_data_client)
+                determine_target_ledger_info(known_epoch, request_timeout_ms, &libra2_data_client)
                     .await;
 
             // Fetch the new transaction outputs
-            let outputs_with_proof = aptos_data_client
+            let outputs_with_proof = libra2_data_client
                 .get_transaction_outputs_with_proof(
                     known_version + 1,
                     known_version + 1,
                     known_version + 1,
-                    self.aptos_data_client_config.response_timeout_ms,
+                    self.libra2_data_client_config.response_timeout_ms,
                 )
                 .await
                 .unwrap()
@@ -424,7 +424,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         request_timeout_ms: u64,
     ) -> Result<
         Response<(TransactionListWithProof, LedgerInfoWithSignatures)>,
-        aptos_data_client::error::Error,
+        libra2_data_client::error::Error,
     > {
         // Verify the request timeout
         let data_request =
@@ -441,21 +441,21 @@ impl AptosDataClientInterface for MockAptosDataClient {
         // Attempt to fetch and serve the new data
         if self.data_beyond_highest_advertised && known_version < MAX_REAL_TRANSACTION {
             // Create a mock data client without timeout verification (to handle the internal requests)
-            let aptos_data_client = self.clone_without_timeout_verification();
+            let libra2_data_client = self.clone_without_timeout_verification();
 
             // Determine the target ledger info
             let target_ledger_info =
-                determine_target_ledger_info(known_epoch, request_timeout_ms, &aptos_data_client)
+                determine_target_ledger_info(known_epoch, request_timeout_ms, &libra2_data_client)
                     .await;
 
             // Fetch the new transactions
-            let transactions_with_proof = aptos_data_client
+            let transactions_with_proof = libra2_data_client
                 .get_transactions_with_proof(
                     known_version + 1,
                     known_version + 1,
                     known_version + 1,
                     include_events,
-                    self.aptos_data_client_config.response_timeout_ms,
+                    self.libra2_data_client_config.response_timeout_ms,
                 )
                 .await
                 .unwrap()
@@ -478,7 +478,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         known_epoch: Epoch,
         include_events: bool,
         request_timeout_ms: u64,
-    ) -> aptos_data_client::error::Result<
+    ) -> libra2_data_client::error::Result<
         Response<(TransactionOrOutputListWithProof, LedgerInfoWithSignatures)>,
     > {
         // Verify the request timeout
@@ -496,11 +496,11 @@ impl AptosDataClientInterface for MockAptosDataClient {
         self.emulate_network_latencies().await;
 
         // Create a mock data client without timeout verification (to handle the internal requests)
-        let aptos_data_client = self.clone_without_timeout_verification();
+        let libra2_data_client = self.clone_without_timeout_verification();
 
         // Get the new transactions or outputs response
         let response = if return_transactions_instead_of_outputs() {
-            let (transactions, ledger_info) = aptos_data_client
+            let (transactions, ledger_info) = libra2_data_client
                 .get_new_transactions_with_proof(
                     known_version,
                     known_epoch,
@@ -511,7 +511,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
                 .payload;
             ((Some(transactions), None), ledger_info)
         } else {
-            let (outputs, ledger_info) = aptos_data_client
+            let (outputs, ledger_info) = libra2_data_client
                 .get_new_transaction_outputs_with_proof(
                     known_version,
                     known_epoch,
@@ -530,7 +530,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         &self,
         version: Version,
         request_timeout_ms: u64,
-    ) -> Result<Response<u64>, aptos_data_client::error::Error> {
+    ) -> Result<Response<u64>, libra2_data_client::error::Error> {
         // Verify the request timeout
         let data_request = DataRequest::GetNumberOfStatesAtVersion(version);
         self.verify_request_timeout_value(request_timeout_ms, false, false, data_request);
@@ -548,7 +548,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         start_version: Version,
         end_version: Version,
         request_timeout_ms: u64,
-    ) -> Result<Response<TransactionOutputListWithProof>, aptos_data_client::error::Error> {
+    ) -> Result<Response<TransactionOutputListWithProof>, libra2_data_client::error::Error> {
         // Verify the request timeout
         let data_request =
             DataRequest::GetTransactionOutputsWithProof(TransactionOutputsWithProofRequest {
@@ -578,7 +578,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         end_version: Version,
         include_events: bool,
         request_timeout_ms: u64,
-    ) -> Result<Response<TransactionListWithProof>, aptos_data_client::error::Error> {
+    ) -> Result<Response<TransactionListWithProof>, libra2_data_client::error::Error> {
         // Verify the request timeout
         let data_request = DataRequest::GetTransactionsWithProof(TransactionsWithProofRequest {
             proof_version,
@@ -609,7 +609,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         end_version: Version,
         include_events: bool,
         request_timeout_ms: u64,
-    ) -> aptos_data_client::error::Result<Response<TransactionOrOutputListWithProof>> {
+    ) -> libra2_data_client::error::Result<Response<TransactionOrOutputListWithProof>> {
         // Verify the request timeout
         let data_request =
             DataRequest::GetTransactionsOrOutputsWithProof(TransactionsOrOutputsWithProofRequest {
@@ -625,11 +625,11 @@ impl AptosDataClientInterface for MockAptosDataClient {
         self.emulate_network_latencies().await;
 
         // Create a mock data client without timeout verification (to handle the internal requests)
-        let aptos_data_client = self.clone_without_timeout_verification();
+        let libra2_data_client = self.clone_without_timeout_verification();
 
         // Get the transactions or outputs response
         let transactions_or_outputs = if return_transactions_instead_of_outputs() {
-            let transactions_with_proof = aptos_data_client
+            let transactions_with_proof = libra2_data_client
                 .get_transactions_with_proof(
                     proof_version,
                     start_version,
@@ -640,7 +640,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
                 .await?;
             (Some(transactions_with_proof.payload), None)
         } else {
-            let outputs_with_proof = aptos_data_client
+            let outputs_with_proof = libra2_data_client
                 .get_transaction_outputs_with_proof(
                     proof_version,
                     start_version,
@@ -659,7 +659,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         &self,
         subscription_request_metadata: SubscriptionRequestMetadata,
         request_timeout_ms: u64,
-    ) -> aptos_data_client::error::Result<
+    ) -> libra2_data_client::error::Result<
         Response<(TransactionOutputListWithProof, LedgerInfoWithSignatures)>,
     > {
         // Extract the known version, known epoch and the subscription stream index
@@ -690,21 +690,21 @@ impl AptosDataClientInterface for MockAptosDataClient {
         // Attempt to fetch and serve the new data
         if self.data_beyond_highest_advertised && known_version < MAX_REAL_TRANSACTION_OUTPUT {
             // Create a mock data client without timeout verification (to handle the internal requests)
-            let aptos_data_client = self.clone_without_timeout_verification();
+            let libra2_data_client = self.clone_without_timeout_verification();
 
             // Determine the target ledger info
             let known_epoch = self.find_known_epoch_for_version(known_version);
             let target_ledger_info =
-                determine_target_ledger_info(known_epoch, request_timeout_ms, &aptos_data_client)
+                determine_target_ledger_info(known_epoch, request_timeout_ms, &libra2_data_client)
                     .await;
 
             // Fetch the new transaction outputs
-            let outputs_with_proof = aptos_data_client
+            let outputs_with_proof = libra2_data_client
                 .get_transaction_outputs_with_proof(
                     known_version + 1,
                     known_version + 1,
                     known_version + 1,
-                    self.aptos_data_client_config.response_timeout_ms,
+                    self.libra2_data_client_config.response_timeout_ms,
                 )
                 .await
                 .unwrap()
@@ -726,7 +726,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         subscription_request_metadata: SubscriptionRequestMetadata,
         include_events: bool,
         request_timeout_ms: u64,
-    ) -> aptos_data_client::error::Result<
+    ) -> libra2_data_client::error::Result<
         Response<(TransactionListWithProof, LedgerInfoWithSignatures)>,
     > {
         // Extract the known version, known epoch and the subscription stream index
@@ -757,22 +757,22 @@ impl AptosDataClientInterface for MockAptosDataClient {
         // Attempt to fetch and serve the new data
         if self.data_beyond_highest_advertised && known_version < MAX_REAL_TRANSACTION_OUTPUT {
             // Create a mock data client without timeout verification (to handle the internal requests)
-            let aptos_data_client = self.clone_without_timeout_verification();
+            let libra2_data_client = self.clone_without_timeout_verification();
 
             // Determine the target ledger info
             let known_epoch = self.find_known_epoch_for_version(known_version);
             let target_ledger_info =
-                determine_target_ledger_info(known_epoch, request_timeout_ms, &aptos_data_client)
+                determine_target_ledger_info(known_epoch, request_timeout_ms, &libra2_data_client)
                     .await;
 
             // Fetch the new transaction outputs
-            let outputs_with_proof = aptos_data_client
+            let outputs_with_proof = libra2_data_client
                 .get_transactions_with_proof(
                     known_version + 1,
                     known_version + 1,
                     known_version + 1,
                     include_events,
-                    self.aptos_data_client_config.response_timeout_ms,
+                    self.libra2_data_client_config.response_timeout_ms,
                 )
                 .await
                 .unwrap()
@@ -794,7 +794,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
         subscription_request_metadata: SubscriptionRequestMetadata,
         include_events: bool,
         request_timeout_ms: u64,
-    ) -> aptos_data_client::error::Result<
+    ) -> libra2_data_client::error::Result<
         Response<(TransactionOrOutputListWithProof, LedgerInfoWithSignatures)>,
     > {
         // Extract the known version, known epoch and the subscription stream index
@@ -822,11 +822,11 @@ impl AptosDataClientInterface for MockAptosDataClient {
         self.emulate_network_latencies().await;
 
         // Create a mock data client without timeout verification (to handle the internal requests)
-        let aptos_data_client = self.clone_without_timeout_verification();
+        let libra2_data_client = self.clone_without_timeout_verification();
 
         // Send the new transactions or outputs response
         let response = if return_transactions_instead_of_outputs() {
-            let (transactions, ledger_info) = aptos_data_client
+            let (transactions, ledger_info) = libra2_data_client
                 .subscribe_to_transactions_with_proof(
                     subscription_request_metadata,
                     include_events,
@@ -836,7 +836,7 @@ impl AptosDataClientInterface for MockAptosDataClient {
                 .payload;
             ((Some(transactions), None), ledger_info)
         } else {
-            let (outputs, ledger_info) = aptos_data_client
+            let (outputs, ledger_info) = libra2_data_client
                 .subscribe_to_transaction_outputs_with_proof(
                     subscription_request_metadata,
                     request_timeout_ms,
@@ -1022,11 +1022,11 @@ fn create_range_random_u64(min_value: u64, max_value: u64) -> u64 {
 async fn determine_target_ledger_info(
     known_epoch: Epoch,
     request_timeout_ms: u64,
-    aptos_data_client: &MockAptosDataClient,
+    libra2_data_client: &MockAptosDataClient,
 ) -> LedgerInfoWithSignatures {
     if known_epoch <= MAX_REAL_EPOCH_END {
         // Fetch the epoch ending ledger info
-        aptos_data_client
+        libra2_data_client
             .get_epoch_ending_ledger_infos(known_epoch, known_epoch, request_timeout_ms)
             .await
             .unwrap()
