@@ -13,7 +13,7 @@ use libra2_config::{
 use libra2_infallible::RwLock;
 use libra2_logger::warn;
 use aptos_network::application::metadata::PeerMetadata;
-use aptos_peer_monitoring_service_types::{
+use libra2_peer_monitoring_service_types::{
     request::PeerMonitoringServiceRequest,
     response::{NetworkInformationResponse, PeerMonitoringServiceResponse},
     MAX_DISTANCE_FROM_VALIDATORS,
@@ -217,7 +217,7 @@ mod test {
         protocols::wire::handshake::v1::{MessagingProtocolVersion, ProtocolIdSet},
         transport::{ConnectionId, ConnectionMetadata},
     };
-    use aptos_peer_monitoring_service_types::{
+    use libra2_peer_monitoring_service_types::{
         request::PeerMonitoringServiceRequest,
         response::{NetworkInformationResponse, PeerMonitoringServiceResponse},
     };

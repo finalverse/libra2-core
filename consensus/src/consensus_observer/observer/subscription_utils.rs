@@ -299,7 +299,7 @@ pub fn sort_peers_by_subscription_optimality(
 
         // If the distance is not found, use the maximum distance
         let distance =
-            distance.unwrap_or(aptos_peer_monitoring_service_types::MAX_DISTANCE_FROM_VALIDATORS);
+            distance.unwrap_or(libra2_peer_monitoring_service_types::MAX_DISTANCE_FROM_VALIDATORS);
 
         // If the latency is not found, use a large latency
         let latency = latency.unwrap_or(MAX_PING_LATENCY_SECS);
@@ -370,7 +370,7 @@ mod tests {
         },
         transport::{ConnectionId, ConnectionMetadata},
     };
-    use aptos_peer_monitoring_service_types::{
+    use libra2_peer_monitoring_service_types::{
         response::NetworkInformationResponse, PeerMonitoringMetadata,
     };
     use libra2_storage_interface::Result;

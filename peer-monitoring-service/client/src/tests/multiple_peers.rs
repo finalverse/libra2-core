@@ -25,7 +25,7 @@ use libra2_config::{
     config::{NodeConfig, PeerMonitoringServiceConfig, PeerRole},
     network_id::NetworkId,
 };
-use aptos_peer_monitoring_service_types::{
+use libra2_peer_monitoring_service_types::{
     request::PeerMonitoringServiceRequest,
     response::{LatencyPingResponse, PeerMonitoringServiceResponse},
 };

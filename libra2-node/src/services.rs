@@ -25,11 +25,11 @@ use libra2_mempool::{
 use libra2_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{interface::NetworkClientInterface, storage::PeersAndMetadata};
 use aptos_network_benchmark::{run_netbench_service, NetbenchMessage};
-use aptos_peer_monitoring_service_server::{
+use libra2_peer_monitoring_service_server::{
     network::PeerMonitoringServiceNetworkEvents, storage::StorageReader,
     PeerMonitoringServiceServer,
 };
-use aptos_peer_monitoring_service_types::PeerMonitoringServiceMessage;
+use libra2_peer_monitoring_service_types::PeerMonitoringServiceMessage;
 use libra2_storage_interface::{DbReader, DbReaderWriter};
 use libra2_time_service::TimeService;
 use libra2_types::{
@@ -254,7 +254,7 @@ pub fn start_peer_monitoring_service(
         .enable_peer_monitoring_client
     {
         peer_monitoring_service_runtime.spawn(
-            aptos_peer_monitoring_service_client::start_peer_monitor(
+            libra2_peer_monitoring_service_client::start_peer_monitor(
                 node_config.clone(),
                 network_client,
                 Some(peer_monitoring_service_runtime.handle().clone()),

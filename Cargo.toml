@@ -422,9 +422,9 @@ libra2-node-resource-metrics = { path = "crates/node-resource-metrics" }
 libra2-num-variants = { path = "crates/num-variants" }
 aptos-openapi = { path = "crates/aptos-openapi" }
 aptos-package-builder = { path = "aptos-move/package-builder" }
-aptos-peer-monitoring-service-client = { path = "peer-monitoring-service/client" }
-aptos-peer-monitoring-service-server = { path = "peer-monitoring-service/server" }
-aptos-peer-monitoring-service-types = { path = "peer-monitoring-service/types" }
+libra2-peer-monitoring-service-client = { path = "peer-monitoring-service/client" }
+libra2-peer-monitoring-service-server = { path = "peer-monitoring-service/server" }
+libra2-peer-monitoring-service-types = { path = "peer-monitoring-service/types" }
 aptos-keyless-common = { path = "keyless/common" }
 libra2-keyless-pepper-common = { path = "keyless/pepper/common" }
 libra2-keyless-pepper-service = { path = "keyless/pepper/service" }

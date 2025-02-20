@@ -7,7 +7,7 @@ use aptos_network::{
     protocols::network::{Event, RpcError},
     ProtocolId,
 };
-use aptos_peer_monitoring_service_types::{
+use libra2_peer_monitoring_service_types::{
     request::PeerMonitoringServiceRequest, response::PeerMonitoringServiceResponse,
     PeerMonitoringServiceMessage, Result,
 };

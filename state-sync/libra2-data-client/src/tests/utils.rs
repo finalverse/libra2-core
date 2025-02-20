@@ -10,7 +10,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_crypto::HashValue;
-use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
+use libra2_peer_monitoring_service_types::PeerMonitoringMetadata;
 use libra2_storage_service_server::network::NetworkRequest;
 use libra2_storage_service_types::{
     requests::{

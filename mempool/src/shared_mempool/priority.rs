@@ -9,7 +9,7 @@ use libra2_config::{
 };
 use libra2_infallible::RwLock;
 use libra2_logger::prelude::*;
-use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
+use libra2_peer_monitoring_service_types::PeerMonitoringMetadata;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use itertools::Itertools;
 use std::{
@@ -564,7 +564,7 @@ mod test {
         config::{MempoolConfig, NodeType},
         network_id::{NetworkId, PeerNetworkId},
     };
-    use aptos_peer_monitoring_service_types::{
+    use libra2_peer_monitoring_service_types::{
         response::NetworkInformationResponse, PeerMonitoringMetadata,
     };
     use libra2_types::PeerId;

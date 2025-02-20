@@ -11,7 +11,7 @@ use aptos_network::application::{
     interface::{NetworkClient, NetworkClientInterface},
     storage::PeersAndMetadata,
 };
-use aptos_peer_monitoring_service_types::{
+use libra2_peer_monitoring_service_types::{
     request::PeerMonitoringServiceRequest, response::PeerMonitoringServiceResponse,
     PeerMonitoringServiceMessage,
 };

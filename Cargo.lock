@@ -720,7 +720,6 @@ dependencies = [
  "aptos-keygen",
  "aptos-netcore",
  "aptos-network",
- "aptos-peer-monitoring-service-types",
  "aptos-reliable-broadcast",
  "aptos-runtimes",
  "aptos-safety-rules",
@@ -757,6 +756,7 @@ dependencies = [
  "libra2-logger",
  "libra2-mempool",
  "libra2-metrics-core",
+ "libra2-peer-monitoring-service-types",
  "libra2-schemadb",
  "libra2-secure-storage",
  "libra2-short-hex-str",
@@ -2241,7 +2241,6 @@ dependencies = [
  "anyhow",
  "aptos-memsocket",
  "aptos-netcore",
- "aptos-peer-monitoring-service-types",
  "aptos-proptest-helpers",
  "arc-swap",
  "async-trait",
@@ -2261,6 +2260,7 @@ dependencies = [
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-num-variants",
+ "libra2-peer-monitoring-service-types",
  "libra2-short-hex-str",
  "libra2-time-service",
  "libra2-types",
@@ -2421,9 +2421,6 @@ dependencies = [
  "aptos-network",
  "aptos-network-benchmark",
  "aptos-network-builder",
- "aptos-peer-monitoring-service-client",
- "aptos-peer-monitoring-service-server",
- "aptos-peer-monitoring-service-types",
  "aptos-runtimes",
  "aptos-telemetry",
  "aptos-validator-transaction-pool",
@@ -2453,6 +2450,9 @@ dependencies = [
  "libra2-mempool",
  "libra2-mempool-notifications",
  "libra2-node-identity",
+ "libra2-peer-monitoring-service-client",
+ "libra2-peer-monitoring-service-server",
+ "libra2-peer-monitoring-service-types",
  "libra2-state-sync-driver",
  "libra2-storage-interface",
  "libra2-storage-service-client",
@@ -2537,78 +2537,6 @@ dependencies = [
  "move-command-line-common",
  "move-package",
  "tempfile",
-]
-
-[[package]]
-name = "aptos-peer-monitoring-service-client"
-version = "0.1.0"
-dependencies = [
- "aptos-netcore",
- "aptos-network",
- "aptos-peer-monitoring-service-server",
- "aptos-peer-monitoring-service-types",
- "bcs 0.1.4",
- "enum_dispatch",
- "futures",
- "libra2-build-info",
- "libra2-channels",
- "libra2-config",
- "libra2-id-generator",
- "libra2-infallible",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-time-service",
- "libra2-types",
- "maplit",
- "once_cell",
- "rand 0.7.3",
- "serde",
- "serde_json",
- "thiserror",
- "tokio",
- "tokio-stream",
-]
-
-[[package]]
-name = "aptos-peer-monitoring-service-server"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-netcore",
- "aptos-network",
- "aptos-peer-monitoring-service-types",
- "bcs 0.1.4",
- "bytes",
- "claims",
- "futures",
- "libra2-bounded-executor",
- "libra2-build-info",
- "libra2-channels",
- "libra2-config",
- "libra2-crypto",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-storage-interface",
- "libra2-time-service",
- "libra2-types",
- "maplit",
- "mockall",
- "once_cell",
- "rand 0.7.3",
- "serde",
- "thiserror",
- "tokio",
-]
-
-[[package]]
-name = "aptos-peer-monitoring-service-types"
-version = "0.1.0"
-dependencies = [
- "bcs 0.1.4",
- "libra2-config",
- "libra2-types",
- "serde",
- "thiserror",
 ]
 
 [[package]]
@@ -9701,7 +9629,6 @@ dependencies = [
  "anyhow",
  "aptos-netcore",
  "aptos-network",
- "aptos-peer-monitoring-service-types",
  "arc-swap",
  "async-trait",
  "bcs 0.1.4",
@@ -9716,6 +9643,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-peer-monitoring-service-types",
  "libra2-storage-interface",
  "libra2-storage-service-client",
  "libra2-storage-service-server",
@@ -10191,7 +10119,6 @@ dependencies = [
  "aptos-consensus-types",
  "aptos-netcore",
  "aptos-network",
- "aptos-peer-monitoring-service-types",
  "aptos-runtimes",
  "aptos-vm-validator",
  "bcs 0.1.4",
@@ -10210,6 +10137,7 @@ dependencies = [
  "libra2-logger",
  "libra2-mempool-notifications",
  "libra2-metrics-core",
+ "libra2-peer-monitoring-service-types",
  "libra2-short-hex-str",
  "libra2-storage-interface",
  "libra2-time-service",
@@ -10270,9 +10198,6 @@ dependencies = [
  "aptos-network",
  "aptos-network-benchmark",
  "aptos-network-builder",
- "aptos-peer-monitoring-service-client",
- "aptos-peer-monitoring-service-server",
- "aptos-peer-monitoring-service-types",
  "aptos-runtimes",
  "aptos-telemetry",
  "aptos-validator-transaction-pool",
@@ -10302,6 +10227,9 @@ dependencies = [
  "libra2-mempool",
  "libra2-mempool-notifications",
  "libra2-node-identity",
+ "libra2-peer-monitoring-service-client",
+ "libra2-peer-monitoring-service-server",
+ "libra2-peer-monitoring-service-types",
  "libra2-state-sync-driver",
  "libra2-storage-interface",
  "libra2-storage-service-client",
@@ -10355,6 +10283,78 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "libra2-peer-monitoring-service-client"
+version = "0.1.0"
+dependencies = [
+ "aptos-netcore",
+ "aptos-network",
+ "bcs 0.1.4",
+ "enum_dispatch",
+ "futures",
+ "libra2-build-info",
+ "libra2-channels",
+ "libra2-config",
+ "libra2-id-generator",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-peer-monitoring-service-server",
+ "libra2-peer-monitoring-service-types",
+ "libra2-time-service",
+ "libra2-types",
+ "maplit",
+ "once_cell",
+ "rand 0.7.3",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+]
+
+[[package]]
+name = "libra2-peer-monitoring-service-server"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-netcore",
+ "aptos-network",
+ "bcs 0.1.4",
+ "bytes",
+ "claims",
+ "futures",
+ "libra2-bounded-executor",
+ "libra2-build-info",
+ "libra2-channels",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-peer-monitoring-service-types",
+ "libra2-storage-interface",
+ "libra2-time-service",
+ "libra2-types",
+ "maplit",
+ "mockall",
+ "once_cell",
+ "rand 0.7.3",
+ "serde",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-peer-monitoring-service-types"
+version = "0.1.0"
+dependencies = [
+ "bcs 0.1.4",
+ "libra2-config",
+ "libra2-types",
+ "serde",
+ "thiserror",
 ]
 
 [[package]]

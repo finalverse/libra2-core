@@ -2786,7 +2786,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "rate(aptos_peer_monitoring_service_server_pending_network_events{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"})[$AggInterval]",
+          "expr": "rate(libra2_peer_monitoring_service_server_pending_network_events{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"})[$AggInterval]",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -2853,7 +2853,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "rate(aptos_peer_monitoring_service_server_pending_network_events{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",state=\"dropped\"})[$AggInterval]",
+          "expr": "rate(libra2_peer_monitoring_service_server_pending_network_events{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",state=\"dropped\"})[$AggInterval]",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,

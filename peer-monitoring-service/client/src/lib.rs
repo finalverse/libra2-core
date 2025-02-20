@@ -14,7 +14,7 @@ use libra2_logger::{info, warn};
 use aptos_network::application::{
     interface::NetworkClient, metadata::PeerMetadata, storage::PeersAndMetadata,
 };
-use aptos_peer_monitoring_service_types::{PeerMonitoringMetadata, PeerMonitoringServiceMessage};
+use libra2_peer_monitoring_service_types::{PeerMonitoringMetadata, PeerMonitoringServiceMessage};
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use error::Error;
 use futures::StreamExt;

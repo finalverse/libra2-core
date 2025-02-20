@@ -1,5 +1,5 @@
 [package]
-name = "aptos-peer-monitoring-service-server"
+name = "libra2-peer-monitoring-service-server"
 description = "The peer monitoring service (server-side)"
 version = "0.1.0"
 
@@ -21,7 +21,7 @@ libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true }
-aptos-peer-monitoring-service-types = { workspace = true }
+libra2-peer-monitoring-service-types = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }

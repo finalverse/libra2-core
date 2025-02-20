@@ -1,5 +1,5 @@
 [package]
-name = "aptos-peer-monitoring-service-client"
+name = "libra2-peer-monitoring-service-client"
 description = "The Aptos peer monitoring service (client-side)"
 version = "0.1.0"
 
@@ -20,7 +20,7 @@ libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
-aptos-peer-monitoring-service-types = { workspace = true }
+libra2-peer-monitoring-service-types = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
 enum_dispatch = { workspace = true }
@@ -37,7 +37,7 @@ libra2-build-info = { workspace = true }
 libra2-config = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true, features = ["fuzzing"] }
-aptos-peer-monitoring-service-server = { workspace = true }
+libra2-peer-monitoring-service-server = { workspace = true }
 bcs = { workspace = true }
 maplit = { workspace = true }
 tokio-stream = { workspace = true }

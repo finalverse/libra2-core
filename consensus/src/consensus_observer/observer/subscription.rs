@@ -242,7 +242,7 @@ mod test {
         transport::{ConnectionId, ConnectionMetadata},
         ProtocolId,
     };
-    use aptos_peer_monitoring_service_types::PeerMonitoringMetadata;
+    use libra2_peer_monitoring_service_types::PeerMonitoringMetadata;
     use libra2_storage_interface::Result;
     use libra2_types::{network_address::NetworkAddress, transaction::Version};
     use claims::assert_matches;

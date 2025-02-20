@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_network::protocols::network::RpcError;
-use aptos_peer_monitoring_service_types::{
+use libra2_peer_monitoring_service_types::{
     response::UnexpectedResponseError, PeerMonitoringServiceError,
 };
 use thiserror::Error;

@@ -26,7 +26,7 @@ libra2-mempool-notifications = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true }
-aptos-peer-monitoring-service-types = { workspace = true }
+libra2-peer-monitoring-service-types = { workspace = true }
 aptos-runtimes = { workspace = true }
 libra2-short-hex-str = { workspace = true }
 libra2-storage-interface = { workspace = true }
