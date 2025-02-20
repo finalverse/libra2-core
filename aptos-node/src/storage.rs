@@ -160,7 +160,7 @@ fn create_rocksdb_checkpoint_and_change_working_dir(
 
     // Create a state sync db checkpoint
     let state_sync_db =
-        aptos_state_sync_driver::metadata_storage::PersistentMetadataStorage::new(&source_dir);
+        libra2_state_sync_driver::metadata_storage::PersistentMetadataStorage::new(&source_dir);
     state_sync_db
         .create_checkpoint(&checkpoint_dir)
         .expect("StateSyncDB checkpoint creation failed.");

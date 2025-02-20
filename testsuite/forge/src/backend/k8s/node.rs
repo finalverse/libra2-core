@@ -14,7 +14,7 @@ use aptos_db::common::{LEDGER_DB_NAME, STATE_MERKLE_DB_NAME};
 use libra2_logger::info;
 use aptos_rest_client::Client as RestClient;
 use aptos_sdk::types::PeerId;
-use aptos_state_sync_driver::metadata_storage::STATE_SYNC_DB_NAME;
+use libra2_state_sync_driver::metadata_storage::STATE_SYNC_DB_NAME;
 use futures::try_join;
 use k8s_openapi::api::core::v1::Pod;
 use kube::Api;

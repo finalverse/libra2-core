@@ -17,7 +17,7 @@ use aptos_sdk::{
     crypto::ed25519::Ed25519PrivateKey,
     types::{account_address::AccountAddress, PeerId},
 };
-use aptos_state_sync_driver::metadata_storage::STATE_SYNC_DB_NAME;
+use libra2_state_sync_driver::metadata_storage::STATE_SYNC_DB_NAME;
 use std::{
     env,
     fs::{self, OpenOptions},

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-state-sync-driver"
+name = "libra2-state-sync-driver"
 description = "The driver for state sync"
 version = "0.1.0"
 

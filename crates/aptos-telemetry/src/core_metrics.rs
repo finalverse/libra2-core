@@ -3,7 +3,7 @@
 
 use crate::{utils, utils::sum_all_histogram_counts};
 use libra2_config::config::NodeConfig;
-use aptos_state_sync_driver::metrics::StorageSynchronizerOperations;
+use libra2_state_sync_driver::metrics::StorageSynchronizerOperations;
 use aptos_telemetry_service::types::telemetry::TelemetryEvent;
 use prometheus::core::Collector;
 use std::collections::BTreeMap;
@@ -113,14 +113,14 @@ fn collect_state_sync_metrics(
 
     core_metrics.insert(
         STATE_SYNC_SYNCED_EPOCH.into(),
-        aptos_state_sync_driver::metrics::STORAGE_SYNCHRONIZER_OPERATIONS
+        libra2_state_sync_driver::metrics::STORAGE_SYNCHRONIZER_OPERATIONS
             .with_label_values(&[StorageSynchronizerOperations::SyncedEpoch.get_label()])
             .get()
             .to_string(),
     );
     core_metrics.insert(
         STATE_SYNC_SYNCED_VERSION.into(),
-        aptos_state_sync_driver::metrics::STORAGE_SYNCHRONIZER_OPERATIONS
+        libra2_state_sync_driver::metrics::STORAGE_SYNCHRONIZER_OPERATIONS
             .with_label_values(&[StorageSynchronizerOperations::Synced.get_label()])
             .get()
             .to_string(),

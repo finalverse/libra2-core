@@ -31,7 +31,7 @@ libra2-retrier = { workspace = true }
 aptos-runtimes = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-short-hex-str = { workspace = true }
-aptos-state-sync-driver = { workspace = true }
+libra2-state-sync-driver = { workspace = true }
 aptos-transaction-emitter-lib = { workspace = true }
 aptos-transaction-generator-lib = { workspace = true }
 aptos-transaction-workloads-lib = { workspace = true }

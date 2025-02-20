@@ -24,7 +24,7 @@ use libra2_build_info::build_information;
 use libra2_config::config::{merge_node_config, NodeConfig, PersistableConfig};
 use aptos_framework::ReleaseBundle;
 use libra2_logger::{prelude::*, telemetry_log_writer::TelemetryLog, Level, LoggerFilterUpdater};
-use aptos_state_sync_driver::driver_factory::StateSyncRuntimes;
+use libra2_state_sync_driver::driver_factory::StateSyncRuntimes;
 use libra2_types::{chain_id::ChainId, on_chain_config::OnChainJWKConsensusConfig};
 use clap::Parser;
 use futures::channel::{mpsc, oneshot};

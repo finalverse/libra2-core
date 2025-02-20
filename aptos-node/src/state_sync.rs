@@ -20,7 +20,7 @@ use aptos_network::application::{
     interface::{NetworkClient, NetworkClientInterface, NetworkServiceEvents},
     storage::PeersAndMetadata,
 };
-use aptos_state_sync_driver::{
+use libra2_state_sync_driver::{
     driver_factory::{DriverFactory, StateSyncRuntimes},
     metadata_storage::PersistentMetadataStorage,
 };
