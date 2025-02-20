@@ -30,7 +30,7 @@ use libra2_schemadb::{
 #[cfg(test)]
 use libra2_scratchpad::get_state_shard_id;
 use libra2_storage_interface::{
-    db_ensure as ensure, state_store::NUM_STATE_SHARDS, AptosDbError, Result,
+    db_ensure as ensure, state_store::NUM_STATE_SHARDS, Libra2DbError, Result,
 };
 use libra2_types::{
     nibble::{nibble_path::NibblePath, ROOT_NIBBLE_HEIGHT},

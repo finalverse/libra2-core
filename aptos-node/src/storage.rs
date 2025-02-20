@@ -4,7 +4,7 @@
 use anyhow::{anyhow, Result};
 use libra2_backup_service::start_backup_service;
 use libra2_config::{config::NodeConfig, utils::get_genesis_txn};
-use aptos_db::{fast_sync_storage_wrapper::FastSyncStorageWrapper, AptosDB};
+use libra2_db::{fast_sync_storage_wrapper::FastSyncStorageWrapper, Libra2DB};
 use libra2_db_indexer::db_indexer::InternalIndexerDB;
 use aptos_executor::db_bootstrapper::maybe_bootstrap;
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
@@ -60,7 +60,7 @@ pub(crate) fn bootstrap_db(
         (None, None)
     };
 
-    let (aptos_db_reader, db_rw, backup_service) = match FastSyncStorageWrapper::initialize_dbs(
+    let (libra2_db_reader, db_rw, backup_service) = match FastSyncStorageWrapper::initialize_dbs(
         node_config,
         internal_indexer_db.clone(),
         update_sender,
@@ -98,7 +98,7 @@ pub(crate) fn bootstrap_db(
         },
     };
     Ok((
-        aptos_db_reader,
+        libra2_db_reader,
         db_rw,
         backup_service,
         internal_indexer_db,
@@ -106,15 +106,15 @@ pub(crate) fn bootstrap_db(
     ))
 }
 
-/// In consensus-only mode, return a in-memory based [FakeAptosDB] and
+/// In consensus-only mode, return a in-memory based [FakeLibra2DB] and
 /// do not run the backup service.
 #[cfg(feature = "consensus-only-perf-test")]
 pub(crate) fn bootstrap_db(
     node_config: &NodeConfig,
 ) -> Result<(Arc<dyn DbReader>, DbReaderWriter, Option<Runtime>)> {
-    use aptos_db::db::fake_aptosdb::FakeAptosDB;
+    use libra2_db::db::fake_Libra2DB::FakeLibra2DB;
 
-    let aptos_db = AptosDB::open(
+    let libra2_db = Libra2DB::open(
         node_config.storage.get_dir_paths(),
         false, /* readonly */
         node_config.storage.storage_pruner_config,
@@ -124,9 +124,9 @@ pub(crate) fn bootstrap_db(
         node_config.storage.max_num_nodes_per_lru_cache_shard,
     )
     .map_err(|err| anyhow!("DB failed to open {}", err))?;
-    let (aptos_db, db_rw) = DbReaderWriter::wrap(FakeAptosDB::new(aptos_db));
+    let (libra2_db, db_rw) = DbReaderWriter::wrap(FakeLibra2DB::new(libra2_db));
     maybe_apply_genesis(&db_rw, node_config)?;
-    Ok((aptos_db, db_rw, None))
+    Ok((libra2_db, db_rw, None))
 }
 
 /// Creates a RocksDb checkpoint for the consensus_db, state_sync_db,
@@ -147,12 +147,12 @@ fn create_rocksdb_checkpoint_and_change_working_dir(
     fs::create_dir_all(&checkpoint_dir).unwrap();
 
     // Open the database and create a checkpoint
-    AptosDB::create_checkpoint(
+    Libra2DB::create_checkpoint(
         &source_dir,
         &checkpoint_dir,
         node_config.storage.rocksdb_configs.enable_storage_sharding,
     )
-    .expect("AptosDB checkpoint creation failed.");
+    .expect("Libra2DB checkpoint creation failed.");
 
     // Create a consensus db checkpoint
     aptos_consensus::create_checkpoint(&source_dir, &checkpoint_dir)
@@ -186,7 +186,7 @@ pub fn initialize_database_and_checkpoints(
 
     // Open the database
     let instant = Instant::now();
-    let (_aptos_db, db_rw, backup_service, indexer_db_opt, update_receiver) =
+    let (_libra2_db, db_rw, backup_service, indexer_db_opt, update_receiver) =
         bootstrap_db(node_config)?;
 
     // Log the duration to open storage

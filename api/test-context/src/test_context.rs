@@ -16,7 +16,7 @@ use libra2_config::{
     keys::ConfigKey,
 };
 use libra2_crypto::{ed25519::Ed25519PrivateKey, hash::HashValue, SigningKey};
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_executor::{block_executor::BlockExecutor, db_bootstrapper};
 use aptos_executor_types::BlockExecutorTrait;
 use aptos_framework::BuiltPackage;
@@ -140,7 +140,7 @@ pub fn new_test_context_inner(
     let validator_owner = validator_identity.account_address.unwrap();
     let (sender, recver) = channel::<(Instant, Version)>((Instant::now(), 0 as Version));
     let (db, db_rw) = if use_db_with_indexer {
-        let mut aptos_db = AptosDB::new_for_test_with_indexer(
+        let mut libra2_db = Libra2DB::new_for_test_with_indexer(
             &tmp_dir,
             node_config.storage.rocksdb_configs.enable_storage_sharding,
         );
@@ -148,11 +148,11 @@ pub fn new_test_context_inner(
             .indexer_db_config
             .is_internal_indexer_db_enabled()
         {
-            aptos_db.add_version_update_subscriber(sender).unwrap();
+            libra2_db.add_version_update_subscriber(sender).unwrap();
         }
-        DbReaderWriter::wrap(aptos_db)
+        DbReaderWriter::wrap(libra2_db)
     } else {
-        let mut aptos_db = AptosDB::open(
+        let mut libra2_db = Libra2DB::open(
             StorageDirPaths::from_path(&tmp_dir),
             false,                       /* readonly */
             NO_OP_STORAGE_PRUNER_CONFIG, /* pruner */
@@ -173,9 +173,9 @@ pub fn new_test_context_inner(
             .indexer_db_config
             .is_internal_indexer_db_enabled()
         {
-            aptos_db.add_version_update_subscriber(sender).unwrap();
+            libra2_db.add_version_update_subscriber(sender).unwrap();
         }
-        DbReaderWriter::wrap(aptos_db)
+        DbReaderWriter::wrap(libra2_db)
     };
     let ret = db_bootstrapper::maybe_bootstrap::<AptosVMBlockExecutor>(
         &db_rw,
@@ -230,7 +230,7 @@ pub struct TestContext {
     pub context: Context,
     pub validator_owner: AccountAddress,
     pub mempool: Arc<MockSharedMempool>,
-    pub db: Arc<AptosDB>,
+    pub db: Arc<Libra2DB>,
     rng: rand::rngs::StdRng,
     root_key: ConfigKey<Ed25519PrivateKey>,
     executor: Arc<dyn BlockExecutorTrait>,
@@ -249,7 +249,7 @@ impl TestContext {
         validator_owner: AccountAddress,
         executor: Box<dyn BlockExecutorTrait>,
         mempool: MockSharedMempool,
-        db: Arc<AptosDB>,
+        db: Arc<Libra2DB>,
         test_name: String,
         api_specific_config: ApiSpecificConfig,
     ) -> Self {

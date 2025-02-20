@@ -7,7 +7,7 @@ use clap::Parser;
 #[derive(Parser)]
 pub enum Cmd {
     #[clap(subcommand)]
-    AptosDb(libra2_db_tool::DBTool),
+    Libra2Db(libra2_db_tool::DBTool),
 
     Decode(libra2_move_debugger::bcs_txn_decoder::Command),
 
@@ -20,7 +20,7 @@ pub enum Cmd {
 impl Cmd {
     pub async fn run(self) -> Result<()> {
         match self {
-            Cmd::AptosDb(cmd) => cmd.run().await,
+            Cmd::Libra2Db(cmd) => cmd.run().await,
             Cmd::Decode(cmd) => cmd.run().await,
             Cmd::DumpPendingTxns(cmd) => cmd.run().await,
             Cmd::Move(cmd) => cmd.run().await,

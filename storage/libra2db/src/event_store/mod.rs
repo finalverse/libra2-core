@@ -15,7 +15,7 @@ use libra2_db_indexer_schemas::schema::{
     event_by_key::EventByKeySchema, event_by_version::EventByVersionSchema,
 };
 use libra2_schemadb::{batch::SchemaBatch, schema::ValueCodec, DB};
-use libra2_storage_interface::{db_ensure as ensure, db_other_bail, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, db_other_bail, Libra2DbError, Result};
 use libra2_types::{
     account_address::AccountAddress,
     account_config::{new_block_event_key, NewBlockEvent},
@@ -47,7 +47,7 @@ impl EventStore {
     ) -> Result<ContractEvent> {
         self.event_db
             .get::<EventSchema>(&(version, index))?
-            .ok_or_else(|| AptosDbError::NotFound(format!("Event {} of Txn {}", index, version)))
+            .ok_or_else(|| Libra2DbError::NotFound(format!("Event {} of Txn {}", index, version)))
     }
 
     pub fn get_txn_ver_by_seq_num(&self, event_key: &EventKey, seq_num: u64) -> Result<u64> {
@@ -55,7 +55,7 @@ impl EventStore {
             .event_db
             .get::<EventByKeySchema>(&(*event_key, seq_num))?
             .ok_or_else(|| {
-                AptosDbError::NotFound(format!("Index entry should exist for seq_num {}", seq_num))
+                Libra2DbError::NotFound(format!("Index entry should exist for seq_num {}", seq_num))
             })?;
         Ok(ver)
     }
@@ -98,7 +98,7 @@ impl EventStore {
         self.get_latest_sequence_number(ledger_version, event_key)?
             .map_or(Ok(0), |seq| {
                 seq.checked_add(1)
-                    .ok_or_else(|| AptosDbError::Other("Seq num overflowed.".to_string()))
+                    .ok_or_else(|| Libra2DbError::Other("Seq num overflowed.".to_string()))
             })
     }
 
@@ -151,7 +151,7 @@ impl EventStore {
     ) -> Result<(Version, u64)> {
         let indices = self.lookup_events_by_key(event_key, seq_num, 1, ledger_version)?;
         if indices.is_empty() {
-            return Err(AptosDbError::NotFound(format!(
+            return Err(Libra2DbError::NotFound(format!(
                 "Event {} of seq num {}.",
                 event_key, seq_num
             )));
@@ -253,7 +253,7 @@ impl EventStore {
         let mut begin = 0u64;
         let mut end = match self.get_latest_sequence_number(ledger_version, event_key)? {
             Some(s) => s.checked_add(1).ok_or_else(|| {
-                AptosDbError::Other("event sequence number overflew.".to_string())
+                Libra2DbError::Other("event sequence number overflew.".to_string())
             })?,
             None => return Ok(None),
         };
@@ -298,7 +298,7 @@ impl EventStore {
                 Ok(new_block_event.proposed_time() < timestamp)
             },
             ledger_version,
-        )?.ok_or_else(|| AptosDbError::NotFound(
+        )?.ok_or_else(|| Libra2DbError::NotFound(
             format!("No new block found beyond timestamp {}, so can't determine the last version before it.",
             timestamp,
         )))?;
@@ -313,7 +313,7 @@ impl EventStore {
             self.lookup_event_by_key(&event_key, seq_at_or_after_ts, ledger_version)?;
 
         version.checked_sub(1).ok_or_else(|| {
-            AptosDbError::Other("A block with non-zero seq num started at version 0.".to_string())
+            Libra2DbError::Other("A block with non-zero seq num started at version 0.".to_string())
         })
     }
 

@@ -37,7 +37,7 @@ thiserror = { workspace = true }
 
 [dev-dependencies]
 libra2-crypto = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 libra2-types = { workspace = true, features = ["fuzzing"] }
 proptest = { workspace = true }
 proptest-derive = { workspace = true }

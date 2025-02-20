@@ -10,7 +10,7 @@ use crate::handlers::utils::{
     LATENCY_HISTOGRAM,
 };
 use libra2_crypto::hash::HashValue;
-use aptos_db::backup::backup_handler::BackupHandler;
+use libra2_db::backup::backup_handler::BackupHandler;
 use libra2_types::transaction::Version;
 use warp::{filters::BoxedFilter, reply::Reply, Filter};
 

@@ -50,13 +50,13 @@ pub fn start_consensus(
     network_service_events: NetworkServiceEvents<ConsensusMsg>,
     state_sync_notifier: Arc<dyn ConsensusNotificationSender>,
     consensus_to_mempool_sender: mpsc::Sender<QuorumStoreRequest>,
-    aptos_db: DbReaderWriter,
+    libra2_db: DbReaderWriter,
     reconfig_events: ReconfigNotificationListener<DbBackedOnChainConfig>,
     vtxn_pool: VTxnPoolState,
     consensus_publisher: Option<Arc<ConsensusPublisher>>,
 ) -> (Runtime, Arc<StorageWriteProxy>, Arc<QuorumStoreDB>) {
     let runtime = aptos_runtimes::spawn_named_runtime("consensus".into(), None);
-    let storage = Arc::new(StorageWriteProxy::new(node_config, aptos_db.reader.clone()));
+    let storage = Arc::new(StorageWriteProxy::new(node_config, libra2_db.reader.clone()));
     let quorum_store_db = Arc::new(QuorumStoreDB::new(node_config.storage.dir()));
 
     let txn_notifier = Arc::new(MempoolNotifier::new(
@@ -65,7 +65,7 @@ pub fn start_consensus(
     ));
 
     let execution_proxy = ExecutionProxy::new(
-        Arc::new(BlockExecutor::<AptosVMBlockExecutor>::new(aptos_db)),
+        Arc::new(BlockExecutor::<AptosVMBlockExecutor>::new(libra2_db)),
         txn_notifier,
         state_sync_notifier,
         runtime.handle(),
@@ -136,7 +136,7 @@ pub fn start_consensus_observer(
     consensus_publisher: Option<Arc<ConsensusPublisher>>,
     state_sync_notifier: Arc<dyn ConsensusNotificationSender>,
     consensus_to_mempool_sender: mpsc::Sender<QuorumStoreRequest>,
-    aptos_db: DbReaderWriter,
+    libra2_db: DbReaderWriter,
     reconfig_events: Option<ReconfigNotificationListener<DbBackedOnChainConfig>>,
 ) {
     // Create the (dummy) consensus network client
@@ -158,7 +158,7 @@ pub fn start_consensus_observer(
             node_config.consensus.mempool_executed_txn_timeout_ms,
         ));
         let execution_proxy = ExecutionProxy::new(
-            Arc::new(BlockExecutor::<AptosVMBlockExecutor>::new(aptos_db.clone())),
+            Arc::new(BlockExecutor::<AptosVMBlockExecutor>::new(libra2_db.clone())),
             txn_notifier,
             state_sync_notifier,
             consensus_observer_runtime.handle(),
@@ -192,7 +192,7 @@ pub fn start_consensus_observer(
     let consensus_observer = ConsensusObserver::new(
         node_config.clone(),
         consensus_observer_client,
-        aptos_db.reader.clone(),
+        libra2_db.reader.clone(),
         execution_client,
         state_sync_notification_sender,
         reconfig_events,

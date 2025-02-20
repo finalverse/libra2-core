@@ -5,7 +5,7 @@
 use crate::vm_validator::{get_account_sequence_number, PooledVMValidator, TransactionValidation};
 use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
 use libra2_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReaderWriter,
@@ -32,7 +32,7 @@ impl TestValidator {
     fn new() -> Self {
         let _db_path = libra2_temppath::TempPath::new();
         _db_path.create_as_dir().unwrap();
-        let (db, db_rw) = DbReaderWriter::wrap(AptosDB::new_for_test(_db_path.path()));
+        let (db, db_rw) = DbReaderWriter::wrap(Libra2DB::new_for_test(_db_path.path()));
         aptos_executor_test_helpers::bootstrap_genesis::<AptosVMBlockExecutor>(
             &db_rw,
             &aptos_vm_genesis::test_genesis_transaction(),

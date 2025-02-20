@@ -14,7 +14,7 @@ use libra2_schemadb::{
     batch::{SchemaBatch, WriteBatch},
     DB,
 };
-use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, Libra2DbError, Result};
 use libra2_types::{
     transaction::{TransactionOutput, Version},
     write_set::WriteSet,
@@ -57,7 +57,7 @@ impl WriteSetDb {
     pub(crate) fn get_write_set(&self, version: Version) -> Result<WriteSet> {
         self.db
             .get::<WriteSetSchema>(&version)?
-            .ok_or_else(|| AptosDbError::NotFound(format!("WriteSet at version {}", version)))
+            .ok_or_else(|| Libra2DbError::NotFound(format!("WriteSet at version {}", version)))
     }
 
     /// Returns an iterator that yields `num_transactions` write sets starting from `start_version`.
@@ -95,7 +95,7 @@ impl WriteSetDb {
         let mut ret = Vec::with_capacity((end_version - begin_version) as usize);
         for current_version in begin_version..end_version {
             let (version, write_set) = iter.next().transpose()?.ok_or_else(|| {
-                AptosDbError::NotFound(format!("Write set missing for version {}", current_version))
+                Libra2DbError::NotFound(format!("Write set missing for version {}", current_version))
             })?;
             ensure!(
                 version == current_version,

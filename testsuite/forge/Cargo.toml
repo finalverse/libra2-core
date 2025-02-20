@@ -19,7 +19,7 @@ aptos = { workspace = true }
 aptos-cached-packages = { workspace = true }
 libra2-cli-common = { workspace = true }
 libra2-config = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 aptos-framework = { workspace = true }
 aptos-genesis = { workspace = true }
 libra2-global-constants = { workspace = true }

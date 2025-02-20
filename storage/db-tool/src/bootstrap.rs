@@ -7,7 +7,7 @@ use libra2_config::config::{
     RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS,
     DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD, NO_OP_STORAGE_PRUNER_CONFIG,
 };
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_executor::db_bootstrapper::calculate_genesis;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{transaction::Transaction, waypoint::Waypoint};
@@ -21,7 +21,7 @@ use std::{
 
 #[derive(Parser)]
 #[clap(
-    name = "aptos-db-bootstrapper",
+    name = "libra2-db-bootstrapper",
     about = "Calculate, verify and commit the genesis to local DB without a consensus among validators."
 )]
 pub struct Command {
@@ -49,7 +49,7 @@ impl Command {
 
         // Opening the DB exclusively, it's not allowed to run this tool alongside a running node which
         // operates on the same DB.
-        let db = AptosDB::open(
+        let db = Libra2DB::open(
             StorageDirPaths::from_path(&self.db_dir),
             false,
             NO_OP_STORAGE_PRUNER_CONFIG, /* pruner */

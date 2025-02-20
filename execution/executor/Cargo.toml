@@ -41,7 +41,7 @@ serde = { workspace = true }
 [dev-dependencies]
 aptos-cached-packages = { workspace = true }
 libra2-config = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 libra2-db-indexer = { workspace = true, features = ["fuzzing"] }
 aptos-executor-test-helpers = { workspace = true }
 libra2-storage-interface = { workspace = true }

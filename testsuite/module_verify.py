@@ -40,7 +40,7 @@ def main():
     subprocess.run(
         [
             "target/release/libra2-debugger",
-            "aptos-db",
+            "libra2-db",
             "backup",
             "verify",
             "--validate-modules",

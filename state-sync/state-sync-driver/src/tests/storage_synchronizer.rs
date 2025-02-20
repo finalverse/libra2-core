@@ -31,7 +31,7 @@ use libra2_event_notifications::EventSubscriptionService;
 use aptos_executor_types::ChunkCommitNotification;
 use libra2_infallible::{Mutex, RwLock};
 use libra2_mempool_notifications::MempoolNotificationListener;
-use libra2_storage_interface::{AptosDbError, DbReaderWriter};
+use libra2_storage_interface::{Libra2DbError, DbReaderWriter};
 use libra2_storage_service_notifications::StorageServiceNotificationListener;
 use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
@@ -656,7 +656,7 @@ async fn test_initialize_state_synchronizer_receiver_error() {
     db_writer
         .expect_get_state_snapshot_receiver()
         .returning(|_, _| {
-            Err(AptosDbError::Other(
+            Err(Libra2DbError::Other(
                 "Failed to get snapshot receiver!".to_string(),
             ))
         });
@@ -824,7 +824,7 @@ async fn test_save_states_invalid_chunk() {
     snapshot_receiver
         .expect_add_chunk()
         .with(always(), always())
-        .returning(|_, _| Err(AptosDbError::Other("Invalid chunk!".to_string())));
+        .returning(|_, _| Err(Libra2DbError::Other("Invalid chunk!".to_string())));
 
     // Setup the mock db writer
     let mut db_writer = create_mock_db_writer();

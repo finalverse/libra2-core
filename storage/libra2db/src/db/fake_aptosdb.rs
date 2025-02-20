@@ -21,7 +21,7 @@ use libra2_storage_interface::{
         state_delta::StateDelta, state_update_refs::BatchedStateUpdateRefs,
         state_view::cached_state_view::ShardedStateCache,
     },
-    AptosDbError, DbReader, DbWriter, LedgerSummary, MAX_REQUEST_LIMIT,
+    Libra2DbError, DbReader, DbWriter, LedgerSummary, MAX_REQUEST_LIMIT,
 };
 use libra2_types::{
     access_path::AccessPath,
@@ -679,7 +679,7 @@ impl DbReader for FakeLibra2DB {
             if timestamp > 0 {
                 Ok(timestamp)
             } else {
-                Err(AptosDbError::NotFound("NewBlockEvent".to_string()).into())
+                Err(Libra2DbError::NotFound("NewBlockEvent".to_string()).into())
             }
         })
     }
@@ -873,7 +873,7 @@ impl DbReader for FakeLibra2DB {
         gauged_api("get_latest_version", || {
             self.latest_version
                 .lock()
-                .ok_or_else(|| AptosDbError::NotFound("No latest version found.".to_string()))
+                .ok_or_else(|| Libra2DbError::NotFound("No latest version found.".to_string()))
         })
     }
 
@@ -957,7 +957,7 @@ impl HashReader for FakeLibra2DB {
 
 fn error_if_too_many_requested(num_requested: u64, max_allowed: u64) -> Result<()> {
     if num_requested > max_allowed {
-        Err(AptosDbError::TooManyRequested(num_requested, max_allowed).into())
+        Err(Libra2DbError::TooManyRequested(num_requested, max_allowed).into())
     } else {
         Ok(())
     }

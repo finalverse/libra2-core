@@ -38,7 +38,7 @@ use libra2_metrics_core::TimerHelper;
 use aptos_resource_viewer::AptosValueAnnotator;
 use libra2_schemadb::batch::SchemaBatch;
 use libra2_storage_interface::{
-    db_ensure as ensure, db_other_bail as bail, AptosDbError, DbReader, DbWriter, LedgerSummary,
+    db_ensure as ensure, db_other_bail as bail, Libra2DbError, DbReader, DbWriter, LedgerSummary,
     Order, Result, StateSnapshotReceiver, MAX_REQUEST_LIMIT,
 };
 use libra2_types::{
@@ -114,7 +114,7 @@ include!("include/libra2db_internal.rs");
 include!("include/libra2db_testonly.rs");
 
 #[cfg(feature = "consensus-only-perf-test")]
-pub mod fake_aptosdb;
+pub mod fake_Libra2DB;
 
 impl Libra2DB {
     pub fn open(

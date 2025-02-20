@@ -100,7 +100,7 @@ async fn test_fullnode_genesis_transaction_flow() {
     let output = Command::new(libra2_debugger.as_path())
         .current_dir(workspace_root())
         .args(&vec![
-            "aptos-db",
+            "libra2-db",
             "bootstrap",
             first_validator_storage_dir.to_str().unwrap(),
             "--genesis-txn-file",
@@ -237,7 +237,7 @@ async fn test_validator_genesis_transaction_and_db_restore_flow() {
     let output = Command::new(libra2_debugger.as_path())
         .current_dir(workspace_root())
         .args(&vec![
-            "aptos-db",
+            "libra2-db",
             "bootstrap",
             first_validator_storage_dir.to_str().unwrap(),
             "--genesis-txn-file",
@@ -528,7 +528,7 @@ fn parse_waypoint(bootstrap_command_output: &str) -> Waypoint {
         .unwrap()
         .captures(bootstrap_command_output)
         .ok_or_else(|| {
-            anyhow!("Failed to parse `libra2-debugger aptos-db bootstrap` waypoint output!")
+            anyhow!("Failed to parse `libra2-debugger libra2-db bootstrap` waypoint output!")
         });
     Waypoint::from_str(waypoint.unwrap()[1].into()).unwrap()
 }

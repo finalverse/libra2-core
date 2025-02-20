@@ -25,7 +25,7 @@ thiserror = { workspace = true }
 
 [dev-dependencies]
 libra2-crypto = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }
 libra2-temppath = { workspace = true }
 aptos-vm = { workspace = true }

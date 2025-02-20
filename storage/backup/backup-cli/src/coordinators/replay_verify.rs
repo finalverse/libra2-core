@@ -13,10 +13,10 @@ use crate::{
     utils::{GlobalRestoreOptions, RestoreRunMode, TrustedWaypointOpt},
 };
 use anyhow::Result;
-use aptos_db::backup::restore_handler::RestoreHandler;
+use libra2_db::backup::restore_handler::RestoreHandler;
 use aptos_executor_types::VerifyExecutionMode;
 use libra2_logger::prelude::*;
-use libra2_storage_interface::AptosDbError;
+use libra2_storage_interface::Libra2DbError;
 use libra2_types::{on_chain_config::TimedFeatureOverride, transaction::Version};
 use aptos_vm::AptosVM;
 use aptos_vm_environment::prod_configs::set_timed_feature_override;
@@ -37,8 +37,8 @@ impl From<anyhow::Error> for ReplayError {
     }
 }
 
-impl From<AptosDbError> for ReplayError {
-    fn from(error: AptosDbError) -> Self {
+impl From<Libra2DbError> for ReplayError {
+    fn from(error: Libra2DbError) -> Self {
         ReplayError::OtherError(error.to_string())
     }
 }

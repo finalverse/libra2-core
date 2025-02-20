@@ -9,7 +9,7 @@ use crate::{
     },
 };
 use libra2_config::config::{BootstrappingMode, NodeConfig, OverrideNodeConfig};
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_forge::{LocalNode, LocalSwarm, Node, NodeExt, Swarm};
 use aptos_inspection_service::inspection_client::InspectionClient;
 use libra2_rest_client::Client as RestClient;
@@ -199,8 +199,8 @@ fn verify_first_ledger_info(node: &mut LocalNode) {
     node.stop();
 
     // Verify that the ledger info exists at version 0
-    let aptos_db = AptosDB::new_for_test(db_path_buf.as_path());
-    aptos_db.get_epoch_ending_ledger_info(0).unwrap();
+    let libra2_db = Libra2DB::new_for_test(db_path_buf.as_path());
+    libra2_db.get_epoch_ending_ledger_info(0).unwrap();
 
     // Restart the node
     node.start().unwrap();

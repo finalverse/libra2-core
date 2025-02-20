@@ -3,7 +3,7 @@
 
 use crate::tests::{mock, mock::MockClient, utils};
 use anyhow::format_err;
-use libra2_storage_interface::AptosDbError;
+use libra2_storage_interface::Libra2DbError;
 use libra2_storage_service_types::{
     responses::{DataResponse, StorageServiceResponse},
     StorageServiceError,
@@ -74,7 +74,7 @@ async fn test_get_number_of_states_at_version_invalid() {
         .times(1)
         .with(eq(version))
         .returning(move |_| {
-            Err(AptosDbError::NotFound(
+            Err(Libra2DbError::NotFound(
                 format_err!("Version does not exist!").to_string(),
             ))
         });

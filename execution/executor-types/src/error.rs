@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_crypto::HashValue;
-use libra2_storage_interface::AptosDbError;
+use libra2_storage_interface::Libra2DbError;
 use libra2_types::{state_store::errors::StateViewError, transaction::Version};
 use serde::{Deserialize, Serialize};
 use std::fmt::Display;
@@ -51,8 +51,8 @@ impl From<anyhow::Error> for ExecutorError {
     }
 }
 
-impl From<AptosDbError> for ExecutorError {
-    fn from(error: AptosDbError) -> Self {
+impl From<Libra2DbError> for ExecutorError {
+    fn from(error: Libra2DbError) -> Self {
         Self::InternalError {
             error: format!("{}", error),
         }

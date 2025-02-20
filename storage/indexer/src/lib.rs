@@ -25,7 +25,7 @@ use libra2_rocksdb_options::gen_rocksdb_options;
 use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::{
     db_ensure, db_other_bail, state_store::state_view::db_state_view::DbStateViewAtVersion,
-    AptosDbError, DbReader, Result,
+    Libra2DbError, DbReader, Result,
 };
 use libra2_types::{
     access_path::Path,

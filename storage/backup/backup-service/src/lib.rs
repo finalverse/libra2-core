@@ -5,12 +5,12 @@
 mod handlers;
 
 use crate::handlers::get_routes;
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use libra2_logger::prelude::*;
 use std::{net::SocketAddr, sync::Arc};
 use tokio::runtime::Runtime;
 
-pub fn start_backup_service(address: SocketAddr, db: Arc<AptosDB>) -> Runtime {
+pub fn start_backup_service(address: SocketAddr, db: Arc<Libra2DB>) -> Runtime {
     let backup_handler = db.get_backup_handler();
     let routes = get_routes(backup_handler);
 
@@ -47,7 +47,7 @@ mod tests {
     #[test]
     fn routing_and_error_codes() {
         let tmpdir = TempPath::new();
-        let db = Arc::new(AptosDB::new_for_test(&tmpdir));
+        let db = Arc::new(Libra2DB::new_for_test(&tmpdir));
         let port = get_available_port();
         let _rt = start_backup_service(SocketAddr::new(IpAddr::V4(Ipv4Addr::LOCALHOST), port), db);
 

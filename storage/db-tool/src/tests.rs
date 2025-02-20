@@ -80,7 +80,7 @@ mod dbtool_tests {
         storage::{local_fs::LocalFs, BackupStorage},
         utils::test_utils::start_local_backup_service,
     };
-    use aptos_db::AptosDB;
+    use libra2_db::Libra2DB;
     use aptos_executor_test_helpers::integration_test_impl::{
         test_execution_with_storage_impl, test_execution_with_storage_impl_inner,
     };
@@ -291,7 +291,7 @@ mod dbtool_tests {
             RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS_FOR_TEST,
             NO_OP_STORAGE_PRUNER_CONFIG,
         };
-        use aptos_db::utils::iterators::PrefixedStateValueIterator;
+        use libra2_db::utils::iterators::PrefixedStateValueIterator;
         use libra2_db_indexer::utils::PrefixedStateValueIterator as IndexerPrefixedStateValueIterator;
         use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
         use itertools::zip_eq;
@@ -472,7 +472,7 @@ mod dbtool_tests {
 
         if !force_sharding {
             let (_ledger_db, tree_db, state_kv_db) =
-                AptosDB::open_dbs(&StorageDirPaths::from_path(new_db_dir), db_config, false, 0)
+                Libra2DB::open_dbs(&StorageDirPaths::from_path(new_db_dir), db_config, false, 0)
                     .unwrap();
             for ver in start..=end {
                 let new_iter = PrefixedStateValueIterator::new(
@@ -515,8 +515,8 @@ mod dbtool_tests {
             let internal_indexer_db =
                 InternalIndexerDBService::get_indexer_db_for_restore(new_db_dir.as_path()).unwrap();
 
-            let aptos_db: Arc<dyn DbReader> = Arc::new(
-                AptosDB::open(
+            let libra2_db: Arc<dyn DbReader> = Arc::new(
+                Libra2DB::open(
                     StorageDirPaths::from_path(new_db_dir),
                     false,
                     NO_OP_STORAGE_PRUNER_CONFIG,
@@ -539,7 +539,7 @@ mod dbtool_tests {
             };
 
             let new_iter = IndexerPrefixedStateValueIterator::new(
-                aptos_db.clone(),
+                libra2_db.clone(),
                 internal_indexer_db.get_inner_db_ref(),
                 StateKeyPrefix::new(AccessPath, b"".to_vec()),
                 None,
@@ -563,10 +563,10 @@ mod dbtool_tests {
             old_keys.sort();
             assert_eq!(new_keys, old_keys);
 
-            let ledger_version = aptos_db.get_latest_ledger_info_version().unwrap();
+            let ledger_version = libra2_db.get_latest_ledger_info_version().unwrap();
             for ver in start..=ledger_version {
                 let old_block_res = db.get_block_info_by_version(ver);
-                let new_block_res = aptos_db.get_block_info_by_version(ver);
+                let new_block_res = libra2_db.get_block_info_by_version(ver);
                 let (old_block_version, old_block_height, _) = old_block_res.unwrap();
                 let (new_block_version, new_block_height, _) = new_block_res.unwrap();
                 assert_eq!(old_block_version, new_block_version);

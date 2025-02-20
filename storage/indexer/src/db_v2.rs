@@ -14,7 +14,7 @@ use aptos_resource_viewer::{AnnotatedMoveValue, AptosValueAnnotator};
 use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::{
     db_other_bail as bail, state_store::state_view::db_state_view::DbStateViewAtVersion,
-    AptosDbError, DbReader, Result,
+    Libra2DbError, DbReader, Result,
 };
 use libra2_types::{
     access_path::Path,

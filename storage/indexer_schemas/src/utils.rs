@@ -3,7 +3,7 @@
 
 use crate::schema::transaction_by_account::TransactionByAccountSchema;
 use libra2_schemadb::iterator::SchemaIterator;
-use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, Libra2DbError, Result};
 use libra2_types::{
     account_address::AccountAddress, indexer::indexer_db_reader::Order, transaction::Version,
 };
@@ -22,7 +22,7 @@ pub const MAX_REQUEST_LIMIT: u64 = 10_000;
 
 pub fn error_if_too_many_requested(num_requested: u64, max_allowed: u64) -> Result<()> {
     if num_requested > max_allowed {
-        Err(AptosDbError::TooManyRequested(num_requested, max_allowed))
+        Err(Libra2DbError::TooManyRequested(num_requested, max_allowed))
     } else {
         Ok(())
     }
@@ -41,7 +41,7 @@ pub fn get_first_seq_num_and_limit(order: Order, cursor: u64, limit: u64) -> Res
     })
 }
 
-// This is a replicate of the AccountTransactionVersionIter from storage/aptosdb crate.
+// This is a replicate of the AccountTransactionVersionIter from storage/Libra2DB crate.
 pub struct AccountTransactionVersionIter<'a> {
     inner: SchemaIterator<'a, TransactionByAccountSchema>,
     address: AccountAddress,

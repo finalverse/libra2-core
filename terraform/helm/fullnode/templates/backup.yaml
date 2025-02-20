@@ -50,7 +50,7 @@ spec:
           {{- toYaml .Values.backup.resources | nindent 10 }}
         command: ["/usr/local/bin/libra2-debugger"]
         args:
-        - "aptos-db"
+        - "libra2-db"
         - "backup"
         - "continuously"
         - "--metadata-cache-dir"

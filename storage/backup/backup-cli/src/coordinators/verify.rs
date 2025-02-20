@@ -17,7 +17,7 @@ use crate::{
     utils::{unix_timestamp_sec, GlobalRestoreOptions, RestoreRunMode, TrustedWaypointOpt},
 };
 use anyhow::Result;
-use aptos_db::state_restore::StateSnapshotRestoreMode;
+use libra2_db::state_restore::StateSnapshotRestoreMode;
 use aptos_executor_types::VerifyExecutionMode;
 use libra2_logger::prelude::*;
 use libra2_types::transaction::Version;

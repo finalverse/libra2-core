@@ -17,7 +17,7 @@ use libra2_config::config::{
     DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD, NO_OP_STORAGE_PRUNER_CONFIG,
 };
 use libra2_crypto::ed25519::Ed25519PublicKey;
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_framework::ReleaseBundle;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_temppath::TempPath;
@@ -168,7 +168,7 @@ impl GenesisInfo {
     pub fn generate_waypoint(&mut self) -> anyhow::Result<Waypoint> {
         let genesis = self.get_genesis();
         let path = TempPath::new();
-        let aptosdb = AptosDB::open(
+        let Libra2DB = Libra2DB::open(
             StorageDirPaths::from_path(path),
             false,
             NO_OP_STORAGE_PRUNER_CONFIG,
@@ -178,7 +178,7 @@ impl GenesisInfo {
             DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD,
             None,
         )?;
-        let db_rw = DbReaderWriter::new(aptosdb);
+        let db_rw = DbReaderWriter::new(Libra2DB);
         aptos_executor::db_bootstrapper::generate_waypoint::<AptosVMBlockExecutor>(&db_rw, genesis)
     }
 }

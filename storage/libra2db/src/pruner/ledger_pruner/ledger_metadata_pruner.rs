@@ -6,7 +6,7 @@ use crate::schema::{
     version_data::VersionDataSchema,
 };
 use libra2_schemadb::{batch::SchemaBatch, DB};
-use libra2_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{Libra2DbError, Result};
 use libra2_types::transaction::Version;
 use std::sync::Arc;
 
@@ -59,6 +59,6 @@ impl LedgerMetadataPruner {
         self.ledger_metadata_db
             .get::<DbMetadataSchema>(&DbMetadataKey::LedgerPrunerProgress)?
             .map(|v| v.expect_version())
-            .ok_or_else(|| AptosDbError::Other("LedgerPrunerProgress cannot be None.".to_string()))
+            .ok_or_else(|| Libra2DbError::Other("LedgerPrunerProgress cannot be None.".to_string()))
     }
 }

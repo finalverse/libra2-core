@@ -27,7 +27,7 @@ libra2-crash-handler = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-data-client = { workspace = true }
 libra2-data-streaming-service = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 libra2-db-indexer = { workspace = true }
 libra2-dkg-runtime = { workspace = true }
 libra2-event-notifications = { workspace = true }
@@ -89,7 +89,7 @@ rstack-self = { workspace = true }
 [features]
 assert-private-keys-not-cloneable = ["libra2-crypto/assert-private-keys-not-cloneable"]
 check-vm-features = []
-consensus-only-perf-test = ["aptos-executor/consensus-only-perf-test", "libra2-mempool/consensus-only-perf-test", "aptos-db/consensus-only-perf-test"]
+consensus-only-perf-test = ["aptos-executor/consensus-only-perf-test", "libra2-mempool/consensus-only-perf-test", "libra2-db/consensus-only-perf-test"]
 default = []
 failpoints = ["fail/failpoints", "aptos-consensus/failpoints", "aptos-executor/failpoints", "libra2-mempool/failpoints", "aptos-api/failpoints", "libra2-config/failpoints"]
 indexer = ["aptos-indexer"]

@@ -40,8 +40,8 @@ impl From<anyhow::Error> for Error {
     }
 }
 
-impl From<libra2_storage_interface::AptosDbError> for Error {
-    fn from(error: libra2_storage_interface::AptosDbError) -> Self {
+impl From<libra2_storage_interface::Libra2DbError> for Error {
+    fn from(error: libra2_storage_interface::Libra2DbError) -> Self {
         Error::StorageErrorEncountered(error.to_string())
     }
 }

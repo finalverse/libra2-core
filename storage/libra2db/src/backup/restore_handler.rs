@@ -25,16 +25,16 @@ use std::sync::Arc;
 /// Provides functionalities for Libra2DB data restore.
 #[derive(Clone)]
 pub struct RestoreHandler {
-    pub aptosdb: Arc<Libra2DB>,
+    pub Libra2DB: Arc<Libra2DB>,
     state_store: Arc<StateStore>,
     ledger_db: Arc<LedgerDb>,
 }
 
 impl RestoreHandler {
-    pub(crate) fn new(aptosdb: Arc<Libra2DB>, state_store: Arc<StateStore>) -> Self {
+    pub(crate) fn new(Libra2DB: Arc<Libra2DB>, state_store: Arc<StateStore>) -> Self {
         Self {
-            ledger_db: Arc::clone(&aptosdb.ledger_db),
-            aptosdb,
+            ledger_db: Arc::clone(&Libra2DB.ledger_db),
+            Libra2DB,
             state_store,
         }
     }
@@ -60,7 +60,7 @@ impl RestoreHandler {
     }
 
     pub fn save_ledger_infos(&self, ledger_infos: &[LedgerInfoWithSignatures]) -> Result<()> {
-        restore_utils::save_ledger_infos(self.aptosdb.ledger_db.metadata_db(), ledger_infos, None)
+        restore_utils::save_ledger_infos(self.Libra2DB.ledger_db.metadata_db(), ledger_infos, None)
     }
 
     pub fn confirm_or_save_frozen_subtrees(
@@ -69,7 +69,7 @@ impl RestoreHandler {
         frozen_subtrees: &[HashValue],
     ) -> Result<()> {
         restore_utils::confirm_or_save_frozen_subtrees(
-            self.aptosdb.ledger_db.transaction_accumulator_db_raw(),
+            self.Libra2DB.ledger_db.transaction_accumulator_db_raw(),
             num_leaves,
             frozen_subtrees,
             None,
@@ -123,20 +123,20 @@ impl RestoreHandler {
     }
 
     pub fn get_next_expected_transaction_version(&self) -> Result<Version> {
-        Ok(self.aptosdb.get_synced_version()?.map_or(0, |ver| ver + 1))
+        Ok(self.Libra2DB.get_synced_version()?.map_or(0, |ver| ver + 1))
     }
 
     pub fn get_state_snapshot_before(
         &self,
         version: Version,
     ) -> Result<Option<(Version, HashValue)>> {
-        self.aptosdb
+        self.Libra2DB
             .get_state_snapshot_before(version)
             .map_err(Into::into)
     }
 
     pub fn get_in_progress_state_kv_snapshot_version(&self) -> Result<Option<Version>> {
-        let db = self.aptosdb.state_kv_db.metadata_db_arc();
+        let db = self.Libra2DB.state_kv_db.metadata_db_arc();
         let mut iter = db.iter::<DbMetadataSchema>()?;
         iter.seek_to_first();
         while let Some((k, _v)) = iter.next().transpose()? {

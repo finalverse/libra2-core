@@ -7,14 +7,14 @@ custom_edit_url: https://github.com/aptos-labs/aptos-core/edit/main/storage/READ
 ## Overview
 
 The storage modules implement:
-* the AptosDB which holds the authenticated blockchain data structure within a
+* the Libra2DB which holds the authenticated blockchain data structure within a
 Aptos Node. It serves the current "state" readable by Move contracts being
 executed, as well as a configurable length of the blockchain history to fellow
 Aptos Nodes and the Rest API. It takes in new data from either the consensus or
 the state sync components to grow the history.
 * the backup system which persists the entire history of transactions. The
 backups are not required for running the blockchain in normal situations, but
-can be critical when emergency happens were an AptosDB needs to be recreated
+can be critical when emergency happens were an Libra2DB needs to be recreated
 a. without the help of widely available healthy running Aptos Nodes b. to
 recover a historical state back in time. c. specifically, to do b. in order to
 create an alternative ledger and redistribute the result to overcome
@@ -74,7 +74,7 @@ storage:
   # and this config has the default value (`db`), the DBs will be at
   # `/opt/aptos/data/db/ledger_db` and  `/opt/aptos/data/db/state_merkle_db`
   dir: db
-  # AptosDB persists the state authentication structure off the critical path
+  # Libra2DB persists the state authentication structure off the critical path
   # of transaction execution and batch up recent changes for performance. Once
   # the number of buffered state updates exceeds this config, a dump of all
   # buffered values into a snapshot is triggered. (Alternatively, if too many
@@ -85,7 +85,7 @@ storage:
   # helps with performance but consumes a lot of memory and can compete with
   # the filesystem cache.
   max_num_nodes_per_lru_cache_shard: 8192
-  # AptosDB keeps recent history of the blockchain ledger and recent versions
+  # Libra2DB keeps recent history of the blockchain ledger and recent versions
   # of the state trees. And a pruner is responsible for pruning old data. The
   # default values makes sure the network is in good health in terms of
   # data availability and won't occupy too much space on recommended hardware
@@ -181,7 +181,7 @@ indexer_db_config:
 The DB backup is a concise format to preserve the raw data of the blockchain. It
  means a lot for the data security of the blockchain overall, and provides a way
 to batch process the blockchain data off chain. But it's not the preferred way
-to boot up a AptosDB instance on an empty disk. Use State Sync (it's Fast Sync
+to boot up a Libra2DB instance on an empty disk. Use State Sync (it's Fast Sync
 mode). Read more about state sync here:
 https://github.com/aptos-labs/aptos-core/blob/main/state-sync/README.md
 
@@ -198,14 +198,14 @@ https://github.com/aptos-labs/aptos-core/tree/main/storage/backup/backup-cli/src
 
 
 ```bash
-$ cargo run -p libra2-debugger aptos-db backup continuously --help
+$ cargo run -p libra2-debugger libra2-db backup continuously --help
     Finished dev [unoptimized + debuginfo] target(s) in 1.06s
-     Running `target/debug/libra2-debugger aptos-db backup continuously --help`
+     Running `target/debug/libra2-debugger libra2-db backup continuously --help`
 libra2-db-tool-backup-continuously 0.1.0
 Run the backup coordinator which backs up blockchain data continuously off a Aptos Node.
 
 USAGE:
-    libra2-debugger aptos-db backup continuously [OPTIONS] <--local-fs-dir <LOCAL_FS_DIR>|--command-adapter-config <COMMAND_ADAPTER_CONFIG>>
+    libra2-debugger libra2-db backup continuously [OPTIONS] <--local-fs-dir <LOCAL_FS_DIR>|--command-adapter-config <COMMAND_ADAPTER_CONFIG>>
 
 OPTIONS:
         --backup-service-address <ADDRESS>
@@ -263,19 +263,19 @@ OPTIONS:
 
 Example command:
 ```
-$ cargo run -p libra2-debugger aptos-db backup continuously \
+$ cargo run -p libra2-debugger libra2-db backup continuously \
     --metadata-cache-dir ./mc \
     --state-snapshot-interval-epochs 1 \
     --concurrent-downloads 4 \
     --command-adapter-config s3.yaml
 ```
 
-There are other subcommands of the libra2-debugger aptos-db, all of which are experimental
+There are other subcommands of the libra2-debugger libra2-db, all of which are experimental
 and can mess up with the backup storage, use only at your own risk.
 
-### Creating an AptosDB with minimal data at the latest epoch ending in a backup
+### Creating an Libra2DB with minimal data at the latest epoch ending in a backup
 
-It's part of the Aptos API functionality to bootstrap a AptosDB with a backup.
+It's part of the Aptos API functionality to bootstrap a Libra2DB with a backup.
 When emergency happens and the need to do the somewhat manual bootstrapping is
 high, Aptos will provide a backup source in the form of a yaml config file. Otherwise
 one can play with a config created by herself (probably the same one used in the
@@ -311,7 +311,7 @@ OPTIONS:
             transactions after a state snapshot. [Defaults to number of CPUs]
 
         --target-db-dir <DB_DIR>
-            Target dir where the tool recreates a AptosDB with snapshots and transactions provided
+            Target dir where the tool recreates a Libra2DB with snapshots and transactions provided
             in the backup. The data folder can later be used to start an Aptos node. e.g. /opt/
             aptos/data/db
 
@@ -330,7 +330,7 @@ RUST_LOG=info ./aptos \
 ```
 
 This is basically the same functionality with
-the "auto" mode of `cargo run -p libra2-debugger aptos-db restore`, but with more
+the "auto" mode of `cargo run -p libra2-debugger libra2-db restore`, but with more
 limited options. The `restore` tool mentioned has the ability to manually
 hack a local DB and is highly experimental. It's not recommended is be used if
 you are not 100% aware of what you are doing.

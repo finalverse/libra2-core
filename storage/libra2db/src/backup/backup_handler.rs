@@ -11,7 +11,7 @@ use crate::{
     state_store::StateStore,
 };
 use libra2_crypto::hash::HashValue;
-use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, Libra2DbError, Result};
 use libra2_types::{
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,
@@ -68,19 +68,19 @@ impl BackupHandler {
 
             let txn = txn_res?;
             let txn_info = txn_info_iter.next().ok_or_else(|| {
-                AptosDbError::NotFound(format!(
+                Libra2DbError::NotFound(format!(
                     "TransactionInfo not found when Transaction exists, version {}",
                     version
                 ))
             })??;
             let event_vec = event_vec_iter.next().ok_or_else(|| {
-                AptosDbError::NotFound(format!(
+                Libra2DbError::NotFound(format!(
                     "Events not found when Transaction exists., version {}",
                     version
                 ))
             })??;
             let write_set = write_set_iter.next().ok_or_else(|| {
-                AptosDbError::NotFound(format!(
+                Libra2DbError::NotFound(format!(
                     "WriteSet not found when Transaction exists, version {}",
                     version
                 ))

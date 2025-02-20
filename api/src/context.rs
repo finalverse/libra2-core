@@ -25,7 +25,7 @@ use libra2_storage_interface::{
     state_store::state_view::db_state_view::{
         DbStateView, DbStateViewAtVersion, LatestDbStateCheckpointView,
     },
-    AptosDbError, DbReader, Order, MAX_REQUEST_LIMIT,
+    Libra2DbError, DbReader, Order, MAX_REQUEST_LIMIT,
 };
 use libra2_types::{
     access_path::{AccessPath, Path},
@@ -875,7 +875,7 @@ impl Context {
                     true,
                     ledger_version,
                 )
-                .map_err(|e| AptosDbError::Other(e.to_string()))
+                .map_err(|e| Libra2DbError::Other(e.to_string()))
         };
         let txns = txns_res
             .context("Failed to retrieve account transactions")

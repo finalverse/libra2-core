@@ -208,7 +208,7 @@ class WorkerPod:
         pod_manifest["spec"]["containers"][0]["name"] = self.get_claim_name()
         pod_manifest["spec"]["containers"][0]["command"] = [
             "libra2-debugger",
-            "aptos-db",
+            "libra2-db",
             "replay-on-archive",
             "--start-version",
             str(self.start_version),

@@ -22,7 +22,7 @@ use libra2_schemadb::{
     batch::{SchemaBatch, WriteBatch},
     DB,
 };
-use libra2_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{Libra2DbError, Result};
 use libra2_types::{
     account_config::new_block_event_key, contract_event::ContractEvent, transaction::Version,
 };
@@ -89,7 +89,7 @@ impl EventDb {
             }
         }
 
-        Err(AptosDbError::NotFound(format!(
+        Err(Libra2DbError::NotFound(format!(
             "NewBlockEvent at version {}",
             version,
         )))
@@ -109,7 +109,7 @@ impl EventDb {
             iter,
             start_version,
             start_version.checked_add(num_versions as u64).ok_or(
-                AptosDbError::TooManyRequested(num_versions as u64, Version::max_value()),
+                Libra2DbError::TooManyRequested(num_versions as u64, Version::max_value()),
             )?,
         ))
     }
@@ -136,7 +136,7 @@ impl EventDb {
         event_vecs.iter().enumerate().try_for_each(|(idx, events)| {
             let version = first_version
                 .checked_add(idx as Version)
-                .ok_or_else(|| AptosDbError::Other("version overflow".to_string()))?;
+                .ok_or_else(|| Libra2DbError::Other("version overflow".to_string()))?;
             self.put_events(version, events, /*skip_index=*/ false, batch)
         })
     }

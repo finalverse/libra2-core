@@ -50,8 +50,8 @@ pub trait PersistentLivenessStorage: Send + Sync {
     /// ValidatorVerifier.
     fn retrieve_epoch_change_proof(&self, version: u64) -> Result<EpochChangeProof>;
 
-    /// Returns a handle of the aptosdb.
-    fn aptos_db(&self) -> Arc<dyn DbReader>;
+    /// Returns a handle of the Libra2DB.
+    fn libra2_db(&self) -> Arc<dyn DbReader>;
 
     // Returns a handle of the consensus db
     fn consensus_db(&self) -> Arc<ConsensusDB>;
@@ -334,13 +334,13 @@ impl RecoveryData {
 /// The proxy we use to persist data in db storage service via grpc.
 pub struct StorageWriteProxy {
     db: Arc<ConsensusDB>,
-    aptos_db: Arc<dyn DbReader>,
+    libra2_db: Arc<dyn DbReader>,
 }
 
 impl StorageWriteProxy {
-    pub fn new(config: &NodeConfig, aptos_db: Arc<dyn DbReader>) -> Self {
+    pub fn new(config: &NodeConfig, libra2_db: Arc<dyn DbReader>) -> Self {
         let db = Arc::new(ConsensusDB::new(config.storage.dir()));
-        StorageWriteProxy { db, aptos_db }
+        StorageWriteProxy { db, libra2_db }
     }
 }
 
@@ -365,7 +365,7 @@ impl PersistentLivenessStorage for StorageWriteProxy {
 
     fn recover_from_ledger(&self) -> LedgerRecoveryData {
         let latest_ledger_info = self
-            .aptos_db
+            .libra2_db
             .get_latest_ledger_info()
             .expect("Failed to get latest ledger info.");
         LedgerRecoveryData::new(latest_ledger_info)
@@ -402,11 +402,11 @@ impl PersistentLivenessStorage for StorageWriteProxy {
         );
         // find the block corresponding to storage latest ledger info
         let latest_ledger_info = self
-            .aptos_db
+            .libra2_db
             .get_latest_ledger_info()
             .expect("Failed to get latest ledger info.");
         let accumulator_summary = self
-            .aptos_db
+            .libra2_db
             .get_accumulator_summary(latest_ledger_info.ledger_info().version())
             .expect("Failed to get accumulator summary.");
         let ledger_recovery_data = LedgerRecoveryData::new(latest_ledger_info);
@@ -460,15 +460,15 @@ impl PersistentLivenessStorage for StorageWriteProxy {
 
     fn retrieve_epoch_change_proof(&self, version: u64) -> Result<EpochChangeProof> {
         let (_, proofs) = self
-            .aptos_db
+            .libra2_db
             .get_state_proof(version)
             .map_err(DbError::from)?
             .into_inner();
         Ok(proofs)
     }
 
-    fn aptos_db(&self) -> Arc<dyn DbReader> {
-        self.aptos_db.clone()
+    fn libra2_db(&self) -> Arc<dyn DbReader> {
+        self.libra2_db.clone()
     }
 
     fn consensus_db(&self) -> Arc<ConsensusDB> {

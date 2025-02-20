@@ -2,14 +2,14 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-//! This module defines error types used by `AptosDB`.
+//! This module defines error types used by `Libra2DB`.
 use libra2_types::state_store::errors::StateViewError;
 use std::sync::mpsc::RecvError;
 use thiserror::Error;
 
-/// This enum defines errors commonly used among `AptosDB` APIs.
+/// This enum defines errors commonly used among `Libra2DB` APIs.
 #[derive(Debug, Error)]
-pub enum AptosDbError {
+pub enum Libra2DbError {
     /// A requested item is not found.
     #[error("{0} not found.")]
     NotFound(String),
@@ -19,68 +19,68 @@ pub enum AptosDbError {
     #[error("Missing state root node at version {0}, probably pruned.")]
     MissingRootError(u64),
     /// Other non-classified error.
-    #[error("AptosDB Other Error: {0}")]
+    #[error("Libra2DB Other Error: {0}")]
     Other(String),
-    #[error("AptosDB RocksDb Error: {0}")]
+    #[error("Libra2DB RocksDb Error: {0}")]
     RocksDbIncompleteResult(String),
-    #[error("AptosDB RocksDB Error: {0}")]
+    #[error("Libra2DB RocksDB Error: {0}")]
     OtherRocksDbError(String),
-    #[error("AptosDB bcs Error: {0}")]
+    #[error("Libra2DB bcs Error: {0}")]
     BcsError(String),
-    #[error("AptosDB IO Error: {0}")]
+    #[error("Libra2DB IO Error: {0}")]
     IoError(String),
-    #[error("AptosDB Recv Error: {0}")]
+    #[error("Libra2DB Recv Error: {0}")]
     RecvError(String),
-    #[error("AptosDB ParseInt Error: {0}")]
+    #[error("Libra2DB ParseInt Error: {0}")]
     ParseIntError(String),
 }
 
-impl From<anyhow::Error> for AptosDbError {
+impl From<anyhow::Error> for Libra2DbError {
     fn from(error: anyhow::Error) -> Self {
         Self::Other(format!("{}", error))
     }
 }
 
-impl From<bcs::Error> for AptosDbError {
+impl From<bcs::Error> for Libra2DbError {
     fn from(error: bcs::Error) -> Self {
         Self::BcsError(format!("{}", error))
     }
 }
 
-impl From<RecvError> for AptosDbError {
+impl From<RecvError> for Libra2DbError {
     fn from(error: RecvError) -> Self {
         Self::RecvError(format!("{}", error))
     }
 }
 
-impl From<std::io::Error> for AptosDbError {
+impl From<std::io::Error> for Libra2DbError {
     fn from(error: std::io::Error) -> Self {
         Self::IoError(format!("{}", error))
     }
 }
 
-impl From<std::num::ParseIntError> for AptosDbError {
+impl From<std::num::ParseIntError> for Libra2DbError {
     fn from(error: std::num::ParseIntError) -> Self {
         Self::Other(format!("{}", error))
     }
 }
 
-impl From<AptosDbError> for StateViewError {
-    fn from(error: AptosDbError) -> Self {
+impl From<Libra2DbError> for StateViewError {
+    fn from(error: Libra2DbError) -> Self {
         match error {
-            AptosDbError::NotFound(msg) => StateViewError::NotFound(msg),
-            AptosDbError::Other(msg) => StateViewError::Other(msg),
+            Libra2DbError::NotFound(msg) => StateViewError::NotFound(msg),
+            Libra2DbError::Other(msg) => StateViewError::Other(msg),
             _ => StateViewError::Other(format!("{}", error)),
         }
     }
 }
 
-impl From<StateViewError> for AptosDbError {
+impl From<StateViewError> for Libra2DbError {
     fn from(error: StateViewError) -> Self {
         match error {
-            StateViewError::NotFound(msg) => AptosDbError::NotFound(msg),
-            StateViewError::Other(msg) => AptosDbError::Other(msg),
-            StateViewError::BcsError(err) => AptosDbError::BcsError(err.to_string()),
+            StateViewError::NotFound(msg) => Libra2DbError::NotFound(msg),
+            StateViewError::Other(msg) => Libra2DbError::Other(msg),
+            StateViewError::BcsError(err) => Libra2DbError::BcsError(err.to_string()),
         }
     }
 }

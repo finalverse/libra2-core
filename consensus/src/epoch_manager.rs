@@ -15,7 +15,7 @@ use crate::{
     liveness::{
         cached_proposer_election::CachedProposerElection,
         leader_reputation::{
-            extract_epoch_to_proposers, AptosDBBackend, LeaderReputation,
+            extract_epoch_to_proposers, Libra2DBBackend, LeaderReputation,
             ProposerAndVoterHeuristic, ReputationHeuristic,
         },
         proposal_generator::{
@@ -328,10 +328,10 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
                     + onchain_config.max_failed_authors_to_store()
                     + PROPOSER_ROUND_BEHIND_STORAGE_BUFFER;
 
-                let backend = Arc::new(AptosDBBackend::new(
+                let backend = Arc::new(Libra2DBBackend::new(
                     window_size,
                     seek_len,
-                    self.storage.aptos_db(),
+                    self.storage.libra2_db(),
                 ));
                 let voting_powers: Vec<_> = if weight_by_voting_power {
                     proposers
@@ -415,7 +415,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         // If we are considering beyond the current epoch, we need to fetch validators for those epochs
         if epoch_state.epoch > first_epoch_to_consider {
             self.storage
-                .aptos_db()
+                .libra2_db()
                 .get_epoch_ending_ledger_infos(first_epoch_to_consider - 1, epoch_state.epoch)
                 .map_err(Into::into)
                 .and_then(|proof| {
@@ -450,7 +450,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         );
         let proof = self
             .storage
-            .aptos_db()
+            .libra2_db()
             .get_epoch_ending_ledger_infos(request.start_epoch, request.end_epoch)
             .map_err(DbError::from)
             .context("[EpochManager] Failed to get epoch proof")?;
@@ -729,7 +729,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
                 consensus_to_quorum_store_rx,
                 self.quorum_store_to_mempool_sender.clone(),
                 self.config.mempool_txn_pull_timeout_ms,
-                self.storage.aptos_db().clone(),
+                self.storage.libra2_db().clone(),
                 network_sender,
                 epoch_state.verifier.clone(),
                 self.proof_cache.clone(),
@@ -1392,7 +1392,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
         );
         let highest_committed_round = self
             .storage
-            .aptos_db()
+            .libra2_db()
             .get_latest_ledger_info()
             .expect("unable to get latest ledger info")
             .commit_info()
@@ -1425,7 +1425,7 @@ impl<P: OnChainConfigProvider> EpochManager<P> {
             epoch,
             epoch_to_validators,
             self.storage.consensus_db(),
-            self.storage.aptos_db(),
+            self.storage.libra2_db(),
         ));
 
         let network_sender_arc = Arc::new(network_sender);

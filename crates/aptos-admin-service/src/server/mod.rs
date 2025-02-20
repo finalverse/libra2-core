@@ -33,15 +33,15 @@ mod mempool;
 pub struct Context {
     authentication_configs: Vec<AuthenticationConfig>,
 
-    aptos_db: RwLock<Option<Arc<DbReaderWriter>>>,
+    libra2_db: RwLock<Option<Arc<DbReaderWriter>>>,
     consensus_db: RwLock<Option<Arc<StorageWriteProxy>>>,
     quorum_store_db: RwLock<Option<Arc<QuorumStoreDB>>>,
     mempool_client_sender: RwLock<Option<MempoolClientSender>>,
 }
 
 impl Context {
-    fn set_aptos_db(&self, aptos_db: Arc<DbReaderWriter>) {
-        *self.aptos_db.write() = Some(aptos_db);
+    fn set_libra2_db(&self, libra2_db: Arc<DbReaderWriter>) {
+        *self.libra2_db.write() = Some(libra2_db);
     }
 
     fn set_consensus_dbs(
@@ -101,8 +101,8 @@ impl AdminService {
         admin_service
     }
 
-    pub fn set_aptos_db(&self, aptos_db: Arc<DbReaderWriter>) {
-        self.context.set_aptos_db(aptos_db)
+    pub fn set_libra2_db(&self, libra2_db: Arc<DbReaderWriter>) {
+        self.context.set_libra2_db(libra2_db)
     }
 
     pub fn set_consensus_dbs(

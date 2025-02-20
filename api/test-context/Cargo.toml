@@ -18,7 +18,7 @@ aptos-api-types = { workspace = true }
 aptos-cached-packages = { workspace = true }
 libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
-aptos-db = { workspace = true, features = ["fuzzing"] }
+libra2-db = { workspace = true, features = ["fuzzing"] }
 aptos-executor = { workspace = true }
 aptos-executor-types = { workspace = true }
 aptos-framework = { workspace = true }

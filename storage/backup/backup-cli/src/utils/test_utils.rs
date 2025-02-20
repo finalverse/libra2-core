@@ -4,7 +4,7 @@
 
 use libra2_backup_service::start_backup_service;
 use libra2_config::utils::get_available_port;
-use aptos_db::{db::test_helper::arb_blocks_to_commit, AptosDB};
+use libra2_db::{db::test_helper::arb_blocks_to_commit, Libra2DB};
 use libra2_proptest_helpers::ValueGenerator;
 use libra2_temppath::TempPath;
 use libra2_types::{
@@ -17,16 +17,16 @@ use std::{
 };
 use tokio::runtime::Runtime;
 
-pub fn tmp_db_empty() -> (TempPath, Arc<AptosDB>) {
+pub fn tmp_db_empty() -> (TempPath, Arc<Libra2DB>) {
     let tmpdir = TempPath::new();
-    let db = Arc::new(AptosDB::new_for_test(&tmpdir));
+    let db = Arc::new(Libra2DB::new_for_test(&tmpdir));
 
     (tmpdir, db)
 }
 
 pub fn tmp_db_with_random_content() -> (
     TempPath,
-    Arc<AptosDB>,
+    Arc<Libra2DB>,
     Vec<(Vec<TransactionToCommit>, LedgerInfoWithSignatures)>,
 ) {
     let (tmpdir, db) = tmp_db_empty();
@@ -46,7 +46,7 @@ pub fn tmp_db_with_random_content() -> (
     (tmpdir, db, blocks)
 }
 
-pub fn start_local_backup_service(db: Arc<AptosDB>) -> (Runtime, u16) {
+pub fn start_local_backup_service(db: Arc<Libra2DB>) -> (Runtime, u16) {
     let port = get_available_port();
     let rt = start_backup_service(SocketAddr::new(IpAddr::V4(Ipv4Addr::LOCALHOST), port), db);
     (rt, port)

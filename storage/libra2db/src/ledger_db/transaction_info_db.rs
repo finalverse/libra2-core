@@ -10,7 +10,7 @@ use crate::{
     utils::iterators::ExpectContinuousVersions,
 };
 use libra2_schemadb::{batch::SchemaBatch, DB};
-use libra2_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{Libra2DbError, Result};
 use libra2_types::{
     proof::TransactionInfoWithProof,
     transaction::{TransactionInfo, Version},
@@ -53,7 +53,7 @@ impl TransactionInfoDb {
         self.db
             .get::<TransactionInfoSchema>(&version)?
             .ok_or_else(|| {
-                AptosDbError::NotFound(format!("No TransactionInfo at version {}", version))
+                Libra2DbError::NotFound(format!("No TransactionInfo at version {}", version))
             })
     }
 

@@ -17,7 +17,7 @@ use libra2_db_indexer_schemas::{
 };
 use libra2_logger::info;
 use libra2_schemadb::batch::SchemaBatch;
-use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, Libra2DbError, Result};
 use libra2_types::transaction::{Transaction, Version};
 use std::sync::Arc;
 

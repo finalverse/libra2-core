@@ -179,7 +179,6 @@ members = [
     "state-sync/storage-service/server",
     "state-sync/storage-service/types",
     "storage/accumulator",
-    "storage/aptosdb",
     "storage/libra2db",
     "storage/backup/backup-cli",
     "storage/backup/backup-service",
@@ -331,7 +330,6 @@ libra2-crypto = { path = "crates/libra2-crypto" }
 libra2-crypto-derive = { path = "crates/libra2-crypto-derive" }
 libra2-data-client = { path = "state-sync/libra2-data-client" }
 libra2-data-streaming-service = { path = "state-sync/data-streaming-service" }
-aptos-db = { path = "storage/aptosdb" }
 libra2-db = { path = "storage/libra2db" }
 libra2-db-indexer = { path = "storage/indexer" }
 libra2-db-indexer-schemas = { path = "storage/indexer_schemas" }

@@ -23,7 +23,7 @@ use crate::{
     },
 };
 use anyhow::{anyhow, ensure, Result};
-use aptos_db::state_restore::StateSnapshotRestoreMode;
+use libra2_db::state_restore::StateSnapshotRestoreMode;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use libra2_storage_interface::StateSnapshotReceiver;

@@ -19,7 +19,7 @@ aptos-block-executor = { workspace = true }
 aptos-block-partitioner = { workspace = true }
 libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-executor-service = { workspace = true }
 aptos-executor-types = { workspace = true }

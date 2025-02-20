@@ -36,7 +36,7 @@ spec:
             imagePullPolicy: {{ .Values.backup.image.pullPolicy }}
             command:
             - /usr/local/bin/libra2-debugger
-            - aptos-db
+            - libra2-db
             - backup-maintenance
             - compact
             - --state-snapshot-file-compact-factor

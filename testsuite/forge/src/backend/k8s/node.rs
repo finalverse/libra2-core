@@ -10,7 +10,7 @@ use crate::{
 };
 use anyhow::{anyhow, format_err};
 use libra2_config::config::NodeConfig;
-use aptos_db::common::{LEDGER_DB_NAME, STATE_MERKLE_DB_NAME};
+use libra2_db::common::{LEDGER_DB_NAME, STATE_MERKLE_DB_NAME};
 use libra2_logger::info;
 use libra2_rest_client::Client as RestClient;
 use aptos_sdk::types::PeerId;

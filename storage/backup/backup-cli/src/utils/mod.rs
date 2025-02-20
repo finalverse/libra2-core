@@ -16,9 +16,9 @@ use libra2_config::config::{
     DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD, NO_OP_STORAGE_PRUNER_CONFIG,
 };
 use libra2_crypto::HashValue;
-use aptos_db::{
+use libra2_db::{
     backup::restore_handler::RestoreHandler,
-    db::AptosDB,
+    db::Libra2DB,
     get_restore_handler::GetRestoreHandler,
     state_restore::{
         StateSnapshotRestore, StateSnapshotRestoreMode, StateValueBatch, StateValueWriter,
@@ -29,7 +29,7 @@ use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerD
 use libra2_infallible::duration_since_epoch;
 use libra2_jellyfish_merkle::{NodeBatch, TreeWriter};
 use libra2_logger::info;
-use libra2_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{Libra2DbError, Result};
 use libra2_types::{
     state_store::{
         state_key::StateKey, state_storage_usage::StateStorageUsage, state_value::StateValue,
@@ -305,7 +305,7 @@ impl TryFrom<GlobalRestoreOpt> for GlobalRestoreOptions {
             } else {
                 None
             };
-            let restore_handler = Arc::new(AptosDB::open_kv_only(
+            let restore_handler = Arc::new(Libra2DB::open_kv_only(
                 StorageDirPaths::from_path(db_dir),
                 false,                       /* read_only */
                 NO_OP_STORAGE_PRUNER_CONFIG, /* pruner config */
@@ -355,7 +355,7 @@ impl TrustedWaypointOpt {
             trusted_waypoints
                 .insert(w.version(), w)
                 .map_or(Ok(()), |w| {
-                    Err(AptosDbError::Other(format!(
+                    Err(Libra2DbError::Other(format!(
                         "Duplicated waypoints at version {}",
                         w.version()
                     )))
@@ -430,7 +430,7 @@ impl<T: AsRef<Path>> PathToString for T {
             .to_path_buf()
             .into_os_string()
             .into_string()
-            .map_err(|s| AptosDbError::Other(format!("into_string failed for OsString '{:?}'", s)))
+            .map_err(|s| Libra2DbError::Other(format!("into_string failed for OsString '{:?}'", s)))
     }
 }
 

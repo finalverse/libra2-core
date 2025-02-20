@@ -244,7 +244,7 @@ pub struct StorageAdapter {
     epoch: u64,
     epoch_to_validators: HashMap<u64, Vec<Author>>,
     consensus_db: Arc<ConsensusDB>,
-    aptos_db: Arc<dyn DbReader>,
+    libra2_db: Arc<dyn DbReader>,
 }
 
 impl StorageAdapter {
@@ -252,13 +252,13 @@ impl StorageAdapter {
         epoch: u64,
         epoch_to_validators: HashMap<u64, Vec<Author>>,
         consensus_db: Arc<ConsensusDB>,
-        aptos_db: Arc<dyn DbReader>,
+        libra2_db: Arc<dyn DbReader>,
     ) -> Self {
         Self {
             epoch,
             epoch_to_validators,
             consensus_db,
-            aptos_db,
+            libra2_db,
         }
     }
 
@@ -330,7 +330,7 @@ impl StorageAdapter {
         latest_version: u64,
     ) -> anyhow::Result<CommitHistoryResource> {
         Ok(bcs::from_bytes(
-            self.aptos_db
+            self.libra2_db
                 .get_state_value_by_version(
                     &StateKey::on_chain_config::<CommitHistoryResource>()?,
                     latest_version,
@@ -382,7 +382,7 @@ impl DAGStorage for StorageAdapter {
 
     fn get_latest_k_committed_events(&self, k: u64) -> anyhow::Result<Vec<CommitEvent>> {
         let timer = counters::FETCH_COMMIT_HISTORY_DURATION.start_timer();
-        let version = self.aptos_db.get_latest_ledger_info_version()?;
+        let version = self.libra2_db.get_latest_ledger_info_version()?;
         let resource = self.get_commit_history_resource(version)?;
         let handle = resource.table_handle();
         let mut commit_events = vec![];
@@ -393,7 +393,7 @@ impl DAGStorage for StorageAdapter {
             let idx_bytes = bcs::to_bytes(&idx)
                 .map_err(|e| anyhow::anyhow!("Failed to serialize index: {:?}", e))?;
             let state_value = self
-                .aptos_db
+                .libra2_db
                 .get_state_value_by_version(&StateKey::table_item(handle, &idx_bytes), version)?
                 .ok_or_else(|| anyhow::anyhow!("Table item doesn't exist"))?;
             let new_block_event = bcs::from_bytes::<NewBlockEvent>(state_value.bytes())
@@ -413,7 +413,7 @@ impl DAGStorage for StorageAdapter {
 
     fn get_latest_ledger_info(&self) -> anyhow::Result<LedgerInfoWithSignatures> {
         // TODO: use callback from notifier to cache the latest ledger info
-        Ok(self.aptos_db.get_latest_ledger_info()?)
+        Ok(self.libra2_db.get_latest_ledger_info()?)
     }
 
     fn get_epoch_to_proposers(&self) -> HashMap<u64, Vec<Author>> {

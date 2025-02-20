@@ -10,7 +10,7 @@ use libra2_db_indexer_schemas::{
     utils::AccountTransactionVersionIter,
 };
 use libra2_schemadb::batch::SchemaBatch;
-use libra2_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{Libra2DbError, Result};
 use libra2_types::{
     account_address::AccountAddress,
     transaction::{Transaction, Version},
@@ -73,7 +73,7 @@ impl TransactionStore {
             address,
             min_seq_num
                 .checked_add(num_versions)
-                .ok_or(AptosDbError::TooManyRequested(min_seq_num, num_versions))?,
+                .ok_or(Libra2DbError::TooManyRequested(min_seq_num, num_versions))?,
             ledger_version,
         ))
     }

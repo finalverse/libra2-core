@@ -58,7 +58,7 @@ pub enum IndexerGrpcStep {
     TableInfoProcessedBatch,
     // [Indexer Table Info] Processed transactions from fullnode
     TableInfoProcessed,
-    // [Indexer Indices] Processed transactions from AptosDB
+    // [Indexer Indices] Processed transactions from Libra2DB
     InternalIndexerDBProcessed,
 }
 

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_cached_packages::aptos_stdlib;
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use libra2_db_indexer::db_indexer::DBIndexer;
 use aptos_executor_test_helpers::{
     gen_block_id, gen_ledger_info_with_sigs, integration_test_impl::create_db_and_executor,
@@ -35,7 +35,7 @@ use std::{fmt::Debug, str::FromStr, sync::Arc};
 const B: u64 = 1_000_000_000;
 
 #[cfg(test)]
-pub fn create_test_db() -> (Arc<AptosDB>, LocalAccount) {
+pub fn create_test_db() -> (Arc<Libra2DB>, LocalAccount) {
     // create test db
     let path = libra2_temppath::TempPath::new();
     let (genesis, validators) = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
@@ -45,7 +45,7 @@ pub fn create_test_db() -> (Arc<AptosDB>, LocalAccount) {
         AccountKey::from_private_key(aptos_vm_genesis::GENESIS_KEYPAIR.0.clone()),
         0,
     );
-    let (aptos_db, _db, executor, _waypoint) =
+    let (libra2_db, _db, executor, _waypoint) =
         create_db_and_executor(path.path(), &genesis_txn, true);
     let parent_block_id = executor.committed_block_id();
 
@@ -129,15 +129,15 @@ pub fn create_test_db() -> (Arc<AptosDB>, LocalAccount) {
         .unwrap();
     let li1 = gen_ledger_info_with_sigs(1, &output1, block1_id, &[signer.clone()]);
     executor.commit_blocks(vec![block1_id], li1).unwrap();
-    (aptos_db, core_resources_account)
+    (libra2_db, core_resources_account)
 }
 
 #[test]
 fn test_db_indexer_data() {
     use std::{thread, time::Duration};
     // create test db
-    let (aptos_db, core_account) = create_test_db();
-    let total_version = aptos_db.expect_synced_version();
+    let (libra2_db, core_account) = create_test_db();
+    let total_version = libra2_db.expect_synced_version();
     assert_eq!(total_version, 11);
     let temp_path = TempPath::new();
     let mut node_config = libra2_config::config::NodeConfig::default();
@@ -148,7 +148,7 @@ fn test_db_indexer_data() {
 
     let internal_indexer_db = InternalIndexerDBService::get_indexer_db(&node_config).unwrap();
 
-    let db_indexer = DBIndexer::new(internal_indexer_db.clone(), aptos_db.clone());
+    let db_indexer = DBIndexer::new(internal_indexer_db.clone(), libra2_db.clone());
     // assert the data matches the expected data
     let version = internal_indexer_db.get_persisted_version().unwrap();
     assert_eq!(version, None);

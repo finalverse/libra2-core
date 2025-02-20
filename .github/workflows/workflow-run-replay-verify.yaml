@@ -149,7 +149,7 @@ jobs:
           BUCKET: ${{ inputs.BUCKET }}
           SUB_DIR: ${{ inputs.SUB_DIR }}
         run: |
-          ./libra2-debugger aptos-db gen-replay-verify-jobs  \
+          ./libra2-debugger libra2-db gen-replay-verify-jobs  \
             --metadata-cache-dir ./metadata_cache \
             --command-adapter-config ${{ inputs.BACKUP_CONFIG_TEMPLATE_PATH }} \
             --start-version ${{ inputs.HISTORY_START }} \
@@ -245,7 +245,7 @@ jobs:
                 fi
 
                 res=0
-                ./libra2-debugger aptos-db replay-verify \
+                ./libra2-debugger libra2-db replay-verify \
                   --metadata-cache-dir $MC \
                   --command-adapter-config ${{ inputs.BACKUP_CONFIG_TEMPLATE_PATH }} \
                   --start-version $begin \

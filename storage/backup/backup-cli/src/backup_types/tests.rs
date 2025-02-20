@@ -20,7 +20,7 @@ use crate::{
         ReplayConcurrencyLevelOpt, RocksdbOpt, TrustedWaypointOpt,
     },
 };
-use aptos_db::{state_restore::StateSnapshotRestoreMode, AptosDB};
+use libra2_db::{state_restore::StateSnapshotRestoreMode, Libra2DB};
 use aptos_executor_test_helpers::integration_test_impl::test_execution_with_storage_impl;
 use aptos_executor_types::VerifyExecutionMode;
 use libra2_storage_interface::DbReader;
@@ -32,7 +32,7 @@ use tokio::time::Duration;
 
 #[derive(Debug)]
 struct TestData {
-    db: Arc<AptosDB>,
+    db: Arc<Libra2DB>,
     txn_start_ver: Version,
     state_snapshot_epoch: Option<u64>,
     state_snapshot_ver: Option<u64>,
@@ -165,7 +165,7 @@ fn test_end_to_end_impl(d: TestData) {
     .unwrap();
 
     // Check
-    let tgt_db = AptosDB::new_readonly_for_test(&tgt_db_dir);
+    let tgt_db = Libra2DB::new_readonly_for_test(&tgt_db_dir);
     assert_eq!(
         d.db.get_transactions(
             d.txn_start_ver,

@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 libra2-backup-service = { workspace = true }
 libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 libra2-db-indexer-schemas = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }
@@ -61,7 +61,7 @@ tokio-util = { workspace = true }
 [dev-dependencies]
 libra2-backup-service = { workspace = true }
 libra2-config = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }
 libra2-proptest-helpers = { workspace = true }
 libra2-storage-interface = { workspace = true }
@@ -70,4 +70,4 @@ warp = { workspace = true }
 
 [features]
 testing = []
-fuzzing = ["aptos-db/fuzzing"]
+fuzzing = ["libra2-db/fuzzing"]

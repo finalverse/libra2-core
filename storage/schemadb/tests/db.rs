@@ -9,7 +9,7 @@ use libra2_schemadb::{
     schema::{KeyCodec, Schema, ValueCodec},
     ColumnFamilyName, DB,
 };
-use libra2_storage_interface::AptosDbError;
+use libra2_storage_interface::Libra2DbError;
 use byteorder::{LittleEndian, ReadBytesExt};
 use rocksdb::{ColumnFamilyDescriptor, DEFAULT_COLUMN_FAMILY_NAME};
 
@@ -180,7 +180,7 @@ fn test_schema_put_get() {
 fn collect_values<S: Schema>(db: &TestDB) -> Vec<(S::Key, S::Value)> {
     let mut iter = db.iter::<S>().expect("Failed to create iterator.");
     iter.seek_to_first();
-    iter.collect::<Result<Vec<_>, AptosDbError>>().unwrap()
+    iter.collect::<Result<Vec<_>, Libra2DbError>>().unwrap()
 }
 
 fn gen_expected_values(values: &[(u32, u32)]) -> Vec<(TestField, TestField)> {

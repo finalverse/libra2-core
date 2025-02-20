@@ -12,7 +12,7 @@ use libra2_config::config::{
     StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS, DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD,
     NO_OP_STORAGE_PRUNER_CONFIG,
 };
-use aptos_db::{get_restore_handler::GetRestoreHandler, AptosDB};
+use libra2_db::{get_restore_handler::GetRestoreHandler, Libra2DB};
 use aptos_executor_types::VerifyExecutionMode;
 use libra2_logger::info;
 use libra2_types::transaction::Version;
@@ -61,7 +61,7 @@ pub struct Opt {
 
 impl Opt {
     pub async fn run(self) -> Result<()> {
-        let restore_handler = Arc::new(AptosDB::open_kv_only(
+        let restore_handler = Arc::new(Libra2DB::open_kv_only(
             StorageDirPaths::from_path(self.db_dir),
             false,                       /* read_only */
             NO_OP_STORAGE_PRUNER_CONFIG, /* pruner config */

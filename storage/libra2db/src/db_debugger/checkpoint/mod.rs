@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{db_debugger::common::DbDir, Libra2DB};
-use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, Libra2DbError, Result};
 use clap::Parser;
 use std::{fs, path::PathBuf};
 

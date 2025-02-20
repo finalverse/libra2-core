@@ -12,7 +12,7 @@ use libra2_config::{
 use libra2_consensus_notifications::new_consensus_notifier_listener_pair;
 use libra2_data_client::client::AptosDataClient;
 use libra2_data_streaming_service::streaming_client::new_streaming_service_client_listener_pair;
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use libra2_event_notifications::EventSubscriptionService;
 use aptos_executor::chunk_executor::ChunkExecutor;
 use aptos_executor_test_helpers::bootstrap_genesis;
@@ -32,7 +32,7 @@ use std::{collections::HashMap, sync::Arc};
 fn test_new_initialized_configs() {
     // Create a test database
     let tmp_dir = TempPath::new();
-    let db = AptosDB::open(
+    let db = Libra2DB::open(
         StorageDirPaths::from_path(&tmp_dir),
         false,
         NO_OP_STORAGE_PRUNER_CONFIG,

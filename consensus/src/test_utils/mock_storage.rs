@@ -232,7 +232,7 @@ impl PersistentLivenessStorage for MockStorage {
         Ok(EpochChangeProof::new(vec![lis], false))
     }
 
-    fn aptos_db(&self) -> Arc<dyn DbReader> {
+    fn libra2_db(&self) -> Arc<dyn DbReader> {
         unimplemented!()
     }
 
@@ -305,7 +305,7 @@ impl PersistentLivenessStorage for EmptyStorage {
         Ok(EpochChangeProof::new(vec![], false))
     }
 
-    fn aptos_db(&self) -> Arc<dyn DbReader> {
+    fn libra2_db(&self) -> Arc<dyn DbReader> {
         unimplemented!()
     }
 

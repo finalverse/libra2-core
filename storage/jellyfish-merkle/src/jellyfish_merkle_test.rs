@@ -611,7 +611,7 @@ fn test_missing_root() {
     let db = MockTreeStore::<ValueBlob>::default();
     let tree = JellyfishMerkleTree::new(&db);
     let err = tree.get_with_proof(HashValue::random(), 0).err().unwrap();
-    if let AptosDbError::MissingRootError(version) = err {
+    if let Libra2DbError::MissingRootError(version) = err {
         assert_eq!(version, 0);
     } else {
         panic!("Unexpected error: {:?}", err);

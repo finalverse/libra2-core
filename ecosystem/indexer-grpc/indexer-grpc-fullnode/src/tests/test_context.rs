@@ -21,7 +21,7 @@ use libra2_types::{
     transaction::{Transaction, TransactionStatus},
 };
 use aptos_vm::AptosVM;
-use aptosdb::AptosDB;
+use Libra2DB::Libra2DB;
 use executor::{block_executor::BlockExecutor, db_bootstrapper};
 use executor_types::BlockExecutorTrait;
 use mempool_notifications::MempoolNotificationSender;
@@ -59,7 +59,7 @@ pub fn new_test_context(test_name: &str, fake_start_time_usecs: u64) -> TestCont
     let (validator_identity, _, _) = validators[0].get_key_objects(None).unwrap();
     let validator_owner = validator_identity.account_address.unwrap();
 
-    let (db, db_rw) = DbReaderWriter::wrap(AptosDB::new_for_test_with_indexer(&tmp_dir));
+    let (db, db_rw) = DbReaderWriter::wrap(Libra2DB::new_for_test_with_indexer(&tmp_dir));
     let ret =
         db_bootstrapper::maybe_bootstrap::<AptosVM>(&db_rw, &genesis, genesis_waypoint).unwrap();
     assert!(ret);
@@ -90,7 +90,7 @@ pub struct TestContext {
     pub context: Context,
     pub validator_owner: AccountAddress,
     pub mempool: Arc<MockSharedMempool>,
-    pub db: Arc<AptosDB>,
+    pub db: Arc<Libra2DB>,
     rng: rand::rngs::StdRng,
     root_key: ConfigKey<Ed25519PrivateKey>,
     executor: Arc<dyn BlockExecutorTrait>,
@@ -110,7 +110,7 @@ impl TestContext {
         validator_owner: AccountAddress,
         executor: Box<dyn BlockExecutorTrait>,
         mempool: MockSharedMempool,
-        db: Arc<AptosDB>,
+        db: Arc<Libra2DB>,
         test_name: String,
         fake_time_usecs: u64,
     ) -> Self {

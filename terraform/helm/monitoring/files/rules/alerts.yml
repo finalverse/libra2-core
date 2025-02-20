@@ -100,7 +100,7 @@ groups:
           it's most likely a expansion of the volume is needed soon. Talk to the PE team. Otherwise, it's a bigger issue.
         2. Pass this issue on to the storage team. If you are the storage team, read on.
         3. Go to the dashboard and look for the stacked up column family sizes. \
-          If the total size on that chart can't justify low free disk space, we need to log in to a node to see if something other than the AptosDB is eating up disk. \
+          If the total size on that chart can't justify low free disk space, we need to log in to a node to see if something other than the Libra2DB is eating up disk. \
           Start from things under /opt/aptos/data.
         3 Otherwise, if the total size on that chart is the majority of the disk consumption, zoom out and look for anomalies -- sudden increases overall or on a few \
           specific Column Families, etc. Also check average size of each type of data. Reason about the anomaly with changes in recent releases in mind.
@@ -123,14 +123,14 @@ groups:
           and read carefully the comments on the prune window config entries -- set safe values.
         3. If you believe this is happening on nodes that are not run by us, involve the PE / Community / Ecosystem teams to coordinate efforts needed on those nodes.
       "
-  - alert: AptosDB API Success Rate
+  - alert: Libra2DB API Success Rate
     expr: sum by(kubernetes_pod_name) (rate(aptos_storage_api_latency_seconds_count{result="Ok"}[1m])) / sum by(kubernetes_pod_name) (rate(aptos_storage_api_latency_seconds_count[1m])) < 0.99  # 99%
     for: 5m
     labels:
       severity: error
-      summary: "AptosDB API success rate dropped."
+      summary: "Libra2DB API success rate dropped."
     annotations:
-      description: "AptosDB APIs started to return Error.
+      description: "Libra2DB APIs started to return Error.
       This must be looked at together with alerts / dashboards of upper level components -- it unfortunately can be either the cause or victim of issues over there. Things you can do:
         1. Go to the storage dashboard and see if the errors are on specific APIs.
         2. Look at logs and see storage related errors, understand if it's hardware / dependency errors or logical errors in our code.

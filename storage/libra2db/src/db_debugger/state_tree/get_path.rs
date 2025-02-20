@@ -11,7 +11,7 @@ use libra2_jellyfish_merkle::{
     node_type::{Child, Node, NodeKey, NodeType},
     TreeReader,
 };
-use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, Libra2DbError, Result};
 use libra2_types::{
     nibble::{nibble_path::NibblePath, Nibble},
     transaction::Version,

@@ -4,7 +4,7 @@
 use crate::{error::Error, metrics::increment_network_frame_overflow};
 use libra2_config::config::StorageServiceConfig;
 use libra2_logger::debug;
-use libra2_storage_interface::{AptosDbError, DbReader, Result as StorageResult};
+use libra2_storage_interface::{Libra2DbError, DbReader, Result as StorageResult};
 use libra2_storage_service_types::responses::{
     CompleteDataRange, DataResponse, DataSummary, TransactionOrOutputListWithProof,
 };
@@ -519,7 +519,7 @@ macro_rules! timed_read {
                     read_operation,
                     None,
                 );
-                result.map_err(|e| AptosDbError::Other(e.to_string()))
+                result.map_err(|e| Libra2DbError::Other(e.to_string()))
             }
         )+
     };

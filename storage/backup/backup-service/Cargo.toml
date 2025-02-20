@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-crypto = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-runtimes = { workspace = true }
@@ -31,9 +31,9 @@ warp = { workspace = true }
 
 [dev-dependencies]
 libra2-config = { workspace = true }
-aptos-db = { workspace = true, features = ["fuzzing"] }
+libra2-db = { workspace = true, features = ["fuzzing"] }
 libra2-temppath = { workspace = true }
 reqwest = { workspace = true }
 
 [features]
-fuzzing = ["aptos-db/fuzzing"]
+fuzzing = ["libra2-db/fuzzing"]

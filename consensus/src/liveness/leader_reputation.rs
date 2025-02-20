@@ -51,19 +51,19 @@ pub struct VersionedNewBlockEvent {
     pub version: u64,
 }
 
-pub struct AptosDBBackend {
+pub struct Libra2DBBackend {
     window_size: usize,
     seek_len: usize,
-    aptos_db: Arc<dyn DbReader>,
+    libra2_db: Arc<dyn DbReader>,
     db_result: Mutex<Option<(Vec<VersionedNewBlockEvent>, u64, bool)>>,
 }
 
-impl AptosDBBackend {
-    pub fn new(window_size: usize, seek_len: usize, aptos_db: Arc<dyn DbReader>) -> Self {
+impl Libra2DBBackend {
+    pub fn new(window_size: usize, seek_len: usize, libra2_db: Arc<dyn DbReader>) -> Self {
         Self {
             window_size,
             seek_len,
-            aptos_db,
+            libra2_db,
             db_result: Mutex::new(None),
         }
     }
@@ -76,7 +76,7 @@ impl AptosDBBackend {
         // assumes target round is not too far from latest commit
         let limit = self.window_size + self.seek_len;
 
-        let events = self.aptos_db.get_latest_block_events(limit)?;
+        let events = self.libra2_db.get_latest_block_events(limit)?;
 
         let max_returned_version = events.first().map_or(0, |first| first.transaction_version);
 
@@ -152,7 +152,7 @@ impl AptosDBBackend {
             (result, HashValue::zero())
         } else {
             let root_hash = self
-                .aptos_db
+                .libra2_db
                 .get_accumulator_root_hash(max_version)
                 .unwrap_or_else(|_| {
                     error!(
@@ -166,7 +166,7 @@ impl AptosDBBackend {
     }
 }
 
-impl MetadataBackend for AptosDBBackend {
+impl MetadataBackend for Libra2DBBackend {
     // assume the target_round only increases
     fn get_block_metadata(
         &self,
@@ -174,7 +174,7 @@ impl MetadataBackend for AptosDBBackend {
         target_round: Round,
     ) -> (Vec<NewBlockEvent>, HashValue) {
         let mut locked = self.db_result.lock();
-        let latest_db_version = self.aptos_db.get_latest_ledger_info_version().unwrap_or(0);
+        let latest_db_version = self.libra2_db.get_latest_ledger_info_version().unwrap_or(0);
         // lazy init db_result
         if locked.is_none() {
             if let Err(e) = self.refresh_db_result(&mut locked, latest_db_version) {

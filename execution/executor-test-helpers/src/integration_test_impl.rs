@@ -7,7 +7,7 @@ use anyhow::{ensure, Result};
 use aptos_cached_packages::aptos_stdlib;
 use libra2_config::config::DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD;
 use aptos_consensus_types::block::Block;
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_executor::block_executor::BlockExecutor;
 use aptos_executor_types::BlockExecutorTrait;
 use aptos_sdk::{
@@ -41,7 +41,7 @@ use aptos_vm::aptos_vm::AptosVMBlockExecutor;
 use rand::SeedableRng;
 use std::{path::Path, sync::Arc};
 
-pub fn test_execution_with_storage_impl() -> Arc<AptosDB> {
+pub fn test_execution_with_storage_impl() -> Arc<Libra2DB> {
     let path = libra2_temppath::TempPath::new();
     path.create_as_dir().unwrap();
     test_execution_with_storage_impl_inner(false, path.path())
@@ -50,7 +50,7 @@ pub fn test_execution_with_storage_impl() -> Arc<AptosDB> {
 pub fn test_execution_with_storage_impl_inner(
     force_sharding: bool,
     db_path: &Path,
-) -> Arc<AptosDB> {
+) -> Arc<Libra2DB> {
     const B: u64 = 1_000_000_000;
 
     let (genesis, validators) = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
@@ -62,7 +62,7 @@ pub fn test_execution_with_storage_impl_inner(
         0,
     );
 
-    let (aptos_db, db, executor, waypoint) =
+    let (libra2_db, db, executor, waypoint) =
         create_db_and_executor(db_path, &genesis_txn, force_sharding);
 
     let parent_block_id = executor.committed_block_id();
@@ -367,7 +367,7 @@ pub fn test_execution_with_storage_impl_inner(
     let expected_txns: Vec<Transaction> = block3.iter().map(|t| t.expect_valid().clone()).collect();
     verify_transactions(&transaction_list_with_proof, &expected_txns).unwrap();
 
-    aptos_db
+    libra2_db
 }
 
 fn approx_eq(a: u64, b: u64) -> bool {
@@ -380,19 +380,19 @@ pub fn create_db_and_executor<P: AsRef<std::path::Path>>(
     genesis: &Transaction,
     force_sharding: bool, // if true force sharding db otherwise using default db
 ) -> (
-    Arc<AptosDB>,
+    Arc<Libra2DB>,
     DbReaderWriter,
     BlockExecutor<AptosVMBlockExecutor>,
     Waypoint,
 ) {
     let (db, dbrw) = force_sharding
         .then(|| {
-            DbReaderWriter::wrap(AptosDB::new_for_test_with_sharding(
+            DbReaderWriter::wrap(Libra2DB::new_for_test_with_sharding(
                 &path,
                 DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD,
             ))
         })
-        .unwrap_or_else(|| DbReaderWriter::wrap(AptosDB::new_for_test(&path)));
+        .unwrap_or_else(|| DbReaderWriter::wrap(Libra2DB::new_for_test(&path)));
     let waypoint = bootstrap_genesis::<AptosVMBlockExecutor>(&dbrw, genesis).unwrap();
     let executor = BlockExecutor::new(dbrw.clone());
 

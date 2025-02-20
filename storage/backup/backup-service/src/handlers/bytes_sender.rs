@@ -4,7 +4,7 @@
 
 use crate::handlers::utils::THROUGHPUT_COUNTER;
 use libra2_metrics_core::IntCounterHelper;
-use libra2_storage_interface::{AptosDbError, Result as DbResult};
+use libra2_storage_interface::{Libra2DbError, Result as DbResult};
 use bytes::{BufMut, Bytes, BytesMut};
 use serde::Serialize;
 
@@ -84,6 +84,6 @@ impl BytesSender {
     pub fn send_res(&self, item: BytesResult) -> DbResult<()> {
         self.bytes_tx
             .blocking_send(item)
-            .map_err(|e| AptosDbError::Other(format!("Failed to send to response stream. {e}")))
+            .map_err(|e| Libra2DbError::Other(format!("Failed to send to response stream. {e}")))
     }
 }

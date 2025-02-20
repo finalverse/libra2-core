@@ -69,7 +69,7 @@ pub struct RunLocalnet {
 
     /// Clean the state and start with a new chain at genesis
     ///
-    /// This will wipe the aptosdb in `--test-dir` to remove any incompatible changes, and start
+    /// This will wipe the Libra2DB in `--test-dir` to remove any incompatible changes, and start
     /// the chain fresh. Note, that you will need to publish the module again and distribute funds
     /// from the faucet accordingly.
     #[clap(long)]

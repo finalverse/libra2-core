@@ -46,7 +46,7 @@ def warm_cache_and_get_latest_backup_version(
     db_backup_result = subprocess.Popen(
         [
             "target/release/libra2-debugger",
-            "aptos-db",
+            "libra2-db",
             "backup",
             "query",
             "backup-storage-state",

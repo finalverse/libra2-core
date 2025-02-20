@@ -52,7 +52,7 @@ regex = { workspace = true }
 
 aptos-api-test-context = { workspace = true }
 libra2-crypto = { workspace = true }
-aptos-db = { workspace = true }
+libra2-db = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-executor-types = { workspace = true }
 aptos-framework = { workspace = true }

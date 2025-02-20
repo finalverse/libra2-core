@@ -3,7 +3,7 @@
 
 use crate::{ledger_db::ledger_metadata_db::LedgerMetadataDb, Libra2DB};
 use libra2_schemadb::batch::SchemaBatch;
-use libra2_storage_interface::AptosDbError;
+use libra2_storage_interface::Libra2DbError;
 use libra2_temppath::TempPath;
 use libra2_types::{
     account_address::AccountAddress,
@@ -67,7 +67,7 @@ fn set_up(path: &impl AsRef<Path>, ledger_infos_with_sigs: &[LedgerInfoWithSigna
     ledger_infos_with_sigs
         .iter()
         .map(|info| ledger_metadata_db.put_ledger_info(info, &mut batch))
-        .collect::<Result<Vec<_>, AptosDbError>>()
+        .collect::<Result<Vec<_>, Libra2DbError>>()
         .unwrap();
     ledger_metadata_db.write_schemas(batch).unwrap();
     ledger_metadata_db.set_latest_ledger_info(ledger_infos_with_sigs.last().unwrap().clone());
@@ -131,7 +131,7 @@ proptest! {
             .metadata_db()
             .get_epoch_ending_ledger_info_iter(start_epoch, end_epoch)
             .unwrap()
-            .collect::<Result<Vec<_>, AptosDbError>>()
+            .collect::<Result<Vec<_>, Libra2DbError>>()
             .unwrap();
 
         let expected: Vec<_> = ledger_infos_with_sigs

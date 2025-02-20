@@ -42,7 +42,7 @@ spec:
         - -c
         - |-
           set -euxo pipefail
-          # cleanup aptosdb
+          # cleanup Libra2DB
           if [ -f /opt/aptos/data/restore-failed ] || \
               [ ! -f /opt/aptos/data/restore-uid ] || \
               [ "$(cat /opt/aptos/data/restore-uid)" != "{{ .config.restore_epoch }}" ]; then
@@ -52,7 +52,7 @@ spec:
 
           [ -f /opt/aptos/data/restore-complete ] && exit 0
           # start restore process
-          /usr/local/bin/libra2-debugger aptos-db restore bootstrap-db \
+          /usr/local/bin/libra2-debugger libra2-db restore bootstrap-db \
             --concurrent-downloads {{ .config.concurrent_downloads }} \
             {{ range .config.trusted_waypoints }} --trust-waypoint {{ . }}{{ end }} \
             --target-db-dir /opt/aptos/data/db \

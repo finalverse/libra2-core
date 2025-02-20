@@ -81,7 +81,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "last_over_time(aptos_db_backup_coordinator_heartbeat_timestamp_s{cluster=~\"$cluster\", chain_name=\"$chain_name\"}[7d]) * 1000",
+          "expr": "last_over_time(libra2_db_backup_coordinator_heartbeat_timestamp_s{cluster=~\"$cluster\", chain_name=\"$chain_name\"}[7d]) * 1000",
           "interval": "",
           "legendFormat": " {{cluster}} {{kubernetes_pod_name}}",
           "range": true,
@@ -130,7 +130,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "last_over_time(aptos_db_backup_coordinator_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[7d])",
+          "expr": "last_over_time(libra2_db_backup_coordinator_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[7d])",
           "interval": "",
           "legendFormat": " {{cluster}} {{kubernetes_pod_name}}",
           "range": true,
@@ -224,7 +224,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "aptos_db_backup_coordinator_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
+          "expr": "libra2_db_backup_coordinator_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
           "hide": false,
           "legendFormat": "{{cluster}} {{kubernetes_pod_name}} backed up",
           "range": true,
@@ -273,7 +273,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "last_over_time(aptos_db_backup_coordinator_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[7d])",
+          "expr": "last_over_time(libra2_db_backup_coordinator_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[7d])",
           "interval": "",
           "legendFormat": " {{cluster}} {{kubernetes_pod_name}}",
           "range": true,
@@ -363,7 +363,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "aptos_db_backup_coordinator_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
+          "expr": "libra2_db_backup_coordinator_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "{{cluster}} {{kubernetes_pod_name}} backed up",
@@ -473,7 +473,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "last_over_time(aptos_db_backup_coordinator_state_snapshot_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[7d])",
+          "expr": "last_over_time(libra2_db_backup_coordinator_state_snapshot_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[7d])",
           "interval": "",
           "legendFormat": " {{cluster}} {{kubernetes_pod_name}}",
           "range": true,
@@ -572,7 +572,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "aptos_db_backup_coordinator_state_snapshot_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
+          "expr": "libra2_db_backup_coordinator_state_snapshot_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "{{cluster}} {{kubernetes_pod_name}} backed up",
@@ -764,7 +764,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "last_over_time(aptos_db_backup_verify_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1d])",
+              "expr": "last_over_time(libra2_db_backup_verify_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1d])",
               "interval": "",
               "legendFormat": " {{cluster}} {{kubernetes_pod_name}}",
               "range": true,
@@ -812,7 +812,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "aptos_db_backup_verify_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_backup_verify_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
+              "expr": "libra2_db_backup_verify_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_backup_verify_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
               "interval": "",
               "legendFormat": "{{cluster}} {{kubernetes_pod_name}}",
               "range": true,
@@ -869,7 +869,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "aptos_db_backup_verify_epoch_ending_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_backup_verify_epoch_ending_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
+              "expr": "libra2_db_backup_verify_epoch_ending_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_backup_verify_epoch_ending_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
               "interval": "",
               "legendFormat": "{{cluster}} {{kubernetes_pod_name}}",
               "range": true,
@@ -927,7 +927,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "last_over_time(aptos_db_backup_verify_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1d])",
+              "expr": "last_over_time(libra2_db_backup_verify_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1d])",
               "interval": "",
               "legendFormat": " {{cluster}} {{kubernetes_pod_name}}",
               "range": true,
@@ -975,7 +975,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "aptos_db_backup_verify_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_backup_verify_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
+              "expr": "libra2_db_backup_verify_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_backup_verify_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
               "interval": "",
               "legendFormat": "{{cluster}} {{kubernetes_pod_name}}",
               "range": true,
@@ -1032,7 +1032,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "irate(aptos_db_backup_verify_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) > 0",
+              "expr": "irate(libra2_db_backup_verify_transaction_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) > 0",
               "interval": "",
               "legendFormat": "{{cluster}} {{kubernetes_pod_name}}",
               "range": true,
@@ -1090,7 +1090,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "last_over_time(aptos_db_backup_verify_state_snapshot_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1d])",
+              "expr": "last_over_time(libra2_db_backup_verify_state_snapshot_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1d])",
               "interval": "",
               "legendFormat": " {{cluster}} {{kubernetes_pod_name}}",
               "range": true,
@@ -1138,7 +1138,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "aptos_db_backup_verify_state_snapshot_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_backup_verify_state_snapshot_leaf_index[1m]) != 0",
+              "expr": "libra2_db_backup_verify_state_snapshot_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_backup_verify_state_snapshot_leaf_index[1m]) != 0",
               "interval": "",
               "legendFormat": "{{cluster}} {{kubernetes_pod_name}}",
               "range": true,
@@ -1212,7 +1212,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "sort_desc(last_over_time(aptos_db_backup_verify_coordinator_start_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[2d]) * 1000\r\nunless last_over_time(aptos_db_backup_verify_coordinator_succeed_timestamp_s[2d]) >  last_over_time(aptos_db_backup_verify_coordinator_start_timestamp_s[2d])\r\nunless last_over_time(aptos_db_backup_verify_coordinator_fail_timestamp_s[2d]) >  last_over_time(aptos_db_backup_verify_coordinator_start_timestamp_s[2d]))",
+              "expr": "sort_desc(last_over_time(libra2_db_backup_verify_coordinator_start_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[2d]) * 1000\r\nunless last_over_time(libra2_db_backup_verify_coordinator_succeed_timestamp_s[2d]) >  last_over_time(libra2_db_backup_verify_coordinator_start_timestamp_s[2d])\r\nunless last_over_time(libra2_db_backup_verify_coordinator_fail_timestamp_s[2d]) >  last_over_time(libra2_db_backup_verify_coordinator_start_timestamp_s[2d]))",
               "hide": false,
               "legendFormat": "{{cluster}} {{kubernetes_pod_name}} running since",
               "range": true,
@@ -1221,7 +1221,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "sort_desc(last_over_time(aptos_db_backup_verify_coordinator_succeed_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[2d]) * 1000\r\nunless last_over_time(aptos_db_backup_verify_coordinator_start_timestamp_s[2d]) >  last_over_time(aptos_db_backup_verify_coordinator_succeed_timestamp_s[2d])\r\nunless last_over_time(aptos_db_backup_verify_coordinator_fail_timestamp_s[2d]) >  last_over_time(aptos_db_backup_verify_coordinator_succeed_timestamp_s[2d]))",
+              "expr": "sort_desc(last_over_time(libra2_db_backup_verify_coordinator_succeed_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[2d]) * 1000\r\nunless last_over_time(libra2_db_backup_verify_coordinator_start_timestamp_s[2d]) >  last_over_time(libra2_db_backup_verify_coordinator_succeed_timestamp_s[2d])\r\nunless last_over_time(libra2_db_backup_verify_coordinator_fail_timestamp_s[2d]) >  last_over_time(libra2_db_backup_verify_coordinator_succeed_timestamp_s[2d]))",
               "hide": false,
               "legendFormat": "{{cluster}} {{kubernetes_pod_name}} succeeded since",
               "range": true,
@@ -1230,7 +1230,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "sort_desc(last_over_time(aptos_db_backup_verify_coordinator_fail_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[2d]) * 1000\r\nunless last_over_time(aptos_db_backup_verify_coordinator_start_timestamp_s[2d]) >  last_over_time(aptos_db_backup_verify_coordinator_fail_timestamp_s[2d])\r\nunless last_over_time(aptos_db_backup_verify_coordinator_succeed_timestamp_s[2d]) >  last_over_time(aptos_db_backup_verify_coordinator_fail_timestamp_s[2d]))",
+              "expr": "sort_desc(last_over_time(libra2_db_backup_verify_coordinator_fail_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[2d]) * 1000\r\nunless last_over_time(libra2_db_backup_verify_coordinator_start_timestamp_s[2d]) >  last_over_time(libra2_db_backup_verify_coordinator_fail_timestamp_s[2d])\r\nunless last_over_time(libra2_db_backup_verify_coordinator_succeed_timestamp_s[2d]) >  last_over_time(libra2_db_backup_verify_coordinator_fail_timestamp_s[2d]))",
               "hide": false,
               "legendFormat": "{{cluster}} {{kubernetes_pod_name}} failed since",
               "range": true,
@@ -1421,21 +1421,21 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_coordinator_start_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless aptos_db_restore_coordinator_succeed_timestamp_s > aptos_db_restore_coordinator_start_timestamp_s\nunless aptos_db_restore_coordinator_fail_timestamp_s > aptos_db_restore_coordinator_start_timestamp_s\n\n# any restore activity:\nand (rate(aptos_db_restore_epoch_ending_epoch[1m]) > 0 or rate(aptos_db_restore_state_snapshot_leaf_index[1m]) > 0 or rate(aptos_db_restore_transaction_save_version[1m]) > 0 or rate(aptos_db_restore_transaction_replay_version[1m]) > 0) == bool 1",
+              "expr": "libra2_db_restore_coordinator_start_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless libra2_db_restore_coordinator_succeed_timestamp_s > libra2_db_restore_coordinator_start_timestamp_s\nunless libra2_db_restore_coordinator_fail_timestamp_s > libra2_db_restore_coordinator_start_timestamp_s\n\n# any restore activity:\nand (rate(libra2_db_restore_epoch_ending_epoch[1m]) > 0 or rate(libra2_db_restore_state_snapshot_leaf_index[1m]) > 0 or rate(libra2_db_restore_transaction_save_version[1m]) > 0 or rate(libra2_db_restore_transaction_replay_version[1m]) > 0) == bool 1",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} running since",
               "refId": "A"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_coordinator_succeed_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless aptos_db_restore_coordinator_start_timestamp_s > aptos_db_restore_coordinator_succeed_timestamp_s\nunless aptos_db_restore_coordinator_fail_timestamp_s > aptos_db_restore_coordinator_succeed_timestamp_s",
+              "expr": "libra2_db_restore_coordinator_succeed_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless libra2_db_restore_coordinator_start_timestamp_s > libra2_db_restore_coordinator_succeed_timestamp_s\nunless libra2_db_restore_coordinator_fail_timestamp_s > libra2_db_restore_coordinator_succeed_timestamp_s",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} succeeded since",
               "refId": "B"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_coordinator_fail_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless aptos_db_restore_coordinator_start_timestamp_s > aptos_db_restore_coordinator_fail_timestamp_s\nunless aptos_db_restore_coordinator_succeed_timestamp_s > aptos_db_restore_coordinator_fail_timestamp_s",
+              "expr": "libra2_db_restore_coordinator_fail_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless libra2_db_restore_coordinator_start_timestamp_s > libra2_db_restore_coordinator_fail_timestamp_s\nunless libra2_db_restore_coordinator_succeed_timestamp_s > libra2_db_restore_coordinator_fail_timestamp_s",
               "hide": false,
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} failed since",
@@ -1491,7 +1491,7 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_restore_epoch_ending_epoch[1m]) != 0",
+              "expr": "libra2_db_restore_epoch_ending_epoch{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_restore_epoch_ending_epoch[1m]) != 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}}",
               "refId": "A"
@@ -1546,7 +1546,7 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_epoch_ending_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_restore_epoch_ending_version[1m]) != 0",
+              "expr": "libra2_db_restore_epoch_ending_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_restore_epoch_ending_version[1m]) != 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}}",
               "refId": "A"
@@ -1601,7 +1601,7 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_state_snapshot_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_restore_state_snapshot_target_leaf_index[1m]) != 0",
+              "expr": "libra2_db_restore_state_snapshot_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_restore_state_snapshot_target_leaf_index[1m]) != 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}}",
               "refId": "A"
@@ -1657,21 +1657,21 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_transaction_save_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_restore_transaction_save_version[1m]) != 0",
+              "expr": "libra2_db_restore_transaction_save_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_restore_transaction_save_version[1m]) != 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} saved",
               "refId": "A"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_transaction_replay_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_restore_transaction_replay_version[1m]) != 0",
+              "expr": "libra2_db_restore_transaction_replay_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_restore_transaction_replay_version[1m]) != 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}}  replayed",
               "refId": "B"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_coordinator_target_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and (irate(aptos_db_restore_transaction_save_version[1m]) != 0 or irate(aptos_db_restore_transaction_replay_version[1m]) != 0)",
+              "expr": "libra2_db_restore_coordinator_target_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and (irate(libra2_db_restore_transaction_save_version[1m]) != 0 or irate(libra2_db_restore_transaction_replay_version[1m]) != 0)",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} target",
               "refId": "C"
@@ -1727,14 +1727,14 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "(aptos_db_restore_transaction_save_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_restore_transaction_save_version[1m]) != 0) / aptos_db_restore_coordinator_target_version",
+              "expr": "(libra2_db_restore_transaction_save_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_restore_transaction_save_version[1m]) != 0) / libra2_db_restore_coordinator_target_version",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} saved",
               "refId": "A"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "(aptos_db_restore_transaction_replay_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(aptos_db_restore_transaction_replay_version[1m]) != 0) / aptos_db_restore_coordinator_target_version",
+              "expr": "(libra2_db_restore_transaction_replay_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} and irate(libra2_db_restore_transaction_replay_version[1m]) != 0) / libra2_db_restore_coordinator_target_version",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} replayed",
               "refId": "B"
@@ -1789,7 +1789,7 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "irate(aptos_db_restore_transaction_save_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
+              "expr": "irate(libra2_db_restore_transaction_save_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}}",
               "refId": "A"
@@ -1844,7 +1844,7 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "irate(aptos_db_restore_transaction_replay_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
+              "expr": "irate(libra2_db_restore_transaction_replay_version{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]) != 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}}",
               "refId": "A"
@@ -1910,21 +1910,21 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_coordinator_start_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless aptos_db_restore_coordinator_succeed_timestamp_s > aptos_db_restore_coordinator_start_timestamp_s\nunless aptos_db_restore_coordinator_fail_timestamp_s > aptos_db_restore_coordinator_start_timestamp_s\n\n# any restore activity:\nand (rate(aptos_db_restore_epoch_ending_epoch[1m]) > 0 or rate(aptos_db_restore_state_snapshot_leaf_index[1m]) > 0 or rate(aptos_db_restore_transaction_save_version[1m]) > 0 or rate(aptos_db_restore_transaction_replay_version[1m]) > 0) == bool 1",
+              "expr": "libra2_db_restore_coordinator_start_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless libra2_db_restore_coordinator_succeed_timestamp_s > libra2_db_restore_coordinator_start_timestamp_s\nunless libra2_db_restore_coordinator_fail_timestamp_s > libra2_db_restore_coordinator_start_timestamp_s\n\n# any restore activity:\nand (rate(libra2_db_restore_epoch_ending_epoch[1m]) > 0 or rate(libra2_db_restore_state_snapshot_leaf_index[1m]) > 0 or rate(libra2_db_restore_transaction_save_version[1m]) > 0 or rate(libra2_db_restore_transaction_replay_version[1m]) > 0) == bool 1",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} running since",
               "refId": "A"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_coordinator_succeed_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless aptos_db_restore_coordinator_start_timestamp_s > aptos_db_restore_coordinator_succeed_timestamp_s\nunless aptos_db_restore_coordinator_fail_timestamp_s > aptos_db_restore_coordinator_succeed_timestamp_s",
+              "expr": "libra2_db_restore_coordinator_succeed_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless libra2_db_restore_coordinator_start_timestamp_s > libra2_db_restore_coordinator_succeed_timestamp_s\nunless libra2_db_restore_coordinator_fail_timestamp_s > libra2_db_restore_coordinator_succeed_timestamp_s",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} succeeded since",
               "refId": "B"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_coordinator_fail_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless aptos_db_restore_coordinator_start_timestamp_s > aptos_db_restore_coordinator_fail_timestamp_s\nunless aptos_db_restore_coordinator_succeed_timestamp_s > aptos_db_restore_coordinator_fail_timestamp_s",
+              "expr": "libra2_db_restore_coordinator_fail_timestamp_s{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} * 1000\nunless libra2_db_restore_coordinator_start_timestamp_s > libra2_db_restore_coordinator_fail_timestamp_s\nunless libra2_db_restore_coordinator_succeed_timestamp_s > libra2_db_restore_coordinator_fail_timestamp_s",
               "hide": false,
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} failed since",
@@ -1980,21 +1980,21 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_transaction_save_version and irate(aptos_db_restore_transaction_save_version[1m]) > 0",
+              "expr": "libra2_db_restore_transaction_save_version and irate(libra2_db_restore_transaction_save_version[1m]) > 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} saved",
               "refId": "A"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_transaction_replay_version and irate(aptos_db_restore_transaction_replay_version[1m]) > 0",
+              "expr": "libra2_db_restore_transaction_replay_version and irate(libra2_db_restore_transaction_replay_version[1m]) > 0",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}}  replayed",
               "refId": "B"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "aptos_db_restore_coordinator_target_version and (irate(aptos_db_restore_transaction_save_version[1m]) > 0 or irate(aptos_db_restore_transaction_replay_version[1m]) > 0)",
+              "expr": "libra2_db_restore_coordinator_target_version and (irate(libra2_db_restore_transaction_save_version[1m]) > 0 or irate(libra2_db_restore_transaction_replay_version[1m]) > 0)",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} target",
               "refId": "C"
@@ -2049,14 +2049,14 @@
           "targets": [
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "(aptos_db_restore_transaction_save_version and irate(aptos_db_restore_transaction_save_version[1m]) > 0) / aptos_db_restore_coordinator_target_version",
+              "expr": "(libra2_db_restore_transaction_save_version and irate(libra2_db_restore_transaction_save_version[1m]) > 0) / libra2_db_restore_coordinator_target_version",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} saved",
               "refId": "A"
             },
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-              "expr": "(aptos_db_restore_transaction_replay_version and irate(aptos_db_restore_transaction_replay_version[1m]) > 0) / aptos_db_restore_coordinator_target_version",
+              "expr": "(libra2_db_restore_transaction_replay_version and irate(libra2_db_restore_transaction_replay_version[1m]) > 0) / libra2_db_restore_coordinator_target_version",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} replayed",
               "refId": "B"
@@ -2112,7 +2112,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "aptos_db_restore_state_snapshot_leaf_index and irate(aptos_db_restore_state_snapshot_leaf_index[1m])",
+              "expr": "libra2_db_restore_state_snapshot_leaf_index and irate(libra2_db_restore_state_snapshot_leaf_index[1m])",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}} saved",
               "range": true,
@@ -2121,7 +2121,7 @@
             {
               "datasource": { "type": "prometheus", "uid": "${Datasource}" },
               "editorMode": "code",
-              "expr": "aptos_db_restore_state_snapshot_target_leaf_index and irate(aptos_db_restore_state_snapshot_leaf_index[1m])",
+              "expr": "libra2_db_restore_state_snapshot_target_leaf_index and irate(libra2_db_restore_state_snapshot_leaf_index[1m])",
               "interval": "",
               "legendFormat": "{{kubernetes_pod_name}}  target",
               "range": true,

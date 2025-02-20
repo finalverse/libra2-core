@@ -12,8 +12,8 @@ pub struct DbError {
     inner: anyhow::Error,
 }
 
-impl From<libra2_storage_interface::AptosDbError> for DbError {
-    fn from(e: libra2_storage_interface::AptosDbError) -> Self {
+impl From<libra2_storage_interface::Libra2DbError> for DbError {
+    fn from(e: libra2_storage_interface::Libra2DbError) -> Self {
         DbError { inner: e.into() }
     }
 }

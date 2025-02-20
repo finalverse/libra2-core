@@ -97,7 +97,7 @@
         }
       ],
       "targets": [{ "datasource": { "type": "prometheus", "uid": "${Datasource}" }, "refId": "A" }],
-      "title": "AptosDB API Latency by api_name",
+      "title": "Libra2DB API Latency by api_name",
       "type": "row"
     },
     {
@@ -235,7 +235,7 @@
         }
       ],
       "targets": [{ "datasource": { "type": "prometheus", "uid": "${Datasource}" }, "refId": "A" }],
-      "title": "AptosDB API Success Rate by api_name",
+      "title": "Libra2DB API Success Rate by api_name",
       "type": "row"
     },
     {
@@ -354,7 +354,7 @@
         }
       ],
       "targets": [{ "datasource": { "type": "prometheus", "uid": "${Datasource}" }, "refId": "A" }],
-      "title": "AptosDB API Call per Second by api_name",
+      "title": "Libra2DB API Call per Second by api_name",
       "type": "row"
     },
     {
@@ -473,7 +473,7 @@
         }
       ],
       "targets": [{ "datasource": { "type": "prometheus", "uid": "${Datasource}" }, "refId": "A" }],
-      "title": "AptosDB API Error per Second by api_name",
+      "title": "Libra2DB API Error per Second by api_name",
       "type": "row"
     },
     {

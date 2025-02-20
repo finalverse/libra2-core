@@ -628,7 +628,7 @@ pub fn setup_environment_and_start_node(
     let (db_rw, backup_service, genesis_waypoint, indexer_db_opt, update_receiver) =
         storage::initialize_database_and_checkpoints(&mut node_config)?;
 
-    admin_service.set_aptos_db(db_rw.clone().into());
+    admin_service.set_libra2_db(db_rw.clone().into());
 
     // Set the Aptos VM configurations
     utils::set_aptos_vm_configurations(&node_config);

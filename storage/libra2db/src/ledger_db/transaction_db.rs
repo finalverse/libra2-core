@@ -17,7 +17,7 @@ use libra2_schemadb::{
     batch::{NativeBatch, SchemaBatch, WriteBatch},
     DB,
 };
-use libra2_storage_interface::{AptosDbError, Result};
+use libra2_storage_interface::{Libra2DbError, Result};
 use libra2_types::transaction::{Transaction, Version};
 use rayon::prelude::*;
 use std::{path::Path, sync::Arc};
@@ -55,7 +55,7 @@ impl TransactionDb {
     pub(crate) fn get_transaction(&self, version: Version) -> Result<Transaction> {
         self.db
             .get::<TransactionSchema>(&version)?
-            .ok_or_else(|| AptosDbError::NotFound(format!("Txn {version}")))
+            .ok_or_else(|| Libra2DbError::NotFound(format!("Txn {version}")))
     }
 
     /// Returns an iterator that yields at most `num_transactions` transactions starting from `start_version`.

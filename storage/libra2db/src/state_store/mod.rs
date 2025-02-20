@@ -57,7 +57,7 @@ use libra2_storage_interface::{
         versioned_state_value::{StateCacheEntry, StateUpdateRef},
         NUM_STATE_SHARDS,
     },
-    AptosDbError, DbReader, Result, StateSnapshotReceiver,
+    Libra2DbError, DbReader, Result, StateSnapshotReceiver,
 };
 use libra2_types::{
     proof::{definition::LeafCount, SparseMerkleProofExt, SparseMerkleRangeProof},
@@ -285,7 +285,7 @@ impl StateDb {
         self.get_state_value_by_version(state_key, version)
             .and_then(|opt| {
                 opt.ok_or_else(|| {
-                    AptosDbError::NotFound(format!(
+                    Libra2DbError::NotFound(format!(
                         "State Value is missing for key {:?} by version {}",
                         state_key, version
                     ))

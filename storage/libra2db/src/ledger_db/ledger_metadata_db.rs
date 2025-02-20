@@ -14,7 +14,7 @@ use crate::{
 };
 use anyhow::anyhow;
 use libra2_schemadb::{batch::SchemaBatch, DB};
-use libra2_storage_interface::{block_info::BlockInfo, db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{block_info::BlockInfo, db_ensure as ensure, Libra2DbError, Result};
 use libra2_types::{
     account_config::NewBlockEvent, block_info::BlockHeight, contract_event::ContractEvent,
     epoch_state::EpochState, ledger_info::LedgerInfoWithSignatures,
@@ -79,12 +79,12 @@ impl LedgerMetadataDb {
 
     pub(crate) fn get_ledger_commit_progress(&self) -> Result<Version> {
         get_progress(&self.db, &DbMetadataKey::LedgerCommitProgress)?
-            .ok_or_else(|| AptosDbError::NotFound("No LedgerCommitProgress in db.".to_string()))
+            .ok_or_else(|| Libra2DbError::NotFound("No LedgerCommitProgress in db.".to_string()))
     }
 
     pub(crate) fn get_pruner_progress(&self) -> Result<Version> {
         get_progress(&self.db, &DbMetadataKey::LedgerPrunerProgress)?
-            .ok_or_else(|| AptosDbError::NotFound("No LedgerPrunerProgress in db.".to_string()))
+            .ok_or_else(|| Libra2DbError::NotFound("No LedgerPrunerProgress in db.".to_string()))
     }
 }
 
@@ -106,7 +106,7 @@ impl LedgerMetadataDb {
     /// Returns the latest ledger info, or NOT_FOUND if it doesn't exist.
     pub(crate) fn get_latest_ledger_info(&self) -> Result<LedgerInfoWithSignatures> {
         self.get_latest_ledger_info_option()
-            .ok_or_else(|| AptosDbError::NotFound(String::from("Genesis LedgerInfo")))
+            .ok_or_else(|| Libra2DbError::NotFound(String::from("Genesis LedgerInfo")))
     }
 
     /// Returns the latest ledger info for a given epoch.
@@ -116,7 +116,7 @@ impl LedgerMetadataDb {
     ) -> Result<LedgerInfoWithSignatures> {
         self.db
             .get::<LedgerInfoSchema>(&epoch)?
-            .ok_or_else(|| AptosDbError::NotFound(format!("Last LedgerInfo of epoch {epoch}")))
+            .ok_or_else(|| Libra2DbError::NotFound(format!("Last LedgerInfo of epoch {epoch}")))
     }
 
     /// Returns an iterator that yields epoch ending ledger infos, starting from `start_epoch`, and
@@ -139,13 +139,13 @@ impl LedgerMetadataDb {
             self.db
                 .get::<LedgerInfoSchema>(&(epoch - 1))?
                 .ok_or_else(|| {
-                    AptosDbError::NotFound(format!("Last LedgerInfo of epoch {}", epoch - 1))
+                    Libra2DbError::NotFound(format!("Last LedgerInfo of epoch {}", epoch - 1))
                 })?;
         let latest_epoch_state = ledger_info_with_sigs
             .ledger_info()
             .next_epoch_state()
             .ok_or_else(|| {
-                AptosDbError::Other(
+                Libra2DbError::Other(
                     "Last LedgerInfo in epoch must carry next_epoch_state.".to_string(),
                 )
             })?;
@@ -162,7 +162,7 @@ impl LedgerMetadataDb {
         let li = self
             .db
             .get::<LedgerInfoSchema>(&epoch)?
-            .ok_or_else(|| AptosDbError::NotFound(format!("LedgerInfo for epoch {}.", epoch)))?;
+            .ok_or_else(|| Libra2DbError::NotFound(format!("LedgerInfo for epoch {}.", epoch)))?;
         ensure!(
             li.ledger_info().version() == version,
             "Epoch {} didn't end at version {}",
@@ -170,7 +170,7 @@ impl LedgerMetadataDb {
             version,
         );
         li.ledger_info().next_epoch_state().ok_or_else(|| {
-            AptosDbError::NotFound(format!("Not an epoch change at version {version}"))
+            Libra2DbError::NotFound(format!("Not an epoch change at version {version}"))
         })?;
 
         Ok(li)
@@ -235,7 +235,7 @@ impl LedgerMetadataDb {
         self.db
             .get::<EpochByVersionSchema>(&version)?
             .ok_or_else(|| {
-                AptosDbError::Other(format!("Version {version} is not epoch ending."))
+                Libra2DbError::Other(format!("Version {version} is not epoch ending."))
             })?;
 
         Ok(())
@@ -334,7 +334,7 @@ impl LedgerMetadataDb {
             Some((previous_version, data)) => {
                 Ok((previous_version, data.get_state_storage_usage()))
             },
-            None => Err(AptosDbError::NotFound(
+            None => Err(Libra2DbError::NotFound(
                 "Unable to find a version before the given version with usage.".to_string(),
             )),
         }

@@ -6,7 +6,7 @@ use crate::{
     state_kv_db::StateKvDb,
 };
 use libra2_schemadb::{iterator::SchemaIterator, ReadOptions};
-use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, Libra2DbError, Result};
 use libra2_types::{
     contract_event::ContractEvent,
     ledger_info::LedgerInfoWithSignatures,
@@ -89,7 +89,7 @@ where
             expected_next_version: first_version,
             end_version: first_version
                 .checked_add(limit as u64)
-                .ok_or(AptosDbError::TooManyRequested(first_version, limit as u64))?,
+                .ok_or(Libra2DbError::TooManyRequested(first_version, limit as u64))?,
             _phantom: Default::default(),
         })
     }
@@ -262,7 +262,7 @@ impl<'a> EventsByVersionIter<'a> {
         while let Some(res) = self.inner.peek() {
             let ((version, _index), _event) = res
                 .as_ref()
-                .map_err(|e| AptosDbError::Other(format!("Hit error iterating events: {}", e)))?;
+                .map_err(|e| Libra2DbError::Other(format!("Hit error iterating events: {}", e)))?;
             if *version != self.expected_next_version {
                 break;
             }
@@ -273,7 +273,7 @@ impl<'a> EventsByVersionIter<'a> {
         self.expected_next_version = self
             .expected_next_version
             .checked_add(1)
-            .ok_or_else(|| AptosDbError::Other("expected version overflowed.".to_string()))?;
+            .ok_or_else(|| Libra2DbError::Other("expected version overflowed.".to_string()))?;
         Ok(Some(ret))
     }
 }

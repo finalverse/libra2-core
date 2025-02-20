@@ -239,7 +239,7 @@ impl DbReader for Libra2DB {
                     .event_store
                     .lookup_event_at_or_after_version(&new_block_event_key(), min_version)?
                     .ok_or_else(|| {
-                        AptosDbError::NotFound(format!(
+                        Libra2DbError::NotFound(format!(
                             "NewBlockEvent at or after version {}",
                             min_version
                         ))
@@ -756,7 +756,7 @@ impl DbReader for Libra2DB {
     fn get_table_info(&self, handle: TableHandle) -> Result<TableInfo> {
         gauged_api("get_table_info", || {
             self.get_table_info_option(handle)?
-                .ok_or_else(|| AptosDbError::NotFound(format!("TableInfo for {:?}", handle)))
+                .ok_or_else(|| Libra2DbError::NotFound(format!("TableInfo for {:?}", handle)))
         })
     }
 

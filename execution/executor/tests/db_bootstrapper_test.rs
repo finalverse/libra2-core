@@ -6,7 +6,7 @@
 
 use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, Uniform};
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_executor::{
     block_executor::BlockExecutor,
     db_bootstrapper::{generate_waypoint, maybe_bootstrap},
@@ -47,7 +47,7 @@ fn test_empty_db() {
     let genesis = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
     let genesis_txn = Transaction::GenesisTransaction(WriteSetPayload::Direct(genesis.0));
     let tmp_dir = TempPath::new();
-    let db_rw = DbReaderWriter::new(AptosDB::new_for_test(&tmp_dir));
+    let db_rw = DbReaderWriter::new(Libra2DB::new_for_test(&tmp_dir));
 
     assert!(db_rw
         .reader
@@ -193,7 +193,7 @@ fn test_new_genesis() {
     let genesis_txn = Transaction::GenesisTransaction(WriteSetPayload::Direct(genesis.0));
     // Create bootstrapped DB.
     let tmp_dir = TempPath::new();
-    let db = DbReaderWriter::new(AptosDB::new_for_test(&tmp_dir));
+    let db = DbReaderWriter::new(Libra2DB::new_for_test(&tmp_dir));
     let waypoint = bootstrap_genesis::<AptosVMBlockExecutor>(&db, &genesis_txn).unwrap();
     let signer = ValidatorSigner::new(
         genesis.1[0].data.owner_address,

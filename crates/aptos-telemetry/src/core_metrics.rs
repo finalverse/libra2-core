@@ -145,25 +145,25 @@ fn collect_state_sync_metrics(
 fn collect_storage_metrics(core_metrics: &mut BTreeMap<String, String>) {
     core_metrics.insert(
         STORAGE_LEDGER_VERSION.into(),
-        aptos_db::metrics::LEDGER_VERSION.get().to_string(),
+        libra2_db::metrics::LEDGER_VERSION.get().to_string(),
     );
     core_metrics.insert(
         STORAGE_MIN_READABLE_LEDGER_VERSION.into(),
-        aptos_db::metrics::PRUNER_VERSIONS
+        libra2_db::metrics::PRUNER_VERSIONS
             .with_label_values(&["ledger_pruner", "min_readable"])
             .get()
             .to_string(),
     );
     core_metrics.insert(
         STORAGE_MIN_READABLE_STATE_MERKLE_VERSION.into(),
-        aptos_db::metrics::PRUNER_VERSIONS
+        libra2_db::metrics::PRUNER_VERSIONS
             .with_label_values(&["state_merkle_pruner", "min_readable"])
             .get()
             .to_string(),
     );
     core_metrics.insert(
         STORAGE_MIN_READABLE_STATE_KV_VERSION.into(),
-        aptos_db::metrics::PRUNER_VERSIONS
+        libra2_db::metrics::PRUNER_VERSIONS
             .with_label_values(&["state_kv_pruner", "min_readable"])
             .get()
             .to_string(),

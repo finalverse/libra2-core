@@ -4,7 +4,7 @@
 
 //! This module provides mock dbreader for tests.
 
-use crate::{errors::AptosDbError, DbReader, DbWriter, Result};
+use crate::{errors::Libra2DbError, DbReader, DbWriter, Result};
 use libra2_crypto::HashValue;
 use libra2_types::{
     proof::SparseMerkleProofExt,
@@ -41,7 +41,7 @@ impl DbReader for MockDbReaderWriter {
         match state_key.inner() {
             StateKeyInner::AccessPath(..) => Ok(None),
             StateKeyInner::Raw(raw_key) => Ok(Some(StateValue::from(raw_key.to_owned()))),
-            _ => Err(AptosDbError::Other(format!(
+            _ => Err(Libra2DbError::Other(format!(
                 "Not supported state key type {:?}",
                 state_key
             ))),

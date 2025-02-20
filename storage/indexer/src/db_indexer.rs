@@ -23,7 +23,7 @@ use libra2_db_indexer_schemas::{
 use libra2_logger::warn;
 use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::{
-    db_ensure as ensure, db_other_bail as bail, AptosDbError, DbReader, Result,
+    db_ensure as ensure, db_other_bail as bail, Libra2DbError, DbReader, Result,
 };
 use libra2_types::{
     account_address::AccountAddress,
@@ -184,7 +184,7 @@ impl InternalIndexerDB {
             address,
             min_seq_num
                 .checked_add(num_versions)
-                .ok_or(AptosDbError::TooManyRequested(min_seq_num, num_versions))?,
+                .ok_or(Libra2DbError::TooManyRequested(min_seq_num, num_versions))?,
             ledger_version,
         ))
     }
@@ -297,7 +297,7 @@ impl InternalIndexerDB {
     ) -> Result<ContractEventV1> {
         self.db
             .get::<TranslatedV1EventSchema>(&(version, index))?
-            .ok_or_else(|| AptosDbError::NotFound(format!("Event {} of Txn {}", index, version)))
+            .ok_or_else(|| Libra2DbError::NotFound(format!("Event {} of Txn {}", index, version)))
     }
 }
 
@@ -479,7 +479,7 @@ impl DBIndexer {
                             }
                         }
                     }
-                    Ok::<(), AptosDbError>(())
+                    Ok::<(), Libra2DbError>(())
                 })?;
             }
 
@@ -493,7 +493,7 @@ impl DBIndexer {
                 });
             }
             version += 1;
-            Ok::<(), AptosDbError>(())
+            Ok::<(), Libra2DbError>(())
         })?;
         assert!(version > 0, "batch number should be greater than 0");
 
@@ -542,7 +542,7 @@ impl DBIndexer {
         )?;
         self.sender
             .send(Some(batch))
-            .map_err(|e| AptosDbError::Other(e.to_string()))?;
+            .map_err(|e| Libra2DbError::Other(e.to_string()))?;
         Ok(version)
     }
 

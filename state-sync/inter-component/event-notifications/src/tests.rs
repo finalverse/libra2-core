@@ -8,7 +8,7 @@ use crate::{
     DbBackedOnChainConfig, Error, EventNotificationListener, EventNotificationSender,
     EventSubscriptionService, ReconfigNotificationListener,
 };
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_executor_test_helpers::bootstrap_genesis;
 use libra2_infallible::RwLock;
 use libra2_storage_interface::DbReaderWriter;
@@ -556,7 +556,7 @@ fn create_database() -> Arc<RwLock<DbReaderWriter>> {
     // Create test aptos database
     let db_path = libra2_temppath::TempPath::new();
     assert_ok!(db_path.create_as_dir());
-    let (_, db_rw) = DbReaderWriter::wrap(AptosDB::new_for_test(db_path.path()));
+    let (_, db_rw) = DbReaderWriter::wrap(Libra2DB::new_for_test(db_path.path()));
 
     // Bootstrap the genesis transaction
     let genesis_txn = Transaction::GenesisTransaction(WriteSetPayload::Direct(genesis));

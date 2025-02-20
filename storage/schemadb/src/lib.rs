@@ -31,7 +31,7 @@ use crate::{
 use anyhow::format_err;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
-use libra2_storage_interface::{AptosDbError, Result as DbResult};
+use libra2_storage_interface::{Libra2DbError, Result as DbResult};
 use batch::{IntoRawBatch, NativeBatch, WriteBatch};
 use iterator::{ScanDirection, SchemaIterator};
 use rocksdb::ErrorKind;
@@ -299,7 +299,7 @@ impl DB {
             .property_int_value_cf(self.get_cf_handle(cf_name)?, property_name)
             .into_db_res()?
             .ok_or_else(|| {
-                libra2_storage_interface::AptosDbError::Other(
+                libra2_storage_interface::Libra2DbError::Other(
                     format!(
                         "Unable to get property \"{}\" of  column family \"{}\".",
                         property_name, cf_name,
@@ -343,9 +343,9 @@ trait DeUnc: AsRef<Path> {
 
 impl<T> DeUnc for T where T: AsRef<Path> {}
 
-fn to_db_err(rocksdb_err: rocksdb::Error) -> AptosDbError {
+fn to_db_err(rocksdb_err: rocksdb::Error) -> Libra2DbError {
     match rocksdb_err.kind() {
-        ErrorKind::Incomplete => AptosDbError::RocksDbIncompleteResult(rocksdb_err.to_string()),
+        ErrorKind::Incomplete => Libra2DbError::RocksDbIncompleteResult(rocksdb_err.to_string()),
         ErrorKind::NotFound
         | ErrorKind::Corruption
         | ErrorKind::NotSupported
@@ -360,7 +360,7 @@ fn to_db_err(rocksdb_err: rocksdb::Error) -> AptosDbError {
         | ErrorKind::TryAgain
         | ErrorKind::CompactionTooLarge
         | ErrorKind::ColumnFamilyDropped
-        | ErrorKind::Unknown => AptosDbError::OtherRocksDbError(rocksdb_err.to_string()),
+        | ErrorKind::Unknown => Libra2DbError::OtherRocksDbError(rocksdb_err.to_string()),
     }
 }
 

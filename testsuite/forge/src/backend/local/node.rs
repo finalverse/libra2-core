@@ -8,7 +8,7 @@ use libra2_config::{
     config::{NodeConfig, SECURE_STORAGE_FILENAME},
     keys::ConfigKey,
 };
-use aptos_db::{
+use libra2_db::{
     common::{LEDGER_DB_NAME, STATE_MERKLE_DB_NAME},
     fast_sync_storage_wrapper::SECONDARY_DB_DIR,
 };

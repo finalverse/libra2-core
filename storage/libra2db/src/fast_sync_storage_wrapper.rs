@@ -121,7 +121,7 @@ impl FastSyncStorageWrapper {
         status == FastSyncStatus::STARTED
     }
 
-    pub(crate) fn get_aptos_db_read_ref(&self) -> &Libra2DB {
+    pub(crate) fn get_libra2_db_read_ref(&self) -> &Libra2DB {
         if self.is_fast_sync_bootstrap_finished() {
             self.db_for_fast_sync.as_ref()
         } else {
@@ -129,7 +129,7 @@ impl FastSyncStorageWrapper {
         }
     }
 
-    pub(crate) fn get_aptos_db_write_ref(&self) -> &Libra2DB {
+    pub(crate) fn get_libra2_db_write_ref(&self) -> &Libra2DB {
         if self.is_fast_sync_bootstrap_started() || self.is_fast_sync_bootstrap_finished() {
             self.db_for_fast_sync.as_ref()
         } else {
@@ -145,7 +145,7 @@ impl DbWriter for FastSyncStorageWrapper {
         expected_root_hash: HashValue,
     ) -> Result<Box<dyn StateSnapshotReceiver<StateKey, StateValue>>> {
         *self.fast_sync_status.write() = FastSyncStatus::STARTED;
-        self.get_aptos_db_write_ref()
+        self.get_libra2_db_write_ref()
             .get_state_snapshot_receiver(version, expected_root_hash)
     }
 
@@ -157,7 +157,7 @@ impl DbWriter for FastSyncStorageWrapper {
     ) -> Result<()> {
         let status = self.get_fast_sync_status();
         assert_eq!(status, FastSyncStatus::STARTED);
-        self.get_aptos_db_write_ref().finalize_state_snapshot(
+        self.get_libra2_db_write_ref().finalize_state_snapshot(
             version,
             output_with_proof,
             ledger_infos,
@@ -168,7 +168,7 @@ impl DbWriter for FastSyncStorageWrapper {
     }
 
     fn pre_commit_ledger(&self, chunk: ChunkToCommit, sync_commit: bool) -> Result<()> {
-        self.get_aptos_db_write_ref()
+        self.get_libra2_db_write_ref()
             .pre_commit_ledger(chunk, sync_commit)
     }
 
@@ -178,13 +178,13 @@ impl DbWriter for FastSyncStorageWrapper {
         ledger_info_with_sigs: Option<&LedgerInfoWithSignatures>,
         chunk_opt: Option<ChunkToCommit>,
     ) -> Result<()> {
-        self.get_aptos_db_write_ref()
+        self.get_libra2_db_write_ref()
             .commit_ledger(version, ledger_info_with_sigs, chunk_opt)
     }
 }
 
 impl DbReader for FastSyncStorageWrapper {
     fn get_read_delegatee(&self) -> &dyn DbReader {
-        self.get_aptos_db_read_ref()
+        self.get_libra2_db_read_ref()
     }
 }

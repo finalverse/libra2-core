@@ -19,7 +19,7 @@ use crate::{
 use libra2_crypto::HashValue;
 use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::{
-    db_ensure as ensure, state_store::state_update_refs::StateUpdateRefs, AptosDbError, Result,
+    db_ensure as ensure, state_store::state_update_refs::StateUpdateRefs, Libra2DbError, Result,
 };
 use libra2_types::{
     account_config::new_block_event_key,

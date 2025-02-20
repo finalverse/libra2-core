@@ -12,7 +12,7 @@ use crate::{
 };
 use libra2_config::config::{RocksdbConfigs, StorageDirPaths};
 use libra2_schemadb::batch::SchemaBatch;
-use libra2_storage_interface::{db_ensure as ensure, AptosDbError, Result};
+use libra2_storage_interface::{db_ensure as ensure, Libra2DbError, Result};
 use claims::assert_le;
 use clap::Parser;
 use std::{fs, path::PathBuf, sync::Arc};

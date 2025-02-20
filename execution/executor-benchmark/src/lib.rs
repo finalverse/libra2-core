@@ -23,7 +23,7 @@ use aptos_block_executor::counters::{
     self as block_executor_counters, GasType, BLOCK_EXECUTOR_INNER_EXECUTE_BLOCK,
 };
 use libra2_config::config::{NodeConfig, PrunerConfig, NO_OP_STORAGE_PRUNER_CONFIG};
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_executor::{
     block_executor::BlockExecutor,
     metrics::{
@@ -65,7 +65,7 @@ pub fn default_benchmark_features() -> Features {
 
 pub fn init_db(config: &NodeConfig) -> DbReaderWriter {
     DbReaderWriter::new(
-        AptosDB::open(
+        Libra2DB::open(
             config.storage.get_dir_paths(),
             false, /* readonly */
             config.storage.storage_pruner_config,
@@ -90,7 +90,7 @@ fn create_checkpoint(
     }
     std::fs::create_dir_all(checkpoint_dir.as_ref()).unwrap();
 
-    AptosDB::create_checkpoint(source_dir, checkpoint_dir, enable_storage_sharding)
+    Libra2DB::create_checkpoint(source_dir, checkpoint_dir, enable_storage_sharding)
         .expect("db checkpoint creation fails.");
 }
 

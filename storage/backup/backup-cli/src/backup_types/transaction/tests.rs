@@ -15,7 +15,7 @@ use crate::{
         RocksdbOpt, TrustedWaypointOpt,
     },
 };
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use aptos_executor_types::VerifyExecutionMode;
 use libra2_storage_interface::DbReader;
 use libra2_temppath::TempPath;
@@ -125,7 +125,7 @@ fn end_to_end() {
     // We don't write down any ledger infos when recovering transactions. State-sync needs to take
     // care of it before running consensus. The latest transactions are deemed "synced" instead of
     // "committed" most likely.
-    let tgt_db = AptosDB::new_readonly_for_test(&tgt_db_dir);
+    let tgt_db = Libra2DB::new_readonly_for_test(&tgt_db_dir);
     let ouptputlist = tgt_db
         .get_transaction_outputs(0, target_version, target_version)
         .unwrap();

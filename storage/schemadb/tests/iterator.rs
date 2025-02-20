@@ -9,7 +9,7 @@ use libra2_schemadb::{
     schema::{KeyCodec, Schema, SeekKeyCodec, ValueCodec},
     DB,
 };
-use libra2_storage_interface::AptosDbError;
+use libra2_storage_interface::Libra2DbError;
 use byteorder::{BigEndian, ReadBytesExt, WriteBytesExt};
 use rocksdb::{ColumnFamilyDescriptor, SliceTransform, DEFAULT_COLUMN_FAMILY_NAME};
 
@@ -85,7 +85,7 @@ fn collect_incomplete(iter: &mut SchemaIterator<TestSchema>) -> Vec<u32> {
             Ok((_key, value)) => {
                 res_vec.push(value.0);
             },
-            Err(AptosDbError::RocksDbIncompleteResult(..)) => {
+            Err(Libra2DbError::RocksDbIncompleteResult(..)) => {
                 return res_vec;
             },
             Err(e) => {

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::handlers::bytes_sender;
-use aptos_db::{backup::backup_handler::BackupHandler, metrics::BACKUP_TIMER};
+use libra2_db::{backup::backup_handler::BackupHandler, metrics::BACKUP_TIMER};
 use libra2_logger::prelude::*;
 use libra2_metrics_core::{
     register_histogram_vec, register_int_counter_vec, HistogramVec, IntCounterVec, TimerHelper,

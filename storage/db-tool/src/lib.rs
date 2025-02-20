@@ -15,7 +15,7 @@ mod tests;
 mod utils;
 
 use anyhow::Result;
-use aptos_db::db_debugger;
+use libra2_db::db_debugger;
 use libra2_logger::info;
 use clap::Parser;
 

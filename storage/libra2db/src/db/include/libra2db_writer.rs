@@ -523,7 +523,7 @@ impl Libra2DB {
         version: Version,
         ledger_info_with_sig: &LedgerInfoWithSignatures,
         ledger_batch: &mut SchemaBatch
-    ) -> Result<(), AptosDbError> {
+    ) -> Result<(), Libra2DbError> {
         let ledger_info = ledger_info_with_sig.ledger_info();
 
         // Verify the version.
@@ -595,7 +595,7 @@ impl Libra2DB {
                 update_sender.send(
                     (Instant::now(), version)
                 ).map_err(| err | {
-                        AptosDbError::Other(format!("Failed to send update to subscriber: {}", err))
+                        Libra2DbError::Other(format!("Failed to send update to subscriber: {}", err))
                     })?;
             }
             // Activate the ledger pruner and state kv pruner.

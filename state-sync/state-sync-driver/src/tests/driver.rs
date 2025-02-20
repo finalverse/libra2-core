@@ -15,7 +15,7 @@ use libra2_config::config::{NodeConfig, RoleType, StateSyncDriverConfig};
 use libra2_consensus_notifications::{ConsensusNotificationSender, ConsensusNotifier};
 use libra2_data_client::client::AptosDataClient;
 use libra2_data_streaming_service::streaming_client::new_streaming_service_client_listener_pair;
-use aptos_db::AptosDB;
+use libra2_db::Libra2DB;
 use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, EventSubscriptionService,
     ReconfigNotificationListener,
@@ -335,7 +335,7 @@ async fn create_driver_for_tests(
     // Create test aptos database
     let db_path = libra2_temppath::TempPath::new();
     db_path.create_as_dir().unwrap();
-    let (_, db_rw) = DbReaderWriter::wrap(AptosDB::new_for_test(db_path.path()));
+    let (_, db_rw) = DbReaderWriter::wrap(Libra2DB::new_for_test(db_path.path()));
 
     // Bootstrap the genesis transaction
     let (genesis, _) = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
