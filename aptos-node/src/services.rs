@@ -19,10 +19,10 @@ use aptos_indexer_grpc_table_info::runtime::{
     bootstrap as bootstrap_indexer_table_info, bootstrap_internal_indexer_db,
 };
 use libra2_logger::{debug, telemetry_log_writer::TelemetryLog, LoggerFilterUpdater};
-use aptos_mempool::{
+use libra2_mempool::{
     network::MempoolSyncMsg, MempoolClientRequest, MempoolClientSender, QuorumStoreRequest,
 };
-use aptos_mempool_notifications::MempoolNotificationListener;
+use libra2_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{interface::NetworkClientInterface, storage::PeersAndMetadata};
 use aptos_network_benchmark::{run_netbench_service, NetbenchMessage};
 use aptos_peer_monitoring_service_server::{
@@ -187,7 +187,7 @@ pub fn start_mempool_runtime_and_get_consensus_sender(
 
     // Bootstrap and start mempool
     let instant = Instant::now();
-    let mempool = aptos_mempool::bootstrap(
+    let mempool = libra2_mempool::bootstrap(
         node_config,
         Arc::clone(&db_rw.reader),
         network_interfaces.network_client,

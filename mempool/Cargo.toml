@@ -1,6 +1,6 @@
 [package]
-name = "aptos-mempool"
-description = "Aptos mempool for consuming incoming transactions"
+name = "libra2-mempool"
+description = "Libra2 mempool for consuming incoming transactions"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -22,7 +22,7 @@ libra2-crypto = { workspace = true }
 libra2-event-notifications = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-mempool-notifications = { workspace = true }
+libra2-mempool-notifications = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true }

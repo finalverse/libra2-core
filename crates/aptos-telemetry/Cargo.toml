@@ -21,7 +21,7 @@ libra2-crypto = { workspace = true }
 aptos-db = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-mempool = { workspace = true }
+libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
 libra2-node-resource-metrics = { workspace = true }

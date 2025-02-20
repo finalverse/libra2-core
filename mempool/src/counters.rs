@@ -347,7 +347,7 @@ pub static CORE_MEMPOOL_PARKING_LOT_EVICTED_LATENCY: Lazy<Histogram> = Lazy::new
 /// Counter of pending network events to Mempool
 pub static PENDING_MEMPOOL_NETWORK_EVENTS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_mempool_pending_network_events",
+        "libra2_mempool_pending_network_events",
         "Counters(queued,dequeued,dropped) related to pending network notifications to Mempool",
         &["state"]
     )
@@ -358,7 +358,7 @@ pub static PENDING_MEMPOOL_NETWORK_EVENTS: Lazy<IntCounterVec> = Lazy::new(|| {
 /// (e.g. # txns in block pulled by consensus, # txns committed from state sync)
 static MEMPOOL_SERVICE_TXNS: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_mempool_service_transactions",
+        "libra2_mempool_service_transactions",
         "Number of transactions handled in one request/response between mempool and consensus/state sync",
         &["type"],
         TXN_COUNT_BUCKETS.clone()
@@ -375,7 +375,7 @@ pub fn mempool_service_transactions(label: &'static str, num: usize) {
 /// Histogram for the byte size of transactions processed in get_block
 pub static MEMPOOL_SERVICE_BYTES_GET_BLOCK: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
-        "aptos_mempool_service_bytes_get_block",
+        "libra2_mempool_service_bytes_get_block",
         "Histogram for the number of txns per (mempool returned for proposal) blocks."
     )
     .unwrap()
@@ -385,7 +385,7 @@ pub static MEMPOOL_SERVICE_BYTES_GET_BLOCK: Lazy<Histogram> = Lazy::new(|| {
 /// A 'fail' result means the mempool's callback response to consensus/state sync failed.
 static MEMPOOL_SERVICE_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_mempool_service_latency_ms",
+        "libra2_mempool_service_latency_ms",
         "Latency of mempool processing request from consensus/state sync",
         &["type", "result"]
     )
@@ -459,7 +459,7 @@ pub fn process_get_txn_latency_timer_client() -> HistogramTimer {
 /// Tracks latency of different stages of txn processing (e.g. vm validation, storage read)
 pub static PROCESS_TXN_BREAKDOWN_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_mempool_process_txn_breakdown_latency",
+        "libra2_mempool_process_txn_breakdown_latency",
         "Latency of different stages of processing txns in mempool",
         &["portion"]
     )
@@ -469,7 +469,7 @@ pub static PROCESS_TXN_BREAKDOWN_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
 /// Counter for tracking latency for mempool to broadcast to a peer
 static SHARED_MEMPOOL_BROADCAST_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_mempool_broadcast_latency",
+        "libra2_mempool_broadcast_latency",
         "Latency of mempool executing broadcast to another peer",
         &["network"]
     )
@@ -588,7 +588,7 @@ pub fn shared_mempool_ack_inc(network_id: NetworkId, direction: &str, label: &'s
 
 static TASK_SPAWN_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_mempool_bounded_executor_spawn_latency",
+        "libra2_mempool_bounded_executor_spawn_latency",
         "Time it takes for mempool's coordinator to spawn async tasks",
         &["task", "stage"]
     )
@@ -603,7 +603,7 @@ pub fn task_spawn_latency_timer(task: &'static str, stage: &'static str) -> Hist
 
 pub static CORE_MEMPOOL_INVARIANT_VIOLATION_COUNT: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_mempool_core_mempool_invariant_violated_count",
+        "libra2_mempool_core_mempool_invariant_violated_count",
         "Number of times a core mempool invariant was violated"
     )
     .unwrap()
@@ -611,7 +611,7 @@ pub static CORE_MEMPOOL_INVARIANT_VIOLATION_COUNT: Lazy<IntCounter> = Lazy::new(
 
 pub static VM_RECONFIG_UPDATE_FAIL_COUNT: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_mempool_vm_reconfig_update_fail_count",
+        "libra2_mempool_vm_reconfig_update_fail_count",
         "Number of times mempool's VM reconfig update failed"
     )
     .unwrap()
@@ -620,7 +620,7 @@ pub static VM_RECONFIG_UPDATE_FAIL_COUNT: Lazy<IntCounter> = Lazy::new(|| {
 /// Counter for failed network sends
 static NETWORK_SEND_FAIL: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_mempool_network_send_fail_count",
+        "libra2_mempool_network_send_fail_count",
         "Number of times mempool network send failure occurs",
         &["type"]
     )
@@ -633,7 +633,7 @@ pub fn network_send_fail_inc(label: &'static str) {
 
 static UNEXPECTED_NETWORK_MSG_COUNT: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_mempool_unexpected_network_count",
+        "libra2_mempool_unexpected_network_count",
         "Number of unexpected network msgs received",
         &["network"]
     )
@@ -649,7 +649,7 @@ pub fn unexpected_msg_count_inc(network_id: &NetworkId) {
 /// Counter for failed callback response to JSON RPC
 pub static CLIENT_CALLBACK_FAIL: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_mempool_json_rpc_callback_fail_count",
+        "libra2_mempool_json_rpc_callback_fail_count",
         "Number of times callback to JSON RPC failed in mempool"
     )
     .unwrap()
@@ -659,7 +659,7 @@ pub static CLIENT_CALLBACK_FAIL: Lazy<IntCounter> = Lazy::new(|| {
 /// did not send
 static INVALID_ACK_RECEIVED_COUNT: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_mempool_unrecognized_ack_received_count",
+        "libra2_mempool_unrecognized_ack_received_count",
         "Number of ACK messages received with an invalid request_id that this node's mempool did not send",
         &["network", "type"]
     )
@@ -675,7 +675,7 @@ pub fn invalid_ack_inc(network_id: NetworkId, label: &'static str) {
 /// Counter for number of times a DB read resulted in error
 pub static DB_ERROR: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_mempool_db_error_count",
+        "libra2_mempool_db_error_count",
         "Number of times a DB read error was encountered in mempool"
     )
     .unwrap()
@@ -685,7 +685,7 @@ pub static DB_ERROR: Lazy<IntCounter> = Lazy::new(|| {
 /// broadcast to, summed across each of its networks
 static ACTIVE_UPSTREAM_PEERS_COUNT: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_mempool_active_upstream_peers_count",
+        "libra2_mempool_active_upstream_peers_count",
         "Number of active upstream peers for the node of this mempool",
         &["network"]
     )
@@ -700,7 +700,7 @@ pub fn active_upstream_peers(network_id: &NetworkId) -> IntGauge {
 pub static MAIN_LOOP: Lazy<DurationHistogram> = Lazy::new(|| {
     DurationHistogram::new(
         register_histogram!(
-            "aptos_mempool_main_loop",
+            "libra2_mempool_main_loop",
             "Duration of the each run of the event loop"
         )
         .unwrap(),

@@ -21,7 +21,7 @@ use crate::{
 use anyhow::{anyhow, Context as AnyhowContext};
 use libra2_config::config::{ApiConfig, NodeConfig};
 use libra2_logger::info;
-use aptos_mempool::MempoolClientSender;
+use libra2_mempool::MempoolClientSender;
 use libra2_storage_interface::DbReader;
 use libra2_types::{chain_id::ChainId, indexer::indexer_db_reader::IndexerReader};
 use futures::channel::oneshot;

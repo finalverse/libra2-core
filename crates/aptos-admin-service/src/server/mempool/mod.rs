@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_logger::info;
-use aptos_mempool::{MempoolClientRequest, MempoolClientSender};
+use libra2_mempool::{MempoolClientRequest, MempoolClientSender};
 use libra2_system_utils::utils::{reply_with, reply_with_status};
 use libra2_types::account_address::AccountAddress;
 use futures_channel::oneshot::Canceled;

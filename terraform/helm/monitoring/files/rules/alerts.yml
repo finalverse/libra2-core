@@ -43,7 +43,7 @@ groups:
 
     # Mempool alerts
   - alert: Mempool has no active upstream peers
-    expr: (sum by (kubernetes_pod_name) (aptos_mempool_active_upstream_peers_count)) == 0
+    expr: (sum by (kubernetes_pod_name) (libra2_mempool_active_upstream_peers_count)) == 0
     for: 3m
     labels:
       severity: error

@@ -2123,7 +2123,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "aptos_mempool_active_upstream_peers_count{kubernetes_pod_name=~\"$kubernetes_pod_name\", chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=\"validator_fullnode\"}",
+          "expr": "libra2_mempool_active_upstream_peers_count{kubernetes_pod_name=~\"$kubernetes_pod_name\", chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=\"validator_fullnode\"}",
           "legendFormat": "{{kubernetes_pod_name}}",
           "range": true,
           "refId": "A"
@@ -2408,7 +2408,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "aptos_mempool_active_upstream_peers_count{kubernetes_pod_name=~\"$kubernetes_pod_name\", chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=\"public_fullnode\"}",
+          "expr": "libra2_mempool_active_upstream_peers_count{kubernetes_pod_name=~\"$kubernetes_pod_name\", chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=\"public_fullnode\"}",
           "legendFormat": "{{kubernetes_pod_name}}",
           "range": true,
           "refId": "A"

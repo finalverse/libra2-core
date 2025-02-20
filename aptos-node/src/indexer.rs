@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_config::config::NodeConfig;
-use aptos_mempool::MempoolClientSender;
+use libra2_mempool::MempoolClientSender;
 use libra2_storage_interface::DbReader;
 use libra2_types::chain_id::ChainId;
 use std::sync::Arc;

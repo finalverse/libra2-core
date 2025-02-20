@@ -398,8 +398,8 @@ aptos-localnet = { path = "crates/aptos-localnet" }
 libra2-log-derive = { path = "crates/libra2-log-derive" }
 libra2-logger = { path = "crates/libra2-logger" }
 aptos-memory-usage-tracker = { path = "aptos-move/aptos-memory-usage-tracker" }
-aptos-mempool = { path = "mempool" }
-aptos-mempool-notifications = { path = "state-sync/inter-component/mempool-notifications" }
+libra2-mempool = { path = "mempool" }
+libra2-mempool-notifications = { path = "state-sync/inter-component/mempool-notifications" }
 aptos-memsocket = { path = "network/memsocket" }
 libra2-metrics-core = { path = "crates/libra2-metrics-core" }
 aptos-move-debugger = { path = "aptos-move/aptos-debugger" }

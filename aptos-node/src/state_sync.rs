@@ -15,7 +15,7 @@ use libra2_event_notifications::{
 };
 use aptos_executor::chunk_executor::ChunkExecutor;
 use libra2_infallible::RwLock;
-use aptos_mempool_notifications::MempoolNotificationListener;
+use libra2_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{
     interface::{NetworkClient, NetworkClientInterface, NetworkServiceEvents},
     storage::PeersAndMetadata,
@@ -157,7 +157,7 @@ pub fn start_state_sync_and_get_notification_handles(
 
     // Create notification senders and listeners for mempool, consensus and the storage service
     let (mempool_notifier, mempool_listener) =
-        aptos_mempool_notifications::new_mempool_notifier_listener_pair(
+        libra2_mempool_notifications::new_mempool_notifier_listener_pair(
             state_sync_config
                 .state_sync_driver
                 .max_pending_mempool_notifications,

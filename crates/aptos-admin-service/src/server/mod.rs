@@ -7,7 +7,7 @@ use aptos_consensus::{
 };
 use libra2_infallible::RwLock;
 use libra2_logger::info;
-use aptos_mempool::MempoolClientSender;
+use libra2_mempool::MempoolClientSender;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_system_utils::utils::reply_with_status;
 #[cfg(target_os = "linux")]

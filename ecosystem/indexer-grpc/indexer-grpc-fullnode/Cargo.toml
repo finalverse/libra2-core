@@ -35,7 +35,7 @@ libra2-bitvec = { workspace = true }
 libra2-config = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-mempool = { workspace = true }
+libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-moving-average = { workspace = true }
 aptos-protos = { workspace = true }
@@ -58,8 +58,8 @@ aptos-executor-types = { workspace = true }
 aptos-framework = { workspace = true }
 aptos-genesis = { workspace = true }
 libra2-global-constants = { workspace = true }
-aptos-mempool = { workspace = true }
-aptos-mempool-notifications = { workspace = true }
+libra2-mempool = { workspace = true }
+libra2-mempool-notifications = { workspace = true }
 aptos-proptest-helpers = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-secure-storage = { workspace = true }

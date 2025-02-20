@@ -15,7 +15,7 @@ use libra2_dkg_runtime::DKGMessage;
 use libra2_event_notifications::EventSubscriptionService;
 use aptos_jwk_consensus::types::JWKConsensusMsg;
 use libra2_logger::debug;
-use aptos_mempool::network::MempoolSyncMsg;
+use libra2_mempool::network::MempoolSyncMsg;
 use aptos_network::{
     application::{
         interface::{NetworkClient, NetworkServiceEvents},
@@ -117,7 +117,7 @@ pub fn mempool_network_configuration(node_config: &NodeConfig) -> NetworkApplica
         rpc_protocols,
         libra2_channel::Config::new(node_config.mempool.max_network_channel_size)
             .queue_style(QueueStyle::KLAST) // TODO: why is this not FIFO?
-            .counters(&aptos_mempool::counters::PENDING_MEMPOOL_NETWORK_EVENTS),
+            .counters(&libra2_mempool::counters::PENDING_MEMPOOL_NETWORK_EVENTS),
     );
     NetworkApplicationConfig::new(network_client_config, network_service_config)
 }

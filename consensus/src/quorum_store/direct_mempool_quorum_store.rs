@@ -8,7 +8,7 @@ use aptos_consensus_types::{
     request_response::{GetPayloadCommand, GetPayloadResponse},
 };
 use libra2_logger::prelude::*;
-use aptos_mempool::{QuorumStoreRequest, QuorumStoreResponse};
+use libra2_mempool::{QuorumStoreRequest, QuorumStoreResponse};
 use libra2_types::transaction::SignedTransaction;
 use futures::{
     channel::{

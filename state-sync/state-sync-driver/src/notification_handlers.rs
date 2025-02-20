@@ -14,7 +14,7 @@ use libra2_data_streaming_service::data_notification::NotificationId;
 use libra2_event_notifications::{EventNotificationSender, EventSubscriptionService};
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
-use aptos_mempool_notifications::MempoolNotificationSender;
+use libra2_mempool_notifications::MempoolNotificationSender;
 use libra2_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use libra2_types::{

@@ -19,7 +19,7 @@ use libra2_data_streaming_service::streaming_client::StreamingServiceClient;
 use libra2_event_notifications::{EventNotificationSender, EventSubscriptionService};
 use aptos_executor_types::ChunkExecutorTrait;
 use libra2_infallible::Mutex;
-use aptos_mempool_notifications::MempoolNotificationSender;
+use libra2_mempool_notifications::MempoolNotificationSender;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_storage_service_notifications::StorageServiceNotificationSender;
 use libra2_time_service::TimeService;

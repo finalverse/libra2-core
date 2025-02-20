@@ -87,7 +87,7 @@ fn collect_consensus_metrics(core_metrics: &mut BTreeMap<String, String>) {
 fn collect_mempool_metrics(core_metrics: &mut BTreeMap<String, String>) {
     core_metrics.insert(
         MEMPOOL_CORE_MEMPOOL_INDEX_SIZE.into(),
-        aptos_mempool::counters::CORE_MEMPOOL_INDEX_SIZE
+        libra2_mempool::counters::CORE_MEMPOOL_INDEX_SIZE
             .with_label_values(&["system_ttl"])
             .get()
             .to_string(),

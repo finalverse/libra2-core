@@ -21,8 +21,8 @@ use aptos_executor::{block_executor::BlockExecutor, db_bootstrapper};
 use aptos_executor_types::BlockExecutorTrait;
 use aptos_framework::BuiltPackage;
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::MockInternalIndexerDBService;
-use aptos_mempool::mocks::MockSharedMempool;
-use aptos_mempool_notifications::MempoolNotificationSender;
+use libra2_mempool::mocks::MockSharedMempool;
+use libra2_mempool_notifications::MempoolNotificationSender;
 use aptos_sdk::{
     bcs,
     transaction_builder::TransactionFactory,

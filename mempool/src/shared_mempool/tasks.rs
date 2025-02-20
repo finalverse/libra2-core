@@ -25,7 +25,7 @@ use aptos_consensus_types::common::RejectedTransactionSummary;
 use libra2_crypto::HashValue;
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::prelude::*;
-use aptos_mempool_notifications::CommittedTransaction;
+use libra2_mempool_notifications::CommittedTransaction;
 use libra2_metrics_core::HistogramTimer;
 use aptos_network::application::interface::NetworkClientInterface;
 use libra2_storage_interface::state_store::state_view::db_state_view::LatestDbStateCheckpointView;

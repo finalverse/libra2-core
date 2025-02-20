@@ -16,7 +16,7 @@ use aptos_consensus_types::{
     common::{TransactionInProgress, TransactionSummary},
     proof_of_store::{BatchId, SignedBatchInfo},
 };
-use aptos_mempool::{QuorumStoreRequest, QuorumStoreResponse};
+use libra2_mempool::{QuorumStoreRequest, QuorumStoreResponse};
 use libra2_types::transaction::SignedTransaction;
 use futures::{
     channel::mpsc::{channel, Receiver},

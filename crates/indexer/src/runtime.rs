@@ -16,7 +16,7 @@ use crate::{
 use aptos_api::context::Context;
 use libra2_config::config::{IndexerConfig, NodeConfig};
 use libra2_logger::{error, info};
-use aptos_mempool::MempoolClientSender;
+use libra2_mempool::MempoolClientSender;
 use libra2_storage_interface::DbReader;
 use libra2_types::chain_id::ChainId;
 use std::{collections::VecDeque, sync::Arc};

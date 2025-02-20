@@ -8,7 +8,7 @@ use crate::{
 use aptos_api::context::Context;
 use libra2_config::config::NodeConfig;
 use libra2_logger::info;
-use aptos_mempool::MempoolClientSender;
+use libra2_mempool::MempoolClientSender;
 use aptos_protos::{
     indexer::v1::{
         raw_data_server::RawDataServer, FILE_DESCRIPTOR_SET as INDEXER_V1_FILE_DESCRIPTOR_SET,

@@ -23,7 +23,7 @@ use libra2_event_notifications::{
 use aptos_executor::chunk_executor::ChunkExecutor;
 use aptos_executor_test_helpers::bootstrap_genesis;
 use libra2_infallible::RwLock;
-use aptos_mempool_notifications::MempoolNotificationListener;
+use libra2_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
 use libra2_storage_interface::DbReaderWriter;
 use libra2_storage_service_client::StorageServiceClient;
@@ -358,7 +358,7 @@ async fn create_driver_for_tests(
     let (consensus_notifier, consensus_listener) =
         libra2_consensus_notifications::new_consensus_notifier_listener_pair(5000);
     let (mempool_notifier, mempool_listener) =
-        aptos_mempool_notifications::new_mempool_notifier_listener_pair(100);
+        libra2_mempool_notifications::new_mempool_notifier_listener_pair(100);
 
     // Create the storage service notifier and listener
     let (storage_service_notifier, storage_service_listener) =

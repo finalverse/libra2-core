@@ -19,7 +19,7 @@ use libra2_config::{
 use libra2_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
 use libra2_id_generator::U32IdGenerator;
 use libra2_infallible::{Mutex, RwLock};
-use aptos_mempool_notifications::MempoolNotifier;
+use libra2_mempool_notifications::MempoolNotifier;
 use aptos_network::{
     application::{
         interface::{NetworkClient, NetworkServiceEvents},
@@ -628,7 +628,7 @@ fn setup_mempool(
     let (ac_endpoint_sender, ac_endpoint_receiver) = mpsc_channel();
     let (quorum_store_sender, quorum_store_receiver) = mpsc_channel();
     let (mempool_notifier, mempool_listener) =
-        aptos_mempool_notifications::new_mempool_notifier_listener_pair(100);
+        libra2_mempool_notifications::new_mempool_notifier_listener_pair(100);
 
     let mempool = Arc::new(Mutex::new(CoreMempool::new(&config)));
     let vm_validator = Arc::new(RwLock::new(MockVMValidator));

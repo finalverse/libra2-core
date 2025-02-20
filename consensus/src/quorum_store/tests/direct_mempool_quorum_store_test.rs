@@ -7,7 +7,7 @@ use aptos_consensus_types::{
     request_response::{GetPayloadCommand, GetPayloadRequest, GetPayloadResponse},
     utils::PayloadTxnsSize,
 };
-use aptos_mempool::{QuorumStoreRequest, QuorumStoreResponse};
+use libra2_mempool::{QuorumStoreRequest, QuorumStoreResponse};
 use futures::{
     channel::{mpsc, oneshot},
     StreamExt,

@@ -12,7 +12,7 @@ use libra2_db_indexer::{
     db_ops::open_db,
     db_v2::IndexerAsyncV2,
 };
-use aptos_mempool::MempoolClientSender;
+use libra2_mempool::MempoolClientSender;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{chain_id::ChainId, transaction::Version};
 use std::{sync::Arc, time::Instant};

@@ -15,7 +15,7 @@ use libra2_config::config::{NodeConfig, NodeType};
 use libra2_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::Level;
-use aptos_mempool_notifications::MempoolNotificationListener;
+use libra2_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{
     interface::{NetworkClient, NetworkServiceEvents},
     storage::PeersAndMetadata,

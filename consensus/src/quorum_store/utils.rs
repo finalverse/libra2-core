@@ -7,7 +7,7 @@ use aptos_consensus_types::{
     proof_of_store::{BatchId, BatchInfo},
 };
 use libra2_logger::prelude::*;
-use aptos_mempool::{QuorumStoreRequest, QuorumStoreResponse};
+use libra2_mempool::{QuorumStoreRequest, QuorumStoreResponse};
 use libra2_types::{transaction::SignedTransaction, PeerId};
 use chrono::Utc;
 use futures::channel::{mpsc::Sender, oneshot};

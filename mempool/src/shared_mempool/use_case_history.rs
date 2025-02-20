@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_logger::info;
-use aptos_mempool_notifications::CommittedTransaction;
+use libra2_mempool_notifications::CommittedTransaction;
 use libra2_types::transaction::use_case::UseCaseKey;
 use std::{
     cmp::Ordering,

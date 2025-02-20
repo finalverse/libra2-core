@@ -23,7 +23,7 @@ libra2-event-notifications = { workspace = true }
 aptos-executor-types = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-mempool-notifications = { workspace = true }
+libra2-mempool-notifications = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-runtimes = { workspace = true }
 libra2-schemadb = { workspace = true }

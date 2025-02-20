@@ -32,7 +32,7 @@ aptos-experimental-runtimes = { workspace = true }
 libra2-fallible = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-mempool = { workspace = true }
+libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-network = { workspace = true }
 aptos-peer-monitoring-service-types = { workspace = true }
@@ -91,7 +91,7 @@ libra2-config = { workspace = true, features = ["fuzzing"] }
 aptos-consensus-types = { workspace = true, features = ["fuzzing"] }
 aptos-executor-test-helpers = { workspace = true }
 aptos-keygen = { workspace = true }
-aptos-mempool = { workspace = true, features = ["fuzzing"] }
+libra2-mempool = { workspace = true, features = ["fuzzing"] }
 aptos-netcore = { workspace = true }
 aptos-network = { workspace = true, features = ["fuzzing"] }
 aptos-safety-rules = { workspace = true, features = ["testing"] }
@@ -110,7 +110,7 @@ fuzzing = [
     "aptos-consensus-types/fuzzing",
     "libra2-config/fuzzing",
     "libra2-crypto/fuzzing",
-    "aptos-mempool/fuzzing",
+    "libra2-mempool/fuzzing",
     "libra2-types/fuzzing",
     "aptos-safety-rules/testing",
 ]

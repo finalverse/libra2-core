@@ -31,7 +31,7 @@ use libra2_consensus_notifications::ConsensusNotificationSender;
 use libra2_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use aptos_executor::block_executor::BlockExecutor;
 use libra2_logger::prelude::*;
-use aptos_mempool::QuorumStoreRequest;
+use libra2_mempool::QuorumStoreRequest;
 use aptos_network::application::interface::{NetworkClient, NetworkServiceEvents};
 use libra2_storage_interface::DbReaderWriter;
 use libra2_time_service::TimeService;

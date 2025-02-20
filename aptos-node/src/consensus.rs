@@ -27,7 +27,7 @@ use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };
 use aptos_jwk_consensus::{start_jwk_consensus_runtime, types::JWKConsensusMsg};
-use aptos_mempool::QuorumStoreRequest;
+use libra2_mempool::QuorumStoreRequest;
 use aptos_network::application::interface::{NetworkClient, NetworkServiceEvents};
 use libra2_storage_interface::DbReaderWriter;
 use aptos_validator_transaction_pool::VTxnPoolState;
