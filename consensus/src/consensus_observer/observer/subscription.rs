@@ -236,7 +236,7 @@ impl ConsensusObserverSubscription {
 mod test {
     use super::*;
     use libra2_config::config::PeerRole;
-    use aptos_netcore::transport::ConnectionOrigin;
+    use libra2_netcore::transport::ConnectionOrigin;
     use aptos_network::{
         protocols::wire::handshake::v1::{MessagingProtocolVersion, ProtocolIdSet},
         transport::{ConnectionId, ConnectionMetadata},

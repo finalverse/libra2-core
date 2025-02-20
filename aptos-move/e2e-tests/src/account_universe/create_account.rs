@@ -12,7 +12,7 @@ use crate::{
     common_transactions::create_account_txn,
     gas_costs,
 };
-use aptos_proptest_helpers::Index;
+use libra2_proptest_helpers::Index;
 use libra2_types::{
     transaction::{ExecutionStatus, SignedTransaction, TransactionStatus},
     vm_status::{AbortLocation, StatusCode},

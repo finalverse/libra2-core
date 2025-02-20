@@ -11,7 +11,7 @@ use libra2_config::{
     network_id::{NetworkContext, NetworkId, PeerNetworkId},
 };
 use libra2_crypto::{test_utils::TEST_SEED, x25519, Uniform};
-use aptos_netcore::transport::ConnectionOrigin;
+use libra2_netcore::transport::ConnectionOrigin;
 use aptos_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},
     peer_manager::{builder::AuthenticationMode, ConnectionNotification},

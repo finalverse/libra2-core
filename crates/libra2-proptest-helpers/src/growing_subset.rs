@@ -16,7 +16,7 @@ use std::iter::FromIterator;
 /// # Examples
 ///
 /// ```
-/// use aptos_proptest_helpers::GrowingSubset;
+/// use libra2_proptest_helpers::GrowingSubset;
 /// let items = vec![(1, "a"), (3, "c"), (2, "b"), (2, "d")];
 /// let mut subset: GrowingSubset<_, _> = items.into_iter().collect();
 ///

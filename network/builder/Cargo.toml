@@ -1,6 +1,6 @@
 [package]
-name = "aptos-network-builder"
-description = "Aptos network builder for constructing a network"
+name = "libra2-network-builder"
+description = "Libra2 network builder for constructing a network"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -18,9 +18,9 @@ libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-event-notifications = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-netcore = { workspace = true }
+libra2-netcore = { workspace = true }
 aptos-network = { workspace = true }
-aptos-network-discovery = { workspace = true }
+libra2-network-discovery = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
 bcs = { workspace = true }

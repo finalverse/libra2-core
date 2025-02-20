@@ -568,7 +568,7 @@ pub struct SendRecord {
 
 pub static APTOS_NETWORK_BENCHMARK_DIRECT_MESSAGES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_benchmark_direct_messages",
+        "libra2_network_benchmark_direct_messages",
         "Number of net benchmark direct messages",
         &["state"]
     )
@@ -583,7 +583,7 @@ fn direct_messages(state_label: &'static str) {
 
 pub static APTOS_NETWORK_BENCHMARK_DIRECT_BYTES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_benchmark_direct_bytes",
+        "libra2_network_benchmark_direct_bytes",
         "Number of net benchmark direct bytes",
         &["state"]
     )
@@ -598,7 +598,7 @@ fn direct_bytes(state_label: &'static str, byte_count: u64) {
 
 pub static APTOS_NETWORK_BENCHMARK_DIRECT_MICROS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_benchmark_direct_micros",
+        "libra2_network_benchmark_direct_micros",
         "Number of net benchmark direct micros",
         &["state"]
     )
@@ -613,7 +613,7 @@ fn direct_micros(state_label: &'static str, micros: u64) {
 
 pub static APTOS_NETWORK_BENCHMARK_RPC_MESSAGES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_benchmark_rpc_messages",
+        "libra2_network_benchmark_rpc_messages",
         "Number of net benchmark RPC messages",
         &["state"]
     )
@@ -628,7 +628,7 @@ fn rpc_messages(state_label: &'static str) {
 
 pub static APTOS_NETWORK_BENCHMARK_RPC_BYTES: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_benchmark_rpc_bytes",
+        "libra2_network_benchmark_rpc_bytes",
         "Number of net benchmark RPC bytes transferred",
         &["state"]
     )
@@ -641,7 +641,7 @@ pub fn rpc_bytes(state_label: &'static str) -> IntCounter {
 
 pub static APTOS_NETWORK_BENCHMARK_RPC_MICROS: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_network_benchmark_rpc_micros",
+        "libra2_network_benchmark_rpc_micros",
         "Number of net benchmark RPC microseconds used (hint: divide by _messages)",
         &["state"]
     )

@@ -27,7 +27,7 @@ use crate::{
 };
 use libra2_config::network_id::NetworkContext;
 use libra2_logger::Schema;
-use aptos_netcore::transport::ConnectionOrigin;
+use libra2_netcore::transport::ConnectionOrigin;
 use libra2_types::{network_address::NetworkAddress, PeerId};
 
 #[derive(Schema)]

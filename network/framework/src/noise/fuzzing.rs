@@ -113,7 +113,7 @@ fn generate_first_two_messages() -> (Vec<u8>, Vec<u8>) {
     (init_msg, resp_msg)
 }
 
-pub fn generate_corpus(gen: &mut aptos_proptest_helpers::ValueGenerator) -> Vec<u8> {
+pub fn generate_corpus(gen: &mut libra2_proptest_helpers::ValueGenerator) -> Vec<u8> {
     let (init_msg, resp_msg) = generate_first_two_messages();
     // choose a random one
     let strategy = proptest::arbitrary::any::<bool>();

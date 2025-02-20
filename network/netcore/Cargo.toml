@@ -1,6 +1,6 @@
 [package]
-name = "aptos-netcore"
-description = "Aptos netcore"
+name = "libra2-netcore"
+description = "Libra2 netcore"
 version = "0.1.0"
 
 # Workspace inherited keys

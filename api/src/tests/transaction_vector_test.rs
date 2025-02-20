@@ -21,7 +21,7 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     SigningKey, Uniform,
 };
-use aptos_proptest_helpers::ValueGenerator;
+use libra2_proptest_helpers::ValueGenerator;
 use libra2_types::{
     account_address::AccountAddress,
     chain_id::ChainId,

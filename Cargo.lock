@@ -451,7 +451,6 @@ dependencies = [
  "aptos-gas-meter",
  "aptos-gas-schedule",
  "aptos-move-stdlib",
- "aptos-proptest-helpers",
  "aptos-runtimes",
  "aptos-sdk",
  "aptos-vm",
@@ -469,6 +468,7 @@ dependencies = [
  "libra2-logger",
  "libra2-mempool",
  "libra2-metrics-core",
+ "libra2-proptest-helpers",
  "libra2-storage-interface",
  "libra2-types",
  "mime",
@@ -718,7 +718,6 @@ dependencies = [
  "aptos-executor-types",
  "aptos-experimental-runtimes",
  "aptos-keygen",
- "aptos-netcore",
  "aptos-network",
  "aptos-reliable-broadcast",
  "aptos-runtimes",
@@ -756,6 +755,7 @@ dependencies = [
  "libra2-logger",
  "libra2-mempool",
  "libra2-metrics-core",
+ "libra2-netcore",
  "libra2-peer-monitoring-service-types",
  "libra2-schemadb",
  "libra2-secure-storage",
@@ -828,7 +828,6 @@ dependencies = [
  "anyhow",
  "aptos-executor-types",
  "aptos-experimental-runtimes",
- "aptos-proptest-helpers",
  "aptos-resource-viewer",
  "arc-swap",
  "arr_macro",
@@ -851,6 +850,7 @@ dependencies = [
  "libra2-jellyfish-merkle",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-proptest-helpers",
  "libra2-rocksdb-options",
  "libra2-schemadb",
  "libra2-scratchpad",
@@ -1715,7 +1715,6 @@ dependencies = [
  "aptos-genesis",
  "aptos-indexer-grpc-utils",
  "aptos-moving-average",
- "aptos-proptest-helpers",
  "aptos-protos 1.3.1",
  "aptos-runtimes",
  "aptos-sdk",
@@ -1737,6 +1736,7 @@ dependencies = [
  "libra2-mempool",
  "libra2-mempool-notifications",
  "libra2-metrics-core",
+ "libra2-proptest-helpers",
  "libra2-secure-storage",
  "libra2-storage-interface",
  "libra2-temppath",
@@ -2003,7 +2003,6 @@ dependencies = [
  "aptos-gas-profiling",
  "aptos-gas-schedule",
  "aptos-keygen",
- "aptos-proptest-helpers",
  "aptos-vm",
  "aptos-vm-environment",
  "aptos-vm-genesis",
@@ -2015,6 +2014,7 @@ dependencies = [
  "goldenfile",
  "libra2-bitvec",
  "libra2-crypto",
+ "libra2-proptest-helpers",
  "libra2-temppath",
  "libra2-types",
  "move-binary-format",
@@ -2209,28 +2209,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-netcore"
-version = "0.1.0"
-dependencies = [
- "bytes",
- "futures",
- "libra2-memsocket",
- "libra2-proxy",
- "libra2-types",
- "pin-project 1.1.3",
- "serde",
- "tokio",
- "tokio-util 0.7.10",
- "url",
-]
-
-[[package]]
 name = "aptos-network"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-netcore",
- "aptos-proptest-helpers",
  "arc-swap",
  "async-trait",
  "bcs 0.1.4",
@@ -2249,8 +2231,10 @@ dependencies = [
  "libra2-logger",
  "libra2-memsocket",
  "libra2-metrics-core",
+ "libra2-netcore",
  "libra2-num-variants",
  "libra2-peer-monitoring-service-types",
+ "libra2-proptest-helpers",
  "libra2-short-hex-str",
  "libra2-time-service",
  "libra2-types",
@@ -2274,47 +2258,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-network-benchmark"
-version = "0.1.0"
-dependencies = [
- "aptos-network",
- "async-channel 1.9.0",
- "bytes",
- "futures",
- "libra2-config",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-time-service",
- "libra2-types",
- "once_cell",
- "rand 0.7.3",
- "serde",
- "tokio",
-]
-
-[[package]]
-name = "aptos-network-builder"
-version = "0.1.0"
-dependencies = [
- "aptos-netcore",
- "aptos-network",
- "aptos-network-discovery",
- "bcs 0.1.4",
- "futures",
- "libra2-channels",
- "libra2-config",
- "libra2-crypto",
- "libra2-event-notifications",
- "libra2-logger",
- "libra2-time-service",
- "libra2-types",
- "maplit",
- "rand 0.7.3",
- "serde",
- "tokio",
-]
-
-[[package]]
 name = "aptos-network-checker"
 version = "0.0.1"
 dependencies = [
@@ -2328,33 +2271,6 @@ dependencies = [
  "libra2-types",
  "serde",
  "tokio",
-]
-
-[[package]]
-name = "aptos-network-discovery"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-netcore",
- "aptos-network",
- "aptos-rest-client",
- "bcs 0.1.4",
- "futures",
- "libra2-channels",
- "libra2-config",
- "libra2-crypto",
- "libra2-event-notifications",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-short-hex-str",
- "libra2-temppath",
- "libra2-time-service",
- "libra2-types",
- "once_cell",
- "rand 0.7.3",
- "serde_yaml 0.8.26",
- "tokio",
- "url",
 ]
 
 [[package]]
@@ -2409,8 +2325,6 @@ dependencies = [
  "aptos-inspection-service",
  "aptos-jwk-consensus",
  "aptos-network",
- "aptos-network-benchmark",
- "aptos-network-builder",
  "aptos-runtimes",
  "aptos-telemetry",
  "aptos-validator-transaction-pool",
@@ -2439,6 +2353,8 @@ dependencies = [
  "libra2-logger",
  "libra2-mempool",
  "libra2-mempool-notifications",
+ "libra2-network-benchmark",
+ "libra2-network-builder",
  "libra2-node-identity",
  "libra2-peer-monitoring-service-client",
  "libra2-peer-monitoring-service-server",
@@ -2540,15 +2456,6 @@ dependencies = [
  "jemallocator",
  "pprof",
  "regex",
-]
-
-[[package]]
-name = "aptos-proptest-helpers"
-version = "0.1.0"
-dependencies = [
- "crossbeam",
- "proptest",
- "proptest-derive",
 ]
 
 [[package]]
@@ -2769,7 +2676,6 @@ name = "aptos-safety-rules"
 version = "0.1.0"
 dependencies = [
  "aptos-consensus-types",
- "aptos-proptest-helpers",
  "claims",
  "criterion",
  "hex",
@@ -2779,6 +2685,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-proptest-helpers",
  "libra2-secure-net",
  "libra2-secure-storage",
  "libra2-types",
@@ -3279,13 +3186,13 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-framework",
  "aptos-gas-schedule",
- "aptos-proptest-helpers",
  "aptos-vm",
  "aptos-vm-types",
  "bcs 0.1.4",
  "bytes",
  "claims",
  "libra2-crypto",
+ "libra2-proptest-helpers",
  "libra2-types",
  "move-binary-format",
  "move-core-types",
@@ -9340,7 +9247,6 @@ dependencies = [
  "aptos-executor-test-helpers",
  "aptos-executor-types",
  "aptos-indexer-grpc-table-info",
- "aptos-proptest-helpers",
  "aptos-vm",
  "aptos-vm-environment",
  "async-trait",
@@ -9358,6 +9264,7 @@ dependencies = [
  "libra2-jellyfish-merkle",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-proptest-helpers",
  "libra2-push-metrics",
  "libra2-storage-interface",
  "libra2-temppath",
@@ -9617,7 +9524,6 @@ name = "libra2-data-client"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-netcore",
  "aptos-network",
  "arc-swap",
  "async-trait",
@@ -9633,6 +9539,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-netcore",
  "libra2-peer-monitoring-service-types",
  "libra2-storage-interface",
  "libra2-storage-service-client",
@@ -9684,7 +9591,6 @@ dependencies = [
  "anyhow",
  "aptos-executor-types",
  "aptos-experimental-runtimes",
- "aptos-proptest-helpers",
  "aptos-resource-viewer",
  "arc-swap",
  "arr_macro",
@@ -9707,6 +9613,7 @@ dependencies = [
  "libra2-jellyfish-merkle",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-proptest-helpers",
  "libra2-rocksdb-options",
  "libra2-schemadb",
  "libra2-scratchpad",
@@ -9732,7 +9639,6 @@ name = "libra2-db-indexer"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-proptest-helpers",
  "aptos-resource-viewer",
  "bcs 0.1.4",
  "bytes",
@@ -9741,6 +9647,7 @@ dependencies = [
  "libra2-db-indexer-schemas",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-proptest-helpers",
  "libra2-rocksdb-options",
  "libra2-schemadb",
  "libra2-storage-interface",
@@ -9755,10 +9662,10 @@ name = "libra2-db-indexer-schemas"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-proptest-helpers",
  "bcs 0.1.4",
  "byteorder",
  "libra2-crypto",
+ "libra2-proptest-helpers",
  "libra2-schemadb",
  "libra2-storage-interface",
  "libra2-types",
@@ -10107,7 +10014,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus-types",
- "aptos-netcore",
  "aptos-network",
  "aptos-runtimes",
  "aptos-vm-validator",
@@ -10127,6 +10033,7 @@ dependencies = [
  "libra2-logger",
  "libra2-mempool-notifications",
  "libra2-metrics-core",
+ "libra2-netcore",
  "libra2-peer-monitoring-service-types",
  "libra2-short-hex-str",
  "libra2-storage-interface",
@@ -10178,6 +10085,90 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-netcore"
+version = "0.1.0"
+dependencies = [
+ "bytes",
+ "futures",
+ "libra2-memsocket",
+ "libra2-proxy",
+ "libra2-types",
+ "pin-project 1.1.3",
+ "serde",
+ "tokio",
+ "tokio-util 0.7.10",
+ "url",
+]
+
+[[package]]
+name = "libra2-network-benchmark"
+version = "0.1.0"
+dependencies = [
+ "aptos-network",
+ "async-channel 1.9.0",
+ "bytes",
+ "futures",
+ "libra2-config",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-time-service",
+ "libra2-types",
+ "once_cell",
+ "rand 0.7.3",
+ "serde",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-network-builder"
+version = "0.1.0"
+dependencies = [
+ "aptos-network",
+ "bcs 0.1.4",
+ "futures",
+ "libra2-channels",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-event-notifications",
+ "libra2-logger",
+ "libra2-netcore",
+ "libra2-network-discovery",
+ "libra2-time-service",
+ "libra2-types",
+ "maplit",
+ "rand 0.7.3",
+ "serde",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-network-discovery"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-network",
+ "aptos-rest-client",
+ "bcs 0.1.4",
+ "futures",
+ "libra2-channels",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-event-notifications",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-netcore",
+ "libra2-short-hex-str",
+ "libra2-temppath",
+ "libra2-time-service",
+ "libra2-types",
+ "once_cell",
+ "rand 0.7.3",
+ "serde_yaml 0.8.26",
+ "tokio",
+ "url",
+]
+
+[[package]]
 name = "libra2-node"
 version = "0.0.0-main"
 dependencies = [
@@ -10196,8 +10187,6 @@ dependencies = [
  "aptos-inspection-service",
  "aptos-jwk-consensus",
  "aptos-network",
- "aptos-network-benchmark",
- "aptos-network-builder",
  "aptos-runtimes",
  "aptos-telemetry",
  "aptos-validator-transaction-pool",
@@ -10226,6 +10215,8 @@ dependencies = [
  "libra2-logger",
  "libra2-mempool",
  "libra2-mempool-notifications",
+ "libra2-network-benchmark",
+ "libra2-network-builder",
  "libra2-node-identity",
  "libra2-peer-monitoring-service-client",
  "libra2-peer-monitoring-service-server",
@@ -10289,7 +10280,6 @@ dependencies = [
 name = "libra2-peer-monitoring-service-client"
 version = "0.1.0"
 dependencies = [
- "aptos-netcore",
  "aptos-network",
  "bcs 0.1.4",
  "enum_dispatch",
@@ -10301,6 +10291,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-netcore",
  "libra2-peer-monitoring-service-server",
  "libra2-peer-monitoring-service-types",
  "libra2-time-service",
@@ -10320,7 +10311,6 @@ name = "libra2-peer-monitoring-service-server"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-netcore",
  "aptos-network",
  "bcs 0.1.4",
  "bytes",
@@ -10333,6 +10323,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-netcore",
  "libra2-peer-monitoring-service-types",
  "libra2-storage-interface",
  "libra2-time-service",
@@ -10367,6 +10358,15 @@ dependencies = [
  "jemallocator",
  "pprof",
  "regex",
+]
+
+[[package]]
+name = "libra2-proptest-helpers"
+version = "0.1.0"
+dependencies = [
+ "crossbeam",
+ "proptest",
+ "proptest-derive",
 ]
 
 [[package]]
@@ -10623,7 +10623,6 @@ name = "libra2-storage-service-server"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-netcore",
  "aptos-network",
  "arc-swap",
  "bcs 0.1.4",
@@ -10638,6 +10637,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-netcore",
  "libra2-storage-interface",
  "libra2-storage-service-notifications",
  "libra2-storage-service-types",
@@ -10717,7 +10717,6 @@ version = "0.0.3"
 dependencies = [
  "ahash 0.8.11",
  "anyhow",
- "aptos-proptest-helpers",
  "arbitrary",
  "ark-bn254",
  "ark-ec",
@@ -10747,6 +10746,7 @@ dependencies = [
  "libra2-crypto-derive",
  "libra2-dkg",
  "libra2-infallible",
+ "libra2-proptest-helpers",
  "move-binary-format",
  "move-core-types",
  "move-table-extension",
@@ -10791,10 +10791,10 @@ version = "0.1.0"
 name = "libra2-vault-client"
 version = "0.1.0"
 dependencies = [
- "aptos-proptest-helpers",
  "base64 0.13.1",
  "chrono",
  "libra2-crypto",
+ "libra2-proptest-helpers",
  "libra2-types",
  "native-tls",
  "once_cell",

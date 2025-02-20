@@ -4,7 +4,7 @@
 #![allow(clippy::non_canonical_partial_ord_impl)]
 
 use libra2_crypto::HashValue;
-use aptos_proptest_helpers::ValueGenerator;
+use libra2_proptest_helpers::ValueGenerator;
 use libra2_types::{
     access_path::AccessPath,
     account_config::AccountResource,

@@ -1,6 +1,6 @@
 [package]
-name = "aptos-proptest-helpers"
-description = "Aptos proptest helpers"
+name = "libra2-proptest-helpers"
+description = "Libra2 proptest helpers"
 version = "0.1.0"
 
 # Workspace inherited keys

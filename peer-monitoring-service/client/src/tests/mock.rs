@@ -7,7 +7,7 @@ use libra2_config::{
     config::PeerRole,
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_netcore::transport::ConnectionOrigin;
+use libra2_netcore::transport::ConnectionOrigin;
 use aptos_network::{
     application::{interface::NetworkClient, metadata::ConnectionState, storage::PeersAndMetadata},
     peer_manager::{ConnectionRequestSender, PeerManagerRequest, PeerManagerRequestSender},

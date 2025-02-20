@@ -19,7 +19,7 @@ use std::iter;
 /// # Examples
 ///
 /// ```
-/// use aptos_proptest_helpers::RepeatVec;
+/// use libra2_proptest_helpers::RepeatVec;
 ///
 /// let mut repeat_vec = RepeatVec::new();
 /// repeat_vec.extend("a", 10); // logically, insert "a" 10 times
@@ -34,7 +34,7 @@ use std::iter;
 /// The data structure doesn't care about whether the inserted items are equal or not.
 ///
 /// ```
-/// use aptos_proptest_helpers::RepeatVec;
+/// use libra2_proptest_helpers::RepeatVec;
 ///
 /// let mut repeat_vec = RepeatVec::new();
 /// repeat_vec.extend("a", 10); // logically, insert "a" 10 times
@@ -79,7 +79,7 @@ impl<T> RepeatVec<T> {
     /// # Examples
     ///
     /// ```
-    /// use aptos_proptest_helpers::RepeatVec;
+    /// use libra2_proptest_helpers::RepeatVec;
     ///
     /// let mut repeat_vec = RepeatVec::new();
     ///

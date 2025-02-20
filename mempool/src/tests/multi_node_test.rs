@@ -18,7 +18,7 @@ use libra2_config::{
     config::{NodeConfig, PeerRole},
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_netcore::transport::ConnectionOrigin;
+use libra2_netcore::transport::ConnectionOrigin;
 use aptos_network::{
     peer_manager::PeerManagerRequest,
     protocols::{

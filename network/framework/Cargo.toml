@@ -1,6 +1,6 @@
 [package]
 name = "aptos-network"
-description = "Aptos networking stack"
+description = "Libra2 networking stack"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -24,10 +24,10 @@ libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-memsocket = { workspace = true, optional = true }
 libra2-metrics-core = { workspace = true }
-aptos-netcore = { workspace = true }
+libra2-netcore = { workspace = true }
 libra2-num-variants = { workspace = true }
 libra2-peer-monitoring-service-types = { workspace = true }
-aptos-proptest-helpers = { workspace = true, optional = true }
+libra2-proptest-helpers = { workspace = true, optional = true }
 libra2-short-hex-str = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
@@ -63,8 +63,8 @@ tokio-util = { workspace = true }
 libra2-bitvec = { workspace = true, features = ["fuzzing"] }
 libra2-config = { workspace = true, features = ["testing"] }
 libra2-memsocket = { workspace = true }
-aptos-netcore = { workspace = true, features = ["testing"] }
-aptos-proptest-helpers = { workspace = true }
+libra2-netcore = { workspace = true, features = ["testing"] }
+libra2-proptest-helpers = { workspace = true }
 libra2-time-service = { workspace = true, features = ["testing"] }
 libra2-types = { workspace = true, features = ["fuzzing"] }
 proptest = { workspace = true }
@@ -73,8 +73,8 @@ rand_core = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["libra2-bitvec/fuzzing", "libra2-config/fuzzing", "libra2-crypto/fuzzing", "libra2-types/fuzzing", "aptos-proptest-helpers", "libra2-time-service/testing", "libra2-types/fuzzing", "libra2-memsocket/testing", "aptos-netcore/fuzzing", "proptest", "proptest-derive"]
-testing = ["libra2-config/testing", "libra2-time-service/testing", "libra2-memsocket/testing", "aptos-netcore/testing"]
+fuzzing = ["libra2-bitvec/fuzzing", "libra2-config/fuzzing", "libra2-crypto/fuzzing", "libra2-types/fuzzing", "libra2-proptest-helpers", "libra2-time-service/testing", "libra2-types/fuzzing", "libra2-memsocket/testing", "libra2-netcore/fuzzing", "proptest", "proptest-derive"]
+testing = ["libra2-config/testing", "libra2-time-service/testing", "libra2-memsocket/testing", "libra2-netcore/testing"]
 
 [package.metadata.cargo-machete]
 ignored = ["serde_bytes"]

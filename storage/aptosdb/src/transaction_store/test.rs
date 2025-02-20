@@ -6,7 +6,7 @@
 
 use super::*;
 use crate::{ledger_db::transaction_db_test::init_db, AptosDB};
-use aptos_proptest_helpers::Index;
+use libra2_proptest_helpers::Index;
 use libra2_temppath::TempPath;
 use libra2_types::proptest_types::{AccountInfoUniverse, SignatureCheckedTransactionGen};
 use proptest::{collection::vec, prelude::*};

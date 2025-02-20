@@ -3,7 +3,7 @@
 
 use crate::{ledger_db::transaction_db::TransactionDb, Libra2DB};
 use libra2_crypto::hash::CryptoHash;
-use aptos_proptest_helpers::Index;
+use libra2_proptest_helpers::Index;
 use libra2_schemadb::batch::SchemaBatch;
 use libra2_storage_interface::Result;
 use libra2_temppath::TempPath;

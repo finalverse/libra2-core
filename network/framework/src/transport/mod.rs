@@ -18,8 +18,8 @@ use libra2_crypto::x25519;
 use libra2_id_generator::{IdGenerator, U32IdGenerator};
 use libra2_logger::prelude::*;
 // Re-exposed for aptos-network-checker
-pub use aptos_netcore::transport::tcp::{resolve_and_connect, TCPBufferCfg, TcpSocket};
-use aptos_netcore::transport::{proxy_protocol, tcp, ConnectionOrigin, Transport};
+pub use libra2_netcore::transport::tcp::{resolve_and_connect, TCPBufferCfg, TcpSocket};
+use libra2_netcore::transport::{proxy_protocol, tcp, ConnectionOrigin, Transport};
 use libra2_short_hex_str::AsShortHexStr;
 use libra2_time_service::{timeout, TimeService, TimeServiceTrait};
 use libra2_types::{

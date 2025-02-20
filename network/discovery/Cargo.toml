@@ -1,6 +1,6 @@
 [package]
-name = "aptos-network-discovery"
-description = "Aptos Network Peer Discovery"
+name = "libra2-network-discovery"
+description = "Libra2 Network Peer Discovery"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -34,6 +34,6 @@ url = { workspace = true }
 
 [dev-dependencies]
 libra2-config = { workspace = true, features = ["testing"] }
-aptos-netcore = { workspace = true, features = ["fuzzing"] }
+libra2-netcore = { workspace = true, features = ["fuzzing"] }
 libra2-temppath = { workspace = true }
 rand = { workspace = true }

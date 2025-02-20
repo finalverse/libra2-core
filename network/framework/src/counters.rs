@@ -9,7 +9,7 @@ use libra2_metrics_core::{
     register_int_gauge_vec, Histogram, HistogramTimer, HistogramVec, IntCounter, IntCounterVec,
     IntGauge, IntGaugeVec,
 };
-use aptos_netcore::transport::ConnectionOrigin;
+use libra2_netcore::transport::ConnectionOrigin;
 use libra2_short_hex_str::AsShortHexStr;
 use libra2_types::PeerId;
 use once_cell::sync::Lazy;
@@ -190,7 +190,7 @@ pub fn connection_upgrade_time(
 
 pub static APTOS_NETWORK_DISCOVERY_NOTES: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_network_discovery_notes",
+        "libra2_network_discovery_notes",
         "Aptos network discovery notes",
         &["role_type"]
     )

@@ -25,7 +25,7 @@ libra2-infallible = { workspace = true }
 libra2-jellyfish-merkle = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-proptest-helpers = { workspace = true, optional = true }
+libra2-proptest-helpers = { workspace = true, optional = true }
 aptos-resource-viewer = { workspace = true }
 libra2-rocksdb-options = { workspace = true }
 libra2-schemadb = { workspace = true }
@@ -60,7 +60,7 @@ tokio = { workspace = true }
 [dev-dependencies]
 aptos-executor-types = { workspace = true }
 libra2-jellyfish-merkle = { workspace = true, features = ["fuzzing"] }
-aptos-proptest-helpers = { workspace = true }
+libra2-proptest-helpers = { workspace = true }
 libra2-schemadb = { workspace = true, features = ["fuzzing"] }
 libra2-scratchpad = { workspace = true, features = ["fuzzing"] }
 libra2-temppath = { workspace = true }
@@ -71,6 +71,6 @@ rand = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["proptest", "proptest-derive", "aptos-proptest-helpers", "libra2-temppath", "libra2-crypto/fuzzing", "libra2-jellyfish-merkle/fuzzing", "libra2-types/fuzzing", "aptos-executor-types/fuzzing", "libra2-schemadb/fuzzing", "libra2-scratchpad/fuzzing"]
+fuzzing = ["proptest", "proptest-derive", "libra2-proptest-helpers", "libra2-temppath", "libra2-crypto/fuzzing", "libra2-jellyfish-merkle/fuzzing", "libra2-types/fuzzing", "aptos-executor-types/fuzzing", "libra2-schemadb/fuzzing", "libra2-scratchpad/fuzzing"]
 consensus-only-perf-test = []
 db-debugger = ["libra2-temppath", "clap", "crossbeam-channel", "owo-colors", "indicatif"]

@@ -35,7 +35,7 @@ thiserror = { workspace = true }
 [dev-dependencies]
 libra2-config = { workspace = true, features = ["fuzzing"] }
 aptos-consensus-types = { workspace = true, features = ["fuzzing"] }
-aptos-proptest-helpers = { workspace = true }
+libra2-proptest-helpers = { workspace = true }
 libra2-secure-storage = { workspace = true, features = ["testing"] }
 claims = { workspace = true }
 criterion = { workspace = true }

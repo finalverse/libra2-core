@@ -4627,7 +4627,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "rate(aptos_network_benchmark_direct_messages{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", state=\"sent\"})",
+          "expr": "rate(libra2_network_benchmark_direct_messages{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", state=\"sent\"})",
           "legendFormat": "{{kubernetes_pod_name}}-{{role_type}}-{{network_id}}",
           "range": true,
           "refId": "A"

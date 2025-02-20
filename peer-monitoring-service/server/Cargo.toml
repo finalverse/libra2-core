@@ -19,7 +19,7 @@ libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-netcore = { workspace = true }
+libra2-netcore = { workspace = true }
 aptos-network = { workspace = true }
 libra2-peer-monitoring-service-types = { workspace = true }
 libra2-storage-interface = { workspace = true }

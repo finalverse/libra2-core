@@ -8,7 +8,7 @@ use crate::{account::AccountData, executor::FakeExecutor};
 use aptos_cached_packages::aptos_stdlib;
 use aptos_framework::{BuildOptions, BuiltPackage};
 use aptos_gas_algebra::GasQuantity;
-use aptos_proptest_helpers::Index;
+use libra2_proptest_helpers::Index;
 use libra2_temppath::TempPath;
 use libra2_types::transaction::{
     EntryFunction, ExecutionStatus, SignedTransaction, TransactionStatus,

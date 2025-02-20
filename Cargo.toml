@@ -89,7 +89,7 @@ members = [
     "crates/libra2-node-identity",
     "crates/aptos-openapi",
     "crates/libra2-profiler",
-    "crates/aptos-proptest-helpers",
+    "crates/libra2-proptest-helpers",
     "crates/libra2-push-metrics",
     "crates/libra2-rate-limiter",
     "crates/aptos-rest-client",
@@ -407,12 +407,12 @@ aptos-move-examples = { path = "aptos-move/move-examples" }
 aptos-move-e2e-benchmark = { path = "aptos-move/e2e-benchmark" }
 aptos-mvhashmap = { path = "aptos-move/mvhashmap" }
 aptos-native-interface = { path = "aptos-move/aptos-native-interface" }
-aptos-netcore = { path = "network/netcore" }
+libra2-netcore = { path = "network/netcore" }
 aptos-network = { path = "network/framework" }
-aptos-network-benchmark = { path = "network/benchmark" }
-aptos-network-builder = { path = "network/builder" }
+libra2-network-benchmark = { path = "network/benchmark" }
+libra2-network-builder = { path = "network/builder" }
 aptos-network-checker = { path = "crates/aptos-network-checker" }
-aptos-network-discovery = { path = "network/discovery" }
+libra2-network-discovery = { path = "network/discovery" }
 aptos-nft-metadata-crawler = { path = "ecosystem/nft-metadata-crawler" }
 aptos-node = { path = "aptos-node" }
 libra2-node = { path = "libra2-node" }
@@ -429,7 +429,7 @@ aptos-keyless-common = { path = "keyless/common" }
 libra2-keyless-pepper-common = { path = "keyless/pepper/common" }
 libra2-keyless-pepper-service = { path = "keyless/pepper/service" }
 libra2-profiler = { path = "crates/libra2-profiler" }
-aptos-proptest-helpers = { path = "crates/aptos-proptest-helpers" }
+libra2-proptest-helpers = { path = "crates/libra2-proptest-helpers" }
 aptos-protos = { path = "protos/rust" }
 libra2-proxy = { path = "crates/proxy" }
 libra2-push-metrics = { path = "crates/libra2-push-metrics" }

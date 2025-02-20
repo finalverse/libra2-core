@@ -24,7 +24,7 @@ libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-mempool-notifications = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-netcore = { workspace = true }
+libra2-netcore = { workspace = true }
 aptos-network = { workspace = true }
 libra2-peer-monitoring-service-types = { workspace = true }
 aptos-runtimes = { workspace = true }

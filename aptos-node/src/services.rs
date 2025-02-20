@@ -24,7 +24,7 @@ use libra2_mempool::{
 };
 use libra2_mempool_notifications::MempoolNotificationListener;
 use aptos_network::application::{interface::NetworkClientInterface, storage::PeersAndMetadata};
-use aptos_network_benchmark::{run_netbench_service, NetbenchMessage};
+use libra2_network_benchmark::{run_netbench_service, NetbenchMessage};
 use libra2_peer_monitoring_service_server::{
     network::PeerMonitoringServiceNetworkEvents, storage::StorageReader,
     PeerMonitoringServiceServer,

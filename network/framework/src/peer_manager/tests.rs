@@ -28,7 +28,7 @@ use libra2_config::{
     network_id::{NetworkContext, NetworkId},
 };
 use libra2_memsocket::MemorySocket;
-use aptos_netcore::transport::{
+use libra2_netcore::transport::{
     boxed::BoxedTransport, memory::MemoryTransport, ConnectionOrigin, TransportExt,
 };
 use libra2_time_service::TimeService;

@@ -44,8 +44,8 @@ libra2-logger = { workspace = true, features = ["node-identity"] }
 libra2-mempool = { workspace = true }
 libra2-mempool-notifications = { workspace = true }
 aptos-network = { workspace = true }
-aptos-network-benchmark = { workspace = true }
-aptos-network-builder = { workspace = true }
+libra2-network-benchmark = { workspace = true }
+libra2-network-builder = { workspace = true }
 libra2-node-identity = { workspace = true }
 libra2-peer-monitoring-service-client = { workspace = true }
 libra2-peer-monitoring-service-server = { workspace = true }

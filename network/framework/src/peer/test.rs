@@ -28,7 +28,7 @@ use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use libra2_config::{config::PeerRole, network_id::NetworkContext};
 use libra2_logger::info;
 use libra2_memsocket::MemorySocket;
-use aptos_netcore::transport::ConnectionOrigin;
+use libra2_netcore::transport::ConnectionOrigin;
 use libra2_time_service::{MockTimeService, TimeService};
 use libra2_types::{network_address::NetworkAddress, PeerId};
 use bytes::Bytes;

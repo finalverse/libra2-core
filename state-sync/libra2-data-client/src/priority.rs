@@ -145,7 +145,7 @@ mod tests {
         config::{BaseConfig, Peer, PeerRole, RoleType},
         network_id::{NetworkId, PeerNetworkId},
     };
-    use aptos_netcore::transport::ConnectionOrigin;
+    use libra2_netcore::transport::ConnectionOrigin;
     use aptos_network::{application::storage::PeersAndMetadata, transport::ConnectionMetadata};
     use libra2_types::PeerId;
     use maplit::hashmap;

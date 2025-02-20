@@ -22,8 +22,8 @@ use libra2_config::{config::HANDSHAKE_VERSION, network_id::NetworkContext};
 use libra2_crypto::x25519;
 use libra2_logger::prelude::*;
 #[cfg(any(test, feature = "testing", feature = "fuzzing"))]
-use aptos_netcore::transport::memory::MemoryTransport;
-use aptos_netcore::transport::{
+use libra2_netcore::transport::memory::MemoryTransport;
+use libra2_netcore::transport::{
     tcp::{TCPBufferCfg, TcpSocket, TcpTransport},
     Transport,
 };

@@ -41,7 +41,7 @@ anyhow = { workspace = true }
 libra2-bitvec = { workspace = true }
 libra2-config = { workspace = true, features = ["fuzzing"] }
 libra2-crypto = { workspace = true }
-aptos-netcore = { workspace = true }
+libra2-netcore = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-time-service = { workspace = true, features = ["async", "testing"] }
 libra2-types = { workspace = true }

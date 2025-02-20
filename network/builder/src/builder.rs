@@ -20,7 +20,7 @@ use libra2_config::{
 };
 use libra2_event_notifications::{DbBackedOnChainConfig, EventSubscriptionService};
 use libra2_logger::prelude::*;
-use aptos_netcore::transport::tcp::TCPBufferCfg;
+use libra2_netcore::transport::tcp::TCPBufferCfg;
 use aptos_network::{
     application::storage::PeersAndMetadata,
     connectivity_manager::{builder::ConnectivityManagerBuilder, ConnectivityRequest},
@@ -38,7 +38,7 @@ use aptos_network::{
         },
     },
 };
-use aptos_network_discovery::DiscoveryChangeListener;
+use libra2_network_discovery::DiscoveryChangeListener;
 use libra2_time_service::TimeService;
 use libra2_types::{chain_id::ChainId, network_address::NetworkAddress};
 use std::{clone::Clone, collections::HashSet, sync::Arc, time::Duration};

@@ -9,7 +9,7 @@ use crate::{
     account_universe::{default_num_accounts, default_num_transactions, AccountCurrent},
     executor::FakeExecutor,
 };
-use aptos_proptest_helpers::{pick_slice_idxs, Index};
+use libra2_proptest_helpers::{pick_slice_idxs, Index};
 use proptest::{
     collection::{vec, SizeRange},
     prelude::*,

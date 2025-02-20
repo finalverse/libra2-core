@@ -32,7 +32,7 @@ use std::{
 ///
 /// ```
 /// use proptest::prelude::*;
-/// use aptos_proptest_helpers::with_stack_size;
+/// use libra2_proptest_helpers::with_stack_size;
 ///
 /// with_stack_size(4 * 1024 * 1024, || proptest!(|(x in 0usize..128)| {
 ///     // assertions go here

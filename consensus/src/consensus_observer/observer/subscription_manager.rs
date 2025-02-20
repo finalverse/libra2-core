@@ -423,7 +423,7 @@ fn update_total_subscription_metrics(active_subscription_peers: &[PeerNetworkId]
 mod test {
     use super::*;
     use libra2_config::{config::PeerRole, network_id::NetworkId};
-    use aptos_netcore::transport::ConnectionOrigin;
+    use libra2_netcore::transport::ConnectionOrigin;
     use aptos_network::{
         application::storage::PeersAndMetadata,
         protocols::wire::handshake::v1::{MessagingProtocolVersion, ProtocolId, ProtocolIdSet},

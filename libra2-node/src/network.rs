@@ -27,8 +27,8 @@ use aptos_network::{
     },
     ProtocolId,
 };
-use aptos_network_benchmark::NetbenchMessage;
-use aptos_network_builder::builder::NetworkBuilder;
+use libra2_network_benchmark::NetbenchMessage;
+use libra2_network_builder::builder::NetworkBuilder;
 use libra2_peer_monitoring_service_types::PeerMonitoringServiceMessage;
 use libra2_storage_service_types::StorageServiceMessage;
 use libra2_time_service::TimeService;
@@ -209,7 +209,7 @@ pub fn netbench_network_configuration(
         rpc_protocols,
         libra2_channel::Config::new(max_network_channel_size)
             .queue_style(QueueStyle::FIFO)
-            .counters(&aptos_network_benchmark::PENDING_NETBENCH_NETWORK_EVENTS),
+            .counters(&libra2_network_benchmark::PENDING_NETBENCH_NETWORK_EVENTS),
     );
     Some(NetworkApplicationConfig::new(
         network_client_config,
