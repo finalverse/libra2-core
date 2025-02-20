@@ -19,7 +19,7 @@ dpn = []
 [dependencies]
 anyhow = { workspace = true }
 aptos-api-types = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 aptos-types = { workspace = true }

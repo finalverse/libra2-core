@@ -39,7 +39,7 @@ use libra2_config::{
     config::{Peer, PeerRole, PeerSet},
     network_id::NetworkContext,
 };
-use aptos_crypto::x25519;
+use libra2_crypto::x25519;
 use libra2_infallible::RwLock;
 use libra2_logger::prelude::*;
 use aptos_netcore::transport::ConnectionOrigin;

@@ -6,7 +6,7 @@ use crate::{
     utils::sort_dedup,
     LeafIdx, ARITY,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHasher, HexyHasher, HOT_STATE_PLACE_HOLDER_HASH},
     HashValue,
 };

@@ -16,7 +16,7 @@ use crate::{
     },
     CliCommand,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     PrivateKey,
 };

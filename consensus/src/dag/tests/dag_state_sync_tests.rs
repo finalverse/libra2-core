@@ -20,7 +20,7 @@ use crate::{
     pipeline::execution_client::DummyExecutionClient,
 };
 use aptos_consensus_types::common::{Author, Round};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_reliable_broadcast::RBNetworkSender;
 use libra2_time_service::TimeService;
 use aptos_types::{

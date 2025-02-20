@@ -21,7 +21,7 @@ use aptos_consensus_types::{
     vote::Vote,
     vote_data::VoteData,
 };
-use aptos_crypto::{HashValue, PrivateKey};
+use libra2_crypto::{HashValue, PrivateKey};
 use aptos_types::{
     validator_signer::ValidatorSigner, validator_verifier::random_validator_verifier,
 };

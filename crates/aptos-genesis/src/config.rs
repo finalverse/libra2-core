@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_config::config::HANDSHAKE_VERSION;
-use aptos_crypto::{bls12381, ed25519::Ed25519PublicKey, x25519};
+use libra2_crypto::{bls12381, ed25519::Ed25519PublicKey, x25519};
 use aptos_types::{
     account_address::{AccountAddress, AccountAddressWithChecks},
     chain_id::ChainId,

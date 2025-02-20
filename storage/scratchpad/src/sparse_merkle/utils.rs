@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 
 /// Returns the shard id of the hashed key.
 pub fn get_state_shard_id(key: HashValue) -> u8 {

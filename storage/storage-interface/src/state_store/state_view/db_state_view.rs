@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::DbReader;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_types::{
     ledger_info::LedgerInfo,
     state_store::{

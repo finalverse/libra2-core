@@ -31,7 +31,7 @@ use crate::{
         ShardedStateKvSchemaBatch,
     },
 };
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, CORRUPTION_SENTINEL, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
@@ -1242,7 +1242,7 @@ impl StateValueWriter<StateKey, StateValue> for StateStore {
 #[cfg(test)]
 mod test_only {
     use crate::state_store::StateStore;
-    use aptos_crypto::HashValue;
+    use libra2_crypto::HashValue;
     use aptos_schemadb::batch::SchemaBatch;
     use aptos_storage_interface::state_store::{
         state_summary::ProvableStateSummary, state_update_refs::StateUpdateRefs,

@@ -5,7 +5,7 @@ use crate::{
     db_debugger::common::DbDir,
     schema::{state_value::StateValueSchema, state_value_by_key_hash::StateValueByKeyHashSchema},
 };
-use aptos_crypto::hash::CryptoHash;
+use libra2_crypto::hash::CryptoHash;
 use aptos_jellyfish_merkle::iterator::JellyfishMerkleIterator;
 use aptos_schemadb::ReadOptions;
 use aptos_storage_interface::Result;

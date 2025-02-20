@@ -5,7 +5,7 @@
 #![forbid(unsafe_code)]
 
 use aptos_cached_packages::aptos_stdlib;
-use aptos_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, Uniform};
+use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, Uniform};
 use aptos_db::AptosDB;
 use aptos_executor::{
     block_executor::BlockExecutor,

@@ -8,7 +8,7 @@ use crate::schema::{
 };
 use anyhow::anyhow;
 use aptos_accumulator::{HashReader, MerkleAccumulator};
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, TransactionAccumulatorHasher},
     HashValue,
 };

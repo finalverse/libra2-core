@@ -492,8 +492,8 @@ impl From<&TransactionInfo> for TransactionIdentifier {
     }
 }
 
-impl From<aptos_crypto::HashValue> for TransactionIdentifier {
-    fn from(hash: aptos_crypto::HashValue) -> Self {
+impl From<libra2_crypto::HashValue> for TransactionIdentifier {
+    fn from(hash: libra2_crypto::HashValue) -> Self {
         TransactionIdentifier {
             hash: to_hex_lower(&hash),
         }

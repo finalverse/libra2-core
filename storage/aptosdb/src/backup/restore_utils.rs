@@ -16,7 +16,7 @@ use crate::{
     state_store::StateStore,
     utils::ShardedStateKvSchemaBatch,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_schemadb::{batch::SchemaBatch, DB};
 use aptos_storage_interface::{
     db_ensure as ensure, state_store::state_update_refs::StateUpdateRefs, AptosDbError, Result,

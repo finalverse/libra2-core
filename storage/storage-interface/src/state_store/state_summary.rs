@@ -10,7 +10,7 @@ use crate::{
     DbReader,
 };
 use anyhow::Result;
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, CORRUPTION_SENTINEL},
     HashValue,
 };

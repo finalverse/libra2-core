@@ -13,7 +13,7 @@
 
 use crate::schema::{ensure_slice_len_eq, EVENT_ACCUMULATOR_CF_NAME};
 use anyhow::Result;
-use aptos_crypto::hash::HashValue;
+use libra2_crypto::hash::HashValue;
 use aptos_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},

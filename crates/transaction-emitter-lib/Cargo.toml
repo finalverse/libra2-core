@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 again = { workspace = true }
 anyhow = { workspace = true }
 libra2-config = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 libra2-global-constants = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }

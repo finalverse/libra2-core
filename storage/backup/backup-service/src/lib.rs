@@ -34,7 +34,7 @@ pub fn start_backup_service(address: SocketAddr, db: Arc<AptosDB>) -> Runtime {
 mod tests {
     use super::*;
     use libra2_config::utils::get_available_port;
-    use aptos_crypto::hash::HashValue;
+    use libra2_crypto::hash::HashValue;
     use libra2_temppath::TempPath;
     use reqwest::blocking::get;
     use std::net::{IpAddr, Ipv4Addr};

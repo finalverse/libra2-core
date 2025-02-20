@@ -11,7 +11,7 @@ use crate::{
     utils::iterators::EventsByVersionIter,
 };
 use aptos_accumulator::MerkleAccumulator;
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, EventAccumulatorHasher},
     HashValue,
 };

@@ -10,7 +10,7 @@ use aptos_consensus_types::{
     request_response::{GetPayloadCommand, GetPayloadRequest, GetPayloadResponse},
     utils::PayloadTxnsSize,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_types::{aggregate_signature::AggregateSignature, PeerId};
 use futures::channel::oneshot;
 use std::{cmp::max, collections::HashSet};

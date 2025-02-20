@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{aptos_vm::fetch_module_metadata_for_struct_tag, move_vm_ext::AptosMoveResolver};
-use aptos_crypto::ed25519::Ed25519PublicKey;
+use libra2_crypto::ed25519::Ed25519PublicKey;
 use aptos_types::{
     invalid_signature,
     jwks::{jwk::JWK, AllProvidersJWKs, FederatedJWKs, PatchedJWKs},
@@ -216,7 +216,7 @@ pub(crate) fn validate_authenticators(
     let training_wheels_pk = match &config.training_wheels_pubkey {
         None => None,
         // This takes ~4.4 microseconds, so we are not too concerned about speed here.
-        // (Run `cargo bench -- ed25519/pk_deserialize` in `crates/aptos-crypto`.)
+        // (Run `cargo bench -- ed25519/pk_deserialize` in `crates/libra2-crypto`.)
         Some(bytes) => Some(EphemeralPublicKey::ed25519(
             Ed25519PublicKey::try_from(bytes.as_slice()).map_err(|_| {
                 // println!("[aptos-vm][groth16] On chain TW PK is invalid");

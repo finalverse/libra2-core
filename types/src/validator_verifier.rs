@@ -10,7 +10,7 @@ use crate::{
 };
 use anyhow::{ensure, Result};
 use libra2_bitvec::BitVec;
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381,
     bls12381::{bls12381_keys, PublicKey},
     hash::CryptoHash,
@@ -679,7 +679,7 @@ pub fn random_validator_verifier_with_voting_power(
 mod tests {
     use super::*;
     use crate::{aggregate_signature::PartialSignatures, validator_signer::ValidatorSigner};
-    use aptos_crypto::test_utils::{TestAptosCrypto, TEST_SEED};
+    use libra2_crypto::test_utils::{TestAptosCrypto, TEST_SEED};
     use proptest::{collection::vec, prelude::*};
     use std::collections::BTreeMap;
 

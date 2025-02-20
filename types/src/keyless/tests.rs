@@ -11,7 +11,7 @@ use crate::keyless::{
     Configuration, EphemeralCertificate, KeylessPublicKey, KeylessSignature,
     VERIFICATION_KEY_FOR_TESTING,
 };
-use aptos_crypto::poseidon_bn254::keyless::fr_to_bytes_le;
+use libra2_crypto::poseidon_bn254::keyless::fr_to_bytes_le;
 use std::ops::{AddAssign, Deref};
 
 /// Outputs:

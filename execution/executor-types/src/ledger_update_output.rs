@@ -4,7 +4,7 @@
 #![forbid(unsafe_code)]
 
 use anyhow::{ensure, Result};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_drop_helper::DropHelper;
 use aptos_types::{
     proof::accumulator::InMemoryTransactionAccumulator,

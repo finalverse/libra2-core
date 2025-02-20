@@ -7,7 +7,7 @@ use crate::{
     map::{DefaultHashBuilder, LayeredMap},
     metrics::LAYER,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_drop_helper::ArcAsyncDrop;
 use libra2_infallible::Mutex;
 use libra2_metrics_core::IntGaugeHelper;

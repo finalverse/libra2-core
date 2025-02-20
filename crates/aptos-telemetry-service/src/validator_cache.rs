@@ -177,7 +177,7 @@ impl PeerSetCacheUpdater {
 #[cfg(test)]
 mod tests {
     use super::PeerSetCacheUpdater;
-    use aptos_crypto::{
+    use libra2_crypto::{
         bls12381::{PrivateKey, PublicKey},
         test_utils::KeyPair,
         Uniform,

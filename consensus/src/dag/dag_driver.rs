@@ -31,7 +31,7 @@ use aptos_consensus_types::{
     payload_pull_params::PayloadPullParameters,
     utils::PayloadTxnsSize,
 };
-use aptos_crypto::hash::CryptoHash;
+use libra2_crypto::hash::CryptoHash;
 use libra2_infallible::Mutex;
 use libra2_logger::{debug, error};
 use aptos_reliable_broadcast::{DropGuard, ReliableBroadcast};

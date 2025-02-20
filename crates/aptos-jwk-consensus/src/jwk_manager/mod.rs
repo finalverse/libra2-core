@@ -9,7 +9,7 @@ use crate::{
 };
 use anyhow::{anyhow, bail, Result};
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_crypto::{bls12381::PrivateKey, SigningKey};
+use libra2_crypto::{bls12381::PrivateKey, SigningKey};
 use libra2_logger::{debug, error, info, warn};
 use aptos_types::{
     account_address::AccountAddress,

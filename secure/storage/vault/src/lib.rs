@@ -6,7 +6,7 @@
 
 pub mod dev;
 
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature, ED25519_PRIVATE_KEY_LENGTH},
     PrivateKey,
 };
@@ -61,8 +61,8 @@ impl From<base64::DecodeError> for Error {
     }
 }
 
-impl From<aptos_crypto::traits::CryptoMaterialError> for Error {
-    fn from(error: aptos_crypto::traits::CryptoMaterialError) -> Self {
+impl From<libra2_crypto::traits::CryptoMaterialError> for Error {
+    fn from(error: libra2_crypto::traits::CryptoMaterialError) -> Self {
         Self::SerializationError(format!("{}", error))
     }
 }

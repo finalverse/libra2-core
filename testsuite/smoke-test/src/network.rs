@@ -15,7 +15,7 @@ use libra2_config::{
     },
     network_id::NetworkId,
 };
-use aptos_crypto::{encoding_type::EncodingType, x25519, x25519::PrivateKey};
+use libra2_crypto::{encoding_type::EncodingType, x25519, x25519::PrivateKey};
 use aptos_forge::{FullNode, Node, NodeExt, Swarm};
 use aptos_genesis::config::HostAndPort;
 use aptos_sdk::move_types::account_address::AccountAddress;

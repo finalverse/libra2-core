@@ -3,7 +3,7 @@
 
 use crate::builder::InitGenesisConfigFn;
 use libra2_config::config::{IdentityBlob, NodeConfig};
-use aptos_crypto::ed25519::Ed25519PrivateKey;
+use libra2_crypto::ed25519::Ed25519PrivateKey;
 use libra2_temppath::TempPath;
 use aptos_types::on_chain_config::Features;
 use rand::{rngs::StdRng, SeedableRng};

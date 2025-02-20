@@ -9,7 +9,7 @@ use crate::handlers::utils::{
     handle_rejection, reply_with_bcs_bytes, reply_with_bytes_sender, unwrap_or_500,
     LATENCY_HISTOGRAM,
 };
-use aptos_crypto::hash::HashValue;
+use libra2_crypto::hash::HashValue;
 use aptos_db::backup::backup_handler::BackupHandler;
 use aptos_types::transaction::Version;
 use warp::{filters::BoxedFilter, reply::Reply, Filter};

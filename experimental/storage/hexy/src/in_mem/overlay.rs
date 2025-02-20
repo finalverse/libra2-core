@@ -5,7 +5,7 @@ use crate::{
     in_mem::{base::HexyBase, view::HexyView},
     NodePosition,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_experimental_layered_map::MapLayer;
 use std::sync::Arc;
 

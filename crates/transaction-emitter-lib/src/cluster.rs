@@ -3,7 +3,7 @@
 
 use crate::{emitter::load_specific_account, instance::Instance, ClusterArgs};
 use anyhow::{anyhow, bail, format_err, Result};
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     test_utils::KeyPair,
 };

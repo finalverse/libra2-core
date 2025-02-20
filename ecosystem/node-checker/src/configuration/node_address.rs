@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{anyhow, bail, Context, Result};
-use aptos_crypto::x25519;
+use libra2_crypto::x25519;
 use aptos_rest_client::Client as AptosRestClient;
 use aptos_sdk::types::network_address::NetworkAddress;
 use reqwest::cookie::Jar;

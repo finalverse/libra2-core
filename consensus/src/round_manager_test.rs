@@ -51,7 +51,7 @@ use aptos_consensus_types::{
     utils::PayloadTxnsSize,
     vote_msg::VoteMsg,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::info;
 use aptos_network::{

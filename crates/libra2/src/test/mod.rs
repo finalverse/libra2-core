@@ -48,7 +48,7 @@ use crate::{
     CliCommand,
 };
 use libra2_config::config::Peer;
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381,
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     x25519, PrivateKey,

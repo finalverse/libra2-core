@@ -8,7 +8,7 @@ use crate::{
 };
 use aptos_cached_packages::aptos_stdlib;
 use libra2_config::config::GasEstimationConfig;
-use aptos_crypto::ed25519::Ed25519Signature;
+use libra2_crypto::ed25519::Ed25519Signature;
 use aptos_forge::{LocalSwarm, NodeExt, Swarm, TransactionType};
 use libra2_global_constants::{DEFAULT_BUCKETS, GAS_UNIT_PRICE};
 use aptos_rest_client::{
@@ -360,7 +360,7 @@ async fn test_bcs() {
         let bcs_txn = transactions_bcs.get(i).unwrap();
         assert_eq!(bcs_txn.version, expected_transaction.version().unwrap());
         let expected_hash =
-            aptos_crypto::HashValue::from(expected_transaction.transaction_info().unwrap().hash);
+            libra2_crypto::HashValue::from(expected_transaction.transaction_info().unwrap().hash);
 
         let bcs_hash = if let Transaction::UserTransaction(ref txn) = bcs_txn.transaction {
             txn.committed_hash()
@@ -410,7 +410,7 @@ async fn test_bcs() {
 
         assert_eq!(json_txn.version().unwrap(), bcs_txn.version);
         assert_eq!(
-            aptos_crypto::HashValue::from(json_txn.transaction_info().unwrap().hash),
+            libra2_crypto::HashValue::from(json_txn.transaction_info().unwrap().hash),
             bcs_txn.info.transaction_hash()
         );
     }
@@ -433,7 +433,7 @@ async fn test_bcs() {
 
     let bcs_txn = client.simulate_bcs(&signed_txn).await.unwrap().into_inner();
     assert_eq!(
-        aptos_crypto::HashValue::from(json_txn.info.hash),
+        libra2_crypto::HashValue::from(json_txn.info.hash),
         bcs_txn.info.transaction_hash()
     );
 
@@ -469,7 +469,7 @@ async fn test_bcs() {
 
     assert_eq!(json_block.block_height.0, bcs_block.block_height);
     assert_eq!(
-        aptos_crypto::HashValue::from(json_block.block_hash),
+        libra2_crypto::HashValue::from(json_block.block_hash),
         bcs_block.block_hash
     );
 
@@ -479,7 +479,7 @@ async fn test_bcs() {
     let first_bcs_txn = bcs_txns.first().unwrap();
     assert_eq!(first_json_txn.version().unwrap(), first_bcs_txn.version);
     assert_eq!(
-        aptos_crypto::HashValue::from(first_json_txn.transaction_info().unwrap().hash),
+        libra2_crypto::HashValue::from(first_json_txn.transaction_info().unwrap().hash),
         first_bcs_txn.info.transaction_hash()
     );
 
@@ -500,7 +500,7 @@ async fn test_bcs() {
     assert_eq!(bcs_block.block_height, bcs_block_by_height.block_height);
     assert_eq!(bcs_block.block_hash, bcs_block_by_height.block_hash);
     assert_eq!(
-        aptos_crypto::HashValue::from(json_block_by_height.block_hash),
+        libra2_crypto::HashValue::from(json_block_by_height.block_hash),
         bcs_block_by_height.block_hash
     );
 

@@ -28,7 +28,7 @@ use crate::{
     CliCommand, CliResult,
 };
 use aptos_api_types::AptosErrorCode;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_framework::{
     chunked_publish::{
         chunk_package_and_create_payloads, large_packages_cleanup_staging_area, PublishType,

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::pipeline::signing_phase::CommitSignerProvider;
-use aptos_crypto::bls12381;
+use libra2_crypto::bls12381;
 use aptos_types::validator_signer::ValidatorSigner;
 use std::sync::Arc;
 

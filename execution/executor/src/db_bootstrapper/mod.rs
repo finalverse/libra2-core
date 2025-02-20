@@ -9,7 +9,7 @@ use crate::{
     workflow::{do_get_execution_output::DoGetExecutionOutput, ApplyExecutionOutput},
 };
 use anyhow::{anyhow, ensure, format_err, Result};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
 use aptos_storage_interface::{
     state_store::state_view::cached_state_view::CachedStateView, DbReaderWriter, DbWriter,

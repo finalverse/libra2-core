@@ -7,7 +7,7 @@ mod mock_vm_test;
 
 use anyhow::Result;
 use aptos_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvider};
-use aptos_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
+use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
 use aptos_types::{
     account_address::AccountAddress,
     account_config::NEW_EPOCH_EVENT_V2_MOVE_TYPE_TAG,

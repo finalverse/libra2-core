@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::common::types::{CliError, CliTypedResult};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_gas_profiling::FrameName;
 use aptos_move_debugger::aptos_debugger::AptosDebugger;
 use aptos_types::transaction::SignedTransaction;

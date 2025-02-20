@@ -17,7 +17,7 @@ use crate::{
     },
 };
 use libra2_config::config::{RocksdbConfig, RocksdbConfigs, StorageDirPaths};
-use aptos_crypto::hash::CryptoHash;
+use libra2_crypto::hash::CryptoHash;
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::prelude::info;
 use libra2_metrics_core::TimerHelper;

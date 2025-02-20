@@ -4,7 +4,7 @@
 
 use super::new_test_context;
 use aptos_api_test_context::current_function_name;
-use aptos_crypto::{ed25519::Ed25519PrivateKey, secp256k1_ecdsa, SigningKey};
+use libra2_crypto::{ed25519::Ed25519PrivateKey, secp256k1_ecdsa, SigningKey};
 use aptos_sdk::types::{
     transaction::{
         authenticator::{
@@ -24,8 +24,8 @@ async fn test_multi_secp256k1_ecdsa() {
     let other = context.create_account().await;
 
     let mut rng: StdRng = SeedableRng::from_seed([0; 32]);
-    let private_key: secp256k1_ecdsa::PrivateKey = aptos_crypto::Uniform::generate(&mut rng);
-    let public_key = aptos_crypto::PrivateKey::public_key(&private_key);
+    let private_key: secp256k1_ecdsa::PrivateKey = libra2_crypto::Uniform::generate(&mut rng);
+    let public_key = libra2_crypto::PrivateKey::public_key(&private_key);
     let address = AuthenticationKey::multi_key(
         MultiKey::new(vec![AnyPublicKey::secp256k1_ecdsa(public_key.clone())], 1).unwrap(),
     )
@@ -77,8 +77,8 @@ async fn test_secp256k1_ecdsa() {
     let other = context.create_account().await;
 
     let mut rng: StdRng = SeedableRng::from_seed([0; 32]);
-    let private_key: secp256k1_ecdsa::PrivateKey = aptos_crypto::Uniform::generate(&mut rng);
-    let public_key = aptos_crypto::PrivateKey::public_key(&private_key);
+    let private_key: secp256k1_ecdsa::PrivateKey = libra2_crypto::Uniform::generate(&mut rng);
+    let public_key = libra2_crypto::PrivateKey::public_key(&private_key);
     let address = AuthenticationKey::any_key(AnyPublicKey::secp256k1_ecdsa(public_key.clone()))
         .account_address();
 

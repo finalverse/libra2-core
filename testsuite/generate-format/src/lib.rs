@@ -5,7 +5,7 @@
 //! How and where to record the Serde format of interesting Aptos types.
 //! See API documentation with `cargo doc -p serde-reflection --open`
 
-use aptos_crypto::ed25519::{Ed25519PublicKey, Ed25519Signature};
+use libra2_crypto::ed25519::{Ed25519PublicKey, Ed25519Signature};
 use aptos_types::{
     keyless,
     keyless::{EphemeralCertificate, Groth16Proof, IdCommitment, Pepper, ZeroKnowledgeSig},

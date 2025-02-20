@@ -13,7 +13,7 @@ repository = "https://github.com/aptos-labs/aptos-core/tree/main/crates/aptos-le
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 aptos-types = { workspace = true }
 hex = { workspace = true }
 ledger-apdu = "0.10.0"

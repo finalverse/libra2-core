@@ -16,7 +16,7 @@ use aptos_consensus_types::{
     timeout_2chain::{TwoChainTimeout, TwoChainTimeoutCertificate},
     vote_data::VoteData,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,

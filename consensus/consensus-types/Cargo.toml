@@ -15,8 +15,8 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 libra2-bitvec = { workspace = true }
-aptos-crypto = { workspace = true }
-aptos-crypto-derive = { workspace = true }
+libra2-crypto = { workspace = true }
+libra2-crypto-derive = { workspace = true }
 aptos-executor-types = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
@@ -44,4 +44,4 @@ serde_json = { workspace = true }
 [features]
 default = []
 failpoints = ["fail/failpoints"]
-fuzzing = ["proptest", "aptos-types/fuzzing", "aptos-crypto/fuzzing"]
+fuzzing = ["proptest", "aptos-types/fuzzing", "libra2-crypto/fuzzing"]

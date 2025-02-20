@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_experimental_layered_map::{LayeredMap, MapLayer};
 use aptos_schemadb::{
     batch::WriteBatch,

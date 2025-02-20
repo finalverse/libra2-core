@@ -19,7 +19,7 @@ libra2-bitvec = { path = "../../crates/libra2-bitvec" }
 aptos-cached-packages = { workspace = true }
 libra2-config = { workspace = true, features = ["smoke-test"] }
 aptos-consensus = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 aptos-db = { workspace = true }
 aptos-db-indexer-schemas = { workspace = true }
 libra2-dkg = { workspace = true }

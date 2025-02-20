@@ -10,7 +10,7 @@ use crate::{
     },
     Capability, CryptoStorage, Error, Identity, KVStorage, Namespaced, Permission, Policy, Storage,
 };
-use aptos_crypto::{test_utils::TestAptosCrypto, Signature};
+use libra2_crypto::{test_utils::TestAptosCrypto, Signature};
 use aptos_vault_client::dev::{self, ROOT_TOKEN};
 
 /// VaultStorage namespace constants

@@ -12,7 +12,7 @@ use crate::{
     vote_data::VoteData,
 };
 use libra2_bitvec::BitVec;
-use aptos_crypto::hash::HashValue;
+use libra2_crypto::hash::HashValue;
 use aptos_types::{
     account_address::AccountAddress,
     aggregate_signature::PartialSignatures,

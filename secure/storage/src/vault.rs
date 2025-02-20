@@ -6,7 +6,7 @@ use crate::{
     namespaced::NAMESPACE_SEPARATOR, CryptoStorage, Error, GetResponse, KVStorage,
     PublicKeyResponse,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature},
     hash::CryptoHash,
 };
@@ -278,7 +278,7 @@ impl CryptoStorage for VaultStorage {
         message: &T,
     ) -> Result<Ed25519Signature, Error> {
         let name = self.crypto_name(name);
-        let mut bytes = <T::Hasher as aptos_crypto::hash::CryptoHasher>::seed().to_vec();
+        let mut bytes = <T::Hasher as libra2_crypto::hash::CryptoHasher>::seed().to_vec();
         bcs::serialize_into(&mut bytes, &message).map_err(|e| {
             Error::InternalError(format!(
                 "Serialization of signable material should not fail, yet returned Error:{}",
@@ -296,7 +296,7 @@ impl CryptoStorage for VaultStorage {
     ) -> Result<Ed25519Signature, Error> {
         let name = self.crypto_name(name);
         let vers = self.key_version(&name, &version)?;
-        let mut bytes = <T::Hasher as aptos_crypto::hash::CryptoHasher>::seed().to_vec();
+        let mut bytes = <T::Hasher as libra2_crypto::hash::CryptoHasher>::seed().to_vec();
         bcs::serialize_into(&mut bytes, &message).map_err(|e| {
             Error::InternalError(format!(
                 "Serialization of signable material should not fail, yet returned Error:{}",

@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_crypto::hash::HashValue;
+use libra2_crypto::hash::HashValue;
 use aptos_types::{
     account_address::AccountAddress, account_config::NewBlockEvent, transaction::Version,
 };

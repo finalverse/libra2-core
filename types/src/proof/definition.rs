@@ -15,8 +15,8 @@ use crate::{
 };
 use anyhow::{bail, ensure, format_err, Context, Result};
 #[cfg(any(test, feature = "fuzzing"))]
-use aptos_crypto::hash::TestOnlyHasher;
-use aptos_crypto::{
+use libra2_crypto::hash::TestOnlyHasher;
+use libra2_crypto::{
     hash::{
         CryptoHash, CryptoHasher, EventAccumulatorHasher, TransactionAccumulatorHasher,
         SPARSE_MERKLE_PLACEHOLDER_HASH,

@@ -40,9 +40,9 @@
 //! To prevent replay of signed PVSS transcripts inside higher-level protocols, the PVSS dealer can
 //! include some auxiliary data to compute the signature over too.
 //!
-//! ## A note on `aptos-crypto` traits
+//! ## A note on `libra2-crypto` traits
 //!
-//! We do not implement the `PublicKey` and `PrivateKey` traits from `aptos-crypto` for our PVSS
+//! We do not implement the `PublicKey` and `PrivateKey` traits from `libra2-crypto` for our PVSS
 //! `DealtSecretKey[Share]` and `DealtPublicKey[Share]` structs because those traits (wrongly) assume
 //! that one can always derive a public key from a secret key, which in our PVSS construction's case
 //! does not hold.
@@ -52,7 +52,7 @@ use crate::pvss::{
     Player,
 };
 use anyhow::bail;
-use aptos_crypto::{SigningKey, Uniform, ValidCryptoMaterial, VerifyingKey};
+use libra2_crypto::{SigningKey, Uniform, ValidCryptoMaterial, VerifyingKey};
 use num_traits::Zero;
 use serde::{de::DeserializeOwned, Serialize};
 use std::{fmt::Debug, ops::AddAssign};

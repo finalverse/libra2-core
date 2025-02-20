@@ -14,7 +14,7 @@ use crate::{
     Epoch, StorageServiceRequest,
 };
 use libra2_config::config::AptosDataClientConfig;
-use aptos_crypto::hash::HashValue;
+use libra2_crypto::hash::HashValue;
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use aptos_types::{
     aggregate_signature::AggregateSignature,

@@ -17,7 +17,7 @@ use aptos_consensus_types::{
     payload::{BatchPointer, DataFetchFut, TDataInfo},
     proof_of_store::BatchInfo,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_executor_types::{
     ExecutorError::{DataNotFound, InternalError},
     *,

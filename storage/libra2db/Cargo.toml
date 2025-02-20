@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 anyhow = { workspace = true }
 aptos-accumulator = { workspace = true }
 libra2-config = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 aptos-db-indexer = { workspace = true }
 aptos-db-indexer-schemas = { workspace = true, features = ["fuzzing"] }
 aptos-executor-types = { workspace = true }
@@ -71,6 +71,6 @@ rand = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["proptest", "proptest-derive", "aptos-proptest-helpers", "libra2-temppath", "aptos-crypto/fuzzing", "aptos-jellyfish-merkle/fuzzing", "aptos-types/fuzzing", "aptos-executor-types/fuzzing", "aptos-schemadb/fuzzing", "aptos-scratchpad/fuzzing"]
+fuzzing = ["proptest", "proptest-derive", "aptos-proptest-helpers", "libra2-temppath", "libra2-crypto/fuzzing", "aptos-jellyfish-merkle/fuzzing", "aptos-types/fuzzing", "aptos-executor-types/fuzzing", "aptos-schemadb/fuzzing", "aptos-scratchpad/fuzzing"]
 consensus-only-perf-test = []
 db-debugger = ["libra2-temppath", "clap", "crossbeam-channel", "owo-colors", "indicatif"]

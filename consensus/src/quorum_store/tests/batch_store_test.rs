@@ -7,7 +7,7 @@ use crate::quorum_store::{
     types::{PersistedValue, StorageMode},
 };
 use aptos_consensus_types::proof_of_store::{BatchId, BatchInfo};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_temppath::TempPath;
 use aptos_types::{
     account_address::AccountAddress, transaction::SignedTransaction,

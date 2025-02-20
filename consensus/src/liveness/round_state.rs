@@ -14,7 +14,7 @@ use aptos_consensus_types::{
     timeout_2chain::TwoChainTimeoutWithPartialSignatures,
     vote::Vote,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_logger::{prelude::*, Schema};
 use aptos_types::validator_verifier::ValidatorVerifier;
 use futures::future::AbortHandle;

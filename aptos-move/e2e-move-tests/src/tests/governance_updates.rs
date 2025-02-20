@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{tests::common, MoveHarness};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_framework::{BuildOptions, BuiltPackage};
 use aptos_gas_algebra::Gas;
 use aptos_language_e2e_tests::account::{Account, TransactionBuilder};

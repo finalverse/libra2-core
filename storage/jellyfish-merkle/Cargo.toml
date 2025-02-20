@@ -14,8 +14,8 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-crypto = { workspace = true }
-aptos-crypto-derive = { workspace = true }
+libra2-crypto = { workspace = true }
+libra2-crypto-derive = { workspace = true }
 aptos-experimental-runtimes = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
@@ -36,7 +36,7 @@ serde = { workspace = true }
 thiserror = { workspace = true }
 
 [dev-dependencies]
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 aptos-db = { workspace = true }
 aptos-types = { workspace = true, features = ["fuzzing"] }
 proptest = { workspace = true }
@@ -45,4 +45,4 @@ rand = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["proptest", "proptest-derive", "aptos-crypto/fuzzing", "aptos-types/fuzzing"]
+fuzzing = ["proptest", "proptest-derive", "libra2-crypto/fuzzing", "aptos-types/fuzzing"]

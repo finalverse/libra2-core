@@ -17,7 +17,7 @@ use crate::{
     },
     test_utils::consensus_runtime,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_safety_rules::Error;
 use aptos_types::{
     aggregate_signature::AggregateSignature,

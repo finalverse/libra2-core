@@ -24,7 +24,7 @@ libra2-config = { workspace = true }
 aptos-consensus = { workspace = true }
 aptos-consensus-notifications = { workspace = true }
 libra2-crash-handler = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 aptos-data-client = { workspace = true }
 aptos-data-streaming-service = { workspace = true }
 aptos-db = { workspace = true }
@@ -87,7 +87,7 @@ jemallocator = { workspace = true }
 rstack-self = { workspace = true }
 
 [features]
-assert-private-keys-not-cloneable = ["aptos-crypto/assert-private-keys-not-cloneable"]
+assert-private-keys-not-cloneable = ["libra2-crypto/assert-private-keys-not-cloneable"]
 check-vm-features = []
 consensus-only-perf-test = ["aptos-executor/consensus-only-perf-test", "aptos-mempool/consensus-only-perf-test", "aptos-db/consensus-only-perf-test"]
 default = []
@@ -97,4 +97,4 @@ tokio-console = ["libra2-logger/tokio-console", "libra2-config/tokio-console"]
 smoke-test = ["aptos-jwk-consensus/smoke-test", "libra2-dkg-runtime/smoke-test"]
 
 [package.metadata.cargo-machete]
-ignored = ["aptos-crypto"]
+ignored = ["libra2-crypto"]

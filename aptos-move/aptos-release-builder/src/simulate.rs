@@ -25,7 +25,7 @@ use anyhow::{anyhow, bail, Context, Result};
 use aptos::{
     common::types::PromptOptions, governance::compile_in_temp_dir, move_tool::FrameworkPackageArgs,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_gas_profiling::GasProfiler;
 use aptos_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
 use aptos_language_e2e_tests::account::AccountData;

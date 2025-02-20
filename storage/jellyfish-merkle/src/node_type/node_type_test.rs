@@ -7,7 +7,7 @@ use super::{
     NodeKey,
 };
 use crate::{node_type::NodeType, test_helper::ValueBlob, LeafNode, StateKey, TreeReader};
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };

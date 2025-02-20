@@ -8,7 +8,7 @@ use crate::{
     types::DKGTranscriptRequest,
     DKGMessage,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381::{PrivateKey, PublicKey},
     Uniform,
 };

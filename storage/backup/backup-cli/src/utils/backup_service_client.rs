@@ -7,7 +7,7 @@ use crate::{
     utils::error_notes::ErrorNotes,
 };
 use anyhow::Result;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_db::backup::backup_handler::DbState;
 use libra2_metrics_core::{IntCounterHelper, TimerHelper};
 use aptos_types::transaction::Version;

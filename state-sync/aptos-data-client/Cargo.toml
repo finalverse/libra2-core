@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-config = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 libra2-id-generator = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }

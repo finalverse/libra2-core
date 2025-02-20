@@ -19,7 +19,7 @@ use crate::{
 };
 use libra2_config::config::NodeConfig;
 use aptos_consensus_types::common::{TransactionInProgress, TransactionSummary};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
 use aptos_types::{
     account_address::AccountAddress,

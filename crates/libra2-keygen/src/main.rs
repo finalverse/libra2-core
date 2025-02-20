@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_crypto::ValidCryptoMaterialStringExt;
+use libra2_crypto::ValidCryptoMaterialStringExt;
 use libra2_keygen::KeyGen;
 use aptos_types::transaction::authenticator::AuthenticationKey;
 

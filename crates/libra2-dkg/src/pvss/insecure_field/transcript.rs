@@ -15,8 +15,8 @@ use crate::{
     },
 };
 use anyhow::bail;
-use aptos_crypto::{bls12381, CryptoMaterialError, ValidCryptoMaterial};
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto::{bls12381, CryptoMaterialError, ValidCryptoMaterial};
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use blstrs::{G2Projective, Scalar};
 use rand::thread_rng;
 use serde::{Deserialize, Serialize};

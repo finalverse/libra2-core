@@ -286,7 +286,7 @@ mod test {
         proof_of_store::{BatchId, BatchInfo, ProofOfStore},
         quorum_cert::QuorumCert,
     };
-    use aptos_crypto::HashValue;
+    use libra2_crypto::HashValue;
     use aptos_types::{
         aggregate_signature::AggregateSignature,
         block_info::{BlockInfo, Round},

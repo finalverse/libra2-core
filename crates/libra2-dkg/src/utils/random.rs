@@ -12,7 +12,7 @@
 /// }
 /// ```
 ///
-/// But we can't due to `aptos-crypto`'s dependency on an older version of `rand` and `rand_core`
+/// But we can't due to `libra2-crypto`'s dependency on an older version of `rand` and `rand_core`
 /// compared to `blstrs`'s dependency.
 use crate::{G1_PROJ_NUM_BYTES, G2_PROJ_NUM_BYTES, SCALAR_FIELD_ORDER, SCALAR_NUM_BYTES};
 use blstrs::{G1Projective, G2Projective, Gt, Scalar};

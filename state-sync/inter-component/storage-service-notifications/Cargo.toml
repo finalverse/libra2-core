@@ -20,6 +20,6 @@ serde = { workspace = true }
 thiserror = { workspace = true }
 
 [dev-dependencies]
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 claims = { workspace = true }
 tokio = { workspace = true }

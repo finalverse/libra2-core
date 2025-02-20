@@ -5,7 +5,7 @@ use crate::{smoke_test_environment::SwarmBuilder, utils::get_on_chain_resource};
 use anyhow::bail;
 use aptos::common::types::GasOptions;
 use libra2_config::config::{OverrideNodeConfig, PersistableConfig};
-use aptos_crypto::{bls12381, Uniform};
+use libra2_crypto::{bls12381, Uniform};
 use aptos_forge::{NodeExt, Swarm, SwarmExt};
 use libra2_logger::info;
 use aptos_rest_client::Client;

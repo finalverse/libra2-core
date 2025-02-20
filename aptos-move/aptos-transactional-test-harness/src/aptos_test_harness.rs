@@ -5,7 +5,7 @@
 use anyhow::{bail, format_err, Result};
 use aptos_api_types::AsConverter;
 use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     hash::HashValue,
     ValidCryptoMaterialStringExt,

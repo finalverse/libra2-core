@@ -5,7 +5,7 @@ use crate::{
     execution_output::ExecutionOutput, state_checkpoint_output::StateCheckpointOutput,
     ChunkCommitNotification, LedgerUpdateOutput,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{TransactionAccumulatorHasher, ACCUMULATOR_PLACEHOLDER_HASH},
     HashValue,
 };

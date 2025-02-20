@@ -6,7 +6,7 @@ use crate::{
     common::Author, quorum_cert::QuorumCert, timeout_2chain::TwoChainTimeout, vote_data::VoteData,
 };
 use anyhow::{ensure, Context};
-use aptos_crypto::{bls12381, hash::CryptoHash, CryptoMaterialError};
+use libra2_crypto::{bls12381, hash::CryptoHash, CryptoMaterialError};
 use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::{
     ledger_info::{LedgerInfo, SignatureWithStatus},

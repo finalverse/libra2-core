@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 aptos-experimental-layered-map = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-scratchpad = { workspace = true }

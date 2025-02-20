@@ -14,7 +14,7 @@ use aptos_consensus_types::{
     timeout_2chain::{TwoChainTimeout, TwoChainTimeoutCertificate},
     vote_proposal::VoteProposal,
 };
-use aptos_crypto::hash::{HashValue, ACCUMULATOR_PLACEHOLDER_HASH};
+use libra2_crypto::hash::{HashValue, ACCUMULATOR_PLACEHOLDER_HASH};
 use aptos_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,

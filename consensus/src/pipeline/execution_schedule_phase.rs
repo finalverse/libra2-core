@@ -9,7 +9,7 @@ use crate::{
     state_replication::StateComputer,
 };
 use aptos_consensus_types::pipelined_block::PipelinedBlock;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_executor_types::ExecutorError;
 use libra2_logger::debug;
 use async_trait::async_trait;

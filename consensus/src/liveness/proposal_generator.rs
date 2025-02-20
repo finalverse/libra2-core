@@ -30,7 +30,7 @@ use aptos_consensus_types::{
     quorum_cert::QuorumCert,
     utils::PayloadTxnsSize,
 };
-use aptos_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_infallible::Mutex;
 use libra2_logger::{error, sample, sample::SampleRate, warn};
 use aptos_types::{on_chain_config::ValidatorTxnConfig, validator_txn::ValidatorTransaction};

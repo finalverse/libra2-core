@@ -8,7 +8,7 @@ use crate::{
 };
 use anyhow::format_err;
 use aptos_accumulator::{HashReader, MerkleAccumulator};
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, TransactionAccumulatorHasher, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
@@ -971,7 +971,7 @@ mod tests {
         AptosDB,
     };
     use anyhow::{anyhow, ensure, Result};
-    use aptos_crypto::{hash::CryptoHash, HashValue};
+    use libra2_crypto::{hash::CryptoHash, HashValue};
     use aptos_storage_interface::{
         state_store::state_view::cached_state_view::ShardedStateCache, DbReader, DbWriter,
     };

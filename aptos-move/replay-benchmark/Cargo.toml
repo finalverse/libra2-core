@@ -36,5 +36,5 @@ tokio = { workspace = true }
 url = { workspace = true }
 
 [dev-dependencies]
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 rand = { workspace = true }

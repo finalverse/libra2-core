@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 aes-gcm = { workspace = true }
 anyhow = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-inspection-service = { workspace = true }
 aptos-keyless-pepper-common = { workspace = true }

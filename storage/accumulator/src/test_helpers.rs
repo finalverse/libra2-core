@@ -4,7 +4,7 @@
 
 use crate::{HashReader, MerkleAccumulator, MerkleAccumulatorView};
 use anyhow::{ensure, format_err, Result};
-use aptos_crypto::hash::{HashValue, TestOnlyHasher, ACCUMULATOR_PLACEHOLDER_HASH};
+use libra2_crypto::hash::{HashValue, TestOnlyHasher, ACCUMULATOR_PLACEHOLDER_HASH};
 use aptos_types::proof::{definition::LeafCount, position::Position};
 use proptest::{collection::vec, prelude::*};
 use std::collections::HashMap;

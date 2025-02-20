@@ -14,7 +14,7 @@ use aptos_consensus_types::{
     vote::Vote,
     vote_proposal::VoteProposal,
 };
-use aptos_crypto::bls12381;
+use libra2_crypto::bls12381;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::info;
 use aptos_safety_rules::{ConsensusState, Error, TSafetyRules};
@@ -172,7 +172,7 @@ mod tests {
         vote::Vote,
         vote_proposal::VoteProposal,
     };
-    use aptos_crypto::bls12381;
+    use libra2_crypto::bls12381;
     use aptos_safety_rules::{ConsensusState, Error, TSafetyRules};
     use aptos_types::{
         epoch_change::EpochChangeProof,

@@ -18,11 +18,11 @@ WVUF schemes:
 
 ## rand_core_hell
 
-`aptos_crypto` uses `rand_core 0.5.1`. However, `blstrs` uses `rand_core 0.6`
+`libra2_crypto` uses `rand_core 0.5.1`. However, `blstrs` uses `rand_core 0.6`
 
-This spells disaster: we cannot pass the RNGs from `rand_core 0.6` into the `aptos_crypto` traits that expect a `0.5.1`-version RNG.
+This spells disaster: we cannot pass the RNGs from `rand_core 0.6` into the `libra2_crypto` traits that expect a `0.5.1`-version RNG.
 
-We work around this by generating random seeds using the 0.5.1 RNG that we get from `aptos_crypto` and then create `Scalar`s and points from those seeds manually by hashing the seed to a curve point.
+We work around this by generating random seeds using the 0.5.1 RNG that we get from `libra2_crypto` and then create `Scalar`s and points from those seeds manually by hashing the seed to a curve point.
 
 ## blstrs quirks
 
@@ -52,7 +52,7 @@ e.g., no multiexp trait on G1, G2 and GT
 
 # Notes
 
-We (mostly) rely on the `aptos-crypto` `SerializeKey` and `DeserializeKey` derives for safety during deserialization.
+We (mostly) rely on the `libra2-crypto` `SerializeKey` and `DeserializeKey` derives for safety during deserialization.
 Specifically, each cryptographic object (e.g., public key, public parameters, etc) must implement `ValidCryptoMaterial` for serialization and `TryFrom` for deserialization when these derives are used.
 
 The G1/G2 group elements in `blstrs` are deserialized safely via calls to `from_[un]compressed` rather than calls to `from_[un]compressed_unchecked` which does not check prime-order subgroup membership.

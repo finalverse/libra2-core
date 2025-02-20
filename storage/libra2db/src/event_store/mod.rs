@@ -10,7 +10,7 @@ use super::Libra2DB;
 use crate::schema::{event::EventSchema, event_accumulator::EventAccumulatorSchema};
 use anyhow::anyhow;
 use aptos_accumulator::HashReader;
-use aptos_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto::{hash::CryptoHash, HashValue};
 use aptos_db_indexer_schemas::schema::{
     event_by_key::EventByKeySchema, event_by_version::EventByVersionSchema,
 };

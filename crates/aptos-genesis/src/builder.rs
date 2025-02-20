@@ -17,7 +17,7 @@ use libra2_config::{
     keys::ConfigKey,
     network_id::NetworkId,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381,
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     PrivateKey,

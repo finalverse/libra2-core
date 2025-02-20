@@ -3,7 +3,7 @@
 
 use crate::{components::get_signer_arg, utils::*};
 use anyhow::Result;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_types::on_chain_config::AptosVersion;
 use move_model::{code_writer::CodeWriter, emitln, model::Loc};
 

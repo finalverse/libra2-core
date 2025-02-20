@@ -145,7 +145,7 @@ mod tests {
     #[test]
     fn verify_epoch_change_proof() {
         use crate::{ledger_info::LedgerInfo, validator_verifier::random_validator_verifier};
-        use aptos_crypto::hash::HashValue;
+        use libra2_crypto::hash::HashValue;
 
         let all_epoch: Vec<u64> = (1..=10).collect();
         let mut valid_ledger_info = vec![];

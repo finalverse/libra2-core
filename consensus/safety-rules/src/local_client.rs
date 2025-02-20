@@ -11,7 +11,7 @@ use aptos_consensus_types::{
     vote::Vote,
     vote_proposal::VoteProposal,
 };
-use aptos_crypto::bls12381;
+use libra2_crypto::bls12381;
 use libra2_infallible::RwLock;
 use aptos_types::{
     epoch_change::EpochChangeProof,

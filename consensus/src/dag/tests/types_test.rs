@@ -10,7 +10,7 @@ use crate::dag::{
     },
 };
 use aptos_consensus_types::common::Payload;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_types::{
     aggregate_signature::AggregateSignature, validator_verifier::random_validator_verifier,
 };

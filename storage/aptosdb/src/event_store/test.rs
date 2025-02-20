@@ -4,7 +4,7 @@
 
 use super::*;
 use crate::{db::AptosDB, event_store::EventStore};
-use aptos_crypto::hash::ACCUMULATOR_PLACEHOLDER_HASH;
+use libra2_crypto::hash::ACCUMULATOR_PLACEHOLDER_HASH;
 use aptos_proptest_helpers::Index;
 use libra2_temppath::TempPath;
 use aptos_types::{

@@ -13,7 +13,7 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-temppath = { workspace = true }
@@ -29,10 +29,10 @@ serde_json = { workspace = true }
 thiserror = { workspace = true }
 
 [dev-dependencies]
-aptos-crypto = { workspace = true, features = ["fuzzing"] }
-aptos-crypto-derive = { workspace = true }
+libra2-crypto = { workspace = true, features = ["fuzzing"] }
+libra2-crypto-derive = { workspace = true }
 rand = { workspace = true }
 
 [features]
-fuzzing = ["aptos-crypto/fuzzing"]
+fuzzing = ["libra2-crypto/fuzzing"]
 testing = []

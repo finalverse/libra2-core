@@ -13,12 +13,12 @@ use crate::{
 use anyhow::{bail, ensure};
 use libra2_bitvec::BitVec;
 use aptos_consensus_types::common::{Author, Payload, Round};
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381::Signature,
     hash::{CryptoHash, CryptoHasher},
     CryptoMaterialError, HashValue,
 };
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use libra2_enum_conversion_derive::EnumConversion;
 use libra2_infallible::Mutex;
 use libra2_logger::debug;

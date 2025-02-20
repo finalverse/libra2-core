@@ -22,7 +22,7 @@ use crate::{
     },
 };
 use anyhow::Result;
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, DummyHasher},
     HashValue,
 };

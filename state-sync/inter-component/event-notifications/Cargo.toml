@@ -24,7 +24,7 @@ serde = { workspace = true }
 thiserror = { workspace = true }
 
 [dev-dependencies]
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 aptos-db = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }
 libra2-temppath = { workspace = true }

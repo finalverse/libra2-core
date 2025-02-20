@@ -21,5 +21,5 @@ thiserror = { workspace = true }
 tokio = { workspace = true }
 
 [dev-dependencies]
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 claims = { workspace = true }

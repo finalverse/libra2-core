@@ -921,7 +921,7 @@ mod tests {
         BenchmarkWorkload,
     };
     use libra2_config::config::NO_OP_STORAGE_PRUNER_CONFIG;
-    use aptos_crypto::HashValue;
+    use libra2_crypto::HashValue;
     use aptos_executor::block_executor::BlockExecutor;
     use aptos_executor_types::BlockExecutorTrait;
     use aptos_sdk::{transaction_builder::aptos_stdlib, types::LocalAccount};

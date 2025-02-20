@@ -8,7 +8,7 @@ use crate::{
     tests::utils::{create_empty_epoch_state, create_epoch_ending_ledger_info},
 };
 use anyhow::Result as AnyhowResult;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_data_streaming_service::{
     data_notification::NotificationId,
     data_stream::{DataStreamId, DataStreamListener},

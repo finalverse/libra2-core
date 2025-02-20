@@ -6,7 +6,7 @@ use crate::natives::cryptography::ristretto255::{pop_scalar_from_bytes, pop_scal
 use crate::natives::cryptography::ristretto255_point::{
     get_point_handle, NativeRistrettoPointContext,
 };
-use aptos_crypto::bulletproofs::MAX_RANGE_BITS;
+use libra2_crypto::bulletproofs::MAX_RANGE_BITS;
 use aptos_gas_schedule::gas_params::natives::aptos_framework::*;
 use aptos_native_interface::{
     safely_pop_arg, safely_pop_vec_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext,

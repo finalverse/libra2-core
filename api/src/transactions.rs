@@ -27,7 +27,7 @@ use aptos_api_types::{
     Transaction, TransactionData, TransactionOnChainData, TransactionsBatchSingleSubmissionFailure,
     TransactionsBatchSubmissionResult, UserTransaction, VerifyInput, VerifyInputWithRecursion, U64,
 };
-use aptos_crypto::{hash::CryptoHash, signing_message};
+use libra2_crypto::{hash::CryptoHash, signing_message};
 use aptos_types::{
     account_address::AccountAddress,
     mempool_status::MempoolStatusCode,
@@ -515,7 +515,7 @@ impl TransactionsApi {
             // here for the block ID because we don't allow filtering by block ID for the
             // simulation filters. See the ConfigSanitizer for ApiConfig.
             if !context.node_config.api.simulation_filter.allows(
-                aptos_crypto::HashValue::zero(),
+                libra2_crypto::HashValue::zero(),
                 ledger_info.timestamp(),
                 &signed_transaction,
             ) {
@@ -974,7 +974,7 @@ impl TransactionsApi {
     /// it means the transaction is still pending.
     async fn get_by_hash(
         &self,
-        hash: aptos_crypto::HashValue,
+        hash: libra2_crypto::HashValue,
         storage_ledger_version: u64,
         internal_ledger_version: Option<u64>,
     ) -> anyhow::Result<Option<TransactionData>> {
@@ -1431,7 +1431,7 @@ impl TransactionsApi {
         // Build up a transaction from the outputs
         // All state hashes are invalid, and will be filled with 0s
         let txn = aptos_types::transaction::Transaction::UserTransaction(txn);
-        let zero_hash = aptos_crypto::HashValue::zero();
+        let zero_hash = libra2_crypto::HashValue::zero();
         let info = aptos_types::transaction::TransactionInfo::new(
             txn.hash(),
             zero_hash,

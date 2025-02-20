@@ -16,7 +16,7 @@ use aptos_consensus_types::{
     block::Block, pipeline_execution_result::PipelineExecutionResult,
     pipelined_block::PipelinedBlock, quorum_cert::QuorumCert,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_executor_types::{
     state_compute_result::StateComputeResult, ExecutorError, ExecutorResult,
 };

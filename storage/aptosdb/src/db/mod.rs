@@ -30,7 +30,7 @@ use crate::{
 use libra2_config::config::{
     PrunerConfig, RocksdbConfig, RocksdbConfigs, StorageDirPaths, NO_OP_STORAGE_PRUNER_CONFIG,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_db_indexer::{db_indexer::InternalIndexerDB, Indexer};
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::prelude::*;

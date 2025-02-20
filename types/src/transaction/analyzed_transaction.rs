@@ -12,7 +12,7 @@ use crate::{
     },
     AptosCoinType, CoinType,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 pub use move_core_types::abi::{
     ArgumentABI, ScriptFunctionABI as EntryFunctionABI, TransactionScriptABI, TypeArgumentABI,
 };

@@ -3,7 +3,7 @@
 
 use crate::utils;
 use anyhow::{anyhow, ensure, Result};
-use aptos_crypto::{compat::Sha3_256, Uniform};
+use libra2_crypto::{compat::Sha3_256, Uniform};
 use libra2_dkg::weighted_vuf::traits::WeightedVUF;
 use aptos_forge::LocalSwarm;
 use libra2_logger::info;

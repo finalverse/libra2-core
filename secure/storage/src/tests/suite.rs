@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{CryptoStorage, Error, KVStorage, Storage};
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::Ed25519PrivateKey, test_utils::TestAptosCrypto, HashValue, PrivateKey, Signature,
     Uniform,
 };

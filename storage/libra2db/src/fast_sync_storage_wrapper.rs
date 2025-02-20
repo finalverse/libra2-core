@@ -4,7 +4,7 @@
 use crate::Libra2DB;
 use anyhow::anyhow;
 use libra2_config::config::{NodeConfig, StorageDirPaths};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_db_indexer::db_indexer::InternalIndexerDB;
 use libra2_infallible::RwLock;
 use aptos_storage_interface::{

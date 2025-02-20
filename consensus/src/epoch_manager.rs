@@ -66,7 +66,7 @@ use aptos_consensus_types::{
     proof_of_store::ProofCache,
     utils::PayloadTxnsSize,
 };
-use aptos_crypto::bls12381::PrivateKey;
+use libra2_crypto::bls12381::PrivateKey;
 use libra2_dkg::{
     pvss::{traits::Transcript, Player},
     weighted_vuf::traits::WeightedVUF,

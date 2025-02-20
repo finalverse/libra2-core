@@ -19,7 +19,7 @@ use aptos_consensus_types::{
     quorum_cert::QuorumCert,
     sync_info::SyncInfo,
 };
-use aptos_crypto::{HashValue, PrivateKey, Uniform};
+use libra2_crypto::{HashValue, PrivateKey, Uniform};
 use libra2_logger::Level;
 use aptos_types::{ledger_info::LedgerInfo, validator_signer::ValidatorSigner};
 use std::{future::Future, sync::Arc, time::Duration};
@@ -38,7 +38,7 @@ use crate::{
     util::mock_time_service::SimulatedTimeService,
 };
 use aptos_consensus_types::{block::block_test_utils::gen_test_certificate, common::Payload};
-use aptos_crypto::ed25519::{Ed25519PrivateKey, Ed25519Signature};
+use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519Signature};
 use libra2_infallible::Mutex;
 use aptos_types::{
     block_info::BlockInfo,

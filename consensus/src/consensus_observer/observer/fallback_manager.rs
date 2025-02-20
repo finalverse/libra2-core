@@ -167,7 +167,7 @@ impl ObserverFallbackManager {
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_crypto::HashValue;
+    use libra2_crypto::HashValue;
     use aptos_storage_interface::Result;
     use aptos_types::{
         aggregate_signature::AggregateSignature, block_info::BlockInfo, ledger_info::LedgerInfo,

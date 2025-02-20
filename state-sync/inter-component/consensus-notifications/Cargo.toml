@@ -13,7 +13,7 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 aptos-runtimes = { workspace = true }
 aptos-types = { workspace = true }
 async-trait = { workspace = true }

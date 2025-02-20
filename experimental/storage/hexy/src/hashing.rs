@@ -3,7 +3,7 @@
 
 use crate::ARITY;
 use anyhow::{ensure, Result};
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHasher, HexyHasher},
     HashValue,
 };

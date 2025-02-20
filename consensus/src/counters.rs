@@ -9,7 +9,7 @@ use crate::{
     quorum_store,
 };
 use aptos_consensus_types::{block::Block, pipelined_block::PipelinedBlock};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_executor_types::{state_compute_result::StateComputeResult, ExecutorError};
 use libra2_logger::prelude::{error, warn};
 use libra2_metrics_core::{

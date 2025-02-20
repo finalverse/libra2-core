@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::application;
-use aptos_crypto::noise::NoiseError;
+use libra2_crypto::noise::NoiseError;
 use libra2_short_hex_str::ShortHexStr;
 use aptos_types::PeerId;
 use std::io;

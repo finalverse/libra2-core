@@ -13,7 +13,7 @@ use crate::{
     },
     versioned_node_cache::VersionedNodeCache,
 };
-use aptos_crypto::hash::CryptoHash;
+use libra2_crypto::hash::CryptoHash;
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_infallible::Mutex;
 use libra2_logger::trace;

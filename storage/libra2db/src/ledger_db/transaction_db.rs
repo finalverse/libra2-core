@@ -10,7 +10,7 @@ use crate::{
     },
     utils::iterators::ExpectContinuousVersions,
 };
-use aptos_crypto::hash::{CryptoHash, HashValue};
+use libra2_crypto::hash::{CryptoHash, HashValue};
 use aptos_db_indexer_schemas::schema::transaction_by_account::TransactionByAccountSchema;
 use libra2_metrics_core::TimerHelper;
 use aptos_schemadb::{

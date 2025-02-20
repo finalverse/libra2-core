@@ -3,8 +3,8 @@
 
 use crate::utils::{hash_to_scalar, random::random_scalar, HasMultiExp};
 use anyhow::bail;
-use aptos_crypto::signing_message;
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto::signing_message;
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use blstrs::Scalar;
 use ff::Field;
 use group::Group;

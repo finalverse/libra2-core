@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 aptos-cached-packages = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 aptos-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true, features = ["testing"] }
 aptos-language-e2e-tests = { workspace = true }

@@ -4,7 +4,7 @@
 
 #![allow(clippy::arc_with_non_send_sync)]
 
-use aptos_crypto::{
+use libra2_crypto::{
     traits::{CryptoMaterialError, ValidCryptoMaterialStringExt},
     x25519,
 };
@@ -325,7 +325,7 @@ impl NetworkAddress {
     /// ### Example
     ///
     /// ```rust
-    /// use aptos_crypto::{traits::ValidCryptoMaterialStringExt, x25519};
+    /// use libra2_crypto::{traits::ValidCryptoMaterialStringExt, x25519};
     /// use aptos_types::network_address::NetworkAddress;
     /// use std::str::FromStr;
     ///

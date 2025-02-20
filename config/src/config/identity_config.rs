@@ -3,7 +3,7 @@
 
 use crate::{config::SecureBackend, keys::ConfigKey};
 use anyhow::anyhow;
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381,
     ed25519::Ed25519PrivateKey,
     x25519::{self, PRIVATE_KEY_SIZE},

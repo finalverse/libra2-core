@@ -9,7 +9,7 @@ use crate::{
     peer_location::PeerLocationUpdater,
     validator_cache::PeerSetCacheUpdater,
 };
-use aptos_crypto::{x25519, ValidCryptoMaterialStringExt};
+use libra2_crypto::{x25519, ValidCryptoMaterialStringExt};
 use aptos_types::{chain_id::ChainId, PeerId};
 use clap::Parser;
 use context::GroupedMetricsClients;

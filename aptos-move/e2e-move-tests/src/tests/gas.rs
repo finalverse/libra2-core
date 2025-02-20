@@ -12,7 +12,7 @@ use crate::{
     MoveHarness,
 };
 use aptos_cached_packages::{aptos_stdlib, aptos_token_sdk_builder};
-use aptos_crypto::{bls12381, PrivateKey, Uniform};
+use libra2_crypto::{bls12381, PrivateKey, Uniform};
 use aptos_gas_algebra::GasQuantity;
 use aptos_gas_profiling::TransactionGasLog;
 use aptos_language_e2e_tests::account::Account;

@@ -15,7 +15,7 @@ use libra2_config::config::{
     RocksdbConfig, RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS,
     DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD, NO_OP_STORAGE_PRUNER_CONFIG,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_db::{
     backup::restore_handler::RestoreHandler,
     db::AptosDB,

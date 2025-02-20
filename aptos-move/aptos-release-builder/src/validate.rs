@@ -9,7 +9,7 @@ use aptos::{
     move_tool::{RunFunction, RunScript},
     stake::IncreaseLockup,
 };
-use aptos_crypto::ed25519::Ed25519PrivateKey;
+use libra2_crypto::ed25519::Ed25519PrivateKey;
 use aptos_genesis::keys::PrivateIdentity;
 use libra2_temppath::TempPath;
 use aptos_types::account_address::AccountAddress;
@@ -478,7 +478,7 @@ pub async fn validate_config_and_generate_release(
 #[cfg(test)]
 pub mod test {
     use super::NetworkConfig;
-    use aptos_crypto::PrivateKey;
+    use libra2_crypto::PrivateKey;
     use aptos_keygen::KeyGen;
     use aptos_types::transaction::authenticator::AuthenticationKey;
 

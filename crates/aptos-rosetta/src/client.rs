@@ -18,7 +18,7 @@ use crate::{
     },
 };
 use anyhow::anyhow;
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::Ed25519PrivateKey, PrivateKey, SigningKey, ValidCryptoMaterialStringExt,
 };
 use aptos_rest_client::aptos_api_types::mime_types::JSON;

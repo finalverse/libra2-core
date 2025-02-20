@@ -16,7 +16,7 @@
 //! use futures::{executor, future, io::{AsyncReadExt, AsyncWriteExt}};
 //! use aptos_memsocket::MemorySocket;
 //! use libra2_config::{config::{Peer, PeerRole}, network_id::{NetworkContext, NetworkId}};
-//! use aptos_crypto::{x25519, ed25519, Uniform, PrivateKey, test_utils::TEST_SEED};
+//! use libra2_crypto::{x25519, ed25519, Uniform, PrivateKey, test_utils::TEST_SEED};
 //! use libra2_infallible::RwLock;
 //! use rand::{rngs::StdRng, SeedableRng};
 //! use aptos_types::PeerId;
@@ -100,7 +100,7 @@
 //!
 //! [noise]: http://noiseprotocol.org/
 //! [ik]: https://noiseexplorer.com/patterns/IK
-//! [crypto]: ../aptos_crypto/noise/index.html
+//! [crypto]: ../libra2_crypto/noise/index.html
 
 pub mod error;
 pub mod handshake;

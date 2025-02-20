@@ -20,7 +20,7 @@ use crate::{
     write_set::WriteSet,
 };
 use anyhow::{ensure, format_err, Context, Error, Result};
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::*,
     hash::CryptoHash,
     multi_ed25519::{MultiEd25519PublicKey, MultiEd25519Signature},
@@ -28,7 +28,7 @@ use aptos_crypto::{
     traits::{signing_message, SigningKey},
     CryptoMaterialError, HashValue,
 };
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 #[cfg(any(test, feature = "fuzzing"))]
 use proptest_derive::Arbitrary;
 use rayon::prelude::*;

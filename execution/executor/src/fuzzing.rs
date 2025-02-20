@@ -5,7 +5,7 @@
 use crate::block_executor::BlockExecutor;
 use anyhow::Result;
 use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
-use aptos_crypto::{hash::SPARSE_MERKLE_PLACEHOLDER_HASH, HashValue};
+use libra2_crypto::{hash::SPARSE_MERKLE_PLACEHOLDER_HASH, HashValue};
 use aptos_executor_types::BlockExecutorTrait;
 use aptos_storage_interface::{chunk_to_commit::ChunkToCommit, DbReader, DbReaderWriter, DbWriter};
 use aptos_types::{

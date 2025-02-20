@@ -13,7 +13,7 @@ use crate::{
     transaction::Version,
 };
 use anyhow::{bail, Error, Result};
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use move_core_types::{
     ident_str,
     language_storage::{StructTag, TypeTag, CORE_CODE_ADDRESS},

@@ -9,7 +9,7 @@ use crate::{
 };
 use anyhow::{anyhow, bail, ensure, Result};
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-use aptos_crypto::Uniform;
+use libra2_crypto::Uniform;
 use libra2_infallible::duration_since_epoch;
 use libra2_logger::{debug, error, info, warn};
 use aptos_types::{

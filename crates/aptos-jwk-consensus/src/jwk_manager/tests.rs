@@ -9,7 +9,7 @@ use crate::{
 };
 use libra2_bitvec::BitVec;
 use libra2_channels::libra2_channel;
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381::{PrivateKey, PublicKey, Signature},
     hash::CryptoHash,
     SigningKey, Uniform,

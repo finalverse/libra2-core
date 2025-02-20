@@ -9,7 +9,7 @@ use crate::{
     },
     transaction::Version,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use bytes::Bytes;
 use move_core_types::move_resource::MoveResource;
 #[cfg(any(test, feature = "testing"))]

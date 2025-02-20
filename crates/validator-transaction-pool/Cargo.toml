@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-channels = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 libra2-infallible = { workspace = true }
 aptos-types = { workspace = true }
 futures-util = { workspace = true }

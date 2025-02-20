@@ -55,7 +55,7 @@ impl TransactionCorrectnessChecker {
     /// as returned by the API.
     fn unwrap_accumulator_root_hash(
         transaction_data: &TransactionData,
-    ) -> Result<&aptos_crypto::HashValue, CheckerError> {
+    ) -> Result<&libra2_crypto::HashValue, CheckerError> {
         match transaction_data {
             TransactionData::OnChain(on_chain) => Ok(&on_chain.accumulator_root_hash),
             wildcard => Err(CheckerError::NonRetryableEndpointError(

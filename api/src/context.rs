@@ -17,7 +17,7 @@ use aptos_api_types::{
     TransactionOnChainData,
 };
 use libra2_config::config::{GasEstimationConfig, NodeConfig, RoleType};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
 use libra2_logger::{error, info, Schema};
 use aptos_mempool::{MempoolClientRequest, MempoolClientSender, SubmissionStatus};

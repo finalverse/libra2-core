@@ -10,7 +10,7 @@ use libra2_config::{
     config::{Peer, PeerRole, PeerSet, RoleType, NETWORK_CHANNEL_SIZE},
     network_id::{NetworkContext, NetworkId, PeerNetworkId},
 };
-use aptos_crypto::{test_utils::TEST_SEED, x25519, Uniform};
+use libra2_crypto::{test_utils::TEST_SEED, x25519, Uniform};
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},

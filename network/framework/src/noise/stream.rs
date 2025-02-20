@@ -9,7 +9,7 @@
 //!
 //! [handshake]: crate::noise::handshake
 
-use aptos_crypto::{noise, x25519};
+use libra2_crypto::{noise, x25519};
 use libra2_logger::prelude::*;
 use futures::{
     io::{AsyncRead, AsyncWrite},
@@ -527,7 +527,7 @@ mod test {
         testutils::fake_socket::{ReadOnlyTestSocket, ReadWriteTestSocket},
     };
     use libra2_config::network_id::NetworkContext;
-    use aptos_crypto::{test_utils::TEST_SEED, traits::Uniform as _, x25519};
+    use libra2_crypto::{test_utils::TEST_SEED, traits::Uniform as _, x25519};
     use aptos_memsocket::MemorySocket;
     use futures::{
         executor::block_on,

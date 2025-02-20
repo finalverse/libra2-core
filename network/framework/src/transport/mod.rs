@@ -14,7 +14,7 @@ use libra2_config::{
     config::{PeerRole, HANDSHAKE_VERSION},
     network_id::{NetworkContext, NetworkId},
 };
-use aptos_crypto::x25519;
+use libra2_crypto::x25519;
 use libra2_id_generator::{IdGenerator, U32IdGenerator};
 use libra2_logger::prelude::*;
 // Re-exposed for aptos-network-checker

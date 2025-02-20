@@ -7,7 +7,7 @@
 mod genesis_context;
 
 use crate::genesis_context::GenesisStateView;
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381,
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     HashValue, PrivateKey, Uniform,

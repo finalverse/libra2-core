@@ -16,7 +16,7 @@
 
 use crate::schema::{ensure_slice_len_eq, STATE_VALUE_BY_KEY_HASH_CF_NAME};
 use anyhow::Result;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_schemadb::{
     define_schema,
     schema::{KeyCodec, ValueCodec},

@@ -14,7 +14,7 @@ use crate::{
     },
 };
 use anyhow::{bail, ensure, Error, Result};
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PublicKey, Ed25519Signature},
     hash::CryptoHash,
     multi_ed25519::{MultiEd25519PublicKey, MultiEd25519Signature},
@@ -22,7 +22,7 @@ use aptos_crypto::{
     traits::Signature,
     CryptoMaterialError, HashValue, ValidCryptoMaterial, ValidCryptoMaterialStringExt,
 };
-use aptos_crypto_derive::{CryptoHasher, DeserializeKey, SerializeKey};
+use libra2_crypto_derive::{CryptoHasher, DeserializeKey, SerializeKey};
 #[cfg(any(test, feature = "fuzzing"))]
 use proptest_derive::Arbitrary;
 use rand::{rngs::OsRng, Rng};
@@ -1421,7 +1421,7 @@ mod tests {
         },
         transaction::{webauthn::AssertionSignature, SignedTransaction},
     };
-    use aptos_crypto::{
+    use libra2_crypto::{
         ed25519::Ed25519PrivateKey,
         secp256k1_ecdsa,
         secp256r1_ecdsa::{PublicKey, Signature},

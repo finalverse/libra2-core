@@ -6,7 +6,7 @@
 #![allow(clippy::let_and_return)]
 
 //! PVSS scheme-independent testing
-use aptos_crypto::hash::CryptoHash;
+use libra2_crypto::hash::CryptoHash;
 use libra2_dkg::{
     constants::{G1_PROJ_NUM_BYTES, G2_PROJ_NUM_BYTES},
     pvss::{

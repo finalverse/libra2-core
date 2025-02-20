@@ -8,7 +8,7 @@ use crate::{
     Error,
 };
 use aptos_consensus_types::{common::Author, safety_data::SafetyData};
-use aptos_crypto::{bls12381, PrivateKey};
+use libra2_crypto::{bls12381, PrivateKey};
 use libra2_global_constants::{CONSENSUS_KEY, OWNER_ACCOUNT, SAFETY_DATA, WAYPOINT};
 use libra2_logger::prelude::*;
 use aptos_secure_storage::{KVStorage, Storage};
@@ -194,7 +194,7 @@ impl PersistentSafetyStorage {
 mod tests {
     use super::*;
     use crate::counters;
-    use aptos_crypto::hash::HashValue;
+    use libra2_crypto::hash::HashValue;
     use aptos_secure_storage::InMemoryStorage;
     use aptos_types::{
         block_info::BlockInfo, epoch_state::EpochState, ledger_info::LedgerInfo,

@@ -11,7 +11,7 @@ use anyhow::Result;
 use aptos_consensus_types::{
     block::Block, pipelined_block::PipelinedBlock, quorum_cert::QuorumCert,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_executor_types::ExecutorResult;
 use aptos_types::{
     block_executor::config::BlockExecutorConfigFromOnchain, epoch_state::EpochState,

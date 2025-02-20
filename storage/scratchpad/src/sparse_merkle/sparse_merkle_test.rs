@@ -7,7 +7,7 @@ use crate::test_utils::{
     proof_reader::ProofReader,
     proptest_helpers::{arb_smt_correctness_case, test_smt_correctness_impl},
 };
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, TestOnlyHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };

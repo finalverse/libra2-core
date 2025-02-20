@@ -9,7 +9,7 @@ use aptos_consensus_types::{
     proof_of_store::{BatchId, BatchInfo, ProofOfStore},
     utils::PayloadTxnsSize,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_types::{aggregate_signature::AggregateSignature, PeerId};
 use maplit::hashset;
 use std::{collections::HashSet, time::Duration};

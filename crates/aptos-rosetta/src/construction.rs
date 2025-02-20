@@ -33,7 +33,7 @@ use crate::{
     types::{InternalOperation, *},
     RosettaContext,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PublicKey, Ed25519Signature},
     signing_message, ValidCryptoMaterialStringExt,
 };

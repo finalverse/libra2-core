@@ -11,8 +11,8 @@ workspace dependencies which are also being published.
 
 Here is the set of currently published packages that make up the aptos-sdk:
 * move-core-types
-* aptos-crypto-derive
-* aptos-crypto
+* libra2-crypto-derive
+* libra2-crypto
 * aptos-types
 * aptos-json-rpc-types
 * aptos-client

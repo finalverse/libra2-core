@@ -13,7 +13,7 @@ use libra2_config::{
     config::{Identity, NodeConfig, PeerRole, RoleType},
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_crypto::{x25519::PrivateKey, Uniform};
+use libra2_crypto::{x25519::PrivateKey, Uniform};
 use aptos_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
 use libra2_infallible::{Mutex, MutexGuard, RwLock};
 use aptos_netcore::transport::ConnectionOrigin;

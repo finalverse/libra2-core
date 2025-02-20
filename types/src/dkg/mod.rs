@@ -8,8 +8,8 @@ use crate::{
     validator_verifier::{ValidatorConsensusInfo, ValidatorConsensusInfoMoveStruct},
 };
 use anyhow::Result;
-use aptos_crypto::Uniform;
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto::Uniform;
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use move_core_types::{
     account_address::AccountAddress, ident_str, identifier::IdentStr, language_storage::TypeTag,
     move_resource::MoveStructType,

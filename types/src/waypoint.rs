@@ -9,8 +9,8 @@ use crate::{
     transaction::Version,
 };
 use anyhow::{ensure, format_err, Error, Result};
-use aptos_crypto::hash::{CryptoHash, HashValue};
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto::hash::{CryptoHash, HashValue};
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 #[cfg(any(test, feature = "fuzzing"))]
 use proptest_derive::Arbitrary;
 use serde::{de::Error as _, Deserialize, Deserializer, Serialize, Serializer};

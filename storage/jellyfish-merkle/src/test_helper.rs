@@ -3,11 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{mock_tree_store::MockTreeStore, node_type::LeafNode, JellyfishMerkleTree, TestKey};
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use aptos_storage_interface::jmt_update_refs;
 use aptos_types::{
     proof::{SparseMerkleInternalNode, SparseMerkleRangeProof},

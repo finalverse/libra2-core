@@ -15,7 +15,7 @@ use libra2_config::config::{
     StateMerklePrunerConfig, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS_FOR_TEST,
     DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD,
 };
-use aptos_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto::{hash::CryptoHash, HashValue};
 use aptos_storage_interface::{DbReader, Order};
 use libra2_temppath::TempPath;
 use aptos_types::{

@@ -3,7 +3,7 @@
 
 use crate::smoke_test_environment::SwarmBuilder;
 use aptos::{account::create::DEFAULT_FUNDED_COINS, common::types::GasOptions};
-use aptos_crypto::{PrivateKey, ValidCryptoMaterialStringExt};
+use libra2_crypto::{PrivateKey, ValidCryptoMaterialStringExt};
 use aptos_keygen::KeyGen;
 
 #[tokio::test]

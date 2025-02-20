@@ -54,7 +54,7 @@ use aptos_consensus_types::{
     vote_msg::VoteMsg,
     wrapped_ledger_info::WrappedLedgerInfo,
 };
-use aptos_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_infallible::{checked, Mutex};
 use libra2_logger::prelude::*;
 #[cfg(test)]
@@ -1121,7 +1121,7 @@ impl RoundManager {
             .context("[RoundManager] Process proposal")?;
 
         fail_point!("consensus::create_invalid_vote", |_| {
-            use aptos_crypto::bls12381;
+            use libra2_crypto::bls12381;
             let faulty_vote = Vote::new_with_signature(
                 vote.vote_data().clone(),
                 vote.author(),
@@ -1310,7 +1310,7 @@ impl RoundManager {
         ))?;
 
         fail_point!("consensus::create_invalid_order_vote", |_| {
-            use aptos_crypto::bls12381;
+            use libra2_crypto::bls12381;
             let faulty_order_vote = OrderVote::new_with_signature(
                 order_vote.author(),
                 order_vote.ledger_info().clone(),

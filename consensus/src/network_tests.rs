@@ -538,7 +538,7 @@ mod tests {
         block_retrieval::{BlockRetrievalRequestV1, BlockRetrievalResponse, BlockRetrievalStatus},
         common::Payload,
     };
-    use aptos_crypto::HashValue;
+    use libra2_crypto::HashValue;
     use aptos_network::{
         application::{
             interface::{NetworkClient, NetworkServiceEvents},

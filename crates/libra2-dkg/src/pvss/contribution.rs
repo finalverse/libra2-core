@@ -6,8 +6,8 @@ use crate::{
     utils::HasMultiExp,
 };
 use anyhow::bail;
-use aptos_crypto::bls12381;
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto::bls12381;
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use blstrs::Scalar;
 use group::Group;
 use serde::{Deserialize, Serialize};

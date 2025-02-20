@@ -13,7 +13,7 @@ use crate::{
         mock_vm::{encode_mint_transaction, MockVM},
     },
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_db::AptosDB;
 use aptos_executor_types::{BlockExecutorTrait, ChunkExecutorTrait};
 use aptos_storage_interface::DbReaderWriter;

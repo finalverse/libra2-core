@@ -20,7 +20,7 @@ use crate::{
 };
 use anyhow::{bail, Context};
 use aptos_api_types::ViewFunction;
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature},
     encoding_type::{EncodingError, EncodingType},
     x25519, PrivateKey, ValidCryptoMaterialStringExt,
@@ -203,8 +203,8 @@ impl From<std::string::FromUtf8Error> for CliError {
     }
 }
 
-impl From<aptos_crypto::CryptoMaterialError> for CliError {
-    fn from(e: aptos_crypto::CryptoMaterialError) -> Self {
+impl From<libra2_crypto::CryptoMaterialError> for CliError {
+    fn from(e: libra2_crypto::CryptoMaterialError) -> Self {
         CliError::UnexpectedError(e.to_string())
     }
 }
@@ -1951,7 +1951,7 @@ impl TransactionOptions {
             &AptosDebugger,
             u64,
             SignedTransaction,
-            aptos_crypto::HashValue,
+            libra2_crypto::HashValue,
         ) -> CliTypedResult<(VMStatus, VMOutput)>,
     {
         let client = self.rest_client()?;

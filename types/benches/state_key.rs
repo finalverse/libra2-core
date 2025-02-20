@@ -3,7 +3,7 @@
 
 #![allow(clippy::non_canonical_partial_ord_impl)]
 
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_proptest_helpers::ValueGenerator;
 use aptos_types::{
     access_path::AccessPath,

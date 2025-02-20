@@ -8,7 +8,7 @@ use crate::{
     MoveValue, VerifyInput, VerifyInputWithRecursion, U64,
 };
 use anyhow::{bail, Context as AnyhowContext, Result};
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{self, Ed25519PublicKey, ED25519_PUBLIC_KEY_LENGTH, ED25519_SIGNATURE_LENGTH},
     multi_ed25519::{self, MultiEd25519PublicKey, BITMAP_NUM_OF_BYTES, MAX_NUM_OF_KEYS},
     secp256k1_ecdsa, secp256r1_ecdsa,
@@ -110,13 +110,13 @@ pub struct TransactionOnChainData {
     /// Events emitted by the transaction
     pub events: Vec<ContractEvent>,
     /// The accumulator root hash at this version
-    pub accumulator_root_hash: aptos_crypto::HashValue,
+    pub accumulator_root_hash: libra2_crypto::HashValue,
     /// Final state of resources changed by the transaction
     pub changes: aptos_types::write_set::WriteSet,
 }
 
-impl From<(TransactionWithProof, aptos_crypto::HashValue)> for TransactionOnChainData {
-    fn from((txn, accumulator_root_hash): (TransactionWithProof, aptos_crypto::HashValue)) -> Self {
+impl From<(TransactionWithProof, libra2_crypto::HashValue)> for TransactionOnChainData {
+    fn from((txn, accumulator_root_hash): (TransactionWithProof, libra2_crypto::HashValue)) -> Self {
         Self {
             version: txn.version,
             transaction: txn.transaction,
@@ -131,14 +131,14 @@ impl From<(TransactionWithProof, aptos_crypto::HashValue)> for TransactionOnChai
 impl
     From<(
         TransactionWithProof,
-        aptos_crypto::HashValue,
+        libra2_crypto::HashValue,
         &TransactionOutput,
     )> for TransactionOnChainData
 {
     fn from(
         (txn, accumulator_root_hash, txn_output): (
             TransactionWithProof,
-            aptos_crypto::HashValue,
+            libra2_crypto::HashValue,
             &TransactionOutput,
         ),
     ) -> Self {
@@ -159,7 +159,7 @@ impl
         aptos_types::transaction::Transaction,
         aptos_types::transaction::TransactionInfo,
         Vec<ContractEvent>,
-        aptos_crypto::HashValue,
+        libra2_crypto::HashValue,
         aptos_types::write_set::WriteSet,
     )> for TransactionOnChainData
 {
@@ -169,7 +169,7 @@ impl
             aptos_types::transaction::Transaction,
             aptos_types::transaction::TransactionInfo,
             Vec<ContractEvent>,
-            aptos_crypto::HashValue,
+            libra2_crypto::HashValue,
             aptos_types::write_set::WriteSet,
         ),
     ) -> Self {
@@ -1380,7 +1380,7 @@ impl TryFrom<MultiEd25519Signature> for TransactionAuthenticator {
 
         Ok(TransactionAuthenticator::multi_ed25519(
             MultiEd25519PublicKey::new(ed25519_public_keys, threshold)?,
-            aptos_crypto::multi_ed25519::MultiEd25519Signature::new_with_signatures_and_bitmap(
+            libra2_crypto::multi_ed25519::MultiEd25519Signature::new_with_signatures_and_bitmap(
                 ed25519_signatures,
                 bitmap.inner().try_into()?,
             ),
@@ -1410,7 +1410,7 @@ impl TryFrom<MultiEd25519Signature> for AccountAuthenticator {
 
         Ok(AccountAuthenticator::multi_ed25519(
             MultiEd25519PublicKey::new(ed25519_public_keys, threshold)?,
-            aptos_crypto::multi_ed25519::MultiEd25519Signature::new_with_signatures_and_bitmap(
+            libra2_crypto::multi_ed25519::MultiEd25519Signature::new_with_signatures_and_bitmap(
                 ed25519_signatures,
                 bitmap.inner().try_into()?,
             ),

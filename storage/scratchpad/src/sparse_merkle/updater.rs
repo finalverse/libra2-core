@@ -10,7 +10,7 @@ use crate::{
     },
     ProofRead,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };

@@ -296,7 +296,6 @@ dependencies = [
  "aptos-api-types",
  "aptos-backup-cli",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-faucet-core",
  "aptos-framework",
  "aptos-gas-profiling",
@@ -344,6 +343,7 @@ dependencies = [
  "libra2-build-info",
  "libra2-cli-common",
  "libra2-config",
+ "libra2-crypto",
  "libra2-global-constants",
  "libra2-logger",
  "libra2-temppath",
@@ -406,8 +406,8 @@ name = "aptos-accumulator"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-types",
+ "libra2-crypto",
  "proptest",
  "rand 0.7.3",
 ]
@@ -418,7 +418,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus",
- "aptos-crypto",
  "aptos-mempool",
  "aptos-runtimes",
  "aptos-storage-interface",
@@ -428,6 +427,7 @@ dependencies = [
  "http 0.2.11",
  "hyper 0.14.28",
  "libra2-config",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "libra2-system-utils",
@@ -458,7 +458,6 @@ dependencies = [
  "aptos-api-test-context",
  "aptos-api-types",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-framework",
  "aptos-gas-meter",
  "aptos-gas-schedule",
@@ -479,6 +478,7 @@ dependencies = [
  "libra2-bcs-utils",
  "libra2-build-info",
  "libra2-config",
+ "libra2-crypto",
  "libra2-global-constants",
  "libra2-logger",
  "libra2-metrics-core",
@@ -510,7 +510,6 @@ dependencies = [
  "aptos-api",
  "aptos-api-types",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-db",
  "aptos-executor",
  "aptos-executor-types",
@@ -530,6 +529,7 @@ dependencies = [
  "goldenfile",
  "hyper 0.14.28",
  "libra2-config",
+ "libra2-crypto",
  "libra2-temppath",
  "rand 0.7.3",
  "regex",
@@ -568,7 +568,6 @@ name = "aptos-api-types"
 version = "0.0.1"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-framework",
  "aptos-openapi",
  "aptos-resource-viewer",
@@ -581,6 +580,7 @@ dependencies = [
  "hex",
  "indoc",
  "libra2-config",
+ "libra2-crypto",
  "libra2-logger",
  "move-binary-format",
  "move-core-types",
@@ -598,7 +598,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-backup-service",
- "aptos-crypto",
  "aptos-db",
  "aptos-db-indexer-schemas",
  "aptos-executor",
@@ -619,6 +618,7 @@ dependencies = [
  "futures",
  "itertools 0.13.0",
  "libra2-config",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -648,7 +648,6 @@ dependencies = [
 name = "aptos-backup-service"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-db",
  "aptos-runtimes",
  "aptos-storage-interface",
@@ -657,6 +656,7 @@ dependencies = [
  "bytes",
  "hyper 0.14.28",
  "libra2-config",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-temppath",
@@ -716,7 +716,6 @@ dependencies = [
 name = "aptos-block-partitioner"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
  "bcs 0.1.4",
  "clap 4.5.21",
@@ -724,6 +723,7 @@ dependencies = [
  "dashmap",
  "itertools 0.13.0",
  "jemallocator",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-metrics-core",
  "move-core-types",
@@ -801,8 +801,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-consensus-notifications",
  "aptos-consensus-types",
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-event-notifications",
  "aptos-executor",
  "aptos-executor-test-helpers",
@@ -842,6 +840,8 @@ dependencies = [
  "libra2-channels",
  "libra2-collections",
  "libra2-config",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "libra2-dkg",
  "libra2-enum-conversion-derive",
  "libra2-fallible",
@@ -883,12 +883,12 @@ dependencies = [
 name = "aptos-consensus-notifications"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-runtimes",
  "aptos-types",
  "async-trait",
  "claims",
  "futures",
+ "libra2-crypto",
  "move-core-types",
  "serde",
  "thiserror",
@@ -900,8 +900,6 @@ name = "aptos-consensus-types"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-executor-types",
  "aptos-types",
  "bcs 0.1.4",
@@ -910,6 +908,8 @@ dependencies = [
  "futures",
  "itertools 0.13.0",
  "libra2-bitvec",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "libra2-infallible",
  "libra2-logger",
  "libra2-short-hex-str",
@@ -925,83 +925,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-crypto"
-version = "0.0.3"
-dependencies = [
- "aes-gcm",
- "anyhow",
- "aptos-crypto-derive",
- "arbitrary",
- "ark-bls12-381",
- "ark-bn254",
- "ark-ec",
- "ark-ff",
- "ark-groth16",
- "ark-serialize",
- "ark-std",
- "base64 0.13.1",
- "bcs 0.1.4",
- "bitvec 1.0.1",
- "blake2",
- "blake2-rfc",
- "blst",
- "bulletproofs",
- "byteorder",
- "bytes",
- "criterion",
- "curve25519-dalek 3.2.0",
- "curve25519-dalek-ng",
- "digest 0.9.0",
- "ed25519-dalek 1.0.1",
- "ff",
- "hex",
- "hkdf 0.10.0",
- "libsecp256k1",
- "merlin",
- "more-asserts",
- "neptune",
- "num-bigint 0.3.3",
- "num-integer",
- "once_cell",
- "p256",
- "poseidon-ark",
- "proptest",
- "proptest-derive",
- "rand 0.7.3",
- "rand_core 0.5.1",
- "ring 0.16.20",
- "serde",
- "serde-name",
- "serde_bytes",
- "serde_json",
- "sha2 0.10.8",
- "sha2 0.9.9",
- "sha3 0.9.1",
- "signature 2.2.0",
- "static_assertions",
- "thiserror",
- "tiny-keccak",
- "trybuild",
- "typenum",
- "x25519-dalek",
-]
-
-[[package]]
-name = "aptos-crypto-derive"
-version = "0.0.3"
-dependencies = [
- "anyhow",
- "proc-macro2",
- "quote",
- "syn 1.0.109",
-]
-
-[[package]]
 name = "aptos-data-client"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-netcore",
  "aptos-network",
  "aptos-peer-monitoring-service-types",
@@ -1019,6 +946,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-channels",
  "libra2-config",
+ "libra2-crypto",
  "libra2-id-generator",
  "libra2-infallible",
  "libra2-logger",
@@ -1037,7 +965,6 @@ dependencies = [
 name = "aptos-data-streaming-service"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-data-client",
  "aptos-storage-service-types",
  "aptos-types",
@@ -1048,6 +975,7 @@ dependencies = [
  "futures",
  "libra2-channels",
  "libra2-config",
+ "libra2-crypto",
  "libra2-id-generator",
  "libra2-infallible",
  "libra2-logger",
@@ -1067,7 +995,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-accumulator",
- "aptos-crypto",
  "aptos-db-indexer",
  "aptos-db-indexer-schemas",
  "aptos-executor-types",
@@ -1093,6 +1020,7 @@ dependencies = [
  "indicatif 0.15.0",
  "itertools 0.13.0",
  "libra2-config",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -1139,13 +1067,13 @@ name = "aptos-db-indexer-schemas"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-proptest-helpers",
  "aptos-schemadb",
  "aptos-storage-interface",
  "aptos-types",
  "bcs 0.1.4",
  "byteorder",
+ "libra2-crypto",
  "proptest",
  "proptest-derive",
  "rand 0.7.3",
@@ -1221,7 +1149,6 @@ name = "aptos-event-notifications"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-db",
  "aptos-executor-test-helpers",
  "aptos-storage-interface",
@@ -1232,6 +1159,7 @@ dependencies = [
  "claims",
  "futures",
  "libra2-channels",
+ "libra2-crypto",
  "libra2-id-generator",
  "libra2-infallible",
  "libra2-temppath",
@@ -1249,7 +1177,6 @@ dependencies = [
  "aptos-block-executor",
  "aptos-cached-packages",
  "aptos-consensus-types",
- "aptos-crypto",
  "aptos-db",
  "aptos-db-indexer",
  "aptos-executor-service",
@@ -1269,6 +1196,7 @@ dependencies = [
  "fail",
  "itertools 0.13.0",
  "libra2-config",
+ "libra2-crypto",
  "libra2-drop-helper",
  "libra2-infallible",
  "libra2-logger",
@@ -1290,7 +1218,6 @@ dependencies = [
  "aptos-aggregator",
  "aptos-block-executor",
  "aptos-block-partitioner",
- "aptos-crypto",
  "aptos-db",
  "aptos-executor",
  "aptos-executor-service",
@@ -1320,6 +1247,7 @@ dependencies = [
  "itertools 0.13.0",
  "jemallocator",
  "libra2-config",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-node-resource-metrics",
@@ -1375,7 +1303,6 @@ dependencies = [
  "anyhow",
  "aptos-cached-packages",
  "aptos-consensus-types",
- "aptos-crypto",
  "aptos-db",
  "aptos-executor",
  "aptos-executor-types",
@@ -1385,6 +1312,7 @@ dependencies = [
  "aptos-vm",
  "aptos-vm-genesis",
  "libra2-config",
+ "libra2-crypto",
  "libra2-temppath",
  "rand 0.7.3",
 ]
@@ -1394,7 +1322,6 @@ name = "aptos-executor-types"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-scratchpad",
  "aptos-secure-net",
  "aptos-storage-interface",
@@ -1403,6 +1330,7 @@ dependencies = [
  "criterion",
  "derive_more 0.99.17",
  "itertools 0.13.0",
+ "libra2-crypto",
  "libra2-drop-helper",
  "libra2-infallible",
  "libra2-metrics-core",
@@ -1418,11 +1346,11 @@ name = "aptos-experimental-hexy"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-experimental-layered-map",
  "criterion",
  "itertools 0.13.0",
  "jemallocator",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-metrics-core",
  "once_cell",
@@ -1436,12 +1364,12 @@ version = "0.1.0"
 dependencies = [
  "ahash 0.8.11",
  "anyhow",
- "aptos-crypto",
  "aptos-schemadb",
  "bitvec 1.0.1",
  "criterion",
  "itertools 0.13.0",
  "jemallocator",
+ "libra2-crypto",
  "libra2-drop-helper",
  "libra2-infallible",
  "libra2-metrics-core",
@@ -1663,7 +1591,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-aggregator",
- "aptos-crypto",
  "aptos-gas-algebra",
  "aptos-gas-meter",
  "aptos-gas-schedule",
@@ -1692,6 +1619,7 @@ dependencies = [
  "flate2",
  "hex",
  "itertools 0.13.0",
+ "libra2-crypto",
  "libsecp256k1",
  "log",
  "lru 0.7.8",
@@ -1828,7 +1756,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-db",
  "aptos-executor",
  "aptos-framework",
@@ -1839,6 +1766,7 @@ dependencies = [
  "aptos-vm-genesis",
  "bcs 0.1.4",
  "libra2-config",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-temppath",
  "rand 0.7.3",
@@ -2042,7 +1970,6 @@ dependencies = [
  "aptos-api",
  "aptos-api-test-context",
  "aptos-api-types",
- "aptos-crypto",
  "aptos-db",
  "aptos-executor",
  "aptos-executor-types",
@@ -2071,6 +1998,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-bitvec",
  "libra2-config",
+ "libra2-crypto",
  "libra2-global-constants",
  "libra2-logger",
  "libra2-metrics-core",
@@ -2283,8 +2211,6 @@ name = "aptos-jellyfish-merkle"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-db",
  "aptos-experimental-runtimes",
  "aptos-storage-interface",
@@ -2293,6 +2219,8 @@ dependencies = [
  "bcs 0.1.4",
  "byteorder",
  "itertools 0.13.0",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -2313,7 +2241,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus-types",
- "aptos-crypto",
  "aptos-event-notifications",
  "aptos-network",
  "aptos-reliable-broadcast",
@@ -2330,6 +2257,7 @@ dependencies = [
  "libra2-bounded-executor",
  "libra2-channels",
  "libra2-config",
+ "libra2-crypto",
  "libra2-enum-conversion-derive",
  "libra2-infallible",
  "libra2-jwk-utils",
@@ -2347,8 +2275,8 @@ dependencies = [
 name = "aptos-keygen"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
+ "libra2-crypto",
  "rand 0.7.3",
 ]
 
@@ -2357,8 +2285,6 @@ name = "aptos-keyless-pepper-common"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-types",
  "ark-bls12-381",
  "ark-ec",
@@ -2372,6 +2298,8 @@ dependencies = [
  "hex",
  "hmac 0.12.1",
  "jsonwebtoken 8.3.0",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "libra2-dkg",
  "once_cell",
  "rand 0.7.3",
@@ -2385,7 +2313,6 @@ dependencies = [
 name = "aptos-keyless-pepper-example-client-rust"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-keyless-pepper-common",
  "aptos-types",
  "ark-bls12-381",
@@ -2393,6 +2320,7 @@ dependencies = [
  "bcs 0.1.4",
  "firestore",
  "hex",
+ "libra2-crypto",
  "libra2-infallible",
  "reqwest 0.11.23",
  "serde_json",
@@ -2405,7 +2333,6 @@ version = "0.1.0"
 dependencies = [
  "aes-gcm",
  "anyhow",
- "aptos-crypto",
  "aptos-inspection-service",
  "aptos-keyless-pepper-common",
  "aptos-types",
@@ -2422,6 +2349,7 @@ dependencies = [
  "hyper 0.14.28",
  "jsonwebtoken 8.3.0",
  "jwt",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -2444,7 +2372,6 @@ dependencies = [
  "aptos-abstract-gas-usage",
  "aptos-block-executor",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-framework",
  "aptos-gas-algebra",
  "aptos-gas-meter",
@@ -2463,6 +2390,7 @@ dependencies = [
  "claims",
  "goldenfile",
  "libra2-bitvec",
+ "libra2-crypto",
  "libra2-temppath",
  "move-binary-format",
  "move-command-line-common",
@@ -2485,11 +2413,11 @@ dependencies = [
 name = "aptos-ledger"
 version = "0.2.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
  "hex",
  "ledger-apdu",
  "ledger-transport-hid",
+ "libra2-crypto",
  "thiserror",
 ]
 
@@ -2534,7 +2462,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus-types",
- "aptos-crypto",
  "aptos-event-notifications",
  "aptos-mempool-notifications",
  "aptos-netcore",
@@ -2553,6 +2480,7 @@ dependencies = [
  "libra2-channels",
  "libra2-compression",
  "libra2-config",
+ "libra2-crypto",
  "libra2-id-generator",
  "libra2-infallible",
  "libra2-logger",
@@ -2575,11 +2503,11 @@ dependencies = [
 name = "aptos-mempool-notifications"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
  "async-trait",
  "claims",
  "futures",
+ "libra2-crypto",
  "serde",
  "thiserror",
  "tokio",
@@ -2602,7 +2530,6 @@ dependencies = [
  "anyhow",
  "aptos-block-executor",
  "aptos-consensus",
- "aptos-crypto",
  "aptos-gas-profiling",
  "aptos-rest-client",
  "aptos-types",
@@ -2614,6 +2541,7 @@ dependencies = [
  "bcs 0.1.4",
  "clap 4.5.21",
  "itertools 0.13.0",
+ "libra2-crypto",
  "libra2-logger",
  "regex",
  "reqwest 0.11.23",
@@ -2688,13 +2616,13 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-aggregator",
- "aptos-crypto",
  "aptos-types",
  "aptos-vm-types",
  "bytes",
  "claims",
  "crossbeam",
  "dashmap",
+ "libra2-crypto",
  "move-binary-format",
  "move-core-types",
  "move-vm-runtime",
@@ -2743,7 +2671,6 @@ name = "aptos-network"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-memsocket",
  "aptos-netcore",
  "aptos-peer-monitoring-service-types",
@@ -2761,6 +2688,7 @@ dependencies = [
  "libra2-channels",
  "libra2-compression",
  "libra2-config",
+ "libra2-crypto",
  "libra2-id-generator",
  "libra2-infallible",
  "libra2-logger",
@@ -2810,7 +2738,6 @@ dependencies = [
 name = "aptos-network-builder"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-event-notifications",
  "aptos-netcore",
  "aptos-network",
@@ -2820,6 +2747,7 @@ dependencies = [
  "futures",
  "libra2-channels",
  "libra2-config",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-time-service",
  "maplit",
@@ -2833,12 +2761,12 @@ name = "aptos-network-checker"
 version = "0.0.1"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-network",
  "aptos-types",
  "clap 4.5.21",
  "futures",
  "libra2-config",
+ "libra2-crypto",
  "libra2-logger",
  "serde",
  "tokio",
@@ -2849,7 +2777,6 @@ name = "aptos-network-discovery"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-event-notifications",
  "aptos-netcore",
  "aptos-network",
@@ -2859,6 +2786,7 @@ dependencies = [
  "futures",
  "libra2-channels",
  "libra2-config",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-short-hex-str",
@@ -2915,7 +2843,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-consensus",
  "aptos-consensus-notifications",
- "aptos-crypto",
  "aptos-data-client",
  "aptos-data-streaming-service",
  "aptos-db",
@@ -2960,6 +2887,7 @@ dependencies = [
  "libra2-channels",
  "libra2-config",
  "libra2-crash-handler",
+ "libra2-crypto",
  "libra2-dkg-runtime",
  "libra2-infallible",
  "libra2-logger",
@@ -2983,7 +2911,6 @@ name = "aptos-node-checker"
 version = "0.1.1"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-network-checker",
  "aptos-rest-client",
  "aptos-sdk",
@@ -2993,6 +2920,7 @@ dependencies = [
  "clap 4.5.21",
  "futures",
  "libra2-config",
+ "libra2-crypto",
  "libra2-logger",
  "once_cell",
  "poem",
@@ -3078,7 +3006,6 @@ name = "aptos-peer-monitoring-service-server"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-netcore",
  "aptos-network",
  "aptos-peer-monitoring-service-types",
@@ -3092,6 +3019,7 @@ dependencies = [
  "libra2-build-info",
  "libra2-channels",
  "libra2-config",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-time-service",
@@ -3164,7 +3092,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos",
- "aptos-crypto",
  "aptos-framework",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
@@ -3186,6 +3113,7 @@ dependencies = [
  "handlebars",
  "hex",
  "libra2-build-info",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-temppath",
  "move-binary-format",
@@ -3235,7 +3163,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-block-executor",
- "aptos-crypto",
  "aptos-framework",
  "aptos-gas-schedule",
  "aptos-move-debugger",
@@ -3247,6 +3174,7 @@ dependencies = [
  "claims",
  "clap 4.5.21",
  "colored",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-push-metrics",
  "move-core-types",
@@ -3278,12 +3206,12 @@ version = "0.0.0"
 dependencies = [
  "anyhow",
  "aptos-api-types",
- "aptos-crypto",
  "aptos-types",
  "bcs 0.1.4",
  "bytes",
  "clap 4.5.21",
  "hex",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "move-core-types",
@@ -3309,7 +3237,6 @@ version = "0.0.1"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-node",
  "aptos-rest-client",
  "aptos-runtimes",
@@ -3321,6 +3248,7 @@ dependencies = [
  "hex",
  "itertools 0.13.0",
  "libra2-config",
+ "libra2-crypto",
  "libra2-global-constants",
  "libra2-logger",
  "libra2-warp-webserver",
@@ -3363,7 +3291,6 @@ name = "aptos-safety-rules"
 version = "0.1.0"
 dependencies = [
  "aptos-consensus-types",
- "aptos-crypto",
  "aptos-proptest-helpers",
  "aptos-secure-net",
  "aptos-secure-storage",
@@ -3373,6 +3300,7 @@ dependencies = [
  "criterion",
  "hex",
  "libra2-config",
+ "libra2-crypto",
  "libra2-global-constants",
  "libra2-infallible",
  "libra2-logger",
@@ -3409,13 +3337,13 @@ dependencies = [
 name = "aptos-scratchpad"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
  "aptos-vm",
  "bitvec 1.0.1",
  "criterion",
  "itertools 0.13.0",
  "jemallocator",
+ "libra2-crypto",
  "libra2-drop-helper",
  "libra2-infallible",
  "libra2-metrics-core",
@@ -3432,7 +3360,6 @@ version = "0.0.3"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-ledger",
  "aptos-rest-client",
  "aptos-types",
@@ -3441,6 +3368,7 @@ dependencies = [
  "ed25519-dalek-bip32",
  "hex",
  "lazy_static",
+ "libra2-crypto",
  "libra2-global-constants",
  "move-core-types",
  "once_cell",
@@ -3497,13 +3425,13 @@ dependencies = [
 name = "aptos-secure-storage"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-vault-client",
  "base64 0.13.1",
  "bcs 0.1.4",
  "chrono",
  "enum_dispatch",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "libra2-infallible",
  "libra2-logger",
  "libra2-temppath",
@@ -3520,7 +3448,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus-notifications",
- "aptos-crypto",
  "aptos-data-client",
  "aptos-data-streaming-service",
  "aptos-db",
@@ -3546,6 +3473,7 @@ dependencies = [
  "futures",
  "libra2-channels",
  "libra2-config",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -3567,7 +3495,6 @@ name = "aptos-storage-interface"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-experimental-layered-map",
  "aptos-scratchpad",
  "aptos-secure-net",
@@ -3577,6 +3504,7 @@ dependencies = [
  "dashmap",
  "derive_more 0.99.17",
  "itertools 0.13.0",
+ "libra2-crypto",
  "libra2-metrics-core",
  "once_cell",
  "parking_lot 0.12.1",
@@ -3602,11 +3530,11 @@ dependencies = [
 name = "aptos-storage-service-notifications"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "async-trait",
  "claims",
  "futures",
  "libra2-channels",
+ "libra2-crypto",
  "serde",
  "thiserror",
  "tokio",
@@ -3617,7 +3545,6 @@ name = "aptos-storage-service-server"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-netcore",
  "aptos-network",
  "aptos-storage-interface",
@@ -3633,6 +3560,7 @@ dependencies = [
  "libra2-bitvec",
  "libra2-channels",
  "libra2-config",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -3651,12 +3579,12 @@ dependencies = [
 name = "aptos-storage-service-types"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
  "bcs 0.1.4",
  "claims",
  "libra2-compression",
  "libra2-config",
+ "libra2-crypto",
  "libra2-time-service",
  "num-traits",
  "proptest",
@@ -3709,7 +3637,6 @@ dependencies = [
  "anyhow",
  "aptos-api",
  "aptos-consensus",
- "aptos-crypto",
  "aptos-db",
  "aptos-mempool",
  "aptos-network",
@@ -3721,6 +3648,7 @@ dependencies = [
  "futures",
  "httpmock",
  "libra2-config",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -3746,7 +3674,6 @@ name = "aptos-telemetry-service"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-rest-client",
  "aptos-types",
  "base64 0.13.1",
@@ -3761,6 +3688,7 @@ dependencies = [
  "httpmock",
  "jsonwebtoken 8.3.0",
  "libra2-config",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -3818,7 +3746,6 @@ version = "0.1.0"
 dependencies = [
  "aptos-block-executor",
  "aptos-block-partitioner",
- "aptos-crypto",
  "aptos-language-e2e-tests",
  "aptos-types",
  "aptos-vm",
@@ -3827,6 +3754,7 @@ dependencies = [
  "criterion",
  "criterion-cpu-time",
  "libra2-bitvec",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-node-resource-metrics",
@@ -3857,7 +3785,6 @@ version = "0.0.0"
 dependencies = [
  "again",
  "anyhow",
- "aptos-crypto",
  "aptos-rest-client",
  "aptos-sdk",
  "aptos-transaction-generator-lib",
@@ -3869,6 +3796,7 @@ dependencies = [
  "hex",
  "itertools 0.13.0",
  "libra2-config",
+ "libra2-crypto",
  "libra2-global-constants",
  "libra2-infallible",
  "libra2-logger",
@@ -3941,7 +3869,6 @@ dependencies = [
  "aptos-api-types",
  "aptos-block-executor",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-framework",
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
@@ -3956,6 +3883,7 @@ dependencies = [
  "codespan-reporting",
  "datatest-stable",
  "hex",
+ "libra2-crypto",
  "move-binary-format",
  "move-bytecode-verifier",
  "move-command-line-common",
@@ -3977,8 +3905,6 @@ version = "0.0.3"
 dependencies = [
  "ahash 0.8.11",
  "anyhow",
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-proptest-helpers",
  "arbitrary",
  "ark-bn254",
@@ -4005,6 +3931,8 @@ dependencies = [
  "itertools 0.13.0",
  "jsonwebtoken 8.3.0",
  "libra2-bitvec",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "libra2-dkg",
  "libra2-infallible",
  "move-binary-format",
@@ -4067,10 +3995,10 @@ dependencies = [
 name = "aptos-validator-transaction-pool"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
  "futures-util",
  "libra2-channels",
+ "libra2-crypto",
  "libra2-infallible",
  "tokio",
 ]
@@ -4079,11 +4007,11 @@ dependencies = [
 name = "aptos-vault-client"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-proptest-helpers",
  "aptos-types",
  "base64 0.13.1",
  "chrono",
+ "libra2-crypto",
  "native-tls",
  "once_cell",
  "proptest",
@@ -4101,8 +4029,6 @@ dependencies = [
  "aptos-aggregator",
  "aptos-block-executor",
  "aptos-block-partitioner",
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-experimental-runtimes",
  "aptos-framework",
  "aptos-gas-algebra",
@@ -4128,6 +4054,8 @@ dependencies = [
  "futures",
  "hex",
  "itertools 0.13.0",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -4190,7 +4118,6 @@ name = "aptos-vm-genesis"
 version = "0.1.0"
 dependencies = [
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-framework",
  "aptos-gas-schedule",
  "aptos-proptest-helpers",
@@ -4200,6 +4127,7 @@ dependencies = [
  "bcs 0.1.4",
  "bytes",
  "claims",
+ "libra2-crypto",
  "move-binary-format",
  "move-core-types",
  "move-vm-runtime",
@@ -4215,9 +4143,9 @@ dependencies = [
 name = "aptos-vm-logging"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
  "arc-swap",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-speculative-state-helper",
@@ -4283,7 +4211,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-db",
  "aptos-executor-test-helpers",
  "aptos-gas-schedule",
@@ -4294,6 +4221,7 @@ dependencies = [
  "aptos-vm-genesis",
  "aptos-vm-logging",
  "fail",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-temppath",
  "move-binary-format",
@@ -7242,7 +7170,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-framework",
  "aptos-gas-algebra",
  "aptos-gas-profiling",
@@ -7258,6 +7185,7 @@ dependencies = [
  "bcs 0.1.4",
  "claims",
  "hex",
+ "libra2-crypto",
  "move-binary-format",
  "move-core-types",
  "move-model",
@@ -8195,7 +8123,6 @@ version = "0.0.0"
 dependencies = [
  "aptos-cached-packages",
  "aptos-consensus",
- "aptos-crypto",
  "aptos-framework",
  "aptos-language-e2e-tests",
  "aptos-types",
@@ -8204,6 +8131,7 @@ dependencies = [
  "base64 0.13.1",
  "bcs 0.1.4",
  "libfuzzer-sys",
+ "libra2-crypto",
  "move-binary-format",
  "move-bytecode-verifier",
  "move-core-types",
@@ -8288,13 +8216,13 @@ dependencies = [
  "aptos-api-types",
  "aptos-consensus",
  "aptos-consensus-types",
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-network",
  "aptos-types",
  "bcs 0.1.4",
  "clap 4.5.21",
  "libra2-config",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "move-core-types",
  "rand 0.7.3",
  "serde",
@@ -9992,7 +9920,6 @@ name = "language-e2e-testsuite"
 version = "0.1.0"
 dependencies = [
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-gas-algebra",
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
@@ -10001,6 +9928,7 @@ dependencies = [
  "aptos-vm-genesis",
  "claims",
  "fail",
+ "libra2-crypto",
  "libra2-logger",
  "move-binary-format",
  "move-bytecode-verifier",
@@ -10138,7 +10066,6 @@ dependencies = [
  "aptos-api-types",
  "aptos-backup-cli",
  "aptos-cached-packages",
- "aptos-crypto",
  "aptos-faucet-core",
  "aptos-framework",
  "aptos-gas-profiling",
@@ -10186,6 +10113,7 @@ dependencies = [
  "libra2-build-info",
  "libra2-cli-common",
  "libra2-config",
+ "libra2-crypto",
  "libra2-global-constants",
  "libra2-logger",
  "libra2-node",
@@ -10297,9 +10225,9 @@ version = "0.1.0"
 name = "libra2-compression"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
  "bcs 0.1.4",
+ "libra2-crypto",
  "libra2-logger",
  "libra2-metrics-core",
  "lz4",
@@ -10314,7 +10242,6 @@ name = "libra2-config"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
  "aptos-secure-storage",
  "aptos-types",
  "arr_macro",
@@ -10322,6 +10249,7 @@ dependencies = [
  "byteorder",
  "cfg-if",
  "get_if_addrs",
+ "libra2-crypto",
  "libra2-global-constants",
  "libra2-logger",
  "libra2-short-hex-str",
@@ -10351,12 +10279,83 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-crypto"
+version = "0.0.3"
+dependencies = [
+ "aes-gcm",
+ "anyhow",
+ "arbitrary",
+ "ark-bls12-381",
+ "ark-bn254",
+ "ark-ec",
+ "ark-ff",
+ "ark-groth16",
+ "ark-serialize",
+ "ark-std",
+ "base64 0.13.1",
+ "bcs 0.1.4",
+ "bitvec 1.0.1",
+ "blake2",
+ "blake2-rfc",
+ "blst",
+ "bulletproofs",
+ "byteorder",
+ "bytes",
+ "criterion",
+ "curve25519-dalek 3.2.0",
+ "curve25519-dalek-ng",
+ "digest 0.9.0",
+ "ed25519-dalek 1.0.1",
+ "ff",
+ "hex",
+ "hkdf 0.10.0",
+ "libra2-crypto-derive",
+ "libsecp256k1",
+ "merlin",
+ "more-asserts",
+ "neptune",
+ "num-bigint 0.3.3",
+ "num-integer",
+ "once_cell",
+ "p256",
+ "poseidon-ark",
+ "proptest",
+ "proptest-derive",
+ "rand 0.7.3",
+ "rand_core 0.5.1",
+ "ring 0.16.20",
+ "serde",
+ "serde-name",
+ "serde_bytes",
+ "serde_json",
+ "sha2 0.10.8",
+ "sha2 0.9.9",
+ "sha3 0.9.1",
+ "signature 2.2.0",
+ "static_assertions",
+ "thiserror",
+ "tiny-keccak",
+ "trybuild",
+ "typenum",
+ "x25519-dalek",
+]
+
+[[package]]
+name = "libra2-crypto-derive"
+version = "0.0.3"
+dependencies = [
+ "anyhow",
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
+]
+
+[[package]]
 name = "libra2-db"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-accumulator",
- "aptos-crypto",
  "aptos-db-indexer",
  "aptos-db-indexer-schemas",
  "aptos-executor-types",
@@ -10382,6 +10381,7 @@ dependencies = [
  "indicatif 0.15.0",
  "itertools 0.13.0",
  "libra2-config",
+ "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -10405,8 +10405,6 @@ name = "libra2-dkg"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-runtimes",
  "bcs 0.1.4",
  "blst",
@@ -10415,6 +10413,8 @@ dependencies = [
  "ff",
  "group",
  "hex",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "merlin",
  "more-asserts",
  "num-bigint 0.3.3",
@@ -10438,8 +10438,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-consensus-types",
- "aptos-crypto",
- "aptos-crypto-derive",
  "aptos-event-notifications",
  "aptos-network",
  "aptos-reliable-broadcast",
@@ -10457,6 +10455,8 @@ dependencies = [
  "libra2-bounded-executor",
  "libra2-channels",
  "libra2-config",
+ "libra2-crypto",
+ "libra2-crypto-derive",
  "libra2-enum-conversion-derive",
  "libra2-infallible",
  "libra2-logger",
@@ -10528,8 +10528,8 @@ dependencies = [
 name = "libra2-keygen"
 version = "0.1.0"
 dependencies = [
- "aptos-crypto",
  "aptos-types",
+ "libra2-crypto",
  "rand 0.7.3",
 ]
 
@@ -10587,7 +10587,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-consensus",
  "aptos-consensus-notifications",
- "aptos-crypto",
  "aptos-data-client",
  "aptos-data-streaming-service",
  "aptos-db",
@@ -10632,6 +10631,7 @@ dependencies = [
  "libra2-channels",
  "libra2-config",
  "libra2-crash-handler",
+ "libra2-crypto",
  "libra2-dkg-runtime",
  "libra2-infallible",
  "libra2-logger",
@@ -16099,7 +16099,6 @@ dependencies = [
  "aptos-backup-cli",
  "aptos-cached-packages",
  "aptos-consensus",
- "aptos-crypto",
  "aptos-db",
  "aptos-db-indexer",
  "aptos-db-indexer-schemas",
@@ -16134,6 +16133,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-bitvec",
  "libra2-config",
+ "libra2-crypto",
  "libra2-dkg",
  "libra2-global-constants",
  "libra2-infallible",

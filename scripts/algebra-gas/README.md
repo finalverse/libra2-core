@@ -12,8 +12,8 @@ Ensure you `cd` to the repo root.
 
 Run the necessary benches.
 ```
-cargo bench -p aptos-crypto -- hash/SHA2-256
-cargo bench -p aptos-crypto -- ark_bls12_381
+cargo bench -p libra2-crypto -- hash/SHA2-256
+cargo bench -p libra2-crypto -- ark_bls12_381
 ```
 
 Compute `gas_per_ns` using `hash/SHA2-256` bench results.

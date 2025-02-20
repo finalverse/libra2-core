@@ -4,7 +4,7 @@
 
 use crate::driver::DriverConfiguration;
 use libra2_config::config::{ConsensusObserverConfig, RoleType, StateSyncDriverConfig};
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519Signature},
     HashValue, PrivateKey, Uniform,
 };

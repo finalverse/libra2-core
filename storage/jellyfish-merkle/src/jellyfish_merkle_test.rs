@@ -11,7 +11,7 @@ use crate::{
         test_get_with_proof, test_get_with_proof_with_distinct_last_nibble, ValueBlob,
     },
 };
-use aptos_crypto::{hash::SPARSE_MERKLE_PLACEHOLDER_HASH, HashValue};
+use libra2_crypto::{hash::SPARSE_MERKLE_PLACEHOLDER_HASH, HashValue};
 use aptos_types::nibble::Nibble;
 use mock_tree_store::MockTreeStore;
 use proptest::{collection::hash_set, prelude::*};

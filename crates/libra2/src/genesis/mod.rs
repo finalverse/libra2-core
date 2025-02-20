@@ -18,7 +18,7 @@ use crate::{
     },
     CliCommand, CliResult,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381, ed25519::ED25519_PUBLIC_KEY_LENGTH, x25519, ValidCryptoMaterial,
     ValidCryptoMaterialStringExt,
 };

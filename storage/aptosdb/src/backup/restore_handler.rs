@@ -10,7 +10,7 @@ use crate::{
     state_store::StateStore,
     AptosDB,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_storage_interface::{DbReader, Result};
 use aptos_types::{
     contract_event::ContractEvent,

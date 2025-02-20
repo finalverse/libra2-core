@@ -9,7 +9,7 @@ use crate::{
     },
 };
 use anyhow::Result;
-use aptos_crypto::{hash::CryptoHasher, HashValue};
+use libra2_crypto::{hash::CryptoHasher, HashValue};
 use libra2_infallible::RwLock;
 use bytes::Bytes;
 use hashbrown::HashMap;

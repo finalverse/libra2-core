@@ -8,7 +8,7 @@ use crate::common::types::{
     PublicKeyInputOptions, RestOptions, TransactionOptions, TransactionSummary,
 };
 use aptos_cached_packages::aptos_stdlib;
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     encoding_type::EncodingType,
     PrivateKey, SigningKey,

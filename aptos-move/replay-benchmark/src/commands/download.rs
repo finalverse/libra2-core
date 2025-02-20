@@ -115,7 +115,7 @@ fn partition(begin_version: Version, txns: Vec<Transaction>) -> Vec<TransactionB
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aptos_crypto::{
+    use libra2_crypto::{
         ed25519::{Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature},
         HashValue, Uniform,
     };

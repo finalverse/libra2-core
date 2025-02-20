@@ -29,7 +29,7 @@ use aptos_consensus_types::{
     vote_data::VoteData,
     wrapped_ledger_info::WrappedLedgerInfo,
 };
-use aptos_crypto::{hash::ACCUMULATOR_PLACEHOLDER_HASH, HashValue};
+use libra2_crypto::{hash::ACCUMULATOR_PLACEHOLDER_HASH, HashValue};
 use aptos_executor_types::state_compute_result::StateComputeResult;
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::prelude::*;

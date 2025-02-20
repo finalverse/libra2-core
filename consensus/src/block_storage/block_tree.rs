@@ -13,7 +13,7 @@ use aptos_consensus_types::{
     pipelined_block::PipelinedBlock, quorum_cert::QuorumCert,
     timeout_2chain::TwoChainTimeoutCertificate, wrapped_ledger_info::WrappedLedgerInfo,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
 use aptos_types::{
     block_info::{BlockInfo, Round},

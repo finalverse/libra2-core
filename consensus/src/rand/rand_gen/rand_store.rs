@@ -339,7 +339,7 @@ mod tests {
         types::{MockShare, PathType, RandConfig},
     };
     use aptos_consensus_types::common::Author;
-    use aptos_crypto::{bls12381, HashValue, Uniform};
+    use libra2_crypto::{bls12381, HashValue, Uniform};
     use libra2_dkg::{
         pvss::{traits::Transcript, Player, WeightedConfig},
         weighted_vuf::traits::WeightedVUF,

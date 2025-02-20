@@ -4,7 +4,7 @@
 use crate::smoke_test_environment::SwarmBuilder;
 use aptos::move_tool::MemberId;
 use aptos_cached_packages::aptos_stdlib;
-use aptos_crypto::SigningKey;
+use libra2_crypto::SigningKey;
 use aptos_forge::Swarm;
 use aptos_types::function_info::FunctionInfo;
 use move_core_types::account_address::AccountAddress;

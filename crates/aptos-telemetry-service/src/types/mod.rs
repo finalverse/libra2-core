@@ -77,7 +77,7 @@ pub mod common {
 
 pub mod response {
     use crate::errors::ServiceError;
-    use aptos_crypto::x25519;
+    use libra2_crypto::x25519;
     use reqwest::StatusCode;
     use serde::{Deserialize, Serialize};
 

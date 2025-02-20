@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{db::test_helper::put_transaction_infos, Libra2DB};
-use aptos_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_temppath::TempPath;
 use aptos_types::transaction::{TransactionInfo, Version};
 use proptest::{collection::vec, prelude::*};

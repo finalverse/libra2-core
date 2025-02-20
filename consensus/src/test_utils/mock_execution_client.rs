@@ -20,7 +20,7 @@ use aptos_consensus_types::{
     common::{Payload, Round},
     pipelined_block::PipelinedBlock,
 };
-use aptos_crypto::{bls12381::PrivateKey, HashValue};
+use libra2_crypto::{bls12381::PrivateKey, HashValue};
 use aptos_executor_types::ExecutorResult;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;

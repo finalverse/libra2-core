@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 use crate::transaction::authenticator::{AuthenticationKey, Scheme};
 use anyhow::bail;
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::Ed25519PublicKey,
     hash::{CryptoHasher, HashValue},
     x25519,
@@ -251,7 +251,7 @@ pub fn create_multisig_account_address(
 // with the imported `AccountAddress` from move-core-types. It needs to have the same name since
 // the hash salt is calculated using the name of the type.
 mod hasher {
-    #[derive(serde::Deserialize, aptos_crypto_derive::CryptoHasher)]
+    #[derive(serde::Deserialize, libra2_crypto_derive::CryptoHasher)]
     struct AccountAddress;
 }
 
@@ -270,7 +270,7 @@ impl HashAccountAddress for AccountAddress {
 #[cfg(test)]
 mod test {
     use super::{AccountAddress, HashAccountAddress};
-    use aptos_crypto::hash::HashValue;
+    use libra2_crypto::hash::HashValue;
     use hex::FromHex;
 
     #[test]

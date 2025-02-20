@@ -10,7 +10,7 @@ use crate::{
     quorum_cert::QuorumCert,
     vote_data::VoteData,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381,
     ed25519::Ed25519PrivateKey,
     hash::{CryptoHash, HashValue},

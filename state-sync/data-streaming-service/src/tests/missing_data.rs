@@ -20,7 +20,7 @@ use crate::{
     tests::utils::{create_ledger_info, create_transaction_list_with_proof},
 };
 use libra2_config::config::DataStreamingServiceConfig;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_data_client::{global_summary::GlobalDataSummary, interface::ResponsePayload};
 use libra2_id_generator::U64IdGenerator;
 use aptos_storage_service_types::responses::CompleteDataRange;

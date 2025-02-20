@@ -18,7 +18,7 @@ libra2-bitvec = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-compression = { workspace = true }
 libra2-config = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 libra2-id-generator = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
@@ -73,7 +73,7 @@ rand_core = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["libra2-bitvec/fuzzing", "libra2-config/fuzzing", "aptos-crypto/fuzzing", "aptos-types/fuzzing", "aptos-proptest-helpers", "libra2-time-service/testing", "aptos-types/fuzzing", "aptos-memsocket/testing", "aptos-netcore/fuzzing", "proptest", "proptest-derive"]
+fuzzing = ["libra2-bitvec/fuzzing", "libra2-config/fuzzing", "libra2-crypto/fuzzing", "aptos-types/fuzzing", "aptos-proptest-helpers", "libra2-time-service/testing", "aptos-types/fuzzing", "aptos-memsocket/testing", "aptos-netcore/fuzzing", "proptest", "proptest-derive"]
 testing = ["libra2-config/testing", "libra2-time-service/testing", "aptos-memsocket/testing", "aptos-netcore/testing"]
 
 [package.metadata.cargo-machete]

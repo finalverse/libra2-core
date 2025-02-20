@@ -11,7 +11,7 @@ use crate::{
 };
 use anyhow::{anyhow, bail, Context, Result};
 use aptos::governance::GenerateExecutionHash;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION;
 use libra2_infallible::duration_since_epoch;
 use aptos_rest_client::Client;

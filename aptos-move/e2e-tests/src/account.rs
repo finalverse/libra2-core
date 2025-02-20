@@ -5,7 +5,7 @@
 //! Test infrastructure for modeling Aptos accounts.
 
 use crate::gas_costs;
-use aptos_crypto::ed25519::*;
+use libra2_crypto::ed25519::*;
 use aptos_keygen::KeyGen;
 use aptos_types::{
     access_path::AccessPath,

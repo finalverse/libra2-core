@@ -12,7 +12,7 @@ use crate::{
     vote_proposal::VoteProposal,
 };
 use anyhow::Error;
-use aptos_crypto::hash::{HashValue, ACCUMULATOR_PLACEHOLDER_HASH};
+use libra2_crypto::hash::{HashValue, ACCUMULATOR_PLACEHOLDER_HASH};
 use aptos_executor_types::{
     state_compute_result::StateComputeResult, ExecutorError, ExecutorResult,
 };

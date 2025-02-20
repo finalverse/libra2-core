@@ -7,7 +7,7 @@ use aptos_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvide
 use aptos_block_partitioner::{
     v2::config::PartitionerV2Config, BlockPartitioner, PartitionerConfig,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_language_e2e_tests::{
     account_universe::{AUTransactionGen, AccountPickStyle, AccountUniverse, AccountUniverseGen},
     data_store::FakeDataStore,

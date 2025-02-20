@@ -9,7 +9,7 @@ use crate::tests::{
 };
 use aptos_api_test_context::{assert_json, current_function_name, pretty, TestContext};
 use libra2_config::config::{GasEstimationStaticOverride, NodeConfig};
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519Signature},
     multi_ed25519::{MultiEd25519PrivateKey, MultiEd25519PublicKey},
     PrivateKey, SigningKey, Uniform,

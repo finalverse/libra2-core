@@ -5,7 +5,7 @@
 //! This module provides reusable helpers in tests.
 
 use crate::Libra2DB;
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };

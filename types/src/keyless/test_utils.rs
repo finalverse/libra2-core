@@ -21,7 +21,7 @@ use crate::{
     },
     transaction::{authenticator::EphemeralSignature, RawTransaction, SignedTransaction},
 };
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::Ed25519PrivateKey, poseidon_bn254::keyless::fr_to_bytes_le, SigningKey, Uniform,
 };
 use ark_bn254::Bn254;
@@ -407,7 +407,7 @@ mod test {
         },
         transaction::authenticator::EphemeralPublicKey,
     };
-    use aptos_crypto::PrivateKey;
+    use libra2_crypto::PrivateKey;
     use ark_ff::PrimeField;
     use reqwest::Client;
     use serde_json::{json, Value};

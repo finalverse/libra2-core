@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_types::{state_store::state_storage_usage::StateStorageUsage, transaction::Version};
 use serde::{Deserialize, Serialize};
 

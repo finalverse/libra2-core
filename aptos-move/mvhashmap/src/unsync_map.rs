@@ -7,7 +7,7 @@ use crate::{
 };
 use anyhow::anyhow;
 use aptos_aggregator::types::DelayedFieldValue;
-use aptos_crypto::hash::HashValue;
+use libra2_crypto::hash::HashValue;
 use aptos_types::{
     error::{code_invariant_error, PanicError},
     executable::ModulePath,

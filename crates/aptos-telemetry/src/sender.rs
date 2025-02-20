@@ -4,7 +4,7 @@
 use crate::metrics::{self, increment_log_ingest_failures_by, increment_log_ingest_successes_by};
 use anyhow::{anyhow, Error, Result};
 use libra2_config::config::{NodeConfig, RoleType};
-use aptos_crypto::{
+use libra2_crypto::{
     noise::{self, NoiseConfig},
     x25519,
 };
@@ -422,7 +422,7 @@ mod tests {
 
     use super::*;
     use crate::metrics::{APTOS_TELEMETRY_SERVICE_FAILURE, APTOS_TELEMETRY_SERVICE_SUCCESS};
-    use aptos_crypto::Uniform;
+    use libra2_crypto::Uniform;
     use aptos_telemetry_service::types::telemetry::TelemetryEvent;
     use httpmock::MockServer;
     use prometheus::{register_int_counter_vec_with_registry, Registry};

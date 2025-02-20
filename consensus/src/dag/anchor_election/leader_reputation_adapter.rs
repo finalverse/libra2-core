@@ -16,7 +16,7 @@ use crate::{
 use libra2_bitvec::BitVec;
 use libra2_collections::BoundedVecDeque;
 use aptos_consensus_types::common::{Author, Round};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_infallible::Mutex;
 use aptos_types::account_config::NewBlockEvent;
 use move_core_types::account_address::AccountAddress;

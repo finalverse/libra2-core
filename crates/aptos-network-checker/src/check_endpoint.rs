@@ -7,7 +7,7 @@ use libra2_config::{
     config::{Error, RoleType, HANDSHAKE_VERSION},
     network_id::{NetworkContext, NetworkId},
 };
-use aptos_crypto::x25519::{self, PRIVATE_KEY_SIZE};
+use libra2_crypto::x25519::{self, PRIVATE_KEY_SIZE};
 use aptos_network::{
     noise::{HandshakeAuthMode, NoiseUpgrader},
     protocols::wire::handshake::v1::ProtocolIdSet,

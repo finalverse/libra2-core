@@ -87,7 +87,7 @@ use crate::sparse_merkle::{
     updater::SubTreeUpdater,
     utils::get_state_shard_id,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };

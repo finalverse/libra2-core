@@ -9,7 +9,7 @@ use crate::{
     transport::*,
 };
 use libra2_config::config::{Peer, PeerRole, PeerSet, HANDSHAKE_VERSION};
-use aptos_crypto::{test_utils::TEST_SEED, traits::Uniform, x25519, x25519::PrivateKey};
+use libra2_crypto::{test_utils::TEST_SEED, traits::Uniform, x25519, x25519::PrivateKey};
 use aptos_netcore::{
     framing::{read_u16frame, write_u16frame},
     transport::{memory, ConnectionOrigin, Transport},

@@ -356,7 +356,7 @@ mod test {
         network_events::ResponseSender, observer_message::BlockTransactionPayload,
     };
     use libra2_config::network_id::NetworkId;
-    use aptos_crypto::HashValue;
+    use libra2_crypto::HashValue;
     use aptos_network::{
         application::{metadata::ConnectionState, storage::PeersAndMetadata},
         transport::ConnectionMetadata,

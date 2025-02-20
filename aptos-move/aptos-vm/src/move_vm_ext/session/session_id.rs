@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::transaction_metadata::TransactionMetadata;
-use aptos_crypto::{hash::CryptoHash, HashValue};
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use aptos_types::{
     block_metadata::BlockMetadata, block_metadata_ext::BlockMetadataExt,
     validator_txn::ValidatorTransaction,

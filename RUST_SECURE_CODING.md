@@ -134,7 +134,7 @@ Below is a list of deterministic data structures available in Rust. Please note,
 
 ### No Custom Cryptographic Algorithm
 
-Use exclusively the cryptographic primitives exposed by the `aptos-crypto` crate.
+Use exclusively the cryptographic primitives exposed by the `libra2-crypto` crate.
 
 ### Cryptographic Material Management
 

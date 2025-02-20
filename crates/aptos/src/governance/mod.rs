@@ -20,7 +20,7 @@ use crate::{
 };
 use aptos_api_types::ViewFunction;
 use aptos_cached_packages::aptos_stdlib;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_framework::{BuildOptions, BuiltPackage, ReleasePackage};
 use libra2_logger::warn;
 use aptos_rest_client::{

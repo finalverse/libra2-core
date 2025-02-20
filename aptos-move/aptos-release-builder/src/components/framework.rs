@@ -3,7 +3,7 @@
 
 use crate::{aptos_core_path, components::get_execution_hash};
 use anyhow::Result;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_framework::{BuildOptions, BuiltPackage, ReleasePackage};
 use libra2_temppath::TempPath;
 use aptos_types::account_address::AccountAddress;

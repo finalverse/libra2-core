@@ -37,7 +37,7 @@ use aptos_consensus_types::{
     sync_info::SyncInfo,
     wrapped_ledger_info::WrappedLedgerInfo,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use aptos_types::{

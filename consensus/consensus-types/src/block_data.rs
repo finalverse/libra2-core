@@ -9,8 +9,8 @@ use crate::{
     vote_data::VoteData,
 };
 use libra2_bitvec::BitVec;
-use aptos_crypto::hash::HashValue;
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto::hash::HashValue;
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use aptos_types::{
     aggregate_signature::AggregateSignature,
     block_info::BlockInfo,

@@ -10,7 +10,7 @@ use libra2_config::{
     config::{Peer, PeerRole, PeerSet},
     network_id::NetworkContext,
 };
-use aptos_crypto::x25519;
+use libra2_crypto::x25519;
 use aptos_event_notifications::ReconfigNotificationListener;
 use libra2_logger::prelude::*;
 use aptos_network::{counters::inc_by_with_context, logging::NetworkSchema};
@@ -156,7 +156,7 @@ mod tests {
     use crate::DiscoveryChangeListener;
     use libra2_channels::{libra2_channel, message_queues::QueueStyle};
     use libra2_config::config::HANDSHAKE_VERSION;
-    use aptos_crypto::{bls12381, x25519::PrivateKey, PrivateKey as PK, Uniform};
+    use libra2_crypto::{bls12381, x25519::PrivateKey, PrivateKey as PK, Uniform};
     use aptos_event_notifications::ReconfigNotification;
     use aptos_types::{
         network_address::NetworkAddress,

@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 libra2-compression = { workspace = true }
 libra2-config = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 libra2-time-service = { workspace = true }
 aptos-types = { workspace = true }
 bcs = { workspace = true }

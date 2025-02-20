@@ -28,7 +28,7 @@ use aptos_api_types::{
     MoveModuleId, TransactionData, TransactionOnChainData, TransactionsBatchSubmissionResult,
     UserTransaction, VersionedEvent, ViewFunction, ViewRequest,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_logger::{debug, info, sample, sample::SampleRate};
 use aptos_types::{
     account_address::AccountAddress,

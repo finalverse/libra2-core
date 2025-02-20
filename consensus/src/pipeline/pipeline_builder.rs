@@ -24,7 +24,7 @@ use aptos_consensus_types::{
     },
     quorum_cert::QuorumCert,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_executor_types::{state_compute_result::StateComputeResult, BlockExecutorTrait};
 use aptos_experimental_runtimes::thread_manager::optimal_min_len;
 use libra2_logger::{error, info, warn};

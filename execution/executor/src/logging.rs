@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_logger::Schema;
 use serde::Serialize;
 

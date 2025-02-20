@@ -7,7 +7,7 @@ use crate::{
     common_transactions::{empty_txn, EMPTY_SCRIPT},
     gas_costs,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     test_utils::KeyPair,
 };
@@ -131,7 +131,7 @@ impl AUTransactionGen for InsufficientBalanceGen {
 pub struct InvalidAuthkeyGen {
     sender: Index,
     #[proptest(
-        strategy = "aptos_crypto::test_utils::uniform_keypair_strategy_with_perturbation(1)"
+        strategy = "libra2_crypto::test_utils::uniform_keypair_strategy_with_perturbation(1)"
     )]
     new_keypair: KeyPair<Ed25519PrivateKey, Ed25519PublicKey>,
 }

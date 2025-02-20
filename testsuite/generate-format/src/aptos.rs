@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381,
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     hash::{CryptoHasher as _, TestOnlyHasher},
@@ -10,7 +10,7 @@ use aptos_crypto::{
     secp256k1_ecdsa, secp256r1_ecdsa,
     traits::{SigningKey, Uniform},
 };
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use aptos_types::{
     block_metadata_ext::BlockMetadataExt,
     contract_event, event,
@@ -54,7 +54,7 @@ fn trace_crypto_values(tracer: &mut Tracer, samples: &mut Samples) -> Result<()>
     tracer.trace_value::<MultiEd25519Signature>(samples, &signature.clone().into())?;
 
     let secp256k1_private_key = secp256k1_ecdsa::PrivateKey::generate(&mut rng);
-    let secp256k1_public_key = aptos_crypto::PrivateKey::public_key(&secp256k1_private_key);
+    let secp256k1_public_key = libra2_crypto::PrivateKey::public_key(&secp256k1_private_key);
     let secp256k1_signature = secp256k1_private_key.sign(&message).unwrap();
     tracer.trace_value(samples, &secp256k1_private_key)?;
     tracer.trace_value(samples, &secp256k1_public_key)?;
@@ -62,7 +62,7 @@ fn trace_crypto_values(tracer: &mut Tracer, samples: &mut Samples) -> Result<()>
 
     let secp256r1_ecdsa_private_key = secp256r1_ecdsa::PrivateKey::generate(&mut rng);
     let secp256r1_ecdsa_public_key =
-        aptos_crypto::PrivateKey::public_key(&secp256r1_ecdsa_private_key);
+        libra2_crypto::PrivateKey::public_key(&secp256r1_ecdsa_private_key);
     let secp256r1_ecdsa_signature = secp256r1_ecdsa_private_key.sign(&message).unwrap();
     tracer.trace_value(samples, &secp256r1_ecdsa_private_key)?;
     tracer.trace_value(samples, &secp256r1_ecdsa_public_key)?;

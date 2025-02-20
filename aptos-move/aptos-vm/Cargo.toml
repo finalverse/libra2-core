@@ -17,8 +17,8 @@ anyhow = { workspace = true }
 aptos-aggregator = { workspace = true }
 aptos-block-executor = { workspace = true }
 aptos-block-partitioner = { workspace = true }
-aptos-crypto = { workspace = true }
-aptos-crypto-derive = { workspace = true }
+libra2-crypto = { workspace = true }
+libra2-crypto-derive = { workspace = true }
 aptos-experimental-runtimes = { workspace = true }
 aptos-framework =  { workspace = true }
 aptos-gas-algebra = { workspace = true }

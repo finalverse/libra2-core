@@ -19,7 +19,7 @@ use crate::{
     Key, TreeReader,
 };
 use anyhow::{ensure, Context, Result};
-use aptos_crypto::{
+use libra2_crypto::{
     hash::{CryptoHash, SPARSE_MERKLE_PLACEHOLDER_HASH},
     HashValue,
 };

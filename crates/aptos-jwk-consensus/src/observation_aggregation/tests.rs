@@ -5,7 +5,7 @@ use crate::{
     observation_aggregation::ObservationAggregationState,
     types::{ObservedUpdate, ObservedUpdateResponse},
 };
-use aptos_crypto::{bls12381, SigningKey, Uniform};
+use libra2_crypto::{bls12381, SigningKey, Uniform};
 use aptos_reliable_broadcast::BroadcastStatus;
 use aptos_types::{
     epoch_state::EpochState,

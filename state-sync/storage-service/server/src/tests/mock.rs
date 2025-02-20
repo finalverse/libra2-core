@@ -11,7 +11,7 @@ use libra2_config::{
     config::{StateSyncConfig, StorageServiceConfig},
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_network::{
     application::{interface::NetworkServiceEvents, storage::PeersAndMetadata},
     protocols::{

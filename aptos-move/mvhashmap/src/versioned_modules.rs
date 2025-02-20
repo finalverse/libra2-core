@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::types::{Flag, MVModulesError, MVModulesOutput, TxnIndex};
-use aptos_crypto::hash::{DefaultHasher, HashValue};
+use libra2_crypto::hash::{DefaultHasher, HashValue};
 use aptos_types::{
     executable::{Executable, ExecutableDescriptor},
     write_set::TransactionWrite,

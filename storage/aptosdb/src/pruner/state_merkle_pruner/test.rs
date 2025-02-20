@@ -16,7 +16,7 @@ use crate::{
     state_store::StateStore,
 };
 use libra2_config::config::{LedgerPrunerConfig, StateMerklePrunerConfig};
-use aptos_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto::{hash::CryptoHash, HashValue};
 use aptos_storage_interface::{state_store::NUM_STATE_SHARDS, DbReader};
 use libra2_temppath::TempPath;
 use aptos_types::{

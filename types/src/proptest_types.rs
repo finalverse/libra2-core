@@ -36,7 +36,7 @@ use crate::{
     write_set::{WriteOp, WriteSet, WriteSetMut},
     AptosCoinType,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381::{self, bls12381_keys},
     ed25519::{self, Ed25519PrivateKey, Ed25519PublicKey},
     test_utils::KeyPair,

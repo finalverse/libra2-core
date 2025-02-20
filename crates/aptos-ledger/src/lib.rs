@@ -7,8 +7,8 @@
 
 #![deny(missing_docs)]
 
-use aptos_crypto::ed25519::Ed25519Signature;
-pub use aptos_crypto::{ed25519::Ed25519PublicKey, ValidCryptoMaterialStringExt};
+use libra2_crypto::ed25519::Ed25519Signature;
+pub use libra2_crypto::{ed25519::Ed25519PublicKey, ValidCryptoMaterialStringExt};
 pub use aptos_types::{
     account_address::AccountAddress, transaction::authenticator::AuthenticationKey,
 };

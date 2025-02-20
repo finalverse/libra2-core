@@ -47,10 +47,6 @@
 # Owners for the `/crates/aptos` directory and all its subdirectories.
 /crates/aptos @gregnazario @banool
 
-# Owners for the `/crates/aptos-crypto*` directories.
-/crates/aptos-crypto-derive/ @alinush @zjma @mstraka100 @rex1fernando
-/crates/aptos-crypto/ @alinush @zjma @mstraka100 @rex1fernando
-
 # Owners for the `/crates/aptos-faucet` directory and all its subdirectories. And other faucet, genesis, and OpenAPI-related crates.
 /crates/aptos-faucet @banool @gregnazario
 /crates/aptos-genesis @gregnazario

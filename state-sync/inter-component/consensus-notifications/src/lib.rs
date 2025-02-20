@@ -405,7 +405,7 @@ impl ConsensusSyncTargetNotification {
 #[cfg(test)]
 mod tests {
     use crate::{ConsensusNotification, ConsensusNotificationSender, Error};
-    use aptos_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
+    use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
     use aptos_types::{
         account_address::AccountAddress,
         aggregate_signature::AggregateSignature,

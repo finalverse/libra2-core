@@ -3,7 +3,7 @@
 
 use crate::counters::BLOCK_RETRIEVAL_LOCAL_FULFILL_COUNT;
 use aptos_consensus_types::{block::Block, common::Round};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_logger::info;
 use futures_channel::oneshot;
 use std::collections::{BTreeMap, HashMap};

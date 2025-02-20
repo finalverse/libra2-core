@@ -183,7 +183,7 @@ impl fmt::Display for CommittedTransaction {
 #[cfg(test)]
 mod tests {
     use crate::{CommittedTransaction, Error, MempoolNotificationSender};
-    use aptos_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
+    use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
     use aptos_types::{
         account_address::AccountAddress,
         block_metadata::BlockMetadata,

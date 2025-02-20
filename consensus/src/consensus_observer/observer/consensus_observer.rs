@@ -40,7 +40,7 @@ use aptos_consensus_types::{
     pipeline,
     pipelined_block::{PipelineFutures, PipelinedBlock},
 };
-use aptos_crypto::{bls12381, Genesis};
+use libra2_crypto::{bls12381, Genesis};
 use aptos_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
 use aptos_executor_types::state_compute_result::StateComputeResult;
 use libra2_infallible::Mutex;

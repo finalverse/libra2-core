@@ -20,7 +20,7 @@ use libra2_config::{
     config::{Peer, PeerRole},
     network_id::{NetworkContext, NetworkId},
 };
-use aptos_crypto::{noise, x25519};
+use libra2_crypto::{noise, x25519};
 use libra2_infallible::{duration_since_epoch, RwLock};
 use libra2_logger::{error, trace};
 use libra2_short_hex_str::{AsShortHexStr, ShortHexStr};
@@ -511,7 +511,7 @@ mod test {
     use super::*;
     use crate::{testutils, testutils::fake_socket::ReadWriteTestSocket};
     use libra2_config::config::{Peer, PeerRole, RoleType};
-    use aptos_crypto::{
+    use libra2_crypto::{
         test_utils::TEST_SEED,
         traits::Uniform as _,
         x25519::{PrivateKey, PublicKey},

@@ -352,7 +352,7 @@ mod test {
         pipelined_block::PipelinedBlock,
         quorum_cert::QuorumCert,
     };
-    use aptos_crypto::HashValue;
+    use libra2_crypto::HashValue;
     use aptos_event_notifications::ReconfigNotification;
     use aptos_types::{
         aggregate_signature::AggregateSignature, block_info::BlockInfo, ledger_info::LedgerInfo,

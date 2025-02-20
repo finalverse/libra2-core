@@ -13,7 +13,7 @@ use libra2_config::{
     config::{BaseConfig, NodeConfig, PeerMonitoringServiceConfig, PeerRole, RoleType},
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_logger::Level;
 use aptos_netcore::transport::ConnectionOrigin;
 use aptos_network::{

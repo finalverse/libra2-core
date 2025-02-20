@@ -3,7 +3,7 @@
 
 use crate::{assert_success, MoveHarness};
 use aptos_cached_packages::aptos_stdlib;
-use aptos_crypto::SigningKey;
+use libra2_crypto::SigningKey;
 use aptos_types::{
     account_address::AccountAddress,
     account_config::{AccountResource, CORE_CODE_ADDRESS},

@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 anyhow = { workspace = true }
 aptos-block-executor = { workspace = true }
 aptos-consensus-types = { workspace = true }
-aptos-crypto = { workspace = true }
+libra2-crypto = { workspace = true }
 libra2-drop-helper = { workspace = true }
 aptos-executor-service = { workspace = true }
 aptos-executor-types = { workspace = true }
@@ -55,7 +55,7 @@ rand = { workspace = true }
 
 [features]
 default = []
-fuzzing = ["aptos-consensus-types/fuzzing", "aptos-crypto/fuzzing", "aptos-types/fuzzing", "aptos-storage-interface/fuzzing"]
+fuzzing = ["aptos-consensus-types/fuzzing", "libra2-crypto/fuzzing", "aptos-types/fuzzing", "aptos-storage-interface/fuzzing"]
 failpoints = ["fail/failpoints", "aptos-vm/failpoints"]
 consensus-only-perf-test = []
 

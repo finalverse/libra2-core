@@ -3,7 +3,7 @@
 
 use crate::utils::*;
 use anyhow::Result;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use move_model::{code_writer::CodeWriter, emitln, model::Loc};
 
 pub fn generate_fee_distribution_proposal(

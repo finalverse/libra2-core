@@ -7,7 +7,7 @@ use crate::tests::{
     utils,
 };
 use libra2_config::config::StorageServiceConfig;
-use aptos_crypto::hash::HashValue;
+use libra2_crypto::hash::HashValue;
 use aptos_storage_service_types::{
     requests::{DataRequest, StateValuesWithProofRequest},
     responses::{DataResponse, StorageServiceResponse},

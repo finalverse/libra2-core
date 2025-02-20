@@ -13,7 +13,7 @@ use crate::{
     },
 };
 use anyhow::{anyhow, ensure, Result};
-use aptos_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
 use aptos_types::{

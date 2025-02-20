@@ -16,7 +16,7 @@ use crate::{
     },
 };
 use anyhow::{Context, Result};
-use aptos_crypto::{ed25519::Ed25519Signature, secp256r1_ecdsa, HashValue, PrivateKey, SigningKey};
+use libra2_crypto::{ed25519::Ed25519Signature, secp256r1_ecdsa, HashValue, PrivateKey, SigningKey};
 use aptos_ledger::AptosLedgerError;
 use aptos_rest_client::{aptos_api_types::MoveStructTag, Client, PepperRequest, ProverRequest};
 pub use aptos_types::*;
@@ -135,7 +135,7 @@ pub fn get_apt_primary_store_address(address: AccountAddress) -> AccountAddress 
     let mut bytes = address.to_vec();
     bytes.append(&mut AccountAddress::ONE.to_vec());
     bytes.push(0xFC);
-    AccountAddress::from_bytes(aptos_crypto::hash::HashValue::sha3_256_of(&bytes).to_vec()).unwrap()
+    AccountAddress::from_bytes(libra2_crypto::hash::HashValue::sha3_256_of(&bytes).to_vec()).unwrap()
 }
 
 pub fn get_paired_fa_primary_store_address(
@@ -145,7 +145,7 @@ pub fn get_paired_fa_primary_store_address(
     let mut bytes = address.to_vec();
     bytes.append(&mut fa_metadata_address.to_vec());
     bytes.push(0xFC);
-    AccountAddress::from_bytes(aptos_crypto::hash::HashValue::sha3_256_of(&bytes).to_vec()).unwrap()
+    AccountAddress::from_bytes(libra2_crypto::hash::HashValue::sha3_256_of(&bytes).to_vec()).unwrap()
 }
 
 pub fn get_paired_fa_metadata_address(coin_type_name: &MoveStructTag) -> AccountAddress {
@@ -1143,7 +1143,7 @@ async fn get_pepper_from_jwt(
 mod tests {
     use super::*;
     use crate::coin_client::CoinClient;
-    use aptos_crypto::ed25519::Ed25519PrivateKey;
+    use libra2_crypto::ed25519::Ed25519PrivateKey;
     use aptos_rest_client::{AptosBaseUrl, FaucetClient};
     use reqwest::Url;
 

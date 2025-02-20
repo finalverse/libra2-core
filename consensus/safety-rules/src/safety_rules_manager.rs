@@ -12,7 +12,7 @@ use crate::{
     SafetyRules, TSafetyRules,
 };
 use libra2_config::config::{InitialSafetyRulesConfig, SafetyRulesConfig, SafetyRulesService};
-use aptos_crypto::bls12381::PublicKey;
+use libra2_crypto::bls12381::PublicKey;
 use libra2_global_constants::CONSENSUS_KEY;
 use libra2_infallible::RwLock;
 use libra2_logger::{info, warn};

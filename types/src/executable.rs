@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::state_store::state_key::{inner::StateKeyInner, StateKey};
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use move_core_types::{account_address::AccountAddress, identifier::IdentStr};
 
 #[derive(PartialEq, Eq, Debug)]

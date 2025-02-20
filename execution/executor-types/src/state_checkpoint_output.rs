@@ -3,7 +3,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_drop_helper::DropHelper;
 use aptos_storage_interface::state_store::state_summary::LedgerStateSummary;
 use derive_more::Deref;

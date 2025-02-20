@@ -14,7 +14,7 @@ use crate::{
 use aptos_consensus_types::{
     block::Block, pipeline_execution_result::PipelineExecutionResult, quorum_cert::QuorumCert,
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_executor_types::{
     state_compute_result::StateComputeResult, BlockExecutorTrait, ExecutorError, ExecutorResult,
 };

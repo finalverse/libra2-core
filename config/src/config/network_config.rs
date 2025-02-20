@@ -10,7 +10,7 @@ use crate::{
     network_id::NetworkId,
     utils,
 };
-use aptos_crypto::{x25519, Uniform};
+use libra2_crypto::{x25519, Uniform};
 use aptos_secure_storage::{CryptoStorage, KVStorage, Storage};
 use libra2_short_hex_str::AsShortHexStr;
 use aptos_types::{

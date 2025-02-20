@@ -10,7 +10,7 @@ use crate::{
     on_chain_config::OnChainConfig,
 };
 use anyhow::{bail, Context};
-use aptos_crypto_derive::{BCSCryptoHash, CryptoHasher};
+use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use jwk::JWKMoveStruct;
 use move_core_types::{
     ident_str,

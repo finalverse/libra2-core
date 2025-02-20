@@ -12,7 +12,7 @@ use libra2_config::{
     config::{Peer, PeerRole, PeerSet, HANDSHAKE_VERSION},
     network_id::NetworkId,
 };
-use aptos_crypto::{test_utils::TEST_SEED, x25519, Uniform};
+use libra2_crypto::{test_utils::TEST_SEED, x25519, Uniform};
 use libra2_logger::info;
 use libra2_time_service::{MockTimeService, TimeService};
 use aptos_types::{account_address::AccountAddress, network_address::NetworkAddress};

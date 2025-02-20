@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::network_address::NetworkAddress;
-use aptos_crypto::bls12381;
+use libra2_crypto::bls12381;
 use move_core_types::{
     ident_str,
     identifier::IdentStr,

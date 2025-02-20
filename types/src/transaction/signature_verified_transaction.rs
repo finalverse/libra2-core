@@ -7,7 +7,7 @@ use crate::{
     transaction::{BlockExecutableTransaction, Transaction},
     write_set::WriteOp,
 };
-use aptos_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto::{hash::CryptoHash, HashValue};
 use move_core_types::{account_address::AccountAddress, language_storage::StructTag};
 use serde::{Deserialize, Serialize};
 use std::fmt::Debug;

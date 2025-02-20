@@ -15,7 +15,7 @@ use libra2_config::{
     },
     keys::ConfigKey,
 };
-use aptos_crypto::{ed25519::Ed25519PrivateKey, hash::HashValue, SigningKey};
+use libra2_crypto::{ed25519::Ed25519PrivateKey, hash::HashValue, SigningKey};
 use aptos_db::AptosDB;
 use aptos_executor::{block_executor::BlockExecutor, db_bootstrapper};
 use aptos_executor_types::BlockExecutorTrait;

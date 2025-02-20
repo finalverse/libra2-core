@@ -4,7 +4,7 @@
 
 use super::new_test_context;
 use aptos_api_test_context::{current_function_name, TestContext};
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381::{PrivateKey, PublicKey},
     test_utils::KeyPair,
     SigningKey, Uniform,

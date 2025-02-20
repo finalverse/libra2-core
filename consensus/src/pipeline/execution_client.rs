@@ -34,7 +34,7 @@ use aptos_consensus_types::{
     common::{Author, Round},
     pipelined_block::PipelinedBlock,
 };
-use aptos_crypto::bls12381::PrivateKey;
+use libra2_crypto::bls12381::PrivateKey;
 use aptos_executor_types::ExecutorResult;
 use libra2_infallible::RwLock;
 use libra2_logger::prelude::*;

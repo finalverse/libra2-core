@@ -4,12 +4,12 @@
 #[cfg(test)]
 use crate::{BlockPartitioner, Sender};
 #[cfg(test)]
-use aptos_crypto::hash::CryptoHash;
+use libra2_crypto::hash::CryptoHash;
 #[cfg(test)]
-use aptos_crypto::hash::TestOnlyHash;
+use libra2_crypto::hash::TestOnlyHash;
 #[cfg(test)]
-use aptos_crypto::HashValue;
-use aptos_crypto::{ed25519::ed25519_keys::Ed25519PrivateKey, PrivateKey, SigningKey, Uniform};
+use libra2_crypto::HashValue;
+use libra2_crypto::{ed25519::ed25519_keys::Ed25519PrivateKey, PrivateKey, SigningKey, Uniform};
 #[cfg(test)]
 use aptos_types::block_executor::partitioner::PartitionedTransactions;
 #[cfg(test)]

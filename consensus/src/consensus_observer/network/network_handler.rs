@@ -250,7 +250,7 @@ mod test {
         config::ConsensusObserverConfig,
         network_id::{NetworkId, PeerNetworkId},
     };
-    use aptos_crypto::HashValue;
+    use libra2_crypto::HashValue;
     use aptos_network::{
         application::{
             interface::{NetworkClient, NetworkServiceEvents},

@@ -13,7 +13,7 @@ use crate::{
     CliResult,
 };
 use libra2_build_info::build_information;
-use aptos_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
+use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
 use aptos_keygen::KeyGen;
 use libra2_logger::{debug, Level};
 use aptos_rest_client::{aptos_api_types::HashValue, Account, Client, FaucetClient, State};
@@ -580,7 +580,7 @@ pub fn explorer_account_link(hash: AccountAddress, network: Option<Network>) -> 
 }
 
 pub fn explorer_transaction_link(
-    hash: aptos_crypto::HashValue,
+    hash: libra2_crypto::HashValue,
     network: Option<Network>,
 ) -> String {
     // For now, default to what the browser is already on, though the link could be wrong

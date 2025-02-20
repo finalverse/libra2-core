@@ -16,7 +16,7 @@ use libra2_config::config::{
     RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS,
     DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD, NO_OP_STORAGE_PRUNER_CONFIG,
 };
-use aptos_crypto::ed25519::Ed25519PublicKey;
+use libra2_crypto::ed25519::Ed25519PublicKey;
 use aptos_db::AptosDB;
 use aptos_framework::ReleaseBundle;
 use aptos_storage_interface::DbReaderWriter;

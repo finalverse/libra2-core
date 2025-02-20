@@ -3,7 +3,7 @@
 
 use crate::transaction::authenticator::AnyPublicKey;
 use anyhow::{anyhow, Result};
-use aptos_crypto::{
+use libra2_crypto::{
     hash::CryptoHash, secp256r1_ecdsa, signing_message, CryptoMaterialError, HashValue, Signature,
 };
 use passkey_types::{crypto::sha256, webauthn::CollectedClientData, Bytes};
@@ -61,10 +61,10 @@ pub enum AssertionSignature {
 impl<'a> arbitrary::Arbitrary<'a> for AssertionSignature {
     fn arbitrary(u: &mut arbitrary::Unstructured<'a>) -> arbitrary::Result<Self> {
         // Generate a fixed-length byte array for the signature
-        let bytes: [u8; aptos_crypto::secp256r1_ecdsa::Signature::LENGTH] = u.arbitrary()?;
+        let bytes: [u8; libra2_crypto::secp256r1_ecdsa::Signature::LENGTH] = u.arbitrary()?;
 
         // Create a signature without validating it
-        let signature = aptos_crypto::secp256r1_ecdsa::Signature::from_bytes_unchecked(&bytes)
+        let signature = libra2_crypto::secp256r1_ecdsa::Signature::from_bytes_unchecked(&bytes)
             .map_err(|_| arbitrary::Error::IncorrectFormat)?;
 
         Ok(AssertionSignature::Secp256r1Ecdsa { signature })
@@ -231,7 +231,7 @@ mod tests {
         },
     };
     use anyhow::anyhow;
-    use aptos_crypto::{
+    use libra2_crypto::{
         secp256r1_ecdsa,
         secp256r1_ecdsa::{PrivateKey, PublicKey, Signature},
         signing_message, HashValue, PrivateKey as PrivateKeyTrait, Uniform,
@@ -929,7 +929,7 @@ mod tests {
         );
         let mut rng: StdRng = SeedableRng::from_seed([0; 32]);
         let bad_private_key: secp256r1_ecdsa::PrivateKey =
-            aptos_crypto::Uniform::generate(&mut rng);
+            libra2_crypto::Uniform::generate(&mut rng);
         let bad_public_key = PrivateKey::public_key(&bad_private_key);
         let bad_any_public_key = AnyPublicKey::Secp256r1Ecdsa {
             public_key: bad_public_key,

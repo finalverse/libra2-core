@@ -7,7 +7,7 @@ use crate::keyless::{
     bn254_circom::{g1_projective_str_to_affine, g2_projective_str_to_affine},
     proof_simulation::{Groth16SimulatorBn254, Trapdoor},
 };
-use aptos_crypto::poseidon_bn254;
+use libra2_crypto::poseidon_bn254;
 use ark_bn254::Bn254;
 use ark_groth16::{PreparedVerifyingKey, VerifyingKey};
 use once_cell::sync::Lazy;

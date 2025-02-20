@@ -10,7 +10,7 @@ use crate::{
     },
 };
 pub use aptos_cached_packages::aptos_stdlib;
-use aptos_crypto::{ed25519::Ed25519PublicKey, HashValue};
+use libra2_crypto::{ed25519::Ed25519PublicKey, HashValue};
 use libra2_global_constants::{GAS_UNIT_PRICE, MAX_GAS_AMOUNT};
 use aptos_types::{
     function_info::FunctionInfo,

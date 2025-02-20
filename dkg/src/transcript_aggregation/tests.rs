@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::transcript_aggregation::TranscriptAggregationState;
-use aptos_crypto::{bls12381::bls12381_keys, Uniform};
+use libra2_crypto::{bls12381::bls12381_keys, Uniform};
 use libra2_infallible::duration_since_epoch;
 use aptos_reliable_broadcast::BroadcastStatus;
 use aptos_types::{

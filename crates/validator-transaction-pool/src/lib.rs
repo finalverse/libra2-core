@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_channels::libra2_channel;
-use aptos_crypto::{hash::CryptoHash, HashValue};
+use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_infallible::Mutex;
 use aptos_types::validator_txn::{Topic, ValidatorTransaction};
 use std::{

@@ -16,7 +16,7 @@ use aptos_consensus_types::{
     vote_data::VoteData,
     vote_proposal::VoteProposal,
 };
-use aptos_crypto::{
+use libra2_crypto::{
     bls12381,
     hash::{HashValue, TransactionAccumulatorHasher},
     test_utils::TEST_SEED,
@@ -273,7 +273,7 @@ pub mod fuzzing {
         block_data::BlockData, order_vote::OrderVote, order_vote_proposal::OrderVoteProposal,
         timeout_2chain::TwoChainTimeout, vote::Vote, vote_proposal::VoteProposal,
     };
-    use aptos_crypto::bls12381;
+    use libra2_crypto::bls12381;
     use aptos_types::epoch_change::EpochChangeProof;
 
     pub fn fuzz_initialize(proof: EpochChangeProof) -> Result<(), Error> {

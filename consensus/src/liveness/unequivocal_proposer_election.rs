@@ -6,7 +6,7 @@ use aptos_consensus_types::{
     block::Block,
     common::{Author, Round},
 };
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use libra2_infallible::Mutex;
 use libra2_logger::{error, warn, SecurityEvent};
 use std::{cmp::Ordering, sync::Arc};

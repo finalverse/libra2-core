@@ -10,7 +10,7 @@ use crate::{
     },
 };
 use aptos_consensus_types::proof_of_store::BatchInfo;
-use aptos_crypto::HashValue;
+use libra2_crypto::HashValue;
 use aptos_executor_types::*;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;

@@ -3,7 +3,7 @@
 
 use super::new_test_context;
 use aptos_api_test_context::{current_function_name, pretty, TestContext};
-use aptos_crypto::ed25519::Ed25519Signature;
+use libra2_crypto::ed25519::Ed25519Signature;
 use aptos_types::{
     account_address::AccountAddress,
     transaction::{
