@@ -15,7 +15,7 @@ use crate::{
 };
 use libra2_crypto::HashValue;
 use libra2_db::Libra2DB;
-use aptos_executor_types::{BlockExecutorTrait, ChunkExecutorTrait};
+use libra2_executor_types::{BlockExecutorTrait, ChunkExecutorTrait};
 use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,

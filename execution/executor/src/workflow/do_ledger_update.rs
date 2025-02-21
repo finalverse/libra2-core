@@ -4,7 +4,7 @@
 use crate::metrics::OTHER_TIMERS;
 use anyhow::Result;
 use libra2_crypto::{hash::CryptoHash, HashValue};
-use aptos_executor_types::{
+use libra2_executor_types::{
     execution_output::ExecutionOutput, state_checkpoint_output::StateCheckpointOutput,
     transactions_with_output::TransactionsWithOutput, LedgerUpdateOutput,
 };

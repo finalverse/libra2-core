@@ -9,7 +9,7 @@ use crate::{
 };
 use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
 use libra2_db::Libra2DB;
-use aptos_executor_types::{
+use libra2_executor_types::{
     BlockExecutorTrait, ChunkExecutorTrait, TransactionReplayer, VerifyExecutionMode,
 };
 use libra2_storage_interface::{

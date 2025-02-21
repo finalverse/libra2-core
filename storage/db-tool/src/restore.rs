@@ -12,7 +12,7 @@ use libra2_backup_cli::{
     storage::DBToolStorageOpt,
     utils::GlobalRestoreOpt,
 };
-use aptos_executor_types::VerifyExecutionMode;
+use libra2_executor_types::VerifyExecutionMode;
 use clap::{Parser, Subcommand};
 
 /// Restore the database using either a one-time or continuous backup.

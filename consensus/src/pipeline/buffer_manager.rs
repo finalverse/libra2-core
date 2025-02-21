@@ -32,7 +32,7 @@ use aptos_consensus_types::{
     pipelined_block::PipelinedBlock,
 };
 use libra2_crypto::HashValue;
-use aptos_executor_types::ExecutorResult;
+use libra2_executor_types::ExecutorResult;
 use libra2_logger::prelude::*;
 use libra2_network::protocols::{rpc::error::RpcError, wire::handshake::v1::ProtocolId};
 use libra2_reliable_broadcast::{DropGuard, ReliableBroadcast};

@@ -18,7 +18,7 @@ use libra2_config::{
 use libra2_crypto::{ed25519::Ed25519PrivateKey, hash::HashValue, SigningKey};
 use libra2_db::Libra2DB;
 use aptos_executor::{block_executor::BlockExecutor, db_bootstrapper};
-use aptos_executor_types::BlockExecutorTrait;
+use libra2_executor_types::BlockExecutorTrait;
 use aptos_framework::BuiltPackage;
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::MockInternalIndexerDBService;
 use libra2_mempool::mocks::MockSharedMempool;

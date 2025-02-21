@@ -4,7 +4,7 @@
 
 use crate::pipeline::{CommitBlockMessage, LedgerUpdateMessage};
 use aptos_executor::block_executor::BlockExecutor;
-use aptos_executor_types::BlockExecutorTrait;
+use libra2_executor_types::BlockExecutorTrait;
 use aptos_vm::VMBlockExecutor;
 use std::sync::{mpsc, Arc};
 

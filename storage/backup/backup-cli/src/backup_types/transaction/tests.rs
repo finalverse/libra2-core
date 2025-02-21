@@ -16,7 +16,7 @@ use crate::{
     },
 };
 use libra2_db::Libra2DB;
-use aptos_executor_types::VerifyExecutionMode;
+use libra2_executor_types::VerifyExecutionMode;
 use libra2_storage_interface::DbReader;
 use libra2_temppath::TempPath;
 use libra2_types::transaction::Version;

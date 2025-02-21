@@ -24,7 +24,7 @@ use aptos_consensus_types::{
     pipelined_block::PipelinedBlock, quorum_cert::QuorumCert,
 };
 use libra2_crypto::HashValue;
-use aptos_executor_types::{
+use libra2_executor_types::{
     state_compute_result::StateComputeResult, BlockExecutorTrait, ExecutorResult,
 };
 use libra2_infallible::RwLock;

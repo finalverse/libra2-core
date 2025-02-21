@@ -14,7 +14,7 @@ use aptos_executor_service::{
     local_executor_helper::SHARDED_BLOCK_EXECUTOR,
     remote_executor_client::{get_remote_addresses, REMOTE_SHARDED_BLOCK_EXECUTOR},
 };
-use aptos_executor_types::{
+use libra2_executor_types::{
     execution_output::ExecutionOutput,
     planned::Planned,
     should_forward_to_subscription_service,

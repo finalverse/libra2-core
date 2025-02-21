@@ -19,7 +19,7 @@ use crate::{
 };
 use anyhow::Result;
 use libra2_crypto::HashValue;
-use aptos_executor_types::{
+use libra2_executor_types::{
     state_compute_result::StateComputeResult, BlockExecutorTrait, ExecutorError, ExecutorResult,
 };
 use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;

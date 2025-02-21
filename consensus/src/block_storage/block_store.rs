@@ -30,7 +30,7 @@ use aptos_consensus_types::{
     wrapped_ledger_info::WrappedLedgerInfo,
 };
 use libra2_crypto::{hash::ACCUMULATOR_PLACEHOLDER_HASH, HashValue};
-use aptos_executor_types::state_compute_result::StateComputeResult;
+use libra2_executor_types::state_compute_result::StateComputeResult;
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::prelude::*;
 use libra2_types::{

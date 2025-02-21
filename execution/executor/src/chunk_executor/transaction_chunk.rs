@@ -6,7 +6,7 @@ use crate::{
     workflow::do_get_execution_output::DoGetExecutionOutput,
 };
 use anyhow::Result;
-use aptos_executor_types::execution_output::ExecutionOutput;
+use libra2_executor_types::execution_output::ExecutionOutput;
 use aptos_experimental_runtimes::thread_manager::optimal_min_len;
 use libra2_metrics_core::TimerHelper;
 use libra2_storage_interface::state_store::{

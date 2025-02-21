@@ -13,7 +13,7 @@ use crate::{
 };
 use anyhow::Error;
 use libra2_crypto::hash::{HashValue, ACCUMULATOR_PLACEHOLDER_HASH};
-use aptos_executor_types::{
+use libra2_executor_types::{
     state_compute_result::StateComputeResult, ExecutorError, ExecutorResult,
 };
 use libra2_infallible::Mutex;

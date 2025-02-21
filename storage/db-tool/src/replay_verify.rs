@@ -13,7 +13,7 @@ use libra2_config::config::{
     NO_OP_STORAGE_PRUNER_CONFIG,
 };
 use libra2_db::{get_restore_handler::GetRestoreHandler, Libra2DB};
-use aptos_executor_types::VerifyExecutionMode;
+use libra2_executor_types::VerifyExecutionMode;
 use libra2_logger::info;
 use libra2_types::transaction::Version;
 use clap::Parser;

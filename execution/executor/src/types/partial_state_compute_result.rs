@@ -3,7 +3,7 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_executor_types::{
+use libra2_executor_types::{
     execution_output::ExecutionOutput, state_checkpoint_output::StateCheckpointOutput,
     state_compute_result::StateComputeResult, LedgerUpdateOutput,
 };

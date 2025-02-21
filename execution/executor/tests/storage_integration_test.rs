@@ -10,7 +10,7 @@ use aptos_executor_test_helpers::{
         create_db_and_executor, test_execution_with_storage_impl, verify_committed_txn_status,
     },
 };
-use aptos_executor_types::BlockExecutorTrait;
+use libra2_executor_types::BlockExecutorTrait;
 use libra2_storage_interface::state_store::state_view::db_state_view::DbStateViewAtVersion;
 use libra2_types::{
     account_config::{aptos_test_root_address, AccountResource, CORE_CODE_ADDRESS},

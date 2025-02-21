@@ -342,7 +342,7 @@ aptos-block-partitioner = { path = "execution/block-partitioner" }
 libra2-enum-conversion-derive = { path = "crates/libra2-enum-conversion-derive" }
 aptos-executor-service = { path = "execution/executor-service" }
 aptos-executor-test-helpers = { path = "execution/executor-test-helpers" }
-aptos-executor-types = { path = "execution/executor-types" }
+libra2-executor-types = { path = "execution/executor-types" }
 aptos-experimental-hexy = { path = "experimental/storage/hexy" }
 aptos-experimental-layered-map = { path = "experimental/storage/layered-map" }
 aptos-experimental-ptx-executor = { path = "experimental/execution/ptx-executor" }

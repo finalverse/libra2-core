@@ -20,7 +20,7 @@ aptos-consensus-types = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-db = { workspace = true, features = ["fuzzing"] }
 aptos-executor = { workspace = true }
-aptos-executor-types = { workspace = true }
+libra2-executor-types = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }

@@ -18,7 +18,7 @@ use crate::{
 };
 use anyhow::Result;
 use libra2_db::state_restore::StateSnapshotRestoreMode;
-use aptos_executor_types::VerifyExecutionMode;
+use libra2_executor_types::VerifyExecutionMode;
 use libra2_logger::prelude::*;
 use libra2_types::transaction::Version;
 use std::{path::PathBuf, sync::Arc};

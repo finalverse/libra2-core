@@ -3,7 +3,7 @@
 
 use crate::proof_of_store::{BatchInfo, ProofOfStore};
 use anyhow::ensure;
-use aptos_executor_types::ExecutorResult;
+use libra2_executor_types::ExecutorResult;
 use libra2_infallible::Mutex;
 use libra2_types::{transaction::SignedTransaction, PeerId};
 use core::fmt;

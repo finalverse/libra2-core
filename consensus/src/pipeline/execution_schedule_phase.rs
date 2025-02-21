@@ -10,7 +10,7 @@ use crate::{
 };
 use aptos_consensus_types::pipelined_block::PipelinedBlock;
 use libra2_crypto::HashValue;
-use aptos_executor_types::ExecutorError;
+use libra2_executor_types::ExecutorError;
 use libra2_logger::debug;
 use async_trait::async_trait;
 use futures::{FutureExt, TryFutureExt};
@@ -70,7 +70,7 @@ impl StatelessPipeline for ExecutionSchedulePhase {
             None => {
                 return ExecutionWaitRequest {
                     block_id: HashValue::zero(),
-                    fut: Box::pin(async { Err(aptos_executor_types::ExecutorError::EmptyBlocks) }),
+                    fut: Box::pin(async { Err(libra2_executor_types::ExecutorError::EmptyBlocks) }),
                 }
             },
         };

@@ -12,7 +12,7 @@ use aptos_consensus_types::{
     pipelined_block::PipelinedBlock,
 };
 use libra2_crypto::{bls12381, HashValue};
-use aptos_executor_types::ExecutorResult;
+use libra2_executor_types::ExecutorResult;
 use libra2_logger::prelude::*;
 use libra2_reliable_broadcast::DropGuard;
 use libra2_types::{
@@ -479,7 +479,7 @@ mod test {
     use super::*;
     use aptos_consensus_types::{block::Block, block_data::BlockData};
     use libra2_crypto::HashValue;
-    use aptos_executor_types::state_compute_result::StateComputeResult;
+    use libra2_executor_types::state_compute_result::StateComputeResult;
     use libra2_types::{
         aggregate_signature::AggregateSignature,
         ledger_info::LedgerInfo,

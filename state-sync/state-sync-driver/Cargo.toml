@@ -20,7 +20,7 @@ libra2-crypto = { workspace = true }
 libra2-data-client = { workspace = true }
 libra2-data-streaming-service = { workspace = true }
 libra2-event-notifications = { workspace = true }
-aptos-executor-types = { workspace = true }
+libra2-executor-types = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-mempool-notifications = { workspace = true }

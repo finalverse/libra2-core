@@ -22,7 +22,7 @@ libra2-crypto = { workspace = true }
 libra2-db = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-executor-service = { workspace = true }
-aptos-executor-types = { workspace = true }
+libra2-executor-types = { workspace = true }
 aptos-experimental-ptx-executor = { workspace = true }
 aptos-experimental-runtimes = { workspace = true }
 aptos-genesis = { workspace = true, features = ["testing"] }

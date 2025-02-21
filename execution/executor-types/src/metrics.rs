@@ -7,7 +7,7 @@ use once_cell::sync::Lazy;
 pub static TIMER: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
         // metric name
-        "aptos_executor_types_timer",
+        "libra2_executor_types_timer",
         // metric description
         "The time spent in seconds.",
         &["name"],

@@ -12,7 +12,7 @@ use libra2_crypto::{
     HashValue,
 };
 use libra2_crypto_derive::CryptoHasher;
-use aptos_executor_types::ExecutorResult;
+use libra2_executor_types::ExecutorResult;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use libra2_types::{

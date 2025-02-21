@@ -18,7 +18,7 @@ use aptos_consensus_types::{
     proof_of_store::BatchInfo,
 };
 use libra2_crypto::HashValue;
-use aptos_executor_types::{
+use libra2_executor_types::{
     ExecutorError::{DataNotFound, InternalError},
     *,
 };

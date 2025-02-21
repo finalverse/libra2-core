@@ -10,7 +10,7 @@ use crate::{
 };
 use aptos_consensus_types::{block::Block, pipelined_block::PipelinedBlock};
 use libra2_crypto::HashValue;
-use aptos_executor_types::{state_compute_result::StateComputeResult, ExecutorError};
+use libra2_executor_types::{state_compute_result::StateComputeResult, ExecutorError};
 use libra2_logger::prelude::{error, warn};
 use libra2_metrics_core::{
     exponential_buckets, op_counters::DurationHistogram, register_avg_counter, register_counter,

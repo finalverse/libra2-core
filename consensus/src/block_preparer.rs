@@ -9,7 +9,7 @@ use crate::{
     transaction_shuffler::TransactionShuffler,
 };
 use aptos_consensus_types::{block::Block, quorum_cert::QuorumCert};
-use aptos_executor_types::ExecutorResult;
+use libra2_executor_types::ExecutorResult;
 use libra2_types::transaction::SignedTransaction;
 use fail::fail_point;
 use futures::future::Shared;
@@ -43,7 +43,7 @@ impl BlockPreparer {
         block_qc_fut: Shared<impl Future<Output = Option<Arc<QuorumCert>>>>,
     ) -> ExecutorResult<Vec<SignedTransaction>> {
         fail_point!("consensus::prepare_block", |_| {
-            use aptos_executor_types::ExecutorError;
+            use libra2_executor_types::ExecutorError;
             use std::{thread, time::Duration};
             thread::sleep(Duration::from_millis(10));
             Err(ExecutorError::CouldNotGetData)

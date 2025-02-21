@@ -31,8 +31,8 @@ impl From<pipeline::errors::Error> for StateSyncError {
     }
 }
 
-impl From<aptos_executor_types::ExecutorError> for StateSyncError {
-    fn from(e: aptos_executor_types::ExecutorError) -> Self {
+impl From<libra2_executor_types::ExecutorError> for StateSyncError {
+    fn from(e: libra2_executor_types::ExecutorError) -> Self {
         StateSyncError { inner: e.into() }
     }
 }
@@ -59,14 +59,14 @@ pub struct VerifyError {
 }
 
 pub fn error_kind(e: &anyhow::Error) -> &'static str {
-    if e.downcast_ref::<aptos_executor_types::ExecutorError>()
+    if e.downcast_ref::<libra2_executor_types::ExecutorError>()
         .is_some()
     {
         return "Execution";
     }
     if let Some(e) = e.downcast_ref::<StateSyncError>() {
         if e.inner
-            .downcast_ref::<aptos_executor_types::ExecutorError>()
+            .downcast_ref::<libra2_executor_types::ExecutorError>()
             .is_some()
         {
             return "Execution";
@@ -98,7 +98,7 @@ mod tests {
 
     #[test]
     fn conversion_and_downcast() {
-        let error = aptos_executor_types::ExecutorError::InternalError {
+        let error = libra2_executor_types::ExecutorError::InternalError {
             error: "lalala".to_string(),
         };
         let typed_error: StateSyncError = error.into();

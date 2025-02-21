@@ -12,7 +12,7 @@ use crate::{
 };
 use aptos_consensus_types::proof_of_store::{BatchId, SignedBatchInfo, SignedBatchInfoMsg};
 use libra2_crypto::HashValue;
-use aptos_executor_types::ExecutorResult;
+use libra2_executor_types::ExecutorResult;
 use libra2_infallible::Mutex;
 use libra2_types::{
     transaction::SignedTransaction, validator_verifier::random_validator_verifier, PeerId,

@@ -4,7 +4,7 @@
 use libra2_config::config::{BUFFERED_STATE_TARGET_ITEMS_FOR_TEST, DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD};
 use std::default::Default;
 use libra2_types::transaction::{TransactionStatus, TransactionToCommit};
-use aptos_executor_types::transactions_with_output::TransactionsToKeep;
+use libra2_executor_types::transactions_with_output::TransactionsToKeep;
 use libra2_storage_interface::state_store::state_summary::ProvableStateSummary;
 
 impl Libra2DB {

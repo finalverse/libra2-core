@@ -11,7 +11,7 @@ use aptos_consensus_types::{
     vote_proposal::VoteProposal,
 };
 use libra2_crypto::{hash::ACCUMULATOR_PLACEHOLDER_HASH, HashValue};
-use aptos_executor_types::state_compute_result::StateComputeResult;
+use libra2_executor_types::state_compute_result::StateComputeResult;
 use libra2_infallible::Mutex;
 use aptos_safety_rules::{
     test_utils::{make_proposal_with_parent, make_proposal_with_qc},

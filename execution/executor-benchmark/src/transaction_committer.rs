@@ -11,7 +11,7 @@ use aptos_executor::{
         BLOCK_EXECUTION_WORKFLOW_WHOLE, COMMIT_BLOCKS, GET_BLOCK_EXECUTION_OUTPUT_BY_EXECUTING,
     },
 };
-use aptos_executor_types::BlockExecutorTrait;
+use libra2_executor_types::BlockExecutorTrait;
 use libra2_logger::prelude::*;
 use libra2_types::{
     aggregate_signature::AggregateSignature,

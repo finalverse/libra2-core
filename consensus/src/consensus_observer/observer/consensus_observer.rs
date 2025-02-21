@@ -42,7 +42,7 @@ use aptos_consensus_types::{
 };
 use libra2_crypto::{bls12381, Genesis};
 use libra2_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
-use aptos_executor_types::state_compute_result::StateComputeResult;
+use libra2_executor_types::state_compute_result::StateComputeResult;
 use libra2_infallible::Mutex;
 use libra2_logger::{debug, error, info, warn};
 use libra2_network::{

@@ -12,7 +12,7 @@ use aptos_consensus_types::{
     block::Block, pipelined_block::PipelinedBlock, quorum_cert::QuorumCert,
 };
 use libra2_crypto::HashValue;
-use aptos_executor_types::ExecutorResult;
+use libra2_executor_types::ExecutorResult;
 use libra2_types::{
     block_executor::config::BlockExecutorConfigFromOnchain, epoch_state::EpochState,
     ledger_info::LedgerInfoWithSignatures, randomness::Randomness,

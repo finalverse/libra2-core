@@ -13,7 +13,7 @@ use aptos_consensus_types::{
     block::Block,
     common::{Author, Payload, Round},
 };
-use aptos_executor_types::ExecutorResult;
+use libra2_executor_types::ExecutorResult;
 use libra2_types::{aggregate_signature::AggregateSignature, transaction::SignedTransaction};
 use async_trait::async_trait;
 

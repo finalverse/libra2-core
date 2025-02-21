@@ -21,7 +21,7 @@ use aptos_consensus_types::{
     pipelined_block::PipelinedBlock,
 };
 use libra2_crypto::{bls12381::PrivateKey, HashValue};
-use aptos_executor_types::ExecutorResult;
+use libra2_executor_types::ExecutorResult;
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use libra2_types::{

@@ -25,7 +25,7 @@ use aptos_consensus_types::{
     quorum_cert::QuorumCert,
 };
 use libra2_crypto::HashValue;
-use aptos_executor_types::state_compute_result::StateComputeResult;
+use libra2_executor_types::state_compute_result::StateComputeResult;
 use libra2_infallible::RwLock;
 use libra2_logger::{error, info};
 use libra2_storage_interface::DbReader;

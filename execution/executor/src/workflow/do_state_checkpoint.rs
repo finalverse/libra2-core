@@ -4,7 +4,7 @@
 use crate::metrics::OTHER_TIMERS;
 use anyhow::{ensure, Result};
 use libra2_crypto::HashValue;
-use aptos_executor_types::{
+use libra2_executor_types::{
     execution_output::ExecutionOutput, state_checkpoint_output::StateCheckpointOutput,
 };
 use libra2_metrics_core::TimerHelper;

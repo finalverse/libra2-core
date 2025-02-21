@@ -21,7 +21,7 @@ libra2-db = { workspace = true }
 libra2-db-indexer-schemas = { workspace = true }
 aptos-executor = { workspace = true }
 aptos-executor-test-helpers = { workspace = true }
-aptos-executor-types = { workspace = true }
+libra2-executor-types = { workspace = true }
 aptos-indexer-grpc-table-info = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-jellyfish-merkle = { workspace = true }

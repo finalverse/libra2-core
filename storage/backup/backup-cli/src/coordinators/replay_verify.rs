@@ -14,7 +14,7 @@ use crate::{
 };
 use anyhow::Result;
 use libra2_db::backup::restore_handler::RestoreHandler;
-use aptos_executor_types::VerifyExecutionMode;
+use libra2_executor_types::VerifyExecutionMode;
 use libra2_logger::prelude::*;
 use libra2_storage_interface::Libra2DbError;
 use libra2_types::{on_chain_config::TimedFeatureOverride, transaction::Version};

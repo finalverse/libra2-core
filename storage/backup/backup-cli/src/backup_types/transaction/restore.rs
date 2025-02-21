@@ -27,7 +27,7 @@ use crate::{
 use anyhow::{anyhow, ensure, Result};
 use libra2_db::backup::restore_handler::RestoreHandler;
 use aptos_executor::chunk_executor::ChunkExecutor;
-use aptos_executor_types::{ChunkExecutorTrait, TransactionReplayer, VerifyExecutionMode};
+use libra2_executor_types::{ChunkExecutorTrait, TransactionReplayer, VerifyExecutionMode};
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
 use libra2_storage_interface::DbReaderWriter;

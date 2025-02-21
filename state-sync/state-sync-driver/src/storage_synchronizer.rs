@@ -16,7 +16,7 @@ use crate::{
 use libra2_config::config::StateSyncDriverConfig;
 use libra2_data_streaming_service::data_notification::NotificationId;
 use libra2_event_notifications::EventSubscriptionService;
-use aptos_executor_types::{ChunkCommitNotification, ChunkExecutorTrait};
+use libra2_executor_types::{ChunkCommitNotification, ChunkExecutorTrait};
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use libra2_mempool_notifications::MempoolNotificationSender;
