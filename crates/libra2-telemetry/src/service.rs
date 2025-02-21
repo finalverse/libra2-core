@@ -115,7 +115,7 @@ pub fn start_telemetry_service(
     }
 
     // Create the telemetry runtime
-    let telemetry_runtime = aptos_runtimes::spawn_named_runtime("telemetry".into(), None);
+    let telemetry_runtime = libra2_runtimes::spawn_named_runtime("telemetry".into(), None);
     telemetry_runtime.handle().spawn(spawn_telemetry_service(
         node_config,
         chain_id,

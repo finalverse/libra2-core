@@ -22,7 +22,7 @@ libra2-keygen = { workspace = true }
 libra2-logger = { workspace = true }
 aptos-release-builder = { workspace = true }
 libra2-rest-client = { workspace = true }
-aptos-runtimes = { workspace = true }
+libra2-runtimes = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }

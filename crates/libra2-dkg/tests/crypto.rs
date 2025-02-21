@@ -11,7 +11,7 @@ use libra2_dkg::{
     },
     weighted_vuf::pinkas::MIN_MULTIPAIR_NUM_JOBS,
 };
-use aptos_runtimes::spawn_rayon_thread_pool;
+use libra2_runtimes::spawn_rayon_thread_pool;
 use blstrs::{G1Projective, G2Projective, Scalar};
 use ff::Field;
 use group::Group;

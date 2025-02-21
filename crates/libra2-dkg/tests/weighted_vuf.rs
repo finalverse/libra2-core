@@ -15,7 +15,7 @@ use libra2_dkg::{
     utils::random::random_scalar,
     weighted_vuf::{pinkas::PinkasWUF, traits::WeightedVUF},
 };
-use aptos_runtimes::spawn_rayon_thread_pool;
+use libra2_runtimes::spawn_rayon_thread_pool;
 use rand::{rngs::StdRng, thread_rng};
 use rand_core::SeedableRng;
 use sha3::{Digest, Sha3_256};

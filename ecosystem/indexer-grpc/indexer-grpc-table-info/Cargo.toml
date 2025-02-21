@@ -22,7 +22,7 @@ aptos-indexer-grpc-utils = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-runtimes = { workspace = true }
+libra2-runtimes = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }
 flate2 = { workspace = true }

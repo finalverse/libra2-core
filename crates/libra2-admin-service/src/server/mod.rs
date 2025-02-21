@@ -84,7 +84,7 @@ impl AdminService {
             .unwrap();
 
         // Create a runtime for the admin service
-        let runtime = aptos_runtimes::spawn_named_runtime("admin".into(), None);
+        let runtime = libra2_runtimes::spawn_named_runtime("admin".into(), None);
 
         let admin_service = Self {
             runtime,

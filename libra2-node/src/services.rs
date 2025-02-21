@@ -233,7 +233,7 @@ pub fn start_peer_monitoring_service(
 
     // Create a new runtime for the monitoring service
     let peer_monitoring_service_runtime =
-        aptos_runtimes::spawn_named_runtime("peer-mon".into(), None);
+        libra2_runtimes::spawn_named_runtime("peer-mon".into(), None);
 
     // Create and spawn the peer monitoring server
     let peer_monitoring_network_events =

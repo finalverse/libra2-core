@@ -24,7 +24,7 @@ libra2-global-constants = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-runtimes = { workspace = true }
+libra2-runtimes = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }

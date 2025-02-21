@@ -79,7 +79,7 @@ impl<'t> NetworkContext<'t> {
             global_duration,
             emit_job,
             success_criteria,
-            runtime: aptos_runtimes::spawn_named_runtime("emitter".into(), Some(64)),
+            runtime: libra2_runtimes::spawn_named_runtime("emitter".into(), Some(64)),
         }
     }
 

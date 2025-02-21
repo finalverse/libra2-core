@@ -27,7 +27,7 @@ libra2-metrics-core = { workspace = true }
 libra2-netcore = { workspace = true }
 libra2-network = { workspace = true }
 libra2-peer-monitoring-service-types = { workspace = true }
-aptos-runtimes = { workspace = true }
+libra2-runtimes = { workspace = true }
 libra2-short-hex-str = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-time-service = { workspace = true }

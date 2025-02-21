@@ -1,5 +1,5 @@
 [package]
-name = "aptos-runtimes"
+name = "libra2-runtimes"
 description = "Simple runtime spawning utilities"
 version = "0.1.0"
 

@@ -67,7 +67,7 @@ pub fn start_inspection_service(
         .unwrap();
 
     // Create a runtime for the inspection service
-    let runtime = aptos_runtimes::spawn_named_runtime("inspection".into(), None);
+    let runtime = libra2_runtimes::spawn_named_runtime("inspection".into(), None);
 
     // Spawn the inspection service
     thread::spawn(move || {

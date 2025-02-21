@@ -37,7 +37,7 @@ libra2-metrics-core = { workspace = true }
 libra2-network = { workspace = true }
 libra2-peer-monitoring-service-types = { workspace = true }
 libra2-reliable-broadcast = { workspace = true }
-aptos-runtimes = { workspace = true }
+libra2-runtimes = { workspace = true }
 libra2-safety-rules = { workspace = true }
 libra2-schemadb = { workspace = true }
 libra2-secure-storage = { workspace = true }

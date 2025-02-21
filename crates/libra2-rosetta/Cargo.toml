@@ -21,7 +21,7 @@ libra2-global-constants = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-node = { workspace = true }
 libra2-rest-client = { workspace = true }
-aptos-runtimes = { workspace = true }
+libra2-runtimes = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-types = { workspace = true }
 libra2-warp-webserver = { workspace = true }

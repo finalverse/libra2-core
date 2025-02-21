@@ -230,7 +230,7 @@ pub fn consensus_runtime() -> runtime::Runtime {
         ::libra2_logger::Logger::new().level(Level::Debug).init();
     }
 
-    aptos_runtimes::spawn_named_runtime("consensus".into(), None)
+    libra2_runtimes::spawn_named_runtime("consensus".into(), None)
 }
 
 pub fn timed_block_on<F>(runtime: &runtime::Runtime, f: F) -> <F as Future>::Output

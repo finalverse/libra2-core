@@ -20,7 +20,7 @@ libra2-data-client = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 libra2-network = { workspace = true }
-aptos-runtimes = { workspace = true }
+libra2-runtimes = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-storage-service-client = { workspace = true }
 libra2-telemetry = { workspace = true }

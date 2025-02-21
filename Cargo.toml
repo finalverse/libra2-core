@@ -94,7 +94,7 @@ members = [
     "crates/libra2-retrier",
     "crates/libra2-rosetta",
     "crates/libra2-rosetta-cli",
-    "crates/aptos-runtimes",
+    "crates/libra2-runtimes",
     "crates/libra2-speculative-state-helper",
     "crates/libra2-system-utils",
     "crates/libra2-telemetry",
@@ -434,7 +434,7 @@ libra2-rest-client = { path = "crates/libra2-rest-client" }
 libra2-retrier = { path = "crates/libra2-retrier" }
 libra2-rocksdb-options = { path = "storage/rocksdb-options" }
 libra2-rosetta = { path = "crates/libra2-rosetta" }
-aptos-runtimes = { path = "crates/aptos-runtimes" }
+libra2-runtimes = { path = "crates/libra2-runtimes" }
 libra2-safety-rules = { path = "consensus/safety-rules" }
 libra2-schemadb = { path = "storage/schemadb" }
 libra2-scratchpad = { path = "storage/scratchpad" }

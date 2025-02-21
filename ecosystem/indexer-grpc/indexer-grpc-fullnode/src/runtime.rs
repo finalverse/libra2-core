@@ -45,7 +45,7 @@ pub fn bootstrap(
         return None;
     }
 
-    let runtime = aptos_runtimes::spawn_named_runtime("indexer-grpc".to_string(), None);
+    let runtime = libra2_runtimes::spawn_named_runtime("indexer-grpc".to_string(), None);
 
     let node_config = config.clone();
 

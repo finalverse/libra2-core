@@ -79,7 +79,7 @@ impl SMRNode {
     ) -> Self {
         // Create a runtime for the twin
         let thread_name = format!("twin-{}", twin_id.id);
-        let runtime = aptos_runtimes::spawn_named_runtime(thread_name, None);
+        let runtime = libra2_runtimes::spawn_named_runtime(thread_name, None);
         let _entered_runtime = runtime.enter();
 
         // Setup the network and SMR node
