@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::types::{AtomicTxnIndex, MVDelayedFieldsError, TxnIndex};
-use aptos_aggregator::{
+use libra2_aggregator::{
     delayed_change::{ApplyBase, DelayedApplyEntry, DelayedEntry},
     types::{DelayedFieldValue, ReadPosition},
 };
@@ -740,7 +740,7 @@ impl<K: Eq + Hash + Clone + Debug + Copy> TVersionedDelayedFieldView<K>
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_aggregator::{
+    use libra2_aggregator::{
         bounded_math::SignedU128, delta_change_set::DeltaOp, delta_math::DeltaHistory,
     };
     use libra2_types::delayed_fields::SnapshotToStringFormula;

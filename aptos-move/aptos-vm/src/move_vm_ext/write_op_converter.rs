@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::move_vm_ext::{session::BytesWithResourceLayout, AptosMoveResolver};
-use aptos_aggregator::delta_change_set::serialize;
+use libra2_aggregator::delta_change_set::serialize;
 use libra2_types::{
     on_chain_config::{CurrentTimeMicroseconds, OnChainConfig},
     state_store::{state_key::StateKey, state_value::StateValueMetadata},

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::natives::aggregator_natives::{helpers_v2::*, NativeAggregatorContext};
-use aptos_aggregator::{
+use libra2_aggregator::{
     bounded_math::{BoundedMath, SignedU128},
     delayed_field_extension::DelayedFieldData,
     resolver::DelayedFieldResolver,

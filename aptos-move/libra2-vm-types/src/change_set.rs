@@ -10,7 +10,7 @@ use crate::{
     module_write_set::{ModuleWrite, ModuleWriteSet},
     resolver::ExecutorView,
 };
-use aptos_aggregator::{
+use libra2_aggregator::{
     delayed_change::DelayedChange,
     delta_change_set::{serialize, DeltaOp},
     resolver::AggregatorV1Resolver,

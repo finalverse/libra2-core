@@ -22,7 +22,7 @@ use crate::{
     types::ReadWriteSummary,
     view::{LatestView, ParallelState, SequentialState, ViewState},
 };
-use aptos_aggregator::{
+use libra2_aggregator::{
     delayed_change::{ApplyBase, DelayedChange},
     delta_change_set::serialize,
 };

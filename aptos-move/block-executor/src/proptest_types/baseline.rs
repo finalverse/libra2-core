@@ -18,7 +18,7 @@ use crate::{
         STORAGE_AGGREGATOR_VALUE,
     },
 };
-use aptos_aggregator::delta_change_set::serialize;
+use libra2_aggregator::delta_change_set::serialize;
 use libra2_types::{
     contract_event::TransactionEvent, state_store::state_value::StateValueMetadata,
     transaction::BlockOutput, write_set::TransactionWrite,

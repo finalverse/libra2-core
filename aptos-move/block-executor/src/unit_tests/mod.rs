@@ -21,7 +21,7 @@ use crate::{
     txn_commit_hook::NoOpTransactionCommitHook,
     txn_provider::default::DefaultTxnProvider,
 };
-use aptos_aggregator::{
+use libra2_aggregator::{
     bounded_math::SignedU128,
     delta_change_set::{delta_add, delta_sub, DeltaOp},
     delta_math::DeltaHistory,

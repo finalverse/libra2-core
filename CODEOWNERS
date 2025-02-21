@@ -7,7 +7,7 @@
 /api/ @banool @gregnazario @0xmaayan
 
 # Owners for the `/aptos-move` directory and its subdirectories:`aptos-gas`, `aptos-vm`, `framework` and `framework/aptos-stdlib/sources/cryptography`.
-/aptos-move/aptos-aggregator/ @georgemitenkov @gelash @zekun000
+/aptos-move/libra2-aggregator/ @georgemitenkov @gelash @zekun000
 /aptos-move/aptos-gas/ @vgao1996
 /aptos-move/aptos-vm/ @davidiw @wrwg @zekun000 @vgao1996 @georgemitenkov
 /aptos-move/aptos-vm/src/keyless_validation.rs @alinush @heliuchuan

@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_aggregator::{
+use libra2_aggregator::{
     bounded_math::{BoundedMath, SignedU128},
     delayed_change::{ApplyBase, DelayedApplyChange, DelayedChange},
     delta_change_set::DeltaWithMax,
@@ -342,7 +342,7 @@ mod test {
         data_cache::AsMoveResolver,
         move_vm_ext::resolver::{AsExecutorView, AsResourceGroupView},
     };
-    use aptos_aggregator::delta_change_set::{delta_add, serialize};
+    use libra2_aggregator::delta_change_set::{delta_add, serialize};
     use aptos_language_e2e_tests::data_store::FakeDataStore;
     use libra2_types::{account_address::AccountAddress, write_set::WriteOp};
     use libra2_vm_types::abstract_write_op::GroupWrite;

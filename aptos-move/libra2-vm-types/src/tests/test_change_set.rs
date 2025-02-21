@@ -16,7 +16,7 @@ use crate::{
         ExpandedVMChangeSetBuilder,
     },
 };
-use aptos_aggregator::{
+use libra2_aggregator::{
     bounded_math::SignedU128,
     delayed_change::{DelayedApplyChange, DelayedChange},
     delta_change_set::DeltaWithMax,

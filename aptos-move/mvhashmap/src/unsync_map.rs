@@ -6,7 +6,7 @@ use crate::{
     BlockStateStats,
 };
 use anyhow::anyhow;
-use aptos_aggregator::types::DelayedFieldValue;
+use libra2_aggregator::types::DelayedFieldValue;
 use libra2_crypto::hash::HashValue;
 use libra2_types::{
     error::{code_invariant_error, PanicError},

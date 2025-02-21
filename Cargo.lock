@@ -390,20 +390,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-aggregator"
-version = "0.1.0"
-dependencies = [
- "bcs 0.1.4",
- "claims",
- "libra2-types",
- "move-binary-format",
- "move-core-types",
- "move-vm-types",
- "once_cell",
- "test-case",
-]
-
-[[package]]
 name = "aptos-api"
 version = "0.2.0"
 dependencies = [
@@ -527,7 +513,6 @@ version = "0.1.0"
 dependencies = [
  "ambassador",
  "anyhow",
- "aptos-aggregator",
  "aptos-language-e2e-tests",
  "aptos-mvhashmap",
  "arc-swap",
@@ -542,6 +527,7 @@ dependencies = [
  "fail",
  "hashbrown 0.14.3",
  "itertools 0.13.0",
+ "libra2-aggregator",
  "libra2-drop-helper",
  "libra2-infallible",
  "libra2-logger",
@@ -737,7 +723,6 @@ name = "aptos-framework"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-aggregator",
  "aptos-gas-meter",
  "aptos-gas-schedule",
  "aptos-move-stdlib",
@@ -763,6 +748,7 @@ dependencies = [
  "flate2",
  "hex",
  "itertools 0.13.0",
+ "libra2-aggregator",
  "libra2-crypto",
  "libra2-gas-algebra",
  "libra2-types",
@@ -1405,11 +1391,11 @@ name = "aptos-mvhashmap"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-aggregator",
  "bytes",
  "claims",
  "crossbeam",
  "dashmap",
+ "libra2-aggregator",
  "libra2-crypto",
  "libra2-types",
  "libra2-vm-types",
@@ -1818,7 +1804,6 @@ name = "aptos-vm"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-aggregator",
  "aptos-block-executor",
  "aptos-framework",
  "aptos-gas-meter",
@@ -1839,6 +1824,7 @@ dependencies = [
  "futures",
  "hex",
  "itertools 0.13.0",
+ "libra2-aggregator",
  "libra2-block-partitioner",
  "libra2-crypto",
  "libra2-crypto-derive",
@@ -7844,6 +7830,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-aggregator"
+version = "0.1.0"
+dependencies = [
+ "bcs 0.1.4",
+ "claims",
+ "libra2-types",
+ "move-binary-format",
+ "move-core-types",
+ "move-vm-types",
+ "once_cell",
+ "test-case",
+]
+
+[[package]]
 name = "libra2-api-tester"
 version = "0.1.0"
 dependencies = [
@@ -8646,7 +8646,6 @@ name = "libra2-executor-benchmark"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-aggregator",
  "aptos-block-executor",
  "aptos-mvhashmap",
  "aptos-sdk",
@@ -8661,6 +8660,7 @@ dependencies = [
  "indicatif 0.15.0",
  "itertools 0.13.0",
  "jemallocator",
+ "libra2-aggregator",
  "libra2-block-partitioner",
  "libra2-config",
  "libra2-crypto",
@@ -10626,7 +10626,6 @@ version = "0.0.1"
 dependencies = [
  "ambassador",
  "anyhow",
- "aptos-aggregator",
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
  "aptos-vm",
@@ -10634,6 +10633,7 @@ dependencies = [
  "bytes",
  "claims",
  "either",
+ "libra2-aggregator",
  "libra2-gas-algebra",
  "libra2-types",
  "move-binary-format",

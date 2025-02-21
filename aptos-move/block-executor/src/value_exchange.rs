@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::view::{LatestView, ViewState};
-use aptos_aggregator::{
+use libra2_aggregator::{
     resolver::TDelayedFieldView,
     types::{DelayedFieldValue, ReadPosition},
 };

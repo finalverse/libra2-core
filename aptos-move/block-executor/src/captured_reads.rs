@@ -3,7 +3,7 @@
 
 use crate::{code_cache_global::GlobalModuleCache, types::InputOutputKey, view::LatestView};
 use anyhow::bail;
-use aptos_aggregator::{
+use libra2_aggregator::{
     delta_math::DeltaHistory,
     types::{DelayedFieldValue, DelayedFieldsSpeculativeError, ReadPosition},
 };

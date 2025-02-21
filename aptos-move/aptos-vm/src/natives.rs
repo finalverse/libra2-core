@@ -3,11 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 #[cfg(feature = "testing")]
-use aptos_aggregator::resolver::TAggregatorV1View;
+use libra2_aggregator::resolver::TAggregatorV1View;
 #[cfg(feature = "testing")]
-use aptos_aggregator::{bounded_math::SignedU128, types::DelayedFieldsSpeculativeError};
+use libra2_aggregator::{bounded_math::SignedU128, types::DelayedFieldsSpeculativeError};
 #[cfg(feature = "testing")]
-use aptos_aggregator::{resolver::TDelayedFieldView, types::DelayedFieldValue};
+use libra2_aggregator::{resolver::TDelayedFieldView, types::DelayedFieldValue};
 #[cfg(feature = "testing")]
 use aptos_framework::natives::randomness::RandomnessContext;
 #[cfg(feature = "testing")]

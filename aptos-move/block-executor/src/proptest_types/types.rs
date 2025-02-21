@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::task::{ExecutionStatus, ExecutorTask, TransactionOutput};
-use aptos_aggregator::{
+use libra2_aggregator::{
     delayed_change::DelayedChange,
     delta_change_set::{delta_add, delta_sub, serialize, DeltaOp},
     resolver::TAggregatorV1View,

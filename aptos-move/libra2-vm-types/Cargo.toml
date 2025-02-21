@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 ambassador = { workspace = true }
 anyhow = { workspace = true }
-aptos-aggregator = { workspace = true }
+libra2-aggregator = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 libra2-types = { workspace = true }
@@ -31,7 +31,7 @@ rand = { workspace = true }
 serde = { workspace = true }
 
 [dev-dependencies]
-aptos-aggregator = { workspace = true, features = ["testing"] }
+libra2-aggregator = { workspace = true, features = ["testing"] }
 aptos-gas-schedule = { workspace = true, features = ["testing"] }
 aptos-language-e2e-tests = { workspace = true }
 aptos-vm = { workspace = true }

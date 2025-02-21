@@ -7,7 +7,7 @@ use super::{
     MVHashMap,
 };
 use crate::types::ValueWithLayout;
-use aptos_aggregator::delta_change_set::{delta_add, delta_sub, DeltaOp};
+use libra2_aggregator::delta_change_set::{delta_add, delta_sub, DeltaOp};
 use libra2_types::{
     state_store::state_value::StateValue,
     write_set::{TransactionWrite, WriteOpKind},

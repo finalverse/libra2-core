@@ -7,7 +7,7 @@ members = [
     "api/test-context",
     "api/types",
     "aptos-move/libra2-abstract-gas-usage",
-    "aptos-move/aptos-aggregator",
+    "aptos-move/libra2-aggregator",
     "aptos-move/libra2-debugger",
     "aptos-move/aptos-e2e-comparison-testing",
     "aptos-move/libra2-gas-algebra",
@@ -301,7 +301,7 @@ libra2 = { path = "crates/libra2" }
 aptos = { path = "crates/aptos" }
 libra2-accumulator = { path = "storage/accumulator" }
 libra2-admin-service = { path = "crates/libra2-admin-service" }
-aptos-aggregator = { path = "aptos-move/aptos-aggregator" }
+libra2-aggregator = { path = "aptos-move/libra2-aggregator" }
 aptos-api = { path = "api" }
 aptos-api-test-context = { path = "api/test-context" }
 aptos-api-types = { path = "api/types" }

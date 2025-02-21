@@ -7,7 +7,7 @@ use crate::move_vm_ext::{
     resource_state_key, AptosMoveResolver, AsExecutorView, AsResourceGroupView,
     ResourceGroupResolver,
 };
-use aptos_aggregator::{
+use libra2_aggregator::{
     bounded_math::SignedU128,
     resolver::{TAggregatorV1View, TDelayedFieldView},
     types::{DelayedFieldValue, DelayedFieldsSpeculativeError},

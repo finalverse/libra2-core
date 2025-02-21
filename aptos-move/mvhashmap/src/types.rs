@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_aggregator::{delta_change_set::DeltaOp, types::DelayedFieldsSpeculativeError};
+use libra2_aggregator::{delta_change_set::DeltaOp, types::DelayedFieldsSpeculativeError};
 use libra2_crypto::hash::HashValue;
 use libra2_types::{
     error::PanicOr,
@@ -248,7 +248,7 @@ pub enum UnknownOrLayout<'a> {
 #[cfg(test)]
 pub(crate) mod test {
     use super::*;
-    use aptos_aggregator::delta_change_set::serialize;
+    use libra2_aggregator::delta_change_set::serialize;
     use libra2_types::{
         executable::ModulePath,
         state_store::state_value::StateValue,

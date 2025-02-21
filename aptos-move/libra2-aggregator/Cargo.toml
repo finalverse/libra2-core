@@ -1,6 +1,6 @@
 [package]
-name = "aptos-aggregator"
-description = "Aggregator sources for the Aptos blockchain"
+name = "libra2-aggregator"
+description = "Aggregator sources for the Libra2 blockchain"
 version = "0.1.0"
 
 # Workspace inherited keys

@@ -6,7 +6,7 @@ use crate::{
     change_set::{ChangeSetInterface, VMChangeSet},
     module_write_set::{ModuleWrite, ModuleWriteSet},
 };
-use aptos_aggregator::{
+use libra2_aggregator::{
     delayed_change::DelayedChange, delta_change_set::DeltaOp, resolver::AggregatorV1Resolver,
 };
 use libra2_types::{

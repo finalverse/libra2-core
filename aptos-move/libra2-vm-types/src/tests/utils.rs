@@ -6,7 +6,7 @@ use crate::{
     change_set::VMChangeSet,
     output::VMOutput,
 };
-use aptos_aggregator::{
+use libra2_aggregator::{
     delayed_change::DelayedChange,
     delta_change_set::{delta_add, DeltaOp},
 };

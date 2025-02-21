@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::types::InputOutputKey;
-use aptos_aggregator::{
+use libra2_aggregator::{
     delayed_change::DelayedChange, delta_change_set::DeltaOp, resolver::TAggregatorV1View,
 };
 use aptos_mvhashmap::types::TxnIndex;

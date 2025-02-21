@@ -9,7 +9,7 @@ use crate::{
         native_transaction::{compute_deltas_for_batch, NativeTransaction},
     },
 };
-use aptos_aggregator::{
+use libra2_aggregator::{
     bounded_math::SignedU128,
     delayed_change::{DelayedApplyChange, DelayedChange},
     delta_change_set::{DeltaOp, DeltaWithMax},

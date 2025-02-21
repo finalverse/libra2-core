@@ -6,7 +6,7 @@ use crate::types::{
     Incarnation, MVDataError, MVDataOutput, ShiftedTxnIndex, TxnIndex, ValueWithLayout,
 };
 use anyhow::Result;
-use aptos_aggregator::delta_change_set::DeltaOp;
+use libra2_aggregator::delta_change_set::DeltaOp;
 use libra2_types::write_set::TransactionWrite;
 use claims::assert_some;
 use crossbeam::utils::CachePadded;

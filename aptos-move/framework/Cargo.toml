@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-aggregator = { workspace = true }
+libra2-aggregator = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true }
@@ -82,7 +82,7 @@ tiny-keccak = { workspace = true }
 toml = { workspace = true }
 
 [dev-dependencies]
-aptos-aggregator = { workspace = true, features = ["testing"] }
+libra2-aggregator = { workspace = true, features = ["testing"] }
 libra2-crypto = { workspace = true, features = ["fuzzing"] }
 aptos-gas-meter = { workspace = true }
 aptos-vm = { workspace = true, features = ["testing"] }

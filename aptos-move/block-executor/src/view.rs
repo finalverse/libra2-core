@@ -13,7 +13,7 @@ use crate::{
     scheduler::{DependencyResult, DependencyStatus, Scheduler, TWaitForDependency},
     value_exchange::TemporaryValueToIdentifierMapping,
 };
-use aptos_aggregator::{
+use libra2_aggregator::{
     bounded_math::{ok_overflow, BoundedMath, SignedU128},
     delta_change_set::serialize,
     delta_math::DeltaHistory,
@@ -1832,7 +1832,7 @@ mod test {
         scheduler::{DependencyResult, Scheduler, TWaitForDependency},
         view::{delayed_field_try_add_delta_outcome_impl, get_delayed_field_value_impl, ViewState},
     };
-    use aptos_aggregator::{
+    use libra2_aggregator::{
         bounded_math::{BoundedMath, SignedU128},
         delta_math::DeltaHistory,
         types::{DelayedFieldValue, DelayedFieldsSpeculativeError, ReadPosition},
