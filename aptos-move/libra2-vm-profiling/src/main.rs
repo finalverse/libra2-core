@@ -6,7 +6,7 @@ use clap::Parser;
 use once_cell::sync::Lazy;
 use std::path::Path;
 
-mod profile_aptos_vm;
+mod profile_libra2_vm;
 mod profile_move_vm;
 mod valgrind;
 
@@ -23,7 +23,7 @@ fn main() -> Result<()> {
     let args = Args::parse();
 
     profile_move_vm::run(args.regenerate_all)?;
-    profile_aptos_vm::run()?;
+    profile_libra2_vm::run()?;
 
     Ok(())
 }
