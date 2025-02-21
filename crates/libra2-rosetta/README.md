@@ -12,7 +12,7 @@ API calls to underlying Aptos REST API calls and builds the appropriate data.
 
 ## Running Rosetta
 
-The `aptos-rosetta` binary can run in three modes:
+The `libra2-rosetta` binary can run in three modes:
 1. `online` -> This runs a local fullnode and blocks the Aptos REST API from outside access, using it only as a local proxy for Rosetta APIs.
 2. `offline` -> This runs a Rosetta server that is not connected to the blockchain.  Only commands listed as `offline` work with this mode.
 3. `online-remote` -> This runs a Rosetta instance that connects to a remote fullnode e.g. a public fullnode.  Please keep in mind that since this proxies APIs, it can fail due to throttling and network errors between the servers.
@@ -103,4 +103,4 @@ file to run the automated checks.  Additionally, the [aptos.ros](./aptos.ros)
 file uses the Rosetta CLI DSL to describe the possible operations that
 can be run.
 
-Additionally, we have our `aptos-rosetta-cli` crate for local testing.
+Additionally, we have our `libra2-rosetta-cli` crate for local testing.

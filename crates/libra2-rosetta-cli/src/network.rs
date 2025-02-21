@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::common::{format_output, NetworkArgs, UrlArgs};
-use aptos_rosetta::types::{NetworkListResponse, NetworkOptionsResponse, NetworkStatusResponse};
+use libra2_rosetta::types::{NetworkListResponse, NetworkOptionsResponse, NetworkStatusResponse};
 use clap::{Parser, Subcommand};
 
 /// Network APIs

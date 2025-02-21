@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{account, block, construction, network};
-use aptos_rosetta::{
+use libra2_rosetta::{
     client::RosettaClient,
     types::{NetworkIdentifier, NetworkRequest, PartialBlockIdentifier},
 };
@@ -14,7 +14,7 @@ use serde::Serialize;
 ///
 /// Provides an implementation of [Rosetta](https://www.rosetta-api.org/docs/Reference.html) on Aptos.
 #[derive(Debug, Parser)]
-#[clap(name = "aptos-rosetta-cli", author, version, propagate_version = true)]
+#[clap(name = "libra2-rosetta-cli", author, version, propagate_version = true)]
 pub enum RosettaCliArgs {
     #[clap(subcommand)]
     Account(account::AccountCommand),

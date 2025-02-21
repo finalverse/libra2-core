@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::common::{format_output, BlockArgs, NetworkArgs, UrlArgs};
-use aptos_rosetta::types::{BlockRequest, BlockRequestMetadata, BlockResponse};
+use libra2_rosetta::types::{BlockRequest, BlockRequestMetadata, BlockResponse};
 use clap::{Parser, Subcommand};
 
 /// Block APIs

@@ -1,6 +1,6 @@
 [package]
-name = "aptos-rosetta-cli"
-description = "Aptos Rosetta CLI for testing"
+name = "libra2-rosetta-cli"
+description = "Libra2 Rosetta CLI for testing"
 version = "0.0.1"
 
 # Workspace inherited keys
@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 anyhow = { workspace = true }
 aptos = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-rosetta = { workspace = true }
+libra2-rosetta = { workspace = true }
 libra2-types = { workspace = true }
 clap = { workspace = true }
 serde = { workspace = true }

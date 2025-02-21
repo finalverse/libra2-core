@@ -4,4 +4,4 @@ The Rosetta CLI is used for testing and is not used for any production use case.
 
 The intent of this CLI is to let developers that know about the Aptos ecosystem simply call Rosetta APIs while actively developing on [Rosetta](https://en.wikipedia.org/wiki/Rosetta_(software).
 
-You can get more help about the commands with `aptos-rosetta-cli --help`
+You can get more help about the commands with `libra2-rosetta-cli --help`

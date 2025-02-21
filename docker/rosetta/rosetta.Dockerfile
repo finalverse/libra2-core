@@ -17,16 +17,16 @@ ARG GIT_REF
 RUN git clone $GIT_REPO ./ && git reset $GIT_REF --hard
 RUN --mount=type=cache,target=/aptos/target --mount=type=cache,target=$CARGO_HOME/registry \
   cargo build --release \
-  -p aptos-rosetta \
+  -p libra2-rosetta \
   && mkdir dist \
-  && cp target/release/aptos-rosetta dist/aptos-rosetta
+  && cp target/release/libra2-rosetta dist/libra2-rosetta
 
-### Create image with aptos-node and aptos-rosetta ###
+### Create image with aptos-node and libra2-rosetta ###
 FROM ubuntu-base AS rosetta
 
 RUN apt-get update && apt-get install -y libssl-dev ca-certificates && apt-get clean && rm -r /var/lib/apt/lists/*
 
-COPY --from=builder /aptos/dist/aptos-rosetta /usr/local/bin/aptos-rosetta
+COPY --from=builder /aptos/dist/libra2-rosetta /usr/local/bin/libra2-rosetta
 
 # Rosetta API
 EXPOSE 8082
@@ -36,5 +36,5 @@ ENV RUST_BACKTRACE 1
 
 WORKDIR /opt/aptos/data
 
-ENTRYPOINT ["/usr/local/bin/aptos-rosetta"]
+ENTRYPOINT ["/usr/local/bin/libra2-rosetta"]
 CMD ["online", "--config /opt/aptos/fullnode.yaml"]

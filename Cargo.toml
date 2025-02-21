@@ -93,8 +93,8 @@ members = [
     "crates/libra2-rate-limiter",
     "crates/libra2-rest-client",
     "crates/libra2-retrier",
-    "crates/aptos-rosetta",
-    "crates/aptos-rosetta-cli",
+    "crates/libra2-rosetta",
+    "crates/libra2-rosetta-cli",
     "crates/aptos-runtimes",
     "crates/libra2-speculative-state-helper",
     "crates/libra2-system-utils",
@@ -278,7 +278,7 @@ default-members = [
     "crates/aptos-faucet/service",
     "crates/libra2-keygen",
     "crates/libra2-rate-limiter",
-    "crates/aptos-rosetta",
+    "crates/libra2-rosetta",
     "crates/transaction-emitter",
     "aptos-move/framework",
     "storage/backup/backup-cli",
@@ -436,7 +436,7 @@ aptos-resource-viewer = { path = "aptos-move/aptos-resource-viewer" }
 libra2-rest-client = { path = "crates/libra2-rest-client" }
 libra2-retrier = { path = "crates/libra2-retrier" }
 libra2-rocksdb-options = { path = "storage/rocksdb-options" }
-aptos-rosetta = { path = "crates/aptos-rosetta" }
+libra2-rosetta = { path = "crates/libra2-rosetta" }
 aptos-runtimes = { path = "crates/aptos-runtimes" }
 aptos-safety-rules = { path = "consensus/safety-rules" }
 libra2-schemadb = { path = "storage/schemadb" }

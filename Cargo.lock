@@ -2406,53 +2406,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-rosetta"
-version = "0.0.1"
-dependencies = [
- "anyhow",
- "aptos-cached-packages",
- "aptos-node",
- "aptos-runtimes",
- "aptos-sdk",
- "bcs 0.1.4",
- "clap 4.5.21",
- "futures",
- "hex",
- "itertools 0.13.0",
- "libra2-config",
- "libra2-crypto",
- "libra2-global-constants",
- "libra2-logger",
- "libra2-rest-client",
- "libra2-types",
- "libra2-warp-webserver",
- "move-core-types",
- "once_cell",
- "reqwest 0.11.23",
- "serde",
- "serde_json",
- "tokio",
- "url",
- "warp",
-]
-
-[[package]]
-name = "aptos-rosetta-cli"
-version = "0.0.1"
-dependencies = [
- "anyhow",
- "aptos",
- "aptos-rosetta",
- "clap 4.5.21",
- "libra2-logger",
- "libra2-types",
- "serde",
- "serde_json",
- "tokio",
- "url",
-]
-
-[[package]]
 name = "aptos-runtimes"
 version = "0.1.0"
 dependencies = [
@@ -10252,6 +10205,53 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-rosetta"
+version = "0.0.1"
+dependencies = [
+ "anyhow",
+ "aptos-cached-packages",
+ "aptos-node",
+ "aptos-runtimes",
+ "aptos-sdk",
+ "bcs 0.1.4",
+ "clap 4.5.21",
+ "futures",
+ "hex",
+ "itertools 0.13.0",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-global-constants",
+ "libra2-logger",
+ "libra2-rest-client",
+ "libra2-types",
+ "libra2-warp-webserver",
+ "move-core-types",
+ "once_cell",
+ "reqwest 0.11.23",
+ "serde",
+ "serde_json",
+ "tokio",
+ "url",
+ "warp",
+]
+
+[[package]]
+name = "libra2-rosetta-cli"
+version = "0.0.1"
+dependencies = [
+ "anyhow",
+ "aptos",
+ "clap 4.5.21",
+ "libra2-logger",
+ "libra2-rosetta",
+ "libra2-types",
+ "serde",
+ "serde_json",
+ "tokio",
+ "url",
+]
+
+[[package]]
 name = "libra2-schemadb"
 version = "0.1.0"
 dependencies = [
@@ -16049,7 +16049,6 @@ dependencies = [
  "aptos-indexer-grpc-table-info",
  "aptos-inspection-service",
  "aptos-release-builder",
- "aptos-rosetta",
  "aptos-sdk",
  "aptos-vm",
  "base64 0.13.1",
@@ -16074,6 +16073,7 @@ dependencies = [
  "libra2-logger",
  "libra2-move-debugger",
  "libra2-rest-client",
+ "libra2-rosetta",
  "libra2-schemadb",
  "libra2-secure-storage",
  "libra2-storage-interface",

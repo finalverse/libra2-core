@@ -61,9 +61,9 @@
 
 /crates/libra2-rest-client @banool @gregnazario
 
-# Owners for the `/aptos-rosetta` directory and related crates.
-/crates/aptos-rosetta @gregnazario
-/crates/aptos-rosetta-cli @gregnazario
+# Owners for the `/libra2-rosetta` directory and related crates.
+/crates/libra2-rosetta @gregnazario
+/crates/libra2-rosetta-cli @gregnazario
 
 # Owners for the `telemetry` related crates.
 /crates/libra2-telemetry @ibalajiarun @geekflyer

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::common::{format_output, BlockArgs, NetworkArgs, UrlArgs};
-use aptos_rosetta::{
+use libra2_rosetta::{
     common::native_coin,
     types::{AccountBalanceRequest, AccountBalanceResponse, AccountIdentifier},
 };

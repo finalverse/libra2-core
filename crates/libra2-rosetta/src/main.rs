@@ -8,7 +8,7 @@
 use libra2_config::config::{ApiConfig, DEFAULT_MAX_PAGE_SIZE};
 use libra2_logger::prelude::*;
 use aptos_node::AptosNodeArgs;
-use aptos_rosetta::{bootstrap, common::native_coin, types::Currency};
+use libra2_rosetta::{bootstrap, common::native_coin, types::Currency};
 use aptos_sdk::move_types::language_storage::StructTag;
 use libra2_types::chain_id::ChainId;
 use clap::Parser;
@@ -38,12 +38,12 @@ async fn main() {
 
     match args {
         CommandArgs::OnlineRemote(_) => {
-            println!("aptos-rosetta: Starting Rosetta in Online remote (no local full node) mode")
+            println!("libra2-rosetta: Starting Rosetta in Online remote (no local full node) mode")
         },
         CommandArgs::Online(_) => {
-            println!("aptos-rosetta: Starting Rosetta in Online (with local full node) mode")
+            println!("libra2-rosetta: Starting Rosetta in Online (with local full node) mode")
         },
-        CommandArgs::Offline(_) => println!("aptos-rosetta: Starting Rosetta in Offline mode"),
+        CommandArgs::Offline(_) => println!("libra2-rosetta: Starting Rosetta in Offline mode"),
     }
 
     // If we're in online mode, we run a full node side by side, the fullnode sets up the logger
@@ -52,7 +52,7 @@ async fn main() {
         ref online_args,
     }) = args
     {
-        println!("aptos-rosetta: Starting local full node");
+        println!("libra2-rosetta: Starting local full node");
         let node_args = node_args.clone();
         let runtime = thread::spawn(move || node_args.run());
 
@@ -68,7 +68,7 @@ async fn main() {
                     sample!(
                         SampleRate::Duration(Duration::from_millis(LOG_INTERVAL_MS)),
                         println!(
-                            "aptos-rosetta: Full node REST API isn't responding yet.  You should check the node logs.  It's been waiting {} seconds.  Error: {:?}",
+                            "libra2-rosetta: Full node REST API isn't responding yet.  You should check the node logs.  It's been waiting {} seconds.  Error: {:?}",
                             start.elapsed().as_secs(),
                             err
                         )
@@ -79,7 +79,7 @@ async fn main() {
             }
         }
 
-        println!("aptos-rosetta: Local full node started successfully");
+        println!("libra2-rosetta: Local full node started successfully");
         Some(runtime)
     } else {
         // If we aren't running a full node, set up the logger now
@@ -87,7 +87,7 @@ async fn main() {
         None
     };
 
-    println!("aptos-rosetta: Starting rosetta");
+    println!("libra2-rosetta: Starting rosetta");
     // Ensure runtime for Rosetta is up and running
     let _rosetta = bootstrap(
         args.chain_id(),
@@ -95,9 +95,9 @@ async fn main() {
         args.rest_client(),
         args.supported_currencies(),
     )
-    .expect("aptos-rosetta: Should bootstrap rosetta server");
+    .expect("libra2-rosetta: Should bootstrap rosetta server");
 
-    println!("aptos-rosetta: Rosetta started");
+    println!("libra2-rosetta: Rosetta started");
     // Run until there is an interrupt
     let term = Arc::new(AtomicBool::new(false));
     while !term.load(Ordering::Acquire) {
@@ -124,7 +124,7 @@ trait ServerArgs {
 ///
 /// Provides an implementation of [Rosetta](https://www.rosetta-api.org/docs/Reference.html) on Aptos.
 #[derive(Debug, Parser)]
-#[clap(name = "aptos-rosetta", author, version, propagate_version = true)]
+#[clap(name = "libra2-rosetta", author, version, propagate_version = true)]
 pub enum CommandArgs {
     /// Run a local online server that connects to a fullnode endpoint
     OnlineRemote(OnlineRemoteArgs),
