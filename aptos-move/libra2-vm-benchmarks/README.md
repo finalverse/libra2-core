@@ -1,12 +1,12 @@
 ---
-id: Aptos-vm-benchmarks
-title: Aptos VM Benchmarks
+id: Libra2-vm-benchmarks
+title: Libra2 VM Benchmarks
 ---
 
-## Aptos VM Benchmarks
+## Libra2 VM Benchmarks
 
-The Aptos VM Benchmark allows anyone to specify a set of Move modules and benchmark 
-the running time of transactions in the AptosVM measured in milliseconds. The Aptos
+The Libra2 VM Benchmark allows anyone to specify a set of Move modules and benchmark 
+the running time of transactions in the Libra2VM measured in milliseconds. The Libra2
 VM Benchmark allows an arbitrary amount of packages to be benchmarked.
 
 ## Usage
@@ -43,10 +43,10 @@ cargo run --release PATTERN
 ## Adding a benchmark
 
 ```
-cd aptos-vm-benchmarks/samples
+cd libra2-vm-benchmarks/samples
 mkdir proj-name
 cd proj-name
-cargo run -p aptos -- move init --name proj-name
+cargo run -p libra2 -- move init --name proj-name
 ```
 
 ## Examples

@@ -25,7 +25,7 @@ members = [
     "aptos-move/aptos-transactional-test-harness",
     "aptos-move/aptos-validator-interface",
     "aptos-move/aptos-vm",
-    "aptos-move/aptos-vm-benchmarks",
+    "aptos-move/libra2-vm-benchmarks",
     "aptos-move/libra2-vm-environment",
     "aptos-move/libra2-vm-logging",
     "aptos-move/libra2-vm-profiling",

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-vm-benchmarks"
+name = "libra2-vm-benchmarks"
 version = "0.1.0"
 edition = "2021"
 license = { workspace = true }
