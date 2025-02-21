@@ -3,7 +3,7 @@
 
 //! This file is where we apply a number of traits that allow us to use these
 //! traits with Poem. For more information on how these macros work, see the
-//! documentation within `crates/aptos-openapi`.
+//! documentation within `crates/libra2-openapi`.
 //!
 //! In some cases we use these derives because the underlying types are not
 //! expressible via OpenAPI, e.g. Address. In other cases, we use them because
@@ -23,7 +23,7 @@ use crate::{
     Address, AssetType, EntryFunctionId, HashValue, HexEncodedBytes, IdentifierWrapper,
     MoveModuleId, MoveStructTag, MoveType, StateKeyWrapper, U128, U256, U64,
 };
-use aptos_openapi::{impl_poem_parameter, impl_poem_type};
+use libra2_openapi::{impl_poem_parameter, impl_poem_type};
 use indoc::indoc;
 use serde_json::json;
 

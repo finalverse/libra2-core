@@ -18,7 +18,7 @@ libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
 aptos-framework = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-openapi = { workspace = true }
+libra2-openapi = { workspace = true }
 aptos-resource-viewer = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-openapi-spec-generator"
+name = "libra2-openapi-spec-generator"
 description = "Aptos API OpenAPI Spec Generator"
 version = "0.1.0"
 

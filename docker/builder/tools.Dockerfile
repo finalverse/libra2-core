@@ -29,7 +29,7 @@ RUN cd /usr/local/bin && wget "https://storage.googleapis.com/kubernetes-release
 
 COPY --link --from=tools-builder /aptos/dist/libra2-debugger /usr/local/bin/libra2-debugger
 COPY --link --from=tools-builder /aptos/dist/aptos /usr/local/bin/aptos
-COPY --link --from=tools-builder /aptos/dist/aptos-openapi-spec-generator /usr/local/bin/aptos-openapi-spec-generator
+COPY --link --from=tools-builder /aptos/dist/libra2-openapi-spec-generator /usr/local/bin/libra2-openapi-spec-generator
 COPY --link --from=tools-builder /aptos/dist/aptos-fn-check-client /usr/local/bin/aptos-fn-check-client
 COPY --link --from=tools-builder /aptos/dist/libra2-transaction-emitter /usr/local/bin/libra2-transaction-emitter
 COPY --link --from=tools-builder /aptos/dist/aptos-api-tester /usr/local/bin/aptos-api-tester

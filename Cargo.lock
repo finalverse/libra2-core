@@ -558,7 +558,6 @@ version = "0.0.1"
 dependencies = [
  "anyhow",
  "aptos-framework",
- "aptos-openapi",
  "aptos-resource-viewer",
  "aptos-vm",
  "async-trait",
@@ -569,6 +568,7 @@ dependencies = [
  "libra2-config",
  "libra2-crypto",
  "libra2-logger",
+ "libra2-openapi",
  "libra2-storage-interface",
  "libra2-types",
  "move-binary-format",
@@ -2180,30 +2180,6 @@ dependencies = [
  "thiserror",
  "tokio",
  "url",
-]
-
-[[package]]
-name = "aptos-openapi"
-version = "0.1.0"
-dependencies = [
- "percent-encoding",
- "poem",
- "poem-openapi",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "aptos-openapi-spec-generator"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-api",
- "clap 4.5.21",
- "libra2-config",
- "libra2-mempool",
- "libra2-storage-interface",
- "libra2-types",
 ]
 
 [[package]]
@@ -9926,6 +9902,30 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "libra2-openapi"
+version = "0.1.0"
+dependencies = [
+ "percent-encoding",
+ "poem",
+ "poem-openapi",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "libra2-openapi-spec-generator"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-api",
+ "clap 4.5.21",
+ "libra2-config",
+ "libra2-mempool",
+ "libra2-storage-interface",
+ "libra2-types",
 ]
 
 [[package]]

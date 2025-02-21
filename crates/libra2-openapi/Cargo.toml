@@ -1,5 +1,5 @@
 [package]
-name = "aptos-openapi"
+name = "libra2-openapi"
 description = "Helpers that allow structs to self-describe in an OpenAPI spec"
 version = "0.1.0"
 

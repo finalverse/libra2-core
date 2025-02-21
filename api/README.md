@@ -20,8 +20,8 @@ All commands here are relative to the root of `aptos-core`.
 1. Make your changes to the API code, i.e. the code in `api/src/`.
 2. Regenerate the API spec `.yaml` and `.json` files by running these commands from the root of `aptos-core`:
 ```
-cargo run -p aptos-openapi-spec-generator -- -f yaml -o api/doc/spec.yaml
-cargo run -p aptos-openapi-spec-generator -- -f json -o api/doc/spec.json
+cargo run -p libra2-openapi-spec-generator -- -f yaml -o api/doc/spec.yaml
+cargo run -p libra2-openapi-spec-generator -- -f json -o api/doc/spec.json
 ```
 
 ### Sanity checks

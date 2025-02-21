@@ -86,7 +86,7 @@ members = [
     "crates/libra2-metrics-core",
     "crates/libra2-network-checker",
     "crates/libra2-node-identity",
-    "crates/aptos-openapi",
+    "crates/libra2-openapi",
     "crates/libra2-profiler",
     "crates/libra2-proptest-helpers",
     "crates/libra2-push-metrics",
@@ -415,7 +415,7 @@ aptos-node-checker = { path = "ecosystem/node-checker" }
 libra2-node-identity = { path = "crates/libra2-node-identity" }
 libra2-node-resource-metrics = { path = "crates/node-resource-metrics" }
 libra2-num-variants = { path = "crates/num-variants" }
-aptos-openapi = { path = "crates/aptos-openapi" }
+libra2-openapi = { path = "crates/libra2-openapi" }
 aptos-package-builder = { path = "aptos-move/package-builder" }
 libra2-peer-monitoring-service-client = { path = "peer-monitoring-service/client" }
 libra2-peer-monitoring-service-server = { path = "peer-monitoring-service/server" }
