@@ -35,7 +35,7 @@ async fn test_gen_resource_group() {
     let named_addresses_clone = named_addresses.clone();
     let txn = futures::executor::block_on(async move {
         let path = PathBuf::from(std::env!("CARGO_MANIFEST_DIR"))
-            .join("../aptos-move/move-examples/resource_groups/primary");
+            .join("../libra2-move/move-examples/resource_groups/primary");
         TestContext::build_package(path, named_addresses_clone)
     });
     context.publish_package(&mut admin0, txn).await;
@@ -43,7 +43,7 @@ async fn test_gen_resource_group() {
     let named_addresses_clone = named_addresses.clone();
     let txn = futures::executor::block_on(async move {
         let path = PathBuf::from(std::env!("CARGO_MANIFEST_DIR"))
-            .join("../aptos-move/move-examples/resource_groups/secondary");
+            .join("../libra2-move/move-examples/resource_groups/secondary");
         TestContext::build_package(path, named_addresses_clone)
     });
     context.publish_package(&mut admin1, txn).await;

@@ -53,7 +53,7 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     x25519, PrivateKey,
 };
-use aptos_framework::chunked_publish::{CHUNK_SIZE_IN_BYTES, LARGE_PACKAGES_MODULE_ADDRESS};
+use libra2_framework::chunked_publish::{CHUNK_SIZE_IN_BYTES, LARGE_PACKAGES_MODULE_ADDRESS};
 use libra2_genesis::config::HostAndPort;
 use libra2_keygen::KeyGen;
 use libra2_logger::warn;
@@ -87,7 +87,7 @@ pub const INVALID_ACCOUNT: &str = "0xDEADBEEFCAFEBABE";
 pub const FIRST_MOVE_FILE: &str = "
 module NamedAddress0::store {
     use std::string;
-    use aptos_framework::coin::{Self};
+    use libra2_framework::coin::{Self};
 
     struct CoolCoin has key {}
 
@@ -797,7 +797,7 @@ impl CliTestFramework {
         let sources_dir = move_dir.join("sources");
 
         let hello_blockchain_contents = include_str!(
-            "../../../../aptos-move/move-examples/hello_blockchain/sources/hello_blockchain.move"
+            "../../../../libra2-move/move-examples/hello_blockchain/sources/hello_blockchain.move"
         );
         let source_path = sources_dir.join("hello_blockchain.move");
         write_to_file(
@@ -807,7 +807,7 @@ impl CliTestFramework {
         )
         .unwrap();
 
-        let hello_blockchain_test_contents = include_str!("../../../../aptos-move/move-examples/hello_blockchain/sources/hello_blockchain_test.move");
+        let hello_blockchain_test_contents = include_str!("../../../../libra2-move/move-examples/hello_blockchain/sources/hello_blockchain_test.move");
         let test_path = sources_dir.join("hello_blockchain_test.move");
         write_to_file(
             test_path.as_path(),
@@ -968,7 +968,7 @@ impl CliTestFramework {
         .await
     }
 
-    /// Runs the given script contents using the local aptos_framework directory.
+    /// Runs the given script contents using the local libra2_framework directory.
     pub async fn run_script(
         &self,
         index: usize,
@@ -976,7 +976,7 @@ impl CliTestFramework {
     ) -> CliTypedResult<TransactionSummary> {
         self.run_script_with_framework_package(index, script_contents, FrameworkPackageArgs {
             framework_git_rev: None,
-            framework_local_dir: Some(Self::aptos_framework_dir()),
+            framework_local_dir: Some(Self::libra2_framework_dir()),
             skip_fetch_latest_git_deps: false,
         })
         .await
@@ -993,7 +993,7 @@ impl CliTestFramework {
             script_contents,
             FrameworkPackageArgs {
                 framework_git_rev: None,
-                framework_local_dir: Some(Self::aptos_framework_dir()),
+                framework_local_dir: Some(Self::libra2_framework_dir()),
                 skip_fetch_latest_git_deps: false,
             },
             gas_options,
@@ -1001,7 +1001,7 @@ impl CliTestFramework {
         .await
     }
 
-    /// Runs the given script contents using the aptos_framework from aptos-core git repository.
+    /// Runs the given script contents using the libra2_framework from aptos-core git repository.
     pub async fn run_script_with_default_framework(
         &self,
         index: usize,
@@ -1082,7 +1082,7 @@ impl CliTestFramework {
                 script_path: Some(script_path.parse().unwrap()),
                 framework_package_args: FrameworkPackageArgs {
                     framework_git_rev: None,
-                    framework_local_dir: Some(Self::aptos_framework_dir()),
+                    framework_local_dir: Some(Self::libra2_framework_dir()),
                     skip_fetch_latest_git_deps: false,
                 },
                 ..CompileScriptFunction::default()
@@ -1097,13 +1097,13 @@ impl CliTestFramework {
         .await
     }
 
-    pub fn aptos_framework_dir() -> PathBuf {
+    pub fn libra2_framework_dir() -> PathBuf {
         PathBuf::from(env!("CARGO_MANIFEST_DIR"))
             .join("..")
             .join("..")
-            .join("aptos-move")
+            .join("libra2-move")
             .join("framework")
-            .join("aptos-framework")
+            .join("libra2-framework")
     }
 
     pub fn move_options(&self, account_strs: BTreeMap<&str, &str>) -> MovePackageDir {
@@ -1212,7 +1212,7 @@ impl CliTestFramework {
                     script_path: Some(script_path),
                     framework_package_args: FrameworkPackageArgs {
                         framework_git_rev: None,
-                        framework_local_dir: Some(Self::aptos_framework_dir()),
+                        framework_local_dir: Some(Self::libra2_framework_dir()),
                         skip_fetch_latest_git_deps: false,
                     },
                     ..CompileScriptFunction::default()
@@ -1257,7 +1257,7 @@ impl CliTestFramework {
                 script_path: Some(script_path.parse().unwrap()),
                 framework_package_args: FrameworkPackageArgs {
                     framework_git_rev: None,
-                    framework_local_dir: Some(Self::aptos_framework_dir()),
+                    framework_local_dir: Some(Self::libra2_framework_dir()),
                     skip_fetch_latest_git_deps: false,
                 },
                 ..CompileScriptFunction::default()

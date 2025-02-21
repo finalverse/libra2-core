@@ -14,14 +14,14 @@ use std::{fmt::Display, path::PathBuf};
 pub enum StdLib {
     AptosTokenObjects,
     AptosToken,
-    AptosFramework,
+    Libra2Framework,
     AptosStdlib,
     MoveStdlib,
 }
 
 impl StdLib {
     /// The well-known git URL for the standard library.
-    const STD_GIT_URL: &'static str = "https://github.com/aptos-labs/aptos-framework.git";
+    const STD_GIT_URL: &'static str = "https://github.com/aptos-labs/libra2-framework.git";
 
     /// Returns the dependency for the standard library with the given version.
     pub fn dependency(&self, version: &StdVersion) -> Dependency {
@@ -58,7 +58,7 @@ impl StdLib {
         match self {
             StdLib::AptosToken => "AptosToken",
             StdLib::AptosTokenObjects => "AptosTokenObjects",
-            StdLib::AptosFramework => "AptosFramework",
+            StdLib::Libra2Framework => "Libra2Framework",
             StdLib::AptosStdlib => "AptosStdlib",
             StdLib::MoveStdlib => "MoveStdlib",
         }
@@ -69,7 +69,7 @@ impl StdLib {
         match package_name.as_str() {
             "AptosToken" => Some(StdLib::AptosToken),
             "AptosTokenObjects" => Some(StdLib::AptosTokenObjects),
-            "AptosFramework" => Some(StdLib::AptosFramework),
+            "Libra2Framework" => Some(StdLib::Libra2Framework),
             "AptosStdlib" => Some(StdLib::AptosStdlib),
             "MoveStdlib" => Some(StdLib::MoveStdlib),
             _ => None,
@@ -81,7 +81,7 @@ impl StdLib {
         match self {
             StdLib::AptosToken => "aptos-token",
             StdLib::AptosTokenObjects => "aptos-token-objects",
-            StdLib::AptosFramework => "aptos-framework",
+            StdLib::Libra2Framework => "libra2-framework",
             StdLib::AptosStdlib => "aptos-stdlib",
             StdLib::MoveStdlib => "move-stdlib",
         }

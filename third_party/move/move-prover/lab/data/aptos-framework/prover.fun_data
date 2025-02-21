@@ -1,12 +1,12 @@
 # config: prover.toml
 # time  : 2023-08-26 08:18:40.458164 UTC
-system_addresses::assert_aptos_framework         2061           ok
+system_addresses::assert_libra2_framework         2061           ok
 system_addresses::assert_core_resource           1602           ok
 system_addresses::assert_core_resource_address         1621           ok
 system_addresses::assert_framework_reserved         1603           ok
 system_addresses::assert_framework_reserved_address         1647           ok
 system_addresses::assert_vm                      1742           ok
-system_addresses::is_aptos_framework_address         1589           ok
+system_addresses::is_libra2_framework_address         1589           ok
 system_addresses::is_core_resource_address         1599           ok
 system_addresses::is_framework_reserved_address         1605           ok
 system_addresses::is_reserved_address            1590           ok

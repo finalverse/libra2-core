@@ -18,7 +18,7 @@ WORKSPACE=${WORKSPACE:-/tmp}
 USERNAME_PREFIX=${USERNAME_PREFIX:-libra2-node}
 VALIDATOR_INTERNAL_HOST_SUFFIX=${VALIDATOR_INTERNAL_HOST_SUFFIX:-validator-lb}
 FULLNODE_INTERNAL_HOST_SUFFIX=${FULLNODE_INTERNAL_HOST_SUFFIX:-fullnode-lb}
-MOVE_FRAMEWORK_DIR=${MOVE_FRAMEWORK_DIR:-"/aptos-framework/move"}
+MOVE_FRAMEWORK_DIR=${MOVE_FRAMEWORK_DIR:-"/libra2-framework/move"}
 STAKE_AMOUNT=${STAKE_AMOUNT:-1}
 NUM_VALIDATORS_WITH_LARGER_STAKE=${NUM_VALIDATORS_WITH_LARGER_STAKE:0}
 LARGER_STAKE_AMOUNT=${LARGER_STAKE_AMOUNT:-1}
@@ -125,7 +125,7 @@ for i in $(seq 0 $(($NUM_VALIDATORS - 1))); do
 done
 
 # get the framework
-# this is the directory the aptos-framework is located in the aptoslabs/tools docker image
+# this is the directory the libra2-framework is located in the aptoslabs/tools docker image
 cp $MOVE_FRAMEWORK_DIR/head.mrb ${WORKSPACE}/framework.mrb
 
 # run genesis

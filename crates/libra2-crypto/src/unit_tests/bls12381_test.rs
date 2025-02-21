@@ -379,7 +379,7 @@ fn bls12381_validatable_pk() {
 #[test]
 #[ignore]
 /// Not an actual test: only used to generate test cases for testing the BLS Move module in
-/// aptos-move/framework/move-stdlib/sources/signer.move
+/// libra2-move/framework/move-stdlib/sources/signer.move
 fn bls12381_sample_pop() {
     let mut rng = OsRng;
 
@@ -407,7 +407,7 @@ fn bls12381_sample_pop() {
 #[test]
 #[ignore]
 /// Not an actual test: only used to generate test cases for testing the BLS Move module in
-/// aptos-move/framework/move-stdlib/sources/signer.move
+/// libra2-move/framework/move-stdlib/sources/signer.move
 /// For simplicity, we use `sign_arbitrary_message` to generate a signature directly on a
 /// message `m` rather than on its hash derived using the `CryptoHasher` trait. This makes it easier
 /// to verify the signature in our Move code, which uses `verify_arbitrary_message`.
@@ -479,7 +479,7 @@ fn bls12381_sample_doc_test_for_normal_sigs() {
 #[test]
 #[ignore]
 /// Not an actual test: only used to generate test cases for testing the BLS Move module in
-/// aptos-move/framework/move-stdlib/sources/signer.move
+/// libra2-move/framework/move-stdlib/sources/signer.move
 fn bls12381_sample_aggregate_pk_and_aggsig() {
     let mut rng = OsRng;
 
@@ -533,7 +533,7 @@ fn bls12381_sample_aggregate_pk_and_aggsig() {
 #[test]
 #[ignore]
 /// Not an actual test: only used to generate test cases for testing the BLS Move module in
-/// aptos-move/framework/move-stdlib/sources/signer.move
+/// libra2-move/framework/move-stdlib/sources/signer.move
 fn bls12381_sample_aggregate_pk_and_multisig() {
     let mut rng = OsRng;
 
@@ -582,7 +582,7 @@ fn bls12381_sample_aggregate_pk_and_multisig() {
 #[test]
 #[ignore]
 /// Not an actual test: only used to generate test cases for testing the BLS Move module in
-/// aptos-move/framework/move-stdlib/sources/signer.move
+/// libra2-move/framework/move-stdlib/sources/signer.move
 fn bls12381_sample_aggregate_sigs() {
     let mut rng = OsRng;
 

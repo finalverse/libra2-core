@@ -47,4 +47,4 @@ done
 # Build the Aptos Move framework and place it in dist. It can be found afterwards in the current directory.
 echo "MOVE_COMPILER_V2: ${MOVE_COMPILER_V2:-not set}"
 echo "Building the Aptos Move framework..."
-(cd dist && cargo run --locked --profile=$PROFILE --package aptos-framework -- release)
+(cd dist && cargo run --locked --profile=$PROFILE --package libra2-framework -- release)

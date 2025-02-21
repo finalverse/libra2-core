@@ -1,12 +1,12 @@
 # config: new_boogie_2.toml
 # time  : 2023-12-29 12:02:40.992846 UTC
-system_addresses::assert_aptos_framework          635           ok
+system_addresses::assert_libra2_framework          635           ok
 system_addresses::assert_core_resource            633           ok
 system_addresses::assert_core_resource_address          633           ok
 system_addresses::assert_framework_reserved          635           ok
 system_addresses::assert_framework_reserved_address          641           ok
 system_addresses::assert_vm                       633           ok
-system_addresses::is_aptos_framework_address          631           ok
+system_addresses::is_libra2_framework_address          631           ok
 system_addresses::is_core_resource_address          633           ok
 system_addresses::is_framework_reserved_address          633           ok
 system_addresses::is_reserved_address             631           ok

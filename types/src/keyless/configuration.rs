@@ -18,7 +18,7 @@ use move_core_types::{
 };
 use serde::{Deserialize, Serialize};
 
-/// Reflection of aptos_framework::keyless_account::Configuration
+/// Reflection of libra2_framework::keyless_account::Configuration
 #[derive(Serialize, Deserialize, Eq, PartialEq, Debug)]
 pub struct Configuration {
     pub override_aud_vals: Vec<String>,

@@ -7,7 +7,7 @@ use crate::{
     *,
 };
 use libra2_config::config::{NodeConfig, OverrideNodeConfig};
-use aptos_framework::ReleaseBundle;
+use libra2_framework::ReleaseBundle;
 use std::{num::NonZeroUsize, sync::Arc};
 
 pub struct ForgeConfig {

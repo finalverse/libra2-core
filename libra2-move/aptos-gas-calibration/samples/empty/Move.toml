@@ -1,0 +1,16 @@
+[package]
+name = "empty"
+version = "1.0.0"
+authors = []
+
+[addresses]
+empty = "0xcafe"
+
+[dev-addresses]
+
+[dependencies.Libra2Framework]
+git = "https://github.com/aptos-labs/libra2-framework.git"
+rev = "mainnet"
+subdir = "libra2-framework"
+
+[dev-dependencies]

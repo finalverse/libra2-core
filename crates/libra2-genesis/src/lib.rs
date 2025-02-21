@@ -18,7 +18,7 @@ use libra2_config::config::{
 };
 use libra2_crypto::ed25519::Ed25519PublicKey;
 use libra2_db::Libra2DB;
-use aptos_framework::ReleaseBundle;
+use libra2_framework::ReleaseBundle;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_temppath::TempPath;
 use libra2_types::{

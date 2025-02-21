@@ -29,7 +29,7 @@
 - [ ] Validator Node
 - [ ] Full Node (API, Indexer, etc.)
 - [ ] Move/Aptos Virtual Machine
-- [ ] Aptos Framework
+- [ ] Libra2 Framework
 - [ ] Aptos CLI/SDK
 - [ ] Developer Infrastructure
 - [ ] Move Compiler

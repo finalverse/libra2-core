@@ -45,7 +45,7 @@ def get_bulletproofs_lines(gas_per_ns):
     return lines
 
 def main(gas_per_ns):
-    path = Path('aptos-move/aptos-gas/src/aptos_framework.rs')
+    path = Path('aptos-move/aptos-gas/src/libra2_framework.rs')
     lines = path.read_text().split('\n')
     line_id_begin = lines.index('    // Bulletproofs gas parameters begin.')
     line_id_end = lines.index('    // Bulletproofs gas parameters end.')
@@ -55,7 +55,7 @@ def main(gas_per_ns):
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser(
-        description='Generate gas parameters for bulletproofs module in `aptos-move/aptos-gas/src/aptos_framework.rs`.')
+        description='Generate gas parameters for bulletproofs module in `aptos-move/aptos-gas/src/libra2_framework.rs`.')
     parser.add_argument('--gas_per_ns', required=True, type=float)
     args = parser.parse_args()
     main(args.gas_per_ns)

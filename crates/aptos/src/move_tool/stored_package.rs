@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::bail;
-use aptos_framework::{
+use libra2_framework::{
     natives::code::{ModuleMetadata, PackageMetadata, PackageRegistry, UpgradePolicy},
     unzip_metadata_str,
 };

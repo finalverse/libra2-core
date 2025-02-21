@@ -6,45 +6,45 @@ members = [
     "api/openapi-spec-generator",
     "api/test-context",
     "api/types",
-    "aptos-move/libra2-abstract-gas-usage",
-    "aptos-move/libra2-aggregator",
-    "aptos-move/libra2-debugger",
-    "aptos-move/libra2-e2e-comparison-testing",
-    "aptos-move/libra2-gas-algebra",
-    "aptos-move/aptos-gas-calibration",
-    "aptos-move/aptos-gas-meter",
-    "aptos-move/aptos-gas-profiling",
-    "aptos-move/aptos-gas-schedule",
-    "aptos-move/aptos-gas-schedule-updator",
-    "aptos-move/aptos-memory-usage-tracker",
-    "aptos-move/libra2-native-interface",
-    "aptos-move/aptos-release-builder",
-    "aptos-move/libra2-resource-viewer",
-    "aptos-move/libra2-sdk-builder",
-    "aptos-move/libra2-transaction-benchmarks",
-    "aptos-move/libra2-transactional-test-harness",
-    "aptos-move/libra2-validator-interface",
-    "aptos-move/aptos-vm",
-    "aptos-move/libra2-vm-benchmarks",
-    "aptos-move/libra2-vm-environment",
-    "aptos-move/libra2-vm-logging",
-    "aptos-move/libra2-vm-profiling",
-    "aptos-move/libra2-vm-types",
-    "aptos-move/libra2-workspace-server",
-    "aptos-move/block-executor",
-    "aptos-move/e2e-benchmark",
-    "aptos-move/e2e-move-tests",
-    "aptos-move/e2e-tests",
-    "aptos-move/e2e-testsuite",
-    "aptos-move/framework",
-    "aptos-move/framework/cached-packages",
-    "aptos-move/framework/table-natives",
-    "aptos-move/move-examples",
-    "aptos-move/mvhashmap",
-    "aptos-move/package-builder",
-    "aptos-move/replay-benchmark",
-    "aptos-move/script-composer",
-    "aptos-move/vm-genesis",
+    "libra2-move/libra2-abstract-gas-usage",
+    "libra2-move/libra2-aggregator",
+    "libra2-move/libra2-debugger",
+    "libra2-move/libra2-e2e-comparison-testing",
+    "libra2-move/libra2-gas-algebra",
+    "libra2-move/aptos-gas-calibration",
+    "libra2-move/aptos-gas-meter",
+    "libra2-move/aptos-gas-profiling",
+    "libra2-move/aptos-gas-schedule",
+    "libra2-move/aptos-gas-schedule-updator",
+    "libra2-move/aptos-memory-usage-tracker",
+    "libra2-move/libra2-native-interface",
+    "libra2-move/aptos-release-builder",
+    "libra2-move/libra2-resource-viewer",
+    "libra2-move/libra2-sdk-builder",
+    "libra2-move/libra2-transaction-benchmarks",
+    "libra2-move/libra2-transactional-test-harness",
+    "libra2-move/libra2-validator-interface",
+    "libra2-move/aptos-vm",
+    "libra2-move/libra2-vm-benchmarks",
+    "libra2-move/libra2-vm-environment",
+    "libra2-move/libra2-vm-logging",
+    "libra2-move/libra2-vm-profiling",
+    "libra2-move/libra2-vm-types",
+    "libra2-move/libra2-workspace-server",
+    "libra2-move/block-executor",
+    "libra2-move/e2e-benchmark",
+    "libra2-move/e2e-move-tests",
+    "libra2-move/e2e-tests",
+    "libra2-move/e2e-testsuite",
+    "libra2-move/framework",
+    "libra2-move/framework/cached-packages",
+    "libra2-move/framework/table-natives",
+    "libra2-move/move-examples",
+    "libra2-move/mvhashmap",
+    "libra2-move/package-builder",
+    "libra2-move/replay-benchmark",
+    "libra2-move/script-composer",
+    "libra2-move/vm-genesis",
     "libra2-node",
     "libra2-utils",
     "config",
@@ -278,7 +278,7 @@ default-members = [
     "crates/libra2-rate-limiter",
     "crates/libra2-rosetta",
     "crates/transaction-emitter",
-    "aptos-move/framework",
+    "libra2-move/framework",
     "storage/backup/backup-cli",
     "ecosystem/node-checker",
 ]
@@ -301,7 +301,7 @@ libra2 = { path = "crates/libra2" }
 aptos = { path = "crates/aptos" }
 libra2-accumulator = { path = "storage/accumulator" }
 libra2-admin-service = { path = "crates/libra2-admin-service" }
-libra2-aggregator = { path = "aptos-move/libra2-aggregator" }
+libra2-aggregator = { path = "libra2-move/libra2-aggregator" }
 aptos-api = { path = "api" }
 aptos-api-test-context = { path = "api/test-context" }
 aptos-api-types = { path = "api/types" }
@@ -309,10 +309,10 @@ libra2-backup-cli = { path = "storage/backup/backup-cli" }
 libra2-backup-service = { path = "storage/backup/backup-service" }
 libra2-bcs-utils = { path = "crates/libra2-bcs-utils" }
 libra2-bounded-executor = { path = "crates/bounded-executor" }
-aptos-block-executor = { path = "aptos-move/block-executor" }
+aptos-block-executor = { path = "libra2-move/block-executor" }
 libra2-bitvec = { path = "crates/libra2-bitvec" }
 libra2-build-info = { path = "crates/libra2-build-info" }
-aptos-cached-packages = { path = "aptos-move/framework/cached-packages" }
+aptos-cached-packages = { path = "libra2-move/framework/cached-packages" }
 libra2-channels = { path = "crates/channel" }
 libra2-cli-common = { path = "crates/libra2-cli-common" }
 libra2-collections = { path = "crates/libra2-collections" }
@@ -351,15 +351,15 @@ libra2-faucet-service = { path = "crates/libra2-faucet/service" }
 libra2-faucet-metrics-server = { path = "crates/libra2-faucet/metrics-server" }
 libra2-fallible = { path = "crates/fallible" }
 aptos-forge = { path = "testsuite/forge" }
-aptos-framework = { path = "aptos-move/framework" }
+libra2-framework = { path = "libra2-move/framework" }
 fuzzer = { path = "testsuite/fuzzer" }
-libra2-abstract-gas-usage = { path = "aptos-move/libra2-abstract-gas-usage" }
-aptos-gas-meter = { path = "aptos-move/aptos-gas-meter" }
-libra2-gas-algebra = { path = "aptos-move/libra2-gas-algebra" }
-aptos-gas-calibration = { path = "aptos-move/aptos-gas-calibration" }
-aptos-gas-profiling = { path = "aptos-move/aptos-gas-profiling" }
-aptos-gas-schedule = { path = "aptos-move/aptos-gas-schedule" }
-aptos-gas-schedule-updator = { path = "aptos-move/aptos-gas-schedule-updator" }
+libra2-abstract-gas-usage = { path = "libra2-move/libra2-abstract-gas-usage" }
+aptos-gas-meter = { path = "libra2-move/aptos-gas-meter" }
+libra2-gas-algebra = { path = "libra2-move/libra2-gas-algebra" }
+aptos-gas-calibration = { path = "libra2-move/aptos-gas-calibration" }
+aptos-gas-profiling = { path = "libra2-move/aptos-gas-profiling" }
+aptos-gas-schedule = { path = "libra2-move/aptos-gas-schedule" }
+aptos-gas-schedule-updator = { path = "libra2-move/aptos-gas-schedule-updator" }
 libra2-genesis = { path = "crates/libra2-genesis" }
 libra2-github-client = { path = "crates/libra2-github-client" }
 libra2-global-constants = { path = "config/global-constants" }
@@ -385,21 +385,21 @@ libra2-jellyfish-merkle = { path = "storage/jellyfish-merkle" }
 libra2-jwk-consensus = { path = "crates/libra2-jwk-consensus" }
 libra2-jwk-utils = { path = "crates/jwk-utils" }
 libra2-keygen = { path = "crates/libra2-keygen" }
-libra2-language-e2e-tests = { path = "aptos-move/e2e-tests" }
+libra2-language-e2e-tests = { path = "libra2-move/e2e-tests" }
 libra2-ledger = { path = "crates/libra2-ledger" }
 libra2-localnet = { path = "crates/libra2-localnet" }
 libra2-log-derive = { path = "crates/libra2-log-derive" }
 libra2-logger = { path = "crates/libra2-logger" }
-aptos-memory-usage-tracker = { path = "aptos-move/aptos-memory-usage-tracker" }
+aptos-memory-usage-tracker = { path = "libra2-move/aptos-memory-usage-tracker" }
 libra2-mempool = { path = "mempool" }
 libra2-mempool-notifications = { path = "state-sync/inter-component/mempool-notifications" }
 libra2-memsocket = { path = "network/memsocket" }
 libra2-metrics-core = { path = "crates/libra2-metrics-core" }
-libra2-move-debugger = { path = "aptos-move/libra2-debugger" }
-aptos-move-examples = { path = "aptos-move/move-examples" }
-libra2-move-e2e-benchmark = { path = "aptos-move/e2e-benchmark" }
-aptos-mvhashmap = { path = "aptos-move/mvhashmap" }
-libra2-native-interface = { path = "aptos-move/libra2-native-interface" }
+libra2-move-debugger = { path = "libra2-move/libra2-debugger" }
+aptos-move-examples = { path = "libra2-move/move-examples" }
+libra2-move-e2e-benchmark = { path = "libra2-move/e2e-benchmark" }
+aptos-mvhashmap = { path = "libra2-move/mvhashmap" }
+libra2-native-interface = { path = "libra2-move/libra2-native-interface" }
 libra2-netcore = { path = "network/netcore" }
 libra2-network = { path = "network/framework" }
 libra2-network-benchmark = { path = "network/benchmark" }
@@ -413,7 +413,7 @@ libra2-node-identity = { path = "crates/libra2-node-identity" }
 libra2-node-resource-metrics = { path = "crates/node-resource-metrics" }
 libra2-num-variants = { path = "crates/num-variants" }
 libra2-openapi = { path = "crates/libra2-openapi" }
-aptos-package-builder = { path = "aptos-move/package-builder" }
+aptos-package-builder = { path = "libra2-move/package-builder" }
 libra2-peer-monitoring-service-client = { path = "peer-monitoring-service/client" }
 libra2-peer-monitoring-service-server = { path = "peer-monitoring-service/server" }
 libra2-peer-monitoring-service-types = { path = "peer-monitoring-service/types" }
@@ -426,10 +426,10 @@ aptos-protos = { path = "protos/rust" }
 libra2-proxy = { path = "crates/proxy" }
 libra2-push-metrics = { path = "crates/libra2-push-metrics" }
 libra2-rate-limiter = { path = "crates/libra2-rate-limiter" }
-aptos-release-builder = { path = "aptos-move/aptos-release-builder" }
+aptos-release-builder = { path = "libra2-move/aptos-release-builder" }
 libra2-reliable-broadcast = { path = "crates/reliable-broadcast" }
-aptos-replay-benchmark = { path = "aptos-move/replay-benchmark" }
-libra2-resource-viewer = { path = "aptos-move/libra2-resource-viewer" }
+aptos-replay-benchmark = { path = "libra2-move/replay-benchmark" }
+libra2-resource-viewer = { path = "libra2-move/libra2-resource-viewer" }
 libra2-rest-client = { path = "crates/libra2-rest-client" }
 libra2-retrier = { path = "crates/libra2-retrier" }
 libra2-rocksdb-options = { path = "storage/rocksdb-options" }
@@ -438,9 +438,9 @@ libra2-runtimes = { path = "crates/libra2-runtimes" }
 libra2-safety-rules = { path = "consensus/safety-rules" }
 libra2-schemadb = { path = "storage/schemadb" }
 libra2-scratchpad = { path = "storage/scratchpad" }
-aptos-script-composer = { path = "aptos-move/script-composer" }
+aptos-script-composer = { path = "libra2-move/script-composer" }
 aptos-sdk = { path = "sdk" }
-libra2-sdk-builder = { path = "aptos-move/libra2-sdk-builder" }
+libra2-sdk-builder = { path = "libra2-move/libra2-sdk-builder" }
 libra2-secure-net = { path = "secure/net" }
 libra2-secure-storage = { path = "secure/storage" }
 libra2-short-hex-str = { path = "crates/short-hex-str" }
@@ -463,19 +463,19 @@ libra2-time-service = { path = "crates/libra2-time-service", features = [
 libra2-transaction-emitter-lib = { path = "crates/transaction-emitter-lib" }
 libra2-transaction-generator-lib = { path = "crates/transaction-generator-lib" }
 libra2-transaction-workloads-lib = { path = "crates/transaction-workloads-lib" }
-libra2-transactional-test-harness = { path = "aptos-move/libra2-transactional-test-harness" }
+libra2-transactional-test-harness = { path = "libra2-move/libra2-transactional-test-harness" }
 libra2-types = { path = "types" }
 libra2-utils = { path = "libra2-utils" }
-libra2-validator-interface = { path = "aptos-move/libra2-validator-interface" }
+libra2-validator-interface = { path = "libra2-move/libra2-validator-interface" }
 libra2-validator-transaction-pool = { path = "crates/validator-transaction-pool" }
 libra2-vault-client = { path = "secure/storage/vault" }
-aptos-vm = { path = "aptos-move/aptos-vm" }
-libra2-vm-environment = { path = "aptos-move/libra2-vm-environment" }
-libra2-vm-logging = { path = "aptos-move/libra2-vm-logging" }
-libra2-vm-genesis = { path = "aptos-move/vm-genesis" }
-libra2-vm-types = { path = "aptos-move/libra2-vm-types" }
+aptos-vm = { path = "libra2-move/aptos-vm" }
+libra2-vm-environment = { path = "libra2-move/libra2-vm-environment" }
+libra2-vm-logging = { path = "libra2-move/libra2-vm-logging" }
+libra2-vm-genesis = { path = "libra2-move/vm-genesis" }
+libra2-vm-types = { path = "libra2-move/libra2-vm-types" }
 libra2-vm-validator = { path = "vm-validator" }
-libra2-workspace-server = { path = "aptos-move/libra2-workspace-server" }
+libra2-workspace-server = { path = "libra2-move/libra2-workspace-server" }
 libra2-warp-webserver = { path = "crates/libra2-warp-webserver" }
 aptos-cargo-cli = { path = "devtools/aptos-cargo-cli" }
 
@@ -866,8 +866,8 @@ move-prover-boogie-backend = { path = "third_party/move/move-prover/boogie-backe
 move-prover-bytecode-pipeline = { path = "third_party/move/move-prover/bytecode-pipeline" }
 move-prover-test-utils = { path = "third_party/move/move-prover/test-utils" }
 move-prover-lab = { path = "third_party/move/move-prover/lab" }
-aptos-move-stdlib = { path = "aptos-move/framework/move-stdlib" }
-aptos-table-natives = { path = "aptos-move/framework/table-natives" }
+aptos-move-stdlib = { path = "libra2-move/framework/move-stdlib" }
+aptos-table-natives = { path = "libra2-move/framework/table-natives" }
 move-resource-viewer = { path = "third_party/move/tools/move-resource-viewer" }
 move-stackless-bytecode = { path = "third_party/move/move-model/bytecode" }
 move-stackless-bytecode-test-utils = { path = "third_party/move/move-model/bytecode-test-utils" }

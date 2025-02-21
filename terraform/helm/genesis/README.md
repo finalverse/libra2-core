@@ -41,7 +41,7 @@ Aptos blockchain automated genesis ceremony for testnets
 | genesis.image.pullPolicy | string | `"IfNotPresent"` | Image pull policy to use for tools image |
 | genesis.image.repo | string | `"aptoslabs/tools"` | Image repo to use for tools image for running genesis |
 | genesis.image.tag | string | `nil` | Image tag to use for tools image. If set, overrides `imageTag` |
-| genesis.moveModulesDir | string | `"/aptos-framework/move/modules"` | The local path for move modules in the docker image. Defaults to the aptos-framework in the aptoslabs/tools docker image |
+| genesis.moveModulesDir | string | `"/libra2-framework/move/modules"` | The local path for move modules in the docker image. Defaults to the libra2-framework in the aptoslabs/tools docker image |
 | genesis.multicluster | object | `{"domain_suffixes":"","enabled":false}` | Options for multicluster mode. This is *experimental only* |
 | genesis.numValidators | int | `1` | Number of validators to include in genesis |
 | genesis.username_prefix | string | `"libra2-node"` | If `enable_onchain_discovery` is false, use this kubernetes service name prefix. It should be the fullname for the libra2-node helm release |

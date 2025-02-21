@@ -19,7 +19,7 @@ libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-db = { workspace = true }
 libra2-executor = { workspace = true }
-aptos-framework = { workspace = true }
+libra2-framework = { workspace = true }
 libra2-keygen = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-storage-interface = { workspace = true }

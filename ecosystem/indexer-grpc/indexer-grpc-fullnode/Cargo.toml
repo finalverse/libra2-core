@@ -55,7 +55,7 @@ libra2-crypto = { workspace = true }
 libra2-db = { workspace = true }
 libra2-executor = { workspace = true }
 libra2-executor-types = { workspace = true }
-aptos-framework = { workspace = true }
+libra2-framework = { workspace = true }
 libra2-genesis = { workspace = true }
 libra2-global-constants = { workspace = true }
 libra2-mempool = { workspace = true }

@@ -89,13 +89,13 @@ pub async fn publish_on_chain_dice_module(
     cli.init_package(
         "OnChainDice".to_string(),
         package_addresses,
-        Some(CliTestFramework::aptos_framework_dir()),
+        Some(CliTestFramework::libra2_framework_dir()),
     )
     .await
     .unwrap();
 
     let content =
-        include_str!("../../../../aptos-move/move-examples/on_chain_dice/sources/dice.move")
+        include_str!("../../../../libra2-move/move-examples/on_chain_dice/sources/dice.move")
             .to_string();
     cli.add_file_in_package("sources/dice.move", content);
 

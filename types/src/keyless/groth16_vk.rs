@@ -18,7 +18,7 @@ use move_core_types::{
 use serde::{Deserialize, Serialize};
 use std::fmt::{Display, Formatter};
 
-/// Reflection of aptos_framework::keyless_account::Groth16VerificationKey
+/// Reflection of libra2_framework::keyless_account::Groth16VerificationKey
 #[derive(Clone, Serialize, Deserialize, Eq, PartialEq, Debug, BCSCryptoHash, CryptoHasher)]
 pub struct Groth16VerificationKey {
     pub alpha_g1: Vec<u8>,

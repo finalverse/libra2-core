@@ -6,4 +6,4 @@ version = "0.0.0"
 DebugDemo = "0x1"
 
 [dependencies]
-AptosFramework = { local = "../../../aptos-move/framework/aptos-framework" }
+Libra2Framework = { local = "../../../aptos-move/framework/libra2-framework" }

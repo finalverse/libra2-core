@@ -19,10 +19,10 @@ const APTOS_CLI_PACKAGE_NAME: &str = "aptos";
 // Note: these paths should be relative to the root of the `aptos-core` repository,
 // and will be transformed into UTF-8 paths for cross-platform compatibility.
 const RELEVANT_FILE_PATHS_FOR_COMPILER_V2: [&str; 5] = [
-    "aptos-move/libra2-transactional-test-harness",
-    "aptos-move/e2e-move-tests",
-    "aptos-move/framework",
-    "aptos-move/move-examples",
+    "libra2-move/libra2-transactional-test-harness",
+    "libra2-move/e2e-move-tests",
+    "libra2-move/framework",
+    "libra2-move/move-examples",
     "third_party/move",
 ];
 const NO_MVC_BLOCK_V1_PACKAGES: [&str; 11] = [
@@ -41,23 +41,23 @@ const NO_MVC_BLOCK_V1_PACKAGES: [&str; 11] = [
 const RELEVANT_FILE_PATHS_FOR_EXECUTION_PERFORMANCE_TESTS: [&str; 5] = [
     ".github/workflows/execution-performance.yaml",
     ".github/workflows/workflow-run-execution-performance.yaml",
-    "aptos-move/e2e-benchmark",
+    "libra2-move/e2e-benchmark",
     "execution/libra2-executor-benchmark",
     "testsuite/single_node_performance.py",
 ];
 const RELEVANT_FILE_PATHS_FOR_FRAMEWORK_UPGRADE_TESTS: [&str; 4] = [
     ".github",
     "testsuite",
-    "aptos-move/aptos-release-builder",
-    "aptos-move/framework",
+    "libra2-move/aptos-release-builder",
+    "libra2-move/framework",
 ];
 
 // Relevant packages to monitor when deciding to run the targeted tests
-const RELEVANT_PACKAGES_FOR_COMPILER_V2: [&str; 2] = ["aptos-framework", "e2e-move-tests"];
+const RELEVANT_PACKAGES_FOR_COMPILER_V2: [&str; 2] = ["libra2-framework", "e2e-move-tests"];
 const RELEVANT_PACKAGES_FOR_EXECUTION_PERFORMANCE_TESTS: [&str; 2] =
     ["libra2-executor-benchmark", "libra2-move-e2e-benchmark"];
 const RELEVANT_PACKAGES_FOR_FRAMEWORK_UPGRADE_TESTS: [&str; 2] =
-    ["aptos-framework", "aptos-release-builder"];
+    ["libra2-framework", "aptos-release-builder"];
 
 // The targeted unit test packages to ignore (these will be run separately, by other jobs)
 const TARGETED_UNIT_TEST_PACKAGES_TO_IGNORE: [&str; 3] =
@@ -585,7 +585,7 @@ mod tests {
     #[test]
     fn test_detect_relevant_changes() {
         // Create relevant paths and packages for testing
-        let relevant_file_paths = vec![".github/actions/", "aptos-move/", "Cargo.lock", "crates/"];
+        let relevant_file_paths = vec![".github/actions/", "libra2-move/", "Cargo.lock", "crates/"];
         let relevant_package_names = vec!["libra2-node", "e2e-move-tests"];
 
         // Verify that no changes are detected
@@ -638,7 +638,7 @@ mod tests {
     #[test]
     fn test_detect_relevant_changes_file_paths() {
         // Create relevant file paths for testing
-        let relevant_file_paths = vec![".github/actions/", "aptos-move/", "Cargo.lock", "crates/"];
+        let relevant_file_paths = vec![".github/actions/", "libra2-move/", "Cargo.lock", "crates/"];
 
         // Verify that no changes are detected
         let changed_file_paths = vec![
@@ -664,7 +664,7 @@ mod tests {
         // Verify that file changes are detected correctly
         let changed_file_paths = vec![
             ".github///actions/test-action/action.yaml",
-            "aptos-move/file.txt",
+            "libra2-move/file.txt",
             "Cargo.lock",
             "crates/",
         ];

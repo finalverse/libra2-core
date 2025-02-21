@@ -51,9 +51,9 @@ async fn enable_feature_2() {
     let script = format!(
         r#"
 script {{
-    use aptos_framework::aptos_governance;
-    use aptos_framework::consensus_config;
-    use aptos_framework::randomness_config;
+    use libra2_framework::aptos_governance;
+    use libra2_framework::consensus_config;
+    use libra2_framework::randomness_config;
     use aptos_std::fixed_point64;
 
     fun main(core_resources: &signer) {{

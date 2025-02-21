@@ -3,7 +3,7 @@ name = "FrameworkUsecases"
 version = "0.0.0"
 
 [dependencies]
-AptosFramework = { local = "../../../../../aptos-move/framework/aptos-framework" }
+Libra2Framework = { local = "../../../../../aptos-move/framework/libra2-framework" }
 AptosToken = { local = "../../../../../aptos-move/framework/aptos-token" }
 AptosTokenObjects = { local = "../../../../../aptos-move/framework/aptos-token-objects" }
 

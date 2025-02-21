@@ -110,7 +110,7 @@ impl<T: std::fmt::Debug + NonPanic> From<T> for PanicOr<T> {
 }
 
 ///
-/// Error codes that follow the Move error convention of the Aptos Framework.
+/// Error codes that follow the Move error convention of the Libra2 Framework.
 ///
 
 /// Caller specified an invalid argument (http: 400)

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::entry_point_trait::PreBuiltPackages;
-use aptos_framework::{
+use libra2_framework::{
     natives::code::PackageMetadata, KnownAttribute, APTOS_METADATA_KEY, APTOS_METADATA_KEY_V1,
 };
 use aptos_sdk::{
@@ -274,7 +274,7 @@ fn update(
                 }
             }
         }
-        if let Some(mut metadata) = aptos_framework::get_metadata_from_compiled_module(&new_module)
+        if let Some(mut metadata) = libra2_framework::get_metadata_from_compiled_module(&new_module)
         {
             metadata
                 .struct_attributes

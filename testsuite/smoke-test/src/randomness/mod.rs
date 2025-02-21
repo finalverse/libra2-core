@@ -258,8 +258,8 @@ async fn verify_randomness(
 fn script_to_enable_main_logic() -> String {
     r#"
 script {
-    use aptos_framework::aptos_governance;
-    use aptos_framework::randomness_config;
+    use libra2_framework::aptos_governance;
+    use libra2_framework::randomness_config;
     use aptos_std::fixed_point64;
 
     fun main(core_resources: &signer) {
@@ -279,8 +279,8 @@ script {
 fn script_to_disable_main_logic() -> String {
     r#"
 script {
-    use aptos_framework::aptos_governance;
-    use aptos_framework::randomness_config;
+    use libra2_framework::aptos_governance;
+    use libra2_framework::randomness_config;
     fun main(core_resources: &signer) {
         let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0x1);
         let config = randomness_config::new_off();
@@ -297,8 +297,8 @@ fn script_to_update_consensus_config(config: &OnChainConsensusConfig) -> String 
     format!(
         r#"
 script {{
-    use aptos_framework::aptos_governance;
-    use aptos_framework::consensus_config;
+    use libra2_framework::aptos_governance;
+    use libra2_framework::consensus_config;
 
     fun main(core_resources: &signer) {{
         let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0x1);

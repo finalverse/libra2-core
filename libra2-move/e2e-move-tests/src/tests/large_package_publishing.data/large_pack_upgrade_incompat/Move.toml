@@ -1,0 +1,9 @@
+[package]
+name = "LargePackageExample"
+version = "0.0.0"
+upgrade_policy = "compatible"
+[dependencies]
+Libra2Framework = { local = "../../../../../framework/libra2-framework" }
+
+[addresses]
+large_package_example = "_"

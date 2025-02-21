@@ -1,0 +1,12 @@
+[package]
+name = "Examples"
+version = "0.0.0"
+
+[dependencies]
+Libra2Framework = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "libra2-framework", rev = "mainnet" }
+AptosToken = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "aptos-token", rev = "mainnet" }
+
+[addresses]
+libra2_framework = "0x1"
+# replace the admin_addr with the actual admin address we created using CLI
+admin_addr = "0xbeef"

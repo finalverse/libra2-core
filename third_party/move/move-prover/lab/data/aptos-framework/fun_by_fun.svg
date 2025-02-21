@@ -537,7 +537,7 @@ stake::withdraw_with_cap
 2.063
 </text>
 <text x="0" y="2679" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-system_addresses::assert_aptos_framework
+system_addresses::assert_libra2_framework
 </text>
 <rect x="0" y="2692" width="12" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="21" y="2693" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -3302,7 +3302,7 @@ aptos_governance::get_required_proposer_stake
 1.590
 </text>
 <text x="0" y="16484" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-system_addresses::is_aptos_framework_address
+system_addresses::is_libra2_framework_address
 </text>
 <rect x="0" y="16497" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="16498" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">

@@ -459,7 +459,7 @@ fn module_is_in_aptos_libs(module_address: Option<Spanned<Address>>) -> bool {
     const APTOS_STDLIB_NAME: &str = "aptos_std";
     static APTOS_STDLIB_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
         Lazy::new(|| NumericalAddress::parse_str("0x1").unwrap());
-    const APTOS_FRAMEWORK_NAME: &str = "aptos_framework";
+    const APTOS_FRAMEWORK_NAME: &str = "libra2_framework";
     static APTOS_FRAMEWORK_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
         Lazy::new(|| NumericalAddress::parse_str("0x1").unwrap());
     const APTOS_TOKEN_NAME: &str = "aptos_token";

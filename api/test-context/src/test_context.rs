@@ -19,7 +19,7 @@ use libra2_crypto::{ed25519::Ed25519PrivateKey, hash::HashValue, SigningKey};
 use libra2_db::Libra2DB;
 use libra2_executor::{block_executor::BlockExecutor, db_bootstrapper};
 use libra2_executor_types::BlockExecutorTrait;
-use aptos_framework::BuiltPackage;
+use libra2_framework::BuiltPackage;
 use aptos_indexer_grpc_table_info::internal_indexer_db_service::MockInternalIndexerDBService;
 use libra2_mempool::mocks::MockSharedMempool;
 use libra2_mempool_notifications::MempoolNotificationSender;
@@ -384,10 +384,10 @@ impl TestContext {
         // This function executes the following script as the root account:
         // script {
         //   fun main(root: &signer, feature: u64) {
-        //     let aptos_framework = aptos_framework::aptos_governance::get_signer_testnet_only(root, @0x1);
-        //     std::features::change_feature_flags_for_next_epoch(&aptos_framework, vector[feature], vector[]);
-        //     aptos_framework::aptos_governance::reconfigure(&aptos_framework);
-        //     std::features::on_new_epoch(&aptos_framework);
+        //     let libra2_framework = libra2_framework::aptos_governance::get_signer_testnet_only(root, @0x1);
+        //     std::features::change_feature_flags_for_next_epoch(&libra2_framework, vector[feature], vector[]);
+        //     libra2_framework::aptos_governance::reconfigure(&libra2_framework);
+        //     std::features::on_new_epoch(&libra2_framework);
         //   }
         // }
         let mut root = self.root_account().await;
@@ -404,10 +404,10 @@ impl TestContext {
         // This function executes the following script as the root account:
         // script {
         //   fun main(root: &signer, feature: u64) {
-        //     let aptos_framework = aptos_framework::aptos_governance::get_signer_testnet_only(root, @0x1);
-        //     std::features::change_feature_flags_for_next_epoch(&aptos_framework, vector[], vector[feature]);
-        //     aptos_framework::aptos_governance::reconfigure(&aptos_framework);
-        //     std::features::on_new_epoch(&aptos_framework);
+        //     let libra2_framework = libra2_framework::aptos_governance::get_signer_testnet_only(root, @0x1);
+        //     std::features::change_feature_flags_for_next_epoch(&libra2_framework, vector[], vector[feature]);
+        //     libra2_framework::aptos_governance::reconfigure(&libra2_framework);
+        //     std::features::on_new_epoch(&libra2_framework);
         //   }
         // }
         let mut root = self.root_account().await;
@@ -756,7 +756,7 @@ impl TestContext {
         path: PathBuf,
         named_addresses: Vec<(String, AccountAddress)>,
     ) -> TransactionPayload {
-        let mut build_options = aptos_framework::BuildOptions::default();
+        let mut build_options = libra2_framework::BuildOptions::default();
         named_addresses.into_iter().for_each(|(name, address)| {
             build_options.named_addresses.insert(name, address);
         });

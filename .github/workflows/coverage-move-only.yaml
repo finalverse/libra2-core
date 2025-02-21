@@ -7,14 +7,14 @@ on:
       - 'main'
     paths:
       - 'third_party/move/**'
-      - 'aptos-move/e2e-move-tests/**'
-      - 'aptos-move/framework/**'
+      - '../../libra2-move/e2e-move-tests/**'
+      - '../../libra2-move/framework/**'
       - '.github/workflows/coverage-move-only.yaml'
   # pull_request:
   # paths:
   #   - 'third_party/move/**'
-  #   - 'aptos-move/e2e-move-tests/**'
-  #   - 'aptos-move/framework/**'
+  #   - 'libra2-move/e2e-move-tests/**'
+  #   - 'libra2-move/framework/**'
   #   - '.github/workflows/coverage-move-only.yaml'
 
 env:
@@ -50,7 +50,7 @@ jobs:
         with:
           tool: nextest,cargo-llvm-cov
       - run: docker run --detach -p 5432:5432 cimg/postgres:14.2
-      - run: cargo llvm-cov nextest --lcov --output-path lcov_unit.info --ignore-run-fail -p aptos-framework -p "move*"
+      - run: cargo llvm-cov nextest --lcov --output-path lcov_unit.info --ignore-run-fail -p libra2-framework -p "move*"
         env:
           INDEXER_DATABASE_URL: postgresql://postgres@localhost/postgres
       - uses: actions/upload-artifact@v4

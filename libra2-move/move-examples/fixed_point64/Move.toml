@@ -1,0 +1,16 @@
+[package]
+name = "fixed_point64"
+version = "1.0.0"
+authors = []
+
+[addresses]
+fixed_point64 = "0xdeadbeef"
+
+[dev-addresses]
+
+[dependencies.Libra2Framework]
+git = "https://github.com/aptos-labs/libra2-framework.git"
+rev = "mainnet"
+subdir = "libra2-framework"
+
+[dev-dependencies]

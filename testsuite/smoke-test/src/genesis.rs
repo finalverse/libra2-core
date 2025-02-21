@@ -449,9 +449,9 @@ fn generate_genesis_transaction(
     let script = format!(
         r#"
         script {{
-            use aptos_framework::stake;
-            use aptos_framework::aptos_governance;
-            use aptos_framework::block;
+            use libra2_framework::stake;
+            use libra2_framework::aptos_governance;
+            use libra2_framework::block;
 
             fun main(vm_signer: &signer, framework_signer: &signer) {{
                 stake::remove_validators(framework_signer, &vector[@0x{}]);
@@ -473,9 +473,9 @@ fn generate_genesis_transaction(
     let framework_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("..")
         .join("..")
-        .join("aptos-move")
+        .join("libra2-move")
         .join("framework")
-        .join("aptos-framework");
+        .join("libra2-framework");
 
     // Create a temporary file to hold the genesis blob
     let genesis_blob_path = TempPath::new();

@@ -29,7 +29,7 @@ use crate::{
 };
 use aptos_api_types::Libra2ErrorCode;
 use libra2_crypto::HashValue;
-use aptos_framework::{
+use libra2_framework::{
     chunked_publish::{
         chunk_package_and_create_payloads, large_packages_cleanup_staging_area, PublishType,
         LARGE_PACKAGES_MODULE_ADDRESS,
@@ -89,7 +89,7 @@ mod show;
 pub mod stored_package;
 
 const HELLO_BLOCKCHAIN_EXAMPLE: &str = include_str!(
-    "../../../../aptos-move/move-examples/hello_blockchain/sources/hello_blockchain.move"
+    "../../../../libra2-move/move-examples/hello_blockchain/sources/hello_blockchain.move"
 );
 
 /// Tool for Move smart contract related operations
@@ -176,13 +176,13 @@ impl MoveTool {
 
 #[derive(Default, Parser)]
 pub struct FrameworkPackageArgs {
-    /// Git revision or branch for the Aptos framework
+    /// Git revision or branch for the Libra2 framework
     ///
     /// This is mutually exclusive with `--framework-local-dir`
     #[clap(long, group = "framework_package_args")]
     pub(crate) framework_git_rev: Option<String>,
 
-    /// Local framework directory for the Aptos framework
+    /// Local framework directory for the Libra2 framework
     ///
     /// This is mutually exclusive with `--framework-git-rev`
     #[clap(long, value_parser, group = "framework_package_args")]
@@ -205,9 +205,9 @@ impl FrameworkPackageArgs {
         addresses: BTreeMap<String, ManifestNamedAddress>,
         prompt_options: PromptOptions,
     ) -> CliTypedResult<()> {
-        const APTOS_FRAMEWORK: &str = "AptosFramework";
-        const APTOS_GIT_PATH: &str = "https://github.com/aptos-labs/aptos-framework.git";
-        const SUBDIR_PATH: &str = "aptos-framework";
+        const APTOS_FRAMEWORK: &str = "Libra2Framework";
+        const APTOS_GIT_PATH: &str = "https://github.com/aptos-labs/libra2-framework.git";
+        const SUBDIR_PATH: &str = "libra2-framework";
         const DEFAULT_BRANCH: &str = "mainnet";
 
         let move_toml = package_dir.join(SourcePackageLayout::Manifest.path());

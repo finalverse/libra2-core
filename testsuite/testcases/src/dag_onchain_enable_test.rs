@@ -87,8 +87,8 @@ impl NetworkLoadTest for DagOnChainEnableTest {
         let update_consensus_config_script = format!(
             r#"
     script {{
-        use aptos_framework::aptos_governance;
-        use aptos_framework::consensus_config;
+        use libra2_framework::aptos_governance;
+        use libra2_framework::consensus_config;
         fun main(core_resources: &signer) {{
             let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0000000000000000000000000000000000000000000000000000000000000001);
             let config_bytes = {};
@@ -139,8 +139,8 @@ impl NetworkLoadTest for DagOnChainEnableTest {
         let update_consensus_config_script = format!(
             r#"
     script {{
-        use aptos_framework::aptos_governance;
-        use aptos_framework::consensus_config;
+        use libra2_framework::aptos_governance;
+        use libra2_framework::consensus_config;
         fun main(core_resources: &signer) {{
             let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0000000000000000000000000000000000000000000000000000000000000001);
             let config_bytes = {};
@@ -187,8 +187,8 @@ impl NetworkLoadTest for DagOnChainEnableTest {
         let update_consensus_config_script = format!(
             r#"
     script {{
-        use aptos_framework::aptos_governance;
-        use aptos_framework::consensus_config;
+        use libra2_framework::aptos_governance;
+        use libra2_framework::consensus_config;
         fun main(core_resources: &signer) {{
             let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0000000000000000000000000000000000000000000000000000000000000001);
             let config_bytes = {};

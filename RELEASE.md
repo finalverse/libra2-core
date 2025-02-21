@@ -7,8 +7,8 @@
                            \                                  \                         \
                             \___libra2-node-v1.2.0 tag          \                         \
                              \                                  \                         \
-                              \      aptos-framework-v1.3.0 tag__\                     devnet branch
-   aptos-framework-v1.2.0 tag__\                                  \                     
+                              \      libra2-framework-v1.3.0 tag__\                     devnet branch
+   libra2-framework-v1.2.0 tag__\                                  \                     
                                 \___libra2-node-v1.2.4 tag          \___libra2-node-v1.3.0 tag
                                  \                                  \
                                   \                                  \
@@ -20,7 +20,7 @@
 All current development occurs on the `main` branch. All new feature developments have a feature flag to gate it off during development. Feature flags are turned on *after* the development is complete and passes Governance.
 
 ### devnet branch
-The `devnet` branch is created on the `main` branch every week. It is used to deploy devnet and allows the Aptos Community to explore the most recent changes to the Aptos node binary and Aptos framework. Follow along in our [#devnet-release](https://discord.com/channels/945856774056083548/956692649430093904) channel on [Discord](https://discord.gg/aptosnetwork).
+The `devnet` branch is created on the `main` branch every week. It is used to deploy devnet and allows the Aptos Community to explore the most recent changes to the Aptos node binary and Libra2 framework. Follow along in our [#devnet-release](https://discord.com/channels/945856774056083548/956692649430093904) channel on [Discord](https://discord.gg/aptosnetwork).
 
 ### aptos-release-v*X.Y* release branches
 These are release branches based on Aptos release planning timeline. They are created off
@@ -29,7 +29,7 @@ the `main` branch every 1-2 months.
 ### libra2-node-v*X.Y.Z* release tag
 The aptos node release tags are created for validator/fullnode deployment of the given release branch. The minor number *Z* will increment when a new hot-fix release is required on the release branch. Aptos team will publish the matching tag docker images on [Aptos Docker Hub](https://hub.docker.com/r/aptoslabs/validator/tags) when it's available.
 
-### aptos-framework-v*X.Y.Z* release tag
+### libra2-framework-v*X.Y.Z* release tag
 The aptos framework release tags are created to facilitate the on-chain framework upgrade of the given release branch. The minor number *Z* will increment when a new hot-fix release or a new  framework update is required on this release branch.
 
 ### aptos-cli-v*X.Y.Z* release tag

@@ -32,7 +32,7 @@ libra2-db-indexer = { workspace = true }
 libra2-dkg-runtime = { workspace = true }
 libra2-event-notifications = { workspace = true }
 libra2-executor = { workspace = true }
-aptos-framework = { workspace = true }
+libra2-framework = { workspace = true }
 libra2-genesis = { workspace = true }
 aptos-indexer = { workspace = true, optional = true }
 aptos-indexer-grpc-fullnode = { workspace = true }

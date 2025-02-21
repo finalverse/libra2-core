@@ -1,0 +1,23 @@
+[package]
+name = "aptos-gas-calibration"
+version = "0.1.0"
+edition = "2021"
+license = { workspace = true }
+
+[dependencies]
+anyhow = { workspace = true }
+libra2-abstract-gas-usage = { workspace = true }
+aptos-cached-packages = { workspace = true }
+libra2-framework = { workspace = true }
+libra2-gas-algebra = { workspace = true }
+aptos-gas-schedule = { workspace = true }
+libra2-language-e2e-tests = { workspace = true }
+libra2-types = { workspace = true }
+bcs = { workspace = true }
+clap = { workspace = true }
+float-cmp = { workspace = true }
+move-binary-format = { workspace = true }
+move-core-types = { workspace = true }
+move-ir-compiler = { workspace = true }
+nalgebra = { workspace = true }
+walkdir = { workspace = true }

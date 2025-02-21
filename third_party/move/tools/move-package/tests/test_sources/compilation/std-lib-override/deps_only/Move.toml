@@ -8,9 +8,9 @@ B = "0x43"
 
 [dev-addresses]
 
-[dependencies.AptosFramework]
-git = "https://github.com/aptos-labs/aptos-framework.git"
+[dependencies.Libra2Framework]
+git = "https://github.com/aptos-labs/libra2-framework.git"
 rev = "mainnet"
-subdir = "aptos-framework"
+subdir = "libra2-framework"
 
 [dev-dependencies]

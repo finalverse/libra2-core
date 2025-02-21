@@ -21,7 +21,7 @@ use crate::{
 use aptos_api_types::ViewFunction;
 use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::HashValue;
-use aptos_framework::{BuildOptions, BuiltPackage, ReleasePackage};
+use libra2_framework::{BuildOptions, BuiltPackage, ReleasePackage};
 use libra2_logger::warn;
 use libra2_rest_client::{
     aptos_api_types::{Address, HexEncodedBytes, U128, U64},
@@ -723,7 +723,7 @@ impl CliCommand<Vec<TransactionSummary>> for SubmitVote {
 }
 
 /// Submit a transaction to approve a proposal's script hash to bypass the transaction size limit.
-/// This is needed for upgrading large packages such as aptos-framework.
+/// This is needed for upgrading large packages such as libra2-framework.
 #[derive(Parser)]
 pub struct ApproveExecutionHash {
     /// Id of the proposal to vote on
@@ -1084,9 +1084,9 @@ impl GenerateExecutionHash {
                 let mut path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
                 path.pop();
                 path.pop();
-                path.join("aptos-move")
+                path.join("libra2-move")
                     .join("framework")
-                    .join("aptos-framework")
+                    .join("libra2-framework")
                     .canonicalize()
                     .map_err(|err| {
                         CliError::IO(

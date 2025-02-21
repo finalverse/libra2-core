@@ -9,7 +9,7 @@ use crate::{
     CliCommand,
 };
 use libra2_config::config::Token;
-use aptos_framework::ReleaseBundle;
+use libra2_framework::ReleaseBundle;
 use libra2_genesis::config::Layout;
 use libra2_github_client::Client as GithubClient;
 use async_trait::async_trait;

@@ -1,0 +1,12 @@
+[package]
+name = "VeiledCoin"
+version = "0.0.1"
+
+[dependencies]
+Libra2Framework = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "libra2-framework", rev = "mainnet" }
+
+[addresses]
+std = "0x1"
+aptos_std = "0x1"
+libra2_framework = "0x1"
+veiled_coin = "_"

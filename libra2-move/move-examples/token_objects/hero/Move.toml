@@ -1,0 +1,10 @@
+[package]
+name = "Hero"
+version = "0.0.0"
+
+[addresses]
+hero = "_"
+
+[dependencies]
+Libra2Framework = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "libra2-framework", rev = "mainnet" }
+AptosTokenObjects = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "aptos-token-objects", rev = "mainnet" }

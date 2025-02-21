@@ -14,7 +14,7 @@ use std::{
     str::FromStr,
 };
 
-/// Reflection of aptos_framework::function_info::FunctionInfo
+/// Reflection of libra2_framework::function_info::FunctionInfo
 #[derive(Serialize, Deserialize, Eq, PartialEq, Debug, Clone, Hash)]
 #[cfg_attr(any(test, feature = "fuzzing"), derive(Arbitrary))]
 pub struct FunctionInfo {

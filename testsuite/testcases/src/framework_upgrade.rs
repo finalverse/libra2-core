@@ -29,7 +29,7 @@ impl Test for FrameworkUpgrade {
     }
 }
 
-const RELEASE_YAML_PATH: &str = "aptos-move/aptos-release-builder/data";
+const RELEASE_YAML_PATH: &str = "libra2-move/aptos-release-builder/data";
 const IGNORED_YAMLS: [&str; 2] = ["release.yaml", "example.yaml"];
 
 fn is_release_yaml(path: &Path) -> bool {

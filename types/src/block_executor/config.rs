@@ -8,7 +8,7 @@ use serde::{Deserialize, Serialize};
 /// block executions, these configurations allow to specify cache sizes, etc.
 #[derive(Clone, Debug)]
 pub struct BlockExecutorModuleCacheLocalConfig {
-    /// If true, when global caches are empty, Aptos framework is prefetched into module cache.
+    /// If true, when global caches are empty, Libra2 framework is prefetched into module cache.
     pub prefetch_framework_code: bool,
     /// The maximum size of module cache (the sum of serialized sizes of all cached modules in
     /// bytes).

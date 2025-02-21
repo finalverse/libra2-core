@@ -56,7 +56,7 @@ cd aptos-move/move-examples/scripts/minter
 aptos move compile
 ```
 
-If you have issues with this, try deleting `~/.move`, updating your Aptos CLI, and changing the AptosFramework version.
+If you have issues with this, try deleting `~/.move`, updating your Aptos CLI, and changing the Libra2Framework version.
 
 Then build the faucet as normal (from the root of the repo):
 ```

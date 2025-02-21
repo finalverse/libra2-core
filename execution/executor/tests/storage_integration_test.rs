@@ -43,7 +43,7 @@ fn test_genesis() {
 
     let account_resource_path =
         StateKey::resource_typed::<AccountResource>(&CORE_CODE_ADDRESS).unwrap();
-    let (aptos_framework_account_resource, state_proof) = db
+    let (libra2_framework_account_resource, state_proof) = db
         .reader
         .get_state_value_with_proof_by_version(&account_resource_path, 0)
         .unwrap();
@@ -60,7 +60,7 @@ fn test_genesis() {
         .verify(
             txn_info.state_checkpoint_hash().unwrap(),
             account_resource_path.hash(),
-            aptos_framework_account_resource.as_ref(),
+            libra2_framework_account_resource.as_ref(),
         )
         .unwrap();
 }

@@ -7,7 +7,7 @@ use libra2_config::{config::NodeConfig, keys::ConfigKey, utils::get_available_po
 use libra2_crypto::ed25519::Ed25519PrivateKey;
 use libra2_faucet_core::server::{FunderKeyEnum, RunConfig};
 use aptos_forge::{ActiveNodesGuard, Factory, LocalFactory, LocalSwarm, Node};
-use aptos_framework::ReleaseBundle;
+use libra2_framework::ReleaseBundle;
 use libra2_genesis::builder::{InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn};
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
@@ -55,7 +55,7 @@ impl SwarmBuilder {
     }
 
     pub fn with_aptos_testnet(mut self) -> Self {
-        self.genesis_framework = Some(aptos_framework::testnet_release_bundle().clone());
+        self.genesis_framework = Some(libra2_framework::testnet_release_bundle().clone());
         self
     }
 

@@ -9491,7 +9491,7 @@
             "friends": [],
             "exposed_functions": [
               {
-                "name": "assert_aptos_framework",
+                "name": "assert_libra2_framework",
                 "visibility": "public",
                 "is_entry": false,
                 "generic_type_params": [],
@@ -9541,7 +9541,7 @@
                 "return": []
               },
               {
-                "name": "is_aptos_framework_address",
+                "name": "is_libra2_framework_address",
                 "visibility": "public",
                 "is_entry": false,
                 "generic_type_params": [],
@@ -10972,279 +10972,279 @@
                 "val": "1"
               },
               {
-                "key": "aptos_framework.account.create_address.base",
+                "key": "libra2_framework.account.create_address.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.account.create_signer.base",
+                "key": "libra2_framework.account.create_signer.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.base",
+                "key": "libra2_framework.bls12381.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_pubkey_deserialize",
+                "key": "libra2_framework.bls12381.per_pubkey_deserialize",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_pubkey_aggregate",
+                "key": "libra2_framework.bls12381.per_pubkey_aggregate",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_pubkey_subgroup_check",
+                "key": "libra2_framework.bls12381.per_pubkey_subgroup_check",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_sig_deserialize",
+                "key": "libra2_framework.bls12381.per_sig_deserialize",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_sig_aggregate",
+                "key": "libra2_framework.bls12381.per_sig_aggregate",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_sig_subgroup_check",
+                "key": "libra2_framework.bls12381.per_sig_subgroup_check",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_sig_verify",
+                "key": "libra2_framework.bls12381.per_sig_verify",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_pop_verify",
+                "key": "libra2_framework.bls12381.per_pop_verify",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_pairing",
+                "key": "libra2_framework.bls12381.per_pairing",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_msg_hashing",
+                "key": "libra2_framework.bls12381.per_msg_hashing",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.bls12381.per_byte_hashing",
+                "key": "libra2_framework.bls12381.per_byte_hashing",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.signature.base",
+                "key": "libra2_framework.signature.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.signature.per_pubkey_deserialize",
+                "key": "libra2_framework.signature.per_pubkey_deserialize",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.signature.per_pubkey_small_order_check",
+                "key": "libra2_framework.signature.per_pubkey_small_order_check",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.signature.per_sig_deserialize",
+                "key": "libra2_framework.signature.per_sig_deserialize",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.signature.per_sig_strict_verify",
+                "key": "libra2_framework.signature.per_sig_strict_verify",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.signature.per_msg_hashing_base",
+                "key": "libra2_framework.signature.per_msg_hashing_base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.signature.per_msg_byte_hashing",
+                "key": "libra2_framework.signature.per_msg_byte_hashing",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.secp256k1.base",
+                "key": "libra2_framework.secp256k1.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.secp256k1.ecdsa_recover",
+                "key": "libra2_framework.secp256k1.ecdsa_recover",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.basepoint_mul",
+                "key": "libra2_framework.ristretto255.basepoint_mul",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.basepoint_double_mul",
+                "key": "libra2_framework.ristretto255.basepoint_double_mul",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_add",
+                "key": "libra2_framework.ristretto255.point_add",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_compress",
+                "key": "libra2_framework.ristretto255.point_compress",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_decompress",
+                "key": "libra2_framework.ristretto255.point_decompress",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_equals",
+                "key": "libra2_framework.ristretto255.point_equals",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_from_64_uniform_bytes",
+                "key": "libra2_framework.ristretto255.point_from_64_uniform_bytes",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_identity",
+                "key": "libra2_framework.ristretto255.point_identity",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_mul",
+                "key": "libra2_framework.ristretto255.point_mul",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_neg",
+                "key": "libra2_framework.ristretto255.point_neg",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_sub",
+                "key": "libra2_framework.ristretto255.point_sub",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.point_parse_arg",
+                "key": "libra2_framework.ristretto255.point_parse_arg",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_sha512_per_byte",
+                "key": "libra2_framework.ristretto255.scalar_sha512_per_byte",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_sha512_per_hash",
+                "key": "libra2_framework.ristretto255.scalar_sha512_per_hash",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_add",
+                "key": "libra2_framework.ristretto255.scalar_add",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_reduced_from_32_bytes",
+                "key": "libra2_framework.ristretto255.scalar_reduced_from_32_bytes",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_uniform_from_64_bytes",
+                "key": "libra2_framework.ristretto255.scalar_uniform_from_64_bytes",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_from_u128",
+                "key": "libra2_framework.ristretto255.scalar_from_u128",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_from_u64",
+                "key": "libra2_framework.ristretto255.scalar_from_u64",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_invert",
+                "key": "libra2_framework.ristretto255.scalar_invert",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_is_canonical",
+                "key": "libra2_framework.ristretto255.scalar_is_canonical",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_mul",
+                "key": "libra2_framework.ristretto255.scalar_mul",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_neg",
+                "key": "libra2_framework.ristretto255.scalar_neg",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_sub",
+                "key": "libra2_framework.ristretto255.scalar_sub",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.ristretto255.scalar_parse_arg",
+                "key": "libra2_framework.ristretto255.scalar_parse_arg",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.hash.sip_hash.base",
+                "key": "libra2_framework.hash.sip_hash.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.hash.sip_hash.per_byte",
+                "key": "libra2_framework.hash.sip_hash.per_byte",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.hash.keccak256.base",
+                "key": "libra2_framework.hash.keccak256.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.hash.keccak256.per_byte",
+                "key": "libra2_framework.hash.keccak256.per_byte",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.type_info.type_of.base",
+                "key": "libra2_framework.type_info.type_of.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.type_info.type_of.per_abstract_memory_unit",
+                "key": "libra2_framework.type_info.type_of.per_abstract_memory_unit",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.type_info.type_name.base",
+                "key": "libra2_framework.type_info.type_name.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.type_info.type_name.per_abstract_memory_unit",
+                "key": "libra2_framework.type_info.type_name.per_abstract_memory_unit",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.util.from_bytes.base",
+                "key": "libra2_framework.util.from_bytes.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.util.from_bytes.per_byte",
+                "key": "libra2_framework.util.from_bytes.per_byte",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.transaction_context.get_script_hash.base",
+                "key": "libra2_framework.transaction_context.get_script_hash.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.code.request_publish.base",
+                "key": "libra2_framework.code.request_publish.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.code.request_publish.per_byte",
+                "key": "libra2_framework.code.request_publish.per_byte",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.event.write_to_event_store.base",
+                "key": "libra2_framework.event.write_to_event_store.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.event.write_to_event_store.per_abstract_memory_unit",
+                "key": "libra2_framework.event.write_to_event_store.per_abstract_memory_unit",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.state_storage.get_usage.base",
+                "key": "libra2_framework.state_storage.get_usage.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.aggregator.add.base",
+                "key": "libra2_framework.aggregator.add.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.aggregator.read.base",
+                "key": "libra2_framework.aggregator.read.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.aggregator.sub.base",
+                "key": "libra2_framework.aggregator.sub.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.aggregator.destroy.base",
+                "key": "libra2_framework.aggregator.destroy.base",
                 "val": "1"
               },
               {
-                "key": "aptos_framework.aggregator_factory.new_aggregator.base",
+                "key": "libra2_framework.aggregator_factory.new_aggregator.base",
                 "val": "1"
               },
               {
@@ -23451,7 +23451,7 @@
                 "friends": [],
                 "exposed_functions": [
                   {
-                    "name": "assert_aptos_framework",
+                    "name": "assert_libra2_framework",
                     "visibility": "public",
                     "is_entry": false,
                     "generic_type_params": [],
@@ -23501,7 +23501,7 @@
                     "return": []
                   },
                   {
-                    "name": "is_aptos_framework_address",
+                    "name": "is_libra2_framework_address",
                     "visibility": "public",
                     "is_entry": false,
                     "generic_type_params": [],
@@ -24682,7 +24682,7 @@
                         "source_map": "0x"
                       }
                     ],
-                    "name": "AptosFramework",
+                    "name": "Libra2Framework",
                     "source_digest": "09C9ACBC0EB783802AD9881AA2758F7FE88523B528194473DCA1F5330C33F8F9",
                     "upgrade_number": "0",
                     "upgrade_policy": {
@@ -25459,279 +25459,279 @@
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.account.create_address.base",
+                    "key": "libra2_framework.account.create_address.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.account.create_signer.base",
+                    "key": "libra2_framework.account.create_signer.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.base",
+                    "key": "libra2_framework.bls12381.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_pubkey_deserialize",
+                    "key": "libra2_framework.bls12381.per_pubkey_deserialize",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_pubkey_aggregate",
+                    "key": "libra2_framework.bls12381.per_pubkey_aggregate",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_pubkey_subgroup_check",
+                    "key": "libra2_framework.bls12381.per_pubkey_subgroup_check",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_sig_deserialize",
+                    "key": "libra2_framework.bls12381.per_sig_deserialize",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_sig_aggregate",
+                    "key": "libra2_framework.bls12381.per_sig_aggregate",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_sig_subgroup_check",
+                    "key": "libra2_framework.bls12381.per_sig_subgroup_check",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_sig_verify",
+                    "key": "libra2_framework.bls12381.per_sig_verify",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_pop_verify",
+                    "key": "libra2_framework.bls12381.per_pop_verify",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_pairing",
+                    "key": "libra2_framework.bls12381.per_pairing",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_msg_hashing",
+                    "key": "libra2_framework.bls12381.per_msg_hashing",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.bls12381.per_byte_hashing",
+                    "key": "libra2_framework.bls12381.per_byte_hashing",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.signature.base",
+                    "key": "libra2_framework.signature.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.signature.per_pubkey_deserialize",
+                    "key": "libra2_framework.signature.per_pubkey_deserialize",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.signature.per_pubkey_small_order_check",
+                    "key": "libra2_framework.signature.per_pubkey_small_order_check",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.signature.per_sig_deserialize",
+                    "key": "libra2_framework.signature.per_sig_deserialize",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.signature.per_sig_strict_verify",
+                    "key": "libra2_framework.signature.per_sig_strict_verify",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.signature.per_msg_hashing_base",
+                    "key": "libra2_framework.signature.per_msg_hashing_base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.signature.per_msg_byte_hashing",
+                    "key": "libra2_framework.signature.per_msg_byte_hashing",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.secp256k1.base",
+                    "key": "libra2_framework.secp256k1.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.secp256k1.ecdsa_recover",
+                    "key": "libra2_framework.secp256k1.ecdsa_recover",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.basepoint_mul",
+                    "key": "libra2_framework.ristretto255.basepoint_mul",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.basepoint_double_mul",
+                    "key": "libra2_framework.ristretto255.basepoint_double_mul",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_add",
+                    "key": "libra2_framework.ristretto255.point_add",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_compress",
+                    "key": "libra2_framework.ristretto255.point_compress",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_decompress",
+                    "key": "libra2_framework.ristretto255.point_decompress",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_equals",
+                    "key": "libra2_framework.ristretto255.point_equals",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_from_64_uniform_bytes",
+                    "key": "libra2_framework.ristretto255.point_from_64_uniform_bytes",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_identity",
+                    "key": "libra2_framework.ristretto255.point_identity",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_mul",
+                    "key": "libra2_framework.ristretto255.point_mul",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_neg",
+                    "key": "libra2_framework.ristretto255.point_neg",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_sub",
+                    "key": "libra2_framework.ristretto255.point_sub",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.point_parse_arg",
+                    "key": "libra2_framework.ristretto255.point_parse_arg",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_sha512_per_byte",
+                    "key": "libra2_framework.ristretto255.scalar_sha512_per_byte",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_sha512_per_hash",
+                    "key": "libra2_framework.ristretto255.scalar_sha512_per_hash",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_add",
+                    "key": "libra2_framework.ristretto255.scalar_add",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_reduced_from_32_bytes",
+                    "key": "libra2_framework.ristretto255.scalar_reduced_from_32_bytes",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_uniform_from_64_bytes",
+                    "key": "libra2_framework.ristretto255.scalar_uniform_from_64_bytes",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_from_u128",
+                    "key": "libra2_framework.ristretto255.scalar_from_u128",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_from_u64",
+                    "key": "libra2_framework.ristretto255.scalar_from_u64",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_invert",
+                    "key": "libra2_framework.ristretto255.scalar_invert",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_is_canonical",
+                    "key": "libra2_framework.ristretto255.scalar_is_canonical",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_mul",
+                    "key": "libra2_framework.ristretto255.scalar_mul",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_neg",
+                    "key": "libra2_framework.ristretto255.scalar_neg",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_sub",
+                    "key": "libra2_framework.ristretto255.scalar_sub",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.ristretto255.scalar_parse_arg",
+                    "key": "libra2_framework.ristretto255.scalar_parse_arg",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.hash.sip_hash.base",
+                    "key": "libra2_framework.hash.sip_hash.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.hash.sip_hash.per_byte",
+                    "key": "libra2_framework.hash.sip_hash.per_byte",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.hash.keccak256.base",
+                    "key": "libra2_framework.hash.keccak256.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.hash.keccak256.per_byte",
+                    "key": "libra2_framework.hash.keccak256.per_byte",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.type_info.type_of.base",
+                    "key": "libra2_framework.type_info.type_of.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.type_info.type_of.per_abstract_memory_unit",
+                    "key": "libra2_framework.type_info.type_of.per_abstract_memory_unit",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.type_info.type_name.base",
+                    "key": "libra2_framework.type_info.type_name.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.type_info.type_name.per_abstract_memory_unit",
+                    "key": "libra2_framework.type_info.type_name.per_abstract_memory_unit",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.util.from_bytes.base",
+                    "key": "libra2_framework.util.from_bytes.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.util.from_bytes.per_byte",
+                    "key": "libra2_framework.util.from_bytes.per_byte",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.transaction_context.get_script_hash.base",
+                    "key": "libra2_framework.transaction_context.get_script_hash.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.code.request_publish.base",
+                    "key": "libra2_framework.code.request_publish.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.code.request_publish.per_byte",
+                    "key": "libra2_framework.code.request_publish.per_byte",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.event.write_to_event_store.base",
+                    "key": "libra2_framework.event.write_to_event_store.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.event.write_to_event_store.per_abstract_memory_unit",
+                    "key": "libra2_framework.event.write_to_event_store.per_abstract_memory_unit",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.state_storage.get_usage.base",
+                    "key": "libra2_framework.state_storage.get_usage.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.aggregator.add.base",
+                    "key": "libra2_framework.aggregator.add.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.aggregator.read.base",
+                    "key": "libra2_framework.aggregator.read.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.aggregator.sub.base",
+                    "key": "libra2_framework.aggregator.sub.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.aggregator.destroy.base",
+                    "key": "libra2_framework.aggregator.destroy.base",
                     "val": "1"
                   },
                   {
-                    "key": "aptos_framework.aggregator_factory.new_aggregator.base",
+                    "key": "libra2_framework.aggregator_factory.new_aggregator.base",
                     "val": "1"
                   },
                   {
@@ -27837,7 +27837,7 @@
                     "deps": [
                       {
                         "account": "0x1",
-                        "package_name": "AptosFramework"
+                        "package_name": "Libra2Framework"
                       },
                       {
                         "account": "0x1",

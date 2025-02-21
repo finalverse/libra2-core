@@ -3,7 +3,7 @@
 
 use crate::smoke_test_environment::SwarmBuilder;
 use aptos::test::CliTestFramework;
-use aptos_framework::{BuildOptions, BuiltPackage};
+use libra2_framework::{BuildOptions, BuiltPackage};
 use libra2_logger::info;
 use libra2_types::move_utils::MemberId;
 use move_core_types::account_address::AccountAddress;
@@ -13,13 +13,13 @@ use std::{collections::BTreeMap, path::PathBuf, str::FromStr};
 const PACKAGE_NAME: &str = "AwesomePackage";
 const HELLO_BLOCKCHAIN: &str = "hello_blockchain";
 
-fn aptos_framework_dir() -> PathBuf {
+fn libra2_framework_dir() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("..")
         .join("..")
-        .join("aptos-move")
+        .join("libra2-move")
         .join("framework")
-        .join("aptos-framework")
+        .join("libra2-framework")
 }
 
 #[tokio::test]
@@ -36,7 +36,7 @@ async fn test_move_compile_flow() {
     cli.init_package(
         PACKAGE_NAME.to_string(),
         package_addresses,
-        Some(aptos_framework_dir()),
+        Some(libra2_framework_dir()),
     )
     .await
     .expect("Should succeed");
@@ -67,7 +67,7 @@ async fn test_move_compile_flow() {
     assert_eq!(manifest.dependencies.len(), 1);
 
     let dependency = manifest.dependencies.iter().next().unwrap();
-    assert_eq!("AptosFramework", dependency.0.to_string());
+    assert_eq!("Libra2Framework", dependency.0.to_string());
 
     // Now try to compile real code
     cli.add_move_files();
@@ -99,7 +99,7 @@ async fn test_move_publish_flow() {
     cli.init_package(
         PACKAGE_NAME.to_string(),
         package_addresses,
-        Some(aptos_framework_dir()),
+        Some(libra2_framework_dir()),
     )
     .await
     .expect("Should succeed");

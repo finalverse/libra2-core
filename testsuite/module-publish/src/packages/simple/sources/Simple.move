@@ -13,9 +13,9 @@ module 0xABCD::simple {
     use std::signer;
     use std::string::{Self, String, utf8};
     use std::vector;
-    use aptos_framework::event::{Self, EventHandle};
-    use aptos_framework::account;
-    use aptos_framework::code;
+    use libra2_framework::event::{Self, EventHandle};
+    use libra2_framework::account;
+    use libra2_framework::code;
     use aptos_std::table::{Self, Table};
 
     // Through the constant pool it will be possible to change this

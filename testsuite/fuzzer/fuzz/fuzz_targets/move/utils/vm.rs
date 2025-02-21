@@ -6,7 +6,7 @@
 use super::helpers::UserAccount;
 use crate::tdbg;
 use aptos_cached_packages::aptos_stdlib::code_publish_package_txn;
-use aptos_framework::natives::code::{
+use libra2_framework::natives::code::{
     ModuleMetadata, MoveOption, PackageDep, PackageMetadata, UpgradePolicy,
 };
 use libra2_language_e2e_tests::{account::Account, executor::FakeExecutor};

@@ -76,7 +76,7 @@ In this directory you will find lots of useful output. For example, you can see 
 ```
 $ cat /tmp/aptos-cli-tests/out/007_test_move_compile_script.stdout
 {
-  "Error": "Move compilation failed: Unable to resolve packages for package 'TwoByTwoTransfer': While resolving dependency 'AptosFramework' in package 'TwoByTwoTransfer': While processing dependency 'AptosFramework': Unable to find package manifest for 'AptosFramework' at \"Move.toml/move/scripts/two_by_two_transfer/../../../framework/aptos-framework\""
+  "Error": "Move compilation failed: Unable to resolve packages for package 'TwoByTwoTransfer': While resolving dependency 'Libra2Framework' in package 'TwoByTwoTransfer': While processing dependency 'Libra2Framework': Unable to find package manifest for 'Libra2Framework' at \"Move.toml/move/scripts/two_by_two_transfer/../../../framework/libra2-framework\""
 }
 ```
 

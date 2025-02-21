@@ -1,0 +1,6 @@
+[package]
+name = "GenericGroth16"
+version = "0.0.0"
+
+[dependencies]
+Libra2Framework = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "libra2-framework", rev = "mainnet" }

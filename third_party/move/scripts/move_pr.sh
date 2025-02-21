@@ -34,7 +34,7 @@ Usage:
 Flags:
     -h   Print this help
     -t   Run tests
-    -i   In addition to -t, run integration tests (Aptos framework and e2e tests)
+    -i   In addition to -t, run integration tests (Libra2 framework and e2e tests)
     -2   Run integration tests with the v2 compiler
     -c   Run xclippy and fmt +nightly
     -g   Run the git checks script (whitespace check). This works
@@ -130,7 +130,7 @@ MOVE_CRATES_V2_ENV_DEPENDENT="\
   -p move-vm-integration-tests\
   -p aptos-move-examples\
   -p e2e-move-tests\
-  -p aptos-framework\
+  -p libra2-framework\
 "
 
 # Crates which do depend on compiler env but currently

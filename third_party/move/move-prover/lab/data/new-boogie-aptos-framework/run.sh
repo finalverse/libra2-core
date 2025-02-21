@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FRAMEWORK="../../../../../../aptos-move/framework/aptos-framework/sources"
+FRAMEWORK="../../../../../../aptos-move/framework/libra2-framework/sources"
 
 # Check if the first argument is either "new" or "current"
 if [[ "$1" != "new" && "$1" != "current" ]]; then

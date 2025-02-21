@@ -17,9 +17,9 @@ impl Test for ReconfigurationTest {
 #[async_trait]
 impl NetworkTest for ReconfigurationTest {
     async fn run<'a>(&self, _ctx: NetworkContextSynchronizer<'a>) -> Result<()> {
-        Err(anyhow!("Not supported in aptos-framework yet"))
+        Err(anyhow!("Not supported in libra2-framework yet"))
     }
-    // TODO(https://github.com/aptos-labs/aptos-core/issues/317): add back after support those transactions in aptos-framework
+    // TODO(https://github.com/aptos-labs/aptos-core/issues/317): add back after support those transactions in libra2-framework
     //     let rt = Runtime::new()?;
     //
     //     let mut rng = StdRng::from_seed(OsRng.gen());

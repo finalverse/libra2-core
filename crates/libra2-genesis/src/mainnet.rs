@@ -7,7 +7,7 @@ use libra2_config::config::{
     DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD, NO_OP_STORAGE_PRUNER_CONFIG,
 };
 use libra2_db::Libra2DB;
-use aptos_framework::ReleaseBundle;
+use libra2_framework::ReleaseBundle;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_temppath::TempPath;
 use libra2_types::{

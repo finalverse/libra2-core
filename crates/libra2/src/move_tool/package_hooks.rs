@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{common::types::load_account_arg, move_tool::CachedPackageRegistry};
-use aptos_framework::UPGRADE_POLICY_CUSTOM_FIELD;
+use libra2_framework::UPGRADE_POLICY_CUSTOM_FIELD;
 use futures::executor::block_on;
 use move_package::{
     compilation::package_layout::CompiledPackageLayout, package_hooks::PackageHooks,

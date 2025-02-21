@@ -177,8 +177,8 @@ async fn common(params: TestParams) {
     let script = format!(
         r#"
 script {{
-    use aptos_framework::aptos_governance;
-    use aptos_framework::randomness_api_v0_config;
+    use libra2_framework::aptos_governance;
+    use libra2_framework::randomness_api_v0_config;
     use std::option;
 
     fun main(core_resources: &signer) {{

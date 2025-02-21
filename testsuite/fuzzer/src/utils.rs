@@ -4,7 +4,7 @@
 #[allow(dead_code)]
 #[allow(unused_variables)]
 pub(crate) mod cli {
-    use aptos_framework::{BuildOptions, BuiltPackage};
+    use libra2_framework::{BuildOptions, BuiltPackage};
     use libra2_types::{
         account_address::AccountAddress,
         transaction::{EntryFunction, Script, TransactionPayload},

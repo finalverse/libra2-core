@@ -147,9 +147,9 @@ This will download all the terraform dependencies for you, in the `.terraform` f
     chain_id: 5
     ```
 
-13. Download AptosFramework Move bytecodes into a folder named `framework`.
+13. Download Libra2Framework Move bytecodes into a folder named `framework`.
 
-    Download the Aptos Framework from the release page: https://github.com/aptos-labs/aptos-core/releases/tag/aptos-framework-v0.1.0
+    Download the Libra2 Framework from the release page: https://github.com/aptos-labs/aptos-core/releases/tag/libra2-framework-v0.1.0
 
     ```
     $ unzip framework.zip
@@ -171,7 +171,7 @@ This will download all the terraform dependencies for you, in the `.terraform` f
     - `validator-full-node-identity.yaml` Private keys for setting validator full node identity
     - `<username>.yaml` Node info for both validator / fullnode
     - `layout.yaml` layout file to define root key, validator user, and chain ID
-    - `framework` folder which contains all the move bytecode for AptosFramework.
+    - `framework` folder which contains all the move bytecode for Libra2Framework.
     - `waypoint.txt` waypoint for genesis transaction
     - `genesis.blob` genesis binary contains all the info about framework, validatorSet and more.
 

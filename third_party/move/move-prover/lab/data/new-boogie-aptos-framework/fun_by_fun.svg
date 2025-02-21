@@ -2050,7 +2050,7 @@ stake::join_validator_set
 1.063
 </text>
 <text x="0" y="8334" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-system_addresses::assert_aptos_framework
+system_addresses::assert_libra2_framework
 </text>
 <rect x="0" y="8349" width="16" height="10" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="26" y="8350" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -13795,7 +13795,7 @@ system_addresses::is_vm_address
 0.633
 </text>
 <text x="0" y="56116" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-system_addresses::is_aptos_framework_address
+system_addresses::is_libra2_framework_address
 </text>
 <rect x="0" y="56132" width="10" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="19" y="56133" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">

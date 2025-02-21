@@ -1,0 +1,8 @@
+[package]
+name = "too_large_test"
+version = "0.0.0"
+
+[dependencies]
+Libra2Framework = { local = "../../../../../framework/libra2-framework" }
+AptosStdlib = { local = "../../../../../framework/aptos-stdlib" }
+MoveStdlib = { local = "../../../../../framework/move-stdlib" }

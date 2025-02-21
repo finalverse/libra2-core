@@ -98,7 +98,7 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
 
     pub fn is_resource_group(&self, tag: &StructTag) -> bool {
         if let Ok(Some(module)) = self.inner.view_module(&tag.module_id()) {
-            if let Some(md) = aptos_framework::get_metadata(&module.metadata) {
+            if let Some(md) = libra2_framework::get_metadata(&module.metadata) {
                 if let Some(attrs) = md.struct_attributes.get(tag.name.as_ident_str().as_str()) {
                     return attrs
                         .iter()

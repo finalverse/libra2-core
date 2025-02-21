@@ -1,0 +1,19 @@
+[package]
+name = "cli_e2e_tests"
+version = "0.0.1"
+
+[addresses]
+addr = "_"
+
+[dev-addresses]
+addr = "0x12345"
+
+[dependencies.Libra2Framework]
+git = "https://github.com/aptos-labs/libra2-framework.git"
+rev = "devnet"
+subdir = "libra2-framework"
+
+[dependencies.AptosTokenObjects]
+git = "https://github.com/aptos-labs/libra2-framework.git"
+rev = "devnet"
+subdir = "aptos-token-objects"

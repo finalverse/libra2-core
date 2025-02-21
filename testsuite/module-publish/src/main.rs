@@ -25,13 +25,13 @@ fn additional_packages() -> Vec<(&'static str, &'static str)> {
         ("complex", "src/packages/complex"),
         (
             "ambassador_token",
-            "../../aptos-move/move-examples/token_objects/ambassador",
+            "../../libra2-move/move-examples/token_objects/ambassador",
         ),
         (
             "aggregator_examples",
-            "../../aptos-move/move-examples/aggregator_examples",
+            "../../libra2-move/move-examples/aggregator_examples",
         ),
-        ("bcs_stream", "../../aptos-move/move-examples/bcs-stream"),
+        ("bcs_stream", "../../libra2-move/move-examples/bcs-stream"),
     ]
 }
 

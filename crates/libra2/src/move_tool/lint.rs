@@ -5,7 +5,7 @@ use crate::{
     common::types::{AccountAddressWrapper, CliCommand, CliTypedResult, MovePackageDir},
     move_tool::IncludedArtifacts,
 };
-use aptos_framework::{BuildOptions, BuiltPackage};
+use libra2_framework::{BuildOptions, BuiltPackage};
 use async_trait::async_trait;
 use clap::Parser;
 use move_compiler_v2::Experiment;

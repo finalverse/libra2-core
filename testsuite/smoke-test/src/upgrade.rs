@@ -73,9 +73,9 @@ async fn test_upgrade_flow() {
     let framework_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("..")
         .join("..")
-        .join("aptos-move")
+        .join("libra2-move")
         .join("framework")
-        .join("aptos-framework");
+        .join("libra2-framework");
 
     assert!(Command::new(aptos_cli.as_path())
         .current_dir(workspace_root())
@@ -169,9 +169,9 @@ async fn test_upgrade_flow() {
     let framework_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("..")
         .join("..")
-        .join("aptos-move")
+        .join("libra2-move")
         .join("framework")
-        .join("aptos-framework");
+        .join("libra2-framework");
 
     for path in scripts.iter() {
         assert!(Command::new(aptos_cli.as_path())

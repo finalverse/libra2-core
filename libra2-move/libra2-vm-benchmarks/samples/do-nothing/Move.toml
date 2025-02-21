@@ -1,0 +1,6 @@
+[package]
+name = 'do-nothing'
+version = '1.0.0'
+[dependencies]
+Libra2Framework = { local = "../../../framework/libra2-framework" }
+AptosStdlib = { local = "../../../framework/aptos-stdlib" }

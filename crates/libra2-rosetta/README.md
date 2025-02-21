@@ -43,7 +43,7 @@ Here are some exceptions:
  * Not all operators can be parsed from `failed transactions`.
  * Set operator will have the stake balance in its metadata.
 
-All transactions are parsed from the events provided by the AptosFramework.  There are a few exceptions to this that use the transaction payload, but only for errors.
+All transactions are parsed from the events provided by the Libra2Framework.  There are a few exceptions to this that use the transaction payload, but only for errors.
 
 Block hash is `<chain_id>:<block_height>` and not actually a hash.
 

@@ -1,0 +1,12 @@
+[package]
+name = "CliArgs"
+version = "0.1.0"
+upgrade_policy = "compatible"
+
+[addresses]
+test_account = "_"
+
+[dependencies.Libra2Framework]
+git = "https://github.com/aptos-labs/libra2-framework.git"
+subdir = "libra2-framework"
+rev = "mainnet"

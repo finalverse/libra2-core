@@ -12,7 +12,7 @@ use libra2_config::{
     keys::ConfigKey,
     network_id::NetworkId,
 };
-use aptos_framework::ReleaseBundle;
+use libra2_framework::ReleaseBundle;
 use libra2_genesis::builder::{
     FullnodeNodeConfig, InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn,
 };

@@ -151,7 +151,7 @@ fn run_benchmark(
         options.backend.custom_natives =
             Some(move_prover_boogie_backend::options::CustomNativeOptions {
                 template_bytes: include_bytes!(
-                    "../../../../../aptos-move/framework/src/aptos-natives.bpl"
+                    "../../../../../libra2-move/framework/src/aptos-natives.bpl"
                 )
                 .to_vec(),
                 module_instance_names: move_prover_boogie_backend::options::custom_native_options(),

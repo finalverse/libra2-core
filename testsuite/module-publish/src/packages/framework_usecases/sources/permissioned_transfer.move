@@ -1,8 +1,8 @@
 
 module 0xABCD::permissioned_transfer {
-    use aptos_framework::aptos_account;
-    use aptos_framework::permissioned_signer;
-    use aptos_framework::primary_fungible_store;
+    use libra2_framework::aptos_account;
+    use libra2_framework::permissioned_signer;
+    use libra2_framework::primary_fungible_store;
 
     public entry fun transfer_permissioned(
         source: &signer, to: address, amount: u64

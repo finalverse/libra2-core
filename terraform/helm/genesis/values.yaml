@@ -73,8 +73,8 @@ genesis:
     enable_onchain_discovery: true
     # -- If `enable_onchain_discovery` is false, use this host suffix for internal kubernetes service name
     internal_host_suffix: fullnode-lb
-  # -- The local path for move modules in the docker image. Defaults to the aptos-framework in the aptoslabs/tools docker image
-  moveModulesDir: /aptos-framework/move/modules
+  # -- The local path for move modules in the docker image. Defaults to the libra2-framework in the aptoslabs/tools docker image
+  moveModulesDir: /libra2-framework/move/modules
   # -- Options for multicluster mode. This is *experimental only*
   multicluster:
     enabled: false
