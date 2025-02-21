@@ -35,7 +35,7 @@ pub struct FilterCondition {
 // TODO(skedia) Clean up this interfact to remove account specific logic and move to state store
 // key-value interface with fine grained storage project
 #[async_trait::async_trait]
-pub trait AptosValidatorInterface: Sync {
+pub trait Libra2ValidatorInterface: Sync {
     async fn get_state_value_by_version(
         &self,
         state_key: &StateKey,
@@ -94,7 +94,7 @@ pub struct DebuggerStateView {
 }
 
 async fn handler_thread<'a>(
-    db: Arc<dyn AptosValidatorInterface + Send>,
+    db: Arc<dyn Libra2ValidatorInterface + Send>,
     mut thread_receiver: UnboundedReceiver<(
         StateKey,
         Version,
@@ -134,7 +134,7 @@ async fn handler_thread<'a>(
 }
 
 impl DebuggerStateView {
-    pub fn new(db: Arc<dyn AptosValidatorInterface + Send>, version: Version) -> Self {
+    pub fn new(db: Arc<dyn Libra2ValidatorInterface + Send>, version: Version) -> Self {
         let (query_sender, thread_receiver) = unbounded_channel();
         tokio::spawn(async move { handler_thread(db, thread_receiver).await });
         Self {

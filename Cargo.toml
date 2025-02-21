@@ -23,7 +23,7 @@ members = [
     "aptos-move/libra2-sdk-builder",
     "aptos-move/aptos-transaction-benchmarks",
     "aptos-move/aptos-transactional-test-harness",
-    "aptos-move/aptos-validator-interface",
+    "aptos-move/libra2-validator-interface",
     "aptos-move/aptos-vm",
     "aptos-move/libra2-vm-benchmarks",
     "aptos-move/libra2-vm-environment",
@@ -466,7 +466,7 @@ libra2-transaction-workloads-lib = { path = "crates/transaction-workloads-lib" }
 aptos-transactional-test-harness = { path = "aptos-move/aptos-transactional-test-harness" }
 libra2-types = { path = "types" }
 libra2-utils = { path = "libra2-utils" }
-aptos-validator-interface = { path = "aptos-move/aptos-validator-interface" }
+libra2-validator-interface = { path = "aptos-move/libra2-validator-interface" }
 libra2-validator-transaction-pool = { path = "crates/validator-transaction-pool" }
 libra2-vault-client = { path = "secure/storage/vault" }
 aptos-vm = { path = "aptos-move/aptos-vm" }

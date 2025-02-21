@@ -20,8 +20,8 @@ use libra2_types::{
     },
     vm_status::VMStatus,
 };
-use aptos_validator_interface::{
-    AptosValidatorInterface, DBDebuggerInterface, DebuggerStateView, RestDebuggerInterface,
+use libra2_validator_interface::{
+    Libra2ValidatorInterface, DBDebuggerInterface, DebuggerStateView, RestDebuggerInterface,
 };
 use aptos_vm::{
     aptos_vm::AptosVMBlockExecutor, data_cache::AsMoveResolver, AptosVM, VMBlockExecutor,
@@ -33,11 +33,11 @@ use itertools::Itertools;
 use std::{path::Path, sync::Arc, time::Instant};
 
 pub struct Libra2Debugger {
-    debugger: Arc<dyn AptosValidatorInterface + Send>,
+    debugger: Arc<dyn Libra2ValidatorInterface + Send>,
 }
 
 impl Libra2Debugger {
-    pub fn new(debugger: Arc<dyn AptosValidatorInterface + Send>) -> Self {
+    pub fn new(debugger: Arc<dyn Libra2ValidatorInterface + Send>) -> Self {
         Self { debugger }
     }
 

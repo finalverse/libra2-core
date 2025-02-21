@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use crate::{AptosValidatorInterface, FilterCondition};
+use crate::{Libra2ValidatorInterface, FilterCondition};
 use anyhow::{ensure, Result};
 use libra2_config::config::{
     RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS,
@@ -40,7 +40,7 @@ impl DBDebuggerInterface {
 }
 
 #[async_trait::async_trait]
-impl AptosValidatorInterface for DBDebuggerInterface {
+impl Libra2ValidatorInterface for DBDebuggerInterface {
     async fn get_state_value_by_version(
         &self,
         state_key: &StateKey,

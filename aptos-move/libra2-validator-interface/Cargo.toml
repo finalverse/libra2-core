@@ -1,5 +1,5 @@
 [package]
-name = "aptos-validator-interface"
+name = "libra2-validator-interface"
 description = "Defines interfaces between the aptos nodes and local move infrastructure"
 version = "0.1.0"
 

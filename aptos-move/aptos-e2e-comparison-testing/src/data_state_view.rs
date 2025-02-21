@@ -9,7 +9,7 @@ use libra2_types::{
     },
     transaction::Version,
 };
-use aptos_validator_interface::{AptosValidatorInterface, DebuggerStateView};
+use libra2_validator_interface::{Libra2ValidatorInterface, DebuggerStateView};
 use std::{
     collections::HashMap,
     ops::DerefMut,
@@ -24,7 +24,7 @@ pub struct DataStateView {
 
 impl DataStateView {
     pub fn new(
-        db: Arc<dyn AptosValidatorInterface + Send>,
+        db: Arc<dyn Libra2ValidatorInterface + Send>,
         version: Version,
         code_data: FakeDataStore,
     ) -> Self {
@@ -36,7 +36,7 @@ impl DataStateView {
     }
 
     pub fn new_with_data_reads(
-        db: Arc<dyn AptosValidatorInterface + Send>,
+        db: Arc<dyn Libra2ValidatorInterface + Send>,
         version: Version,
     ) -> Self {
         Self {

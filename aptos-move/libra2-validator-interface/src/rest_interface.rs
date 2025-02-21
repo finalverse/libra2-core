@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use crate::{AptosValidatorInterface, FilterCondition};
+use crate::{Libra2ValidatorInterface, FilterCondition};
 use anyhow::{anyhow, Result};
 use aptos_api_types::{Libra2Error, Libra2ErrorCode};
 use aptos_framework::{
@@ -195,7 +195,7 @@ async fn check_and_obtain_source_code(
 }
 
 #[async_trait::async_trait]
-impl AptosValidatorInterface for RestDebuggerInterface {
+impl Libra2ValidatorInterface for RestDebuggerInterface {
     async fn get_state_value_by_version(
         &self,
         state_key: &StateKey,

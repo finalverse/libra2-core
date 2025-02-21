@@ -10,7 +10,7 @@ use aptos_framework::natives::code::PackageMetadata;
 use aptos_language_e2e_tests::data_store::FakeDataStore;
 use libra2_rest_client::Client;
 use libra2_types::transaction::Version;
-use aptos_validator_interface::{AptosValidatorInterface, FilterCondition, RestDebuggerInterface};
+use libra2_validator_interface::{Libra2ValidatorInterface, FilterCondition, RestDebuggerInterface};
 use move_core_types::account_address::AccountAddress;
 use std::{
     collections::HashMap,
@@ -20,7 +20,7 @@ use std::{
 use url::Url;
 
 pub struct OnlineExecutor {
-    debugger: Arc<dyn AptosValidatorInterface + Send>,
+    debugger: Arc<dyn Libra2ValidatorInterface + Send>,
     current_dir: PathBuf,
     batch_size: u64,
     filter_condition: FilterCondition,
@@ -30,7 +30,7 @@ pub struct OnlineExecutor {
 
 impl OnlineExecutor {
     pub fn new(
-        debugger: Arc<dyn AptosValidatorInterface + Send>,
+        debugger: Arc<dyn Libra2ValidatorInterface + Send>,
         current_dir: PathBuf,
         batch_size: u64,
         skip_failed_txns: bool,

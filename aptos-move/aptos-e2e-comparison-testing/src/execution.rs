@@ -16,7 +16,7 @@ use libra2_types::{
     vm_status::VMStatus,
     write_set::WriteSet,
 };
-use aptos_validator_interface::AptosValidatorInterface;
+use libra2_validator_interface::Libra2ValidatorInterface;
 use clap::ValueEnum;
 use itertools::Itertools;
 use move_binary_format::file_format_common::VERSION_6;
@@ -294,7 +294,7 @@ impl Execution {
         txn_idx: &TxnIndex,
         compiled_package_cache: &HashMap<PackageInfo, HashMap<ModuleId, Vec<u8>>>,
         compiled_package_cache_v2: &HashMap<PackageInfo, HashMap<ModuleId, Vec<u8>>>,
-        debugger: Option<Arc<dyn AptosValidatorInterface + Send>>,
+        debugger: Option<Arc<dyn Libra2ValidatorInterface + Send>>,
     ) {
         let mut package_cache_main = compiled_package_cache;
         let package_cache_other = compiled_package_cache_v2;
@@ -348,7 +348,7 @@ impl Execution {
         package_info: &PackageInfo,
         txn: &Transaction,
         compiled_package_cache: &HashMap<PackageInfo, HashMap<ModuleId, Vec<u8>>>,
-        debugger_opt: Option<Arc<dyn AptosValidatorInterface + Send>>,
+        debugger_opt: Option<Arc<dyn Libra2ValidatorInterface + Send>>,
         v2_flag: bool,
     ) -> Result<(WriteSet, Vec<ContractEvent>), VMStatus> {
         // Always add Aptos (0x1) packages.

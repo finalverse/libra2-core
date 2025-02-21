@@ -17,7 +17,7 @@ use libra2_types::{
     },
     write_set::TOTAL_SUPPLY_STATE_KEY,
 };
-use aptos_validator_interface::{AptosValidatorInterface, FilterCondition, RestDebuggerInterface};
+use libra2_validator_interface::{Libra2ValidatorInterface, FilterCondition, RestDebuggerInterface};
 use aptos_vm::{aptos_vm::AptosVMBlockExecutor, VMBlockExecutor};
 use move_core_types::account_address::AccountAddress;
 use std::{
@@ -28,7 +28,7 @@ use std::{
 };
 
 pub struct DataCollection {
-    debugger: Arc<dyn AptosValidatorInterface + Send>,
+    debugger: Arc<dyn Libra2ValidatorInterface + Send>,
     current_dir: PathBuf,
     batch_size: u64,
     dump_write_set: bool,
@@ -37,7 +37,7 @@ pub struct DataCollection {
 
 impl DataCollection {
     pub fn new(
-        debugger: Arc<dyn AptosValidatorInterface + Send>,
+        debugger: Arc<dyn Libra2ValidatorInterface + Send>,
         current_dir: PathBuf,
         batch_size: u64,
         skip_failed_txns: bool,
