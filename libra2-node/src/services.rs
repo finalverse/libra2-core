@@ -214,7 +214,7 @@ pub fn start_node_inspection_service(
     libra2_data_client: AptosDataClient,
     peers_and_metadata: Arc<PeersAndMetadata>,
 ) {
-    aptos_inspection_service::start_inspection_service(
+    libra2_inspection_service::start_inspection_service(
         node_config.clone(),
         libra2_data_client,
         peers_and_metadata,

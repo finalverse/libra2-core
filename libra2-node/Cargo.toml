@@ -38,7 +38,7 @@ aptos-indexer = { workspace = true, optional = true }
 aptos-indexer-grpc-fullnode = { workspace = true }
 aptos-indexer-grpc-table-info = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-inspection-service = { workspace = true }
+libra2-inspection-service = { workspace = true }
 aptos-jwk-consensus = { workspace = true }
 libra2-logger = { workspace = true, features = ["node-identity"] }
 libra2-mempool = { workspace = true }

@@ -11,7 +11,7 @@ use crate::{
 use libra2_config::config::{BootstrappingMode, NodeConfig, OverrideNodeConfig};
 use libra2_db::Libra2DB;
 use aptos_forge::{LocalNode, LocalSwarm, Node, NodeExt, Swarm};
-use aptos_inspection_service::inspection_client::InspectionClient;
+use libra2_inspection_service::inspection_client::InspectionClient;
 use libra2_rest_client::Client as RestClient;
 use aptos_sdk::types::PeerId;
 use libra2_storage_interface::DbReader;

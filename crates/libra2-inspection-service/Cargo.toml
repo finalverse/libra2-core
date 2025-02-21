@@ -1,5 +1,5 @@
 [package]
-name = "aptos-inspection-service"
+name = "libra2-inspection-service"
 description = "The Node Inspection Service"
 version = "0.1.0"
 

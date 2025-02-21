@@ -24,7 +24,7 @@ aptos-framework = { workspace = true }
 aptos-genesis = { workspace = true }
 libra2-global-constants = { workspace = true }
 libra2-infallible = { workspace = true }
-aptos-inspection-service = { workspace = true }
+libra2-inspection-service = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-rest-client = { workspace = true }
 libra2-retrier = { workspace = true }

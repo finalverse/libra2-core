@@ -1182,7 +1182,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-framework",
  "aptos-genesis",
- "aptos-inspection-service",
  "aptos-runtimes",
  "aptos-sdk",
  "async-trait",
@@ -1201,6 +1200,7 @@ dependencies = [
  "libra2-db",
  "libra2-global-constants",
  "libra2-infallible",
+ "libra2-inspection-service",
  "libra2-logger",
  "libra2-rest-client",
  "libra2-retrier",
@@ -1841,33 +1841,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-inspection-service"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-runtimes",
- "assert_approx_eq",
- "futures",
- "hyper 0.14.28",
- "libra2-build-info",
- "libra2-config",
- "libra2-data-client",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-network",
- "libra2-storage-interface",
- "libra2-storage-service-client",
- "libra2-telemetry",
- "libra2-time-service",
- "once_cell",
- "prometheus",
- "reqwest 0.11.23",
- "rusty-fork",
- "serde_json",
- "tokio",
-]
-
-[[package]]
 name = "aptos-jwk-consensus"
 version = "0.1.0"
 dependencies = [
@@ -2121,7 +2094,6 @@ dependencies = [
  "aptos-indexer",
  "aptos-indexer-grpc-fullnode",
  "aptos-indexer-grpc-table-info",
- "aptos-inspection-service",
  "aptos-jwk-consensus",
  "aptos-runtimes",
  "aptos-vm",
@@ -2147,6 +2119,7 @@ dependencies = [
  "libra2-dkg-runtime",
  "libra2-event-notifications",
  "libra2-infallible",
+ "libra2-inspection-service",
  "libra2-logger",
  "libra2-mempool",
  "libra2-mempool-notifications",
@@ -9377,6 +9350,33 @@ name = "libra2-infallible"
 version = "0.1.0"
 
 [[package]]
+name = "libra2-inspection-service"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-runtimes",
+ "assert_approx_eq",
+ "futures",
+ "hyper 0.14.28",
+ "libra2-build-info",
+ "libra2-config",
+ "libra2-data-client",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-network",
+ "libra2-storage-interface",
+ "libra2-storage-service-client",
+ "libra2-telemetry",
+ "libra2-time-service",
+ "once_cell",
+ "prometheus",
+ "reqwest 0.11.23",
+ "rusty-fork",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "libra2-jellyfish-merkle"
 version = "0.1.0"
 dependencies = [
@@ -9481,7 +9481,6 @@ version = "0.1.0"
 dependencies = [
  "aes-gcm",
  "anyhow",
- "aptos-inspection-service",
  "ark-bls12-381",
  "ark-bn254",
  "ark-ec",
@@ -9497,6 +9496,7 @@ dependencies = [
  "jwt",
  "libra2-crypto",
  "libra2-infallible",
+ "libra2-inspection-service",
  "libra2-keyless-pepper-common",
  "libra2-logger",
  "libra2-metrics-core",
@@ -9835,7 +9835,6 @@ dependencies = [
  "aptos-indexer",
  "aptos-indexer-grpc-fullnode",
  "aptos-indexer-grpc-table-info",
- "aptos-inspection-service",
  "aptos-jwk-consensus",
  "aptos-runtimes",
  "aptos-vm",
@@ -9861,6 +9860,7 @@ dependencies = [
  "libra2-dkg-runtime",
  "libra2-event-notifications",
  "libra2-infallible",
+ "libra2-inspection-service",
  "libra2-logger",
  "libra2-mempool",
  "libra2-mempool-notifications",
@@ -16047,7 +16047,6 @@ dependencies = [
  "aptos-genesis",
  "aptos-indexer",
  "aptos-indexer-grpc-table-info",
- "aptos-inspection-service",
  "aptos-release-builder",
  "aptos-sdk",
  "aptos-vm",
@@ -16069,6 +16068,7 @@ dependencies = [
  "libra2-dkg",
  "libra2-global-constants",
  "libra2-infallible",
+ "libra2-inspection-service",
  "libra2-keygen",
  "libra2-logger",
  "libra2-move-debugger",

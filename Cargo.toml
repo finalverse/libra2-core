@@ -76,7 +76,7 @@ members = [
     "crates/libra2-github-client",
     "crates/libra2-id-generator",
     "crates/libra2-infallible",
-    "crates/aptos-inspection-service",
+    "crates/libra2-inspection-service",
     "crates/aptos-jwk-consensus",
     "crates/libra2-keygen",
     "crates/aptos-ledger",
@@ -382,7 +382,7 @@ aptos-indexer-grpc-utils = { path = "ecosystem/indexer-grpc/indexer-grpc-utils" 
 aptos-indexer-grpc-server-framework = { path = "ecosystem/indexer-grpc/indexer-grpc-server-framework" }
 aptos-indexer-transaction-generator = { path = "ecosystem/indexer-grpc/indexer-transaction-generator" }
 libra2-infallible = { path = "crates/libra2-infallible" }
-aptos-inspection-service = { path = "crates/aptos-inspection-service" }
+libra2-inspection-service = { path = "crates/libra2-inspection-service" }
 libra2-jellyfish-merkle = { path = "storage/jellyfish-merkle" }
 aptos-jwk-consensus = { path = "crates/aptos-jwk-consensus" }
 libra2-jwk-utils = { path = "crates/jwk-utils" }
