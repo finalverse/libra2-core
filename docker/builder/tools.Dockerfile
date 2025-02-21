@@ -32,7 +32,7 @@ COPY --link --from=tools-builder /aptos/dist/aptos /usr/local/bin/aptos
 COPY --link --from=tools-builder /aptos/dist/libra2-openapi-spec-generator /usr/local/bin/libra2-openapi-spec-generator
 COPY --link --from=tools-builder /aptos/dist/libra2-fn-check-client /usr/local/bin/libra2-fn-check-client
 COPY --link --from=tools-builder /aptos/dist/libra2-transaction-emitter /usr/local/bin/libra2-transaction-emitter
-COPY --link --from=tools-builder /aptos/dist/aptos-api-tester /usr/local/bin/aptos-api-tester
+COPY --link --from=tools-builder /aptos/dist/libra2-api-tester /usr/local/bin/libra2-api-tester
 
 # Copy the example module to publish for api-tester
 COPY --link --from=tools-builder /aptos/aptos-move/framework/aptos-framework /aptos-move/framework/aptos-framework

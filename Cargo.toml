@@ -55,7 +55,7 @@ members = [
     "crates/aptos",
     "crates/libra2",
     "crates/libra2-admin-service",
-    "crates/aptos-api-tester",
+    "crates/libra2-api-tester",
     "crates/libra2-bcs-utils",
     "crates/libra2-bitvec",
     "crates/libra2-build-info",

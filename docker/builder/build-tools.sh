@@ -21,7 +21,7 @@ cargo build --locked --profile=$PROFILE \
     -p libra2-keyless-pepper-service \
     -p libra2-debugger \
     -p libra2-transaction-emitter \
-    -p aptos-api-tester \
+    -p libra2-api-tester \
     "$@"
 
 # After building, copy the binaries we need to `dist` since the `target` directory is used as docker cache mount and only available during the RUN step
@@ -35,7 +35,7 @@ BINS=(
     libra2-fn-check-client
     libra2-debugger
     libra2-transaction-emitter
-    aptos-api-tester
+    libra2-api-tester
 )
 
 mkdir dist

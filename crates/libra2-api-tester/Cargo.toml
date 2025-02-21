@@ -1,6 +1,6 @@
 [package]
-name = "aptos-api-tester"
-description = "Aptos developer API tester"
+name = "libra2-api-tester"
+description = "Libra2 developer API tester"
 version = "0.1.0"
 
 # Workspace inherited keys
