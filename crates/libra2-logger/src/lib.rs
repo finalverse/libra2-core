@@ -158,7 +158,7 @@ pub mod tracing_adapter;
 mod security;
 
 pub use crate::libra2_logger::{
-    AptosData as Logger, AptosDataBuilder, LoggerFilterUpdater, Writer, CHANNEL_SIZE,
+    Libra2Data as Logger, Libra2DataBuilder, LoggerFilterUpdater, Writer, CHANNEL_SIZE,
 };
 pub use libra2_log_derive::Schema;
 pub use event::Event;

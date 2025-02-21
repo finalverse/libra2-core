@@ -4,7 +4,7 @@
 use crate::network::ApplicationNetworkInterfaces;
 use libra2_config::config::{NodeConfig, StateSyncConfig};
 use libra2_consensus_notifications::ConsensusNotifier;
-use libra2_data_client::{client::AptosDataClient, poller};
+use libra2_data_client::{client::Libra2DataClient, poller};
 use libra2_data_streaming_service::{
     streaming_client::{new_streaming_service_client_listener_pair, StreamingServiceClient},
     streaming_service::DataStreamingService,
@@ -132,7 +132,7 @@ pub fn start_state_sync_and_get_notification_handles(
     event_subscription_service: EventSubscriptionService,
     db_rw: DbReaderWriter,
 ) -> anyhow::Result<(
-    AptosDataClient,
+    Libra2DataClient,
     StateSyncRuntimes,
     MempoolNotificationListener,
     ConsensusNotifier,
@@ -216,7 +216,7 @@ pub fn start_state_sync_and_get_notification_handles(
 /// Sets up the data streaming service runtime
 fn setup_data_streaming_service(
     state_sync_config: StateSyncConfig,
-    libra2_data_client: AptosDataClient,
+    libra2_data_client: Libra2DataClient,
 ) -> anyhow::Result<(StreamingServiceClient, Runtime)> {
     // Create the data streaming service
     let (streaming_service_client, streaming_service_listener) =
@@ -241,7 +241,7 @@ fn setup_libra2_data_client(
     node_config: &NodeConfig,
     network_client: NetworkClient<StorageServiceMessage>,
     storage: Arc<dyn DbReader>,
-) -> anyhow::Result<(AptosDataClient, Runtime)> {
+) -> anyhow::Result<(Libra2DataClient, Runtime)> {
     // Create the storage service client
     let storage_service_client = StorageServiceClient::new(network_client);
 
@@ -249,7 +249,7 @@ fn setup_libra2_data_client(
     let libra2_data_client_runtime = aptos_runtimes::spawn_named_runtime("data-client".into(), None);
 
     // Create the data client and spawn the data poller
-    let (libra2_data_client, data_summary_poller) = AptosDataClient::new(
+    let (libra2_data_client, data_summary_poller) = Libra2DataClient::new(
         node_config.state_sync.libra2_data_client,
         node_config.base.clone(),
         TimeService::real(),

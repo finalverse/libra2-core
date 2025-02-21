@@ -10,7 +10,7 @@ use crate::{
     tests::{mock, utils},
 };
 use libra2_config::{
-    config::{AptosDataClientConfig, StorageServiceConfig},
+    config::{Libra2DataClientConfig, StorageServiceConfig},
     network_id::PeerNetworkId,
 };
 use libra2_storage_service_types::{
@@ -69,7 +69,7 @@ async fn test_peers_with_ready_optimistic_fetches() {
         Arc::new(ArcSwap::from(Arc::new(StorageServerSummary::default())));
     let lru_response_cache = Cache::new(0);
     let request_moderator = Arc::new(RequestModerator::new(
-        AptosDataClientConfig::default(),
+        Libra2DataClientConfig::default(),
         cached_storage_server_summary.clone(),
         mock::create_peers_and_metadata(vec![]),
         storage_service_config,
@@ -174,7 +174,7 @@ async fn test_peers_with_ready_optimistic_fetches_update() {
         Arc::new(ArcSwap::from(Arc::new(StorageServerSummary::default())));
     let lru_response_cache = Cache::new(0);
     let request_moderator = Arc::new(RequestModerator::new(
-        AptosDataClientConfig::default(),
+        Libra2DataClientConfig::default(),
         cached_storage_server_summary.clone(),
         mock::create_peers_and_metadata(vec![]),
         storage_service_config,
@@ -284,7 +284,7 @@ async fn test_remove_expired_optimistic_fetches() {
         Arc::new(ArcSwap::from(Arc::new(StorageServerSummary::default())));
     let lru_response_cache = Cache::new(0);
     let request_moderator = Arc::new(RequestModerator::new(
-        AptosDataClientConfig::default(),
+        Libra2DataClientConfig::default(),
         cached_storage_server_summary.clone(),
         mock::create_peers_and_metadata(vec![]),
         storage_service_config,

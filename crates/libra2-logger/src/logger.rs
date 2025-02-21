@@ -65,7 +65,7 @@ pub fn set_global_logger(logger: Arc<dyn Logger>, tokio_console_port: Option<u16
     }
     if tokio_console_port.is_none() {
         let _ = tracing::subscriber::set_global_default(
-            crate::tracing_adapter::TracingToAptosDataLayer
+            crate::tracing_adapter::TracingToLibra2DataLayer
                 .with_subscriber(tracing_subscriber::Registry::default()),
         );
     } else {

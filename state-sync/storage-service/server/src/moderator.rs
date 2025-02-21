@@ -3,7 +3,7 @@
 
 use crate::{error::Error, logging::LogEntry, metrics, utils, LogSchema};
 use libra2_config::{
-    config::{AptosDataClientConfig, StorageServiceConfig},
+    config::{Libra2DataClientConfig, StorageServiceConfig},
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_logger::warn;
@@ -103,7 +103,7 @@ impl UnhealthyPeerState {
 /// If a peer sends too many invalid requests, the moderator will mark the peer as
 /// "unhealthy" and will ignore requests from that peer for some time.
 pub struct RequestModerator {
-    libra2_data_client_config: AptosDataClientConfig,
+    libra2_data_client_config: Libra2DataClientConfig,
     cached_storage_server_summary: Arc<ArcSwap<StorageServerSummary>>,
     peers_and_metadata: Arc<PeersAndMetadata>,
     storage_service_config: StorageServiceConfig,
@@ -113,7 +113,7 @@ pub struct RequestModerator {
 
 impl RequestModerator {
     pub fn new(
-        libra2_data_client_config: AptosDataClientConfig,
+        libra2_data_client_config: Libra2DataClientConfig,
         cached_storage_server_summary: Arc<ArcSwap<StorageServerSummary>>,
         peers_and_metadata: Arc<PeersAndMetadata>,
         storage_service_config: StorageServiceConfig,

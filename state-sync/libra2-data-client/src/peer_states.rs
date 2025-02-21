@@ -8,7 +8,7 @@ use crate::{
     metrics,
 };
 use libra2_config::{
-    config::AptosDataClientConfig,
+    config::Libra2DataClientConfig,
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_logger::prelude::*;
@@ -65,7 +65,7 @@ impl From<ResponseError> for ErrorType {
 #[derive(Clone, Debug)]
 pub struct PeerState {
     /// The data client configuration
-    data_client_config: Arc<AptosDataClientConfig>,
+    data_client_config: Arc<Libra2DataClientConfig>,
 
     /// The number of responses received from this peer (by data request label)
     received_responses_by_type: Arc<DashMap<String, u64>>,
@@ -82,7 +82,7 @@ pub struct PeerState {
 }
 
 impl PeerState {
-    pub fn new(data_client_config: Arc<AptosDataClientConfig>) -> Self {
+    pub fn new(data_client_config: Arc<Libra2DataClientConfig>) -> Self {
         Self {
             data_client_config,
             received_responses_by_type: Arc::new(DashMap::new()),
@@ -183,12 +183,12 @@ impl PeerState {
 /// advertisements and data-client internal metadata for scoring.
 #[derive(Clone, Debug)]
 pub struct PeerStates {
-    data_client_config: Arc<AptosDataClientConfig>,
+    data_client_config: Arc<Libra2DataClientConfig>,
     peer_to_state: Arc<DashMap<PeerNetworkId, PeerState>>,
 }
 
 impl PeerStates {
-    pub fn new(data_client_config: Arc<AptosDataClientConfig>) -> Self {
+    pub fn new(data_client_config: Arc<Libra2DataClientConfig>) -> Self {
         Self {
             data_client_config,
             peer_to_state: Arc::new(DashMap::new()),
@@ -417,7 +417,7 @@ impl PeerStates {
 /// chunk size parameter. This works well when we have an honest
 /// majority that mostly agrees on the same chunk sizes.
 pub(crate) fn calculate_optimal_chunk_sizes(
-    config: &AptosDataClientConfig,
+    config: &Libra2DataClientConfig,
     max_epoch_chunk_sizes: Vec<u64>,
     max_state_chunk_sizes: Vec<u64>,
     max_transaction_chunk_sizes: Vec<u64>,

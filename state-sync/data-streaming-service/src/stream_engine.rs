@@ -268,7 +268,7 @@ impl DataStreamEngine for StateStreamEngine {
 
         // Otherwise, we need to request the number of states
         info!(
-            (LogSchema::new(LogEntry::AptosDataClient)
+            (LogSchema::new(LogEntry::Libra2DataClient)
                 .event(LogEvent::Pending)
                 .message(&format!(
                     "Requested the number of states at version: {:?}",
@@ -321,7 +321,7 @@ impl DataStreamEngine for StateStreamEngine {
                     ResponsePayload::StateValuesWithProof(state_values_with_proof) => {
                         // Verify that we received at least one state value
                         if state_values_with_proof.raw_values.is_empty() {
-                            return Err(Error::AptosDataClientResponseIsInvalid(format!(
+                            return Err(Error::Libra2DataClientResponseIsInvalid(format!(
                                 "Received an empty state values response! Request: {:?}",
                                 client_request
                             )));
@@ -526,7 +526,7 @@ impl ContinuousTransactionStreamEngine {
             _ => invalid_response_type!(client_response_payload),
         };
         if num_received_versions == 0 {
-            return Err(Error::AptosDataClientResponseIsInvalid(format!(
+            return Err(Error::Libra2DataClientResponseIsInvalid(format!(
                 "Received an empty continuous data response! Request: {:?}",
                 self.request
             )));
@@ -810,7 +810,7 @@ impl ContinuousTransactionStreamEngine {
                 },
                 response_payload => {
                     // TODO(joshlind): eventually we want to notify the data client of the bad response
-                    Err(Error::AptosDataClientResponseIsInvalid(format!(
+                    Err(Error::Libra2DataClientResponseIsInvalid(format!(
                         "Received an incorrect number of epoch ending ledger infos. Response: {:?}",
                         response_payload
                     )))
@@ -818,7 +818,7 @@ impl ContinuousTransactionStreamEngine {
             }
         } else {
             // TODO(joshlind): eventually we want to notify the data client of the bad response
-            Err(Error::AptosDataClientResponseIsInvalid(format!(
+            Err(Error::Libra2DataClientResponseIsInvalid(format!(
                 "Expected an epoch ending ledger response but got: {:?}",
                 response_payload
             )))
@@ -1161,7 +1161,7 @@ impl DataStreamEngine for ContinuousTransactionStreamEngine {
                 if target_ledger_info.ledger_info().epoch() > next_request_epoch {
                     // There was an epoch change. Request an epoch ending ledger info.
                     info!(
-                        (LogSchema::new(LogEntry::AptosDataClient)
+                        (LogSchema::new(LogEntry::Libra2DataClient)
                             .event(LogEvent::Pending)
                             .message(&format!(
                                 "Requested an epoch ending ledger info for epoch: {:?}",
@@ -1572,7 +1572,7 @@ impl DataStreamEngine for EpochEndingStreamEngine {
                     ResponsePayload::EpochEndingLedgerInfos(ledger_infos) => {
                         // Verify that we received at least one ledger info
                         if ledger_infos.is_empty() {
-                            return Err(Error::AptosDataClientResponseIsInvalid(format!(
+                            return Err(Error::Libra2DataClientResponseIsInvalid(format!(
                                 "Received an empty epoch ending ledger info response! Request: {:?}",
                                 client_request
                             )));
@@ -1681,7 +1681,7 @@ impl TransactionStreamEngine {
             _ => invalid_response_type!(client_response_payload),
         };
         if num_received_versions == 0 {
-            return Err(Error::AptosDataClientResponseIsInvalid(format!(
+            return Err(Error::Libra2DataClientResponseIsInvalid(format!(
                 "Received an empty response! Request: {:?}",
                 self.request
             )));
@@ -2254,7 +2254,7 @@ fn extract_new_versions_and_target(
         ),
         response_payload => {
             // TODO(joshlind): eventually we want to notify the data client of the bad response
-            return Err(Error::AptosDataClientResponseIsInvalid(format!(
+            return Err(Error::Libra2DataClientResponseIsInvalid(format!(
                 "Expected new transactions or outputs but got: {:?}",
                 response_payload
             )));
@@ -2264,7 +2264,7 @@ fn extract_new_versions_and_target(
     // Ensure that we have at least one data item
     if num_versions == 0 {
         // TODO(joshlind): eventually we want to notify the data client of the bad response
-        return Err(Error::AptosDataClientResponseIsInvalid(
+        return Err(Error::Libra2DataClientResponseIsInvalid(
             "Received an empty transaction or output list!".into(),
         ));
     }

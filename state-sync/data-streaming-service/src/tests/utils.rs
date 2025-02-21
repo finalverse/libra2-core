@@ -3,12 +3,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{data_notification::DataNotification, data_stream::DataStreamListener, error::Error};
-use libra2_config::config::AptosDataClientConfig;
+use libra2_config::config::Libra2DataClientConfig;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, SigningKey, Uniform};
 use libra2_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary, OptimalChunkSizes},
     interface::{
-        AptosDataClientInterface, Response, ResponseCallback, ResponseContext, ResponseError,
+        Libra2DataClientInterface, Response, ResponseCallback, ResponseContext, ResponseError,
         SubscriptionRequestMetadata,
     },
 };
@@ -82,8 +82,8 @@ pub const MAX_REAL_TRANSACTION_OUTPUT: u64 = MAX_REAL_TRANSACTION;
 
 /// A simple mock of the Aptos Data Client
 #[derive(Clone, Debug)]
-pub struct MockAptosDataClient {
-    pub libra2_data_client_config: AptosDataClientConfig,
+pub struct MockLibra2DataClient {
+    pub libra2_data_client_config: Libra2DataClientConfig,
     pub advertised_epoch_ending_ledger_infos: BTreeMap<Epoch, LedgerInfoWithSignatures>,
     pub advertised_synced_ledger_infos: Vec<LedgerInfoWithSignatures>,
     pub data_beyond_highest_advertised: bool, // If true, data exists beyond the highest advertised
@@ -94,9 +94,9 @@ pub struct MockAptosDataClient {
     pub skip_timeout_verification: bool, // If true, skips timeout verification for incoming requests
 }
 
-impl MockAptosDataClient {
+impl MockLibra2DataClient {
     pub fn new(
-        libra2_data_client_config: AptosDataClientConfig,
+        libra2_data_client_config: Libra2DataClientConfig,
         data_beyond_highest_advertised: bool,
         limit_chunk_sizes: bool,
         skip_emulate_network_latencies: bool,
@@ -244,7 +244,7 @@ impl MockAptosDataClient {
 }
 
 #[async_trait]
-impl AptosDataClientInterface for MockAptosDataClient {
+impl Libra2DataClientInterface for MockLibra2DataClient {
     fn get_global_data_summary(&self) -> GlobalDataSummary {
         // Create a random set of optimal chunk sizes to emulate changing environments
         let optimal_chunk_sizes = OptimalChunkSizes {
@@ -1022,7 +1022,7 @@ fn create_range_random_u64(min_value: u64, max_value: u64) -> u64 {
 async fn determine_target_ledger_info(
     known_epoch: Epoch,
     request_timeout_ms: u64,
-    libra2_data_client: &MockAptosDataClient,
+    libra2_data_client: &MockLibra2DataClient,
 ) -> LedgerInfoWithSignatures {
     if known_epoch <= MAX_REAL_EPOCH_END {
         // Fetch the epoch ending ledger info

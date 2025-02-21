@@ -7,7 +7,7 @@ use libra2_config::{
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_data_client::{
-    client::AptosDataClient, interface::AptosDataClientInterface, peer_states,
+    client::Libra2DataClient, interface::Libra2DataClientInterface, peer_states,
 };
 use libra2_network::application::storage::PeersAndMetadata;
 use hyper::{Body, StatusCode};
@@ -20,7 +20,7 @@ pub const PEER_INFO_DISABLED_MESSAGE: &str =
 /// Handles a new peer information request
 pub fn handle_peer_information_request(
     node_config: &NodeConfig,
-    libra2_data_client: AptosDataClient,
+    libra2_data_client: Libra2DataClient,
     peers_and_metadata: Arc<PeersAndMetadata>,
 ) -> (StatusCode, Body, String) {
     // Only return peer information if the endpoint is enabled
@@ -39,7 +39,7 @@ pub fn handle_peer_information_request(
 
 /// Returns a simple text formatted string with peer and network information
 fn get_peer_information(
-    libra2_data_client: AptosDataClient,
+    libra2_data_client: Libra2DataClient,
     peers_and_metadata: Arc<PeersAndMetadata>,
 ) -> String {
     // Get all registered networks
@@ -206,7 +206,7 @@ fn display_peer_monitoring_metadata(
 fn display_state_sync_metadata(
     peer_information_output: &mut Vec<String>,
     all_peers: &Vec<PeerNetworkId>,
-    libra2_data_client: AptosDataClient,
+    libra2_data_client: Libra2DataClient,
 ) {
     peer_information_output.push("State sync metadata for each peer:".into());
 

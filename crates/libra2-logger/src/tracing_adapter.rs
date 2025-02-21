@@ -12,7 +12,7 @@ use tracing::{
 use tracing_subscriber::{layer::Context, registry::LookupSpan, Layer};
 
 /// A layer that translates tracing events into libra2-logger events.
-pub struct TracingToAptosDataLayer;
+pub struct TracingToLibra2DataLayer;
 
 fn translate_level(level: &Level) -> Option<dl::Level> {
     if *level == Level::ERROR {
@@ -113,7 +113,7 @@ impl<'a, 'b> dl::Schema for EventKeyValueAdapter<'a, 'b> {
     }
 }
 
-impl<S> Layer<S> for TracingToAptosDataLayer
+impl<S> Layer<S> for TracingToLibra2DataLayer
 where
     S: tracing::Subscriber + for<'span> LookupSpan<'span>,
 {

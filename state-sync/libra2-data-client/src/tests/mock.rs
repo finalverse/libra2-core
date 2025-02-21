@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{
-    client::AptosDataClient,
+    client::Libra2DataClient,
     error::Result,
     global_summary::GlobalDataSummary,
-    interface::{AptosDataClientInterface, Response, SubscriptionRequestMetadata},
+    interface::{Libra2DataClientInterface, Response, SubscriptionRequestMetadata},
     poller::DataSummaryPoller,
     priority::PeerPriority,
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::{
-    config::{AptosDataClientConfig, BaseConfig, RoleType},
+    config::{Libra2DataClientConfig, BaseConfig, RoleType},
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_netcore::transport::ConnectionOrigin;
@@ -58,9 +58,9 @@ pub struct MockNetwork {
 impl MockNetwork {
     pub fn new(
         base_config: Option<BaseConfig>,
-        data_client_config: Option<AptosDataClientConfig>,
+        data_client_config: Option<Libra2DataClientConfig>,
         networks: Option<Vec<NetworkId>>,
-    ) -> (Self, MockTimeService, AptosDataClient, DataSummaryPoller) {
+    ) -> (Self, MockTimeService, Libra2DataClient, DataSummaryPoller) {
         // Initialize the logger for testing
         ::libra2_logger::Logger::init_for_testing();
 
@@ -104,7 +104,7 @@ impl MockNetwork {
         let mock_time = TimeService::mock();
         let base_config = base_config.unwrap_or_default();
         let data_client_config = data_client_config.unwrap_or_default();
-        let (client, poller) = AptosDataClient::new(
+        let (client, poller) = Libra2DataClient::new(
             data_client_config,
             base_config.clone(),
             mock_time.clone(),
@@ -259,16 +259,16 @@ impl MockNetwork {
 }
 
 /// Creates a mock data client for testing
-pub fn create_mock_data_client() -> Arc<dyn AptosDataClientInterface + Send + Sync> {
-    Arc::new(MockAptosDataClient::new())
+pub fn create_mock_data_client() -> Arc<dyn Libra2DataClientInterface + Send + Sync> {
+    Arc::new(MockLibra2DataClient::new())
 }
 
-// This automatically creates a MockAptosDataClient
+// This automatically creates a MockLibra2DataClient
 mock! {
-    pub AptosDataClient {}
+    pub Libra2DataClient {}
 
     #[async_trait]
-    impl AptosDataClientInterface for AptosDataClient {
+    impl Libra2DataClientInterface for Libra2DataClient {
         fn get_global_data_summary(&self) -> GlobalDataSummary;
 
         async fn get_epoch_ending_ledger_infos(

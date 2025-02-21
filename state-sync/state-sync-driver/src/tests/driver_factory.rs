@@ -10,7 +10,7 @@ use libra2_config::{
     utils::get_genesis_txn,
 };
 use libra2_consensus_notifications::new_consensus_notifier_listener_pair;
-use libra2_data_client::client::AptosDataClient;
+use libra2_data_client::client::Libra2DataClient;
 use libra2_data_streaming_service::streaming_client::new_streaming_service_client_listener_pair;
 use libra2_db::Libra2DB;
 use libra2_event_notifications::EventSubscriptionService;
@@ -75,7 +75,7 @@ fn test_new_initialized_configs() {
         HashMap::new(),
         PeersAndMetadata::new(&[]),
     ));
-    let (libra2_data_client, _) = AptosDataClient::new(
+    let (libra2_data_client, _) = Libra2DataClient::new(
         node_config.state_sync.libra2_data_client,
         node_config.base.clone(),
         TimeService::mock(),

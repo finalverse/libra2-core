@@ -3,7 +3,7 @@
 
 use anyhow::Result;
 use libra2_crypto::HashValue;
-use aptos_experimental_layered_map::{LayeredMap, MapLayer};
+use libra2_experimental_layered_map::{LayeredMap, MapLayer};
 use libra2_schemadb::{
     batch::WriteBatch,
     define_schema,

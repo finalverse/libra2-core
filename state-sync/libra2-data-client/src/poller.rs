@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{
-    client::AptosDataClient,
+    client::Libra2DataClient,
     error::Error,
     global_summary::GlobalDataSummary,
-    interface::{AptosDataClientInterface, Response},
+    interface::{Libra2DataClientInterface, Response},
     latency_monitor::LatencyMonitor,
     logging::{LogEntry, LogEvent, LogSchema},
     metrics,
@@ -13,7 +13,7 @@ use crate::{
     utils,
 };
 use libra2_config::{
-    config::{AptosDataClientConfig, AptosDataPollerConfig},
+    config::{Libra2DataClientConfig, Libra2DataPollerConfig},
     network_id::PeerNetworkId,
 };
 use libra2_logger::{debug, error, info, sample, sample::SampleRate, warn};
@@ -41,8 +41,8 @@ const POLLER_LOG_FREQ_SECS: u64 = 2;
 /// A data summary poller that maintains state related to peer polling
 #[derive(Clone)]
 pub struct DataSummaryPoller {
-    data_client_config: Arc<AptosDataClientConfig>, // The configuration for the data client
-    data_client: AptosDataClient,                   // The data client through which to poll peers
+    data_client_config: Arc<Libra2DataClientConfig>, // The configuration for the data client
+    data_client: Libra2DataClient,                   // The data client through which to poll peers
     in_flight_priority_polls: Arc<DashSet<PeerNetworkId>>, // The set of priority peers with in-flight polls
     in_flight_regular_polls: Arc<DashSet<PeerNetworkId>>, // The set of regular peers with in-flight polls
     peers_and_metadata: Arc<PeersAndMetadata>,            // The peers and metadata
@@ -53,8 +53,8 @@ pub struct DataSummaryPoller {
 
 impl DataSummaryPoller {
     pub fn new(
-        data_client_config: Arc<AptosDataClientConfig>,
-        data_client: AptosDataClient,
+        data_client_config: Arc<Libra2DataClientConfig>,
+        data_client: Libra2DataClient,
         peers_and_metadata: Arc<PeersAndMetadata>,
         runtime: Option<Handle>,
         storage: Arc<dyn DbReader>,
@@ -351,7 +351,7 @@ pub async fn start_poller(poller: DataSummaryPoller) {
 pub(crate) fn calculate_num_peers_to_poll(
     potential_peers: &HashSet<PeerNetworkId>,
     max_num_peers_to_poll: u64,
-    data_poller_config: AptosDataPollerConfig,
+    data_poller_config: Libra2DataPollerConfig,
 ) -> u64 {
     // Calculate the total number of peers to poll (per second)
     let min_polls_per_second = data_poller_config.min_polls_per_second;
@@ -467,8 +467,8 @@ pub(crate) fn poll_peer(
 
 /// Spawns the dedicated latency monitor
 fn start_latency_monitor(
-    data_client_config: Arc<AptosDataClientConfig>,
-    data_client: AptosDataClient,
+    data_client_config: Arc<Libra2DataClientConfig>,
+    data_client: Libra2DataClient,
     storage: Arc<dyn DbReader>,
     time_service: TimeService,
     runtime: Option<Handle>,

@@ -292,8 +292,8 @@ impl LogEntry {
     }
 }
 
-/// A builder for a `AptosData`, configures what, where, and how to write logs.
-pub struct AptosDataBuilder {
+/// A builder for a `Libra2Data`, configures what, where, and how to write logs.
+pub struct Libra2DataBuilder {
     channel_size: usize,
     tokio_console_port: Option<u16>,
     enable_backtrace: bool,
@@ -307,7 +307,7 @@ pub struct AptosDataBuilder {
     custom_format: Option<fn(&LogEntry) -> Result<String, fmt::Error>>,
 }
 
-impl AptosDataBuilder {
+impl Libra2DataBuilder {
     #[allow(clippy::new_without_default)]
     pub fn new() -> Self {
         Self {
@@ -424,7 +424,7 @@ impl AptosDataBuilder {
         }
     }
 
-    fn build_logger(&mut self) -> Arc<AptosData> {
+    fn build_logger(&mut self) -> Arc<Libra2Data> {
         let filter = self.build_filter();
 
         if let Ok(log_format) = env::var(RUST_LOG_FORMAT) {
@@ -442,7 +442,7 @@ impl AptosDataBuilder {
                 remote_tx = Some(tx.clone());
             }
 
-            let logger = Arc::new(AptosData {
+            let logger = Arc::new(Libra2Data {
                 enable_backtrace: self.enable_backtrace,
                 sender: Some(sender),
                 printer: None,
@@ -460,7 +460,7 @@ impl AptosDataBuilder {
             thread::spawn(move || service.run());
             logger
         } else {
-            Arc::new(AptosData {
+            Arc::new(Libra2Data {
                 enable_backtrace: self.enable_backtrace,
                 sender: None,
                 printer: self.printer.take(),
@@ -471,7 +471,7 @@ impl AptosDataBuilder {
         }
     }
 
-    pub fn build(&mut self) -> Arc<AptosData> {
+    pub fn build(&mut self) -> Arc<Libra2Data> {
         let logger = self.build_logger();
 
         let tokio_console_port = if cfg!(feature = "tokio-console") {
@@ -499,7 +499,7 @@ impl FilterTuple {
     }
 }
 
-pub struct AptosData {
+pub struct Libra2Data {
     enable_backtrace: bool,
     sender: Option<sync::mpsc::SyncSender<LoggerServiceEvent>>,
     printer: Option<Box<dyn Writer>>,
@@ -508,13 +508,13 @@ pub struct AptosData {
     pub(crate) formatter: fn(&LogEntry) -> Result<String, fmt::Error>,
 }
 
-impl AptosData {
-    pub fn builder() -> AptosDataBuilder {
-        AptosDataBuilder::new()
+impl Libra2Data {
+    pub fn builder() -> Libra2DataBuilder {
+        Libra2DataBuilder::new()
     }
 
     #[allow(clippy::new_ret_no_self)]
-    pub fn new() -> AptosDataBuilder {
+    pub fn new() -> Libra2DataBuilder {
         Self::builder()
     }
 
@@ -563,7 +563,7 @@ impl AptosData {
     }
 }
 
-impl Logger for AptosData {
+impl Logger for Libra2Data {
     fn enabled(&self, metadata: &Metadata) -> bool {
         self.filter.read().enabled(metadata)
     }
@@ -602,11 +602,11 @@ enum LoggerServiceEvent {
 }
 
 /// A service for running a log listener, that will continually export logs through a local printer
-/// or to a `AptosData` for external logging.
+/// or to a `Libra2Data` for external logging.
 struct LoggerService {
     receiver: sync::mpsc::Receiver<LoggerServiceEvent>,
     printer: Option<Box<dyn Writer>>,
-    facade: Arc<AptosData>,
+    facade: Arc<Libra2Data>,
     remote_tx: Option<channel::mpsc::Sender<TelemetryLog>>,
 }
 
@@ -792,12 +792,12 @@ fn json_format(entry: &LogEntry) -> Result<String, fmt::Error> {
 /// This is useful for dynamically changing log levels at runtime via existing
 /// environment variables such as `RUST_LOG_TELEMETRY`.
 pub struct LoggerFilterUpdater {
-    logger: Arc<AptosData>,
-    logger_builder: AptosDataBuilder,
+    logger: Arc<Libra2Data>,
+    logger_builder: Libra2DataBuilder,
 }
 
 impl LoggerFilterUpdater {
-    pub fn new(logger: Arc<AptosData>, logger_builder: AptosDataBuilder) -> Self {
+    pub fn new(logger: Arc<Libra2Data>, logger_builder: Libra2DataBuilder) -> Self {
         Self {
             logger,
             logger_builder,
@@ -822,13 +822,13 @@ impl LoggerFilterUpdater {
 
 #[cfg(test)]
 mod tests {
-    use super::{text_format, AptosData, LogEntry};
+    use super::{text_format, Libra2Data, LogEntry};
     use crate::{
         libra2_logger::{json_format, TruncatedLogString, RUST_LOG_TELEMETRY},
         debug, error, info,
         logger::Logger,
         telemetry_log_writer::TelemetryLog,
-        trace, warn, AptosDataBuilder, Event, Key, KeyValue, Level, LoggerFilterUpdater, Metadata,
+        trace, warn, Libra2DataBuilder, Event, Key, KeyValue, Level, LoggerFilterUpdater, Metadata,
         Schema, Value, Visitor, Writer,
     };
     use chrono::{DateTime, Utc};
@@ -1071,8 +1071,8 @@ mod tests {
         }
     }
 
-    fn new_async_logger() -> (AptosDataBuilder, Arc<AptosData>) {
-        let mut logger_builder = AptosDataBuilder::new();
+    fn new_async_logger() -> (Libra2DataBuilder, Arc<Libra2Data>) {
+        let mut logger_builder = Libra2DataBuilder::new();
         let (remote_log_tx, _) = futures::channel::mpsc::channel(10);
         let logger = logger_builder
             .remote_log_tx(remote_log_tx)
@@ -1082,14 +1082,14 @@ mod tests {
     }
 
     fn new_text_logger() -> (
-        Arc<AptosData>,
+        Arc<Libra2Data>,
         Arc<Mutex<Vec<String>>>,
         futures::channel::mpsc::Receiver<TelemetryLog>,
     ) {
         let (tx, rx) = futures::channel::mpsc::channel(100);
         let (mock_writer, logs) = MockWriter::new();
 
-        let logger = AptosDataBuilder::new()
+        let logger = Libra2DataBuilder::new()
             .level(Level::Debug)
             .telemetry_level(Level::Debug)
             .remote_log_tx(tx)

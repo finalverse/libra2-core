@@ -3,12 +3,12 @@
 
 use crate::{
     error::Error,
-    interface::AptosDataClientInterface,
+    interface::Libra2DataClientInterface,
     poller,
     priority::PeerPriority,
     tests::{mock::MockNetwork, utils},
 };
-use libra2_config::{config::AptosDataClientConfig, network_id::NetworkId};
+use libra2_config::{config::Libra2DataClientConfig, network_id::NetworkId};
 use libra2_network::protocols::wire::handshake::v1::ProtocolId;
 use libra2_storage_service_types::{
     requests::{DataRequest, TransactionsWithProofRequest},
@@ -23,7 +23,7 @@ async fn compression_mismatch_disabled() {
     let base_config = utils::create_validator_base_config();
 
     // Create a data client config that disables compression
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         use_compression: false,
         ..Default::default()
     };
@@ -103,7 +103,7 @@ async fn compression_mismatch_enabled() {
     let base_config = utils::create_validator_base_config();
 
     // Create a data client config that enables compression
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         use_compression: true,
         ..Default::default()
     };
@@ -182,7 +182,7 @@ async fn disable_compression() {
     let networks = vec![NetworkId::Vfn, NetworkId::Public];
 
     // Create a data client config that disables compression
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         use_compression: false,
         ..Default::default()
     };

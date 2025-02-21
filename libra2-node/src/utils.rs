@@ -48,7 +48,7 @@ pub fn fetch_chain_id(db: &DbReaderWriter) -> anyhow::Result<ChainId> {
         .chain_id())
 }
 
-/// Sets the Aptos VM configuration based on the node configurations
+/// Sets the Libra2 VM configuration based on the node configurations
 pub fn set_aptos_vm_configurations(node_config: &NodeConfig) {
     set_paranoid_type_checks(node_config.execution.paranoid_type_verification);
     let effective_concurrency_level = if node_config.execution.concurrency_level == 0 {

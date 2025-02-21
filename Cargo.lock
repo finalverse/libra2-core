@@ -687,7 +687,7 @@ name = "aptos-experimental-hexy"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-experimental-layered-map",
+ "libra2-experimental-layered-map",
  "criterion",
  "itertools 0.13.0",
  "jemallocator",
@@ -700,7 +700,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-experimental-layered-map"
+name = "libra2-experimental-layered-map"
 version = "0.1.0"
 dependencies = [
  "ahash 0.8.11",
@@ -10241,7 +10241,7 @@ name = "libra2-storage-interface"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-experimental-layered-map",
+ "libra2-experimental-layered-map",
  "arr_macro",
  "bcs 0.1.4",
  "dashmap",

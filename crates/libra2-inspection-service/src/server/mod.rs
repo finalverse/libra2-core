@@ -3,7 +3,7 @@
 
 use crate::server::utils::CONTENT_TYPE_TEXT;
 use libra2_config::config::NodeConfig;
-use libra2_data_client::client::AptosDataClient;
+use libra2_data_client::client::Libra2DataClient;
 use libra2_logger::debug;
 use libra2_network::application::storage::PeersAndMetadata;
 use hyper::{
@@ -47,7 +47,7 @@ pub const UNEXPECTED_ERROR_MESSAGE: &str = "An unexpected error was encountered!
 /// address and handles various endpoint requests.
 pub fn start_inspection_service(
     node_config: NodeConfig,
-    libra2_data_client: AptosDataClient,
+    libra2_data_client: Libra2DataClient,
     peers_and_metadata: Arc<PeersAndMetadata>,
 ) {
     // Fetch the service port and address
@@ -102,7 +102,7 @@ pub fn start_inspection_service(
 async fn serve_requests(
     req: Request<Body>,
     node_config: NodeConfig,
-    libra2_data_client: AptosDataClient,
+    libra2_data_client: Libra2DataClient,
     peers_and_metadata: Arc<PeersAndMetadata>,
 ) -> Result<Response<Body>, hyper::Error> {
     // Process the request and get the response components

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_infallible::RwLock;
-use libra2_logger::{libra2_logger::AptosData, Writer};
+use libra2_logger::{libra2_logger::Libra2Data, Writer};
 use std::sync::Arc;
 use tracing::Level;
 
@@ -40,7 +40,7 @@ fn verify_tracing_kvs() {
     // set up the logger
     let writer = VecWriter::default();
     let logs = writer.logs.clone();
-    AptosData::builder()
+    Libra2Data::builder()
         .is_async(false)
         .tokio_console_port(None)
         .printer(Box::new(writer.write_to_stderr(false)))

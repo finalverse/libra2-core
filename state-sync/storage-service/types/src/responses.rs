@@ -15,7 +15,7 @@ use crate::{
 };
 use libra2_compression::{client::CompressionClient, CompressedData};
 use libra2_config::config::{
-    AptosDataClientConfig, StorageServiceConfig, MAX_APPLICATION_MESSAGE_SIZE,
+    Libra2DataClientConfig, StorageServiceConfig, MAX_APPLICATION_MESSAGE_SIZE,
 };
 use libra2_time_service::{TimeService, TimeServiceTrait};
 use libra2_types::{
@@ -368,7 +368,7 @@ pub struct StorageServerSummary {
 impl StorageServerSummary {
     pub fn can_service(
         &self,
-        libra2_data_client_config: &AptosDataClientConfig,
+        libra2_data_client_config: &Libra2DataClientConfig,
         time_service: TimeService,
         request: &StorageServiceRequest,
     ) -> bool {
@@ -437,7 +437,7 @@ impl DataSummary {
     /// Returns true iff the request can be serviced
     pub fn can_service(
         &self,
-        libra2_data_client_config: &AptosDataClientConfig,
+        libra2_data_client_config: &Libra2DataClientConfig,
         time_service: TimeService,
         request: &StorageServiceRequest,
     ) -> bool {
@@ -582,7 +582,7 @@ impl DataSummary {
 /// Returns true iff an optimistic data request can be serviced
 /// by the peer with the given synced ledger info.
 fn can_service_optimistic_request(
-    libra2_data_client_config: &AptosDataClientConfig,
+    libra2_data_client_config: &Libra2DataClientConfig,
     time_service: TimeService,
     synced_ledger_info: Option<&LedgerInfoWithSignatures>,
 ) -> bool {
@@ -593,7 +593,7 @@ fn can_service_optimistic_request(
 /// Returns true iff a subscription data request can be serviced
 /// by the peer with the given synced ledger info.
 fn can_service_subscription_request(
-    libra2_data_client_config: &AptosDataClientConfig,
+    libra2_data_client_config: &Libra2DataClientConfig,
     time_service: TimeService,
     synced_ledger_info: Option<&LedgerInfoWithSignatures>,
 ) -> bool {

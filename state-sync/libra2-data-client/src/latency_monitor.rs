@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{
-    interface::AptosDataClientInterface,
+    interface::Libra2DataClientInterface,
     logging::{LogEntry, LogEvent, LogSchema},
     metrics,
 };
-use libra2_config::config::AptosDataClientConfig;
+use libra2_config::config::Libra2DataClientConfig;
 use libra2_logger::{info, sample, sample::SampleRate, warn};
 use libra2_storage_interface::DbReader;
 use libra2_time_service::{TimeService, TimeServiceTrait};
@@ -27,7 +27,7 @@ const MAX_VERSION_LAG_TO_TOLERATE: u64 = 10_000;
 pub struct LatencyMonitor {
     advertised_versions: BTreeMap<u64, AdvertisedVersionMetadata>, // A map from advertised versions to metadata
     caught_up_to_latest: bool, // Whether the node has ever caught up to the latest blockchain version
-    data_client: Arc<dyn AptosDataClientInterface + Send + Sync>, // The data client through which to see advertised data
+    data_client: Arc<dyn Libra2DataClientInterface + Send + Sync>, // The data client through which to see advertised data
     monitor_loop_interval: Duration, // The interval between latency monitor loop executions
     storage: Arc<dyn DbReader>,      // The reader interface to storage
     time_service: TimeService,       // The service to monitor elapsed time
@@ -35,8 +35,8 @@ pub struct LatencyMonitor {
 
 impl LatencyMonitor {
     pub fn new(
-        data_client_config: Arc<AptosDataClientConfig>,
-        data_client: Arc<dyn AptosDataClientInterface + Send + Sync>,
+        data_client_config: Arc<Libra2DataClientConfig>,
+        data_client: Arc<dyn Libra2DataClientInterface + Send + Sync>,
         storage: Arc<dyn DbReader>,
         time_service: TimeService,
     ) -> Self {
@@ -355,7 +355,7 @@ mod tests {
         },
         tests::mock::{create_mock_data_client, create_mock_db_reader},
     };
-    use libra2_config::config::AptosDataClientConfig;
+    use libra2_config::config::Libra2DataClientConfig;
     use libra2_time_service::{TimeService, TimeServiceTrait};
     use std::{sync::Arc, time::Duration};
 
@@ -665,7 +665,7 @@ mod tests {
 
     /// Creates a latency monitor for testing
     fn create_latency_monitor() -> (TimeService, LatencyMonitor) {
-        let data_client_config = Arc::new(AptosDataClientConfig::default());
+        let data_client_config = Arc::new(Libra2DataClientConfig::default());
         let data_client = create_mock_data_client();
         let storage = create_mock_db_reader();
         let time_service = TimeService::mock();

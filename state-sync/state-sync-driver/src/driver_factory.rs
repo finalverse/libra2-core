@@ -14,7 +14,7 @@ use crate::{
 };
 use libra2_config::config::NodeConfig;
 use libra2_consensus_notifications::ConsensusNotificationListener;
-use libra2_data_client::client::AptosDataClient;
+use libra2_data_client::client::Libra2DataClient;
 use libra2_data_streaming_service::streaming_client::StreamingServiceClient;
 use libra2_event_notifications::{EventNotificationSender, EventSubscriptionService};
 use libra2_executor_types::ChunkExecutorTrait;
@@ -55,7 +55,7 @@ impl DriverFactory {
         metadata_storage: MetadataStorage,
         consensus_listener: ConsensusNotificationListener,
         event_subscription_service: EventSubscriptionService,
-        libra2_data_client: AptosDataClient,
+        libra2_data_client: Libra2DataClient,
         streaming_service_client: StreamingServiceClient,
         time_service: TimeService,
     ) -> Self {
@@ -96,7 +96,7 @@ impl DriverFactory {
         metadata_storage: MetadataStorage,
         consensus_listener: ConsensusNotificationListener,
         mut event_subscription_service: EventSubscriptionService,
-        libra2_data_client: AptosDataClient,
+        libra2_data_client: Libra2DataClient,
         streaming_service_client: StreamingServiceClient,
         time_service: TimeService,
     ) -> (Self, UnboundedSender<CommitNotification>) {

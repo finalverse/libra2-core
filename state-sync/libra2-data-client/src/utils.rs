@@ -5,7 +5,7 @@ use crate::{
     error::Error,
     logging::{LogEntry, LogEvent, LogSchema},
 };
-use libra2_config::{config::AptosDataClientConfig, network_id::PeerNetworkId};
+use libra2_config::{config::Libra2DataClientConfig, network_id::PeerNetworkId};
 use libra2_logger::{sample, sample::SampleRate, warn};
 use libra2_network::application::{metadata::PeerMetadata, storage::PeersAndMetadata};
 use maplit::hashset;
@@ -71,7 +71,7 @@ pub fn choose_random_peers_by_distance_and_latency(
 /// may be filtered to only include a subset of peers with lower latencies.
 /// This helps to avoid sub-optimal peer selection and bad tail behaviours.
 pub fn choose_peers_by_latency(
-    data_client_config: Arc<AptosDataClientConfig>,
+    data_client_config: Arc<Libra2DataClientConfig>,
     num_peers_to_choose: u64,
     potential_peers: HashSet<PeerNetworkId>,
     peers_and_metadata: Arc<PeersAndMetadata>,

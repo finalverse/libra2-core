@@ -14,7 +14,7 @@ use std::{fmt, time::Instant};
 
 /// The API offered by the Aptos Data Client.
 #[async_trait]
-pub trait AptosDataClientInterface {
+pub trait Libra2DataClientInterface {
     /// Fetches a global summary of the data currently available in the network.
     ///
     /// This API is intended to be relatively cheap to call, usually returning a

@@ -5,7 +5,7 @@ use crate::{
     error::Error,
     global_summary::GlobalDataSummary,
     interface::{
-        AptosDataClientInterface, Response, ResponseCallback, ResponseContext, ResponseError,
+        Libra2DataClientInterface, Response, ResponseCallback, ResponseContext, ResponseError,
         ResponseId, SubscriptionRequestMetadata,
     },
     logging::{LogEntry, LogEvent, LogSchema},
@@ -20,7 +20,7 @@ use crate::{
     utils,
 };
 use libra2_config::{
-    config::{AptosDataClientConfig, BaseConfig},
+    config::{Libra2DataClientConfig, BaseConfig},
     network_id::PeerNetworkId,
 };
 use libra2_id_generator::{IdGenerator, U64IdGenerator};
@@ -69,10 +69,10 @@ use tokio::runtime::Handle;
 // Useful constants
 const PEER_METRICS_FREQ_SECS: u64 = 5; // The frequency to update peer metrics and logs
 
-/// An [`AptosDataClientInterface`] that fulfills requests from remote peers' Storage Service
+/// An [`Libra2DataClientInterface`] that fulfills requests from remote peers' Storage Service
 /// over AptosNet.
 ///
-/// The `AptosDataClient`:
+/// The `Libra2DataClient`:
 ///
 /// 1. Sends requests to connected Aptos peers.
 /// 2. Does basic type conversions and error handling on the responses.
@@ -88,11 +88,11 @@ const PEER_METRICS_FREQ_SECS: u64 = 5; // The frequency to update peer metrics a
 /// The client is expected to be cloneable and usable from many concurrent tasks
 /// and/or threads.
 #[derive(Clone, Debug)]
-pub struct AptosDataClient {
+pub struct Libra2DataClient {
     /// The base config of the node.
     base_config: Arc<BaseConfig>,
     /// The config for the AptosNet data client.
-    data_client_config: Arc<AptosDataClientConfig>,
+    data_client_config: Arc<Libra2DataClientConfig>,
     /// The underlying AptosNet storage service client.
     storage_service_client: StorageServiceClient<NetworkClient<StorageServiceMessage>>,
     /// The state of the active subscription stream.
@@ -107,9 +107,9 @@ pub struct AptosDataClient {
     time_service: TimeService,
 }
 
-impl AptosDataClient {
+impl Libra2DataClient {
     pub fn new(
-        data_client_config: AptosDataClientConfig,
+        data_client_config: Libra2DataClientConfig,
         base_config: BaseConfig,
         time_service: TimeService,
         storage: Arc<dyn DbReader>,
@@ -913,7 +913,7 @@ impl AptosDataClient {
 }
 
 #[async_trait]
-impl AptosDataClientInterface for AptosDataClient {
+impl Libra2DataClientInterface for Libra2DataClient {
     fn get_global_data_summary(&self) -> GlobalDataSummary {
         self.global_summary_cache.load().clone().deref().clone()
     }
@@ -1137,7 +1137,7 @@ impl AptosDataClientInterface for AptosDataClient {
 
 /// The AptosNet-specific request context needed to update a peer's scoring.
 struct AptosNetResponseCallback {
-    data_client: AptosDataClient,
+    data_client: Libra2DataClient,
     id: ResponseId,
     peer: PeerNetworkId,
     request: StorageServiceRequest,

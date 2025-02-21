@@ -10,8 +10,8 @@ use crate::{
     CONFIGURATION_PATH, FORGE_METRICS_PATH, INDEX_PATH, JSON_METRICS_PATH, METRICS_PATH,
     PEER_INFORMATION_PATH, SYSTEM_INFORMATION_PATH,
 };
-use libra2_config::config::{AptosDataClientConfig, BaseConfig, NodeConfig};
-use libra2_data_client::client::AptosDataClient;
+use libra2_config::config::{Libra2DataClientConfig, BaseConfig, NodeConfig};
+use libra2_data_client::client::Libra2DataClient;
 use libra2_network::application::{interface::NetworkClient, storage::PeersAndMetadata};
 use libra2_storage_interface::DbReader;
 use libra2_storage_service_client::StorageServiceClient;
@@ -257,8 +257,8 @@ async fn send_get_request_to_path(config: &NodeConfig, endpoint: &str) -> Respon
     // Create the data client
     let network_client =
         NetworkClient::new(vec![], vec![], HashMap::new(), peers_and_metadata.clone());
-    let (libra2_data_client, _) = AptosDataClient::new(
-        AptosDataClientConfig::default(),
+    let (libra2_data_client, _) = Libra2DataClient::new(
+        Libra2DataClientConfig::default(),
         BaseConfig::default(),
         TimeService::mock(),
         Arc::new(MockDatabaseReader {}),

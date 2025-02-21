@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{
-    client::AptosDataClient, error::Error, interface::AptosDataClientInterface,
+    client::Libra2DataClient, error::Error, interface::Libra2DataClientInterface,
     priority::PeerPriority, tests::mock::MockNetwork,
 };
 use libra2_config::{
-    config::{AptosDataClientConfig, BaseConfig, RoleType},
+    config::{Libra2DataClientConfig, BaseConfig, RoleType},
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_crypto::HashValue;
@@ -73,7 +73,7 @@ pub fn add_several_peers(
 /// Adds several peers with metadata to the mock network and returns the set of peers
 pub fn add_several_peers_with_metadata(
     mock_network: &mut MockNetwork,
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     num_peers: u64,
     min_validator_distance: u64,
     max_validator_distance: u64,
@@ -99,7 +99,7 @@ pub fn add_several_peers_with_metadata(
 /// Advances time by at least the polling loop interval
 pub async fn advance_polling_timer(
     mock_time: &mut MockTimeService,
-    data_client_config: &AptosDataClientConfig,
+    data_client_config: &Libra2DataClientConfig,
 ) {
     let poll_loop_interval_ms = data_client_config.data_poller_config.poll_loop_interval_ms;
     for _ in 0..10 {
@@ -357,7 +357,7 @@ pub fn handle_transactions_request(network_request: NetworkRequest, use_compress
 }
 
 /// Removes the distance metadata for the specified peer
-pub fn remove_distance_metadata(client: &AptosDataClient, peer: PeerNetworkId) {
+pub fn remove_distance_metadata(client: &Libra2DataClient, peer: PeerNetworkId) {
     // Get the peer monitoring metadata
     let peers_and_metadata = client.get_peers_and_metadata();
     let peer_metadata = peers_and_metadata.get_metadata_for_peer(peer).unwrap();
@@ -373,7 +373,7 @@ pub fn remove_distance_metadata(client: &AptosDataClient, peer: PeerNetworkId) {
 }
 
 /// Removes the latency metadata for the specified peer
-pub fn remove_latency_metadata(client: &AptosDataClient, peer: PeerNetworkId) {
+pub fn remove_latency_metadata(client: &Libra2DataClient, peer: PeerNetworkId) {
     // Get the peer monitoring metadata
     let peers_and_metadata = client.get_peers_and_metadata();
     let peer_metadata = peers_and_metadata.get_metadata_for_peer(peer).unwrap();
@@ -391,7 +391,7 @@ pub fn remove_latency_metadata(client: &AptosDataClient, peer: PeerNetworkId) {
 /// Chooses peers to service the given request multiple times and
 /// returns a map of the peers and their selection counts.
 pub fn select_peers_multiple_times(
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     expected_num_peers_for_request: usize,
     storage_request: &StorageServiceRequest,
 ) -> HashMap<PeerNetworkId, i32> {
@@ -414,7 +414,7 @@ pub fn select_peers_multiple_times(
 
 /// Updates the distance metadata for the specified peer
 pub fn update_distance_metadata(
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     peer: PeerNetworkId,
     distance_from_validators: u64,
 ) {
@@ -439,7 +439,7 @@ pub fn update_distance_metadata(
 /// Updates the storage summaries for the given peers using the specified
 /// version and timestamp.
 pub fn update_storage_summaries_for_peers(
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     peers: &HashSet<PeerNetworkId>,
     known_version: u64,
     timestamp_usecs: u128,
@@ -524,7 +524,7 @@ pub fn build_selection_count_max_heap(
 
 /// Verifies that the selected peers for the given request match the expected peers
 pub fn verify_selected_peers_match(
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     expected_peers: HashSet<PeerNetworkId>,
     request: &StorageServiceRequest,
 ) {
@@ -534,7 +534,7 @@ pub fn verify_selected_peers_match(
 
 /// Verifies that the given request is unserviceable
 pub fn verify_request_is_unserviceable(
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     request: &StorageServiceRequest,
     no_connected_peers: bool,
 ) {
@@ -550,7 +550,7 @@ pub fn verify_request_is_unserviceable(
 /// that: (i) only a single peer is selected; and (ii) that
 /// peer is contained in the broader set.
 pub fn verify_selected_peer_from_set(
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     storage_request: &StorageServiceRequest,
     peers: &HashSet<PeerNetworkId>,
 ) {
@@ -561,7 +561,7 @@ pub fn verify_selected_peer_from_set(
 /// (i) the correct number of peers are selection; and
 /// (ii) the peers are contained in the broader set.
 pub fn verify_selected_peers_from_set(
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     storage_request: &StorageServiceRequest,
     num_expected_peers: usize,
     peers: &HashSet<PeerNetworkId>,
@@ -576,9 +576,9 @@ pub fn verify_selected_peers_from_set(
 
 /// Waits until the transaction range is advertised by the peers
 pub async fn wait_for_transaction_advertisement(
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     mock_time: &mut MockTimeService,
-    data_client_config: &AptosDataClientConfig,
+    data_client_config: &Libra2DataClientConfig,
     transaction_range: CompleteDataRange<u64>,
 ) {
     timeout(Duration::from_secs(10), async {

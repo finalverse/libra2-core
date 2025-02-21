@@ -2,12 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{
-    client::AptosDataClient,
+    client::Libra2DataClient,
     priority::PeerPriority,
     tests::{mock::MockNetwork, utils},
 };
 use libra2_config::{
-    config::{AptosDataClientConfig, AptosDataMultiFetchConfig},
+    config::{Libra2DataClientConfig, Libra2DataMultiFetchConfig},
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_storage_service_types::{
@@ -21,8 +21,8 @@ use std::{cmp::Ordering, collections::HashSet};
 #[tokio::test]
 async fn prioritized_peer_request_selection() {
     // Create a data client with multi-fetch disabled
-    let data_client_config = AptosDataClientConfig {
-        data_multi_fetch_config: AptosDataMultiFetchConfig {
+    let data_client_config = Libra2DataClientConfig {
+        data_multi_fetch_config: Libra2DataMultiFetchConfig {
             enable_multi_fetch: false,
             ..Default::default()
         },
@@ -90,8 +90,8 @@ async fn prioritized_peer_request_selection() {
 async fn prioritized_peer_optimistic_fetch_selection() {
     // Create a data client with a max lag of 100 and multi-fetch disabled
     let max_optimistic_fetch_lag_secs = 100;
-    let data_client_config = AptosDataClientConfig {
-        data_multi_fetch_config: AptosDataMultiFetchConfig {
+    let data_client_config = Libra2DataClientConfig {
+        data_multi_fetch_config: Libra2DataMultiFetchConfig {
             enable_multi_fetch: false,
             ..Default::default()
         },
@@ -209,8 +209,8 @@ async fn prioritized_peer_optimistic_fetch_selection() {
 async fn prioritized_peer_optimistic_fetch_distance_latency_selection() {
     // Create a data client with a max lag of 100 and multi-fetch disabled
     let max_optimistic_fetch_lag_secs = 100;
-    let data_client_config = AptosDataClientConfig {
-        data_multi_fetch_config: AptosDataMultiFetchConfig {
+    let data_client_config = Libra2DataClientConfig {
+        data_multi_fetch_config: Libra2DataMultiFetchConfig {
             enable_multi_fetch: false,
             ..Default::default()
         },
@@ -334,7 +334,7 @@ async fn prioritized_peer_optimistic_fetch_distance_latency_selection() {
 async fn prioritized_peer_optimistic_fetch_missing_distances() {
     // Create a data client with a max lag of 1000
     let max_optimistic_fetch_lag_secs = 1000;
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         max_optimistic_fetch_lag_secs,
         ..Default::default()
     };
@@ -430,7 +430,7 @@ async fn prioritized_peer_optimistic_fetch_missing_distances() {
 async fn prioritized_peer_optimistic_fetch_missing_latencies() {
     // Create a data client with a max lag of 1000
     let max_optimistic_fetch_lag_secs = 1000;
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         max_optimistic_fetch_lag_secs,
         ..Default::default()
     };
@@ -526,7 +526,7 @@ async fn prioritized_peer_optimistic_fetch_missing_latencies() {
 async fn prioritized_peer_subscription_requests() {
     // Create a data client with a max lag of 10
     let max_subscription_lag_secs = 10;
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         max_subscription_lag_secs,
         ..Default::default()
     };
@@ -644,7 +644,7 @@ async fn prioritized_peer_subscription_requests() {
 async fn prioritized_peer_subscription_distance_latency_selection() {
     // Create a data client with a max lag of 500
     let max_subscription_lag_secs = 500;
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         max_subscription_lag_secs,
         ..Default::default()
     };
@@ -773,7 +773,7 @@ async fn prioritized_peer_subscription_distance_latency_selection() {
 async fn prioritized_peer_subscription_missing_distances() {
     // Create a data client with a max lag of 900
     let max_subscription_lag_secs = 900;
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         max_subscription_lag_secs,
         ..Default::default()
     };
@@ -881,7 +881,7 @@ async fn prioritized_peer_subscription_missing_distances() {
 async fn prioritized_peer_subscription_missing_latencies() {
     // Create a data client with a max lag of 900
     let max_subscription_lag_secs = 900;
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         max_subscription_lag_secs,
         ..Default::default()
     };
@@ -993,7 +993,7 @@ async fn prioritized_peer_subscription_missing_latencies() {
 async fn prioritized_peer_subscription_sticky_selection() {
     // Create a data client with a max lag of 100
     let max_subscription_lag_secs = 100;
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         max_subscription_lag_secs,
         ..Default::default()
     };
@@ -1246,7 +1246,7 @@ fn verify_peer_in_set(single_peer: &HashSet<PeerNetworkId>, peers: &HashSet<Peer
 /// and returns the selected peers.
 fn verify_peers_selected_by_distance_and_latency(
     mock_network: &mut MockNetwork,
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     storage_request: &StorageServiceRequest,
     potential_peers: &mut HashSet<PeerNetworkId>,
 ) -> HashSet<PeerNetworkId> {

@@ -11,9 +11,9 @@ pub enum Error {
     #[error("The requested data is unavailable and cannot be found in the network! Error: {0}")]
     DataIsUnavailable(String),
     #[error("Error returned by the aptos data client: {0}")]
-    AptosDataClientError(String),
+    Libra2DataClientError(String),
     #[error("The response from the aptos data client is invalid! Error: {0}")]
-    AptosDataClientResponseIsInvalid(String),
+    Libra2DataClientResponseIsInvalid(String),
     #[error("An integer overflow has occurred: {0}")]
     IntegerOverflow(String),
     #[error("No data to fetch: {0}")]
@@ -29,8 +29,8 @@ impl Error {
     pub fn get_label(&self) -> &'static str {
         match self {
             Self::DataIsUnavailable(_) => "data_is_unavailable",
-            Self::AptosDataClientError(_) => "libra2_data_client_error",
-            Self::AptosDataClientResponseIsInvalid(_) => "libra2_data_client_response_is_invalid",
+            Self::Libra2DataClientError(_) => "libra2_data_client_error",
+            Self::Libra2DataClientResponseIsInvalid(_) => "libra2_data_client_response_is_invalid",
             Self::IntegerOverflow(_) => "integer_overflow",
             Self::NoDataToFetch(_) => "no_data_to_fetch",
             Self::UnexpectedErrorEncountered(_) => "unexpected_error_encountered",
@@ -41,7 +41,7 @@ impl Error {
 
 impl From<libra2_data_client::error::Error> for Error {
     fn from(error: libra2_data_client::error::Error) -> Self {
-        Error::AptosDataClientError(error.to_string())
+        Error::Libra2DataClientError(error.to_string())
     }
 }
 

@@ -25,7 +25,7 @@ use libra2_consensus_notifications::{
     ConsensusCommitNotification, ConsensusNotification, ConsensusSyncDurationNotification,
     ConsensusSyncTargetNotification,
 };
-use libra2_data_client::interface::AptosDataClientInterface;
+use libra2_data_client::interface::Libra2DataClientInterface;
 use libra2_data_streaming_service::streaming_client::{
     DataStreamingClient, NotificationAndFeedback, NotificationFeedback,
 };
@@ -137,7 +137,7 @@ pub struct StateSyncDriver<
 }
 
 impl<
-        DataClient: AptosDataClientInterface + Send + Clone + 'static,
+        DataClient: Libra2DataClientInterface + Send + Clone + 'static,
         MempoolNotifier: MempoolNotificationSender,
         MetadataStorage: MetadataStorageInterface + Clone,
         StorageServiceNotifier: StorageServiceNotificationSender,

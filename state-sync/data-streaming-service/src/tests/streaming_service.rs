@@ -12,14 +12,14 @@ use crate::{
     },
     streaming_service::DataStreamingService,
     tests::utils::{
-        create_ledger_info, get_data_notification, initialize_logger, MockAptosDataClient,
+        create_ledger_info, get_data_notification, initialize_logger, MockLibra2DataClient,
         MAX_ADVERTISED_EPOCH_END, MAX_ADVERTISED_STATES, MAX_ADVERTISED_TRANSACTION,
         MAX_ADVERTISED_TRANSACTION_OUTPUT, MAX_REAL_EPOCH_END, MAX_REAL_TRANSACTION,
         MAX_REAL_TRANSACTION_OUTPUT, MIN_ADVERTISED_EPOCH_END, MIN_ADVERTISED_STATES,
         MIN_ADVERTISED_TRANSACTION, MIN_ADVERTISED_TRANSACTION_OUTPUT, TOTAL_NUM_STATE_VALUES,
     },
 };
-use libra2_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
+use libra2_config::config::{Libra2DataClientConfig, DataStreamingServiceConfig};
 use libra2_time_service::TimeService;
 use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
@@ -1635,7 +1635,7 @@ pub fn create_streaming_client_and_server(
     enable_subscription_streaming: bool,
 ) -> (
     StreamingServiceClient,
-    DataStreamingService<MockAptosDataClient>,
+    DataStreamingService<MockLibra2DataClient>,
 ) {
     initialize_logger();
 
@@ -1644,8 +1644,8 @@ pub fn create_streaming_client_and_server(
         new_streaming_service_client_listener_pair();
 
     // Create a mock data client
-    let libra2_data_client_config = AptosDataClientConfig::default();
-    let libra2_data_client = MockAptosDataClient::new(
+    let libra2_data_client_config = Libra2DataClientConfig::default();
+    let libra2_data_client = MockLibra2DataClient::new(
         libra2_data_client_config,
         data_beyond_highest_advertised,
         limit_chunk_sizes,

@@ -23,11 +23,11 @@ use crate::{
     streaming_service::StreamUpdateNotification,
 };
 use libra2_channels::libra2_channel;
-use libra2_config::config::{AptosDataClientConfig, DataStreamingServiceConfig};
+use libra2_config::config::{Libra2DataClientConfig, DataStreamingServiceConfig};
 use libra2_data_client::{
     global_summary::{AdvertisedData, GlobalDataSummary},
     interface::{
-        AptosDataClientInterface, Response, ResponseContext, ResponseError, ResponsePayload,
+        Libra2DataClientInterface, Response, ResponseContext, ResponseError, ResponsePayload,
         SubscriptionRequestMetadata,
     },
 };
@@ -66,7 +66,7 @@ pub type PendingClientResponse = Arc<Mutex<Box<data_notification::PendingClientR
 #[derive(Debug)]
 pub struct DataStream<T> {
     // The configuration for the data client
-    data_client_config: AptosDataClientConfig,
+    data_client_config: Libra2DataClientConfig,
 
     // The configuration for the streaming service
     streaming_service_config: DataStreamingServiceConfig,
@@ -125,9 +125,9 @@ pub struct DataStream<T> {
     dynamic_prefetching_state: DynamicPrefetchingState,
 }
 
-impl<T: AptosDataClientInterface + Send + Clone + 'static> DataStream<T> {
+impl<T: Libra2DataClientInterface + Send + Clone + 'static> DataStream<T> {
     pub fn new(
-        data_client_config: AptosDataClientConfig,
+        data_client_config: Libra2DataClientConfig,
         data_stream_config: DataStreamingServiceConfig,
         data_stream_id: DataStreamId,
         stream_request: &StreamRequest,
@@ -1094,7 +1094,7 @@ fn create_missing_epoch_ending_ledger_infos_request(
                 Ok(None) // The request was satisfied!
             }
         },
-        payload => Err(Error::AptosDataClientResponseIsInvalid(format!(
+        payload => Err(Error::Libra2DataClientResponseIsInvalid(format!(
             "Invalid response payload found for epoch ending ledger info request: {:?}",
             payload
         ))),
@@ -1138,7 +1138,7 @@ fn create_missing_state_values_request(
                 Ok(None) // The request was satisfied!
             }
         },
-        payload => Err(Error::AptosDataClientResponseIsInvalid(format!(
+        payload => Err(Error::Libra2DataClientResponseIsInvalid(format!(
             "Invalid response payload found for state values request: {:?}",
             payload
         ))),
@@ -1183,7 +1183,7 @@ fn create_missing_transactions_request(
                 Ok(None) // The request was satisfied!
             }
         },
-        payload => Err(Error::AptosDataClientResponseIsInvalid(format!(
+        payload => Err(Error::Libra2DataClientResponseIsInvalid(format!(
             "Invalid response payload found for transactions request: {:?}",
             payload
         ))),
@@ -1229,7 +1229,7 @@ fn create_missing_transaction_outputs_request(
                 Ok(None) // The request was satisfied!
             }
         },
-        payload => Err(Error::AptosDataClientResponseIsInvalid(format!(
+        payload => Err(Error::Libra2DataClientResponseIsInvalid(format!(
             "Invalid response payload found for transaction outputs request: {:?}",
             payload
         ))),
@@ -1265,7 +1265,7 @@ fn create_missing_transactions_or_outputs_request(
                 .len() as u64
         },
         payload => {
-            return Err(Error::AptosDataClientResponseIsInvalid(format!(
+            return Err(Error::Libra2DataClientResponseIsInvalid(format!(
                 "Invalid response payload found for transactions or outputs request: {:?}",
                 payload
             )))
@@ -1398,7 +1398,7 @@ fn extract_response_error(
     }
 }
 
-fn spawn_request_task<T: AptosDataClientInterface + Send + Clone + 'static>(
+fn spawn_request_task<T: Libra2DataClientInterface + Send + Clone + 'static>(
     data_stream_id: DataStreamId,
     data_client_request: DataClientRequest,
     libra2_data_client: T,
@@ -1510,7 +1510,7 @@ fn spawn_request_task<T: AptosDataClientInterface + Send + Clone + 'static>(
     })
 }
 
-async fn get_states_values_with_proof<T: AptosDataClientInterface + Send + Clone + 'static>(
+async fn get_states_values_with_proof<T: Libra2DataClientInterface + Send + Clone + 'static>(
     libra2_data_client: T,
     request: StateValuesWithProofRequest,
     request_timeout_ms: u64,
@@ -1526,7 +1526,7 @@ async fn get_states_values_with_proof<T: AptosDataClientInterface + Send + Clone
         .map(|response| response.map(ResponsePayload::from))
 }
 
-async fn get_epoch_ending_ledger_infos<T: AptosDataClientInterface + Send + Clone + 'static>(
+async fn get_epoch_ending_ledger_infos<T: Libra2DataClientInterface + Send + Clone + 'static>(
     libra2_data_client: T,
     request: EpochEndingLedgerInfosRequest,
     request_timeout_ms: u64,
@@ -1542,7 +1542,7 @@ async fn get_epoch_ending_ledger_infos<T: AptosDataClientInterface + Send + Clon
 }
 
 async fn get_new_transaction_outputs_with_proof<
-    T: AptosDataClientInterface + Send + Clone + 'static,
+    T: Libra2DataClientInterface + Send + Clone + 'static,
 >(
     libra2_data_client: T,
     request: NewTransactionOutputsWithProofRequest,
@@ -1558,7 +1558,7 @@ async fn get_new_transaction_outputs_with_proof<
         .map(|response| response.map(ResponsePayload::from))
 }
 
-async fn get_new_transactions_with_proof<T: AptosDataClientInterface + Send + Clone + 'static>(
+async fn get_new_transactions_with_proof<T: Libra2DataClientInterface + Send + Clone + 'static>(
     libra2_data_client: T,
     request: NewTransactionsWithProofRequest,
     request_timeout_ms: u64,
@@ -1575,7 +1575,7 @@ async fn get_new_transactions_with_proof<T: AptosDataClientInterface + Send + Cl
 }
 
 async fn get_new_transactions_or_outputs_with_proof<
-    T: AptosDataClientInterface + Send + Clone + 'static,
+    T: Libra2DataClientInterface + Send + Clone + 'static,
 >(
     libra2_data_client: T,
     request: NewTransactionsOrOutputsWithProofRequest,
@@ -1591,7 +1591,7 @@ async fn get_new_transactions_or_outputs_with_proof<
     Ok(Response::new(context, ResponsePayload::try_from(payload)?))
 }
 
-async fn get_number_of_states<T: AptosDataClientInterface + Send + Clone + 'static>(
+async fn get_number_of_states<T: Libra2DataClientInterface + Send + Clone + 'static>(
     libra2_data_client: T,
     request: NumberOfStatesRequest,
     request_timeout_ms: u64,
@@ -1604,7 +1604,7 @@ async fn get_number_of_states<T: AptosDataClientInterface + Send + Clone + 'stat
 }
 
 async fn get_transaction_outputs_with_proof<
-    T: AptosDataClientInterface + Send + Clone + 'static,
+    T: Libra2DataClientInterface + Send + Clone + 'static,
 >(
     libra2_data_client: T,
     request: TransactionOutputsWithProofRequest,
@@ -1621,7 +1621,7 @@ async fn get_transaction_outputs_with_proof<
         .map(|response| response.map(ResponsePayload::from))
 }
 
-async fn get_transactions_with_proof<T: AptosDataClientInterface + Send + Clone + 'static>(
+async fn get_transactions_with_proof<T: Libra2DataClientInterface + Send + Clone + 'static>(
     libra2_data_client: T,
     request: TransactionsWithProofRequest,
     request_timeout_ms: u64,
@@ -1639,7 +1639,7 @@ async fn get_transactions_with_proof<T: AptosDataClientInterface + Send + Clone 
 }
 
 async fn get_transactions_or_outputs_with_proof<
-    T: AptosDataClientInterface + Send + Clone + 'static,
+    T: Libra2DataClientInterface + Send + Clone + 'static,
 >(
     libra2_data_client: T,
     request: TransactionsOrOutputsWithProofRequest,
@@ -1657,7 +1657,7 @@ async fn get_transactions_or_outputs_with_proof<
 }
 
 async fn subscribe_to_transactions_with_proof<
-    T: AptosDataClientInterface + Send + Clone + 'static,
+    T: Libra2DataClientInterface + Send + Clone + 'static,
 >(
     libra2_data_client: T,
     request: SubscribeTransactionsWithProofRequest,
@@ -1680,7 +1680,7 @@ async fn subscribe_to_transactions_with_proof<
 }
 
 async fn subscribe_to_transaction_outputs_with_proof<
-    T: AptosDataClientInterface + Send + Clone + 'static,
+    T: Libra2DataClientInterface + Send + Clone + 'static,
 >(
     libra2_data_client: T,
     request: SubscribeTransactionOutputsWithProofRequest,
@@ -1702,7 +1702,7 @@ async fn subscribe_to_transaction_outputs_with_proof<
 }
 
 async fn subscribe_to_transactions_or_outputs_with_proof<
-    T: AptosDataClientInterface + Send + Clone + 'static,
+    T: Libra2DataClientInterface + Send + Clone + 'static,
 >(
     libra2_data_client: T,
     request: SubscribeTransactionsOrOutputsWithProofRequest,
@@ -1726,7 +1726,7 @@ async fn subscribe_to_transactions_or_outputs_with_proof<
 #[cfg(test)]
 mod test {
     use super::*;
-    use crate::tests::utils::MockAptosDataClient;
+    use crate::tests::utils::MockLibra2DataClient;
     use libra2_channels::message_queues::QueueStyle;
     use futures::StreamExt;
     use tokio::time::timeout;
@@ -1738,9 +1738,9 @@ mod test {
             DataClientRequest::NumberOfStates(NumberOfStatesRequest { version: 0 });
 
         // Create a mock data client
-        let data_client_config = AptosDataClientConfig::default();
+        let data_client_config = Libra2DataClientConfig::default();
         let libra2_data_client =
-            MockAptosDataClient::new(data_client_config, true, false, true, true);
+            MockLibra2DataClient::new(data_client_config, true, false, true, true);
 
         // Create a new pending client response
         let pending_client_response = Arc::new(Mutex::new(Box::new(

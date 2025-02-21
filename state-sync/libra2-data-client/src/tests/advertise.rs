@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{
-    client::AptosDataClient,
+    client::Libra2DataClient,
     error::Error,
-    interface::AptosDataClientInterface,
+    interface::Libra2DataClientInterface,
     peer_states::calculate_optimal_chunk_sizes,
     poller,
     priority::PeerPriority,
     tests::{mock::MockNetwork, utils},
 };
-use libra2_config::{config::AptosDataClientConfig, network_id::PeerNetworkId};
+use libra2_config::{config::Libra2DataClientConfig, network_id::PeerNetworkId};
 use libra2_storage_service_types::{
     requests::{DataRequest, TransactionsWithProofRequest},
     responses::{CompleteDataRange, DataResponse, StorageServerSummary, StorageServiceResponse},
@@ -29,7 +29,7 @@ async fn request_works_only_when_data_available() {
         let base_config = utils::create_validator_base_config();
 
         // Create the mock network, mock time, client and poller
-        let data_client_config = AptosDataClientConfig::default();
+        let data_client_config = Libra2DataClientConfig::default();
         let (mut mock_network, mut mock_time, client, poller) =
             MockNetwork::new(Some(base_config), Some(data_client_config), None);
 
@@ -100,7 +100,7 @@ async fn update_global_data_summary() {
     let base_config = utils::create_validator_base_config();
 
     // Create the mock network, mock time, client and poller
-    let data_client_config = AptosDataClientConfig::default();
+    let data_client_config = Libra2DataClientConfig::default();
     let (mut mock_network, mut mock_time, client, poller) =
         MockNetwork::new(Some(base_config), Some(data_client_config), None);
 
@@ -168,7 +168,7 @@ async fn update_peer_states() {
     let base_config = utils::create_validator_base_config();
 
     // Create the mock network, mock time, client and poller
-    let data_client_config = AptosDataClientConfig::default();
+    let data_client_config = Libra2DataClientConfig::default();
     let (mut mock_network, mut mock_time, client, poller) =
         MockNetwork::new(Some(base_config), Some(data_client_config), None);
 
@@ -274,7 +274,7 @@ async fn optimal_chunk_size_calculations() {
     let max_state_chunk_size = 500;
     let max_transaction_chunk_size = 700;
     let max_transaction_output_chunk_size = 800;
-    let data_client_config = AptosDataClientConfig {
+    let data_client_config = Libra2DataClientConfig {
         max_epoch_chunk_size,
         max_state_chunk_size,
         max_transaction_chunk_size,
@@ -328,8 +328,8 @@ async fn optimal_chunk_size_calculations() {
 
 /// Requests transactions up to the specified version and verifies the request fails
 async fn fetch_transactions_and_verify_failure(
-    data_client_config: &AptosDataClientConfig,
-    data_client: &AptosDataClient,
+    data_client_config: &Libra2DataClientConfig,
+    data_client: &Libra2DataClient,
     version: u64,
     no_connected_peers: bool,
 ) {
@@ -350,8 +350,8 @@ async fn fetch_transactions_and_verify_failure(
 
 /// Verifies that the advertised transaction data is valid
 async fn verify_advertised_transaction_data(
-    data_client_config: &AptosDataClientConfig,
-    client: &AptosDataClient,
+    data_client_config: &Libra2DataClientConfig,
+    client: &Libra2DataClient,
     mock_time: &mut MockTimeService,
     advertised_version: Version,
     expected_num_advertisements: usize,
@@ -400,7 +400,7 @@ async fn verify_advertised_transaction_data(
 
 /// Verifies that the peer's state is updated to the correct value
 async fn verify_peer_state(
-    client: &AptosDataClient,
+    client: &Libra2DataClient,
     peer: PeerNetworkId,
     expected_storage_summary: StorageServerSummary,
 ) {

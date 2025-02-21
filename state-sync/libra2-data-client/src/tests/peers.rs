@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{
-    client::AptosDataClient,
+    client::Libra2DataClient,
     error::Error,
-    interface::AptosDataClientInterface,
+    interface::Libra2DataClientInterface,
     poller,
     poller::{poll_peer, DataSummaryPoller},
     priority::PeerPriority,
     tests::{mock::MockNetwork, utils},
 };
 use libra2_config::{
-    config::{AptosDataClientConfig, AptosDataMultiFetchConfig},
+    config::{Libra2DataClientConfig, Libra2DataMultiFetchConfig},
     network_id::{NetworkId, PeerNetworkId},
 };
 use libra2_storage_service_server::network::NetworkRequest;
@@ -35,8 +35,8 @@ async fn all_bad_peers_with_invalid_responses() {
 
         // Create a data client with multi-fetch enabled (10 peers per request)
         let peers_for_multi_fetch = 10;
-        let data_client_config = AptosDataClientConfig {
-            data_multi_fetch_config: AptosDataMultiFetchConfig {
+        let data_client_config = Libra2DataClientConfig {
+            data_multi_fetch_config: Libra2DataMultiFetchConfig {
                 enable_multi_fetch: true,
                 min_peers_for_multi_fetch: peers_for_multi_fetch,
                 max_peers_for_multi_fetch: peers_for_multi_fetch,
@@ -99,7 +99,7 @@ async fn bad_peer_is_eventually_banned_internal() {
         let base_config = utils::create_validator_base_config();
 
         // Create a data client config with peer ignoring enabled
-        let data_client_config = AptosDataClientConfig {
+        let data_client_config = Libra2DataClientConfig {
             ignore_low_score_peers: true,
             ..Default::default()
         };
@@ -195,7 +195,7 @@ async fn bad_peer_is_eventually_banned_callback() {
         let networks = vec![NetworkId::Vfn, NetworkId::Public];
 
         // Create a data client config with peer ignoring enabled
-        let data_client_config = AptosDataClientConfig {
+        let data_client_config = Libra2DataClientConfig {
             ignore_low_score_peers: true,
             ..Default::default()
         };
@@ -278,7 +278,7 @@ async fn bad_peer_is_eventually_added_back() {
         let base_config = utils::create_validator_base_config();
 
         // Create a data client config with peer ignoring enabled
-        let data_client_config = AptosDataClientConfig {
+        let data_client_config = Libra2DataClientConfig {
             ignore_low_score_peers: true,
             ..Default::default()
         };
@@ -383,7 +383,7 @@ async fn disable_ignoring_low_score_peers() {
         let base_config = utils::create_validator_base_config();
 
         // Create a data client config with peer ignoring disabled
-        let data_client_config = AptosDataClientConfig {
+        let data_client_config = Libra2DataClientConfig {
             ignore_low_score_peers: false,
             ..Default::default()
         };
@@ -473,7 +473,7 @@ async fn disconnected_peers_garbage_collection() {
         let base_config = utils::create_validator_base_config();
 
         // Create the mock network, client and poller
-        let data_client_config = AptosDataClientConfig::default();
+        let data_client_config = Libra2DataClientConfig::default();
         let (mut mock_network, _, client, poller) =
             MockNetwork::new(Some(base_config), Some(data_client_config), None);
 
@@ -530,8 +530,8 @@ async fn single_good_peer() {
 
         // Create a data client with multi-fetch enabled (10 peers per request)
         let peers_for_multi_fetch = 10;
-        let data_client_config = AptosDataClientConfig {
-            data_multi_fetch_config: AptosDataMultiFetchConfig {
+        let data_client_config = Libra2DataClientConfig {
+            data_multi_fetch_config: Libra2DataMultiFetchConfig {
                 enable_multi_fetch: true,
                 min_peers_for_multi_fetch: peers_for_multi_fetch,
                 max_peers_for_multi_fetch: peers_for_multi_fetch,
@@ -607,8 +607,8 @@ async fn single_good_peer_across_priorities() {
 
     // Create a data client with multi-fetch enabled (5 peers per request)
     let peers_for_multi_fetch = 5;
-    let data_client_config = AptosDataClientConfig {
-        data_multi_fetch_config: AptosDataMultiFetchConfig {
+    let data_client_config = Libra2DataClientConfig {
+        data_multi_fetch_config: Libra2DataMultiFetchConfig {
             enable_multi_fetch: true,
             min_peers_for_multi_fetch: peers_for_multi_fetch,
             max_peers_for_multi_fetch: peers_for_multi_fetch,
@@ -732,7 +732,7 @@ fn send_transaction_response(network_request: NetworkRequest) {
 }
 
 /// Verifies the exclusive existence of peer states for all the specified peers
-fn verify_peer_states(client: &AptosDataClient, all_peers: HashSet<PeerNetworkId>) {
+fn verify_peer_states(client: &Libra2DataClient, all_peers: HashSet<PeerNetworkId>) {
     let peer_to_states = client.get_peer_states().get_peer_to_states();
     for peer in &all_peers {
         assert!(peer_to_states.contains_key(peer));
@@ -743,8 +743,8 @@ fn verify_peer_states(client: &AptosDataClient, all_peers: HashSet<PeerNetworkId
 /// Sends a request to fetch transactions from the peers and
 /// verifies that the response is expected.
 async fn verify_transactions_response(
-    data_client_config: &AptosDataClientConfig,
-    client: &AptosDataClient,
+    data_client_config: &Libra2DataClientConfig,
+    client: &Libra2DataClient,
     max_transaction_version: u64,
     expect_error: bool,
 ) {

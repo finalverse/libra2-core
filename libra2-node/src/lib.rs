@@ -44,7 +44,7 @@ use tokio::runtime::Runtime;
 
 const EPOCH_LENGTH_SECS: u64 = 60;
 
-/// Runs an Aptos validator or fullnode
+/// Runs an Libra2 validator or fullnode
 #[derive(Clone, Debug, Parser)]
 #[clap(name = "Libra2 Node", author, version)]
 pub struct Libra2NodeArgs {
@@ -84,7 +84,7 @@ pub struct Libra2NodeArgs {
     #[clap(long, requires("test"))]
     random_ports: bool,
 
-    /// Paths to the Aptos framework release package to be used for genesis.
+    /// Paths to the Libra2 framework release package to be used for genesis.
     #[clap(long, requires("test"))]
     genesis_framework: Option<PathBuf>,
 
@@ -107,7 +107,7 @@ pub struct Libra2NodeArgs {
 }
 
 impl Libra2NodeArgs {
-    /// Runs an Aptos node based on the given command line arguments and config flags
+    /// Runs an Libra2 node based on the given command line arguments and config flags
     pub fn run(self) {
         #[cfg(target_os = "linux")]
         // https://sfackler.github.io/rstack/doc/rstack_self/index.html
@@ -192,7 +192,7 @@ pub fn load_seed(input: &str) -> Result<[u8; 32], FromHexError> {
 }
 
 /// Runtime handle to ensure that all inner runtimes stay in scope
-pub struct AptosHandle {
+pub struct Libra2Handle {
     _admin_service: AdminService,
     _api_runtime: Option<Runtime>,
     _backup_runtime: Option<Runtime>,
@@ -220,7 +220,7 @@ pub fn start(
     start_and_report_ports(config, log_file, create_global_rayon_pool, None, None)
 }
 
-/// Start an Aptos node
+/// Start an Libra2 node
 pub fn start_and_report_ports(
     config: NodeConfig,
     log_file: Option<PathBuf>,
@@ -617,7 +617,7 @@ pub fn setup_environment_and_start_node(
     logger_filter_update_job: Option<LoggerFilterUpdater>,
     api_port_tx: Option<oneshot::Sender<u16>>,
     indexer_grpc_port_tx: Option<oneshot::Sender<u16>>,
-) -> anyhow::Result<AptosHandle> {
+) -> anyhow::Result<Libra2Handle> {
     // Log the node config at node startup
     node_config.log_all_configs();
 
@@ -774,7 +774,7 @@ pub fn setup_environment_and_start_node(
         &mut admin_service,
     );
 
-    Ok(AptosHandle {
+    Ok(Libra2Handle {
         _admin_service: admin_service,
         _api_runtime: api_runtime,
         _backup_runtime: backup_service,
