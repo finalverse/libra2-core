@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::Error;
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 use libra2_logger::Schema;
 use libra2_types::waypoint::Waypoint;
 use serde::Serialize;

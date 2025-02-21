@@ -9,7 +9,7 @@ use crate::dag::{
         NodeMetadata, RemoteFetchRequest,
     },
 };
-use aptos_consensus_types::common::Payload;
+use libra2_consensus_types::common::Payload;
 use libra2_crypto::HashValue;
 use libra2_types::{
     aggregate_signature::AggregateSignature, validator_verifier::random_validator_verifier,

@@ -11,7 +11,7 @@ use crate::{
     rand::rand_gen::network_messages::RandGenMessage,
 };
 use libra2_config::network_id::{NetworkId, PeerNetworkId};
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block_retrieval::{BlockRetrievalRequest, BlockRetrievalRequestV1, BlockRetrievalResponse},
     epoch_retrieval::EpochRetrievalRequest,
     order_vote_msg::OrderVoteMsg,

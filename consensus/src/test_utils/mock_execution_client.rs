@@ -16,7 +16,7 @@ use crate::{
 };
 use anyhow::{anyhow, format_err, Result};
 use libra2_channels::libra2_channel;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::{Payload, Round},
     pipelined_block::PipelinedBlock,
 };

@@ -6,7 +6,7 @@ use crate::{
     test_utils::{self, make_timeout_cert},
     Error, TSafetyRules,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::block_test_utils::random_payload,
     common::{Payload, Round},
     order_vote_proposal::OrderVoteProposal,

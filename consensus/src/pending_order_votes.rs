@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::counters;
-use aptos_consensus_types::{common::Author, order_vote::OrderVote, quorum_cert::QuorumCert};
+use libra2_consensus_types::{common::Author, order_vote::OrderVote, quorum_cert::QuorumCert};
 use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_logger::prelude::*;
 use libra2_types::{
@@ -183,7 +183,7 @@ impl PendingOrderVotes {
 #[cfg(test)]
 mod tests {
     use super::{OrderVoteReceptionResult, OrderVoteStatus, PendingOrderVotes};
-    use aptos_consensus_types::{order_vote::OrderVote, quorum_cert::QuorumCert};
+    use libra2_consensus_types::{order_vote::OrderVote, quorum_cert::QuorumCert};
     use libra2_crypto::{bls12381, hash::CryptoHash, HashValue};
     use libra2_types::{
         aggregate_signature::PartialSignatures, block_info::BlockInfo, ledger_info::LedgerInfo,

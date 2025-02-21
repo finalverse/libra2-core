@@ -27,7 +27,7 @@ use crate::{
 };
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use libra2_config::{config::ConsensusConfig, network_id::NetworkId};
-use aptos_consensus_types::{proposal_msg::ProposalMsg, utils::PayloadTxnsSize};
+use libra2_consensus_types::{proposal_msg::ProposalMsg, utils::PayloadTxnsSize};
 use libra2_infallible::Mutex;
 use libra2_network::{
     application::{interface::NetworkClient, storage::PeersAndMetadata},

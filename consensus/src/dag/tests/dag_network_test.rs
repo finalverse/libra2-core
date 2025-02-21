@@ -7,7 +7,7 @@ use crate::dag::{
     DAGRpcResult,
 };
 use anyhow::{anyhow, bail};
-use aptos_consensus_types::common::Author;
+use libra2_consensus_types::common::Author;
 use libra2_infallible::Mutex;
 use libra2_reliable_broadcast::RBNetworkSender;
 use libra2_time_service::{TimeService, TimeServiceTrait};

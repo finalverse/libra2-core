@@ -12,7 +12,7 @@ use crate::{
     transaction_shuffler::TransactionShuffler,
 };
 use anyhow::{anyhow, Result};
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block, pipeline_execution_result::PipelineExecutionResult,
     pipelined_block::PipelinedBlock, quorum_cert::QuorumCert,
 };

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::consensus_observer::common::error::Error;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::{BatchPayload, Payload},
     payload::InlineBatches,
     pipelined_block::PipelinedBlock,
@@ -943,7 +943,7 @@ fn verify_batch(
 mod test {
     use super::*;
     use libra2_bitvec::BitVec;
-    use aptos_consensus_types::{
+    use libra2_consensus_types::{
         block::Block,
         block_data::{BlockData, BlockType},
         common::{Author, ProofWithData, ProofWithDataWithTxnLimit},

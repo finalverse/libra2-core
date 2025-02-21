@@ -14,7 +14,7 @@ use crate::dag::{
     types::NodeMetadata,
     CertifiedNode,
 };
-use aptos_consensus_types::common::Round;
+use libra2_consensus_types::common::Round;
 use libra2_infallible::Mutex;
 use libra2_logger::debug;
 use libra2_types::epoch_state::EpochState;

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_node_checker_lib::{configuration, server};
+use libra2_node_checker_lib::{configuration, server};
 use clap::{Parser, Subcommand};
 
 #[derive(Clone, Debug, Subcommand)]

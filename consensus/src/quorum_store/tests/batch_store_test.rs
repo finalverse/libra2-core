@@ -6,7 +6,7 @@ use crate::quorum_store::{
     quorum_store_db::QuorumStoreDB,
     types::{PersistedValue, StorageMode},
 };
-use aptos_consensus_types::proof_of_store::{BatchId, BatchInfo};
+use libra2_consensus_types::proof_of_store::{BatchId, BatchInfo};
 use libra2_crypto::HashValue;
 use libra2_temppath::TempPath;
 use libra2_types::{

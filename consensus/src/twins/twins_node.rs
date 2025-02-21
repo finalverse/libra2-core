@@ -22,7 +22,7 @@ use libra2_config::{
     generator::{self, ValidatorSwarm},
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 use libra2_event_notifications::{ReconfigNotification, ReconfigNotificationListener};
 use libra2_mempool::mocks::MockSharedMempool;
 use libra2_network::{

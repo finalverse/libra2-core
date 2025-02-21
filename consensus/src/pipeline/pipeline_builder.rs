@@ -13,7 +13,7 @@ use crate::{
 };
 use anyhow::anyhow;
 use libra2_consensus_notifications::ConsensusNotificationSender;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     common::Round,
     pipeline::commit_vote::CommitVote,

@@ -13,7 +13,7 @@ use crate::{
         utils::Timeouts,
     },
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     payload::TDataInfo,
     proof_of_store::{
         BatchInfo, ProofCache, ProofOfStore, SignedBatchInfo, SignedBatchInfoError,

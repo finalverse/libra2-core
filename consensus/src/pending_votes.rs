@@ -10,7 +10,7 @@
 
 use crate::counters;
 use libra2_bitvec::BitVec;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::Author,
     quorum_cert::QuorumCert,
     round_timeout::{RoundTimeout, RoundTimeoutReason},
@@ -562,7 +562,7 @@ impl fmt::Display for PendingVotes {
 #[cfg(test)]
 mod tests {
     use super::{PendingVotes, VoteReceptionResult, VoteStatus};
-    use aptos_consensus_types::{
+    use libra2_consensus_types::{
         block::block_test_utils::certificate_for_genesis, vote::Vote, vote_data::VoteData,
     };
     use libra2_crypto::{bls12381, hash::CryptoHash, HashValue};

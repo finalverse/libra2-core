@@ -667,7 +667,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-consensus-types",
  "aptos-experimental-runtimes",
  "aptos-runtimes",
  "aptos-safety-rules",
@@ -692,6 +691,7 @@ dependencies = [
  "libra2-collections",
  "libra2-config",
  "libra2-consensus-notifications",
+ "libra2-consensus-types",
  "libra2-crypto",
  "libra2-crypto-derive",
  "libra2-dkg",
@@ -745,35 +745,6 @@ dependencies = [
  "tokio",
  "tokio-retry",
  "tokio-stream",
-]
-
-[[package]]
-name = "aptos-consensus-types"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "bcs 0.1.4",
- "derivative",
- "fail",
- "futures",
- "itertools 0.13.0",
- "libra2-bitvec",
- "libra2-crypto",
- "libra2-crypto-derive",
- "libra2-executor-types",
- "libra2-infallible",
- "libra2-logger",
- "libra2-short-hex-str",
- "libra2-types",
- "mini-moka",
- "mirai-annotations",
- "once_cell",
- "proptest",
- "rand 0.7.3",
- "rayon",
- "serde",
- "serde_json",
- "tokio",
 ]
 
 [[package]]
@@ -866,24 +837,6 @@ dependencies = [
  "num_cpus",
  "once_cell",
  "rayon",
-]
-
-[[package]]
-name = "aptos-fn-check-client"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-node-checker",
- "aptos-sdk",
- "clap 4.5.21",
- "env_logger",
- "futures",
- "gcp-bigquery-client",
- "libra2-logger",
- "reqwest 0.11.23",
- "serde",
- "serde_json",
- "tokio",
 ]
 
 [[package]]
@@ -1559,7 +1512,6 @@ name = "aptos-jwk-consensus"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-consensus-types",
  "aptos-runtimes",
  "aptos-safety-rules",
  "async-trait",
@@ -1571,6 +1523,7 @@ dependencies = [
  "libra2-bounded-executor",
  "libra2-channels",
  "libra2-config",
+ "libra2-consensus-types",
  "libra2-crypto",
  "libra2-enum-conversion-derive",
  "libra2-event-notifications",
@@ -1856,35 +1809,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-node-checker"
-version = "0.1.1"
-dependencies = [
- "anyhow",
- "aptos-sdk",
- "async-trait",
- "clap 4.5.21",
- "futures",
- "libra2-config",
- "libra2-crypto",
- "libra2-logger",
- "libra2-network-checker",
- "libra2-rest-client",
- "libra2-transaction-emitter-lib",
- "libra2-transaction-workloads-lib",
- "once_cell",
- "poem",
- "poem-openapi",
- "prometheus-parse",
- "reqwest 0.11.23",
- "serde",
- "serde_json",
- "serde_yaml 0.8.26",
- "thiserror",
- "tokio",
- "url",
-]
-
-[[package]]
 name = "aptos-package-builder"
 version = "0.1.0"
 dependencies = [
@@ -2035,11 +1959,11 @@ dependencies = [
 name = "aptos-safety-rules"
 version = "0.1.0"
 dependencies = [
- "aptos-consensus-types",
  "claims",
  "criterion",
  "hex",
  "libra2-config",
+ "libra2-consensus-types",
  "libra2-crypto",
  "libra2-global-constants",
  "libra2-infallible",
@@ -6443,10 +6367,10 @@ version = "0.1.0"
 dependencies = [
  "aptos-api-types",
  "aptos-consensus",
- "aptos-consensus-types",
  "bcs 0.1.4",
  "clap 4.5.21",
  "libra2-config",
+ "libra2-consensus-types",
  "libra2-crypto",
  "libra2-crypto-derive",
  "libra2-network",
@@ -8644,6 +8568,35 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-consensus-types"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "bcs 0.1.4",
+ "derivative",
+ "fail",
+ "futures",
+ "itertools 0.13.0",
+ "libra2-bitvec",
+ "libra2-crypto",
+ "libra2-crypto-derive",
+ "libra2-executor-types",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-short-hex-str",
+ "libra2-types",
+ "mini-moka",
+ "mirai-annotations",
+ "once_cell",
+ "proptest",
+ "rand 0.7.3",
+ "rayon",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "libra2-crash-handler"
 version = "0.1.0"
 dependencies = [
@@ -8962,7 +8915,6 @@ name = "libra2-dkg-runtime"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-consensus-types",
  "aptos-runtimes",
  "aptos-safety-rules",
  "async-trait",
@@ -8975,6 +8927,7 @@ dependencies = [
  "libra2-bounded-executor",
  "libra2-channels",
  "libra2-config",
+ "libra2-consensus-types",
  "libra2-crypto",
  "libra2-crypto-derive",
  "libra2-enum-conversion-derive",
@@ -9048,7 +9001,6 @@ dependencies = [
  "anyhow",
  "aptos-block-executor",
  "aptos-cached-packages",
- "aptos-consensus-types",
  "aptos-experimental-runtimes",
  "aptos-indexer-grpc-table-info",
  "aptos-sdk",
@@ -9061,6 +9013,7 @@ dependencies = [
  "fail",
  "itertools 0.13.0",
  "libra2-config",
+ "libra2-consensus-types",
  "libra2-crypto",
  "libra2-db",
  "libra2-db-indexer",
@@ -9174,11 +9127,11 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-consensus-types",
  "aptos-sdk",
  "aptos-vm",
  "aptos-vm-genesis",
  "libra2-config",
+ "libra2-consensus-types",
  "libra2-crypto",
  "libra2-db",
  "libra2-executor",
@@ -9286,6 +9239,24 @@ dependencies = [
  "clap 4.5.21",
  "libra2-faucet-core",
  "libra2-logger",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-fn-check-client"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-sdk",
+ "clap 4.5.21",
+ "env_logger",
+ "futures",
+ "gcp-bigquery-client",
+ "libra2-logger",
+ "libra2-node-checker",
+ "reqwest 0.11.23",
+ "serde",
+ "serde_json",
  "tokio",
 ]
 
@@ -9550,7 +9521,6 @@ name = "libra2-mempool"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-consensus-types",
  "aptos-runtimes",
  "bcs 0.1.4",
  "enum_dispatch",
@@ -9561,6 +9531,7 @@ dependencies = [
  "libra2-channels",
  "libra2-compression",
  "libra2-config",
+ "libra2-consensus-types",
  "libra2-crypto",
  "libra2-event-notifications",
  "libra2-id-generator",
@@ -9871,6 +9842,35 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-node-checker"
+version = "0.1.1"
+dependencies = [
+ "anyhow",
+ "aptos-sdk",
+ "async-trait",
+ "clap 4.5.21",
+ "futures",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-logger",
+ "libra2-network-checker",
+ "libra2-rest-client",
+ "libra2-transaction-emitter-lib",
+ "libra2-transaction-workloads-lib",
+ "once_cell",
+ "poem",
+ "poem-openapi",
+ "prometheus-parse",
+ "reqwest 0.11.23",
+ "serde",
+ "serde_json",
+ "serde_yaml 0.8.26",
+ "thiserror",
+ "tokio",
+ "url",
+]
+
+[[package]]
 name = "libra2-node-identity"
 version = "0.1.0"
 dependencies = [
@@ -10057,13 +10057,13 @@ name = "libra2-reliable-broadcast"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-consensus-types",
  "async-trait",
  "bytes",
  "claims",
  "futures",
  "futures-channel",
  "libra2-bounded-executor",
+ "libra2-consensus-types",
  "libra2-enum-conversion-derive",
  "libra2-infallible",
  "libra2-logger",

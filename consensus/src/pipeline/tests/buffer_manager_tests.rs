@@ -27,7 +27,7 @@ use crate::{
 use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::{config::ConsensusObserverConfig, network_id::NetworkId};
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::block_test_utils::certificate_for_genesis, pipelined_block::PipelinedBlock,
     vote_proposal::VoteProposal,
 };

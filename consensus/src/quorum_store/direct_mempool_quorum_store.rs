@@ -3,7 +3,7 @@
 
 use crate::{monitor, quorum_store::counters};
 use anyhow::Result;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::{Payload, PayloadFilter, TransactionInProgress, TransactionSummary},
     request_response::{GetPayloadCommand, GetPayloadResponse},
 };

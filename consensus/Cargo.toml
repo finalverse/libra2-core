@@ -20,7 +20,7 @@ libra2-channels = { workspace = true }
 libra2-collections = { workspace = true }
 libra2-config = { workspace = true }
 libra2-consensus-notifications = { workspace = true }
-aptos-consensus-types = { workspace = true }
+libra2-consensus-types = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-crypto-derive = { workspace = true }
 libra2-dkg = { workspace = true }
@@ -88,7 +88,7 @@ tokio-stream = { workspace = true }
 [dev-dependencies]
 aptos-cached-packages = { workspace = true }
 libra2-config = { workspace = true, features = ["fuzzing"] }
-aptos-consensus-types = { workspace = true, features = ["fuzzing"] }
+libra2-consensus-types = { workspace = true, features = ["fuzzing"] }
 libra2-executor-test-helpers = { workspace = true }
 libra2-keygen = { workspace = true }
 libra2-mempool = { workspace = true, features = ["fuzzing"] }
@@ -107,7 +107,7 @@ tempfile = { workspace = true }
 [features]
 default = []
 fuzzing = [
-    "aptos-consensus-types/fuzzing",
+    "libra2-consensus-types/fuzzing",
     "libra2-config/fuzzing",
     "libra2-crypto/fuzzing",
     "libra2-mempool/fuzzing",

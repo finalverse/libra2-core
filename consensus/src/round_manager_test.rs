@@ -35,7 +35,7 @@ use libra2_config::{
     config::ConsensusConfig,
     network_id::{NetworkId, PeerNetworkId},
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::{
         block_test_utils::{certificate_for_genesis, gen_test_certificate},
         Block,

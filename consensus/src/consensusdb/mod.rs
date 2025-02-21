@@ -8,7 +8,7 @@ mod schema;
 
 use crate::error::DbError;
 use anyhow::Result;
-use aptos_consensus_types::{block::Block, quorum_cert::QuorumCert};
+use libra2_consensus_types::{block::Block, quorum_cert::QuorumCert};
 use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
 use libra2_schemadb::{batch::SchemaBatch, schema::Schema, Options, DB, DEFAULT_COLUMN_FAMILY_NAME};

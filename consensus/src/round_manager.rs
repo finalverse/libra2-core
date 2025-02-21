@@ -36,7 +36,7 @@ use crate::{
 use anyhow::{bail, ensure, Context};
 use libra2_channels::libra2_channel;
 use libra2_config::config::ConsensusConfig;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     block_data::BlockType,
     common::{Author, Round},

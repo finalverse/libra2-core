@@ -14,7 +14,7 @@ use crate::{
     },
 };
 use anyhow::ensure;
-use aptos_consensus_types::payload::TDataInfo;
+use libra2_consensus_types::payload::TDataInfo;
 use libra2_logger::prelude::*;
 use libra2_short_hex_str::AsShortHexStr;
 use libra2_types::PeerId;

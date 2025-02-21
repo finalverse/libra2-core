@@ -8,7 +8,7 @@ use crate::{
 use anyhow::bail;
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::network_id::NetworkId;
-use aptos_consensus_types::common::Author;
+use libra2_consensus_types::common::Author;
 #[cfg(test)]
 use libra2_infallible::RwLock;
 use libra2_logger::warn;

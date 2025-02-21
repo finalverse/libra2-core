@@ -7,7 +7,7 @@ use crate::{
     pending_votes::{PendingVotes, VoteReceptionResult, VoteStatus},
     util::time_service::{SendTask, TimeService},
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::Round,
     round_timeout::{RoundTimeout, RoundTimeoutReason},
     sync_info::SyncInfo,

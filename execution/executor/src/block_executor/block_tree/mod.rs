@@ -12,7 +12,7 @@ use crate::{
     types::partial_state_compute_result::PartialStateComputeResult,
 };
 use anyhow::{anyhow, ensure, Result};
-use aptos_consensus_types::block::Block as ConsensusBlock;
+use libra2_consensus_types::block::Block as ConsensusBlock;
 use libra2_crypto::HashValue;
 use libra2_drop_helper::DEFAULT_DROPPER;
 use libra2_executor_types::ExecutorError;

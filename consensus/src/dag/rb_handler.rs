@@ -19,7 +19,7 @@ use crate::{
 };
 use anyhow::{bail, ensure};
 use libra2_config::config::DagPayloadConfig;
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 use libra2_infallible::Mutex;
 use libra2_logger::{debug, error};
 use libra2_types::{

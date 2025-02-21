@@ -41,7 +41,7 @@ use libra2_channels::{
     message_queues::QueueStyle,
 };
 use libra2_config::config::DagConsensusConfig;
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::{debug, info};
 use libra2_reliable_broadcast::{RBNetworkSender, ReliableBroadcast};

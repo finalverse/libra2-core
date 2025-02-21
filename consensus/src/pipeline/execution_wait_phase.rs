@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::pipeline::{buffer_item::ExecutionFut, pipeline_phase::StatelessPipeline};
-use aptos_consensus_types::pipelined_block::PipelinedBlock;
+use libra2_consensus_types::pipelined_block::PipelinedBlock;
 use libra2_crypto::HashValue;
 use libra2_executor_types::ExecutorResult;
 use async_trait::async_trait;

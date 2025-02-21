@@ -9,7 +9,7 @@ use crate::dag::{
     types::{CertifiedNode, DagSnapshotBitmask, Node},
     NodeId, Vote,
 };
-use aptos_consensus_types::common::Author;
+use libra2_consensus_types::common::Author;
 use libra2_crypto::HashValue;
 use libra2_infallible::Mutex;
 use libra2_types::{

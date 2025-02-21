@@ -21,7 +21,7 @@ use crate::{
 };
 use anyhow::Result;
 use libra2_config::network_id::PeerNetworkId;
-use aptos_consensus_types::common::RejectedTransactionSummary;
+use libra2_consensus_types::common::RejectedTransactionSummary;
 use libra2_crypto::HashValue;
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::prelude::*;

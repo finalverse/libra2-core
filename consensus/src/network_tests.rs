@@ -9,7 +9,7 @@ use crate::{
 };
 use libra2_channels::{self, libra2_channel, message_queues::QueueStyle};
 use libra2_config::network_id::{NetworkId, PeerNetworkId};
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::{block_test_utils::certificate_for_genesis, Block},
     common::Author,
     proposal_msg::ProposalMsg,
@@ -534,7 +534,7 @@ mod tests {
         network_interface::{DIRECT_SEND, RPC},
     };
     use libra2_config::network_id::{NetworkId, PeerNetworkId};
-    use aptos_consensus_types::{
+    use libra2_consensus_types::{
         block_retrieval::{BlockRetrievalRequestV1, BlockRetrievalResponse, BlockRetrievalStatus},
         common::Payload,
     };

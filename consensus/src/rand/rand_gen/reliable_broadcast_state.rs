@@ -13,7 +13,7 @@ use crate::{
     },
 };
 use anyhow::ensure;
-use aptos_consensus_types::common::Author;
+use libra2_consensus_types::common::Author;
 use libra2_infallible::Mutex;
 use libra2_logger::info;
 use libra2_reliable_broadcast::BroadcastStatus;

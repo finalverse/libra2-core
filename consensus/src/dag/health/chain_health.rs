@@ -7,7 +7,7 @@ use crate::{
     liveness::{leader_reputation::VotingPowerRatio, proposal_generator::ChainHealthBackoffConfig},
 };
 use libra2_config::config::ChainHealthBackoffValues;
-use aptos_consensus_types::common::Round;
+use libra2_consensus_types::common::Round;
 use std::{sync::Arc, time::Duration};
 
 pub trait TChainHealth: Send + Sync {

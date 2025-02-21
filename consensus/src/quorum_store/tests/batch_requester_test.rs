@@ -8,7 +8,7 @@ use crate::{
         types::{Batch, BatchRequest, BatchResponse},
     },
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::Author,
     proof_of_store::{BatchId, ProofOfStore, SignedBatchInfo},
 };

@@ -18,7 +18,7 @@ use crate::{
 };
 use anyhow::{anyhow, bail, format_err};
 use libra2_bitvec::BitVec;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     common::{Author, Payload, Round},
     pipelined_block::PipelinedBlock,

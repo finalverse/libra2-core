@@ -9,7 +9,7 @@ use crate::{
         build_empty_tree, build_simple_tree, consensus_runtime, timed_block_on, TreeInserter,
     },
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::{
         block_test_utils::{
             self, certificate_for_genesis, gen_test_certificate, placeholder_certificate_for_block,

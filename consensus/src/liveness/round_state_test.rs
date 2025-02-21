@@ -8,7 +8,7 @@ use crate::{
     },
     util::mock_time_service::SimulatedTimeService,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::Round,
     quorum_cert::QuorumCert,
     round_timeout::RoundTimeoutReason,

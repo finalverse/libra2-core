@@ -6,7 +6,7 @@
 
 ## Quickstart
 ```bash
-pnpm add aptos-node-checker-client
+pnpm add libra2-node-checker-client
 ```
 
 You can also use `yarn` or `npm`.
@@ -53,7 +53,7 @@ cargo run -p aptos -- node run-local-testnet --faucet-port 8081 --force-restart 
 
 Run a local Node Health Checker:
 ```
-cargo run -p aptos-node-checker -- server run --baseline-node-config-paths ecosystem/node-checker/configuration_examples/local_testnet.yaml --listen-address 0.0.0.0
+cargo run -p libra2-node-checker -- server run --baseline-node-config-paths ecosystem/node-checker/configuration_examples/local_testnet.yaml --listen-address 0.0.0.0
 ```
 
 Run the tests:
@@ -91,6 +91,6 @@ pnpm test
 [repo]: https://github.com/aptos-labs/aptos-core
 [npm-image-version]: https://img.shields.io/npm/v/aptos.svg
 [npm-image-downloads]: https://img.shields.io/npm/dm/aptos.svg
-[npm-url]: https://npmjs.org/package/aptos-node-checker-client
+[npm-url]: https://npmjs.org/package/libra2-node-checker-client
 [discord-image]: https://img.shields.io/discord/945856774056083548?label=Discord&logo=discord&style=flat~~~~
 [discord-url]: https://discord.gg/aptosnetwork

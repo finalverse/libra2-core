@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::proposer_election::ProposerElection;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     common::{Author, Round},
 };

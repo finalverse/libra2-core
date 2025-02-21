@@ -6,7 +6,7 @@ use crate::{
     dag::{anchor_election::AnchorElection, storage::CommitEvent},
     liveness::leader_reputation::VotingPowerRatio,
 };
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 
 pub struct RoundRobinAnchorElection {
     validators: Vec<Author>,

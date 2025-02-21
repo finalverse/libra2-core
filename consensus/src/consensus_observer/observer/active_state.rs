@@ -154,7 +154,7 @@ impl ActiveObserverState {
     pub async fn wait_for_epoch_start(
         &mut self,
         block_payloads: Arc<
-            Mutex<BTreeMap<(u64, aptos_consensus_types::common::Round), BlockPayloadStatus>>,
+            Mutex<BTreeMap<(u64, libra2_consensus_types::common::Round), BlockPayloadStatus>>,
         >,
     ) -> (
         Arc<dyn TPayloadManager>,
@@ -346,7 +346,7 @@ mod test {
         BlockPayload, BlockTransactionPayload, OrderedBlock,
     };
     use libra2_channels::{libra2_channel, message_queues::QueueStyle};
-    use aptos_consensus_types::{
+    use libra2_consensus_types::{
         block::Block,
         block_data::{BlockData, BlockType},
         pipelined_block::PipelinedBlock,
@@ -554,7 +554,7 @@ mod test {
             // Create an ordered block
             let blocks = vec![pipelined_block];
             let ordered_proof =
-                create_ledger_info(epoch, i as aptos_consensus_types::common::Round);
+                create_ledger_info(epoch, i as libra2_consensus_types::common::Round);
             let ordered_block = OrderedBlock::new(blocks, ordered_proof);
 
             // Insert the block into the ordered block store
@@ -586,7 +586,7 @@ mod test {
     /// Creates and returns a new ledger info with the specified epoch and round
     fn create_ledger_info(
         epoch: u64,
-        round: aptos_consensus_types::common::Round,
+        round: libra2_consensus_types::common::Round,
     ) -> LedgerInfoWithSignatures {
         LedgerInfoWithSignatures::new(
             LedgerInfo::new(

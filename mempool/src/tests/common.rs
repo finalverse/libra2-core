@@ -9,7 +9,7 @@ use crate::{
 use anyhow::{format_err, Result};
 use libra2_compression::client::CompressionClient;
 use libra2_config::config::{NodeConfig, MAX_APPLICATION_MESSAGE_SIZE};
-use aptos_consensus_types::common::{TransactionInProgress, TransactionSummary};
+use libra2_consensus_types::common::{TransactionInProgress, TransactionSummary};
 use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
 use libra2_types::{
     account_address::AccountAddress,

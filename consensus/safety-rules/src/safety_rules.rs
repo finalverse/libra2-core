@@ -10,7 +10,7 @@ use crate::{
     persistent_safety_storage::PersistentSafetyStorage,
     t_safety_rules::TSafetyRules,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block_data::BlockData,
     common::{Author, Round},
     order_vote::OrderVote,

@@ -8,7 +8,7 @@ use crate::{
     transaction_deduper::TransactionDeduper, transaction_shuffler::TransactionShuffler,
 };
 use anyhow::Result;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block, pipelined_block::PipelinedBlock, quorum_cert::QuorumCert,
 };
 use libra2_crypto::HashValue;

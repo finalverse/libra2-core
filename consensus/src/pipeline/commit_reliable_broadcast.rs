@@ -3,7 +3,7 @@
 
 use crate::{counters, network::NetworkSender, network_interface::ConsensusMsg};
 use anyhow::bail;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::Author,
     pipeline::{commit_decision::CommitDecision, commit_vote::CommitVote},
 };

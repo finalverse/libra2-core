@@ -11,7 +11,7 @@ use crate::{
     },
     payload_manager::DirectMempoolPayloadManager,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::{block_test_utils::certificate_for_genesis, Block},
     common::{Author, Round},
     payload_pull_params::OptQSPayloadPullParams,
@@ -37,7 +37,7 @@ use crate::{
     block_storage::pending_blocks::PendingBlocks, pipeline::execution_client::DummyExecutionClient,
     util::mock_time_service::SimulatedTimeService,
 };
-use aptos_consensus_types::{block::block_test_utils::gen_test_certificate, common::Payload};
+use libra2_consensus_types::{block::block_test_utils::gen_test_certificate, common::Payload};
 use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519Signature};
 use libra2_infallible::Mutex;
 use libra2_types::{

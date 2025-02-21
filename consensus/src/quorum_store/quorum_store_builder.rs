@@ -26,7 +26,7 @@ use crate::{
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::config::QuorumStoreConfig;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::Author, proof_of_store::ProofCache, request_response::GetPayloadCommand,
 };
 use libra2_crypto::bls12381::PrivateKey;

@@ -8,7 +8,7 @@ use crate::{
     },
     state_replication::StateComputer,
 };
-use aptos_consensus_types::pipelined_block::PipelinedBlock;
+use libra2_consensus_types::pipelined_block::PipelinedBlock;
 use libra2_crypto::HashValue;
 use libra2_executor_types::ExecutorError;
 use libra2_logger::debug;

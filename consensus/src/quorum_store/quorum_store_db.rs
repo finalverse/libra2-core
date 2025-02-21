@@ -9,7 +9,7 @@ use crate::{
     },
 };
 use anyhow::Result;
-use aptos_consensus_types::proof_of_store::BatchId;
+use libra2_consensus_types::proof_of_store::BatchId;
 use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
 use libra2_schemadb::{batch::SchemaBatch, Options, DB};

@@ -9,7 +9,7 @@ use crate::{
 };
 use libra2_config::config::transaction_filter_type::Filter;
 use libra2_consensus_notifications::{ConsensusNotificationSender, Error};
-use aptos_consensus_types::{block::Block, block_data::BlockData};
+use libra2_consensus_types::{block::Block, block_data::BlockData};
 use libra2_crypto::HashValue;
 use libra2_executor_types::{
     state_compute_result::StateComputeResult, BlockExecutorTrait, ExecutorResult,

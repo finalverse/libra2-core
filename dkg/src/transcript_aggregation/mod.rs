@@ -3,7 +3,7 @@
 
 use crate::{counters::DKG_STAGE_SECONDS, types::DKGTranscriptRequest, DKGMessage};
 use anyhow::{anyhow, ensure};
-use aptos_consensus_types::common::Author;
+use libra2_consensus_types::common::Author;
 use libra2_infallible::{duration_since_epoch, Mutex};
 use libra2_logger::info;
 use libra2_reliable_broadcast::BroadcastStatus;

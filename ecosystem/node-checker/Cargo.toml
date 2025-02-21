@@ -1,6 +1,6 @@
 [package]
-name = "aptos-node-checker"
-description = "Aptos Node Health Checker"
+name = "libra2-node-checker"
+description = "Libra2 Node Health Checker"
 version = "0.1.1"
 
 # Workspace inherited keys
@@ -38,5 +38,5 @@ tokio = { workspace = true }
 url = { workspace = true }
 
 [lib]
-name = "aptos_node_checker_lib"
+name = "libra2_node_checker_lib"
 path = "src/lib.rs"

@@ -14,7 +14,7 @@ use crate::{
 };
 use anyhow::{anyhow, ensure, Context, Result};
 use libra2_channels::libra2_channel;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::Author, proposal_msg::ProposalMsg, sync_info::SyncInfo, vote_msg::VoteMsg,
 };
 use libra2_infallible::Mutex;

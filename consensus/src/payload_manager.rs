@@ -11,7 +11,7 @@ use crate::{
     quorum_store::{batch_store::BatchReader, quorum_store_coordinator::CoordinatorCommand},
 };
 use libra2_bitvec::BitVec;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     common::{DataStatus, Payload, ProofWithData, Round},
     payload::{BatchPointer, DataFetchFut, TDataInfo},

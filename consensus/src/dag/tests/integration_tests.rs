@@ -13,7 +13,7 @@ use crate::{
 };
 use libra2_channels::{libra2_channel, message_queues::QueueStyle};
 use libra2_config::network_id::{NetworkId, PeerNetworkId};
-use aptos_consensus_types::common::Author;
+use libra2_consensus_types::common::Author;
 use libra2_logger::debug;
 use libra2_network::{
     application::interface::NetworkClient,

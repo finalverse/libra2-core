@@ -13,7 +13,7 @@ use crate::{
     state_replication::StateComputer,
     test_utils::{consensus_runtime, RandomComputeResultStateComputer},
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::{block_test_utils::certificate_for_genesis, Block},
     common::Payload,
     pipelined_block::PipelinedBlock,

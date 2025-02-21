@@ -4,7 +4,7 @@
 use super::round_state::NewRoundReason;
 use crate::counters;
 use libra2_collections::BoundedVecDeque;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::Author, payload_pull_params::OptQSPayloadPullParams, round_timeout::RoundTimeoutReason,
 };
 use libra2_infallible::Mutex;
@@ -165,7 +165,7 @@ mod tests {
     use super::ExponentialWindowFailureTracker;
     use crate::liveness::round_state::NewRoundReason;
     use libra2_bitvec::BitVec;
-    use aptos_consensus_types::round_timeout::RoundTimeoutReason;
+    use libra2_consensus_types::round_timeout::RoundTimeoutReason;
     use libra2_types::validator_verifier::random_validator_verifier;
 
     #[test]

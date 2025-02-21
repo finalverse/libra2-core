@@ -13,7 +13,7 @@ use libra2_config::{
     config::{MempoolConfig, NodeType},
     network_id::PeerNetworkId,
 };
-use aptos_consensus_types::common::{
+use libra2_consensus_types::common::{
     RejectedTransactionSummary, TransactionInProgress, TransactionSummary,
 };
 use libra2_crypto::HashValue;

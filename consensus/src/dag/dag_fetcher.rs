@@ -12,7 +12,7 @@ use crate::dag::{
 use anyhow::{bail, ensure};
 use libra2_bitvec::BitVec;
 use libra2_config::config::DagFetcherConfig;
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 use libra2_logger::{debug, error, info};
 use libra2_time_service::TimeService;
 use libra2_types::epoch_state::EpochState;

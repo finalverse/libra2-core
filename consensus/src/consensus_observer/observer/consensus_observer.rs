@@ -36,7 +36,7 @@ use libra2_config::{
     config::{ConsensusObserverConfig, NodeConfig},
     network_id::PeerNetworkId,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     pipeline,
     pipelined_block::{PipelineFutures, PipelinedBlock},
 };

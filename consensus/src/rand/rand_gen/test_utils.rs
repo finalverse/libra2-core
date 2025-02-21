@@ -5,7 +5,7 @@ use crate::{
     pipeline::buffer_manager::OrderedBlocks,
     rand::rand_gen::types::{MockShare, RandShare},
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     block_data::{BlockData, BlockType},
     common::{Author, Round},

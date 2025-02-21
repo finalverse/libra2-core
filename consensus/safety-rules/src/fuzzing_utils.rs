@@ -6,8 +6,8 @@
 
 use crate::serializer::SafetyRulesInput;
 #[cfg(any(test, feature = "fuzzing"))]
-use aptos_consensus_types::block::Block;
-use aptos_consensus_types::{
+use libra2_consensus_types::block::Block;
+use libra2_consensus_types::{
     block_data::{BlockData, BlockType},
     common::Payload,
     order_vote_proposal::OrderVoteProposal,
@@ -269,7 +269,7 @@ pub fn arb_safety_rules_input() -> impl Strategy<Value = SafetyRulesInput> {
 #[cfg(any(test, feature = "fuzzing"))]
 pub mod fuzzing {
     use crate::{error::Error, serializer::SafetyRulesInput, test_utils, TSafetyRules};
-    use aptos_consensus_types::{
+    use libra2_consensus_types::{
         block_data::BlockData, order_vote::OrderVote, order_vote_proposal::OrderVoteProposal,
         timeout_2chain::TwoChainTimeout, vote::Vote, vote_proposal::VoteProposal,
     };

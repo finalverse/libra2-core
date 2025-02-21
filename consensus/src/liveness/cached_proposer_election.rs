@@ -3,7 +3,7 @@
 
 use super::proposer_election::ProposerElection;
 use crate::counters::PROPOSER_ELECTION_DURATION;
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::info;
 use std::collections::BTreeMap;

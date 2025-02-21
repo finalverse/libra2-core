@@ -26,7 +26,7 @@ use crate::{
     pipeline::execution_client::TExecutionClient,
 };
 use anyhow::{anyhow, bail, Context};
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     block_retrieval::{
         BlockRetrievalRequestV1, BlockRetrievalResponse, BlockRetrievalStatus, NUM_PEERS_PER_RETRY,

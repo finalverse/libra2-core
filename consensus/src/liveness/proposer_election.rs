@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 use libra2_fallible::copy_from_slice::copy_slice_to_vec;
 use num_traits::CheckedAdd;
 use std::cmp::Ordering;

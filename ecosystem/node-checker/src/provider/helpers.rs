@@ -11,7 +11,7 @@ pub const MISSING_PROVIDER_MESSAGE: &str = "Incomplete request";
 ///
 /// ```ignore
 /// # use std::io;
-/// let target_metrics_provider = aptos_node_checker_lib::get_provider!(
+/// let target_metrics_provider = libra2_node_checker_lib::get_provider!(
 ///     input.target_metrics_provider,
 ///     true,
 ///     MetricsProvider

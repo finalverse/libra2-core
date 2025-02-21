@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{metrics_safety_rules::MetricsSafetyRules, test_utils::MockStorage};
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::block_test_utils::certificate_for_genesis,
     common::{Payload, Round},
     pipelined_block::PipelinedBlock,

@@ -6,7 +6,7 @@ use crate::{
     payload_client::{user::quorum_store_client::QuorumStoreClient, PayloadClient},
 };
 use anyhow::Result;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::block_test_utils::random_payload, common::Payload,
     payload_pull_params::PayloadPullParameters, request_response::GetPayloadCommand,
 };

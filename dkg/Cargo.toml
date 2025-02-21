@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 libra2-bounded-executor = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
-aptos-consensus-types = { workspace = true }
+libra2-consensus-types = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-crypto-derive = { workspace = true }
 libra2-enum-conversion-derive = { workspace = true }

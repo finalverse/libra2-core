@@ -10,7 +10,7 @@ use crate::consensus_observer::{
     network::observer_message::{BlockPayload, OrderedBlock},
 };
 use libra2_config::config::ConsensusObserverConfig;
-use aptos_consensus_types::{common::Round, pipelined_block::PipelinedBlock};
+use libra2_consensus_types::{common::Round, pipelined_block::PipelinedBlock};
 use libra2_infallible::Mutex;
 use libra2_logger::{error, warn};
 use libra2_types::epoch_state::EpochState;
@@ -279,7 +279,7 @@ mod test {
     use super::*;
     use crate::consensus_observer::network::observer_message::BlockTransactionPayload;
     use libra2_bitvec::BitVec;
-    use aptos_consensus_types::{
+    use libra2_consensus_types::{
         block::Block,
         block_data::{BlockData, BlockType},
         common::{Author, Payload, ProofWithData},

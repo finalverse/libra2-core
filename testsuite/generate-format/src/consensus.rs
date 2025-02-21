@@ -83,7 +83,7 @@ pub fn get_registry() -> Result<Registry> {
     trace_crypto_values(&mut tracer, &mut samples)?;
     tracer.trace_value(
         &mut samples,
-        &aptos_consensus_types::block::Block::make_genesis_block(),
+        &libra2_consensus_types::block::Block::make_genesis_block(),
     )?;
     tracer.trace_value(&mut samples, &event::EventKey::random())?;
     tracer.trace_value(&mut samples, &write_set::WriteOp::legacy_deletion())?;
@@ -110,14 +110,14 @@ pub fn get_registry() -> Result<Registry> {
 
     tracer.trace_type::<StateKey>(&samples)?;
     tracer.trace_type::<aptos_consensus::quorum_store::types::BatchResponse>(&samples)?;
-    tracer.trace_type::<aptos_consensus_types::round_timeout::RoundTimeoutReason>(&samples)?;
+    tracer.trace_type::<libra2_consensus_types::round_timeout::RoundTimeoutReason>(&samples)?;
     tracer.trace_type::<aptos_consensus::network_interface::ConsensusMsg>(&samples)?;
     tracer.trace_type::<aptos_consensus::network_interface::CommitMessage>(&samples)?;
-    tracer.trace_type::<aptos_consensus_types::block_data::BlockType>(&samples)?;
-    tracer.trace_type::<aptos_consensus_types::block_retrieval::BlockRetrievalStatus>(&samples)?;
-    tracer.trace_type::<aptos_consensus_types::payload::PayloadExecutionLimit>(&samples)?;
-    tracer.trace_type::<aptos_consensus_types::common::Payload>(&samples)?;
-    tracer.trace_type::<aptos_consensus_types::block_retrieval::BlockRetrievalRequest>(&samples)?;
+    tracer.trace_type::<libra2_consensus_types::block_data::BlockType>(&samples)?;
+    tracer.trace_type::<libra2_consensus_types::block_retrieval::BlockRetrievalStatus>(&samples)?;
+    tracer.trace_type::<libra2_consensus_types::payload::PayloadExecutionLimit>(&samples)?;
+    tracer.trace_type::<libra2_consensus_types::common::Payload>(&samples)?;
+    tracer.trace_type::<libra2_consensus_types::block_retrieval::BlockRetrievalRequest>(&samples)?;
 
     // aliases within StructTag
     tracer.ignore_aliases("StructTag", &["type_params"])?;

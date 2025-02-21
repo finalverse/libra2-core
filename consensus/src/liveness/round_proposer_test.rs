@@ -5,7 +5,7 @@
 use crate::liveness::{
     proposer_election::ProposerElection, round_proposer_election::RoundProposer,
 };
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 use libra2_types::account_address::AccountAddress;
 use std::collections::HashMap;
 

@@ -6,7 +6,7 @@ use super::{
     utils::{BatchKey, BatchSortKey, TimeExpirations},
 };
 use crate::quorum_store::counters;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::{Author, TxnSummaryWithExpiration},
     payload::TDataInfo,
     proof_of_store::{BatchInfo, ProofOfStore},

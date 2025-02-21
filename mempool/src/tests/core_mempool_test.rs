@@ -11,7 +11,7 @@ use crate::{
     },
 };
 use libra2_config::config::{MempoolConfig, NodeConfig};
-use aptos_consensus_types::common::{TransactionInProgress, TransactionSummary};
+use libra2_consensus_types::common::{TransactionInProgress, TransactionSummary};
 use libra2_crypto::HashValue;
 use libra2_types::{
     account_address::AccountAddress, mempool_status::MempoolStatusCode,

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::error::QuorumStoreError;
-use aptos_consensus_types::{common::Payload, payload_pull_params::PayloadPullParameters};
+use libra2_consensus_types::{common::Payload, payload_pull_params::PayloadPullParameters};
 #[cfg(test)]
 use libra2_types::transaction::SignedTransaction;
 use futures::future::BoxFuture;
@@ -43,7 +43,7 @@ impl UserPayloadClient for DummyClient {
         mut params: PayloadPullParameters,
         _wait_callback: BoxFuture<'static, ()>,
     ) -> anyhow::Result<Payload, QuorumStoreError> {
-        use aptos_consensus_types::utils::PayloadTxnsSize;
+        use libra2_consensus_types::utils::PayloadTxnsSize;
 
         let timer = Instant::now();
         let mut nxt_txn_idx = 0;

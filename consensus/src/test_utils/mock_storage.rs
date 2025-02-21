@@ -9,7 +9,7 @@ use crate::{
     },
 };
 use anyhow::Result;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block, quorum_cert::QuorumCert, timeout_2chain::TwoChainTimeoutCertificate, vote::Vote,
 };
 use libra2_crypto::HashValue;

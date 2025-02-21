@@ -18,7 +18,7 @@ use crate::{
     },
 };
 use libra2_config::config::NodeConfig;
-use aptos_consensus_types::common::{TransactionInProgress, TransactionSummary};
+use libra2_consensus_types::common::{TransactionInProgress, TransactionSummary};
 use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
 use libra2_types::{

@@ -21,7 +21,7 @@ use anyhow::{bail, ensure, format_err, Context};
 use libra2_config::config::{
     ChainHealthBackoffValues, ExecutionBackpressureConfig, PipelineBackpressureValues,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     block_data::BlockData,
     common::{Author, Payload, PayloadFilter, Round},

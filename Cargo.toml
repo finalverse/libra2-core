@@ -321,7 +321,7 @@ libra2-collections = { path = "crates/libra2-collections" }
 libra2-compression = { path = "crates/libra2-compression" }
 aptos-consensus = { path = "consensus" }
 libra2-consensus-notifications = { path = "state-sync/inter-component/consensus-notifications" }
-aptos-consensus-types = { path = "consensus/consensus-types" }
+libra2-consensus-types = { path = "consensus/consensus-types" }
 libra2-config = { path = "config" }
 libra2-crash-handler = { path = "crates/crash-handler" }
 libra2-crypto = { path = "crates/libra2-crypto" }
@@ -411,7 +411,7 @@ libra2-network-discovery = { path = "network/discovery" }
 aptos-nft-metadata-crawler = { path = "ecosystem/nft-metadata-crawler" }
 aptos-node = { path = "aptos-node" }
 libra2-node = { path = "libra2-node" }
-aptos-node-checker = { path = "ecosystem/node-checker" }
+libra2-node-checker = { path = "ecosystem/node-checker" }
 libra2-node-identity = { path = "crates/libra2-node-identity" }
 libra2-node-resource-metrics = { path = "crates/node-resource-metrics" }
 libra2-num-variants = { path = "crates/num-variants" }

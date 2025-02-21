@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::{types::DAGMessage, DAGRpcResult};
-use aptos_consensus_types::common::Author;
+use libra2_consensus_types::common::Author;
 use libra2_reliable_broadcast::RBNetworkSender;
 use libra2_time_service::{Interval, TimeService, TimeServiceTrait};
 use async_trait::async_trait;

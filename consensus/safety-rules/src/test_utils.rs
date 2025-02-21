@@ -6,7 +6,7 @@ use crate::{
     persistent_safety_storage::PersistentSafetyStorage, serializer::SerializerService, SafetyRules,
     TSafetyRules,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     common::{Payload, Round},
     quorum_cert::QuorumCert,

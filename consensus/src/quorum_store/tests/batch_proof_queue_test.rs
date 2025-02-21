@@ -4,7 +4,7 @@
 use crate::quorum_store::{
     batch_proof_queue::BatchProofQueue, tests::batch_store_test::batch_store_for_test,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::TxnSummaryWithExpiration,
     proof_of_store::{BatchId, BatchInfo, ProofOfStore},
     utils::PayloadTxnsSize,

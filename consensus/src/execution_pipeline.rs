@@ -11,7 +11,7 @@ use crate::{
     state_computer::StateComputeResultFut,
     transaction_shuffler::TransactionShuffler,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block, pipeline_execution_result::PipelineExecutionResult, quorum_cert::QuorumCert,
 };
 use libra2_crypto::HashValue;

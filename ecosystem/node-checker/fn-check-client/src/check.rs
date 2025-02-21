@@ -7,7 +7,7 @@
 //! it into a common format that these functions can ingest.
 
 use libra2_logger::{debug, info};
-use aptos_node_checker_lib::CheckSummary;
+use libra2_node_checker_lib::CheckSummary;
 use aptos_sdk::{
     crypto::{x25519, ValidCryptoMaterialStringExt},
     types::account_address::AccountAddress,

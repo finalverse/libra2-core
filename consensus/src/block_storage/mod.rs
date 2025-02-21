@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     pipelined_block::{ExecutionSummary, PipelinedBlock},
     quorum_cert::QuorumCert,
     sync_info::SyncInfo,

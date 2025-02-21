@@ -6,7 +6,7 @@ use crate::{
     counters, pipeline::hashable::Hashable, state_replication::StateComputerCommitCallBackType,
 };
 use anyhow::anyhow;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::{Author, Round},
     pipeline::commit_vote::CommitVote,
     pipelined_block::PipelinedBlock,
@@ -477,7 +477,7 @@ impl BufferItem {
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_consensus_types::{block::Block, block_data::BlockData};
+    use libra2_consensus_types::{block::Block, block_data::BlockData};
     use libra2_crypto::HashValue;
     use libra2_executor_types::state_compute_result::StateComputeResult;
     use libra2_types::{

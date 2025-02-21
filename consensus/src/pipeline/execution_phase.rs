@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{experimental::pipeline_phase::StatelessPipeline, state_replication::StateComputer};
-use aptos_consensus_types::executed_block::ExecutedBlock;
+use libra2_consensus_types::executed_block::ExecutedBlock;
 use libra2_crypto::HashValue;
 use libra2_executor_types::{ExecutorError, ExecutorResult};
 use async_trait::async_trait;

@@ -19,7 +19,7 @@ use crate::{
 };
 use anyhow::{bail, ensure, format_err, Context};
 use libra2_bitvec::BitVec;
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     common::Round,
     pipelined_block::{ExecutionSummary, PipelinedBlock},

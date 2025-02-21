@@ -6,7 +6,7 @@ use crate::{
     monitor, persistent_liveness_storage::PersistentLivenessStorage,
     pipeline::signing_phase::CommitSignerProvider,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block_data::BlockData,
     order_vote::OrderVote,
     order_vote_proposal::OrderVoteProposal,
@@ -164,7 +164,7 @@ impl CommitSignerProvider for Mutex<MetricsSafetyRules> {
 #[cfg(test)]
 mod tests {
     use crate::{metrics_safety_rules::MetricsSafetyRules, test_utils::EmptyStorage};
-    use aptos_consensus_types::{
+    use libra2_consensus_types::{
         block_data::BlockData,
         order_vote::OrderVote,
         order_vote_proposal::OrderVoteProposal,

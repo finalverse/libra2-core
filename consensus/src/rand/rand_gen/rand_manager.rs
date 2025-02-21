@@ -21,7 +21,7 @@ use crate::{
 use libra2_bounded_executor::BoundedExecutor;
 use libra2_channels::libra2_channel;
 use libra2_config::config::ReliableBroadcastConfig;
-use aptos_consensus_types::common::{Author, Round};
+use libra2_consensus_types::common::{Author, Round};
 use libra2_infallible::Mutex;
 use libra2_logger::{error, info, spawn_named, trace, warn};
 use libra2_network::{protocols::network::RpcError, ProtocolId};

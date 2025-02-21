@@ -12,7 +12,7 @@ use crate::{
 };
 use anyhow::{bail, ensure};
 use libra2_bitvec::BitVec;
-use aptos_consensus_types::common::{Author, Payload, Round};
+use libra2_consensus_types::common::{Author, Payload, Round};
 use libra2_crypto::{
     bls12381::Signature,
     hash::{CryptoHash, CryptoHasher},

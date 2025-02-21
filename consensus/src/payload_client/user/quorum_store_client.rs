@@ -5,7 +5,7 @@ use crate::{
     counters::WAIT_FOR_FULL_BLOCKS_TRIGGERED, error::QuorumStoreError, monitor,
     payload_client::user::UserPayloadClient,
 };
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     common::{Payload, PayloadFilter},
     payload_pull_params::{OptQSPayloadPullParams, PayloadPullParameters},
     request_response::{GetPayloadCommand, GetPayloadRequest, GetPayloadResponse},

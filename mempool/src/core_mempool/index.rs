@@ -9,7 +9,7 @@ use crate::{
     logging::{LogEntry, LogSchema},
     shared_mempool::types::{MultiBucketTimelineIndexIds, TimelineIndexIdentifier},
 };
-use aptos_consensus_types::common::TransactionSummary;
+use libra2_consensus_types::common::TransactionSummary;
 use libra2_crypto::HashValue;
 use libra2_logger::prelude::*;
 use libra2_types::account_address::AccountAddress;

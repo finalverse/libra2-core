@@ -4,7 +4,7 @@
 
 #![allow(clippy::unwrap_used)]
 
-use aptos_consensus_types::block::block_test_utils;
+use libra2_consensus_types::block::block_test_utils;
 use aptos_safety_rules::{test_utils, PersistentSafetyStorage, SafetyRulesManager, TSafetyRules};
 use libra2_secure_storage::{InMemoryStorage, KVStorage, OnDiskStorage, Storage, VaultStorage};
 use libra2_types::validator_signer::ValidatorSigner;

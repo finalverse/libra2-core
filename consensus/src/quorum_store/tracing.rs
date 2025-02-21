@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::quorum_store::counters;
-use aptos_consensus_types::common::Author;
+use libra2_consensus_types::common::Author;
 use libra2_infallible::duration_since_epoch;
 use libra2_short_hex_str::AsShortHexStr;
 use std::time::Duration;

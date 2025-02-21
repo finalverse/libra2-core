@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{error::Error, safety_rules::next_round, SafetyRules};
-use aptos_consensus_types::{
+use libra2_consensus_types::{
     block::Block,
     order_vote::OrderVote,
     order_vote_proposal::OrderVoteProposal,
