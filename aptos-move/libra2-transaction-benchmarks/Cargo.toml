@@ -1,6 +1,6 @@
 [package]
-name = "aptos-transaction-benchmarks"
-description = "Aptos transaction benchmarks"
+name = "libra2-transaction-benchmarks"
+description = "Libra2 transaction benchmarks"
 version = "0.1.0"
 
 # Workspace inherited keys

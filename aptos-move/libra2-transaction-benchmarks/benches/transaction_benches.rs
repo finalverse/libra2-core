@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_language_e2e_tests::account_universe::P2PTransferGen;
-use aptos_transaction_benchmarks::{
+use libra2_transaction_benchmarks::{
     measurement::wall_time_measurement, transactions::TransactionBencher,
 };
 use criterion::{criterion_group, criterion_main, measurement::Measurement, Criterion};
