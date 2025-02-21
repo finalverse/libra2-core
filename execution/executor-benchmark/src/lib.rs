@@ -40,7 +40,7 @@ use aptos_sdk::types::LocalAccount;
 use libra2_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReader, DbReaderWriter,
 };
-use aptos_transaction_generator_lib::{
+use libra2_transaction_generator_lib::{
     create_txn_generator_creator, AlwaysApproveRootAccountHandle, TransactionGeneratorCreator,
     TransactionType::{self, CoinTransfer},
 };
@@ -105,7 +105,7 @@ pub enum BenchmarkWorkload {
 
 enum InitializedBenchmarkWorkload {
     TransactionMix {
-        transaction_generators: Vec<Box<dyn aptos_transaction_generator_lib::TransactionGenerator>>,
+        transaction_generators: Vec<Box<dyn libra2_transaction_generator_lib::TransactionGenerator>>,
         phase: Arc<AtomicUsize>,
         workload_name: String,
     },
@@ -926,8 +926,8 @@ mod tests {
     use aptos_executor_types::BlockExecutorTrait;
     use aptos_sdk::{transaction_builder::aptos_stdlib, types::LocalAccount};
     use libra2_temppath::TempPath;
-    use aptos_transaction_generator_lib::WorkflowProgress;
-    use aptos_transaction_workloads_lib::args::TransactionTypeArg;
+    use libra2_transaction_generator_lib::WorkflowProgress;
+    use libra2_transaction_workloads_lib::args::TransactionTypeArg;
     use libra2_types::{
         access_path::Path,
         account_address::AccountAddress,

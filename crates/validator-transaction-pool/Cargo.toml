@@ -1,6 +1,6 @@
 [package]
-name = "aptos-validator-transaction-pool"
-description = "Aptos Validator Transaction Pool"
+name = "libra2-validator-transaction-pool"
+description = "Libra2 Validator Transaction Pool"
 version = "0.1.0"
 
 # Workspace inherited keys

@@ -95,7 +95,7 @@ use libra2_types::{
     validator_signer::ValidatorSigner,
     validator_verifier::ValidatorVerifier,
 };
-use aptos_validator_transaction_pool::VTxnPoolState;
+use libra2_validator_transaction_pool::VTxnPoolState;
 use fail::fail_point;
 use futures::{
     channel::{mpsc, mpsc::Sender, oneshot},

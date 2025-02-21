@@ -12,7 +12,7 @@
 // This crate should also provide a Rust file that allows proper manipulation of each
 // module defined below.
 
-use aptos_transaction_generator_lib::entry_point_trait::PreBuiltPackages;
+use libra2_transaction_generator_lib::entry_point_trait::PreBuiltPackages;
 use once_cell::sync::Lazy;
 use std::collections::HashMap;
 

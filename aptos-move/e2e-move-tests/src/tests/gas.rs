@@ -16,11 +16,11 @@ use libra2_crypto::{bls12381, PrivateKey, Uniform};
 use aptos_gas_algebra::GasQuantity;
 use aptos_gas_profiling::TransactionGasLog;
 use aptos_language_e2e_tests::account::Account;
-use aptos_transaction_generator_lib::{
+use libra2_transaction_generator_lib::{
     entry_point_trait::{EntryPointTrait, MultiSigConfig},
     publishing::publish_util::PackageHandler,
 };
-use aptos_transaction_workloads_lib::{EntryPoints, LoopType};
+use libra2_transaction_workloads_lib::{EntryPoints, LoopType};
 use libra2_types::{
     account_address::{default_stake_pool_address, AccountAddress},
     account_config::CORE_CODE_ADDRESS,

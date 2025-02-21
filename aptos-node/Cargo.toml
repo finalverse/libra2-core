@@ -61,7 +61,7 @@ libra2-telemetry = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
-aptos-validator-transaction-pool = { workspace = true }
+libra2-validator-transaction-pool = { workspace = true }
 aptos-vm = { workspace = true }
 aptos-vm-environment = { workspace = true }
 bcs = { workspace = true }

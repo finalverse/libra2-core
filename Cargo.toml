@@ -464,13 +464,13 @@ libra2-time-service = { path = "crates/libra2-time-service", features = [
     "async",
 ] }
 libra2-transaction-emitter-lib = { path = "crates/transaction-emitter-lib" }
-aptos-transaction-generator-lib = { path = "crates/transaction-generator-lib" }
-aptos-transaction-workloads-lib = { path = "crates/transaction-workloads-lib" }
+libra2-transaction-generator-lib = { path = "crates/transaction-generator-lib" }
+libra2-transaction-workloads-lib = { path = "crates/transaction-workloads-lib" }
 aptos-transactional-test-harness = { path = "aptos-move/aptos-transactional-test-harness" }
 libra2-types = { path = "types" }
 libra2-utils = { path = "libra2-utils" }
 aptos-validator-interface = { path = "aptos-move/aptos-validator-interface" }
-aptos-validator-transaction-pool = { path = "crates/validator-transaction-pool" }
+libra2-validator-transaction-pool = { path = "crates/validator-transaction-pool" }
 libra2-vault-client = { path = "secure/storage/vault" }
 aptos-vm = { path = "aptos-move/aptos-vm" }
 aptos-vm-environment = { path = "aptos-move/aptos-vm-environment" }

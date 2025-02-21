@@ -35,7 +35,7 @@ use libra2_time_service::TimeService;
 use libra2_types::{
     chain_id::ChainId, indexer::indexer_db_reader::IndexerReader, transaction::Version,
 };
-use aptos_validator_transaction_pool::VTxnPoolState;
+use libra2_validator_transaction_pool::VTxnPoolState;
 use futures::channel::{mpsc, mpsc::Sender, oneshot};
 use std::{sync::Arc, time::Instant};
 use tokio::{

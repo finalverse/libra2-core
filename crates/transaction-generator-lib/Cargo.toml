@@ -1,6 +1,6 @@
 [package]
-name = "aptos-transaction-generator-lib"
-description = "Library for Aptos transaction generator"
+name = "libra2-transaction-generator-lib"
+description = "Library for Libra2 transaction generator"
 version = "0.0.0"
 
 # Workspace inherited keys

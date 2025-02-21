@@ -27,7 +27,7 @@ use aptos_sdk::{
     transaction_builder::{aptos_stdlib, TransactionFactory},
     types::{transaction::SignedTransaction, AccountKey, LocalAccount},
 };
-use aptos_transaction_generator_lib::{
+use libra2_transaction_generator_lib::{
     create_txn_generator_creator, AccountType, TransactionType, SEND_AMOUNT,
 };
 use libra2_types::account_config::aptos_test_root_address;

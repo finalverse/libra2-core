@@ -313,7 +313,7 @@ impl TransactionGenerator {
         &mut self,
         block_size: usize,
         num_blocks: usize,
-        transaction_generators: Vec<Box<dyn aptos_transaction_generator_lib::TransactionGenerator>>,
+        transaction_generators: Vec<Box<dyn libra2_transaction_generator_lib::TransactionGenerator>>,
         phase: Arc<AtomicUsize>,
         transactions_per_sender: usize,
     ) -> usize {

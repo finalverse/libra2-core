@@ -14,7 +14,7 @@ use aptos_sdk::{
     transaction_builder::{aptos_stdlib, TransactionFactory},
     types::{transaction::SignedTransaction, AccountKey, LocalAccount},
 };
-use aptos_transaction_generator_lib::{
+use libra2_transaction_generator_lib::{
     CounterState, ReliableTransactionSubmitter, RootAccountHandle,
 };
 use libra2_types::account_address::AccountAddress;

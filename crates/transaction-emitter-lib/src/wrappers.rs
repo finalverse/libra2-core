@@ -18,7 +18,7 @@ use crate::{
 use anyhow::{bail, Context, Result};
 use libra2_logger::{error, info};
 use aptos_sdk::transaction_builder::TransactionFactory;
-use aptos_transaction_generator_lib::{AccountType, TransactionType};
+use libra2_transaction_generator_lib::{AccountType, TransactionType};
 use libra2_types::{account_address::AccountAddress, keyless::test_utils::get_sample_esk};
 use rand::{rngs::StdRng, SeedableRng};
 use std::{

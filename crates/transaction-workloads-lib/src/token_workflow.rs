@@ -3,7 +3,7 @@
 
 use crate::EntryPoints;
 use aptos_sdk::transaction_builder::TransactionFactory;
-use aptos_transaction_generator_lib::{
+use libra2_transaction_generator_lib::{
     account_generator::AccountGeneratorCreator,
     accounts_pool_wrapper::AccountsPoolWrapperCreator,
     call_custom_modules::CustomModulesDelegationGeneratorCreator,

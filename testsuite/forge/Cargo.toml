@@ -33,8 +33,8 @@ aptos-sdk = { workspace = true }
 libra2-short-hex-str = { workspace = true }
 libra2-state-sync-driver = { workspace = true }
 libra2-transaction-emitter-lib = { workspace = true }
-aptos-transaction-generator-lib = { workspace = true }
-aptos-transaction-workloads-lib = { workspace = true }
+libra2-transaction-generator-lib = { workspace = true }
+libra2-transaction-workloads-lib = { workspace = true }
 async-trait = { workspace = true }
 chrono = { workspace = true }
 clap = { workspace = true, features = ["env", "unstable-styles"] }

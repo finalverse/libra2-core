@@ -10,7 +10,7 @@ use aptos_consensus_types::{
 };
 use libra2_logger::debug;
 use libra2_types::{on_chain_config::ValidatorTxnConfig, validator_txn::ValidatorTransaction};
-use aptos_validator_transaction_pool::TransactionFilter;
+use libra2_validator_transaction_pool::TransactionFilter;
 use fail::fail_point;
 use futures::future::BoxFuture;
 use std::{cmp::min, sync::Arc, time::Instant};
@@ -119,7 +119,7 @@ mod tests {
         payload_pull_params::PayloadPullParameters,
     };
     use libra2_types::{on_chain_config::ValidatorTxnConfig, validator_txn::ValidatorTransaction};
-    use aptos_validator_transaction_pool as vtxn_pool;
+    use libra2_validator_transaction_pool as vtxn_pool;
     use std::{collections::HashSet, sync::Arc, time::Duration};
 
     #[tokio::test]

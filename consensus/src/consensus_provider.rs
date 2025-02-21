@@ -35,7 +35,7 @@ use libra2_mempool::QuorumStoreRequest;
 use libra2_network::application::interface::{NetworkClient, NetworkServiceEvents};
 use libra2_storage_interface::DbReaderWriter;
 use libra2_time_service::TimeService;
-use aptos_validator_transaction_pool::VTxnPoolState;
+use libra2_validator_transaction_pool::VTxnPoolState;
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;
 use futures::channel::mpsc;
 use move_core_types::account_address::AccountAddress;

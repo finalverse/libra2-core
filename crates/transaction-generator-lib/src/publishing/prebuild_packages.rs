@@ -50,7 +50,7 @@ pub fn create_prebuilt_packages_rs_file(
     writeln!(
         string_buffer,
         "
-use aptos_transaction_generator_lib::entry_point_trait::PreBuiltPackages;
+use libra2_transaction_generator_lib::entry_point_trait::PreBuiltPackages;
 use once_cell::sync::Lazy;
 use std::collections::HashMap;",
     )

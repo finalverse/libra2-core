@@ -26,7 +26,7 @@ use libra2_types::{
     validator_txn::ValidatorTransaction,
     validator_verifier::{ValidatorConsensusInfo, ValidatorVerifier},
 };
-use aptos_validator_transaction_pool::{TransactionFilter, VTxnPoolState};
+use libra2_validator_transaction_pool::{TransactionFilter, VTxnPoolState};
 use futures_util::future::AbortHandle;
 use std::{
     collections::{HashMap, HashSet},

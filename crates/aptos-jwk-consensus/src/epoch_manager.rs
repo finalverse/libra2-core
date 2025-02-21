@@ -31,7 +31,7 @@ use libra2_types::{
         OnChainJWKConsensusConfig, ValidatorSet,
     },
 };
-use aptos_validator_transaction_pool::VTxnPoolState;
+use libra2_validator_transaction_pool::VTxnPoolState;
 use futures::StreamExt;
 use futures_channel::oneshot;
 use std::{sync::Arc, time::Duration};

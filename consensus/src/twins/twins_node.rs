@@ -48,7 +48,7 @@ use libra2_types::{
     validator_info::ValidatorInfo,
     waypoint::Waypoint,
 };
-use aptos_validator_transaction_pool::VTxnPoolState;
+use libra2_validator_transaction_pool::VTxnPoolState;
 use futures::{channel::mpsc, StreamExt};
 use maplit::hashmap;
 use std::{collections::HashMap, iter::FromIterator, sync::Arc};

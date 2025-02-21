@@ -15,7 +15,7 @@ use libra2_types::{
     validator_txn::ValidatorTransaction,
     vm_status::StatusCode,
 };
-use aptos_validator_transaction_pool as vtxn_pool;
+use libra2_validator_transaction_pool as vtxn_pool;
 use futures::{channel::mpsc, future::BoxFuture};
 use rand::Rng;
 

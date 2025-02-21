@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_transaction_generator_lib::publishing::prebuild_packages::create_prebuilt_packages_rs_file;
+use libra2_transaction_generator_lib::publishing::prebuild_packages::create_prebuilt_packages_rs_file;
 use clap::Parser;
 
 #[derive(Parser, Debug)]

@@ -5,7 +5,7 @@ use libra2_crypto::ed25519::Ed25519PrivateKey;
 use aptos_sdk::types::{
     AccountKey, EphemeralKeyPair, EphemeralPrivateKey, KeylessAccount, LocalAccount,
 };
-use aptos_transaction_generator_lib::ReliableTransactionSubmitter;
+use libra2_transaction_generator_lib::ReliableTransactionSubmitter;
 use libra2_types::{
     keyless,
     keyless::{Claims, OpenIdSig, Pepper, ZeroKnowledgeSig},

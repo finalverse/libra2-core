@@ -15,7 +15,7 @@ use aptos_sdk::{
         transaction::{EntryFunction, Script, TransactionPayload},
     },
 };
-use aptos_transaction_generator_lib::{
+use libra2_transaction_generator_lib::{
     entry_point_trait::{
         get_payload, AutomaticArgs, EntryPointTrait, MultiSigConfig, PreBuiltPackages,
     },

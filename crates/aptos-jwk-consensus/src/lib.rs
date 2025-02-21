@@ -11,7 +11,7 @@ use libra2_event_notifications::{
 };
 use libra2_network::application::interface::{NetworkClient, NetworkServiceEvents};
 use libra2_types::account_address::AccountAddress;
-use aptos_validator_transaction_pool::VTxnPoolState;
+use libra2_validator_transaction_pool::VTxnPoolState;
 use tokio::runtime::Runtime;
 
 #[allow(clippy::let_and_return)]

@@ -14,7 +14,7 @@ use aptos_sdk::{
     move_types::account_address::AccountAddress,
     types::{transaction::SignedTransaction, vm_status::StatusCode, LocalAccount},
 };
-use aptos_transaction_generator_lib::TransactionGenerator;
+use libra2_transaction_generator_lib::TransactionGenerator;
 use core::{
     cmp::{max, min},
     result::Result::{Err, Ok},

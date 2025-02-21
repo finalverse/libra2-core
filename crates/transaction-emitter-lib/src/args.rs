@@ -5,7 +5,7 @@ use anyhow::{bail, format_err, Result};
 use libra2_config::keys::ConfigKey;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, encoding_type::EncodingType};
 use aptos_sdk::types::chain_id::ChainId;
-use aptos_transaction_generator_lib::AccountType;
+use libra2_transaction_generator_lib::AccountType;
 use clap::{ArgGroup, Parser};
 use serde::{Deserialize, Serialize};
 use std::{

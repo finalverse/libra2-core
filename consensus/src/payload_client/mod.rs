@@ -4,7 +4,7 @@
 use crate::error::QuorumStoreError;
 use aptos_consensus_types::{common::Payload, payload_pull_params::PayloadPullParameters};
 use libra2_types::validator_txn::ValidatorTransaction;
-use aptos_validator_transaction_pool::TransactionFilter;
+use libra2_validator_transaction_pool::TransactionFilter;
 use futures::future::BoxFuture;
 
 pub mod mixed;

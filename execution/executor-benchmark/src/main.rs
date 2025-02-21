@@ -34,8 +34,8 @@ use aptos_experimental_runtimes::thread_manager::{ThreadConfigStrategy, ThreadMa
 use libra2_metrics_core::{register_int_gauge, IntGauge};
 use libra2_profiler::{ProfilerConfig, ProfilerHandler};
 use libra2_push_metrics::MetricsPusher;
-use aptos_transaction_generator_lib::WorkflowProgress;
-use aptos_transaction_workloads_lib::args::TransactionTypeArg;
+use libra2_transaction_generator_lib::WorkflowProgress;
+use libra2_transaction_workloads_lib::args::TransactionTypeArg;
 use libra2_types::on_chain_config::{FeatureFlag, Features};
 use aptos_vm::{aptos_vm::AptosVMBlockExecutor, AptosVM, VMBlockExecutor};
 use aptos_vm_environment::prod_configs::set_paranoid_type_checks;

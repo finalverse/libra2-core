@@ -6,7 +6,7 @@ use crate::{
     token_workflow::TokenWorkflowKind,
     EntryPoints,
 };
-use aptos_transaction_generator_lib::{TransactionType, WorkflowProgress};
+use libra2_transaction_generator_lib::{TransactionType, WorkflowProgress};
 use clap::{Parser, ValueEnum};
 use serde::{Deserialize, Serialize};
 

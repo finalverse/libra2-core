@@ -18,7 +18,7 @@ use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };
 use libra2_network::application::interface::{NetworkClient, NetworkServiceEvents};
-use aptos_validator_transaction_pool::VTxnPoolState;
+use libra2_validator_transaction_pool::VTxnPoolState;
 use move_core_types::account_address::AccountAddress;
 use tokio::runtime::Runtime;
 pub use types::DKGMessage;

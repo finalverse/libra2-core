@@ -34,7 +34,7 @@ use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_infallible::Mutex;
 use libra2_logger::{error, sample, sample::SampleRate, warn};
 use libra2_types::{on_chain_config::ValidatorTxnConfig, validator_txn::ValidatorTransaction};
-use aptos_validator_transaction_pool as vtxn_pool;
+use libra2_validator_transaction_pool as vtxn_pool;
 use futures::future::BoxFuture;
 use itertools::Itertools;
 use std::{

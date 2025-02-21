@@ -25,7 +25,7 @@ use libra2_types::{
         ValidatorConsensusInfo, ValidatorConsensusInfoMoveStruct, ValidatorVerifier,
     },
 };
-use aptos_validator_transaction_pool::{TransactionFilter, VTxnPoolState};
+use libra2_validator_transaction_pool::{TransactionFilter, VTxnPoolState};
 use move_core_types::account_address::AccountAddress;
 use std::{
     sync::Arc,

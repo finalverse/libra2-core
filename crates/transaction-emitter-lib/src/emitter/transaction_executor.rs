@@ -8,7 +8,7 @@ use libra2_rest_client::{aptos_api_types::AptosErrorCode, error::RestError, Clie
 use aptos_sdk::{
     move_types::account_address::AccountAddress, types::transaction::SignedTransaction,
 };
-use aptos_transaction_generator_lib::{CounterState, ReliableTransactionSubmitter};
+use libra2_transaction_generator_lib::{CounterState, ReliableTransactionSubmitter};
 use async_trait::async_trait;
 use futures::future::join_all;
 use rand::{rngs::StdRng, seq::SliceRandom, thread_rng, Rng, SeedableRng};
