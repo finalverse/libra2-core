@@ -288,7 +288,7 @@ pub fn start_telemetry_service(
     chain_id: ChainId,
 ) -> Option<Runtime> {
     let build_info = build_information!();
-    aptos_telemetry::service::start_telemetry_service(
+    libra2_telemetry::service::start_telemetry_service(
         node_config.clone(),
         chain_id,
         build_info,

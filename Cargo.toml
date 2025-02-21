@@ -99,8 +99,8 @@ members = [
     "crates/aptos-runtimes",
     "crates/libra2-speculative-state-helper",
     "crates/libra2-system-utils",
-    "crates/aptos-telemetry",
-    "crates/aptos-telemetry-service",
+    "crates/libra2-telemetry",
+    "crates/libra2-telemetry-service",
     "crates/libra2-temppath",
     "crates/libra2-time-service",
     "crates/libra2-warp-webserver",
@@ -459,8 +459,8 @@ libra2-storage-service-types = { path = "state-sync/storage-service/types" }
 libra2-storage-service-server = { path = "state-sync/storage-service/server" }
 libra2-system-utils = { path = "crates/libra2-system-utils" }
 aptos-transaction-filter = { path = "ecosystem/indexer-grpc/transaction-filter" }
-aptos-telemetry = { path = "crates/aptos-telemetry" }
-aptos-telemetry-service = { path = "crates/aptos-telemetry-service" }
+libra2-telemetry = { path = "crates/libra2-telemetry" }
+libra2-telemetry-service = { path = "crates/libra2-telemetry-service" }
 libra2-temppath = { path = "crates/libra2-temppath" }
 aptos-testcases = { path = "testsuite/testcases" }
 libra2-time-service = { path = "crates/libra2-time-service", features = [

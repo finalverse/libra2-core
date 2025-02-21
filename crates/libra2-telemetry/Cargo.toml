@@ -1,6 +1,6 @@
 [package]
-name = "aptos-telemetry"
-description = "Aptos utilities to collect observability data from a node and send it to a remote destination"
+name = "libra2-telemetry"
+description = "Libra2 utilities to collect observability data from a node and send it to a remote destination"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -27,7 +27,7 @@ libra2-network = { workspace = true }
 libra2-node-resource-metrics = { workspace = true }
 aptos-runtimes = { workspace = true }
 libra2-state-sync-driver = { workspace = true }
-aptos-telemetry-service = { workspace = true }
+libra2-telemetry-service = { workspace = true }
 libra2-types = { workspace = true }
 flate2 = { workspace = true }
 futures = { workspace = true }

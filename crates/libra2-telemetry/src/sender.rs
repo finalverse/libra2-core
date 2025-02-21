@@ -10,7 +10,7 @@ use libra2_crypto::{
 };
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::debug;
-use aptos_telemetry_service::types::{
+use libra2_telemetry_service::types::{
     auth::{AuthRequest, AuthResponse},
     response::IndexResponse,
     telemetry::TelemetryDump,
@@ -421,9 +421,9 @@ async fn error_for_status_with_body(response: Response) -> Result<Response, anyh
 mod tests {
 
     use super::*;
-    use crate::metrics::{APTOS_TELEMETRY_SERVICE_FAILURE, APTOS_TELEMETRY_SERVICE_SUCCESS};
+    use crate::metrics::{LIBRA2_TELEMETRY_SERVICE_FAILURE, LIBRA2_TELEMETRY_SERVICE_SUCCESS};
     use libra2_crypto::Uniform;
-    use aptos_telemetry_service::types::telemetry::TelemetryEvent;
+    use libra2_telemetry_service::types::telemetry::TelemetryEvent;
     use httpmock::MockServer;
     use prometheus::{register_int_counter_vec_with_registry, Registry};
     use std::{
@@ -559,13 +559,13 @@ mod tests {
 
         mock.assert_hits(1);
         assert_eq!(
-            APTOS_TELEMETRY_SERVICE_SUCCESS
+            LIBRA2_TELEMETRY_SERVICE_SUCCESS
                 .with_label_values(&[event_name])
                 .get(),
             0
         );
         assert_eq!(
-            APTOS_TELEMETRY_SERVICE_FAILURE
+            LIBRA2_TELEMETRY_SERVICE_FAILURE
                 .with_label_values(&[event_name])
                 .get(),
             1
@@ -579,7 +579,7 @@ mod tests {
         let test_registry = Registry::default();
 
         let counter = register_int_counter_vec_with_registry!(
-            "aptos_telemetry_service_success",
+            "libra2_telemetry_service_success",
             "Number of telemetry events successfully sent to telemetry service",
             &["event_name"],
             test_registry

@@ -14,7 +14,7 @@ use libra2_logger::{
     libra2_logger::RUST_LOG_TELEMETRY, prelude::*, telemetry_log_writer::TelemetryLog,
     LoggerFilterUpdater,
 };
-use aptos_telemetry_service::types::telemetry::{TelemetryDump, TelemetryEvent};
+use libra2_telemetry_service::types::telemetry::{TelemetryDump, TelemetryEvent};
 use libra2_types::chain_id::ChainId;
 use futures::channel::mpsc::{self, Receiver};
 use once_cell::sync::Lazy;
@@ -476,7 +476,7 @@ async fn send_telemetry_event(
             telemetry_dump,
         )
     } else {
-        // Aptos nodes send their metrics to aptos-telemetry-service crate.
+        // Aptos nodes send their metrics to libra2-telemetry-service crate.
         spawn_event_sender_to_telemetry_service(event_name, telemetry_sender, telemetry_dump)
     }
 }

@@ -57,8 +57,8 @@ impl PeerLocationUpdater {
 
 fn get_chain_id() -> ChainId {
     match env::var("GCP_METADATA_PROJECT_ID") {
-        Ok(val) if val == "aptos-telemetry-svc-mainnet" => ChainId::mainnet(),
-        Ok(val) if val == "aptos-telemetry-svc-dev" => ChainId::testnet(),
+        Ok(val) if val == "libra2-telemetry-svc-mainnet" => ChainId::mainnet(),
+        Ok(val) if val == "libra2-telemetry-svc-dev" => ChainId::testnet(),
         _ => {
             libra2_logger::warn!("Unknown GCP_METADATA_PROJECT_ID, defaulting to test");
             ChainId::test()
@@ -129,7 +129,7 @@ mod tests {
 
     #[tokio::test]
     async fn test_query() {
-        env::set_var("GCP_METADATA_PROJECT_ID", "aptos-telemetry-svc-dev");
+        env::set_var("GCP_METADATA_PROJECT_ID", "libra2-telemetry-svc-dev");
         env::set_var("PEER_LOCATION_QUERY", "<QUERY>");
 
         let client = BigQueryClient::from_application_default_credentials()

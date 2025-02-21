@@ -19,7 +19,7 @@ use anyhow::{anyhow, Result};
 use libra2_logger::debug;
 use serde::{Deserialize, Serialize};
 
-// TODO: Use the key in crates/aptos-telemetry/src/build_information.rs
+// TODO: Use the key in crates/libra2-telemetry/src/build_information.rs
 const BUILD_COMMIT_HASH_KEY: &str = "build_commit_hash";
 
 #[derive(Clone, Debug, Deserialize, Serialize)]

@@ -17,7 +17,7 @@ use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
 use aptos_keygen::KeyGen;
 use libra2_logger::{debug, Level};
 use libra2_rest_client::{aptos_api_types::HashValue, Account, Client, FaucetClient, State};
-use aptos_telemetry::service::telemetry_is_disabled;
+use libra2_telemetry::service::telemetry_is_disabled;
 use libra2_types::{
     account_address::create_multisig_account_address,
     chain_id::ChainId,
@@ -133,7 +133,7 @@ async fn send_telemetry_event(command: &str, latency: Duration, error: Option<&s
     let build_information = cli_build_information();
 
     // Send the event
-    aptos_telemetry::cli_metrics::send_cli_telemetry_event(
+    libra2_telemetry::cli_metrics::send_cli_telemetry_event(
         build_information,
         command.into(),
         latency,

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::utils;
-use aptos_telemetry_service::types::telemetry::TelemetryEvent;
+use libra2_telemetry_service::types::telemetry::TelemetryEvent;
 use prometheus::core::Collector;
 use std::collections::BTreeMap;
 

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-telemetry-service"
+name = "libra2-telemetry-service"
 description = "Web service to receive telemetry from nodes and ingest it to backends"
 version = "0.1.0"
 

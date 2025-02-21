@@ -66,8 +66,8 @@
 /crates/aptos-rosetta-cli @gregnazario
 
 # Owners for the `telemetry` related crates.
-/crates/aptos-telemetry @ibalajiarun @geekflyer
-/crates/aptos-telemetry-service @ibalajiarun @geekflyer
+/crates/libra2-telemetry @ibalajiarun @geekflyer
+/crates/libra2-telemetry-service @ibalajiarun @geekflyer
 
 # Owners for the inspection-service crate
 /crates/inspection-service/ @joshlind

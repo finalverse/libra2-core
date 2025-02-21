@@ -3,7 +3,7 @@
 
 use crate::utils;
 use libra2_infallible::Mutex;
-use aptos_telemetry_service::types::telemetry::TelemetryEvent;
+use libra2_telemetry_service::types::telemetry::TelemetryEvent;
 use once_cell::sync::Lazy;
 use std::collections::BTreeMap;
 use sysinfo::{CpuExt, DiskExt, System, SystemExt};

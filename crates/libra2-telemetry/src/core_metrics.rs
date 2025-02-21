@@ -4,7 +4,7 @@
 use crate::{utils, utils::sum_all_histogram_counts};
 use libra2_config::config::NodeConfig;
 use libra2_state_sync_driver::metrics::StorageSynchronizerOperations;
-use aptos_telemetry_service::types::telemetry::TelemetryEvent;
+use libra2_telemetry_service::types::telemetry::TelemetryEvent;
 use prometheus::core::Collector;
 use std::collections::BTreeMap;
 
@@ -173,14 +173,14 @@ fn collect_storage_metrics(core_metrics: &mut BTreeMap<String, String>) {
 
 /// Collects the telemetry metrics and appends it to the given map
 fn collect_telemetry_metrics(core_metrics: &mut BTreeMap<String, String>) {
-    let telemetry_failure_metrics = crate::metrics::APTOS_TELEMETRY_FAILURE.collect();
+    let telemetry_failure_metrics = crate::metrics::LIBRA2_TELEMETRY_FAILURE.collect();
     let telemetry_failure_count = utils::sum_all_gauges(&telemetry_failure_metrics);
     core_metrics.insert(
         TELEMETRY_FAILURE_COUNT.into(),
         telemetry_failure_count.to_string(),
     );
 
-    let telemetry_success_metrics = crate::metrics::APTOS_TELEMETRY_SUCCESS.collect();
+    let telemetry_success_metrics = crate::metrics::LIBRA2_TELEMETRY_SUCCESS.collect();
     let telemetry_success_count = utils::sum_all_gauges(&telemetry_success_metrics);
     core_metrics.insert(
         TELEMETRY_SUCCESS_COUNT.into(),

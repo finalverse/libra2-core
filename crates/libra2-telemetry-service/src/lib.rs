@@ -51,12 +51,12 @@ mod validator_cache;
 
 #[derive(Clone, Debug, Parser)]
 #[clap(name = "Aptos Telemetry Service", author, version)]
-pub struct AptosTelemetryServiceArgs {
+pub struct Libra2TelemetryServiceArgs {
     #[clap(short = 'f', long, value_parser)]
     config_path: PathBuf,
 }
 
-impl AptosTelemetryServiceArgs {
+impl Libra2TelemetryServiceArgs {
     pub async fn run(self) {
         // Load the config file
         let config =
@@ -351,5 +351,5 @@ pub struct CustomEventConfig {
 #[test]
 fn verify_tool() {
     use clap::CommandFactory;
-    AptosTelemetryServiceArgs::command().debug_assert()
+    Libra2TelemetryServiceArgs::command().debug_assert()
 }

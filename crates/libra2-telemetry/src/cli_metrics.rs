@@ -3,7 +3,7 @@
 
 use crate::{service, utils};
 use libra2_logger::debug;
-use aptos_telemetry_service::types::telemetry::TelemetryEvent;
+use libra2_telemetry_service::types::telemetry::TelemetryEvent;
 use std::{collections::BTreeMap, time::Duration};
 
 /// CLI metrics event name
