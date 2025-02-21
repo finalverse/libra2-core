@@ -1185,7 +1185,6 @@ dependencies = [
  "aptos-inspection-service",
  "aptos-runtimes",
  "aptos-sdk",
- "aptos-transaction-emitter-lib",
  "aptos-transaction-generator-lib",
  "aptos-transaction-workloads-lib",
  "async-trait",
@@ -1209,6 +1208,7 @@ dependencies = [
  "libra2-retrier",
  "libra2-short-hex-str",
  "libra2-state-sync-driver",
+ "libra2-transaction-emitter-lib",
  "num_cpus",
  "once_cell",
  "prometheus-http-query",
@@ -2198,7 +2198,6 @@ version = "0.1.1"
 dependencies = [
  "anyhow",
  "aptos-sdk",
- "aptos-transaction-emitter-lib",
  "aptos-transaction-workloads-lib",
  "async-trait",
  "clap 4.5.21",
@@ -2208,6 +2207,7 @@ dependencies = [
  "libra2-logger",
  "libra2-network-checker",
  "libra2-rest-client",
+ "libra2-transaction-emitter-lib",
  "once_cell",
  "poem",
  "poem-openapi",
@@ -2579,53 +2579,6 @@ dependencies = [
  "libra2-types",
  "num_cpus",
  "proptest",
-]
-
-[[package]]
-name = "aptos-transaction-emitter"
-version = "0.0.0"
-dependencies = [
- "anyhow",
- "aptos-sdk",
- "aptos-transaction-emitter-lib",
- "aptos-transaction-workloads-lib",
- "clap 4.5.21",
- "futures",
- "libra2-global-constants",
- "libra2-logger",
- "rand 0.7.3",
- "tokio",
-]
-
-[[package]]
-name = "aptos-transaction-emitter-lib"
-version = "0.0.0"
-dependencies = [
- "again",
- "anyhow",
- "aptos-sdk",
- "aptos-transaction-generator-lib",
- "async-trait",
- "base64 0.13.1",
- "clap 4.5.21",
- "futures",
- "hex",
- "itertools 0.13.0",
- "libra2-config",
- "libra2-crypto",
- "libra2-global-constants",
- "libra2-infallible",
- "libra2-logger",
- "libra2-rest-client",
- "libra2-types",
- "once_cell",
- "rand 0.7.3",
- "rand_core 0.5.1",
- "reqwest 0.11.23",
- "serde",
- "serde_json",
- "tokio",
- "url",
 ]
 
 [[package]]
@@ -10624,6 +10577,53 @@ dependencies = [
  "thiserror",
  "tokio",
  "tokio-test",
+]
+
+[[package]]
+name = "libra2-transaction-emitter"
+version = "0.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-sdk",
+ "aptos-transaction-workloads-lib",
+ "clap 4.5.21",
+ "futures",
+ "libra2-global-constants",
+ "libra2-logger",
+ "libra2-transaction-emitter-lib",
+ "rand 0.7.3",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-transaction-emitter-lib"
+version = "0.0.0"
+dependencies = [
+ "again",
+ "anyhow",
+ "aptos-sdk",
+ "aptos-transaction-generator-lib",
+ "async-trait",
+ "base64 0.13.1",
+ "clap 4.5.21",
+ "futures",
+ "hex",
+ "itertools 0.13.0",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-global-constants",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-rest-client",
+ "libra2-types",
+ "once_cell",
+ "rand 0.7.3",
+ "rand_core 0.5.1",
+ "reqwest 0.11.23",
+ "serde",
+ "serde_json",
+ "tokio",
+ "url",
 ]
 
 [[package]]

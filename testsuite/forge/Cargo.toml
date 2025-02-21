@@ -32,7 +32,7 @@ aptos-runtimes = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-short-hex-str = { workspace = true }
 libra2-state-sync-driver = { workspace = true }
-aptos-transaction-emitter-lib = { workspace = true }
+libra2-transaction-emitter-lib = { workspace = true }
 aptos-transaction-generator-lib = { workspace = true }
 aptos-transaction-workloads-lib = { workspace = true }
 async-trait = { workspace = true }

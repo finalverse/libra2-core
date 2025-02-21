@@ -14,7 +14,7 @@ mod runner;
 pub use runner::*;
 
 mod backend;
-pub use aptos_transaction_emitter_lib::*;
+pub use libra2_transaction_emitter_lib::*;
 pub use aptos_transaction_generator_lib::*;
 pub use aptos_transaction_workloads_lib::*;
 pub use backend::*;

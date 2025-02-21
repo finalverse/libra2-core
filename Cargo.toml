@@ -463,7 +463,7 @@ aptos-testcases = { path = "testsuite/testcases" }
 libra2-time-service = { path = "crates/libra2-time-service", features = [
     "async",
 ] }
-aptos-transaction-emitter-lib = { path = "crates/transaction-emitter-lib" }
+libra2-transaction-emitter-lib = { path = "crates/transaction-emitter-lib" }
 aptos-transaction-generator-lib = { path = "crates/transaction-generator-lib" }
 aptos-transaction-workloads-lib = { path = "crates/transaction-workloads-lib" }
 aptos-transactional-test-harness = { path = "aptos-move/aptos-transactional-test-harness" }

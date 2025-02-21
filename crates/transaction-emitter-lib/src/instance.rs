@@ -6,7 +6,7 @@ use reqwest::Url;
 use std::fmt;
 
 // Custom header value to identify the client
-const X_APTOS_CLIENT_VALUE: &str = "aptos-transaction-emitter";
+const X_APTOS_CLIENT_VALUE: &str = "libra2-transaction-emitter";
 
 #[derive(Clone)]
 pub struct Instance {

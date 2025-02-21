@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_logger::info;
-use aptos_transaction_emitter_lib::emitter::stats::TxnStats;
+use libra2_transaction_emitter_lib::emitter::stats::TxnStats;
 use serde::Serialize;
 use std::fmt;
 

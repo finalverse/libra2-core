@@ -1,6 +1,6 @@
 [package]
-name = "aptos-transaction-emitter-lib"
-description = "Library for Aptos transaction emitter"
+name = "libra2-transaction-emitter-lib"
+description = "Library for Libra2 transaction emitter"
 version = "0.0.0"
 
 # Workspace inherited keys

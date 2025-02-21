@@ -1,6 +1,6 @@
 [package]
-name = "aptos-transaction-emitter"
-description = "Aptos transaction emitter for testing"
+name = "libra2-transaction-emitter"
+description = "Libra2 transaction emitter for testing"
 version = "0.0.0"
 
 # Workspace inherited keys
@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 libra2-global-constants = { workspace = true }
 libra2-logger = { workspace = true }
 aptos-sdk = { workspace = true }
-aptos-transaction-emitter-lib = { workspace = true }
+libra2-transaction-emitter-lib = { workspace = true }
 aptos-transaction-workloads-lib = { workspace = true }
 clap = { workspace = true }
 futures = { workspace = true }
