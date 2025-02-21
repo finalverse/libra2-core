@@ -90,7 +90,7 @@ aptos-cached-packages = { workspace = true }
 libra2-config = { workspace = true, features = ["fuzzing"] }
 aptos-consensus-types = { workspace = true, features = ["fuzzing"] }
 aptos-executor-test-helpers = { workspace = true }
-aptos-keygen = { workspace = true }
+libra2-keygen = { workspace = true }
 libra2-mempool = { workspace = true, features = ["fuzzing"] }
 libra2-netcore = { workspace = true }
 libra2-network = { workspace = true, features = ["fuzzing"] }

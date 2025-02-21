@@ -7,7 +7,7 @@ use aptos_forge::{
     reconfig, NetworkContext, NetworkContextSynchronizer, NetworkTest, NodeExt, Result, Swarm,
     SwarmExt, Test, TestReport, FORGE_KEY_SEED,
 };
-use aptos_keygen::KeyGen;
+use libra2_keygen::KeyGen;
 use libra2_logger::info;
 use aptos_sdk::crypto::{ed25519::Ed25519PrivateKey, PrivateKey};
 use libra2_types::{account_address::AccountAddress, transaction::authenticator::AuthenticationKey};

@@ -6,7 +6,7 @@
 
 use crate::gas_costs;
 use libra2_crypto::ed25519::*;
-use aptos_keygen::KeyGen;
+use libra2_keygen::KeyGen;
 use libra2_types::{
     access_path::AccessPath,
     account_address::AccountAddress,

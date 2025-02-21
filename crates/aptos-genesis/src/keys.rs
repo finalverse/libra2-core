@@ -7,7 +7,7 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     x25519, PrivateKey,
 };
-use aptos_keygen::KeyGen;
+use libra2_keygen::KeyGen;
 use libra2_types::{account_address::AccountAddress, transaction::authenticator::AuthenticationKey};
 use serde::{Deserialize, Serialize};
 

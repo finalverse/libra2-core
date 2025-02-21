@@ -23,7 +23,7 @@ use libra2_crypto::{
     PrivateKey,
 };
 use aptos_framework::ReleaseBundle;
-use aptos_keygen::KeyGen;
+use libra2_keygen::KeyGen;
 use libra2_logger::prelude::*;
 use libra2_types::{
     chain_id::ChainId,

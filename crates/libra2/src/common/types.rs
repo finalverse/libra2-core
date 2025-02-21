@@ -27,7 +27,7 @@ use libra2_crypto::{
 };
 use aptos_framework::chunked_publish::{CHUNK_SIZE_IN_BYTES, LARGE_PACKAGES_MODULE_ADDRESS};
 use libra2_global_constants::adjust_gas_headroom;
-use aptos_keygen::KeyGen;
+use libra2_keygen::KeyGen;
 use libra2_logger::Level;
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_rest_client::{

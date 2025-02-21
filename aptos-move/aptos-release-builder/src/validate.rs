@@ -479,7 +479,7 @@ pub async fn validate_config_and_generate_release(
 pub mod test {
     use super::NetworkConfig;
     use libra2_crypto::PrivateKey;
-    use aptos_keygen::KeyGen;
+    use libra2_keygen::KeyGen;
     use libra2_types::transaction::authenticator::AuthenticationKey;
 
     #[tokio::test]
