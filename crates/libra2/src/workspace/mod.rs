@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::common::types::{CliCommand, CliTypedResult};
-use aptos_workspace_server::WorkspaceCommand;
+use libra2_workspace_server::WorkspaceCommand;
 use async_trait::async_trait;
 
 #[async_trait]

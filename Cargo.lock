@@ -303,7 +303,6 @@ dependencies = [
  "aptos-protos 1.3.1",
  "aptos-sdk",
  "aptos-vm",
- "aptos-workspace-server",
  "async-trait",
  "base64 0.13.1",
  "bcs 0.1.4",
@@ -347,6 +346,7 @@ dependencies = [
  "libra2-vm-genesis",
  "libra2-vm-logging",
  "libra2-vm-types",
+ "libra2-workspace-server",
  "maplit",
  "move-binary-format",
  "move-bytecode-source-map",
@@ -1815,33 +1815,6 @@ dependencies = [
  "rand_core 0.5.1",
  "rayon",
  "serde",
-]
-
-[[package]]
-name = "aptos-workspace-server"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-cached-packages",
- "bollard",
- "clap 4.5.21",
- "diesel",
- "diesel-async",
- "futures",
- "libra2-config",
- "libra2-faucet-core",
- "libra2-localnet",
- "libra2-node",
- "libra2-types",
- "maplit",
- "processor",
- "rand 0.7.3",
- "server-framework",
- "tempfile",
- "tokio",
- "tokio-util 0.7.10",
- "url",
- "uuid",
 ]
 
 [[package]]
@@ -7659,7 +7632,6 @@ dependencies = [
  "aptos-protos 1.3.1",
  "aptos-sdk",
  "aptos-vm",
- "aptos-workspace-server",
  "async-trait",
  "base64 0.13.1",
  "bcs 0.1.4",
@@ -7703,6 +7675,7 @@ dependencies = [
  "libra2-vm-genesis",
  "libra2-vm-logging",
  "libra2-vm-types",
+ "libra2-workspace-server",
  "maplit",
  "move-binary-format",
  "move-bytecode-source-map",
@@ -10684,6 +10657,33 @@ dependencies = [
  "serde",
  "serde_json",
  "warp",
+]
+
+[[package]]
+name = "libra2-workspace-server"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-cached-packages",
+ "bollard",
+ "clap 4.5.21",
+ "diesel",
+ "diesel-async",
+ "futures",
+ "libra2-config",
+ "libra2-faucet-core",
+ "libra2-localnet",
+ "libra2-node",
+ "libra2-types",
+ "maplit",
+ "processor",
+ "rand 0.7.3",
+ "server-framework",
+ "tempfile",
+ "tokio",
+ "tokio-util 0.7.10",
+ "url",
+ "uuid",
 ]
 
 [[package]]

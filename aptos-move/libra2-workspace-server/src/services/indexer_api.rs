@@ -100,7 +100,7 @@ fn create_container_options_and_config(
     };
 
     let options = CreateContainerOptions {
-        name: format!("aptos-workspace-{}-indexer-api", instance_id),
+        name: format!("libra2-workspace-{}-indexer-api", instance_id),
         ..Default::default()
     };
 
@@ -214,7 +214,7 @@ pub fn start_indexer_api(
         // Wait for the container to stop (which it shouldn't).
         let _wait = docker
             .wait_container(
-                &format!("aptos-workspace-{}-indexer-api", instance_id),
+                &format!("libra2-workspace-{}-indexer-api", instance_id),
                 Some(WaitContainerOptions {
                     condition: "not-running",
                 }),

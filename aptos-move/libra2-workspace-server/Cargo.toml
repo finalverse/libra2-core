@@ -1,5 +1,5 @@
 [package]
-name = "aptos-workspace-server"
+name = "libra2-workspace-server"
 version = "0.1.0"
 
 # Workspace inherited keys

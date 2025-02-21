@@ -30,7 +30,7 @@ members = [
     "aptos-move/libra2-vm-logging",
     "aptos-move/libra2-vm-profiling",
     "aptos-move/libra2-vm-types",
-    "aptos-move/aptos-workspace-server",
+    "aptos-move/libra2-workspace-server",
     "aptos-move/block-executor",
     "aptos-move/e2e-benchmark",
     "aptos-move/e2e-move-tests",
@@ -475,7 +475,7 @@ libra2-vm-logging = { path = "aptos-move/libra2-vm-logging" }
 libra2-vm-genesis = { path = "aptos-move/vm-genesis" }
 libra2-vm-types = { path = "aptos-move/libra2-vm-types" }
 libra2-vm-validator = { path = "vm-validator" }
-aptos-workspace-server = { path = "aptos-move/aptos-workspace-server" }
+libra2-workspace-server = { path = "aptos-move/libra2-workspace-server" }
 libra2-warp-webserver = { path = "crates/libra2-warp-webserver" }
 aptos-cargo-cli = { path = "devtools/aptos-cargo-cli" }
 

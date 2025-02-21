@@ -19,7 +19,7 @@ enum Language {
 }
 
 #[derive(Debug, Parser)]
-#[clap(name = "Aptos SDK Builder", about = "Generate boilerplate Aptos SDKs")]
+#[clap(name = "Libra2 SDK Builder", about = "Generate boilerplate Libra2 SDKs")]
 struct Options {
     /// Path to the directory containing ABI files in BCS encoding.
     abi_directories: Vec<PathBuf>,

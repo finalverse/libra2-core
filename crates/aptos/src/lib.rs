@@ -21,7 +21,7 @@ use crate::common::{
     types::{CliCommand, CliResult, CliTypedResult},
     utils::cli_build_information,
 };
-use aptos_workspace_server::WorkspaceCommand;
+use libra2_workspace_server::WorkspaceCommand;
 use async_trait::async_trait;
 use clap::Parser;
 use std::collections::BTreeMap;

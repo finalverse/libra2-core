@@ -64,7 +64,7 @@ pub fn get_postgres_connection_string(postgres_port: u16) -> String {
 ///       use [`get_postgres_connection_string`] instead.
 pub fn get_postgres_connection_string_within_docker_network(instance_id: Uuid) -> String {
     format!(
-        "postgres://{}@aptos-workspace-{}-postgres:{}/{}",
+        "postgres://{}@libra2-workspace-{}-postgres:{}/{}",
         POSTGRES_USER, instance_id, POSTGRES_DEFAULT_PORT, POSTGRES_DB_NAME
     )
 }
@@ -140,7 +140,7 @@ fn create_container_options_and_config(
     };
 
     let options = CreateContainerOptions {
-        name: format!("aptos-workspace-{}-postgres", instance_id),
+        name: format!("libra2-workspace-{}-postgres", instance_id),
         ..Default::default()
     };
 
@@ -173,7 +173,7 @@ pub fn start_postgres(
 ) {
     no_panic_println!("Starting postgres..");
 
-    let volume_name = format!("aptos-workspace-{}-postgres", instance_id);
+    let volume_name = format!("libra2-workspace-{}-postgres", instance_id);
     let (fut_volume, fut_volume_clean_up) =
         create_docker_volume(shutdown.clone(), fut_docker.clone(), volume_name);
 
@@ -230,7 +230,7 @@ pub fn start_postgres(
         // Wait for the container to stop (which it shouldn't).
         let _wait = docker
             .wait_container(
-                &format!("aptos-workspace-{}-postgres", instance_id),
+                &format!("libra2-workspace-{}-postgres", instance_id),
                 Some(WaitContainerOptions {
                     condition: "not-running",
                 }),

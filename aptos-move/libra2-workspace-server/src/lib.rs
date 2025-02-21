@@ -143,7 +143,7 @@ async fn run_all_services(timeout: u64) -> Result<()> {
     let fut_docker = make_shared(get_docker());
 
     // Docker Network
-    let docker_network_name = "aptos-workspace".to_string();
+    let docker_network_name = "libra2-workspace".to_string();
     let fut_docker_network = make_shared(create_docker_network_permanent(
         shutdown.clone(),
         fut_docker.clone(),

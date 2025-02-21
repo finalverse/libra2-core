@@ -50,7 +50,7 @@ libra2-vm-environment = { workspace = true }
 libra2-vm-genesis = { workspace = true }
 libra2-vm-logging = { workspace = true }
 libra2-vm-types = { workspace = true }
-aptos-workspace-server = { workspace = true }
+libra2-workspace-server = { workspace = true }
 async-trait = { workspace = true }
 base64 = { workspace = true }
 bcs = { workspace = true }

@@ -102,7 +102,7 @@ struct GoEmitter<T> {
     /// Go module path for Serde runtime packages
     /// `None` to use the default path.
     serde_module_path: Option<String>,
-    /// Go module path for Aptos types.
+    /// Go module path for Libra2 types.
     /// `None` to use an empty path.
     aptos_module_path: Option<String>,
     /// Name of the package owning the generated definitions (e.g. "my_package")
@@ -207,7 +207,7 @@ where
             writeln!(
                 self.out,
                 r#"
-// Build an Aptos `Script` from a structured object `ScriptCall`.
+// Build an Libra2 `Script` from a structured object `ScriptCall`.
 func EncodeScript(call ScriptCall) libra2types.Script {{"#
             )?;
             self.out.indent();
@@ -239,7 +239,7 @@ func EncodeScript(call ScriptCall) libra2types.Script {{"#
             writeln!(
                 self.out,
                 r#"
-// Build an Aptos `TransactionPayload` from a structured object `EntryFunctionCall`.
+// Build an Libra2 `TransactionPayload` from a structured object `EntryFunctionCall`.
 func EncodeEntryFunction(call EntryFunctionCall) libra2types.TransactionPayload {{"#
             )?;
             self.out.indent();
@@ -274,7 +274,7 @@ func EncodeEntryFunction(call EntryFunctionCall) libra2types.TransactionPayload 
         writeln!(
             self.out,
             r#"
-// Try to recognize an Aptos `Script` and convert it into a structured object `ScriptCall`.
+// Try to recognize an Libra2 `Script` and convert it into a structured object `ScriptCall`.
 func DecodeScript(script *libra2types.Script) (ScriptCall, error) {{
 	if helper := script_decoder_map[string(script.Code)]; helper != nil {{
 		val, err := helper(script)
@@ -290,7 +290,7 @@ func DecodeScript(script *libra2types.Script) (ScriptCall, error) {{
         writeln!(
             self.out,
             r#"
-// Try to recognize an Aptos `TransactionPayload` and convert it into a structured object `EntryFunctionCall`.
+// Try to recognize an Libra2 `TransactionPayload` and convert it into a structured object `EntryFunctionCall`.
 func DecodeEntryFunctionPayload(script libra2types.TransactionPayload) (EntryFunctionCall, error) {{
     switch script := script.(type) {{
         case *libra2types.TransactionPayload__EntryFunction:
