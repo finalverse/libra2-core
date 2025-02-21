@@ -35,7 +35,7 @@ use libra2_db_indexer::{db_indexer::InternalIndexerDB, Indexer};
 use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
-use aptos_resource_viewer::AptosValueAnnotator;
+use libra2_resource_viewer::Libra2ValueAnnotator;
 use libra2_schemadb::batch::SchemaBatch;
 use libra2_storage_interface::{
     db_ensure as ensure, db_other_bail as bail, Libra2DbError, DbReader, DbWriter, LedgerSummary,

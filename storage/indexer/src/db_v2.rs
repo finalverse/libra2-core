@@ -10,7 +10,7 @@ use libra2_db_indexer_schemas::{
     schema::{indexer_metadata::IndexerMetadataSchema, table_info::TableInfoSchema},
 };
 use libra2_logger::info;
-use aptos_resource_viewer::{AnnotatedMoveValue, AptosValueAnnotator};
+use libra2_resource_viewer::{AnnotatedMoveValue, Libra2ValueAnnotator};
 use libra2_schemadb::{batch::SchemaBatch, DB};
 use libra2_storage_interface::{
     db_other_bail as bail, state_store::state_view::db_state_view::DbStateViewAtVersion,
@@ -83,7 +83,7 @@ impl IndexerAsyncV2 {
     ) -> Result<()> {
         let last_version = first_version + write_sets.len() as Version;
         let state_view = db_reader.state_view_at_version(Some(last_version))?;
-        let annotator = AptosValueAnnotator::new(&state_view);
+        let annotator = Libra2ValueAnnotator::new(&state_view);
         self.index_with_annotator(
             &annotator,
             first_version,
@@ -96,7 +96,7 @@ impl IndexerAsyncV2 {
     /// After the current batch's parsed, write the mapping to the rocksdb, also update the next version to be processed
     pub fn index_with_annotator<R: StateView>(
         &self,
-        annotator: &AptosValueAnnotator<R>,
+        annotator: &Libra2ValueAnnotator<R>,
         first_version: Version,
         write_sets: &[&WriteSet],
         end_early_if_pending_on_empty: bool,
@@ -216,7 +216,7 @@ impl IndexerAsyncV2 {
 
 struct TableInfoParser<'a, R> {
     indexer_async_v2: &'a IndexerAsyncV2,
-    annotator: &'a AptosValueAnnotator<'a, R>,
+    annotator: &'a Libra2ValueAnnotator<'a, R>,
     result: HashMap<TableHandle, TableInfo>,
     pending_on: &'a DashMap<TableHandle, DashSet<Bytes>>,
 }
@@ -224,7 +224,7 @@ struct TableInfoParser<'a, R> {
 impl<'a, R: StateView> TableInfoParser<'a, R> {
     pub fn new(
         indexer_async_v2: &'a IndexerAsyncV2,
-        annotator: &'a AptosValueAnnotator<R>,
+        annotator: &'a Libra2ValueAnnotator<R>,
         pending_on: &'a DashMap<TableHandle, DashSet<Bytes>>,
     ) -> Self {
         Self {

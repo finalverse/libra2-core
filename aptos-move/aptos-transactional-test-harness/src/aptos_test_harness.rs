@@ -12,7 +12,7 @@ use libra2_crypto::{
 };
 use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
 use aptos_language_e2e_tests::data_store::{FakeDataStore, GENESIS_CHANGE_SET_HEAD};
-use aptos_resource_viewer::{AnnotatedMoveValue, AptosValueAnnotator};
+use libra2_resource_viewer::{AnnotatedMoveValue, Libra2ValueAnnotator};
 use libra2_types::{
     account_config::{aptos_test_root_address, AccountResource, CoinStoreResource},
     block_metadata::BlockMetadata,
@@ -444,7 +444,7 @@ impl<'a> AptosTestAdapter<'a> {
                 )
             })?;
 
-        let annotated = AptosValueAnnotator::new(&self.storage)
+        let annotated = Libra2ValueAnnotator::new(&self.storage)
             .view_resource(&aptos_coin_tag, &balance_blob)?;
 
         // Filter the Coin resource and return the resouce value
@@ -998,7 +998,7 @@ impl<'a> MoveTestAdapter<'a> for AptosTestAdapter<'a> {
             None => Ok("[No Resource Exists]".to_owned()),
             Some(data) => {
                 let annotated =
-                    AptosValueAnnotator::new(&self.storage).view_resource(&struct_tag, &data)?;
+                    Libra2ValueAnnotator::new(&self.storage).view_resource(&struct_tag, &data)?;
                 Ok(format!("{}", annotated))
             },
         }

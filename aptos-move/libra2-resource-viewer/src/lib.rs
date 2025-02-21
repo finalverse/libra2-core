@@ -22,9 +22,9 @@ use move_resource_viewer::MoveValueAnnotator;
 pub use move_resource_viewer::{AnnotatedMoveStruct, AnnotatedMoveValue};
 use std::sync::Arc;
 
-pub struct AptosValueAnnotator<'a, S>(MoveValueAnnotator<ModuleView<'a, S>>);
+pub struct Libra2ValueAnnotator<'a, S>(MoveValueAnnotator<ModuleView<'a, S>>);
 
-impl<'a, S: StateView> AptosValueAnnotator<'a, S> {
+impl<'a, S: StateView> Libra2ValueAnnotator<'a, S> {
     pub fn new(state_view: &'a S) -> Self {
         let view = ModuleView::new(state_view);
         Self(MoveValueAnnotator::new(view))

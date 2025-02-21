@@ -510,7 +510,6 @@ version = "0.0.1"
 dependencies = [
  "anyhow",
  "aptos-framework",
- "aptos-resource-viewer",
  "aptos-vm",
  "async-trait",
  "bcs 0.1.4",
@@ -521,6 +520,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-logger",
  "libra2-openapi",
+ "libra2-resource-viewer",
  "libra2-storage-interface",
  "libra2-types",
  "move-binary-format",
@@ -1611,20 +1611,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-resource-viewer"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-vm",
- "libra2-types",
- "libra2-vm-environment",
- "move-binary-format",
- "move-bytecode-utils",
- "move-core-types",
- "move-resource-viewer",
-]
-
-[[package]]
 name = "aptos-sdk"
 version = "0.0.3"
 dependencies = [
@@ -1792,7 +1778,6 @@ dependencies = [
  "aptos-framework",
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
- "aptos-resource-viewer",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
@@ -1800,6 +1785,7 @@ dependencies = [
  "datatest-stable",
  "hex",
  "libra2-crypto",
+ "libra2-resource-viewer",
  "libra2-storage-interface",
  "libra2-types",
  "libra2-vm-environment",
@@ -8369,7 +8355,6 @@ name = "libra2-db"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-resource-viewer",
  "arc-swap",
  "arr_macro",
  "bcs 0.1.4",
@@ -8394,6 +8379,7 @@ dependencies = [
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-proptest-helpers",
+ "libra2-resource-viewer",
  "libra2-rocksdb-options",
  "libra2-schemadb",
  "libra2-scratchpad",
@@ -8419,7 +8405,6 @@ name = "libra2-db-indexer"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-resource-viewer",
  "bcs 0.1.4",
  "bytes",
  "dashmap",
@@ -8428,6 +8413,7 @@ dependencies = [
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-proptest-helpers",
+ "libra2-resource-viewer",
  "libra2-rocksdb-options",
  "libra2-schemadb",
  "libra2-storage-interface",
@@ -9830,6 +9816,20 @@ dependencies = [
  "libra2-types",
  "tokio",
  "tokio-retry",
+]
+
+[[package]]
+name = "libra2-resource-viewer"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-vm",
+ "libra2-types",
+ "libra2-vm-environment",
+ "move-binary-format",
+ "move-bytecode-utils",
+ "move-core-types",
+ "move-resource-viewer",
 ]
 
 [[package]]

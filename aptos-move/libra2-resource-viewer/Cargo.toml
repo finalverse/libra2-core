@@ -1,6 +1,6 @@
 [package]
-name = "aptos-resource-viewer"
-description = "Aptos resource viewer"
+name = "libra2-resource-viewer"
+description = "Libra2 resource viewer"
 version = "0.1.0"
 
 # Workspace inherited keys

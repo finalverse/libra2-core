@@ -20,7 +20,7 @@ use crate::{
 use anyhow::{bail, ensure, format_err, Context as AnyhowContext, Result};
 use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_logger::{sample, sample::SampleRate};
-use aptos_resource_viewer::AptosValueAnnotator;
+use libra2_resource_viewer::Libra2ValueAnnotator;
 use libra2_storage_interface::DbReader;
 use libra2_types::{
     access_path::{AccessPath, Path},
@@ -66,7 +66,7 @@ const OBJECT_STRUCT: &IdentStr = ident_str!("Object");
 /// This reads the underlying BCS types and ABIs to convert them into
 /// JSON outputs
 pub struct MoveConverter<'a, S> {
-    inner: AptosValueAnnotator<'a, S>,
+    inner: Libra2ValueAnnotator<'a, S>,
     db: Arc<dyn DbReader>,
     indexer_reader: Option<Arc<dyn IndexerReader>>,
 }
@@ -78,7 +78,7 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
         indexer_reader: Option<Arc<dyn IndexerReader>>,
     ) -> Self {
         Self {
-            inner: AptosValueAnnotator::new(inner),
+            inner: Libra2ValueAnnotator::new(inner),
             db,
             indexer_reader,
         }

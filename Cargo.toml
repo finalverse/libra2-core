@@ -19,7 +19,7 @@ members = [
     "aptos-move/aptos-memory-usage-tracker",
     "aptos-move/aptos-native-interface",
     "aptos-move/aptos-release-builder",
-    "aptos-move/aptos-resource-viewer",
+    "aptos-move/libra2-resource-viewer",
     "aptos-move/aptos-sdk-builder",
     "aptos-move/aptos-transaction-benchmarks",
     "aptos-move/aptos-transactional-test-harness",
@@ -429,7 +429,7 @@ libra2-rate-limiter = { path = "crates/libra2-rate-limiter" }
 aptos-release-builder = { path = "aptos-move/aptos-release-builder" }
 libra2-reliable-broadcast = { path = "crates/reliable-broadcast" }
 aptos-replay-benchmark = { path = "aptos-move/replay-benchmark" }
-aptos-resource-viewer = { path = "aptos-move/aptos-resource-viewer" }
+libra2-resource-viewer = { path = "aptos-move/libra2-resource-viewer" }
 libra2-rest-client = { path = "crates/libra2-rest-client" }
 libra2-retrier = { path = "crates/libra2-retrier" }
 libra2-rocksdb-options = { path = "storage/rocksdb-options" }

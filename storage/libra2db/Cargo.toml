@@ -26,7 +26,7 @@ libra2-jellyfish-merkle = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 libra2-proptest-helpers = { workspace = true, optional = true }
-aptos-resource-viewer = { workspace = true }
+libra2-resource-viewer = { workspace = true }
 libra2-rocksdb-options = { workspace = true }
 libra2-schemadb = { workspace = true }
 libra2-scratchpad = { workspace = true }

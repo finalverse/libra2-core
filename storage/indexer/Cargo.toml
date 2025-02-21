@@ -18,7 +18,7 @@ libra2-config = { workspace = true }
 libra2-db-indexer-schemas = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-resource-viewer = { workspace = true }
+libra2-resource-viewer = { workspace = true }
 libra2-rocksdb-options = { workspace = true }
 libra2-schemadb = { workspace = true }
 libra2-storage-interface = { workspace = true }

@@ -4,7 +4,7 @@
 
 use crate::{Address, Bytecode, IdentifierWrapper, VerifyInput, VerifyInputWithRecursion};
 use anyhow::{bail, format_err};
-use aptos_resource_viewer::{AnnotatedMoveStruct, AnnotatedMoveValue};
+use libra2_resource_viewer::{AnnotatedMoveStruct, AnnotatedMoveValue};
 use libra2_types::{account_config::CORE_CODE_ADDRESS, event::EventKey, transaction::Module};
 use move_binary_format::{
     access::ModuleAccess,
