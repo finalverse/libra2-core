@@ -1,6 +1,6 @@
 [package]
-name = "aptos-faucet-metrics-server"
-description = "Metrics server for the Aptos faucet"
+name = "libra2-faucet-metrics-server"
+description = "Metrics server for the Libra2 faucet"
 version = "2.0.0"
 
 # Workspace inherited keys

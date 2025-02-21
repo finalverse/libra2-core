@@ -68,10 +68,10 @@ members = [
     "crates/libra2-dkg",
     "crates/libra2-drop-helper",
     "crates/libra2-enum-conversion-derive",
-    "crates/aptos-faucet/cli",
-    "crates/aptos-faucet/core",
-    "crates/aptos-faucet/metrics-server",
-    "crates/aptos-faucet/service",
+    "crates/libra2-faucet/cli",
+    "crates/libra2-faucet/core",
+    "crates/libra2-faucet/metrics-server",
+    "crates/libra2-faucet/service",
     "crates/aptos-genesis",
     "crates/libra2-github-client",
     "crates/libra2-id-generator",
@@ -275,7 +275,7 @@ default-members = [
     "crates/aptos",
     "crates/libra2",
     "crates/libra2-debugger",
-    "crates/aptos-faucet/service",
+    "crates/libra2-faucet/service",
     "crates/libra2-keygen",
     "crates/libra2-rate-limiter",
     "crates/libra2-rosetta",
@@ -347,10 +347,10 @@ aptos-experimental-hexy = { path = "experimental/storage/hexy" }
 aptos-experimental-layered-map = { path = "experimental/storage/layered-map" }
 aptos-experimental-ptx-executor = { path = "experimental/execution/ptx-executor" }
 aptos-experimental-runtimes = { path = "experimental/runtimes" }
-aptos-faucet-cli = { path = "crates/aptos-faucet/cli" }
-aptos-faucet-core = { path = "crates/aptos-faucet/core" }
-aptos-faucet-service = { path = "crates/aptos-faucet/service" }
-aptos-faucet-metrics-server = { path = "crates/aptos-faucet/metrics-server" }
+libra2-faucet-cli = { path = "crates/libra2-faucet/cli" }
+libra2-faucet-core = { path = "crates/libra2-faucet/core" }
+libra2-faucet-service = { path = "crates/libra2-faucet/service" }
+libra2-faucet-metrics-server = { path = "crates/libra2-faucet/metrics-server" }
 libra2-fallible = { path = "crates/fallible" }
 aptos-forge = { path = "testsuite/forge" }
 aptos-framework = { path = "aptos-move/framework" }

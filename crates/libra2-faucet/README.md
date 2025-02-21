@@ -1,6 +1,6 @@
-# Aptos Faucet
+# Libra2 Faucet
 
-The Aptos Faucet is a service that runs alongside a test network and mints coins for users to test and develop on Aptos.
+The Libra2 Faucet is a service that runs alongside a test network and mints coins for users to test and develop on Aptos.
 
 ## Subdirectories
 This is a brief overview of the subdirectories to help you find what you seek. For more information on each of these subdirectories, see the README in that subdirectory.
@@ -11,7 +11,7 @@ This is a brief overview of the subdirectories to help you find what you seek. F
 - `metrics-server/`: The metrics server for the faucet service.
 - `doc/`: OpenAPI spec generated from the server definition.
 
-In all cases, if a directory holds a crate, the name of that crate is `aptos-faucet-<directory>`. For example the name of the crate in `metrics-server/` is `aptos-faucet-metrics-server`.
+In all cases, if a directory holds a crate, the name of that crate is `libra2-faucet-<directory>`. For example the name of the crate in `metrics-server/` is `libra2-faucet-metrics-server`.
 
 ## Features
 
@@ -31,20 +31,20 @@ Noteworthy features of the faucet include:
 ## Running
 To run the faucet, the simplest way to start is with this command:
 ```
-cargo run -p aptos-faucet-service -- run-simple --key <private_key> --node-url <api_url> --chain-id TESTING
+cargo run -p libra2-faucet-service -- run-simple --key <private_key> --node-url <api_url> --chain-id TESTING
 ```
 
 Another example, running alongside a localnet (without `--use-faucet`):
 ```
 cargo run -p aptos -- node run-local-testnet --force-restart --assume-yes
-cargo run -p aptos-faucet-service -- run-simple --key ~/.aptos/testnet/mint.key --node-url http://127.0.0.1:8080 --chain-id TESTING
+cargo run -p libra2-faucet-service -- run-simple --key ~/.aptos/testnet/mint.key --node-url http://127.0.0.1:8080 --chain-id TESTING
 ```
 
 This command lets you configure only a subset of the full functionality of the faucet. You cannot enable any checkers / bypassers, and it supports only the MintFunder. Generally it is intended for use with some kind of local swarm-based testnet or other such uses.
 
 For running the faucet in production, you will instead want to build a configuration file and run it like this:
 ```
-cargo run -p aptos-faucet-service -- run -c <path_to_config_file>
+cargo run -p libra2-faucet-service -- run -c <path_to_config_file>
 ```
 
 You can find many examples of different config files in [configs/](configs/).
@@ -69,8 +69,8 @@ If you want to run the tests manually, follow the steps in [integration-tests/RE
 ## Validating configs
 To ensure all the configs are valid, run this:
 ```
-cd crates/aptos-faucet/configs
-ls . | xargs -I@ cargo run -p aptos-faucet-service -- validate-config -c @
+cd crates/libra2-faucet/configs
+ls . | xargs -I@ cargo run -p libra2-faucet-service -- validate-config -c @
 ```
 
 ## Generating the specs

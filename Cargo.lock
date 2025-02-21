@@ -295,7 +295,6 @@ dependencies = [
  "anyhow",
  "aptos-api-types",
  "aptos-cached-packages",
- "aptos-faucet-core",
  "aptos-framework",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
@@ -335,6 +334,7 @@ dependencies = [
  "libra2-cli-common",
  "libra2-config",
  "libra2-crypto",
+ "libra2-faucet-core",
  "libra2-github-client",
  "libra2-global-constants",
  "libra2-keygen",
@@ -1086,75 +1086,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-faucet-cli"
-version = "2.0.1"
-dependencies = [
- "anyhow",
- "aptos-faucet-core",
- "aptos-sdk",
- "clap 4.5.21",
- "libra2-logger",
- "tokio",
-]
-
-[[package]]
-name = "aptos-faucet-core"
-version = "2.0.1"
-dependencies = [
- "anyhow",
- "aptos-faucet-metrics-server",
- "aptos-sdk",
- "async-trait",
- "captcha",
- "clap 4.5.21",
- "deadpool-redis",
- "enum_dispatch",
- "firebase-token",
- "futures",
- "hex",
- "ipnet",
- "iprange",
- "libra2-config",
- "libra2-logger",
- "libra2-metrics-core",
- "lru 0.9.0",
- "once_cell",
- "poem",
- "poem-openapi",
- "rand 0.7.3",
- "redis",
- "reqwest 0.11.23",
- "serde",
- "serde_json",
- "serde_yaml 0.8.26",
- "tokio",
-]
-
-[[package]]
-name = "aptos-faucet-metrics-server"
-version = "2.0.0"
-dependencies = [
- "anyhow",
- "libra2-logger",
- "libra2-metrics-core",
- "once_cell",
- "poem",
- "prometheus",
- "serde",
-]
-
-[[package]]
-name = "aptos-faucet-service"
-version = "2.0.1"
-dependencies = [
- "anyhow",
- "aptos-faucet-core",
- "clap 4.5.21",
- "libra2-logger",
- "tokio",
-]
-
-[[package]]
 name = "aptos-fn-check-client"
 version = "0.1.0"
 dependencies = [
@@ -1821,13 +1752,13 @@ version = "1.0.0"
 dependencies = [
  "anyhow",
  "aptos",
- "aptos-faucet-core",
  "aptos-indexer-grpc-utils",
  "aptos-protos 1.3.1",
  "clap 4.5.21",
  "futures",
  "itertools 0.13.0",
  "libra2-config",
+ "libra2-faucet-core",
  "rand 0.7.3",
  "serde",
  "serde_json",
@@ -2763,7 +2694,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-faucet-core",
  "aptos-node",
  "bollard",
  "clap 4.5.21",
@@ -2771,6 +2701,7 @@ dependencies = [
  "diesel-async",
  "futures",
  "libra2-config",
+ "libra2-faucet-core",
  "libra2-localnet",
  "libra2-types",
  "maplit",
@@ -8591,7 +8522,6 @@ dependencies = [
  "anyhow",
  "aptos-api-types",
  "aptos-cached-packages",
- "aptos-faucet-core",
  "aptos-framework",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
@@ -8631,6 +8561,7 @@ dependencies = [
  "libra2-cli-common",
  "libra2-config",
  "libra2-crypto",
+ "libra2-faucet-core",
  "libra2-github-client",
  "libra2-global-constants",
  "libra2-keygen",
@@ -9299,6 +9230,75 @@ name = "libra2-fallible"
 version = "0.1.0"
 dependencies = [
  "thiserror",
+]
+
+[[package]]
+name = "libra2-faucet-cli"
+version = "2.0.1"
+dependencies = [
+ "anyhow",
+ "aptos-sdk",
+ "clap 4.5.21",
+ "libra2-faucet-core",
+ "libra2-logger",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-faucet-core"
+version = "2.0.1"
+dependencies = [
+ "anyhow",
+ "aptos-sdk",
+ "async-trait",
+ "captcha",
+ "clap 4.5.21",
+ "deadpool-redis",
+ "enum_dispatch",
+ "firebase-token",
+ "futures",
+ "hex",
+ "ipnet",
+ "iprange",
+ "libra2-config",
+ "libra2-faucet-metrics-server",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "lru 0.9.0",
+ "once_cell",
+ "poem",
+ "poem-openapi",
+ "rand 0.7.3",
+ "redis",
+ "reqwest 0.11.23",
+ "serde",
+ "serde_json",
+ "serde_yaml 0.8.26",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-faucet-metrics-server"
+version = "2.0.0"
+dependencies = [
+ "anyhow",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "once_cell",
+ "poem",
+ "prometheus",
+ "serde",
+]
+
+[[package]]
+name = "libra2-faucet-service"
+version = "2.0.1"
+dependencies = [
+ "anyhow",
+ "clap 4.5.21",
+ "libra2-faucet-core",
+ "libra2-logger",
+ "tokio",
 ]
 
 [[package]]
@@ -16039,7 +16039,6 @@ dependencies = [
  "aptos",
  "aptos-cached-packages",
  "aptos-consensus",
- "aptos-faucet-core",
  "aptos-forge",
  "aptos-framework",
  "aptos-gas-algebra",
@@ -16066,6 +16065,7 @@ dependencies = [
  "libra2-db-indexer",
  "libra2-db-indexer-schemas",
  "libra2-dkg",
+ "libra2-faucet-core",
  "libra2-global-constants",
  "libra2-infallible",
  "libra2-inspection-service",

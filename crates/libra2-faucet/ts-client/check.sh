@@ -6,7 +6,7 @@
 set -e
 
 # Get the latest version of the package on npm.js
-PUBLISHED_VERSION=`npm show @aptos-labs/aptos-faucet-client version >& /dev/null || echo 0.0.0`
+PUBLISHED_VERSION=`npm show @aptos-labs/libra2-faucet-client version >& /dev/null || echo 0.0.0`
 
 # Get the version from the local package.json file.
 NEW_VERSION=`node -p -e "require('./package.json').version"`

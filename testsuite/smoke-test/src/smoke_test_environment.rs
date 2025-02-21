@@ -5,7 +5,7 @@
 use aptos::test::CliTestFramework;
 use libra2_config::{config::NodeConfig, keys::ConfigKey, utils::get_available_port};
 use libra2_crypto::ed25519::Ed25519PrivateKey;
-use aptos_faucet_core::server::{FunderKeyEnum, RunConfig};
+use libra2_faucet_core::server::{FunderKeyEnum, RunConfig};
 use aptos_forge::{ActiveNodesGuard, Factory, LocalFactory, LocalSwarm, Node};
 use aptos_framework::ReleaseBundle;
 use aptos_genesis::builder::{InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn};

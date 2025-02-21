@@ -1,5 +1,5 @@
 {
-  "name": "@aptos-labs/aptos-faucet-client",
+  "name": "@aptos-labs/libra2-faucet-client",
   "description": "Generated client for the Aptos faucet",
   "license": "Apache 2.0",
   "engines": {

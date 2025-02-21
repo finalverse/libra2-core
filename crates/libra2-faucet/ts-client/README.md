@@ -1,8 +1,8 @@
-# Generated TS client for the Aptos Faucet
+# Generated TS client for the Libra2 Faucet
 
 ## Quickstart
 ```bash
-pnpm add @aptos-labs/aptos-faucet-client
+pnpm add @aptos-labs/libra2-faucet-client
 ```
 
 ## Usage

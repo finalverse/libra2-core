@@ -6,7 +6,7 @@ use crate::{
     no_panic_println,
 };
 use anyhow::{anyhow, Context, Result};
-use aptos_faucet_core::server::{FunderKeyEnum, RunConfig};
+use libra2_faucet_core::server::{FunderKeyEnum, RunConfig};
 use libra2_localnet::health_checker::HealthChecker;
 use futures::channel::oneshot;
 use std::{future::Future, path::PathBuf};

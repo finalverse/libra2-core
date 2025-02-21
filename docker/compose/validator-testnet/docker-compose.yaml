@@ -63,7 +63,7 @@ services:
             sleep 1
           else
             sleep 1
-            /usr/local/bin/aptos-faucet-service \\
+            /usr/local/bin/libra2-faucet-service \\
               run-simple \\
               --key-file-path /opt/aptos/var/mint.key \\
               --chain-id TESTING \\

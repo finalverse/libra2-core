@@ -32,7 +32,7 @@ runs:
 
     - uses: ./.github/actions/python-setup
       with:
-        pyproject_directory: crates/aptos-faucet/integration-tests
+        pyproject_directory: crates/libra2-faucet/integration-tests
 
     # Run the faucet integration tests. This script will handle starting the local
     # testnet, moving the mint key where the tests expect it to be, and running the
@@ -41,7 +41,7 @@ runs:
     - name: Run integration tests
       if: ${{ inputs.NETWORK == 'custom' }}
       run: poetry run python main.py --tag ${{ inputs.IMAGE_TAG }} --base-network ${{ inputs.NETWORK }} --external-test-dir ${{ runner.temp }}/testnet --image-repo-with-project ${{ inputs.GCP_DOCKER_ARTIFACT_REPO }}
-      working-directory: crates/aptos-faucet/integration-tests
+      working-directory: crates/libra2-faucet/integration-tests
       shell: bash
 
     # Run the faucet integration tests. This script will handle starting the local
@@ -51,7 +51,7 @@ runs:
     - name: Run integration tests
       if: ${{ inputs.NETWORK != 'custom' }}
       run: poetry run python main.py --base-network ${{ inputs.NETWORK }} --external-test-dir ${{ runner.temp }}/testnet --image-repo-with-project ${{ inputs.GCP_DOCKER_ARTIFACT_REPO }}
-      working-directory: crates/aptos-faucet/integration-tests
+      working-directory: crates/libra2-faucet/integration-tests
       shell: bash
 
     # Print the logs from the local testnet if the tests failed.

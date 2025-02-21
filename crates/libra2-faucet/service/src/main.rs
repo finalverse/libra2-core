@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_faucet_core::server::Server;
+use libra2_faucet_core::server::Server;
 use libra2_logger::info;
 use clap::Parser;
 

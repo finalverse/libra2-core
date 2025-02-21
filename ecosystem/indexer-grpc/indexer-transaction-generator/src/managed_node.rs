@@ -10,7 +10,7 @@ use aptos::node::local_testnet::{
     traits::ServiceManager,
 };
 use libra2_config::config::DEFAULT_GRPC_STREAM_PORT;
-use aptos_faucet_core::server::{FunderKeyEnum, RunConfig};
+use libra2_faucet_core::server::{FunderKeyEnum, RunConfig};
 use rand::{rngs::StdRng, SeedableRng};
 use std::{collections::HashSet, net::Ipv4Addr, path::PathBuf};
 use tokio::{

@@ -1,6 +1,6 @@
 [package]
-name = "aptos-faucet-cli"
-description = "Aptos Faucet CLI"
+name = "libra2-faucet-cli"
+description = "Libra2 Faucet CLI"
 version = "2.0.1"
 
 # Workspace inherited keys
@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-faucet-core = { workspace = true }
+libra2-faucet-core = { workspace = true }
 libra2-logger = { workspace = true }
 aptos-sdk = { workspace = true }
 clap = { workspace = true }

@@ -23,7 +23,7 @@ libra2-crypto = { workspace = true }
 libra2-db = { workspace = true }
 libra2-db-indexer-schemas = { workspace = true }
 libra2-dkg = { workspace = true }
-aptos-faucet-core = { workspace = true }
+libra2-faucet-core = { workspace = true }
 aptos-forge = { workspace = true }
 aptos-framework = { workspace = true }
 aptos-gas-algebra = { workspace = true }

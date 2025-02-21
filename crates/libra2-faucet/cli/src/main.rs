@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{Context, Result};
-use aptos_faucet_core::funder::{
+use libra2_faucet_core::funder::{
     ApiConnectionConfig, FunderTrait, MintFunder, TransactionSubmissionConfig,
 };
 use aptos_sdk::{
@@ -25,7 +25,7 @@ async fn main() -> Result<()> {
 }
 
 #[derive(Debug, Parser)]
-#[clap(name = "aptos-faucet-cli", author, version)]
+#[clap(name = "libra2-faucet-cli", author, version)]
 pub struct FaucetCliArgs {
     #[clap(flatten)]
     api_connection_args: ApiConnectionConfig,

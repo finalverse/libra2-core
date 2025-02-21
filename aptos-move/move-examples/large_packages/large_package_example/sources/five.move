@@ -492,7 +492,7 @@
 ///
 /// ## Integrating with the faucet
 ///
-/// This tutorial is for SDK and wallet developers who want to integrate with the [Aptos Faucet](https://github.com/aptos-labs/aptos-core/tree/main/crates/aptos-faucet). If you are a dapp developer, you should access the faucet through an existing [SDK](../tutorials/first-transaction.md) or [CLI](../tools/aptos-cli-tool/use-aptos-cli#initialize-local-configuration-and-create-an-account) instead.
+/// This tutorial is for SDK and wallet developers who want to integrate with the [Libra2 Faucet](https://github.com/aptos-labs/aptos-core/tree/main/crates/libra2-faucet). If you are a dapp developer, you should access the faucet through an existing [SDK](../tutorials/first-transaction.md) or [CLI](../tools/aptos-cli-tool/use-aptos-cli#initialize-local-configuration-and-create-an-account) instead.
 ///
 /// ### Differences between devnet and testnet
 /// What are the differences between devnet and testnet? Effectively none. In the past, the testnet faucet had a Captcha in front of it, making it unqueryable by normal means. This is no longer true.
@@ -502,14 +502,14 @@
 /// - Testnet: https://faucet.testnet.aptoslabs.com
 ///
 /// ### Calling the faucet: JavaScript / TypeScript
-/// If you are building a client in JavaScript or TypeScript, you should make use of the [@aptos-labs/aptos-faucet-client](https://www.npmjs.com/package/@aptos-labs/aptos-faucet-client) package. This client is generated based on the OpenAPI spec published by the faucet service.
+/// If you are building a client in JavaScript or TypeScript, you should make use of the [@aptos-labs/libra2-faucet-client](https://www.npmjs.com/package/@aptos-labs/libra2-faucet-client) package. This client is generated based on the OpenAPI spec published by the faucet service.
 ///
 /// Example use:
 /// ```typescript
 /// import {
 ///   AptosFaucetClient,
 ///   FundRequest,
-/// } from "@aptos-labs/aptos-faucet-client";
+/// } from "@aptos-labs/libra2-faucet-client";
 ///
 /// async function callFaucet(amount: number, address: string): Promise<string[]> {
 ///   const faucetClient = new AptosFaucetClient({BASE: "https://faucet.devnet.aptoslabs.com"});
@@ -524,7 +524,7 @@
 ///
 /// ### Calling the faucet: Other languages
 /// If you are trying to call the faucet in other languages, you have two options:
-/// 1. Generate a client from the [OpenAPI spec](https://github.com/aptos-labs/aptos-core/blob/main/crates/aptos-faucet/doc/spec.yaml).
+/// 1. Generate a client from the [OpenAPI spec](https://github.com/aptos-labs/aptos-core/blob/main/crates/libra2-faucet/doc/spec.yaml).
 /// 2. Call the faucet on your own.
 ///
 /// For the latter, you will want to build a query similar to this:

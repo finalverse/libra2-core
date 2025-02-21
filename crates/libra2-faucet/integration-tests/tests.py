@@ -14,7 +14,7 @@ def run_faucet_integration_tests():
             "cargo",
             "test",
             "--package",
-            "aptos-faucet-core",
+            "libra2-faucet-core",
             "--features",
             "integration-tests",
         ],

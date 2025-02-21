@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 # aptos deps
 aptos-cached-packages = { workspace = true }
 libra2-config = { workspace = true }
-aptos-faucet-core = { workspace = true }
+libra2-faucet-core = { workspace = true }
 libra2-localnet = { workspace = true }
 aptos-node = { workspace = true }
 libra2-types = { workspace = true }

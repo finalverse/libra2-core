@@ -3,7 +3,7 @@
 
 use super::{health_checker::HealthChecker, traits::ServiceManager, RunLocalnet};
 use anyhow::Result;
-use aptos_faucet_core::server::{FunderKeyEnum, RunConfig};
+use libra2_faucet_core::server::{FunderKeyEnum, RunConfig};
 use async_trait::async_trait;
 use clap::Parser;
 use maplit::hashset;

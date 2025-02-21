@@ -13,7 +13,7 @@ echo "CARGO_TARGET_DIR: $CARGO_TARGET_DIR"
 cargo build --locked --profile=$PROFILE \
     -p aptos \
     -p libra2-backup-cli \
-    -p aptos-faucet-service \
+    -p libra2-faucet-service \
     -p aptos-fn-check-client \
     -p aptos-node-checker \
     -p libra2-openapi-spec-generator \
@@ -27,7 +27,7 @@ cargo build --locked --profile=$PROFILE \
 # After building, copy the binaries we need to `dist` since the `target` directory is used as docker cache mount and only available during the RUN step
 BINS=(
     aptos
-    aptos-faucet-service
+    libra2-faucet-service
     aptos-node-checker
     libra2-openapi-spec-generator
     libra2-telemetry-service
