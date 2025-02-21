@@ -4,7 +4,7 @@
 //! This module defines the gas parameters for the table extension.
 
 use crate::gas_schedule::NativeGasParameters;
-use aptos_gas_algebra::{InternalGas, InternalGasPerByte};
+use libra2_gas_algebra::{InternalGas, InternalGasPerByte};
 
 crate::gas_schedule::macros::define_gas_parameters!(
     TableGasParameters,

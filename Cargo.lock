@@ -394,9 +394,9 @@ name = "aptos-abstract-gas-usage"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-gas-algebra",
  "aptos-gas-meter",
  "aptos-gas-schedule",
+ "libra2-gas-algebra",
  "libra2-vm-types",
  "move-binary-format",
 ]
@@ -750,7 +750,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-aggregator",
- "aptos-gas-algebra",
  "aptos-gas-meter",
  "aptos-gas-schedule",
  "aptos-move-stdlib",
@@ -777,6 +776,7 @@ dependencies = [
  "hex",
  "itertools 0.13.0",
  "libra2-crypto",
+ "libra2-gas-algebra",
  "libra2-types",
  "libra2-vm-types",
  "libsecp256k1",
@@ -819,14 +819,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-gas-algebra"
-version = "0.0.1"
-dependencies = [
- "either",
- "move-core-types",
-]
-
-[[package]]
 name = "aptos-gas-calibration"
 version = "0.1.0"
 dependencies = [
@@ -834,12 +826,12 @@ dependencies = [
  "aptos-abstract-gas-usage",
  "aptos-cached-packages",
  "aptos-framework",
- "aptos-gas-algebra",
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
  "bcs 0.1.4",
  "clap 4.5.21",
  "float-cmp",
+ "libra2-gas-algebra",
  "libra2-types",
  "move-binary-format",
  "move-core-types",
@@ -852,8 +844,8 @@ dependencies = [
 name = "aptos-gas-meter"
 version = "0.1.0"
 dependencies = [
- "aptos-gas-algebra",
  "aptos-gas-schedule",
+ "libra2-gas-algebra",
  "libra2-logger",
  "libra2-types",
  "libra2-vm-types",
@@ -867,10 +859,10 @@ name = "aptos-gas-profiling"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-gas-algebra",
  "aptos-gas-meter",
  "handlebars",
  "inferno",
+ "libra2-gas-algebra",
  "libra2-types",
  "libra2-vm-types",
  "move-binary-format",
@@ -885,7 +877,7 @@ dependencies = [
 name = "aptos-gas-schedule"
 version = "0.1.0"
 dependencies = [
- "aptos-gas-algebra",
+ "libra2-gas-algebra",
  "libra2-global-constants",
  "move-core-types",
  "move-vm-types",
@@ -1311,7 +1303,6 @@ dependencies = [
  "aptos-block-executor",
  "aptos-cached-packages",
  "aptos-framework",
- "aptos-gas-algebra",
  "aptos-gas-meter",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
@@ -1322,6 +1313,7 @@ dependencies = [
  "goldenfile",
  "libra2-bitvec",
  "libra2-crypto",
+ "libra2-gas-algebra",
  "libra2-keygen",
  "libra2-proptest-helpers",
  "libra2-temppath",
@@ -1351,8 +1343,8 @@ dependencies = [
 name = "aptos-memory-usage-tracker"
 version = "0.1.0"
 dependencies = [
- "aptos-gas-algebra",
  "aptos-gas-meter",
+ "libra2-gas-algebra",
  "libra2-types",
  "move-binary-format",
  "move-core-types",
@@ -1448,10 +1440,10 @@ dependencies = [
 name = "aptos-native-interface"
 version = "0.1.0"
 dependencies = [
- "aptos-gas-algebra",
  "aptos-gas-schedule",
  "bcs 0.1.4",
  "bytes",
+ "libra2-gas-algebra",
  "libra2-types",
  "move-binary-format",
  "move-core-types",
@@ -1855,7 +1847,6 @@ dependencies = [
  "aptos-aggregator",
  "aptos-block-executor",
  "aptos-framework",
- "aptos-gas-algebra",
  "aptos-gas-meter",
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
@@ -1878,6 +1869,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-crypto-derive",
  "libra2-experimental-runtimes",
+ "libra2-gas-algebra",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -4842,7 +4834,6 @@ dependencies = [
  "anyhow",
  "aptos-cached-packages",
  "aptos-framework",
- "aptos-gas-algebra",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
@@ -4852,6 +4843,7 @@ dependencies = [
  "claims",
  "hex",
  "libra2-crypto",
+ "libra2-gas-algebra",
  "libra2-transaction-generator-lib",
  "libra2-transaction-workloads-lib",
  "libra2-types",
@@ -7591,13 +7583,13 @@ name = "language-e2e-testsuite"
 version = "0.1.0"
 dependencies = [
  "aptos-cached-packages",
- "aptos-gas-algebra",
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
  "aptos-vm",
  "claims",
  "fail",
  "libra2-crypto",
+ "libra2-gas-algebra",
  "libra2-logger",
  "libra2-types",
  "libra2-vm-genesis",
@@ -8957,6 +8949,14 @@ dependencies = [
  "serde",
  "serde_json",
  "tokio",
+]
+
+[[package]]
+name = "libra2-gas-algebra"
+version = "0.0.1"
+dependencies = [
+ "either",
+ "move-core-types",
 ]
 
 [[package]]
@@ -10535,12 +10535,12 @@ name = "libra2-vm-environment"
 version = "0.0.1"
 dependencies = [
  "aptos-framework",
- "aptos-gas-algebra",
  "aptos-gas-schedule",
  "aptos-move-stdlib",
  "aptos-native-interface",
  "aptos-table-natives",
  "bcs 0.1.4",
+ "libra2-gas-algebra",
  "libra2-types",
  "libra2-vm-types",
  "move-binary-format",
@@ -10627,7 +10627,6 @@ dependencies = [
  "ambassador",
  "anyhow",
  "aptos-aggregator",
- "aptos-gas-algebra",
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
  "aptos-vm",
@@ -10635,6 +10634,7 @@ dependencies = [
  "bytes",
  "claims",
  "either",
+ "libra2-gas-algebra",
  "libra2-types",
  "move-binary-format",
  "move-core-types",
@@ -15965,7 +15965,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-forge",
  "aptos-framework",
- "aptos-gas-algebra",
  "aptos-gas-schedule",
  "aptos-indexer",
  "aptos-indexer-grpc-table-info",
@@ -15990,6 +15989,7 @@ dependencies = [
  "libra2-db-indexer-schemas",
  "libra2-dkg",
  "libra2-faucet-core",
+ "libra2-gas-algebra",
  "libra2-genesis",
  "libra2-global-constants",
  "libra2-infallible",

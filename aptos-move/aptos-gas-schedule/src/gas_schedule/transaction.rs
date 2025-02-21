@@ -10,7 +10,7 @@ use crate::{
         RELEASE_V1_11, RELEASE_V1_12, RELEASE_V1_13, RELEASE_V1_15, RELEASE_V1_26,
     },
 };
-use aptos_gas_algebra::{
+use libra2_gas_algebra::{
     AbstractValueSize, Fee, FeePerByte, FeePerGasUnit, FeePerSlot, Gas, GasExpression,
     GasScalingFactor, GasUnit, NumModules, NumSlots, NumTypeNodes,
 };

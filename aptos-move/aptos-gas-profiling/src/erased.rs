@@ -9,7 +9,7 @@ use crate::{
     render::Render,
     FrameName, TransactionGasLog,
 };
-use aptos_gas_algebra::{Fee, GasScalingFactor, InternalGas};
+use libra2_gas_algebra::{Fee, GasScalingFactor, InternalGas};
 use std::ops::{Add, AddAssign};
 
 /// Represents a node in a general tree structure where each node is tagged with

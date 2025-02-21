@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_crypto::ValidCryptoMaterialStringExt;
 use aptos_forge::Swarm;
-use aptos_gas_algebra::GasQuantity;
+use libra2_gas_algebra::GasQuantity;
 use aptos_gas_schedule::{AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule};
 use aptos_release_builder::{
     components::{

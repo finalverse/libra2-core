@@ -4,7 +4,7 @@
 use crate::{
     assert_out_of_gas, assert_success, assert_vm_status, enable_golden, tests::common, MoveHarness,
 };
-use aptos_gas_algebra::{Gas, GasQuantity};
+use libra2_gas_algebra::{Gas, GasQuantity};
 use aptos_language_e2e_tests::account::Account;
 use libra2_types::{
     account_address::AccountAddress,

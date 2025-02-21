@@ -21,7 +21,7 @@ libra2-crypto = { workspace = true }
 libra2-crypto-derive = { workspace = true }
 libra2-experimental-runtimes = { workspace = true }
 aptos-framework =  { workspace = true }
-aptos-gas-algebra = { workspace = true }
+libra2-gas-algebra = { workspace = true }
 aptos-gas-meter = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 libra2-infallible = { workspace = true }

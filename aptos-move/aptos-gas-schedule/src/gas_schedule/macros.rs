@@ -86,7 +86,7 @@ macro_rules! define_gas_parameters {
         #[allow(unused)]
         pub mod gas_params {
             use super::*;
-            use aptos_gas_algebra::{GasExpression, GasExpressionVisitor, GasMul, GasAdd};
+            use libra2_gas_algebra::{GasExpression, GasExpressionVisitor, GasMul, GasAdd};
             use $crate::{
                 gas_schedule::AptosGasParameters,
             };

@@ -7,7 +7,7 @@ mod measurements;
 mod measurements_helpers;
 mod solve;
 use aptos_abstract_gas_usage::{aggregate_terms, expand_terms};
-use aptos_gas_algebra::DynamicExpression;
+use libra2_gas_algebra::DynamicExpression;
 use clap::Parser;
 use math_interface::{convert_to_matrix_format, total_num_of_cols, total_num_rows};
 use measurements::compile_and_run;

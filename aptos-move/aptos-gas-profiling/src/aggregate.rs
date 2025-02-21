@@ -5,7 +5,7 @@ use crate::{
     log::{ExecutionAndIOCosts, ExecutionGasEvent},
     render::{Render, TableKey},
 };
-use aptos_gas_algebra::{GasQuantity, GasScalingFactor, InternalGas};
+use libra2_gas_algebra::{GasQuantity, GasScalingFactor, InternalGas};
 use std::collections::{btree_map, BTreeMap};
 
 /// Represents an aggregation of execution gas events, including the count and total gas costs for each type of event.

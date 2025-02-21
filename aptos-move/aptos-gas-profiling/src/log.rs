@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_gas_algebra::{Fee, GasScalingFactor, InternalGas, NumBytes};
+use libra2_gas_algebra::{Fee, GasScalingFactor, InternalGas, NumBytes};
 use libra2_types::state_store::state_key::StateKey;
 use move_binary_format::{file_format::CodeOffset, file_format_common::Opcodes};
 use move_core_types::{

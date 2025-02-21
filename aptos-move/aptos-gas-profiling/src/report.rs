@@ -3,7 +3,7 @@
 
 use crate::{log::TransactionGasLog, render::Render};
 use anyhow::Result;
-use aptos_gas_algebra::{Fee, InternalGas};
+use libra2_gas_algebra::{Fee, InternalGas};
 use handlebars::Handlebars;
 use serde_json::{json, Map, Value};
 use std::{

@@ -1,6 +1,6 @@
 [package]
-name = "aptos-gas-algebra"
-description = "Aptos Gas Algebra"
+name = "libra2-gas-algebra"
+description = "Libra2 Gas Algebra"
 version = "0.0.1"
 
 # Workspace inherited keys

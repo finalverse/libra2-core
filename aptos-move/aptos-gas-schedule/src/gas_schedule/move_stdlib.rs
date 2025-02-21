@@ -7,7 +7,7 @@ use crate::{
     gas_feature_versions::{RELEASE_V1_18, RELEASE_V1_24},
     gas_schedule::NativeGasParameters,
 };
-use aptos_gas_algebra::{
+use libra2_gas_algebra::{
     InternalGas, InternalGasPerAbstractValueUnit, InternalGasPerArg, InternalGasPerByte,
     InternalGasPerTypeNode,
 };

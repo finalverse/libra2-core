@@ -11,7 +11,7 @@ use libra2_crypto::{
     multi_ed25519,
     traits::*,
 };
-use aptos_gas_algebra::{Arg, GasExpression};
+use libra2_gas_algebra::{Arg, GasExpression};
 use aptos_gas_schedule::gas_params::natives::aptos_framework::*;
 use aptos_native_interface::{
     safely_assert_eq, safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext,

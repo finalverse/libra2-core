@@ -12,7 +12,7 @@ use crate::{
     testing::{maybe_raise_injected_error, InjectedError},
     transaction_metadata::TransactionMetadata,
 };
-use aptos_gas_algebra::Gas;
+use libra2_gas_algebra::Gas;
 use libra2_types::{
     account_config::constants::CORE_CODE_ADDRESS, fee_statement::FeeStatement,
     move_utils::as_move_value::AsMoveValue, on_chain_config::Features, transaction::Multisig,

@@ -26,7 +26,7 @@ libra2-dkg = { workspace = true }
 libra2-faucet-core = { workspace = true }
 aptos-forge = { workspace = true }
 aptos-framework = { workspace = true }
-aptos-gas-algebra = { workspace = true }
+libra2-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true, features = ["testing"] }
 libra2-global-constants = { workspace = true }
 aptos-indexer = { workspace = true }

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::traits::GasAlgebra;
-use aptos_gas_algebra::{Fee, FeePerGasUnit, Gas, GasExpression, NumBytes, NumModules, Octa};
+use libra2_gas_algebra::{Fee, FeePerGasUnit, Gas, GasExpression, NumBytes, NumModules, Octa};
 use aptos_gas_schedule::{gas_feature_versions, VMGasParameters};
 use libra2_logger::error;
 use libra2_vm_types::{

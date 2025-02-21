@@ -11,7 +11,7 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     test_utils::KeyPair,
 };
-use aptos_gas_algebra::{FeePerGasUnit, Gas, GasExpression};
+use libra2_gas_algebra::{FeePerGasUnit, Gas, GasExpression};
 use aptos_gas_schedule::{AptosGasParameters, InitialGasSchedule, LATEST_GAS_FEATURE_VERSION};
 use libra2_proptest_helpers::Index;
 use libra2_types::{

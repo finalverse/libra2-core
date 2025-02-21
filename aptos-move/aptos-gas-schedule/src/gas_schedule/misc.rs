@@ -8,7 +8,7 @@ use crate::{
     gas_schedule::VMGasParameters,
     traits::{FromOnChainGasSchedule, InitialGasSchedule, ToOnChainGasSchedule},
 };
-use aptos_gas_algebra::{AbstractValueSize, AbstractValueSizePerArg};
+use libra2_gas_algebra::{AbstractValueSize, AbstractValueSizePerArg};
 use move_core_types::{account_address::AccountAddress, gas_algebra::NumArgs, u256::U256};
 use move_vm_types::{
     delayed_values::delayed_field_id::DelayedFieldID,

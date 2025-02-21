@@ -12,7 +12,7 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-gas-algebra = { workspace = true }
+libra2-gas-algebra = { workspace = true }
 aptos-gas-meter = { workspace = true }
 libra2-types = { workspace = true }
 move-binary-format = { workspace = true }

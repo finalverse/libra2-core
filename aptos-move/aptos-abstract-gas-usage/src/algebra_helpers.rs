@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{bail, Result};
-use aptos_gas_algebra::DynamicExpression;
+use libra2_gas_algebra::DynamicExpression;
 use std::collections::{
     btree_map::Entry::{Occupied, Vacant},
     BTreeMap,

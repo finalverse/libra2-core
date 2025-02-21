@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_crypto::HashValue;
-use aptos_gas_algebra::{FeePerGasUnit, Gas, NumBytes};
+use libra2_gas_algebra::{FeePerGasUnit, Gas, NumBytes};
 use libra2_types::{
     account_address::AccountAddress,
     chain_id::ChainId,

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::errors::{SafeNativeError, SafeNativeResult};
-use aptos_gas_algebra::{
+use libra2_gas_algebra::{
     AbstractValueSize, DynamicExpression, GasExpression, GasQuantity, InternalGasUnit,
 };
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters};

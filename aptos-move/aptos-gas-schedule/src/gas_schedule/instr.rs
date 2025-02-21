@@ -4,7 +4,7 @@
 //! This module defines the gas parameters for all Move instructions.
 
 use crate::{gas_feature_versions::RELEASE_V1_18, gas_schedule::VMGasParameters};
-use aptos_gas_algebra::{
+use libra2_gas_algebra::{
     InternalGas, InternalGasPerAbstractValueUnit, InternalGasPerArg, InternalGasPerByte,
     InternalGasPerTypeNode,
 };

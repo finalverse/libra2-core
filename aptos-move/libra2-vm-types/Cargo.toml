@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 ambassador = { workspace = true }
 anyhow = { workspace = true }
 aptos-aggregator = { workspace = true }
-aptos-gas-algebra = { workspace = true }
+libra2-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 libra2-types = { workspace = true }
 bcs = { workspace = true }

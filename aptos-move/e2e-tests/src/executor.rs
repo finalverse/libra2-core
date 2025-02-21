@@ -20,7 +20,7 @@ use aptos_block_executor::{
 };
 use libra2_crypto::HashValue;
 use aptos_framework::ReleaseBundle;
-use aptos_gas_algebra::DynamicExpression;
+use libra2_gas_algebra::DynamicExpression;
 use aptos_gas_meter::{AptosGasMeter, GasAlgebra, StandardGasAlgebra, StandardGasMeter};
 use aptos_gas_profiling::{GasProfiler, TransactionGasLog};
 use libra2_keygen::KeyGen;

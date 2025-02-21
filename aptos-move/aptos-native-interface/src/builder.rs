@@ -5,7 +5,7 @@ use crate::{
     context::SafeNativeContext,
     errors::{SafeNativeError, SafeNativeResult},
 };
-use aptos_gas_algebra::DynamicExpression;
+use libra2_gas_algebra::DynamicExpression;
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, ToOnChainGasSchedule};
 use libra2_types::on_chain_config::{Features, TimedFeatures};
 use bytes::Bytes;

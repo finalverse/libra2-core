@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::change_set::WriteOpInfo;
-use aptos_gas_algebra::{Fee, NumSlots};
+use libra2_gas_algebra::{Fee, NumSlots};
 use aptos_gas_schedule::TransactionGasParameters;
 use libra2_types::{
     account_config::AccountResource, contract_event::ContractEvent, on_chain_config::Features,

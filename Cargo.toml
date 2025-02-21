@@ -10,7 +10,7 @@ members = [
     "aptos-move/aptos-aggregator",
     "aptos-move/libra2-debugger",
     "aptos-move/aptos-e2e-comparison-testing",
-    "aptos-move/aptos-gas-algebra",
+    "aptos-move/libra2-gas-algebra",
     "aptos-move/aptos-gas-calibration",
     "aptos-move/aptos-gas-meter",
     "aptos-move/aptos-gas-profiling",
@@ -355,7 +355,7 @@ aptos-framework = { path = "aptos-move/framework" }
 fuzzer = { path = "testsuite/fuzzer" }
 aptos-abstract-gas-usage = { path = "aptos-move/aptos-abstract-gas-usage" }
 aptos-gas-meter = { path = "aptos-move/aptos-gas-meter" }
-aptos-gas-algebra = { path = "aptos-move/aptos-gas-algebra" }
+libra2-gas-algebra = { path = "aptos-move/libra2-gas-algebra" }
 aptos-gas-calibration = { path = "aptos-move/aptos-gas-calibration" }
 aptos-gas-profiling = { path = "aptos-move/aptos-gas-profiling" }
 aptos-gas-schedule = { path = "aptos-move/aptos-gas-schedule" }

@@ -37,7 +37,7 @@ use aptos_framework::{
     natives::{code::PublishRequest, randomness::RandomnessContext},
     RuntimeModuleMetadataV1,
 };
-use aptos_gas_algebra::{Gas, GasQuantity, NumBytes, Octa};
+use libra2_gas_algebra::{Gas, GasQuantity, NumBytes, Octa};
 use aptos_gas_meter::{AptosGasMeter, GasAlgebra};
 use aptos_gas_schedule::{
     gas_feature_versions::{RELEASE_V1_10, RELEASE_V1_27},

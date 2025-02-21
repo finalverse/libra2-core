@@ -9,7 +9,7 @@ use crate::{
         get_timed_feature_override,
     },
 };
-use aptos_gas_algebra::DynamicExpression;
+use libra2_gas_algebra::DynamicExpression;
 use aptos_gas_schedule::{AptosGasParameters, MiscGasParameters, NativeGasParameters};
 use aptos_native_interface::SafeNativeBuilder;
 use libra2_types::{

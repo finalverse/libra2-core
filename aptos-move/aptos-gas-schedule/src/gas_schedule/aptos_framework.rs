@@ -10,7 +10,7 @@ use crate::{
         RELEASE_V1_12, RELEASE_V1_13, RELEASE_V1_23, RELEASE_V1_26, RELEASE_V1_28,
     },
 };
-use aptos_gas_algebra::{
+use libra2_gas_algebra::{
     InternalGas, InternalGasPerAbstractValueUnit, InternalGasPerArg, InternalGasPerByte,
 };
 
