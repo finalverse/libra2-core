@@ -3,7 +3,7 @@
 
 use crate::MoveHarness;
 use aptos_cached_packages::aptos_stdlib::aptos_account_transfer;
-use aptos_language_e2e_tests::account::Account;
+use libra2_language_e2e_tests::account::Account;
 use claims::assert_err_eq;
 use move_core_types::vm_status::StatusCode;
 

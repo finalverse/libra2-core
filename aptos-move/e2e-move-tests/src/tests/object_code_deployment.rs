@@ -9,7 +9,7 @@ use aptos_framework::{
     },
     BuildOptions,
 };
-use aptos_language_e2e_tests::account::Account;
+use libra2_language_e2e_tests::account::Account;
 use libra2_types::{
     account_address::AccountAddress,
     object_address::create_object_code_deployment_address,

@@ -11,7 +11,7 @@ aptos-cached-packages = { workspace = true }
 aptos-framework = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true }
-aptos-language-e2e-tests = { workspace = true }
+libra2-language-e2e-tests = { workspace = true }
 libra2-types = { workspace = true }
 bcs = { workspace = true }
 clap = { workspace = true }

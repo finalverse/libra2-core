@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, harness::MoveHarness, BlockSplit};
-use aptos_language_e2e_tests::{
+use libra2_language_e2e_tests::{
     account::Account,
     executor::{assert_outputs_equal, ExecutorMode, FakeExecutor},
 };

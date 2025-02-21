@@ -306,7 +306,7 @@ fn prefetch_aptos_framework<S: StateView>(
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_language_e2e_tests::{data_store::FakeDataStore, executor::FakeExecutor};
+    use libra2_language_e2e_tests::{data_store::FakeDataStore, executor::FakeExecutor};
     use libra2_types::{
         on_chain_config::{FeatureFlag, Features, OnChainConfig},
         state_store::{state_key::StateKey, state_value::StateValue, MockStateView},

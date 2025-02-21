@@ -12,7 +12,7 @@ use libra2_crypto::{
     multi_ed25519::{MultiEd25519PrivateKey, MultiEd25519PublicKey},
     Signature, SigningKey, Uniform, ValidCryptoMaterial,
 };
-use aptos_language_e2e_tests::account::Account;
+use libra2_language_e2e_tests::account::Account;
 use libra2_types::{
     account_address::AccountAddress,
     account_config::{RotationProofChallenge, CORE_CODE_ADDRESS},

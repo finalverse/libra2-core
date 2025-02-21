@@ -1,5 +1,5 @@
 [package]
-name = "aptos-move-e2e-benchmark"
+name = "libra2-move-e2e-benchmark"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -12,7 +12,7 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-language-e2e-tests = { workspace = true }
+libra2-language-e2e-tests = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-transaction-generator-lib = { workspace = true }
 libra2-transaction-workloads-lib = { workspace = true }

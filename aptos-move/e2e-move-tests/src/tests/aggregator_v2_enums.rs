@@ -6,7 +6,7 @@ use crate::{
     tests::{aggregator_v2::AggregatorMode, common},
 };
 use aptos_framework::BuildOptions;
-use aptos_language_e2e_tests::executor::ExecutorMode;
+use libra2_language_e2e_tests::executor::ExecutorMode;
 use aptos_package_builder::PackageBuilder;
 use libra2_types::transaction::SignedTransaction;
 use claims::{assert_ok, assert_some};

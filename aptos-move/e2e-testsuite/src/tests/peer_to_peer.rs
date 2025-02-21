@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_language_e2e_tests::{
+use libra2_language_e2e_tests::{
     account::Account, common_transactions::peer_to_peer_txn, executor::FakeExecutor,
 };
 use libra2_types::{

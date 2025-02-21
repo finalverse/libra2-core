@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, tests::common, MoveHarness};
-use aptos_language_e2e_tests::account::Account;
+use libra2_language_e2e_tests::account::Account;
 use move_core_types::{account_address::AccountAddress, parser::parse_struct_tag};
 use serde::{Deserialize, Serialize};
 

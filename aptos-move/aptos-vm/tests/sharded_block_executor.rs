@@ -4,7 +4,7 @@
 #![forbid(unsafe_code)]
 
 /// It has to be integration tests because otherwise it forms an indirect dependency circle between
-/// aptos-vm and aptos-language-e2e-tests, which causes static variables to have two instances in
+/// aptos-vm and libra2-language-e2e-tests, which causes static variables to have two instances in
 /// the same process while testing, resulting in the counters failing to register with "AlreadyReg"
 /// error.
 use libra2_block_partitioner::{
@@ -188,7 +188,7 @@ fn test_partitioner_v2_connected_component_sharded_block_executor_with_random_tr
 mod test_utils {
     use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
     use libra2_block_partitioner::BlockPartitioner;
-    use aptos_language_e2e_tests::{
+    use libra2_language_e2e_tests::{
         account::AccountData, common_transactions::peer_to_peer_txn, data_store::FakeDataStore,
         executor::FakeExecutor,
     };

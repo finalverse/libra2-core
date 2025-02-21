@@ -5,7 +5,7 @@
 
 use crate::{assert_success, assert_vm_status, MoveHarness};
 use aptos_framework::BuildOptions;
-use aptos_language_e2e_tests::account::Account;
+use libra2_language_e2e_tests::account::Account;
 use aptos_package_builder::PackageBuilder;
 use libra2_types::{account_address::AccountAddress, transaction::TransactionStatus};
 use move_core_types::vm_status::StatusCode;

@@ -7,7 +7,7 @@ use crate::{
 };
 use anyhow::Result;
 use aptos_framework::natives::code::PackageMetadata;
-use aptos_language_e2e_tests::data_store::FakeDataStore;
+use libra2_language_e2e_tests::data_store::FakeDataStore;
 use libra2_rest_client::Client;
 use libra2_types::transaction::Version;
 use libra2_validator_interface::{Libra2ValidatorInterface, FilterCondition, RestDebuggerInterface};

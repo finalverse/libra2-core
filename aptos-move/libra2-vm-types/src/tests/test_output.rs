@@ -9,7 +9,7 @@ use crate::{
     },
 };
 use libra2_aggregator::delta_change_set::serialize;
-use aptos_language_e2e_tests::data_store::FakeDataStore;
+use libra2_language_e2e_tests::data_store::FakeDataStore;
 use libra2_types::{
     state_store::state_key::StateKey, transaction::TransactionOutput, write_set::WriteOp,
 };

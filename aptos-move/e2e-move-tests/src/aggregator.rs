@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, harness::MoveHarness};
-use aptos_language_e2e_tests::{account::Account, executor::FakeExecutor};
+use libra2_language_e2e_tests::{account::Account, executor::FakeExecutor};
 use libra2_types::{account_address::AccountAddress, transaction::SignedTransaction};
 use std::path::PathBuf;
 

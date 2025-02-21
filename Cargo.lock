@@ -513,7 +513,6 @@ version = "0.1.0"
 dependencies = [
  "ambassador",
  "anyhow",
- "aptos-language-e2e-tests",
  "aptos-mvhashmap",
  "arc-swap",
  "bcs 0.1.4",
@@ -530,6 +529,7 @@ dependencies = [
  "libra2-aggregator",
  "libra2-drop-helper",
  "libra2-infallible",
+ "libra2-language-e2e-tests",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-types",
@@ -580,34 +580,6 @@ dependencies = [
  "guppy",
  "log",
  "reqwest 0.11.23",
- "url",
-]
-
-[[package]]
-name = "aptos-comparison-testing"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-block-executor",
- "aptos-framework",
- "aptos-language-e2e-tests",
- "aptos-vm",
- "bcs 0.1.4",
- "clap 4.5.21",
- "futures",
- "itertools 0.13.0",
- "libra2-rest-client",
- "libra2-types",
- "libra2-validator-interface",
- "move-binary-format",
- "move-compiler",
- "move-core-types",
- "move-model",
- "move-package",
- "rocksdb",
- "serde",
- "tempfile",
- "tokio",
  "url",
 ]
 
@@ -800,12 +772,12 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-framework",
  "aptos-gas-schedule",
- "aptos-language-e2e-tests",
  "bcs 0.1.4",
  "clap 4.5.21",
  "float-cmp",
  "libra2-abstract-gas-usage",
  "libra2-gas-algebra",
+ "libra2-language-e2e-tests",
  "libra2-types",
  "move-binary-format",
  "move-core-types",
@@ -1269,51 +1241,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-language-e2e-tests"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-block-executor",
- "aptos-cached-packages",
- "aptos-framework",
- "aptos-gas-meter",
- "aptos-gas-profiling",
- "aptos-gas-schedule",
- "aptos-vm",
- "bcs 0.1.4",
- "bytes",
- "claims",
- "goldenfile",
- "libra2-abstract-gas-usage",
- "libra2-bitvec",
- "libra2-crypto",
- "libra2-gas-algebra",
- "libra2-keygen",
- "libra2-proptest-helpers",
- "libra2-temppath",
- "libra2-types",
- "libra2-vm-environment",
- "libra2-vm-genesis",
- "libra2-vm-logging",
- "libra2-vm-types",
- "move-binary-format",
- "move-command-line-common",
- "move-core-types",
- "move-ir-compiler",
- "move-model",
- "move-vm-runtime",
- "move-vm-types",
- "num_cpus",
- "once_cell",
- "petgraph 0.5.1",
- "proptest",
- "proptest-derive",
- "rand 0.7.3",
- "rayon",
- "serde",
-]
-
-[[package]]
 name = "aptos-memory-usage-tracker"
 version = "0.1.0"
 dependencies = [
@@ -1323,19 +1250,6 @@ dependencies = [
  "move-binary-format",
  "move-core-types",
  "move-vm-types",
-]
-
-[[package]]
-name = "aptos-move-e2e-benchmark"
-version = "0.1.0"
-dependencies = [
- "aptos-language-e2e-tests",
- "libra2-logger",
- "libra2-transaction-generator-lib",
- "libra2-transaction-workloads-lib",
- "libra2-types",
- "rand 0.7.3",
- "serde_json",
 ]
 
 [[package]]
@@ -1499,7 +1413,6 @@ dependencies = [
  "aptos-gas-profiling",
  "aptos-gas-schedule",
  "aptos-gas-schedule-updator",
- "aptos-language-e2e-tests",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
@@ -1512,6 +1425,7 @@ dependencies = [
  "libra2-genesis",
  "libra2-infallible",
  "libra2-keygen",
+ "libra2-language-e2e-tests",
  "libra2-move-debugger",
  "libra2-rest-client",
  "libra2-temppath",
@@ -1690,7 +1604,6 @@ dependencies = [
  "aptos-framework",
  "aptos-gas-meter",
  "aptos-gas-schedule",
- "aptos-language-e2e-tests",
  "aptos-memory-usage-tracker",
  "aptos-mvhashmap",
  "aptos-table-natives",
@@ -1712,6 +1625,7 @@ dependencies = [
  "libra2-experimental-runtimes",
  "libra2-gas-algebra",
  "libra2-infallible",
+ "libra2-language-e2e-tests",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-native-interface",
@@ -4651,7 +4565,6 @@ dependencies = [
  "aptos-framework",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
- "aptos-language-e2e-tests",
  "aptos-package-builder",
  "aptos-vm",
  "bcs 0.1.4",
@@ -4659,6 +4572,7 @@ dependencies = [
  "hex",
  "libra2-crypto",
  "libra2-gas-algebra",
+ "libra2-language-e2e-tests",
  "libra2-transaction-generator-lib",
  "libra2-transaction-workloads-lib",
  "libra2-types",
@@ -5601,7 +5515,6 @@ version = "0.0.0"
 dependencies = [
  "aptos-cached-packages",
  "aptos-framework",
- "aptos-language-e2e-tests",
  "aptos-vm",
  "arbitrary",
  "base64 0.13.1",
@@ -5609,6 +5522,7 @@ dependencies = [
  "libfuzzer-sys",
  "libra2-consensus",
  "libra2-crypto",
+ "libra2-language-e2e-tests",
  "libra2-types",
  "move-binary-format",
  "move-bytecode-verifier",
@@ -7399,12 +7313,12 @@ version = "0.1.0"
 dependencies = [
  "aptos-cached-packages",
  "aptos-gas-schedule",
- "aptos-language-e2e-tests",
  "aptos-vm",
  "claims",
  "fail",
  "libra2-crypto",
  "libra2-gas-algebra",
+ "libra2-language-e2e-tests",
  "libra2-logger",
  "libra2-types",
  "libra2-vm-genesis",
@@ -7879,6 +7793,34 @@ dependencies = [
 [[package]]
 name = "libra2-collections"
 version = "0.1.0"
+
+[[package]]
+name = "libra2-comparison-testing"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-block-executor",
+ "aptos-framework",
+ "aptos-vm",
+ "bcs 0.1.4",
+ "clap 4.5.21",
+ "futures",
+ "itertools 0.13.0",
+ "libra2-language-e2e-tests",
+ "libra2-rest-client",
+ "libra2-types",
+ "libra2-validator-interface",
+ "move-binary-format",
+ "move-compiler",
+ "move-core-types",
+ "move-model",
+ "move-package",
+ "rocksdb",
+ "serde",
+ "tempfile",
+ "tokio",
+ "url",
+]
 
 [[package]]
 name = "libra2-compression"
@@ -8557,7 +8499,6 @@ name = "libra2-executor-service"
 version = "0.1.0"
 dependencies = [
  "aptos-block-executor",
- "aptos-language-e2e-tests",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
@@ -8568,6 +8509,7 @@ dependencies = [
  "libra2-block-partitioner",
  "libra2-config",
  "libra2-infallible",
+ "libra2-language-e2e-tests",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-node-resource-metrics",
@@ -9048,6 +8990,51 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-language-e2e-tests"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-block-executor",
+ "aptos-cached-packages",
+ "aptos-framework",
+ "aptos-gas-meter",
+ "aptos-gas-profiling",
+ "aptos-gas-schedule",
+ "aptos-vm",
+ "bcs 0.1.4",
+ "bytes",
+ "claims",
+ "goldenfile",
+ "libra2-abstract-gas-usage",
+ "libra2-bitvec",
+ "libra2-crypto",
+ "libra2-gas-algebra",
+ "libra2-keygen",
+ "libra2-proptest-helpers",
+ "libra2-temppath",
+ "libra2-types",
+ "libra2-vm-environment",
+ "libra2-vm-genesis",
+ "libra2-vm-logging",
+ "libra2-vm-types",
+ "move-binary-format",
+ "move-command-line-common",
+ "move-core-types",
+ "move-ir-compiler",
+ "move-model",
+ "move-vm-runtime",
+ "move-vm-types",
+ "num_cpus",
+ "once_cell",
+ "petgraph 0.5.1",
+ "proptest",
+ "proptest-derive",
+ "rand 0.7.3",
+ "rayon",
+ "serde",
+]
+
+[[package]]
 name = "libra2-ledger"
 version = "0.2.0"
 dependencies = [
@@ -9216,6 +9203,19 @@ dependencies = [
  "reqwest 0.11.23",
  "tokio",
  "url",
+]
+
+[[package]]
+name = "libra2-move-e2e-benchmark"
+version = "0.1.0"
+dependencies = [
+ "libra2-language-e2e-tests",
+ "libra2-logger",
+ "libra2-transaction-generator-lib",
+ "libra2-transaction-workloads-lib",
+ "libra2-types",
+ "rand 0.7.3",
+ "serde_json",
 ]
 
 [[package]]
@@ -10227,7 +10227,6 @@ name = "libra2-transaction-benchmarks"
 version = "0.1.0"
 dependencies = [
  "aptos-block-executor",
- "aptos-language-e2e-tests",
  "aptos-vm",
  "clap 4.5.21",
  "criterion",
@@ -10235,6 +10234,7 @@ dependencies = [
  "libra2-bitvec",
  "libra2-block-partitioner",
  "libra2-crypto",
+ "libra2-language-e2e-tests",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-node-resource-metrics",
@@ -10335,7 +10335,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-framework",
  "aptos-gas-schedule",
- "aptos-language-e2e-tests",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
@@ -10343,6 +10342,7 @@ dependencies = [
  "datatest-stable",
  "hex",
  "libra2-crypto",
+ "libra2-language-e2e-tests",
  "libra2-resource-viewer",
  "libra2-storage-interface",
  "libra2-types",
@@ -10495,9 +10495,9 @@ version = "0.1.0"
 dependencies = [
  "aptos-cached-packages",
  "aptos-framework",
- "aptos-language-e2e-tests",
  "bcs 0.1.4",
  "clap 4.5.21",
+ "libra2-language-e2e-tests",
  "libra2-types",
  "move-binary-format",
  "move-core-types",
@@ -10574,13 +10574,13 @@ dependencies = [
  "aptos-block-executor",
  "aptos-cached-packages",
  "aptos-gas-schedule",
- "aptos-language-e2e-tests",
  "aptos-move-stdlib",
  "aptos-table-natives",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
  "glob",
+ "libra2-language-e2e-tests",
  "libra2-native-interface",
  "libra2-types",
  "move-binary-format",
@@ -10600,7 +10600,6 @@ dependencies = [
  "ambassador",
  "anyhow",
  "aptos-gas-schedule",
- "aptos-language-e2e-tests",
  "aptos-vm",
  "bcs 0.1.4",
  "bytes",
@@ -10608,6 +10607,7 @@ dependencies = [
  "either",
  "libra2-aggregator",
  "libra2-gas-algebra",
+ "libra2-language-e2e-tests",
  "libra2-types",
  "move-binary-format",
  "move-core-types",

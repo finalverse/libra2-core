@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_language_e2e_tests::{
+use libra2_language_e2e_tests::{
     account::Account,
     executor::{ExecFuncTimerDynamicArgs, FakeExecutor, GasMeterType, Measurement},
 };

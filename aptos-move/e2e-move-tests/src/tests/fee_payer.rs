@@ -3,7 +3,7 @@
 
 use crate::{assert_abort, assert_success, tests::common, MoveHarness};
 use aptos_cached_packages::aptos_stdlib;
-use aptos_language_e2e_tests::{
+use libra2_language_e2e_tests::{
     account::{Account, TransactionBuilder},
     transaction_status_eq,
 };

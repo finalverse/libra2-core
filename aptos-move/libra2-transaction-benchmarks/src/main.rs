@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_crypto::_once_cell::sync::Lazy;
-use aptos_language_e2e_tests::account_universe::P2PTransferGen;
+use libra2_language_e2e_tests::account_universe::P2PTransferGen;
 use libra2_metrics_core::{register_int_gauge, IntGauge};
 use libra2_push_metrics::MetricsPusher;
 use libra2_transaction_benchmarks::transactions::TransactionBencher;

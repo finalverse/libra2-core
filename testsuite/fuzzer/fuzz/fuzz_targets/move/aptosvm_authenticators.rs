@@ -8,7 +8,7 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     PrivateKey, SigningKey, Uniform,
 };
-use aptos_language_e2e_tests::{
+use libra2_language_e2e_tests::{
     account::Account, data_store::GENESIS_CHANGE_SET_HEAD, executor::FakeExecutor,
 };
 use libra2_types::{

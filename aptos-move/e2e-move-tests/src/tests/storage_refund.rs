@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, tests::common::test_dir_path, MoveHarness};
-use aptos_language_e2e_tests::account::Account;
+use libra2_language_e2e_tests::account::Account;
 use libra2_types::{
     on_chain_config::FeatureFlag,
     transaction::{ExecutionStatus, TransactionStatus},

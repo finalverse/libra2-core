@@ -4,7 +4,7 @@
 use crate::{assert_success, MoveHarness};
 use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::SigningKey;
-use aptos_language_e2e_tests::account::Account;
+use libra2_language_e2e_tests::account::Account;
 use libra2_types::{
     account_address::AccountAddress,
     account_config::{AccountResource, CORE_CODE_ADDRESS},

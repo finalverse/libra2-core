@@ -343,7 +343,7 @@ mod test {
         move_vm_ext::resolver::{AsExecutorView, AsResourceGroupView},
     };
     use libra2_aggregator::delta_change_set::{delta_add, serialize};
-    use aptos_language_e2e_tests::data_store::FakeDataStore;
+    use libra2_language_e2e_tests::data_store::FakeDataStore;
     use libra2_types::{account_address::AccountAddress, write_set::WriteOp};
     use libra2_vm_types::abstract_write_op::GroupWrite;
     use move_core_types::{

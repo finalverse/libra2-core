@@ -5,7 +5,7 @@ use crate::measurements::GasMeasurements;
 use anyhow::{anyhow, Result};
 use aptos_cached_packages::aptos_stdlib;
 use aptos_framework::BuiltPackage;
-use aptos_language_e2e_tests::{
+use libra2_language_e2e_tests::{
     account::Account,
     executor::{ExecFuncTimerDynamicArgs, FakeExecutor, GasMeterType},
 };

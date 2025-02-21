@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::transaction_bench_state::TransactionBenchState;
-use aptos_language_e2e_tests::account_universe::{AUTransactionGen, AccountPickStyle};
+use libra2_language_e2e_tests::account_universe::{AUTransactionGen, AccountPickStyle};
 use libra2_types::{
     block_executor::partitioner::PartitionedTransactions,
     transaction::signature_verified_transaction::SignatureVerifiedTransaction,

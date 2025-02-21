@@ -8,7 +8,7 @@ use aptos_gas_profiling::TransactionGasLog;
 use aptos_gas_schedule::{
     AptosGasParameters, FromOnChainGasSchedule, InitialGasSchedule, ToOnChainGasSchedule,
 };
-use aptos_language_e2e_tests::{
+use libra2_language_e2e_tests::{
     account::{Account, TransactionBuilder},
     executor::FakeExecutor,
 };
@@ -1077,7 +1077,7 @@ macro_rules! enable_golden {
     ($h:expr) => {
         $h.internal_set_golden(
             std::file!(),
-            aptos_language_e2e_tests::current_function_name!(),
+            libra2_language_e2e_tests::current_function_name!(),
         )
     };
 }

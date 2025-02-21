@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_comparison_testing::{
+use libra2_comparison_testing::{
     prepare_aptos_packages, DataCollection, Execution, ExecutionMode, OnlineExecutor, APTOS_COMMONS,
 };
 use libra2_rest_client::Client;

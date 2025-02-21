@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_language_e2e_tests::account_universe::P2PTransferGen;
+use libra2_language_e2e_tests::account_universe::P2PTransferGen;
 use libra2_transaction_benchmarks::{
     measurement::wall_time_measurement, transactions::TransactionBencher,
 };

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-language-e2e-tests"
+name = "libra2-language-e2e-tests"
 description = "Move language e2e testing framework"
 version = "0.1.0"
 

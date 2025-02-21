@@ -8,7 +8,7 @@ use crate::{
     },
     transaction_bench_state::TransactionBenchState,
 };
-use aptos_language_e2e_tests::{
+use libra2_language_e2e_tests::{
     account_universe::{AUTransactionGen, AccountPickStyle, AccountUniverseGen},
     gas_costs::TXN_RESERVED,
 };

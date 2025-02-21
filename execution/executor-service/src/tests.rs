@@ -6,7 +6,7 @@ use crate::{
     thread_executor_service::ThreadExecutorService,
 };
 use libra2_config::utils;
-use aptos_language_e2e_tests::data_store::FakeDataStore;
+use libra2_language_e2e_tests::data_store::FakeDataStore;
 use libra2_secure_net::network_controller::NetworkController;
 use aptos_vm::sharded_block_executor::ShardedBlockExecutor;
 use std::net::{IpAddr, Ipv4Addr, SocketAddr};

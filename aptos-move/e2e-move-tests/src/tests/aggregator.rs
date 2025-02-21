@@ -9,7 +9,7 @@ use crate::{
     tests::common,
     BlockSplit, MoveHarness, SUCCESS,
 };
-use aptos_language_e2e_tests::account::Account;
+use libra2_language_e2e_tests::account::Account;
 use proptest::prelude::*;
 use test_case::test_case;
 

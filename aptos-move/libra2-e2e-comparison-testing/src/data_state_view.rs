@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_language_e2e_tests::data_store::FakeDataStore;
+use libra2_language_e2e_tests::data_store::FakeDataStore;
 use libra2_types::{
     state_store::{
         state_key::StateKey, state_storage_usage::StateStorageUsage, state_value::StateValue,

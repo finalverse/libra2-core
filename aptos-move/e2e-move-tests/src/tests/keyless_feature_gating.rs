@@ -4,7 +4,7 @@
 use crate::{assert_success, build_package, tests::common, MoveHarness};
 use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::{hash::CryptoHash, SigningKey};
-use aptos_language_e2e_tests::account::{Account, AccountPublicKey, TransactionBuilder};
+use libra2_language_e2e_tests::account::{Account, AccountPublicKey, TransactionBuilder};
 use libra2_types::{
     account_config::CORE_CODE_ADDRESS,
     jwks::{rsa::RSA_JWK, secure_test_rsa_jwk},

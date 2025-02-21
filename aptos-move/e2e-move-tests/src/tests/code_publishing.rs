@@ -5,7 +5,7 @@ use crate::{
     assert_abort, assert_success, assert_vm_status, build_package, tests::common, MoveHarness,
 };
 use aptos_framework::natives::code::{PackageRegistry, UpgradePolicy};
-use aptos_language_e2e_tests::executor::FakeExecutor;
+use libra2_language_e2e_tests::executor::FakeExecutor;
 use aptos_package_builder::PackageBuilder;
 use libra2_types::{
     account_address::{create_resource_address, AccountAddress},

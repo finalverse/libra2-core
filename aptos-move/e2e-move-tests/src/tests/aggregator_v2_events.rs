@@ -6,7 +6,7 @@ use crate::{
     tests::aggregator_v2::{AggregatorMode, EAGGREGATOR_OVERFLOW},
     BlockSplit, SUCCESS,
 };
-use aptos_language_e2e_tests::{account::Account, executor::ExecutorMode};
+use libra2_language_e2e_tests::{account::Account, executor::ExecutorMode};
 use libra2_types::transaction::SignedTransaction;
 use claims::{assert_none, assert_ok, assert_some};
 use move_core_types::{language_storage::TypeTag, parser::parse_struct_tag};

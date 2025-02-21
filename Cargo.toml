@@ -9,7 +9,7 @@ members = [
     "aptos-move/libra2-abstract-gas-usage",
     "aptos-move/libra2-aggregator",
     "aptos-move/libra2-debugger",
-    "aptos-move/aptos-e2e-comparison-testing",
+    "aptos-move/libra2-e2e-comparison-testing",
     "aptos-move/libra2-gas-algebra",
     "aptos-move/aptos-gas-calibration",
     "aptos-move/aptos-gas-meter",
@@ -385,7 +385,7 @@ libra2-jellyfish-merkle = { path = "storage/jellyfish-merkle" }
 libra2-jwk-consensus = { path = "crates/libra2-jwk-consensus" }
 libra2-jwk-utils = { path = "crates/jwk-utils" }
 libra2-keygen = { path = "crates/libra2-keygen" }
-aptos-language-e2e-tests = { path = "aptos-move/e2e-tests" }
+libra2-language-e2e-tests = { path = "aptos-move/e2e-tests" }
 libra2-ledger = { path = "crates/libra2-ledger" }
 libra2-localnet = { path = "crates/libra2-localnet" }
 libra2-log-derive = { path = "crates/libra2-log-derive" }
@@ -397,7 +397,7 @@ libra2-memsocket = { path = "network/memsocket" }
 libra2-metrics-core = { path = "crates/libra2-metrics-core" }
 libra2-move-debugger = { path = "aptos-move/libra2-debugger" }
 aptos-move-examples = { path = "aptos-move/move-examples" }
-aptos-move-e2e-benchmark = { path = "aptos-move/e2e-benchmark" }
+libra2-move-e2e-benchmark = { path = "aptos-move/e2e-benchmark" }
 aptos-mvhashmap = { path = "aptos-move/mvhashmap" }
 libra2-native-interface = { path = "aptos-move/libra2-native-interface" }
 libra2-netcore = { path = "network/netcore" }

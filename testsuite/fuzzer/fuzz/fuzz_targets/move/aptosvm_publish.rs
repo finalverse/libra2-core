@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 mod utils;
-use aptos_language_e2e_tests::{data_store::GENESIS_CHANGE_SET_HEAD, executor::FakeExecutor};
+use libra2_language_e2e_tests::{data_store::GENESIS_CHANGE_SET_HEAD, executor::FakeExecutor};
 use libra2_types::{chain_id::ChainId, write_set::WriteSet};
 use aptos_vm::AptosVM;
 use libfuzzer_sys::{fuzz_target, Corpus};

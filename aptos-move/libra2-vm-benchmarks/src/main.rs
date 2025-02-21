@@ -3,7 +3,7 @@
 
 mod helper;
 use aptos_framework::{BuildOptions, BuiltPackage};
-use aptos_language_e2e_tests::executor::FakeExecutor;
+use libra2_language_e2e_tests::executor::FakeExecutor;
 use clap::Parser;
 use move_binary_format::CompiledModule;
 use std::{fs::read_dir, path::PathBuf};

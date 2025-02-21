@@ -625,9 +625,9 @@ warnings = []
 with tempfile.TemporaryDirectory() as tmpdirname:
     move_e2e_benchmark_failed = False
     if not SKIP_MOVE_E2E:
-        execute_command(f"cargo build {BUILD_FLAG} --package aptos-move-e2e-benchmark")
+        execute_command(f"cargo build {BUILD_FLAG} --package libra2-move-e2e-benchmark")
         try:
-            execute_command(f"RUST_BACKTRACE=1 {BUILD_FOLDER}/aptos-move-e2e-benchmark")
+            execute_command(f"RUST_BACKTRACE=1 {BUILD_FOLDER}/libra2-move-e2e-benchmark")
         except:
             # for land-blocking (i.e. on PR), fail immediately, for speedy response.
             # Otherwise run all tests, and fail in the end.

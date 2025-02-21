@@ -8,7 +8,7 @@ use libra2_block_partitioner::{
     v2::config::PartitionerV2Config, BlockPartitioner, PartitionerConfig,
 };
 use libra2_crypto::HashValue;
-use aptos_language_e2e_tests::{
+use libra2_language_e2e_tests::{
     account_universe::{AUTransactionGen, AccountPickStyle, AccountUniverse, AccountUniverseGen},
     data_store::FakeDataStore,
     executor::FakeExecutor,

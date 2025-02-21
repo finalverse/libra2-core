@@ -20,7 +20,7 @@ aptos-framework = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-profiling = { workspace = true }
 aptos-gas-schedule = { workspace = true, features = ["testing"] }
-aptos-language-e2e-tests = { workspace = true }
+libra2-language-e2e-tests = { workspace = true }
 aptos-package-builder = { workspace = true }
 libra2-transaction-generator-lib = { workspace = true }
 libra2-transaction-workloads-lib = { workspace = true }

@@ -3,7 +3,7 @@
 
 #![allow(dead_code)]
 
-use aptos_language_e2e_tests::{account::Account, executor::FakeExecutor};
+use libra2_language_e2e_tests::{account::Account, executor::FakeExecutor};
 use arbitrary::Arbitrary;
 use move_binary_format::file_format::CompiledModule;
 use move_core_types::value::{MoveStructLayout, MoveTypeLayout};

@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_language_e2e_tests::account_universe::{
+use libra2_language_e2e_tests::account_universe::{
     default_num_accounts, default_num_transactions, log_balance_strategy, p2p_strategy,
     run_and_assert_gas_cost_stability, run_and_assert_universe, AccountPickStyle,
     AccountUniverseGen, P2PTransferGen,

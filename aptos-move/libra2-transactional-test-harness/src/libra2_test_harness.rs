@@ -11,7 +11,7 @@ use libra2_crypto::{
     ValidCryptoMaterialStringExt,
 };
 use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
-use aptos_language_e2e_tests::data_store::{FakeDataStore, GENESIS_CHANGE_SET_HEAD};
+use libra2_language_e2e_tests::data_store::{FakeDataStore, GENESIS_CHANGE_SET_HEAD};
 use libra2_resource_viewer::{AnnotatedMoveValue, Libra2ValueAnnotator};
 use libra2_types::{
     account_config::{aptos_test_root_address, AccountResource, CoinStoreResource},

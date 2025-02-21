@@ -5,7 +5,7 @@ use crate::{tests::common, MoveHarness};
 use libra2_crypto::HashValue;
 use aptos_framework::{BuildOptions, BuiltPackage};
 use libra2_gas_algebra::Gas;
-use aptos_language_e2e_tests::account::{Account, TransactionBuilder};
+use libra2_language_e2e_tests::account::{Account, TransactionBuilder};
 use libra2_types::{
     account_address::AccountAddress,
     on_chain_config::{ApprovedExecutionHashes, OnChainConfig},
