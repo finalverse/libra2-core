@@ -94,7 +94,7 @@ impl NetworkTest for ReconfigurationTest {
     //             let downgrade_config = OnChainConsensusConfig::default();
     //             for i in 1..count / 2 {
     //                 let upgrade_txn = aptos_root_account.sign_with_transaction_builder(
-    //                     tx_factory.update_aptos_consensus_config(
+    //                     tx_factory.update_libra2_consensus_config(
     //                         allowed_nonce,
     //                         bcs::to_bytes(&upgrade_config).unwrap(),
     //                     ),
@@ -108,7 +108,7 @@ impl NetworkTest for ReconfigurationTest {
     //                 .unwrap();
     //                 expect_epoch(full_node_client, (i + 1) * 2).await.unwrap();
     //                 let downgrade_txn = aptos_root_account.sign_with_transaction_builder(
-    //                     tx_factory.update_aptos_consensus_config(
+    //                     tx_factory.update_libra2_consensus_config(
     //                         allowed_nonce,
     //                         bcs::to_bytes(&downgrade_config).unwrap(),
     //                     ),

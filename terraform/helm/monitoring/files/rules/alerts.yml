@@ -4,21 +4,21 @@ groups:
 {{- if .Values.validator.name }}
   # consensus
   - alert: Zero Block Commit Rate
-    expr: rate(aptos_consensus_last_committed_round{role="validator"}[1m]) == 0 OR absent(aptos_consensus_last_committed_round{role="validator"})
+    expr: rate(libra2_consensus_last_committed_round{role="validator"}[1m]) == 0 OR absent(libra2_consensus_last_committed_round{role="validator"})
     for: 20m
     labels:
       severity: error
       summary: "The block commit rate is low"
     annotations:
   - alert: High local timeout rate
-    expr: rate(aptos_consensus_timeout_count{role="validator"}[1m]) > 0.5
+    expr: rate(libra2_consensus_timeout_count{role="validator"}[1m]) > 0.5
     for: 20m
     labels:
       severity: warning
       summary: "Consensus timeout rate is high"
     annotations:
   - alert: High consensus error rate
-    expr: rate(aptos_consensus_error_count{role="validator"}[1m]) / on (role) rate(consensus_duration_count{op='main_loop', role="validator"}[1m]) > 0.25
+    expr: rate(libra2_consensus_error_count{role="validator"}[1m]) / on (role) rate(consensus_duration_count{op='main_loop', role="validator"}[1m]) > 0.25
     for: 20m
     labels:
       severity: warning

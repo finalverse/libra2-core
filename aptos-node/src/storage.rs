@@ -155,7 +155,7 @@ fn create_rocksdb_checkpoint_and_change_working_dir(
     .expect("Libra2DB checkpoint creation failed.");
 
     // Create a consensus db checkpoint
-    aptos_consensus::create_checkpoint(&source_dir, &checkpoint_dir)
+    libra2_consensus::create_checkpoint(&source_dir, &checkpoint_dir)
         .expect("ConsensusDB checkpoint creation failed.");
 
     // Create a state sync db checkpoint

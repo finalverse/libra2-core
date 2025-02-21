@@ -102,7 +102,7 @@
       "sparkline": {},
       "targets": [
         {
-          "expr": "quantile(0.67, aptos_consensus_current_epoch_validators)",
+          "expr": "quantile(0.67, libra2_consensus_current_epoch_validators)",
           "format": "time_series",
           "instant": true,
           "refId": "A"
@@ -156,7 +156,7 @@
       "sparkline": {},
       "targets": [
         {
-          "expr": "quantile(0.67, aptos_consensus_current_epoch_validators) - (count(rate(aptos_consensus_current_round[10m]) > 0) OR on() vector(0))",
+          "expr": "quantile(0.67, libra2_consensus_current_epoch_validators) - (count(rate(libra2_consensus_current_round[10m]) > 0) OR on() vector(0))",
           "format": "time_series",
           "instant": true,
           "refId": "A"
@@ -210,7 +210,7 @@
       "sparkline": {},
       "targets": [
         {
-          "expr": "1 - (count(rate(aptos_consensus_current_round[10m]) > 0) OR on() vector(0)) / quantile(0.67, aptos_consensus_current_epoch_validators)",
+          "expr": "1 - (count(rate(libra2_consensus_current_round[10m]) > 0) OR on() vector(0)) / quantile(0.67, libra2_consensus_current_epoch_validators)",
           "format": "table",
           "instant": true,
           "refId": "A"
@@ -249,7 +249,7 @@
       "span": 0,
       "targets": [
         {
-          "expr": "rate(aptos_consensus_current_round{role=\"validator\"}[1m]) == 0",
+          "expr": "rate(libra2_consensus_current_round{role=\"validator\"}[1m]) == 0",
           "format": "table",
           "instant": true,
           "refId": "A"
@@ -519,7 +519,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(aptos_consensus_current_round{kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m])",
+          "expr": "rate(libra2_consensus_current_round{kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}",
@@ -582,7 +582,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(aptos_consensus_last_committed_round{kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m])",
+          "expr": "rate(libra2_consensus_last_committed_round{kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}",
@@ -645,7 +645,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(aptos_consensus_last_committed_version{kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m])",
+          "expr": "rate(libra2_consensus_last_committed_version{kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}",
@@ -727,7 +727,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum without (state) (rate(aptos_consensus_committed_txns_count{state=\"failed\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m])) / sum without (state) (rate(aptos_consensus_committed_txns_count{kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]))",
+          "expr": "sum without (state) (rate(libra2_consensus_committed_txns_count{state=\"failed\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m])) / sum without (state) (rate(libra2_consensus_committed_txns_count{kubernetes_pod_name=~\"$kubernetes_pod_name\"}[1m]))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}",

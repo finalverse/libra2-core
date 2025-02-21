@@ -21,7 +21,7 @@ libra2-build-info = { workspace = true }
 aptos-cached-packages = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
-aptos-consensus = { workspace = true }
+libra2-consensus = { workspace = true }
 libra2-consensus-notifications = { workspace = true }
 libra2-crash-handler = { workspace = true }
 libra2-crypto = { workspace = true }
@@ -39,7 +39,7 @@ aptos-indexer-grpc-fullnode = { workspace = true }
 aptos-indexer-grpc-table-info = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-inspection-service = { workspace = true }
-aptos-jwk-consensus = { workspace = true }
+libra2-jwk-consensus = { workspace = true }
 libra2-logger = { workspace = true, features = ["node-identity"] }
 libra2-mempool = { workspace = true }
 libra2-mempool-notifications = { workspace = true }
@@ -91,10 +91,10 @@ assert-private-keys-not-cloneable = ["libra2-crypto/assert-private-keys-not-clon
 check-vm-features = []
 consensus-only-perf-test = ["libra2-executor/consensus-only-perf-test", "libra2-mempool/consensus-only-perf-test", "libra2-db/consensus-only-perf-test"]
 default = []
-failpoints = ["fail/failpoints", "aptos-consensus/failpoints", "libra2-executor/failpoints", "libra2-mempool/failpoints", "aptos-api/failpoints", "libra2-config/failpoints"]
+failpoints = ["fail/failpoints", "libra2-consensus/failpoints", "libra2-executor/failpoints", "libra2-mempool/failpoints", "aptos-api/failpoints", "libra2-config/failpoints"]
 indexer = ["aptos-indexer"]
 tokio-console = ["libra2-logger/tokio-console", "libra2-config/tokio-console"]
-smoke-test = ["aptos-jwk-consensus/smoke-test", "libra2-dkg-runtime/smoke-test"]
+smoke-test = ["libra2-jwk-consensus/smoke-test", "libra2-dkg-runtime/smoke-test"]
 
 [package.metadata.cargo-machete]
 ignored = ["libra2-crypto"]

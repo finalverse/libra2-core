@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 // TODO: When we have it, switch to using a crate that unifies metric names.
 // As it is now, this metric name could change and we'd never catch it here
 // at compile time.
-const PROPOSALS_METRIC: &str = "aptos_consensus_proposals_count";
+const PROPOSALS_METRIC: &str = "libra2_consensus_proposals_count";
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]

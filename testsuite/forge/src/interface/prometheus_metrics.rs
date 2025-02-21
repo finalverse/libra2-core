@@ -151,8 +151,8 @@ pub async fn fetch_latency_breakdown(
 ) -> anyhow::Result<LatencyBreakdown> {
     // Averaging over 1m, and skipping data points at the start that would take averages outside of the interval.
     let start_time_adjusted = start_time + 60;
-    let consensus_proposal_to_ordered_query = r#"quantile(0.67, rate(aptos_consensus_block_tracing_sum{role=~"validator", stage="ordered"}[1m]) / rate(aptos_consensus_block_tracing_count{role=~"validator", stage="ordered"}[1m]))"#;
-    let consensus_proposal_to_commit_query = r#"quantile(0.67, rate(aptos_consensus_block_tracing_sum{role=~"validator", stage="committed"}[1m]) / rate(aptos_consensus_block_tracing_count{role=~"validator", stage="committed"}[1m]))"#;
+    let consensus_proposal_to_ordered_query = r#"quantile(0.67, rate(libra2_consensus_block_tracing_sum{role=~"validator", stage="ordered"}[1m]) / rate(libra2_consensus_block_tracing_count{role=~"validator", stage="ordered"}[1m]))"#;
+    let consensus_proposal_to_commit_query = r#"quantile(0.67, rate(libra2_consensus_block_tracing_sum{role=~"validator", stage="committed"}[1m]) / rate(libra2_consensus_block_tracing_count{role=~"validator", stage="committed"}[1m]))"#;
 
     let mempool_to_block_creation_query = r#"sum(
         rate(aptos_core_mempool_txn_commit_latency_sum{

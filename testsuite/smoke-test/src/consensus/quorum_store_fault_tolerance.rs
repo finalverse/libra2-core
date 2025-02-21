@@ -6,7 +6,7 @@ use crate::{
     txn_emitter::generate_traffic,
 };
 use aptos::test::CliTestFramework;
-use aptos_consensus::QUORUM_STORE_DB_NAME;
+use libra2_consensus::QUORUM_STORE_DB_NAME;
 use aptos_forge::{
     args::TransactionTypeArg, reconfig, wait_for_all_nodes_to_catchup, NodeExt, Swarm, SwarmExt,
     TransactionType,

@@ -77,7 +77,7 @@ members = [
     "crates/libra2-id-generator",
     "crates/libra2-infallible",
     "crates/libra2-inspection-service",
-    "crates/aptos-jwk-consensus",
+    "crates/libra2-jwk-consensus",
     "crates/libra2-keygen",
     "crates/libra2-ledger",
     "crates/libra2-localnet",
@@ -319,7 +319,7 @@ libra2-channels = { path = "crates/channel" }
 libra2-cli-common = { path = "crates/libra2-cli-common" }
 libra2-collections = { path = "crates/libra2-collections" }
 libra2-compression = { path = "crates/libra2-compression" }
-aptos-consensus = { path = "consensus" }
+libra2-consensus = { path = "consensus" }
 libra2-consensus-notifications = { path = "state-sync/inter-component/consensus-notifications" }
 libra2-consensus-types = { path = "consensus/consensus-types" }
 libra2-config = { path = "config" }
@@ -384,7 +384,7 @@ aptos-indexer-transaction-generator = { path = "ecosystem/indexer-grpc/indexer-t
 libra2-infallible = { path = "crates/libra2-infallible" }
 libra2-inspection-service = { path = "crates/libra2-inspection-service" }
 libra2-jellyfish-merkle = { path = "storage/jellyfish-merkle" }
-aptos-jwk-consensus = { path = "crates/aptos-jwk-consensus" }
+libra2-jwk-consensus = { path = "crates/libra2-jwk-consensus" }
 libra2-jwk-utils = { path = "crates/jwk-utils" }
 libra2-keygen = { path = "crates/libra2-keygen" }
 aptos-language-e2e-tests = { path = "aptos-move/e2e-tests" }

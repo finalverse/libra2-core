@@ -109,10 +109,10 @@ pub fn get_registry() -> Result<Registry> {
     tracer.trace_type::<PersistedStateValueMetadata>(&samples)?;
 
     tracer.trace_type::<StateKey>(&samples)?;
-    tracer.trace_type::<aptos_consensus::quorum_store::types::BatchResponse>(&samples)?;
+    tracer.trace_type::<libra2_consensus::quorum_store::types::BatchResponse>(&samples)?;
     tracer.trace_type::<libra2_consensus_types::round_timeout::RoundTimeoutReason>(&samples)?;
-    tracer.trace_type::<aptos_consensus::network_interface::ConsensusMsg>(&samples)?;
-    tracer.trace_type::<aptos_consensus::network_interface::CommitMessage>(&samples)?;
+    tracer.trace_type::<libra2_consensus::network_interface::ConsensusMsg>(&samples)?;
+    tracer.trace_type::<libra2_consensus::network_interface::CommitMessage>(&samples)?;
     tracer.trace_type::<libra2_consensus_types::block_data::BlockType>(&samples)?;
     tracer.trace_type::<libra2_consensus_types::block_retrieval::BlockRetrievalStatus>(&samples)?;
     tracer.trace_type::<libra2_consensus_types::payload::PayloadExecutionLimit>(&samples)?;

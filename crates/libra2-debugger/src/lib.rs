@@ -11,7 +11,7 @@ pub enum Cmd {
 
     Decode(libra2_move_debugger::bcs_txn_decoder::Command),
 
-    DumpPendingTxns(aptos_consensus::util::db_tool::Command),
+    DumpPendingTxns(libra2_consensus::util::db_tool::Command),
 
     #[clap(subcommand)]
     Move(libra2_move_debugger::common::Command),

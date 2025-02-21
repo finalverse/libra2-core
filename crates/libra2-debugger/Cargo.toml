@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-consensus = { workspace = true }
+libra2-consensus = { workspace = true }
 libra2-db-tool = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-move-debugger = { workspace = true }

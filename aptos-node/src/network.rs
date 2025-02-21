@@ -7,13 +7,13 @@ use libra2_config::{
     config::{NetworkConfig, NodeConfig},
     network_id::NetworkId,
 };
-use aptos_consensus::{
+use libra2_consensus::{
     consensus_observer, consensus_observer::network::observer_message::ConsensusObserverMessage,
     network_interface::ConsensusMsg,
 };
 use libra2_dkg_runtime::DKGMessage;
 use libra2_event_notifications::EventSubscriptionService;
-use aptos_jwk_consensus::types::JWKConsensusMsg;
+use libra2_jwk_consensus::types::JWKConsensusMsg;
 use libra2_logger::debug;
 use libra2_mempool::network::MempoolSyncMsg;
 use libra2_network::{
@@ -56,8 +56,8 @@ struct ApplicationNetworkHandle<T> {
 /// Returns the network application config for the consensus client and service
 pub fn consensus_network_configuration(node_config: &NodeConfig) -> NetworkApplicationConfig {
     let direct_send_protocols: Vec<ProtocolId> =
-        aptos_consensus::network_interface::DIRECT_SEND.into();
-    let rpc_protocols: Vec<ProtocolId> = aptos_consensus::network_interface::RPC.into();
+        libra2_consensus::network_interface::DIRECT_SEND.into();
+    let rpc_protocols: Vec<ProtocolId> = libra2_consensus::network_interface::RPC.into();
 
     let network_client_config =
         NetworkClientConfig::new(direct_send_protocols.clone(), rpc_protocols.clone());
@@ -66,7 +66,7 @@ pub fn consensus_network_configuration(node_config: &NodeConfig) -> NetworkAppli
         rpc_protocols,
         libra2_channel::Config::new(node_config.consensus.max_network_channel_size)
             .queue_style(QueueStyle::FIFO)
-            .counters(&aptos_consensus::counters::PENDING_CONSENSUS_NETWORK_EVENTS),
+            .counters(&libra2_consensus::counters::PENDING_CONSENSUS_NETWORK_EVENTS),
     );
     NetworkApplicationConfig::new(network_client_config, network_service_config)
 }
@@ -91,8 +91,8 @@ pub fn dkg_network_configuration(node_config: &NodeConfig) -> NetworkApplication
 /// Returns the network application config for the JWK consensus client and service
 pub fn jwk_consensus_network_configuration(node_config: &NodeConfig) -> NetworkApplicationConfig {
     let direct_send_protocols: Vec<ProtocolId> =
-        aptos_jwk_consensus::network_interface::DIRECT_SEND.into();
-    let rpc_protocols: Vec<ProtocolId> = aptos_jwk_consensus::network_interface::RPC.into();
+        libra2_jwk_consensus::network_interface::DIRECT_SEND.into();
+    let rpc_protocols: Vec<ProtocolId> = libra2_jwk_consensus::network_interface::RPC.into();
 
     let network_client_config =
         NetworkClientConfig::new(direct_send_protocols.clone(), rpc_protocols.clone());

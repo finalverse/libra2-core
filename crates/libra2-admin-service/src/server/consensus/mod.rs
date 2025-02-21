@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{bail, Error};
-use aptos_consensus::{
+use libra2_consensus::{
     persistent_liveness_storage::PersistentLivenessStorage,
     quorum_store::quorum_store_db::QuorumStoreStorage, util::db_tool::extract_txns_from_block,
 };

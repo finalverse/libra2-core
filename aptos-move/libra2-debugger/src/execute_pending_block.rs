@@ -69,7 +69,7 @@ impl Command {
                 "Getting block {:?} from {consensus_db_path:?}.",
                 self.block_id
             );
-            let cmd = aptos_consensus::util::db_tool::Command {
+            let cmd = libra2_consensus::util::db_tool::Command {
                 db_dir: consensus_db_path,
                 block_id: self.block_id,
             };

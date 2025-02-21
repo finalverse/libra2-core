@@ -5,7 +5,7 @@ use crate::{network::ApplicationNetworkInterfaces, services};
 use libra2_admin_service::AdminService;
 use libra2_channels::libra2_channel::Receiver;
 use libra2_config::config::NodeConfig;
-use aptos_consensus::{
+use libra2_consensus::{
     consensus_observer::{
         network::{
             network_events::ConsensusObserverNetworkEvents,
@@ -26,7 +26,7 @@ use libra2_dkg_runtime::{start_dkg_runtime, DKGMessage};
 use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, ReconfigNotificationListener,
 };
-use aptos_jwk_consensus::{start_jwk_consensus_runtime, types::JWKConsensusMsg};
+use libra2_jwk_consensus::{start_jwk_consensus_runtime, types::JWKConsensusMsg};
 use libra2_mempool::QuorumStoreRequest;
 use libra2_network::application::interface::{NetworkClient, NetworkServiceEvents};
 use libra2_storage_interface::DbReaderWriter;

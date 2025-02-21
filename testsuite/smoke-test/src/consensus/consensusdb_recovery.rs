@@ -5,7 +5,7 @@ use crate::{
     smoke_test_environment::new_local_swarm_with_aptos,
     utils::{assert_balance, create_and_fund_account, transfer_coins, MAX_HEALTHY_WAIT_SECS},
 };
-use aptos_consensus::CONSENSUS_DB_NAME;
+use libra2_consensus::CONSENSUS_DB_NAME;
 use aptos_forge::{HealthCheckError, NodeExt, Swarm};
 use std::{
     fs,

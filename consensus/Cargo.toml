@@ -1,6 +1,6 @@
 [package]
-name = "aptos-consensus"
-description = "Aptos consensus"
+name = "libra2-consensus"
+description = "Libra2 consensus"
 version = "0.1.0"
 
 # Workspace inherited keys

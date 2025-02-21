@@ -5,7 +5,7 @@ use crate::{bootstrap_api, indexer, mpsc::Receiver, network::ApplicationNetworkI
 use libra2_admin_service::AdminService;
 use libra2_build_info::build_information;
 use libra2_config::config::NodeConfig;
-use aptos_consensus::{
+use libra2_consensus::{
     consensus_observer::publisher::consensus_publisher::ConsensusPublisher,
     network_interface::ConsensusMsg, persistent_liveness_storage::StorageWriteProxy,
     quorum_store::quorum_store_db::QuorumStoreDB,
@@ -155,7 +155,7 @@ pub fn start_consensus_runtime(
     let reconfig_subscription = consensus_reconfig_subscription
         .expect("Consensus requires a reconfiguration subscription!");
 
-    let consensus = aptos_consensus::consensus_provider::start_consensus(
+    let consensus = libra2_consensus::consensus_provider::start_consensus(
         node_config,
         consensus_network_interfaces.network_client,
         consensus_network_interfaces.network_service_events,

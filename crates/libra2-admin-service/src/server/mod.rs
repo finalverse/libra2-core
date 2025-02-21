@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_config::config::{AuthenticationConfig, NodeConfig};
-use aptos_consensus::{
+use libra2_consensus::{
     persistent_liveness_storage::StorageWriteProxy, quorum_store::quorum_store_db::QuorumStoreDB,
 };
 use libra2_infallible::RwLock;

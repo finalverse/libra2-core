@@ -1,6 +1,6 @@
 [package]
-name = "aptos-jwk-consensus"
-description = "Aptos JWK consensus"
+name = "libra2-jwk-consensus"
+description = "Libra2 JWK consensus"
 version = "0.1.0"
 
 # Workspace inherited keys
