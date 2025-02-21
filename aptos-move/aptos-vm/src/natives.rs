@@ -13,7 +13,7 @@ use aptos_framework::natives::randomness::RandomnessContext;
 #[cfg(feature = "testing")]
 use aptos_framework::natives::{cryptography::algebra::AlgebraContext, event::NativeEventContext};
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEATURE_VERSION};
-use aptos_native_interface::SafeNativeBuilder;
+use libra2_native_interface::SafeNativeBuilder;
 #[cfg(feature = "testing")]
 use aptos_table_natives::{TableHandle, TableResolver};
 use libra2_types::on_chain_config::{Features, TimedFeatures, TimedFeaturesBuilder};

@@ -10,7 +10,7 @@
 use aptos_gas_schedule::gas_params::natives::move_stdlib::{
     VECTOR_MOVE_RANGE_BASE, VECTOR_MOVE_RANGE_PER_INDEX_MOVED,
 };
-use aptos_native_interface::{
+use libra2_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,
 };

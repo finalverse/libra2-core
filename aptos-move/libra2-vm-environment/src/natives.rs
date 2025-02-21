@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_native_interface::SafeNativeBuilder;
+use libra2_native_interface::SafeNativeBuilder;
 use move_core_types::language_storage::CORE_CODE_ADDRESS;
 use move_vm_runtime::native_functions::NativeFunctionTable;
 use std::collections::HashSet;

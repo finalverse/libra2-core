@@ -3,7 +3,7 @@
 use aptos_gas_schedule::gas_params::natives::aptos_framework::{
     IS_PERMISSIONED_SIGNER_BASE, PERMISSION_ADDRESS_BASE, SIGNER_FROM_PERMISSIONED_HANDLE_BASE,
 };
-use aptos_native_interface::{
+use libra2_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,
 };

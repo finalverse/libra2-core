@@ -8,7 +8,7 @@ use aptos_framework::natives::code::PackageRegistry;
 use aptos_gas_schedule::AptosGasParameters;
 use libra2_infallible::RwLock;
 use libra2_metrics_core::TimerHelper;
-use aptos_native_interface::SafeNativeBuilder;
+use libra2_native_interface::SafeNativeBuilder;
 use libra2_types::{on_chain_config::OnChainConfig, state_store::state_key::StateKey};
 use libra2_vm_environment::environment::Libra2Environment;
 use bytes::Bytes;

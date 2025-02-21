@@ -13,7 +13,7 @@ use crate::{
 use aptos_gas_schedule::{
     gas_feature_versions::RELEASE_V1_16, gas_params::natives::aptos_framework::*,
 };
-use aptos_native_interface::{
+use libra2_native_interface::{
     safely_pop_arg, SafeNativeContext, SafeNativeError, SafeNativeResult,
 };
 use libra2_types::on_chain_config::FeatureFlag;

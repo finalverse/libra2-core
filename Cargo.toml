@@ -17,7 +17,7 @@ members = [
     "aptos-move/aptos-gas-schedule",
     "aptos-move/aptos-gas-schedule-updator",
     "aptos-move/aptos-memory-usage-tracker",
-    "aptos-move/aptos-native-interface",
+    "aptos-move/libra2-native-interface",
     "aptos-move/aptos-release-builder",
     "aptos-move/libra2-resource-viewer",
     "aptos-move/aptos-sdk-builder",
@@ -399,7 +399,7 @@ libra2-move-debugger = { path = "aptos-move/libra2-debugger" }
 aptos-move-examples = { path = "aptos-move/move-examples" }
 aptos-move-e2e-benchmark = { path = "aptos-move/e2e-benchmark" }
 aptos-mvhashmap = { path = "aptos-move/mvhashmap" }
-aptos-native-interface = { path = "aptos-move/aptos-native-interface" }
+libra2-native-interface = { path = "aptos-move/libra2-native-interface" }
 libra2-netcore = { path = "network/netcore" }
 libra2-network = { path = "network/framework" }
 libra2-network-benchmark = { path = "network/benchmark" }

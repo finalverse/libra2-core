@@ -10,7 +10,7 @@ use crate::{
     safe_borrow_element, structure_from_ty_arg,
 };
 use aptos_gas_schedule::gas_params::natives::aptos_framework::*;
-use aptos_native_interface::{
+use libra2_native_interface::{
     safely_pop_arg, SafeNativeContext, SafeNativeError, SafeNativeResult,
 };
 use move_vm_types::{loaded_data::runtime_types::Type, values::Value};

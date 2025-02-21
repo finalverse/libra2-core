@@ -1,5 +1,5 @@
 [package]
-name = "aptos-native-interface"
+name = "libra2-native-interface"
 version = "0.1.0"
 
 # Workspace inherited keys

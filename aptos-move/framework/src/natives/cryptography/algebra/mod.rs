@@ -16,7 +16,7 @@ use crate::natives::cryptography::algebra::{
     pairing::{multi_pairing_internal, pairing_internal},
     serialization::{deserialize_internal, serialize_internal},
 };
-use aptos_native_interface::{RawSafeNative, SafeNativeBuilder};
+use libra2_native_interface::{RawSafeNative, SafeNativeBuilder};
 use libra2_types::on_chain_config::FeatureFlag;
 use arithmetics::{
     div::div_internal,

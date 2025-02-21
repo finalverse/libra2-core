@@ -3,7 +3,7 @@
 
 use super::function_info::extract_function_info;
 use aptos_gas_schedule::gas_params::natives::aptos_framework::DISPATCHABLE_AUTHENTICATE_DISPATCH_BASE;
-use aptos_native_interface::{
+use libra2_native_interface::{
     RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError, SafeNativeResult,
 };
 use move_vm_runtime::native_functions::NativeFunction;

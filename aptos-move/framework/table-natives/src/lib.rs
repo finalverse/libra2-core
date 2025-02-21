@@ -11,7 +11,7 @@
 //! See [`README.md`](../README.md) for integration into an adapter.
 
 use aptos_gas_schedule::gas_params::natives::table::*;
-use aptos_native_interface::{
+use libra2_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,
 };

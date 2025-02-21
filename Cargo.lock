@@ -726,7 +726,6 @@ dependencies = [
  "aptos-gas-meter",
  "aptos-gas-schedule",
  "aptos-move-stdlib",
- "aptos-native-interface",
  "aptos-sdk-builder",
  "aptos-vm",
  "ark-bls12-381",
@@ -751,6 +750,7 @@ dependencies = [
  "libra2-aggregator",
  "libra2-crypto",
  "libra2-gas-algebra",
+ "libra2-native-interface",
  "libra2-types",
  "libra2-vm-types",
  "libsecp256k1",
@@ -1361,10 +1361,10 @@ name = "aptos-move-stdlib"
 version = "0.1.1"
 dependencies = [
  "aptos-gas-schedule",
- "aptos-native-interface",
  "bcs 0.1.4",
  "dir-diff",
  "file_diff",
+ "libra2-native-interface",
  "libra2-types",
  "move-cli",
  "move-core-types",
@@ -1408,22 +1408,6 @@ dependencies = [
  "rayon",
  "serde",
  "test-case",
-]
-
-[[package]]
-name = "aptos-native-interface"
-version = "0.1.0"
-dependencies = [
- "aptos-gas-schedule",
- "bcs 0.1.4",
- "bytes",
- "libra2-gas-algebra",
- "libra2-types",
- "move-binary-format",
- "move-core-types",
- "move-vm-runtime",
- "move-vm-types",
- "smallvec",
 ]
 
 [[package]]
@@ -1658,9 +1642,9 @@ name = "aptos-table-natives"
 version = "0.1.0"
 dependencies = [
  "aptos-gas-schedule",
- "aptos-native-interface",
  "better_any",
  "bytes",
+ "libra2-native-interface",
  "move-binary-format",
  "move-core-types",
  "move-table-extension",
@@ -1811,7 +1795,6 @@ dependencies = [
  "aptos-language-e2e-tests",
  "aptos-memory-usage-tracker",
  "aptos-mvhashmap",
- "aptos-native-interface",
  "aptos-table-natives",
  "ark-bn254",
  "ark-groth16",
@@ -1833,6 +1816,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-native-interface",
  "libra2-types",
  "libra2-utils",
  "libra2-vm-environment",
@@ -9364,6 +9348,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-native-interface"
+version = "0.1.0"
+dependencies = [
+ "aptos-gas-schedule",
+ "bcs 0.1.4",
+ "bytes",
+ "libra2-gas-algebra",
+ "libra2-types",
+ "move-binary-format",
+ "move-core-types",
+ "move-vm-runtime",
+ "move-vm-types",
+ "smallvec",
+]
+
+[[package]]
 name = "libra2-netcore"
 version = "0.1.0"
 dependencies = [
@@ -10537,10 +10537,10 @@ dependencies = [
  "aptos-framework",
  "aptos-gas-schedule",
  "aptos-move-stdlib",
- "aptos-native-interface",
  "aptos-table-natives",
  "bcs 0.1.4",
  "libra2-gas-algebra",
+ "libra2-native-interface",
  "libra2-types",
  "libra2-vm-types",
  "move-binary-format",
@@ -10603,12 +10603,12 @@ dependencies = [
  "aptos-gas-schedule",
  "aptos-language-e2e-tests",
  "aptos-move-stdlib",
- "aptos-native-interface",
  "aptos-table-natives",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
  "glob",
+ "libra2-native-interface",
  "libra2-types",
  "move-binary-format",
  "move-core-types",

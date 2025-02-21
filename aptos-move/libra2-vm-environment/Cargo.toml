@@ -17,7 +17,7 @@ aptos-framework = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 aptos-move-stdlib = { workspace = true }
-aptos-native-interface = { workspace = true }
+libra2-native-interface = { workspace = true }
 aptos-table-natives = { workspace = true }
 libra2-types = { workspace = true }
 libra2-vm-types = { workspace = true }

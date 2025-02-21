@@ -11,7 +11,7 @@ use crate::{
 };
 use libra2_gas_algebra::DynamicExpression;
 use aptos_gas_schedule::{AptosGasParameters, MiscGasParameters, NativeGasParameters};
-use aptos_native_interface::SafeNativeBuilder;
+use libra2_native_interface::SafeNativeBuilder;
 use libra2_types::{
     chain_id::ChainId,
     on_chain_config::{
