@@ -1,6 +1,6 @@
 [package]
-name = "aptos-sdk-builder"
-description = "Aptos transaction-builder"
+name = "libra2-sdk-builder"
+description = "Libra2 transaction-builder"
 version = "0.2.0"
 
 # Workspace inherited keys

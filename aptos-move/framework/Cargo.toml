@@ -20,7 +20,7 @@ libra2-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 aptos-move-stdlib = { workspace = true }
 libra2-native-interface = { workspace = true }
-aptos-sdk-builder = { workspace = true }
+libra2-sdk-builder = { workspace = true }
 libra2-types = { workspace = true }
 libra2-vm-types = { workspace = true }
 ark-bls12-381 = { workspace = true }

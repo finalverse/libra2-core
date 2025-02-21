@@ -2,11 +2,11 @@
 # SPDX-License-Identifier: Apache-2.0
 
 clean:
-	- rm -rf go.mod go.sum aptosstdlib aptostypes
+	- rm -rf go.mod go.sum aptosstdlib libra2types
 
 test:
 	cargo run -p aptos-framework release
-	cargo run -p aptos-sdk-builder -- \
+	cargo run -p libra2-sdk-builder -- \
 		--language go --module-name aptosstdlib \
 		--package-name testing \
 		--with-libra2-types "../../../../testsuite/generate-format/tests/staged/aptos.yaml" \

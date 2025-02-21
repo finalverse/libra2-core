@@ -726,7 +726,6 @@ dependencies = [
  "aptos-gas-meter",
  "aptos-gas-schedule",
  "aptos-move-stdlib",
- "aptos-sdk-builder",
  "aptos-vm",
  "ark-bls12-381",
  "ark-bn254",
@@ -751,6 +750,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-gas-algebra",
  "libra2-native-interface",
+ "libra2-sdk-builder",
  "libra2-types",
  "libra2-vm-types",
  "libsecp256k1",
@@ -1594,27 +1594,6 @@ dependencies = [
  "tiny-bip39",
  "tokio",
  "url",
-]
-
-[[package]]
-name = "aptos-sdk-builder"
-version = "0.2.0"
-dependencies = [
- "anyhow",
- "aptos-cached-packages",
- "aptos-framework",
- "bcs 0.1.4",
- "clap 4.5.21",
- "heck 0.4.1",
- "libra2-types",
- "move-core-types",
- "once_cell",
- "serde-generate",
- "serde-reflection",
- "serde_yaml 0.8.26",
- "tempfile",
- "textwrap 0.15.2",
- "which",
 ]
 
 [[package]]
@@ -9992,6 +9971,27 @@ dependencies = [
  "rand 0.7.3",
  "rayon",
  "thiserror",
+]
+
+[[package]]
+name = "libra2-sdk-builder"
+version = "0.2.0"
+dependencies = [
+ "anyhow",
+ "aptos-cached-packages",
+ "aptos-framework",
+ "bcs 0.1.4",
+ "clap 4.5.21",
+ "heck 0.4.1",
+ "libra2-types",
+ "move-core-types",
+ "once_cell",
+ "serde-generate",
+ "serde-reflection",
+ "serde_yaml 0.8.26",
+ "tempfile",
+ "textwrap 0.15.2",
+ "which",
 ]
 
 [[package]]

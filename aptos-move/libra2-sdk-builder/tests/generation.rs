@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_sdk_builder as buildgen;
+use libra2_sdk_builder as buildgen;
 use libra2_types::transaction::EntryABI;
 use serde_generate as serdegen;
 use serde_generate::SourceInstaller as _;

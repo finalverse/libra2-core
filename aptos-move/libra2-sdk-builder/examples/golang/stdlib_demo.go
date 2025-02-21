@@ -7,7 +7,7 @@ package main
 import (
 	"fmt"
 	stdlib "testing/aptosstdlib"
-	aptos "testing/aptostypes"
+	aptos "testing/libra2types"
 )
 
 func demo_coin_transfer() {

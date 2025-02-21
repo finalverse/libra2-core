@@ -7,7 +7,7 @@ use crate::{
     release_bundle::{ReleaseBundle, ReleasePackage},
 };
 use anyhow::{anyhow, Context};
-use aptos_sdk_builder::rust;
+use libra2_sdk_builder::rust;
 use libra2_types::transaction::EntryABI;
 use clap::Parser;
 use std::path::{Path, PathBuf};

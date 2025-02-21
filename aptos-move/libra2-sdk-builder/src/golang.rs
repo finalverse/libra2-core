@@ -115,8 +115,8 @@ where
 {
     fn output_script_call_enum_with_imports(&mut self, abis: &[EntryABI]) -> Result<()> {
         let libra2_types_package = match &self.aptos_module_path {
-            Some(path) => format!("{}/aptostypes", path),
-            None => "aptostypes".into(),
+            Some(path) => format!("{}/libra2types", path),
+            None => "libra2types".into(),
         };
         let mut external_definitions =
             crate::common::get_external_definitions(&libra2_types_package);
@@ -208,7 +208,7 @@ where
                 self.out,
                 r#"
 // Build an Aptos `Script` from a structured object `ScriptCall`.
-func EncodeScript(call ScriptCall) aptostypes.Script {{"#
+func EncodeScript(call ScriptCall) libra2types.Script {{"#
             )?;
             self.out.indent();
             writeln!(self.out, "switch call := call.(type) {{")?;
@@ -240,7 +240,7 @@ func EncodeScript(call ScriptCall) aptostypes.Script {{"#
                 self.out,
                 r#"
 // Build an Aptos `TransactionPayload` from a structured object `EntryFunctionCall`.
-func EncodeEntryFunction(call EntryFunctionCall) aptostypes.TransactionPayload {{"#
+func EncodeEntryFunction(call EntryFunctionCall) libra2types.TransactionPayload {{"#
             )?;
             self.out.indent();
             writeln!(self.out, "switch call := call.(type) {{")?;
@@ -275,7 +275,7 @@ func EncodeEntryFunction(call EntryFunctionCall) aptostypes.TransactionPayload {
             self.out,
             r#"
 // Try to recognize an Aptos `Script` and convert it into a structured object `ScriptCall`.
-func DecodeScript(script *aptostypes.Script) (ScriptCall, error) {{
+func DecodeScript(script *libra2types.Script) (ScriptCall, error) {{
 	if helper := script_decoder_map[string(script.Code)]; helper != nil {{
 		val, err := helper(script)
                 return val, err
@@ -291,9 +291,9 @@ func DecodeScript(script *aptostypes.Script) (ScriptCall, error) {{
             self.out,
             r#"
 // Try to recognize an Aptos `TransactionPayload` and convert it into a structured object `EntryFunctionCall`.
-func DecodeEntryFunctionPayload(script aptostypes.TransactionPayload) (EntryFunctionCall, error) {{
+func DecodeEntryFunctionPayload(script libra2types.TransactionPayload) (EntryFunctionCall, error) {{
     switch script := script.(type) {{
-        case *aptostypes.TransactionPayload__EntryFunction:
+        case *libra2types.TransactionPayload__EntryFunction:
             if helper := entry_function_decoder_map[string(script.Value.Module.Name) + "_" + string(script.Value.Function)]; helper != nil {{
                     val, err := helper(script)
                     return val, err
@@ -313,7 +313,7 @@ func DecodeEntryFunctionPayload(script aptostypes.TransactionPayload) (EntryFunc
     ) -> Result<()> {
         writeln!(
             self.out,
-            "\n{}\nfunc Encode{}({}) aptostypes.Script {{",
+            "\n{}\nfunc Encode{}({}) libra2types.Script {{",
             Self::quote_doc(abi.doc()),
             abi.name().to_upper_camel_case(),
             [
@@ -326,10 +326,10 @@ func DecodeEntryFunctionPayload(script aptostypes.TransactionPayload) (EntryFunc
         self.out.indent();
         writeln!(
             self.out,
-            r#"return aptostypes.Script {{
+            r#"return libra2types.Script {{
 	Code: append([]byte(nil), {}_code...),
-	TyArgs: []aptostypes.TypeTag{{{}}},
-	Args: []aptostypes.TransactionArgument{{{}}},
+	TyArgs: []libra2types.TypeTag{{{}}},
+	Args: []libra2types.TransactionArgument{{{}}},
 }}"#,
             abi.name(),
             Self::quote_type_arguments(abi.ty_args()),
@@ -342,7 +342,7 @@ func DecodeEntryFunctionPayload(script aptostypes.TransactionPayload) (EntryFunc
     fn output_entry_function_encoder_function(&mut self, abi: &EntryFunctionABI) -> Result<()> {
         writeln!(
             self.out,
-            "\n{}\nfunc Encode{}{}({}) aptostypes.TransactionPayload {{",
+            "\n{}\nfunc Encode{}{}({}) libra2types.TransactionPayload {{",
             Self::quote_doc(abi.doc()),
             abi.module_name().name().to_string().to_upper_camel_case(),
             abi.name().to_upper_camel_case(),
@@ -356,11 +356,11 @@ func DecodeEntryFunctionPayload(script aptostypes.TransactionPayload) (EntryFunc
         self.out.indent();
         writeln!(
             self.out,
-            r#"return &aptostypes.TransactionPayload__EntryFunction {{
-            aptostypes.EntryFunction {{
+            r#"return &libra2types.TransactionPayload__EntryFunction {{
+            libra2types.EntryFunction {{
                 Module: {},
                 Function: {},
-                TyArgs: []aptostypes.TypeTag{{{}}},
+                TyArgs: []libra2types.TypeTag{{{}}},
                 Args: [][]byte{{{}}},
     }},
 }}"#,
@@ -379,7 +379,7 @@ func DecodeEntryFunctionPayload(script aptostypes.TransactionPayload) (EntryFunc
     ) -> Result<()> {
         writeln!(
             self.out,
-            "\nfunc decode_{}(script *aptostypes.Script) (ScriptCall, error) {{",
+            "\nfunc decode_{}(script *libra2types.Script) (ScriptCall, error) {{",
             abi.name(),
         )?;
         self.out.indent();
@@ -429,7 +429,7 @@ func DecodeEntryFunctionPayload(script aptostypes.TransactionPayload) (EntryFunc
     fn output_entry_function_decoder_function(&mut self, abi: &EntryFunctionABI) -> Result<()> {
         writeln!(
             self.out,
-            "\nfunc decode_{}_{}(script aptostypes.TransactionPayload) (EntryFunctionCall, error) {{",
+            "\nfunc decode_{}_{}(script libra2types.TransactionPayload) (EntryFunctionCall, error) {{",
             abi.module_name().name(),
             abi.name(),
         )?;
@@ -438,7 +438,7 @@ func DecodeEntryFunctionPayload(script aptostypes.TransactionPayload) (EntryFunc
         self.out.indent();
         writeln!(
             self.out,
-            "case *aptostypes.TransactionPayload__EntryFunction:"
+            "case *libra2types.TransactionPayload__EntryFunction:"
         )?;
         self.out.indent();
         writeln!(
@@ -558,7 +558,7 @@ if val, err := {}; err == nil {{
         writeln!(
             self.out,
             r#"
-var script_decoder_map = map[string]func(*aptostypes.Script) (ScriptCall, error) {{"#
+var script_decoder_map = map[string]func(*libra2types.Script) (ScriptCall, error) {{"#
         )?;
         self.out.indent();
         for abi in abis {
@@ -572,7 +572,7 @@ var script_decoder_map = map[string]func(*aptostypes.Script) (ScriptCall, error)
         writeln!(
             self.out,
             r#"
-var entry_function_decoder_map = map[string]func(aptostypes.TransactionPayload) (EntryFunctionCall, error) {{"#
+var entry_function_decoder_map = map[string]func(libra2types.TransactionPayload) (EntryFunctionCall, error) {{"#
         )?;
         self.out.indent();
         for abi in abis {
@@ -677,8 +677,8 @@ func encode_{}_argument(arg {}) []byte {{
         writeln!(
             self.out,
             r#"
-func decode_{0}_argument(arg aptostypes.TransactionArgument) (value {1}, err error) {{
-	if arg, ok := arg.(*aptostypes.TransactionArgument__{2}); ok {{
+func decode_{0}_argument(arg libra2types.TransactionArgument) (value {1}, err error) {{
+	if arg, ok := arg.(*libra2types.TransactionArgument__{2}); ok {{
 		{3}
 	}} else {{
 		err = fmt.Errorf("Was expecting a {2} argument")
@@ -727,7 +727,7 @@ func decode_{0}_argument(arg aptostypes.TransactionArgument) (value {1}, err err
 
     fn quote_module_id(module_id: &ModuleId) -> String {
         format!(
-            "aptostypes.ModuleId {{ Address: {}, Name: {} }}",
+            "libra2types.ModuleId {{ Address: {}, Name: {} }}",
             Self::quote_address(module_id.address()),
             Self::quote_identifier(module_id.name().as_str()),
         )
@@ -741,7 +741,7 @@ func decode_{0}_argument(arg aptostypes.TransactionArgument) (value {1}, err err
     fn quote_type_parameters(ty_args: &[TypeArgumentABI]) -> Vec<String> {
         ty_args
             .iter()
-            .map(|ty_arg| format!("{} aptostypes.TypeTag", ty_arg.name()))
+            .map(|ty_arg| format!("{} libra2types.TypeTag", ty_arg.name()))
             .collect()
     }
 
@@ -785,7 +785,7 @@ func decode_{0}_argument(arg aptostypes.TransactionArgument) (value {1}, err err
             U64 => "uint64".into(),
             U128 => "serde.Uint128".into(),
             U256 => unimplemented!(),
-            Address => "aptostypes.AccountAddress".into(),
+            Address => "libra2types.AccountAddress".into(),
             Vector(type_tag) => {
                 format!("[]{}", Self::quote_type(type_tag))
             },
@@ -808,16 +808,16 @@ func decode_{0}_argument(arg aptostypes.TransactionArgument) (value {1}, err err
     fn quote_transaction_argument_for_script(type_tag: &TypeTag, name: &str) -> String {
         use TypeTag::*;
         match type_tag {
-            Bool => format!("(*aptostypes.TransactionArgument__Bool)(&{})", name),
-            U8 => format!("(*aptostypes.TransactionArgument__U8)(&{})", name),
-            U16 => format!("(*aptostypes.TransactionArgument__U16)(&{})", name),
-            U32 => format!("(*aptostypes.TransactionArgument__U32)(&{})", name),
-            U64 => format!("(*aptostypes.TransactionArgument__U64)(&{})", name),
-            U128 => format!("(*aptostypes.TransactionArgument__U128)(&{})", name),
-            U256 => format!("(*aptostypes.TransactionArgument__U256)(&{})", name),
-            Address => format!("&aptostypes.TransactionArgument__Address{{{}}}", name),
+            Bool => format!("(*libra2types.TransactionArgument__Bool)(&{})", name),
+            U8 => format!("(*libra2types.TransactionArgument__U8)(&{})", name),
+            U16 => format!("(*libra2types.TransactionArgument__U16)(&{})", name),
+            U32 => format!("(*libra2types.TransactionArgument__U32)(&{})", name),
+            U64 => format!("(*libra2types.TransactionArgument__U64)(&{})", name),
+            U128 => format!("(*libra2types.TransactionArgument__U128)(&{})", name),
+            U256 => format!("(*libra2types.TransactionArgument__U256)(&{})", name),
+            Address => format!("&libra2types.TransactionArgument__Address{{{}}}", name),
             Vector(type_tag) => match type_tag.as_ref() {
-                U8 => format!("(*aptostypes.TransactionArgument__U8Vector)(&{})", name),
+                U8 => format!("(*libra2types.TransactionArgument__U8Vector)(&{})", name),
                 _ => common::type_not_allowed(type_tag),
             },
             Struct(_) | Signer => common::type_not_allowed(type_tag),
