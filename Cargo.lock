@@ -683,26 +683,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-experimental-ptx-executor"
-version = "0.1.0"
-dependencies = [
- "aptos-block-executor",
- "aptos-vm",
- "aptos-vm-environment",
- "aptos-vm-logging",
- "aptos-vm-types",
- "hashbrown 0.14.3",
- "libra2-experimental-runtimes",
- "libra2-infallible",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-types",
- "move-core-types",
- "once_cell",
- "rayon",
-]
-
-[[package]]
 name = "aptos-forge"
 version = "0.0.0"
 dependencies = [
@@ -8851,7 +8831,6 @@ dependencies = [
  "anyhow",
  "aptos-aggregator",
  "aptos-block-executor",
- "aptos-experimental-ptx-executor",
  "aptos-genesis",
  "aptos-mvhashmap",
  "aptos-sdk",
@@ -8876,6 +8855,7 @@ dependencies = [
  "libra2-executor",
  "libra2-executor-service",
  "libra2-executor-types",
+ "libra2-experimental-ptx-executor",
  "libra2-experimental-runtimes",
  "libra2-jellyfish-merkle",
  "libra2-logger",
@@ -9012,6 +8992,26 @@ dependencies = [
  "proptest",
  "rand 0.7.3",
  "rocksdb",
+]
+
+[[package]]
+name = "libra2-experimental-ptx-executor"
+version = "0.1.0"
+dependencies = [
+ "aptos-block-executor",
+ "aptos-vm",
+ "aptos-vm-environment",
+ "aptos-vm-logging",
+ "aptos-vm-types",
+ "hashbrown 0.14.3",
+ "libra2-experimental-runtimes",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-types",
+ "move-core-types",
+ "once_cell",
+ "rayon",
 ]
 
 [[package]]

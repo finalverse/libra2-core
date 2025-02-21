@@ -23,7 +23,7 @@ libra2-db = { workspace = true }
 libra2-executor = { workspace = true }
 libra2-executor-service = { workspace = true }
 libra2-executor-types = { workspace = true }
-aptos-experimental-ptx-executor = { workspace = true }
+libra2-experimental-ptx-executor = { workspace = true }
 libra2-experimental-runtimes = { workspace = true }
 aptos-genesis = { workspace = true, features = ["testing"] }
 libra2-jellyfish-merkle = { workspace = true }
