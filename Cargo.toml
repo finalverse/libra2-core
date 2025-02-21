@@ -22,7 +22,7 @@ members = [
     "aptos-move/libra2-resource-viewer",
     "aptos-move/libra2-sdk-builder",
     "aptos-move/aptos-transaction-benchmarks",
-    "aptos-move/aptos-transactional-test-harness",
+    "aptos-move/libra2-transactional-test-harness",
     "aptos-move/libra2-validator-interface",
     "aptos-move/aptos-vm",
     "aptos-move/libra2-vm-benchmarks",
@@ -463,7 +463,7 @@ libra2-time-service = { path = "crates/libra2-time-service", features = [
 libra2-transaction-emitter-lib = { path = "crates/transaction-emitter-lib" }
 libra2-transaction-generator-lib = { path = "crates/transaction-generator-lib" }
 libra2-transaction-workloads-lib = { path = "crates/transaction-workloads-lib" }
-aptos-transactional-test-harness = { path = "aptos-move/aptos-transactional-test-harness" }
+libra2-transactional-test-harness = { path = "aptos-move/libra2-transactional-test-harness" }
 libra2-types = { path = "types" }
 libra2-utils = { path = "libra2-utils" }
 libra2-validator-interface = { path = "aptos-move/libra2-validator-interface" }

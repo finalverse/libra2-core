@@ -4,4 +4,4 @@
 
 mod aptos_test_harness;
 
-pub use aptos_test_harness::{run_aptos_test, run_aptos_test_with_config};
+pub use aptos_test_harness::{run_libra2_test, run_libra2_test_with_config};

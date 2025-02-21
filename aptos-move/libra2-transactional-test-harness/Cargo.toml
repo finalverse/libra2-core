@@ -1,5 +1,5 @@
 [package]
-name = "aptos-transactional-test-harness"
+name = "libra2-transactional-test-harness"
 description = "Transactional testing framework for Move"
 version = "0.1.0"
 

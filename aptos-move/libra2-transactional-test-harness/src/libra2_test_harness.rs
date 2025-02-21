@@ -1111,14 +1111,14 @@ fn precompiled_v2_stdlib_if_needed(
     }
 }
 
-pub fn run_aptos_test(path: &Path) -> Result<(), Box<dyn std::error::Error>> {
-    run_aptos_test_with_config(path, TestRunConfig::CompilerV2 {
+pub fn run_libra2_test(path: &Path) -> Result<(), Box<dyn std::error::Error>> {
+    run_libra2_test_with_config(path, TestRunConfig::CompilerV2 {
         language_version: LanguageVersion::default(),
         v2_experiments: vec![("attach-compiled-module".to_owned(), true)],
     })
 }
 
-pub fn run_aptos_test_with_config(
+pub fn run_libra2_test_with_config(
     path: &Path,
     config: TestRunConfig,
 ) -> Result<(), Box<dyn std::error::Error>> {

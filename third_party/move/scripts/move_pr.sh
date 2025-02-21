@@ -110,7 +110,7 @@ MOVE_CRATES="\
 # This is a list of crates for integration testing which depends on the
 # MOVE_COMPILER_V2 env var.
 MOVE_CRATES_V2_ENV_DEPENDENT="\
-  -p aptos-transactional-test-harness \
+  -p libra2-transactional-test-harness \
   -p bytecode-verifier-tests \
   -p bytecode-verifier-transactional-tests \
   -p move-cli \
