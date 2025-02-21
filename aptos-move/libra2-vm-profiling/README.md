@@ -1,6 +1,6 @@
-# Aptos VM Profiling Scripts
+# Libra2 VM Profiling Scripts
 
-This is a collection of scripts to profile the Move VM and the Aptos VM using Valgrind,
+This is a collection of scripts to profile the Move VM and the Libra2 VM using Valgrind,
 which allows us to tell how many machine instructions a Move instruction or a certain
 VM procedure costs.
 
@@ -8,7 +8,7 @@ The scripts were originally developed for calibrating gas costs, but could also 
 to understand the performance characteristics of the VM in general.
 
 ## Running the Scripts
-To run the scripts, simply invoke the main binary via `cargo run -p aptos-vm-profiling`.
+To run the scripts, simply invoke the main binary via `cargo run -p libra2-vm-profiling`.
 The main binary will compile the individual scripts in release mode and then profile them.
 
 Each profiling pass will produce two outputs:

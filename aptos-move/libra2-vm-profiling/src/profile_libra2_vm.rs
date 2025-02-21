@@ -10,9 +10,9 @@ use std::{
     process::Command,
 };
 
-const RUN_APTOS_P2P: &str = "run-aptos-p2p";
+const RUN_LIBRA2_P2P: &str = "run-libra2-p2p";
 
-static PATH_BIN_RUN_APTOS_P2P: Lazy<PathBuf> = Lazy::new(|| {
+static PATH_BIN_RUN_LIBRA2_P2P: Lazy<PathBuf> = Lazy::new(|| {
     PATH_CRATE_ROOT
         .parent()
         .unwrap()
@@ -20,11 +20,11 @@ static PATH_BIN_RUN_APTOS_P2P: Lazy<PathBuf> = Lazy::new(|| {
         .unwrap()
         .join("target")
         .join(BUILD_PROFILE)
-        .join(RUN_APTOS_P2P)
+        .join(RUN_LIBRA2_P2P)
 });
 
-fn run_aptos_p2p() -> Result<()> {
-    println!("Profiling Aptos VM...");
+fn run_libra2_p2p() -> Result<()> {
+    println!("Profiling Libra2 VM...");
 
     let genesis_blob = bcs::to_bytes(GENESIS_CHANGE_SET_HEAD.write_set())?;
 
@@ -32,7 +32,7 @@ fn run_aptos_p2p() -> Result<()> {
     let annotation_path = Path::join(&PATH_CRATE_ROOT, "p2p.txt");
 
     crate::valgrind::profile_with_valgrind(
-        [&*PATH_BIN_RUN_APTOS_P2P],
+        [&*PATH_BIN_RUN_LIBRA2_P2P],
         &genesis_blob,
         log_path,
         annotation_path,
@@ -47,13 +47,13 @@ fn build_binaries() -> Result<()> {
         .arg("--profile")
         .arg(BUILD_PROFILE)
         .arg("-p")
-        .arg("aptos-vm-profiling")
+        .arg("libra2-vm-profiling")
         .arg("--bin")
-        .arg(RUN_APTOS_P2P)
+        .arg(RUN_LIBRA2_P2P)
         .status()?;
 
     if !status.success() {
-        bail!("Failed to compile {}", RUN_APTOS_P2P);
+        bail!("Failed to compile {}", RUN_LIBRA2_P2P);
     }
 
     Ok(())
@@ -61,7 +61,7 @@ fn build_binaries() -> Result<()> {
 
 pub fn run() -> Result<()> {
     build_binaries()?;
-    run_aptos_p2p()?;
+    run_libra2_p2p()?;
 
     Ok(())
 }

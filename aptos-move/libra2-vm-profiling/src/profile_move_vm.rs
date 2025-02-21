@@ -94,7 +94,7 @@ fn build_binaries() -> Result<()> {
         .arg("--profile")
         .arg(BUILD_PROFILE)
         .arg("-p")
-        .arg("aptos-vm-profiling")
+        .arg("libra2-vm-profiling")
         .arg("--bin")
         .arg(RUN_MOVE)
         .status()?;

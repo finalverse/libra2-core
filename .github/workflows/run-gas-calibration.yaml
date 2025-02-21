@@ -36,4 +36,4 @@ jobs:
       - name: install Valgrind
         shell: bash
         run: sudo apt-get -y install valgrind
-      - run: cargo run -p aptos-vm-profiling -- -r
+      - run: cargo run -p libra2-vm-profiling -- -r

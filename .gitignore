@@ -114,8 +114,8 @@ __pycache__
 **/*.mrb
 
 # Profiler outputs
-aptos-move/aptos-vm-profiling/**/*.log
-aptos-move/aptos-vm-profiling/**/*.txt
+aptos-move/libra2-vm-profiling/**/*.log
+aptos-move/libra2-vm-profiling/**/*.txt
 
 # Gas profiler outputs
 aptos-move/e2e-move-tests/gas-profiling
