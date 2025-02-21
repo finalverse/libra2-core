@@ -12,7 +12,7 @@ use crate::{
     },
     golden_outputs::GoldenOutputs,
 };
-use aptos_abstract_gas_usage::CalibrationAlgebra;
+use libra2_abstract_gas_usage::CalibrationAlgebra;
 use libra2_bitvec::BitVec;
 use aptos_block_executor::{
     code_cache_global_manager::AptosModuleCacheManager, txn_commit_hook::NoOpTransactionCommitHook,

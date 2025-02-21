@@ -1,5 +1,5 @@
 [package]
-name = "aptos-abstract-gas-usage"
+name = "libra2-abstract-gas-usage"
 version = "0.1.0"
 edition = "2021"
 license = { workspace = true }

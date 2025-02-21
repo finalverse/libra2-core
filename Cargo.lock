@@ -390,18 +390,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-abstract-gas-usage"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-gas-meter",
- "aptos-gas-schedule",
- "libra2-gas-algebra",
- "libra2-vm-types",
- "move-binary-format",
-]
-
-[[package]]
 name = "aptos-aggregator"
 version = "0.1.0"
 dependencies = [
@@ -823,7 +811,6 @@ name = "aptos-gas-calibration"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-abstract-gas-usage",
  "aptos-cached-packages",
  "aptos-framework",
  "aptos-gas-schedule",
@@ -831,6 +818,7 @@ dependencies = [
  "bcs 0.1.4",
  "clap 4.5.21",
  "float-cmp",
+ "libra2-abstract-gas-usage",
  "libra2-gas-algebra",
  "libra2-types",
  "move-binary-format",
@@ -1299,7 +1287,6 @@ name = "aptos-language-e2e-tests"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-abstract-gas-usage",
  "aptos-block-executor",
  "aptos-cached-packages",
  "aptos-framework",
@@ -1311,6 +1298,7 @@ dependencies = [
  "bytes",
  "claims",
  "goldenfile",
+ "libra2-abstract-gas-usage",
  "libra2-bitvec",
  "libra2-crypto",
  "libra2-gas-algebra",
@@ -7806,6 +7794,18 @@ dependencies = [
  "tracing",
  "tracing-subscriber 0.3.18",
  "url",
+]
+
+[[package]]
+name = "libra2-abstract-gas-usage"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-gas-meter",
+ "aptos-gas-schedule",
+ "libra2-gas-algebra",
+ "libra2-vm-types",
+ "move-binary-format",
 ]
 
 [[package]]

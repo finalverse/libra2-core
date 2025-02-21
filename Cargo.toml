@@ -6,7 +6,7 @@ members = [
     "api/openapi-spec-generator",
     "api/test-context",
     "api/types",
-    "aptos-move/aptos-abstract-gas-usage",
+    "aptos-move/libra2-abstract-gas-usage",
     "aptos-move/aptos-aggregator",
     "aptos-move/libra2-debugger",
     "aptos-move/aptos-e2e-comparison-testing",
@@ -353,7 +353,7 @@ libra2-fallible = { path = "crates/fallible" }
 aptos-forge = { path = "testsuite/forge" }
 aptos-framework = { path = "aptos-move/framework" }
 fuzzer = { path = "testsuite/fuzzer" }
-aptos-abstract-gas-usage = { path = "aptos-move/aptos-abstract-gas-usage" }
+libra2-abstract-gas-usage = { path = "aptos-move/libra2-abstract-gas-usage" }
 aptos-gas-meter = { path = "aptos-move/aptos-gas-meter" }
 libra2-gas-algebra = { path = "aptos-move/libra2-gas-algebra" }
 aptos-gas-calibration = { path = "aptos-move/aptos-gas-calibration" }

@@ -6,7 +6,7 @@ license = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-abstract-gas-usage = { workspace = true }
+libra2-abstract-gas-usage = { workspace = true }
 aptos-cached-packages = { workspace = true }
 aptos-framework = { workspace = true }
 libra2-gas-algebra = { workspace = true }
