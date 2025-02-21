@@ -3,7 +3,7 @@
 
 use super::{health_checker::HealthChecker, traits::ServiceManager, RunLocalnet};
 use anyhow::{bail, Context, Result};
-pub use aptos_localnet::processors::get_processor_config;
+pub use libra2_localnet::processors::get_processor_config;
 use async_trait::async_trait;
 use clap::Parser;
 use diesel::Connection;

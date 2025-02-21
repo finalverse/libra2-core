@@ -7,7 +7,7 @@ use crate::{
     services::docker_common::{create_docker_volume, create_start_and_inspect_container},
 };
 use anyhow::{anyhow, Context, Result};
-use aptos_localnet::health_checker::HealthChecker;
+use libra2_localnet::health_checker::HealthChecker;
 use bollard::{
     container::{CreateContainerOptions, WaitContainerOptions},
     secret::{ContainerInspectResponse, HostConfig, PortBinding},

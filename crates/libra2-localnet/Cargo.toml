@@ -1,5 +1,5 @@
 [package]
-name = "aptos-localnet"
+name = "libra2-localnet"
 version = "0.1.0"
 
 # Workspace inherited keys

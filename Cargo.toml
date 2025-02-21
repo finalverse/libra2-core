@@ -81,7 +81,7 @@ members = [
     "crates/aptos-keygen",
     "crates/libra2-keygen",
     "crates/aptos-ledger",
-    "crates/aptos-localnet",
+    "crates/libra2-localnet",
     "crates/libra2-log-derive",
     "crates/libra2-logger",
     "crates/libra2-metrics-core",
@@ -392,7 +392,7 @@ aptos-keygen = { path = "crates/aptos-keygen" }
 libra2-keygen = { path = "crates/libra2-keygen" }
 aptos-language-e2e-tests = { path = "aptos-move/e2e-tests" }
 aptos-ledger = { path = "crates/aptos-ledger" }
-aptos-localnet = { path = "crates/aptos-localnet" }
+libra2-localnet = { path = "crates/libra2-localnet" }
 libra2-log-derive = { path = "crates/libra2-log-derive" }
 libra2-logger = { path = "crates/libra2-logger" }
 aptos-memory-usage-tracker = { path = "aptos-move/aptos-memory-usage-tracker" }

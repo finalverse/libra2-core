@@ -305,7 +305,6 @@ dependencies = [
  "aptos-indexer-grpc-utils",
  "aptos-keygen",
  "aptos-ledger",
- "aptos-localnet",
  "aptos-node",
  "aptos-protos 1.3.1",
  "aptos-sdk",
@@ -340,6 +339,7 @@ dependencies = [
  "libra2-config",
  "libra2-crypto",
  "libra2-global-constants",
+ "libra2-localnet",
  "libra2-logger",
  "libra2-move-debugger",
  "libra2-network-checker",
@@ -1982,29 +1982,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-localnet"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-indexer-grpc-utils",
- "aptos-protos 1.3.1",
- "bollard",
- "diesel",
- "diesel-async",
- "dirs 5.0.1",
- "futures",
- "libra2-rest-client",
- "processor",
- "reqwest 0.11.23",
- "serde",
- "serde_json",
- "tokio",
- "tonic 0.12.3",
- "tracing",
- "version-compare",
-]
-
-[[package]]
 name = "aptos-memory-usage-tracker"
 version = "0.1.0"
 dependencies = [
@@ -3099,7 +3076,6 @@ dependencies = [
  "anyhow",
  "aptos-cached-packages",
  "aptos-faucet-core",
- "aptos-localnet",
  "aptos-node",
  "bollard",
  "clap 4.5.21",
@@ -3107,6 +3083,7 @@ dependencies = [
  "diesel-async",
  "futures",
  "libra2-config",
+ "libra2-localnet",
  "libra2-types",
  "maplit",
  "processor",
@@ -8936,7 +8913,6 @@ dependencies = [
  "aptos-indexer-grpc-utils",
  "aptos-keygen",
  "aptos-ledger",
- "aptos-localnet",
  "aptos-node",
  "aptos-protos 1.3.1",
  "aptos-sdk",
@@ -8971,6 +8947,7 @@ dependencies = [
  "libra2-config",
  "libra2-crypto",
  "libra2-global-constants",
+ "libra2-localnet",
  "libra2-logger",
  "libra2-move-debugger",
  "libra2-network-checker",
@@ -9782,6 +9759,29 @@ dependencies = [
  "sha3 0.9.1",
  "tokio",
  "uuid",
+]
+
+[[package]]
+name = "libra2-localnet"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-indexer-grpc-utils",
+ "aptos-protos 1.3.1",
+ "bollard",
+ "diesel",
+ "diesel-async",
+ "dirs 5.0.1",
+ "futures",
+ "libra2-rest-client",
+ "processor",
+ "reqwest 0.11.23",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tonic 0.12.3",
+ "tracing",
+ "version-compare",
 ]
 
 [[package]]

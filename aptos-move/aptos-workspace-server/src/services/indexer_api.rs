@@ -10,7 +10,7 @@ use crate::{
     no_panic_println,
 };
 use anyhow::{anyhow, Context, Result};
-use aptos_localnet::{
+use libra2_localnet::{
     health_checker::HealthChecker,
     indexer_api::{post_metadata, HASURA_IMAGE, HASURA_METADATA},
 };

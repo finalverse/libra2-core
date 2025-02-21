@@ -27,7 +27,7 @@ mod common;
 mod services;
 
 use anyhow::{anyhow, Context, Result};
-use aptos_localnet::docker::get_docker;
+use libra2_localnet::docker::get_docker;
 use clap::Parser;
 use common::make_shared;
 use futures::TryFutureExt;

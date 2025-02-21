@@ -33,7 +33,7 @@ aptos-indexer-grpc-server-framework = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }
 aptos-keygen = { workspace = true }
 aptos-ledger = { workspace = true }
-aptos-localnet = { workspace = true }
+libra2-localnet = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-move-debugger = { workspace = true }
 libra2-network-checker = { workspace = true }
