@@ -10,7 +10,7 @@ use libra2_types::transaction::{ExecutionStatus, TransactionStatus};
 fn mint_to_new_account() {
     let mut executor = FakeExecutor::from_head_genesis();
     let mut root = Account::new_aptos_root();
-    let (private_key, public_key) = aptos_vm_genesis::GENESIS_KEYPAIR.clone();
+    let (private_key, public_key) = libra2_vm_genesis::GENESIS_KEYPAIR.clone();
     root.rotate_key(private_key, public_key);
 
     // Create and publish a sender with TXN_RESERVED coins, also note how

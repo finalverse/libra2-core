@@ -17,7 +17,7 @@ use libra2_types::{
     waypoint::Waypoint,
 };
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;
-use aptos_vm_genesis::{AccountBalance, EmployeePool, ValidatorWithCommissionRate};
+use libra2_vm_genesis::{AccountBalance, EmployeePool, ValidatorWithCommissionRate};
 
 /// Holder object for all pieces needed to generate a genesis transaction
 #[derive(Clone)]
@@ -120,13 +120,13 @@ impl MainnetGenesisInfo {
     }
 
     fn generate_genesis_txn(&self) -> Transaction {
-        aptos_vm_genesis::encode_aptos_mainnet_genesis_transaction(
+        libra2_vm_genesis::encode_aptos_mainnet_genesis_transaction(
             &self.accounts,
             &self.employee_vesting_accounts,
             &self.validators,
             &self.framework,
             self.chain_id,
-            &aptos_vm_genesis::GenesisConfiguration {
+            &libra2_vm_genesis::GenesisConfiguration {
                 allow_new_validators: true,
                 is_test: false,
                 epoch_duration_secs: self.epoch_duration_secs,

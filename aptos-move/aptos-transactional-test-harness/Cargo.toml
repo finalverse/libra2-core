@@ -26,7 +26,7 @@ libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true, features = ["fuzzing"] }
 aptos-vm = { workspace = true }
 aptos-vm-environment = { workspace = true }
-aptos-vm-genesis = { workspace = true }
+libra2-vm-genesis = { workspace = true }
 bcs = { workspace = true }
 clap = { workspace = true }
 codespan-reporting = { workspace = true }

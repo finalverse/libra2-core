@@ -17,7 +17,7 @@ use libra2_types::{
     write_set::{TransactionWrite, WriteSet},
     AptosCoinType,
 };
-use aptos_vm_genesis::{
+use libra2_vm_genesis::{
     generate_genesis_change_set_for_mainnet, generate_genesis_change_set_for_testing,
     GenesisOptions,
 };

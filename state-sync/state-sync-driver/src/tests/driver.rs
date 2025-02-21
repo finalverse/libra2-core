@@ -338,7 +338,7 @@ async fn create_driver_for_tests(
     let (_, db_rw) = DbReaderWriter::wrap(Libra2DB::new_for_test(db_path.path()));
 
     // Bootstrap the genesis transaction
-    let (genesis, _) = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
+    let (genesis, _) = libra2_vm_genesis::test_genesis_change_set_and_validators(Some(1));
     let genesis_txn = Transaction::GenesisTransaction(WriteSetPayload::Direct(genesis));
     bootstrap_genesis::<AptosVMBlockExecutor>(&db_rw, &genesis_txn).unwrap();
 

@@ -44,7 +44,7 @@ use std::sync::Arc;
 
 #[test]
 fn test_empty_db() {
-    let genesis = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
+    let genesis = libra2_vm_genesis::test_genesis_change_set_and_validators(Some(1));
     let genesis_txn = Transaction::GenesisTransaction(WriteSetPayload::Direct(genesis.0));
     let tmp_dir = TempPath::new();
     let db_rw = DbReaderWriter::new(Libra2DB::new_for_test(&tmp_dir));
@@ -188,8 +188,8 @@ fn get_configuration(db: &DbReaderWriter) -> ConfigurationResource {
 #[test]
 #[cfg_attr(feature = "consensus-only-perf-test", ignore)]
 fn test_new_genesis() {
-    let genesis = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
-    let genesis_key = &aptos_vm_genesis::GENESIS_KEYPAIR.0;
+    let genesis = libra2_vm_genesis::test_genesis_change_set_and_validators(Some(1));
+    let genesis_key = &libra2_vm_genesis::GENESIS_KEYPAIR.0;
     let genesis_txn = Transaction::GenesisTransaction(WriteSetPayload::Direct(genesis.0));
     // Create bootstrapped DB.
     let tmp_dir = TempPath::new();

@@ -12,7 +12,7 @@ use libra2_types::{
     on_chain_config::{OnChainConsensusConfig, OnChainExecutionConfig, OnChainJWKConsensusConfig},
     transaction::authenticator::AuthenticationKey,
 };
-use aptos_vm_genesis::{AccountBalance, EmployeePool, Validator, ValidatorWithCommissionRate};
+use libra2_vm_genesis::{AccountBalance, EmployeePool, Validator, ValidatorWithCommissionRate};
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use std::{
     collections::{BTreeMap, HashSet},

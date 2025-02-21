@@ -33,7 +33,7 @@ use libra2_types::{
     waypoint::Waypoint,
 };
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;
-use aptos_vm_genesis::Validator;
+use libra2_vm_genesis::Validator;
 use std::convert::TryInto;
 
 /// Holder object for all pieces needed to generate a genesis transaction
@@ -134,12 +134,12 @@ impl GenesisInfo {
     }
 
     fn generate_genesis_txn(&self) -> Transaction {
-        aptos_vm_genesis::encode_genesis_transaction(
+        libra2_vm_genesis::encode_genesis_transaction(
             self.root_key.clone(),
             &self.validators,
             &self.framework,
             self.chain_id,
-            &aptos_vm_genesis::GenesisConfiguration {
+            &libra2_vm_genesis::GenesisConfiguration {
                 allow_new_validators: self.allow_new_validators,
                 epoch_duration_secs: self.epoch_duration_secs,
                 is_test: true,

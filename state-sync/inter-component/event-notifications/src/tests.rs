@@ -551,7 +551,7 @@ fn create_event_subscription_service() -> EventSubscriptionService {
 
 fn create_database() -> Arc<RwLock<DbReaderWriter>> {
     // Generate a genesis change set
-    let (genesis, _) = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
+    let (genesis, _) = libra2_vm_genesis::test_genesis_change_set_and_validators(Some(1));
 
     // Create test aptos database
     let db_path = libra2_temppath::TempPath::new();

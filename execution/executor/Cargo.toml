@@ -47,7 +47,7 @@ libra2-executor-test-helpers = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true, features = ["testing"] }
-aptos-vm-genesis = { workspace = true }
+libra2-vm-genesis = { workspace = true }
 arr_macro = { workspace = true }
 criterion = { workspace = true }
 proptest = { workspace = true }

@@ -30,7 +30,7 @@ use libra2_genesis::{
 use libra2_keygen::KeyGen;
 use libra2_temppath::TempPath;
 use libra2_types::{account_address::AccountAddress, chain_id::ChainId};
-use aptos_vm_genesis::{AccountBalance, TestValidator};
+use libra2_vm_genesis::{AccountBalance, TestValidator};
 use std::{
     collections::HashMap,
     path::{Path, PathBuf},

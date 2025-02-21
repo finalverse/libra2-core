@@ -36,7 +36,7 @@ use libra2_types::{
     transaction::Transaction,
     waypoint::Waypoint,
 };
-use aptos_vm_genesis::default_gas_schedule;
+use libra2_vm_genesis::default_gas_schedule;
 use rand::Rng;
 use serde::{de::DeserializeOwned, Serialize};
 use std::{

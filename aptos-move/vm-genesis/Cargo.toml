@@ -1,6 +1,6 @@
 [package]
-name = "aptos-vm-genesis"
-description = "Aptos vm genesis"
+name = "libra2-vm-genesis"
+description = "Libra2 vm genesis"
 version = "0.1.0"
 
 # Workspace inherited keys

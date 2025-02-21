@@ -61,7 +61,7 @@ use aptos_vm::{
     AptosVM, VMValidator,
 };
 use aptos_vm_environment::environment::AptosEnvironment;
-use aptos_vm_genesis::{generate_genesis_change_set_for_testing_with_count, GenesisOptions};
+use libra2_vm_genesis::{generate_genesis_change_set_for_testing_with_count, GenesisOptions};
 use aptos_vm_logging::log_schema::AdapterLogSchema;
 use aptos_vm_types::{
     module_and_script_storage::{module_storage::AptosModuleStorage, AsAptosCodeStorage},
@@ -381,7 +381,7 @@ impl FakeExecutor {
 
     /// Creates fresh genesis from the framework passed in.
     pub fn custom_genesis(framework: &ReleaseBundle, validator_accounts: Option<usize>) -> Self {
-        let genesis = aptos_vm_genesis::generate_test_genesis(framework, validator_accounts);
+        let genesis = libra2_vm_genesis::generate_test_genesis(framework, validator_accounts);
         Self::from_genesis(genesis.0.write_set(), ChainId::test())
     }
 

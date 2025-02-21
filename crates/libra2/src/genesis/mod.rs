@@ -36,7 +36,7 @@ use libra2_types::{
     account_address::{AccountAddress, AccountAddressWithChecks},
     on_chain_config::{OnChainConsensusConfig, OnChainExecutionConfig},
 };
-use aptos_vm_genesis::{default_gas_schedule, AccountBalance, EmployeePool};
+use libra2_vm_genesis::{default_gas_schedule, AccountBalance, EmployeePool};
 use async_trait::async_trait;
 use clap::Parser;
 use std::{

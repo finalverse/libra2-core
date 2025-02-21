@@ -38,11 +38,11 @@ const B: u64 = 1_000_000_000;
 pub fn create_test_db() -> (Arc<Libra2DB>, LocalAccount) {
     // create test db
     let path = libra2_temppath::TempPath::new();
-    let (genesis, validators) = aptos_vm_genesis::test_genesis_change_set_and_validators(Some(1));
+    let (genesis, validators) = libra2_vm_genesis::test_genesis_change_set_and_validators(Some(1));
     let genesis_txn = Transaction::GenesisTransaction(WriteSetPayload::Direct(genesis));
     let core_resources_account: LocalAccount = LocalAccount::new(
         aptos_test_root_address(),
-        AccountKey::from_private_key(aptos_vm_genesis::GENESIS_KEYPAIR.0.clone()),
+        AccountKey::from_private_key(libra2_vm_genesis::GENESIS_KEYPAIR.0.clone()),
         0,
     );
     let (libra2_db, _db, executor, _waypoint) =

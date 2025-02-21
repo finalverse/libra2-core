@@ -35,7 +35,7 @@ impl TestExecutor {
         let path = libra2_temppath::TempPath::new();
         path.create_as_dir().unwrap();
         let db = DbReaderWriter::new(Libra2DB::new_for_test(path.path()));
-        let genesis = aptos_vm_genesis::test_genesis_transaction();
+        let genesis = libra2_vm_genesis::test_genesis_transaction();
         let waypoint = generate_waypoint::<MockVM>(&db, &genesis).unwrap();
         maybe_bootstrap::<MockVM>(&db, &genesis, waypoint).unwrap();
         let executor = ChunkExecutor::new(db.clone());

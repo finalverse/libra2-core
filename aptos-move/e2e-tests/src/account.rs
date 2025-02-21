@@ -26,7 +26,7 @@ use libra2_types::{
     write_set::{WriteOp, WriteSet, WriteSetMut},
     AptosCoinType,
 };
-use aptos_vm_genesis::GENESIS_KEYPAIR;
+use libra2_vm_genesis::GENESIS_KEYPAIR;
 use move_core_types::move_resource::MoveStructType;
 
 // TTL is 86400s. Initial time was set to 0.

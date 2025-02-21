@@ -29,7 +29,7 @@ libra2-db = { workspace = true }
 libra2-executor-test-helpers = { workspace = true }
 libra2-temppath = { workspace = true }
 aptos-vm = { workspace = true }
-aptos-vm-genesis = { workspace = true }
+libra2-vm-genesis = { workspace = true }
 bcs = { workspace = true }
 claims = { workspace = true }
 move-binary-format = { workspace = true }
