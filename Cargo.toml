@@ -480,7 +480,7 @@ aptos-vm-environment = { path = "aptos-move/aptos-vm-environment" }
 aptos-vm-logging = { path = "aptos-move/aptos-vm-logging" }
 aptos-vm-genesis = { path = "aptos-move/vm-genesis" }
 aptos-vm-types = { path = "aptos-move/aptos-vm-types" }
-aptos-vm-validator = { path = "vm-validator" }
+libra2-vm-validator = { path = "vm-validator" }
 aptos-workspace-server = { path = "aptos-move/aptos-workspace-server" }
 libra2-warp-webserver = { path = "crates/libra2-warp-webserver" }
 aptos-cargo-cli = { path = "devtools/aptos-cargo-cli" }

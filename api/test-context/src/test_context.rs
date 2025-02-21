@@ -51,7 +51,7 @@ use libra2_types::{
     },
 };
 use aptos_vm::aptos_vm::AptosVMBlockExecutor;
-use aptos_vm_validator::vm_validator::PooledVMValidator;
+use libra2_vm_validator::vm_validator::PooledVMValidator;
 use bytes::Bytes;
 use hyper::{HeaderMap, Response};
 use rand::SeedableRng;

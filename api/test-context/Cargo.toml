@@ -32,7 +32,7 @@ libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true }
 aptos-vm-logging = { workspace = true }
-aptos-vm-validator = { workspace = true }
+libra2-vm-validator = { workspace = true }
 bcs = { workspace = true }
 bytes = { workspace = true }
 goldenfile = { workspace = true }

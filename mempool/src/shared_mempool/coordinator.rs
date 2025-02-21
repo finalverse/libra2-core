@@ -37,7 +37,7 @@ use libra2_types::{
     transaction::SignedTransaction,
     PeerId,
 };
-use aptos_vm_validator::vm_validator::TransactionValidation;
+use libra2_vm_validator::vm_validator::TransactionValidation;
 use futures::{
     channel::mpsc,
     stream::{select_all, FuturesUnordered},

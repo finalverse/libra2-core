@@ -507,7 +507,6 @@ dependencies = [
  "aptos-sdk",
  "aptos-vm",
  "aptos-vm-logging",
- "aptos-vm-validator",
  "bcs 0.1.4",
  "bytes",
  "goldenfile",
@@ -520,6 +519,7 @@ dependencies = [
  "libra2-storage-interface",
  "libra2-temppath",
  "libra2-types",
+ "libra2-vm-validator",
  "rand 0.7.3",
  "regex",
  "serde_json",
@@ -723,7 +723,6 @@ dependencies = [
  "aptos-safety-rules",
  "aptos-validator-transaction-pool",
  "aptos-vm",
- "aptos-vm-validator",
  "async-trait",
  "bcs 0.1.4",
  "byteorder",
@@ -764,6 +763,7 @@ dependencies = [
  "libra2-temppath",
  "libra2-time-service",
  "libra2-types",
+ "libra2-vm-validator",
  "lru 0.7.8",
  "maplit",
  "mini-moka",
@@ -1653,7 +1653,6 @@ dependencies = [
  "aptos-runtimes",
  "aptos-sdk",
  "aptos-vm",
- "aptos-vm-validator",
  "bcs 0.1.4",
  "bytes",
  "chrono",
@@ -1676,6 +1675,7 @@ dependencies = [
  "libra2-storage-interface",
  "libra2-temppath",
  "libra2-types",
+ "libra2-vm-validator",
  "move-core-types",
  "once_cell",
  "rand 0.7.3",
@@ -3090,32 +3090,6 @@ dependencies = [
  "rand 0.7.3",
  "serde",
  "test-case",
-]
-
-[[package]]
-name = "aptos-vm-validator"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-cached-packages",
- "aptos-executor-test-helpers",
- "aptos-gas-schedule",
- "aptos-vm",
- "aptos-vm-environment",
- "aptos-vm-genesis",
- "aptos-vm-logging",
- "fail",
- "libra2-crypto",
- "libra2-db",
- "libra2-logger",
- "libra2-storage-interface",
- "libra2-temppath",
- "libra2-types",
- "move-binary-format",
- "move-core-types",
- "move-vm-runtime",
- "move-vm-types",
- "rand 0.7.3",
 ]
 
 [[package]]
@@ -9851,7 +9825,6 @@ dependencies = [
  "anyhow",
  "aptos-consensus-types",
  "aptos-runtimes",
- "aptos-vm-validator",
  "bcs 0.1.4",
  "enum_dispatch",
  "fail",
@@ -9875,6 +9848,7 @@ dependencies = [
  "libra2-storage-interface",
  "libra2-time-service",
  "libra2-types",
+ "libra2-vm-validator",
  "maplit",
  "num_cpus",
  "once_cell",
@@ -10753,6 +10727,32 @@ dependencies = [
  "serde_json",
  "thiserror",
  "ureq",
+]
+
+[[package]]
+name = "libra2-vm-validator"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-cached-packages",
+ "aptos-executor-test-helpers",
+ "aptos-gas-schedule",
+ "aptos-vm",
+ "aptos-vm-environment",
+ "aptos-vm-genesis",
+ "aptos-vm-logging",
+ "fail",
+ "libra2-crypto",
+ "libra2-db",
+ "libra2-logger",
+ "libra2-storage-interface",
+ "libra2-temppath",
+ "libra2-types",
+ "move-binary-format",
+ "move-core-types",
+ "move-vm-runtime",
+ "move-vm-types",
+ "rand 0.7.3",
 ]
 
 [[package]]

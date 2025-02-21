@@ -51,7 +51,7 @@ use libra2_types::{
     on_chain_config::{InMemoryOnChainConfig, OnChainConfigPayload},
     transaction::SignedTransaction,
 };
-use aptos_vm_validator::mocks::mock_vm_validator::MockVMValidator;
+use libra2_vm_validator::mocks::mock_vm_validator::MockVMValidator;
 use futures::{channel::oneshot, SinkExt};
 use maplit::btreemap;
 use std::{collections::HashMap, hash::Hash, sync::Arc};

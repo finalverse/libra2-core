@@ -37,7 +37,7 @@ use libra2_types::{
     on_chain_config::{InMemoryOnChainConfig, OnChainConfigPayload},
     PeerId,
 };
-use aptos_vm_validator::mocks::mock_vm_validator::MockVMValidator;
+use libra2_vm_validator::mocks::mock_vm_validator::MockVMValidator;
 use enum_dispatch::enum_dispatch;
 use futures::{
     channel::mpsc::{self, unbounded, UnboundedReceiver},

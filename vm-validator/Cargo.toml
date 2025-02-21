@@ -1,6 +1,6 @@
 [package]
-name = "aptos-vm-validator"
-description = "Aptos vm validator"
+name = "libra2-vm-validator"
+description = "Libra2 vm validator"
 version = "0.1.0"
 
 # Workspace inherited keys

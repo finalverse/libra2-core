@@ -24,7 +24,7 @@ use libra2_types::{
     account_address::AccountAddress, mempool_status::MempoolStatus, transaction::SignedTransaction,
     vm_status::DiscardedVMStatus,
 };
-use aptos_vm_validator::vm_validator::TransactionValidation;
+use libra2_vm_validator::vm_validator::TransactionValidation;
 use futures::{
     channel::{mpsc, mpsc::UnboundedSender, oneshot},
     future::Future,

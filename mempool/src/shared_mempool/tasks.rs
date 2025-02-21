@@ -36,7 +36,7 @@ use libra2_types::{
     transaction::SignedTransaction,
     vm_status::{DiscardedVMStatus, StatusCode},
 };
-use aptos_vm_validator::vm_validator::{get_account_sequence_number, TransactionValidation};
+use libra2_vm_validator::vm_validator::{get_account_sequence_number, TransactionValidation};
 use futures::{channel::oneshot, stream::FuturesUnordered};
 use rayon::prelude::*;
 use std::{

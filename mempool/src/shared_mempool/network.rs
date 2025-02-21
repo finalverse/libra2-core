@@ -29,7 +29,7 @@ use libra2_network::{
 };
 use libra2_time_service::TimeService;
 use libra2_types::transaction::SignedTransaction;
-use aptos_vm_validator::vm_validator::TransactionValidation;
+use libra2_vm_validator::vm_validator::TransactionValidation;
 use fail::fail_point;
 use serde::{Deserialize, Serialize};
 use std::{

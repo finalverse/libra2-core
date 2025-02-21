@@ -32,7 +32,7 @@ libra2-short-hex-str = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm-validator = { workspace = true }
+libra2-vm-validator = { workspace = true }
 bcs = { workspace = true }
 fail = { workspace = true }
 futures = { workspace = true }
@@ -60,6 +60,6 @@ proptest = { workspace = true }
 
 [features]
 default = []
-failpoints = ["fail/failpoints", "aptos-vm-validator/failpoints"]
+failpoints = ["fail/failpoints", "libra2-vm-validator/failpoints"]
 fuzzing = ["proptest", "libra2-types/fuzzing", "libra2-storage-interface/fuzzing", "libra2-config/fuzzing"]
 consensus-only-perf-test = []

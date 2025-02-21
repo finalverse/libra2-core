@@ -65,4 +65,4 @@ aptos-sdk = { workspace = true }
 libra2-secure-storage = { workspace = true }
 libra2-temppath = { workspace = true }
 aptos-vm = { workspace = true }
-aptos-vm-validator = { workspace = true }
+libra2-vm-validator = { workspace = true }
