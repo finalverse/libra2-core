@@ -564,7 +564,7 @@ mod test {
             .send()
             .await?;
         let aptos_error = AptosTapError::parse_from_json_string(&response.text().await?)
-            .expect("Failed to read response as AptosError");
+            .expect("Failed to read response as Libra2Error");
         assert!(!aptos_error.rejection_reasons.is_empty());
 
         // Assert that a request that passes all the configured checkers passes.
@@ -590,7 +590,7 @@ mod test {
             .send()
             .await?;
         let aptos_error = AptosTapError::parse_from_json_string(&response.text().await?)
-            .expect("Failed to read response as AptosError");
+            .expect("Failed to read response as Libra2Error");
         let rejection_reason_codes: HashSet<RejectionReasonCode> = aptos_error
             .rejection_reasons
             .into_iter()
@@ -608,7 +608,7 @@ mod test {
             .send()
             .await?;
         let aptos_error = AptosTapError::parse_from_json_string(&response.text().await?)
-            .expect("Failed to read response as AptosError");
+            .expect("Failed to read response as Libra2Error");
         let rejection_reason_codes: HashSet<RejectionReasonCode> = aptos_error
             .rejection_reasons
             .into_iter()
@@ -679,7 +679,7 @@ mod test {
             .await?;
         assert_eq!(response.status(), reqwest::StatusCode::TOO_MANY_REQUESTS);
         let aptos_error = AptosTapError::parse_from_json_string(&response.text().await?)
-            .expect("Failed to read response as AptosError");
+            .expect("Failed to read response as Libra2Error");
         let rejection_reason_codes: HashSet<RejectionReasonCode> = aptos_error
             .rejection_reasons
             .into_iter()
@@ -773,7 +773,7 @@ mod test {
             .await?;
         assert_eq!(response.status(), reqwest::StatusCode::SERVICE_UNAVAILABLE);
         let aptos_error = AptosTapError::parse_from_json_string(&response.text().await?)
-            .expect("Failed to read response as AptosError");
+            .expect("Failed to read response as Libra2Error");
         assert_eq!(
             aptos_error.error_code,
             AptosTapErrorCode::FunderAccountProblem

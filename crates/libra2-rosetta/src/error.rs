@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{types, types::ErrorDetails};
-use libra2_rest_client::{aptos_api_types::AptosErrorCode, error::RestError};
+use libra2_rest_client::{aptos_api_types::Libra2ErrorCode, error::RestError};
 use hex::FromHexError;
 use move_core_types::account_address::AccountAddressParseError;
 use serde::{Deserialize, Serialize};
@@ -267,49 +267,49 @@ impl From<RestError> for ApiError {
     fn from(err: RestError) -> Self {
         match err {
             RestError::Api(err) => match err.error.error_code {
-                AptosErrorCode::AccountNotFound => {
+                Libra2ErrorCode::AccountNotFound => {
                     ApiError::AccountNotFound(Some(err.error.message))
                 },
-                AptosErrorCode::ResourceNotFound => {
+                Libra2ErrorCode::ResourceNotFound => {
                     ApiError::ResourceNotFound(Some(err.error.message))
                 },
-                AptosErrorCode::ModuleNotFound => ApiError::ModuleNotFound(Some(err.error.message)),
-                AptosErrorCode::StructFieldNotFound => {
+                Libra2ErrorCode::ModuleNotFound => ApiError::ModuleNotFound(Some(err.error.message)),
+                Libra2ErrorCode::StructFieldNotFound => {
                     ApiError::StructFieldNotFound(Some(err.error.message))
                 },
-                AptosErrorCode::VersionNotFound => {
+                Libra2ErrorCode::VersionNotFound => {
                     ApiError::VersionNotFound(Some(err.error.message))
                 },
-                AptosErrorCode::TransactionNotFound => {
+                Libra2ErrorCode::TransactionNotFound => {
                     ApiError::TransactionNotFound(Some(err.error.message))
                 },
-                AptosErrorCode::TableItemNotFound => {
+                Libra2ErrorCode::TableItemNotFound => {
                     ApiError::TableItemNotFound(Some(err.error.message))
                 },
-                AptosErrorCode::BlockNotFound => ApiError::BlockNotFound(Some(err.error.message)),
-                AptosErrorCode::StateValueNotFound => {
+                Libra2ErrorCode::BlockNotFound => ApiError::BlockNotFound(Some(err.error.message)),
+                Libra2ErrorCode::StateValueNotFound => {
                     ApiError::StateValueNotFound(Some(err.error.message))
                 },
-                AptosErrorCode::VersionPruned => ApiError::VersionPruned(Some(err.error.message)),
-                AptosErrorCode::BlockPruned => ApiError::BlockPruned(Some(err.error.message)),
-                AptosErrorCode::InvalidInput => ApiError::InvalidInput(Some(err.error.message)),
-                AptosErrorCode::InvalidTransactionUpdate => {
+                Libra2ErrorCode::VersionPruned => ApiError::VersionPruned(Some(err.error.message)),
+                Libra2ErrorCode::BlockPruned => ApiError::BlockPruned(Some(err.error.message)),
+                Libra2ErrorCode::InvalidInput => ApiError::InvalidInput(Some(err.error.message)),
+                Libra2ErrorCode::InvalidTransactionUpdate => {
                     ApiError::InvalidInput(Some(err.error.message))
                 },
-                AptosErrorCode::SequenceNumberTooOld => {
+                Libra2ErrorCode::SequenceNumberTooOld => {
                     ApiError::SequenceNumberTooOld(Some(err.error.message))
                 },
-                AptosErrorCode::VmError => ApiError::VmError(Some(err.error.message)),
-                AptosErrorCode::HealthCheckFailed => {
+                Libra2ErrorCode::VmError => ApiError::VmError(Some(err.error.message)),
+                Libra2ErrorCode::HealthCheckFailed => {
                     ApiError::InternalError(Some(err.error.message))
                 },
-                AptosErrorCode::MempoolIsFull => ApiError::MempoolIsFull(Some(err.error.message)),
-                AptosErrorCode::WebFrameworkError => {
+                Libra2ErrorCode::MempoolIsFull => ApiError::MempoolIsFull(Some(err.error.message)),
+                Libra2ErrorCode::WebFrameworkError => {
                     ApiError::InternalError(Some(err.error.message))
                 },
-                AptosErrorCode::BcsNotSupported => ApiError::InvalidInput(Some(err.error.message)),
-                AptosErrorCode::InternalError => ApiError::InternalError(Some(err.error.message)),
-                AptosErrorCode::ApiDisabled => ApiError::InternalError(Some(err.error.message)),
+                Libra2ErrorCode::BcsNotSupported => ApiError::InvalidInput(Some(err.error.message)),
+                Libra2ErrorCode::InternalError => ApiError::InternalError(Some(err.error.message)),
+                Libra2ErrorCode::ApiDisabled => ApiError::InternalError(Some(err.error.message)),
             },
             RestError::Bcs(_) => ApiError::DeserializationFailed(None),
             RestError::Json(_) => ApiError::DeserializationFailed(None),

@@ -189,7 +189,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -265,7 +265,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -341,7 +341,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -417,7 +417,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -493,7 +493,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -569,7 +569,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -806,7 +806,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -882,7 +882,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -958,7 +958,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -1034,7 +1034,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -1110,7 +1110,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -1186,7 +1186,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -1408,7 +1408,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -1484,7 +1484,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -1560,7 +1560,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -1636,7 +1636,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -1712,7 +1712,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -1788,7 +1788,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -2025,7 +2025,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -2101,7 +2101,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -2177,7 +2177,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -2253,7 +2253,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -2329,7 +2329,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -2405,7 +2405,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -2650,7 +2650,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -2726,7 +2726,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -2938,7 +2938,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3014,7 +3014,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3090,7 +3090,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3166,7 +3166,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3242,7 +3242,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3318,7 +3318,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3530,7 +3530,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3606,7 +3606,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3682,7 +3682,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3758,7 +3758,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3834,7 +3834,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -3910,7 +3910,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -4147,7 +4147,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -4223,7 +4223,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -4299,7 +4299,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -4375,7 +4375,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -4451,7 +4451,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -4527,7 +4527,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -4775,7 +4775,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -4851,7 +4851,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -4927,7 +4927,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5003,7 +5003,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5079,7 +5079,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5155,7 +5155,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5342,7 +5342,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5418,7 +5418,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5494,7 +5494,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5570,7 +5570,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5792,7 +5792,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5868,7 +5868,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -5944,7 +5944,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6020,7 +6020,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6096,7 +6096,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6172,7 +6172,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6394,7 +6394,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6470,7 +6470,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6546,7 +6546,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6622,7 +6622,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6698,7 +6698,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6774,7 +6774,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -6995,7 +6995,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7071,7 +7071,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7147,7 +7147,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7223,7 +7223,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7299,7 +7299,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7375,7 +7375,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7596,7 +7596,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7672,7 +7672,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7748,7 +7748,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7824,7 +7824,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7900,7 +7900,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -7976,7 +7976,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -8191,7 +8191,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -8267,7 +8267,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -8343,7 +8343,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -8419,7 +8419,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -8495,7 +8495,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -8571,7 +8571,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -8775,7 +8775,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -8851,7 +8851,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -8927,7 +8927,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9003,7 +9003,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9079,7 +9079,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9155,7 +9155,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9231,7 +9231,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9431,7 +9431,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9507,7 +9507,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9583,7 +9583,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9659,7 +9659,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9735,7 +9735,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -9811,7 +9811,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10011,7 +10011,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10087,7 +10087,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10163,7 +10163,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10239,7 +10239,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10315,7 +10315,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10391,7 +10391,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10591,7 +10591,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10667,7 +10667,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10743,7 +10743,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10819,7 +10819,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10895,7 +10895,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -10971,7 +10971,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -11197,7 +11197,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -11273,7 +11273,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -11349,7 +11349,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -11425,7 +11425,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -11501,7 +11501,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -11577,7 +11577,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -11885,7 +11885,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -11961,7 +11961,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12037,7 +12037,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12113,7 +12113,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12189,7 +12189,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12265,7 +12265,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12341,7 +12341,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12585,7 +12585,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12661,7 +12661,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12737,7 +12737,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12813,7 +12813,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12889,7 +12889,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -12965,7 +12965,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -13041,7 +13041,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -13238,7 +13238,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -13314,7 +13314,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -13390,7 +13390,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -13466,7 +13466,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -13653,7 +13653,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -13729,7 +13729,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -13805,7 +13805,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -13881,7 +13881,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -14103,7 +14103,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -14179,7 +14179,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -14255,7 +14255,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -14331,7 +14331,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -14407,7 +14407,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -14483,7 +14483,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AptosError"
+                  "$ref": "#/components/schemas/Libra2Error"
                 }
               }
             },
@@ -14765,7 +14765,7 @@
         "description": "A hex encoded 32 byte Aptos account address.\n\nThis is represented in a string as a 64 character hex string, sometimes\nshortened by stripping leading 0s, and adding a 0x.\n\nFor example, address 0x0000000000000000000000000000000000000000000000000000000000000001 is represented as 0x1.\n",
         "example": "0x88fbd33f54e1126269769780feb24480428179f552e2313fbe571b72e62a1ca1 "
       },
-      "AptosError": {
+      "Libra2Error": {
         "type": "object",
         "description": "This is the generic struct we use for all API errors, it contains a string\nmessage and an Aptos API specific error code.",
         "required": [
@@ -14778,7 +14778,7 @@
             "description": "A message describing the error"
           },
           "error_code": {
-            "$ref": "#/components/schemas/AptosErrorCode"
+            "$ref": "#/components/schemas/Libra2ErrorCode"
           },
           "vm_error_code": {
             "type": "integer",
@@ -14787,7 +14787,7 @@
           }
         }
       },
-      "AptosErrorCode": {
+      "Libra2ErrorCode": {
         "type": "string",
         "description": "These codes provide more granular error information beyond just the HTTP\nstatus code of the response.",
         "enum": [
@@ -17388,7 +17388,7 @@
         ],
         "properties": {
           "error": {
-            "$ref": "#/components/schemas/AptosError"
+            "$ref": "#/components/schemas/Libra2Error"
           },
           "transaction_index": {
             "type": "integer",

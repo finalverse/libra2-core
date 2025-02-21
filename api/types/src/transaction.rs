@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{
-    Address, AptosError, EntryFunctionId, EventGuid, HashValue, HexEncodedBytes,
+    Address, Libra2Error, EntryFunctionId, EventGuid, HashValue, HexEncodedBytes,
     MoveModuleBytecode, MoveModuleId, MoveResource, MoveScriptBytecode, MoveStructTag, MoveType,
     MoveValue, VerifyInput, VerifyInputWithRecursion, U64,
 };
@@ -454,7 +454,7 @@ pub struct TransactionsBatchSubmissionResult {
 /// Information telling which batch submission transactions failed
 #[derive(Debug, Serialize, Deserialize, Object)]
 pub struct TransactionsBatchSingleSubmissionFailure {
-    pub error: AptosError,
+    pub error: Libra2Error,
     /// The index of which transaction failed, same as submission order
     pub transaction_index: usize,
 }

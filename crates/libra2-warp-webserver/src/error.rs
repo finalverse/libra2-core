@@ -16,7 +16,7 @@ pub struct Error {
     pub message: String,
     /// Aptos blockchain latest onchain ledger version.
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub aptos_ledger_version: Option<U64>,
+    pub libra2_ledger_version: Option<U64>,
 }
 
 impl Error {
@@ -24,7 +24,7 @@ impl Error {
         Self {
             code: code.as_u16(),
             message,
-            aptos_ledger_version: None,
+            libra2_ledger_version: None,
         }
     }
 
@@ -41,7 +41,7 @@ impl Error {
             StatusCode::NOT_FOUND,
             format!("{} not found by {}", resource, identifier),
         )
-        .aptos_ledger_version(ledger_version)
+        .libra2_ledger_version(ledger_version)
     }
 
     pub fn invalid_param<S: Display>(name: &str, value: S) -> Self {
@@ -64,8 +64,8 @@ impl Error {
         StatusCode::from_u16(self.code).unwrap_or(StatusCode::INTERNAL_SERVER_ERROR)
     }
 
-    pub fn aptos_ledger_version(mut self, ledger_version: u64) -> Self {
-        self.aptos_ledger_version = Some(ledger_version.into());
+    pub fn libra2_ledger_version(mut self, ledger_version: u64) -> Self {
+        self.libra2_ledger_version = Some(ledger_version.into());
         self
     }
 }
@@ -73,7 +73,7 @@ impl Error {
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}: {}", self.status_code(), &self.message)?;
-        if let Some(val) = &self.aptos_ledger_version {
+        if let Some(val) = &self.libra2_ledger_version {
             write!(f, "\nAptos ledger version: {}", val)?;
         }
         Ok(())
@@ -112,9 +112,9 @@ mod tests {
     }
 
     #[test]
-    fn test_to_string_with_aptos_ledger_version() {
+    fn test_to_string_with_libra2_ledger_version() {
         let err = Error::new(StatusCode::BAD_REQUEST, "invalid address".to_owned())
-            .aptos_ledger_version(123);
+            .libra2_ledger_version(123);
         assert_eq!(
             err.to_string(),
             "400 Bad Request: invalid address\nAptos ledger version: 123"

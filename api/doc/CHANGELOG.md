@@ -99,7 +99,7 @@ This section is dedicated to the finer details of the API change, but we include
 - When returning BCS, currently every endpoint is just returning the BCS version of what the JSON endpoint would return. This doesn't give us much beyond some network bandwidth savings. We are now working on cutting out the move type resolution in the middle and returning data straight from storage where possible.
 - The headers that each endpoint can return are explicitly stated in the spec.
 - Each endpoint in the spec now accurately states the exact set of response codes it can return.
-- In the error case, we return an AptosError, which can now contain a custom error code, more specific than just the HTTP status code.
+- In the error case, we return an Libra2Error, which can now contain a custom error code, more specific than just the HTTP status code.
 - Headers, responses, and parameters do not have their own section in the spec, making the spec a bit more verbose than it could be. See https://github.com/poem-web/poem/issues/321 and https://github.com/poem-web/poem/issues/332.
 - Per-endpoint logging is now based on path, not operation ID. We want to change this back pending changes in Poem: https://github.com/poem-web/poem/issues/351.
 - All types we use via the API must implement a Poem derive, e.g. Object, Enum, etc. This provides the framework with necessary information for the types to self describe in the spec.

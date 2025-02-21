@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 aptos-cached-packages = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-global-constants = { workspace = true }
-aptos-ledger = { workspace = true }
+libra2-ledger = { workspace = true }
 libra2-rest-client = { workspace = true }
 libra2-types = { workspace = true }
 base64 = { workspace = true }

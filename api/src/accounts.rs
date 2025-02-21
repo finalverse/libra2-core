@@ -15,7 +15,7 @@ use crate::{
 };
 use anyhow::Context as AnyhowContext;
 use aptos_api_types::{
-    AccountData, Address, AptosErrorCode, AsConverter, AssetType, LedgerInfo, MoveModuleBytecode,
+    AccountData, Address, Libra2ErrorCode, AsConverter, AssetType, LedgerInfo, MoveModuleBytecode,
     MoveModuleId, MoveResource, MoveStructTag, StateKeyWrapper, U64,
 };
 use aptos_sdk::types::{get_paired_fa_metadata_address, get_paired_fa_primary_store_address};
@@ -271,7 +271,7 @@ impl Account {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &self.latest_ledger_info,
                 )
             })?;
@@ -303,7 +303,7 @@ impl Account {
                         .map_err(|err| {
                             BasicErrorWith404::internal_with_code(
                                 err,
-                                AptosErrorCode::InternalError,
+                                Libra2ErrorCode::InternalError,
                                 &self.latest_ledger_info,
                             )
                         })?;
@@ -313,7 +313,7 @@ impl Account {
                         |err| {
                             BasicErrorWith404::internal_with_code(
                                 err,
-                                AptosErrorCode::InternalError,
+                                Libra2ErrorCode::InternalError,
                                 &self.latest_ledger_info,
                             )
                         },
@@ -327,7 +327,7 @@ impl Account {
                         .map_err(|err| {
                             BasicErrorWith404::internal_with_code(
                                 err,
-                                AptosErrorCode::InternalError,
+                                Libra2ErrorCode::InternalError,
                                 &self.latest_ledger_info,
                             )
                         })?
@@ -357,7 +357,7 @@ impl Account {
                         .map_err(|err| {
                             BasicErrorWith404::internal_with_code(
                                 err,
-                                AptosErrorCode::InternalError,
+                                Libra2ErrorCode::InternalError,
                                 &self.latest_ledger_info,
                             )
                         })?;
@@ -375,7 +375,7 @@ impl Account {
                             .map_err(|err| {
                                 BasicErrorWith404::internal_with_code(
                                     err,
-                                    AptosErrorCode::InternalError,
+                                    Libra2ErrorCode::InternalError,
                                     &self.latest_ledger_info,
                                 )
                             })?;
@@ -403,7 +403,7 @@ impl Account {
             StateKey::resource_typed::<AccountResource>(self.address.inner()).map_err(|e| {
                 BasicErrorWith404::internal_with_code(
                     e,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &self.latest_ledger_info,
                 )
             })?;
@@ -475,7 +475,7 @@ impl Account {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &self.latest_ledger_info,
                 )
             })?;
@@ -494,7 +494,7 @@ impl Account {
                     .map_err(|err| {
                         BasicErrorWith404::internal_with_code(
                             err,
-                            AptosErrorCode::InternalError,
+                            Libra2ErrorCode::InternalError,
                             &self.latest_ledger_info,
                         )
                     })?;
@@ -547,7 +547,7 @@ impl Account {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &self.latest_ledger_info,
                 )
             })?;
@@ -564,7 +564,7 @@ impl Account {
                             .map_err(|err| {
                                 BasicErrorWith404::internal_with_code(
                                     err,
-                                    AptosErrorCode::InternalError,
+                                    Libra2ErrorCode::InternalError,
                                     &self.latest_ledger_info,
                                 )
                             })?,
@@ -609,7 +609,7 @@ impl Account {
             .map_err(|err| {
                 BasicErrorWith404::bad_request_with_code(
                     err,
-                    AptosErrorCode::InvalidInput,
+                    Libra2ErrorCode::InvalidInput,
                     &self.latest_ledger_info,
                 )
             })?;
@@ -635,7 +635,7 @@ impl Account {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &self.latest_ledger_info,
                 )
             })?;
@@ -648,7 +648,7 @@ impl Account {
             .map_err(|err| {
                 BasicErrorWith404::bad_request_with_code(
                     err,
-                    AptosErrorCode::InvalidInput,
+                    Libra2ErrorCode::InvalidInput,
                     &self.latest_ledger_info,
                 )
             })?;
@@ -680,7 +680,7 @@ impl Account {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })?
@@ -700,7 +700,7 @@ impl Account {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })

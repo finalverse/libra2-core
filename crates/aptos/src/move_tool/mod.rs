@@ -27,7 +27,7 @@ use crate::{
     },
     CliCommand, CliResult,
 };
-use aptos_api_types::AptosErrorCode;
+use aptos_api_types::Libra2ErrorCode;
 use libra2_crypto::HashValue;
 use aptos_framework::{
     chunked_publish::{
@@ -1715,7 +1715,7 @@ async fn is_staging_area_empty(
             None => Ok(true),     // TODO: determine which case this is
         },
         Err(RestError::Api(aptos_error_response))
-            if aptos_error_response.error.error_code == AptosErrorCode::ResourceNotFound =>
+            if aptos_error_response.error.error_code == Libra2ErrorCode::ResourceNotFound =>
         {
             Ok(true) // The resource doesn't exist
         },

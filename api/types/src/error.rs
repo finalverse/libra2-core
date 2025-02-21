@@ -10,27 +10,27 @@ use std::fmt::Formatter;
 /// This is the generic struct we use for all API errors, it contains a string
 /// message and an Aptos API specific error code.
 #[derive(Debug, Clone, Serialize, Deserialize, Object)]
-pub struct AptosError {
+pub struct Libra2Error {
     /// A message describing the error
     pub message: String,
-    pub error_code: AptosErrorCode,
+    pub error_code: Libra2ErrorCode,
     /// A code providing VM error details when submitting transactions to the VM
     pub vm_error_code: Option<u64>,
 }
 
-impl std::fmt::Display for AptosError {
+impl std::fmt::Display for Libra2Error {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         write!(f, "Error({:?}): {:#}", self.error_code, self.message)
     }
 }
 
-impl std::error::Error for AptosError {}
+impl std::error::Error for Libra2Error {}
 
-impl AptosError {
+impl Libra2Error {
     pub fn new_with_error_code<ErrorType: std::fmt::Display>(
         error: ErrorType,
-        error_code: AptosErrorCode,
-    ) -> AptosError {
+        error_code: Libra2ErrorCode,
+    ) -> Libra2Error {
         Self {
             message: format!("{:#}", error),
             error_code,
@@ -40,9 +40,9 @@ impl AptosError {
 
     pub fn new_with_vm_status<ErrorType: std::fmt::Display>(
         error: ErrorType,
-        error_code: AptosErrorCode,
+        error_code: Libra2ErrorCode,
         vm_error_code: StatusCode,
-    ) -> AptosError {
+    ) -> Libra2Error {
         Self {
             message: format!("{:#}", error),
             error_code,
@@ -57,7 +57,7 @@ impl AptosError {
 #[oai(rename_all = "snake_case")]
 #[serde(rename_all = "snake_case")]
 #[repr(u32)]
-pub enum AptosErrorCode {
+pub enum Libra2ErrorCode {
     /// Account not found at the requested version
     AccountNotFound = 101,
     /// Resource not found at the requested version
@@ -112,7 +112,7 @@ pub enum AptosErrorCode {
     ApiDisabled = 603,
 }
 
-impl AptosErrorCode {
+impl Libra2ErrorCode {
     pub fn as_u32(&self) -> u32 {
         *self as u32
     }
@@ -120,17 +120,17 @@ impl AptosErrorCode {
 
 #[test]
 fn test_serialize_deserialize() {
-    let with_code = AptosError::new_with_vm_status(
+    let with_code = Libra2Error::new_with_vm_status(
         "Invalid transaction",
-        AptosErrorCode::VmError,
+        Libra2ErrorCode::VmError,
         libra2_types::vm_status::StatusCode::UNKNOWN_MODULE,
     );
-    let _: AptosError = bcs::from_bytes(&bcs::to_bytes(&with_code).unwrap()).unwrap();
-    let _: AptosError = serde_json::from_str(&serde_json::to_string(&with_code).unwrap()).unwrap();
+    let _: Libra2Error = bcs::from_bytes(&bcs::to_bytes(&with_code).unwrap()).unwrap();
+    let _: Libra2Error = serde_json::from_str(&serde_json::to_string(&with_code).unwrap()).unwrap();
 
     let without_code =
-        AptosError::new_with_error_code("some message", AptosErrorCode::MempoolIsFull);
-    let _: AptosError = bcs::from_bytes(&bcs::to_bytes(&without_code).unwrap()).unwrap();
-    let _: AptosError =
+        Libra2Error::new_with_error_code("some message", Libra2ErrorCode::MempoolIsFull);
+    let _: Libra2Error = bcs::from_bytes(&bcs::to_bytes(&without_code).unwrap()).unwrap();
+    let _: Libra2Error =
         serde_json::from_str(&serde_json::to_string(&without_code).unwrap()).unwrap();
 }

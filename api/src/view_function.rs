@@ -14,7 +14,7 @@ use crate::{
 };
 use anyhow::Context as anyhowContext;
 use aptos_api_types::{
-    AptosErrorCode, AsConverter, MoveValue, ViewFunction, ViewRequest, MAX_RECURSIVE_TYPES_ALLOWED,
+    Libra2ErrorCode, AsConverter, MoveValue, ViewFunction, ViewRequest, MAX_RECURSIVE_TYPES_ALLOWED,
     U64,
 };
 use libra2_bcs_utils::serialize_uleb128;
@@ -88,7 +88,7 @@ fn view_request(
         .map_err(|err| {
             BasicErrorWith404::bad_request_with_code(
                 err,
-                AptosErrorCode::InternalError,
+                Libra2ErrorCode::InternalError,
                 &ledger_info,
             )
         })?;
@@ -100,7 +100,7 @@ fn view_request(
             .map_err(|err| {
                 BasicErrorWith404::bad_request_with_code(
                     err,
-                    AptosErrorCode::InvalidInput,
+                    Libra2ErrorCode::InvalidInput,
                     &ledger_info,
                 )
             })?,
@@ -110,7 +110,7 @@ fn view_request(
                 .map_err(|err| {
                     BasicErrorWith404::bad_request_with_code(
                         err,
-                        AptosErrorCode::InvalidInput,
+                        Libra2ErrorCode::InvalidInput,
                         &ledger_info,
                     )
                 })?
@@ -128,7 +128,7 @@ fn view_request(
                 "Function {}::{} is not allowed",
                 view_function.module, view_function.function
             ),
-            AptosErrorCode::InvalidInput,
+            Libra2ErrorCode::InvalidInput,
         ));
     }
 
@@ -141,7 +141,7 @@ fn view_request(
         context.node_config.api.max_gas_view_function,
     );
     let values = output.values.map_err(|err| {
-        BasicErrorWith404::bad_request_with_code_no_info(err, AptosErrorCode::InvalidInput)
+        BasicErrorWith404::bad_request_with_code_no_info(err, Libra2ErrorCode::InvalidInput)
     })?;
     let result = match accept_type {
         AcceptType::Bcs => {
@@ -154,7 +154,7 @@ fn view_request(
             serialize_uleb128(&mut length, num_vals as u64).map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })?;
@@ -177,7 +177,7 @@ fn view_request(
                 .map_err(|err| {
                     BasicErrorWith404::bad_request_with_code(
                         err,
-                        AptosErrorCode::InternalError,
+                        Libra2ErrorCode::InternalError,
                         &ledger_info,
                     )
                 })?;
@@ -194,7 +194,7 @@ fn view_request(
                 .map_err(|err| {
                     BasicErrorWith404::bad_request_with_code(
                         err,
-                        AptosErrorCode::InternalError,
+                        Libra2ErrorCode::InternalError,
                         &ledger_info,
                     )
                 })?;

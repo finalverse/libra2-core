@@ -32,7 +32,7 @@ libra2-global-constants = { workspace = true }
 aptos-indexer-grpc-server-framework = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }
 libra2-keygen = { workspace = true }
-aptos-ledger = { workspace = true }
+libra2-ledger = { workspace = true }
 libra2-localnet = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-move-debugger = { workspace = true }

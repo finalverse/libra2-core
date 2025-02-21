@@ -14,7 +14,7 @@ use crate::{
 };
 use anyhow::Context as AnyhowContext;
 use aptos_api_types::{
-    verify_module_identifier, Address, AptosErrorCode, AsConverter, IdentifierWrapper,
+    verify_module_identifier, Address, Libra2ErrorCode, AsConverter, IdentifierWrapper,
     MoveModuleBytecode, MoveResource, MoveStructTag, MoveValue, RawStateValueRequest,
     RawTableItemRequest, TableItemRequest, VerifyInput, VerifyInputWithRecursion, U64,
 };
@@ -65,7 +65,7 @@ impl StateApi {
             .verify(0)
             .context("'resource_type' invalid")
             .map_err(|err| {
-                BasicErrorWith404::bad_request_with_code_no_info(err, AptosErrorCode::InvalidInput)
+                BasicErrorWith404::bad_request_with_code_no_info(err, Libra2ErrorCode::InvalidInput)
             })?;
         fail_point_poem("endpoint_get_account_resource")?;
         self.context
@@ -111,7 +111,7 @@ impl StateApi {
         verify_module_identifier(module_name.0.as_str())
             .context("'module_name' invalid")
             .map_err(|err| {
-                BasicErrorWith404::bad_request_with_code_no_info(err, AptosErrorCode::InvalidInput)
+                BasicErrorWith404::bad_request_with_code_no_info(err, Libra2ErrorCode::InvalidInput)
             })?;
         fail_point_poem("endpoint_get_account_module")?;
         self.context
@@ -158,7 +158,7 @@ impl StateApi {
             .verify()
             .context("'table_item_request' invalid")
             .map_err(|err| {
-                BasicErrorWith404::bad_request_with_code_no_info(err, AptosErrorCode::InvalidInput)
+                BasicErrorWith404::bad_request_with_code_no_info(err, Libra2ErrorCode::InvalidInput)
             })?;
         fail_point_poem("endpoint_get_table_item")?;
         self.context
@@ -282,7 +282,7 @@ impl StateApi {
             .try_into()
             .context("Failed to parse given resource type")
             .map_err(|err| {
-                BasicErrorWith404::bad_request_with_code_no_info(err, AptosErrorCode::InvalidInput)
+                BasicErrorWith404::bad_request_with_code_no_info(err, Libra2ErrorCode::InvalidInput)
             })?;
 
         let (ledger_info, ledger_version, state_view) = self.context.state_view(ledger_version)?;
@@ -296,7 +296,7 @@ impl StateApi {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })?
@@ -311,7 +311,7 @@ impl StateApi {
                     .map_err(|err| {
                         BasicErrorWith404::internal_with_code(
                             err,
-                            AptosErrorCode::InternalError,
+                            Libra2ErrorCode::InternalError,
                             &ledger_info,
                         )
                     })?;
@@ -347,7 +347,7 @@ impl StateApi {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })?
@@ -361,7 +361,7 @@ impl StateApi {
                     .map_err(|err| {
                         BasicErrorWith404::internal_with_code(
                             err,
-                            AptosErrorCode::InternalError,
+                            Libra2ErrorCode::InternalError,
                             &ledger_info,
                         )
                     })?;
@@ -390,7 +390,7 @@ impl StateApi {
             .try_into()
             .context("Failed to parse key_type")
             .map_err(|err| {
-                BasicErrorWith404::bad_request_with_code_no_info(err, AptosErrorCode::InvalidInput)
+                BasicErrorWith404::bad_request_with_code_no_info(err, Libra2ErrorCode::InvalidInput)
             })?;
         let key = table_item_request.key;
         let value_type = table_item_request
@@ -398,7 +398,7 @@ impl StateApi {
             .try_into()
             .context("Failed to parse value_type")
             .map_err(|err| {
-                BasicErrorWith404::bad_request_with_code_no_info(err, AptosErrorCode::InvalidInput)
+                BasicErrorWith404::bad_request_with_code_no_info(err, Libra2ErrorCode::InvalidInput)
             })?;
 
         // Retrieve local state
@@ -415,14 +415,14 @@ impl StateApi {
             .map_err(|err| {
                 BasicErrorWith404::bad_request_with_code(
                     err,
-                    AptosErrorCode::InvalidInput,
+                    Libra2ErrorCode::InvalidInput,
                     &ledger_info,
                 )
             })?;
         let raw_key = vm_key.undecorate().simple_serialize().ok_or_else(|| {
             BasicErrorWith404::bad_request_with_code(
                 "Failed to serialize table key",
-                AptosErrorCode::InvalidInput,
+                Libra2ErrorCode::InvalidInput,
                 &ledger_info,
             )
         })?;
@@ -438,7 +438,7 @@ impl StateApi {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })?
@@ -454,7 +454,7 @@ impl StateApi {
                     .map_err(|err| {
                         BasicErrorWith404::internal_with_code(
                             err,
-                            AptosErrorCode::InternalError,
+                            Libra2ErrorCode::InternalError,
                             &ledger_info,
                         )
                     })?;
@@ -493,7 +493,7 @@ impl StateApi {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })?
@@ -504,7 +504,7 @@ impl StateApi {
                         "Table handle({}), Table key({}) and Ledger version({})",
                         table_handle, table_item_request.key, ledger_version
                     ),
-                    AptosErrorCode::TableItemNotFound,
+                    Libra2ErrorCode::TableItemNotFound,
                     &ledger_info,
                 )
             })?;
@@ -542,7 +542,7 @@ impl StateApi {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })?;
@@ -552,7 +552,7 @@ impl StateApi {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })?
@@ -563,7 +563,7 @@ impl StateApi {
                         "StateKey({}) and Ledger version({})",
                         request.key, ledger_version
                     ),
-                    AptosErrorCode::StateValueNotFound,
+                    Libra2ErrorCode::StateValueNotFound,
                     &ledger_info,
                 )
             })?;
@@ -575,7 +575,7 @@ impl StateApi {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &ledger_info,
                 )
             })?;

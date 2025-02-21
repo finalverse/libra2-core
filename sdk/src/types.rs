@@ -17,7 +17,7 @@ use crate::{
 };
 use anyhow::{Context, Result};
 use libra2_crypto::{ed25519::Ed25519Signature, secp256r1_ecdsa, HashValue, PrivateKey, SigningKey};
-use aptos_ledger::AptosLedgerError;
+use libra2_ledger::Libra2LedgerError;
 use libra2_rest_client::{aptos_api_types::MoveStructTag, Client, PepperRequest, ProverRequest};
 pub use libra2_types::*;
 use libra2_types::{
@@ -597,8 +597,8 @@ impl HardwareWalletAccount {
     pub fn from_ledger(
         derivation_path: String,
         sequence_number: u64,
-    ) -> Result<Self, AptosLedgerError> {
-        let public_key = aptos_ledger::get_public_key(&derivation_path, false)?;
+    ) -> Result<Self, Libra2LedgerError> {
+        let public_key = libra2_ledger::get_public_key(&derivation_path, false)?;
         let authentication_key = AuthenticationKey::ed25519(&public_key);
         let address = authentication_key.account_address();
 
@@ -638,8 +638,8 @@ impl HardwareWalletAccount {
     pub fn sign_arbitrary_message(
         &self,
         message: &[u8],
-    ) -> Result<Ed25519Signature, AptosLedgerError> {
-        aptos_ledger::sign_message(&self.derivation_path, message)
+    ) -> Result<Ed25519Signature, Libra2LedgerError> {
+        libra2_ledger::sign_message(&self.derivation_path, message)
     }
 }
 

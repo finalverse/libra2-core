@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::State;
-use aptos_api_types::AptosError;
+use aptos_api_types::Libra2Error;
 use reqwest::StatusCode;
 use thiserror::Error;
 
@@ -146,7 +146,7 @@ impl From<serde_json::Error> for FaucetClientError {
 #[derive(Debug, Error)]
 pub enum RestError {
     #[error("API error {0}")]
-    Api(AptosErrorResponse),
+    Api(Libra2ErrorResponse),
     #[error("BCS ser/de error {0}")]
     Bcs(bcs::Error),
     #[error("JSON er/de error {0}")]
@@ -161,9 +161,9 @@ pub enum RestError {
     Http(StatusCode, reqwest::Error),
 }
 
-impl From<(AptosError, Option<State>, StatusCode)> for RestError {
-    fn from((error, state, status_code): (AptosError, Option<State>, StatusCode)) -> Self {
-        Self::Api(AptosErrorResponse {
+impl From<(Libra2Error, Option<State>, StatusCode)> for RestError {
+    fn from((error, state, status_code): (Libra2Error, Option<State>, StatusCode)) -> Self {
+        Self::Api(Libra2ErrorResponse {
             error,
             state,
             status_code,
@@ -206,13 +206,13 @@ impl From<reqwest::Error> for RestError {
 }
 
 #[derive(Debug)]
-pub struct AptosErrorResponse {
-    pub error: AptosError,
+pub struct Libra2ErrorResponse {
+    pub error: Libra2Error,
     pub state: Option<State>,
     pub status_code: StatusCode,
 }
 
-impl std::fmt::Display for AptosErrorResponse {
+impl std::fmt::Display for Libra2ErrorResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}", self.error)
     }

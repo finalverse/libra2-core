@@ -16,8 +16,8 @@ use crate::{
 };
 use libra2_logger::{debug, trace, warn};
 use libra2_rest_client::{
-    aptos_api_types::{AptosError, AptosErrorCode, ViewFunction},
-    error::{AptosErrorResponse, RestError},
+    aptos_api_types::{Libra2Error, Libra2ErrorCode, ViewFunction},
+    error::{Libra2ErrorResponse, RestError},
     Client,
 };
 use libra2_types::{account_address::AccountAddress, account_config::AccountResource};
@@ -171,18 +171,18 @@ async fn get_sequence_number(
             let account: AccountResource = response.into_inner();
             account.sequence_number()
         },
-        Err(RestError::Api(AptosErrorResponse {
+        Err(RestError::Api(Libra2ErrorResponse {
             error:
-                AptosError {
-                    error_code: AptosErrorCode::AccountNotFound,
+                Libra2Error {
+                    error_code: Libra2ErrorCode::AccountNotFound,
                     ..
                 },
             ..
         }))
-        | Err(RestError::Api(AptosErrorResponse {
+        | Err(RestError::Api(Libra2ErrorResponse {
             error:
-                AptosError {
-                    error_code: AptosErrorCode::ResourceNotFound,
+                Libra2Error {
+                    error_code: Libra2ErrorCode::ResourceNotFound,
                     ..
                 },
             ..

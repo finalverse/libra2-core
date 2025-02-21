@@ -227,8 +227,8 @@ impl From<bcs::Error> for CliError {
     }
 }
 
-impl From<aptos_ledger::AptosLedgerError> for CliError {
-    fn from(e: aptos_ledger::AptosLedgerError) -> Self {
+impl From<libra2_ledger::Libra2LedgerError> for CliError {
+    fn from(e: libra2_ledger::Libra2LedgerError) -> Self {
         CliError::UnexpectedError(e.to_string())
     }
 }

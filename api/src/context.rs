@@ -13,7 +13,7 @@ use crate::{
 };
 use anyhow::{anyhow, bail, ensure, format_err, Context as AnyhowContext, Result};
 use aptos_api_types::{
-    AptosErrorCode, AsConverter, BcsBlock, GasEstimation, LedgerInfo, ResourceGroup,
+    Libra2ErrorCode, AsConverter, BcsBlock, GasEstimation, LedgerInfo, ResourceGroup,
     TransactionOnChainData,
 };
 use libra2_config::config::{GasEstimationConfig, NodeConfig, RoleType};
@@ -163,7 +163,7 @@ impl Context {
         self.db
             .latest_state_checkpoint_view()
             .context("Failed to read latest state checkpoint from DB")
-            .map_err(|e| E::internal_with_code(e, AptosErrorCode::InternalError, ledger_info))
+            .map_err(|e| E::internal_with_code(e, Libra2ErrorCode::InternalError, ledger_info))
     }
 
     pub fn state_view<E: StdApiError>(
@@ -176,7 +176,7 @@ impl Context {
         let state_view = self
             .state_view_at_version(requested_ledger_version)
             .map_err(|err| {
-                E::internal_with_code(err, AptosErrorCode::InternalError, &latest_ledger_info)
+                E::internal_with_code(err, Libra2ErrorCode::InternalError, &latest_ledger_info)
             })?;
 
         Ok((latest_ledger_info, requested_ledger_version, state_view))
@@ -229,7 +229,7 @@ impl Context {
         self.db
             .get_first_viable_block()
             .context("Failed to retrieve oldest block information")
-            .map_err(|e| E::service_unavailable_with_code_no_info(e, AptosErrorCode::InternalError))
+            .map_err(|e| E::service_unavailable_with_code_no_info(e, Libra2ErrorCode::InternalError))
     }
 
     pub fn get_latest_storage_ledger_info<E: ServiceUnavailableError>(
@@ -239,7 +239,7 @@ impl Context {
             .get_latest_ledger_info_with_signatures()
             .context("Failed to retrieve latest ledger info")
             .map_err(|e| {
-                E::service_unavailable_with_code_no_info(e, AptosErrorCode::InternalError)
+                E::service_unavailable_with_code_no_info(e, Libra2ErrorCode::InternalError)
             })?;
 
         let (oldest_version, oldest_block_height) = self.get_oldest_version_and_block_height()?;
@@ -248,7 +248,7 @@ impl Context {
             .get_block_info_by_version(ledger_info.ledger_info().version())
             .context("Failed to retrieve latest block information")
             .map_err(|e| {
-                E::service_unavailable_with_code_no_info(e, AptosErrorCode::InternalError)
+                E::service_unavailable_with_code_no_info(e, Libra2ErrorCode::InternalError)
             })?;
 
         Ok(LedgerInfo::new(
@@ -316,7 +316,7 @@ impl Context {
                 if let Some(mut latest_version) = indexer_reader
                     .get_latest_internal_indexer_ledger_version()
                     .map_err(|err| {
-                        E::service_unavailable_with_code_no_info(err, AptosErrorCode::InternalError)
+                        E::service_unavailable_with_code_no_info(err, Libra2ErrorCode::InternalError)
                     })?
                 {
                     // The internal indexer version can be ahead of the storage committed version since it syncs to db's latest synced version
@@ -329,7 +329,7 @@ impl Context {
                         .map_err(|_| {
                             E::service_unavailable_with_code_no_info(
                                 "Failed to get block",
-                                AptosErrorCode::InternalError,
+                                Libra2ErrorCode::InternalError,
                             )
                         })?;
                     let (oldest_version, oldest_block_height) =
@@ -347,7 +347,7 @@ impl Context {
                     // Indexer doesn't have data yet as DB is boostrapping.
                     return Err(E::service_unavailable_with_code_no_info(
                         "DB is bootstrapping",
-                        AptosErrorCode::InternalError,
+                        Libra2ErrorCode::InternalError,
                     ));
                 }
             }
@@ -355,7 +355,7 @@ impl Context {
 
         Err(E::service_unavailable_with_code_no_info(
             "Indexer reader doesn't exist",
-            AptosErrorCode::InternalError,
+            Libra2ErrorCode::InternalError,
         ))
     }
 
@@ -379,7 +379,7 @@ impl Context {
     ) -> Result<Option<Vec<u8>>, E> {
         self.get_state_value(state_key, version)
             .context("Failed to retrieve state value")
-            .map_err(|e| E::internal_with_code(e, AptosErrorCode::InternalError, ledger_info))
+            .map_err(|e| E::internal_with_code(e, Libra2ErrorCode::InternalError, ledger_info))
     }
 
     pub fn get_resource<T: MoveResource>(
@@ -403,7 +403,7 @@ impl Context {
         self.get_resource(address, version)
             .context("Failed to read account resource.")
             .map_err(|err| {
-                E::internal_with_code(err, AptosErrorCode::InternalError, latest_ledger_info)
+                E::internal_with_code(err, Libra2ErrorCode::InternalError, latest_ledger_info)
             })
     }
 
@@ -421,7 +421,7 @@ impl Context {
                         T::struct_identifier(),
                         address,
                     ),
-                    AptosErrorCode::ResourceNotFound,
+                    Libra2ErrorCode::ResourceNotFound,
                     latest_ledger_info,
                 )
             })
@@ -614,7 +614,7 @@ impl Context {
         self.db
             .get_block_timestamp(version)
             .context("Failed to retrieve block timestamp")
-            .map_err(|err| E::internal_with_code(err, AptosErrorCode::InternalError, ledger_info))
+            .map_err(|err| E::internal_with_code(err, Libra2ErrorCode::InternalError, ledger_info))
     }
 
     pub fn get_block_by_height<E: StdApiError>(
@@ -691,7 +691,7 @@ impl Context {
             .hash()
             .context("Failed to parse block hash")
             .map_err(|err| {
-                E::internal_with_code(err, AptosErrorCode::InternalError, latest_ledger_info)
+                E::internal_with_code(err, Libra2ErrorCode::InternalError, latest_ledger_info)
             })?;
         let block_timestamp = new_block_event.proposed_time();
 
@@ -707,7 +707,7 @@ impl Context {
                     .map_err(|err| {
                         E::internal_with_code(
                             err,
-                            AptosErrorCode::InternalError,
+                            Libra2ErrorCode::InternalError,
                             latest_ledger_info,
                         )
                     })?,
@@ -753,7 +753,7 @@ impl Context {
             .collect::<Result<_, anyhow::Error>>()
             .context("Failed to convert transaction data from storage")
             .map_err(|err| {
-                E::internal_with_code(err, AptosErrorCode::InternalError, ledger_info)
+                E::internal_with_code(err, Libra2ErrorCode::InternalError, ledger_info)
             })?;
 
         Ok(txns)
@@ -780,7 +780,7 @@ impl Context {
             .collect::<Result<_, anyhow::Error>>()
             .context("Failed to convert transaction data from storage")
             .map_err(|err| {
-                E::internal_with_code(err, AptosErrorCode::InternalError, ledger_info)
+                E::internal_with_code(err, Libra2ErrorCode::InternalError, ledger_info)
             })?;
 
         Ok(txns)
@@ -866,7 +866,7 @@ impl Context {
                 .as_ref()
                 .ok_or_else(|| anyhow!("Indexer reader is None"))
                 .map_err(|err| {
-                    E::internal_with_code(err, AptosErrorCode::InternalError, ledger_info)
+                    E::internal_with_code(err, Libra2ErrorCode::InternalError, ledger_info)
                 })?
                 .get_account_transactions(
                     address,
@@ -880,7 +880,7 @@ impl Context {
         let txns = txns_res
             .context("Failed to retrieve account transactions")
             .map_err(|err| {
-                E::internal_with_code(err, AptosErrorCode::InternalError, ledger_info)
+                E::internal_with_code(err, Libra2ErrorCode::InternalError, ledger_info)
             })?;
         txns.into_inner()
             .into_iter()
@@ -890,7 +890,7 @@ impl Context {
             })
             .collect::<Result<Vec<_>>>()
             .context("Failed to parse account transactions")
-            .map_err(|err| E::internal_with_code(err, AptosErrorCode::InternalError, ledger_info))
+            .map_err(|err| E::internal_with_code(err, Libra2ErrorCode::InternalError, ledger_info))
     }
 
     pub fn get_transaction_by_hash(
@@ -1432,7 +1432,7 @@ impl Context {
                 .db
                 .state_view_at_version(Some(ledger_info.version()))
                 .map_err(|e| {
-                    E::internal_with_code(e, AptosErrorCode::InternalError, ledger_info)
+                    E::internal_with_code(e, Libra2ErrorCode::InternalError, ledger_info)
                 })?;
 
             let gas_schedule_params = {
@@ -1456,7 +1456,7 @@ impl Context {
                         .ok_or_else(|| {
                             E::internal_with_code(
                                 "Failed to retrieve gas schedule",
-                                AptosErrorCode::InternalError,
+                                Libra2ErrorCode::InternalError,
                                 ledger_info,
                             )
                         }),
@@ -1502,7 +1502,7 @@ impl Context {
                 .db
                 .state_view_at_version(Some(ledger_info.version()))
                 .map_err(|e| {
-                    E::internal_with_code(e, AptosErrorCode::InternalError, ledger_info)
+                    E::internal_with_code(e, Libra2ErrorCode::InternalError, ledger_info)
                 })?;
 
             let execution_onchain_config = OnChainExecutionConfig::fetch_config(&state_view)
@@ -1584,7 +1584,7 @@ where
 {
     tokio::task::spawn_blocking(func)
         .await
-        .map_err(|err| E::internal_with_code_no_info(err, AptosErrorCode::InternalError))?
+        .map_err(|err| E::internal_with_code_no_info(err, Libra2ErrorCode::InternalError))?
 }
 
 #[derive(Schema)]

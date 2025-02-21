@@ -1,8 +1,8 @@
-# aptos-ledger
+# libra2-ledger
 
 Provides a set of commands and methods to communicate with Aptos app on Ledger
 
-The methods supported by the aptos-ledger are:
+The methods supported by the libra2-ledger are:
 
 - `get_app_version()`
 - `get_app_name()`
@@ -18,7 +18,7 @@ NOTE: All methods and commands requires the user to have Aptos ledger app unlock
 ### Get Public Key from your Aptos account on Ledger
 
 ```rust
-use aptos_ledger::get_public_key;
+use libra2_ledger::get_public_key;
 
 let public_key = match get_public_key(false);
 println!("Public Key: {:?}", public_key);
@@ -30,7 +30,7 @@ println!("Public Key: {:?}", public_key);
 Currently we only support derivative path at index 0, and the transaction has to be serialized using BCS format
 
 ```rust
-use aptos_ledger::sign_txn;
+use libra2_ledger::sign_txn;
 use bcs;
 
 let utf8_str = "my transaction";

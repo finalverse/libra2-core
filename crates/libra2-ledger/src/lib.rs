@@ -1,9 +1,9 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-//! # aptos-ledger
+//! # libra2-ledger
 //!
-//! `aptos-ledger` provides convenience methods to communicate with the Aptos app on ledger
+//! `libra2-ledger` provides convenience methods to communicate with the Aptos app on ledger
 
 #![deny(missing_docs)]
 
@@ -46,23 +46,23 @@ const P2_LAST: u8 = 0x00;
 
 #[derive(Debug, Error)]
 /// Aptos Ledger Error
-pub enum AptosLedgerError {
+pub enum Libra2LedgerError {
     /// Error when trying to open a connection to the Ledger device
     #[error("Device not found")]
     DeviceNotFound,
 
     /// Error when communicating with Aptos app on Ledger
     #[error("Error - {0}")]
-    AptosError(AptosLedgerStatusCode),
+    Libra2Error(Libra2LedgerStatusCode),
 
     /// Unexpected error, the `Option<u16>` is the retcode received from ledger transport
     #[error("Unexpected Error: {0} (StatusCode {1:?})")]
     UnexpectedError(String, Option<u16>),
 }
 
-impl From<LedgerHIDError> for AptosLedgerError {
+impl From<LedgerHIDError> for Libra2LedgerError {
     fn from(e: LedgerHIDError) -> Self {
-        AptosLedgerError::UnexpectedError(e.to_string(), None)
+        Libra2LedgerError::UnexpectedError(e.to_string(), None)
     }
 }
 
@@ -71,7 +71,7 @@ impl From<LedgerHIDError> for AptosLedgerError {
 /// Status code returned when communicating with ledger
 /// Most Aptos ones defined here <https://github.com/aptos-labs/ledger-app-aptos/blob/main/doc/COMMANDS.md#status-words>
 /// Some of the ledger status code defined here - <https://www.eftlab.com/knowledge-base/complete-list-of-apdu-responses>
-pub enum AptosLedgerStatusCode {
+pub enum Libra2LedgerStatusCode {
     /// Aptos ledger app related status code
 
     /// Rejected by user
@@ -133,57 +133,57 @@ pub enum AptosLedgerStatusCode {
     Unknown = 0x0000,
 }
 
-impl AptosLedgerStatusCode {
+impl Libra2LedgerStatusCode {
     fn description(&self) -> &str {
         match self {
-            AptosLedgerStatusCode::Deny => "Request rejected by user",
-            AptosLedgerStatusCode::WrongPip2 => "Wrong P1 or P2",
-            AptosLedgerStatusCode::WrongDataLength => "Wrong data length",
-            AptosLedgerStatusCode::InsNotSupported => "Ins(Instruction) not supported",
-            AptosLedgerStatusCode::ClaNotSupported => "Cla not supported",
-            AptosLedgerStatusCode::WrongResponseLength => "Wrong response length",
-            AptosLedgerStatusCode::DisplayBip32PathFail => "BIP32 path conversion to string failed",
-            AptosLedgerStatusCode::DisplayAddressFail => "Address conversion to string failed",
-            AptosLedgerStatusCode::DisplayAmountFail => "Amount conversion to string failed",
-            AptosLedgerStatusCode::WrongTxnLength => "Wrong raw transaction length",
-            AptosLedgerStatusCode::TxnParsingFail => "Failed to parse raw transaction",
-            AptosLedgerStatusCode::TxnHashFail => {
+            Libra2LedgerStatusCode::Deny => "Request rejected by user",
+            Libra2LedgerStatusCode::WrongPip2 => "Wrong P1 or P2",
+            Libra2LedgerStatusCode::WrongDataLength => "Wrong data length",
+            Libra2LedgerStatusCode::InsNotSupported => "Ins(Instruction) not supported",
+            Libra2LedgerStatusCode::ClaNotSupported => "Cla not supported",
+            Libra2LedgerStatusCode::WrongResponseLength => "Wrong response length",
+            Libra2LedgerStatusCode::DisplayBip32PathFail => "BIP32 path conversion to string failed",
+            Libra2LedgerStatusCode::DisplayAddressFail => "Address conversion to string failed",
+            Libra2LedgerStatusCode::DisplayAmountFail => "Amount conversion to string failed",
+            Libra2LedgerStatusCode::WrongTxnLength => "Wrong raw transaction length",
+            Libra2LedgerStatusCode::TxnParsingFail => "Failed to parse raw transaction",
+            Libra2LedgerStatusCode::TxnHashFail => {
                 "Failed to compute hash digest of raw transaction"
             },
-            AptosLedgerStatusCode::BadState => "Security issue with bad state",
-            AptosLedgerStatusCode::SignatureFail => "Signature of raw transaction failed",
-            AptosLedgerStatusCode::Success => "Success",
-            AptosLedgerStatusCode::LedgerLocked => "Ledger device is locked",
-            AptosLedgerStatusCode::AppNotOpen => "Aptos ledger app is not opened",
-            AptosLedgerStatusCode::Unknown => "Unknown status code",
+            Libra2LedgerStatusCode::BadState => "Security issue with bad state",
+            Libra2LedgerStatusCode::SignatureFail => "Signature of raw transaction failed",
+            Libra2LedgerStatusCode::Success => "Success",
+            Libra2LedgerStatusCode::LedgerLocked => "Ledger device is locked",
+            Libra2LedgerStatusCode::AppNotOpen => "Aptos ledger app is not opened",
+            Libra2LedgerStatusCode::Unknown => "Unknown status code",
         }
     }
 
-    fn map_status_code(status_code: u16) -> AptosLedgerStatusCode {
+    fn map_status_code(status_code: u16) -> Libra2LedgerStatusCode {
         match status_code {
-            0x6985 => AptosLedgerStatusCode::Deny,
-            0x6A86 => AptosLedgerStatusCode::WrongPip2,
-            0x6A87 => AptosLedgerStatusCode::WrongDataLength,
-            0x6D00 => AptosLedgerStatusCode::InsNotSupported,
-            0x6E00 => AptosLedgerStatusCode::ClaNotSupported,
-            0xB000 => AptosLedgerStatusCode::WrongResponseLength,
-            0xB001 => AptosLedgerStatusCode::DisplayBip32PathFail,
-            0xB002 => AptosLedgerStatusCode::DisplayAddressFail,
-            0xB003 => AptosLedgerStatusCode::DisplayAmountFail,
-            0xB004 => AptosLedgerStatusCode::WrongTxnLength,
-            0xB005 => AptosLedgerStatusCode::TxnParsingFail,
-            0xB006 => AptosLedgerStatusCode::TxnHashFail,
-            0xB007 => AptosLedgerStatusCode::BadState,
-            0xB008 => AptosLedgerStatusCode::SignatureFail,
-            0x9000 => AptosLedgerStatusCode::Success,
-            0x5515 => AptosLedgerStatusCode::LedgerLocked,
-            0x6E01 => AptosLedgerStatusCode::AppNotOpen,
-            _ => AptosLedgerStatusCode::Unknown,
+            0x6985 => Libra2LedgerStatusCode::Deny,
+            0x6A86 => Libra2LedgerStatusCode::WrongPip2,
+            0x6A87 => Libra2LedgerStatusCode::WrongDataLength,
+            0x6D00 => Libra2LedgerStatusCode::InsNotSupported,
+            0x6E00 => Libra2LedgerStatusCode::ClaNotSupported,
+            0xB000 => Libra2LedgerStatusCode::WrongResponseLength,
+            0xB001 => Libra2LedgerStatusCode::DisplayBip32PathFail,
+            0xB002 => Libra2LedgerStatusCode::DisplayAddressFail,
+            0xB003 => Libra2LedgerStatusCode::DisplayAmountFail,
+            0xB004 => Libra2LedgerStatusCode::WrongTxnLength,
+            0xB005 => Libra2LedgerStatusCode::TxnParsingFail,
+            0xB006 => Libra2LedgerStatusCode::TxnHashFail,
+            0xB007 => Libra2LedgerStatusCode::BadState,
+            0xB008 => Libra2LedgerStatusCode::SignatureFail,
+            0x9000 => Libra2LedgerStatusCode::Success,
+            0x5515 => Libra2LedgerStatusCode::LedgerLocked,
+            0x6E01 => Libra2LedgerStatusCode::AppNotOpen,
+            _ => Libra2LedgerStatusCode::Unknown,
         }
     }
 }
 
-impl Display for AptosLedgerStatusCode {
+impl Display for Libra2LedgerStatusCode {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{} (0x{:x})", self.description(), *self as u16)
     }
@@ -235,7 +235,7 @@ pub fn validate_derivation_path(input: &str) -> bool {
 }
 
 /// Returns the current version of the Aptos app on Ledger
-pub fn get_app_version() -> Result<Version, AptosLedgerError> {
+pub fn get_app_version() -> Result<Version, Libra2LedgerError> {
     // Open connection to ledger
     let transport = open_ledger_transport()?;
 
@@ -258,16 +258,16 @@ pub fn get_app_version() -> Result<Version, AptosLedgerError> {
                     patch,
                 })
             } else {
-                let error_code = AptosLedgerStatusCode::map_status_code(response.retcode());
-                Err(AptosLedgerError::AptosError(error_code))
+                let error_code = Libra2LedgerStatusCode::map_status_code(response.retcode());
+                Err(Libra2LedgerError::Libra2Error(error_code))
             }
         },
-        Err(err) => Err(AptosLedgerError::from(err)),
+        Err(err) => Err(Libra2LedgerError::from(err)),
     }
 }
 
 /// Returns the official app name register in Ledger
-pub fn get_app_name() -> Result<String, AptosLedgerError> {
+pub fn get_app_name() -> Result<String, Libra2LedgerError> {
     // Open connection to ledger
     let transport = open_ledger_transport()?;
 
@@ -282,15 +282,15 @@ pub fn get_app_name() -> Result<String, AptosLedgerError> {
             if response.retcode() == APDU_CODE_SUCCESS {
                 let app_name = match str::from_utf8(response.data()) {
                     Ok(v) => v,
-                    Err(e) => return Err(AptosLedgerError::UnexpectedError(e.to_string(), None)),
+                    Err(e) => return Err(Libra2LedgerError::UnexpectedError(e.to_string(), None)),
                 };
                 Ok(app_name.to_string())
             } else {
-                let error_code = AptosLedgerStatusCode::map_status_code(response.retcode());
-                Err(AptosLedgerError::AptosError(error_code))
+                let error_code = Libra2LedgerStatusCode::map_status_code(response.retcode());
+                Err(Libra2LedgerError::Libra2Error(error_code))
             }
         },
-        Err(err) => Err(AptosLedgerError::from(err)),
+        Err(err) => Err(Libra2LedgerError::from(err)),
     }
 }
 
@@ -302,7 +302,7 @@ pub fn get_app_name() -> Result<String, AptosLedgerError> {
 /// * `index_range` - start(inclusive) - end(exclusive) acounts, that you want to fetch, if None default to 0-10
 pub fn fetch_batch_accounts(
     index_range: Option<Range<u32>>,
-) -> Result<BTreeMap<String, AccountAddress>, AptosLedgerError> {
+) -> Result<BTreeMap<String, AccountAddress>, Libra2LedgerError> {
     let range = if let Some(range) = index_range {
         range
     } else {
@@ -311,7 +311,7 @@ pub fn fetch_batch_accounts(
 
     // Make sure the range is within 10 counts
     if range.end - range.start > 10 {
-        return Err(AptosLedgerError::UnexpectedError(
+        return Err(Libra2LedgerError::UnexpectedError(
             "Unexpected Error: Make sure the range is less than or equal to 10".to_string(),
             None,
         ));
@@ -348,7 +348,7 @@ pub fn fetch_batch_accounts(
                     let hex_string = encode(pub_key_buffer);
                     let public_key = match Ed25519PublicKey::from_encoded_string(&hex_string) {
                         Ok(pk) => Ok(pk),
-                        Err(err) => Err(AptosLedgerError::UnexpectedError(
+                        Err(err) => Err(Libra2LedgerError::UnexpectedError(
                             err.to_string(),
                             Some(response.retcode()),
                         )),
@@ -356,11 +356,11 @@ pub fn fetch_batch_accounts(
                     let account = account_address_from_public_key(&public_key?);
                     accounts.insert(path, account);
                 } else {
-                    let error_code = AptosLedgerStatusCode::map_status_code(response.retcode());
-                    return Err(AptosLedgerError::AptosError(error_code));
+                    let error_code = Libra2LedgerStatusCode::map_status_code(response.retcode());
+                    return Err(Libra2LedgerError::Libra2Error(error_code));
                 }
             },
-            Err(err) => return Err(AptosLedgerError::from(err)),
+            Err(err) => return Err(Libra2LedgerError::from(err)),
         }
     }
 
@@ -372,7 +372,7 @@ pub fn fetch_batch_accounts(
 /// # Arguments
 ///
 /// * `display` - If true, the public key will be displayed on the Ledger device, and confirmation is needed
-pub fn get_public_key(path: &str, display: bool) -> Result<Ed25519PublicKey, AptosLedgerError> {
+pub fn get_public_key(path: &str, display: bool) -> Result<Ed25519PublicKey, Libra2LedgerError> {
     // Open connection to ledger
     let transport = open_ledger_transport()?;
 
@@ -408,14 +408,14 @@ pub fn get_public_key(path: &str, display: bool) -> Result<Ed25519PublicKey, Apt
                 let hex_string = encode(pub_key_buffer);
                 match Ed25519PublicKey::from_encoded_string(&hex_string) {
                     Ok(pk) => Ok(pk),
-                    Err(err) => Err(AptosLedgerError::UnexpectedError(err.to_string(), None)),
+                    Err(err) => Err(Libra2LedgerError::UnexpectedError(err.to_string(), None)),
                 }
             } else {
-                let error_code = AptosLedgerStatusCode::map_status_code(response.retcode());
-                Err(AptosLedgerError::AptosError(error_code))
+                let error_code = Libra2LedgerStatusCode::map_status_code(response.retcode());
+                Err(Libra2LedgerError::Libra2Error(error_code))
             }
         },
-        Err(err) => Err(AptosLedgerError::from(err)),
+        Err(err) => Err(Libra2LedgerError::from(err)),
     }
 }
 
@@ -425,7 +425,7 @@ pub fn get_public_key(path: &str, display: bool) -> Result<Ed25519PublicKey, Apt
 ///
 /// * `path` - derivation path of the ledger account
 /// * `raw_message` - the raw message that need to be signed
-pub fn sign_message(path: &str, raw_message: &[u8]) -> Result<Ed25519Signature, AptosLedgerError> {
+pub fn sign_message(path: &str, raw_message: &[u8]) -> Result<Ed25519Signature, Libra2LedgerError> {
     // open connection to ledger
     let transport = open_ledger_transport()?;
 
@@ -442,7 +442,7 @@ pub fn sign_message(path: &str, raw_message: &[u8]) -> Result<Ed25519Signature, 
     });
 
     if let Err(err) = sign_start {
-        return Err(AptosLedgerError::UnexpectedError(err.to_string(), None));
+        return Err(Libra2LedgerError::UnexpectedError(err.to_string(), None));
     }
 
     let chunks = raw_message.chunks(MAX_APDU_LEN);
@@ -466,18 +466,18 @@ pub fn sign_message(path: &str, raw_message: &[u8]) -> Result<Ed25519Signature, 
                         let signature_len: usize = response_buffer[0] as usize;
                         let signature_buffer = &response_buffer[1..1 + signature_len];
                         return Ed25519Signature::try_from(signature_buffer).map_err(|err| {
-                            AptosLedgerError::UnexpectedError(err.to_string(), None)
+                            Libra2LedgerError::UnexpectedError(err.to_string(), None)
                         });
                     }
                 } else {
-                    let error_code = AptosLedgerStatusCode::map_status_code(response.retcode());
-                    return Err(AptosLedgerError::AptosError(error_code));
+                    let error_code = Libra2LedgerStatusCode::map_status_code(response.retcode());
+                    return Err(Libra2LedgerError::Libra2Error(error_code));
                 }
             },
-            Err(err) => return Err(AptosLedgerError::from(err)),
+            Err(err) => return Err(Libra2LedgerError::from(err)),
         };
     }
-    Err(AptosLedgerError::UnexpectedError(
+    Err(Libra2LedgerError::UnexpectedError(
         "Unable to process request".to_string(),
         None,
     ))
@@ -507,18 +507,18 @@ fn serialize_bip32(path: &str) -> Vec<u8> {
     serialized
 }
 
-fn open_ledger_transport() -> Result<TransportNativeHID, AptosLedgerError> {
+fn open_ledger_transport() -> Result<TransportNativeHID, Libra2LedgerError> {
     // open connection to ledger
     // NOTE: ledger has to be unlocked
     let hidapi = match HidApi::new() {
         Ok(hidapi) => hidapi,
-        Err(_err) => return Err(AptosLedgerError::DeviceNotFound),
+        Err(_err) => return Err(Libra2LedgerError::DeviceNotFound),
     };
 
     // Open transport to the first device
     let transport = match TransportNativeHID::new(&hidapi) {
         Ok(transport) => transport,
-        Err(_err) => return Err(AptosLedgerError::DeviceNotFound),
+        Err(_err) => return Err(Libra2LedgerError::DeviceNotFound),
     };
 
     Ok(transport)

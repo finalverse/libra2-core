@@ -18,10 +18,10 @@ use crate::{
     },
 };
 use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, ValidCryptoMaterialStringExt};
-use aptos_ledger;
+use libra2_ledger;
 use libra2_rest_client::{
-    aptos_api_types::{AptosError, AptosErrorCode},
-    error::{AptosErrorResponse, RestError},
+    aptos_api_types::{Libra2Error, Libra2ErrorCode},
+    error::{Libra2ErrorResponse, RestError},
 };
 use async_trait::async_trait;
 use clap::Parser;
@@ -176,7 +176,7 @@ impl CliCommand<()> for InitTool {
             Some(deri_path)
         } else if self.ledger {
             // Fetch the top 5 (index 0-4) accounts from Ledger
-            let account_map = aptos_ledger::fetch_batch_accounts(Some(0..5))?;
+            let account_map = libra2_ledger::fetch_batch_accounts(Some(0..5))?;
             eprintln!(
                 "Please choose an index from the following {} ledger accounts, or choose an arbitrary index that you want to use:",
                 account_map.len()
@@ -191,10 +191,10 @@ impl CliCommand<()> for InitTool {
             }
             let input_index = read_line("derivation_index")?;
             let input_index = input_index.trim();
-            let path = aptos_ledger::DERIVATION_PATH.replace("{index}", input_index);
+            let path = libra2_ledger::DERIVATION_PATH.replace("{index}", input_index);
 
             // Validate the path
-            if !aptos_ledger::validate_derivation_path(&path) {
+            if !libra2_ledger::validate_derivation_path(&path) {
                 return Err(CliError::UnexpectedError(
                     "Invalid index input. Please make sure the input is a valid number index"
                         .to_owned(),
@@ -246,7 +246,7 @@ impl CliCommand<()> for InitTool {
 
         // Public key
         let public_key = if self.is_hardware_wallet() {
-            let pub_key = match aptos_ledger::get_public_key(
+            let pub_key = match libra2_ledger::get_public_key(
                 derivation_path
                     .ok_or_else(|| {
                         CliError::UnexpectedError("Invalid derivation path".to_string())
@@ -290,18 +290,18 @@ impl CliCommand<()> for InitTool {
         let account_exists = match client.get_account(address).await {
             Ok(_) => true,
             Err(err) => {
-                if let RestError::Api(AptosErrorResponse {
+                if let RestError::Api(Libra2ErrorResponse {
                     error:
-                        AptosError {
-                            error_code: AptosErrorCode::ResourceNotFound,
+                        Libra2Error {
+                            error_code: Libra2ErrorCode::ResourceNotFound,
                             ..
                         },
                     ..
                 })
-                | RestError::Api(AptosErrorResponse {
+                | RestError::Api(Libra2ErrorResponse {
                     error:
-                        AptosError {
-                            error_code: AptosErrorCode::AccountNotFound,
+                        Libra2Error {
+                            error_code: Libra2ErrorCode::AccountNotFound,
                             ..
                         },
                     ..

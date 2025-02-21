@@ -3,13 +3,13 @@
 
 use crate::{AptosValidatorInterface, FilterCondition};
 use anyhow::{anyhow, Result};
-use aptos_api_types::{AptosError, AptosErrorCode};
+use aptos_api_types::{Libra2Error, Libra2ErrorCode};
 use aptos_framework::{
     natives::code::{PackageMetadata, PackageRegistry},
     APTOS_PACKAGES,
 };
 use libra2_rest_client::{
-    error::{AptosErrorResponse, RestError},
+    error::{Libra2ErrorResponse, RestError},
     Client,
 };
 use libra2_types::{
@@ -204,11 +204,11 @@ impl AptosValidatorInterface for RestDebuggerInterface {
         match self.0.get_raw_state_value(state_key, version).await {
             Ok(resp) => Ok(Some(bcs::from_bytes(&resp.into_inner())?)),
             Err(err) => match err {
-                RestError::Api(AptosErrorResponse {
+                RestError::Api(Libra2ErrorResponse {
                     error:
-                        AptosError {
+                        Libra2Error {
                             error_code:
-                                AptosErrorCode::StateValueNotFound | AptosErrorCode::TableItemNotFound, /* bug in pre 1.9 nodes */
+                                Libra2ErrorCode::StateValueNotFound | Libra2ErrorCode::TableItemNotFound, /* bug in pre 1.9 nodes */
                             ..
                         },
                     ..

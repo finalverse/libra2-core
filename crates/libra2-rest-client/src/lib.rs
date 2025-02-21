@@ -7,7 +7,7 @@ extern crate core;
 pub mod libra2;
 pub mod error;
 pub mod faucet;
-use error::AptosErrorResponse;
+use error::Libra2ErrorResponse;
 pub use faucet::FaucetClient;
 pub mod response;
 pub use response::Response;
@@ -24,7 +24,7 @@ pub use aptos_api_types::{
 use aptos_api_types::{
     deserialize_from_string,
     mime_types::{BCS, BCS_SIGNED_TRANSACTION, BCS_VIEW_FUNCTION, JSON},
-    AptosError, AptosErrorCode, BcsBlock, Block, GasEstimation, HexEncodedBytes, IndexResponse,
+    Libra2Error, Libra2ErrorCode, BcsBlock, Block, GasEstimation, HexEncodedBytes, IndexResponse,
     MoveModuleId, TransactionData, TransactionOnChainData, TransactionsBatchSubmissionResult,
     UserTransaction, VersionedEvent, ViewFunction, ViewRequest,
 };
@@ -288,10 +288,10 @@ impl Client {
             .await
         {
             Ok(inner) => Ok(inner),
-            Err(RestError::Api(AptosErrorResponse {
+            Err(RestError::Api(Libra2ErrorResponse {
                 error:
-                    AptosError {
-                        error_code: AptosErrorCode::TableItemNotFound,
+                    Libra2Error {
+                        error_code: Libra2ErrorCode::TableItemNotFound,
                         ..
                     },
                 ..
@@ -1350,7 +1350,7 @@ impl Client {
             Ok(account) => account.and_then(|account| Ok(account.sequence_number())),
             Err(error) => match error {
                 RestError::Api(error) => {
-                    if matches!(error.error.error_code, AptosErrorCode::AccountNotFound) {
+                    if matches!(error.error.error_code, Libra2ErrorCode::AccountNotFound) {
                         if let Some(state) = error.state {
                             Ok(Response::new(0, state))
                         } else {
@@ -1735,7 +1735,7 @@ impl Client {
     ) -> AptosResult<T>
     where
         F: Fn() -> Fut,
-        RetryFun: Fn(StatusCode, Option<AptosError>) -> bool,
+        RetryFun: Fn(StatusCode, Option<Libra2Error>) -> bool,
         Fut: Future<Output = AptosResult<T>>,
     {
         let total_wait = total_wait.unwrap_or(DEFAULT_MAX_WAIT_DURATION);
@@ -1886,11 +1886,11 @@ pub fn get_version_path_with_base(base_url: Url) -> String {
     }
 }
 
-pub fn retriable_with_404(status_code: StatusCode, aptos_error: Option<AptosError>) -> bool {
+pub fn retriable_with_404(status_code: StatusCode, aptos_error: Option<Libra2Error>) -> bool {
     retriable(status_code, aptos_error) | matches!(status_code, StatusCode::NOT_FOUND)
 }
 
-pub fn retriable(status_code: StatusCode, _aptos_error: Option<AptosError>) -> bool {
+pub fn retriable(status_code: StatusCode, _aptos_error: Option<Libra2Error>) -> bool {
     matches!(
         status_code,
         StatusCode::TOO_MANY_REQUESTS
@@ -1935,7 +1935,7 @@ fn parse_state_optional(response: &reqwest::Response) -> Option<State> {
 async fn parse_error(response: reqwest::Response) -> RestError {
     let status_code = response.status();
     let maybe_state = parse_state_optional(&response);
-    match response.json::<AptosError>().await {
+    match response.json::<Libra2Error>().await {
         Ok(error) => (error, maybe_state, status_code).into(),
         Err(e) => RestError::Http(status_code, e),
     }

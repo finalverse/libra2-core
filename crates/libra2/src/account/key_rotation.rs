@@ -13,7 +13,7 @@ use libra2_crypto::{
     encoding_type::EncodingType,
     PrivateKey, SigningKey,
 };
-use aptos_ledger;
+use libra2_ledger;
 use libra2_rest_client::{error::RestError, Client};
 use libra2_types::{
     account_address::AccountAddress,
@@ -169,7 +169,7 @@ impl CliCommand<RotateSummary> for RotateKey {
         let (new_private_key, new_public_key) = if new_derivation_path.is_some() {
             (
                 None,
-                aptos_ledger::get_public_key(new_derivation_path.clone().unwrap().as_str(), false)?,
+                libra2_ledger::get_public_key(new_derivation_path.clone().unwrap().as_str(), false)?,
             )
         } else {
             let new_private_key = self
@@ -211,7 +211,7 @@ impl CliCommand<RotateSummary> for RotateKey {
         let rotation_proof_signed_by_current_private_key =
             if let Some(current_derivation_path) = current_derivation_path.clone() {
                 eprintln!("Sign rotation proof challenge on your Ledger device (current key)");
-                let challenge_signature = aptos_ledger::sign_message(
+                let challenge_signature = libra2_ledger::sign_message(
                     current_derivation_path.as_str(),
                     &rotation_msg.clone(),
                 )?;
@@ -228,7 +228,7 @@ impl CliCommand<RotateSummary> for RotateKey {
         let rotation_proof_signed_by_new_private_key =
             if let Some(new_derivation_path) = new_derivation_path.clone() {
                 eprintln!("Sign rotation proof challenge on your Ledger device (new key)");
-                let challenge_signature = aptos_ledger::sign_message(
+                let challenge_signature = libra2_ledger::sign_message(
                     new_derivation_path.clone().as_str(),
                     &rotation_msg.clone(),
                 )?;

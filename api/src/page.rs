@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::response::BadRequestError;
-use aptos_api_types::{AptosErrorCode, LedgerInfo};
+use aptos_api_types::{Libra2ErrorCode, LedgerInfo};
 use serde::Deserialize;
 
 const DEFAULT_PAGE_SIZE: u16 = 25;
@@ -49,7 +49,7 @@ impl Page {
                 "Given start value ({}) is higher than the current ledger version, it must be < {}",
                 start, max
             ),
-                AptosErrorCode::InvalidInput,
+                Libra2ErrorCode::InvalidInput,
                 ledger_info,
             ));
         }
@@ -85,7 +85,7 @@ pub fn determine_limit<E: BadRequestError>(
     if limit == 0 {
         return Err(E::bad_request_with_code(
             format!("Given limit value ({}) must not be zero", limit),
-            AptosErrorCode::InvalidInput,
+            Libra2ErrorCode::InvalidInput,
             ledger_info,
         ));
     }

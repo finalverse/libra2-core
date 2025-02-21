@@ -1,6 +1,6 @@
 [package]
-name = "aptos-ledger"
-description = "Library for integration with the Aptos app on Ledger"
+name = "libra2-ledger"
+description = "Library for integration with the Libra2 app on Ledger"
 version = "0.2.0"
 publish = true
 
@@ -9,7 +9,7 @@ authors = { workspace = true }
 edition = { workspace = true }
 homepage = { workspace = true }
 license = { workspace = true }
-repository = "https://github.com/aptos-labs/aptos-core/tree/main/crates/aptos-ledger"
+repository = "https://github.com/finalverse/libra2-core/tree/main/crates/libra2-ledger"
 rust-version = { workspace = true }
 
 [dependencies]

@@ -16,7 +16,7 @@ use crate::{
 };
 use anyhow::Context as AnyhowContext;
 use aptos_api_types::{
-    verify_field_identifier, Address, AptosErrorCode, AsConverter, IdentifierWrapper, LedgerInfo,
+    verify_field_identifier, Address, Libra2ErrorCode, AsConverter, IdentifierWrapper, LedgerInfo,
     MoveStructTag, VerifyInputWithRecursion, VersionedEvent, U64,
 };
 use libra2_types::event::EventKey;
@@ -126,12 +126,12 @@ impl EventsApi {
             .verify(0)
             .context("'event_handle' invalid")
             .map_err(|err| {
-                BasicErrorWith404::bad_request_with_code_no_info(err, AptosErrorCode::InvalidInput)
+                BasicErrorWith404::bad_request_with_code_no_info(err, Libra2ErrorCode::InvalidInput)
             })?;
         verify_field_identifier(field_name.as_str())
             .context("'field_name' invalid")
             .map_err(|err| {
-                BasicErrorWith404::bad_request_with_code_no_info(err, AptosErrorCode::InvalidInput)
+                BasicErrorWith404::bad_request_with_code_no_info(err, Libra2ErrorCode::InvalidInput)
             })?;
         fail_point_poem("endpoint_get_events_by_event_handle")?;
         self.context
@@ -174,7 +174,7 @@ impl EventsApi {
             .map_err(|err| {
                 BasicErrorWith404::internal_with_code(
                     err,
-                    AptosErrorCode::InternalError,
+                    Libra2ErrorCode::InternalError,
                     &latest_ledger_info,
                 )
             })?;
@@ -190,7 +190,7 @@ impl EventsApi {
                     .map_err(|err| {
                         BasicErrorWith404::internal_with_code(
                             err,
-                            AptosErrorCode::InternalError,
+                            Libra2ErrorCode::InternalError,
                             &latest_ledger_info,
                         )
                     })?;

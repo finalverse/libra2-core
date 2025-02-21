@@ -21,7 +21,7 @@ use anyhow::{ensure, format_err, Result};
 use libra2_config::config::DEFAULT_MAX_SUBMIT_TRANSACTION_BATCH_SIZE;
 use libra2_crypto::ed25519::Ed25519PrivateKey;
 use libra2_logger::{error, info, sample, sample::SampleRate, warn};
-use libra2_rest_client::{aptos_api_types::AptosErrorCode, error::RestError, Client as RestClient};
+use libra2_rest_client::{aptos_api_types::Libra2ErrorCode, error::RestError, Client as RestClient};
 use aptos_sdk::{
     move_types::account_address::AccountAddress,
     transaction_builder::{aptos_stdlib, TransactionFactory},
@@ -1130,7 +1130,7 @@ pub async fn get_account_seq_num(
         Err(e) => {
             // if account is not present, that is equivalent to sequence_number = 0
             if let RestError::Api(api_error) = e {
-                if let AptosErrorCode::AccountNotFound = api_error.error.error_code {
+                if let Libra2ErrorCode::AccountNotFound = api_error.error.error_code {
                     return Ok((
                         0,
                         Duration::from_micros(api_error.state.as_ref().unwrap().timestamp_usecs)
