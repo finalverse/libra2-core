@@ -21,7 +21,7 @@ use crate::{
 };
 use aptos_consensus_types::common::{Author, Round};
 use libra2_crypto::HashValue;
-use aptos_reliable_broadcast::RBNetworkSender;
+use libra2_reliable_broadcast::RBNetworkSender;
 use libra2_time_service::TimeService;
 use libra2_types::{
     aggregate_signature::AggregateSignature,

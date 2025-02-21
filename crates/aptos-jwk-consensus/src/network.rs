@@ -17,7 +17,7 @@ use libra2_network::{
     protocols::network::{Event, RpcError},
     ProtocolId,
 };
-use aptos_reliable_broadcast::RBNetworkSender;
+use libra2_reliable_broadcast::RBNetworkSender;
 use libra2_types::account_address::AccountAddress;
 use bytes::Bytes;
 use futures::Stream;

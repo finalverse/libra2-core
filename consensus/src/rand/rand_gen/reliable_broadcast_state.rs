@@ -16,7 +16,7 @@ use anyhow::ensure;
 use aptos_consensus_types::common::Author;
 use libra2_infallible::Mutex;
 use libra2_logger::info;
-use aptos_reliable_broadcast::BroadcastStatus;
+use libra2_reliable_broadcast::BroadcastStatus;
 use libra2_types::{
     aggregate_signature::PartialSignatures, epoch_state::EpochState, randomness::RandMetadata,
 };

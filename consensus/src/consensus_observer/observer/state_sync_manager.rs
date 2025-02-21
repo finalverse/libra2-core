@@ -13,7 +13,7 @@ use crate::{
 };
 use libra2_config::config::ConsensusObserverConfig;
 use libra2_logger::{error, info};
-use aptos_reliable_broadcast::DropGuard;
+use libra2_reliable_broadcast::DropGuard;
 use libra2_types::ledger_info::LedgerInfoWithSignatures;
 use futures::future::{AbortHandle, Abortable};
 use std::{sync::Arc, time::Duration};

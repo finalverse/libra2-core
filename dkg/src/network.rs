@@ -15,7 +15,7 @@ use libra2_network::{
     protocols::network::{Event, RpcError},
     ProtocolId,
 };
-use aptos_reliable_broadcast::RBNetworkSender;
+use libra2_reliable_broadcast::RBNetworkSender;
 use async_trait::async_trait;
 use bytes::Bytes;
 use futures::{

@@ -19,7 +19,7 @@ use libra2_event_notifications::{
 };
 use libra2_logger::{error, info};
 use libra2_network::{application::interface::NetworkClient, protocols::network::Event};
-use aptos_reliable_broadcast::ReliableBroadcast;
+use libra2_reliable_broadcast::ReliableBroadcast;
 use aptos_safety_rules::{safety_rules_manager::storage, PersistentSafetyStorage};
 use libra2_types::{
     account_address::AccountAddress,

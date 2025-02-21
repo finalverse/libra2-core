@@ -3,7 +3,7 @@
 
 use libra2_crypto::bls12381::Signature;
 use libra2_enum_conversion_derive::EnumConversion;
-use aptos_reliable_broadcast::RBMessage;
+use libra2_reliable_broadcast::RBMessage;
 use libra2_types::{
     account_address::AccountAddress,
     jwks::{Issuer, ProviderJWKs},

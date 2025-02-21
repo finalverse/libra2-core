@@ -22,7 +22,7 @@ use libra2_crypto_derive::{BCSCryptoHash, CryptoHasher};
 use libra2_enum_conversion_derive::EnumConversion;
 use libra2_infallible::Mutex;
 use libra2_logger::debug;
-use aptos_reliable_broadcast::{BroadcastStatus, RBMessage};
+use libra2_reliable_broadcast::{BroadcastStatus, RBMessage};
 use libra2_types::{
     aggregate_signature::{AggregateSignature, PartialSignatures},
     epoch_state::EpochState,

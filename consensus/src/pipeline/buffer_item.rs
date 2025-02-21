@@ -14,7 +14,7 @@ use aptos_consensus_types::{
 use libra2_crypto::{bls12381, HashValue};
 use aptos_executor_types::ExecutorResult;
 use libra2_logger::prelude::*;
-use aptos_reliable_broadcast::DropGuard;
+use libra2_reliable_broadcast::DropGuard;
 use libra2_types::{
     block_info::BlockInfo,
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures, SignatureAggregator},

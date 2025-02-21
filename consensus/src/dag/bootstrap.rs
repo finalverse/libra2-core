@@ -44,7 +44,7 @@ use libra2_config::config::DagConsensusConfig;
 use aptos_consensus_types::common::{Author, Round};
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::{debug, info};
-use aptos_reliable_broadcast::{RBNetworkSender, ReliableBroadcast};
+use libra2_reliable_broadcast::{RBNetworkSender, ReliableBroadcast};
 use libra2_types::{
     epoch_state::EpochState,
     on_chain_config::{

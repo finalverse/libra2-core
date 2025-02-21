@@ -6,7 +6,7 @@ use crate::{
     pipeline::buffer_manager::OrderedBlocks,
 };
 use aptos_consensus_types::{common::Round, pipelined_block::PipelinedBlock};
-use aptos_reliable_broadcast::DropGuard;
+use libra2_reliable_broadcast::DropGuard;
 use libra2_types::randomness::{FullRandMetadata, Randomness};
 use std::collections::{BTreeMap, HashMap};
 

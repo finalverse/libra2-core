@@ -3,7 +3,7 @@
 
 use libra2_crypto_derive::CryptoHasher;
 use libra2_enum_conversion_derive::EnumConversion;
-use aptos_reliable_broadcast::RBMessage;
+use libra2_reliable_broadcast::RBMessage;
 pub use libra2_types::dkg::DKGTranscript;
 use serde::{Deserialize, Serialize};
 

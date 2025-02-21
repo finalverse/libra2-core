@@ -14,7 +14,7 @@ use anyhow::{bail, ensure};
 use aptos_consensus_types::common::Author;
 use libra2_enum_conversion_derive::EnumConversion;
 use libra2_network::{protocols::network::RpcError, ProtocolId};
-use aptos_reliable_broadcast::RBMessage;
+use libra2_reliable_broadcast::RBMessage;
 use libra2_types::epoch_state::EpochState;
 use bytes::Bytes;
 use futures_channel::oneshot;

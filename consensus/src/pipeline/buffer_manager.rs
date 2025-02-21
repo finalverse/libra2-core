@@ -35,7 +35,7 @@ use libra2_crypto::HashValue;
 use aptos_executor_types::ExecutorResult;
 use libra2_logger::prelude::*;
 use libra2_network::protocols::{rpc::error::RpcError, wire::handshake::v1::ProtocolId};
-use aptos_reliable_broadcast::{DropGuard, ReliableBroadcast};
+use libra2_reliable_broadcast::{DropGuard, ReliableBroadcast};
 use libra2_time_service::TimeService;
 use libra2_types::{
     account_address::AccountAddress, epoch_state::EpochState, ledger_info::LedgerInfoWithSignatures,

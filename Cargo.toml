@@ -430,7 +430,7 @@ libra2-proxy = { path = "crates/proxy" }
 libra2-push-metrics = { path = "crates/libra2-push-metrics" }
 libra2-rate-limiter = { path = "crates/libra2-rate-limiter" }
 aptos-release-builder = { path = "aptos-move/aptos-release-builder" }
-aptos-reliable-broadcast = { path = "crates/reliable-broadcast" }
+libra2-reliable-broadcast = { path = "crates/reliable-broadcast" }
 aptos-replay-benchmark = { path = "aptos-move/replay-benchmark" }
 aptos-resource-viewer = { path = "aptos-move/aptos-resource-viewer" }
 libra2-rest-client = { path = "crates/libra2-rest-client" }

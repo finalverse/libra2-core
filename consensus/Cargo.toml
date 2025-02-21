@@ -36,7 +36,7 @@ libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
 libra2-network = { workspace = true }
 libra2-peer-monitoring-service-types = { workspace = true }
-aptos-reliable-broadcast = { workspace = true }
+libra2-reliable-broadcast = { workspace = true }
 aptos-runtimes = { workspace = true }
 aptos-safety-rules = { workspace = true }
 libra2-schemadb = { workspace = true }
