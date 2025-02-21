@@ -225,7 +225,7 @@ def spawn_fullnode(git_ref, network, bootstrapping_mode, continuous_syncing_mode
 
   # Start the fullnode
   node_log_file = open(node_log_file_path, "w")
-  process_handle = subprocess.Popen(["cargo", "run", "-p", "aptos-node", "--release", "--", "-f", FULLNODE_CONFIG_NAME], stdout=node_log_file, stderr=node_log_file)
+  process_handle = subprocess.Popen(["cargo", "run", "-p", "libra2-node", "--release", "--", "-f", FULLNODE_CONFIG_NAME], stdout=node_log_file, stderr=node_log_file)
 
   # Return the process handle
   return process_handle

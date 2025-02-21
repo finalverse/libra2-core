@@ -131,7 +131,7 @@ resource "helm_release" "testnet-addons" {
       # The addons need to be able to refer to the Genesis parameters
       genesis = {
         era             = var.era
-        username_prefix = local.aptos_node_helm_prefix
+        username_prefix = local.libra2_node_helm_prefix
         chain_id        = var.chain_id
         numValidators   = var.num_validators
       }

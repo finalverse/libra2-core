@@ -622,10 +622,10 @@ mod test {
     #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
     async fn test_redis_ratelimiter() -> Result<()> {
         // Assert that a localnet is alive.
-        let aptos_node_api_client = aptos_sdk::rest_client::Client::new(
+        let libra2_node_api_client = aptos_sdk::rest_client::Client::new(
             reqwest::Url::from_str("http://127.0.0.1:8080").unwrap(),
         );
-        aptos_node_api_client
+        libra2_node_api_client
             .get_index_bcs()
             .await
             .context("Localnet API couldn't be reached at port 8080, have you started one?")?;
@@ -785,10 +785,10 @@ mod test {
     #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
     async fn test_mint_funder() -> Result<()> {
         // Assert that a localnet is alive.
-        let aptos_node_api_client = aptos_sdk::rest_client::Client::new(
+        let libra2_node_api_client = aptos_sdk::rest_client::Client::new(
             reqwest::Url::from_str("http://127.0.0.1:8080").unwrap(),
         );
-        aptos_node_api_client
+        libra2_node_api_client
             .get_index_bcs()
             .await
             .context("Localnet API couldn't be reached at port 8080, have you started one?")?;
@@ -817,7 +817,7 @@ mod test {
             .expect("Failed to read response as FundResponse");
 
         // Wait for the transaction.
-        let response = aptos_node_api_client
+        let response = libra2_node_api_client
             .wait_for_transaction_by_hash(
                 HashValue::from_str(&fund_response.txn_hashes[0])?,
                 get_current_time_secs() + 30,
@@ -835,7 +835,7 @@ mod test {
         );
 
         // Assert that the account exists now with the expected balance.
-        let response = aptos_node_api_client
+        let response = libra2_node_api_client
             .view_apt_account_balance(
                 AccountAddress::from_str(&fund_request.address.unwrap()).unwrap(),
             )
@@ -849,10 +849,10 @@ mod test {
     #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
     async fn test_mint_funder_wait_for_txns() -> Result<()> {
         // Assert that a localnet is alive.
-        let aptos_node_api_client = aptos_sdk::rest_client::Client::new(
+        let libra2_node_api_client = aptos_sdk::rest_client::Client::new(
             reqwest::Url::from_str("http://127.0.0.1:8080").unwrap(),
         );
-        aptos_node_api_client
+        libra2_node_api_client
             .get_index_bcs()
             .await
             .context("Localnet API couldn't be reached at port 8080, have you started one?")?;
@@ -882,7 +882,7 @@ mod test {
             .expect("Failed to read response as FundResponse");
 
         // Ensure the transaction was executed now that the tap request has finished.
-        let response = aptos_node_api_client
+        let response = libra2_node_api_client
             .get_transaction_by_hash(HashValue::from_str(&fund_response.txn_hashes[0])?)
             .await
             .context("Failed to get transaction, it should be on-chain now")?;
@@ -895,7 +895,7 @@ mod test {
         );
 
         // Assert that the account exists now with the expected balance.
-        let response = aptos_node_api_client
+        let response = libra2_node_api_client
             .view_apt_account_balance(
                 AccountAddress::from_str(&fund_request.address.unwrap()).unwrap(),
             )
@@ -911,10 +911,10 @@ mod test {
         make_auth_tokens_file(&["test_token"])?;
 
         // Assert that a localnet is alive.
-        let aptos_node_api_client = aptos_sdk::rest_client::Client::new(
+        let libra2_node_api_client = aptos_sdk::rest_client::Client::new(
             reqwest::Url::from_str("http://127.0.0.1:8080").unwrap(),
         );
-        aptos_node_api_client
+        libra2_node_api_client
             .get_index_bcs()
             .await
             .context("Localnet API couldn't be reached at port 8080, have you started one?")?;
@@ -945,7 +945,7 @@ mod test {
         .await?;
 
         // Confirm that the account was given the full 1000 OCTA as requested.
-        let response = aptos_node_api_client
+        let response = libra2_node_api_client
             .view_apt_account_balance(
                 AccountAddress::from_str(&fund_request.address.unwrap()).unwrap(),
             )
@@ -965,7 +965,7 @@ mod test {
             .await?;
 
         // Confirm that the account was only given 100 OCTA (maximum_amount), not 1000.
-        let response = aptos_node_api_client
+        let response = libra2_node_api_client
             .view_apt_account_balance(
                 AccountAddress::from_str(&fund_request.address.unwrap()).unwrap(),
             )

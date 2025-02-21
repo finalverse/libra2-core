@@ -20,18 +20,18 @@ pub struct Metadata {
     pub workspace_root: PathBuf,
 }
 
-/// at _forge_ compile time, decide what kind of build we will use for `aptos-node`
+/// at _forge_ compile time, decide what kind of build we will use for `libra2-node`
 pub fn use_release() -> bool {
     option_env!("LOCAL_SWARM_NODE_RELEASE").is_some()
 }
 
-/// at _forge_ compile time, decide to build `aptos-node` only for consensus perf tests
+/// at _forge_ compile time, decide to build `libra2-node` only for consensus perf tests
 pub fn build_consensus_only_node() -> bool {
     option_env!("CONSENSUS_ONLY_PERF_TEST").is_some()
 }
 
-/// at forge _run_ time, compile `aptos-node` without indexer
-pub fn build_aptos_node_without_indexer() -> bool {
+/// at forge _run_ time, compile `libra2-node` without indexer
+pub fn build_libra2_node_without_indexer() -> bool {
     std::env::var("FORGE_BUILD_WITHOUT_INDEXER").is_ok()
 }
 
@@ -47,39 +47,39 @@ pub fn metadata() -> Result<Metadata> {
 }
 
 /// Get the aptos node binary from the current working directory
-pub fn get_aptos_node_binary_from_worktree() -> Result<(String, PathBuf)> {
+pub fn get_libra2_node_binary_from_worktree() -> Result<(String, PathBuf)> {
     let metadata = metadata()?;
     let mut revision = git_rev_parse(&metadata, "HEAD")?;
     if git_is_worktree_dirty()? {
         revision.push_str("-dirty");
     }
 
-    let bin_path = cargo_build_aptos_node(&metadata.workspace_root, &metadata.target_directory)?;
+    let bin_path = cargo_build_libra2_node(&metadata.workspace_root, &metadata.target_directory)?;
 
     Ok((revision, bin_path))
 }
 
-/// This function will attempt to build the aptos-node binary at an arbitrary revision.
+/// This function will attempt to build the libra2-node binary at an arbitrary revision.
 /// Using the `target/forge` as a working directory it will do the following:
-///     1. Look for a binary named `aptos-node--<revision>`, if it already exists return it
+///     1. Look for a binary named `libra2-node--<revision>`, if it already exists return it
 ///     2. If the binary doesn't exist check out the revision to `target/forge/revision` by doing
 ///        `git archive --format=tar <revision> | tar x`
 ///     3. Using the `target/forge/target` directory as a cargo artifact directory, build the
-///        binary and then move it to `target/forge/aptos-node--<revision>`
-pub fn get_aptos_node_binary_at_revision(revision: &str) -> Result<(String, PathBuf)> {
+///        binary and then move it to `target/forge/libra2-node--<revision>`
+pub fn get_libra2_node_binary_at_revision(revision: &str) -> Result<(String, PathBuf)> {
     let metadata = metadata()?;
     let forge_directory = metadata.target_directory.join("forge");
     let revision = git_rev_parse(&metadata, format!("{}^{{commit}}", revision))?;
     let checkout_dir = forge_directory.join(&revision);
     let forge_target_directory = forge_directory.join("target");
-    let aptos_node_bin = forge_directory.join(format!(
-        "aptos-node--{}{}",
+    let libra2_node_bin = forge_directory.join(format!(
+        "libra2-node--{}{}",
         revision,
         env::consts::EXE_SUFFIX
     ));
 
-    if aptos_node_bin.exists() {
-        return Ok((revision, aptos_node_bin));
+    if libra2_node_bin.exists() {
+        return Ok((revision, libra2_node_bin));
     }
 
     fs::create_dir_all(&forge_target_directory)?;
@@ -87,13 +87,13 @@ pub fn get_aptos_node_binary_at_revision(revision: &str) -> Result<(String, Path
     checkout_revision(&metadata, &revision, &checkout_dir)?;
 
     fs::rename(
-        cargo_build_aptos_node(&checkout_dir, &forge_target_directory)?,
-        &aptos_node_bin,
+        cargo_build_libra2_node(&checkout_dir, &forge_target_directory)?,
+        &libra2_node_bin,
     )?;
 
     let _ = fs::remove_dir_all(&checkout_dir);
 
-    Ok((revision, aptos_node_bin))
+    Ok((revision, libra2_node_bin))
 }
 
 fn git_rev_parse<R: AsRef<str>>(metadata: &Metadata, rev: R) -> Result<String> {
@@ -165,7 +165,7 @@ pub fn git_merge_base<R: AsRef<str>>(rev: R) -> Result<String> {
 }
 
 pub fn cargo_build_common_args() -> Vec<&'static str> {
-    let mut args = if build_aptos_node_without_indexer() {
+    let mut args = if build_libra2_node_without_indexer() {
         vec!["build", "--features=failpoints,smoke-test"]
     } else {
         vec!["build", "--features=failpoints,indexer,smoke-test"]
@@ -179,7 +179,7 @@ pub fn cargo_build_common_args() -> Vec<&'static str> {
     args
 }
 
-fn cargo_build_aptos_node<D, T>(directory: D, target_directory: T) -> Result<PathBuf>
+fn cargo_build_libra2_node<D, T>(directory: D, target_directory: T) -> Result<PathBuf>
 where
     D: AsRef<Path>,
     T: AsRef<Path>,
@@ -188,26 +188,26 @@ where
     let directory = directory.as_ref();
 
     let mut args = cargo_build_common_args();
-    // build the aptos-node package directly to avoid feature unification issues
-    args.push("--package=aptos-node");
+    // build the libra2-node package directly to avoid feature unification issues
+    args.push("--package=libra2-node");
     info!("Compiling with cargo args: {:?}", args);
     let output = Command::new("cargo")
         .current_dir(directory)
         .env("CARGO_TARGET_DIR", target_directory)
         .args(&args)
         .output()
-        .context("Failed to build aptos-node")?;
+        .context("Failed to build libra2-node")?;
 
     if output.status.success() {
         let bin_path = target_directory.join(format!(
             "{}/{}{}",
             if use_release() { "release" } else { "debug" },
-            "aptos-node",
+            "libra2-node",
             env::consts::EXE_SUFFIX
         ));
         if !bin_path.exists() {
             bail!(
-                "Can't find binary aptos-node at expected path {:?}",
+                "Can't find binary libra2-node at expected path {:?}",
                 bin_path
             );
         }
@@ -217,7 +217,7 @@ where
         io::stderr().write_all(&output.stderr)?;
 
         bail!(
-            "Failed to build aptos-node: 'cd {} && CARGO_TARGET_DIR={} cargo build --bin=aptos-node",
+            "Failed to build libra2-node: 'cd {} && CARGO_TARGET_DIR={} cargo build --bin=libra2-node",
             directory.display(),
             target_directory.display(),
         );

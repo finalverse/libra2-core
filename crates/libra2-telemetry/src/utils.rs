@@ -8,7 +8,7 @@ use prometheus::proto::MetricFamily;
 use std::collections::BTreeMap;
 
 /// Build information event name
-const APTOS_NODE_BUILD_INFORMATION: &str = "APTOS_NODE_BUILD_INFORMATION";
+const LIBRA2_NODE_BUILD_INFORMATION: &str = "LIBRA2_NODE_BUILD_INFORMATION";
 /// Build information keys
 pub const BUILD_CHAIN_ID: &str = "build_chain_id";
 
@@ -18,7 +18,7 @@ pub(crate) async fn create_build_info_telemetry_event(
 ) -> TelemetryEvent {
     // Create and return a new telemetry event
     TelemetryEvent {
-        name: APTOS_NODE_BUILD_INFORMATION.into(),
+        name: LIBRA2_NODE_BUILD_INFORMATION.into(),
         params: build_info,
     }
 }

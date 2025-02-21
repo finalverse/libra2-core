@@ -42,8 +42,8 @@ Install pre-requisites if needed:
   terraform {
     required_version = "~> 1.2.0"
     backend "s3" {
-      bucket = "terraform.aptos-node"
-      key    = "state/aptos-node"
+      bucket = "terraform.libra2-node"
+      key    = "state/libra2-node"
       region = var.region
     }
   }
@@ -52,9 +52,9 @@ Install pre-requisites if needed:
     region = var.region
   }
 
-  module "aptos-node" {
+  module "libra2-node" {
     # download Terraform module from aptos-labs/aptos-core repo
-    source        = "github.com/aptos-labs/aptos-core.git//terraform/aptos-node/aws?ref=main"
+    source        = "github.com/aptos-labs/aptos-core.git//terraform/libra2-node/aws?ref=main"
     region        = var.region  # Specify the region
     # zone_id     = "<Route53 zone id>"  # zone id for Route53 if you want to use DNS
     era           = 1              # bump era number to wipe the chain
@@ -64,7 +64,7 @@ Install pre-requisites if needed:
   }
   ```
 
-For the full customization options, see the variables file [here](https://github.com/aptos-labs/aptos-core/blob/main/terraform/aptos-node/aws/variables.tf), and the [helm values](https://github.com/aptos-labs/aptos-core/blob/main/terraform/helm/aptos-node/values.yaml).
+For the full customization options, see the variables file [here](https://github.com/aptos-labs/aptos-core/blob/main/terraform/libra2-node/aws/variables.tf), and the [helm values](https://github.com/aptos-labs/aptos-core/blob/main/terraform/helm/libra2-node/values.yaml).
 
 5. Initialize Terraform in the same directory of your `main.tf` file
   ```
@@ -94,9 +94,9 @@ This will download all the terraform dependencies for you, in the `.terraform` f
 9. Get your node IP info:
 
     ```
-    $ export VALIDATOR_ADDRESS="$(kubectl get svc ${WORKSPACE}-aptos-node-validator-lb --output jsonpath='{.status.loadBalancer.ingress[0].hostname}')"
+    $ export VALIDATOR_ADDRESS="$(kubectl get svc ${WORKSPACE}-libra2-node-validator-lb --output jsonpath='{.status.loadBalancer.ingress[0].hostname}')"
 
-    $ export FULLNODE_ADDRESS="$(kubectl get svc ${WORKSPACE}-aptos-node-fullnode-lb --output jsonpath='{.status.loadBalancer.ingress[0].hostname}')"
+    $ export FULLNODE_ADDRESS="$(kubectl get svc ${WORKSPACE}-libra2-node-fullnode-lb --output jsonpath='{.status.loadBalancer.ingress[0].hostname}')"
     ```
 
 10. Generate key pairs (node owner key, consensus key and networking key) in your working directory.
@@ -178,7 +178,7 @@ This will download all the terraform dependencies for you, in the `.terraform` f
 16. Insert `genesis.blob`, `waypoint.txt` and the identity files as secret into k8s cluster.
 
     ```
-    $ kubectl create secret generic ${WORKSPACE}-aptos-node-genesis-e1 \
+    $ kubectl create secret generic ${WORKSPACE}-libra2-node-genesis-e1 \
         --from-file=genesis.blob=genesis.blob \
         --from-file=waypoint.txt=waypoint.txt \
         --from-file=validator-identity.yaml=validator-identity.yaml \
@@ -193,7 +193,7 @@ This will download all the terraform dependencies for you, in the `.terraform` f
     $ kubectl get pods
 
     NAME                                        READY   STATUS    RESTARTS   AGE
-    node1-aptos-node-fullnode-e9-0              1/1     Running   0          4h31m
-    node1-aptos-node-haproxy-7cc4c5f74c-l4l6n   1/1     Running   0          4h40m
-    node1-aptos-node-validator-0                1/1     Running   0          4h30m
+    node1-libra2-node-fullnode-e9-0              1/1     Running   0          4h31m
+    node1-libra2-node-haproxy-7cc4c5f74c-l4l6n   1/1     Running   0          4h40m
+    node1-libra2-node-validator-0                1/1     Running   0          4h30m
     ```

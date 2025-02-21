@@ -40,7 +40,7 @@ const TELEMETRY_TOKEN_KEY: &str = "TELEMETRY_TOKEN";
 // The default for unknown metric values
 const UNKNOWN_METRIC_VALUE: &str = "UNKNOWN";
 
-const APTOS_NODE_CONFIG_EVENT_NAME: &str = "APTOS_NODE_CONFIG";
+const LIBRA2_NODE_CONFIG_EVENT_NAME: &str = "LIBRA2_NODE_CONFIG";
 
 /// The random token presented by the node to connect all
 /// telemetry events.
@@ -373,7 +373,7 @@ async fn send_node_config(
         .unwrap_or_default();
 
     let telemetry_event = TelemetryEvent {
-        name: APTOS_NODE_CONFIG_EVENT_NAME.into(),
+        name: LIBRA2_NODE_CONFIG_EVENT_NAME.into(),
         params: node_config,
     };
     send_telemetry_event_with_ip(peer_id, chain_id, telemetry_sender, telemetry_event).await;

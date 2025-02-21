@@ -18,7 +18,7 @@ locals {
 data "kubernetes_service" "validator-lb" {
   count = var.zone_name != "" && var.create_dns_records ? 1 : 0
   metadata {
-    name = "${local.workspace_name}-aptos-node-0-validator-lb"
+    name = "${local.workspace_name}-libra2-node-0-validator-lb"
   }
   depends_on = [time_sleep.lb_creation]
 }
@@ -26,7 +26,7 @@ data "kubernetes_service" "validator-lb" {
 data "kubernetes_service" "fullnode-lb" {
   count = var.zone_name != "" && var.create_dns_records ? 1 : 0
   metadata {
-    name = "${local.workspace_name}-aptos-node-0-fullnode-lb"
+    name = "${local.workspace_name}-libra2-node-0-fullnode-lb"
   }
   depends_on = [time_sleep.lb_creation]
 }

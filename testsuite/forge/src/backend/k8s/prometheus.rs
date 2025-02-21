@@ -298,7 +298,7 @@ mod tests {
 
         // try a simple instant query
         // if it fails to connect to a prometheus instance, skip the test
-        let query = r#"container_cpu_usage_seconds_total{chain_name=~".*forge.*", pod="aptos-node-0-validator-0", container="validator"}"#;
+        let query = r#"container_cpu_usage_seconds_total{chain_name=~".*forge.*", pod="libra2-node-0-validator-0", container="validator"}"#;
         let response = client.query(query, None, None).await;
         match response {
             Ok(pres) => {

@@ -35,7 +35,7 @@ Aptos blockchain automated genesis ceremony for testnets
 | enabled | bool | `true` | Used to toggle on and off the automatic genesis job |
 | genesis.cluster_name | string | `"unknown"` |  |
 | genesis.domain | string | `nil` | If set, the base domain name of the fullnode and validator endpoints |
-| genesis.fullnode.enable_onchain_discovery | bool | `true` | Use External DNS as created by aptos-node helm chart for fullnode host in genesis |
+| genesis.fullnode.enable_onchain_discovery | bool | `true` | Use External DNS as created by libra2-node helm chart for fullnode host in genesis |
 | genesis.fullnode.internal_host_suffix | string | `"fullnode-lb"` | If `enable_onchain_discovery` is false, use this host suffix for internal kubernetes service name |
 | genesis.genesis_blob_upload_url | string | `"https://us-west1-aptos-forge-gcp-0.cloudfunctions.net/signed-url"` |  |
 | genesis.image.pullPolicy | string | `"IfNotPresent"` | Image pull policy to use for tools image |
@@ -44,8 +44,8 @@ Aptos blockchain automated genesis ceremony for testnets
 | genesis.moveModulesDir | string | `"/aptos-framework/move/modules"` | The local path for move modules in the docker image. Defaults to the aptos-framework in the aptoslabs/tools docker image |
 | genesis.multicluster | object | `{"domain_suffixes":"","enabled":false}` | Options for multicluster mode. This is *experimental only* |
 | genesis.numValidators | int | `1` | Number of validators to include in genesis |
-| genesis.username_prefix | string | `"aptos-node"` | If `enable_onchain_discovery` is false, use this kubernetes service name prefix. It should be the fullname for the aptos-node helm release |
-| genesis.validator.enable_onchain_discovery | bool | `false` | Use External DNS as created by aptos-node helm chart for validator host in genesis |
+| genesis.username_prefix | string | `"libra2-node"` | If `enable_onchain_discovery` is false, use this kubernetes service name prefix. It should be the fullname for the libra2-node helm release |
+| genesis.validator.enable_onchain_discovery | bool | `false` | Use External DNS as created by libra2-node helm chart for validator host in genesis |
 | genesis.validator.internal_host_suffix | string | `"validator-lb"` | If `enable_onchain_discovery` is false, use this host suffix for internal kubernetes service name |
 | genesis.validator.key_seed | string | `nil` | Random seed to generate validator keys in order to make the key generation deterministic |
 | genesis.validator.larger_stake_amount | string | `"1000000000000000"` | Stake amount for nodes we are giving larger state to. Defaults to 10M APTOS coins with 8 decimals |

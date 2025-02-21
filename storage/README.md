@@ -282,7 +282,7 @@ one can play with a config created by herself (probably the same one used in the
 backup process described in the previous section.).
 
 ```bash
-aptos-node-bootstrap-db-from-backup 0.3.5
+libra2-node-bootstrap-db-from-backup 0.3.5
 Tool to bootstrap DB from backup
 
 USAGE:

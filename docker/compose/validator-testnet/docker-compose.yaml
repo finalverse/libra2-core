@@ -37,7 +37,7 @@ services:
       - type: bind
         source: ./validator_node_template.yaml
         target: /opt/aptos/config.yaml
-    command: ["/usr/local/bin/aptos-node", "--test", "--test-dir", "/opt/aptos/var/", "--test-config-override", "/opt/aptos/config.yaml"]
+    command: ["/usr/local/bin/libra2-node", "--test", "--test-dir", "/opt/aptos/var/", "--test-config-override", "/opt/aptos/config.yaml"]
     ports:
       - "8080:8080" # REST API
       - "50051:50051" # Indexer GRPC, if enabled

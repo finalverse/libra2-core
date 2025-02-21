@@ -44,7 +44,7 @@ pub struct HealthCheckSuccess {
 impl HealthCheckSuccess {
     pub fn new() -> Self {
         Self {
-            message: "aptos-node:ok".to_string(),
+            message: "libra2-node:ok".to_string(),
         }
     }
 }

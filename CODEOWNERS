@@ -30,7 +30,7 @@
 /aptos-move/vm-genesis/ @davidiw @movekevin
 
 # Owner for aptos node (to prevent things from becoming out of hand :D)
-/aptos-node/ @joshlind
+/libra2-node/ @joshlind
 
 # Owner for the node configs (to prevent things from becoming out of hand :D)
 /config/ @joshlind @gregnazario

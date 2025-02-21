@@ -9,7 +9,7 @@ use prometheus::core::Collector;
 use std::collections::BTreeMap;
 
 /// Core metrics event name
-const APTOS_NODE_CORE_METRICS: &str = "APTOS_NODE_CORE_METRICS";
+const LIBRA2_NODE_CORE_METRICS: &str = "LIBRA2_NODE_CORE_METRICS";
 
 /// Core metric keys
 const CONSENSUS_LAST_COMMITTED_ROUND: &str = "consensus_last_committed_round";
@@ -37,7 +37,7 @@ pub(crate) async fn create_core_metric_telemetry_event(node_config: &NodeConfig)
 
     // Create and return a new telemetry event
     TelemetryEvent {
-        name: APTOS_NODE_CORE_METRICS.into(),
+        name: LIBRA2_NODE_CORE_METRICS.into(),
         params: core_metrics,
     }
 }

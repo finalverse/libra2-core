@@ -128,7 +128,7 @@ spec:
           curl -o /opt/aptos/genesis/genesis.blob {{ (get .Values.aptos_chains .Values.chain.name).genesis_blob_url }}
           {{- end }}
           # Start the node
-          exec /usr/local/bin/aptos-node -f /opt/aptos/etc/fullnode.yaml
+          exec /usr/local/bin/libra2-node -f /opt/aptos/etc/fullnode.yaml
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
         env:

@@ -945,7 +945,7 @@ async def create_node_stateful_sets(
         name=util.type_specific_name(vfn_validator_node_pair_name, type),
         image=image,
         command=[
-            "/usr/local/bin/aptos-node",
+            "/usr/local/bin/libra2-node",
             "-f",
             f"/opt/aptos/etc/{type.value}.yaml",
         ],

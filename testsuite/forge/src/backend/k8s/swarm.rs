@@ -129,7 +129,7 @@ impl K8sSwarm {
         };
 
         // test hitting the configured prometheus endpoint
-        let query = "container_memory_usage_bytes{pod=\"aptos-node-0-validator-0\"}";
+        let query = "container_memory_usage_bytes{pod=\"libra2-node-0-validator-0\"}";
         let r = swarm.query_metrics(query, None, None).await?;
         let ivs = r.as_instant().unwrap();
         for iv in ivs {
@@ -504,7 +504,7 @@ fn parse_service_name_from_stateful_set_name(
     stateful_set_name: &str,
     enable_haproxy: bool,
 ) -> String {
-    let re = Regex::new(r"(aptos-node-\d+)-(validator|fullnode)").unwrap();
+    let re = Regex::new(r"(libra2-node-\d+)-(validator|fullnode)").unwrap();
     let cap = re.captures(stateful_set_name).unwrap();
     let service_base_name = format!("{}-{}", &cap[1], &cap[2]);
     if enable_haproxy {
@@ -597,7 +597,7 @@ pub(crate) async fn get_validators(
                     ),
                     (
                         "app.kubernetes.io/part-of".to_string(),
-                        "aptos-node".to_string(),
+                        "libra2-node".to_string(),
                     ),
                 ]),
             )
@@ -627,7 +627,7 @@ pub(crate) async fn get_validator_fullnodes(
                     ("app.kubernetes.io/name".to_string(), "fullnode".to_string()),
                     (
                         "app.kubernetes.io/part-of".to_string(),
-                        "aptos-node".to_string(),
+                        "libra2-node".to_string(),
                     ),
                 ]),
             )
@@ -650,11 +650,11 @@ fn parse_node_type(s: &str) -> String {
 }
 
 // gets the node index based on its associated statefulset name
-// e.g. aptos-node-<idx>-validator
-// e.g. aptos-node-<idx>-fullnode-e<era>
+// e.g. libra2-node-<idx>-validator
+// e.g. libra2-node-<idx>-fullnode-e<era>
 fn parse_node_index(s: &str) -> Result<usize> {
     // first get rid of the prefixes
-    let v = s.split("aptos-node-").collect::<Vec<&str>>();
+    let v = s.split("libra2-node-").collect::<Vec<&str>>();
     if v.len() < 2 {
         return Err(format_err!("Failed to parse {:?} node id format", s));
     }
@@ -847,23 +847,23 @@ mod tests {
 
     #[test]
     fn test_parse_service_name_from_stateful_set_name() {
-        let validator_sts_name = "aptos-node-19-validator";
+        let validator_sts_name = "libra2-node-19-validator";
         let validator_service_name =
             parse_service_name_from_stateful_set_name(validator_sts_name, false);
-        assert_eq!("aptos-node-19-validator", &validator_service_name);
+        assert_eq!("libra2-node-19-validator", &validator_service_name);
         // with haproxy
         let validator_service_name =
             parse_service_name_from_stateful_set_name(validator_sts_name, true);
-        assert_eq!("aptos-node-19-validator-lb", &validator_service_name);
+        assert_eq!("libra2-node-19-validator-lb", &validator_service_name);
 
-        let fullnode_sts_name = "aptos-node-0-fullnode-eforge195";
+        let fullnode_sts_name = "libra2-node-0-fullnode-eforge195";
         let fullnode_service_name =
             parse_service_name_from_stateful_set_name(fullnode_sts_name, false);
-        assert_eq!("aptos-node-0-fullnode", &fullnode_service_name);
+        assert_eq!("libra2-node-0-fullnode", &fullnode_service_name);
         // with haproxy
         let fullnode_service_name =
             parse_service_name_from_stateful_set_name(fullnode_sts_name, true);
-        assert_eq!("aptos-node-0-fullnode-lb", &fullnode_service_name);
+        assert_eq!("libra2-node-0-fullnode-lb", &fullnode_service_name);
     }
 
     async fn create_chaos_experiments(

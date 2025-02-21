@@ -5,7 +5,7 @@ use super::{health_checker::HealthChecker, traits::ServiceManager, RunLocalnet};
 use crate::node::local_testnet::utils::socket_addr_to_url;
 use anyhow::{anyhow, Context, Result};
 use libra2_config::config::{NodeConfig, DEFAULT_GRPC_STREAM_PORT};
-use aptos_node::{load_node_config, start_test_environment_node};
+use libra2_node::{load_node_config, start_test_environment_node};
 use async_trait::async_trait;
 use clap::Parser;
 use maplit::hashset;
@@ -46,7 +46,7 @@ pub struct NodeArgs {
     /// Random seed for key generation in test mode
     ///
     /// This allows you to have deterministic keys for testing
-    #[clap(long, value_parser = aptos_node::load_seed)]
+    #[clap(long, value_parser = libra2_node::load_seed)]
     pub seed: Option<[u8; 32]>,
 
     /// Do not run a transaction stream service alongside the node.

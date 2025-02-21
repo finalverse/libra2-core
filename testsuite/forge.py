@@ -128,7 +128,7 @@ def envoption(name: str, default: Optional[Any] = None) -> Any:
 GRAFANA_BASE_URL = "https://aptoslabs.grafana.net/d/overview/overview?orgId=1&refresh=10s&var-Datasource=VictoriaMetrics%20Global%20%28Non-mainnet%29&var-BigQuery=Google%20BigQuery"
 
 # helm chart default override values
-HELM_CHARTS = ["aptos-node", "aptos-genesis"]
+HELM_CHARTS = ["libra2-node", "aptos-genesis"]
 
 
 class ForgeState(Enum):

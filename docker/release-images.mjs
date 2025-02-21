@@ -33,10 +33,10 @@
 //
 // You can also run unittests by running docker/__tests__/release-images.test.js
 
-// When we release aptos-node, we also want to release related images for tooling, testing, etc. Similarly, other images have other related images
+// When we release libra2-node, we also want to release related images for tooling, testing, etc. Similarly, other images have other related images
 // that we can release together, ie in a release group.
 const IMAGES_TO_RELEASE_BY_RELEASE_GROUP = {
-  "aptos-node": [
+  "libra2-node": [
     "validator",
     "validator-testing",
     "faucet",
@@ -276,7 +276,7 @@ function joinTagSegments(...segments) {
 }
 
 // The image tag prefix is used to determine the release group. Examples:
-// * tag a release as "aptos-node-vX.Y.Z"
+// * tag a release as "libra2-node-vX.Y.Z"
 // * tag a release as "aptos-indexer-grpc-vX.Y.Z"
 export function getImageReleaseGroupByImageTagPrefix(prefix) {
   // iterate over the keys in IMAGES_TO_RELEASE_BY_RELEASE_GROUP
@@ -286,14 +286,14 @@ export function getImageReleaseGroupByImageTagPrefix(prefix) {
       return imageReleaseGroup;
     }
   }
-  // if there's no match, then release aptos-node by default
-  return "aptos-node";
+  // if there's no match, then release libra2-node by default
+  return "libra2-node";
 }
 
-const APTOS_RELEASE_REGEX = /aptos-node-v(\d+\.\d+\.\d+)/;
+const APTOS_RELEASE_REGEX = /libra2-node-v(\d+\.\d+\.\d+)/;
 
 export function assertTagMatchesSourceVersion(imageTag) {
-  const config = toml.parse(fs.readFileSync("aptos-node/Cargo.toml"));
+  const config = toml.parse(fs.readFileSync("libra2-node/Cargo.toml"));
   const configVersion = config.package.version;
   if (!doesTagMatchConfig(imageTag, configVersion)) {
     reportError(`image tag does not match cargo version: ${imageTag} !== ${configVersion}`, {throwOnFailure: true});

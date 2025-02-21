@@ -22,7 +22,7 @@ RUN ln -sf /usr/bin/perf_* /usr/bin/perf
 RUN addgroup --system --gid 6180 aptos && adduser --system --ingroup aptos --no-create-home --uid 6180 aptos
 
 RUN mkdir -p /opt/aptos/etc
-COPY --link --from=node-builder /aptos/dist/aptos-node /usr/local/bin/
+COPY --link --from=node-builder /aptos/dist/libra2-node /usr/local/bin/
 COPY --link --from=tools-builder /aptos/dist/libra2-debugger /usr/local/bin/
 
 # Admission control

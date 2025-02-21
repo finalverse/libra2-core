@@ -14,7 +14,7 @@ use url::Url;
 // :!:>section_1c
 static NODE_URL: Lazy<Url> = Lazy::new(|| {
     Url::from_str(
-        std::env::var("APTOS_NODE_URL")
+        std::env::var("LIBRA2_NODE_URL")
             .as_ref()
             .map(|s| s.as_str())
             .unwrap_or("https://fullnode.devnet.aptoslabs.com"),

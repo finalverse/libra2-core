@@ -21,7 +21,7 @@ RUN --mount=type=cache,target=/aptos/target --mount=type=cache,target=$CARGO_HOM
   && mkdir dist \
   && cp target/release/libra2-rosetta dist/libra2-rosetta
 
-### Create image with aptos-node and libra2-rosetta ###
+### Create image with libra2-node and libra2-rosetta ###
 FROM ubuntu-base AS rosetta
 
 RUN apt-get update && apt-get install -y libssl-dev ca-certificates && apt-get clean && rm -r /var/lib/apt/lists/*

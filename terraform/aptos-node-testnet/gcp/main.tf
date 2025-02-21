@@ -15,7 +15,7 @@ provider "helm" {
 }
 
 module "validator" {
-  source = "../../aptos-node/gcp"
+  source = "../../libra2-node/gcp"
 
   manage_via_tf = var.manage_via_tf
 
@@ -41,7 +41,7 @@ module "validator" {
   chain_id       = var.chain_id
   chain_name     = var.chain_name
   image_tag      = var.image_tag
-  validator_name = "aptos-node"
+  validator_name = "libra2-node"
 
   # K8s config
   k8s_api_sources                     = var.k8s_api_sources
@@ -60,7 +60,7 @@ module "validator" {
   # Testnet config
   workspace_name_override = var.workspace_name_override
   # if forge enabled, standardize the helm release name for ease of operations
-  helm_release_name_override = var.enable_forge ? "aptos-node" : ""
+  helm_release_name_override = var.enable_forge ? "libra2-node" : ""
   helm_values                = local.merged_helm_values
   num_validators             = var.num_validators
   num_fullnode_groups        = var.num_fullnode_groups
@@ -90,7 +90,7 @@ locals {
   # Forge assumes the chain_id is 4
   chain_id = var.enable_forge ? 4 : var.chain_id
 
-  aptos_node_helm_prefix = var.enable_forge ? "aptos-node" : "${module.validator.helm_release_name}-aptos-node"
+  libra2_node_helm_prefix = var.enable_forge ? "libra2-node" : "${module.validator.helm_release_name}-libra2-node"
 
   default_helm_values = {
     cluster_name            = module.validator.gke_cluster_name
@@ -99,7 +99,7 @@ locals {
 
   merged_helm_values = merge(
     local.default_helm_values,
-    var.aptos_node_helm_values
+    var.libra2_node_helm_values
   )
 }
 resource "helm_release" "genesis" {
@@ -119,7 +119,7 @@ resource "helm_release" "genesis" {
       imageTag = var.image_tag
       genesis = {
         numValidators   = var.num_validators
-        username_prefix = local.aptos_node_helm_prefix
+        username_prefix = local.libra2_node_helm_prefix
         domain          = local.domain
         validator = {
           enable_onchain_discovery = false

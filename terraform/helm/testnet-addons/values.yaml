@@ -5,8 +5,8 @@ cloud: EKS
 imageTag: devnet
 
 genesis:
-  # -- Validator username prefix, used to get genesis secrets. This should be the fullname for the aptos-node helm release
-  username_prefix: aptos-node
+  # -- Validator username prefix, used to get genesis secrets. This should be the fullname for the libra2-node helm release
+  username_prefix: libra2-node
   # -- Number of validators deployed in this testnet
   numValidators:
   # -- Aptos Chain ID

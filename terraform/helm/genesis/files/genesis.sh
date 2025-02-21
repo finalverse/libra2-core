@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #
-# Runs an automated genesis ceremony for validators spun up by the aptos-node helm chart
+# Runs an automated genesis ceremony for validators spun up by the libra2-node helm chart
 #
 # Expect the following environment variables to be set before execution:
 # NUM_VALIDATORS
 # ERA
 # WORKSPACE: default /tmp
-# USERNAME_PREFIX: default aptos-node
+# USERNAME_PREFIX: default libra2-node
 # VALIDATOR_INTERNAL_HOST_SUFFIX: default validator-lb
 # FULLNODE_INTERNAL_HOST_SUFFIX: default fullnode-lb
 #
@@ -15,7 +15,7 @@
 set -x
 
 WORKSPACE=${WORKSPACE:-/tmp}
-USERNAME_PREFIX=${USERNAME_PREFIX:-aptos-node}
+USERNAME_PREFIX=${USERNAME_PREFIX:-libra2-node}
 VALIDATOR_INTERNAL_HOST_SUFFIX=${VALIDATOR_INTERNAL_HOST_SUFFIX:-validator-lb}
 FULLNODE_INTERNAL_HOST_SUFFIX=${FULLNODE_INTERNAL_HOST_SUFFIX:-fullnode-lb}
 MOVE_FRAMEWORK_DIR=${MOVE_FRAMEWORK_DIR:-"/aptos-framework/move"}

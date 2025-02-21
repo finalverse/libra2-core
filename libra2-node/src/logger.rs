@@ -73,7 +73,7 @@ fn log_config_and_build_information(node_config: &NodeConfig) {
     }
 
     // Log the feature information. Note: this should be kept up-to-date
-    // with the features defined in the aptos-node Cargo.toml file.
+    // with the features defined in the libra2-node Cargo.toml file.
     info!("Feature information:");
     log_feature_info!(
         "assert-private-keys-not-cloneable",

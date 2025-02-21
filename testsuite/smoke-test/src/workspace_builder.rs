@@ -14,14 +14,14 @@ use std::{env, path::PathBuf, process::Command};
 const WORKSPACE_BUILD_ERROR_MSG: &str = r#"
     Unable to build all workspace binaries. Cannot continue running tests.
 
-    Try running 'cargo build --release --all --bins --exclude aptos-node' yourself.
+    Try running 'cargo build --release --all --bins --exclude libra2-node' yourself.
 "#;
 
 // Global flag indicating if all binaries in the workspace have been built.
 static WORKSPACE_BUILT: Lazy<bool> = Lazy::new(|| {
     info!("Building project binaries");
     let mut args = cargo_build_common_args();
-    args.append(&mut vec!["--all", "--bins", "--exclude", "aptos-node"]);
+    args.append(&mut vec!["--all", "--bins", "--exclude", "libra2-node"]);
 
     let cargo_build = Command::new("cargo")
         .current_dir(workspace_root())
@@ -65,9 +65,9 @@ fn build_dir() -> PathBuf {
 // Path to a specified binary
 pub fn get_bin<S: AsRef<str>>(bin_name: S) -> PathBuf {
     assert_ne!(
-        "aptos-node",
+        "libra2-node",
         bin_name.as_ref(),
-        "aptos-node must be built and used via local swarm cargo_build_aptos_node"
+        "libra2-node must be built and used via local swarm cargo_build_libra2_node"
     );
 
     // We have to check to see if the workspace is built first to ensure that the binaries we're

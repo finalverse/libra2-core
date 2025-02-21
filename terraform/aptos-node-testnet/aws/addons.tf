@@ -109,7 +109,7 @@ data "aws_iam_policy_document" "cluster-autoscaler" {
 }
 
 resource "aws_iam_role" "cluster-autoscaler" {
-  name                 = "aptos-node-testnet-${local.workspace_name}-cluster-autoscaler"
+  name                 = "libra2-node-testnet-${local.workspace_name}-cluster-autoscaler"
   path                 = var.iam_path
   permissions_boundary = var.permissions_boundary_policy
   assume_role_policy   = data.aws_iam_policy_document.cluster-autoscaler-assume-role.json
@@ -239,7 +239,7 @@ resource "helm_release" "testnet-addons" {
       imageTag = var.image_tag
       genesis = {
         era             = var.era
-        username_prefix = local.aptos_node_helm_prefix
+        username_prefix = local.libra2_node_helm_prefix
         chain_id        = var.chain_id
         numValidators   = var.num_validators
       }

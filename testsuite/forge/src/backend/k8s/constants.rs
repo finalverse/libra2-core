@@ -17,9 +17,9 @@ pub const HELM_BIN: &str = "helm";
 pub const KUBECTL_BIN: &str = "kubectl";
 
 // helm release names and helm chart paths
-pub const APTOS_NODE_HELM_RELEASE_NAME: &str = "aptos-node";
+pub const LIBRA2_NODE_HELM_RELEASE_NAME: &str = "libra2-node";
 pub const GENESIS_HELM_RELEASE_NAME: &str = "genesis";
-pub const APTOS_NODE_HELM_CHART_PATH: &str = "terraform/helm/aptos-node";
+pub const LIBRA2_NODE_HELM_CHART_PATH: &str = "terraform/helm/libra2-node";
 pub const GENESIS_HELM_CHART_PATH: &str = "terraform/helm/genesis";
 
 // cleanup namespaces after 30 minutes unless "keep = true" or they have a cleanup time set
@@ -45,9 +45,9 @@ pub const FULLNODE_HAPROXY_SERVICE_SUFFIX: &str = "fullnode-lb";
 pub const HAPROXY_SERVICE_SUFFIX: &str = "lb";
 
 // kubernetes resource names for validator 0, which may be used for templating
-pub const VALIDATOR_0_STATEFUL_SET_NAME: &str = "aptos-node-0-validator";
-pub const VALIDATOR_0_GENESIS_SECRET_PREFIX: &str = "aptos-node-0-genesis";
-pub const VALIDATOR_0_DATA_PERSISTENT_VOLUME_CLAIM_PREFIX: &str = "aptos-node-0-validator";
+pub const VALIDATOR_0_STATEFUL_SET_NAME: &str = "libra2-node-0-validator";
+pub const VALIDATOR_0_GENESIS_SECRET_PREFIX: &str = "libra2-node-0-genesis";
+pub const VALIDATOR_0_DATA_PERSISTENT_VOLUME_CLAIM_PREFIX: &str = "libra2-node-0-validator";
 
 // metadata about the cluster
 pub const DEFAULT_TEST_SUITE_NAME: &str = "unknown-testsuite";

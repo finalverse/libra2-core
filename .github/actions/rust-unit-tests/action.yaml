@@ -15,7 +15,7 @@ runs:
 
     # Check the VM features
     - name: Check VM features
-      run: cargo test --profile ci --locked --features check-vm-features -p aptos-node
+      run: cargo test --profile ci --locked --features check-vm-features -p libra2-node
       shell: bash
 
     # Run the rust doc tests

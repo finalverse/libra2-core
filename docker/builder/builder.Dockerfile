@@ -50,7 +50,7 @@ RUN --mount=type=secret,id=GIT_CREDENTIALS,target=/root/.git_credentials \
 
 COPY --link . /aptos/
 
-FROM builder-base as aptos-node-builder
+FROM builder-base as libra2-node-builder
 
 RUN --mount=type=secret,id=GIT_CREDENTIALS,target=/root/.git-credentials \
     --mount=type=cache,target=/usr/local/cargo/git,id=node-builder-cargo-git-cache \

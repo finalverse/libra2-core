@@ -93,10 +93,10 @@ transforms:
     inputs:
       - normalized_logs
     condition: |
-      aptos_node_index = to_int(parse_regex(.k8s.pod_name, r'^aptos-node-(?P<node_index>\d+)-.*').node_index ?? 0) ?? 0
+      libra2_node_index = to_int(parse_regex(.k8s.pod_name, r'^libra2-node-(?P<node_index>\d+)-.*').node_index ?? 0) ?? 0
 
       is_forge_log = contains(to_string!(.k8s.cluster), "forge") && exists(.k8s.labels."forge-namespace")
-      is_low_index_forge_node = aptos_node_index < 5
+      is_low_index_forge_node = libra2_node_index < 5
       is_error_log = (.level == "error")
 
       log_level_values = {

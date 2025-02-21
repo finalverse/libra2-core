@@ -9,7 +9,7 @@ use std::collections::BTreeMap;
 use sysinfo::{CpuExt, DiskExt, System, SystemExt};
 
 /// System information event name
-const APTOS_NODE_SYSTEM_INFORMATION: &str = "APTOS_NODE_SYSTEM_INFORMATION";
+const LIBRA2_NODE_SYSTEM_INFORMATION: &str = "LIBRA2_NODE_SYSTEM_INFORMATION";
 
 /// System information keys
 const CPU_BRAND: &str = "cpu_brand";
@@ -42,7 +42,7 @@ pub(crate) async fn create_system_info_telemetry_event() -> TelemetryEvent {
 
     // Create and return a new telemetry event
     TelemetryEvent {
-        name: APTOS_NODE_SYSTEM_INFORMATION.into(),
+        name: LIBRA2_NODE_SYSTEM_INFORMATION.into(),
         params: system_information,
     }
 }

@@ -2,7 +2,7 @@ apiVersion: v2
 name: testnet-addons
 version: "0.1"
 appVersion: 0.1.0
-description: Additional components for aptos-nodes testnet
+description: Additional components for libra2-nodes testnet
 home: https://aptoslabs.com/
 sources:
   - https://github.com/aptos-labs/aptos-core

@@ -22,7 +22,7 @@ Follow instructions on how to run a fullnode against an existing network.
       processor_task_count: 10
       processor_batch_size: 100
       output_batch_size: 100```
-* Run fullnode `cargo run -p aptos-node --release -- -f ./fullnode.yaml`
+* Run fullnode `cargo run -p libra2-node --release -- -f ./fullnode.yaml`
 
 ### 2) Test with GCURL
 * Install grpcurl (https://github.com/fullstorydev/grpcurl#installation)

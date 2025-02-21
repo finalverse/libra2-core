@@ -6,7 +6,7 @@ use super::GENESIS_HELM_RELEASE_NAME;
 use crate::{
     get_validator_fullnodes, get_validators, k8s_wait_nodes_strategy, nodes_healthcheck,
     wait_stateful_set, ForgeDeployerManager, ForgeRunnerMode, GenesisConfigFn, K8sApi, K8sNode,
-    NodeConfigFn, ReadWrite, Result, APTOS_NODE_HELM_RELEASE_NAME, DEFAULT_ROOT_KEY,
+    NodeConfigFn, ReadWrite, Result, LIBRA2_NODE_HELM_RELEASE_NAME, DEFAULT_ROOT_KEY,
     DEFAULT_TEST_SUITE_NAME, DEFAULT_USERNAME, FORGE_KEY_SEED,
     FORGE_TESTNET_DEPLOYER_DOCKER_IMAGE_REPO, FULLNODE_HAPROXY_SERVICE_SUFFIX,
     FULLNODE_SERVICE_SUFFIX, HELM_BIN, KUBECTL_BIN, MANAGEMENT_CONFIGMAP_PREFIX,
@@ -196,7 +196,7 @@ async fn wait_node_haproxy(
         Box::pin(async move {
             for i in 0..num_haproxy {
                 let haproxy_deployment_name =
-                    format!("{}-{}-haproxy", APTOS_NODE_HELM_RELEASE_NAME, i);
+                    format!("{}-{}-haproxy", LIBRA2_NODE_HELM_RELEASE_NAME, i);
                 match deployments_api.get_status(&haproxy_deployment_name).await {
                     Ok(s) => {
                         let deployment_name = s.name();
@@ -249,7 +249,7 @@ async fn wait_nodes_stateful_set(
     Ok(())
 }
 
-/// Deletes a collection of resources in k8s as part of aptos-node
+/// Deletes a collection of resources in k8s as part of libra2-node
 async fn delete_k8s_collection<T>(
     api: Api<T>,
     name: &'static str,
@@ -281,7 +281,7 @@ where
 /// Delete existing k8s resources in the namespace. This is essentially helm uninstall but lighter weight
 pub(crate) async fn delete_k8s_resources(client: K8sClient, kube_namespace: &str) -> Result<()> {
     // selector for the helm chart
-    let aptos_node_helm_selector = "app.kubernetes.io/part-of=aptos-node";
+    let libra2_node_helm_selector = "app.kubernetes.io/part-of=libra2-node";
     let testnet_addons_helm_selector = "app.kubernetes.io/part-of=testnet-addons";
     let genesis_helm_selector = "app.kubernetes.io/part-of=aptos-genesis";
 
@@ -289,7 +289,7 @@ pub(crate) async fn delete_k8s_resources(client: K8sClient, kube_namespace: &str
     let forge_pfn_selector = "app.kubernetes.io/part-of=forge-pfn";
 
     // delete all deployments and statefulsets
-    // cross this with all the compute resources created by aptos-node helm chart
+    // cross this with all the compute resources created by libra2-node helm chart
     let deployments: Api<Deployment> = Api::namespaced(client.clone(), kube_namespace);
     let stateful_sets: Api<StatefulSet> = Api::namespaced(client.clone(), kube_namespace);
     let pvcs: Api<PersistentVolumeClaim> = Api::namespaced(client.clone(), kube_namespace);
@@ -298,7 +298,7 @@ pub(crate) async fn delete_k8s_resources(client: K8sClient, kube_namespace: &str
     // let services: Api<Service> = Api::namespaced(client.clone(), kube_namespace);
 
     for selector in &[
-        aptos_node_helm_selector,
+        libra2_node_helm_selector,
         testnet_addons_helm_selector,
         genesis_helm_selector,
         forge_pfn_selector,
@@ -396,7 +396,7 @@ pub async fn uninstall_testnet_resources(kube_namespace: String) -> Result<()> {
     // delete kubernetes resources
     delete_k8s_cluster(kube_namespace.clone()).await?;
     info!(
-        "aptos-node resources for Forge removed in namespace: {}",
+        "libra2-node resources for Forge removed in namespace: {}",
         kube_namespace
     );
 
@@ -412,9 +412,9 @@ pub fn generate_new_era() -> String {
 fn get_node_default_helm_path() -> String {
     match ForgeRunnerMode::try_from_env().unwrap_or(ForgeRunnerMode::K8s) {
         ForgeRunnerMode::Local => {
-            "testsuite/forge/src/backend/k8s/helm-values/aptos-node-default-values.yaml"
+            "testsuite/forge/src/backend/k8s/helm-values/libra2-node-default-values.yaml"
         },
-        ForgeRunnerMode::K8s => "/aptos/terraform/aptos-node-default-values.yaml",
+        ForgeRunnerMode::K8s => "/aptos/terraform/libra2-node-default-values.yaml",
     }
     .to_string()
 }
@@ -556,7 +556,7 @@ fn merge_yaml(a: &mut serde_yaml::Value, b: serde_yaml::Value) {
     }
 }
 
-/// Installs a testnet in a k8s namespace by first running genesis, and the installing the aptos-nodes via helm
+/// Installs a testnet in a k8s namespace by first running genesis, and the installing the libra2-nodes via helm
 /// Returns all validators and fullnodes by collecting the running nodes
 pub async fn install_testnet_resources(
     new_era: String,
@@ -580,14 +580,14 @@ pub async fn install_testnet_resources(
 
     // get existing helm values from the cluster
     // if the release doesn't exist, return an empty mapping, which may work, especially as we move away from this pattern and instead having default values baked into the deployer
-    let mut aptos_node_helm_values =
-        get_default_helm_release_values_from_cluster(APTOS_NODE_HELM_RELEASE_NAME)
+    let mut libra2_node_helm_values =
+        get_default_helm_release_values_from_cluster(LIBRA2_NODE_HELM_RELEASE_NAME)
             .unwrap_or_else(|_| serde_yaml::Value::Mapping(serde_yaml::Mapping::new()));
     let mut genesis_helm_values =
         get_default_helm_release_values_from_cluster(GENESIS_HELM_RELEASE_NAME)
             .unwrap_or_else(|_| serde_yaml::Value::Mapping(serde_yaml::Mapping::new()));
 
-    let aptos_node_helm_values_override = construct_node_helm_values_from_input(
+    let libra2_node_helm_values_override = construct_node_helm_values_from_input(
         node_helm_config_fn,
         fs::read_to_string(get_node_default_helm_path())
             .expect("Not able to read default value file"),
@@ -608,23 +608,23 @@ pub async fn install_testnet_resources(
         enable_haproxy,
     )?;
 
-    info!("aptos_node_helm_values: {:?}", aptos_node_helm_values);
+    info!("libra2_node_helm_values: {:?}", libra2_node_helm_values);
     info!(
-        "aptos_node_helm_values_override: {:?}",
-        aptos_node_helm_values_override
+        "libra2_node_helm_values_override: {:?}",
+        libra2_node_helm_values_override
     );
 
-    merge_yaml(&mut aptos_node_helm_values, aptos_node_helm_values_override);
+    merge_yaml(&mut libra2_node_helm_values, libra2_node_helm_values_override);
     merge_yaml(&mut genesis_helm_values, genesis_helm_values_override);
 
     info!(
-        "aptos_node_helm_values after override: {:?}",
-        aptos_node_helm_values
+        "libra2_node_helm_values after override: {:?}",
+        libra2_node_helm_values
     );
 
     // disable uploading genesis to blob storage since indexer requires it in the cluster
     if enable_indexer {
-        aptos_node_helm_values["genesis_blob_upload_url"] = "".into();
+        libra2_node_helm_values["genesis_blob_upload_url"] = "".into();
     }
     // run genesis from this directory in the image
     if let Some(genesis_modules_path) = genesis_modules_path {
@@ -639,7 +639,7 @@ pub async fn install_testnet_resources(
         "profile": deployer_profile,
         "era": new_era,
         "namespace": kube_namespace.clone(),
-        "testnet-values": aptos_node_helm_values,
+        "testnet-values": libra2_node_helm_values,
         "genesis-values": genesis_helm_values,
     }))?;
 

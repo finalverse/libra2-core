@@ -34,7 +34,7 @@
 !ecosystem/nft-metadata-crawler/migrations/**/*.sql
 !rust-toolchain.toml
 !scripts/
-!terraform/helm/aptos-node/
+!terraform/helm/libra2-node/
 !terraform/helm/genesis/
 !testsuite/forge/src/backend/k8s/
 !third_party/move/move-prover/boogie-backend/**/*.bpl

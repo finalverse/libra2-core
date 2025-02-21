@@ -636,7 +636,7 @@ pub fn setup_environment_and_start_node(
     // Obtain the chain_id from the DB
     let chain_id = utils::fetch_chain_id(&db_rw)?;
 
-    // Set the chain_id in global AptosNodeIdentity
+    // Set the chain_id in global Libra2NodeIdentity
     libra2_node_identity::set_chain_id(chain_id)?;
 
     // Start the telemetry service (as early as possible and before any blocking calls)

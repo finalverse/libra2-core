@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - command:
-        - /usr/local/bin/aptos-node
+        - /usr/local/bin/libra2-node
         - -f
         - /opt/aptos/etc/validator.yaml
         image: aptoslabs/validator:devnet@sha256:f0c62463b0e86acc9ad081c54be2d1823f143f780c73828b876caebc978c8947

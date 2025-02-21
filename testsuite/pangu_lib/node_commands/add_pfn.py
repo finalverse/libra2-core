@@ -230,7 +230,7 @@ def _create_pfn_statefulset_object(
         name=f"{util.type_specific_name(pfn_name, util.NodeType.PFN)}",
         image=pfn_image,
         command=[
-            "/usr/local/bin/aptos-node",
+            "/usr/local/bin/libra2-node",
             "-f",
             f"/opt/aptos/etc/{util.NodeType.PFN.value}.yaml",
         ],

@@ -1,5 +1,5 @@
 # This compose file defines an Aptos Fullnode deployment.
-# Read the README.md files for instruction on how to install aptos-node
+# Read the README.md files for instruction on how to install libra2-node
 
 version: "3.8"
 services:
@@ -50,7 +50,7 @@ services:
       - type: bind
         source: ./keys/validator-full-node-identity.yaml
         target: /opt/aptos/genesis/validator-full-node-identity.yaml
-    command: ["/usr/local/bin/aptos-node", "-f", "/opt/aptos/etc/fullnode.yaml"]
+    command: ["/usr/local/bin/libra2-node", "-f", "/opt/aptos/etc/fullnode.yaml"]
     restart: unless-stopped
     expose:
       # Public fullnode access

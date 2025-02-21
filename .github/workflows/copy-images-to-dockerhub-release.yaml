@@ -2,7 +2,7 @@ name: Copy images to dockerhub on release
 on:
   push:
     branches:
-      # aptos-node network-specific release branches
+      # libra2-node network-specific release branches
       - devnet
       - testnet
       - mainnet
@@ -14,7 +14,7 @@ on:
       - aptos-indexer-grpc-testnet
       - aptos-indexer-grpc-mainnet
     tags:
-      - aptos-node-v*
+      - libra2-node-v*
       - aptos-indexer-grpc-v*
 
 permissions:

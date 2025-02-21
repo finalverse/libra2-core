@@ -8,7 +8,7 @@ on:
       - devnet
       - testnet
       - mainnet
-      - aptos-node-v*
+      - libra2-node-v*
       - aptos-release-v*
   workflow_dispatch:
 
@@ -227,9 +227,9 @@ jobs:
     if: contains(github.event.pull_request.labels.*.name, 'CICD:build-consensus-only-image')
     steps:
       - uses: actions/checkout@v4
-      # prebuild aptos-node binary, so that tests don't start before node is built.
-      # also prebuild aptos-node binary as a separate step to avoid feature unification issues
-      - run: cargo build --locked --package=aptos-node -F consensus-only-perf-test --release && LOCAL_SWARM_NODE_RELEASE=1 CONSENSUS_ONLY_PERF_TEST=1 cargo nextest run --release --package smoke-test -E "test(test_consensus_only_with_txn_emitter)" --run-ignored all
+      # prebuild libra2-node binary, so that tests don't start before node is built.
+      # also prebuild libra2-node binary as a separate step to avoid feature unification issues
+      - run: cargo build --locked --package=libra2-node -F consensus-only-perf-test --release && LOCAL_SWARM_NODE_RELEASE=1 CONSENSUS_ONLY_PERF_TEST=1 cargo nextest run --release --package smoke-test -E "test(test_consensus_only_with_txn_emitter)" --run-ignored all
 
       # We always try to create the artifact, but it only creates on flaky or failed smoke tests -- when the directories are empty.
       - name: Upload smoke test logs for failed and flaky tests

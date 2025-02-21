@@ -2,7 +2,7 @@
 
 ![Version: 0.1](https://img.shields.io/badge/Version-0.1-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
 
-Additional components for aptos-nodes testnet
+Additional components for libra2-nodes testnet
 
 **Homepage:** <https://aptoslabs.com/>
 
@@ -17,7 +17,7 @@ Additional components for aptos-nodes testnet
 | cloud | string | `"EKS"` |  |
 | genesis.chain_id | string | `nil` | Aptos Chain ID |
 | genesis.numValidators | string | `nil` | Number of validators deployed in this testnet |
-| genesis.username_prefix | string | `"aptos-node"` | Validator username prefix, used to get genesis secrets. This should be the fullname for the aptos-node helm release |
+| genesis.username_prefix | string | `"libra2-node"` | Validator username prefix, used to get genesis secrets. This should be the fullname for the libra2-node helm release |
 | imageTag | string | `"devnet"` | Default image tag to use for all aptos images |
 | ingress.acm_certificate | string | `nil` | The ACM certificate to install on the ingress |
 | ingress.cookieDurationSeconds | int | `86400` | If stickiness is enabled, how long the session cookie should last |

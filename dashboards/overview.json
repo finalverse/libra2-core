@@ -765,7 +765,7 @@
           "location": "US",
           "project": "analytics-test-345723",
           "rawQuery": true,
-          "rawSql": "SELECT count(DISTINCT peer_id) as unique_connected_pfns \nFROM `analytics-test-345723.aptos_node_telemetry.custom_events` \nWHERE $__timeFilter(event_timestamp) and (role_type in (\"Unknown\", \"PublicFullNode\",\"UnknownFullNode\"))\nand if(chain_id='1','mainnet',if(chain_id='2','testnet',null)) = \"$chain_name\";",
+          "rawSql": "SELECT count(DISTINCT peer_id) as unique_connected_pfns \nFROM `analytics-test-345723.libra2_node_telemetry.custom_events` \nWHERE $__timeFilter(event_timestamp) and (role_type in (\"Unknown\", \"PublicFullNode\",\"UnknownFullNode\"))\nand if(chain_id='1','mainnet',if(chain_id='2','testnet',null)) = \"$chain_name\";",
           "refId": "A",
           "sql": {
             "columns": [{ "parameters": [], "type": "function" }],

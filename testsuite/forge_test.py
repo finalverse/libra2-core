@@ -922,22 +922,22 @@ class GetForgeJobsTests(unittest.IsolatedAsyncioTestCase):
         )
         fake_forge_first_first_cluster_pods = GetPodsResult(
             items=[
-                fake_pod_item("aptos-node-0-validator", "Running"),
-                fake_pod_item("aptos-node-1-validator", "Running"),
+                fake_pod_item("libra2-node-0-validator", "Running"),
+                fake_pod_item("libra2-node-1-validator", "Running"),
             ]
         )
         fake_forge_first_failed_cluster_pods = GetPodsResult(
             items=[
-                fake_pod_item("aptos-node-0-validator", "Running"),
-                fake_pod_item("aptos-node-1-validator", "Running"),
-                fake_pod_item("aptos-node-0-fullnode", "Running"),
-                fake_pod_item("aptos-node-1-fullnode", "Running"),
+                fake_pod_item("libra2-node-0-validator", "Running"),
+                fake_pod_item("libra2-node-1-validator", "Running"),
+                fake_pod_item("libra2-node-0-fullnode", "Running"),
+                fake_pod_item("libra2-node-1-fullnode", "Running"),
             ]
         )
         fake_forge_first_ignore_me_cluster_pods = GetPodsResult(
             items=[
-                fake_pod_item("aptos-node-0-validator", "Failed"),
-                fake_pod_item("aptos-node-1-validator", "Running"),
+                fake_pod_item("libra2-node-0-validator", "Failed"),
+                fake_pod_item("libra2-node-1-validator", "Running"),
             ]
         )
 
@@ -959,8 +959,8 @@ class GetForgeJobsTests(unittest.IsolatedAsyncioTestCase):
         )
         fake_forge_second_second_cluster_pods = GetPodsResult(
             items=[
-                fake_pod_item("aptos-node-0-validator", "Running"),
-                fake_pod_item("aptos-node-1-fullnode", "Running"),
+                fake_pod_item("libra2-node-0-validator", "Running"),
+                fake_pod_item("libra2-node-1-fullnode", "Running"),
             ]
         )
         fake_forge_second_succeeded_cluster_pods = GetPodsResult(
@@ -1120,7 +1120,7 @@ class ForgeConfigTests(unittest.TestCase):
                     "enabled_clusters": ["banana"],
                     "all_clusters": ["banana", "apple"],
                     "default_helm_values": {
-                        "aptos-node": {"image": {"tag": "banana"}},
+                        "libra2-node": {"image": {"tag": "banana"}},
                         "aptos-genesis": {"image": {"tag": "banana"}},
                     },
                 }
@@ -1163,14 +1163,14 @@ class ForgeConfigTests(unittest.TestCase):
             "enabled_clusters": ["banana"],
             "all_clusters": ["banana", "apple"],
             "default_helm_values": {
-                "aptos-node": {"apple": "enabled", "banana": {"enabled": "true"}}
+                "libra2-node": {"apple": "enabled", "banana": {"enabled": "true"}}
             },
         }
         helm_after_complete = {
             "enabled_clusters": ["banana"],
             "all_clusters": ["banana", "apple"],
             "default_helm_values": {
-                "aptos-node": {"apple": "enabled", "banana": {"enabled": "true"}},
+                "libra2-node": {"apple": "enabled", "banana": {"enabled": "true"}},
                 "aptos-genesis": {"apple": "enabled", "banana": {"enabled": "true"}},
             },
         }
@@ -1210,7 +1210,7 @@ class ForgeConfigTests(unittest.TestCase):
             )
             result_helm_config_not_present: Result = runner.invoke(
                 main,
-                ["--no-log-metadata", "config", "helm", "get", "aptos-node"],
+                ["--no-log-metadata", "config", "helm", "get", "libra2-node"],
                 catch_exceptions=True,
             )
             result_helm_config_present_missing = runner.invoke(
@@ -1220,7 +1220,7 @@ class ForgeConfigTests(unittest.TestCase):
             )
             result_helm_config_present_complete = runner.invoke(
                 main,
-                ["--no-log-metadata", "config", "helm", "get", "aptos-node"],
+                ["--no-log-metadata", "config", "helm", "get", "libra2-node"],
                 catch_exceptions=True,
             )
             # assert all commands and filesystem calls are correct
@@ -1247,11 +1247,11 @@ class ForgeConfigTests(unittest.TestCase):
             # we successfully get the config
             self.assertEqual(result_helm_config_present_complete.exit_code, 0)
             self.assertIsNotNone(helm_after_complete.get("default_helm_values"))
-            self.assertIsNotNone(helm_after_complete.get("default_helm_values").get("aptos-node"))  # type: ignore
+            self.assertIsNotNone(helm_after_complete.get("default_helm_values").get("libra2-node"))  # type: ignore
             # the output config is printed with an extra newline
             self.assertEqual(
                 result_helm_config_present_complete.stdout_bytes,
-                f'{json.dumps(helm_after_complete.get("default_helm_values").get("aptos-node"), indent=2)}\n'.encode(),  # type: ignore
+                f'{json.dumps(helm_after_complete.get("default_helm_values").get("libra2-node"), indent=2)}\n'.encode(),  # type: ignore
             )
 
     def testHelmSetConfig(self) -> None:
@@ -1274,13 +1274,13 @@ class ForgeConfigTests(unittest.TestCase):
             "enabled_clusters": ["banana"],
             "all_clusters": ["banana", "apple"],
             "default_helm_values": {
-                "aptos-node": {"apple": "enabled", "banana": {"enabled": "false"}}
+                "libra2-node": {"apple": "enabled", "banana": {"enabled": "false"}}
             },
         }
         config_after = {
             **config_before,
             "default_helm_values": {
-                "aptos-node": {"apple": "enabled", "banana": {"enabled": "true"}}
+                "libra2-node": {"apple": "enabled", "banana": {"enabled": "true"}}
             },
         }
         filesystem = SpyFilesystem(
@@ -1293,7 +1293,7 @@ class ForgeConfigTests(unittest.TestCase):
                 "temp1": json.dumps(config_before).encode(),
                 # read the new *helm* config from disk
                 "temp2": json.dumps(
-                    config_after["default_helm_values"]["aptos-node"]
+                    config_after["default_helm_values"]["libra2-node"]
                 ).encode(),
             },
         )
@@ -1304,7 +1304,7 @@ class ForgeConfigTests(unittest.TestCase):
             )
             ret = runner.invoke(
                 main,
-                ["config", "helm", "set", "aptos-node", "--config", "temp2", "-y"],
+                ["config", "helm", "set", "libra2-node", "--config", "temp2", "-y"],
                 catch_exceptions=True,
             )
             shell.assert_commands(self)
@@ -1335,7 +1335,7 @@ class ForgeConfigTests(unittest.TestCase):
         config_after = {
             **config_before,
             "default_helm_values": {
-                "aptos-node": {"apple": "enabled", "banana": {"enabled": "true"}}
+                "libra2-node": {"apple": "enabled", "banana": {"enabled": "true"}}
             },
         }
         filesystem = SpyFilesystem(
@@ -1348,7 +1348,7 @@ class ForgeConfigTests(unittest.TestCase):
                 "temp1": json.dumps(config_before).encode(),
                 # read the new *helm* config from disk
                 "temp2": json.dumps(
-                    config_after["default_helm_values"]["aptos-node"]
+                    config_after["default_helm_values"]["libra2-node"]
                 ).encode(),
             },
         )
@@ -1359,7 +1359,7 @@ class ForgeConfigTests(unittest.TestCase):
             )
             ret = runner.invoke(
                 main,
-                ["config", "helm", "set", "aptos-node", "--config", "temp2", "-y"],
+                ["config", "helm", "set", "libra2-node", "--config", "temp2", "-y"],
                 catch_exceptions=True,
             )
             shell.assert_commands(self)
@@ -1390,7 +1390,7 @@ class ForgeConfigTests(unittest.TestCase):
         )
         config_applied = json.loads(config_fixture_after.read_bytes().decode())[
             "default_helm_values"
-        ]["aptos-node"]
+        ]["libra2-node"]
         config_fixture_preview = get_fixture_path(
             "forge-default-helm-values-preview.fixture"
         )
@@ -1415,7 +1415,7 @@ class ForgeConfigTests(unittest.TestCase):
                     "config",
                     "helm",
                     "set",
-                    "aptos-node",
+                    "libra2-node",
                     "--config",
                     "temp2",
                     "-y",

@@ -23,7 +23,7 @@ variable "node_locations" {
 }
 
 variable "manage_via_tf" {
-  description = "Whether to manage the aptos-node k8s workload via Terraform. If set to false, the helm_release resource will still be created and updated when values change, but it may not be updated on every apply"
+  description = "Whether to manage the libra2-node k8s workload via Terraform. If set to false, the helm_release resource will still be created and updated when values change, but it may not be updated on every apply"
   type        = bool
   default     = true
 }
@@ -113,13 +113,13 @@ variable "workspace_name_override" {
 }
 
 variable "helm_release_name_override" {
-  description = "If set, overrides the name of the aptos-node helm chart"
+  description = "If set, overrides the name of the libra2-node helm chart"
   type        = string
   default     = ""
 }
 
-variable "aptos_node_helm_values" {
-  description = "Map of values to pass to aptos-node helm chart"
+variable "libra2_node_helm_values" {
+  description = "Map of values to pass to libra2-node helm chart"
   type        = any
   default     = {}
 }

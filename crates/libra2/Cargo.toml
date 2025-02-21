@@ -37,7 +37,6 @@ libra2-localnet = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-move-debugger = { workspace = true }
 libra2-network-checker = { workspace = true }
-aptos-node = { workspace = true }
 libra2-node = { workspace = true }
 aptos-protos = { workspace = true }
 libra2-rest-client = { workspace = true }
@@ -117,7 +116,7 @@ jemallocator = { workspace = true }
 default = []
 fuzzing = []
 no-upload-proposal = []
-indexer = ["aptos-node/indexer"]
+indexer = ["libra2-node/indexer"]
 cli-framework-test-move = []
 
 [build-dependencies]

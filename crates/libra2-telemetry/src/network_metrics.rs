@@ -7,7 +7,7 @@ use prometheus::core::Collector;
 use std::collections::BTreeMap;
 
 /// Network metrics event name
-const APTOS_NODE_NETWORK_METRICS: &str = "APTOS_NODE_NETWORK_METRICS";
+const LIBRA2_NODE_NETWORK_METRICS: &str = "LIBRA2_NODE_NETWORK_METRICS";
 
 /// Network metric keys
 const NETWORK_INBOUND_CONNECTIONS: &str = "network_inbound_connections";
@@ -24,7 +24,7 @@ pub(crate) async fn create_network_metric_telemetry_event() -> TelemetryEvent {
 
     // Create and return a new telemetry event
     TelemetryEvent {
-        name: APTOS_NODE_NETWORK_METRICS.into(),
+        name: LIBRA2_NODE_NETWORK_METRICS.into(),
         params: network_metrics,
     }
 }

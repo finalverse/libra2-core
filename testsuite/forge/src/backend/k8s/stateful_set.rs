@@ -253,7 +253,7 @@ pub async fn set_identity(
     let kube_client = create_k8s_client().await?;
     let stateful_set_api: Api<StatefulSet> = Api::namespaced(kube_client.clone(), kube_namespace);
     let patch_op = PatchOperation::Replace(ReplaceOperation {
-        // The json path below should match `terraform/helm/aptos-node/templates/validator.yaml`.
+        // The json path below should match `terraform/helm/libra2-node/templates/validator.yaml`.
         path: "/spec/template/spec/volumes/1/secret/secretName".to_string(),
         value: json!(k8s_secret_name),
     });
@@ -267,7 +267,7 @@ pub async fn get_identity(sts_name: &str, kube_namespace: &str) -> Result<String
     let kube_client = create_k8s_client().await?;
     let stateful_set_api: Api<StatefulSet> = Api::namespaced(kube_client.clone(), kube_namespace);
     let sts = stateful_set_api.get(sts_name).await?;
-    // The json path below should match `terraform/helm/aptos-node/templates/validator.yaml`.
+    // The json path below should match `terraform/helm/libra2-node/templates/validator.yaml`.
     let secret_name = sts.spec.unwrap().template.spec.unwrap().volumes.unwrap()[1]
         .secret
         .clone()

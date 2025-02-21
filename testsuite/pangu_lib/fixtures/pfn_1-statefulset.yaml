@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - command:
-        - /usr/local/bin/aptos-node
+        - /usr/local/bin/libra2-node
         - -f
         - /opt/aptos/etc/pfn.yaml
         image: pfn-image

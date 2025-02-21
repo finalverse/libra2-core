@@ -16,7 +16,7 @@ locals {
 data "kubernetes_service" "validator-lb" {
   count = var.zone_name != "" ? 1 : 0
   metadata {
-    name = "${terraform.workspace}-aptos-node-validator-lb"
+    name = "${terraform.workspace}-libra2-node-validator-lb"
   }
   depends_on = [time_sleep.lb_creation]
 }
@@ -24,7 +24,7 @@ data "kubernetes_service" "validator-lb" {
 data "kubernetes_service" "fullnode-lb" {
   count = var.zone_name != "" ? 1 : 0
   metadata {
-    name = "${terraform.workspace}-aptos-node-fullnode-lb"
+    name = "${terraform.workspace}-libra2-node-fullnode-lb"
   }
   depends_on = [time_sleep.lb_creation]
 }

@@ -74,7 +74,7 @@ data "aws_iam_policy_document" "forge" {
 
 resource "aws_iam_role" "forge" {
   count                = var.enable_forge ? 1 : 0
-  name                 = "aptos-node-testnet-${local.workspace_name}-forge"
+  name                 = "libra2-node-testnet-${local.workspace_name}-forge"
   path                 = var.iam_path
   permissions_boundary = var.permissions_boundary_policy
   assume_role_policy   = data.aws_iam_policy_document.forge-assume-role[0].json

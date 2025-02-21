@@ -5,11 +5,11 @@
 ```
 ========================================= main branch ==========================================>
                            \                                  \                         \
-                            \___aptos-node-v1.2.0 tag          \                         \
+                            \___libra2-node-v1.2.0 tag          \                         \
                              \                                  \                         \
                               \      aptos-framework-v1.3.0 tag__\                     devnet branch
    aptos-framework-v1.2.0 tag__\                                  \                     
-                                \___aptos-node-v1.2.4 tag          \___aptos-node-v1.3.0 tag
+                                \___libra2-node-v1.2.4 tag          \___libra2-node-v1.3.0 tag
                                  \                                  \
                                   \                                  \
                              aptos-release-v1.2 branch         aptos-release-v1.3 branch
@@ -26,7 +26,7 @@ The `devnet` branch is created on the `main` branch every week. It is used to de
 These are release branches based on Aptos release planning timeline. They are created off
 the `main` branch every 1-2 months.
 
-### aptos-node-v*X.Y.Z* release tag
+### libra2-node-v*X.Y.Z* release tag
 The aptos node release tags are created for validator/fullnode deployment of the given release branch. The minor number *Z* will increment when a new hot-fix release is required on the release branch. Aptos team will publish the matching tag docker images on [Aptos Docker Hub](https://hub.docker.com/r/aptoslabs/validator/tags) when it's available.
 
 ### aptos-framework-v*X.Y.Z* release tag
@@ -39,11 +39,11 @@ The aptos cli release tags are created to track the CLI versions for community t
 (The time length here is a rough estimate, it varies depends on each release.)
 * [day 0] A release branch `aptos-release-vx.y` will be created, with a commit hash `abcde`. The full test suite will be triggered for the commit hash for validation.
 * [day 1] The release will be deployed to **devnet**.
-* [day 7] Once the release passed devnet test, a release tag `aptos-node-vx.y.z.rc` will be created, and get deployed to **testnet**.
+* [day 7] Once the release passed devnet test, a release tag `libra2-node-vx.y.z.rc` will be created, and get deployed to **testnet**.
 * [day 10] After the binary release stabilized on testnet, testnet framework will be upgraded.
 * Hot-fixes release will be created as needed when a release version is soaking in testnet, and we will only promote a release from testnet to Mainnet after confirming a release version is stable.
-* [day 14] Once confirmed that both binary upgrade and framework upgrade stabilized on testnet, a release tag `aptos-node-vx.y.z` will be created, the release version will be deployed to 1% of the stake on **Mainnet**.
-* [day 16] Wider announcement will be made for the community to upgrade the binary, `aptos-node-vx.y.z` will be updated with "[Mainnet]" in the release page, Mainnet validators will be slowly upgrading.
+* [day 14] Once confirmed that both binary upgrade and framework upgrade stabilized on testnet, a release tag `libra2-node-vx.y.z` will be created, the release version will be deployed to 1% of the stake on **Mainnet**.
+* [day 16] Wider announcement will be made for the community to upgrade the binary, `libra2-node-vx.y.z` will be updated with "[Mainnet]" in the release page, Mainnet validators will be slowly upgrading.
 * [day 17] A list of framework upgrade proposals will be submitted to Mainnet for voting.
 * [day 24] Proposals executed on-chain if passed voting.
 

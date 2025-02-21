@@ -39,8 +39,8 @@ use std::{
 };
 use tempfile::TempDir;
 
-// these are constants given by the aptos-node helm chart
-// see terraform/helm/aptos-node/templates/validator.yaml
+// these are constants given by the libra2-node helm chart
+// see terraform/helm/libra2-node/templates/validator.yaml
 
 // the name of the NodeConfig for the PFN, as well as the key in the k8s ConfigMap
 // where the NodeConfig is stored
@@ -170,7 +170,7 @@ fn create_fullnode_container(
     Ok(Container {
         image: Some(fullnode_image),
         args: Some(vec![
-            "/usr/local/bin/aptos-node".to_string(),
+            "/usr/local/bin/libra2-node".to_string(),
             "-f".to_string(),
             format!("/opt/aptos/etc/{}", FULLNODE_CONFIG_MAP_KEY),
         ]),
@@ -518,11 +518,11 @@ mod tests {
     use aptos_sdk::crypto::{x25519::PrivateKey, Uniform};
     use k8s_openapi::apimachinery::pkg::api::resource::Quantity;
 
-    /// Get a dummy validator persistent volume claim that looks like one created by terraform/helm/aptos-node/templates/validator.yaml
+    /// Get a dummy validator persistent volume claim that looks like one created by terraform/helm/libra2-node/templates/validator.yaml
     fn get_dummy_validator_persistent_volume_claim() -> PersistentVolumeClaim {
         PersistentVolumeClaim {
             metadata: ObjectMeta {
-                name: Some("aptos-node-0-validator-e42069".to_string()),
+                name: Some("libra2-node-0-validator-e42069".to_string()),
                 ..ObjectMeta::default()
             },
             spec: Some(PersistentVolumeClaimSpec {
@@ -545,7 +545,7 @@ mod tests {
         }
     }
 
-    /// Get a dummy validator stateful set that looks like one created by terraform/helm/aptos-node/templates/validator.yaml
+    /// Get a dummy validator stateful set that looks like one created by terraform/helm/libra2-node/templates/validator.yaml
     fn get_dummy_validator_stateful_set() -> StatefulSet {
         let labels: BTreeMap<String, String> = [
             (
@@ -554,7 +554,7 @@ mod tests {
             ),
             (
                 "app.kubernetes.io/instance".to_string(),
-                "aptos-node-0-validator-0".to_string(),
+                "libra2-node-0-validator-0".to_string(),
             ),
             (
                 "app.kubernetes.io/part-of".to_string(),
@@ -566,7 +566,7 @@ mod tests {
         .collect();
         StatefulSet {
             metadata: ObjectMeta {
-                name: Some("aptos-node-0-validator".to_string()),
+                name: Some("libra2-node-0-validator".to_string()),
                 labels: Some(labels.clone()),
                 ..ObjectMeta::default()
             },
@@ -584,7 +584,7 @@ mod tests {
                                 "banana.fruit.aptos/potato/validator:banana_image_tag".to_string(),
                             ),
                             command: Some(vec![
-                                "/usr/local/bin/aptos-node".to_string(),
+                                "/usr/local/bin/libra2-node".to_string(),
                                 "-f".to_string(),
                                 "/opt/aptos/etc/validator.yaml".to_string(),
                             ]),
@@ -619,7 +619,7 @@ mod tests {
     #[tokio::test]
     /// Test that we can create a node config configmap and that it contains the node config at a known data key
     async fn test_create_node_config_map() {
-        let config_map_name = "aptos-node-0-validator-0-config".to_string();
+        let config_map_name = "libra2-node-0-validator-0-config".to_string();
         let node_config = NodeConfig::default();
         let override_config = OverrideNodeConfig::new_with_default_base(node_config.clone());
 
@@ -684,7 +684,7 @@ mod tests {
         let peer_id = PeerId::random();
         let fullnode_name = "fullnode-".to_string() + &peer_id.to_string(); // everything should be keyed on this
         let fullnode_image = "fruit.com/banana:latest".to_string();
-        let fullnode_genesis_secret_name = format!("aptos-node-0-genesis-e{}", era);
+        let fullnode_genesis_secret_name = format!("libra2-node-0-genesis-e{}", era);
         let fullnode_node_config_config_map_name = format!("{}-config", fullnode_name);
 
         let fullnode_stateful_set = create_fullnode_stateful_set(

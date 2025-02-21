@@ -25,7 +25,7 @@ provider "helm" {
 
 locals {
   # helm chart paths
-  aptos_node_helm_chart_path = var.helm_chart != "" ? var.helm_chart : "${path.module}/../../helm/aptos-node"
+  libra2_node_helm_chart_path = var.helm_chart != "" ? var.helm_chart : "${path.module}/../../helm/libra2-node"
   monitoring_helm_chart_path = "${path.module}/../../helm/monitoring"
 
   # override the helm release name if an override exists, otherwise adopt the workspace name
@@ -34,7 +34,7 @@ locals {
 
 resource "helm_release" "validator" {
   name        = local.helm_release_name
-  chart       = local.aptos_node_helm_chart_path
+  chart       = local.libra2_node_helm_chart_path
   max_history = 5
   wait        = false
 
@@ -113,7 +113,7 @@ resource "helm_release" "validator" {
     content {
       # inspired by https://stackoverflow.com/a/66501021 to trigger redeployment whenever any of the charts file contents change.
       name  = "chart_sha1"
-      value = sha1(join("", [for f in fileset(local.aptos_node_helm_chart_path, "**") : filesha1("${local.aptos_node_helm_chart_path}/${f}")]))
+      value = sha1(join("", [for f in fileset(local.libra2_node_helm_chart_path, "**") : filesha1("${local.libra2_node_helm_chart_path}/${f}")]))
     }
   }
 }

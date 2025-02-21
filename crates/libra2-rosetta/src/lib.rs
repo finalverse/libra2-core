@@ -229,5 +229,5 @@ async fn health_check(
     let duration_secs = params.duration_secs.unwrap_or(HEALTH_CHECK_DEFAULT_SECS);
     rest_client.health_check(duration_secs).await?;
 
-    Ok("aptos-node:ok")
+    Ok("libra2-node:ok")
 }

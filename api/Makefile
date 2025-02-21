@@ -12,7 +12,7 @@ test-code-gen:
 	$(call test_code_gen,doc/spec.yaml)
 
 clean:
-	- pkill aptos-node
+	- pkill libra2-node
 	- rm -rf /tmp/aptos_api_client
 	- rm -f openapitools.json
 	- rm -rf .hypothesis

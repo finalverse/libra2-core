@@ -92,9 +92,9 @@ target "builder-base" {
   ]
 }
 
-target "aptos-node-builder" {
+target "libra2-node-builder" {
   dockerfile = "docker/builder/builder.Dockerfile"
-  target     = "aptos-node-builder"
+  target     = "libra2-node-builder"
   contexts = {
     builder-base = "target:builder-base"
   }
@@ -128,7 +128,7 @@ target "indexer-builder" {
 target "_common" {
   contexts = {
     debian-base     = "target:debian-base"
-    node-builder    = "target:aptos-node-builder"
+    node-builder    = "target:libra2-node-builder"
     tools-builder   = "target:tools-builder"
     indexer-builder = "target:indexer-builder"
   }

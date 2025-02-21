@@ -17,7 +17,7 @@ locals {
 }
 
 module "validator" {
-  source = "../../aptos-node/aws"
+  source = "../../libra2-node/aws"
 
   manage_via_tf = var.manage_via_tf
 
@@ -35,7 +35,7 @@ module "validator" {
   workspace_name_override     = var.workspace_name_override
 
   # if forge enabled, standardize the helm release name for ease of operations
-  helm_release_name_override = var.enable_forge ? "aptos-node" : ""
+  helm_release_name_override = var.enable_forge ? "libra2-node" : ""
 
   k8s_api_sources = var.admin_sources_ipv4
   k8s_admin_roles = var.k8s_admin_roles
@@ -45,14 +45,14 @@ module "validator" {
   era            = var.era
   chain_name     = local.chain_name
   image_tag      = var.validator_image_tag != "" ? var.validator_image_tag : var.image_tag
-  validator_name = "aptos-node"
+  validator_name = "libra2-node"
 
   validator_storage_class = var.validator_storage_class
   fullnode_storage_class  = var.fullnode_storage_class
 
   num_validators      = var.num_validators
   num_fullnode_groups = var.num_fullnode_groups
-  helm_values         = var.aptos_node_helm_values
+  helm_values         = var.libra2_node_helm_values
 
   # allow all nodegroups to surge to 2x their size by default, in case of total nodes replacement
   validator_instance_num          = var.num_validator_instance > 0 ? 2 * var.num_validator_instance : var.num_validators
@@ -67,7 +67,7 @@ module "validator" {
 }
 
 locals {
-  aptos_node_helm_prefix = var.enable_forge ? "aptos-node" : "${module.validator.helm_release_name}-aptos-node"
+  libra2_node_helm_prefix = var.enable_forge ? "libra2-node" : "${module.validator.helm_release_name}-libra2-node"
 }
 
 provider "helm" {
@@ -105,7 +105,7 @@ resource "helm_release" "genesis" {
       imageTag = var.image_tag
       genesis = {
         numValidators   = var.num_validators
-        username_prefix = local.aptos_node_helm_prefix
+        username_prefix = local.libra2_node_helm_prefix
         domain          = local.domain
         validator = {
           enable_onchain_discovery = false

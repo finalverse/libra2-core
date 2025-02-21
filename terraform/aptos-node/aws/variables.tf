@@ -236,7 +236,7 @@ variable "workspace_name_override" {
 }
 
 variable "helm_release_name_override" {
-  description = "If set, overrides the name of the aptos-node helm chart"
+  description = "If set, overrides the name of the libra2-node helm chart"
   type        = string
   default     = ""
 }
@@ -286,7 +286,7 @@ variable "enable_kube_state_metrics" {
 }
 
 variable "manage_via_tf" {
-  description = "Whether to manage the aptos-node k8s workload via Terraform. If set to false, the helm_release resource will still be created and updated when values change, but it may not be updated on every apply"
+  description = "Whether to manage the libra2-node k8s workload via Terraform. If set to false, the helm_release resource will still be created and updated when values change, but it may not be updated on every apply"
   type        = bool
   default     = true
 }

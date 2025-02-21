@@ -586,7 +586,7 @@ mod tests {
     fn test_detect_relevant_changes() {
         // Create relevant paths and packages for testing
         let relevant_file_paths = vec![".github/actions/", "aptos-move/", "Cargo.lock", "crates/"];
-        let relevant_package_names = vec!["aptos-node", "e2e-move-tests"];
+        let relevant_package_names = vec!["libra2-node", "e2e-move-tests"];
 
         // Verify that no changes are detected
         let changed_file_paths = Utf8Paths0::from_bytes(b"developer-docs-site/").unwrap();
@@ -613,7 +613,7 @@ mod tests {
 
         // Verify that package changes are detected correctly
         let affected_package_paths =
-            vec!["file:///home/aptos-core/crates/aptos-node#aptos-node".into()];
+            vec!["file:///home/aptos-core/crates/libra2-node#libra2-node".into()];
         let relevant_changes_detected = detect_relevant_changes(
             relevant_file_paths.clone(),
             relevant_package_names.clone(),
@@ -686,14 +686,14 @@ mod tests {
     #[test]
     fn test_detect_relevant_changes_package_paths() {
         // Create relevant package names for testing
-        let relevant_package_names = vec!["aptos-node", "e2e-move-tests"];
+        let relevant_package_names = vec!["libra2-node", "e2e-move-tests"];
 
         // Verify that no changes are detected
         let affected_package_paths = vec![
             "file:///home/aptos-core/aptos-mode/tests/e2e-move-tests#test-crate",
             "file:///home/aptos-core/crates/test-crate#other-test-crate",
             "file:///home/aptos-core/crates/other-crate#other-crate",
-            "file:///home/aptos-core/aptos-node#other-node-crate",
+            "file:///home/aptos-core/libra2-node#other-node-crate",
         ];
         for affected_package_path in affected_package_paths {
             // Verify that no changes are detected
@@ -708,7 +708,7 @@ mod tests {
 
         // Verify that package changes are detected correctly
         let affected_package_paths = vec![
-            "file:///home/aptos-core/crates/aptos-node#aptos-node",
+            "file:///home/aptos-core/crates/libra2-node#libra2-node",
             "file:///home/aptos-core/crates/e2e-move-tests#e2e-move-tests",
         ];
         for affected_package_path in affected_package_paths {

@@ -1,5 +1,5 @@
 # This compose file defines an Aptos Validator deployment.
-# Read the README.md files for instruction on how to install aptos-node
+# Read the README.md files for instruction on how to install libra2-node
 
 version: "3.8"
 services:
@@ -42,8 +42,8 @@ services:
       shared:
     volumes:
       - type: bind
-        source: aptos-node
-        target: /usr/local/bin/aptos-node
+        source: libra2-node
+        target: /usr/local/bin/libra2-node
       - type: volume
         source: aptos-validator
         target: /opt/aptos/data
@@ -59,7 +59,7 @@ services:
       - type: bind
         source: ./keys/validator-identity.yaml
         target: /opt/aptos/genesis/validator-identity.yaml
-    command: ["/usr/local/bin/aptos-node", "-f", "/opt/aptos/etc/validator.yaml"]
+    command: ["/usr/local/bin/libra2-node", "-f", "/opt/aptos/etc/validator.yaml"]
     restart: unless-stopped
     expose:
       # These are only exposed on the docker internal network

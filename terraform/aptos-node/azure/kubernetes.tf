@@ -16,12 +16,12 @@ provider "helm" {
 
 locals {
   # helm chart paths
-  aptos_node_helm_chart_path = var.helm_chart != "" ? var.helm_chart : "${path.module}/../../helm/aptos-node"
+  libra2_node_helm_chart_path = var.helm_chart != "" ? var.helm_chart : "${path.module}/../../helm/libra2-node"
 }
 
 resource "helm_release" "validator" {
   name        = terraform.workspace
-  chart       = local.aptos_node_helm_chart_path
+  chart       = local.libra2_node_helm_chart_path
   max_history = 5
   wait        = false
 
@@ -68,6 +68,6 @@ resource "helm_release" "validator" {
   # inspired by https://stackoverflow.com/a/66501021 to trigger redeployment whenever any of the charts file contents change.
   set {
     name  = "chart_sha1"
-    value = sha1(join("", [for f in fileset(local.aptos_node_helm_chart_path, "**") : filesha1("${local.aptos_node_helm_chart_path}/${f}")]))
+    value = sha1(join("", [for f in fileset(local.libra2_node_helm_chart_path, "**") : filesha1("${local.libra2_node_helm_chart_path}/${f}")]))
   }
 }

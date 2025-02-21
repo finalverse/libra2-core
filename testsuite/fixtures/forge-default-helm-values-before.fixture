@@ -12,7 +12,7 @@
         "repo": "apple"
       }
     },
-    "aptos-node": {
+    "libra2-node": {
       "image": {
         "repo": "banana"
       }

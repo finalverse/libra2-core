@@ -44,4 +44,4 @@ Follow instructions on how to run a fullnode against an existing network.
             your-bucket-name
 ```
 
-* Run fullnode `cargo run -p aptos-node --release -- -f ./fullnode.yaml`
+* Run fullnode `cargo run -p libra2-node --release -- -f ./fullnode.yaml`

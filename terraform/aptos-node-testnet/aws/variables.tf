@@ -104,8 +104,8 @@ variable "validator_image_tag" {
 
 ### Helm values
 
-variable "aptos_node_helm_values" {
-  description = "Map of values to pass to aptos-node helm chart"
+variable "libra2_node_helm_values" {
+  description = "Map of values to pass to libra2-node helm chart"
   type        = any
   default     = {}
 }
@@ -219,7 +219,7 @@ variable "fullnode_storage_class" {
 }
 
 variable "manage_via_tf" {
-  description = "Whether to manage the aptos-node k8s workload via Terraform. If set to false, the helm_release resource will still be created and updated when values change, but it may not be updated on every apply"
+  description = "Whether to manage the libra2-node k8s workload via Terraform. If set to false, the helm_release resource will still be created and updated when values change, but it may not be updated on every apply"
   type        = bool
   default     = true
 }

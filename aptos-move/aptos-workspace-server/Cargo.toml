@@ -17,7 +17,7 @@ aptos-cached-packages = { workspace = true }
 libra2-config = { workspace = true }
 libra2-faucet-core = { workspace = true }
 libra2-localnet = { workspace = true }
-aptos-node = { workspace = true }
+libra2-node = { workspace = true }
 libra2-types = { workspace = true }
 
 # third party deps

@@ -42,13 +42,13 @@ Install pre-requisites if needed:
     required_version = "~> 1.2.0"
     backend "gcs" {
       bucket = "BUCKET_NAME" # bucket name created in step 2
-      prefix = "state/aptos-node"
+      prefix = "state/libra2-node"
     }
   }
 
-  module "aptos-node" {
+  module "libra2-node" {
     # download Terraform module from aptos-labs/aptos-core repo
-    source        = "github.com/aptos-labs/aptos-core.git//terraform/aptos-node/gcp?ref=testnet"
+    source        = "github.com/aptos-labs/aptos-core.git//terraform/libra2-node/gcp?ref=testnet"
     region        = "us-central1"  # Specify the region
     zone          = "c"            # Specify the zone suffix
     project       = "<GCP Project Name>" # Specify your GCP project name
@@ -59,7 +59,7 @@ Install pre-requisites if needed:
   }
   ```
 
-  For the full customization options, see the variables file [here](https://github.com/aptos-labs/aptos-core/blob/main/terraform/aptos-node/gcp/variables.tf), and the [helm values](https://github.com/aptos-labs/aptos-core/blob/main/terraform/helm/aptos-node/values.yaml).
+  For the full customization options, see the variables file [here](https://github.com/aptos-labs/aptos-core/blob/main/terraform/libra2-node/gcp/variables.tf), and the [helm values](https://github.com/aptos-labs/aptos-core/blob/main/terraform/helm/libra2-node/values.yaml).
 
 5. Initialize Terraform in the same directory of your `main.tf` file
   ```
@@ -97,11 +97,11 @@ This will download all the Terraform dependencies for you, in the `.terraform` f
 
     ```
     $ export VALIDATOR_ADDRESS="$(kubectl get svc \
-        ${WORKSPACE}-aptos-node-0-validator-lb \
+        ${WORKSPACE}-libra2-node-0-validator-lb \
         --output jsonpath='{.status.loadBalancer.ingress[0].ip}')"
 
     $ export FULLNODE_ADDRESS="$(kubectl get svc \
-        ${WORKSPACE}-aptos-node-0-fullnode-lb \
+        ${WORKSPACE}-libra2-node-0-fullnode-lb \
         --output jsonpath='{.status.loadBalancer.ingress[0].ip}')"
     ```
 
@@ -188,7 +188,7 @@ This will download all the Terraform dependencies for you, in the `.terraform` f
 16. Insert `genesis.blob`, `waypoint.txt` and identity files as secret into k8s cluster.
 
     ```
-    $ kubectl create secret generic ${WORKSPACE}-aptos-node-genesis-e1 \
+    $ kubectl create secret generic ${WORKSPACE}-libra2-node-genesis-e1 \
         --from-file=genesis.blob=genesis.blob \
         --from-file=waypoint.txt=waypoint.txt \
         --from-file=validator-identity.yaml=validator-identity.yaml \
@@ -203,7 +203,7 @@ This will download all the Terraform dependencies for you, in the `.terraform` f
     $ kubectl get pods
 
     NAME                                        READY   STATUS    RESTARTS   AGE
-    node1-aptos-node-fullnode-e9-0              1/1     Running   0          4h31m
-    node1-aptos-node-haproxy-7cc4c5f74c-l4l6n   1/1     Running   0          4h40m
-    node1-aptos-node-validator-0                1/1     Running   0          4h30m
+    node1-libra2-node-fullnode-e9-0              1/1     Running   0          4h31m
+    node1-libra2-node-haproxy-7cc4c5f74c-l4l6n   1/1     Running   0          4h40m
+    node1-libra2-node-validator-0                1/1     Running   0          4h30m
     ```

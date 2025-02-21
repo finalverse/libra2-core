@@ -51,12 +51,12 @@ genesis:
     pullPolicy: IfNotPresent
   # -- Number of validators to include in genesis
   numValidators: 1
-  # -- If `enable_onchain_discovery` is false, use this kubernetes service name prefix. It should be the fullname for the aptos-node helm release
-  username_prefix: aptos-node
+  # -- If `enable_onchain_discovery` is false, use this kubernetes service name prefix. It should be the fullname for the libra2-node helm release
+  username_prefix: libra2-node
   # -- If set, the base domain name of the fullnode and validator endpoints
   domain:
   validator:
-    # -- Use External DNS as created by aptos-node helm chart for validator host in genesis
+    # -- Use External DNS as created by libra2-node helm chart for validator host in genesis
     enable_onchain_discovery: false
     # -- If `enable_onchain_discovery` is false, use this host suffix for internal kubernetes service name
     internal_host_suffix: validator-lb
@@ -69,7 +69,7 @@ genesis:
     # -- Random seed to generate validator keys in order to make the key generation deterministic
     key_seed:
   fullnode:
-    # -- Use External DNS as created by aptos-node helm chart for fullnode host in genesis
+    # -- Use External DNS as created by libra2-node helm chart for fullnode host in genesis
     enable_onchain_discovery: true
     # -- If `enable_onchain_discovery` is false, use this host suffix for internal kubernetes service name
     internal_host_suffix: fullnode-lb
