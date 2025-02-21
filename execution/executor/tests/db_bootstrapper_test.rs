@@ -11,7 +11,7 @@ use aptos_executor::{
     block_executor::BlockExecutor,
     db_bootstrapper::{generate_waypoint, maybe_bootstrap},
 };
-use aptos_executor_test_helpers::{
+use libra2_executor_test_helpers::{
     bootstrap_genesis, gen_ledger_info_with_sigs, get_test_signed_transaction,
 };
 use libra2_executor_types::BlockExecutorTrait;

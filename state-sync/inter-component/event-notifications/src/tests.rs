@@ -9,7 +9,7 @@ use crate::{
     EventSubscriptionService, ReconfigNotificationListener,
 };
 use libra2_db::Libra2DB;
-use aptos_executor_test_helpers::bootstrap_genesis;
+use libra2_executor_test_helpers::bootstrap_genesis;
 use libra2_infallible::RwLock;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{

@@ -690,7 +690,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-consensus-types",
  "aptos-executor",
- "aptos-executor-test-helpers",
  "aptos-experimental-runtimes",
  "aptos-runtimes",
  "aptos-safety-rules",
@@ -720,6 +719,7 @@ dependencies = [
  "libra2-dkg",
  "libra2-enum-conversion-derive",
  "libra2-event-notifications",
+ "libra2-executor-test-helpers",
  "libra2-executor-types",
  "libra2-fallible",
  "libra2-infallible",
@@ -827,7 +827,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-consensus-types",
  "aptos-executor-service",
- "aptos-executor-test-helpers",
  "aptos-experimental-runtimes",
  "aptos-indexer-grpc-table-info",
  "aptos-sdk",
@@ -844,6 +843,7 @@ dependencies = [
  "libra2-db",
  "libra2-db-indexer",
  "libra2-drop-helper",
+ "libra2-executor-test-helpers",
  "libra2-executor-types",
  "libra2-infallible",
  "libra2-logger",
@@ -943,27 +943,6 @@ dependencies = [
  "rayon",
  "serde",
  "thiserror",
-]
-
-[[package]]
-name = "aptos-executor-test-helpers"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-cached-packages",
- "aptos-consensus-types",
- "aptos-executor",
- "aptos-sdk",
- "aptos-vm",
- "aptos-vm-genesis",
- "libra2-config",
- "libra2-crypto",
- "libra2-db",
- "libra2-executor-types",
- "libra2-storage-interface",
- "libra2-temppath",
- "libra2-types",
- "rand 0.7.3",
 ]
 
 [[package]]
@@ -8598,7 +8577,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-executor",
- "aptos-executor-test-helpers",
  "aptos-indexer-grpc-table-info",
  "aptos-vm",
  "aptos-vm-environment",
@@ -8614,6 +8592,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-db",
  "libra2-db-indexer-schemas",
+ "libra2-executor-test-helpers",
  "libra2-executor-types",
  "libra2-infallible",
  "libra2-jellyfish-merkle",
@@ -9037,7 +9016,6 @@ dependencies = [
  "anyhow",
  "aptos-block-executor",
  "aptos-executor",
- "aptos-executor-test-helpers",
  "aptos-indexer-grpc-table-info",
  "aptos-vm",
  "bcs 0.1.4",
@@ -9048,6 +9026,7 @@ dependencies = [
  "libra2-config",
  "libra2-db",
  "libra2-db-indexer",
+ "libra2-executor-test-helpers",
  "libra2-executor-types",
  "libra2-logger",
  "libra2-storage-interface",
@@ -9169,7 +9148,6 @@ name = "libra2-event-notifications"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-executor-test-helpers",
  "aptos-vm",
  "aptos-vm-genesis",
  "bcs 0.1.4",
@@ -9178,6 +9156,7 @@ dependencies = [
  "libra2-channels",
  "libra2-crypto",
  "libra2-db",
+ "libra2-executor-test-helpers",
  "libra2-id-generator",
  "libra2-infallible",
  "libra2-storage-interface",
@@ -9187,6 +9166,27 @@ dependencies = [
  "move-core-types",
  "serde",
  "thiserror",
+]
+
+[[package]]
+name = "libra2-executor-test-helpers"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-cached-packages",
+ "aptos-consensus-types",
+ "aptos-executor",
+ "aptos-sdk",
+ "aptos-vm",
+ "aptos-vm-genesis",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-db",
+ "libra2-executor-types",
+ "libra2-storage-interface",
+ "libra2-temppath",
+ "libra2-types",
+ "rand 0.7.3",
 ]
 
 [[package]]
@@ -10269,7 +10269,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-executor",
- "aptos-executor-test-helpers",
  "aptos-genesis",
  "aptos-runtimes",
  "aptos-vm",
@@ -10286,6 +10285,7 @@ dependencies = [
  "libra2-data-streaming-service",
  "libra2-db",
  "libra2-event-notifications",
+ "libra2-executor-test-helpers",
  "libra2-executor-types",
  "libra2-infallible",
  "libra2-logger",
@@ -10726,7 +10726,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-executor-test-helpers",
  "aptos-gas-schedule",
  "aptos-vm",
  "aptos-vm-environment",
@@ -10735,6 +10734,7 @@ dependencies = [
  "fail",
  "libra2-crypto",
  "libra2-db",
+ "libra2-executor-test-helpers",
  "libra2-logger",
  "libra2-storage-interface",
  "libra2-temppath",

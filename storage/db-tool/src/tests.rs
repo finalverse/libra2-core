@@ -81,7 +81,7 @@ mod dbtool_tests {
         utils::test_utils::start_local_backup_service,
     };
     use libra2_db::Libra2DB;
-    use aptos_executor_test_helpers::integration_test_impl::{
+    use libra2_executor_test_helpers::integration_test_impl::{
         test_execution_with_storage_impl, test_execution_with_storage_impl_inner,
     };
     use libra2_storage_interface::DbReader;

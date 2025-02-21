@@ -15,7 +15,7 @@ use libra2_data_streaming_service::streaming_client::new_streaming_service_clien
 use libra2_db::Libra2DB;
 use libra2_event_notifications::EventSubscriptionService;
 use aptos_executor::chunk_executor::ChunkExecutor;
-use aptos_executor_test_helpers::bootstrap_genesis;
+use libra2_executor_test_helpers::bootstrap_genesis;
 use aptos_genesis::test_utils::test_config;
 use libra2_infallible::RwLock;
 use libra2_mempool_notifications::new_mempool_notifier_listener_pair;

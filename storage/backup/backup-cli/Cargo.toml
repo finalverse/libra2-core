@@ -20,7 +20,7 @@ libra2-crypto = { workspace = true }
 libra2-db = { workspace = true }
 libra2-db-indexer-schemas = { workspace = true }
 aptos-executor = { workspace = true }
-aptos-executor-test-helpers = { workspace = true }
+libra2-executor-test-helpers = { workspace = true }
 libra2-executor-types = { workspace = true }
 aptos-indexer-grpc-table-info = { workspace = true }
 libra2-infallible = { workspace = true }
@@ -62,7 +62,7 @@ tokio-util = { workspace = true }
 libra2-backup-service = { workspace = true }
 libra2-config = { workspace = true }
 libra2-db = { workspace = true }
-aptos-executor-test-helpers = { workspace = true }
+libra2-executor-test-helpers = { workspace = true }
 libra2-proptest-helpers = { workspace = true }
 libra2-storage-interface = { workspace = true }
 proptest = { workspace = true }

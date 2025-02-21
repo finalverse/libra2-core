@@ -1,6 +1,6 @@
 [package]
-name = "aptos-executor-test-helpers"
-description = "Aptos executor test helpers"
+name = "libra2-executor-test-helpers"
+description = "Libra2 executor test helpers"
 version = "0.1.0"
 
 # Workspace inherited keys

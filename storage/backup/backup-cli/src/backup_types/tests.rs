@@ -21,7 +21,7 @@ use crate::{
     },
 };
 use libra2_db::{state_restore::StateSnapshotRestoreMode, Libra2DB};
-use aptos_executor_test_helpers::integration_test_impl::test_execution_with_storage_impl;
+use libra2_executor_test_helpers::integration_test_impl::test_execution_with_storage_impl;
 use libra2_executor_types::VerifyExecutionMode;
 use libra2_storage_interface::DbReader;
 use libra2_temppath::TempPath;
