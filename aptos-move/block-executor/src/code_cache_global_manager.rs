@@ -18,7 +18,7 @@ use libra2_types::{
     vm::modules::AptosModuleExtension,
 };
 use libra2_vm_environment::environment::Libra2Environment;
-use aptos_vm_logging::alert;
+use libra2_vm_logging::alert;
 use libra2_vm_types::module_and_script_storage::{AptosCodeStorageAdapter, AsAptosCodeStorage};
 use move_binary_format::{
     errors::{Location, VMError},
@@ -40,7 +40,7 @@ macro_rules! alert_or_println {
             println!($($arg)*)
         } else {
 
-            use aptos_vm_logging::{alert, prelude::CRITICAL_ERRORS};
+            use libra2_vm_logging::{alert, prelude::CRITICAL_ERRORS};
             use libra2_logger::error;
             alert!($($arg)*);
         }

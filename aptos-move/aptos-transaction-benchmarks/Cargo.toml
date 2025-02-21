@@ -24,7 +24,7 @@ libra2-node-resource-metrics = { workspace = true }
 libra2-push-metrics =  { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true }
-aptos-vm-logging = { workspace = true }
+libra2-vm-logging = { workspace = true }
 clap = { workspace = true }
 criterion = { workspace = true, features = ["html_reports"] }
 criterion-cpu-time = { workspace = true }

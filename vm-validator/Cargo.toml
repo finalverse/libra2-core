@@ -19,7 +19,7 @@ libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true }
 libra2-vm-environment = { workspace = true }
-aptos-vm-logging = { workspace = true }
+libra2-vm-logging = { workspace = true }
 fail = { workspace = true }
 move-binary-format = { workspace = true }
 move-core-types = { workspace = true }

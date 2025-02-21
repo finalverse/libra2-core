@@ -1,6 +1,6 @@
 [package]
-name = "aptos-vm-logging"
-description = "Aptos VM speculative logging utility"
+name = "libra2-vm-logging"
+description = "Libra2 VM speculative logging utility"
 version = "0.1.0"
 
 # Workspace inherited keys

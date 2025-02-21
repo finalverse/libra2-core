@@ -20,7 +20,7 @@ use libra2_types::{
 };
 use aptos_vm::AptosVM;
 use libra2_vm_environment::environment::Libra2Environment;
-use aptos_vm_logging::log_schema::AdapterLogSchema;
+use libra2_vm_logging::log_schema::AdapterLogSchema;
 use fail::fail_point;
 use move_binary_format::{
     errors::{Location, PartialVMError, VMResult},

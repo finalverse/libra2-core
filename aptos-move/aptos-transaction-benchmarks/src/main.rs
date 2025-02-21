@@ -7,7 +7,7 @@ use aptos_language_e2e_tests::account_universe::P2PTransferGen;
 use libra2_metrics_core::{register_int_gauge, IntGauge};
 use libra2_push_metrics::MetricsPusher;
 use aptos_transaction_benchmarks::transactions::TransactionBencher;
-use aptos_vm_logging::disable_speculative_logging;
+use libra2_vm_logging::disable_speculative_logging;
 use clap::{Parser, Subcommand};
 use proptest::prelude::*;
 use std::{

@@ -62,7 +62,7 @@ use aptos_vm::{
 };
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_genesis::{generate_genesis_change_set_for_testing_with_count, GenesisOptions};
-use aptos_vm_logging::log_schema::AdapterLogSchema;
+use libra2_vm_logging::log_schema::AdapterLogSchema;
 use libra2_vm_types::{
     module_and_script_storage::{module_storage::AptosModuleStorage, AsAptosCodeStorage},
     resolver::NoopBlockSynchronizationKillSwitch,

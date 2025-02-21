@@ -120,7 +120,7 @@ pub fn new_test_context_inner(
 ) -> TestContext {
     // Speculative logging uses a global variable and when many instances use it together, they
     // panic, so we disable this to run tests.
-    aptos_vm_logging::disable_speculative_logging();
+    libra2_vm_logging::disable_speculative_logging();
     let tmp_dir = TempPath::new();
     tmp_dir.create_as_dir().unwrap();
 

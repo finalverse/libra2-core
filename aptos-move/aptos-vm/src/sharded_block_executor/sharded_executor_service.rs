@@ -33,7 +33,7 @@ use libra2_types::{
         TransactionOutput,
     },
 };
-use aptos_vm_logging::disable_speculative_logging;
+use libra2_vm_logging::disable_speculative_logging;
 use futures::{channel::oneshot, executor::block_on};
 use move_core_types::vm_status::VMStatus;
 use std::sync::Arc;

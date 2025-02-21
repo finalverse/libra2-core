@@ -27,7 +27,7 @@ members = [
     "aptos-move/aptos-vm",
     "aptos-move/aptos-vm-benchmarks",
     "aptos-move/libra2-vm-environment",
-    "aptos-move/aptos-vm-logging",
+    "aptos-move/libra2-vm-logging",
     "aptos-move/aptos-vm-profiling",
     "aptos-move/libra2-vm-types",
     "aptos-move/aptos-workspace-server",
@@ -471,7 +471,7 @@ libra2-validator-transaction-pool = { path = "crates/validator-transaction-pool"
 libra2-vault-client = { path = "secure/storage/vault" }
 aptos-vm = { path = "aptos-move/aptos-vm" }
 libra2-vm-environment = { path = "aptos-move/libra2-vm-environment" }
-aptos-vm-logging = { path = "aptos-move/aptos-vm-logging" }
+libra2-vm-logging = { path = "aptos-move/libra2-vm-logging" }
 libra2-vm-genesis = { path = "aptos-move/vm-genesis" }
 libra2-vm-types = { path = "aptos-move/libra2-vm-types" }
 libra2-vm-validator = { path = "vm-validator" }

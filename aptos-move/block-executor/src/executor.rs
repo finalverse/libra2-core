@@ -46,7 +46,7 @@ use libra2_types::{
     write_set::{TransactionWrite, WriteOp},
 };
 use libra2_vm_environment::environment::Libra2Environment;
-use aptos_vm_logging::{alert, clear_speculative_txn_logs, init_speculative_logs, prelude::*};
+use libra2_vm_logging::{alert, clear_speculative_txn_logs, init_speculative_logs, prelude::*};
 use libra2_vm_types::{
     change_set::randomly_check_layout_matches, module_write_set::ModuleWrite,
     resolver::ResourceGroupSize,

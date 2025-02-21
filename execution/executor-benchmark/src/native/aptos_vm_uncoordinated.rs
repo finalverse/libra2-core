@@ -19,7 +19,7 @@ use libra2_types::{
 };
 use aptos_vm::{AptosVM, VMBlockExecutor};
 use libra2_vm_environment::environment::Libra2Environment;
-use aptos_vm_logging::log_schema::AdapterLogSchema;
+use libra2_vm_logging::log_schema::AdapterLogSchema;
 use libra2_vm_types::module_and_script_storage::AsAptosCodeStorage;
 use rayon::iter::{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator};
 

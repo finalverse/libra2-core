@@ -6,7 +6,7 @@ use crate::{
     AptosVM,
 };
 use libra2_types::validator_txn::ValidatorTransaction;
-use aptos_vm_logging::log_schema::AdapterLogSchema;
+use libra2_vm_logging::log_schema::AdapterLogSchema;
 use libra2_vm_types::{
     module_and_script_storage::module_storage::AptosModuleStorage, output::VMOutput,
 };

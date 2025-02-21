@@ -50,7 +50,7 @@ use aptos_vm::{
 use libra2_vm_environment::{
     environment::Libra2Environment, prod_configs::aptos_prod_deserializer_config,
 };
-use aptos_vm_logging::log_schema::AdapterLogSchema;
+use libra2_vm_logging::log_schema::AdapterLogSchema;
 use libra2_vm_types::{
     module_and_script_storage::AsAptosCodeStorage, storage::change_set_configs::ChangeSetConfigs,
 };

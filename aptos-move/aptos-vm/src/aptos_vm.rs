@@ -82,7 +82,7 @@ use libra2_types::{
 };
 use libra2_utils::libra2_try;
 use libra2_vm_environment::environment::Libra2Environment;
-use aptos_vm_logging::{log_schema::AdapterLogSchema, speculative_error, speculative_log};
+use libra2_vm_logging::{log_schema::AdapterLogSchema, speculative_error, speculative_log};
 use libra2_vm_types::{
     abstract_write_op::AbstractResourceWriteOp,
     change_set::{

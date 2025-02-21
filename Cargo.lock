@@ -303,7 +303,6 @@ dependencies = [
  "aptos-protos 1.3.1",
  "aptos-sdk",
  "aptos-vm",
- "aptos-vm-logging",
  "aptos-workspace-server",
  "async-trait",
  "base64 0.13.1",
@@ -346,6 +345,7 @@ dependencies = [
  "libra2-types",
  "libra2-vm-environment",
  "libra2-vm-genesis",
+ "libra2-vm-logging",
  "libra2-vm-types",
  "maplit",
  "move-binary-format",
@@ -479,7 +479,6 @@ dependencies = [
  "aptos-indexer-grpc-table-info",
  "aptos-sdk",
  "aptos-vm",
- "aptos-vm-logging",
  "bcs 0.1.4",
  "bytes",
  "goldenfile",
@@ -495,6 +494,7 @@ dependencies = [
  "libra2-storage-interface",
  "libra2-temppath",
  "libra2-types",
+ "libra2-vm-logging",
  "libra2-vm-validator",
  "rand 0.7.3",
  "regex",
@@ -542,7 +542,6 @@ dependencies = [
  "aptos-aggregator",
  "aptos-language-e2e-tests",
  "aptos-mvhashmap",
- "aptos-vm-logging",
  "arc-swap",
  "bcs 0.1.4",
  "bytes",
@@ -561,6 +560,7 @@ dependencies = [
  "libra2-metrics-core",
  "libra2-types",
  "libra2-vm-environment",
+ "libra2-vm-logging",
  "libra2-vm-types",
  "move-binary-format",
  "move-core-types",
@@ -1316,7 +1316,6 @@ dependencies = [
  "aptos-gas-profiling",
  "aptos-gas-schedule",
  "aptos-vm",
- "aptos-vm-logging",
  "bcs 0.1.4",
  "bytes",
  "claims",
@@ -1329,6 +1328,7 @@ dependencies = [
  "libra2-types",
  "libra2-vm-environment",
  "libra2-vm-genesis",
+ "libra2-vm-logging",
  "libra2-vm-types",
  "move-binary-format",
  "move-command-line-common",
@@ -1551,7 +1551,6 @@ dependencies = [
  "aptos-gas-schedule-updator",
  "aptos-language-e2e-tests",
  "aptos-vm",
- "aptos-vm-logging",
  "bcs 0.1.4",
  "clap 4.5.21",
  "futures",
@@ -1568,6 +1567,7 @@ dependencies = [
  "libra2-temppath",
  "libra2-types",
  "libra2-vm-environment",
+ "libra2-vm-logging",
  "libra2-vm-types",
  "move-binary-format",
  "move-bytecode-verifier",
@@ -1755,7 +1755,6 @@ dependencies = [
  "aptos-block-executor",
  "aptos-language-e2e-tests",
  "aptos-vm",
- "aptos-vm-logging",
  "clap 4.5.21",
  "criterion",
  "criterion-cpu-time",
@@ -1767,6 +1766,7 @@ dependencies = [
  "libra2-node-resource-metrics",
  "libra2-push-metrics",
  "libra2-types",
+ "libra2-vm-logging",
  "num_cpus",
  "proptest",
 ]
@@ -1863,7 +1863,6 @@ dependencies = [
  "aptos-mvhashmap",
  "aptos-native-interface",
  "aptos-table-natives",
- "aptos-vm-logging",
  "ark-bn254",
  "ark-groth16",
  "bcs 0.1.4",
@@ -1885,6 +1884,7 @@ dependencies = [
  "libra2-types",
  "libra2-utils",
  "libra2-vm-environment",
+ "libra2-vm-logging",
  "libra2-vm-types",
  "move-binary-format",
  "move-core-types",
@@ -1914,20 +1914,6 @@ dependencies = [
  "libra2-types",
  "move-binary-format",
  "move-core-types",
-]
-
-[[package]]
-name = "aptos-vm-logging"
-version = "0.1.0"
-dependencies = [
- "arc-swap",
- "libra2-crypto",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-speculative-state-helper",
- "libra2-types",
- "once_cell",
- "serde",
 ]
 
 [[package]]
@@ -7799,7 +7785,6 @@ dependencies = [
  "aptos-protos 1.3.1",
  "aptos-sdk",
  "aptos-vm",
- "aptos-vm-logging",
  "aptos-workspace-server",
  "async-trait",
  "base64 0.13.1",
@@ -7842,6 +7827,7 @@ dependencies = [
  "libra2-types",
  "libra2-vm-environment",
  "libra2-vm-genesis",
+ "libra2-vm-logging",
  "libra2-vm-types",
  "maplit",
  "move-binary-format",
@@ -8728,7 +8714,6 @@ dependencies = [
  "aptos-mvhashmap",
  "aptos-sdk",
  "aptos-vm",
- "aptos-vm-logging",
  "async-trait",
  "bcs 0.1.4",
  "bytes",
@@ -8761,6 +8746,7 @@ dependencies = [
  "libra2-transaction-workloads-lib",
  "libra2-types",
  "libra2-vm-environment",
+ "libra2-vm-logging",
  "libra2-vm-types",
  "move-core-types",
  "move-vm-types",
@@ -8894,7 +8880,6 @@ version = "0.1.0"
 dependencies = [
  "aptos-block-executor",
  "aptos-vm",
- "aptos-vm-logging",
  "hashbrown 0.14.3",
  "libra2-experimental-runtimes",
  "libra2-infallible",
@@ -8902,6 +8887,7 @@ dependencies = [
  "libra2-metrics-core",
  "libra2-types",
  "libra2-vm-environment",
+ "libra2-vm-logging",
  "libra2-vm-types",
  "move-core-types",
  "once_cell",
@@ -9415,7 +9401,6 @@ dependencies = [
  "aptos-gas-profiling",
  "aptos-validator-interface",
  "aptos-vm",
- "aptos-vm-logging",
  "bcs 0.1.4",
  "clap 4.5.21",
  "itertools 0.13.0",
@@ -9425,6 +9410,7 @@ dependencies = [
  "libra2-rest-client",
  "libra2-types",
  "libra2-vm-environment",
+ "libra2-vm-logging",
  "libra2-vm-types",
  "regex",
  "reqwest 0.11.23",
@@ -10621,6 +10607,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-vm-logging"
+version = "0.1.0"
+dependencies = [
+ "arc-swap",
+ "libra2-crypto",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-speculative-state-helper",
+ "libra2-types",
+ "once_cell",
+ "serde",
+]
+
+[[package]]
 name = "libra2-vm-types"
 version = "0.0.1"
 dependencies = [
@@ -10653,7 +10653,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-gas-schedule",
  "aptos-vm",
- "aptos-vm-logging",
  "fail",
  "libra2-crypto",
  "libra2-db",
@@ -10664,6 +10663,7 @@ dependencies = [
  "libra2-types",
  "libra2-vm-environment",
  "libra2-vm-genesis",
+ "libra2-vm-logging",
  "move-binary-format",
  "move-core-types",
  "move-vm-runtime",

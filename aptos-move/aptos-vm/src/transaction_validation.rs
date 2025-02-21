@@ -17,7 +17,7 @@ use libra2_types::{
     account_config::constants::CORE_CODE_ADDRESS, fee_statement::FeeStatement,
     move_utils::as_move_value::AsMoveValue, on_chain_config::Features, transaction::Multisig,
 };
-use aptos_vm_logging::log_schema::AdapterLogSchema;
+use libra2_vm_logging::log_schema::AdapterLogSchema;
 use fail::fail_point;
 use move_binary_format::errors::VMResult;
 use move_core_types::{

@@ -44,7 +44,7 @@ use libra2_types::{
     vm::modules::AptosModuleExtension,
     write_set::TransactionWrite,
 };
-use aptos_vm_logging::{log_schema::AdapterLogSchema, prelude::*};
+use libra2_vm_logging::{log_schema::AdapterLogSchema, prelude::*};
 use libra2_vm_types::resolver::{
     BlockSynchronizationKillSwitch, ResourceGroupSize, StateStorageView, TModuleView,
     TResourceGroupView, TResourceView,

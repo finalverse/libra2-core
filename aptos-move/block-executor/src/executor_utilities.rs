@@ -11,7 +11,7 @@ use libra2_types::{
     transaction::BlockExecutableTransaction as Transaction,
     write_set::TransactionWrite,
 };
-use aptos_vm_logging::{alert, prelude::*};
+use libra2_vm_logging::{alert, prelude::*};
 use libra2_vm_types::resolver::ResourceGroupSize;
 use bytes::Bytes;
 use fail::fail_point;

@@ -5,7 +5,7 @@
 use crate::transaction_validation::APTOS_TRANSACTION_VALIDATION;
 use libra2_logger::{enabled, Level};
 use libra2_types::transaction::TransactionStatus;
-use aptos_vm_logging::{log_schema::AdapterLogSchema, prelude::*};
+use libra2_vm_logging::{log_schema::AdapterLogSchema, prelude::*};
 use libra2_vm_types::output::VMOutput;
 use move_binary_format::errors::VMError;
 use move_core_types::vm_status::{StatusCode, VMStatus};
