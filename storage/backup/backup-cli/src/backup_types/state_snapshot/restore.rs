@@ -38,7 +38,7 @@ use libra2_types::{
     },
     transaction::Version,
 };
-use aptos_vm_environment::prod_configs::aptos_prod_verifier_config;
+use libra2_vm_environment::prod_configs::aptos_prod_verifier_config;
 use clap::Parser;
 use futures::{stream, TryStreamExt};
 use move_binary_format::CompiledModule;

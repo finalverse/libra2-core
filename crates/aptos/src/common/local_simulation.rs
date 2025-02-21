@@ -7,9 +7,9 @@ use aptos_gas_profiling::FrameName;
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_types::transaction::SignedTransaction;
 use aptos_vm::{data_cache::AsMoveResolver, AptosVM};
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use aptos_vm_logging::log_schema::AdapterLogSchema;
-use aptos_vm_types::{
+use libra2_vm_types::{
     module_and_script_storage::AsAptosCodeStorage, output::VMOutput, resolver::StateStorageView,
 };
 use move_core_types::vm_status::VMStatus;
@@ -22,7 +22,7 @@ pub fn run_transaction_using_debugger(
     _hash: HashValue,
 ) -> CliTypedResult<(VMStatus, VMOutput)> {
     let state_view = debugger.state_view_at_version(version);
-    let env = AptosEnvironment::new(&state_view);
+    let env = Libra2Environment::new(&state_view);
     let vm = AptosVM::new(env.clone(), &state_view);
     let log_context = AdapterLogSchema::new(state_view.id(), 0);
 
@@ -42,7 +42,7 @@ pub fn benchmark_transaction_using_debugger(
     _hash: HashValue,
 ) -> CliTypedResult<(VMStatus, VMOutput)> {
     let state_view = debugger.state_view_at_version(version);
-    let env = AptosEnvironment::new(&state_view);
+    let env = Libra2Environment::new(&state_view);
     let vm = AptosVM::new(env.clone(), &state_view);
     let log_context = AdapterLogSchema::new(state_view.id(), 0);
 

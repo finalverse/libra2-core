@@ -23,7 +23,7 @@ use libra2_types::{
     contract_event::TransactionEvent, state_store::state_value::StateValueMetadata,
     transaction::BlockOutput, write_set::TransactionWrite,
 };
-use aptos_vm_types::resource_group_adapter::group_size_as_sum;
+use libra2_vm_types::resource_group_adapter::group_size_as_sum;
 use bytes::Bytes;
 use claims::{assert_matches, assert_none, assert_some, assert_some_eq};
 use itertools::izip;

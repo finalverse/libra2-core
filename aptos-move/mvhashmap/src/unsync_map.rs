@@ -14,7 +14,7 @@ use libra2_types::{
     vm::modules::AptosModuleExtension,
     write_set::TransactionWrite,
 };
-use aptos_vm_types::{resolver::ResourceGroupSize, resource_group_adapter::group_size_as_sum};
+use libra2_vm_types::{resolver::ResourceGroupSize, resource_group_adapter::group_size_as_sum};
 use move_binary_format::{file_format::CompiledScript, CompiledModule};
 use move_core_types::{language_storage::ModuleId, value::MoveTypeLayout};
 use move_vm_runtime::{Module, Script};

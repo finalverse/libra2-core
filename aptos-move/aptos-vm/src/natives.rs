@@ -26,7 +26,7 @@ use libra2_types::{
         state_value::{StateValue, StateValueMetadata},
     },
 };
-use aptos_vm_environment::natives::aptos_natives_with_builder;
+use libra2_vm_environment::natives::aptos_natives_with_builder;
 #[cfg(feature = "testing")]
 use bytes::Bytes;
 #[cfg(feature = "testing")]

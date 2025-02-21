@@ -12,7 +12,7 @@ use libra2_logger::{enabled, Level};
 use aptos_memory_usage_tracker::MemoryTrackedGasMeter;
 use libra2_types::on_chain_config::Features;
 use aptos_vm_logging::{log_schema::AdapterLogSchema, speculative_log, speculative_warn};
-use aptos_vm_types::{
+use libra2_vm_types::{
     resolver::BlockSynchronizationKillSwitch,
     storage::{space_pricing::DiskSpacePricing, StorageGasParameters},
 };

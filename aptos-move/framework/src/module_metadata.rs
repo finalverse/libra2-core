@@ -6,7 +6,7 @@ use libra2_types::{
     on_chain_config::{FeatureFlag, Features, TimedFeatureFlag, TimedFeatures},
     transaction::AbortInfo,
 };
-use aptos_vm_types::module_and_script_storage::module_storage::AptosModuleStorage;
+use libra2_vm_types::module_and_script_storage::module_storage::AptosModuleStorage;
 use lru::LruCache;
 use move_binary_format::{
     access::ModuleAccess,

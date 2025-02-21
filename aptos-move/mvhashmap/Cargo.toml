@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 aptos-aggregator = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm-types = { workspace = true }
+libra2-vm-types = { workspace = true }
 bytes = { workspace = true }
 claims = { workspace = true }
 crossbeam = { workspace = true }

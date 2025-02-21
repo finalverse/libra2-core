@@ -25,7 +25,7 @@ aptos-resource-viewer = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true, features = ["fuzzing"] }
 aptos-vm = { workspace = true }
-aptos-vm-environment = { workspace = true }
+libra2-vm-environment = { workspace = true }
 libra2-vm-genesis = { workspace = true }
 bcs = { workspace = true }
 clap = { workspace = true }

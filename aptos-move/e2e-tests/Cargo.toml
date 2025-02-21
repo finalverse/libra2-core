@@ -29,10 +29,10 @@ libra2-proptest-helpers = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true }
-aptos-vm-environment = { workspace = true }
+libra2-vm-environment = { workspace = true }
 libra2-vm-genesis = { workspace = true }
 aptos-vm-logging = { workspace = true }
-aptos-vm-types = { workspace = true }
+libra2-vm-types = { workspace = true }
 bcs = { workspace = true }
 bytes = { workspace = true }
 claims = { workspace = true }

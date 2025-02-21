@@ -14,8 +14,8 @@ use libra2_types::{
     transaction::BlockExecutableTransaction as Transaction,
     write_set::WriteOp,
 };
-use aptos_vm_environment::environment::AptosEnvironment;
-use aptos_vm_types::{
+use libra2_vm_environment::environment::Libra2Environment;
+use libra2_vm_types::{
     module_and_script_storage::code_storage::AptosCodeStorage,
     module_write_set::ModuleWrite,
     resolver::{
@@ -69,7 +69,7 @@ pub trait ExecutorTask: Sync {
 
     /// Create an instance of the transaction executor.
     fn init(
-        environment: AptosEnvironment,
+        environment: Libra2Environment,
         state_view: &impl TStateView<Key = <Self::Txn as Transaction>::Key>,
     ) -> Self;
 

@@ -50,8 +50,8 @@ use aptos_vm::{
     block_executor::{AptosBlockExecutorWrapper, AptosTransactionOutput},
     VMBlockExecutor,
 };
-use aptos_vm_environment::environment::AptosEnvironment;
-use aptos_vm_types::{
+use libra2_vm_environment::environment::Libra2Environment;
+use libra2_vm_types::{
     abstract_write_op::{
         AbstractResourceWriteOp, GroupWrite, ResourceGroupInPlaceDelayedFieldChangeOp,
     },
@@ -122,7 +122,7 @@ impl ExecutorTask for NativeVMExecutorTask {
     type Output = AptosTransactionOutput;
     type Txn = SignatureVerifiedTransaction;
 
-    fn init(env: AptosEnvironment, _state_view: &impl StateView) -> Self {
+    fn init(env: Libra2Environment, _state_view: &impl StateView) -> Self {
         let fa_migration_complete = env
             .features()
             .is_enabled(FeatureFlag::OPERATIONS_DEFAULT_TO_FA_APT_STORE);

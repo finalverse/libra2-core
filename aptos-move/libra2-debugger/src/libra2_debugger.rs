@@ -26,9 +26,9 @@ use aptos_validator_interface::{
 use aptos_vm::{
     aptos_vm::AptosVMBlockExecutor, data_cache::AsMoveResolver, AptosVM, VMBlockExecutor,
 };
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use aptos_vm_logging::log_schema::AdapterLogSchema;
-use aptos_vm_types::{module_and_script_storage::AsAptosCodeStorage, output::VMOutput};
+use libra2_vm_types::{module_and_script_storage::AsAptosCodeStorage, output::VMOutput};
 use itertools::Itertools;
 use std::{path::Path, sync::Arc, time::Instant};
 
@@ -128,7 +128,7 @@ impl Libra2Debugger {
             bail!("Module bundle payload has been removed")
         }
 
-        let env = AptosEnvironment::new(&state_view);
+        let env = Libra2Environment::new(&state_view);
         let vm = AptosVM::new(env.clone(), &state_view);
         let resolver = state_view.as_move_resolver();
         let code_storage = state_view.as_aptos_code_storage(env);

@@ -14,7 +14,7 @@ use libra2_types::{
     transaction::BlockExecutableTransaction as Transaction,
     vm::modules::AptosModuleExtension,
 };
-use aptos_vm_types::module_and_script_storage::module_storage::AptosModuleStorage;
+use libra2_vm_types::module_and_script_storage::module_storage::AptosModuleStorage;
 use move_binary_format::{
     errors::{Location, PartialVMResult, VMResult},
     file_format::CompiledScript,

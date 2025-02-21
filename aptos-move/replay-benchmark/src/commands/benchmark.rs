@@ -9,7 +9,7 @@ use crate::{
 };
 use anyhow::{anyhow, bail};
 use libra2_logger::Level;
-use aptos_vm_environment::prod_configs::set_paranoid_type_checks;
+use libra2_vm_environment::prod_configs::set_paranoid_type_checks;
 use clap::Parser;
 use std::path::PathBuf;
 use tokio::fs;

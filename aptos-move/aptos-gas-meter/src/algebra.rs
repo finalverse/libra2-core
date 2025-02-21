@@ -5,7 +5,7 @@ use crate::traits::GasAlgebra;
 use aptos_gas_algebra::{Fee, FeePerGasUnit, Gas, GasExpression, NumBytes, NumModules, Octa};
 use aptos_gas_schedule::{gas_feature_versions, VMGasParameters};
 use libra2_logger::error;
-use aptos_vm_types::{
+use libra2_vm_types::{
     resolver::BlockSynchronizationKillSwitch,
     storage::{io_pricing::IoPricing, space_pricing::DiskSpacePricing, StorageGasParameters},
 };

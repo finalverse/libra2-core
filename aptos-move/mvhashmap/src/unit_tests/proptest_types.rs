@@ -12,7 +12,7 @@ use libra2_types::{
     state_store::state_value::StateValue,
     write_set::{TransactionWrite, WriteOpKind},
 };
-use aptos_vm_types::resolver::ResourceGroupSize;
+use libra2_vm_types::resolver::ResourceGroupSize;
 use bytes::Bytes;
 use claims::assert_none;
 use proptest::{collection::vec, prelude::*, sample::Index, strategy::Strategy};

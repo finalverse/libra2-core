@@ -46,10 +46,10 @@ libra2-telemetry = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true, features = ["testing"] }
-aptos-vm-environment = { workspace = true }
+libra2-vm-environment = { workspace = true }
 libra2-vm-genesis = { workspace = true }
 aptos-vm-logging = { workspace = true }
-aptos-vm-types = { workspace = true }
+libra2-vm-types = { workspace = true }
 aptos-workspace-server = { workspace = true }
 async-trait = { workspace = true }
 base64 = { workspace = true }

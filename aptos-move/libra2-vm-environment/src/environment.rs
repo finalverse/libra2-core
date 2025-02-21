@@ -19,7 +19,7 @@ use libra2_types::{
     },
     state_store::StateView,
 };
-use aptos_vm_types::storage::StorageGasParameters;
+use libra2_vm_types::storage::StorageGasParameters;
 use move_vm_runtime::{config::VMConfig, RuntimeEnvironment, WithRuntimeEnvironment};
 use sha3::{Digest, Sha3_256};
 use std::sync::Arc;
@@ -28,9 +28,9 @@ use std::sync::Arc;
 /// used by execution, gas parameters, VM configs and global caches. Note that it is the user's
 /// responsibility to make sure the environment is consistent, for now it should only be used per
 /// block of transactions because all features or configs are updated only on per-block basis.
-pub struct AptosEnvironment(Arc<Environment>);
+pub struct Libra2Environment(Arc<Environment>);
 
-impl AptosEnvironment {
+impl Libra2Environment {
     /// Returns new execution environment based on the current state.
     pub fn new(state_view: &impl StateView) -> Self {
         Self(Arc::new(Environment::new(state_view, false, None)))
@@ -117,21 +117,21 @@ impl AptosEnvironment {
     }
 }
 
-impl Clone for AptosEnvironment {
+impl Clone for Libra2Environment {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
 
-impl PartialEq for AptosEnvironment {
+impl PartialEq for Libra2Environment {
     fn eq(&self, other: &Self) -> bool {
         self.0.hash == other.0.hash
     }
 }
 
-impl Eq for AptosEnvironment {}
+impl Eq for Libra2Environment {}
 
-impl WithRuntimeEnvironment for AptosEnvironment {
+impl WithRuntimeEnvironment for Libra2Environment {
     fn runtime_environment(&self) -> &RuntimeEnvironment {
         &self.0.runtime_environment
     }
@@ -314,8 +314,8 @@ pub mod tests {
     #[test]
     fn test_environment_eq() {
         let state_view = MockStateView::empty();
-        let environment_1 = AptosEnvironment::new(&state_view);
-        let environment_2 = AptosEnvironment::new(&state_view);
+        let environment_1 = Libra2Environment::new(&state_view);
+        let environment_2 = Libra2Environment::new(&state_view);
         assert!(environment_1 == environment_2);
     }
 
@@ -364,8 +364,8 @@ pub mod tests {
         for i in 0..state_views.len() {
             for j in 0..state_views.len() {
                 if i != j {
-                    let environment_1 = AptosEnvironment::new(&state_views[i]);
-                    let environment_2 = AptosEnvironment::new(&state_views[j]);
+                    let environment_1 = Libra2Environment::new(&state_views[i]);
+                    let environment_2 = Libra2Environment::new(&state_views[j]);
                     assert!(environment_1 != environment_2);
                 }
             }
@@ -377,9 +377,9 @@ pub mod tests {
         let state_view = MockStateView::empty();
 
         let not_injected_envs = [
-            AptosEnvironment::new(&state_view),
-            AptosEnvironment::new_with_gas_hook(&state_view, Arc::new(|_| {})),
-            AptosEnvironment::new_with_delayed_field_optimization_enabled(&state_view),
+            Libra2Environment::new(&state_view),
+            Libra2Environment::new_with_gas_hook(&state_view, Arc::new(|_| {})),
+            Libra2Environment::new_with_delayed_field_optimization_enabled(&state_view),
         ];
         for env in not_injected_envs {
             #[allow(deprecated)]
@@ -388,7 +388,7 @@ pub mod tests {
         }
 
         // Injected.
-        let env = AptosEnvironment::new_with_injected_create_signer_for_gov_sim(&state_view);
+        let env = Libra2Environment::new_with_injected_create_signer_for_gov_sim(&state_view);
         #[allow(deprecated)]
         let enabled = env.inject_create_signer_for_gov_sim();
         assert!(enabled);

@@ -15,7 +15,7 @@ use crate::{
 };
 use aptos_gas_meter::AptosGasMeter;
 use libra2_types::{on_chain_config::Features, transaction::ModuleBundle};
-use aptos_vm_types::{
+use libra2_vm_types::{
     change_set::VMChangeSet, module_and_script_storage::module_storage::AptosModuleStorage,
     module_write_set::ModuleWriteSet, storage::change_set_configs::ChangeSetConfigs,
 };

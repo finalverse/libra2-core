@@ -45,9 +45,9 @@ use libra2_types::{
     vm::modules::AptosModuleExtension,
     write_set::{TransactionWrite, WriteOp},
 };
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use aptos_vm_logging::{alert, clear_speculative_txn_logs, init_speculative_logs, prelude::*};
-use aptos_vm_types::{
+use libra2_vm_types::{
     change_set::randomly_check_layout_matches, module_write_set::ModuleWrite,
     resolver::ResourceGroupSize,
 };
@@ -948,7 +948,7 @@ where
 
     fn worker_loop(
         &self,
-        environment: &AptosEnvironment,
+        environment: &Libra2Environment,
         block: &TP,
         last_input_output: &TxnLastInputOutput<T, E::Output, E::Error>,
         versioned_cache: &MVHashMap<T::Key, T::Tag, T::Value, DelayedFieldID>,

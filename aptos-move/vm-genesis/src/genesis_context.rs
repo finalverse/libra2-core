@@ -12,7 +12,7 @@ use libra2_types::{
     },
     write_set::WriteOp,
 };
-use aptos_vm_types::module_write_set::ModuleWrite;
+use libra2_vm_types::module_write_set::ModuleWrite;
 use bytes::Bytes;
 use claims::assert_some;
 use move_core_types::language_storage::ModuleId;

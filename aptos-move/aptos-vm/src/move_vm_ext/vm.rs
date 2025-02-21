@@ -10,12 +10,12 @@ use libra2_types::{
     on_chain_config::{Features, TimedFeaturesBuilder},
     transaction::user_transaction_context::UserTransactionContext,
 };
-use aptos_vm_environment::{
-    environment::AptosEnvironment,
+use libra2_vm_environment::{
+    environment::Libra2Environment,
     natives::aptos_natives_with_builder,
     prod_configs::{aptos_default_ty_builder, aptos_prod_vm_config},
 };
-use aptos_vm_types::storage::change_set_configs::ChangeSetConfigs;
+use libra2_vm_types::storage::change_set_configs::ChangeSetConfigs;
 use move_vm_runtime::{move_vm::MoveVM, RuntimeEnvironment, WithRuntimeEnvironment};
 use std::ops::Deref;
 
@@ -111,11 +111,11 @@ impl GenesisMoveVM {
 
 pub struct MoveVmExt {
     inner: MoveVM,
-    pub(crate) env: AptosEnvironment,
+    pub(crate) env: Libra2Environment,
 }
 
 impl MoveVmExt {
-    pub fn new(env: AptosEnvironment, resolver: &impl AptosMoveResolver) -> Self {
+    pub fn new(env: Libra2Environment, resolver: &impl AptosMoveResolver) -> Self {
         let vm = if env.features().is_loader_v2_enabled() {
             MoveVM::new_with_runtime_environment(env.runtime_environment())
         } else {

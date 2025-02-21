@@ -19,7 +19,7 @@ use libra2_types::{
     vm::modules::AptosModuleExtension,
 };
 use aptos_vm::AptosVM;
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use aptos_vm_logging::log_schema::AdapterLogSchema;
 use fail::fail_point;
 use move_binary_format::{
@@ -58,7 +58,7 @@ fn new_vm_for_validation(state_view: &impl StateView) -> AptosVM {
         AdapterLogSchema::new(state_view.id(), 0),
         "AptosVM created for Validation"
     );
-    let env = AptosEnvironment::new(state_view);
+    let env = Libra2Environment::new(state_view);
     AptosVM::new(env, state_view)
 }
 

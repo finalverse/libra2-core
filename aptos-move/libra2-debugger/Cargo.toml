@@ -23,9 +23,9 @@ libra2-rest-client = { workspace = true }
 libra2-types = { workspace = true }
 aptos-validator-interface = { workspace = true }
 aptos-vm = { workspace = true }
-aptos-vm-environment = { workspace = true }
+libra2-vm-environment = { workspace = true }
 aptos-vm-logging = { workspace = true }
-aptos-vm-types = { workspace = true }
+libra2-vm-types = { workspace = true }
 bcs = { workspace = true }
 clap = { workspace = true }
 itertools = { workspace = true }

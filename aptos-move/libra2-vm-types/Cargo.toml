@@ -1,6 +1,6 @@
 [package]
-name = "aptos-vm-environment"
-description = "Aptos VM environment"
+name = "libra2-vm-types"
+description = "Libra2 VM types"
 version = "0.0.1"
 
 # Workspace inherited keys
@@ -13,23 +13,26 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-framework = { workspace = true }
+ambassador = { workspace = true }
+anyhow = { workspace = true }
+aptos-aggregator = { workspace = true }
 aptos-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true }
-aptos-move-stdlib = { workspace = true }
-aptos-native-interface = { workspace = true }
-aptos-table-natives = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm-types = { workspace = true }
 bcs = { workspace = true }
+bytes = { workspace = true }
+claims = { workspace = true }
+either = { workspace = true }
 move-binary-format = { workspace = true }
-move-bytecode-verifier = { workspace = true }
 move-core-types = { workspace = true }
 move-vm-runtime = { workspace = true }
 move-vm-types = { workspace = true }
-once_cell = { workspace = true }
-sha3 = { workspace = true }
+rand = { workspace = true }
+serde = { workspace = true }
 
 [dev-dependencies]
-libra2-types = { workspace = true, features = ["testing", "fuzzing"] }
-serde = { workspace = true }
+aptos-aggregator = { workspace = true, features = ["testing"] }
+aptos-gas-schedule = { workspace = true, features = ["testing"] }
+aptos-language-e2e-tests = { workspace = true }
+aptos-vm = { workspace = true }
+test-case = { workspace = true }

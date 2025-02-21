@@ -8,7 +8,7 @@ use libra2_types::{
     state_store::{state_key::StateKey, state_value::StateValueMetadata},
     write_set::WriteOp,
 };
-use aptos_vm_types::{
+use libra2_vm_types::{
     abstract_write_op::GroupWrite,
     module_and_script_storage::module_storage::AptosModuleStorage,
     module_write_set::ModuleWrite,
@@ -301,8 +301,8 @@ mod tests {
         state_store::{state_value::StateValue, MockStateView},
         write_set::TransactionWrite,
     };
-    use aptos_vm_environment::environment::AptosEnvironment;
-    use aptos_vm_types::{
+    use libra2_vm_environment::environment::Libra2Environment;
+    use libra2_vm_types::{
         module_and_script_storage::AsAptosCodeStorage,
         resource_group_adapter::{group_size_as_sum, GroupSizeKind},
     };
@@ -320,7 +320,7 @@ mod tests {
         StateValueMetadata::legacy(v, &CurrentTimeMicroseconds { microseconds: v })
     }
 
-    // TODO: Can re-use some of these testing definitions with aptos-vm-types.
+    // TODO: Can re-use some of these testing definitions with libra2-vm-types.
     pub(crate) fn mock_tag_0() -> StructTag {
         StructTag {
             address: AccountAddress::ONE,
@@ -396,7 +396,7 @@ mod tests {
             (c_state_key.clone(), c_state_value.clone()),
         ]));
         let resolver = state_view.as_move_resolver();
-        let env = AptosEnvironment::new(&state_view);
+        let env = Libra2Environment::new(&state_view);
         let code_storage = state_view.as_aptos_code_storage(env);
         // Storage slot metadata is enabled on the mainnet.
         let woc = WriteOpConverter::new(&resolver, true);

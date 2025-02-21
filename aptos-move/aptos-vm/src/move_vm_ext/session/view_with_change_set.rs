@@ -19,7 +19,7 @@ use libra2_types::{
     },
     write_set::TransactionWrite,
 };
-use aptos_vm_types::{
+use libra2_vm_types::{
     abstract_write_op::{AbstractResourceWriteOp, WriteWithDelayedFieldsOp},
     change_set::{randomly_check_layout_matches, VMChangeSet},
     resolver::{
@@ -345,7 +345,7 @@ mod test {
     use aptos_aggregator::delta_change_set::{delta_add, serialize};
     use aptos_language_e2e_tests::data_store::FakeDataStore;
     use libra2_types::{account_address::AccountAddress, write_set::WriteOp};
-    use aptos_vm_types::abstract_write_op::GroupWrite;
+    use libra2_vm_types::abstract_write_op::GroupWrite;
     use move_core_types::{
         identifier::Identifier,
         language_storage::{StructTag, TypeTag},

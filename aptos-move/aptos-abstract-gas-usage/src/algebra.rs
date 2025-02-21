@@ -7,7 +7,7 @@ use aptos_gas_algebra::{
 };
 use aptos_gas_meter::GasAlgebra;
 use aptos_gas_schedule::VMGasParameters;
-use aptos_vm_types::storage::{io_pricing::IoPricing, space_pricing::DiskSpacePricing};
+use libra2_vm_types::storage::{io_pricing::IoPricing, space_pricing::DiskSpacePricing};
 use move_binary_format::errors::PartialVMResult;
 use std::sync::{Arc, Mutex};
 

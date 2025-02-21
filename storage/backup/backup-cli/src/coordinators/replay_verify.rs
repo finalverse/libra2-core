@@ -19,7 +19,7 @@ use libra2_logger::prelude::*;
 use libra2_storage_interface::Libra2DbError;
 use libra2_types::{on_chain_config::TimedFeatureOverride, transaction::Version};
 use aptos_vm::AptosVM;
-use aptos_vm_environment::prod_configs::set_timed_feature_override;
+use libra2_vm_environment::prod_configs::set_timed_feature_override;
 use std::sync::Arc;
 use thiserror::Error;
 

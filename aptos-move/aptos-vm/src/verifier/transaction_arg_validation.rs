@@ -7,7 +7,7 @@
 //! for strings whether they consist of correct characters.
 
 use crate::{aptos_vm::SerializedSigners, move_vm_ext::SessionExt, VMStatus};
-use aptos_vm_types::module_and_script_storage::module_storage::AptosModuleStorage;
+use libra2_vm_types::module_and_script_storage::module_storage::AptosModuleStorage;
 use move_binary_format::{
     errors::{Location, PartialVMError},
     file_format::FunctionDefinitionIndex,

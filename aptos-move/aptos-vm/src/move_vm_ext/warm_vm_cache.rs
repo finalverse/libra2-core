@@ -10,7 +10,7 @@ use libra2_infallible::RwLock;
 use libra2_metrics_core::TimerHelper;
 use aptos_native_interface::SafeNativeBuilder;
 use libra2_types::{on_chain_config::OnChainConfig, state_store::state_key::StateKey};
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use bytes::Bytes;
 use move_binary_format::errors::{Location, PartialVMError, VMResult};
 use move_core_types::{
@@ -38,13 +38,13 @@ pub fn flush_warm_vm_cache() {
 
 impl WarmVmCache {
     pub(crate) fn get_warm_vm(
-        env: &AptosEnvironment,
+        env: &Libra2Environment,
         resolver: &impl AptosMoveResolver,
     ) -> VMResult<MoveVM> {
         WARM_VM_CACHE.get(env, resolver)
     }
 
-    fn get(&self, env: &AptosEnvironment, resolver: &impl AptosMoveResolver) -> VMResult<MoveVM> {
+    fn get(&self, env: &Libra2Environment, resolver: &impl AptosMoveResolver) -> VMResult<MoveVM> {
         let _timer = TIMER.timer_with(&["warm_vm_get"]);
         let id = {
             let _timer = TIMER.timer_with(&["get_warm_vm_id"]);
@@ -103,7 +103,7 @@ struct WarmVmId {
 }
 
 impl WarmVmId {
-    fn new(env: &AptosEnvironment, resolver: &impl AptosMoveResolver) -> VMResult<Self> {
+    fn new(env: &Libra2Environment, resolver: &impl AptosMoveResolver) -> VMResult<Self> {
         let natives = {
             // Create native builder just in case, even though the environment has more info now.
             let _timer = TIMER.timer_with(&["serialize_native_builder"]);

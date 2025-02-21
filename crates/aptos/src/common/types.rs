@@ -46,7 +46,7 @@ use libra2_types::{
         SignedTransaction, TransactionArgument, TransactionPayload, TransactionStatus,
     },
 };
-use aptos_vm_types::output::VMOutput;
+use libra2_vm_types::output::VMOutput;
 use async_trait::async_trait;
 use clap::{ArgGroup, Parser, ValueEnum};
 use hex::FromHexError;

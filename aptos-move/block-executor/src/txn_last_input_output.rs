@@ -18,7 +18,7 @@ use libra2_types::{
     vm::modules::AptosModuleExtension,
     write_set::WriteOp,
 };
-use aptos_vm_types::module_write_set::ModuleWrite;
+use libra2_vm_types::module_write_set::ModuleWrite;
 use arc_swap::ArcSwapOption;
 use crossbeam::utils::CachePadded;
 use dashmap::DashSet;

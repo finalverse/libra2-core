@@ -6,7 +6,7 @@ use crate::{
     verifier::{transaction_arg_validation, transaction_arg_validation::get_allowed_structs},
 };
 use aptos_framework::RuntimeModuleMetadataV1;
-use aptos_vm_types::module_and_script_storage::module_storage::AptosModuleStorage;
+use libra2_vm_types::module_and_script_storage::module_storage::AptosModuleStorage;
 use move_binary_format::errors::{PartialVMError, PartialVMResult};
 use move_core_types::{identifier::IdentStr, vm_status::StatusCode};
 use move_vm_runtime::LoadedFunction;

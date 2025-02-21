@@ -11,7 +11,7 @@ use libra2_logger::error;
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_types::transaction::Version;
 use aptos_vm::{aptos_vm::AptosVMBlockExecutor, data_cache::AsMoveResolver, VMBlockExecutor};
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use move_core_types::{
     ident_str,
     language_storage::{ModuleId, CORE_CODE_ADDRESS},
@@ -110,7 +110,7 @@ impl InputOutputDiffGenerator {
 
         // Execute transactions with an override. Here we do not flush warm VM cache but instead
         // ensure all prefetched modules are read to avoid race condition on VM cache flushing.
-        let environment = AptosEnvironment::new(&state_view_with_override);
+        let environment = Libra2Environment::new(&state_view_with_override);
         if !environment.features().is_loader_v2_enabled() {
             let vm = MoveVM::new_with_runtime_environment(environment.runtime_environment());
             #[allow(deprecated)]

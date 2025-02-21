@@ -6,7 +6,7 @@ use aptos_gas_schedule::VMGasParameters;
 use libra2_types::{
     contract_event::ContractEvent, state_store::state_key::StateKey, write_set::WriteOpSize,
 };
-use aptos_vm_types::{
+use libra2_vm_types::{
     change_set::ChangeSetInterface,
     module_and_script_storage::module_storage::AptosModuleStorage,
     resolver::ExecutorView,

@@ -15,7 +15,7 @@ use libra2_types::{
     transaction::TransactionOutput,
     write_set::TransactionWrite,
 };
-use aptos_vm_types::output::VMOutput;
+use libra2_vm_types::output::VMOutput;
 use once_cell::sync::Lazy;
 use rayon::Scope;
 use std::{

@@ -8,7 +8,7 @@ use libra2_types::{
     executable::ExecutableDescriptor,
     write_set::{TransactionWrite, WriteOpKind},
 };
-use aptos_vm_types::resolver::ResourceGroupSize;
+use libra2_vm_types::resolver::ResourceGroupSize;
 use bytes::Bytes;
 use move_core_types::value::MoveTypeLayout;
 use std::sync::{atomic::AtomicU32, Arc};

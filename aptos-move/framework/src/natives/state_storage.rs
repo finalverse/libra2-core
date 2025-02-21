@@ -6,7 +6,7 @@ use aptos_native_interface::{
     RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeResult,
 };
 use libra2_types::{state_store::state_key::StateKey, vm_status::StatusCode};
-use aptos_vm_types::resolver::StateStorageView;
+use libra2_vm_types::resolver::StateStorageView;
 use better_any::{Tid, TidAble};
 use move_binary_format::errors::PartialVMError;
 use move_vm_runtime::native_functions::NativeFunction;

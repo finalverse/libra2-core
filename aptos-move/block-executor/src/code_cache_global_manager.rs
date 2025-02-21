@@ -17,9 +17,9 @@ use libra2_types::{
     state_store::StateView,
     vm::modules::AptosModuleExtension,
 };
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use aptos_vm_logging::alert;
-use aptos_vm_types::module_and_script_storage::{AptosCodeStorageAdapter, AsAptosCodeStorage};
+use libra2_vm_types::module_and_script_storage::{AptosCodeStorageAdapter, AsAptosCodeStorage};
 use move_binary_format::{
     errors::{Location, VMError},
     CompiledModule,
@@ -56,7 +56,7 @@ pub struct ModuleCacheManager<K, D, V, E> {
 
     /// The execution environment, initially set to [None]. The environment, as long as it does not
     /// change, can be kept for multiple block executions.
-    environment: Option<AptosEnvironment>,
+    environment: Option<Libra2Environment>,
     /// Module cache, initially empty, that can be used for parallel block execution. It is the
     /// responsibility of [ModuleCacheManager] to ensure it stays in sync with the environment and
     /// the state.
@@ -88,7 +88,7 @@ where
     ///   4. Checks sizes of type and module caches. If they are too large, caches are flushed.
     fn check_ready(
         &mut self,
-        storage_environment: AptosEnvironment,
+        storage_environment: Libra2Environment,
         config: &BlockExecutorModuleCacheLocalConfig,
         transaction_slice_metadata: TransactionSliceMetadata,
     ) -> Result<(), VMStatus> {
@@ -165,7 +165,7 @@ impl AptosModuleCacheManager {
     ) -> Result<AptosModuleCacheManagerGuard<'_>, VMStatus> {
         // Get the current environment from storage.
         let storage_environment =
-            AptosEnvironment::new_with_delayed_field_optimization_enabled(&state_view);
+            Libra2Environment::new_with_delayed_field_optimization_enabled(&state_view);
 
         Ok(match self.inner.try_lock() {
             Some(mut guard) => {
@@ -226,14 +226,14 @@ pub enum AptosModuleCacheManagerGuard<'a> {
     },
     /// Either there is no [AptosModuleCacheManager], or acquiring the lock for it failed.
     None {
-        environment: AptosEnvironment,
+        environment: Libra2Environment,
         module_cache: GlobalModuleCache<ModuleId, CompiledModule, Module, AptosModuleExtension>,
     },
 }
 
 impl<'a> AptosModuleCacheManagerGuard<'a> {
     /// Returns the references to the environment. If environment is not set, panics.
-    pub fn environment(&self) -> &AptosEnvironment {
+    pub fn environment(&self) -> &Libra2Environment {
         use AptosModuleCacheManagerGuard::*;
         match self {
             Guard { guard } => guard
@@ -272,7 +272,7 @@ impl<'a> AptosModuleCacheManagerGuard<'a> {
     pub(crate) fn none() -> Self {
         use libra2_types::state_store::MockStateView;
         AptosModuleCacheManagerGuard::None {
-            environment: AptosEnvironment::new(&MockStateView::empty()),
+            environment: Libra2Environment::new(&MockStateView::empty()),
             module_cache: GlobalModuleCache::empty(),
         }
     }
@@ -282,7 +282,7 @@ impl<'a> AptosModuleCacheManagerGuard<'a> {
 /// dependencies from storage into provided module cache. If loading fails for any reason, a panic
 /// error is returned.
 fn prefetch_aptos_framework<S: StateView>(
-    code_storage: AptosCodeStorageAdapter<S, AptosEnvironment>,
+    code_storage: AptosCodeStorageAdapter<S, Libra2Environment>,
     module_cache: &mut GlobalModuleCache<ModuleId, CompiledModule, Module, AptosModuleExtension>,
 ) -> Result<(), PanicError> {
     // If framework code exists in storage, the transitive closure will be verified and cached.
@@ -327,7 +327,7 @@ mod test {
         let executor = FakeExecutor::from_head_genesis();
         let state_view = executor.get_state_view();
 
-        let environment = AptosEnvironment::new_with_delayed_field_optimization_enabled(state_view);
+        let environment = Libra2Environment::new_with_delayed_field_optimization_enabled(state_view);
         let code_storage = state_view.as_aptos_code_storage(environment);
 
         let mut module_cache = GlobalModuleCache::empty();
@@ -343,7 +343,7 @@ mod test {
         let state_view = FakeDataStore::default();
 
         let environment =
-            AptosEnvironment::new_with_delayed_field_optimization_enabled(&state_view);
+            Libra2Environment::new_with_delayed_field_optimization_enabled(&state_view);
         let code_storage = state_view.as_aptos_code_storage(environment);
 
         let mut module_cache = GlobalModuleCache::empty();
@@ -433,7 +433,7 @@ mod test {
 
         // Case 1: Initial set-up, modules should not be cached. Metadata and environment are set.
         let metadata_1 = TransactionSliceMetadata::block_from_u64(0, 1);
-        assert_ok!(manager.check_ready(AptosEnvironment::new(&state_view), &config, metadata_1));
+        assert_ok!(manager.check_ready(Libra2Environment::new(&state_view), &config, metadata_1));
         assert_eq!(manager.transaction_slice_metadata, metadata_1);
         assert!(manager.environment.is_some());
         assert_eq!(manager.module_cache.num_modules(), 0);
@@ -450,7 +450,7 @@ mod test {
 
         // Case 2: Different metadata => cache is flushed. Here we pass a deep copy of environment.
         let metadata_2 = TransactionSliceMetadata::block_from_u64(2, 3);
-        assert_ok!(manager.check_ready(AptosEnvironment::new(&state_view), &config, metadata_2));
+        assert_ok!(manager.check_ready(Libra2Environment::new(&state_view), &config, metadata_2));
         assert_eq!(manager.transaction_slice_metadata, metadata_2);
         assert!(manager.environment.is_some());
         assert_eq!(manager.module_cache.num_modules(), 0);
@@ -478,7 +478,7 @@ mod test {
         let metadata_3 = TransactionSliceMetadata::block_from_u64(3, 4);
         assert!(metadata_3.is_immediately_after(&metadata_2));
 
-        assert_ok!(manager.check_ready(AptosEnvironment::new(&state_view), &config, metadata_3));
+        assert_ok!(manager.check_ready(Libra2Environment::new(&state_view), &config, metadata_3));
         assert_eq!(manager.transaction_slice_metadata, metadata_3);
         assert!(manager.environment.is_some());
         assert_eq!(manager.module_cache.num_modules(), 4);
@@ -495,7 +495,7 @@ mod test {
         let metadata_4 = TransactionSliceMetadata::block_from_u64(4, 5);
         assert!(metadata_4.is_immediately_after(&metadata_3));
 
-        assert_ok!(manager.check_ready(AptosEnvironment::new(&state_view), &config, metadata_4));
+        assert_ok!(manager.check_ready(Libra2Environment::new(&state_view), &config, metadata_4));
         assert_eq!(manager.transaction_slice_metadata, metadata_4);
         assert!(manager.environment.is_some());
         assert_eq!(manager.module_cache.num_modules(), 0);
@@ -515,7 +515,7 @@ mod test {
 
         let state_view = state_view_with_changed_feature_flag(FeatureFlag::EMIT_FEE_STATEMENT);
 
-        assert_ok!(manager.check_ready(AptosEnvironment::new(&state_view), &config, metadata_5));
+        assert_ok!(manager.check_ready(Libra2Environment::new(&state_view), &config, metadata_5));
         assert_eq!(manager.transaction_slice_metadata, metadata_5);
         assert!(manager.environment.is_some());
         assert_eq!(manager.module_cache.num_modules(), 0);
@@ -538,7 +538,7 @@ mod test {
         let metadata_6 = TransactionSliceMetadata::block_from_u64(6, 5);
         assert!(metadata_6.is_immediately_after(&metadata_5));
 
-        assert_ok!(manager.check_ready(AptosEnvironment::new(&state_view), &config, metadata_6));
+        assert_ok!(manager.check_ready(Libra2Environment::new(&state_view), &config, metadata_6));
         assert_eq!(manager.transaction_slice_metadata, metadata_6);
         assert!(manager.environment.is_some());
         assert_eq!(manager.module_cache.num_modules(), 0);

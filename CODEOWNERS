@@ -11,7 +11,7 @@
 /aptos-move/aptos-gas/ @vgao1996
 /aptos-move/aptos-vm/ @davidiw @wrwg @zekun000 @vgao1996 @georgemitenkov
 /aptos-move/aptos-vm/src/keyless_validation.rs @alinush @heliuchuan
-/aptos-move/aptos-vm-types/ @georgemitenkov @gelash @vgao1996
+/aptos-move/libra2-vm-types/ @georgemitenkov @gelash @vgao1996
 /aptos-move/framework/ @davidiw @movekevin @wrwg
 /aptos-move/framework/aptos-framework/sources/account.move @alinush
 /aptos-move/framework/aptos-framework/sources/jwks.move @zjma

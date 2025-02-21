@@ -23,7 +23,7 @@ use libra2_types::{
     transaction::BlockExecutableTransaction as Transaction,
     write_set::TransactionWrite,
 };
-use aptos_vm_types::resolver::ResourceGroupSize;
+use libra2_vm_types::resolver::ResourceGroupSize;
 use derivative::Derivative;
 use move_core_types::value::MoveTypeLayout;
 use move_vm_types::{

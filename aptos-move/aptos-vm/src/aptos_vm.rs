@@ -81,9 +81,9 @@ use libra2_types::{
     vm_status::{AbortLocation, StatusCode, VMStatus},
 };
 use libra2_utils::libra2_try;
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use aptos_vm_logging::{log_schema::AdapterLogSchema, speculative_error, speculative_log};
-use aptos_vm_types::{
+use libra2_vm_types::{
     abstract_write_op::AbstractResourceWriteOp,
     change_set::{
         create_vm_change_set_with_module_write_set_when_delayed_field_optimization_disabled,
@@ -273,7 +273,7 @@ impl AptosVM {
     /// block executor to create multiple tasks sharing the same execution configurations extracted
     /// from the environment.
     // TODO: Passing `state_view` is not needed once we move keyless configs to the environment.
-    pub fn new(env: AptosEnvironment, state_view: &impl StateView) -> Self {
+    pub fn new(env: Libra2Environment, state_view: &impl StateView) -> Self {
         let _timer = TIMER.timer_with(&["AptosVM::new"]);
 
         let resolver = state_view.as_move_resolver();
@@ -350,7 +350,7 @@ impl AptosVM {
     }
 
     #[inline(always)]
-    pub fn environment(&self) -> AptosEnvironment {
+    pub fn environment(&self) -> Libra2Environment {
         self.move_vm.env.clone()
     }
 
@@ -2626,7 +2626,7 @@ impl AptosVM {
         arguments: Vec<Vec<u8>>,
         max_gas_amount: u64,
     ) -> ViewFunctionOutput {
-        let env = AptosEnvironment::new(state_view);
+        let env = Libra2Environment::new(state_view);
         let vm = AptosVM::new(env.clone(), state_view);
 
         let log_context = AdapterLogSchema::new(state_view.id(), 0);
@@ -3197,7 +3197,7 @@ impl VMValidator for AptosVM {
 pub struct AptosSimulationVM(AptosVM);
 
 impl AptosSimulationVM {
-    pub fn new(env: AptosEnvironment, state_view: &impl StateView) -> Self {
+    pub fn new(env: Libra2Environment, state_view: &impl StateView) -> Self {
         let mut vm = AptosVM::new(env, state_view);
         vm.is_simulation = true;
         Self(vm)
@@ -3215,7 +3215,7 @@ impl AptosSimulationVM {
             "Simulated transaction should not have a valid signature"
         );
 
-        let env = AptosEnvironment::new(state_view);
+        let env = Libra2Environment::new(state_view);
         let vm = Self::new(env.clone(), state_view);
         let log_context = AdapterLogSchema::new(state_view.id(), 0);
 

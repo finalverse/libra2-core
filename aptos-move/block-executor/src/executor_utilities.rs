@@ -12,7 +12,7 @@ use libra2_types::{
     write_set::TransactionWrite,
 };
 use aptos_vm_logging::{alert, prelude::*};
-use aptos_vm_types::resolver::ResourceGroupSize;
+use libra2_vm_types::resolver::ResourceGroupSize;
 use bytes::Bytes;
 use fail::fail_point;
 use move_core_types::value::MoveTypeLayout;

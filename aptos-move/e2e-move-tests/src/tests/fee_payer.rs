@@ -15,7 +15,7 @@ use libra2_types::{
     transaction::{EntryFunction, ExecutionStatus, Script, TransactionPayload, TransactionStatus},
     AptosCoinType,
 };
-use aptos_vm_types::storage::StorageGasParameters;
+use libra2_vm_types::storage::StorageGasParameters;
 use move_core_types::{move_resource::MoveStructType, vm_status::StatusCode};
 use once_cell::sync::Lazy;
 

@@ -12,9 +12,9 @@ use libra2_types::{
         signature_verified_transaction::SignatureVerifiedTransaction, Transaction, WriteSetPayload,
     },
 };
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use aptos_vm_logging::{log_schema::AdapterLogSchema, prelude::*};
-use aptos_vm_types::{
+use libra2_vm_types::{
     module_and_script_storage::code_storage::AptosCodeStorage,
     resolver::{BlockSynchronizationKillSwitch, ExecutorView, ResourceGroupView},
 };
@@ -31,7 +31,7 @@ impl ExecutorTask for AptosExecutorTask {
     type Output = AptosTransactionOutput;
     type Txn = SignatureVerifiedTransaction;
 
-    fn init(environment: AptosEnvironment, state_view: &impl StateView) -> Self {
+    fn init(environment: Libra2Environment, state_view: &impl StateView) -> Self {
         let vm = AptosVM::new(environment, state_view);
         let id = state_view.id();
         Self { vm, id }

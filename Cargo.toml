@@ -26,10 +26,10 @@ members = [
     "aptos-move/aptos-validator-interface",
     "aptos-move/aptos-vm",
     "aptos-move/aptos-vm-benchmarks",
-    "aptos-move/aptos-vm-environment",
+    "aptos-move/libra2-vm-environment",
     "aptos-move/aptos-vm-logging",
     "aptos-move/aptos-vm-profiling",
-    "aptos-move/aptos-vm-types",
+    "aptos-move/libra2-vm-types",
     "aptos-move/aptos-workspace-server",
     "aptos-move/block-executor",
     "aptos-move/e2e-benchmark",
@@ -470,10 +470,10 @@ aptos-validator-interface = { path = "aptos-move/aptos-validator-interface" }
 libra2-validator-transaction-pool = { path = "crates/validator-transaction-pool" }
 libra2-vault-client = { path = "secure/storage/vault" }
 aptos-vm = { path = "aptos-move/aptos-vm" }
-aptos-vm-environment = { path = "aptos-move/aptos-vm-environment" }
+libra2-vm-environment = { path = "aptos-move/libra2-vm-environment" }
 aptos-vm-logging = { path = "aptos-move/aptos-vm-logging" }
 libra2-vm-genesis = { path = "aptos-move/vm-genesis" }
-aptos-vm-types = { path = "aptos-move/aptos-vm-types" }
+libra2-vm-types = { path = "aptos-move/libra2-vm-types" }
 libra2-vm-validator = { path = "vm-validator" }
 aptos-workspace-server = { path = "aptos-move/aptos-workspace-server" }
 libra2-warp-webserver = { path = "crates/libra2-warp-webserver" }

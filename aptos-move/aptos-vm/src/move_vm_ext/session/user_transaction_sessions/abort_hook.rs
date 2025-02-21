@@ -12,7 +12,7 @@ use crate::{
     transaction_metadata::TransactionMetadata,
     AptosVM,
 };
-use aptos_vm_types::{
+use libra2_vm_types::{
     module_and_script_storage::module_storage::AptosModuleStorage,
     storage::change_set_configs::ChangeSetConfigs,
 };

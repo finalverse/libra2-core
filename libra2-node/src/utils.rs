@@ -12,7 +12,7 @@ use libra2_types::{
     account_config::ChainIdResource, chain_id::ChainId, on_chain_config::OnChainConfig,
 };
 use aptos_vm::AptosVM;
-use aptos_vm_environment::prod_configs::set_paranoid_type_checks;
+use libra2_vm_environment::prod_configs::set_paranoid_type_checks;
 use std::cmp::min;
 
 /// Error message to display when non-production features are enabled

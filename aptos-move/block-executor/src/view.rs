@@ -45,7 +45,7 @@ use libra2_types::{
     write_set::TransactionWrite,
 };
 use aptos_vm_logging::{log_schema::AdapterLogSchema, prelude::*};
-use aptos_vm_types::resolver::{
+use libra2_vm_types::resolver::{
     BlockSynchronizationKillSwitch, ResourceGroupSize, StateStorageView, TModuleView,
     TResourceGroupView, TResourceView,
 };
@@ -1849,7 +1849,7 @@ mod test {
         transaction::BlockExecutableTransaction,
         write_set::TransactionWrite,
     };
-    use aptos_vm_types::resolver::TResourceView;
+    use libra2_vm_types::resolver::TResourceView;
     use claims::{assert_err_eq, assert_none, assert_ok_eq, assert_some_eq};
     use move_core_types::value::{IdentifierMappingKind, MoveStructLayout, MoveTypeLayout};
     use move_vm_types::{

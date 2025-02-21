@@ -25,8 +25,8 @@ use libra2_types::{
     transaction::BlockExecutableTransaction as Transaction,
     write_set::{TransactionWrite, WriteOp, WriteOpKind},
 };
-use aptos_vm_environment::environment::AptosEnvironment;
-use aptos_vm_types::{
+use libra2_vm_environment::environment::Libra2Environment;
+use libra2_vm_types::{
     module_and_script_storage::code_storage::AptosCodeStorage,
     module_write_set::ModuleWrite,
     resolver::{
@@ -847,7 +847,7 @@ where
     type Output = MockOutput<K, E>;
     type Txn = MockTransaction<K, E>;
 
-    fn init(_environment: AptosEnvironment, _state_view: &impl TStateView<Key = K>) -> Self {
+    fn init(_environment: Libra2Environment, _state_view: &impl TStateView<Key = K>) -> Self {
         Self::new()
     }
 

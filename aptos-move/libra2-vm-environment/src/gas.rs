@@ -6,7 +6,7 @@ use libra2_types::{
     on_chain_config::{Features, GasSchedule, GasScheduleV2, OnChainConfig},
     state_store::StateView,
 };
-use aptos_vm_types::storage::{io_pricing::IoPricing, StorageGasParameters};
+use libra2_vm_types::storage::{io_pricing::IoPricing, StorageGasParameters};
 use move_core_types::gas_algebra::NumArgs;
 use sha3::{digest::Update, Sha3_256};
 

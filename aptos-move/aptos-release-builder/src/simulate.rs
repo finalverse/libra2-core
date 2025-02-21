@@ -47,11 +47,11 @@ use aptos_vm::{
     move_vm_ext::{flush_warm_vm_cache, SessionId},
     AptosVM,
 };
-use aptos_vm_environment::{
-    environment::AptosEnvironment, prod_configs::aptos_prod_deserializer_config,
+use libra2_vm_environment::{
+    environment::Libra2Environment, prod_configs::aptos_prod_deserializer_config,
 };
 use aptos_vm_logging::log_schema::AdapterLogSchema;
-use aptos_vm_types::{
+use libra2_vm_types::{
     module_and_script_storage::AsAptosCodeStorage, storage::change_set_configs::ChangeSetConfigs,
 };
 use clap::Parser;
@@ -462,7 +462,7 @@ fn add_script_execution_hash(
  **************************************************************************************************/
 fn force_end_epoch(state_view: &SimulationStateView<impl StateView>) -> Result<()> {
     flush_warm_vm_cache();
-    let env = AptosEnvironment::new_with_injected_create_signer_for_gov_sim(&state_view);
+    let env = Libra2Environment::new_with_injected_create_signer_for_gov_sim(&state_view);
     let vm = AptosVM::new(env.clone(), &state_view);
     let resolver = state_view.as_move_resolver();
     let module_storage = state_view.as_aptos_code_storage(env);
@@ -619,7 +619,7 @@ pub async fn simulate_multistep_proposal(
         // The warm vm cache also needs to be explicitly flushed as it cannot detect the
         // patches we performed.
         flush_warm_vm_cache();
-        let env = AptosEnvironment::new_with_injected_create_signer_for_gov_sim(&state_view);
+        let env = Libra2Environment::new_with_injected_create_signer_for_gov_sim(&state_view);
         let vm = AptosVM::new(env.clone(), &state_view);
         let log_context = AdapterLogSchema::new(state_view.id(), 0);
 

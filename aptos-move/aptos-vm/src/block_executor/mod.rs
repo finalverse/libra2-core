@@ -33,7 +33,7 @@ use libra2_types::{
     write_set::WriteOp,
 };
 use aptos_vm_logging::{flush_speculative_logs, init_speculative_logs};
-use aptos_vm_types::{
+use libra2_vm_types::{
     abstract_write_op::AbstractResourceWriteOp, module_write_set::ModuleWrite, output::VMOutput,
     resolver::ResourceGroupSize,
 };

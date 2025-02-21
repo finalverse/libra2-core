@@ -14,7 +14,7 @@ use libra2_types::{
     error::{code_invariant_error, PanicError},
     write_set::{TransactionWrite, WriteOpKind},
 };
-use aptos_vm_types::{resolver::ResourceGroupSize, resource_group_adapter::group_size_as_sum};
+use libra2_vm_types::{resolver::ResourceGroupSize, resource_group_adapter::group_size_as_sum};
 use claims::assert_some;
 use dashmap::DashMap;
 use move_core_types::value::MoveTypeLayout;

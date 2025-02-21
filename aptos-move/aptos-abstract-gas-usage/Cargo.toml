@@ -9,5 +9,5 @@ anyhow = { workspace = true }
 aptos-gas-algebra = { workspace = true }
 aptos-gas-meter = { workspace = true }
 aptos-gas-schedule = { workspace = true }
-aptos-vm-types = { workspace = true }
+libra2-vm-types = { workspace = true }
 move-binary-format = { workspace = true }

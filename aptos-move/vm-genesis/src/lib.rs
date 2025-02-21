@@ -46,7 +46,7 @@ use aptos_vm::{
         convert_modules_into_write_ops, GenesisMoveVM, GenesisRuntimeBuilder, SessionExt,
     },
 };
-use aptos_vm_types::{
+use libra2_vm_types::{
     change_set::VMChangeSet,
     module_and_script_storage::{module_storage::AptosModuleStorage, AsAptosCodeStorage},
     module_write_set::{ModuleWrite, ModuleWriteSet},

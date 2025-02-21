@@ -60,10 +60,10 @@ use aptos_vm::{
     move_vm_ext::{MoveVmExt, SessionExt, SessionId},
     AptosVM, VMValidator,
 };
-use aptos_vm_environment::environment::AptosEnvironment;
+use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_genesis::{generate_genesis_change_set_for_testing_with_count, GenesisOptions};
 use aptos_vm_logging::log_schema::AdapterLogSchema;
-use aptos_vm_types::{
+use libra2_vm_types::{
     module_and_script_storage::{module_storage::AptosModuleStorage, AsAptosCodeStorage},
     resolver::NoopBlockSynchronizationKillSwitch,
     storage::change_set_configs::ChangeSetConfigs,
@@ -823,7 +823,7 @@ impl FakeExecutor {
         let log_context = AdapterLogSchema::new(self.data_store.id(), 0);
 
         // TODO(Gas): revisit this.
-        let env = AptosEnvironment::new(&self.data_store);
+        let env = Libra2Environment::new(&self.data_store);
         let vm = AptosVM::new(env.clone(), self.get_state_view());
 
         let resolver = self.data_store.as_move_resolver();
@@ -896,7 +896,7 @@ impl FakeExecutor {
 
     /// Validates the given transaction by running it through the VM validator.
     pub fn validate_transaction(&self, txn: SignedTransaction) -> VMValidatorResult {
-        let env = AptosEnvironment::new(&self.data_store);
+        let env = Libra2Environment::new(&self.data_store);
         let vm = AptosVM::new(env.clone(), self.get_state_view());
         vm.validate_transaction(
             txn,
@@ -1015,7 +1015,7 @@ impl FakeExecutor {
             _ => vec![],
         };
 
-        let env = AptosEnvironment::new(&self.data_store);
+        let env = Libra2Environment::new(&self.data_store);
         let resolver = self.data_store.as_move_resolver();
         let vm = MoveVmExt::new(env.clone(), &resolver);
 
@@ -1156,7 +1156,7 @@ impl FakeExecutor {
         let a2 = Arc::clone(&a1);
 
         let (write_set, _events) = {
-            let env = AptosEnvironment::new_with_gas_hook(
+            let env = Libra2Environment::new_with_gas_hook(
                 &self.data_store,
                 Arc::new(move |expression| {
                     a2.lock().unwrap().push(expression);
@@ -1222,7 +1222,7 @@ impl FakeExecutor {
     ) {
         let module_id = Self::module(module_name);
         let (write_set, events) = {
-            let env = AptosEnvironment::new(&self.data_store);
+            let env = Libra2Environment::new(&self.data_store);
             let resolver = self.data_store.as_move_resolver();
             let vm = MoveVmExt::new(env.clone(), &resolver);
 
@@ -1265,7 +1265,7 @@ impl FakeExecutor {
         type_params: Vec<TypeTag>,
         args: Vec<Vec<u8>>,
     ) -> Result<(WriteSet, Vec<ContractEvent>), VMStatus> {
-        let env = AptosEnvironment::new(&self.data_store);
+        let env = Libra2Environment::new(&self.data_store);
         let resolver = self.data_store.as_move_resolver();
         let vm = MoveVmExt::new(env.clone(), &resolver);
 

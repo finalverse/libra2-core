@@ -19,7 +19,7 @@ use libra2_types::{
     transaction::TransactionStatus,
 };
 use aptos_vm_logging::log_schema::AdapterLogSchema;
-use aptos_vm_types::{
+use libra2_vm_types::{
     module_and_script_storage::module_storage::AptosModuleStorage, output::VMOutput,
 };
 use move_core_types::{

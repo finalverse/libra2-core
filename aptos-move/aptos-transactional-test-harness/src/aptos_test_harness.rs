@@ -27,7 +27,7 @@ use libra2_types::{
     AptosCoinType,
 };
 use aptos_vm::{aptos_vm::AptosVMBlockExecutor, VMBlockExecutor};
-use aptos_vm_environment::prod_configs::set_paranoid_type_checks;
+use libra2_vm_environment::prod_configs::set_paranoid_type_checks;
 use libra2_vm_genesis::GENESIS_KEYPAIR;
 use clap::Parser;
 use codespan_reporting::{diagnostic::Severity, term::termcolor::Buffer};

@@ -63,7 +63,7 @@ libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
 libra2-validator-transaction-pool = { workspace = true }
 aptos-vm = { workspace = true }
-aptos-vm-environment = { workspace = true }
+libra2-vm-environment = { workspace = true }
 bcs = { workspace = true }
 clap = { workspace = true }
 either = { workspace = true }

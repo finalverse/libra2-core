@@ -23,7 +23,7 @@ use libra2_types::{
     state_store::state_key::StateKey,
     transaction::user_transaction_context::UserTransactionContext, write_set::WriteOp,
 };
-use aptos_vm_types::{
+use libra2_vm_types::{
     change_set::VMChangeSet,
     module_and_script_storage::module_storage::AptosModuleStorage,
     module_write_set::{ModuleWrite, ModuleWriteSet},

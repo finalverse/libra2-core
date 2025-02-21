@@ -27,7 +27,7 @@ use libra2_types::{
     fee_statement::FeeStatement,
     transaction::{EntryFunction, TransactionPayload},
 };
-use aptos_vm_environment::prod_configs::set_paranoid_type_checks;
+use libra2_vm_environment::prod_configs::set_paranoid_type_checks;
 use move_core_types::{identifier::Identifier, language_storage::ModuleId, value::MoveValue};
 use rand::{rngs::StdRng, SeedableRng};
 use sha3::{Digest, Sha3_512};

@@ -24,10 +24,10 @@ use libra2_types::{
         StateView, StateViewId,
     },
 };
-use aptos_vm_environment::{
+use libra2_vm_environment::{
     gas::get_gas_feature_version, prod_configs::aptos_prod_deserializer_config,
 };
-use aptos_vm_types::{
+use libra2_vm_types::{
     resolver::{
         ExecutorView, ResourceGroupSize, ResourceGroupView, StateStorageView, TResourceGroupView,
     },
@@ -344,7 +344,7 @@ impl<'e, E> AsResourceGroupView for StorageAdapter<'e, E> {
 #[cfg(test)]
 pub(crate) mod tests {
     use super::*;
-    use aptos_vm_types::resource_group_adapter::GroupSizeKind;
+    use libra2_vm_types::resource_group_adapter::GroupSizeKind;
 
     // Expose a method to create a storage adapter with a provided group size kind.
     pub(crate) fn as_resolver_with_group_size_kind<S: StateView>(

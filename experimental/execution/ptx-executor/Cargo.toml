@@ -20,9 +20,9 @@ libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true }
-aptos-vm-environment = { workspace = true }
+libra2-vm-environment = { workspace = true }
 aptos-vm-logging = { workspace = true }
-aptos-vm-types = { workspace = true }
+libra2-vm-types = { workspace = true }
 move-core-types = { workspace = true }
 once_cell = { workspace = true }
 rayon = { workspace = true }
