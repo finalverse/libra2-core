@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_block_partitioner::{
+use libra2_block_partitioner::{
     pre_partition::{
         connected_component::config::ConnectedComponentPartitionerConfig,
         default_pre_partitioner_config, uniform_partitioner::config::UniformPartitionerConfig,
@@ -13,7 +13,7 @@ use aptos_block_partitioner::{
 use libra2_config::config::{
     EpochSnapshotPrunerConfig, LedgerPrunerConfig, PrunerConfig, StateMerklePrunerConfig,
 };
-use aptos_executor_benchmark::{
+use libra2_executor_benchmark::{
     default_benchmark_features,
     native::{
         aptos_vm_uncoordinated::AptosVMParallelUncoordinatedBlockExecutor,
@@ -464,7 +464,7 @@ where
             enable_feature,
             disable_feature,
         } => {
-            aptos_executor_benchmark::db_generator::create_db_with_accounts::<E>(
+            libra2_executor_benchmark::db_generator::create_db_with_accounts::<E>(
                 num_accounts,
                 init_account_balance,
                 opt.block_size,
@@ -522,7 +522,7 @@ where
                 }
             }
 
-            aptos_executor_benchmark::run_benchmark::<E>(
+            libra2_executor_benchmark::run_benchmark::<E>(
                 opt.block_size,
                 blocks,
                 workload,
@@ -545,7 +545,7 @@ where
             num_new_accounts,
             init_account_balance,
         } => {
-            aptos_executor_benchmark::add_accounts::<E>(
+            libra2_executor_benchmark::add_accounts::<E>(
                 num_new_accounts,
                 init_account_balance,
                 opt.block_size,
@@ -680,7 +680,7 @@ fn main() {
         let _cpu_end = cpu_profiler.end_profiling("");
     }
     if memory_profiling {
-        let _mem_end = memory_profiler.end_profiling("./target/release/aptos-executor-benchmark");
+        let _mem_end = memory_profiler.end_profiling("./target/release/libra2-executor-benchmark");
     }
 }
 

@@ -9,7 +9,7 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     HashValue,
 };
-use aptos_executor::db_bootstrapper::{generate_waypoint, maybe_bootstrap};
+use libra2_executor::db_bootstrapper::{generate_waypoint, maybe_bootstrap};
 use libra2_executor_types::state_compute_result::StateComputeResult;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{

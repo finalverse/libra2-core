@@ -23,7 +23,7 @@ use std::time::Duration;
 pub static EXECUTE_CHUNK: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_execute_chunk_seconds",
+        "libra2_executor_execute_chunk_seconds",
         // metric description
         "The time spent in seconds of chunk execution in Aptos executor",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),
@@ -34,7 +34,7 @@ pub static EXECUTE_CHUNK: Lazy<Histogram> = Lazy::new(|| {
 pub static APPLY_CHUNK: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_apply_chunk_seconds",
+        "libra2_executor_apply_chunk_seconds",
         // metric description
         "The time spent in seconds of applying txn output chunk in Aptos executor",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),
@@ -45,7 +45,7 @@ pub static APPLY_CHUNK: Lazy<Histogram> = Lazy::new(|| {
 pub static COMMIT_CHUNK: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_commit_chunk_seconds",
+        "libra2_executor_commit_chunk_seconds",
         // metric description
         "The time spent in seconds of committing chunk in Aptos executor",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),
@@ -56,7 +56,7 @@ pub static COMMIT_CHUNK: Lazy<Histogram> = Lazy::new(|| {
 pub static GET_BLOCK_EXECUTION_OUTPUT_BY_EXECUTING: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_get_block_execution_output_by_executing_seconds",
+        "libra2_executor_get_block_execution_output_by_executing_seconds",
         // metric description
         "The total time spent in seconds in executing execute_and_state_checkpoint in the BlockExecutorInner.",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),
@@ -67,7 +67,7 @@ pub static GET_BLOCK_EXECUTION_OUTPUT_BY_EXECUTING: Lazy<Histogram> = Lazy::new(
 pub static OTHER_TIMERS: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
         // metric name
-        "aptos_executor_other_timers_seconds",
+        "libra2_executor_other_timers_seconds",
         // metric description
         "The time spent in seconds of others in Aptos executor",
         &["name"],
@@ -77,13 +77,13 @@ pub static OTHER_TIMERS: Lazy<HistogramVec> = Lazy::new(|| {
 });
 
 pub static EXECUTOR_ERRORS: Lazy<IntCounter> = Lazy::new(|| {
-    register_int_counter!("aptos_executor_error_total", "Cumulative number of errors").unwrap()
+    register_int_counter!("libra2_executor_error_total", "Cumulative number of errors").unwrap()
 });
 
 pub static BLOCK_EXECUTION_WORKFLOW_WHOLE: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_block_execution_workflow_whole_seconds",
+        "libra2_executor_block_execution_workflow_whole_seconds",
         // metric description
         "The total time spent in seconds in executing execute_and_state_checkpoint in the BlockExecutorInner.",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),
@@ -94,7 +94,7 @@ pub static BLOCK_EXECUTION_WORKFLOW_WHOLE: Lazy<Histogram> = Lazy::new(|| {
 pub static UPDATE_LEDGER: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_ledger_update_seconds",
+        "libra2_executor_ledger_update_seconds",
         // metric description
         "The total time spent in ledger update in the block executor.",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),
@@ -117,7 +117,7 @@ pub static CHUNK_OTHER_TIMERS: Lazy<HistogramVec> = Lazy::new(|| {
 pub static VM_EXECUTE_CHUNK: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_vm_execute_chunk_seconds",
+        "libra2_executor_vm_execute_chunk_seconds",
         // metric description
         "The total time spent in seconds of chunk execution in the chunk executor.",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),
@@ -128,7 +128,7 @@ pub static VM_EXECUTE_CHUNK: Lazy<Histogram> = Lazy::new(|| {
 pub static COMMIT_BLOCKS: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_commit_blocks_seconds",
+        "libra2_executor_commit_blocks_seconds",
         // metric description
         "The total time spent in seconds of commiting blocks in Aptos executor ",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),
@@ -139,7 +139,7 @@ pub static COMMIT_BLOCKS: Lazy<Histogram> = Lazy::new(|| {
 pub static SAVE_TRANSACTIONS: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_save_transactions_seconds",
+        "libra2_executor_save_transactions_seconds",
         // metric description
         "The time spent in seconds of calling save_transactions to storage in Aptos executor",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),
@@ -150,7 +150,7 @@ pub static SAVE_TRANSACTIONS: Lazy<Histogram> = Lazy::new(|| {
 pub static TRANSACTIONS_SAVED: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_transactions_saved",
+        "libra2_executor_transactions_saved",
         // metric description
         "The number of transactions saved to storage in Aptos executor"
     )
@@ -253,7 +253,7 @@ pub static PROCESSED_TXNS_AUTHENTICATOR: Lazy<IntCounterVec> = Lazy::new(|| {
 
 pub static CONCURRENCY_GAUGE: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_executor_call_concurrency",
+        "libra2_executor_call_concurrency",
         "Call concurrency by API.",
         &["executor", "call"]
     )

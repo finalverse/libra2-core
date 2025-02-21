@@ -11,7 +11,7 @@ use libra2_config::{
     utils::get_genesis_txn,
 };
 use libra2_db::Libra2DB;
-use aptos_executor::db_bootstrapper::{generate_waypoint, maybe_bootstrap};
+use libra2_executor::db_bootstrapper::{generate_waypoint, maybe_bootstrap};
 use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{
     jwks::{jwk::JWK, patch::IssuerJWK},

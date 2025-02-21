@@ -29,7 +29,7 @@ use libra2_channels::libra2_channel::Receiver;
 use libra2_config::config::NodeConfig;
 use libra2_consensus_notifications::ConsensusNotificationSender;
 use libra2_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
-use aptos_executor::block_executor::BlockExecutor;
+use libra2_executor::block_executor::BlockExecutor;
 use libra2_logger::prelude::*;
 use libra2_mempool::QuorumStoreRequest;
 use libra2_network::application::interface::{NetworkClient, NetworkServiceEvents};

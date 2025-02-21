@@ -1,6 +1,6 @@
 [package]
-name = "aptos-executor"
-description = "Aptos executor"
+name = "libra2-executor"
+description = "Libra2 executor"
 version = "0.1.0"
 
 # Workspace inherited keys

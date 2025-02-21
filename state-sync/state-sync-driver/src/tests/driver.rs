@@ -20,7 +20,7 @@ use libra2_event_notifications::{
     DbBackedOnChainConfig, EventNotificationListener, EventSubscriptionService,
     ReconfigNotificationListener,
 };
-use aptos_executor::chunk_executor::ChunkExecutor;
+use libra2_executor::chunk_executor::ChunkExecutor;
 use libra2_executor_test_helpers::bootstrap_genesis;
 use libra2_infallible::RwLock;
 use libra2_mempool_notifications::MempoolNotificationListener;

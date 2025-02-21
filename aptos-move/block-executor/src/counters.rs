@@ -52,7 +52,7 @@ fn output_buckets() -> std::vec::Vec<f64> {
 pub static BLOCK_EXECUTOR_INNER_EXECUTE_BLOCK: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_executor_block_executor_inner_execute_block_seconds",
+        "libra2_executor_block_executor_inner_execute_block_seconds",
         // metric description
         "The time spent in the most-inner part of executing a block of transactions, \
         i.e. for BlockSTM that is how long parallel or sequential execution took.",

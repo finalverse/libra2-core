@@ -7,9 +7,9 @@ use crate::{
     metrics::NUM_TXNS,
     OverallMeasuring, TransactionCommitter, TransactionExecutor,
 };
-use aptos_block_partitioner::v2::config::PartitionerV2Config;
+use libra2_block_partitioner::v2::config::PartitionerV2Config;
 use libra2_crypto::HashValue;
-use aptos_executor::block_executor::BlockExecutor;
+use libra2_executor::block_executor::BlockExecutor;
 use libra2_executor_types::{state_compute_result::StateComputeResult, BlockExecutorTrait};
 use libra2_logger::info;
 use libra2_types::{

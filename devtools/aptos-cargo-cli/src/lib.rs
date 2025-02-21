@@ -42,7 +42,7 @@ const RELEVANT_FILE_PATHS_FOR_EXECUTION_PERFORMANCE_TESTS: [&str; 5] = [
     ".github/workflows/execution-performance.yaml",
     ".github/workflows/workflow-run-execution-performance.yaml",
     "aptos-move/e2e-benchmark",
-    "execution/aptos-executor-benchmark",
+    "execution/libra2-executor-benchmark",
     "testsuite/single_node_performance.py",
 ];
 const RELEVANT_FILE_PATHS_FOR_FRAMEWORK_UPGRADE_TESTS: [&str; 4] = [
@@ -55,7 +55,7 @@ const RELEVANT_FILE_PATHS_FOR_FRAMEWORK_UPGRADE_TESTS: [&str; 4] = [
 // Relevant packages to monitor when deciding to run the targeted tests
 const RELEVANT_PACKAGES_FOR_COMPILER_V2: [&str; 2] = ["aptos-framework", "e2e-move-tests"];
 const RELEVANT_PACKAGES_FOR_EXECUTION_PERFORMANCE_TESTS: [&str; 2] =
-    ["aptos-executor-benchmark", "aptos-move-e2e-benchmark"];
+    ["libra2-executor-benchmark", "aptos-move-e2e-benchmark"];
 const RELEVANT_PACKAGES_FOR_FRAMEWORK_UPGRADE_TESTS: [&str; 2] =
     ["aptos-framework", "aptos-release-builder"];
 

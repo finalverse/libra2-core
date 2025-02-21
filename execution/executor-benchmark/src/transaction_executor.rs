@@ -4,7 +4,7 @@
 
 use crate::{metrics::TIMER, pipeline::LedgerUpdateMessage};
 use libra2_crypto::hash::HashValue;
-use aptos_executor::block_executor::BlockExecutor;
+use libra2_executor::block_executor::BlockExecutor;
 use libra2_executor_types::BlockExecutorTrait;
 use libra2_logger::info;
 use libra2_types::block_executor::{

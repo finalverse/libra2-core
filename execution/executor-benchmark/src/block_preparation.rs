@@ -5,7 +5,7 @@ use crate::{
     metrics::{NUM_TXNS, TIMER},
     pipeline::ExecuteBlockMessage,
 };
-use aptos_block_partitioner::{BlockPartitioner, PartitionerConfig};
+use libra2_block_partitioner::{BlockPartitioner, PartitionerConfig};
 use libra2_crypto::HashValue;
 use aptos_experimental_runtimes::thread_manager::optimal_min_len;
 use libra2_logger::info;

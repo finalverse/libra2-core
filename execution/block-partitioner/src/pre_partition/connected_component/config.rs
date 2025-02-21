@@ -10,7 +10,7 @@ pub struct ConnectedComponentPartitionerConfig {
     /// If the size a connected component is larger than `load_imbalance_tolerance * block_size / num_shards`,
     /// this component will be broken up into smaller ones.
     ///
-    /// See the comments of `aptos_block_partitioner::pre_partition::connected_component::ConnectedComponentPartitioner` for more details.
+    /// See the comments of `libra2_block_partitioner::pre_partition::connected_component::ConnectedComponentPartitioner` for more details.
     pub load_imbalance_tolerance: f32,
 }
 

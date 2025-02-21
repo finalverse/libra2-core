@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
-use aptos_block_partitioner::{v2::config::PartitionerV2Config, PartitionerConfig};
+use libra2_block_partitioner::{v2::config::PartitionerV2Config, PartitionerConfig};
 use aptos_language_e2e_tests::{
     account::AccountData, common_transactions::peer_to_peer_txn, data_store::FakeDataStore,
     executor::FakeExecutor,

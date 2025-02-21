@@ -568,7 +568,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.99, sum(rate(aptos_executor_execute_chunk_seconds_bucket{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",role=~\"$role\"}[$__rate_interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(libra2_executor_execute_chunk_seconds_bucket{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",role=~\"$role\"}[$__rate_interval])) by (le))",
           "hide": true,
           "legendFormat": "{{request_type}}",
           "range": true,
@@ -577,7 +577,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.99, sum(rate(aptos_executor_apply_chunk_seconds_bucket{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",role=~\"$role\"}[$__rate_interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(libra2_executor_apply_chunk_seconds_bucket{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",role=~\"$role\"}[$__rate_interval])) by (le))",
           "hide": true,
           "legendFormat": "{{request_type}}",
           "range": true,
@@ -760,7 +760,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.99, sum(rate(aptos_executor_commit_chunk_seconds_bucket{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",role=~\"$role\"}[$__rate_interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(libra2_executor_commit_chunk_seconds_bucket{chain_name=~\"$chain_name\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\",role=~\"$role\"}[$__rate_interval])) by (le))",
           "hide": true,
           "legendFormat": "{{request_type}}",
           "range": true,

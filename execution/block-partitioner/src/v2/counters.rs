@@ -20,7 +20,7 @@ pub static BLOCK_PARTITIONING_SECONDS: Lazy<Histogram> = Lazy::new(|| {
 pub static MISC_TIMERS_SECONDS: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
         // metric name
-        "aptos_block_partitioner_v2_misc_timers_seconds",
+        "libra2_block_partitioner_v2_misc_timers_seconds",
         // metric description
         "The time spent in seconds of miscellaneous phases of block partitioner v2.",
         &["name"],

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-block-partitioner"
+name = "libra2-block-partitioner"
 description = "A tool to partition a block store into smaller chunks based on graph partitioning."
 
 version = "0.1.0"

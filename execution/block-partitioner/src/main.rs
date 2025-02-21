@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_block_partitioner::{
+use libra2_block_partitioner::{
     test_utils::P2PBlockGenerator, v2::config::PartitionerV2Config, PartitionerConfig,
 };
 use libra2_logger::info;

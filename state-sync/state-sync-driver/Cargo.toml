@@ -45,7 +45,7 @@ anyhow = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-db = { workspace = true }
-aptos-executor = { workspace = true }
+libra2-executor = { workspace = true }
 libra2-executor-test-helpers = { workspace = true }
 aptos-genesis = { workspace = true, features = ["testing"] }
 libra2-network = { workspace = true }

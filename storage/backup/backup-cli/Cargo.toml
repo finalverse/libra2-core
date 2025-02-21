@@ -19,7 +19,7 @@ libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-db = { workspace = true }
 libra2-db-indexer-schemas = { workspace = true }
-aptos-executor = { workspace = true }
+libra2-executor = { workspace = true }
 libra2-executor-test-helpers = { workspace = true }
 libra2-executor-types = { workspace = true }
 aptos-indexer-grpc-table-info = { workspace = true }

@@ -18,7 +18,7 @@ aptos-block-executor = { workspace = true }
 libra2-config = { workspace = true }
 libra2-db = { workspace = true, features = ["db-debugger"] }
 libra2-db-indexer = { workspace = true }
-aptos-executor = { workspace = true }
+libra2-executor = { workspace = true }
 libra2-executor-types = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-storage-interface = { workspace = true }

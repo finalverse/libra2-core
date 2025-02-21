@@ -5,7 +5,7 @@
 use crate::{metrics::NUM_TXNS, pipeline::CommitBlockMessage};
 use libra2_crypto::hash::HashValue;
 use libra2_db::metrics::API_LATENCY_SECONDS;
-use aptos_executor::{
+use libra2_executor::{
     block_executor::BlockExecutor,
     metrics::{
         BLOCK_EXECUTION_WORKFLOW_WHOLE, COMMIT_BLOCKS, GET_BLOCK_EXECUTION_OUTPUT_BY_EXECUTING,

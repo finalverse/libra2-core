@@ -4,7 +4,7 @@
 #[macro_use]
 extern crate criterion;
 
-use aptos_block_partitioner::{
+use libra2_block_partitioner::{
     pre_partition::connected_component::ConnectedComponentPartitioner,
     test_utils::P2PBlockGenerator, v2::PartitionerV2, BlockPartitioner,
 };
