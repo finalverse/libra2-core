@@ -41,7 +41,7 @@ use libra2_network::{
         network::{Event, NewNetworkSender},
     },
 };
-use aptos_safety_rules::{PersistentSafetyStorage, SafetyRulesManager};
+use libra2_safety_rules::{PersistentSafetyStorage, SafetyRulesManager};
 use libra2_secure_storage::Storage;
 use libra2_types::{
     account_address::AccountAddress,

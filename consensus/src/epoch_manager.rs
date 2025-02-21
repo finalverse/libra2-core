@@ -76,7 +76,7 @@ use libra2_infallible::{duration_since_epoch, Mutex};
 use libra2_logger::prelude::*;
 use libra2_mempool::QuorumStoreRequest;
 use libra2_network::{application::interface::NetworkClient, protocols::network::Event};
-use aptos_safety_rules::{
+use libra2_safety_rules::{
     safety_rules_manager, Error, PersistentSafetyStorage, SafetyRulesManager,
 };
 use libra2_types::{

@@ -5,7 +5,7 @@
 use crate::pipeline::pipeline_phase::StatelessPipeline;
 use libra2_consensus_types::pipelined_block::PipelinedBlock;
 use libra2_crypto::bls12381;
-use aptos_safety_rules::Error;
+use libra2_safety_rules::Error;
 use libra2_types::ledger_info::{LedgerInfo, LedgerInfoWithSignatures};
 use async_trait::async_trait;
 use std::{

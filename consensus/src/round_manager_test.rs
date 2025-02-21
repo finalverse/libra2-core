@@ -65,7 +65,7 @@ use libra2_network::{
     transport::ConnectionMetadata,
     ProtocolId,
 };
-use aptos_safety_rules::{PersistentSafetyStorage, SafetyRulesManager};
+use libra2_safety_rules::{PersistentSafetyStorage, SafetyRulesManager};
 use libra2_secure_storage::Storage;
 use libra2_types::{
     epoch_state::EpochState,

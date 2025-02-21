@@ -1,6 +1,6 @@
 [package]
-name = "aptos-safety-rules"
-description = "Aptos safety rules"
+name = "libra2-safety-rules"
+description = "Libra2 safety rules"
 version = "0.1.0"
 
 # Workspace inherited keys

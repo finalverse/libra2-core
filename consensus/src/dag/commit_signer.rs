@@ -21,11 +21,11 @@ impl CommitSignerProvider for DagCommitSigner {
         &self,
         _ledger_info: libra2_types::ledger_info::LedgerInfoWithSignatures,
         new_ledger_info: libra2_types::ledger_info::LedgerInfo,
-    ) -> Result<bls12381::Signature, aptos_safety_rules::Error> {
+    ) -> Result<bls12381::Signature, libra2_safety_rules::Error> {
         let signature = self
             .signer
             .sign(&new_ledger_info)
-            .map_err(|err| aptos_safety_rules::Error::SerializationError(err.to_string()))?;
+            .map_err(|err| libra2_safety_rules::Error::SerializationError(err.to_string()))?;
 
         Ok(signature)
     }

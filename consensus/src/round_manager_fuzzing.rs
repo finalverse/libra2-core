@@ -34,7 +34,7 @@ use libra2_network::{
     peer_manager::{ConnectionRequestSender, PeerManagerRequestSender},
     protocols::{network, network::NewNetworkSender},
 };
-use aptos_safety_rules::{test_utils, SafetyRules, TSafetyRules};
+use libra2_safety_rules::{test_utils, SafetyRules, TSafetyRules};
 use libra2_types::{
     aggregate_signature::AggregateSignature,
     epoch_change::EpochChangeProof,

@@ -29,7 +29,7 @@ libra2-metrics-core = { workspace = true }
 libra2-network = { workspace = true }
 libra2-reliable-broadcast = { workspace = true }
 aptos-runtimes = { workspace = true }
-aptos-safety-rules = { workspace = true }
+libra2-safety-rules = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
 libra2-validator-transaction-pool = { workspace = true }

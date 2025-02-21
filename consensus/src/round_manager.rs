@@ -58,8 +58,8 @@ use libra2_crypto::{hash::CryptoHash, HashValue};
 use libra2_infallible::{checked, Mutex};
 use libra2_logger::prelude::*;
 #[cfg(test)]
-use aptos_safety_rules::ConsensusState;
-use aptos_safety_rules::TSafetyRules;
+use libra2_safety_rules::ConsensusState;
+use libra2_safety_rules::TSafetyRules;
 use libra2_short_hex_str::AsShortHexStr;
 use libra2_types::{
     block_info::BlockInfo,

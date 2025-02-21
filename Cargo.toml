@@ -438,7 +438,7 @@ libra2-retrier = { path = "crates/libra2-retrier" }
 libra2-rocksdb-options = { path = "storage/rocksdb-options" }
 libra2-rosetta = { path = "crates/libra2-rosetta" }
 aptos-runtimes = { path = "crates/aptos-runtimes" }
-aptos-safety-rules = { path = "consensus/safety-rules" }
+libra2-safety-rules = { path = "consensus/safety-rules" }
 libra2-schemadb = { path = "storage/schemadb" }
 libra2-scratchpad = { path = "storage/scratchpad" }
 aptos-script-composer = { path = "aptos-move/script-composer" }

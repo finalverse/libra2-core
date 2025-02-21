@@ -669,7 +669,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-experimental-runtimes",
  "aptos-runtimes",
- "aptos-safety-rules",
  "aptos-vm",
  "async-trait",
  "bcs 0.1.4",
@@ -710,6 +709,7 @@ dependencies = [
  "libra2-network",
  "libra2-peer-monitoring-service-types",
  "libra2-reliable-broadcast",
+ "libra2-safety-rules",
  "libra2-schemadb",
  "libra2-secure-storage",
  "libra2-short-hex-str",
@@ -1513,7 +1513,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-runtimes",
- "aptos-safety-rules",
  "async-trait",
  "bytes",
  "futures",
@@ -1533,6 +1532,7 @@ dependencies = [
  "libra2-metrics-core",
  "libra2-network",
  "libra2-reliable-broadcast",
+ "libra2-safety-rules",
  "libra2-time-service",
  "libra2-types",
  "libra2-validator-transaction-pool",
@@ -1953,35 +1953,6 @@ version = "0.1.0"
 dependencies = [
  "rayon",
  "tokio",
-]
-
-[[package]]
-name = "aptos-safety-rules"
-version = "0.1.0"
-dependencies = [
- "claims",
- "criterion",
- "hex",
- "libra2-config",
- "libra2-consensus-types",
- "libra2-crypto",
- "libra2-global-constants",
- "libra2-infallible",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-proptest-helpers",
- "libra2-secure-net",
- "libra2-secure-storage",
- "libra2-types",
- "libra2-vault-client",
- "once_cell",
- "proptest",
- "rand 0.7.3",
- "rusty-fork",
- "serde",
- "serde_json",
- "tempfile",
- "thiserror",
 ]
 
 [[package]]
@@ -8916,7 +8887,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-runtimes",
- "aptos-safety-rules",
  "async-trait",
  "bcs 0.1.4",
  "bytes",
@@ -8937,6 +8907,7 @@ dependencies = [
  "libra2-metrics-core",
  "libra2-network",
  "libra2-reliable-broadcast",
+ "libra2-safety-rules",
  "libra2-time-service",
  "libra2-types",
  "libra2-validator-transaction-pool",
@@ -10157,6 +10128,35 @@ dependencies = [
  "serde_json",
  "tokio",
  "url",
+]
+
+[[package]]
+name = "libra2-safety-rules"
+version = "0.1.0"
+dependencies = [
+ "claims",
+ "criterion",
+ "hex",
+ "libra2-config",
+ "libra2-consensus-types",
+ "libra2-crypto",
+ "libra2-global-constants",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-proptest-helpers",
+ "libra2-secure-net",
+ "libra2-secure-storage",
+ "libra2-types",
+ "libra2-vault-client",
+ "once_cell",
+ "proptest",
+ "rand 0.7.3",
+ "rusty-fork",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "thiserror",
 ]
 
 [[package]]
