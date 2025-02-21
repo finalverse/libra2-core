@@ -27,7 +27,7 @@ use aptos_executor_benchmark::{
     pipeline::PipelineConfig,
     BenchmarkWorkload,
 };
-use aptos_executor_service::remote_executor_client;
+use libra2_executor_service::remote_executor_client;
 use aptos_experimental_ptx_executor::PtxBlockExecutor;
 #[cfg(target_os = "linux")]
 use aptos_experimental_runtimes::thread_manager::{ThreadConfigStrategy, ThreadManagerBuilder};

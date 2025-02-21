@@ -21,7 +21,7 @@ libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-db = { workspace = true }
 aptos-executor = { workspace = true }
-aptos-executor-service = { workspace = true }
+libra2-executor-service = { workspace = true }
 libra2-executor-types = { workspace = true }
 aptos-experimental-ptx-executor = { workspace = true }
 aptos-experimental-runtimes = { workspace = true }
