@@ -402,30 +402,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-admin-service"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-consensus",
- "aptos-runtimes",
- "bcs 0.1.4",
- "futures-channel",
- "http 0.2.11",
- "hyper 0.14.28",
- "libra2-config",
- "libra2-crypto",
- "libra2-infallible",
- "libra2-logger",
- "libra2-mempool",
- "libra2-storage-interface",
- "libra2-system-utils",
- "libra2-types",
- "sha256",
- "tokio",
- "url",
-]
-
-[[package]]
 name = "aptos-aggregator"
 version = "0.1.0"
 dependencies = [
@@ -2015,7 +1991,6 @@ name = "aptos-node"
 version = "0.0.0-main"
 dependencies = [
  "anyhow",
- "aptos-admin-service",
  "aptos-api",
  "aptos-cached-packages",
  "aptos-consensus",
@@ -2036,6 +2011,7 @@ dependencies = [
  "futures",
  "hex",
  "jemallocator",
+ "libra2-admin-service",
  "libra2-backup-service",
  "libra2-build-info",
  "libra2-channels",
@@ -8629,6 +8605,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-admin-service"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-consensus",
+ "aptos-runtimes",
+ "bcs 0.1.4",
+ "futures-channel",
+ "http 0.2.11",
+ "hyper 0.14.28",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-infallible",
+ "libra2-logger",
+ "libra2-mempool",
+ "libra2-storage-interface",
+ "libra2-system-utils",
+ "libra2-types",
+ "sha256",
+ "tokio",
+ "url",
+]
+
+[[package]]
 name = "libra2-backup-cli"
 version = "0.1.0"
 dependencies = [
@@ -9801,7 +9801,6 @@ name = "libra2-node"
 version = "0.0.0-main"
 dependencies = [
  "anyhow",
- "aptos-admin-service",
  "aptos-api",
  "aptos-cached-packages",
  "aptos-consensus",
@@ -9822,6 +9821,7 @@ dependencies = [
  "futures",
  "hex",
  "jemallocator",
+ "libra2-admin-service",
  "libra2-backup-service",
  "libra2-build-info",
  "libra2-channels",

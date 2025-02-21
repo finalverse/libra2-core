@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-admin-service = { workspace = true }
+libra2-admin-service = { workspace = true }
 aptos-api = { workspace = true }
 libra2-backup-service = { workspace = true }
 libra2-build-info = { workspace = true }

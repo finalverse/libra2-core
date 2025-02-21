@@ -55,7 +55,7 @@ members = [
     "consensus/safety-rules",
     "crates/aptos",
     "crates/libra2",
-    "crates/aptos-admin-service",
+    "crates/libra2-admin-service",
     "crates/aptos-api-tester",
     "crates/libra2-bcs-utils",
     "crates/libra2-bitvec",
@@ -302,7 +302,7 @@ rust-version = "1.78.0"
 libra2 = { path = "crates/libra2" }
 aptos = { path = "crates/aptos" }
 libra2-accumulator = { path = "storage/accumulator" }
-aptos-admin-service = { path = "crates/aptos-admin-service" }
+libra2-admin-service = { path = "crates/libra2-admin-service" }
 aptos-aggregator = { path = "aptos-move/aptos-aggregator" }
 aptos-api = { path = "api" }
 aptos-api-test-context = { path = "api/test-context" }

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{bootstrap_api, indexer, mpsc::Receiver, network::ApplicationNetworkInterfaces};
-use aptos_admin_service::AdminService;
+use libra2_admin_service::AdminService;
 use libra2_build_info::build_information;
 use libra2_config::config::NodeConfig;
 use aptos_consensus::{

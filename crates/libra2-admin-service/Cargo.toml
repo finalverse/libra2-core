@@ -1,5 +1,5 @@
 [package]
-name = "aptos-admin-service"
+name = "libra2-admin-service"
 description = "The Admin Service"
 version = "0.1.0"
 
