@@ -683,45 +683,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-experimental-hexy"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "libra2-experimental-layered-map",
- "criterion",
- "itertools 0.13.0",
- "jemallocator",
- "libra2-crypto",
- "libra2-infallible",
- "libra2-metrics-core",
- "once_cell",
- "proptest",
- "rand 0.7.3",
-]
-
-[[package]]
-name = "libra2-experimental-layered-map"
-version = "0.1.0"
-dependencies = [
- "ahash 0.8.11",
- "anyhow",
- "bitvec 1.0.1",
- "criterion",
- "itertools 0.13.0",
- "jemallocator",
- "libra2-crypto",
- "libra2-drop-helper",
- "libra2-infallible",
- "libra2-metrics-core",
- "libra2-schemadb",
- "libra2-temppath",
- "once_cell",
- "proptest",
- "rand 0.7.3",
- "rocksdb",
-]
-
-[[package]]
 name = "aptos-experimental-ptx-executor"
 version = "0.1.0"
 dependencies = [
@@ -9027,6 +8988,45 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-experimental-hexy"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "criterion",
+ "itertools 0.13.0",
+ "jemallocator",
+ "libra2-crypto",
+ "libra2-experimental-layered-map",
+ "libra2-infallible",
+ "libra2-metrics-core",
+ "once_cell",
+ "proptest",
+ "rand 0.7.3",
+]
+
+[[package]]
+name = "libra2-experimental-layered-map"
+version = "0.1.0"
+dependencies = [
+ "ahash 0.8.11",
+ "anyhow",
+ "bitvec 1.0.1",
+ "criterion",
+ "itertools 0.13.0",
+ "jemallocator",
+ "libra2-crypto",
+ "libra2-drop-helper",
+ "libra2-infallible",
+ "libra2-metrics-core",
+ "libra2-schemadb",
+ "libra2-temppath",
+ "once_cell",
+ "proptest",
+ "rand 0.7.3",
+ "rocksdb",
+]
+
+[[package]]
 name = "libra2-fallible"
 version = "0.1.0"
 dependencies = [
@@ -10241,13 +10241,13 @@ name = "libra2-storage-interface"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "libra2-experimental-layered-map",
  "arr_macro",
  "bcs 0.1.4",
  "dashmap",
  "derive_more 0.99.17",
  "itertools 0.13.0",
  "libra2-crypto",
+ "libra2-experimental-layered-map",
  "libra2-metrics-core",
  "libra2-scratchpad",
  "libra2-secure-net",

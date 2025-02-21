@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_crypto::HashValue;
-use aptos_experimental_hexy::{
+use libra2_experimental_hexy::{
     in_mem::{base::HexyBase, overlay::HexyOverlay},
     LeafIdx,
 };

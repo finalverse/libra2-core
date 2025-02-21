@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_experimental_hexy::utils::sort_dedup;
+use libra2_experimental_hexy::utils::sort_dedup;
 use criterion::{criterion_group, criterion_main, BatchSize, Criterion};
 use itertools::Itertools;
 use std::collections::BTreeMap;
