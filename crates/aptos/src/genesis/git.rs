@@ -11,7 +11,7 @@ use crate::{
 use libra2_config::config::Token;
 use aptos_framework::ReleaseBundle;
 use aptos_genesis::config::Layout;
-use aptos_github_client::Client as GithubClient;
+use libra2_github_client::Client as GithubClient;
 use async_trait::async_trait;
 use clap::Parser;
 use serde::{de::DeserializeOwned, Serialize};

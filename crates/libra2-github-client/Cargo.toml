@@ -1,6 +1,6 @@
 [package]
-name = "aptos-github-client"
-description = "Aptos's Restful GitHub Client"
+name = "libra2-github-client"
+description = "Libra2's Restful GitHub Client"
 version = "0.1.0"
 
 # Workspace inherited keys

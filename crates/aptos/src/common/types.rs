@@ -179,8 +179,8 @@ impl From<libra2_config::config::Error> for CliError {
     }
 }
 
-impl From<aptos_github_client::Error> for CliError {
-    fn from(e: aptos_github_client::Error) -> Self {
+impl From<libra2_github_client::Error> for CliError {
+    fn from(e: libra2_github_client::Error) -> Self {
         CliError::UnexpectedError(e.to_string())
     }
 }

@@ -27,7 +27,7 @@ aptos-framework = { workspace = true }
 aptos-gas-profiling = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 aptos-genesis = { workspace = true }
-aptos-github-client = { workspace = true }
+libra2-github-client = { workspace = true }
 libra2-global-constants = { workspace = true }
 aptos-indexer-grpc-server-framework = { workspace = true }
 aptos-indexer-grpc-utils = { workspace = true }

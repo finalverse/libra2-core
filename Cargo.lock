@@ -300,7 +300,6 @@ dependencies = [
  "aptos-gas-profiling",
  "aptos-gas-schedule",
  "aptos-genesis",
- "aptos-github-client",
  "aptos-indexer-grpc-server-framework",
  "aptos-indexer-grpc-utils",
  "aptos-ledger",
@@ -336,6 +335,7 @@ dependencies = [
  "libra2-cli-common",
  "libra2-config",
  "libra2-crypto",
+ "libra2-github-client",
  "libra2-global-constants",
  "libra2-keygen",
  "libra2-localnet",
@@ -1445,18 +1445,6 @@ dependencies = [
  "rand 0.7.3",
  "serde",
  "serde_yaml 0.8.26",
-]
-
-[[package]]
-name = "aptos-github-client"
-version = "0.1.0"
-dependencies = [
- "base64 0.13.1",
- "libra2-proxy",
- "serde",
- "serde_json",
- "thiserror",
- "ureq",
 ]
 
 [[package]]
@@ -8659,7 +8647,6 @@ dependencies = [
  "aptos-gas-profiling",
  "aptos-gas-schedule",
  "aptos-genesis",
- "aptos-github-client",
  "aptos-indexer-grpc-server-framework",
  "aptos-indexer-grpc-utils",
  "aptos-ledger",
@@ -8695,6 +8682,7 @@ dependencies = [
  "libra2-cli-common",
  "libra2-config",
  "libra2-crypto",
+ "libra2-github-client",
  "libra2-global-constants",
  "libra2-keygen",
  "libra2-localnet",
@@ -9362,6 +9350,18 @@ name = "libra2-fallible"
 version = "0.1.0"
 dependencies = [
  "thiserror",
+]
+
+[[package]]
+name = "libra2-github-client"
+version = "0.1.0"
+dependencies = [
+ "base64 0.13.1",
+ "libra2-proxy",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "ureq",
 ]
 
 [[package]]
