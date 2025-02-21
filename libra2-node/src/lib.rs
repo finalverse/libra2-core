@@ -568,7 +568,7 @@ where
     let aptos_root_key_path = test_dir.join("mint.key");
 
     // Build genesis and the validator node
-    let builder = aptos_genesis::builder::Builder::new(test_dir, framework.clone())?
+    let builder = libra2_genesis::builder::Builder::new(test_dir, framework.clone())?
         .with_init_config(Some(Arc::new(move |_, config, _| {
             *config = node_config.clone();
         })))

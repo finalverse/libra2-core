@@ -71,7 +71,7 @@ members = [
     "crates/libra2-faucet/core",
     "crates/libra2-faucet/metrics-server",
     "crates/libra2-faucet/service",
-    "crates/aptos-genesis",
+    "crates/libra2-genesis",
     "crates/libra2-github-client",
     "crates/libra2-id-generator",
     "crates/libra2-infallible",
@@ -360,7 +360,7 @@ aptos-gas-calibration = { path = "aptos-move/aptos-gas-calibration" }
 aptos-gas-profiling = { path = "aptos-move/aptos-gas-profiling" }
 aptos-gas-schedule = { path = "aptos-move/aptos-gas-schedule" }
 aptos-gas-schedule-updator = { path = "aptos-move/aptos-gas-schedule-updator" }
-aptos-genesis = { path = "crates/aptos-genesis" }
+libra2-genesis = { path = "crates/libra2-genesis" }
 libra2-github-client = { path = "crates/libra2-github-client" }
 libra2-global-constants = { path = "config/global-constants" }
 libra2-id-generator = { path = "crates/libra2-id-generator" }

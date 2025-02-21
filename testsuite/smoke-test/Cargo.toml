@@ -66,7 +66,7 @@ walkdir = { workspace = true }
 [dev-dependencies]
 libra2-backup-cli = { workspace = true }
 libra2-db-indexer = { workspace = true, features = ["fuzzing"] }
-aptos-genesis = { workspace = true }
+libra2-genesis = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-secure-storage = { workspace = true }

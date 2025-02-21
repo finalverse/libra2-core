@@ -75,7 +75,7 @@ pub(crate) fn bootstrap_with_genesis(
     init_features: Features,
 ) {
     let (config, _genesis_key) =
-        aptos_genesis::test_utils::test_config_with_custom_onchain(Some(Arc::new(move |config| {
+        libra2_genesis::test_utils::test_config_with_custom_onchain(Some(Arc::new(move |config| {
             config.initial_features_override = Some(init_features.clone());
             config.initial_jwks = vec![IssuerJWK {
                 issuer: get_sample_iss(),

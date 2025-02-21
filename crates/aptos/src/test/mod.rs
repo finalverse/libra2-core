@@ -54,7 +54,7 @@ use libra2_crypto::{
     x25519, PrivateKey,
 };
 use aptos_framework::chunked_publish::{CHUNK_SIZE_IN_BYTES, LARGE_PACKAGES_MODULE_ADDRESS};
-use aptos_genesis::config::HostAndPort;
+use libra2_genesis::config::HostAndPort;
 use libra2_keygen::KeyGen;
 use libra2_logger::warn;
 use libra2_rest_client::{

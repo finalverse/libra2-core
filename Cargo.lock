@@ -298,7 +298,6 @@ dependencies = [
  "aptos-framework",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
- "aptos-genesis",
  "aptos-indexer-grpc-server-framework",
  "aptos-indexer-grpc-utils",
  "aptos-protos 1.3.1",
@@ -333,6 +332,7 @@ dependencies = [
  "libra2-config",
  "libra2-crypto",
  "libra2-faucet-core",
+ "libra2-genesis",
  "libra2-github-client",
  "libra2-global-constants",
  "libra2-keygen",
@@ -476,7 +476,6 @@ dependencies = [
  "aptos-api-types",
  "aptos-cached-packages",
  "aptos-framework",
- "aptos-genesis",
  "aptos-indexer-grpc-table-info",
  "aptos-sdk",
  "aptos-vm",
@@ -490,6 +489,7 @@ dependencies = [
  "libra2-db",
  "libra2-executor",
  "libra2-executor-types",
+ "libra2-genesis",
  "libra2-mempool",
  "libra2-mempool-notifications",
  "libra2-storage-interface",
@@ -691,7 +691,6 @@ dependencies = [
  "aptos",
  "aptos-cached-packages",
  "aptos-framework",
- "aptos-genesis",
  "aptos-sdk",
  "async-trait",
  "chrono",
@@ -707,6 +706,7 @@ dependencies = [
  "libra2-cli-common",
  "libra2-config",
  "libra2-db",
+ "libra2-genesis",
  "libra2-global-constants",
  "libra2-infallible",
  "libra2-inspection-service",
@@ -934,30 +934,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-genesis"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-cached-packages",
- "aptos-framework",
- "aptos-vm",
- "aptos-vm-genesis",
- "bcs 0.1.4",
- "libra2-config",
- "libra2-crypto",
- "libra2-db",
- "libra2-executor",
- "libra2-keygen",
- "libra2-logger",
- "libra2-storage-interface",
- "libra2-temppath",
- "libra2-types",
- "rand 0.7.3",
- "serde",
- "serde_yaml 0.8.26",
-]
-
-[[package]]
 name = "aptos-indexer"
 version = "0.0.1"
 dependencies = [
@@ -1142,7 +1118,6 @@ dependencies = [
  "aptos-api-test-context",
  "aptos-api-types",
  "aptos-framework",
- "aptos-genesis",
  "aptos-indexer-grpc-utils",
  "aptos-moving-average",
  "aptos-protos 1.3.1",
@@ -1162,6 +1137,7 @@ dependencies = [
  "libra2-db",
  "libra2-executor",
  "libra2-executor-types",
+ "libra2-genesis",
  "libra2-global-constants",
  "libra2-logger",
  "libra2-mempool",
@@ -1597,7 +1573,6 @@ dependencies = [
  "aptos-gas-profiling",
  "aptos-gas-schedule",
  "aptos-gas-schedule-updator",
- "aptos-genesis",
  "aptos-language-e2e-tests",
  "aptos-vm",
  "aptos-vm-environment",
@@ -1611,6 +1586,7 @@ dependencies = [
  "hex",
  "libra2-build-info",
  "libra2-crypto",
+ "libra2-genesis",
  "libra2-infallible",
  "libra2-keygen",
  "libra2-move-debugger",
@@ -7916,7 +7892,6 @@ dependencies = [
  "aptos-framework",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
- "aptos-genesis",
  "aptos-indexer-grpc-server-framework",
  "aptos-indexer-grpc-utils",
  "aptos-protos 1.3.1",
@@ -7951,6 +7926,7 @@ dependencies = [
  "libra2-config",
  "libra2-crypto",
  "libra2-faucet-core",
+ "libra2-genesis",
  "libra2-github-client",
  "libra2-global-constants",
  "libra2-keygen",
@@ -8823,7 +8799,6 @@ dependencies = [
  "anyhow",
  "aptos-aggregator",
  "aptos-block-executor",
- "aptos-genesis",
  "aptos-mvhashmap",
  "aptos-sdk",
  "aptos-vm",
@@ -8849,6 +8824,7 @@ dependencies = [
  "libra2-executor-types",
  "libra2-experimental-ptx-executor",
  "libra2-experimental-runtimes",
+ "libra2-genesis",
  "libra2-jellyfish-merkle",
  "libra2-logger",
  "libra2-metrics-core",
@@ -9110,6 +9086,30 @@ dependencies = [
  "serde",
  "serde_json",
  "tokio",
+]
+
+[[package]]
+name = "libra2-genesis"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-cached-packages",
+ "aptos-framework",
+ "aptos-vm",
+ "aptos-vm-genesis",
+ "bcs 0.1.4",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-db",
+ "libra2-executor",
+ "libra2-keygen",
+ "libra2-logger",
+ "libra2-storage-interface",
+ "libra2-temppath",
+ "libra2-types",
+ "rand 0.7.3",
+ "serde",
+ "serde_yaml 0.8.26",
 ]
 
 [[package]]
@@ -9663,7 +9663,6 @@ dependencies = [
  "aptos-api",
  "aptos-cached-packages",
  "aptos-framework",
- "aptos-genesis",
  "aptos-indexer",
  "aptos-indexer-grpc-fullnode",
  "aptos-indexer-grpc-table-info",
@@ -9692,6 +9691,7 @@ dependencies = [
  "libra2-dkg-runtime",
  "libra2-event-notifications",
  "libra2-executor",
+ "libra2-genesis",
  "libra2-infallible",
  "libra2-inspection-service",
  "libra2-jwk-consensus",
@@ -10193,7 +10193,6 @@ name = "libra2-state-sync-driver"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-genesis",
  "aptos-vm",
  "aptos-vm-genesis",
  "async-trait",
@@ -10211,6 +10210,7 @@ dependencies = [
  "libra2-executor",
  "libra2-executor-test-helpers",
  "libra2-executor-types",
+ "libra2-genesis",
  "libra2-infallible",
  "libra2-logger",
  "libra2-mempool-notifications",
@@ -15967,7 +15967,6 @@ dependencies = [
  "aptos-framework",
  "aptos-gas-algebra",
  "aptos-gas-schedule",
- "aptos-genesis",
  "aptos-indexer",
  "aptos-indexer-grpc-table-info",
  "aptos-release-builder",
@@ -15991,6 +15990,7 @@ dependencies = [
  "libra2-db-indexer-schemas",
  "libra2-dkg",
  "libra2-faucet-core",
+ "libra2-genesis",
  "libra2-global-constants",
  "libra2-infallible",
  "libra2-inspection-service",

@@ -1,5 +1,5 @@
 [package]
-name = "aptos-genesis"
+name = "libra2-genesis"
 description = "A tool to manage genesis"
 version = "0.1.0"
 

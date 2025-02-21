@@ -142,7 +142,7 @@ pub fn run_benchmark<V>(
         enable_storage_sharding,
     );
     let (mut config, genesis_key) =
-        aptos_genesis::test_utils::test_config_with_custom_features(init_features);
+        libra2_genesis::test_utils::test_config_with_custom_features(init_features);
     config.storage.dir = checkpoint_dir.as_ref().to_path_buf();
     config.storage.storage_pruner_config = pruner_config;
     config.storage.rocksdb_configs.enable_storage_sharding = enable_storage_sharding;
@@ -415,7 +415,7 @@ fn add_accounts_impl<V>(
     V: VMBlockExecutor + 'static,
 {
     let (mut config, genesis_key) =
-        aptos_genesis::test_utils::test_config_with_custom_features(init_features);
+        libra2_genesis::test_utils::test_config_with_custom_features(init_features);
     config.storage.dir = output_dir.as_ref().to_path_buf();
     config.storage.storage_pruner_config = pruner_config;
     config.storage.rocksdb_configs.enable_storage_sharding = enable_storage_sharding;
@@ -1012,7 +1012,7 @@ mod tests {
         bootstrap_with_genesis(&db_dir, false, features.clone());
 
         let (mut config, genesis_key) =
-            aptos_genesis::test_utils::test_config_with_custom_features(features);
+            libra2_genesis::test_utils::test_config_with_custom_features(features);
         config.storage.dir = db_dir.as_ref().to_path_buf();
         config.storage.storage_pruner_config = NO_OP_STORAGE_PRUNER_CONFIG;
         config.storage.rocksdb_configs.enable_storage_sharding = false;

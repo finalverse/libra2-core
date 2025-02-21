@@ -13,7 +13,7 @@ use crate::{
     governance::CompileScriptFunction,
     CliCommand,
 };
-use aptos_genesis::{
+use libra2_genesis::{
     config::{HostAndPort, Layout, OperatorConfiguration, OwnerConfiguration},
     keys::{generate_key_objects, PublicIdentity},
 };

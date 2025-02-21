@@ -20,7 +20,7 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     PrivateKey,
 };
-use aptos_genesis::{
+use libra2_genesis::{
     config::{
         AccountBalanceMap, EmployeePoolConfig, EmployeePoolMap, HostAndPort, Layout,
         ValidatorConfiguration,

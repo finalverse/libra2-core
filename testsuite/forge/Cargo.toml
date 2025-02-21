@@ -21,7 +21,7 @@ libra2-cli-common = { workspace = true }
 libra2-config = { workspace = true }
 libra2-db = { workspace = true }
 aptos-framework = { workspace = true }
-aptos-genesis = { workspace = true }
+libra2-genesis = { workspace = true }
 libra2-global-constants = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-inspection-service = { workspace = true }

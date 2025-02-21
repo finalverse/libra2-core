@@ -2,7 +2,7 @@ Your {{ .Chart.Name }} deployment named {{ .Release.Name }} is now deployed.
 
 To check automated genesis ceremony status:
 
-    $ kubectl -n {{ .Release.Namespace }} logs -f job/{{ include "aptos-genesis.fullname" . }}-e{{ .Values.chain.era }}
+    $ kubectl -n {{ .Release.Namespace }} logs -f job/{{ include "libra2-genesis.fullname" . }}-e{{ .Values.chain.era }}
 
 The resulting genesis ConfigMaps can be mounted by libra2-node, and will be located at:
 

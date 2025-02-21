@@ -33,7 +33,7 @@ libra2-dkg-runtime = { workspace = true }
 libra2-event-notifications = { workspace = true }
 libra2-executor = { workspace = true }
 aptos-framework = { workspace = true }
-aptos-genesis = { workspace = true }
+libra2-genesis = { workspace = true }
 aptos-indexer = { workspace = true, optional = true }
 aptos-indexer-grpc-fullnode = { workspace = true }
 aptos-indexer-grpc-table-info = { workspace = true }

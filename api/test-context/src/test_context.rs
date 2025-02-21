@@ -125,7 +125,7 @@ pub fn new_test_context_inner(
     tmp_dir.create_as_dir().unwrap();
 
     let mut rng = ::rand::rngs::StdRng::from_seed([0u8; 32]);
-    let builder = aptos_genesis::builder::Builder::new(
+    let builder = libra2_genesis::builder::Builder::new(
         tmp_dir.path(),
         aptos_cached_packages::head_release_bundle().clone(),
     )

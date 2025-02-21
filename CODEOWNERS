@@ -49,7 +49,7 @@
 
 # Owners for the `/crates/libra2-faucet` directory and all its subdirectories. And other faucet, genesis, and OpenAPI-related crates.
 /crates/libra2-faucet @banool @gregnazario
-/crates/aptos-genesis @gregnazario
+/crates/libra2-genesis @gregnazario
 
 # Owners for the libra2-logger crate
 /crates/libra2-logger @gregnazario @joshlind

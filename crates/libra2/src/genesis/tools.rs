@@ -13,7 +13,7 @@ use crate::{
     },
     CliCommand, CliTypedResult,
 };
-use aptos_genesis::config::{EmployeePoolMap, Layout};
+use libra2_genesis::config::{EmployeePoolMap, Layout};
 use aptos_sdk::move_types::account_address::AccountAddress;
 use libra2_types::account_address::{create_vesting_pool_address, default_stake_pool_address};
 use async_trait::async_trait;

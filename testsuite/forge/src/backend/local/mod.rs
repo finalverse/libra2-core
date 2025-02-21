@@ -6,7 +6,7 @@ use crate::{Factory, GenesisConfig, GenesisConfigFn, NodeConfigFn, Result, Swarm
 use anyhow::{bail, Context};
 use libra2_config::config::{NodeConfig, OverrideNodeConfig};
 use aptos_framework::ReleaseBundle;
-use aptos_genesis::builder::{InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn};
+use libra2_genesis::builder::{InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn};
 use libra2_infallible::Mutex;
 use rand::rngs::StdRng;
 use std::{

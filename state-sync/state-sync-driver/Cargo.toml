@@ -47,7 +47,7 @@ libra2-crypto = { workspace = true }
 libra2-db = { workspace = true }
 libra2-executor = { workspace = true }
 libra2-executor-test-helpers = { workspace = true }
-aptos-genesis = { workspace = true, features = ["testing"] }
+libra2-genesis = { workspace = true, features = ["testing"] }
 libra2-network = { workspace = true }
 libra2-storage-service-client = { workspace = true }
 libra2-storage-service-types = { workspace = true }

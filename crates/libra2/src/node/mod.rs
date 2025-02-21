@@ -26,7 +26,7 @@ use libra2_backup_cli::{
 };
 use aptos_cached_packages::aptos_stdlib;
 use libra2_crypto::{bls12381, bls12381::PublicKey, x25519, ValidCryptoMaterialStringExt};
-use aptos_genesis::config::{HostAndPort, OperatorConfiguration};
+use libra2_genesis::config::{HostAndPort, OperatorConfiguration};
 use libra2_logger::Level;
 use libra2_network_checker::args::{
     validate_address, CheckEndpointArgs, HandshakeArgs, NodeAddressArgs,

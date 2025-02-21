@@ -143,7 +143,7 @@ spec:
         volumeMounts:
         - name: libra2-config
           mountPath: /opt/aptos/etc
-        - name: aptos-genesis
+        - name: libra2-genesis
           mountPath: /opt/aptos/genesis
         - name: aptos-data
           mountPath: /opt/aptos/data
@@ -216,7 +216,7 @@ spec:
       - name: libra2-config
         configMap:
           name: {{ include "aptos-fullnode.fullname" . }}
-      - name: aptos-genesis
+      - name: libra2-genesis
       {{- if .Values.chain.genesisConfigmap }}
         configMap:
           name: {{ .Values.chain.genesisConfigmap }}

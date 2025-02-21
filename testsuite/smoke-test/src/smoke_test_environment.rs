@@ -8,7 +8,7 @@ use libra2_crypto::ed25519::Ed25519PrivateKey;
 use libra2_faucet_core::server::{FunderKeyEnum, RunConfig};
 use aptos_forge::{ActiveNodesGuard, Factory, LocalFactory, LocalSwarm, Node};
 use aptos_framework::ReleaseBundle;
-use aptos_genesis::builder::{InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn};
+use libra2_genesis::builder::{InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn};
 use libra2_infallible::Mutex;
 use libra2_logger::prelude::*;
 use libra2_types::chain_id::ChainId;

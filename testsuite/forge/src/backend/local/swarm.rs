@@ -13,7 +13,7 @@ use libra2_config::{
     network_id::NetworkId,
 };
 use aptos_framework::ReleaseBundle;
-use aptos_genesis::builder::{
+use libra2_genesis::builder::{
     FullnodeNodeConfig, InitConfigFn, InitGenesisConfigFn, InitGenesisStakeFn,
 };
 use libra2_infallible::Mutex;
@@ -133,7 +133,7 @@ impl LocalSwarm {
         };
 
         let (root_key, genesis, genesis_waypoint, validators) =
-            aptos_genesis::builder::Builder::new(
+            libra2_genesis::builder::Builder::new(
                 &dir_actual,
                 genesis_framework
                     .unwrap_or_else(|| aptos_cached_packages::head_release_bundle().clone()),

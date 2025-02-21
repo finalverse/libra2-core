@@ -89,7 +89,7 @@
 /// - **The AptosAccount module** is a Move module that contains the code for manipulating the administrative data held in a particular `AptosAccount.T` resource.
 /// - Code for checking or incrementing sequence numbers, withdrawing or depositing currency, and extracting gas deposits is included in the AptosAccount module.
 ///
-/// ### Aptos devnet
+/// ### Libra2 devnet
 ///
 /// - See [devnet](#devnet).
 ///
@@ -143,7 +143,7 @@
 ///
 /// ### devnet
 ///
-/// - The **Aptos devnet** is a publicly deployed instance of the Aptos network that runs using a set of validator test nodes.
+/// - The **Libra2 devnet** is a publicly deployed instance of the Aptos network that runs using a set of validator test nodes.
 /// - The devnet is a demonstration of the Aptos network that is built for experimenting with new ideas
 /// - The devnet simulates a digital payment system and the coins on the devnet have _no real world value_.
 /// - The devnet is the network by which developers are given the opportunity to test given protocols. It is similar to testnet as it operates independently of the mainnet yet is reset weekly.

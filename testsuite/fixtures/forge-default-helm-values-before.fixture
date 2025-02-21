@@ -7,7 +7,7 @@
     "apple"
   ],
   "default_helm_values": {
-    "aptos-genesis": {
+    "libra2-genesis": {
       "image": {
         "repo": "apple"
       }

@@ -10,7 +10,7 @@ use crate::{
 };
 use libra2_config::config::Token;
 use aptos_framework::ReleaseBundle;
-use aptos_genesis::config::Layout;
+use libra2_genesis::config::Layout;
 use libra2_github_client::Client as GithubClient;
 use async_trait::async_trait;
 use clap::Parser;

@@ -22,7 +22,7 @@ use libra2_crypto::{
     bls12381, ed25519::ED25519_PUBLIC_KEY_LENGTH, x25519, ValidCryptoMaterial,
     ValidCryptoMaterialStringExt,
 };
-use aptos_genesis::{
+use libra2_genesis::{
     builder::GenesisConfiguration,
     config::{
         AccountBalanceMap, EmployeePoolMap, HostAndPort, Layout, StringOperatorConfiguration,

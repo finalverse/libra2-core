@@ -283,7 +283,7 @@ pub(crate) async fn delete_k8s_resources(client: K8sClient, kube_namespace: &str
     // selector for the helm chart
     let libra2_node_helm_selector = "app.kubernetes.io/part-of=libra2-node";
     let testnet_addons_helm_selector = "app.kubernetes.io/part-of=testnet-addons";
-    let genesis_helm_selector = "app.kubernetes.io/part-of=aptos-genesis";
+    let genesis_helm_selector = "app.kubernetes.io/part-of=libra2-genesis";
 
     // selector for manually created resources from Forge
     let forge_pfn_selector = "app.kubernetes.io/part-of=forge-pfn";

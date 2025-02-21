@@ -45,7 +45,7 @@ pub fn new_test_context(test_name: &str, fake_start_time_usecs: u64) -> TestCont
     tmp_dir.create_as_dir().unwrap();
 
     let mut rng = ::rand::rngs::StdRng::from_seed([0u8; 32]);
-    let builder = aptos_genesis::builder::Builder::new(
+    let builder = libra2_genesis::builder::Builder::new(
         tmp_dir.path(),
         framework::head_release_bundle().clone(),
     )

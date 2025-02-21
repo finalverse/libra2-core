@@ -1121,7 +1121,7 @@ class ForgeConfigTests(unittest.TestCase):
                     "all_clusters": ["banana", "apple"],
                     "default_helm_values": {
                         "libra2-node": {"image": {"tag": "banana"}},
-                        "aptos-genesis": {"image": {"tag": "banana"}},
+                        "libra2-genesis": {"image": {"tag": "banana"}},
                     },
                 }
             ),
@@ -1171,7 +1171,7 @@ class ForgeConfigTests(unittest.TestCase):
             "all_clusters": ["banana", "apple"],
             "default_helm_values": {
                 "libra2-node": {"apple": "enabled", "banana": {"enabled": "true"}},
-                "aptos-genesis": {"apple": "enabled", "banana": {"enabled": "true"}},
+                "libra2-genesis": {"apple": "enabled", "banana": {"enabled": "true"}},
             },
         }
         runner = CliRunner()
@@ -1215,7 +1215,7 @@ class ForgeConfigTests(unittest.TestCase):
             )
             result_helm_config_present_missing = runner.invoke(
                 main,
-                ["--no-log-metadata", "config", "helm", "get", "aptos-genesis"],
+                ["--no-log-metadata", "config", "helm", "get", "libra2-genesis"],
                 catch_exceptions=True,
             )
             result_helm_config_present_complete = runner.invoke(
@@ -1241,7 +1241,7 @@ class ForgeConfigTests(unittest.TestCase):
             self.assertIsNotNone(result_helm_config_present_missing.exception)
             self.assertEqual(
                 result_helm_config_present_missing.exception.args,  # type: ignore
-                Exception("No helm values found for chart aptos-genesis").args,
+                Exception("No helm values found for chart libra2-genesis").args,
             )
 
             # we successfully get the config

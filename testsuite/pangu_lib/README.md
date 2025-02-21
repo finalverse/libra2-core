@@ -8,7 +8,7 @@ Pangu is a testnet creation and management CLI, which deploys on top of existing
 
 ## What is Pangu CLI?
 
-Ever had to wait for the Aptos devnet/testnet releases to test a new feature? Or, create a PR to launch testnets through Forge? Well, these will be a thing of the past with Pangu.
+Ever had to wait for the Libra2 devnet/testnet releases to test a new feature? Or, create a PR to launch testnets through Forge? Well, these will be a thing of the past with Pangu.
 
 Pangu is a modular, customizable, and next-gen Aptos testnet creation-management CLI tool written in Python. Pangu allows you to create, and manage testnets on demand, and blazingly fast 🚀🚀🚀 
 

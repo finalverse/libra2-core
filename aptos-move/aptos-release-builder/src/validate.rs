@@ -10,7 +10,7 @@ use aptos::{
     stake::IncreaseLockup,
 };
 use libra2_crypto::ed25519::Ed25519PrivateKey;
-use aptos_genesis::keys::PrivateIdentity;
+use libra2_genesis::keys::PrivateIdentity;
 use libra2_temppath::TempPath;
 use libra2_types::account_address::AccountAddress;
 use clap::Parser;
