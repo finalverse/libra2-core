@@ -24,7 +24,7 @@ use crate::{
     schema::db_metadata::{DbMetadataKey, DbMetadataSchema},
 };
 use libra2_config::config::{RocksdbConfig, RocksdbConfigs};
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::prelude::info;
 use libra2_rocksdb_options::gen_rocksdb_options;
 use libra2_schemadb::{batch::SchemaBatch, ColumnFamilyDescriptor, ColumnFamilyName, DB};

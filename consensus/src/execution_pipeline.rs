@@ -18,7 +18,7 @@ use libra2_crypto::HashValue;
 use libra2_executor_types::{
     state_compute_result::StateComputeResult, BlockExecutorTrait, ExecutorError, ExecutorResult,
 };
-use aptos_experimental_runtimes::thread_manager::optimal_min_len;
+use libra2_experimental_runtimes::thread_manager::optimal_min_len;
 use libra2_logger::{debug, warn};
 use libra2_types::{
     block_executor::{config::BlockExecutorConfigFromOnchain, partitioner::ExecutableBlock},

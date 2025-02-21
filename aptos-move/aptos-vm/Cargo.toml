@@ -19,7 +19,7 @@ aptos-block-executor = { workspace = true }
 libra2-block-partitioner = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-crypto-derive = { workspace = true }
-aptos-experimental-runtimes = { workspace = true }
+libra2-experimental-runtimes = { workspace = true }
 aptos-framework =  { workspace = true }
 aptos-gas-algebra = { workspace = true }
 aptos-gas-meter = { workspace = true }

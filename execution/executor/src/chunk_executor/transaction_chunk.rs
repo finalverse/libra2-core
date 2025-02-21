@@ -7,7 +7,7 @@ use crate::{
 };
 use anyhow::Result;
 use libra2_executor_types::execution_output::ExecutionOutput;
-use aptos_experimental_runtimes::thread_manager::optimal_min_len;
+use libra2_experimental_runtimes::thread_manager::optimal_min_len;
 use libra2_metrics_core::TimerHelper;
 use libra2_storage_interface::state_store::{
     state::LedgerState, state_view::cached_state_view::CachedStateView,

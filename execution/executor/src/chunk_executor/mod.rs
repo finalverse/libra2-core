@@ -19,7 +19,7 @@ use anyhow::{anyhow, ensure, Result};
 use libra2_executor_types::{
     ChunkCommitNotification, ChunkExecutorTrait, TransactionReplayer, VerifyExecutionMode,
 };
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_infallible::{Mutex, RwLock};
 use libra2_logger::prelude::*;
 use libra2_metrics_core::{IntGaugeHelper, TimerHelper};

@@ -30,7 +30,7 @@ use libra2_executor_benchmark::{
 use libra2_executor_service::remote_executor_client;
 use aptos_experimental_ptx_executor::PtxBlockExecutor;
 #[cfg(target_os = "linux")]
-use aptos_experimental_runtimes::thread_manager::{ThreadConfigStrategy, ThreadManagerBuilder};
+use libra2_experimental_runtimes::thread_manager::{ThreadConfigStrategy, ThreadManagerBuilder};
 use libra2_metrics_core::{register_int_gauge, IntGauge};
 use libra2_profiler::{ProfilerConfig, ProfilerHandler};
 use libra2_push_metrics::MetricsPusher;

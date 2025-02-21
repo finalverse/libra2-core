@@ -16,7 +16,7 @@ use crate::{
 };
 use libra2_config::config::{RocksdbConfig, RocksdbConfigs, StorageDirPaths};
 use libra2_crypto::HashValue;
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_jellyfish_merkle::{
     node_type::NodeKey, JellyfishMerkleTree, TreeReader, TreeUpdateBatch, TreeWriter,
 };

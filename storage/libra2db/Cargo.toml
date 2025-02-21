@@ -20,7 +20,7 @@ libra2-crypto = { workspace = true }
 libra2-db-indexer = { workspace = true }
 libra2-db-indexer-schemas = { workspace = true, features = ["fuzzing"] }
 libra2-executor-types = { workspace = true }
-aptos-experimental-runtimes = { workspace = true }
+libra2-experimental-runtimes = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-jellyfish-merkle = { workspace = true }
 libra2-logger = { workspace = true }

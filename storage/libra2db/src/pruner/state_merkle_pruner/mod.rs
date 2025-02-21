@@ -21,7 +21,7 @@ use crate::{
     state_merkle_db::StateMerkleDb,
 };
 use anyhow::anyhow;
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_jellyfish_merkle::{node_type::NodeKey, StaleNodeIndex};
 use libra2_logger::info;
 use libra2_schemadb::{schema::KeyCodec, DB};

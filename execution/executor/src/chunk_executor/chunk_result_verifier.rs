@@ -3,7 +3,7 @@
 
 use anyhow::{ensure, Result};
 use libra2_executor_types::LedgerUpdateOutput;
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_types::{
     epoch_state::EpochState,
     ledger_info::LedgerInfoWithSignatures,

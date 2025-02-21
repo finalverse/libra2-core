@@ -6,7 +6,7 @@
 //! TODO(aldenhu): doc
 
 use crate::{common::BASE_VERSION, metrics::TIMER, scheduler::PtxSchedulerClient};
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::trace;
 use libra2_metrics_core::TimerHelper;
 use libra2_types::state_store::{state_key::StateKey, StateView};

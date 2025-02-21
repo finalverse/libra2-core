@@ -28,7 +28,7 @@ libra2-enum-conversion-derive = { workspace = true }
 libra2-event-notifications = { workspace = true }
 libra2-executor = { workspace = true }
 libra2-executor-types = { workspace = true }
-aptos-experimental-runtimes = { workspace = true }
+libra2-experimental-runtimes = { workspace = true }
 libra2-fallible = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }

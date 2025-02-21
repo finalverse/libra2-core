@@ -687,29 +687,17 @@ name = "aptos-experimental-ptx-executor"
 version = "0.1.0"
 dependencies = [
  "aptos-block-executor",
- "aptos-experimental-runtimes",
  "aptos-vm",
  "aptos-vm-environment",
  "aptos-vm-logging",
  "aptos-vm-types",
  "hashbrown 0.14.3",
+ "libra2-experimental-runtimes",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
  "libra2-types",
  "move-core-types",
- "once_cell",
- "rayon",
-]
-
-[[package]]
-name = "aptos-experimental-runtimes"
-version = "0.1.0"
-dependencies = [
- "aptos-runtimes",
- "core_affinity",
- "libc",
- "num_cpus",
  "once_cell",
  "rayon",
 ]
@@ -1942,7 +1930,6 @@ dependencies = [
  "anyhow",
  "aptos-aggregator",
  "aptos-block-executor",
- "aptos-experimental-runtimes",
  "aptos-framework",
  "aptos-gas-algebra",
  "aptos-gas-meter",
@@ -1969,6 +1956,7 @@ dependencies = [
  "libra2-block-partitioner",
  "libra2-crypto",
  "libra2-crypto-derive",
+ "libra2-experimental-runtimes",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -8292,7 +8280,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-experimental-runtimes",
  "aptos-runtimes",
  "aptos-vm",
  "async-trait",
@@ -8324,6 +8311,7 @@ dependencies = [
  "libra2-executor",
  "libra2-executor-test-helpers",
  "libra2-executor-types",
+ "libra2-experimental-runtimes",
  "libra2-fallible",
  "libra2-infallible",
  "libra2-keygen",
@@ -8570,7 +8558,6 @@ name = "libra2-db"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-experimental-runtimes",
  "aptos-resource-viewer",
  "arc-swap",
  "arr_macro",
@@ -8590,6 +8577,7 @@ dependencies = [
  "libra2-db-indexer",
  "libra2-db-indexer-schemas",
  "libra2-executor-types",
+ "libra2-experimental-runtimes",
  "libra2-infallible",
  "libra2-jellyfish-merkle",
  "libra2-logger",
@@ -8822,7 +8810,6 @@ dependencies = [
  "anyhow",
  "aptos-block-executor",
  "aptos-cached-packages",
- "aptos-experimental-runtimes",
  "aptos-indexer-grpc-table-info",
  "aptos-sdk",
  "aptos-vm",
@@ -8842,6 +8829,7 @@ dependencies = [
  "libra2-executor-service",
  "libra2-executor-test-helpers",
  "libra2-executor-types",
+ "libra2-experimental-runtimes",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -8864,7 +8852,6 @@ dependencies = [
  "aptos-aggregator",
  "aptos-block-executor",
  "aptos-experimental-ptx-executor",
- "aptos-experimental-runtimes",
  "aptos-genesis",
  "aptos-mvhashmap",
  "aptos-sdk",
@@ -8889,6 +8876,7 @@ dependencies = [
  "libra2-executor",
  "libra2-executor-service",
  "libra2-executor-types",
+ "libra2-experimental-runtimes",
  "libra2-jellyfish-merkle",
  "libra2-logger",
  "libra2-metrics-core",
@@ -9024,6 +9012,18 @@ dependencies = [
  "proptest",
  "rand 0.7.3",
  "rocksdb",
+]
+
+[[package]]
+name = "libra2-experimental-runtimes"
+version = "0.1.0"
+dependencies = [
+ "aptos-runtimes",
+ "core_affinity",
+ "libc",
+ "num_cpus",
+ "once_cell",
+ "rayon",
 ]
 
 [[package]]
@@ -9176,7 +9176,6 @@ name = "libra2-jellyfish-merkle"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-experimental-runtimes",
  "arr_macro",
  "bcs 0.1.4",
  "byteorder",
@@ -9184,6 +9183,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-crypto-derive",
  "libra2-db",
+ "libra2-experimental-runtimes",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",

@@ -22,7 +22,7 @@ use libra2_crypto::HashValue;
 use libra2_executor_types::{
     state_compute_result::StateComputeResult, BlockExecutorTrait, ExecutorError, ExecutorResult,
 };
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_infallible::RwLock;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::{IntGaugeHelper, TimerHelper};

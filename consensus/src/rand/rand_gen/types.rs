@@ -9,7 +9,7 @@ use libra2_dkg::{
     pvss::{Player, WeightedConfig},
     weighted_vuf::traits::WeightedVUF,
 };
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::debug;
 use libra2_types::{
     aggregate_signature::AggregateSignature,

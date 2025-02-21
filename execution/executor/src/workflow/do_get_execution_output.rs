@@ -20,7 +20,7 @@ use libra2_executor_types::{
     should_forward_to_subscription_service,
     transactions_with_output::{TransactionsToKeep, TransactionsWithOutput},
 };
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
 use libra2_storage_interface::state_store::{

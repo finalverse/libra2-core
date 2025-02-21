@@ -32,7 +32,7 @@ use libra2_config::config::{
 };
 use libra2_crypto::HashValue;
 use libra2_db_indexer::{db_indexer::InternalIndexerDB, Indexer};
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_logger::prelude::*;
 use libra2_metrics_core::TimerHelper;
 use aptos_resource_viewer::AptosValueAnnotator;

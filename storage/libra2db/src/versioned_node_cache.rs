@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{lru_node_cache::LruNodeCache, metrics::OTHER_TIMERS_SECONDS, state_merkle_db::Node};
-use aptos_experimental_runtimes::thread_manager::THREAD_MANAGER;
+use libra2_experimental_runtimes::thread_manager::THREAD_MANAGER;
 use libra2_infallible::RwLock;
 use libra2_jellyfish_merkle::node_type::NodeKey;
 use libra2_types::transaction::Version;

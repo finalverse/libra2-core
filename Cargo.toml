@@ -344,7 +344,7 @@ libra2-executor-types = { path = "execution/executor-types" }
 libra2-experimental-hexy = { path = "experimental/storage/hexy" }
 libra2-experimental-layered-map = { path = "experimental/storage/layered-map" }
 aptos-experimental-ptx-executor = { path = "experimental/execution/ptx-executor" }
-aptos-experimental-runtimes = { path = "experimental/runtimes" }
+libra2-experimental-runtimes = { path = "experimental/runtimes" }
 libra2-faucet-cli = { path = "crates/libra2-faucet/cli" }
 libra2-faucet-core = { path = "crates/libra2-faucet/core" }
 libra2-faucet-service = { path = "crates/libra2-faucet/service" }

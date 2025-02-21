@@ -16,7 +16,7 @@ use libra2_consensus_types::{
     common::{TransactionInProgress, TransactionSummary},
     proof_of_store::{BatchId, BatchInfo},
 };
-use aptos_experimental_runtimes::thread_manager::optimal_min_len;
+use libra2_experimental_runtimes::thread_manager::optimal_min_len;
 use libra2_logger::prelude::*;
 use libra2_mempool::QuorumStoreRequest;
 use libra2_types::{transaction::SignedTransaction, PeerId};
