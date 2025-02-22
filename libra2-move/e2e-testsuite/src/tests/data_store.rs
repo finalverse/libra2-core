@@ -241,7 +241,7 @@ fn add_module(data_store: &mut FakeDataStore, sender: &AccountData) -> CompiledM
         sender.address().to_hex(),
     );
 
-    let framework_modules = aptos_cached_packages::head_release_bundle().compiled_modules();
+    let framework_modules = libra2_cached_packages::head_release_bundle().compiled_modules();
     let compiler = Compiler {
         deps: framework_modules.iter().collect(),
     };

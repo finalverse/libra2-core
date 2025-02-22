@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_config::{
     config::{NodeConfig, Peer, PeerRole, HANDSHAKE_VERSION},
     network_id::NetworkId,

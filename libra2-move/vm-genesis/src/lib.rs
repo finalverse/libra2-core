@@ -1117,7 +1117,7 @@ pub fn generate_genesis_change_set_for_testing_with_count(
     count: u64,
 ) -> ChangeSet {
     let framework = match genesis_options {
-        GenesisOptions::Head => aptos_cached_packages::head_release_bundle(),
+        GenesisOptions::Head => libra2_cached_packages::head_release_bundle(),
         GenesisOptions::Testnet => libra2_framework::testnet_release_bundle(),
         GenesisOptions::Mainnet => {
             // We don't yet have mainnet, so returning testnet here
@@ -1131,7 +1131,7 @@ pub fn generate_genesis_change_set_for_testing_with_count(
 /// Generate a genesis `ChangeSet` for mainnet
 pub fn generate_genesis_change_set_for_mainnet(genesis_options: GenesisOptions) -> ChangeSet {
     let framework = match genesis_options {
-        GenesisOptions::Head => aptos_cached_packages::head_release_bundle(),
+        GenesisOptions::Head => libra2_cached_packages::head_release_bundle(),
         GenesisOptions::Testnet => libra2_framework::testnet_release_bundle(),
         // We don't yet have mainnet, so returning testnet here
         GenesisOptions::Mainnet => libra2_framework::testnet_release_bundle(),
@@ -1148,7 +1148,7 @@ pub fn test_genesis_transaction() -> Transaction {
 pub fn test_genesis_change_set_and_validators(
     count: Option<usize>,
 ) -> (ChangeSet, Vec<TestValidator>) {
-    generate_test_genesis(aptos_cached_packages::head_release_bundle(), count)
+    generate_test_genesis(libra2_cached_packages::head_release_bundle(), count)
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -1354,7 +1354,7 @@ pub fn test_genesis_module_publishing() {
             &genesis_vm,
             &genesis_runtime_environment,
             HashValue::zero(),
-            aptos_cached_packages::head_release_bundle(),
+            libra2_cached_packages::head_release_bundle(),
         );
 
         // All write ops must be a creation!
@@ -1554,7 +1554,7 @@ pub fn test_mainnet_end_to_end() {
         &accounts,
         &employees,
         &validators,
-        aptos_cached_packages::head_release_bundle(),
+        libra2_cached_packages::head_release_bundle(),
         ChainId::mainnet(),
         &mainnet_genesis_config(),
     );

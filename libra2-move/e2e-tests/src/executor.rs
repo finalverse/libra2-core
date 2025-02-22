@@ -371,7 +371,7 @@ impl FakeExecutor {
     pub fn stdlib_only_genesis() -> Self {
         let mut genesis = Self::no_genesis();
         for (bytes, module) in
-            aptos_cached_packages::head_release_bundle().code_and_compiled_modules()
+            libra2_cached_packages::head_release_bundle().code_and_compiled_modules()
         {
             let id = module.self_id();
             genesis.add_module(&id, bytes.to_vec());

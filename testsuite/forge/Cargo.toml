@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 again = { workspace = true }
 anyhow = { workspace = true, features = ["backtrace"] }
 aptos = { workspace = true }
-aptos-cached-packages = { workspace = true }
+libra2-cached-packages = { workspace = true }
 libra2-cli-common = { workspace = true }
 libra2-config = { workspace = true }
 libra2-db = { workspace = true }

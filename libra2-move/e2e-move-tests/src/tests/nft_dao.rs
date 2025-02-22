@@ -31,7 +31,7 @@ fn test_nft_dao_txn_arguments() {
 
     let result = h.run_transaction_payload(
         &acc,
-        aptos_cached_packages::aptos_stdlib::code_publish_package_txn(
+        libra2_cached_packages::aptos_stdlib::code_publish_package_txn(
             bcs::to_bytes(&metadata).expect("PackageMetadata has BCS"),
             code,
         ),
@@ -47,7 +47,7 @@ fn test_nft_dao_txn_arguments() {
     let voter = h.new_account_at(AccountAddress::from_hex_literal("0xaf").unwrap());
     h.run_transaction_payload(
         &acc,
-        aptos_cached_packages::aptos_token_sdk_builder::token_create_collection_script(
+        libra2_cached_packages::aptos_token_sdk_builder::token_create_collection_script(
             collection_name.clone(),
             desc,
             "".to_owned().into_bytes(),
@@ -58,7 +58,7 @@ fn test_nft_dao_txn_arguments() {
     for tok in &token_names {
         h.run_transaction_payload(
             &acc,
-            aptos_cached_packages::aptos_token_sdk_builder::token_create_token_script(
+            libra2_cached_packages::aptos_token_sdk_builder::token_create_token_script(
                 collection_name.clone(),
                 tok.clone(),
                 "".to_owned().into_bytes(),
@@ -99,7 +99,7 @@ fn test_nft_dao_txn_arguments() {
     // transfer two NFTs to DAO and transfer 1 NFT to voter
     h.run_transaction_payload(
         &acc,
-        aptos_cached_packages::aptos_token_sdk_builder::token_transfer_with_opt_in(
+        libra2_cached_packages::aptos_token_sdk_builder::token_transfer_with_opt_in(
             *acc.address(),
             collection_name.clone(),
             token_names[0].clone(),
@@ -110,7 +110,7 @@ fn test_nft_dao_txn_arguments() {
     );
     h.run_transaction_payload(
         &acc,
-        aptos_cached_packages::aptos_token_sdk_builder::token_transfer_with_opt_in(
+        libra2_cached_packages::aptos_token_sdk_builder::token_transfer_with_opt_in(
             *acc.address(),
             collection_name.clone(),
             token_names[1].clone(),
@@ -122,11 +122,11 @@ fn test_nft_dao_txn_arguments() {
     // voter opt-in direct transfer
     h.run_transaction_payload(
         &voter,
-        aptos_cached_packages::aptos_token_sdk_builder::token_opt_in_direct_transfer(true),
+        libra2_cached_packages::aptos_token_sdk_builder::token_opt_in_direct_transfer(true),
     );
     h.run_transaction_payload(
         &acc,
-        aptos_cached_packages::aptos_token_sdk_builder::token_transfer_with_opt_in(
+        libra2_cached_packages::aptos_token_sdk_builder::token_transfer_with_opt_in(
             *acc.address(),
             collection_name.clone(),
             token_names[2].clone(),

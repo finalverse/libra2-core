@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_db::Libra2DB;
 use libra2_db_indexer::db_indexer::DBIndexer;
 use libra2_executor_test_helpers::{

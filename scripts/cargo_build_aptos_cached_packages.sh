@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This script ensures that aptos-cached-packages has been built correctly.
+# This script ensures that libra2-cached-packages has been built correctly.
 #
 # If you want to run this from anywhere in aptos-core, try adding the wrapper
 # script to your path:
@@ -23,13 +23,13 @@ fi
 set -e
 set -x
 
-# Ensure that aptos-cached-packages have been built correctly.
+# Ensure that libra2-cached-packages have been built correctly.
 unset SKIP_FRAMEWORK_BUILD
-cargo build -p aptos-cached-packages
+cargo build -p libra2-cached-packages
 if [ -n "$CHECK_ARG" ]; then
     if [ -n "$(git status --porcelain -uno aptos-move)" ]; then
       git diff
-      echo "There are unstaged changes after running 'cargo build -p aptos-cached-packages'! Are you sure aptos-cached-packages is up-to-date?"
+      echo "There are unstaged changes after running 'cargo build -p libra2-cached-packages'! Are you sure libra2-cached-packages is up-to-date?"
       exit 1
     fi
 fi

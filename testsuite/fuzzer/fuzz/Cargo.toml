@@ -8,7 +8,7 @@ edition = "2021"
 cargo-fuzz = true
 
 [dependencies]
-aptos-cached-packages = { workspace = true }
+libra2-cached-packages = { workspace = true }
 libra2-consensus = { workspace = true, features = ["fuzzing"] }
 libra2-crypto = { workspace = true }
 libra2-framework = { workspace = true }

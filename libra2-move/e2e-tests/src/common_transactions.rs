@@ -5,7 +5,7 @@
 //! Support for encoding transactions for common situations.
 
 use crate::account::Account;
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_types::transaction::{Script, SignedTransaction};
 use move_ir_compiler::Compiler;
 use once_cell::sync::Lazy;
@@ -17,7 +17,7 @@ pub static EMPTY_SCRIPT: Lazy<Vec<u8>> = Lazy::new(|| {
       return;
     }
 ";
-    let modules = aptos_cached_packages::head_release_bundle().compiled_modules();
+    let modules = libra2_cached_packages::head_release_bundle().compiled_modules();
     let compiler = Compiler {
         deps: modules.iter().collect(),
     };

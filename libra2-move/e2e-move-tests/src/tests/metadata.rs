@@ -5,7 +5,7 @@ use crate::{
     assert_success, assert_vm_status, build_package, build_package_with_compiler_version,
     MoveHarness,
 };
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_framework::{
     BuildOptions, RuntimeModuleMetadata, RuntimeModuleMetadataV1, APTOS_METADATA_KEY,
     APTOS_METADATA_KEY_V1,

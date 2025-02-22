@@ -3,7 +3,7 @@
 
 use crate::measurements::GasMeasurements;
 use anyhow::{anyhow, Result};
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_framework::BuiltPackage;
 use libra2_language_e2e_tests::{
     account::Account,

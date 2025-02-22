@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::{hash::CryptoHash, PrivateKey};
 use libra2_executor_test_helpers::{
     gen_block_id, gen_ledger_info_with_sigs, get_test_signed_transaction,

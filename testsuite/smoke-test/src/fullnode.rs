@@ -8,7 +8,7 @@ use crate::{
     utils::{create_test_accounts, execute_transactions, MAX_HEALTHY_WAIT_SECS},
 };
 use anyhow::bail;
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_config::config::{BootstrappingMode, NodeConfig, OverrideNodeConfig};
 use libra2_db_indexer_schemas::{
     metadata::MetadataKey,

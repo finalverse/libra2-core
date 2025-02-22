@@ -7,7 +7,7 @@ use aptos_api_types::{
     mime_types, HexEncodedBytes, TransactionOnChainData, X_APTOS_CHAIN_ID,
     X_APTOS_LEDGER_TIMESTAMP, X_APTOS_LEDGER_VERSION,
 };
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_config::{
     config::{
         NodeConfig, RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS_FOR_TEST,
@@ -127,7 +127,7 @@ pub fn new_test_context_inner(
     let mut rng = ::rand::rngs::StdRng::from_seed([0u8; 32]);
     let builder = libra2_genesis::builder::Builder::new(
         tmp_dir.path(),
-        aptos_cached_packages::head_release_bundle().clone(),
+        libra2_cached_packages::head_release_bundle().clone(),
     )
     .unwrap()
     .with_init_genesis_config(Some(Arc::new(|genesis_config| {

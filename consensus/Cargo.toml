@@ -86,7 +86,7 @@ tokio-retry = { workspace = true }
 tokio-stream = { workspace = true }
 
 [dev-dependencies]
-aptos-cached-packages = { workspace = true }
+libra2-cached-packages = { workspace = true }
 libra2-config = { workspace = true, features = ["fuzzing"] }
 libra2-consensus-types = { workspace = true, features = ["fuzzing"] }
 libra2-executor-test-helpers = { workspace = true }

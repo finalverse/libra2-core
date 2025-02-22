@@ -5,7 +5,7 @@
 
 use super::helpers::UserAccount;
 use crate::tdbg;
-use aptos_cached_packages::aptos_stdlib::code_publish_package_txn;
+use libra2_cached_packages::aptos_stdlib::code_publish_package_txn;
 use libra2_framework::natives::code::{
     ModuleMetadata, MoveOption, PackageDep, PackageMetadata, UpgradePolicy,
 };

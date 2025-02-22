@@ -6,7 +6,7 @@ use crate::{
     smoke_test_environment::{new_local_swarm_with_aptos, SwarmBuilder},
     txn_emitter::generate_traffic,
 };
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_config::config::GasEstimationConfig;
 use libra2_crypto::ed25519::Ed25519Signature;
 use aptos_forge::{LocalSwarm, NodeExt, Swarm, TransactionType};

@@ -13,7 +13,7 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-cached-packages = { workspace = true }
+libra2-cached-packages = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true, features = ["testing"] }
@@ -32,7 +32,7 @@ proptest = { workspace = true }
 
 [features]
 default = [
-    "aptos-cached-packages/fuzzing",
+    "libra2-cached-packages/fuzzing",
     "move-core-types/fuzzing",
     "libra2-types/fuzzing",
 ]

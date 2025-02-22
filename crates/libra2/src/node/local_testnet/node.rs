@@ -107,7 +107,7 @@ pub fn build_node_config(
         false,
         false,
         performance,
-        aptos_cached_packages::head_release_bundle(),
+        libra2_cached_packages::head_release_bundle(),
         rng,
     )
     .context("Failed to load / create config for node")

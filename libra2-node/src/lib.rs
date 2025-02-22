@@ -139,7 +139,7 @@ impl Libra2NodeArgs {
             let genesis_framework = if let Some(path) = self.genesis_framework {
                 ReleaseBundle::read(path).unwrap()
             } else {
-                aptos_cached_packages::head_release_bundle().clone()
+                libra2_cached_packages::head_release_bundle().clone()
             };
 
             // Create a seeded RNG, setup the test environment and start the node

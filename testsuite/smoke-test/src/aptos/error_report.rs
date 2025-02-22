@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::smoke_test_environment::new_local_swarm_with_aptos;
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use aptos_forge::{AptosPublicInfo, Swarm};
 use aptos_sdk::{transaction_builder::TransactionBuilder, types::LocalAccount};
 use libra2_types::{

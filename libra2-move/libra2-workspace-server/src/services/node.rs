@@ -67,7 +67,7 @@ pub fn start_node(
         false,
         false,
         false,
-        aptos_cached_packages::head_release_bundle(),
+        libra2_cached_packages::head_release_bundle(),
         rng,
     )?;
 

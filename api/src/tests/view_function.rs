@@ -3,7 +3,7 @@
 
 use super::{new_test_context, new_test_context_with_config};
 use aptos_api_test_context::{current_function_name, TestContext};
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_config::config::{NodeConfig, ViewFilter, ViewFunctionId};
 use libra2_types::account_address::AccountAddress;
 use serde_json::{json, Value};

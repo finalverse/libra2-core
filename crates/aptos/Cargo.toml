@@ -18,7 +18,7 @@ aptos-api-types = { workspace = true }
 libra2-backup-cli = { workspace = true }
 libra2-bitvec = { workspace = true }
 libra2-build-info = { workspace = true }
-aptos-cached-packages = { workspace = true }
+libra2-cached-packages = { workspace = true }
 libra2-cli-common = { workspace = true }
 libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }

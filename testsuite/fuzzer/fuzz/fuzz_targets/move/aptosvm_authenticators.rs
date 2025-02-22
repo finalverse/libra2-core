@@ -3,7 +3,7 @@
 #![no_main]
 #![allow(unused_imports)]
 
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     PrivateKey, SigningKey, Uniform,

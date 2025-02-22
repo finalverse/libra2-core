@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, build_package, tests::common, MoveHarness};
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::{hash::CryptoHash, SigningKey};
 use libra2_language_e2e_tests::account::{Account, AccountPublicKey, TransactionBuilder};
 use libra2_types::{

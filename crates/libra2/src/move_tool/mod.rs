@@ -1000,19 +1000,19 @@ fn create_package_publication_data(
 
     let payload = match publish_type {
         PublishType::AccountDeploy => {
-            aptos_cached_packages::aptos_stdlib::code_publish_package_txn(
+            libra2_cached_packages::aptos_stdlib::code_publish_package_txn(
                 metadata_serialized.clone(),
                 compiled_units.clone(),
             )
         },
         PublishType::ObjectDeploy => {
-            aptos_cached_packages::aptos_stdlib::object_code_deployment_publish(
+            libra2_cached_packages::aptos_stdlib::object_code_deployment_publish(
                 metadata_serialized.clone(),
                 compiled_units.clone(),
             )
         },
         PublishType::ObjectUpgrade => {
-            aptos_cached_packages::aptos_stdlib::object_code_deployment_upgrade(
+            libra2_cached_packages::aptos_stdlib::object_code_deployment_upgrade(
                 metadata_serialized.clone(),
                 compiled_units.clone(),
                 object_address.expect("Object address must be provided for upgrading object code."),
@@ -1825,7 +1825,7 @@ impl CliCommand<TransactionSummary> for CreateResourceAccountAndPublishPackage {
         );
         prompt_yes_with_override(&message, txn_options.prompt_options)?;
 
-        let payload = aptos_cached_packages::aptos_stdlib::resource_account_create_resource_account_and_publish_package(
+        let payload = libra2_cached_packages::aptos_stdlib::resource_account_create_resource_account_and_publish_package(
             seed,
             bcs::to_bytes(&metadata).expect("PackageMetadata has BCS"),
             compiled_units,

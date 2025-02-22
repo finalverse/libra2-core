@@ -304,7 +304,7 @@ fn code_publishing_using_resource_account() {
 
     let result = h.run_transaction_payload(
         &acc,
-        aptos_cached_packages::aptos_stdlib::resource_account_create_resource_account_and_publish_package(
+        libra2_cached_packages::aptos_stdlib::resource_account_create_resource_account_and_publish_package(
             vec![],
             bcs_metadata,
             code,
@@ -505,7 +505,7 @@ fn publish_module_txn(source: String, module_name: &str) -> TransactionPayload {
 
     let code = package.extract_code();
     let metadata = package.extract_metadata().unwrap();
-    aptos_cached_packages::aptos_stdlib::code_publish_package_txn(
+    libra2_cached_packages::aptos_stdlib::code_publish_package_txn(
         bcs::to_bytes(&metadata).unwrap(),
         code,
     )

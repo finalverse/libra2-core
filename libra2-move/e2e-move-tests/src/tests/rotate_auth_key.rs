@@ -6,7 +6,7 @@ use crate::{
     tests::offer_rotation_capability::{offer_rotation_capability_v2, revoke_rotation_capability},
     MoveHarness,
 };
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     multi_ed25519::{MultiEd25519PrivateKey, MultiEd25519PublicKey},

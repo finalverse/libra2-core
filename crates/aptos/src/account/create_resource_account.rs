@@ -5,7 +5,7 @@ use crate::{
     account::derive_resource_account::ResourceAccountSeed,
     common::types::{CliCommand, CliTypedResult, TransactionOptions, TransactionSummary},
 };
-use aptos_cached_packages::aptos_stdlib::resource_account_create_resource_account;
+use libra2_cached_packages::aptos_stdlib::resource_account_create_resource_account;
 use libra2_rest_client::{
     aptos_api_types::{WriteResource, WriteSetChange},
     Transaction,

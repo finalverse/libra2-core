@@ -28,7 +28,7 @@ pub fn test_config_with_custom_onchain(
     path.create_as_dir().unwrap();
     let (root_key, _genesis, _genesis_waypoint, validators) = crate::builder::Builder::new(
         path.path(),
-        aptos_cached_packages::head_release_bundle().clone(),
+        libra2_cached_packages::head_release_bundle().clone(),
     )
     .unwrap()
     .with_init_genesis_config(init_genesis_config)

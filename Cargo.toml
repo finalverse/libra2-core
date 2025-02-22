@@ -312,7 +312,7 @@ libra2-bounded-executor = { path = "crates/bounded-executor" }
 libra2-block-executor = { path = "libra2-move/block-executor" }
 libra2-bitvec = { path = "crates/libra2-bitvec" }
 libra2-build-info = { path = "crates/libra2-build-info" }
-aptos-cached-packages = { path = "libra2-move/framework/cached-packages" }
+libra2-cached-packages = { path = "libra2-move/framework/cached-packages" }
 libra2-channels = { path = "crates/channel" }
 libra2-cli-common = { path = "crates/libra2-cli-common" }
 libra2-collections = { path = "crates/libra2-collections" }

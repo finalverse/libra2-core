@@ -6,7 +6,7 @@ use crate::{
     join_validator_set, leave_validator_set, rotate_consensus_key, setup_staking, tests::common,
     unlock_stake, withdraw_stake, MoveHarness,
 };
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_types::account_address::{default_stake_pool_address, AccountAddress};
 use once_cell::sync::Lazy;
 use std::collections::BTreeMap;

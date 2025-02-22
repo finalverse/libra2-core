@@ -88,7 +88,7 @@ fn test_that_rust_entry_fun_code_compiles() {
     // TODO: need a way to get abis to reactivate this test
     let abis = vec![];
     test_rust(
-        &abis, // &aptos_cached_packages::head_release_bundle().abis(),
+        &abis, // &libra2_cached_packages::head_release_bundle().abis(),
         "examples/rust/script_fun_demo.rs",
         EXPECTED_SCRIPT_FUN_OUTPUT,
     );

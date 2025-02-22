@@ -15,7 +15,7 @@ use aptos::{
     test::{CliTestFramework, ValidatorPerformance},
 };
 use libra2_bitvec::BitVec;
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::{bls12381, ed25519::Ed25519PrivateKey, x25519, ValidCryptoMaterialStringExt};
 use aptos_forge::{reconfig, wait_for_all_nodes_to_catchup, LocalSwarm, NodeExt, Swarm, SwarmExt};
 use libra2_genesis::config::HostAndPort;

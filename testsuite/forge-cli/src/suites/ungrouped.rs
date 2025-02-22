@@ -13,7 +13,7 @@ use super::{
     },
 };
 use anyhow::Result;
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_config::config::{ConsensusConfig, MempoolConfig, NodeConfig};
 use aptos_forge::{
     args::TransactionTypeArg,
@@ -162,7 +162,7 @@ pub static RELIABLE_REAL_ENV_PROGRESS_THRESHOLD: Lazy<StateProgressThreshold> =
 pub fn run_forever() -> ForgeConfig {
     ForgeConfig::default()
         .add_admin_test(GetMetadata)
-        .with_genesis_module_bundle(aptos_cached_packages::head_release_bundle().clone())
+        .with_genesis_module_bundle(libra2_cached_packages::head_release_bundle().clone())
         .add_aptos_test(RunForever)
 }
 
@@ -173,7 +173,7 @@ pub fn local_test_suite() -> ForgeConfig {
         .add_admin_test(GetMetadata)
         .add_network_test(RestartValidator)
         .add_network_test(EmitTransaction)
-        .with_genesis_module_bundle(aptos_cached_packages::head_release_bundle().clone())
+        .with_genesis_module_bundle(libra2_cached_packages::head_release_bundle().clone())
 }
 
 pub fn k8s_test_suite() -> ForgeConfig {

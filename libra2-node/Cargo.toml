@@ -18,7 +18,7 @@ libra2-admin-service = { workspace = true }
 aptos-api = { workspace = true }
 libra2-backup-service = { workspace = true }
 libra2-build-info = { workspace = true }
-aptos-cached-packages = { workspace = true }
+libra2-cached-packages = { workspace = true }
 libra2-channels = { workspace = true }
 libra2-config = { workspace = true }
 libra2-consensus = { workspace = true }

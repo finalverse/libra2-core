@@ -304,7 +304,7 @@ static PRECOMPILED_APTOS_FRAMEWORK_V1: Lazy<Option<(FullyCompiledProgram, Vec<Pa
         }
         let lib_paths = PackagePaths {
             name: None,
-            paths: aptos_cached_packages::head_release_bundle()
+            paths: libra2_cached_packages::head_release_bundle()
                 .files()
                 .unwrap(),
             named_address_map: libra2_framework::named_addresses().clone(),
@@ -328,7 +328,7 @@ static PRECOMPILED_APTOS_FRAMEWORK_V1: Lazy<Option<(FullyCompiledProgram, Vec<Pa
     });
 
 static APTOS_FRAMEWORK_FILES: Lazy<Vec<String>> = Lazy::new(|| {
-    aptos_cached_packages::head_release_bundle()
+    libra2_cached_packages::head_release_bundle()
         .files()
         .unwrap()
 });
@@ -340,7 +340,7 @@ static PRECOMPILED_APTOS_FRAMEWORK_V2: Lazy<PrecompiledFilesModules> = Lazy::new
         .collect();
 
     let options = move_compiler_v2::Options {
-        sources: aptos_cached_packages::head_release_bundle()
+        sources: libra2_cached_packages::head_release_bundle()
             .files()
             .unwrap(),
         dependencies: vec![],
@@ -549,7 +549,7 @@ impl<'a> AptosTestAdapter<'a> {
         let txn = RawTransaction::new(
             aptos_test_root_address(),
             parameters.sequence_number,
-            aptos_cached_packages::aptos_stdlib::aptos_account_create_account(account_addr),
+            libra2_cached_packages::aptos_stdlib::aptos_account_create_account(account_addr),
             parameters.max_gas_amount,
             parameters.gas_unit_price,
             parameters.expiration_timestamp_secs,
@@ -565,7 +565,7 @@ impl<'a> AptosTestAdapter<'a> {
         let txn = RawTransaction::new(
             aptos_test_root_address(),
             parameters.sequence_number + 1,
-            aptos_cached_packages::aptos_stdlib::aptos_coin_mint(account_addr, amount),
+            libra2_cached_packages::aptos_stdlib::aptos_coin_mint(account_addr, amount),
             parameters.max_gas_amount,
             parameters.gas_unit_price,
             parameters.expiration_timestamp_secs,

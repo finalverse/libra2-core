@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, assert_vm_status, build_package, MoveHarness};
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_framework::BuildOptions;
 use aptos_package_builder::PackageBuilder;
 use libra2_types::{account_address::AccountAddress, on_chain_config::FeatureFlag};

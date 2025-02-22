@@ -19,7 +19,7 @@ use crate::{
     CliCommand, CliResult,
 };
 use aptos_api_types::ViewFunction;
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::HashValue;
 use libra2_framework::{BuildOptions, BuiltPackage, ReleasePackage};
 use libra2_logger::warn;

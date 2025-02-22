@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, tests::common, BlockSplit, MoveHarness, SUCCESS};
-use aptos_cached_packages::aptos_stdlib::{aptos_account_batch_transfer, aptos_account_transfer};
+use libra2_cached_packages::aptos_stdlib::{aptos_account_batch_transfer, aptos_account_transfer};
 use libra2_language_e2e_tests::{
     account::Account,
     executor::{ExecutorMode, FakeExecutor},

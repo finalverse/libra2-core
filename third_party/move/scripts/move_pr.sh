@@ -167,7 +167,7 @@ if [ ! -z "$GEN_ARTIFACTS" ]; then
     # Add hoc treatment
     (
         cd $BASE
-        cargo build $CARGO_OP_PARAMS -p aptos-cached-packages
+        cargo build $CARGO_OP_PARAMS -p libra2-cached-packages
     )
 fi
 

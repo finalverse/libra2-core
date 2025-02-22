@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
 use libra2_gas_algebra::Gas;
 use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
@@ -561,7 +561,7 @@ fn good_module_uses_bad(
         address.to_hex(),
     );
 
-    let framework_modules = aptos_cached_packages::head_release_bundle().compiled_modules();
+    let framework_modules = libra2_cached_packages::head_release_bundle().compiled_modules();
     let compiler = Compiler {
         deps: framework_modules
             .iter()

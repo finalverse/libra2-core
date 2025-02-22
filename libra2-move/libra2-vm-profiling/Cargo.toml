@@ -18,7 +18,7 @@ once_cell = { workspace = true }
 smallvec = { workspace = true }
 
 libra2-block-executor = { workspace = true }
-aptos-cached-packages = { workspace = true }
+libra2-cached-packages = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 libra2-language-e2e-tests = { workspace = true }
 aptos-move-stdlib = { workspace = true }

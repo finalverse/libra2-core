@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-cached-packages = { workspace = true }
+libra2-cached-packages = { workspace = true }
 libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-global-constants = { workspace = true }

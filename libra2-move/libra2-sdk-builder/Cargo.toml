@@ -26,7 +26,7 @@ serde_yaml = { workspace = true }
 textwrap = { workspace = true }
 
 [dev-dependencies]
-aptos-cached-packages = { workspace = true }
+libra2-cached-packages = { workspace = true }
 libra2-framework = { workspace = true }
 tempfile = { workspace = true }
 which = { workspace = true }

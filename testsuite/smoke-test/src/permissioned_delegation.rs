@@ -3,7 +3,7 @@
 
 use crate::smoke_test_environment::SwarmBuilder;
 use aptos::move_tool::MemberId;
-use aptos_cached_packages::aptos_stdlib;
+use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::SigningKey;
 use aptos_forge::Swarm;
 use libra2_types::function_info::FunctionInfo;

@@ -94,7 +94,7 @@ fn test_create_single_node_test_config() {
         false,
         false,
         false,
-        aptos_cached_packages::head_release_bundle(),
+        libra2_cached_packages::head_release_bundle(),
         rand::rngs::StdRng::from_entropy(),
     )
     .unwrap();
