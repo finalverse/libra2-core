@@ -12,7 +12,7 @@ use libra2_crypto::{
     test_utils::KeyPair,
 };
 use libra2_gas_algebra::{FeePerGasUnit, Gas, GasExpression};
-use aptos_gas_schedule::{AptosGasParameters, InitialGasSchedule, LATEST_GAS_FEATURE_VERSION};
+use libra2_gas_schedule::{AptosGasParameters, InitialGasSchedule, LATEST_GAS_FEATURE_VERSION};
 use libra2_proptest_helpers::Index;
 use libra2_types::{
     transaction::{Script, SignedTransaction, TransactionStatus},

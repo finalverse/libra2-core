@@ -7,7 +7,7 @@
 
 //! Implementation of native functions (non-bytecode instructions) for vector.
 
-use aptos_gas_schedule::gas_params::natives::move_stdlib::{
+use libra2_gas_schedule::gas_params::natives::move_stdlib::{
     VECTOR_MOVE_RANGE_BASE, VECTOR_MOVE_RANGE_PER_INDEX_MOVED,
 };
 use libra2_native_interface::{

@@ -6,7 +6,7 @@ use crate::{
     errors::{SafeNativeError, SafeNativeResult},
 };
 use libra2_gas_algebra::DynamicExpression;
-use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, ToOnChainGasSchedule};
+use libra2_gas_schedule::{MiscGasParameters, NativeGasParameters, ToOnChainGasSchedule};
 use libra2_types::on_chain_config::{Features, TimedFeatures};
 use bytes::Bytes;
 use move_vm_runtime::native_functions::{NativeContext, NativeFunction};

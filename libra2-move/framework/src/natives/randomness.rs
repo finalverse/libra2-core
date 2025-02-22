@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_gas_schedule::{
+use libra2_gas_schedule::{
     gas_feature_versions::RELEASE_V1_23,
     gas_params::natives::libra2_framework::RANDOMNESS_FETCH_AND_INC_COUNTER,
 };

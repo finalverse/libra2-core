@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-framework = { workspace = true }
-aptos-gas-schedule = { workspace = true }
+libra2-gas-schedule = { workspace = true }
 libra2-types = { workspace = true }
 libra2-vm ={ workspace = true, features = ["testing"] }
 clap = { workspace = true }

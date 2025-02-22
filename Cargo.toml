@@ -14,7 +14,7 @@ members = [
     "libra2-move/aptos-gas-calibration",
     "libra2-move/aptos-gas-meter",
     "libra2-move/aptos-gas-profiling",
-    "libra2-move/aptos-gas-schedule",
+    "libra2-move/libra2-gas-schedule",
     "libra2-move/libra2-gas-schedule-updator",
     "libra2-move/libra2-memory-usage-tracker",
     "libra2-move/libra2-native-interface",
@@ -358,7 +358,7 @@ aptos-gas-meter = { path = "libra2-move/aptos-gas-meter" }
 libra2-gas-algebra = { path = "libra2-move/libra2-gas-algebra" }
 aptos-gas-calibration = { path = "libra2-move/aptos-gas-calibration" }
 aptos-gas-profiling = { path = "libra2-move/aptos-gas-profiling" }
-aptos-gas-schedule = { path = "libra2-move/aptos-gas-schedule" }
+libra2-gas-schedule = { path = "libra2-move/libra2-gas-schedule" }
 libra2-gas-schedule-updator = { path = "libra2-move/libra2-gas-schedule-updator" }
 libra2-genesis = { path = "crates/libra2-genesis" }
 libra2-github-client = { path = "crates/libra2-github-client" }

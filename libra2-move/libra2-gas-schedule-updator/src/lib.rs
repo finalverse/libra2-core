@@ -8,7 +8,7 @@
 //! gas schedule in a human readable format.
 
 use anyhow::Result;
-use aptos_gas_schedule::{
+use libra2_gas_schedule::{
     AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule, LATEST_GAS_FEATURE_VERSION,
 };
 use libra2_package_builder::PackageBuilder;

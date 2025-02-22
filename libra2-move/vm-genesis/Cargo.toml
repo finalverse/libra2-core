@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 libra2-cached-packages =  { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-framework =  { workspace = true }
-aptos-gas-schedule = { workspace = true } 
+libra2-gas-schedule = { workspace = true }
 libra2-types = { workspace = true }
 libra2-vm = { workspace = true }
 libra2-vm-types = { workspace = true }

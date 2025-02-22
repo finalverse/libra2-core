@@ -7,7 +7,7 @@
 
 //! Implementation of native functions for value comparison.
 
-use aptos_gas_schedule::gas_params::natives::move_stdlib::{
+use libra2_gas_schedule::gas_params::natives::move_stdlib::{
     CMP_COMPARE_BASE, CMP_COMPARE_PER_ABS_VAL_UNIT,
 };
 use libra2_native_interface::{

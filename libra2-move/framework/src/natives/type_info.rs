@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 use crate::natives::transaction_context::NativeTransactionContext;
-use aptos_gas_schedule::gas_params::natives::libra2_framework::*;
+use libra2_gas_schedule::gas_params::natives::libra2_framework::*;
 use libra2_native_interface::{
     RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError, SafeNativeResult,
 };

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_gas_algebra::GasExpression;
-use aptos_gas_schedule::{
+use libra2_gas_schedule::{
     gas_params::txn::{
         STORAGE_IO_PER_EVENT_BYTE_WRITE, STORAGE_IO_PER_STATE_BYTE_READ,
         STORAGE_IO_PER_STATE_BYTE_WRITE, STORAGE_IO_PER_STATE_SLOT_READ,

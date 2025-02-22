@@ -1,5 +1,5 @@
 [package]
-name = "aptos-gas-schedule"
+name = "libra2-gas-schedule"
 version = "0.1.0"
 
 # Workspace inherited keys

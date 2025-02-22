@@ -10,7 +10,7 @@ use libra2_crypto::{
     hash::HashValue,
     ValidCryptoMaterialStringExt,
 };
-use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
+use libra2_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
 use libra2_language_e2e_tests::data_store::{FakeDataStore, GENESIS_CHANGE_SET_HEAD};
 use libra2_resource_viewer::{AnnotatedMoveValue, Libra2ValueAnnotator};
 use libra2_types::{

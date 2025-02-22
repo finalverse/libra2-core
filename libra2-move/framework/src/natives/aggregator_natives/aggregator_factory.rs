@@ -4,7 +4,7 @@
 use crate::natives::aggregator_natives::{helpers_v1::get_handle, NativeAggregatorContext};
 use libra2_aggregator::aggregator_v1_extension::AggregatorID;
 use libra2_crypto::hash::DefaultHasher;
-use aptos_gas_schedule::gas_params::natives::libra2_framework::*;
+use libra2_gas_schedule::gas_params::natives::libra2_framework::*;
 use libra2_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,

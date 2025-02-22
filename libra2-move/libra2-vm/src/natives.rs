@@ -12,7 +12,7 @@ use libra2_aggregator::{resolver::TDelayedFieldView, types::DelayedFieldValue};
 use libra2_framework::natives::randomness::RandomnessContext;
 #[cfg(feature = "testing")]
 use libra2_framework::natives::{cryptography::algebra::AlgebraContext, event::NativeEventContext};
-use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEATURE_VERSION};
+use libra2_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEATURE_VERSION};
 use libra2_native_interface::SafeNativeBuilder;
 #[cfg(feature = "testing")]
 use libra2_table_natives::{TableHandle, TableResolver};

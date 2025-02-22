@@ -8,7 +8,7 @@ use libra2_crypto::{
     test_utils::KeyPair,
     SigningKey, Uniform,
 };
-use aptos_gas_schedule::gas_params::natives::libra2_framework::*;
+use libra2_gas_schedule::gas_params::natives::libra2_framework::*;
 use libra2_native_interface::{
     safely_pop_arg, safely_pop_vec_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext,
     SafeNativeResult,

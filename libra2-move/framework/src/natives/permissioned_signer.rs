@@ -1,6 +1,6 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
-use aptos_gas_schedule::gas_params::natives::libra2_framework::{
+use libra2_gas_schedule::gas_params::natives::libra2_framework::{
     IS_PERMISSIONED_SIGNER_BASE, PERMISSION_ADDRESS_BASE, SIGNER_FROM_PERMISSIONED_HANDLE_BASE,
 };
 use libra2_native_interface::{

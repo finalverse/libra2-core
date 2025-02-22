@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::change_set::ChangeSetInterface;
-use aptos_gas_schedule::AptosGasParameters;
+use libra2_gas_schedule::AptosGasParameters;
 use move_binary_format::errors::{Location, PartialVMError};
 use move_core_types::vm_status::{StatusCode, VMStatus};
 

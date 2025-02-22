@@ -4,7 +4,7 @@
 use anyhow::{bail, Context};
 use libra2_crypto::{ed25519::Ed25519PrivateKey, ValidCryptoMaterialStringExt};
 use libra2_framework::natives::code::PackageRegistry;
-use aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION;
+use libra2_gas_schedule::LATEST_GAS_FEATURE_VERSION;
 use libra2_release_builder::{
     components::fetch_config,
     initialize_aptos_core_path,

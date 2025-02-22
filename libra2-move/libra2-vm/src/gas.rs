@@ -4,7 +4,7 @@
 use crate::{move_vm_ext::AptosMoveResolver, transaction_metadata::TransactionMetadata};
 use libra2_gas_algebra::{Gas, GasExpression, InternalGas};
 use aptos_gas_meter::{StandardGasAlgebra, StandardGasMeter};
-use aptos_gas_schedule::{
+use libra2_gas_schedule::{
     gas_feature_versions::RELEASE_V1_13, gas_params::txn::KEYLESS_BASE_COST, AptosGasParameters,
     VMGasParameters,
 };

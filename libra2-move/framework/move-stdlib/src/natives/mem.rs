@@ -3,7 +3,7 @@
 
 //! Implementation of native functions for memory manipulation.
 
-use aptos_gas_schedule::gas_params::natives::move_stdlib::MEM_SWAP_BASE;
+use libra2_gas_schedule::gas_params::natives::move_stdlib::MEM_SWAP_BASE;
 use libra2_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,

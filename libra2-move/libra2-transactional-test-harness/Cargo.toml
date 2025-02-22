@@ -19,7 +19,7 @@ libra2-block-executor = { workspace = true }
 libra2-cached-packages = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-framework = { workspace = true }
-aptos-gas-schedule = { workspace = true }
+libra2-gas-schedule = { workspace = true }
 libra2-language-e2e-tests = { workspace = true }
 libra2-resource-viewer = { workspace = true }
 libra2-storage-interface = { workspace = true }

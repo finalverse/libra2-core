@@ -19,7 +19,7 @@ smallvec = { workspace = true }
 
 libra2-block-executor = { workspace = true }
 libra2-cached-packages = { workspace = true }
-aptos-gas-schedule = { workspace = true }
+libra2-gas-schedule = { workspace = true }
 libra2-language-e2e-tests = { workspace = true }
 libra2-move-stdlib = { workspace = true }
 libra2-native-interface = { workspace = true }

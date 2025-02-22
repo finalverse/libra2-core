@@ -8,7 +8,7 @@ use crate::{
 use libra2_crypto::ValidCryptoMaterialStringExt;
 use aptos_forge::Swarm;
 use libra2_gas_algebra::GasQuantity;
-use aptos_gas_schedule::{AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule};
+use libra2_gas_schedule::{AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule};
 use libra2_release_builder::{
     components::{
         feature_flags::{FeatureFlag, Features},
@@ -54,9 +54,9 @@ async fn test_upgrade_flow() {
     gas_parameters.vm.txn.max_transaction_size_in_bytes = GasQuantity::new(100_000_000);
 
     let gas_schedule = libra2_types::on_chain_config::GasScheduleV2 {
-        feature_version: aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION,
+        feature_version: libra2_gas_schedule::LATEST_GAS_FEATURE_VERSION,
         entries: gas_parameters
-            .to_on_chain_gas_schedule(aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION),
+            .to_on_chain_gas_schedule(libra2_gas_schedule::LATEST_GAS_FEATURE_VERSION),
     };
 
     let (_, update_gas_script) =

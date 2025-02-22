@@ -5,7 +5,7 @@
 
 use crate::{counters::TIMER, move_vm_ext::AptosMoveResolver};
 use libra2_framework::natives::code::PackageRegistry;
-use aptos_gas_schedule::AptosGasParameters;
+use libra2_gas_schedule::AptosGasParameters;
 use libra2_infallible::RwLock;
 use libra2_metrics_core::TimerHelper;
 use libra2_native_interface::SafeNativeBuilder;

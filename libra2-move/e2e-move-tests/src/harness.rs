@@ -5,7 +5,7 @@ use crate::{assert_success, build_package, AptosPackageHooks};
 use libra2_cached_packages::aptos_stdlib;
 use libra2_framework::{natives::code::PackageMetadata, BuildOptions, BuiltPackage};
 use aptos_gas_profiling::TransactionGasLog;
-use aptos_gas_schedule::{
+use libra2_gas_schedule::{
     AptosGasParameters, FromOnChainGasSchedule, InitialGasSchedule, ToOnChainGasSchedule,
 };
 use libra2_language_e2e_tests::{
@@ -839,7 +839,7 @@ impl MoveHarness {
         // explicitly manipulating gas entries. Wasn't obvious from the gas code how to
         // do this differently then below, so perhaps improve this...
         let entries = AptosGasParameters::initial()
-            .to_on_chain_gas_schedule(aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION);
+            .to_on_chain_gas_schedule(libra2_gas_schedule::LATEST_GAS_FEATURE_VERSION);
         let entries = entries
             .into_iter()
             .map(|(name, val)| {
@@ -851,7 +851,7 @@ impl MoveHarness {
             })
             .collect::<Vec<_>>();
         let gas_schedule = GasScheduleV2 {
-            feature_version: aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION,
+            feature_version: libra2_gas_schedule::LATEST_GAS_FEATURE_VERSION,
             entries,
         };
         let schedule_bytes = bcs::to_bytes(&gas_schedule).expect("bcs");

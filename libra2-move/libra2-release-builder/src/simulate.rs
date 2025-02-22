@@ -27,7 +27,7 @@ use aptos::{
 };
 use libra2_crypto::HashValue;
 use aptos_gas_profiling::GasProfiler;
-use aptos_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
+use libra2_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
 use libra2_language_e2e_tests::account::AccountData;
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_rest_client::Client;

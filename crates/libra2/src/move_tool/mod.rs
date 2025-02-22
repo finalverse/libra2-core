@@ -40,7 +40,7 @@ use libra2_framework::{
     prover::ProverOptions,
     BuildOptions, BuiltPackage,
 };
-use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters};
+use libra2_gas_schedule::{MiscGasParameters, NativeGasParameters};
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_rest_client::{
     aptos_api_types::{EntryFunctionId, HexEncodedBytes, IdentifierWrapper, MoveModuleId},

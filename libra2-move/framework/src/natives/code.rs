@@ -3,7 +3,7 @@
 
 use crate::unzip_metadata_str;
 use anyhow::bail;
-use aptos_gas_schedule::gas_params::natives::libra2_framework::*;
+use libra2_gas_schedule::gas_params::natives::libra2_framework::*;
 use libra2_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,

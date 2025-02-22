@@ -7,7 +7,7 @@
 
 //! Implementation of native functions for utf8 strings.
 
-use aptos_gas_schedule::gas_params::natives::move_stdlib::*;
+use libra2_gas_schedule::gas_params::natives::move_stdlib::*;
 use libra2_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeResult,
 };

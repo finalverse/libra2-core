@@ -6,7 +6,7 @@ use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
 #[cfg(feature = "testing")]
 use libra2_crypto::test_utils::KeyPair;
 use libra2_crypto::{ed25519, ed25519::ED25519_PUBLIC_KEY_LENGTH, traits::*};
-use aptos_gas_schedule::gas_params::natives::libra2_framework::*;
+use libra2_gas_schedule::gas_params::natives::libra2_framework::*;
 use libra2_native_interface::{
     safely_pop_arg, RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError,
     SafeNativeResult,

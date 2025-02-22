@@ -9,7 +9,7 @@ use crate::{
     },
     math_interface::generic_map,
 };
-use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
+use libra2_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
 use nalgebra::DMatrix;
 use std::collections::BTreeMap;
 

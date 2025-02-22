@@ -4,7 +4,7 @@
 use crate::natives::cryptography::ristretto255::{
     pop_32_byte_slice, pop_64_byte_slice, pop_scalar_from_bytes, SCALAR_NUM_BYTES,
 };
-use aptos_gas_schedule::gas_params::natives::libra2_framework::*;
+use libra2_gas_schedule::gas_params::natives::libra2_framework::*;
 use libra2_native_interface::{
     safely_assert_eq, safely_pop_arg, SafeNativeContext, SafeNativeResult,
 };

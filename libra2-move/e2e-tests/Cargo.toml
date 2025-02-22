@@ -23,7 +23,7 @@ libra2-framework = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-meter = { workspace = true }
 aptos-gas-profiling = { workspace = true }
-aptos-gas-schedule = { workspace = true }
+libra2-gas-schedule = { workspace = true }
 libra2-keygen = { workspace = true }
 libra2-proptest-helpers = { workspace = true }
 libra2-temppath = { workspace = true }

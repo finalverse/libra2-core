@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::function_info::extract_function_info;
-use aptos_gas_schedule::gas_params::natives::libra2_framework::DISPATCHABLE_AUTHENTICATE_DISPATCH_BASE;
+use libra2_gas_schedule::gas_params::natives::libra2_framework::DISPATCHABLE_AUTHENTICATE_DISPATCH_BASE;
 use libra2_native_interface::{
     RawSafeNative, SafeNativeBuilder, SafeNativeContext, SafeNativeError, SafeNativeResult,
 };

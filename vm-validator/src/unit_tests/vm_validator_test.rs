@@ -6,7 +6,7 @@ use crate::vm_validator::{get_account_sequence_number, PooledVMValidator, Transa
 use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
 use libra2_db::Libra2DB;
-use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
+use libra2_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
 use libra2_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReaderWriter,
 };

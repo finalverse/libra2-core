@@ -13,7 +13,7 @@ use libra2_crypto::{
     HashValue, PrivateKey, Uniform,
 };
 use libra2_framework::{ReleaseBundle, ReleasePackage};
-use aptos_gas_schedule::{
+use libra2_gas_schedule::{
     AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule, LATEST_GAS_FEATURE_VERSION,
 };
 use libra2_types::{

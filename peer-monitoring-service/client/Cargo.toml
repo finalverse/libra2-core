@@ -1,6 +1,6 @@
 [package]
 name = "libra2-peer-monitoring-service-client"
-description = "The Aptos peer monitoring service (client-side)"
+description = "The Libra2 peer monitoring service (client-side)"
 version = "0.1.0"
 
 # Workspace inherited keys

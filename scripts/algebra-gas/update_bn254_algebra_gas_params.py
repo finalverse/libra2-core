@@ -123,7 +123,7 @@ def main(gas_per_ns):
     new_lines = lines[:line_id_begin+1] + [generator_note_line] + get_algebra_lines(gas_per_ns) + lines[line_id_end:]
     path.write_text('\n'.join(new_lines))
 
-PATH_STR = 'libra2-move/aptos-gas-schedule/src/gas_schedule/libra2_framework.rs'
+PATH_STR = 'libra2-move/libra2-gas-schedule/src/gas_schedule/libra2_framework.rs'
 if __name__=='__main__':
     parser = argparse.ArgumentParser(
         description=f'Generate gas parameters for BN254 algebra module in `{PATH_STR}`.')

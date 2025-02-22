@@ -6,7 +6,7 @@ use libra2_gas_algebra::{
     NumBytes, Octa,
 };
 use aptos_gas_meter::GasAlgebra;
-use aptos_gas_schedule::VMGasParameters;
+use libra2_gas_schedule::VMGasParameters;
 use libra2_vm_types::storage::{io_pricing::IoPricing, space_pricing::DiskSpacePricing};
 use move_binary_format::errors::PartialVMResult;
 use std::sync::{Arc, Mutex};

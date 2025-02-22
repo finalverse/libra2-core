@@ -13,7 +13,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-gas-algebra = { workspace = true }
-aptos-gas-schedule = { workspace = true }
+libra2-gas-schedule = { workspace = true }
 libra2-types = { workspace = true }
 bcs = { workspace = true }
 bytes = { workspace = true }

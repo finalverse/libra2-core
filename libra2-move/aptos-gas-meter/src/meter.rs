@@ -3,7 +3,7 @@
 
 use crate::traits::{AptosGasMeter, GasAlgebra};
 use libra2_gas_algebra::{Fee, FeePerGasUnit, NumTypeNodes};
-use aptos_gas_schedule::{
+use libra2_gas_schedule::{
     gas_feature_versions::*,
     gas_params::{instr::*, txn::*},
 };

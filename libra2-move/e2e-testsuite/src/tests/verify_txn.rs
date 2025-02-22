@@ -5,7 +5,7 @@
 use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
 use libra2_gas_algebra::Gas;
-use aptos_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
+use libra2_gas_schedule::{InitialGasSchedule, TransactionGasParameters};
 use libra2_language_e2e_tests::{
     assert_prologue_disparity, assert_prologue_parity, common_transactions::EMPTY_SCRIPT,
     current_function_name, executor::FakeExecutor, transaction_status_eq,

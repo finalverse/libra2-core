@@ -12,7 +12,7 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-gas-schedule = { workspace = true }
+libra2-gas-schedule = { workspace = true }
 libra2-native-interface = { workspace = true }
 better_any = { workspace = true }
 bytes = { workspace = true }

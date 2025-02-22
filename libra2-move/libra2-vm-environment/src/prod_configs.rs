@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_gas_schedule::{gas_feature_versions::RELEASE_V1_15, AptosGasParameters};
+use libra2_gas_schedule::{gas_feature_versions::RELEASE_V1_15, AptosGasParameters};
 use libra2_types::{
     on_chain_config::{
         randomness_api_v0_config::{AllowCustomMaxGasFlag, RequiredGasDeposit},

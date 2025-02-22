@@ -14,7 +14,7 @@ use crate::{
     safe_borrow_element, store_element, structure_from_ty_arg,
 };
 use libra2_gas_algebra::{Arg, GasExpression};
-use aptos_gas_schedule::gas_params::natives::libra2_framework::*;
+use libra2_gas_schedule::gas_params::natives::libra2_framework::*;
 use libra2_native_interface::{
     safely_pop_arg, SafeNativeContext, SafeNativeError, SafeNativeResult,
 };

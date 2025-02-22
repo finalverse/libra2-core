@@ -8,6 +8,6 @@ license = { workspace = true }
 anyhow = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-meter = { workspace = true }
-aptos-gas-schedule = { workspace = true }
+libra2-gas-schedule = { workspace = true }
 libra2-vm-types = { workspace = true }
 move-binary-format = { workspace = true }

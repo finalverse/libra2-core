@@ -10,7 +10,7 @@ use crate::{
     },
     safe_borrow_element, store_element, structure_from_ty_arg,
 };
-use aptos_gas_schedule::{
+use libra2_gas_schedule::{
     gas_feature_versions::RELEASE_V1_16, gas_params::natives::libra2_framework::*,
 };
 use libra2_native_interface::{
