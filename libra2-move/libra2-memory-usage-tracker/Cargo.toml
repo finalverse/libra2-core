@@ -1,5 +1,5 @@
 [package]
-name = "aptos-memory-usage-tracker"
+name = "libra2-memory-usage-tracker"
 version = "0.1.0"
 
 # Workspace inherited keys

@@ -9,7 +9,7 @@ use aptos_gas_schedule::{
     VMGasParameters,
 };
 use libra2_logger::{enabled, Level};
-use aptos_memory_usage_tracker::MemoryTrackedGasMeter;
+use libra2_memory_usage_tracker::MemoryTrackedGasMeter;
 use libra2_types::on_chain_config::Features;
 use libra2_vm_logging::{log_schema::AdapterLogSchema, speculative_log, speculative_warn};
 use libra2_vm_types::{

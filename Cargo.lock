@@ -730,18 +730,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-memory-usage-tracker"
-version = "0.1.0"
-dependencies = [
- "aptos-gas-meter",
- "libra2-gas-algebra",
- "libra2-types",
- "move-binary-format",
- "move-core-types",
- "move-vm-types",
-]
-
-[[package]]
 name = "aptos-moving-average"
 version = "0.1.0"
 source = "git+https://github.com/aptos-labs/aptos-indexer-processors.git?rev=bf4dd89677e6929ef21f898a7a4176514e606ebd#bf4dd89677e6929ef21f898a7a4176514e606ebd"
@@ -8900,6 +8888,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-memory-usage-tracker"
+version = "0.1.0"
+dependencies = [
+ "aptos-gas-meter",
+ "libra2-gas-algebra",
+ "libra2-types",
+ "move-binary-format",
+ "move-core-types",
+ "move-vm-types",
+]
+
+[[package]]
 name = "libra2-mempool"
 version = "0.1.0"
 dependencies = [
@@ -10441,7 +10441,6 @@ dependencies = [
  "anyhow",
  "aptos-gas-meter",
  "aptos-gas-schedule",
- "aptos-memory-usage-tracker",
  "ark-bn254",
  "ark-groth16",
  "bcs 0.1.4",
@@ -10464,6 +10463,7 @@ dependencies = [
  "libra2-infallible",
  "libra2-language-e2e-tests",
  "libra2-logger",
+ "libra2-memory-usage-tracker",
  "libra2-metrics-core",
  "libra2-mvhashmap",
  "libra2-native-interface",

@@ -26,7 +26,7 @@ aptos-gas-meter = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-memory-usage-tracker = { workspace = true }
+libra2-memory-usage-tracker = { workspace = true }
 libra2-metrics-core = { workspace = true }
 libra2-mvhashmap = { workspace = true }
 libra2-native-interface = { workspace = true }
