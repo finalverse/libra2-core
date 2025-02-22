@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 libra2-framework = { workspace = true }
-aptos-package-builder = { workspace = true }
+libra2-package-builder = { workspace = true }
 libra2-types = { workspace = true }
 bcs = { workspace = true }
 move-core-types = { workspace = true }

@@ -8,7 +8,7 @@ pub use crate::{
     aptos_token_sdk_builder as aptos_token_stdlib,
 };
 use libra2_framework::{BuildOptions, BuiltPackage};
-use aptos_package_builder::PackageBuilder;
+use libra2_package_builder::PackageBuilder;
 use libra2_types::{
     account_address::AccountAddress,
     transaction::{EntryFunction, TransactionPayload},

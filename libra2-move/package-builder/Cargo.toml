@@ -1,5 +1,5 @@
 [package]
-name = "aptos-package-builder"
+name = "libra2-package-builder"
 description = "Helper for building Move packages for tests"
 version = "0.1.0"
 

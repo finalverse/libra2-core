@@ -413,7 +413,7 @@ libra2-node-identity = { path = "crates/libra2-node-identity" }
 libra2-node-resource-metrics = { path = "crates/node-resource-metrics" }
 libra2-num-variants = { path = "crates/num-variants" }
 libra2-openapi = { path = "crates/libra2-openapi" }
-aptos-package-builder = { path = "libra2-move/package-builder" }
+libra2-package-builder = { path = "libra2-move/package-builder" }
 libra2-peer-monitoring-service-client = { path = "peer-monitoring-service/client" }
 libra2-peer-monitoring-service-server = { path = "peer-monitoring-service/server" }
 libra2-peer-monitoring-service-types = { path = "peer-monitoring-service/types" }

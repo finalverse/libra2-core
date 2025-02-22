@@ -10,7 +10,7 @@ use crate::{
     BlockSplit, MoveHarness, SUCCESS,
 };
 use libra2_language_e2e_tests::executor::ExecutorMode;
-use aptos_package_builder::PackageBuilder;
+use libra2_package_builder::PackageBuilder;
 use libra2_types::{account_address::AccountAddress, on_chain_config::FeatureFlag};
 use move_core_types::{identifier::Identifier, language_storage::StructTag, vm_status::StatusCode};
 use proptest::prelude::*;

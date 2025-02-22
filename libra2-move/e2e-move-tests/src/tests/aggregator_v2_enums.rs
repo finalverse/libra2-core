@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_framework::BuildOptions;
 use libra2_language_e2e_tests::executor::ExecutorMode;
-use aptos_package_builder::PackageBuilder;
+use libra2_package_builder::PackageBuilder;
 use libra2_types::transaction::SignedTransaction;
 use claims::{assert_ok, assert_some};
 use move_core_types::parser::parse_struct_tag;

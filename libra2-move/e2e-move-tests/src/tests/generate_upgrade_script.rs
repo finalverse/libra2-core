@@ -3,7 +3,7 @@
 
 use crate::{build_package, tests::common, MoveHarness};
 use libra2_framework::{BuildOptions, ReleasePackage};
-use aptos_package_builder::PackageBuilder;
+use libra2_package_builder::PackageBuilder;
 use libra2_types::account_address::AccountAddress;
 use move_package::compilation::package_layout::CompiledPackageLayout;
 

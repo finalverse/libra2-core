@@ -14,7 +14,7 @@
 
 use crate::{assert_success, assert_vm_status, MoveHarness};
 use libra2_framework::BuildOptions;
-use aptos_package_builder::PackageBuilder;
+use libra2_package_builder::PackageBuilder;
 use libra2_types::{
     account_address::AccountAddress, on_chain_config::FeatureFlag, transaction::TransactionStatus,
 };

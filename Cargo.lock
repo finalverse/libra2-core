@@ -755,18 +755,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-package-builder"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "itertools 0.13.0",
- "libra2-framework",
- "move-command-line-common",
- "move-package",
- "tempfile",
-]
-
-[[package]]
 name = "aptos-profiler"
 version = "0.1.0"
 source = "git+https://github.com/aptos-labs/aptos-core.git?rev=202bdccff2b2d333a385ae86a4fcf23e89da9f62#202bdccff2b2d333a385ae86a4fcf23e89da9f62"
@@ -3820,7 +3808,6 @@ dependencies = [
  "anyhow",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
- "aptos-package-builder",
  "bcs 0.1.4",
  "claims",
  "hex",
@@ -3829,6 +3816,7 @@ dependencies = [
  "libra2-framework",
  "libra2-gas-algebra",
  "libra2-language-e2e-tests",
+ "libra2-package-builder",
  "libra2-transaction-generator-lib",
  "libra2-transaction-workloads-lib",
  "libra2-types",
@@ -7075,9 +7063,9 @@ name = "libra2-cached-packages"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-package-builder",
  "bcs 0.1.4",
  "libra2-framework",
+ "libra2-package-builder",
  "libra2-types",
  "move-core-types",
  "once_cell",
@@ -8155,10 +8143,10 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-gas-schedule",
- "aptos-package-builder",
  "bcs 0.1.4",
  "clap 4.5.21",
  "libra2-framework",
+ "libra2-package-builder",
  "libra2-types",
  "move-core-types",
  "move-model",
@@ -9402,6 +9390,18 @@ dependencies = [
  "libra2-mempool",
  "libra2-storage-interface",
  "libra2-types",
+]
+
+[[package]]
+name = "libra2-package-builder"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "itertools 0.13.0",
+ "libra2-framework",
+ "move-command-line-common",
+ "move-package",
+ "tempfile",
 ]
 
 [[package]]

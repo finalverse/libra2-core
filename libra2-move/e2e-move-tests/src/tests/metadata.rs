@@ -10,7 +10,7 @@ use libra2_framework::{
     BuildOptions, RuntimeModuleMetadata, RuntimeModuleMetadataV1, APTOS_METADATA_KEY,
     APTOS_METADATA_KEY_V1,
 };
-use aptos_package_builder::PackageBuilder;
+use libra2_package_builder::PackageBuilder;
 use libra2_types::{
     chain_id::ChainId,
     on_chain_config::{FeatureFlag, OnChainConfig},

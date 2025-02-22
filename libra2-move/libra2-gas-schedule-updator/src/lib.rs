@@ -11,7 +11,7 @@ use anyhow::Result;
 use aptos_gas_schedule::{
     AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule, LATEST_GAS_FEATURE_VERSION,
 };
-use aptos_package_builder::PackageBuilder;
+use libra2_package_builder::PackageBuilder;
 use libra2_types::on_chain_config::GasScheduleV2;
 use clap::Parser;
 use move_core_types::account_address::AccountAddress;
