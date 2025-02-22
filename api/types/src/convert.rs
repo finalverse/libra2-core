@@ -638,7 +638,7 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
         Ok(RawTransaction::new(
             sender.into(),
             sequence_number.into(),
-            self.try_into_aptos_core_transaction_payload(payload)?,
+            self.try_into_libra2_core_transaction_payload(payload)?,
             max_gas_amount.into(),
             gas_unit_price.into(),
             expiration_timestamp_secs.into(),
@@ -662,7 +662,7 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
         Ok(RawTransaction::new(
             sender.into(),
             sequence_number.into(),
-            self.try_into_aptos_core_transaction_payload(payload)
+            self.try_into_libra2_core_transaction_payload(payload)
                 .context("Failed to parse transaction payload")?,
             max_gas_amount.into(),
             gas_unit_price.into(),
@@ -671,7 +671,7 @@ impl<'a, S: StateView> MoveConverter<'a, S> {
         ))
     }
 
-    pub fn try_into_aptos_core_transaction_payload(
+    pub fn try_into_libra2_core_transaction_payload(
         &self,
         payload: TransactionPayload,
     ) -> Result<libra2_types::transaction::TransactionPayload> {

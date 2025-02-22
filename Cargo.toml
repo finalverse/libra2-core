@@ -284,9 +284,9 @@ default-members = [
 # All workspace members should inherit these keys
 # for package declarations.
 [workspace.package]
-authors = ["Aptos Labs <opensource@aptoslabs.com>"]
+authors = ["Libra2 <info@libra2.org>"]
 edition = "2021"
-homepage = "https://aptoslabs.com"
+homepage = "https://libra2.org"
 license = "Apache-2.0"
 publish = false
 repository = "https://github.com/finalverse/libra2-core"
@@ -414,7 +414,7 @@ libra2-package-builder = { path = "libra2-move/package-builder" }
 libra2-peer-monitoring-service-client = { path = "peer-monitoring-service/client" }
 libra2-peer-monitoring-service-server = { path = "peer-monitoring-service/server" }
 libra2-peer-monitoring-service-types = { path = "peer-monitoring-service/types" }
-# aptos-keyless-common = { path = "keyless/common" }
+aptos-keyless-common = { path = "keyless/common" }
 libra2-keyless-pepper-common = { path = "keyless/pepper/common" }
 libra2-keyless-pepper-service = { path = "keyless/pepper/service" }
 libra2-profiler = { path = "crates/libra2-profiler" }

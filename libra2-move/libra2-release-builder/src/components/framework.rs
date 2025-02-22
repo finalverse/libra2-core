@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use crate::{aptos_core_path, components::get_execution_hash};
+use crate::{libra2_core_path, components::get_execution_hash};
 use anyhow::Result;
 use libra2_crypto::HashValue;
 use libra2_framework::{BuildOptions, BuiltPackage, ReleasePackage};
@@ -75,7 +75,7 @@ pub fn generate_upgrade_proposals(
         let mut package_path = if config.git_hash.is_some() {
             temp_root_path.path().to_path_buf()
         } else {
-            aptos_core_path()
+            libra2_core_path()
         };
 
         package_path.push(relative_package_path);

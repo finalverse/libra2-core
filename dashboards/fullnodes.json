@@ -364,12 +364,12 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "aptos_core_mempool_index_size{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", index=\"system_ttl\", kubernetes_pod_name=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
+          "expr": "libra2_core_mempool_index_size{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", index=\"system_ttl\", kubernetes_pod_name=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
           "legendFormat": "{{kubernetes_pod_name}}-{{kubernetes_pod_name}}",
           "refId": "A"
         },
         {
-          "expr": "aptos_core_mempool_index_size{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", index=\"system_ttl\", job=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
+          "expr": "libra2_core_mempool_index_size{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", index=\"system_ttl\", job=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
           "legendFormat": "{{kubernetes_pod_name}}-{{job}}",
           "refId": "B"
         }
@@ -429,12 +429,12 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "aptos_core_mempool_txn_commit_latency_sum{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} / aptos_core_mempool_txn_commit_latency_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
+          "expr": "libra2_core_mempool_txn_commit_latency_sum{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} / libra2_core_mempool_txn_commit_latency_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
           "legendFormat": "{{kubernetes_pod_name}}-{{kubernetes_pod_name}}",
           "refId": "A"
         },
         {
-          "expr": "aptos_core_mempool_txn_commit_latency_sum{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", job=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} / aptos_core_mempool_txn_commit_latency_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", job=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
+          "expr": "libra2_core_mempool_txn_commit_latency_sum{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", job=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"} / libra2_core_mempool_txn_commit_latency_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", job=~\".*fullnode.*\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}",
           "legendFormat": "{{kubernetes_pod_name}}-{{job}}",
           "refId": "B"
         }

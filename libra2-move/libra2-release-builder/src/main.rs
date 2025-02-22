@@ -7,7 +7,7 @@ use libra2_framework::natives::code::PackageRegistry;
 use libra2_gas_schedule::LATEST_GAS_FEATURE_VERSION;
 use libra2_release_builder::{
     components::fetch_config,
-    initialize_aptos_core_path,
+    initialize_libra2_core_path,
     simulate::simulate_all_proposals,
     validate::{DEFAULT_RESOLUTION_TIME, FAST_RESOLUTION_TIME},
 };
@@ -25,7 +25,7 @@ pub struct Argument {
     #[clap(subcommand)]
     cmd: Commands,
     #[clap(long)]
-    aptos_core_path: Option<PathBuf>,
+    libra2_core_path: Option<PathBuf>,
 }
 
 // TODO(vgao1996): unify with `ReplayNetworkSelection` in the `aptos` crate.
@@ -189,7 +189,7 @@ pub enum InputOptions {
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let args = Argument::parse();
-    initialize_aptos_core_path(args.aptos_core_path.clone());
+    initialize_libra2_core_path(args.libra2_core_path.clone());
 
     // TODO: Being able to parse the release config from a TOML file to generate the proposals.
     match args.cmd {

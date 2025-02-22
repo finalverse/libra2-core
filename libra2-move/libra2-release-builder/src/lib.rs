@@ -26,7 +26,7 @@ pub fn current_release_config() -> &'static ReleaseConfig {
 
 static APTOS_CORE_PATH: OnceCell<PathBuf> = OnceCell::new();
 
-fn aptos_core_path_at_compile_time() -> PathBuf {
+fn libra2_core_path_at_compile_time() -> PathBuf {
     let mut path = Path::new(env!("CARGO_MANIFEST_DIR")).to_path_buf();
     path.pop();
     path.pop();
@@ -34,24 +34,24 @@ fn aptos_core_path_at_compile_time() -> PathBuf {
     path
 }
 
-pub fn initialize_aptos_core_path(overriden_path: Option<PathBuf>) {
+pub fn initialize_libra2_core_path(overriden_path: Option<PathBuf>) {
     if let Some(path) = overriden_path {
         APTOS_CORE_PATH.set(path).unwrap();
     } else {
         APTOS_CORE_PATH
-            .set(aptos_core_path_at_compile_time())
+            .set(libra2_core_path_at_compile_time())
             .unwrap();
     };
 }
 
-pub(crate) fn aptos_core_path() -> PathBuf {
+pub(crate) fn libra2_core_path() -> PathBuf {
     APTOS_CORE_PATH
-        .get_or_init(aptos_core_path_at_compile_time)
+        .get_or_init(libra2_core_path_at_compile_time)
         .clone()
 }
 
 pub(crate) fn libra2_framework_path() -> PathBuf {
-    let mut path = aptos_core_path();
+    let mut path = libra2_core_path();
     path.push("libra2-move/framework/libra2-framework");
     path
 }

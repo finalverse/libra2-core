@@ -155,12 +155,12 @@ pub async fn fetch_latency_breakdown(
     let consensus_proposal_to_commit_query = r#"quantile(0.67, rate(libra2_consensus_block_tracing_sum{role=~"validator", stage="committed"}[1m]) / rate(libra2_consensus_block_tracing_count{role=~"validator", stage="committed"}[1m]))"#;
 
     let mempool_to_block_creation_query = r#"sum(
-        rate(aptos_core_mempool_txn_commit_latency_sum{
+        rate(libra2_core_mempool_txn_commit_latency_sum{
             role=~"validator",
             stage="commit_accepted_block"
         }[1m])
     ) / sum(
-        rate(aptos_core_mempool_txn_commit_latency_count{
+        rate(libra2_core_mempool_txn_commit_latency_count{
             role=~"validator",
             stage="commit_accepted_block"
         }[1m])

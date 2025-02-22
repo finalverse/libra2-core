@@ -129,7 +129,7 @@ static TXN_COUNT_BUCKETS: Lazy<Vec<f64>> = Lazy::new(|| {
 /// Counter tracking size of various indices in core mempool
 pub static CORE_MEMPOOL_INDEX_SIZE: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_core_mempool_index_size",
+        "libra2_core_mempool_index_size",
         "Size of a core mempool index",
         &["index"]
     )
@@ -144,7 +144,7 @@ pub fn core_mempool_index_size(label: &'static str, size: usize) {
 
 pub static SENDER_BUCKET_FREQUENCIES: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_core_mempool_sender_bucket_frequencies",
+        "libra2_core_mempool_sender_bucket_frequencies",
         "Frequency of each sender bucket in core mempool",
         &["sender_bucket"]
     )
@@ -154,7 +154,7 @@ pub static SENDER_BUCKET_FREQUENCIES: Lazy<IntGaugeVec> = Lazy::new(|| {
 /// Counter tracking size of each bucket in timeline index
 static CORE_MEMPOOL_TIMELINE_INDEX_SIZE: Lazy<IntGaugeVec> = Lazy::new(|| {
     register_int_gauge_vec!(
-        "aptos_core_mempool_timeline_index_size",
+        "libra2_core_mempool_timeline_index_size",
         "Size of each bucket in core mempool timeline index",
         &["bucket"]
     )
@@ -172,7 +172,7 @@ pub fn core_mempool_timeline_index_size(bucket_min_size_pairs: Vec<(String, usiz
 /// Counter tracking number of txns removed from core mempool
 pub static CORE_MEMPOOL_REMOVED_TXNS: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_core_mempool_removed_txns_count",
+        "libra2_core_mempool_removed_txns_count",
         "Number of txns removed from core mempool"
     )
     .unwrap()
@@ -181,7 +181,7 @@ pub static CORE_MEMPOOL_REMOVED_TXNS: Lazy<IntCounter> = Lazy::new(|| {
 /// Counter tracking number of txns received that are idempotent duplicates
 pub static CORE_MEMPOOL_IDEMPOTENT_TXNS: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_core_mempool_idempotent_txns_count",
+        "libra2_core_mempool_idempotent_txns_count",
         "Number of txns received that are idempotent duplicates"
     )
     .unwrap()
@@ -190,7 +190,7 @@ pub static CORE_MEMPOOL_IDEMPOTENT_TXNS: Lazy<IntCounter> = Lazy::new(|| {
 /// Counter tracking number of txns received that are gas upgraded for the same sequence number
 pub static CORE_MEMPOOL_GAS_UPGRADED_TXNS: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_core_mempool_gas_upgraded_txns_count",
+        "libra2_core_mempool_gas_upgraded_txns_count",
         "Number of txns received that are gas upgraded for the same sequence number"
     )
     .unwrap()
@@ -216,7 +216,7 @@ pub fn core_mempool_txn_commit_latency(
 /// (e.g. time from txn entering core mempool to being pulled in consensus block)
 static CORE_MEMPOOL_TXN_COMMIT_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_core_mempool_txn_commit_latency",
+        "libra2_core_mempool_txn_commit_latency",
         "Latency of txn reaching various stages in core mempool after insertion",
         &["stage", "submitted_by", "bucket"],
         MEMPOOL_LATENCY_BUCKETS.to_vec()
@@ -228,7 +228,7 @@ static CORE_MEMPOOL_TXN_COMMIT_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
 /// (e.g. time from txn entering core mempool to being pulled in consensus block)
 static CORE_MEMPOOL_TXN_LATENCIES: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_core_mempool_txn_latencies",
+        "libra2_core_mempool_txn_latencies",
         "Latency of txn reaching various stages in mempool",
         &["stage", "submitted_by", "bucket", "priority"],
         MEMPOOL_LATENCY_BUCKETS.to_vec()
@@ -262,7 +262,7 @@ pub fn core_mempool_txn_ranking_score(
 
 static CORE_MEMPOOL_TXN_RANKING_BUCKET: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_core_mempool_txn_ranking_bucket",
+        "libra2_core_mempool_txn_ranking_bucket",
         "Ranking bucket of txn reaching various stages in core mempool",
         &["stage", "status", "bucket"]
     )
@@ -271,7 +271,7 @@ static CORE_MEMPOOL_TXN_RANKING_BUCKET: Lazy<IntCounterVec> = Lazy::new(|| {
 
 static CORE_MEMPOOL_TXN_RANKING_SCORE: Lazy<HistogramVec> = Lazy::new(|| {
     let histogram_opts = histogram_opts!(
-        "aptos_core_mempool_txn_ranking_score",
+        "libra2_core_mempool_txn_ranking_score",
         "Ranking score of txn reaching various stages in core mempool",
         RANKING_SCORE_BUCKETS.to_vec()
     );
@@ -282,7 +282,7 @@ static CORE_MEMPOOL_TXN_RANKING_SCORE: Lazy<HistogramVec> = Lazy::new(|| {
 /// how many txns were actually cleaned up in this GC event
 pub static CORE_MEMPOOL_GC_EVENT_COUNT: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_core_mempool_gc_event_count",
+        "libra2_core_mempool_gc_event_count",
         "Number of times the periodic garbage-collection event occurs, regardless of how many txns were actually removed",
         &["type"])
         .unwrap()
@@ -292,7 +292,7 @@ pub static CORE_MEMPOOL_GC_EVENT_COUNT: Lazy<IntCounterVec> = Lazy::new(|| {
 /// expiration, regardless of how many txns were actually cleaned up in this GC event
 pub static CORE_MEMPOOL_GC_EAGER_EXPIRE_EVENT_COUNT: Lazy<IntCounter> = Lazy::new(|| {
     register_int_counter!(
-        "aptos_core_mempool_gc_eager_expire_event_count",
+        "libra2_core_mempool_gc_eager_expire_event_count",
         "Number of times the periodic garbage-collection event triggers eager expiration, regardless of how many txns were actually removed")
         .unwrap()
 });
@@ -300,7 +300,7 @@ pub static CORE_MEMPOOL_GC_EAGER_EXPIRE_EVENT_COUNT: Lazy<IntCounter> = Lazy::ne
 /// Counter tracking time for how long a transaction stayed in core-mempool before being garbage-collected
 pub static CORE_MEMPOOL_GC_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_core_mempool_gc_latency",
+        "libra2_core_mempool_gc_latency",
         "How long a transaction stayed in core mempool before garbage-collected",
         &["type", "status"]
     )
@@ -309,7 +309,7 @@ pub static CORE_MEMPOOL_GC_LATENCY: Lazy<HistogramVec> = Lazy::new(|| {
 
 pub static CORE_MEMPOOL_TXN_CONSENSUS_PULLED_BY_BUCKET: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_core_mempool_txn_consensus_pulled_by_bucket",
+        "libra2_core_mempool_txn_consensus_pulled_by_bucket",
         "Number of times a txn was pulled from core mempool by consensus",
         &["bucket"],
         TXN_CONSENSUS_PULLED_BUCKETS.to_vec()
@@ -319,7 +319,7 @@ pub static CORE_MEMPOOL_TXN_CONSENSUS_PULLED_BY_BUCKET: Lazy<HistogramVec> = Laz
 
 pub static CORE_MEMPOOL_PARKING_LOT_EVICTED_COUNT: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
-        "aptos_core_mempool_parking_lot_evicted_count",
+        "libra2_core_mempool_parking_lot_evicted_count",
         "Number of txns evicted from parking lot",
         TXN_COUNT_BUCKETS.clone()
     )
@@ -328,7 +328,7 @@ pub static CORE_MEMPOOL_PARKING_LOT_EVICTED_COUNT: Lazy<Histogram> = Lazy::new(|
 
 pub static CORE_MEMPOOL_PARKING_LOT_EVICTED_BYTES: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
-        "aptos_core_mempool_parking_lot_evicted_bytes",
+        "libra2_core_mempool_parking_lot_evicted_bytes",
         "Bytes of txns evicted from parking lot",
         exponential_buckets(/*start=*/ 500.0, /*factor=*/ 1.4, /*count=*/ 32).unwrap()
     )
@@ -337,7 +337,7 @@ pub static CORE_MEMPOOL_PARKING_LOT_EVICTED_BYTES: Lazy<Histogram> = Lazy::new(|
 
 pub static CORE_MEMPOOL_PARKING_LOT_EVICTED_LATENCY: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
-        "aptos_core_mempool_parking_lot_evicted_latency",
+        "libra2_core_mempool_parking_lot_evicted_latency",
         "Latency of evicting for each transaction from parking lot",
         MEMPOOL_LATENCY_BUCKETS.to_vec()
     )

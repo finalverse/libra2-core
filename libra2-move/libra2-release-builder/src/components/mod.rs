@@ -3,7 +3,7 @@
 
 use self::framework::FrameworkReleaseConfig;
 use crate::{
-    aptos_core_path, libra2_framework_path,
+    libra2_core_path, libra2_framework_path,
     components::{
         feature_flags::Features, oidc_providers::OidcProviderOp,
         randomness_config::ReleaseFriendlyRandomnessConfig,
@@ -375,7 +375,7 @@ impl ReleaseEntry {
                 )?);
             },
             ReleaseEntry::RawScript(script_path) => {
-                let base_path = aptos_core_path().join(script_path.as_path());
+                let base_path = libra2_core_path().join(script_path.as_path());
                 let file_name = base_path
                     .file_name()
                     .and_then(|name| name.to_str())
