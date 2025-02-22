@@ -3,4 +3,4 @@
 
 #[allow(clippy::all)]
 mod pb;
-pub use pb::aptos::*;
+pub use pb::libra2::*;

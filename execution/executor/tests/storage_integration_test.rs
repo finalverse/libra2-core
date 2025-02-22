@@ -15,7 +15,7 @@ use libra2_storage_interface::state_store::state_view::db_state_view::DbStateVie
 use libra2_types::{
     account_config::{aptos_test_root_address, AccountResource, CORE_CODE_ADDRESS},
     block_metadata::BlockMetadata,
-    on_chain_config::{AptosVersion, OnChainConfig, ValidatorSet},
+    on_chain_config::{Libra2Version, OnChainConfig, ValidatorSet},
     state_store::{state_key::StateKey, MoveResourceExt},
     test_helpers::transaction_test_helpers::TEST_BLOCK_EXECUTOR_ONCHAIN_CONFIG,
     transaction::{
@@ -177,7 +177,7 @@ fn test_reconfiguration() {
         .unwrap();
 
     assert_eq!(
-        AptosVersion::fetch_config(&db_state_view).unwrap().major,
+        Libra2Version::fetch_config(&db_state_view).unwrap().major,
         42
     );
 }

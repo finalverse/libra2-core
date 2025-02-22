@@ -341,7 +341,7 @@ async fn main() -> anyhow::Result<()> {
                 }
             }
 
-            print_configs!(OnChainConsensusConfig, OnChainExecutionConfig, AptosVersion);
+            print_configs!(OnChainConsensusConfig, OnChainExecutionConfig, Libra2Version);
 
             if print_gas_schedule {
                 print_configs!(GasScheduleV2, StorageGasSchedule);

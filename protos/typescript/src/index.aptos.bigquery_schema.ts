@@ -1,3 +1,3 @@
 /* eslint-disable */
 
-export * as transaction from "./index.aptos.bigquery_schema.transaction";
+export * as transaction from "./index.libra2.bigquery_schema.transaction";

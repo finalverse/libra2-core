@@ -102,7 +102,7 @@ the state. Currently, the only supported overrides are the following:
      packages must be the path to the source directories.
 
 Feature flags should be spelled in capital letters, e.g., `ENABLE_LOADER_V2`. For the full list of
-available features, see [here](../../types/src/on_chain_config/aptos_features.rs).
+available features, see [here](../../types/src/on_chain_config/libra2_features.rs).
 
 Overriding the state can be very useful if you want to experiment with a new feature or Move code,
 and check its performance as well as the gas usage. For example, if there is a new feature that

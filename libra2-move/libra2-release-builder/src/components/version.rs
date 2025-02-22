@@ -4,11 +4,11 @@
 use crate::{components::get_signer_arg, utils::*};
 use anyhow::Result;
 use libra2_crypto::HashValue;
-use libra2_types::on_chain_config::AptosVersion;
+use libra2_types::on_chain_config::Libra2Version;
 use move_model::{code_writer::CodeWriter, emitln, model::Loc};
 
 pub fn generate_version_upgrade_proposal(
-    version: &AptosVersion,
+    version: &Libra2Version,
     is_testnet: bool,
     next_execution_hash: Option<HashValue>,
     is_multi_step: bool,

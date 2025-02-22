@@ -16,7 +16,7 @@ pub mod state;
 pub mod types;
 
 pub use crate::client_builder::{AptosBaseUrl, ClientBuilder};
-use crate::{libra2::AptosVersion, error::RestError};
+use crate::{libra2::Libra2Version, error::RestError};
 use anyhow::{anyhow, Result};
 pub use libra2_api_types::{
     self, IndexResponseBcs, MoveModuleBytecode, PendingTransaction, Transaction,
@@ -163,8 +163,8 @@ impl Client {
         self.base_url.join("keyless/pepper/v0/fetch").unwrap()
     }
 
-    pub async fn get_aptos_version(&self) -> AptosResult<Response<AptosVersion>> {
-        self.get_resource::<AptosVersion>(CORE_CODE_ADDRESS, "0x1::version::Version")
+    pub async fn get_libra2_version(&self) -> AptosResult<Response<Libra2Version>> {
+        self.get_resource::<Libra2Version>(CORE_CODE_ADDRESS, "0x1::version::Version")
             .await
     }
 

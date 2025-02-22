@@ -99,7 +99,7 @@ Mempool APIs are currently not supported.
 ## CLI testing
 
 The [Rosetta CLI](https://www.rosetta-api.org/docs/rosetta_cli.html) can be run with the [rosetta_cli.json](./rosetta_cli.json)
-file to run the automated checks.  Additionally, the [aptos.ros](./aptos.ros)
+file to run the automated checks.  Additionally, the [libra2.ros](./libra2.ros)
 file uses the Rosetta CLI DSL to describe the possible operations that
 can be run.
 

@@ -1,10 +1,10 @@
 [package]
 name = "libra2-protos"
 version = "1.3.1"
-authors = ["Aptos Labs <opensource@aptoslabs.com>"]
-description = "Code generated from Aptos protobuf definitions"
+authors = ["Libra2 <opensource@libra2.org>"]
+description = "Code generated from Libra2 protobuf definitions"
 repository = "https://github.com/finalverse/libra2-core"
-homepage = "https://aptoslabs.com"
+homepage = "https://libra2.org"
 license = "Apache-2.0"
 publish = true
 edition = "2021"

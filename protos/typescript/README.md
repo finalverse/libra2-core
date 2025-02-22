@@ -10,7 +10,7 @@ import { aptos } from "@aptos-labs/libra2-protos";
 
 Then use it like this:
 ```typescript
-function parse(transaction: aptos.transaction.v1.Transaction) {
+function parse(transaction: libra2.transaction.v1.Transaction) {
   console.log(transaction)
 }
 ```

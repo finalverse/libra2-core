@@ -130,7 +130,7 @@ impl NetworkTest for ReconfigurationTest {
     //             let magic_number = 42;
     //             println!("Bump Version to {}", magic_number);
     //             let update_txn = aptos_root_account.sign_with_transaction_builder(
-    //                 tx_factory.update_aptos_version(allowed_nonce, magic_number),
+    //                 tx_factory.update_libra2_version(allowed_nonce, magic_number),
     //             );
     //             execute_and_wait_transactions(
     //                 full_node_client,

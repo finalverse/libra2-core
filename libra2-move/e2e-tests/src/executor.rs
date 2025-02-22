@@ -40,7 +40,7 @@ use libra2_types::{
     chain_id::ChainId,
     contract_event::ContractEvent,
     move_utils::MemberId,
-    on_chain_config::{AptosVersion, FeatureFlag, Features, OnChainConfig, ValidatorSet},
+    on_chain_config::{Libra2Version, FeatureFlag, Features, OnChainConfig, ValidatorSet},
     state_store::{state_key::StateKey, state_value::StateValue, StateView, TStateView},
     transaction::{
         signature_verified_transaction::{
@@ -338,7 +338,7 @@ impl FakeExecutor {
         //  - the e2e test outputs a golden file, and
         //  - the environment variable is properly set
         if let Some(env_trace_dir) = env::var_os(ENV_TRACE_DIR) {
-            let aptos_version = AptosVersion::fetch_config(&self.data_store.as_move_resolver())
+            let libra2_version = Libra2Version::fetch_config(&self.data_store.as_move_resolver())
                 .map_or(0, |v| v.major);
 
             let trace_dir = Path::new(&env_trace_dir).join(file_name);
@@ -351,7 +351,7 @@ impl FakeExecutor {
                 .create_new(true)
                 .open(trace_dir.join(TRACE_FILE_NAME))
                 .unwrap();
-            write!(name_file, "{}::{}", test_name, aptos_version).unwrap();
+            write!(name_file, "{}::{}", test_name, libra2_version).unwrap();
             for sub_dir in &[
                 TRACE_DIR_META,
                 TRACE_DIR_DATA,

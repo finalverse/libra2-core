@@ -51,7 +51,7 @@ struct Options {
     /// Optional version number for the `libra2_types` module (useful in Rust).
     /// If `--with-libra2-types` is passed, this will be the version of the generated `libra2_types` module.
     #[clap(long, default_value = "0.1.0")]
-    aptos_version_number: String,
+    libra2_version_number: String,
 
     /// Optional package name (Python) or module path (Go) of the `libra2_types` dependency.
     #[clap(long)]
@@ -110,10 +110,10 @@ fn main() {
 
         let (package_name, _package_path) = match options.language {
             Language::Rust => (
-                if options.aptos_version_number == "0.1.0" {
+                if options.libra2_version_number == "0.1.0" {
                     "libra2-types".to_string()
                 } else {
-                    format!("libra2-types:{}", options.aptos_version_number)
+                    format!("libra2-types:{}", options.libra2_version_number)
                 },
                 vec!["libra2-types"],
             ),
@@ -131,7 +131,7 @@ fn main() {
         match options.language {
             Language::Rust => Box::new(libra2_sdk_builder::rust::Installer::new(
                 install_dir,
-                options.aptos_version_number,
+                options.libra2_version_number,
             )),
             Language::Go => Box::new(libra2_sdk_builder::golang::Installer::new(
                 install_dir,

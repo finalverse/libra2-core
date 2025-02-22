@@ -34,7 +34,7 @@ use libra2_types::{
         randomness_api_v0_config::{AllowCustomMaxGasFlag, RequiredGasDeposit},
         FeatureFlag, Features, GasScheduleV2, OnChainConsensusConfig, OnChainExecutionConfig,
         OnChainJWKConsensusConfig, OnChainRandomnessConfig, RandomnessConfigMoveStruct,
-        APTOS_MAX_KNOWN_VERSION,
+        LIBRA2_MAX_KNOWN_VERSION,
     },
     state_store::state_key::StateKey,
     transaction::{authenticator::AuthenticationKey, ChangeSet, Transaction, WriteSetPayload},
@@ -449,7 +449,7 @@ fn initialize(
         serialize_values(&vec![
             MoveValue::vector_u8(gas_schedule_blob),
             MoveValue::U8(chain_id.id()),
-            MoveValue::U64(APTOS_MAX_KNOWN_VERSION.major),
+            MoveValue::U64(LIBRA2_MAX_KNOWN_VERSION.major),
             MoveValue::vector_u8(consensus_config_bytes),
             MoveValue::vector_u8(execution_config_bytes),
             MoveValue::U64(epoch_interval_usecs),

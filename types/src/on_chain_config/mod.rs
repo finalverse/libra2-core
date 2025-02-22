@@ -21,8 +21,8 @@ use serde::{de::DeserializeOwned, Deserialize, Serialize};
 use std::{collections::HashMap, fmt, fmt::Debug, str::FromStr, sync::Arc};
 
 mod approved_execution_hashes;
-mod aptos_features;
-mod aptos_version;
+mod libra2_features;
+mod libra2_version;
 mod chain_id;
 mod commit_history;
 mod consensus_config;
@@ -38,9 +38,9 @@ mod validator_set;
 
 pub use self::{
     approved_execution_hashes::ApprovedExecutionHashes,
-    aptos_features::*,
-    aptos_version::{
-        AptosVersion, APTOS_MAX_KNOWN_VERSION, APTOS_VERSION_2, APTOS_VERSION_3, APTOS_VERSION_4,
+    libra2_features::*,
+    libra2_version::{
+        Libra2Version, LIBRA2_MAX_KNOWN_VERSION, LIBRA2_VERSION_2, LIBRA2_VERSION_3, LIBRA2_VERSION_4,
     },
     commit_history::CommitHistoryResource,
     consensus_config::{

@@ -26,7 +26,7 @@
         "broadcast_behind_tip": false,
         "block_broadcast_limit": 50,
         "rebroadcast_all": false,
-        "constructor_dsl_file": "aptos.ros",
+        "constructor_dsl_file": "libra2.ros",
         "status_port": 9090,
         "force_retry": false,
         "end_conditions": {

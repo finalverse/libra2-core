@@ -21,6 +21,6 @@ impl Balance {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct AptosVersion {
+pub struct Libra2Version {
     pub major: U64,
 }

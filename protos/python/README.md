@@ -5,7 +5,7 @@ This repository contains the protobuf definitions for Aptos.
 ## Usage
 Import generated classes like this:
 ```python
-from libra2_protos.aptos.transaction.v1.transaction_pb2 import Transaction
+from libra2_protos.libra2.transaction.v1.transaction_pb2 import Transaction
 ```
 
 Then use them like this:
