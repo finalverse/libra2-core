@@ -65,7 +65,7 @@ impl ReleaseTarget {
             ),
             (
                 "aptos-token",
-                Some("cached-packages/src/libra2_token_sdk_builder"),
+                Some("cached-packages/src/libra2_token_sdk_builder.rs"),
             ),
             (
                 "libra2-token-objects",
