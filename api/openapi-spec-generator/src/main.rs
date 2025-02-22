@@ -4,7 +4,7 @@
 mod fake_context;
 
 use anyhow::Result;
-use aptos_api::{get_api_service, spec::get_spec};
+use libra2_api::{get_api_service, spec::get_spec};
 use clap::{Parser, ValueEnum};
 use fake_context::get_fake_context;
 use std::{path::PathBuf, sync::Arc};

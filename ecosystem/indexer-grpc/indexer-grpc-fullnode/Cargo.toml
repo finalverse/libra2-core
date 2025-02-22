@@ -29,7 +29,7 @@ tokio-stream = { workspace = true }
 tonic = { workspace = true }
 tonic-reflection = { workspace = true }
 
-aptos-api = { workspace = true }
+libra2-api = { workspace = true }
 libra2-api-types = { workspace = true }
 libra2-bitvec = { workspace = true }
 libra2-config = { workspace = true }

@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 libra2-admin-service = { workspace = true }
-aptos-api = { workspace = true }
+libra2-api = { workspace = true }
 libra2-backup-service = { workspace = true }
 libra2-build-info = { workspace = true }
 libra2-cached-packages = { workspace = true }
@@ -91,7 +91,7 @@ assert-private-keys-not-cloneable = ["libra2-crypto/assert-private-keys-not-clon
 check-vm-features = []
 consensus-only-perf-test = ["libra2-executor/consensus-only-perf-test", "libra2-mempool/consensus-only-perf-test", "libra2-db/consensus-only-perf-test"]
 default = []
-failpoints = ["fail/failpoints", "libra2-consensus/failpoints", "libra2-executor/failpoints", "libra2-mempool/failpoints", "aptos-api/failpoints", "libra2-config/failpoints"]
+failpoints = ["fail/failpoints", "libra2-consensus/failpoints", "libra2-executor/failpoints", "libra2-mempool/failpoints", "libra2-api/failpoints", "libra2-config/failpoints"]
 indexer = ["aptos-indexer"]
 tokio-console = ["libra2-logger/tokio-console", "libra2-config/tokio-console"]
 smoke-test = ["libra2-jwk-consensus/smoke-test", "libra2-dkg-runtime/smoke-test"]

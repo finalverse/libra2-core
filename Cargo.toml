@@ -299,7 +299,7 @@ libra2 = { path = "crates/libra2" }
 libra2-accumulator = { path = "storage/accumulator" }
 libra2-admin-service = { path = "crates/libra2-admin-service" }
 libra2-aggregator = { path = "libra2-move/libra2-aggregator" }
-aptos-api = { path = "api" }
+libra2-api = { path = "api" }
 libra2-api-test-context = { path = "api/test-context" }
 libra2-api-types = { path = "api/types" }
 libra2-backup-cli = { path = "storage/backup/backup-cli" }

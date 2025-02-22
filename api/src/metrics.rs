@@ -31,7 +31,7 @@ static BYTE_BUCKETS: Lazy<Vec<f64>> = Lazy::new(|| {
 
 pub static HISTOGRAM: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_api_requests",
+        "libra2_api_requests",
         "API requests latency grouped by method, operation_id and status",
         &["method", "operation_id", "status"],
         SUB_MS_BUCKETS.to_vec()
@@ -41,7 +41,7 @@ pub static HISTOGRAM: Lazy<HistogramVec> = Lazy::new(|| {
 
 pub static RESPONSE_STATUS: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_api_response_status",
+        "libra2_api_response_status",
         "API requests latency grouped by status code only",
         &["status"],
         SUB_MS_BUCKETS.to_vec()
@@ -51,7 +51,7 @@ pub static RESPONSE_STATUS: Lazy<HistogramVec> = Lazy::new(|| {
 
 pub static POST_BODY_BYTES: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_api_post_body_bytes",
+        "libra2_api_post_body_bytes",
         "API POST request body size grouped by operation_id and status",
         &["operation_id", "status"],
         BYTE_BUCKETS.clone()
@@ -61,7 +61,7 @@ pub static POST_BODY_BYTES: Lazy<HistogramVec> = Lazy::new(|| {
 
 pub static REQUEST_SOURCE_CLIENT: Lazy<IntCounterVec> = Lazy::new(|| {
     register_int_counter_vec!(
-        "aptos_api_request_source_client",
+        "libra2_api_request_source_client",
         "API requests grouped by source (e.g. which SDK, unknown, etc), operation_id, and status",
         &["request_source_client", "operation_id", "status"]
     )
@@ -70,7 +70,7 @@ pub static REQUEST_SOURCE_CLIENT: Lazy<IntCounterVec> = Lazy::new(|| {
 
 pub static GAS_ESTIMATE: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_api_gas_estimate",
+        "libra2_api_gas_estimate",
         "API gas estimate returned as part of API calls",
         &["level"],
         DEFAULT_BUCKETS.iter().map(|x| *x as f64).collect(),
@@ -80,7 +80,7 @@ pub static GAS_ESTIMATE: Lazy<HistogramVec> = Lazy::new(|| {
 
 pub static GAS_USED: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_api_gas_used",
+        "libra2_api_gas_used",
         "Amount of gas used by each API operation",
         &["operation_id"],
         BYTE_BUCKETS.clone()
@@ -90,7 +90,7 @@ pub static GAS_USED: Lazy<HistogramVec> = Lazy::new(|| {
 
 pub static WAIT_TRANSACTION_GAUGE: Lazy<IntGauge> = Lazy::new(|| {
     register_int_gauge!(
-        "aptos_api_wait_transaction",
+        "libra2_api_wait_transaction",
         "Number of transactions waiting to be processed"
     )
     .unwrap()
@@ -98,7 +98,7 @@ pub static WAIT_TRANSACTION_GAUGE: Lazy<IntGauge> = Lazy::new(|| {
 
 pub static WAIT_TRANSACTION_POLL_TIME: Lazy<HistogramVec> = Lazy::new(|| {
     register_histogram_vec!(
-        "aptos_api_wait_transaction_poll_time",
+        "libra2_api_wait_transaction_poll_time",
         "Time spent on long poll for transactions, or 0 on short poll",
         &["poll_type"],
         SUB_MS_BUCKETS.to_vec()

@@ -19,7 +19,7 @@ mod tests;
 use crate::utils::ensure_max_open_files_limit;
 use anyhow::anyhow;
 use libra2_admin_service::AdminService;
-use aptos_api::bootstrap as bootstrap_api;
+use libra2_api::bootstrap as bootstrap_api;
 use libra2_build_info::build_information;
 use libra2_config::config::{merge_node_config, NodeConfig, PersistableConfig};
 use libra2_framework::ReleaseBundle;

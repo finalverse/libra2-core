@@ -1,6 +1,6 @@
 [package]
 name = "libra2-openapi-spec-generator"
-description = "Aptos API OpenAPI Spec Generator"
+description = "Libra2 API OpenAPI Spec Generator"
 version = "0.1.0"
 
 # Workspace inherited keys
@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-api = { workspace = true }
+libra2-api = { workspace = true }
 libra2-config = { workspace = true }
 libra2-mempool = { workspace = true, features = ["fuzzing"] }
 libra2-storage-interface = { workspace = true }

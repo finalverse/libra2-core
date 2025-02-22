@@ -13,7 +13,7 @@ test-code-gen:
 
 clean:
 	- pkill libra2-node
-	- rm -rf /tmp/aptos_api_client
+	- rm -rf /tmp/libra2_api_client
 	- rm -f openapitools.json
 	- rm -rf .hypothesis
 
@@ -26,8 +26,8 @@ endef
 
 define test_code_gen
 	echo '{"generator-cli": {"version": "6.0.1"}}' > openapitools.json # v5.3 has bug, pin the version to 5.2.1
-	npx @openapitools/openapi-generator-cli generate -g rust -i $(1) -o /tmp/aptos_api_client --package-name aptos_api_client
-	cd /tmp/aptos_api_client && cargo build
+	npx @openapitools/openapi-generator-cli generate -g rust -i $(1) -o /tmp/libra2_api_client --package-name libra2_api_client
+	cd /tmp/libra2_api_client && cargo build
 endef
 
 .PHONY: test lint test-code-gen test-api-spec clean serve

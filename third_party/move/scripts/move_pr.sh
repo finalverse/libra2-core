@@ -137,7 +137,7 @@ MOVE_CRATES_V2_ENV_DEPENDENT="\
 # do not maintain separate v2 baseline files. Those
 # are listed here for documentation and later fixing.
 MOVE_CRATES_V2_ENV_DEPENDENT_FAILURES="\
-  -p aptos-api\
+  -p libra2-api\
 "
 
 if [ ! -z "$CHECK" ]; then
