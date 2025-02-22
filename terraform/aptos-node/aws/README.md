@@ -3,7 +3,7 @@ This guide assumes you already have AWS account setup.
 
 Install pre-requisites if needed:
 
-   * Aptos CLI: https://github.com/aptos-labs/aptos-core/releases/tag/aptos-cli-v0.1.0-alpha
+   * Aptos CLI: https://github.com/finalverse/libra2-core/releases/tag/aptos-cli-v0.1.0-alpha
    * Terraform 1.1.7: https://www.terraform.io/downloads.html
    * Kubernetes CLI: https://kubernetes.io/docs/tasks/tools/
    * AWS CLI: https://aws.amazon.com/cli/
@@ -53,8 +53,8 @@ Install pre-requisites if needed:
   }
 
   module "libra2-node" {
-    # download Terraform module from aptos-labs/aptos-core repo
-    source        = "github.com/aptos-labs/aptos-core.git//terraform/libra2-node/aws?ref=main"
+    # download Terraform module from finalverse/libra2-core repo
+    source        = "github.com/finalverse/libra2-core.git//terraform/libra2-node/aws?ref=main"
     region        = var.region  # Specify the region
     # zone_id     = "<Route53 zone id>"  # zone id for Route53 if you want to use DNS
     era           = 1              # bump era number to wipe the chain
@@ -64,7 +64,7 @@ Install pre-requisites if needed:
   }
   ```
 
-For the full customization options, see the variables file [here](https://github.com/aptos-labs/aptos-core/blob/main/terraform/libra2-node/aws/variables.tf), and the [helm values](https://github.com/aptos-labs/aptos-core/blob/main/terraform/helm/libra2-node/values.yaml).
+For the full customization options, see the variables file [here](https://github.com/finalverse/libra2-core/blob/main/terraform/libra2-node/aws/variables.tf), and the [helm values](https://github.com/finalverse/libra2-core/blob/main/terraform/helm/libra2-node/values.yaml).
 
 5. Initialize Terraform in the same directory of your `main.tf` file
   ```
@@ -149,7 +149,7 @@ This will download all the terraform dependencies for you, in the `.terraform` f
 
 13. Download Libra2Framework Move bytecodes into a folder named `framework`.
 
-    Download the Libra2 Framework from the release page: https://github.com/aptos-labs/aptos-core/releases/tag/libra2-framework-v0.1.0
+    Download the Libra2 Framework from the release page: https://github.com/finalverse/libra2-core/releases/tag/libra2-framework-v0.1.0
 
     ```
     $ unzip framework.zip

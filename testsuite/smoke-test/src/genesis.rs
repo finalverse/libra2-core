@@ -450,13 +450,13 @@ fn generate_genesis_transaction(
         r#"
         script {{
             use libra2_framework::stake;
-            use libra2_framework::aptos_governance;
+            use libra2_framework::libra2_governance;
             use libra2_framework::block;
 
             fun main(vm_signer: &signer, framework_signer: &signer) {{
                 stake::remove_validators(framework_signer, &vector[@0x{}]);
                 block::emit_writeset_block_event(vm_signer, @0x1);
-                aptos_governance::force_end_epoch(framework_signer);
+                libra2_governance::force_end_epoch(framework_signer);
             }}
     }}
     "#,

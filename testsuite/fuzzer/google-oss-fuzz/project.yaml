@@ -1,7 +1,7 @@
 homepage: "https://aptos.dev"
 language: rust
 primary_contact: "gerardo@aptoslabs.com"
-main_repo: "https://github.com/aptos-labs/aptos-core"
+main_repo: "https://github.com/finalverse/libra2-core"
 auto_ccs:
   - "oss-fuzz-notifications@aptoslabs.com"
   - "security@aptoslabs.com"

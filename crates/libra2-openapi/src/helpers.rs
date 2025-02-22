@@ -201,10 +201,10 @@ mod test {
         impl_poem_parameter!(That);
 
         assert_eq!(
-            That::parse_from_parameter("0x1::coin::CoinStore::%3C0x1::aptos_coin::AptosCoin%3E")
+            That::parse_from_parameter("0x1::coin::CoinStore::%3C0x1::libra2_coin::Libra2Coin%3E")
                 .unwrap()
                 .0,
-            "0x1::coin::CoinStore::<0x1::aptos_coin::AptosCoin>".to_string(),
+            "0x1::coin::CoinStore::<0x1::libra2_coin::Libra2Coin>".to_string(),
         );
     }
 }

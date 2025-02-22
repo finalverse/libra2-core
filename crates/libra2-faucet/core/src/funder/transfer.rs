@@ -280,7 +280,7 @@ impl FunderTrait for TransferFunder {
             let txn = self
                 .execute_transaction(
                     &client,
-                    libra2_stdlib::aptos_account_transfer(receiver_address, amount),
+                    libra2_stdlib::libra2_account_transfer(receiver_address, amount),
                     &receiver_address,
                 )
                 .await?;

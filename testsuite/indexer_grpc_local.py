@@ -393,7 +393,7 @@ def main() -> None:
     if platform.system() == "Darwin" and platform.processor().startswith("arm"):
         # If we're on an ARM Mac, use the amd64 Redis image. On some ARM Macs the ARM
         # Redis image doesn't work so we use the amd64 image for now. See more here:
-        # https://github.com/aptos-labs/aptos-core/issues/9878
+        # https://github.com/finalverse/libra2-core/issues/9878
         if not os.environ.get("REDIS_IMAGE_REPO"):
             os.environ["REDIS_IMAGE_REPO"] = "amd64/redis"
             log.info(

@@ -17,7 +17,7 @@ module collection_offer {
     use libra2_framework::object::{Self, DeleteRef, Object};
     use libra2_framework::timestamp;
 
-    use aptos_token::token as tokenv1;
+    use libra2_token::token as tokenv1;
 
     use libra2_token_objects::collection::Collection;
     use libra2_token_objects::royalty;
@@ -26,7 +26,7 @@ module collection_offer {
     use marketplace::events;
     use marketplace::fee_schedule::{Self, FeeSchedule};
     use marketplace::listing::{Self, TokenV1Container};
-    use libra2_framework::aptos_account;
+    use libra2_framework::libra2_account;
 
     /// No collection offer defined.
     const ENO_COLLECTION_OFFER: u64 = 1;
@@ -199,7 +199,7 @@ module collection_offer {
     ) {
         let fee = fee_schedule::listing_fee(fee_schedule, total_to_extract);
         let fee_address = fee_schedule::fee_address(fee_schedule);
-        aptos_account::transfer_coins<CoinType>(purchaser, fee_address, fee);
+        libra2_account::transfer_coins<CoinType>(purchaser, fee_address, fee);
 
         let coins = coin::withdraw<CoinType>(purchaser, total_to_extract);
         move_to(offer_signer, CoinOffer { coins });
@@ -392,17 +392,17 @@ module collection_offer {
         let royalty_charge = listing::bounded_percentage(price, royalty_numerator, royalty_denominator);
 
         let royalties = coin::extract(&mut coins, royalty_charge);
-        aptos_account::deposit_coins(royalty_payee, royalties);
+        libra2_account::deposit_coins(royalty_payee, royalties);
 
         // Commission can only be of whatever is left
         let fee_schedule = collection_offer_obj.fee_schedule;
         let commission_charge = fee_schedule::commission(fee_schedule, price);
         let actual_commission_charge = math64::min(commission_charge, coin::value(&coins));
         let commission = coin::extract(&mut coins, actual_commission_charge);
-        aptos_account::deposit_coins(fee_schedule::fee_address(fee_schedule), commission);
+        libra2_account::deposit_coins(fee_schedule::fee_address(fee_schedule), commission);
 
         // Seller gets what is left
-        aptos_account::deposit_coins(seller, coins);
+        libra2_account::deposit_coins(seller, coins);
 
         events::emit_collection_offer_filled(
             fee_schedule,
@@ -428,7 +428,7 @@ module collection_offer {
     ) acquires CoinOffer, CollectionOffer, CollectionOfferTokenV1, CollectionOfferTokenV2 {
         let collection_offer_addr = object::object_address(&collection_offer);
         let CoinOffer<CoinType> { coins } = move_from(collection_offer_addr);
-        aptos_account::deposit_coins(object::owner(collection_offer), coins);
+        libra2_account::deposit_coins(object::owner(collection_offer), coins);
 
         let CollectionOffer {
             fee_schedule: _,
@@ -523,12 +523,12 @@ module collection_offer_tests {
     use std::string;
     use std::option;
 
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::coin;
     use libra2_framework::object;
     use libra2_framework::timestamp;
 
-    use aptos_token::token as tokenv1;
+    use libra2_token::token as tokenv1;
 
     use libra2_token_objects::collection as collectionv2;
 
@@ -547,7 +547,7 @@ module collection_offer_tests {
             test_utils::setup(libra2_framework, marketplace, seller, purchaser);
         let (collection, token) = test_utils::mint_tokenv2_with_collection(seller);
         assert!(object::is_owner(token, seller_addr), 0);
-        let collection_offer = collection_offer::init_for_tokenv2<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv2<Libra2Coin>(
             purchaser,
             collection,
             test_utils::fee_schedule(marketplace),
@@ -560,21 +560,21 @@ module collection_offer_tests {
         assert!(collection_offer::price(collection_offer) == 500, 0);
 
         assert!(collection_offer::remaining(collection_offer) == 2, 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 8999, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10000, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 8999, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10000, 0);
 
-        collection_offer::sell_tokenv2<AptosCoin>(seller, collection_offer, token);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 6, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 8999, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10495, 0);
+        collection_offer::sell_tokenv2<Libra2Coin>(seller, collection_offer, token);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 6, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 8999, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10495, 0);
         assert!(object::is_owner(token, purchaser_addr), 0);
         assert!(collection_offer::remaining(collection_offer) == 1, 0);
 
-        collection_offer::sell_tokenv2<AptosCoin>(purchaser, collection_offer, token);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 11, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 9489, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10500, 0);
+        collection_offer::sell_tokenv2<Libra2Coin>(purchaser, collection_offer, token);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 11, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 9489, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10500, 0);
         assert!(object::is_owner(token, purchaser_addr), 0);
         assert!(!collection_offer::exists_at(collection_offer), 0);
     }
@@ -590,7 +590,7 @@ module collection_offer_tests {
             test_utils::setup(libra2_framework, marketplace, seller, purchaser);
         let (collection, token) = test_utils::mint_tokenv2_with_collection_royalty(seller, 1, 1);
         assert!(object::is_owner(token, seller_addr), 0);
-        let collection_offer = collection_offer::init_for_tokenv2<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv2<Libra2Coin>(
             purchaser,
             collection,
             test_utils::fee_schedule(marketplace),
@@ -603,15 +603,15 @@ module collection_offer_tests {
         assert!(collection_offer::price(collection_offer) == 500, 0);
 
         assert!(collection_offer::remaining(collection_offer) == 2, 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 8999, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10000, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 8999, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10000, 0);
 
-        collection_offer::sell_tokenv2<AptosCoin>(seller, collection_offer, token);
+        collection_offer::sell_tokenv2<Libra2Coin>(seller, collection_offer, token);
         assert!(object::is_owner(token, purchaser_addr), 0);
         assert!(collection_offer::remaining(collection_offer) == 1, 0);
 
-        collection_offer::sell_tokenv2<AptosCoin>(purchaser, collection_offer, token);
+        collection_offer::sell_tokenv2<Libra2Coin>(purchaser, collection_offer, token);
         assert!(object::is_owner(token, purchaser_addr), 0);
         assert!(!collection_offer::exists_at(collection_offer), 0);
     }
@@ -634,7 +634,7 @@ module collection_offer_tests {
         let (creator_addr, collection_name, token_name, property_version) =
             tokenv1::get_token_id_fields(&token_id);
 
-        let collection_offer = collection_offer::init_for_tokenv1<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv1<Libra2Coin>(
             purchaser,
             creator_addr,
             collection_name,
@@ -645,21 +645,21 @@ module collection_offer_tests {
         );
 
         assert!(collection_offer::remaining(collection_offer) == 2, 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 8999, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10000, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 8999, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10000, 0);
 
-        collection_offer::sell_tokenv1<AptosCoin>(seller, collection_offer, token_name, property_version);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 6, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 8999, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10495, 0);
+        collection_offer::sell_tokenv1<Libra2Coin>(seller, collection_offer, token_name, property_version);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 6, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 8999, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10495, 0);
         assert!(tokenv1::balance_of(purchaser_addr, token_id) == 1, 0);
         assert!(collection_offer::remaining(collection_offer) == 1, 0);
 
-        collection_offer::sell_tokenv1<AptosCoin>(purchaser, collection_offer, token_name, property_version);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 11, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 9489, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10500, 0);
+        collection_offer::sell_tokenv1<Libra2Coin>(purchaser, collection_offer, token_name, property_version);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 11, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 9489, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10500, 0);
         assert!(tokenv1::balance_of(purchaser_addr, token_id) == 1, 0);
         assert!(!collection_offer::exists_at(collection_offer), 0);
     }
@@ -680,7 +680,7 @@ module collection_offer_tests {
         let (creator_addr, collection_name, token_name, property_version) =
             tokenv1::get_token_id_fields(&token_id);
 
-        let collection_offer = collection_offer::init_for_tokenv1<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv1<Libra2Coin>(
             purchaser,
             creator_addr,
             collection_name,
@@ -690,7 +690,7 @@ module collection_offer_tests {
             timestamp::now_seconds() + 200,
         );
 
-        let token_container = collection_offer::sell_tokenv1<AptosCoin>(
+        let token_container = collection_offer::sell_tokenv1<Libra2Coin>(
             seller,
             collection_offer,
             token_name,
@@ -711,7 +711,7 @@ module collection_offer_tests {
     ) {
         test_utils::setup(libra2_framework, marketplace, seller, purchaser);
         let (collection, token) = test_utils::mint_tokenv2_with_collection(seller);
-        let collection_offer = collection_offer::init_for_tokenv2<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv2<Libra2Coin>(
             purchaser,
             collection,
             test_utils::fee_schedule(marketplace),
@@ -719,11 +719,11 @@ module collection_offer_tests {
             2,
             timestamp::now_seconds() + 200,
         );
-        collection_offer::sell_tokenv2<AptosCoin>(marketplace, collection_offer, token);
+        collection_offer::sell_tokenv2<Libra2Coin>(marketplace, collection_offer, token);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
-    #[expected_failure(abort_code = 0x10005, location = aptos_token::token)]
+    #[expected_failure(abort_code = 0x10005, location = libra2_token::token)]
     fun test_token_v1_has_none(
         libra2_framework: &signer,
         marketplace: &signer,
@@ -735,7 +735,7 @@ module collection_offer_tests {
         let (creator_addr, collection_name, token_name, property_version) =
             tokenv1::get_token_id_fields(&token_id);
 
-        let collection_offer = collection_offer::init_for_tokenv1<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv1<Libra2Coin>(
             purchaser,
             creator_addr,
             collection_name,
@@ -745,7 +745,7 @@ module collection_offer_tests {
             timestamp::now_seconds() + 200,
         );
 
-        collection_offer::sell_tokenv1<AptosCoin>(
+        collection_offer::sell_tokenv1<Libra2Coin>(
             marketplace,
             collection_offer,
             token_name,
@@ -763,7 +763,7 @@ module collection_offer_tests {
     ) {
         test_utils::setup(libra2_framework, marketplace, seller, purchaser);
         let (collection, token) = test_utils::mint_tokenv2_with_collection(seller);
-        let collection_offer = collection_offer::init_for_tokenv2<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv2<Libra2Coin>(
             purchaser,
             collection,
             test_utils::fee_schedule(marketplace),
@@ -772,7 +772,7 @@ module collection_offer_tests {
             timestamp::now_seconds() + 200,
         );
         test_utils::increment_timestamp(200);
-        collection_offer::sell_tokenv2<AptosCoin>(seller, collection_offer, token);
+        collection_offer::sell_tokenv2<Libra2Coin>(seller, collection_offer, token);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -785,7 +785,7 @@ module collection_offer_tests {
     ) {
         test_utils::setup(libra2_framework, marketplace, seller, purchaser);
         let (collection, token) = test_utils::mint_tokenv2_with_collection(seller);
-        let collection_offer = collection_offer::init_for_tokenv2<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv2<Libra2Coin>(
             purchaser,
             collection,
             test_utils::fee_schedule(marketplace),
@@ -793,9 +793,9 @@ module collection_offer_tests {
             2,
             timestamp::now_seconds() + 200,
         );
-        collection_offer::sell_tokenv2<AptosCoin>(seller, collection_offer, token);
-        collection_offer::sell_tokenv2<AptosCoin>(purchaser, collection_offer, token);
-        collection_offer::sell_tokenv2<AptosCoin>(purchaser, collection_offer, token);
+        collection_offer::sell_tokenv2<Libra2Coin>(seller, collection_offer, token);
+        collection_offer::sell_tokenv2<Libra2Coin>(purchaser, collection_offer, token);
+        collection_offer::sell_tokenv2<Libra2Coin>(purchaser, collection_offer, token);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -817,7 +817,7 @@ module collection_offer_tests {
             string::utf8(b"..."),
         );
 
-        let collection_offer = collection_offer::init_for_tokenv2<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv2<Libra2Coin>(
             purchaser,
             object::object_from_constructor_ref(&other_collection),
             test_utils::fee_schedule(marketplace),
@@ -825,11 +825,11 @@ module collection_offer_tests {
             2,
             timestamp::now_seconds() + 200,
         );
-        collection_offer::sell_tokenv2<AptosCoin>(marketplace, collection_offer, token);
+        collection_offer::sell_tokenv2<Libra2Coin>(marketplace, collection_offer, token);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
-    #[expected_failure(abort_code = 0x10005, location = aptos_token::token)]
+    #[expected_failure(abort_code = 0x10005, location = libra2_token::token)]
     fun test_token_v1_other_collection(
         libra2_framework: &signer,
         marketplace: &signer,
@@ -848,7 +848,7 @@ module collection_offer_tests {
             vector[true, true, true],
         );
 
-        let collection_offer = collection_offer::init_for_tokenv1<AptosCoin>(
+        let collection_offer = collection_offer::init_for_tokenv1<Libra2Coin>(
             purchaser,
             purchaser_addr,
             string::utf8(b"..."),
@@ -861,7 +861,7 @@ module collection_offer_tests {
         let token_id = test_utils::mint_tokenv1(seller);
         let (_creator_addr, _collection_name, token_name, property_version) =
             tokenv1::get_token_id_fields(&token_id);
-        collection_offer::sell_tokenv1<AptosCoin>(
+        collection_offer::sell_tokenv1<Libra2Coin>(
             marketplace,
             collection_offer,
             token_name,

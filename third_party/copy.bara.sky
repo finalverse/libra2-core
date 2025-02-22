@@ -1,5 +1,5 @@
 moveUrl = "https://github.com/move-language/move-on-aptos.git"
-aptosUrl = "https://github.com/aptos-labs/aptos-core.git"
+aptosUrl = "https://github.com/finalverse/libra2-core.git"
 
 # Workflow to pull from Move to Aptos. This creates a draft PR at the fixed branch `from_move`
 # which should be further massaged before sending out.

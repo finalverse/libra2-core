@@ -48,7 +48,7 @@ use libra2_vm::{
 };
 use libra2_vm_types::{
     change_set::VMChangeSet,
-    module_and_script_storage::{module_storage::AptosModuleStorage, AsAptosCodeStorage},
+    module_and_script_storage::{module_storage::AptosModuleStorage, AsLibra2CodeStorage},
     module_write_set::{ModuleWrite, ModuleWriteSet},
 };
 use bytes::Bytes;
@@ -74,7 +74,7 @@ use std::collections::BTreeMap;
 const GENESIS_SEED: [u8; 32] = [42; 32];
 
 const GENESIS_MODULE_NAME: &str = "genesis";
-const GOVERNANCE_MODULE_NAME: &str = "aptos_governance";
+const GOVERNANCE_MODULE_NAME: &str = "libra2_governance";
 const CODE_MODULE_NAME: &str = "code";
 const VERSION_MODULE_NAME: &str = "version";
 const JWK_CONSENSUS_CONFIG_MODULE_NAME: &str = "jwk_consensus_config";
@@ -175,7 +175,7 @@ pub fn encode_aptos_mainnet_genesis_transaction(
             .clone()
             .map(Features::into_flag_vec),
     );
-    initialize_aptos_coin(&mut session, &module_storage);
+    initialize_libra2_coin(&mut session, &module_storage);
     initialize_on_chain_governance(&mut session, &module_storage, genesis_config);
     create_accounts(&mut session, &module_storage, accounts);
     create_employee_validators(&mut session, &module_storage, employees, genesis_config);
@@ -280,9 +280,9 @@ pub fn encode_genesis_change_set(
             .map(Features::into_flag_vec),
     );
     if genesis_config.is_test {
-        initialize_core_resources_and_aptos_coin(&mut session, &module_storage, core_resources_key);
+        initialize_core_resources_and_libra2_coin(&mut session, &module_storage, core_resources_key);
     } else {
-        initialize_aptos_coin(&mut session, &module_storage);
+        initialize_libra2_coin(&mut session, &module_storage);
     }
     initialize_config_buffer(&mut session, &module_storage);
     initialize_dkg(&mut session, &module_storage);
@@ -489,12 +489,12 @@ fn initialize_features(
     );
 }
 
-fn initialize_aptos_coin(session: &mut SessionExt, module_storage: &impl AptosModuleStorage) {
+fn initialize_libra2_coin(session: &mut SessionExt, module_storage: &impl AptosModuleStorage) {
     exec_function(
         session,
         module_storage,
         GENESIS_MODULE_NAME,
-        "initialize_aptos_coin",
+        "initialize_libra2_coin",
         vec![],
         serialize_values(&vec![MoveValue::Signer(CORE_CODE_ADDRESS)]),
     );
@@ -640,7 +640,7 @@ fn set_genesis_end(session: &mut SessionExt, module_storage: &impl AptosModuleSt
     );
 }
 
-fn initialize_core_resources_and_aptos_coin(
+fn initialize_core_resources_and_libra2_coin(
     session: &mut SessionExt,
     module_storage: &impl AptosModuleStorage,
     core_resources_key: &Ed25519PublicKey,
@@ -650,7 +650,7 @@ fn initialize_core_resources_and_aptos_coin(
         session,
         module_storage,
         GENESIS_MODULE_NAME,
-        "initialize_core_resources_and_aptos_coin",
+        "initialize_core_resources_and_libra2_coin",
         vec![],
         serialize_values(&vec![
             MoveValue::Signer(CORE_CODE_ADDRESS),

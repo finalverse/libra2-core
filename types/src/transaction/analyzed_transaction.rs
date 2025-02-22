@@ -10,7 +10,7 @@ use crate::{
         signature_verified_transaction::SignatureVerifiedTransaction, Transaction,
         TransactionPayload,
     },
-    AptosCoinType, CoinType,
+    Libra2CoinType, CoinType,
 };
 use libra2_crypto::HashValue;
 pub use move_core_types::abi::{
@@ -163,7 +163,7 @@ pub fn account_resource_location(address: AccountAddress) -> StorageLocation {
 
 pub fn coin_store_location(address: AccountAddress) -> StorageLocation {
     StorageLocation::Specific(
-        StateKey::resource_typed::<CoinStoreResource<AptosCoinType>>(&address).unwrap(),
+        StateKey::resource_typed::<CoinStoreResource<Libra2CoinType>>(&address).unwrap(),
     )
 }
 
@@ -175,10 +175,10 @@ pub fn features_location() -> StorageLocation {
     StorageLocation::Specific(StateKey::on_chain_config::<Features>().unwrap())
 }
 
-pub fn aptos_coin_info_location() -> StorageLocation {
+pub fn libra2_coin_info_location() -> StorageLocation {
     StorageLocation::Specific(
-        StateKey::resource_typed::<CoinInfoResource<AptosCoinType>>(
-            &AptosCoinType::coin_info_address(),
+        StateKey::resource_typed::<CoinInfoResource<Libra2CoinType>>(
+            &Libra2CoinType::coin_info_address(),
         )
         .unwrap(),
     )
@@ -213,7 +213,7 @@ pub fn rw_set_for_coin_transfer(
     let read_hints = vec![
         current_ts_location(),
         features_location(),
-        aptos_coin_info_location(),
+        libra2_coin_info_location(),
         chain_id_location(),
         transaction_fee_burn_cap_location(),
     ];
@@ -260,7 +260,7 @@ impl AnalyzedTransactionProvider for Transaction {
                                 true,
                             )
                         },
-                        (AccountAddress::ONE, "aptos_account", "transfer") => {
+                        (AccountAddress::ONE, "libra2_account", "transfer") => {
                             let sender_address = signed_txn.sender();
                             let receiver_address = bcs::from_bytes(&func.args()[0]).unwrap();
                             rw_set_for_coin_transfer(
@@ -269,7 +269,7 @@ impl AnalyzedTransactionProvider for Transaction {
                                 false,
                             )
                         },
-                        (AccountAddress::ONE, "aptos_account", "create_account") => {
+                        (AccountAddress::ONE, "libra2_account", "create_account") => {
                             let sender_address = signed_txn.sender();
                             let receiver_address = bcs::from_bytes(&func.args()[0]).unwrap();
                             rw_set_for_create_account(

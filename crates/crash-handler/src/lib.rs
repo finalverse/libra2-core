@@ -40,7 +40,7 @@ fn handle_panic(panic_info: &PanicInfo<'_>) {
     let crash_info = toml::to_string_pretty(&info).unwrap();
     error!("{}", crash_info);
     // TODO / HACK ALARM: Write crash info synchronously via eprintln! to ensure it is written before the process exits which error! doesn't guarantee.
-    // This is a workaround until https://github.com/aptos-labs/aptos-core/issues/2038 is resolved.
+    // This is a workaround until https://github.com/finalverse/libra2-core/issues/2038 is resolved.
     eprintln!("{}", crash_info);
 
     // Wait till the logs have been flushed

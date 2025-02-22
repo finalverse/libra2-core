@@ -6,7 +6,7 @@ module marketplace::events {
     use libra2_framework::event;
     use libra2_framework::object::{Self, Object};
 
-    use aptos_token::token as tokenv1;
+    use libra2_token::token as tokenv1;
     use libra2_token_objects::collection as collectionv2;
     use libra2_token_objects::token as tokenv2;
 

@@ -95,10 +95,10 @@ module.resource_signer_cap = option::some(resource_signer_cap);
 
 
 <pre><code><b>use</b> <a href="account.md#0x1_account">0x1::account</a>;
-<b>use</b> <a href="aptos_coin.md#0x1_aptos_coin">0x1::aptos_coin</a>;
 <b>use</b> <a href="code.md#0x1_code">0x1::code</a>;
 <b>use</b> <a href="coin.md#0x1_coin">0x1::coin</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="libra2_coin.md#0x1_libra2_coin">0x1::libra2_coin</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
 <b>use</b> <a href="../../libra2-stdlib/doc/simple_map.md#0x1_simple_map">0x1::simple_map</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">0x1::vector</a>;
@@ -212,7 +212,7 @@ Creates a new resource account, transfer the amount of coins from the origin to 
 account, and rotates the authentication key to either the optional auth key if it is
 non-empty (though auth keys are 32-bytes) or the source accounts current auth key. Note,
 this function adds additional resource ownership to the resource account and should only be
-used for resource accounts that need access to <code>Coin&lt;AptosCoin&gt;</code>.
+used for resource accounts that need access to <code>Coin&lt;Libra2Coin&gt;</code>.
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="resource_account.md#0x1_resource_account_create_resource_account_and_fund">create_resource_account_and_fund</a>(origin: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, seed: <a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, optional_auth_key: <a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, fund_amount: u64)
@@ -231,8 +231,8 @@ used for resource accounts that need access to <code>Coin&lt;AptosCoin&gt;</code
     fund_amount: u64,
 ) <b>acquires</b> <a href="resource_account.md#0x1_resource_account_Container">Container</a> {
     <b>let</b> (resource, resource_signer_cap) = <a href="account.md#0x1_account_create_resource_account">account::create_resource_account</a>(origin, seed);
-    <a href="coin.md#0x1_coin_register">coin::register</a>&lt;AptosCoin&gt;(&resource);
-    <a href="coin.md#0x1_coin_transfer">coin::transfer</a>&lt;AptosCoin&gt;(origin, <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(&resource), fund_amount);
+    <a href="coin.md#0x1_coin_register">coin::register</a>&lt;Libra2Coin&gt;(&resource);
+    <a href="coin.md#0x1_coin_transfer">coin::transfer</a>&lt;Libra2Coin&gt;(origin, <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(&resource), fund_amount);
     <a href="resource_account.md#0x1_resource_account_rotate_account_authentication_key_and_store_capability">rotate_account_authentication_key_and_store_capability</a>(
         origin,
         resource,
@@ -413,7 +413,7 @@ the SignerCapability.
 <td>3</td>
 <td>The resource account is registered for the Aptos coin.</td>
 <td>High</td>
-<td>The create_resource_account_and_fund ensures the newly created resource account is registered to receive the AptosCoin.</td>
+<td>The create_resource_account_and_fund ensures the newly created resource account is registered to receive the Libra2Coin.</td>
 <td>Formally verified via <a href="#high-level-req-3">create_resource_account_and_fund</a>.</td>
 </tr>
 
@@ -506,13 +506,13 @@ the SignerCapability.
 <pre><code><b>pragma</b> verify = <b>false</b>;
 <b>let</b> source_addr = <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(origin);
 <b>let</b> resource_addr = <a href="account.md#0x1_account_spec_create_resource_address">account::spec_create_resource_address</a>(source_addr, seed);
-<b>let</b> coin_store_resource = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;AptosCoin&gt;&gt;(resource_addr);
-<b>include</b> <a href="aptos_account.md#0x1_aptos_account_WithdrawAbortsIf">aptos_account::WithdrawAbortsIf</a>&lt;AptosCoin&gt;{from: origin, amount: fund_amount};
-<b>include</b> <a href="aptos_account.md#0x1_aptos_account_GuidAbortsIf">aptos_account::GuidAbortsIf</a>&lt;AptosCoin&gt;{<b>to</b>: resource_addr};
+<b>let</b> coin_store_resource = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;Libra2Coin&gt;&gt;(resource_addr);
+<b>include</b> <a href="libra2_account.md#0x1_libra2_account_WithdrawAbortsIf">libra2_account::WithdrawAbortsIf</a>&lt;Libra2Coin&gt;{from: origin, amount: fund_amount};
+<b>include</b> <a href="libra2_account.md#0x1_libra2_account_GuidAbortsIf">libra2_account::GuidAbortsIf</a>&lt;Libra2Coin&gt;{<b>to</b>: resource_addr};
 <b>include</b> <a href="resource_account.md#0x1_resource_account_RotateAccountAuthenticationKeyAndStoreCapabilityAbortsIfWithoutAccountLimit">RotateAccountAuthenticationKeyAndStoreCapabilityAbortsIfWithoutAccountLimit</a>;
-<b>aborts_if</b> <a href="coin.md#0x1_coin_spec_is_account_registered">coin::spec_is_account_registered</a>&lt;AptosCoin&gt;(resource_addr) && coin_store_resource.frozen;
+<b>aborts_if</b> <a href="coin.md#0x1_coin_spec_is_account_registered">coin::spec_is_account_registered</a>&lt;Libra2Coin&gt;(resource_addr) && coin_store_resource.frozen;
 // This enforces <a id="high-level-req-3" href="#high-level-req">high-level requirement 3</a>:
-<b>ensures</b> <b>exists</b>&lt;libra2_framework::coin::CoinStore&lt;AptosCoin&gt;&gt;(resource_addr);
+<b>ensures</b> <b>exists</b>&lt;libra2_framework::coin::CoinStore&lt;Libra2Coin&gt;&gt;(resource_addr);
 </code></pre>
 
 

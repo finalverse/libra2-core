@@ -131,7 +131,7 @@ transforms:
     type: filter
     inputs:
       - delete_temp_fields
-    # temporarily filter out noisy logs in vector until https://github.com/aptos-labs/aptos-core/pull/13965 lands in mainnet release
+    # temporarily filter out noisy logs in vector until https://github.com/finalverse/libra2-core/pull/13965 lands in mainnet release
     # temporarily filter out noisy logs from https://aptos-org.slack.com/archives/C06TH3DH7SB/p1721328005384169?thread_ts=1720695143.603089&cid=C06TH3DH7SB until lands in mainnet release
     condition: |
       if is_string(.message) {

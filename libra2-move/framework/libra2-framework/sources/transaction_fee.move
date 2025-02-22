@@ -1,8 +1,8 @@
 /// This module provides an interface to burn or collect and redistribute transaction fees.
 module libra2_framework::transaction_fee {
     use libra2_framework::coin::{Self, AggregatableCoin, BurnCapability, MintCapability};
-    use libra2_framework::aptos_account;
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_account;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::fungible_asset::BurnRef;
     use libra2_framework::system_addresses;
     use std::error;
@@ -29,8 +29,8 @@ module libra2_framework::transaction_fee {
     const EFA_GAS_CHARGING_NOT_ENABLED: u64 = 5;
 
     /// Stores burn capability to burn the gas fees.
-    struct AptosCoinCapabilities has key {
-        burn_cap: BurnCapability<AptosCoin>,
+    struct Libra2CoinCapabilities has key {
+        burn_cap: BurnCapability<Libra2Coin>,
     }
 
     /// Stores burn capability to burn the gas fees.
@@ -39,8 +39,8 @@ module libra2_framework::transaction_fee {
     }
 
     /// Stores mint capability to mint the refunds.
-    struct AptosCoinMintCapability has key {
-        mint_cap: MintCapability<AptosCoin>,
+    struct Libra2CoinMintCapability has key {
+        mint_cap: MintCapability<Libra2Coin>,
     }
 
     #[event]
@@ -77,18 +77,18 @@ module libra2_framework::transaction_fee {
     }
 
     /// Burn transaction fees in epilogue.
-    public(friend) fun burn_fee(account: address, fee: u64) acquires AptosFABurnCapabilities, AptosCoinCapabilities {
+    public(friend) fun burn_fee(account: address, fee: u64) acquires AptosFABurnCapabilities, Libra2CoinCapabilities {
         if (exists<AptosFABurnCapabilities>(@libra2_framework)) {
             let burn_ref = &borrow_global<AptosFABurnCapabilities>(@libra2_framework).burn_ref;
-            aptos_account::burn_from_fungible_store_for_gas(burn_ref, account, fee);
+            libra2_account::burn_from_fungible_store_for_gas(burn_ref, account, fee);
         } else {
-            let burn_cap = &borrow_global<AptosCoinCapabilities>(@libra2_framework).burn_cap;
+            let burn_cap = &borrow_global<Libra2CoinCapabilities>(@libra2_framework).burn_cap;
             if (features::operations_default_to_fa_apt_store_enabled()) {
                 let (burn_ref, burn_receipt) = coin::get_paired_burn_ref(burn_cap);
-                aptos_account::burn_from_fungible_store_for_gas(&burn_ref, account, fee);
+                libra2_account::burn_from_fungible_store_for_gas(&burn_ref, account, fee);
                 coin::return_paired_burn_ref(burn_ref, burn_receipt);
             } else {
-                coin::burn_from_for_gas<AptosCoin>(
+                coin::burn_from_for_gas<Libra2Coin>(
                     account,
                     fee,
                     burn_cap,
@@ -98,38 +98,38 @@ module libra2_framework::transaction_fee {
     }
 
     /// Mint refund in epilogue.
-    public(friend) fun mint_and_refund(account: address, refund: u64) acquires AptosCoinMintCapability {
-        let mint_cap = &borrow_global<AptosCoinMintCapability>(@libra2_framework).mint_cap;
+    public(friend) fun mint_and_refund(account: address, refund: u64) acquires Libra2CoinMintCapability {
+        let mint_cap = &borrow_global<Libra2CoinMintCapability>(@libra2_framework).mint_cap;
         let refund_coin = coin::mint(refund, mint_cap);
         coin::deposit_for_gas_fee(account, refund_coin);
     }
 
     /// Only called during genesis.
-    public(friend) fun store_aptos_coin_burn_cap(libra2_framework: &signer, burn_cap: BurnCapability<AptosCoin>) {
+    public(friend) fun store_libra2_coin_burn_cap(libra2_framework: &signer, burn_cap: BurnCapability<Libra2Coin>) {
         system_addresses::assert_libra2_framework(libra2_framework);
 
         if (features::operations_default_to_fa_apt_store_enabled()) {
             let burn_ref = coin::convert_and_take_paired_burn_ref(burn_cap);
             move_to(libra2_framework, AptosFABurnCapabilities { burn_ref });
         } else {
-            move_to(libra2_framework, AptosCoinCapabilities { burn_cap })
+            move_to(libra2_framework, Libra2CoinCapabilities { burn_cap })
         }
     }
 
-    public entry fun convert_to_aptos_fa_burn_ref(libra2_framework: &signer) acquires AptosCoinCapabilities {
+    public entry fun convert_to_aptos_fa_burn_ref(libra2_framework: &signer) acquires Libra2CoinCapabilities {
         assert!(features::operations_default_to_fa_apt_store_enabled(), EFA_GAS_CHARGING_NOT_ENABLED);
         system_addresses::assert_libra2_framework(libra2_framework);
-        let AptosCoinCapabilities {
+        let Libra2CoinCapabilities {
             burn_cap,
-        } = move_from<AptosCoinCapabilities>(signer::address_of(libra2_framework));
+        } = move_from<Libra2CoinCapabilities>(signer::address_of(libra2_framework));
         let burn_ref = coin::convert_and_take_paired_burn_ref(burn_cap);
         move_to(libra2_framework, AptosFABurnCapabilities { burn_ref });
     }
 
     /// Only called during genesis.
-    public(friend) fun store_aptos_coin_mint_cap(libra2_framework: &signer, mint_cap: MintCapability<AptosCoin>) {
+    public(friend) fun store_libra2_coin_mint_cap(libra2_framework: &signer, mint_cap: MintCapability<Libra2Coin>) {
         system_addresses::assert_libra2_framework(libra2_framework);
-        move_to(libra2_framework, AptosCoinMintCapability { mint_cap })
+        move_to(libra2_framework, Libra2CoinMintCapability { mint_cap })
     }
 
     // Called by the VM after epilogue.
@@ -143,7 +143,7 @@ module libra2_framework::transaction_fee {
     /// DEPRECATED: Stores information about the block proposer and the amount of fees
     /// collected when executing the block.
     struct CollectedFeesPerBlock has key {
-        amount: AggregatableCoin<AptosCoin>,
+        amount: AggregatableCoin<Libra2Coin>,
         proposer: Option<address>,
         burn_percentage: u8,
     }

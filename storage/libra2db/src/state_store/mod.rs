@@ -1028,7 +1028,7 @@ impl StateStore {
     }
 
     // state sync doesn't query for the progress, but keeps its record by itself.
-    // TODO: change to async comment once it does like https://github.com/aptos-labs/aptos-core/blob/159b00f3d53e4327523052c1b99dd9889bf13b03/storage/backup/backup-cli/src/backup_types/state_snapshot/restore.rs#L147 or overlap at least two chunks.
+    // TODO: change to async comment once it does like https://github.com/finalverse/libra2-core/blob/159b00f3d53e4327523052c1b99dd9889bf13b03/storage/backup/backup-cli/src/backup_types/state_snapshot/restore.rs#L147 or overlap at least two chunks.
     pub fn get_snapshot_receiver(
         self: &Arc<Self>,
         version: Version,

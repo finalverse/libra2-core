@@ -1,7 +1,7 @@
 script {
     use std::signer;
-    use libra2_framework::aptos_account;
-    use libra2_framework::aptos_coin;
+    use libra2_framework::libra2_account;
+    use libra2_framework::libra2_coin;
     use libra2_framework::coin;
 
     // Tune this parameter based upon the actual gas costs
@@ -12,11 +12,11 @@ script {
         let minter_addr = signer::address_of(minter);
 
         // Do not mint if it would exceed U64_MAX
-        let balance = coin::balance<aptos_coin::AptosCoin>(minter_addr);
+        let balance = coin::balance<libra2_coin::Libra2Coin>(minter_addr);
         if (balance < U64_MAX - amount - GAS_BUFFER) {
-            aptos_coin::mint(minter, minter_addr, amount + GAS_BUFFER);
+            libra2_coin::mint(minter, minter_addr, amount + GAS_BUFFER);
         };
 
-        aptos_account::transfer(minter, dst_addr, amount);
+        libra2_account::transfer(minter, dst_addr, amount);
     }
 }

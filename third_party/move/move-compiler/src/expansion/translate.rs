@@ -454,7 +454,7 @@ fn set_sender_address(
 
 // This is a hack to recognize APTOS StdLib, Framework, and Token libs to avoid warnings on some old errors.
 // This will be removed after library attributes are cleaned up.
-// (See https://github.com/aptos-labs/aptos-core/issues/9410)
+// (See https://github.com/finalverse/libra2-core/issues/9410)
 fn module_is_in_aptos_libs(module_address: Option<Spanned<Address>>) -> bool {
     const LIBRA2_STDLIB_NAME: &str = "libra2_std";
     static LIBRA2_STDLIB_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
@@ -462,7 +462,7 @@ fn module_is_in_aptos_libs(module_address: Option<Spanned<Address>>) -> bool {
     const APTOS_FRAMEWORK_NAME: &str = "libra2_framework";
     static APTOS_FRAMEWORK_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
         Lazy::new(|| NumericalAddress::parse_str("0x1").unwrap());
-    const APTOS_TOKEN_NAME: &str = "aptos_token";
+    const APTOS_TOKEN_NAME: &str = "libra2_token";
     static APTOS_TOKEN_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
         Lazy::new(|| NumericalAddress::parse_str("0x3").unwrap());
     const LIBRA2_TOKEN_OBJECTS_NAME: &str = "libra2_token_objects";

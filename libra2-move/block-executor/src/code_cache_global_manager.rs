@@ -19,7 +19,7 @@ use libra2_types::{
 };
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_logging::alert;
-use libra2_vm_types::module_and_script_storage::{AptosCodeStorageAdapter, AsAptosCodeStorage};
+use libra2_vm_types::module_and_script_storage::{Libra2CodeStorageAdapter, AsLibra2CodeStorage};
 use move_binary_format::{
     errors::{Location, VMError},
     CompiledModule,
@@ -282,7 +282,7 @@ impl<'a> AptosModuleCacheManagerGuard<'a> {
 /// dependencies from storage into provided module cache. If loading fails for any reason, a panic
 /// error is returned.
 fn prefetch_libra2_framework<S: StateView>(
-    code_storage: AptosCodeStorageAdapter<S, Libra2Environment>,
+    code_storage: Libra2CodeStorageAdapter<S, Libra2Environment>,
     module_cache: &mut GlobalModuleCache<ModuleId, CompiledModule, Module, AptosModuleExtension>,
 ) -> Result<(), PanicError> {
     // If framework code exists in storage, the transitive closure will be verified and cached.

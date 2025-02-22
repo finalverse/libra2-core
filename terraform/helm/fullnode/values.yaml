@@ -29,7 +29,7 @@ aptos_chains:
     genesis_blob_url: https://raw.githubusercontent.com/aptos-labs/libra2-networks/main/mainnet/genesis.blob
 
 fullnode:
-  # -- Fullnode configuration. See NodeConfig https://github.com/aptos-labs/aptos-core/blob/main/config/src/config/mod.rs
+  # -- Fullnode configuration. See NodeConfig https://github.com/finalverse/libra2-core/blob/main/config/src/config/mod.rs
   config:
     full_node_networks:
       # The first item in the array `full_node_networks` must always refer to the public fullnode network

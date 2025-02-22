@@ -3,7 +3,7 @@
 
 # Module `0x4::property_map`
 
-<code><a href="property_map.md#0x4_property_map_PropertyMap">PropertyMap</a></code> provides generic metadata support for <code>AptosToken</code>. It is a specialization of
+<code><a href="property_map.md#0x4_property_map_PropertyMap">PropertyMap</a></code> provides generic metadata support for <code>Libra2Token</code>. It is a specialization of
 <code>SimpleMap</code> that enforces strict typing with minimal storage use by using constant u64 to
 represent types and storing values in bcs format.
 

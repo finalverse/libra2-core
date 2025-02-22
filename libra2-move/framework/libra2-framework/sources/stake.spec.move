@@ -21,7 +21,7 @@ spec libra2_framework::stake {
     /// Requirement: The total staked value in the stake pool should remain constant, excluding operations related to
     /// adding and withdrawing.
     /// Criticality: Low
-    /// Implementation: The total staked value (AptosCoin) of a stake pool is grouped by: active, inactive,
+    /// Implementation: The total staked value (Libra2Coin) of a stake pool is grouped by: active, inactive,
     /// pending_active, and pending_inactive. The stake value remains constant except during the execution of the
     /// add_stake_with_cap or withdraw_with_cap functions or on_new_epoch (which distributes the reward).
     /// Enforcement: Formally specified in the schema [high-level-req-3](StakedValueNoChange).
@@ -45,8 +45,8 @@ spec libra2_framework::stake {
         pragma aborts_if_is_partial;
         // The validator set should satisfy its desired invariant.
         invariant [suspendable] exists<ValidatorSet>(@libra2_framework) ==> validator_set_is_valid();
-        // After genesis, `AptosCoinCapabilities`, `ValidatorPerformance` and `ValidatorSet` exist.
-        invariant [suspendable] chain_status::is_operating() ==> exists<AptosCoinCapabilities>(@libra2_framework);
+        // After genesis, `Libra2CoinCapabilities`, `ValidatorPerformance` and `ValidatorSet` exist.
+        invariant [suspendable] chain_status::is_operating() ==> exists<Libra2CoinCapabilities>(@libra2_framework);
         invariant [suspendable] chain_status::is_operating() ==> exists<ValidatorPerformance>(@libra2_framework);
         invariant [suspendable] chain_status::is_operating() ==> exists<ValidatorSet>(@libra2_framework);
 
@@ -255,16 +255,16 @@ spec libra2_framework::stake {
                     new_withdraw_amount_1 > 0 && stake_pool.inactive.value + stake_pool.pending_inactive.value < new_withdraw_amount_1;
         aborts_if !(bool_find_validator && exists<timestamp::CurrentTimeMicroseconds>(@libra2_framework)) &&
                     new_withdraw_amount_2 > 0 && stake_pool.inactive.value < new_withdraw_amount_2;
-        aborts_if !exists<coin::CoinStore<AptosCoin>>(addr);
-        include coin::DepositAbortsIf<AptosCoin>{account_addr: addr};
+        aborts_if !exists<coin::CoinStore<Libra2Coin>>(addr);
+        include coin::DepositAbortsIf<Libra2Coin>{account_addr: addr};
 
-        let coin_store = global<coin::CoinStore<AptosCoin>>(addr);
-        let post p_coin_store = global<coin::CoinStore<AptosCoin>>(addr);
+        let coin_store = global<coin::CoinStore<Libra2Coin>>(addr);
+        let post p_coin_store = global<coin::CoinStore<Libra2Coin>>(addr);
         ensures bool_find_validator && timestamp::now_seconds() > stake_pool.locked_until_secs
-                    && exists<account::Account>(addr) && exists<coin::CoinStore<AptosCoin>>(addr) ==>
+                    && exists<account::Account>(addr) && exists<coin::CoinStore<Libra2Coin>>(addr) ==>
                         coin_store.coin.value + new_withdraw_amount_1 == p_coin_store.coin.value;
         ensures !(bool_find_validator && exists<timestamp::CurrentTimeMicroseconds>(@libra2_framework))
-                    && exists<account::Account>(addr) && exists<coin::CoinStore<AptosCoin>>(addr) ==>
+                    && exists<account::Account>(addr) && exists<coin::CoinStore<Libra2Coin>>(addr) ==>
                         coin_store.coin.value + new_withdraw_amount_2 == p_coin_store.coin.value;
     }
 
@@ -458,7 +458,7 @@ spec libra2_framework::stake {
         include ResourceRequirement;
         include GetReconfigStartTimeRequirement;
         include staking_config::StakingRewardsConfigRequirement;
-        include libra2_framework::aptos_coin::ExistsAptosCoin;
+        include libra2_framework::libra2_coin::ExistsLibra2Coin;
         // This function should never abort.
         /// [high-level-req-4]
         aborts_if false;
@@ -546,7 +546,7 @@ spec libra2_framework::stake {
         aborts_if !exists<ValidatorConfig>(pool_address);
         aborts_if global<ValidatorConfig>(pool_address).validator_index >= len(validator_perf.validators);
 
-        let aptos_addr = type_info::type_of<AptosCoin>().account_address;
+        let aptos_addr = type_info::type_of<Libra2Coin>().account_address;
 
         let stake_pool = global<StakePool>(pool_address);
 
@@ -585,7 +585,7 @@ spec libra2_framework::stake {
     spec schema DistributeRewardsAbortsIf {
         use libra2_std::type_info;
 
-        stake: Coin<AptosCoin>;
+        stake: Coin<Libra2Coin>;
         num_successful_proposals: num;
         num_total_proposals: num;
         rewards_rate: num;
@@ -598,10 +598,10 @@ spec libra2_framework::stake {
             0
         };
         let amount = rewards_amount;
-        let addr = type_info::type_of<AptosCoin>().account_address;
-        aborts_if (rewards_amount > 0) && !exists<coin::CoinInfo<AptosCoin>>(addr);
-        modifies global<coin::CoinInfo<AptosCoin>>(addr);
-        include (rewards_amount > 0) ==> coin::CoinAddAbortsIf<AptosCoin> { amount: amount };
+        let addr = type_info::type_of<Libra2Coin>().account_address;
+        aborts_if (rewards_amount > 0) && !exists<coin::CoinInfo<Libra2Coin>>(addr);
+        modifies global<coin::CoinInfo<Libra2Coin>>(addr);
+        include (rewards_amount > 0) ==> coin::CoinAddAbortsIf<Libra2Coin> { amount: amount };
     }
 
     spec get_reconfig_start_time_secs(): u64 {
@@ -932,7 +932,7 @@ spec libra2_framework::stake {
     // These resources are required to successfully execute `on_new_epoch`, which cannot
     // be discharged by the global invariants because `on_new_epoch` is called in genesis.
     spec schema ResourceRequirement {
-        requires exists<AptosCoinCapabilities>(@libra2_framework);
+        requires exists<Libra2CoinCapabilities>(@libra2_framework);
         requires exists<ValidatorPerformance>(@libra2_framework);
         requires exists<ValidatorSet>(@libra2_framework);
         requires exists<StakingConfig>(@libra2_framework);

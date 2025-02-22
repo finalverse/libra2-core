@@ -52,7 +52,7 @@ use libra2_vm_environment::{
 };
 use libra2_vm_logging::log_schema::AdapterLogSchema;
 use libra2_vm_types::{
-    module_and_script_storage::AsAptosCodeStorage, storage::change_set_configs::ChangeSetConfigs,
+    module_and_script_storage::AsLibra2CodeStorage, storage::change_set_configs::ChangeSetConfigs,
 };
 use clap::Parser;
 use move_binary_format::{
@@ -315,7 +315,7 @@ where
 static MODULE_ID_APTOS_GOVERNANCE: Lazy<ModuleId> = Lazy::new(|| {
     ModuleId::new(
         AccountAddress::ONE,
-        Identifier::new("aptos_governance").unwrap(),
+        Identifier::new("libra2_governance").unwrap(),
     )
 });
 
@@ -368,9 +368,9 @@ where
     Ok(())
 }
 
-/// Patches `libra2_framework::aptos_governance::resolve_multi_step_proposal` so that
+/// Patches `libra2_framework::libra2_governance::resolve_multi_step_proposal` so that
 /// it returns the requested signer directly, skipping the governance process altogether.
-fn patch_aptos_governance(
+fn patch_libra2_governance(
     state_view: &SimulationStateView<impl StateView>,
     deserializer_config: &DeserializerConfig,
     forbid_next_execution_hash: bool,
@@ -600,7 +600,7 @@ pub async fn simulate_multistep_proposal(
         // If the script is the last step of the proposal, it MUST NOT have a next execution hash.
         // Set the boolean flag to true to use a modified patch to catch this.
         let forbid_next_execution_hash = script_idx == proposal_scripts.len() - 1;
-        patch_aptos_governance(
+        patch_libra2_governance(
             &state_view,
             &deserializer_config,
             forbid_next_execution_hash,

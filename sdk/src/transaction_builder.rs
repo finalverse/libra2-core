@@ -153,7 +153,7 @@ impl TransactionFactory {
     }
 
     pub fn create_user_account(&self, public_key: &Ed25519PublicKey) -> TransactionBuilder {
-        self.payload(libra2_stdlib::aptos_account_create_account(
+        self.payload(libra2_stdlib::libra2_account_create_account(
             AuthenticationKey::ed25519(public_key).account_address(),
         ))
     }
@@ -176,18 +176,18 @@ impl TransactionFactory {
         public_key: &Ed25519PublicKey,
         amount: u64,
     ) -> TransactionBuilder {
-        self.payload(libra2_stdlib::aptos_account_transfer(
+        self.payload(libra2_stdlib::libra2_account_transfer(
             AuthenticationKey::ed25519(public_key).account_address(),
             amount,
         ))
     }
 
     pub fn transfer(&self, to: AccountAddress, amount: u64) -> TransactionBuilder {
-        self.payload(libra2_stdlib::aptos_coin_transfer(to, amount))
+        self.payload(libra2_stdlib::libra2_coin_transfer(to, amount))
     }
 
     pub fn account_transfer(&self, to: AccountAddress, amount: u64) -> TransactionBuilder {
-        self.payload(libra2_stdlib::aptos_account_transfer(to, amount))
+        self.payload(libra2_stdlib::libra2_account_transfer(to, amount))
     }
 
     pub fn create_multisig_account(
@@ -278,7 +278,7 @@ impl TransactionFactory {
     }
 
     pub fn mint(&self, to: AccountAddress, amount: u64) -> TransactionBuilder {
-        self.payload(libra2_stdlib::aptos_coin_mint(to, amount))
+        self.payload(libra2_stdlib::libra2_coin_mint(to, amount))
     }
 
     //

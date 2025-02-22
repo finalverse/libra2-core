@@ -11,7 +11,7 @@ use libra2_sdk::types::APTOS_COIN_TYPE_STR;
 use libra2_types::{
     account_config::{primary_apt_store, ObjectCoreResource},
     transaction::{EntryFunction, TransactionPayload},
-    AptosCoinType, CoinType,
+    Libra2CoinType, CoinType,
 };
 use move_core_types::{
     account_address::AccountAddress,
@@ -202,7 +202,7 @@ async fn test_get_account_balance() {
         ))
         .await;
     let txn = root_account.sign_with_transaction_builder(context.transaction_factory().payload(
-        libra2_stdlib::coin_migrate_to_fungible_store(AptosCoinType::type_tag()),
+        libra2_stdlib::coin_migrate_to_fungible_store(Libra2CoinType::type_tag()),
     ));
     context.commit_block(&vec![txn.clone()]).await;
     let coin_balance_after = context

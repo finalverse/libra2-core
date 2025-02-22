@@ -126,7 +126,7 @@ spec libra2_framework::reconfiguration {
     }
 
     spec reconfigure {
-        use libra2_framework::aptos_coin;
+        use libra2_framework::libra2_coin;
         use libra2_framework::staking_config;
 
         // TODO: set because of timeout (property proved)
@@ -136,7 +136,7 @@ spec libra2_framework::reconfiguration {
         let success = !(chain_status::is_genesis() || timestamp::spec_now_microseconds() == 0 || !reconfiguration_enabled())
             && timestamp::spec_now_microseconds() != global<Configuration>(@libra2_framework).last_reconfiguration_time;
         include features::spec_periodical_reward_rate_decrease_enabled() ==> staking_config::StakingRewardsConfigEnabledRequirement;
-        include success ==> aptos_coin::ExistsAptosCoin;
+        include success ==> libra2_coin::ExistsLibra2Coin;
         aborts_if false;
         // The ensure conditions of the reconfigure function are not fully written, because there is a new cycle in it,
         // but its existing ensure conditions satisfy hp.

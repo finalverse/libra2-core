@@ -4,7 +4,7 @@
 use crate::{
     bls12381,
     bls12381::{PrivateKey, ProofOfPossession, PublicKey},
-    test_utils::{random_subset, KeyPair, TestAptosCrypto},
+    test_utils::{random_subset, KeyPair, TestLibra2Crypto},
     validatable::{Validatable, Validate},
     Signature, SigningKey, Uniform,
 };
@@ -94,8 +94,8 @@ fn bls12381_keygen(num_signers: usize, mut rng: &mut OsRng) -> Vec<KeyPair<Priva
 }
 
 /// Returns a 256-character unique string that can be signed by the BLS API.
-fn random_message_for_signing(rng: &mut OsRng) -> TestAptosCrypto {
-    TestAptosCrypto(
+fn random_message_for_signing(rng: &mut OsRng) -> TestLibra2Crypto {
+    TestLibra2Crypto(
         rng.sample_iter(&Alphanumeric)
             .take(256)
             .map(char::from)
@@ -104,10 +104,10 @@ fn random_message_for_signing(rng: &mut OsRng) -> TestAptosCrypto {
 }
 
 /// Returns several 256-character unique strings that can be aggregate-signed by the BLS API.
-fn random_messages_for_signing(rng: &mut OsRng, n: usize) -> Vec<TestAptosCrypto> {
+fn random_messages_for_signing(rng: &mut OsRng, n: usize) -> Vec<TestLibra2Crypto> {
     (0..n)
         .map(|_| random_message_for_signing(rng))
-        .collect::<Vec<TestAptosCrypto>>()
+        .collect::<Vec<TestLibra2Crypto>>()
 }
 
 /// Tests that a multisignature on a message m aggregated from n/2 out of n signers verifies
@@ -182,11 +182,11 @@ fn bls12381_aggsig_should_verify() {
     let aggsig = bls12381::Signature::aggregate(signatures).unwrap();
 
     // aggsig should verify on the correct messages under the correct PKs
-    let msgs_refs = messages.iter().collect::<Vec<&TestAptosCrypto>>();
+    let msgs_refs = messages.iter().collect::<Vec<&TestLibra2Crypto>>();
     assert!(aggsig.verify_aggregate(&msgs_refs, &pubkeys).is_ok());
 
     // aggsig should NOT verify on incorrect messages under the correct PKs
-    let msgs_wrong_refs = messages_wrong.iter().collect::<Vec<&TestAptosCrypto>>();
+    let msgs_wrong_refs = messages_wrong.iter().collect::<Vec<&TestLibra2Crypto>>();
     assert!(aggsig.verify_aggregate(&msgs_wrong_refs, &pubkeys).is_err());
 }
 
@@ -205,19 +205,19 @@ fn bls12381_aggsig_zero_messages_or_pks_does_not_verify() {
     // aggsig should NOT verify on zero messages and zero PKs
     let pubkeys: Vec<&PublicKey> = vec![];
     let messages = [];
-    let msgs_refs = messages.iter().collect::<Vec<&TestAptosCrypto>>();
+    let msgs_refs = messages.iter().collect::<Vec<&TestLibra2Crypto>>();
     assert!(aggsig.verify_aggregate(&msgs_refs, &pubkeys).is_err());
 
     // aggsig should NOT verify on zero PKs
     let pubkeys: Vec<&PublicKey> = vec![];
     let messages = [message];
-    let msgs_refs = messages.iter().collect::<Vec<&TestAptosCrypto>>();
+    let msgs_refs = messages.iter().collect::<Vec<&TestLibra2Crypto>>();
     assert!(aggsig.verify_aggregate(&msgs_refs, &pubkeys).is_err());
 
     // aggsig should NOT verify on zero messages
     let pubkeys: Vec<&PublicKey> = vec![&key_pair.public_key];
     let messages = [];
-    let msgs_refs = messages.iter().collect::<Vec<&TestAptosCrypto>>();
+    let msgs_refs = messages.iter().collect::<Vec<&TestLibra2Crypto>>();
     assert!(aggsig.verify_aggregate(&msgs_refs, &pubkeys).is_err());
 }
 
@@ -455,7 +455,7 @@ fn bls12381_sample_doc_test_for_normal_sigs() {
     let kp = KeyPair::<PrivateKey, PublicKey>::generate(&mut rng);
 
     // The signer computes a normal signature on a message.
-    let message = TestAptosCrypto("test".to_owned());
+    let message = TestLibra2Crypto("test".to_owned());
     let sig = kp.private_key.sign(&message).unwrap();
 
     // Any verifier who has the signer's public key can verify the `(message, sig)` pair as:
@@ -469,7 +469,7 @@ fn bls12381_sample_doc_test_for_normal_sigs() {
         "let pk_bytes = hex::decode(\"{}\").unwrap();",
         hex::encode(kp.public_key.to_bytes())
     );
-    println!("// signature on TestAptosCrypto(\"test\".to_owned())");
+    println!("// signature on TestLibra2Crypto(\"test\".to_owned())");
     println!(
         "let sig_bytes = hex::decode(\"{}\").unwrap();",
         hex::encode(sig.to_bytes())

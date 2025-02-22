@@ -31,7 +31,7 @@ pub fn generate_version_upgrade_proposal(
                 signer_arg,
                 version.major,
             );
-            emitln!(writer, "aptos_governance::reconfigure({});", signer_arg);
+            emitln!(writer, "libra2_governance::reconfigure({});", signer_arg);
         },
     );
 

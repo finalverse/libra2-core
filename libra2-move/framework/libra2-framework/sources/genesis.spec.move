@@ -25,9 +25,9 @@ spec libra2_framework::genesis {
     /// Requirement: The Aptos coin should be initialized during genesis and only the Libra2 framework account should own
     /// the mint and burn capabilities for the APT token.
     /// Criticality: Critical
-    /// Implementation: Both mint and burn capabilities are wrapped inside the stake::AptosCoinCapabilities and
-    /// transaction_fee::AptosCoinCapabilities resources which are stored under the aptos framework account.
-    /// Enforcement: Formally verified via [high-level-req-3](initialize_aptos_coin).
+    /// Implementation: Both mint and burn capabilities are wrapped inside the stake::Libra2CoinCapabilities and
+    /// transaction_fee::Libra2CoinCapabilities resources which are stored under the aptos framework account.
+    /// Enforcement: Formally verified via [high-level-req-3](initialize_libra2_coin).
     ///
     /// No.: 4
     /// Requirement: An initial set of validators should exist before the end of genesis.
@@ -77,7 +77,7 @@ spec libra2_framework::genesis {
 
         // property 1: All the core resources and modules should be created during genesis and owned by the Libra2 framework account.
         /// [high-level-req-1]
-        ensures exists<aptos_governance::GovernanceResponsbility>(@libra2_framework);
+        ensures exists<libra2_governance::GovernanceResponsbility>(@libra2_framework);
         ensures exists<consensus_config::ConsensusConfig>(@libra2_framework);
         ensures exists<execution_config::ExecutionConfig>(@libra2_framework);
         ensures exists<version::Version>(@libra2_framework);
@@ -98,14 +98,14 @@ spec libra2_framework::genesis {
         ensures exists<staking_config::StakingConfig>(@libra2_framework);
     }
 
-    spec initialize_aptos_coin {
+    spec initialize_libra2_coin {
         // property 3: The Aptos coin should be initialized during genesis and only the Libra2 framework account should
         // own the mint and burn capabilities for the APT token.
         /// [high-level-req-3]
-        requires !exists<stake::AptosCoinCapabilities>(@libra2_framework);
-        ensures exists<stake::AptosCoinCapabilities>(@libra2_framework);
-        requires exists<transaction_fee::AptosCoinCapabilities>(@libra2_framework);
-        ensures exists<transaction_fee::AptosCoinCapabilities>(@libra2_framework);
+        requires !exists<stake::Libra2CoinCapabilities>(@libra2_framework);
+        ensures exists<stake::Libra2CoinCapabilities>(@libra2_framework);
+        requires exists<transaction_fee::Libra2CoinCapabilities>(@libra2_framework);
+        ensures exists<transaction_fee::Libra2CoinCapabilities>(@libra2_framework);
     }
 
     spec create_initialize_validators_with_commission {
@@ -114,7 +114,7 @@ spec libra2_framework::genesis {
         include stake::ResourceRequirement;
         include stake::GetReconfigStartTimeRequirement;
         include CompareTimeRequires;
-        include aptos_coin::ExistsAptosCoin;
+        include libra2_coin::ExistsLibra2Coin;
     }
 
     spec create_initialize_validators {
@@ -123,7 +123,7 @@ spec libra2_framework::genesis {
         include stake::ResourceRequirement;
         include stake::GetReconfigStartTimeRequirement;
         include CompareTimeRequires;
-        include aptos_coin::ExistsAptosCoin;
+        include libra2_coin::ExistsLibra2Coin;
     }
 
     spec create_initialize_validator {
@@ -157,7 +157,7 @@ spec libra2_framework::genesis {
         requires chain_status::is_operating();
         requires len(execution_config) > 0;
         requires exists<staking_config::StakingRewardsConfig>(@libra2_framework);
-        requires exists<coin::CoinInfo<AptosCoin>>(@libra2_framework);
+        requires exists<coin::CoinInfo<Libra2Coin>>(@libra2_framework);
         include CompareTimeRequires;
     }
 

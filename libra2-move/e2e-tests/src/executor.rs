@@ -51,7 +51,7 @@ use libra2_types::{
     },
     vm_status::VMStatus,
     write_set::{WriteOp, WriteSet, WriteSetMut},
-    AptosCoinType, CoinType,
+    Libra2CoinType, CoinType,
 };
 use libra2_vm::{
     block_executor::{AptosTransactionOutput, Libra2VMBlockExecutorWrapper},
@@ -64,7 +64,7 @@ use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_genesis::{generate_genesis_change_set_for_testing_with_count, GenesisOptions};
 use libra2_vm_logging::log_schema::AdapterLogSchema;
 use libra2_vm_types::{
-    module_and_script_storage::{module_storage::AptosModuleStorage, AsAptosCodeStorage},
+    module_and_script_storage::{module_storage::AptosModuleStorage, AsLibra2CodeStorage},
     resolver::NoopBlockSynchronizationKillSwitch,
     storage::change_set_configs::ChangeSetConfigs,
 };
@@ -585,7 +585,7 @@ impl FakeExecutor {
     pub fn read_apt_coin_store_resource(
         &self,
         account: &Account,
-    ) -> Option<CoinStoreResource<AptosCoinType>> {
+    ) -> Option<CoinStoreResource<Libra2CoinType>> {
         self.read_apt_coin_store_resource_at_address(account.address())
     }
 
@@ -595,7 +595,7 @@ impl FakeExecutor {
             .execute_view_function(
                 str::parse("0x1::coin::supply").unwrap(),
                 vec![move_core_types::language_storage::TypeTag::from_str(
-                    "0x1::aptos_coin::AptosCoin",
+                    "0x1::libra2_coin::Libra2Coin",
                 )
                 .unwrap()],
                 vec![],
@@ -608,8 +608,8 @@ impl FakeExecutor {
     }
 
     /// Reads the CoinInfo resource value from this executor's data store.
-    pub fn read_apt_coin_info_resource(&self) -> Option<CoinInfoResource<AptosCoinType>> {
-        self.read_resource(&AptosCoinType::coin_info_address())
+    pub fn read_apt_coin_info_resource(&self) -> Option<CoinInfoResource<Libra2CoinType>> {
+        self.read_resource(&Libra2CoinType::coin_info_address())
     }
 
     /// Reads the CoinStore resource value for an account under the given address from this executor's
@@ -617,7 +617,7 @@ impl FakeExecutor {
     pub fn read_apt_coin_store_resource_at_address(
         &self,
         addr: &AccountAddress,
-    ) -> Option<CoinStoreResource<AptosCoinType>> {
+    ) -> Option<CoinStoreResource<Libra2CoinType>> {
         self.read_resource(addr)
     }
 

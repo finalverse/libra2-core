@@ -30,7 +30,7 @@ from test_framework.git import Git
 from test_framework.logging import log, init_logging
 from forge import image_exists
 
-UPSTREAM_APTOS_CORE_REPO = "aptos-labs/aptos-core"
+UPSTREAM_APTOS_CORE_REPO = "finalverse/libra2-core"
 DOCKER_RUST_BUILD_WORKFLOW_NAME = "workflow-run-docker-rust-build.yaml"
 FORGE_WORKFLOW_NAME = "adhoc-forge.yaml"
 EXP_GIT_BRANCH_PREFIX = "exp/"

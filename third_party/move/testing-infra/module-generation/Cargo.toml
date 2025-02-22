@@ -17,7 +17,7 @@ move-ir-to-bytecode = { workspace = true }
 move-ir-types = { workspace = true }
 move-symbol-pool = { workspace = true }
 # Cannot use workspace version as aptos-core currently cannot be upgraded
-# to newer rand. See https://github.com/aptos-labs/aptos-core/issues/13031
+# to newer rand. See https://github.com/finalverse/libra2-core/issues/13031
 rand = { version = "0.8.5" }
 
 [features]

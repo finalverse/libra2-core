@@ -22,7 +22,7 @@ use aptos_forge::{
         LatencyType, MetricsThreshold, StateProgressThreshold, SuccessCriteria,
         SystemMetricsThreshold,
     },
-    AdminContext, AdminTest, AptosContext, AptosTest, EmitJobMode, EmitJobRequest, ForgeConfig,
+    AdminContext, AdminTest, Libra2Context, AptosTest, EmitJobMode, EmitJobRequest, ForgeConfig,
     NetworkContext, NetworkContextSynchronizer, NetworkTest, Test, WorkflowProgress,
 };
 use libra2_logger::info;
@@ -903,7 +903,7 @@ impl Test for RunForever {
 
 #[async_trait::async_trait]
 impl AptosTest for RunForever {
-    async fn run<'t>(&self, _ctx: &mut AptosContext<'t>) -> Result<()> {
+    async fn run<'t>(&self, _ctx: &mut Libra2Context<'t>) -> Result<()> {
         println!("The network has been deployed. Hit Ctrl+C to kill this, otherwise it will run forever.");
         let keep_running = Arc::new(AtomicBool::new(true));
         while keep_running.load(Ordering::Acquire) {
@@ -959,7 +959,7 @@ impl Test for FundAccount {
 
 #[async_trait::async_trait]
 impl AptosTest for FundAccount {
-    async fn run<'t>(&self, ctx: &mut AptosContext<'t>) -> Result<()> {
+    async fn run<'t>(&self, ctx: &mut Libra2Context<'t>) -> Result<()> {
         let client = ctx.client();
 
         let account = ctx.random_account();
@@ -983,7 +983,7 @@ impl Test for TransferCoins {
 
 #[async_trait::async_trait]
 impl AptosTest for TransferCoins {
-    async fn run<'t>(&self, ctx: &mut AptosContext<'t>) -> Result<()> {
+    async fn run<'t>(&self, ctx: &mut Libra2Context<'t>) -> Result<()> {
         let client = ctx.client();
         let payer = ctx.random_account();
         let payee = ctx.random_account();
@@ -994,7 +994,7 @@ impl AptosTest for TransferCoins {
 
         let transfer_txn = payer.sign_with_transaction_builder(
             ctx.aptos_transaction_factory()
-                .payload(libra2_stdlib::aptos_coin_transfer(payee.address(), 10)),
+                .payload(libra2_stdlib::libra2_coin_transfer(payee.address(), 10)),
         );
         client.submit_and_wait(&transfer_txn).await?;
         check_account_balance(&client, payee.address(), 10).await?;

@@ -1,7 +1,7 @@
 #[test_only]
 module rewards_pool::test_helpers {
     use libra2_framework::account;
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::coin::{Self, Coin};
     use libra2_framework::fungible_asset::{Self, FungibleAsset};
     use libra2_framework::object;

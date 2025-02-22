@@ -42,7 +42,7 @@ pub fn run_prover_for_pkg(
     if no_tools {
         panic!(
             "Prover tools are not configured, \
-        See https://github.com/aptos-labs/aptos-core/blob/main/libra2-move/framework/FRAMEWORK-PROVER-GUIDE.md \
+        See https://github.com/finalverse/libra2-core/blob/main/libra2-move/framework/FRAMEWORK-PROVER-GUIDE.md \
         for instructions, or \
         use \"-- --skip prover\" to filter out the prover tests"
         );
@@ -104,7 +104,7 @@ fn move_framework_prover_tests_shard5() {
 
 #[test]
 fn move_token_prover_tests() {
-    run_prover_for_pkg("aptos-token", 1, None);
+    run_prover_for_pkg("libra2-token", 1, None);
 }
 
 #[test]

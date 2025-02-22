@@ -1173,7 +1173,7 @@ pub fn gen_transfer_txn_request(
     txn_factory: &TransactionFactory,
 ) -> SignedTransaction {
     sender.sign_with_transaction_builder(
-        txn_factory.payload(libra2_stdlib::aptos_coin_transfer(*receiver, num_coins)),
+        txn_factory.payload(libra2_stdlib::libra2_coin_transfer(*receiver, num_coins)),
     )
 }
 

@@ -101,7 +101,7 @@ pub fn bootstrap(
 }
 
 // TODOs regarding spec generation:
-// TODO: https://github.com/aptos-labs/aptos-core/issues/2280
+// TODO: https://github.com/finalverse/libra2-core/issues/2280
 // TODO: https://github.com/poem-web/poem/issues/321
 // TODO: https://github.com/poem-web/poem/issues/332
 // TODO: https://github.com/poem-web/poem/issues/333
@@ -153,14 +153,14 @@ pub fn get_api_service(
         LicenseObject::new("Apache 2.0").url("https://www.apache.org/licenses/LICENSE-2.0.html");
     let contact = ContactObject::new()
         .name("Aptos Labs")
-        .url("https://github.com/aptos-labs/aptos-core");
+        .url("https://github.com/finalverse/libra2-core");
 
     OpenApiService::new(apis, "Aptos Node API", version.trim())
         .server("/v1")
         .description("The Aptos Node API is a RESTful API for client applications to interact with the Aptos blockchain.")
         .license(license)
         .contact(contact)
-        .external_document("https://github.com/aptos-labs/aptos-core")
+        .external_document("https://github.com/finalverse/libra2-core")
 }
 
 /// Returns address it is running at.
@@ -306,7 +306,7 @@ mod tests {
 
     // TODO: Unignore this when I figure out why this only works when being
     // run alone (it fails when run with other tests).
-    // https://github.com/aptos-labs/aptos-core/issues/2977
+    // https://github.com/finalverse/libra2-core/issues/2977
     #[ignore]
     #[test]
     fn test_bootstrap_jsonprc_and_api_configured_at_different_port() {

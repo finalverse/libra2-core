@@ -55,7 +55,7 @@ module libra2_framework::version {
     /// Used in on-chain governances to update the major version for the next epoch.
     /// Example usage:
     /// - `libra2_framework::version::set_for_next_epoch(&framework_signer, new_version);`
-    /// - `libra2_framework::aptos_governance::reconfigure(&framework_signer);`
+    /// - `libra2_framework::libra2_governance::reconfigure(&framework_signer);`
     public entry fun set_for_next_epoch(account: &signer, major: u64) acquires Version {
         assert!(exists<SetVersionCapability>(signer::address_of(account)), error::permission_denied(ENOT_AUTHORIZED));
         let old_major = borrow_global<Version>(@libra2_framework).major;

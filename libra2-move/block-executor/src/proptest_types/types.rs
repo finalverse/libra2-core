@@ -27,7 +27,7 @@ use libra2_types::{
 };
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_types::{
-    module_and_script_storage::code_storage::AptosCodeStorage,
+    module_and_script_storage::code_storage::Libra2CodeStorage,
     module_write_set::ModuleWrite,
     resolver::{
         BlockSynchronizationKillSwitch, ResourceGroupSize, TExecutorView, TResourceGroupView,
@@ -855,7 +855,7 @@ where
         &self,
         view: &(impl TExecutorView<K, u32, MoveTypeLayout, ValueType>
               + TResourceGroupView<GroupKey = K, ResourceTag = u32, Layout = MoveTypeLayout>
-              + AptosCodeStorage
+              + Libra2CodeStorage
               + BlockSynchronizationKillSwitch),
         txn: &Self::Txn,
         txn_idx: TxnIndex,

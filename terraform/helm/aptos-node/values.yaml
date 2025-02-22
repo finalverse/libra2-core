@@ -85,7 +85,7 @@ validator:
   nodeSelector: {}
   tolerations: []
   affinity: {}
-  # -- Validator configuration. See NodeConfig https://github.com/aptos-labs/aptos-core/blob/main/config/src/config/mod.rs
+  # -- Validator configuration. See NodeConfig https://github.com/finalverse/libra2-core/blob/main/config/src/config/mod.rs
   config: {}
   # -- DEPRECATED: it's broken with Cillium a.k.a. GKE DataplaneV2.
   # -- templates/networkpolicy.yaml kept around for reference in case we want to resurrect it.
@@ -94,7 +94,7 @@ validator:
   podAnnotations:
     # Determines which log levels are retained by the Vector pipeline
     # aptos.dev/min-log-level-to-retain: warn
-  useConsensusHealthCheckAsStartupProbe: false # once https://github.com/aptos-labs/aptos-core/pull/15512 is rolled out to all networks (at the time of writing (dec 21 2024) it's only in devnet) we can remove this flag and always add this probe
+  useConsensusHealthCheckAsStartupProbe: false # once https://github.com/finalverse/libra2-core/pull/15512 is rolled out to all networks (at the time of writing (dec 21 2024) it's only in devnet) we can remove this flag and always add this probe
 
 fullnode:
   # -- Specify fullnode groups by `name` and number of `replicas`
@@ -121,7 +121,7 @@ fullnode:
   nodeSelector: {}
   tolerations: []
   affinity: {}
-  # -- Fullnode configuration. See NodeConfig https://github.com/aptos-labs/aptos-core/blob/main/config/src/config/mod.rs
+  # -- Fullnode configuration. See NodeConfig https://github.com/finalverse/libra2-core/blob/main/config/src/config/mod.rs
   config:
     # This full_node_networks config block allows changing only the below parameters for public fullnode networks
     # The rest of the configs are inherited from fullnode-base.yaml

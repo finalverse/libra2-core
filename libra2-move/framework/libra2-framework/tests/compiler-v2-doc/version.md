@@ -190,7 +190,7 @@ TODO: update all the tests that reference this function, then disable this funct
 Used in on-chain governances to update the major version for the next epoch.
 Example usage:
 - <code>libra2_framework::version::set_for_next_epoch(&framework_signer, new_version);</code>
-- <code>libra2_framework::aptos_governance::reconfigure(&framework_signer);</code>
+- <code>libra2_framework::libra2_governance::reconfigure(&framework_signer);</code>
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="version.md#0x1_version_set_for_next_epoch">set_for_next_epoch</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, major: u64)
@@ -361,7 +361,7 @@ Abort if resource already exists in <code>@aptos_framwork</code> when initializi
 <b>include</b> <a href="staking_config.md#0x1_staking_config_StakingRewardsConfigRequirement">staking_config::StakingRewardsConfigRequirement</a>;
 <b>requires</b> <a href="chain_status.md#0x1_chain_status_is_genesis">chain_status::is_genesis</a>();
 <b>requires</b> <a href="timestamp.md#0x1_timestamp_spec_now_microseconds">timestamp::spec_now_microseconds</a>() &gt;= <a href="reconfiguration.md#0x1_reconfiguration_last_reconfiguration_time">reconfiguration::last_reconfiguration_time</a>();
-<b>requires</b> <b>exists</b>&lt;CoinInfo&lt;AptosCoin&gt;&gt;(@libra2_framework);
+<b>requires</b> <b>exists</b>&lt;CoinInfo&lt;Libra2Coin&gt;&gt;(@libra2_framework);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="version.md#0x1_version_SetVersionCapability">SetVersionCapability</a>&gt;(<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="account.md#0x1_account">account</a>));
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="version.md#0x1_version_Version">Version</a>&gt;(@libra2_framework);
 <b>let</b> old_major = <b>global</b>&lt;<a href="version.md#0x1_version_Version">Version</a>&gt;(@libra2_framework).major;

@@ -202,19 +202,19 @@ fn test_gas() {
     runner.run(
         "Transfer",
         account_1,
-        libra2_stdlib::aptos_coin_transfer(account_2_address, 1000),
+        libra2_stdlib::libra2_coin_transfer(account_2_address, 1000),
     );
 
     runner.run(
         "2ndTransfer",
         account_1,
-        libra2_stdlib::aptos_coin_transfer(account_2_address, 1000),
+        libra2_stdlib::libra2_coin_transfer(account_2_address, 1000),
     );
 
     runner.run(
         "CreateAccount",
         account_1,
-        libra2_stdlib::aptos_account_create_account(
+        libra2_stdlib::libra2_account_create_account(
             AccountAddress::from_hex_literal("0xcafe1").unwrap(),
         ),
     );
@@ -222,7 +222,7 @@ fn test_gas() {
     runner.run(
         "CreateTransfer",
         account_1,
-        libra2_stdlib::aptos_account_transfer(
+        libra2_stdlib::libra2_account_transfer(
             AccountAddress::from_hex_literal("0xcafe2").unwrap(),
             1000,
         ),
@@ -718,14 +718,14 @@ fn test_txn_generator_workloads_calibrate_gas() {
     runner.run_with_tps_estimate(
         "Transfer",
         account_1,
-        libra2_stdlib::aptos_coin_transfer(account_2_address, 1000),
+        libra2_stdlib::libra2_coin_transfer(account_2_address, 1000),
         if use_large_db_numbers { 2032. } else { 2791. },
     );
 
     runner.run_with_tps_estimate(
         "CreateAccount",
         account_1,
-        libra2_stdlib::aptos_account_create_account(
+        libra2_stdlib::libra2_account_create_account(
             AccountAddress::from_hex_literal("0xcafe1").unwrap(),
         ),
         if use_large_db_numbers { 1583.0 } else { 2215. },

@@ -65,7 +65,7 @@ module libra2_framework::resource_account {
     use std::signer;
     use std::vector;
     use libra2_framework::account;
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::coin;
     use libra2_std::simple_map::{Self, SimpleMap};
 
@@ -101,7 +101,7 @@ module libra2_framework::resource_account {
     /// account, and rotates the authentication key to either the optional auth key if it is
     /// non-empty (though auth keys are 32-bytes) or the source accounts current auth key. Note,
     /// this function adds additional resource ownership to the resource account and should only be
-    /// used for resource accounts that need access to `Coin<AptosCoin>`.
+    /// used for resource accounts that need access to `Coin<Libra2Coin>`.
     public entry fun create_resource_account_and_fund(
         origin: &signer,
         seed: vector<u8>,
@@ -109,8 +109,8 @@ module libra2_framework::resource_account {
         fund_amount: u64,
     ) acquires Container {
         let (resource, resource_signer_cap) = account::create_resource_account(origin, seed);
-        coin::register<AptosCoin>(&resource);
-        coin::transfer<AptosCoin>(origin, signer::address_of(&resource), fund_amount);
+        coin::register<Libra2Coin>(&resource);
+        coin::transfer<Libra2Coin>(origin, signer::address_of(&resource), fund_amount);
         rotate_account_authentication_key_and_store_capability(
             origin,
             resource,
@@ -231,17 +231,17 @@ module libra2_framework::resource_account {
     #[test(framework = @0x1, user = @0x1234)]
     public entry fun with_coin(framework: signer, user: signer) acquires Container {
         let user_addr = signer::address_of(&user);
-        let (burn, mint) = libra2_framework::aptos_coin::initialize_for_test(&framework);
-        libra2_framework::aptos_account::create_account(copy user_addr);
+        let (burn, mint) = libra2_framework::libra2_coin::initialize_for_test(&framework);
+        libra2_framework::libra2_account::create_account(copy user_addr);
 
-        let coin = coin::mint<AptosCoin>(100, &mint);
+        let coin = coin::mint<Libra2Coin>(100, &mint);
         coin::deposit(copy user_addr, coin);
 
         let seed = x"01";
         create_resource_account_and_fund(&user, copy seed, vector::empty(), 10);
 
         let resource_addr = libra2_framework::account::create_resource_address(&user_addr, seed);
-        coin::transfer<AptosCoin>(&user, resource_addr, 10);
+        coin::transfer<Libra2Coin>(&user, resource_addr, 10);
 
         coin::destroy_burn_cap(burn);
         coin::destroy_mint_cap(mint);
@@ -251,14 +251,14 @@ module libra2_framework::resource_account {
     #[expected_failure(abort_code = 0x60005, location = libra2_framework::coin)]
     public entry fun without_coin(framework: signer, user: signer) acquires Container {
         let user_addr = signer::address_of(&user);
-        let (burn, mint) = libra2_framework::aptos_coin::initialize_for_test(&framework);
-        libra2_framework::aptos_account::create_account(user_addr);
+        let (burn, mint) = libra2_framework::libra2_coin::initialize_for_test(&framework);
+        libra2_framework::libra2_account::create_account(user_addr);
 
         let seed = x"01";
         create_resource_account(&user, copy seed, vector::empty());
 
         let resource_addr = libra2_framework::account::create_resource_address(&user_addr, seed);
-        let coin = coin::mint<AptosCoin>(100, &mint);
+        let coin = coin::mint<Libra2Coin>(100, &mint);
         coin::deposit(resource_addr, coin);
 
         coin::destroy_burn_cap(burn);

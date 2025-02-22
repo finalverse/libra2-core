@@ -6,7 +6,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
 [![Lint+Test](https://github.com/finalverse/libra2/actions/workflows/lint-test.yaml/badge.svg)](https://github.com/finalverse/libra2/actions/workflows/lint-test.yaml)
-[![codecov](https://codecov.io/gh/aptos-labs/aptos-core/branch/main/graph/badge.svg?token=X01RKXSGDE)](https://codecov.io/gh/aptos-labs/aptos-core)
+[![codecov](https://codecov.io/gh/finalverse/libra2-core/branch/main/graph/badge.svg?token=X01RKXSGDE)](https://codecov.io/gh/finalverse/libra2-core)
 [![Discord chat](https://img.shields.io/discord/945856774056083548?style=flat-square)](https://discord.gg/aptosnetwork)
 
 Libra2 is an AI driven layer 1 blockchain bringing a paradigm shift to digital asset, crypto market and virtual world through better technology and user experience. Built with Move to create a home for developers building next-gen applications. Libra2 pickedup and is extending the libra vision and now is on top of aptos temporary and share many ecosystem with libra and aptos. 

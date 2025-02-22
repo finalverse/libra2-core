@@ -10,7 +10,7 @@ module drand::lottery_test {
     #[test_only]
     use libra2_framework::coin;
     #[test_only]
-    use libra2_framework::aptos_coin::{Self, AptosCoin};
+    use libra2_framework::libra2_coin::{Self, Libra2Coin};
     #[test_only]
     use libra2_framework::coin::MintCapability;
     #[test_only]
@@ -23,12 +23,12 @@ module drand::lottery_test {
     use libra2_std::crypto_algebra::enable_cryptography_algebra_natives;
 
     #[test_only]
-    fun give_coins(mint_cap: &MintCapability<AptosCoin>, to: &signer) {
+    fun give_coins(mint_cap: &MintCapability<Libra2Coin>, to: &signer) {
         let to_addr = signer::address_of(to);
         if (!account::exists_at(to_addr)) {
             account::create_account_for_test(to_addr);
         };
-        coin::register<AptosCoin>(to);
+        coin::register<Libra2Coin>(to);
 
         let coins = coin::mint(lottery::get_ticket_price(), mint_cap);
         coin::deposit(to_addr, coins);
@@ -43,7 +43,7 @@ module drand::lottery_test {
         timestamp::set_time_has_started_for_testing(&fx);
 
         // Needed to mint coins out of thin air for testing
-        let (burn_cap, mint_cap) = aptos_coin::initialize_for_test(&fx);
+        let (burn_cap, mint_cap) = libra2_coin::initialize_for_test(&fx);
 
         // Deploy the lottery smart contract
         lottery::init_module_for_testing(&myself);
@@ -89,8 +89,8 @@ module drand::lottery_test {
         };
 
         // Clean up
-        coin::destroy_burn_cap<AptosCoin>(burn_cap);
-        coin::destroy_mint_cap<AptosCoin>(mint_cap);
+        coin::destroy_burn_cap<Libra2Coin>(burn_cap);
+        coin::destroy_mint_cap<Libra2Coin>(mint_cap);
     }
 
     #[test_only]

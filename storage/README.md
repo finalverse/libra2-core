@@ -1,7 +1,7 @@
 ---
 id: storage
 title: Storage
-custom_edit_url: https://github.com/aptos-labs/aptos-core/edit/main/storage/README.md
+custom_edit_url: https://github.com/finalverse/libra2-core/edit/main/storage/README.md
 ---
 
 ## Overview
@@ -22,11 +22,11 @@ unforeseeable catastrophic situations (to hard fork)
 
 More to read:
 * To understand the authenticated blockchain data structure, see
-https://github.com/aptos-labs/aptos-core/tree/main/documentation/specifications/common
+https://github.com/finalverse/libra2-core/tree/main/documentation/specifications/common
 * To know more about the state authentication data structure, see
-https://github.com/aptos-labs/aptos-core/developer-docs-site/static/papers/jellyfish-merkle-tree/2021-01-14.pdf
+https://github.com/finalverse/libra2-core/developer-docs-site/static/papers/jellyfish-merkle-tree/2021-01-14.pdf
 * To learn more about the backup system including the backup data format, see
-https://github.com/aptos-labs/aptos-core/blob/main/documentation/specifications/db_backup/spec.md
+https://github.com/finalverse/libra2-core/blob/main/documentation/specifications/db_backup/spec.md
 
 ## System Architecture
 
@@ -56,7 +56,7 @@ can tune the default configs with new software releases and a override will
 make your node miss it.
 If you do have a reason to change them, probably read the more
 detailed comments in
-https://github.com/aptos-labs/aptos-core/blob/main/config/src/config/storage_config.rs
+https://github.com/finalverse/libra2-core/blob/main/config/src/config/storage_config.rs
 to understand it better.
 
 ```yaml
@@ -183,7 +183,7 @@ The DB backup is a concise format to preserve the raw data of the blockchain. It
 to batch process the blockchain data off chain. But it's not the preferred way
 to boot up a Libra2DB instance on an empty disk. Use State Sync (it's Fast Sync
 mode). Read more about state sync here:
-https://github.com/aptos-labs/aptos-core/blob/main/state-sync/README.md
+https://github.com/finalverse/libra2-core/blob/main/state-sync/README.md
 
 
 ### Continuously backing up to a cloud storage
@@ -194,7 +194,7 @@ storage.
 
 One can make a config file for a specific cloud storage position by updating
 one of the examples here
-https://github.com/aptos-labs/aptos-core/tree/main/storage/backup/backup-cli/src/storage/command_adapter/sample_configs/
+https://github.com/finalverse/libra2-core/tree/main/storage/backup/backup-cli/src/storage/command_adapter/sample_configs/
 
 
 ```bash

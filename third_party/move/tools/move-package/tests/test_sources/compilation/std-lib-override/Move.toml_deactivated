@@ -9,7 +9,7 @@ A = "0x42"
 [dev-addresses]
 
 [dependencies.Libra2Framework]
-git = "https://github.com/aptos-labs/aptos-core.git"
+git = "https://github.com/finalverse/libra2-core.git"
 rev = "devnet"
 subdir = "libra2-move/framework/libra2-framework"
 

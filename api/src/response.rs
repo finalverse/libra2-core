@@ -27,7 +27,7 @@
 //! returned by each function and its callers is enforced at compile time.
 //! See generate_error_traits and its invocations for more on this topic.
 
-// TODO: https://github.com/aptos-labs/aptos-core/issues/2279
+// TODO: https://github.com/finalverse/libra2-core/issues/2279
 
 use super::{accept_type::AcceptType, bcs_payload::Bcs};
 use libra2_api_types::{Address, Libra2Error, Libra2ErrorCode, HashValue, LedgerInfo};

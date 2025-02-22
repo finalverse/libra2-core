@@ -17,7 +17,7 @@ module libra2_framework::fungible_asset {
 
     friend libra2_framework::coin;
     friend libra2_framework::primary_fungible_store;
-    friend libra2_framework::aptos_account;
+    friend libra2_framework::libra2_account;
 
     friend libra2_framework::dispatchable_fungible_asset;
 

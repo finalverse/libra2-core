@@ -7,7 +7,7 @@ workspace dependencies which are also being published.
 3. Create a PR and get it merged into master.
 4. Once the PR has landed in master, check out the commit which does the versions bump.
 5. Publish to crates.io
-6. Create a git tag `git tag libra2-sdk-v0.0.X HEAD` and push that tag to the aptos-labs/aptos-core repository.
+6. Create a git tag `git tag libra2-sdk-v0.0.X HEAD` and push that tag to the finalverse/libra2-core repository.
 
 Here is the set of currently published packages that make up the libra2-sdk:
 * move-core-types

@@ -1,10 +1,10 @@
 script {
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::jwks;
     use libra2_framework::keyless_account;
 
     fun main(core_resources: &signer, max_exp_horizon_secs: u64) {
-        let fx = aptos_governance::get_signer_testnet_only(core_resources, @libra2_framework);
+        let fx = libra2_governance::get_signer_testnet_only(core_resources, @libra2_framework);
 
         keyless_account::update_max_exp_horizon_for_next_epoch(&fx, max_exp_horizon_secs);
 
@@ -15,6 +15,6 @@ script {
         jwks::set_patches(&fx, patches);
 
         // sets the pending Configuration change to the max expiration horizon from above
-        aptos_governance::force_end_epoch_test_only(core_resources);
+        libra2_governance::force_end_epoch_test_only(core_resources);
     }
 }

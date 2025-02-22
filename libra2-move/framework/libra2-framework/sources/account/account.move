@@ -17,7 +17,7 @@ module libra2_framework::account {
     use libra2_std::table::{Self, Table};
     use libra2_std::type_info::{Self, TypeInfo};
 
-    friend libra2_framework::aptos_account;
+    friend libra2_framework::libra2_account;
     friend libra2_framework::coin;
     friend libra2_framework::genesis;
     friend libra2_framework::multisig_account;
@@ -250,7 +250,7 @@ module libra2_framework::account {
 
         // NOTE: @core_resources gets created via a `create_account` call, so we do not include it below.
         assert!(
-            new_address != @vm_reserved && new_address != @libra2_framework && new_address != @aptos_token,
+            new_address != @vm_reserved && new_address != @libra2_framework && new_address != @libra2_token,
             error::invalid_argument(ECANNOT_RESERVED_ADDRESS)
         );
 

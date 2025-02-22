@@ -192,7 +192,7 @@ module std::features {
         is_enabled(PERIODICAL_REWARD_RATE_DECREASE)
     }
 
-    /// Whether enable paritial governance voting on aptos_governance.
+    /// Whether enable paritial governance voting on libra2_governance.
     /// Lifetime: transient
     const PARTIAL_GOVERNANCE_VOTING: u64 = 17;
 

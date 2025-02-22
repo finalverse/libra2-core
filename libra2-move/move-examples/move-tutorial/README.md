@@ -27,7 +27,7 @@ Now let's get started!
 
 ## Step 0: Preparation
 
-You should obtain a copy of the content of the directory in which this `README.md` resides. One way to achieve this is to clone [the Aptos core repository](https://github.com/aptos-labs/aptos-core) and navigate to the [`libra2-move/move-examples/move-tutorial`](..) directory. Subsequently, we assume you have a local copy of this directory and all paths are relative to this. To check that you have the right contents, run the `cd` and `ls` commands below to ensure the `move-tutorial` directory has the relevant subdirectories:
+You should obtain a copy of the content of the directory in which this `README.md` resides. One way to achieve this is to clone [the Aptos core repository](https://github.com/finalverse/libra2-core) and navigate to the [`libra2-move/move-examples/move-tutorial`](..) directory. Subsequently, we assume you have a local copy of this directory and all paths are relative to this. To check that you have the right contents, run the `cd` and `ls` commands below to ensure the `move-tutorial` directory has the relevant subdirectories:
 
 ```shell
 > cd move-tutorial
@@ -351,7 +351,7 @@ It is important to note that Move is transactional in its execution -- so
 if an [abort](https://aptos.dev/move/book/abort-and-assert) is raised no unwinding of state
 needs to be performed, as no changes from that transaction will be persisted to the blockchain.
 
-[`error` module]: https://github.com/aptos-labs/aptos-core/blob/main/libra2-move/framework/move-stdlib/sources/error.move
+[`error` module]: https://github.com/finalverse/libra2-core/blob/main/libra2-move/framework/move-stdlib/sources/error.move
 
 We then deposit a coin with value `amount` to the balance of `mint_addr`:
 ```

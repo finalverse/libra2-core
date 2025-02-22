@@ -86,7 +86,7 @@ module libra2_framework::gas_schedule {
     /// Example usage:
     /// ```
     /// libra2_framework::gas_schedule::set_for_next_epoch(&framework_signer, some_gas_schedule_blob);
-    /// libra2_framework::aptos_governance::reconfigure(&framework_signer);
+    /// libra2_framework::libra2_governance::reconfigure(&framework_signer);
     /// ```
     public fun set_for_next_epoch(libra2_framework: &signer, gas_schedule_blob: vector<u8>) acquires GasScheduleV2 {
         system_addresses::assert_libra2_framework(libra2_framework);

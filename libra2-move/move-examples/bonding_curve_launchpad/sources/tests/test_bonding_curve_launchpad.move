@@ -5,7 +5,7 @@ module bonding_curve_launchpad::test_bonding_curve_launchpad {
     use libra2_std::math64;
     use libra2_framework::account;
     use libra2_framework::coin;
-    use libra2_framework::aptos_coin::{Self, AptosCoin};
+    use libra2_framework::libra2_coin::{Self, Libra2Coin};
     use libra2_framework::primary_fungible_store;
     use bonding_curve_launchpad::bonding_curve_launchpad;
     use bonding_curve_launchpad::liquidity_pairs;
@@ -24,9 +24,9 @@ module bonding_curve_launchpad::test_bonding_curve_launchpad {
         account::create_account_for_test(@0xcafe);
         account::create_account_for_test(@bonding_curve_launchpad);
         account::create_account_for_test(@0x803);
-        coin::register<AptosCoin>(bonding_curve_creator);
+        coin::register<Libra2Coin>(bonding_curve_creator);
 
-        let (burn_cap, mint_cap) = aptos_coin::initialize_for_test(libra2_framework);
+        let (burn_cap, mint_cap) = libra2_coin::initialize_for_test(libra2_framework);
         let bcc_coins = coin::mint(1_000_000_000_000_000, &mint_cap);
         let bcc_address = signer::address_of(bonding_curve_creator);
         coin::deposit(bcc_address, bcc_coins);
@@ -83,7 +83,7 @@ module bonding_curve_launchpad::test_bonding_curve_launchpad {
         test_setup_initialize_contracts(swap_dex_signer, bcl_owner_signer);
         // Create FA and LiquidityPair, w.o Initial Swap.
         let user_address = signer::address_of(bonding_curve_creator);
-        let starting_apt_balance = coin::balance<AptosCoin>(user_address);
+        let starting_apt_balance = coin::balance<Libra2Coin>(user_address);
         let name = string::utf8(b"SheepyCoin");
         let symbol = string::utf8(b"SHEEP");
         bonding_curve_launchpad::create_fa_pair(
@@ -100,7 +100,7 @@ module bonding_curve_launchpad::test_bonding_curve_launchpad {
                 b"https://t4.ftcdn.net/jpg/03/12/95/13/360_F_312951336_8LxW7gBLHslTnpbOAwxFo5FpD2R5vGxu.jpg"
             )
         );
-        assert!(coin::balance<AptosCoin>(user_address) == starting_apt_balance, EUSER_APT_BALANCE_INCORRECT);
+        assert!(coin::balance<Libra2Coin>(user_address) == starting_apt_balance, EUSER_APT_BALANCE_INCORRECT);
         assert!(bonding_curve_launchpad::get_balance(name, symbol, user_address) == 0, EUSER_FA_BALANCE_INCORRECT);
     }
 
@@ -120,7 +120,7 @@ module bonding_curve_launchpad::test_bonding_curve_launchpad {
         test_setup_initialize_contracts(swap_dex_signer, bcl_owner_signer);
         // Create FA and LiquidityPair, w/ Initial Swap.
         let user_address = signer::address_of(bonding_curve_creator);
-        let starting_apt_balance = coin::balance<AptosCoin>(user_address);
+        let starting_apt_balance = coin::balance<Libra2Coin>(user_address);
         let name = string::utf8(b"SheepyCoin");
         let symbol = string::utf8(b"SHEEP");
         bonding_curve_launchpad::create_fa_pair(
@@ -137,7 +137,7 @@ module bonding_curve_launchpad::test_bonding_curve_launchpad {
                 b"https://t4.ftcdn.net/jpg/03/12/95/13/360_F_312951336_8LxW7gBLHslTnpbOAwxFo5FpD2R5vGxu.jpg"
             )
         );
-        assert!(coin::balance<AptosCoin>(user_address) == starting_apt_balance - 1000, EUSER_APT_BALANCE_INCORRECT);
+        assert!(coin::balance<Libra2Coin>(user_address) == starting_apt_balance - 1000, EUSER_APT_BALANCE_INCORRECT);
         assert!(bonding_curve_launchpad::get_balance(name, symbol, user_address) == 16, EUSER_FA_BALANCE_INCORRECT);
     }
 
@@ -206,11 +206,11 @@ module bonding_curve_launchpad::test_bonding_curve_launchpad {
         let user_address = signer::address_of(bonding_curve_creator);
         let name = string::utf8(b"SheepyCoin");
         let symbol = string::utf8(b"SHEEP");
-        let starting_apt_balance = coin::balance<AptosCoin>(user_address);
+        let starting_apt_balance = coin::balance<Libra2Coin>(user_address);
         // APT -> FA
         bonding_curve_launchpad::swap(bonding_curve_creator, name, symbol, false, 100_000_000);
         assert!(
-            coin::balance<AptosCoin>(user_address) == starting_apt_balance - 100_000_000,
+            coin::balance<Libra2Coin>(user_address) == starting_apt_balance - 100_000_000,
             EUSER_APT_BALANCE_INCORRECT
         );
         assert!(
@@ -220,7 +220,7 @@ module bonding_curve_launchpad::test_bonding_curve_launchpad {
         // FA -> APT
         bonding_curve_launchpad::swap(bonding_curve_creator, name, symbol, true, 1_602_794);
         assert!(
-            coin::balance<AptosCoin>(user_address) == starting_apt_balance - 26,
+            coin::balance<Libra2Coin>(user_address) == starting_apt_balance - 26,
             EUSER_APT_BALANCE_INCORRECT
         ); // u256/u64 precision loss.
         assert!(

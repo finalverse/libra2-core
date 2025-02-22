@@ -114,7 +114,7 @@ jobs:
 
       - name: Prepare for build if not cached
         if: steps.cache-libra2-debugger-binary.outputs.cache-hit != 'true'
-        uses: aptos-labs/aptos-core/.github/actions/rust-setup@main
+        uses: finalverse/libra2-core/.github/actions/rust-setup@main
         with:
           GIT_CREDENTIALS: ${{ inputs.GIT_CREDENTIALS }}
 

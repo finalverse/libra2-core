@@ -10,7 +10,7 @@ use crate::{
     },
     Capability, CryptoStorage, Error, Identity, KVStorage, Namespaced, Permission, Policy, Storage,
 };
-use libra2_crypto::{test_utils::TestAptosCrypto, Signature};
+use libra2_crypto::{test_utils::TestLibra2Crypto, Signature};
 use libra2_vault_client::dev::{self, ROOT_TOKEN};
 
 /// VaultStorage namespace constants
@@ -252,7 +252,7 @@ fn test_vault_crypto_policies() {
         pubkey
     );
 
-    let message = TestAptosCrypto("Hello, World".to_string());
+    let message = TestLibra2Crypto("Hello, World".to_string());
 
     // Verify exporter policy
     let exporter_token = storage.create_token(vec![EXPORTER]).unwrap();

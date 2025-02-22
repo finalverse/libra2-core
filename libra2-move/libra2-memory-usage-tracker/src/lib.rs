@@ -199,7 +199,7 @@ where
         ty_args: impl ExactSizeIterator<Item = impl TypeView> + Clone,
         args: impl ExactSizeIterator<Item = impl ValueView> + Clone,
     ) -> PartialVMResult<()> {
-        // TODO(Gas): https://github.com/aptos-labs/aptos-core/issues/5485
+        // TODO(Gas): https://github.com/finalverse/libra2-core/issues/5485
         if !self.should_leak_memory_for_native {
             self.release_heap_memory(args.clone().fold(AbstractValueSize::zero(), |acc, val| {
                 acc + self

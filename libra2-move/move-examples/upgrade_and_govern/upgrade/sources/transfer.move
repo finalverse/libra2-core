@@ -2,7 +2,7 @@
 /// Mock coin transfer module that invokes governance parameters.
 module upgrade_and_govern::transfer {
 
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::coin;
     use upgrade_and_govern::parameters;
 
@@ -12,8 +12,8 @@ module upgrade_and_govern::transfer {
         to_2: address
     ) {
         let (amount_1, amount_2) = parameters::get_parameters();
-        coin::transfer<AptosCoin>(from, to_1, amount_1);
-        coin::transfer<AptosCoin>(from, to_2, amount_2);
+        coin::transfer<Libra2Coin>(from, to_1, amount_1);
+        coin::transfer<Libra2Coin>(from, to_2, amount_2);
     }
 
 } // <:!:module

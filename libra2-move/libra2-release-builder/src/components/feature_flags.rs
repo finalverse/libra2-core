@@ -209,7 +209,7 @@ pub fn generate_feature_upgrade_proposal(
                 "features::change_feature_flags_for_next_epoch({}, enabled_blob, disabled_blob);",
                 signer_arg
             );
-            emitln!(writer, "aptos_governance::reconfigure({});", signer_arg);
+            emitln!(writer, "libra2_governance::reconfigure({});", signer_arg);
         },
     );
 

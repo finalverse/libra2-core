@@ -21,7 +21,7 @@ create_account(1){
           "symbol": "APT",
           "decimals": 8,
           "metadata": {
-            "move_type": "0x1::aptos_coin::AptosCoin"
+            "move_type": "0x1::libra2_coin::Libra2Coin"
           }
         };
         print_message({"Find faucet with at least balance to create accounts": "10000000"});
@@ -55,7 +55,7 @@ request_funds(1){
       "symbol": "APT",
       "decimals": 8,
       "metadata": {
-        "move_type": "0x1::aptos_coin::AptosCoin"
+        "move_type": "0x1::libra2_coin::Libra2Coin"
       }
     };
     print_message({"Find faucet with at least balance": "0"});
@@ -87,7 +87,7 @@ transfer(50){
           "symbol": "APT",
           "decimals": 8,
           "metadata": {
-            "move_type": "0x1::aptos_coin::AptosCoin"
+            "move_type": "0x1::libra2_coin::Libra2Coin"
           }
         };
 

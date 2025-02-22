@@ -5,7 +5,7 @@ use crate::common::types::{
     CliCommand, CliConfig, CliError, CliTypedResult, ConfigSearchMode, ProfileOptions, RestOptions,
 };
 use libra2_api_types::ViewFunction;
-use libra2_types::{account_address::AccountAddress, AptosCoinType, CoinType};
+use libra2_types::{account_address::AccountAddress, Libra2CoinType, CoinType};
 use async_trait::async_trait;
 use clap::Parser;
 use move_core_types::{ident_str, language_storage::ModuleId, parser::parse_type_tag};
@@ -20,7 +20,7 @@ pub struct Balance {
     #[clap(long, value_parser = crate::common::types::load_account_arg)]
     pub(crate) account: Option<AccountAddress>,
 
-    /// Coin type to lookup.  Defaults to 0x1::aptos_coin::AptosCoin
+    /// Coin type to lookup.  Defaults to 0x1::libra2_coin::Libra2Coin
     #[clap(long)]
     pub(crate) coin_type: Option<String>,
 
@@ -66,7 +66,7 @@ impl CliCommand<Vec<AccountBalance>> for Balance {
             })?
         } else {
             // If nothing is given, use the default APT
-            AptosCoinType::type_tag()
+            Libra2CoinType::type_tag()
         };
 
         let client = self.rest_options.client(&self.profile_options)?;

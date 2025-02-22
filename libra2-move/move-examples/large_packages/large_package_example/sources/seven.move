@@ -158,7 +158,7 @@
 /// ### Event
 ///
 /// - An **event** is the user-facing representation of the effects of executing a transaction.
-/// - A transaction may be designed to emit any number of events as a list. For example, a `Coin<AptosCoin>` transfer emits a `WithdrawEvent` for the sender account and a `DepositEvent` for the recipient account.
+/// - A transaction may be designed to emit any number of events as a list. For example, a `Coin<Libra2Coin>` transfer emits a `WithdrawEvent` for the sender account and a `DepositEvent` for the recipient account.
 /// - In the Aptos protocol, events provide evidence that the successful execution of a transaction resulted in a specific effect. The `DepositEvent` (in the above example) allows the recipient to confirm that a payment was received into their account.
 /// - Events are persisted on the blockchain and are used to answer queries by [clients](#client).
 ///
@@ -199,7 +199,7 @@
 ///
 /// ### Fungible Token
 ///
-/// - For TokenV1 (aptos_token::token), a **fungible token** is a token that is interchangeable with other identical tokens (i.e., tokens that share the same `TokenId`). This means the tokens have the same `creator address`, `collection name`, `token name`, and `property version`.
+/// - For TokenV1 (libra2_token::token), a **fungible token** is a token that is interchangeable with other identical tokens (i.e., tokens that share the same `TokenId`). This means the tokens have the same `creator address`, `collection name`, `token name`, and `property version`.
 /// - For TokenV2 (libra2_token_objects::token), a **fungible token** is a fungible asset with metadata object includes a TokenV2 resource.
 ///
 /// ### Fungible Unit
@@ -399,9 +399,9 @@
 ///
 /// ### Table
 ///
-/// - A [**table**](https://github.com/aptos-labs/aptos-core/blob/main/libra2-move/framework/libra2-stdlib/doc/table.md) implements the Table type and in Aptos is used to store information as key-value data within an account at large scale.
+/// - A [**table**](https://github.com/finalverse/libra2-core/blob/main/libra2-move/framework/libra2-stdlib/doc/table.md) implements the Table type and in Aptos is used to store information as key-value data within an account at large scale.
 ///
-/// See [`table.move`](https://github.com/aptos-labs/aptos-core/blob/main/libra2-move/framework/libra2-stdlib/sources/table.move) for the associated Aptos source file.
+/// See [`table.move`](https://github.com/finalverse/libra2-core/blob/main/libra2-move/framework/libra2-stdlib/sources/table.move) for the associated Aptos source file.
 ///
 /// ### Testnet
 ///

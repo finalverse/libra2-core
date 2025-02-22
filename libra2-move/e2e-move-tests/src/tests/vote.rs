@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{
-    aptos_governance::*, assert_abort, assert_success, increase_lockup, setup_staking,
+    libra2_governance::*, assert_abort, assert_success, increase_lockup, setup_staking,
     tests::common, MoveHarness,
 };
 use libra2_types::account_address::AccountAddress;

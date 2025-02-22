@@ -20,8 +20,8 @@
 /libra2-move/framework/**/*.spec.move @junkil-park
 /libra2-move/framework/libra2-stdlib/sources/hash.move @alinush
 
-# Owner for aptos-token, cryptography natives, parallel-executor and vm-genesis.
-/libra2-move/framework/aptos-token @areshand
+# Owner for libra2-token, cryptography natives, parallel-executor and vm-genesis.
+/libra2-move/framework/libra2-token @areshand
 /libra2-move/framework/src/natives/cryptography/ @alinush @zjma @mstraka100
 /libra2-move/framework/src/natives/aggregator_natives/ @georgemitenkov @gelash @zekun000
 /libra2-move/block-executor/ @gelash @zekun000 @sasha8 @danielxiangzl

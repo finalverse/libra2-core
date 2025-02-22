@@ -119,7 +119,7 @@ groups:
         2. Search in the code for the runbook of the warning alert, quickly go through that too determine if it's a bug. Involve the storage team and other team accordingly.
       If no useful information is found, evaluate the trend of disk usage increasing, how long can we run further? If it can't last the night, you have these options to mitigate this:
         1. Expand the disk if it's a cloud volume.
-        2. Shorten the pruner windows. Before that, find the latest version of these https://github.com/aptos-labs/aptos-core/blob/48cc64df8a64f2d13012c10d8bd5bf25d94f19dc/config/src/config/storage_config.rs#L166-L218 \
+        2. Shorten the pruner windows. Before that, find the latest version of these https://github.com/finalverse/libra2-core/blob/48cc64df8a64f2d13012c10d8bd5bf25d94f19dc/config/src/config/storage_config.rs#L166-L218 \
           and read carefully the comments on the prune window config entries -- set safe values.
         3. If you believe this is happening on nodes that are not run by us, involve the PE / Community / Ecosystem teams to coordinate efforts needed on those nodes.
       "

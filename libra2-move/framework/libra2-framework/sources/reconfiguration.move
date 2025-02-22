@@ -14,7 +14,7 @@ module libra2_framework::reconfiguration {
     use libra2_framework::reconfiguration_state;
     use libra2_framework::storage_gas;
 
-    friend libra2_framework::aptos_governance;
+    friend libra2_framework::libra2_governance;
     friend libra2_framework::block;
     friend libra2_framework::consensus_config;
     friend libra2_framework::execution_config;

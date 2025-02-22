@@ -123,8 +123,8 @@ pool.
 
 
 <pre><code><b>use</b> <a href="account.md#0x1_account">0x1::account</a>;
-<b>use</b> <a href="aptos_account.md#0x1_aptos_account">0x1::aptos_account</a>;
-<b>use</b> <a href="aptos_coin.md#0x1_aptos_coin">0x1::aptos_coin</a>;
+<b>use</b> <a href="libra2_account.md#0x1_libra2_account">0x1::libra2_account</a>;
+<b>use</b> <a href="libra2_coin.md#0x1_libra2_coin">0x1::libra2_coin</a>;
 <b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/bcs.md#0x1_bcs">0x1::bcs</a>;
 <b>use</b> <a href="coin.md#0x1_coin">0x1::coin</a>;
 <b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
@@ -1651,7 +1651,7 @@ Staker can call this function to create a simple staking contract with a specifi
     // Optional seed used when creating the staking contract <a href="account.md#0x1_account">account</a>.
     contract_creation_seed: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
 ) <b>acquires</b> <a href="staking_contract.md#0x1_staking_contract_Store">Store</a> {
-    <b>let</b> staked_coins = <a href="coin.md#0x1_coin_withdraw">coin::withdraw</a>&lt;AptosCoin&gt;(staker, amount);
+    <b>let</b> staked_coins = <a href="coin.md#0x1_coin_withdraw">coin::withdraw</a>&lt;Libra2Coin&gt;(staker, amount);
     <a href="staking_contract.md#0x1_staking_contract_create_staking_contract_with_coins">create_staking_contract_with_coins</a>(
         staker, operator, voter, staked_coins, commission_percentage, contract_creation_seed);
 }
@@ -1668,7 +1668,7 @@ Staker can call this function to create a simple staking contract with a specifi
 Staker can call this function to create a simple staking contract with a specified operator.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="staking_contract.md#0x1_staking_contract_create_staking_contract_with_coins">create_staking_contract_with_coins</a>(staker: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, operator: <b>address</b>, voter: <b>address</b>, coins: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;, commission_percentage: u64, contract_creation_seed: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <b>address</b>
+<pre><code><b>public</b> <b>fun</b> <a href="staking_contract.md#0x1_staking_contract_create_staking_contract_with_coins">create_staking_contract_with_coins</a>(staker: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, operator: <b>address</b>, voter: <b>address</b>, coins: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;, commission_percentage: u64, contract_creation_seed: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <b>address</b>
 </code></pre>
 
 
@@ -1681,7 +1681,7 @@ Staker can call this function to create a simple staking contract with a specifi
     staker: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     operator: <b>address</b>,
     voter: <b>address</b>,
-    coins: Coin&lt;AptosCoin&gt;,
+    coins: Coin&lt;Libra2Coin&gt;,
     commission_percentage: u64,
     // Optional seed used when creating the staking contract <a href="account.md#0x1_account">account</a>.
     contract_creation_seed: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
@@ -1772,7 +1772,7 @@ Add more stake to an existing staking contract.
     <b>let</b> <a href="staking_contract.md#0x1_staking_contract">staking_contract</a> = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_borrow_mut">simple_map::borrow_mut</a>(&<b>mut</b> store.staking_contracts, &operator);
 
     // Add the <a href="stake.md#0x1_stake">stake</a> <b>to</b> the <a href="stake.md#0x1_stake">stake</a> pool.
-    <b>let</b> staked_coins = <a href="coin.md#0x1_coin_withdraw">coin::withdraw</a>&lt;AptosCoin&gt;(staker, amount);
+    <b>let</b> staked_coins = <a href="coin.md#0x1_coin_withdraw">coin::withdraw</a>&lt;Libra2Coin&gt;(staker, amount);
     <a href="stake.md#0x1_stake_add_stake_with_cap">stake::add_stake_with_cap</a>(&<a href="staking_contract.md#0x1_staking_contract">staking_contract</a>.owner_cap, staked_coins);
 
     <a href="staking_contract.md#0x1_staking_contract">staking_contract</a>.principal = <a href="staking_contract.md#0x1_staking_contract">staking_contract</a>.principal + amount;
@@ -2375,7 +2375,7 @@ Distribute all unlocked (inactive) funds according to distribution shares.
         <b>if</b> (recipient == operator) {
             recipient = <a href="staking_contract.md#0x1_staking_contract_beneficiary_for_operator">beneficiary_for_operator</a>(operator);
         };
-        <a href="aptos_account.md#0x1_aptos_account_deposit_coins">aptos_account::deposit_coins</a>(recipient, <a href="coin.md#0x1_coin_extract">coin::extract</a>(&<b>mut</b> coins, amount_to_distribute));
+        <a href="libra2_account.md#0x1_libra2_account_deposit_coins">libra2_account::deposit_coins</a>(recipient, <a href="coin.md#0x1_coin_extract">coin::extract</a>(&<b>mut</b> coins, amount_to_distribute));
 
         <b>if</b> (std::features::module_event_migration_enabled()) {
             emit(<a href="staking_contract.md#0x1_staking_contract_Distribute">Distribute</a> { operator, pool_address, recipient, amount: amount_to_distribute });
@@ -2389,7 +2389,7 @@ Distribute all unlocked (inactive) funds according to distribution shares.
 
     // In case there's <a href="../../../libra2-stdlib/tests/compiler-v2-doc/any.md#0x1_any">any</a> dust left, send them all <b>to</b> the staker.
     <b>if</b> (<a href="coin.md#0x1_coin_value">coin::value</a>(&coins) &gt; 0) {
-        <a href="aptos_account.md#0x1_aptos_account_deposit_coins">aptos_account::deposit_coins</a>(staker, coins);
+        <a href="libra2_account.md#0x1_libra2_account_deposit_coins">libra2_account::deposit_coins</a>(staker, coins);
         <a href="../../../libra2-stdlib/tests/compiler-v2-doc/pool_u64.md#0x1_pool_u64_update_total_coins">pool_u64::update_total_coins</a>(distribution_pool, 0);
     } <b>else</b> {
         <a href="coin.md#0x1_coin_destroy_zero">coin::destroy_zero</a>(coins);
@@ -3006,7 +3006,7 @@ Account is not frozen and sufficient to withdraw.
 <pre><code><b>pragma</b> aborts_if_is_partial;
 <b>pragma</b> verify_duration_estimate = 120;
 <b>include</b> <a href="staking_contract.md#0x1_staking_contract_PreconditionsInCreateContract">PreconditionsInCreateContract</a>;
-<b>include</b> <a href="staking_contract.md#0x1_staking_contract_WithdrawAbortsIf">WithdrawAbortsIf</a>&lt;AptosCoin&gt; { <a href="account.md#0x1_account">account</a>: staker };
+<b>include</b> <a href="staking_contract.md#0x1_staking_contract_WithdrawAbortsIf">WithdrawAbortsIf</a>&lt;Libra2Coin&gt; { <a href="account.md#0x1_account">account</a>: staker };
 <b>include</b> <a href="staking_contract.md#0x1_staking_contract_CreateStakingContractWithCoinsAbortsIfAndEnsures">CreateStakingContractWithCoinsAbortsIfAndEnsures</a>;
 </code></pre>
 
@@ -3017,7 +3017,7 @@ Account is not frozen and sufficient to withdraw.
 ### Function `create_staking_contract_with_coins`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="staking_contract.md#0x1_staking_contract_create_staking_contract_with_coins">create_staking_contract_with_coins</a>(staker: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, operator: <b>address</b>, voter: <b>address</b>, coins: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;, commission_percentage: u64, contract_creation_seed: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <b>address</b>
+<pre><code><b>public</b> <b>fun</b> <a href="staking_contract.md#0x1_staking_contract_create_staking_contract_with_coins">create_staking_contract_with_coins</a>(staker: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, operator: <b>address</b>, voter: <b>address</b>, coins: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;, commission_percentage: u64, contract_creation_seed: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <b>address</b>
 </code></pre>
 
 
@@ -3055,9 +3055,9 @@ Staking_contract exists the stacker/operator pair.
 <b>include</b> <a href="staking_contract.md#0x1_staking_contract_ContractExistsAbortsIf">ContractExistsAbortsIf</a> { staker: staker_address };
 <b>let</b> store = <b>global</b>&lt;<a href="staking_contract.md#0x1_staking_contract_Store">Store</a>&gt;(staker_address);
 <b>let</b> <a href="staking_contract.md#0x1_staking_contract">staking_contract</a> = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(store.staking_contracts, operator);
-<b>include</b> <a href="staking_contract.md#0x1_staking_contract_WithdrawAbortsIf">WithdrawAbortsIf</a>&lt;AptosCoin&gt; { <a href="account.md#0x1_account">account</a>: staker };
-<b>let</b> balance = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;AptosCoin&gt;&gt;(staker_address).<a href="coin.md#0x1_coin">coin</a>.value;
-<b>let</b> <b>post</b> post_coin = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;AptosCoin&gt;&gt;(staker_address).<a href="coin.md#0x1_coin">coin</a>.value;
+<b>include</b> <a href="staking_contract.md#0x1_staking_contract_WithdrawAbortsIf">WithdrawAbortsIf</a>&lt;Libra2Coin&gt; { <a href="account.md#0x1_account">account</a>: staker };
+<b>let</b> balance = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;Libra2Coin&gt;&gt;(staker_address).<a href="coin.md#0x1_coin">coin</a>.value;
+<b>let</b> <b>post</b> post_coin = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;Libra2Coin&gt;&gt;(staker_address).<a href="coin.md#0x1_coin">coin</a>.value;
 <b>ensures</b> post_coin == balance - amount;
 <b>let</b> owner_cap = <a href="staking_contract.md#0x1_staking_contract">staking_contract</a>.owner_cap;
 <b>include</b> <a href="stake.md#0x1_stake_AddStakeWithCapAbortsIfAndEnsures">stake::AddStakeWithCapAbortsIfAndEnsures</a> { owner_cap };
@@ -3607,7 +3607,7 @@ a staking_contract exists for the staker/operator pair.
         @libra2_framework
     ) || !std::features::spec_periodical_reward_rate_decrease_enabled();
     <b>requires</b> <b>exists</b>&lt;libra2_framework::timestamp::CurrentTimeMicroseconds&gt;(@libra2_framework);
-    <b>requires</b> <b>exists</b>&lt;<a href="stake.md#0x1_stake_AptosCoinCapabilities">stake::AptosCoinCapabilities</a>&gt;(@libra2_framework);
+    <b>requires</b> <b>exists</b>&lt;<a href="stake.md#0x1_stake_Libra2CoinCapabilities">stake::Libra2CoinCapabilities</a>&gt;(@libra2_framework);
 }
 </code></pre>
 

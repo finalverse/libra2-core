@@ -703,7 +703,7 @@ class ForgeMainTests(unittest.TestCase, AssertFixtureMixin):
                 ),
                 FakeCommand(
                     # NOTE: with multi-cloud support, we set the kubeconfig to ensure auth before continuing
-                    # See changes in: https://github.com/aptos-labs/aptos-core/pull/6166
+                    # See changes in: https://github.com/finalverse/libra2-core/pull/6166
                     "aws eks update-kubeconfig --name aptos-forge-big-1 --kubeconfig temp1",
                     RunResult(0, b""),
                 ),

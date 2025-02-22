@@ -44,7 +44,7 @@ services:
         ipv4_address: 172.16.1.13
     restart: unless-stopped
     volumes:
-      - type: volume # XXX: needed now before refactor https://github.com/aptos-labs/aptos-core/pull/8139
+      - type: volume # XXX: needed now before refactor https://github.com/finalverse/libra2-core/pull/8139
         source: indexer-grpc-file-store
         target: /opt/aptos/file-store
       - type: bind
@@ -84,7 +84,7 @@ services:
         ipv4_address: 172.16.1.15
     restart: unless-stopped
     volumes:
-      - type: volume # XXX: needed now before refactor https://github.com/aptos-labs/aptos-core/pull/8139
+      - type: volume # XXX: needed now before refactor https://github.com/finalverse/libra2-core/pull/8139
         source: indexer-grpc-file-store
         target: /opt/aptos/file-store
       - type: bind

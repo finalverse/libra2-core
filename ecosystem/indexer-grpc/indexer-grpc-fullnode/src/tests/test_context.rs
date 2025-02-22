@@ -346,7 +346,7 @@ impl TestContext {
     }
 
     // Currently we still run our tests with warp.
-    // https://github.com/aptos-labs/aptos-core/issues/2966
+    // https://github.com/finalverse/libra2-core/issues/2966
     pub fn get_routes_with_poem(
         &self,
         poem_address: SocketAddr,

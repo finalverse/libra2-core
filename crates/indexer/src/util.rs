@@ -243,8 +243,8 @@ mod tests {
         };
         let val = serde_json::to_string(&test_struct).unwrap();
         let d: TypeInfoMock = serde_json::from_str(val.as_str()).unwrap();
-        assert_eq!(d.module_name.as_str(), "aptos_coin");
-        assert_eq!(d.struct_name.as_str(), "AptosCoin");
+        assert_eq!(d.module_name.as_str(), "libra2_coin");
+        assert_eq!(d.struct_name.as_str(), "Libra2Coin");
     }
 
     #[test]

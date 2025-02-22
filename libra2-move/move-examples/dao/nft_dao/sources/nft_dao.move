@@ -26,14 +26,14 @@
 module dao_platform::nft_dao {
     use libra2_framework::account::{SignerCapability, create_signer_with_capability};
     use libra2_framework::account;
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::coin;
     use libra2_framework::timestamp;
     use libra2_std::table::Table;
     use libra2_std::table;
-    use aptos_token::property_map::PropertyMap;
-    use aptos_token::property_map;
-    use aptos_token::token::{Self, TokenId, create_token_id_raw};
+    use libra2_token::property_map::PropertyMap;
+    use libra2_token::property_map;
+    use libra2_token::token::{Self, TokenId, create_token_id_raw};
     use dao_platform::bucket_table::BucketTable;
     use dao_platform::bucket_table;
     use dao_platform::nft_dao_events::{Self, emit_create_dao_event};
@@ -672,7 +672,7 @@ module dao_platform::nft_dao {
     /////////////////////////// Private functions //////////////////////////////////
     /// Transfer coin from the DAO account to the destination account
     fun transfer_fund(res_acct: &signer, dst: address, amount: u64) {
-        coin::transfer<AptosCoin>(res_acct, dst, amount);
+        coin::transfer<Libra2Coin>(res_acct, dst, amount);
     }
 
     /// offer one NFT from DAO to the DST address. The DST address should
@@ -813,12 +813,12 @@ module dao_platform::nft_dao {
     }
 
     #[test_only]
-    use aptos_token::token::create_token_script;
+    use libra2_token::token::create_token_script;
     #[test_only]
-    use libra2_framework::aptos_account::transfer_coins;
+    use libra2_framework::libra2_account::transfer_coins;
     #[test_only]
-    use libra2_framework::aptos_coin;
-    use aptos_token::token_transfers;
+    use libra2_framework::libra2_coin;
+    use libra2_token::token_transfers;
 
     #[test_only]
     public fun setup_voting_token_distribution(creator: &signer, voter: &signer){
@@ -861,7 +861,7 @@ module dao_platform::nft_dao {
         account::create_account_for_test(@0xaf);
 
         // intialize with some fund in the DAO resource account
-        let (burn_cap, mint_cap) = aptos_coin::initialize_for_test(libra2_framework);
+        let (burn_cap, mint_cap) = libra2_coin::initialize_for_test(libra2_framework);
 
         setup_voting_token_distribution(creator, voter);
         // creator creates a dao
@@ -913,14 +913,14 @@ module dao_platform::nft_dao {
         //
 
         let coins = coin::mint(100, &mint_cap);
-        coin::register<AptosCoin>(creator);
-        coin::register<AptosCoin>(voter);
+        coin::register<Libra2Coin>(creator);
+        coin::register<Libra2Coin>(voter);
         coin::deposit(creator_addr, coins);
         coin::destroy_burn_cap(burn_cap);
         coin::destroy_mint_cap(mint_cap);
 
         // now resource account has a fund pool of 90 coins
-        transfer_coins<AptosCoin>(creator, res_acc, 90);
+        transfer_coins<Libra2Coin>(creator, res_acc, 90);
 
         // creator a proposal to transfer 45 coins to voter's account
         create_proposal(
@@ -949,7 +949,7 @@ module dao_platform::nft_dao {
         resolve(2, res_acc);
         assert!(get_proposal_resolution(1, res_acc) == PROPOSAL_RESOLVED_PASSED, 1);
         // voter gets 45 coin transferred to her account after resolving
-        assert!(coin::balance<AptosCoin>(signer::address_of(voter)) == 45, 1);
+        assert!(coin::balance<Libra2Coin>(signer::address_of(voter)) == 45, 1);
     }
 
     #[test(libra2_framework = @0x1, admin = @0xdeaf, new_admin = @0xaf)]

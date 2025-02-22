@@ -303,7 +303,7 @@ mod tests {
     };
     use libra2_vm_environment::environment::Libra2Environment;
     use libra2_vm_types::{
-        module_and_script_storage::AsAptosCodeStorage,
+        module_and_script_storage::AsLibra2CodeStorage,
         resource_group_adapter::{group_size_as_sum, GroupSizeKind},
     };
     use claims::{assert_none, assert_ok, assert_some, assert_some_eq};

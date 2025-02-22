@@ -28,10 +28,10 @@ fn simple_builder() {
     let bob = h.new_account_at(AccountAddress::from_hex_literal("0xface").unwrap());
 
     let mut builder = TransactionComposer::single_signer();
-    load_module(&mut builder, &h, "0x1::aptos_account");
+    load_module(&mut builder, &h, "0x1::libra2_account");
     builder
         .add_batched_call(
-            "0x1::aptos_account".to_string(),
+            "0x1::libra2_account".to_string(),
             "transfer".to_string(),
             vec![],
             vec![
@@ -72,13 +72,13 @@ fn chained_deposit() {
 
     let mut builder = TransactionComposer::single_signer();
     load_module(&mut builder, &h, "0x1::coin");
-    load_module(&mut builder, &h, "0x1::aptos_coin");
+    load_module(&mut builder, &h, "0x1::libra2_coin");
     load_module(&mut builder, &h, "0x1::primary_fungible_store");
     let mut returns_1 = builder
         .add_batched_call(
             "0x1::coin".to_string(),
             "withdraw".to_string(),
-            vec!["0x1::aptos_coin::AptosCoin".to_string()],
+            vec!["0x1::libra2_coin::Libra2Coin".to_string()],
             vec![
                 CallArgument::new_signer(0),
                 CallArgument::new_bytes(MoveValue::U64(10).simple_serialize().unwrap()),
@@ -89,7 +89,7 @@ fn chained_deposit() {
         .add_batched_call(
             "0x1::coin".to_string(),
             "coin_to_fungible_asset".to_string(),
-            vec!["0x1::aptos_coin::AptosCoin".to_string()],
+            vec!["0x1::libra2_coin::Libra2Coin".to_string()],
             vec![returns_1.pop().unwrap()],
         )
         .unwrap();
@@ -135,13 +135,13 @@ fn chained_deposit_mismatch() {
 
     let mut builder = TransactionComposer::single_signer();
     load_module(&mut builder, &h, "0x1::coin");
-    load_module(&mut builder, &h, "0x1::aptos_coin");
+    load_module(&mut builder, &h, "0x1::libra2_coin");
     load_module(&mut builder, &h, "0x1::primary_fungible_store");
     let mut returns_1 = builder
         .add_batched_call(
             "0x1::coin".to_string(),
             "withdraw".to_string(),
-            vec!["0x1::aptos_coin::AptosCoin".to_string()],
+            vec!["0x1::libra2_coin::Libra2Coin".to_string()],
             vec![
                 CallArgument::new_signer(0),
                 CallArgument::new_bytes(MoveValue::U64(10).simple_serialize().unwrap()),
@@ -173,13 +173,13 @@ fn chained_deposit_invalid_copy() {
 
     let mut builder = TransactionComposer::single_signer();
     load_module(&mut builder, &h, "0x1::coin");
-    load_module(&mut builder, &h, "0x1::aptos_coin");
+    load_module(&mut builder, &h, "0x1::libra2_coin");
     load_module(&mut builder, &h, "0x1::primary_fungible_store");
     let mut returns_1 = builder
         .add_batched_call(
             "0x1::coin".to_string(),
             "withdraw".to_string(),
-            vec!["0x1::aptos_coin::AptosCoin".to_string()],
+            vec!["0x1::libra2_coin::Libra2Coin".to_string()],
             vec![
                 CallArgument::new_signer(0),
                 CallArgument::new_bytes(MoveValue::U64(10).simple_serialize().unwrap()),
@@ -190,7 +190,7 @@ fn chained_deposit_invalid_copy() {
         .add_batched_call(
             "0x1::coin".to_string(),
             "coin_to_fungible_asset".to_string(),
-            vec!["0x1::aptos_coin::AptosCoin".to_string()],
+            vec!["0x1::libra2_coin::Libra2Coin".to_string()],
             vec![returns_1.pop().unwrap()],
         )
         .unwrap();

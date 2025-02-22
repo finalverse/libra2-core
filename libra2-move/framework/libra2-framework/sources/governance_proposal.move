@@ -2,7 +2,7 @@
 ///
 /// This is separate from the AptosGovernance module to avoid circular dependency between AptosGovernance and Stake.
 module libra2_framework::governance_proposal {
-    friend libra2_framework::aptos_governance;
+    friend libra2_framework::libra2_governance;
 
     struct GovernanceProposal has store, drop {}
 

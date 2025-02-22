@@ -126,7 +126,7 @@ spec libra2_framework::block {
     spec schema BlockRequirement {
         use libra2_framework::chain_status;
         use libra2_framework::coin::CoinInfo;
-        use libra2_framework::aptos_coin::AptosCoin;
+        use libra2_framework::libra2_coin::Libra2Coin;
         use libra2_framework::staking_config;
 
         vm: signer;
@@ -144,7 +144,7 @@ spec libra2_framework::block {
         requires proposer == @vm_reserved || stake::spec_is_current_epoch_validator(proposer);
         requires (proposer == @vm_reserved) ==> (timestamp::spec_now_microseconds() == timestamp);
         requires (proposer != @vm_reserved) ==> (timestamp::spec_now_microseconds() < timestamp);
-        requires exists<CoinInfo<AptosCoin>>(@libra2_framework);
+        requires exists<CoinInfo<Libra2Coin>>(@libra2_framework);
         include staking_config::StakingRewardsConfigRequirement;
     }
 

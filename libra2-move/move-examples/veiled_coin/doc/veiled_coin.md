@@ -103,8 +103,8 @@ u32 veiled coin amount format; we take the middle 32 bits from the u64 format ab
 [ 31 - 0 ]
 ```
 
-Recall that: A coin has a *decimal precision* $d$ (e.g., for <code>AptosCoin</code>, $d = 8$; see <code>initialize</code> in
-<code><a href="../../../framework/libra2-framework/doc/aptos_coin.md#0x1_aptos_coin">aptos_coin</a>.<b>move</b></code>). This precision $d$ is used when displaying a <code>u64</code> amount, by dividing the amount by $10^d$.
+Recall that: A coin has a *decimal precision* $d$ (e.g., for <code>Libra2Coin</code>, $d = 8$; see <code>initialize</code> in
+<code><a href="../../../framework/libra2-framework/doc/libra2_coin.md#0x1_libra2_coin">libra2_coin</a>.<b>move</b></code>). This precision $d$ is used when displaying a <code>u64</code> amount, by dividing the amount by $10^d$.
 For example, if the precision $d = 2$, then a <code>u64</code> amount of 505 coins displays as 5.05 coins.
 
 For veiled coins, we can easily display a <code>u32</code> <code>Coin&lt;T&gt;</code> amount $v$ by:

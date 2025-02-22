@@ -34,7 +34,7 @@ if [[ "$EXPECTED_VERSION" != "$VERSION" ]]; then
 fi
 
 # Check that the release doesn't already exist
-if curl -s --stderr /dev/null --output /dev/null --head -f "https://github.com/aptos-labs/aptos-core/releases/download/aptos-cli-v$EXPECTED_VERSION/aptos-cli-$EXPECTED_VERSION-Ubuntu-22.04-x86_64.zip"; then
+if curl -s --stderr /dev/null --output /dev/null --head -f "https://github.com/finalverse/libra2-core/releases/download/aptos-cli-v$EXPECTED_VERSION/aptos-cli-$EXPECTED_VERSION-Ubuntu-22.04-x86_64.zip"; then
   echo "$EXPECTED_VERSION already released"
   exit 3
 fi

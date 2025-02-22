@@ -5,14 +5,14 @@ module marketplace::test_utils {
     use std::vector;
 
     use libra2_framework::account;
-    use libra2_framework::aptos_coin::{Self, AptosCoin};
+    use libra2_framework::libra2_coin::{Self, Libra2Coin};
     use libra2_framework::coin;
     use libra2_framework::object::{Self, Object};
     use libra2_framework::timestamp;
 
-    use aptos_token::token as tokenv1;
+    use libra2_token::token as tokenv1;
     use libra2_token_objects::token::Token;
-    use libra2_token_objects::aptos_token;
+    use libra2_token_objects::libra2_token;
     use libra2_token_objects::collection::Collection;
 
     use marketplace::fee_schedule::{Self, FeeSchedule};
@@ -24,19 +24,19 @@ module marketplace::test_utils {
         purchaser: &signer,
     ): (address, address, address) {
         timestamp::set_time_has_started_for_testing(libra2_framework);
-        let (burn_cap, mint_cap) = aptos_coin::initialize_for_test(libra2_framework);
+        let (burn_cap, mint_cap) = libra2_coin::initialize_for_test(libra2_framework);
 
         let marketplace_addr = signer::address_of(marketplace);
         account::create_account_for_test(marketplace_addr);
-        coin::register<AptosCoin>(marketplace);
+        coin::register<Libra2Coin>(marketplace);
 
         let seller_addr = signer::address_of(seller);
         account::create_account_for_test(seller_addr);
-        coin::register<AptosCoin>(seller);
+        coin::register<Libra2Coin>(seller);
 
         let purchaser_addr = signer::address_of(purchaser);
         account::create_account_for_test(purchaser_addr);
-        coin::register<AptosCoin>(purchaser);
+        coin::register<Libra2Coin>(purchaser);
 
         let coins = coin::mint(10000, &mint_cap);
         coin::deposit(seller_addr, coins);
@@ -67,7 +67,7 @@ module marketplace::test_utils {
     public fun mint_tokenv2_with_collection(seller: &signer): (Object<Collection>, Object<Token>) {
         let collection_name = string::utf8(b"collection_name");
 
-        let collection_object = aptos_token::create_collection_object(
+        let collection_object = libra2_token::create_collection_object(
             seller,
             string::utf8(b"collection description"),
             2,
@@ -86,7 +86,7 @@ module marketplace::test_utils {
             100,
         );
 
-        let aptos_token = aptos_token::mint_token_object(
+        let libra2_token = libra2_token::mint_token_object(
             seller,
             collection_name,
             string::utf8(b"description"),
@@ -96,7 +96,7 @@ module marketplace::test_utils {
             vector::empty(),
             vector::empty(),
         );
-        (object::convert(collection_object), object::convert(aptos_token))
+        (object::convert(collection_object), object::convert(libra2_token))
     }
 
     public fun mint_tokenv2_with_collection_royalty(
@@ -106,7 +106,7 @@ module marketplace::test_utils {
     ): (Object<Collection>, Object<Token>) {
         let collection_name = string::utf8(b"collection_name");
 
-        let collection_object = aptos_token::create_collection_object(
+        let collection_object = libra2_token::create_collection_object(
             seller,
             string::utf8(b"collection description"),
             2,
@@ -125,7 +125,7 @@ module marketplace::test_utils {
             royalty_denominator,
         );
 
-        let aptos_token = aptos_token::mint_token_object(
+        let libra2_token = libra2_token::mint_token_object(
             seller,
             collection_name,
             string::utf8(b"description"),
@@ -135,7 +135,7 @@ module marketplace::test_utils {
             vector::empty(),
             vector::empty(),
         );
-        (object::convert(collection_object), object::convert(aptos_token))
+        (object::convert(collection_object), object::convert(libra2_token))
     }
 
     public fun mint_tokenv2(seller: &signer): Object<Token> {
@@ -146,7 +146,7 @@ module marketplace::test_utils {
     public fun mint_tokenv2_additional(seller: &signer): Object<Token> {
         let collection_name = string::utf8(b"collection_name");
 
-        let aptos_token = aptos_token::mint_token_object(
+        let libra2_token = libra2_token::mint_token_object(
             seller,
             collection_name,
             string::utf8(b"description"),
@@ -156,7 +156,7 @@ module marketplace::test_utils {
             vector::empty(),
             vector::empty(),
         );
-        object::convert(aptos_token)
+        object::convert(libra2_token)
     }
 
     public fun mint_tokenv1(seller: &signer): tokenv1::TokenId {

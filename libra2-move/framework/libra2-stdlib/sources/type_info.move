@@ -50,7 +50,7 @@ module libra2_std::type_info {
     public native fun type_of<T>(): TypeInfo;
 
     /// Return the human readable string for the type, including the address, module name, and any type arguments.
-    /// Example: 0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>
+    /// Example: 0x1::coin::CoinStore<0x1::libra2_coin::Libra2Coin>
     /// Or: 0x1::table::Table<0x1::string::String, 0x1::string::String>
     public native fun type_name<T>(): String;
 

@@ -149,7 +149,7 @@ This can be called by on-chain governance to update on-chain consensus configs f
 Example usage:
 ```
 libra2_framework::consensus_config::set_for_next_epoch(&framework_signer, some_config_bytes);
-libra2_framework::aptos_governance::reconfigure(&framework_signer);
+libra2_framework::libra2_governance::reconfigure(&framework_signer);
 ```
 
 
@@ -357,7 +357,7 @@ When setting now time must be later than last_reconfiguration_time.
 <b>aborts_if</b> !(len(config) &gt; 0);
 <b>requires</b> <a href="chain_status.md#0x1_chain_status_is_genesis">chain_status::is_genesis</a>();
 <b>requires</b> <a href="timestamp.md#0x1_timestamp_spec_now_microseconds">timestamp::spec_now_microseconds</a>() &gt;= <a href="reconfiguration.md#0x1_reconfiguration_last_reconfiguration_time">reconfiguration::last_reconfiguration_time</a>();
-<b>requires</b> <b>exists</b>&lt;CoinInfo&lt;AptosCoin&gt;&gt;(@libra2_framework);
+<b>requires</b> <b>exists</b>&lt;CoinInfo&lt;Libra2Coin&gt;&gt;(@libra2_framework);
 <b>ensures</b> <b>global</b>&lt;<a href="consensus_config.md#0x1_consensus_config_ConsensusConfig">ConsensusConfig</a>&gt;(@libra2_framework).config == config;
 </code></pre>
 

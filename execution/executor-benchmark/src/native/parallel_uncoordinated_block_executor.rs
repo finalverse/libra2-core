@@ -33,7 +33,7 @@ use libra2_types::{
     },
     vm_status::{StatusCode, VMStatus},
     write_set::{WriteOp, WriteSetMut},
-    AptosCoinType,
+    Libra2CoinType,
 };
 use libra2_vm::VMBlockExecutor;
 use dashmap::{
@@ -486,7 +486,7 @@ impl CommonNativeRawTransactionExecutor for NativeRawTransactionExecutor {
         state_view: &(impl StateView + Sync),
         output: &mut IncrementalOutput,
     ) -> Result<()> {
-        let coin_info = DbAccessUtil::get_value::<CoinInfoResource<AptosCoinType>>(
+        let coin_info = DbAccessUtil::get_value::<CoinInfoResource<Libra2CoinType>>(
             &self.db_util.common.apt_coin_info_resource,
             state_view,
         )?
@@ -567,7 +567,7 @@ impl CommonNativeRawTransactionExecutor for NativeRawTransactionExecutor {
         state_view: &(impl StateView + Sync),
         output: &mut IncrementalOutput,
     ) -> Result<()> {
-        let sender_coin_store_key = self.db_util.new_state_key_aptos_coin(&sender_address);
+        let sender_coin_store_key = self.db_util.new_state_key_libra2_coin(&sender_address);
         let sender_coin_store_opt = {
             let _timer = TIMER
                 .with_label_values(&["read_sender_coin_store"])
@@ -682,7 +682,7 @@ impl CommonNativeRawTransactionExecutor for NativeRawTransactionExecutor {
         state_view: &(impl StateView + Sync),
         output: &mut IncrementalOutput,
     ) -> Result<bool> {
-        let recipient_coin_store_key = self.db_util.new_state_key_aptos_coin(&recipient_address);
+        let recipient_coin_store_key = self.db_util.new_state_key_libra2_coin(&recipient_address);
 
         let (mut recipient_coin_store, recipient_coin_store_existed) =
             match DbAccessUtil::get_apt_coin_store(&recipient_coin_store_key, state_view)? {
@@ -691,7 +691,7 @@ impl CommonNativeRawTransactionExecutor for NativeRawTransactionExecutor {
                     output.events.push(
                         CoinRegister {
                             account: AccountAddress::ONE,
-                            type_info: DbAccessUtil::new_type_info_resource::<AptosCoinType>()?,
+                            type_info: DbAccessUtil::new_type_info_resource::<Libra2CoinType>()?,
                         }
                         .create_event_v2(),
                     );
@@ -775,8 +775,8 @@ enum CachedResource {
     Account(AccountResource),
     FungibleStore(FungibleStoreResource),
     FungibleSupply(ConcurrentSupplyResource),
-    AptCoinStore(CoinStoreResource<AptosCoinType>),
-    AptCoinInfo(CoinInfoResource<AptosCoinType>),
+    AptCoinStore(CoinStoreResource<Libra2CoinType>),
+    AptCoinInfo(CoinInfoResource<Libra2CoinType>),
     AptCoinSupply(CoinSupply),
     SupplyDecrement(SupplyWithDecrement),
 }
@@ -902,7 +902,7 @@ impl CommonNativeRawTransactionExecutor for NativeValueCacheRawTransactionExecut
             let entry =
                 self.cache_get_mut_or_init(&self.db_util.common.apt_coin_info_resource, |key| {
                     CachedResource::AptCoinInfo(
-                        DbAccessUtil::get_value::<CoinInfoResource<AptosCoinType>>(key, state_view)
+                        DbAccessUtil::get_value::<CoinInfoResource<Libra2CoinType>>(key, state_view)
                             .unwrap()
                             .unwrap(),
                     )
@@ -1104,7 +1104,7 @@ impl NativeValueCacheRawTransactionExecutor {
         decrement: u64,
         fail_on_missing: bool,
     ) -> bool {
-        let coin_store_key = self.db_util.new_state_key_aptos_coin(&account);
+        let coin_store_key = self.db_util.new_state_key_libra2_coin(&account);
         let mut exists = true;
 
         let mut entry = self.cache_get_mut_or_init(&coin_store_key, |key| {

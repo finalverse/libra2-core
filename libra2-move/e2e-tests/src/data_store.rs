@@ -15,7 +15,7 @@ use libra2_types::{
     },
     transaction::ChangeSet,
     write_set::{TransactionWrite, WriteSet},
-    AptosCoinType,
+    Libra2CoinType,
 };
 use libra2_vm_genesis::{
     generate_genesis_change_set_for_mainnet, generate_genesis_change_set_for_testing,
@@ -107,7 +107,7 @@ impl FakeDataStore {
 
     /// Adds CoinInfo to this data store.
     pub fn add_coin_info(&mut self) {
-        let coin_info = CoinInfoResource::<AptosCoinType>::random(u128::MAX);
+        let coin_info = CoinInfoResource::<Libra2CoinType>::random(u128::MAX);
         let write_set = coin_info.to_writeset(0).expect("access path in test");
         self.add_write_set(&write_set)
     }

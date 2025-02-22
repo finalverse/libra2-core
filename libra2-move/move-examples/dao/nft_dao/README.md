@@ -1,5 +1,5 @@
 # NFT DAO V0 Eng Design Doc
-PR: https://github.com/aptos-labs/aptos-core/pull/5918
+PR: https://github.com/finalverse/libra2-core/pull/5918
 
 ## Motivation
 
@@ -86,7 +86,7 @@ create_proposal(
     - arg_names: “dst”, “amount”
     - arg_values: bcs_serialized values, please refer to TS SDK function. You need to provide original values in TS and arg_types to get the serialized values
     
-    [aptos-core/property_map_serde.ts at main · aptos-labs/aptos-core](https://github.com/aptos-labs/aptos-core/blob/main/ecosystem/typescript/sdk/src/utils/property_map_serde.ts#L48)
+    [aptos-core/property_map_serde.ts at main · finalverse/libra2-core](https://github.com/finalverse/libra2-core/blob/main/ecosystem/typescript/sdk/src/utils/property_map_serde.ts#L48)
     
     - arg_types: “address”, “u64”
 

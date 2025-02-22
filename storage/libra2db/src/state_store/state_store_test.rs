@@ -20,7 +20,7 @@ use libra2_types::{
     account_config::{AccountResource, ChainIdResource, CoinInfoResource, CoinStoreResource},
     nibble::nibble_path::NibblePath,
     state_store::state_key::inner::StateKeyTag,
-    AptosCoinType,
+    Libra2CoinType,
 };
 use proptest::{collection::hash_map, prelude::*};
 use std::collections::{BTreeMap, HashMap};
@@ -172,7 +172,7 @@ fn test_get_values_by_key_prefix() {
     assert_eq!(*key_value_map.get(&key1).unwrap(), value1_v0);
     assert_eq!(*key_value_map.get(&key2).unwrap(), value2_v0);
 
-    let key4 = StateKey::resource_typed::<CoinInfoResource<AptosCoinType>>(&address).unwrap();
+    let key4 = StateKey::resource_typed::<CoinInfoResource<Libra2CoinType>>(&address).unwrap();
 
     let value2_v1 = StateValue::from(String::from("value2_v1").into_bytes());
     let value4_v1 = StateValue::from(String::from("value4_v1").into_bytes());
@@ -201,7 +201,7 @@ fn test_get_values_by_key_prefix() {
 
     // Add values for one more account and verify the state
     let address1 = AccountAddress::new([22u8; AccountAddress::LENGTH]);
-    let key5 = StateKey::resource_typed::<CoinStoreResource<AptosCoinType>>(&address1).unwrap();
+    let key5 = StateKey::resource_typed::<CoinStoreResource<Libra2CoinType>>(&address1).unwrap();
     let value5_v2 = StateValue::from(String::from("value5_v2").into_bytes());
 
     let account1_key_prefix = StateKeyPrefix::new(StateKeyTag::AccessPath, address1.to_vec());

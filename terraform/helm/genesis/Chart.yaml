@@ -5,4 +5,4 @@ appVersion: 0.1.0
 description: Aptos blockchain automated genesis ceremony for testnets
 home: https://aptoslabs.com/
 sources:
-- https://github.com/aptos-labs/aptos-core
+- https://github.com/finalverse/libra2-core

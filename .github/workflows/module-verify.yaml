@@ -31,7 +31,7 @@ concurrency:
 jobs:
   verify-modules-testnet:
     if: ${{ github.event_name == 'workflow_dispatch' && (inputs.CHAIN_NAME == 'testnet' || inputs.CHAIN_NAME == 'all') }}
-    uses: aptos-labs/aptos-core/.github/workflows/workflow-run-module-verify.yaml@main
+    uses: finalverse/libra2-core/.github/workflows/workflow-run-module-verify.yaml@main
     secrets: inherit
     with:
       GIT_SHA: ${{ inputs.GIT_SHA }}
@@ -44,7 +44,7 @@ jobs:
 
   verify-modules-mainnet:
     if: ${{ github.event_name == 'workflow_dispatch' && (inputs.CHAIN_NAME == 'mainnet' || inputs.CHAIN_NAME == 'all') }}
-    uses: aptos-labs/aptos-core/.github/workflows/workflow-run-module-verify.yaml@main
+    uses: finalverse/libra2-core/.github/workflows/workflow-run-module-verify.yaml@main
     secrets: inherit
     with:
       GIT_SHA: ${{ inputs.GIT_SHA }}
@@ -57,7 +57,7 @@ jobs:
 
   test-verify-modules:
     if: ${{ github.event_name == 'pull_request' }}
-    uses: aptos-labs/aptos-core/.github/workflows/workflow-run-module-verify.yaml@main
+    uses: finalverse/libra2-core/.github/workflows/workflow-run-module-verify.yaml@main
     secrets: inherit
     with:
       GIT_SHA: ${{ github.event.pull_request.head.sha }}

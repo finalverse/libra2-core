@@ -145,7 +145,7 @@ impl TransactionAccumulatorDb {
     /// Note that this node DOES NOT become non-useful.
     /// 2. From the node found from the previous step, delete both its children non-useful, and go
     /// to the right child to repeat the process until we reach a leaf node.
-    /// More details are in this issue https://github.com/aptos-labs/aptos-core/issues/1288.
+    /// More details are in this issue https://github.com/finalverse/libra2-core/issues/1288.
     pub(crate) fn prune(begin: Version, end: Version, db_batch: &mut SchemaBatch) -> Result<()> {
         for version_to_delete in begin..end {
             db_batch.delete::<TransactionAccumulatorRootHashSchema>(&version_to_delete)?;

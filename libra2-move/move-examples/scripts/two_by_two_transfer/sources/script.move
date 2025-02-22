@@ -1,5 +1,5 @@
 script {
-    use libra2_framework::aptos_coin;
+    use libra2_framework::libra2_coin;
     use libra2_framework::coin;
 
     fun main(
@@ -11,8 +11,8 @@ script {
         dst_second: address,
         deposit_first: u64,
     ) {
-        let coin_first = coin::withdraw<aptos_coin::AptosCoin>(first, amount_first);
-        let coin_second = coin::withdraw<aptos_coin::AptosCoin>(second, amount_second);
+        let coin_first = coin::withdraw<libra2_coin::Libra2Coin>(first, amount_first);
+        let coin_second = coin::withdraw<libra2_coin::Libra2Coin>(second, amount_second);
 
         coin::merge(&mut coin_first, coin_second);
 

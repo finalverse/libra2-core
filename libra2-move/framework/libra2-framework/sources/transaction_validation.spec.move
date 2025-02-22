@@ -108,10 +108,10 @@ spec libra2_framework::transaction_validation {
 
         let max_transaction_fee = txn_gas_price * txn_max_gas_units;
         aborts_if max_transaction_fee > MAX_U64;
-        aborts_if !exists<CoinStore<AptosCoin>>(gas_payer_addr);
+        aborts_if !exists<CoinStore<Libra2Coin>>(gas_payer_addr);
         // property 1: The sender of a transaction should have sufficient coin balance to pay the transaction fee.
         /// [high-level-req-1]
-        aborts_if !(global<CoinStore<AptosCoin>>(gas_payer_addr).coin.value >= max_transaction_fee);
+        aborts_if !(global<CoinStore<Libra2Coin>>(gas_payer_addr).coin.value >= max_transaction_fee);
     }
 
     spec prologue_common(
@@ -309,7 +309,7 @@ spec libra2_framework::transaction_validation {
     }
 
     /// Abort according to the conditions.
-    /// `AptosCoinCapabilities` and `CoinInfo` should exists.
+    /// `Libra2CoinCapabilities` and `CoinInfo` should exists.
     /// Skip transaction_fee::burn_fee verification.
     spec epilogue_extended(
     account: signer,
@@ -336,7 +336,7 @@ spec libra2_framework::transaction_validation {
     }
 
     /// Abort according to the conditions.
-    /// `AptosCoinCapabilities` and `CoinInfo` should exist.
+    /// `Libra2CoinCapabilities` and `CoinInfo` should exist.
     /// Skip transaction_fee::burn_fee verification.
     spec epilogue_gas_payer_extended(
     account: signer,
@@ -415,11 +415,11 @@ spec libra2_framework::transaction_validation {
         use std::option;
         use libra2_std::type_info;
         use libra2_framework::account::{Account};
-        use libra2_framework::aptos_coin::{AptosCoin};
+        use libra2_framework::libra2_coin::{Libra2Coin};
         use libra2_framework::coin;
         use libra2_framework::coin::{CoinStore, CoinInfo};
         use libra2_framework::optional_aggregator;
-        use libra2_framework::transaction_fee::{AptosCoinCapabilities, AptosCoinMintCapability};
+        use libra2_framework::transaction_fee::{Libra2CoinCapabilities, Libra2CoinMintCapability};
 
         account: signer;
         gas_payer: address;
@@ -437,12 +437,12 @@ spec libra2_framework::transaction_validation {
         // Check account invariants.
         let addr = signer::address_of(account);
         // TODO(fa_migration)
-        // let pre_balance = global<coin::CoinStore<AptosCoin>>(gas_payer).coin.value;
-        // let post balance = global<coin::CoinStore<AptosCoin>>(gas_payer).coin.value;
+        // let pre_balance = global<coin::CoinStore<Libra2Coin>>(gas_payer).coin.value;
+        // let post balance = global<coin::CoinStore<Libra2Coin>>(gas_payer).coin.value;
         let pre_account = global<account::Account>(addr);
         let post account = global<account::Account>(addr);
 
-        aborts_if !exists<CoinStore<AptosCoin>>(gas_payer);
+        aborts_if !exists<CoinStore<Libra2Coin>>(gas_payer);
         aborts_if !exists<Account>(addr);
         aborts_if !(global<Account>(addr).sequence_number < MAX_U64);
         // aborts_if pre_balance < transaction_fee_amount;
@@ -452,32 +452,32 @@ spec libra2_framework::transaction_validation {
         // Check burning.
         //   (Check the total supply aggregator when enabled.)
         let amount_to_burn = transaction_fee_amount - storage_fee_refunded;
-        let apt_addr = type_info::type_of<AptosCoin>().account_address;
-        let maybe_apt_supply = global<CoinInfo<AptosCoin>>(apt_addr).supply;
+        let apt_addr = type_info::type_of<Libra2Coin>().account_address;
+        let maybe_apt_supply = global<CoinInfo<Libra2Coin>>(apt_addr).supply;
         let total_supply_enabled = option::spec_is_some(maybe_apt_supply);
         let apt_supply = option::spec_borrow(maybe_apt_supply);
         let apt_supply_value = optional_aggregator::optional_aggregator_value(apt_supply);
-        let post post_maybe_apt_supply = global<CoinInfo<AptosCoin>>(apt_addr).supply;
+        let post post_maybe_apt_supply = global<CoinInfo<Libra2Coin>>(apt_addr).supply;
         let post post_apt_supply = option::spec_borrow(post_maybe_apt_supply);
         let post post_apt_supply_value = optional_aggregator::optional_aggregator_value(post_apt_supply);
 
-        aborts_if amount_to_burn > 0 && !exists<AptosCoinCapabilities>(@libra2_framework);
-        aborts_if amount_to_burn > 0 && !exists<CoinInfo<AptosCoin>>(apt_addr);
+        aborts_if amount_to_burn > 0 && !exists<Libra2CoinCapabilities>(@libra2_framework);
+        aborts_if amount_to_burn > 0 && !exists<CoinInfo<Libra2Coin>>(apt_addr);
         aborts_if amount_to_burn > 0 && total_supply_enabled && apt_supply_value < amount_to_burn;
         ensures total_supply_enabled ==> apt_supply_value - amount_to_burn == post_apt_supply_value;
 
         // Check minting.
         let amount_to_mint = storage_fee_refunded - transaction_fee_amount;
-        let total_supply = coin::supply<AptosCoin>;
-        let post post_total_supply = coin::supply<AptosCoin>;
+        let total_supply = coin::supply<Libra2Coin>;
+        let post post_total_supply = coin::supply<Libra2Coin>;
 
-        aborts_if amount_to_mint > 0 && !exists<CoinStore<AptosCoin>>(addr);
-        aborts_if amount_to_mint > 0 && !exists<AptosCoinMintCapability>(@libra2_framework);
+        aborts_if amount_to_mint > 0 && !exists<CoinStore<Libra2Coin>>(addr);
+        aborts_if amount_to_mint > 0 && !exists<Libra2CoinMintCapability>(@libra2_framework);
         aborts_if amount_to_mint > 0 && total_supply + amount_to_mint > MAX_U128;
         ensures amount_to_mint > 0 ==> post_total_supply == total_supply + amount_to_mint;
 
-        let aptos_addr = type_info::type_of<AptosCoin>().account_address;
-        aborts_if (amount_to_mint != 0) && !exists<coin::CoinInfo<AptosCoin>>(aptos_addr);
-        include coin::CoinAddAbortsIf<AptosCoin> { amount: amount_to_mint };
+        let aptos_addr = type_info::type_of<Libra2Coin>().account_address;
+        aborts_if (amount_to_mint != 0) && !exists<coin::CoinInfo<Libra2Coin>>(aptos_addr);
+        include coin::CoinAddAbortsIf<Libra2Coin> { amount: amount_to_mint };
     }
 }

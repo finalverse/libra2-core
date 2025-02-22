@@ -64,7 +64,7 @@ impl ReleaseTarget {
                 Some("cached-packages/src/libra2_framework_sdk_builder.rs"),
             ),
             (
-                "aptos-token",
+                "libra2-token",
                 Some("cached-packages/src/libra2_token_sdk_builder.rs"),
             ),
             (
@@ -176,7 +176,7 @@ static NAMED_ADDRESSES: Lazy<BTreeMap<String, NumericalAddress>> = Lazy::new(|| 
     result.insert("std".to_owned(), one);
     result.insert("libra2_std".to_owned(), one);
     result.insert("libra2_framework".to_owned(), one);
-    result.insert("aptos_token".to_owned(), three);
+    result.insert("libra2_token".to_owned(), three);
     result.insert("libra2_token_objects".to_owned(), four);
     result.insert("aptos_fungible_asset".to_owned(), ten);
     result.insert("core_resources".to_owned(), resources);

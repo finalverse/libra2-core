@@ -5,4 +5,4 @@ appVersion: 1.0.0
 description: Aptos blockchain node deployment
 home: https://aptoslabs.com/
 sources:
-- https://github.com/aptos-labs/aptos-core
+- https://github.com/finalverse/libra2-core

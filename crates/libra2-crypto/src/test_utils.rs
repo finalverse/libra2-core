@@ -131,7 +131,7 @@ pub fn small_order_strategy() -> impl Strategy<Value = EdwardsPoint> {
 #[allow(non_snake_case)]
 #[cfg(any(test, feature = "fuzzing"))]
 pub fn small_order_pk_with_adversarial_message(
-) -> impl Strategy<Value = (EdwardsPoint, EdwardsPoint, TestAptosCrypto)> {
+) -> impl Strategy<Value = (EdwardsPoint, EdwardsPoint, TestLibra2Crypto)> {
     (
         small_order_strategy(),
         small_order_strategy(),
@@ -225,20 +225,20 @@ where
 /// BCS serialization and domain separation
 //#[cfg(any(test, feature = "fuzzing"))]
 #[derive(Debug, Serialize, Deserialize)]
-pub struct TestAptosCrypto(pub String);
+pub struct TestLibra2Crypto(pub String);
 
 // the following block is macro expanded from derive(CryptoHasher, BCSCryptoHash)
 
 /// Cryptographic hasher for an BCS-serializable #item
 // #[cfg(any(test, feature = "fuzzing"))]
-pub struct TestAptosCryptoHasher(crate::hash::DefaultHasher);
+pub struct TestLibra2CryptoHasher(crate::hash::DefaultHasher);
 // #[cfg(any(test, feature = "fuzzing"))]
-impl ::core::clone::Clone for TestAptosCryptoHasher {
+impl ::core::clone::Clone for TestLibra2CryptoHasher {
     #[inline]
-    fn clone(&self) -> TestAptosCryptoHasher {
+    fn clone(&self) -> TestLibra2CryptoHasher {
         match *self {
-            TestAptosCryptoHasher(ref __self_0_0) => {
-                TestAptosCryptoHasher(::core::clone::Clone::clone(__self_0_0))
+            TestLibra2CryptoHasher(ref __self_0_0) => {
+                TestLibra2CryptoHasher(::core::clone::Clone::clone(__self_0_0))
             },
         }
     }
@@ -247,27 +247,27 @@ impl ::core::clone::Clone for TestAptosCryptoHasher {
 static TEST_CRYPTO_SEED: crate::_once_cell::sync::OnceCell<[u8; 32]> =
     crate::_once_cell::sync::OnceCell::new();
 // #[cfg(any(test, feature = "fuzzing"))]
-impl TestAptosCryptoHasher {
+impl TestLibra2CryptoHasher {
     fn new() -> Self {
-        let name = crate::_serde_name::trace_name::<TestAptosCrypto>()
+        let name = crate::_serde_name::trace_name::<TestLibra2Crypto>()
             .expect("The `CryptoHasher` macro only applies to structs and enums");
-        TestAptosCryptoHasher(crate::hash::DefaultHasher::new(name.as_bytes()))
+        TestLibra2CryptoHasher(crate::hash::DefaultHasher::new(name.as_bytes()))
     }
 }
 // #[cfg(any(test, feature = "fuzzing"))]
-static TEST_CRYPTO_HASHER: crate::_once_cell::sync::Lazy<TestAptosCryptoHasher> =
-    crate::_once_cell::sync::Lazy::new(TestAptosCryptoHasher::new);
+static TEST_CRYPTO_HASHER: crate::_once_cell::sync::Lazy<TestLibra2CryptoHasher> =
+    crate::_once_cell::sync::Lazy::new(TestLibra2CryptoHasher::new);
 // #[cfg(any(test, feature = "fuzzing"))]
-impl std::default::Default for TestAptosCryptoHasher {
+impl std::default::Default for TestLibra2CryptoHasher {
     fn default() -> Self {
         TEST_CRYPTO_HASHER.clone()
     }
 }
 // #[cfg(any(test, feature = "fuzzing"))]
-impl crate::hash::CryptoHasher for TestAptosCryptoHasher {
+impl crate::hash::CryptoHasher for TestLibra2CryptoHasher {
     fn seed() -> &'static [u8; 32] {
         TEST_CRYPTO_SEED.get_or_init(|| {
-            let name = crate::_serde_name::trace_name::<TestAptosCrypto>()
+            let name = crate::_serde_name::trace_name::<TestLibra2Crypto>()
                 .expect("The `CryptoHasher` macro only applies to structs and enums.")
                 .as_bytes();
             crate::hash::DefaultHasher::prefixed_hash(name)
@@ -283,7 +283,7 @@ impl crate::hash::CryptoHasher for TestAptosCryptoHasher {
     }
 }
 // #[cfg(any(test, feature = "fuzzing"))]
-impl std::io::Write for TestAptosCryptoHasher {
+impl std::io::Write for TestLibra2CryptoHasher {
     fn write(&mut self, bytes: &[u8]) -> std::io::Result<usize> {
         self.0.update(bytes);
         Ok(bytes.len())
@@ -294,20 +294,20 @@ impl std::io::Write for TestAptosCryptoHasher {
     }
 }
 // #[cfg(any(test, feature = "fuzzing"))]
-impl crate::hash::CryptoHash for TestAptosCrypto {
-    type Hasher = TestAptosCryptoHasher;
+impl crate::hash::CryptoHash for TestLibra2Crypto {
+    type Hasher = TestLibra2CryptoHasher;
 
     fn hash(&self) -> crate::hash::HashValue {
         use crate::hash::CryptoHasher;
         let mut state = Self::Hasher::default();
         bcs::serialize_into(&mut state, &self)
-            .expect("BCS serialization of TestAptosCrypto should not fail");
+            .expect("BCS serialization of TestLibra2Crypto should not fail");
         state.finish()
     }
 }
 
-/// Produces a random TestAptosCrypto signable / verifiable struct.
+/// Produces a random TestLibra2Crypto signable / verifiable struct.
 #[cfg(any(test, feature = "fuzzing"))]
-pub fn random_serializable_struct() -> impl Strategy<Value = TestAptosCrypto> {
-    (String::arbitrary()).prop_map(TestAptosCrypto).no_shrink()
+pub fn random_serializable_struct() -> impl Strategy<Value = TestLibra2Crypto> {
+    (String::arbitrary()).prop_map(TestLibra2Crypto).no_shrink()
 }

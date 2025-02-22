@@ -52,7 +52,7 @@
 | chain.genesisSecret | string | `nil` | Kubernetes Secret from which to load the genesis.blob and waypoint.txt |
 | chain.label | string | `nil` | The value of the `chain_name` label. If empty, defaults to `.Values.chain.name` |
 | chain.name | string | `"devnet"` | Name of the testnet to connect to. There must be a corresponding entry in .Values.aptos_chains |
-| fullnode.config | object | `{"full_node_networks":[{"identity":{},"inbound_rate_limit_config":null,"network_id":"public","outbound_rate_limit_config":null}]}` | Fullnode configuration. See NodeConfig https://github.com/aptos-labs/aptos-core/blob/main/config/src/config/mod.rs |
+| fullnode.config | object | `{"full_node_networks":[{"identity":{},"inbound_rate_limit_config":null,"network_id":"public","outbound_rate_limit_config":null}]}` | Fullnode configuration. See NodeConfig https://github.com/finalverse/libra2-core/blob/main/config/src/config/mod.rs |
 | image.pullPolicy | string | `"IfNotPresent"` | Image pull policy to use for fullnode images |
 | image.repo | string | `"aptoslabs/validator"` | Image repo to use for fullnode images. Fullnodes and validators use the same image |
 | image.tag | string | `nil` | Image tag to use for fullnode images. If set, overrides `imageTag` |
@@ -134,6 +134,6 @@ Deployment
 
        $ helm install fullnode --set storage.class=gp2 .
 
-[REST API]: https://github.com/aptos-labs/aptos-core/blob/main/api/doc/v0/openapi.yaml
+[REST API]: https://github.com/finalverse/libra2-core/blob/main/api/doc/v0/openapi.yaml
 [values.yaml]: values.yaml
 [Aptos dockerhub]: https://hub.docker.com/r/aptoslabs/validator/tags?page=1&ordering=last_updated

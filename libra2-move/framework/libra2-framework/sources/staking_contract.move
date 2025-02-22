@@ -35,8 +35,8 @@ module libra2_framework::staking_contract {
     use libra2_std::simple_map::{Self, SimpleMap};
 
     use libra2_framework::account::{Self, SignerCapability};
-    use libra2_framework::aptos_account;
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_account;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::coin::{Self, Coin};
     use libra2_framework::event::{EventHandle, emit, emit_event};
     use libra2_framework::stake::{Self, OwnerCapability};
@@ -355,7 +355,7 @@ module libra2_framework::staking_contract {
         // Optional seed used when creating the staking contract account.
         contract_creation_seed: vector<u8>,
     ) acquires Store {
-        let staked_coins = coin::withdraw<AptosCoin>(staker, amount);
+        let staked_coins = coin::withdraw<Libra2Coin>(staker, amount);
         create_staking_contract_with_coins(
             staker, operator, voter, staked_coins, commission_percentage, contract_creation_seed);
     }
@@ -365,7 +365,7 @@ module libra2_framework::staking_contract {
         staker: &signer,
         operator: address,
         voter: address,
-        coins: Coin<AptosCoin>,
+        coins: Coin<Libra2Coin>,
         commission_percentage: u64,
         // Optional seed used when creating the staking contract account.
         contract_creation_seed: vector<u8>,
@@ -436,7 +436,7 @@ module libra2_framework::staking_contract {
         let staking_contract = simple_map::borrow_mut(&mut store.staking_contracts, &operator);
 
         // Add the stake to the stake pool.
-        let staked_coins = coin::withdraw<AptosCoin>(staker, amount);
+        let staked_coins = coin::withdraw<Libra2Coin>(staker, amount);
         stake::add_stake_with_cap(&staking_contract.owner_cap, staked_coins);
 
         staking_contract.principal = staking_contract.principal + amount;
@@ -799,7 +799,7 @@ module libra2_framework::staking_contract {
             if (recipient == operator) {
                 recipient = beneficiary_for_operator(operator);
             };
-            aptos_account::deposit_coins(recipient, coin::extract(&mut coins, amount_to_distribute));
+            libra2_account::deposit_coins(recipient, coin::extract(&mut coins, amount_to_distribute));
 
             if (std::features::module_event_migration_enabled()) {
                 emit(Distribute { operator, pool_address, recipient, amount: amount_to_distribute });
@@ -813,7 +813,7 @@ module libra2_framework::staking_contract {
 
         // In case there's any dust left, send them all to the staker.
         if (coin::value(&coins) > 0) {
-            aptos_account::deposit_coins(staker, coins);
+            libra2_account::deposit_coins(staker, coins);
             pool_u64::update_total_coins(distribution_pool, 0);
         } else {
             coin::destroy_zero(coins);
@@ -1054,7 +1054,7 @@ module libra2_framework::staking_contract {
         new_balance = with_rewards(new_balance);
         stake::assert_stake_pool(pool_address, new_balance, expected_commission_1, 0, 0);
         distribute(staker_address, operator_address);
-        let operator_balance = coin::balance<AptosCoin>(operator_address);
+        let operator_balance = coin::balance<Libra2Coin>(operator_address);
         let expected_operator_balance = INITIAL_BALANCE + expected_commission_1;
         assert!(operator_balance == expected_operator_balance, operator_balance);
         stake::assert_stake_pool(pool_address, new_balance, 0, 0, 0);
@@ -1080,7 +1080,7 @@ module libra2_framework::staking_contract {
         stake::fast_forward_to_unlock(pool_address);
         expected_commission_2 = with_rewards(expected_commission_2);
         distribute(staker_address, operator_address);
-        operator_balance = coin::balance<AptosCoin>(operator_address);
+        operator_balance = coin::balance<Libra2Coin>(operator_address);
         expected_operator_balance = expected_operator_balance + expected_commission_2;
         assert!(operator_balance == expected_operator_balance, operator_balance);
         assert_no_pending_distributions(staker_address, operator_address);
@@ -1111,9 +1111,9 @@ module libra2_framework::staking_contract {
         // Distribute and verify balances.
         distribute(staker_address, operator_address);
         assert_no_pending_distributions(staker_address, operator_address);
-        operator_balance = coin::balance<AptosCoin>(operator_address);
+        operator_balance = coin::balance<Libra2Coin>(operator_address);
         assert!(operator_balance == expected_operator_balance + unpaid_commission, operator_balance);
-        let staker_balance = coin::balance<AptosCoin>(staker_address);
+        let staker_balance = coin::balance<Libra2Coin>(staker_address);
         // Staker receives the extra dust due to rounding error.
         assert!(staker_balance == withdrawn_amount + 1, staker_balance);
         assert_no_pending_distributions(staker_address, operator_address);
@@ -1293,7 +1293,7 @@ module libra2_framework::staking_contract {
         new_balance = new_balance - commission_for_operator_2;
         request_commission(operator_2, staker_address, operator_2_address);
         assert_distribution(staker_address, operator_2_address, operator_2_address, commission_for_operator_2);
-        let operator_1_balance = coin::balance<AptosCoin>(operator_1_address);
+        let operator_1_balance = coin::balance<Libra2Coin>(operator_1_address);
         assert!(operator_1_balance == INITIAL_BALANCE + commission_for_operator_1, operator_1_balance);
         stake::assert_stake_pool(pool_address, new_balance, 0, 0, commission_for_operator_2);
         assert!(last_recorded_principal(staker_address, operator_2_address) == new_balance, 0);
@@ -1301,7 +1301,7 @@ module libra2_framework::staking_contract {
 
         // Operator 2's commission is distributed.
         distribute(staker_address, operator_2_address);
-        let operator_2_balance = coin::balance<AptosCoin>(operator_2_address);
+        let operator_2_balance = coin::balance<Libra2Coin>(operator_2_address);
         new_balance = with_rewards(new_balance);
         commission_for_operator_2 = with_rewards(commission_for_operator_2);
         assert!(
@@ -1352,7 +1352,7 @@ module libra2_framework::staking_contract {
         let beneficiary_address = signer::address_of(beneficiary);
 
         // account::create_account_for_test(beneficiary_address);
-        libra2_framework::aptos_account::create_account(beneficiary_address);
+        libra2_framework::libra2_account::create_account(beneficiary_address);
         assert_staking_contract_exists(staker_address, operator1_address);
         assert_staking_contract(staker_address, operator1_address, INITIAL_BALANCE, 10);
 
@@ -1391,8 +1391,8 @@ module libra2_framework::staking_contract {
         new_balance = with_rewards(new_balance);
         stake::assert_stake_pool(pool_address, new_balance, expected_commission_1, 0, 0);
         distribute(staker_address, operator1_address);
-        let operator_balance = coin::balance<AptosCoin>(operator1_address);
-        let beneficiary_balance = coin::balance<AptosCoin>(beneficiary_address);
+        let operator_balance = coin::balance<Libra2Coin>(operator1_address);
+        let beneficiary_balance = coin::balance<Libra2Coin>(beneficiary_address);
         let expected_operator_balance = INITIAL_BALANCE;
         let expected_beneficiary_balance = expected_commission_1;
         assert!(operator_balance == expected_operator_balance, operator_balance);
@@ -1419,8 +1419,8 @@ module libra2_framework::staking_contract {
         distribute(staker_address, operator2_address);
 
         // Assert that the rewards go to operator2, and the balance of the operator1's beneficiay remains the same.
-        assert!(coin::balance<AptosCoin>(operator2_address) >= expected_commission, 1);
-        assert!(coin::balance<AptosCoin>(beneficiary_address) == old_beneficiay_balance, 1);
+        assert!(coin::balance<Libra2Coin>(operator2_address) >= expected_commission, 1);
+        assert!(coin::balance<Libra2Coin>(beneficiary_address) == old_beneficiay_balance, 1);
     }
 
     #[test(libra2_framework = @0x1, staker = @0x123, operator = @0x234)]
@@ -1467,9 +1467,9 @@ module libra2_framework::staking_contract {
         // Distribute and verify balances.
         distribute(staker_address, operator_address);
         assert_no_pending_distributions(staker_address, operator_address);
-        let operator_balance = coin::balance<AptosCoin>(operator_address);
+        let operator_balance = coin::balance<Libra2Coin>(operator_address);
         assert!(operator_balance == initial_balance + unpaid_commission, operator_balance);
-        let staker_balance = coin::balance<AptosCoin>(staker_address);
+        let staker_balance = coin::balance<Libra2Coin>(staker_address);
         assert!(staker_balance == withdrawn_stake, staker_balance);
     }
 
@@ -1499,10 +1499,10 @@ module libra2_framework::staking_contract {
         distribute(staker_address, operator_address);
         assert_no_pending_distributions(staker_address, operator_address);
         // Operator's balance shouldn't change as there are no rewards.
-        let operator_balance = coin::balance<AptosCoin>(operator_address);
+        let operator_balance = coin::balance<Libra2Coin>(operator_address);
         assert!(operator_balance == initial_balance, operator_balance);
         // Staker receives back the withdrawn amount (no rewards).
-        let staker_balance = coin::balance<AptosCoin>(staker_address);
+        let staker_balance = coin::balance<Libra2Coin>(staker_address);
         assert!(staker_balance == withdrawn_stake, staker_balance);
     }
 

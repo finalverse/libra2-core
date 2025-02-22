@@ -26,19 +26,19 @@ pub struct CoinSupply {
 }
 
 impl CoinSupply {
-    /// Currently only supports aptos_coin. Aggregator table detail is in CoinInfo which for aptos coin appears during genesis.
+    /// Currently only supports libra2_coin. Aggregator table detail is in CoinInfo which for aptos coin appears during genesis.
     /// We query for the aggregator table details (handle and key) once upon indexer initiation and use it to fetch supply.
     pub fn from_write_table_item(
         write_table_item: &APIWriteTableItem,
-        maybe_aptos_coin_info: &Option<CoinInfoQuery>,
+        maybe_libra2_coin_info: &Option<CoinInfoQuery>,
         txn_version: i64,
         txn_timestamp: chrono::NaiveDateTime,
         txn_epoch: i64,
     ) -> anyhow::Result<Option<Self>> {
-        if let Some(aptos_coin_info) = maybe_aptos_coin_info {
+        if let Some(libra2_coin_info) = maybe_libra2_coin_info {
             // Return early if we don't have the aptos aggregator table info
-            if aptos_coin_info.supply_aggregator_table_key.is_none()
-                || aptos_coin_info.supply_aggregator_table_handle.is_none()
+            if libra2_coin_info.supply_aggregator_table_key.is_none()
+                || libra2_coin_info.supply_aggregator_table_handle.is_none()
             {
                 return Ok(None);
             }
@@ -49,7 +49,7 @@ impl CoinSupply {
                 }
                 // Return early if not aggregator table handle
                 if &write_table_item.handle.to_string()
-                    != aptos_coin_info
+                    != libra2_coin_info
                         .supply_aggregator_table_handle
                         .as_ref()
                         .unwrap()
@@ -62,7 +62,7 @@ impl CoinSupply {
                     .as_str()
                     .context(format!("key is not a string: {:?}", data.key))?;
                 if table_key
-                    != aptos_coin_info
+                    != libra2_coin_info
                         .supply_aggregator_table_key
                         .as_ref()
                         .unwrap()
@@ -84,8 +84,8 @@ impl CoinSupply {
                     ))?;
                 return Ok(Some(Self {
                     transaction_version: txn_version,
-                    coin_type_hash: aptos_coin_info.coin_type_hash.clone(),
-                    coin_type: aptos_coin_info.coin_type.clone(),
+                    coin_type_hash: libra2_coin_info.coin_type_hash.clone(),
+                    coin_type: libra2_coin_info.coin_type.clone(),
                     supply,
                     transaction_timestamp: txn_timestamp,
                     transaction_epoch: txn_epoch,

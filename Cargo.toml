@@ -289,7 +289,7 @@ edition = "2021"
 homepage = "https://aptoslabs.com"
 license = "Apache-2.0"
 publish = false
-repository = "https://github.com/aptos-labs/aptos-core"
+repository = "https://github.com/finalverse/libra2-core"
 rust-version = "1.78.0"
 
 [workspace.dependencies]
@@ -697,7 +697,7 @@ pprof = { version = "0.11", features = ["flamegraph", "protobuf-codec"] }
 pretty = "0.10.0"
 pretty_assertions = "1.2.1"
 # We set default-features to false so we don't onboard the libpq dep. See more here:
-# https://github.com/aptos-labs/aptos-core/pull/12568
+# https://github.com/finalverse/libra2-core/pull/12568
 processor = { git = "https://github.com/aptos-labs/aptos-indexer-processors.git", rev = "bf4dd89677e6929ef21f898a7a4176514e606ebd", default-features = false }
 procfs = "0.14.1"
 proc-macro2 = "1.0.38"

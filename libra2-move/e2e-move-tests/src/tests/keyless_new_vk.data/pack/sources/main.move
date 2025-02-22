@@ -1,5 +1,5 @@
 script {
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::keyless_account;
 
     fun main(
@@ -12,9 +12,9 @@ script {
          gamma_abc_g1_1: vector<u8>
     ) {
         let vk = keyless_account::new_groth16_verification_key(alpha_g1, beta_g2, gamma_g2, delta_g2, vector[gamma_abc_g1_0, gamma_abc_g1_1]);
-        let fx = aptos_governance::get_signer_testnet_only(core_resources, @libra2_framework);
+        let fx = libra2_governance::get_signer_testnet_only(core_resources, @libra2_framework);
         keyless_account::set_groth16_verification_key_for_next_epoch(&fx, vk);
         // sets the pending Configuration change to the max expiration horizon from above
-        aptos_governance::force_end_epoch_test_only(core_resources);
+        libra2_governance::force_end_epoch_test_only(core_resources);
     }
 }

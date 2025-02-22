@@ -22,7 +22,7 @@ use libra2_types::{
 use libra2_vm::Libra2VM;
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_logging::log_schema::AdapterLogSchema;
-use libra2_vm_types::module_and_script_storage::AsAptosCodeStorage;
+use libra2_vm_types::module_and_script_storage::AsLibra2CodeStorage;
 use rayon::Scope;
 use std::sync::mpsc::{channel, Receiver, Sender};
 

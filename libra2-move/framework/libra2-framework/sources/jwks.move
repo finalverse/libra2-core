@@ -309,7 +309,7 @@ module libra2_framework::jwks {
     ///     b"https://accounts.google.com",
     ///     b"https://accounts.google.com/.well-known/openid-configuration"
     /// );
-    /// libra2_framework::aptos_governance::reconfigure(&framework_signer);
+    /// libra2_framework::libra2_governance::reconfigure(&framework_signer);
     /// ```
     public fun upsert_oidc_provider_for_next_epoch(fx: &signer, name: vector<u8>, config_url: vector<u8>): Option<vector<u8>> acquires SupportedOIDCProviders {
         system_addresses::assert_libra2_framework(fx);
@@ -344,7 +344,7 @@ module libra2_framework::jwks {
     ///     &framework_signer,
     ///     b"https://accounts.google.com",
     /// );
-    /// libra2_framework::aptos_governance::reconfigure(&framework_signer);
+    /// libra2_framework::libra2_governance::reconfigure(&framework_signer);
     /// ```
     public fun remove_oidc_provider_for_next_epoch(fx: &signer, name: vector<u8>): Option<vector<u8>> acquires SupportedOIDCProviders {
         system_addresses::assert_libra2_framework(fx);

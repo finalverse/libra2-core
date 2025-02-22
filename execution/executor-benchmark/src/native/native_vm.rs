@@ -44,7 +44,7 @@ use libra2_types::{
         TransactionOutput, TransactionStatus, WriteSetPayload,
     },
     write_set::WriteOp,
-    AptosCoinType,
+    Libra2CoinType,
 };
 use libra2_vm::{
     block_executor::{AptosBlockExecutorWrapper, AptosTransactionOutput},
@@ -553,7 +553,7 @@ impl NativeVMExecutorTask {
         view: &(impl ExecutorView + ResourceGroupView),
         aggregator_v1_delta_set: &mut BTreeMap<StateKey, DeltaOp>,
     ) -> Result<(), ()> {
-        let (sender_coin_store, _metadata) = Self::get_value::<CoinInfoResource<AptosCoinType>>(
+        let (sender_coin_store, _metadata) = Self::get_value::<CoinInfoResource<Libra2CoinType>>(
             &self.db_util.common.apt_coin_info_resource,
             view,
         )?
@@ -660,10 +660,10 @@ impl NativeVMExecutorTask {
         resource_write_set: &mut BTreeMap<StateKey, AbstractResourceWriteOp>,
         events: &mut Vec<(ContractEvent, Option<MoveTypeLayout>)>,
     ) -> Result<(), ()> {
-        let sender_coin_store_key = self.db_util.new_state_key_aptos_coin(&sender_address);
+        let sender_coin_store_key = self.db_util.new_state_key_libra2_coin(&sender_address);
 
         let sender_coin_store_opt =
-            Self::get_value::<CoinStoreResource<AptosCoinType>>(&sender_coin_store_key, view)?;
+            Self::get_value::<CoinStoreResource<Libra2CoinType>>(&sender_coin_store_key, view)?;
 
         let (mut sender_coin_store, metadata) = match sender_coin_store_opt {
             None => {
@@ -808,9 +808,9 @@ impl NativeVMExecutorTask {
         resource_write_set: &mut BTreeMap<StateKey, AbstractResourceWriteOp>,
         events: &mut Vec<(ContractEvent, Option<MoveTypeLayout>)>,
     ) -> Result<bool, ()> {
-        let recipient_coin_store_key = self.db_util.new_state_key_aptos_coin(&recipient_address);
+        let recipient_coin_store_key = self.db_util.new_state_key_libra2_coin(&recipient_address);
         let (mut recipient_coin_store, recipient_coin_store_metadata, existed) =
-            match Self::get_value::<CoinStoreResource<AptosCoinType>>(
+            match Self::get_value::<CoinStoreResource<Libra2CoinType>>(
                 &recipient_coin_store_key,
                 view,
             )? {
@@ -821,7 +821,7 @@ impl NativeVMExecutorTask {
                     events.push((
                         CoinRegister {
                             account: AccountAddress::ONE,
-                            type_info: DbAccessUtil::new_type_info_resource::<AptosCoinType>()
+                            type_info: DbAccessUtil::new_type_info_resource::<Libra2CoinType>()
                                 .map_err(hide_error)?,
                         }
                         .create_event_v2(),

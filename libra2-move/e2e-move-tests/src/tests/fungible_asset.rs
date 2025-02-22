@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, tests::common, BlockSplit, MoveHarness, SUCCESS};
-use libra2_cached_packages::libra2_stdlib::{aptos_account_batch_transfer, aptos_account_transfer};
+use libra2_cached_packages::libra2_stdlib::{libra2_account_batch_transfer, libra2_account_transfer};
 use libra2_language_e2e_tests::{
     account::Account,
     executor::{ExecutorMode, FakeExecutor},
@@ -204,7 +204,7 @@ fn test_coin_to_fungible_asset_migration() {
             (*root.address()).to_hex()
         ))
         .unwrap(),
-        vec![TypeTag::from_str("0x1::aptos_coin::AptosCoin").unwrap()],
+        vec![TypeTag::from_str("0x1::libra2_coin::Libra2Coin").unwrap()],
         vec![],
     ));
     assert!(h
@@ -218,7 +218,7 @@ fn test_coin_to_fungible_asset_migration() {
     let result = h.run_entry_function(
         &alice,
         str::parse("0x1::coin::migrate_to_fungible_store").unwrap(),
-        vec![TypeTag::from_str("0x1::aptos_coin::AptosCoin").unwrap()],
+        vec![TypeTag::from_str("0x1::libra2_coin::Libra2Coin").unwrap()],
         vec![],
     );
     assert_success!(result);
@@ -255,7 +255,7 @@ fn test_prologue_speculation() {
 
     let sink_txn = harness.create_transaction_payload(
         &independent_account,
-        aptos_account_batch_transfer(vec![AccountAddress::random(); 50], vec![10_000_000_000; 50]),
+        libra2_account_batch_transfer(vec![AccountAddress::random(); 50], vec![10_000_000_000; 50]),
     );
 
     let account = harness.new_account_at(AccountAddress::ONE);
@@ -265,18 +265,18 @@ fn test_prologue_speculation() {
 
     let fund_txn = harness.create_transaction_payload(
         &account,
-        aptos_account_batch_transfer(
+        libra2_account_batch_transfer(
             vec![*dst_1.address(), *dst_2.address(), *dst_3.address()],
             vec![10_000_000_000, 10_000_000_000, 10_000_000_000],
         ),
     );
 
     let transfer_1_txn =
-        harness.create_transaction_payload(&dst_1, aptos_account_transfer(*dst_2.address(), 1));
+        harness.create_transaction_payload(&dst_1, libra2_account_transfer(*dst_2.address(), 1));
     let transfer_2_txn =
-        harness.create_transaction_payload(&dst_2, aptos_account_transfer(*dst_3.address(), 1));
+        harness.create_transaction_payload(&dst_2, libra2_account_transfer(*dst_3.address(), 1));
     let transfer_3_txn =
-        harness.create_transaction_payload(&dst_3, aptos_account_transfer(*dst_1.address(), 1));
+        harness.create_transaction_payload(&dst_3, libra2_account_transfer(*dst_1.address(), 1));
 
     harness.run_block_in_parts_and_check(BlockSplit::Whole, vec![
         (SUCCESS, sink_txn),

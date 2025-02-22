@@ -16,7 +16,7 @@ use libra2_types::{state_store::StateView, transaction::SignedTransaction};
 use libra2_vm_logging::log_schema::AdapterLogSchema;
 #[cfg(any(test, feature = "testing"))]
 use libra2_vm_types::{
-    module_and_script_storage::AsAptosCodeStorage, output::VMOutput,
+    module_and_script_storage::AsLibra2CodeStorage, output::VMOutput,
     resolver::NoopBlockSynchronizationKillSwitch,
 };
 use move_binary_format::errors::VMResult;

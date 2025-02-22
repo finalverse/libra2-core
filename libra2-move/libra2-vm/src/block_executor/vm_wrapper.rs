@@ -15,7 +15,7 @@ use libra2_types::{
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_logging::{log_schema::AdapterLogSchema, prelude::*};
 use libra2_vm_types::{
-    module_and_script_storage::code_storage::AptosCodeStorage,
+    module_and_script_storage::code_storage::Libra2CodeStorage,
     resolver::{BlockSynchronizationKillSwitch, ExecutorView, ResourceGroupView},
 };
 use fail::fail_point;
@@ -44,7 +44,7 @@ impl ExecutorTask for AptosExecutorTask {
         &self,
         view: &(impl ExecutorView
               + ResourceGroupView
-              + AptosCodeStorage
+              + Libra2CodeStorage
               + BlockSynchronizationKillSwitch),
         txn: &SignatureVerifiedTransaction,
         txn_idx: TxnIndex,

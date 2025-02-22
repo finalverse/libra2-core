@@ -27,7 +27,7 @@ spec libra2_framework::version {
         use libra2_framework::chain_status;
         use libra2_framework::timestamp;
         use libra2_framework::coin::CoinInfo;
-        use libra2_framework::aptos_coin::AptosCoin;
+        use libra2_framework::libra2_coin::Libra2Coin;
         use libra2_framework::staking_config;
         use libra2_framework::reconfiguration;
 
@@ -36,7 +36,7 @@ spec libra2_framework::version {
         include staking_config::StakingRewardsConfigRequirement;
         requires chain_status::is_genesis();
         requires timestamp::spec_now_microseconds() >= reconfiguration::last_reconfiguration_time();
-        requires exists<CoinInfo<AptosCoin>>(@libra2_framework);
+        requires exists<CoinInfo<Libra2Coin>>(@libra2_framework);
 
         aborts_if !exists<SetVersionCapability>(signer::address_of(account));
         aborts_if !exists<Version>(@libra2_framework);

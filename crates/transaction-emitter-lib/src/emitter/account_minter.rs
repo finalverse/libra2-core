@@ -130,7 +130,7 @@ impl<'t> SourceAccountManager<'t> {
         let txn = self
             .source_account
             .sign_with_transaction_builder(self.txn_factory.payload(
-                libra2_stdlib::aptos_coin_mint(self.source_account_address(), amount),
+                libra2_stdlib::libra2_coin_mint(self.source_account_address(), amount),
             ));
 
         if let Err(e) = txn_executor.execute_transactions(&[txn]).await {
@@ -524,7 +524,7 @@ pub fn create_and_fund_account_request(
     txn_factory: &TransactionFactory,
 ) -> SignedTransaction {
     creation_account.sign_with_transaction_builder(
-        txn_factory.payload(libra2_stdlib::aptos_account_transfer(address, amount)),
+        txn_factory.payload(libra2_stdlib::libra2_account_transfer(address, amount)),
     )
 }
 

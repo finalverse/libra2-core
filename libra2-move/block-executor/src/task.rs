@@ -16,7 +16,7 @@ use libra2_types::{
 };
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_types::{
-    module_and_script_storage::code_storage::AptosCodeStorage,
+    module_and_script_storage::code_storage::Libra2CodeStorage,
     module_write_set::ModuleWrite,
     resolver::{
         BlockSynchronizationKillSwitch, ResourceGroupSize, TExecutorView, TResourceGroupView,
@@ -85,7 +85,7 @@ pub trait ExecutorTask: Sync {
             GroupKey = <Self::Txn as Transaction>::Key,
             ResourceTag = <Self::Txn as Transaction>::Tag,
             Layout = MoveTypeLayout,
-        > + AptosCodeStorage
+        > + Libra2CodeStorage
               + BlockSynchronizationKillSwitch),
         txn: &Self::Txn,
         txn_idx: TxnIndex,

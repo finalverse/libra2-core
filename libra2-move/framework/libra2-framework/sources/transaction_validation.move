@@ -8,9 +8,9 @@ module libra2_framework::transaction_validation {
     use std::vector;
 
     use libra2_framework::account;
-    use libra2_framework::aptos_account;
+    use libra2_framework::libra2_account;
     use libra2_framework::account_abstraction;
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::chain_id;
     use libra2_framework::coin;
     use libra2_framework::create_signer;
@@ -191,12 +191,12 @@ module libra2_framework::transaction_validation {
             );
             if (features::operations_default_to_fa_apt_store_enabled()) {
                 assert!(
-                    aptos_account::is_fungible_balance_at_least(gas_payer_address, max_transaction_fee),
+                    libra2_account::is_fungible_balance_at_least(gas_payer_address, max_transaction_fee),
                     error::invalid_argument(PROLOGUE_ECANT_PAY_GAS_DEPOSIT)
                 );
             } else {
                 assert!(
-                    coin::is_balance_at_least<AptosCoin>(gas_payer_address, max_transaction_fee),
+                    coin::is_balance_at_least<Libra2Coin>(gas_payer_address, max_transaction_fee),
                     error::invalid_argument(PROLOGUE_ECANT_PAY_GAS_DEPOSIT)
                 );
             }
@@ -555,12 +555,12 @@ module libra2_framework::transaction_validation {
         if (!features::transaction_simulation_enhancement_enabled() || !skip_gas_payment(is_simulation, gas_payer)) {
             if (features::operations_default_to_fa_apt_store_enabled()) {
                 assert!(
-                    aptos_account::is_fungible_balance_at_least(gas_payer, transaction_fee_amount),
+                    libra2_account::is_fungible_balance_at_least(gas_payer, transaction_fee_amount),
                     error::out_of_range(PROLOGUE_ECANT_PAY_GAS_DEPOSIT),
                 );
             } else {
                 assert!(
-                    coin::is_balance_at_least<AptosCoin>(gas_payer, transaction_fee_amount),
+                    coin::is_balance_at_least<Libra2Coin>(gas_payer, transaction_fee_amount),
                     error::out_of_range(PROLOGUE_ECANT_PAY_GAS_DEPOSIT),
                 );
             };
@@ -690,12 +690,12 @@ module libra2_framework::transaction_validation {
         )) {
             if (features::operations_default_to_fa_apt_store_enabled()) {
                 assert!(
-                    aptos_account::is_fungible_balance_at_least(gas_payer_address, transaction_fee_amount),
+                    libra2_account::is_fungible_balance_at_least(gas_payer_address, transaction_fee_amount),
                     error::out_of_range(PROLOGUE_ECANT_PAY_GAS_DEPOSIT),
                 );
             } else {
                 assert!(
-                    coin::is_balance_at_least<AptosCoin>(gas_payer_address, transaction_fee_amount),
+                    coin::is_balance_at_least<Libra2Coin>(gas_payer_address, transaction_fee_amount),
                     error::out_of_range(PROLOGUE_ECANT_PAY_GAS_DEPOSIT),
                 );
             };

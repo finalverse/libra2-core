@@ -50,13 +50,13 @@ spec libra2_framework::gas_schedule {
         use std::signer;
         use libra2_framework::util;
         use libra2_framework::coin::CoinInfo;
-        use libra2_framework::aptos_coin::AptosCoin;
+        use libra2_framework::libra2_coin::Libra2Coin;
         use libra2_framework::staking_config;
         use libra2_framework::chain_status;
 
         // TODO: set because of timeout (property proved)
         pragma verify_duration_estimate = 600;
-        requires exists<CoinInfo<AptosCoin>>(@libra2_framework);
+        requires exists<CoinInfo<Libra2Coin>>(@libra2_framework);
         requires chain_status::is_genesis();
         include staking_config::StakingRewardsConfigRequirement;
 
@@ -74,12 +74,12 @@ spec libra2_framework::gas_schedule {
 
     spec set_storage_gas_config(libra2_framework: &signer, config: StorageGasConfig) {
         use libra2_framework::coin::CoinInfo;
-        use libra2_framework::aptos_coin::AptosCoin;
+        use libra2_framework::libra2_coin::Libra2Coin;
         use libra2_framework::staking_config;
 
         // TODO: set because of timeout (property proved).
         pragma verify_duration_estimate = 600;
-        requires exists<CoinInfo<AptosCoin>>(@libra2_framework);
+        requires exists<CoinInfo<Libra2Coin>>(@libra2_framework);
         include system_addresses::AbortsIfNotLibra2Framework{ account: libra2_framework };
         include staking_config::StakingRewardsConfigRequirement;
         aborts_if !exists<StorageGasConfig>(@libra2_framework);

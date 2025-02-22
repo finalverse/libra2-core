@@ -6,8 +6,8 @@ module addr::exceed_limit {
     use std::simple_map::{SimpleMap, Self};
     use std::vector;
 
-    use aptos_token::token;
-    use aptos_token::token::TokenId;
+    use libra2_token::token;
+    use libra2_token::token::TokenId;
 
     // This struct is too large and exceeds the maximum allowed number of type nodes.
     struct MyStruct has key, store {

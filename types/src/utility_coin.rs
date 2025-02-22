@@ -20,16 +20,16 @@ pub trait CoinType {
 static APTOS_COIN_TYPE: Lazy<TypeTag> = Lazy::new(|| {
     TypeTag::Struct(Box::new(StructTag {
         address: AccountAddress::ONE,
-        module: ident_str!("aptos_coin").to_owned(),
-        name: ident_str!("AptosCoin").to_owned(),
+        module: ident_str!("libra2_coin").to_owned(),
+        name: ident_str!("Libra2Coin").to_owned(),
         type_args: vec![],
     }))
 });
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct AptosCoinType;
+pub struct Libra2CoinType;
 
-impl CoinType for AptosCoinType {
+impl CoinType for Libra2CoinType {
     fn type_tag() -> TypeTag {
         APTOS_COIN_TYPE.clone()
     }
@@ -39,9 +39,9 @@ impl CoinType for AptosCoinType {
     }
 }
 
-impl MoveStructType for AptosCoinType {
-    const MODULE_NAME: &'static IdentStr = ident_str!("aptos_coin");
-    const STRUCT_NAME: &'static IdentStr = ident_str!("AptosCoin");
+impl MoveStructType for Libra2CoinType {
+    const MODULE_NAME: &'static IdentStr = ident_str!("libra2_coin");
+    const STRUCT_NAME: &'static IdentStr = ident_str!("Libra2Coin");
 }
 
 pub static DUMMY_COIN_TYPE: Lazy<TypeTag> = Lazy::new(|| {

@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_cached_packages::libra2_stdlib::aptos_token_stdlib;
+use libra2_cached_packages::libra2_stdlib::libra2_token_stdlib;
 use aptos_forge::{AptosPublicInfo, Result, Swarm};
 use aptos_indexer::{
     database::{new_db_pool, PgDbPool, PgPoolConnection},
@@ -37,7 +37,7 @@ pub async fn execute_nft_txns<'t>(creator: LocalAccount, info: &mut AptosPublicI
     let token_name = "token name".to_owned().into_bytes();
     let collection_builder =
         info.transaction_factory()
-            .payload(aptos_token_stdlib::token_create_collection_script(
+            .payload(libra2_token_stdlib::token_create_collection_script(
                 collection_name.clone(),
                 "description".to_owned().into_bytes(),
                 "uri".to_owned().into_bytes(),
@@ -50,7 +50,7 @@ pub async fn execute_nft_txns<'t>(creator: LocalAccount, info: &mut AptosPublicI
 
     let token_builder =
         info.transaction_factory()
-            .payload(aptos_token_stdlib::token_create_token_script(
+            .payload(libra2_token_stdlib::token_create_token_script(
                 collection_name.clone(),
                 token_name.clone(),
                 "collection description".to_owned().into_bytes(),
@@ -71,7 +71,7 @@ pub async fn execute_nft_txns<'t>(creator: LocalAccount, info: &mut AptosPublicI
 
     let token_mutator =
         info.transaction_factory()
-            .payload(aptos_token_stdlib::token_mutate_token_properties(
+            .payload(libra2_token_stdlib::token_mutate_token_properties(
                 creator.address(),
                 creator.address(),
                 collection_name.clone(),

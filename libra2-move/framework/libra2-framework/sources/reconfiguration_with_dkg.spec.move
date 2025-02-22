@@ -29,7 +29,7 @@ spec libra2_framework::reconfiguration_with_dkg {
         use std::signer;
         use std::features;
         use libra2_framework::coin::CoinInfo;
-        use libra2_framework::aptos_coin::AptosCoin;
+        use libra2_framework::libra2_coin::Libra2Coin;
         use libra2_framework::staking_config;
         use libra2_framework::config_buffer;
         use libra2_framework::version;
@@ -42,7 +42,7 @@ spec libra2_framework::reconfiguration_with_dkg {
         framework: signer;
         requires signer::address_of(framework) == @libra2_framework;
         requires chain_status::is_operating();
-        requires exists<CoinInfo<AptosCoin>>(@libra2_framework);
+        requires exists<CoinInfo<Libra2Coin>>(@libra2_framework);
         include staking_config::StakingRewardsConfigRequirement;
         requires exists<features::Features>(@std);
         include config_buffer::OnNewEpochRequirement<version::Version>;

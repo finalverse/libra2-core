@@ -127,14 +127,14 @@ impl NetworkConfig {
 
         std::fs::write(fas_script_path.as_path(), format!(r#"
         script {{
-            use libra2_framework::aptos_governance;
+            use libra2_framework::libra2_governance;
 
             fun main(core_resources: &signer) {{
-                let core_signer = aptos_governance::get_signer_testnet_only(core_resources, @0000000000000000000000000000000000000000000000000000000000000001);
+                let core_signer = libra2_governance::get_signer_testnet_only(core_resources, @0000000000000000000000000000000000000000000000000000000000000001);
 
                 let framework_signer = &core_signer;
 
-                aptos_governance::update_governance_config(framework_signer, 0, 0, {});
+                libra2_governance::update_governance_config(framework_signer, 0, 0, {});
             }}
         }}
         "#, resolution_time).as_bytes())?;
@@ -194,7 +194,7 @@ impl NetworkConfig {
             "--metadata-path",
             metadata_path.path().to_str().unwrap(),
             "--metadata-url",
-            "https://raw.githubusercontent.com/aptos-labs/aptos-core/b4fb9acfc297327c43d030def2b59037c4376611/testsuite/smoke-test/src/upgrade_multi_step_test_metadata.txt",
+            "https://raw.githubusercontent.com/finalverse/libra2-core/b4fb9acfc297327c43d030def2b59037c4376611/testsuite/smoke-test/src/upgrade_multi_step_test_metadata.txt",
             "--sender-account",
             address_string.as_str(),
             "--private-key",
@@ -259,7 +259,7 @@ impl NetworkConfig {
         let args = vec![
             "",
             "--function-id",
-            "0x1::aptos_coin::mint",
+            "0x1::libra2_coin::mint",
             "--sender-account",
             "0xa550c18",
             "--args",
@@ -284,7 +284,7 @@ impl NetworkConfig {
         let args = vec![
             "",
             "--function-id",
-            "0x1::aptos_governance::add_approved_script_hash_script",
+            "0x1::libra2_governance::add_approved_script_hash_script",
             "--sender-account",
             "0xa550c18",
             "--args",

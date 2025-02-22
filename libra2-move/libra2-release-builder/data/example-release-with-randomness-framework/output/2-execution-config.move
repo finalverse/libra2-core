@@ -26,11 +26,11 @@
 // )
 
 script {
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::execution_config;
 
     fun main(core_resources: &signer) {
-        let core_signer = aptos_governance::get_signer_testnet_only(core_resources, @0x1);
+        let core_signer = libra2_governance::get_signer_testnet_only(core_resources, @0x1);
 
         let framework_signer = &core_signer;
 
@@ -41,6 +41,6 @@ script {
         ];
 
         execution_config::set_for_next_epoch(framework_signer, execution_blob);
-        aptos_governance::reconfigure(framework_signer);
+        libra2_governance::reconfigure(framework_signer);
     }
 }

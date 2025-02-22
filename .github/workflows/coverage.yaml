@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # get all the history because cargo xtest --change-since origin/main requires it.
-      - uses: aptos-labs/aptos-core/.github/actions/rust-setup@main
+      - uses: finalverse/libra2-core/.github/actions/rust-setup@main
       - run: rustup component add llvm-tools-preview
       - uses: taiki-e/install-action@4fedbddde88aab767a45a011661f832d68202716 # pin@v2.33.28
         with:
@@ -63,7 +63,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # get all the history because cargo xtest --change-since origin/main requires it.
-      - uses: aptos-labs/aptos-core/.github/actions/rust-setup@main
+      - uses: finalverse/libra2-core/.github/actions/rust-setup@main
       - run: rustup component add llvm-tools-preview
       - uses: taiki-e/install-action@4fedbddde88aab767a45a011661f832d68202716 # pin@v2.33.28
         with:

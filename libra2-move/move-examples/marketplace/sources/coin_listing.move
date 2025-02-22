@@ -22,7 +22,7 @@ module coin_listing {
     use marketplace::events;
     use marketplace::fee_schedule::{Self, FeeSchedule};
     use marketplace::listing::{Self, Listing};
-    use libra2_framework::aptos_account;
+    use libra2_framework::libra2_account;
 
     #[test_only]
     friend marketplace::listing_tests;
@@ -306,7 +306,7 @@ module coin_listing {
         start_time: u64,
         initial_price: u64,
     ): (signer, ConstructorRef) {
-        aptos_account::transfer_coins<CoinType>(
+        libra2_account::transfer_coins<CoinType>(
             seller,
             fee_schedule::fee_address(fee_schedule),
             fee_schedule::listing_fee(fee_schedule, initial_price),
@@ -341,7 +341,7 @@ module coin_listing {
             assert!(option::is_some(&buy_it_now_price), error::invalid_argument(ENO_BUY_IT_NOW));
             if (option::is_some(&current_bid)) {
                 let Bid { bidder, coins } = option::destroy_some(current_bid);
-                aptos_account::deposit_coins(bidder, coins);
+                libra2_account::deposit_coins(bidder, coins);
             } else {
                 option::destroy_none(current_bid);
             };
@@ -405,7 +405,7 @@ module coin_listing {
         let (previous_bidder, previous_bid, minimum_bid) = if (option::is_some(&auction_listing.current_bid)) {
             let Bid { bidder, coins } = option::extract(&mut auction_listing.current_bid);
             let current_bid = coin::value(&coins);
-            aptos_account::deposit_coins(bidder, coins);
+            libra2_account::deposit_coins(bidder, coins);
             (option::some(bidder), option::some(current_bid), current_bid + auction_listing.bid_increment)
         } else {
             (option::none(), option::none(), auction_listing.starting_bid)
@@ -420,7 +420,7 @@ module coin_listing {
         option::fill(&mut auction_listing.current_bid, bid);
 
         let fee_schedule = listing::fee_schedule(object);
-        aptos_account::transfer_coins<CoinType>(
+        libra2_account::transfer_coins<CoinType>(
             bidder,
             fee_schedule::fee_address(fee_schedule),
             fee_schedule::bidding_fee(fee_schedule, bid_amount),
@@ -498,17 +498,17 @@ module coin_listing {
         // Take royalty first
         if (royalty_charge != 0) {
             let royalty = coin::extract(&mut coins, royalty_charge);
-            aptos_account::deposit_coins(royalty_addr, royalty);
+            libra2_account::deposit_coins(royalty_addr, royalty);
         };
 
         // Take commission of what's left, creators get paid first
         let commission_charge = fee_schedule::commission(fee_schedule, price);
         let actual_commission_charge = math64::min(coin::value(&coins), commission_charge);
         let commission = coin::extract(&mut coins, actual_commission_charge);
-        aptos_account::deposit_coins(fee_schedule::fee_address(fee_schedule), commission);
+        libra2_account::deposit_coins(fee_schedule::fee_address(fee_schedule), commission);
 
         // Seller gets what is left
-        aptos_account::deposit_coins(seller, coins);
+        libra2_account::deposit_coins(seller, coins);
 
         events::emit_listing_filled(
             fee_schedule,
@@ -622,12 +622,12 @@ module coin_listing {
 module listing_tests {
     use std::option;
 
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::coin;
     use libra2_framework::object::{Self, Object};
     use libra2_framework::timestamp;
 
-    use aptos_token::token as tokenv1;
+    use libra2_token::token as tokenv1;
 
     use libra2_token_objects::token::Token;
     use marketplace::test_utils::{mint_tokenv2_with_collection_royalty, mint_tokenv1_additional_royalty, mint_tokenv1};
@@ -648,19 +648,19 @@ module listing_tests {
 
         let (token, fee_schedule, listing) = fixed_price_listing(marketplace, seller);
 
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9999, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9999, 0);
         assert!(listing::listed_object(listing) == object::convert(token), 0);
         assert!(listing::fee_schedule(listing) == fee_schedule, 0);
-        assert!(coin_listing::price<AptosCoin>(listing) == option::some(500), 0);
-        assert!(!coin_listing::is_auction<AptosCoin>(listing), 0);
+        assert!(coin_listing::price<Libra2Coin>(listing) == option::some(500), 0);
+        assert!(!coin_listing::is_auction<Libra2Coin>(listing), 0);
 
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
 
         assert!(object::owner(token) == purchaser_addr, 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 6, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10494, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 9500, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 6, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10494, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 9500, 0);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -676,20 +676,20 @@ module listing_tests {
         let (_collection, additional_token) = mint_tokenv2_with_collection_royalty(seller, 100, 100);
         let (token, fee_schedule, listing) = fixed_price_listing_with_token(marketplace, seller, additional_token);
 
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9999, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9999, 0);
         assert!(listing::listed_object(listing) == object::convert(token), 0);
         assert!(listing::fee_schedule(listing) == fee_schedule, 0);
-        assert!(coin_listing::price<AptosCoin>(listing) == option::some(500), 0);
-        assert!(!coin_listing::is_auction<AptosCoin>(listing), 0);
+        assert!(coin_listing::price<Libra2Coin>(listing) == option::some(500), 0);
+        assert!(!coin_listing::is_auction<Libra2Coin>(listing), 0);
 
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
 
         assert!(object::owner(token) == purchaser_addr, 0);
         // Because royalty is 100, no commission is taken just the listing fee
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10499, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 9500, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10499, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 9500, 0);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -704,10 +704,10 @@ module listing_tests {
 
         let (token, _fee_schedule, listing) = fixed_price_listing(marketplace, seller);
 
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        coin_listing::end_fixed_price<AptosCoin>(seller, listing);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9999, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        coin_listing::end_fixed_price<Libra2Coin>(seller, listing);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9999, 0);
         assert!(object::owner(token) == seller_addr, 0);
     }
 
@@ -722,25 +722,25 @@ module listing_tests {
             test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (token, fee_schedule, listing) = auction_listing(marketplace, seller);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9999, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9999, 0);
         assert!(listing::listed_object(listing) == object::convert(token), 0);
         assert!(listing::fee_schedule(listing) == fee_schedule, 0);
-        assert!(coin_listing::price<AptosCoin>(listing) == option::some(500), 0);
-        assert!(coin_listing::is_auction<AptosCoin>(listing), 0);
-        assert!(coin_listing::starting_bid<AptosCoin>(listing) == 100, 0);
-        assert!(coin_listing::bid_increment<AptosCoin>(listing) == 50, 0);
-        assert!(coin_listing::auction_end_time<AptosCoin>(listing) == timestamp::now_seconds() + 200, 0);
-        assert!(coin_listing::minimum_bid_time_before_end<AptosCoin>(listing) == 150, 0);
-        assert!(coin_listing::current_amount<AptosCoin>(listing) == option::none(), 0);
-        assert!(coin_listing::current_bidder<AptosCoin>(listing) == option::none(), 0);
+        assert!(coin_listing::price<Libra2Coin>(listing) == option::some(500), 0);
+        assert!(coin_listing::is_auction<Libra2Coin>(listing), 0);
+        assert!(coin_listing::starting_bid<Libra2Coin>(listing) == 100, 0);
+        assert!(coin_listing::bid_increment<Libra2Coin>(listing) == 50, 0);
+        assert!(coin_listing::auction_end_time<Libra2Coin>(listing) == timestamp::now_seconds() + 200, 0);
+        assert!(coin_listing::minimum_bid_time_before_end<Libra2Coin>(listing) == 150, 0);
+        assert!(coin_listing::current_amount<Libra2Coin>(listing) == option::none(), 0);
+        assert!(coin_listing::current_bidder<Libra2Coin>(listing) == option::none(), 0);
 
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
 
         assert!(object::owner(token) == purchaser_addr, 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 6, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10494, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 9500, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 6, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10494, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 9500, 0);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -754,28 +754,28 @@ module listing_tests {
             test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (token, _fee_schedule, listing) = auction_listing(marketplace, seller);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9999, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9999, 0);
 
-        coin_listing::bid<AptosCoin>(seller, listing, 100);
-        assert!(coin_listing::current_amount<AptosCoin>(listing) == option::some(100), 0);
-        assert!(coin_listing::current_bidder<AptosCoin>(listing) == option::some(seller_addr), 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 3, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9897, 0);
+        coin_listing::bid<Libra2Coin>(seller, listing, 100);
+        assert!(coin_listing::current_amount<Libra2Coin>(listing) == option::some(100), 0);
+        assert!(coin_listing::current_bidder<Libra2Coin>(listing) == option::some(seller_addr), 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 3, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9897, 0);
 
         // Return the bid and insert a new bid
-        coin_listing::bid<AptosCoin>(purchaser, listing, 150);
-        assert!(coin_listing::current_amount<AptosCoin>(listing) == option::some(150), 0);
-        assert!(coin_listing::current_bidder<AptosCoin>(listing) == option::some(purchaser_addr), 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 5, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9997, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 9848, 0);
+        coin_listing::bid<Libra2Coin>(purchaser, listing, 150);
+        assert!(coin_listing::current_amount<Libra2Coin>(listing) == option::some(150), 0);
+        assert!(coin_listing::current_bidder<Libra2Coin>(listing) == option::some(purchaser_addr), 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 5, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9997, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 9848, 0);
 
         // Return the bid and replace with a purchase
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
         assert!(object::owner(token) == purchaser_addr, 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 10, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 9498, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 10, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 9498, 0);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -789,31 +789,31 @@ module listing_tests {
             test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (token, _fee_schedule, listing) = auction_listing(marketplace, seller);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9999, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9999, 0);
         let end_time = timestamp::now_seconds() + 200;
-        assert!(coin_listing::auction_end_time<AptosCoin>(listing) == end_time, 0);
+        assert!(coin_listing::auction_end_time<Libra2Coin>(listing) == end_time, 0);
 
         // Bid but do not affect end timing
-        coin_listing::bid<AptosCoin>(seller, listing, 100);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 3, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9897, 0);
-        assert!(coin_listing::auction_end_time<AptosCoin>(listing) == end_time, 0);
+        coin_listing::bid<Libra2Coin>(seller, listing, 100);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 3, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9897, 0);
+        assert!(coin_listing::auction_end_time<Libra2Coin>(listing) == end_time, 0);
 
         // Return the bid and insert a new bid and affect end timing
         test_utils::increment_timestamp(150);
-        coin_listing::bid<AptosCoin>(purchaser, listing, 150);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 5, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9997, 0);
-        assert!(coin::balance<AptosCoin>(purchaser_addr) == 9848, 0);
-        assert!(coin_listing::auction_end_time<AptosCoin>(listing) != end_time, 0);
+        coin_listing::bid<Libra2Coin>(purchaser, listing, 150);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 5, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9997, 0);
+        assert!(coin::balance<Libra2Coin>(purchaser_addr) == 9848, 0);
+        assert!(coin_listing::auction_end_time<Libra2Coin>(listing) != end_time, 0);
 
         // End the auction as out of time
         test_utils::increment_timestamp(150);
-        coin_listing::complete_auction<AptosCoin>(libra2_framework, listing);
+        coin_listing::complete_auction<Libra2Coin>(libra2_framework, listing);
         assert!(object::owner(token) == purchaser_addr, 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 6, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 10146, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 6, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 10146, 0);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -827,15 +827,15 @@ module listing_tests {
             test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (token, _fee_schedule, listing) = auction_listing(marketplace, seller);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9999, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9999, 0);
 
         test_utils::increment_timestamp(200);
-        coin_listing::complete_auction<AptosCoin>(libra2_framework, listing);
+        coin_listing::complete_auction<Libra2Coin>(libra2_framework, listing);
 
         assert!(object::owner(token) == seller_addr, 0);
-        assert!(coin::balance<AptosCoin>(marketplace_addr) == 1, 0);
-        assert!(coin::balance<AptosCoin>(seller_addr) == 9999, 0);
+        assert!(coin::balance<Libra2Coin>(marketplace_addr) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(seller_addr) == 9999, 0);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -850,7 +850,7 @@ module listing_tests {
 
         let token = test_utils::mint_tokenv2(seller);
         let fee_schedule = test_utils::fee_schedule(marketplace);
-        let listing = coin_listing::init_fixed_price_internal<AptosCoin>(
+        let listing = coin_listing::init_fixed_price_internal<Libra2Coin>(
             seller,
             object::convert(token),
             fee_schedule,
@@ -858,7 +858,7 @@ module listing_tests {
             500,
         );
 
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -873,7 +873,7 @@ module listing_tests {
 
         let token = test_utils::mint_tokenv2(seller);
         let fee_schedule = test_utils::fee_schedule(marketplace);
-        let listing = coin_listing::init_auction_internal<AptosCoin>(
+        let listing = coin_listing::init_auction_internal<Libra2Coin>(
             seller,
             object::convert(token),
             fee_schedule,
@@ -885,7 +885,7 @@ module listing_tests {
             option::some(500),
         );
 
-        coin_listing::bid<AptosCoin>(purchaser, listing, 1000);
+        coin_listing::bid<Libra2Coin>(purchaser, listing, 1000);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -900,7 +900,7 @@ module listing_tests {
 
         let (_token, _fee_schedule, listing) = auction_listing(marketplace, seller);
         test_utils::increment_timestamp(200);
-        coin_listing::bid<AptosCoin>(purchaser, listing, 1000);
+        coin_listing::bid<Libra2Coin>(purchaser, listing, 1000);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -915,7 +915,7 @@ module listing_tests {
 
         let (_token, _fee_schedule, listing) = auction_listing(marketplace, seller);
         test_utils::increment_timestamp(200);
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -930,7 +930,7 @@ module listing_tests {
 
         let token = test_utils::mint_tokenv2(seller);
         let fee_schedule = test_utils::fee_schedule(marketplace);
-        let listing = coin_listing::init_fixed_price_internal<AptosCoin>(
+        let listing = coin_listing::init_fixed_price_internal<Libra2Coin>(
             seller,
             object::convert(token),
             fee_schedule,
@@ -938,7 +938,7 @@ module listing_tests {
             100000,
         );
 
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -952,7 +952,7 @@ module listing_tests {
         test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (_token, _fee_schedule, listing) = auction_listing(marketplace, seller);
-        coin_listing::bid<AptosCoin>(purchaser, listing, 100000);
+        coin_listing::bid<Libra2Coin>(purchaser, listing, 100000);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -966,8 +966,8 @@ module listing_tests {
         test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (_token, _fee_schedule, listing) = auction_listing(marketplace, seller);
-        coin_listing::bid<AptosCoin>(purchaser, listing, 100);
-        coin_listing::bid<AptosCoin>(purchaser, listing, 125);
+        coin_listing::bid<Libra2Coin>(purchaser, listing, 100);
+        coin_listing::bid<Libra2Coin>(purchaser, listing, 125);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -982,7 +982,7 @@ module listing_tests {
 
         let token = test_utils::mint_tokenv2(seller);
         let fee_schedule = test_utils::fee_schedule(marketplace);
-        let listing = coin_listing::init_auction_internal<AptosCoin>(
+        let listing = coin_listing::init_auction_internal<Libra2Coin>(
             seller,
             object::convert(token),
             fee_schedule,
@@ -994,7 +994,7 @@ module listing_tests {
             option::some(50000),
         );
 
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -1008,7 +1008,7 @@ module listing_tests {
         test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (_token, _fee_schedule, listing) = fixed_price_listing(marketplace, seller);
-        coin_listing::auction_end_time<AptosCoin>(listing);
+        coin_listing::auction_end_time<Libra2Coin>(listing);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -1023,7 +1023,7 @@ module listing_tests {
 
         let token = test_utils::mint_tokenv2(seller);
         let fee_schedule = test_utils::fee_schedule(marketplace);
-        let listing = coin_listing::init_auction_internal<AptosCoin>(
+        let listing = coin_listing::init_auction_internal<Libra2Coin>(
             seller,
             object::convert(token),
             fee_schedule,
@@ -1035,7 +1035,7 @@ module listing_tests {
             option::none(),
         );
 
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
     }
 
     #[test(libra2_framework = @0x1, marketplace = @0x111, seller = @0x222, purchaser = @0x333)]
@@ -1049,7 +1049,7 @@ module listing_tests {
         test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (_token, _fee_schedule, listing) = fixed_price_listing(marketplace, seller);
-        coin_listing::end_fixed_price<AptosCoin>(purchaser, listing);
+        coin_listing::end_fixed_price<Libra2Coin>(purchaser, listing);
     }
 
     // Objects and TokenV2 stuff
@@ -1068,7 +1068,7 @@ module listing_tests {
         token: Object<Token>
     ): (Object<Token>, Object<FeeSchedule>, Object<Listing>) {
         let fee_schedule = test_utils::fee_schedule(marketplace);
-        let listing = coin_listing::init_fixed_price_internal<AptosCoin>(
+        let listing = coin_listing::init_fixed_price_internal<Libra2Coin>(
             seller,
             object::convert(token),
             fee_schedule,
@@ -1085,7 +1085,7 @@ module listing_tests {
     ): (Object<Token>, Object<FeeSchedule>, Object<Listing>) {
         let token = test_utils::mint_tokenv2(seller);
         let fee_schedule = test_utils::fee_schedule(marketplace);
-        let listing = coin_listing::init_auction_internal<AptosCoin>(
+        let listing = coin_listing::init_auction_internal<Libra2Coin>(
             seller,
             object::convert(token),
             fee_schedule,
@@ -1113,7 +1113,7 @@ module listing_tests {
         tokenv1::opt_in_direct_transfer(purchaser, true);
 
         let (token_id, _fee_schedule, listing) = fixed_price_listing_for_tokenv1(marketplace, seller);
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
         assert!(tokenv1::balance_of(purchaser_addr, token_id) == 1, 0);
     }
 
@@ -1131,7 +1131,7 @@ module listing_tests {
         let token_id = mint_tokenv1_additional_royalty(seller, 100, 100);
 
         let (_fee_schedule, listing) = fixed_price_listing_for_tokenv1_with_token(marketplace, seller, &token_id);
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
         assert!(tokenv1::balance_of(purchaser_addr, token_id) == 1, 0);
         // TODO balance checks
     }
@@ -1151,7 +1151,7 @@ module listing_tests {
 
         let (_fee_schedule, listing) = fixed_price_listing_for_tokenv1_with_token(marketplace, seller, &token_id);
         // This should not fail, and no royalty is taken
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
         assert!(tokenv1::balance_of(purchaser_addr, token_id) == 1, 0);
         // TODO balance checks
     }
@@ -1168,7 +1168,7 @@ module listing_tests {
         tokenv1::opt_in_direct_transfer(purchaser, true);
 
         let (token_id, _fee_schedule, listing) = auction_listing_for_tokenv1(marketplace, seller);
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
         assert!(tokenv1::balance_of(purchaser_addr, token_id) == 1, 0);
     }
 
@@ -1183,7 +1183,7 @@ module listing_tests {
             test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (token_id, _fee_schedule, listing) = auction_listing_for_tokenv1(marketplace, seller);
-        coin_listing::purchase<AptosCoin>(purchaser, listing);
+        coin_listing::purchase<Libra2Coin>(purchaser, listing);
         assert!(tokenv1::balance_of(purchaser_addr, token_id) == 1, 0);
     }
 
@@ -1198,10 +1198,10 @@ module listing_tests {
             test_utils::setup(libra2_framework, marketplace, seller, purchaser);
 
         let (token_id, _fee_schedule, listing) = auction_listing_for_tokenv1(marketplace, seller);
-        coin_listing::bid<AptosCoin>(purchaser, listing, 100);
+        coin_listing::bid<Libra2Coin>(purchaser, listing, 100);
         test_utils::increment_timestamp(1000);
         let token_object = listing::listed_object(listing);
-        coin_listing::complete_auction<AptosCoin>(libra2_framework, listing);
+        coin_listing::complete_auction<Libra2Coin>(libra2_framework, listing);
         listing::extract_tokenv1(purchaser, object::convert(token_object));
         assert!(tokenv1::balance_of(purchaser_addr, token_id) == 1, 0);
     }
@@ -1223,7 +1223,7 @@ module listing_tests {
         let (creator_addr, collection_name, token_name, property_version) =
             tokenv1::get_token_id_fields(token_id);
         let fee_schedule = test_utils::fee_schedule(marketplace);
-        let listing = coin_listing::init_fixed_price_for_tokenv1_internal<AptosCoin>(
+        let listing = coin_listing::init_fixed_price_for_tokenv1_internal<Libra2Coin>(
             seller,
             creator_addr,
             collection_name,
@@ -1244,7 +1244,7 @@ module listing_tests {
         let (creator_addr, collection_name, token_name, property_version) =
             tokenv1::get_token_id_fields(&token_id);
         let fee_schedule = test_utils::fee_schedule(marketplace);
-        let listing = coin_listing::init_auction_for_tokenv1_internal<AptosCoin>(
+        let listing = coin_listing::init_auction_for_tokenv1_internal<Libra2Coin>(
             seller,
             creator_addr,
             collection_name,

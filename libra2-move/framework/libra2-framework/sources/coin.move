@@ -22,7 +22,7 @@ module libra2_framework::coin {
     use libra2_std::type_info::{Self, TypeInfo, type_name};
     use libra2_framework::create_signer;
 
-    friend libra2_framework::aptos_coin;
+    friend libra2_framework::libra2_coin;
     friend libra2_framework::genesis;
     friend libra2_framework::transaction_fee;
 
@@ -300,7 +300,7 @@ module libra2_framework::coin {
         };
     }
 
-    /// Create APT pairing by passing `AptosCoin`.
+    /// Create APT pairing by passing `Libra2Coin`.
     public entry fun create_pairing<CoinType>(
         libra2_framework: &signer
     ) acquires CoinConversionMap, CoinInfo {
@@ -309,7 +309,7 @@ module libra2_framework::coin {
     }
 
     inline fun is_apt<CoinType>(): bool {
-        type_info::type_name<CoinType>() == string::utf8(b"0x1::aptos_coin::AptosCoin")
+        type_info::type_name<CoinType>() == string::utf8(b"0x1::libra2_coin::Libra2Coin")
     }
 
     inline fun create_and_return_paired_metadata_if_not_exist<CoinType>(allow_apt_creation: bool): Object<Metadata> {

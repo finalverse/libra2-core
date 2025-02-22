@@ -125,7 +125,7 @@ pub fn generate_randomness_config_update_proposal(
                     );
                 },
             }
-            emitln!(writer, "aptos_governance::reconfigure({});", signer_arg);
+            emitln!(writer, "libra2_governance::reconfigure({});", signer_arg);
         },
     );
 

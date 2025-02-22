@@ -101,7 +101,7 @@ CREATE OPTIONS:
 
 ## Pangu Node Config (Customizability)
 
-[Pangu config template](https://github.com/aptos-labs/aptos-core/blob/main/testsuite/pangu_lib/template_testnet_files/pangu_node_config.yaml)
+[Pangu config template](https://github.com/finalverse/libra2-core/blob/main/testsuite/pangu_lib/template_testnet_files/pangu_node_config.yaml)
 
 ```yaml
 blueprints:
@@ -143,7 +143,7 @@ Pangu allows you to use a default template to create n number of nodes without m
 
 To create a testnet with a custom topology, create a new pangu config file and pass it with the option "--pangu-node-configs-path" 
 
-- [**See the default config here**](https://github.com/aptos-labs/aptos-core/blob/main/testsuite/pangu_lib/template_testnet_files/pangu_node_config.yaml)
+- [**See the default config here**](https://github.com/finalverse/libra2-core/blob/main/testsuite/pangu_lib/template_testnet_files/pangu_node_config.yaml)
     - The config yaml should start with “blueprints:”
     - A blueprint describes the validator config, the validator image, the vfn config, the vfn image, stake_amount for the validator, and the number of validator/vfn pairs you would like to create with this specific blueprint.
     - The name of the blueprint will dictate the names of the pods (validators, vfns) created using it.
@@ -174,20 +174,20 @@ alias pangu="poetry run python pangu.py"
 
 Pangu lives in aptos-core/testsuite. Tips for navigating the codebase:
 
-- [**aptos-core/testsuite/pangu.py**](https://github.com/aptos-labs/aptos-core/blob/main/testsuite/pangu.py)
+- [**aptos-core/testsuite/pangu.py**](https://github.com/finalverse/libra2-core/blob/main/testsuite/pangu.py)
     - This is the entry point to the Pangu CLI. Use poetry run python pangu.py to run.
-- [**aptos-core/testsuite/test_framework**](https://github.com/aptos-labs/aptos-core/tree/main/testsuite/test_framework)
+- [**aptos-core/testsuite/test_framework**](https://github.com/finalverse/libra2-core/tree/main/testsuite/test_framework)
     - Includes the system abstractions for testing.
     - The Kubernetes abstraction might need to be updated to add new Kubernetes features.
-- [**aptos-core/testsuite/pangu_lib/node_commands**](https://github.com/aptos-labs/aptos-core/tree/main/testsuite/pangu_lib/node_commands)
+- [**aptos-core/testsuite/pangu_lib/node_commands**](https://github.com/finalverse/libra2-core/tree/main/testsuite/pangu_lib/node_commands)
     - Includes the commands for the pangu node {COMMAND} commands
     - Each command has its own .py file, which are then aggregated in the commands.py file to be exported to pangu.py
-- [a**ptos-core/testsuite/pangu_lib/testnet_commands**](https://github.com/aptos-labs/aptos-core/tree/main/testsuite/pangu_lib/testnet_commands)
+- [a**ptos-core/testsuite/pangu_lib/testnet_commands**](https://github.com/finalverse/libra2-core/tree/main/testsuite/pangu_lib/testnet_commands)
     - Includes the commands for the pangu testnet {COMMAND} commands
     - Each command has its own .py file, which are then aggregated in the commands.py file to be exported to pangu.py
-- [**aptos-core/testsuite/pangu_lib/tests**](https://github.com/aptos-labs/aptos-core/tree/main/testsuite/pangu_lib/tests)
+- [**aptos-core/testsuite/pangu_lib/tests**](https://github.com/finalverse/libra2-core/tree/main/testsuite/pangu_lib/tests)
     - Includes the unit tests
-- [**aptos-core/testsuite/pangu-sdk**](https://github.com/aptos-labs/aptos-core/tree/main/testsuite/pangu-sdk)
+- [**aptos-core/testsuite/pangu-sdk**](https://github.com/finalverse/libra2-core/tree/main/testsuite/pangu-sdk)
     - The Pangu Rust SDK is a light Rust wrapper around the Pangu CLI. It allows rust code to be able to run Pangu commands by passing structs, without having to generate the Pangu Config Yaml files. It is not feature complete, but should be a good starting point for the Pangu-Forge integrations.
 
 ## Metrics

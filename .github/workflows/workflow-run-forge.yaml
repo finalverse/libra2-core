@@ -155,7 +155,7 @@ jobs:
           auth_duration=$(( $FORGE_RUNNER_DURATION_SECS > 5400 ? $FORGE_RUNNER_DURATION_SECS + 30 * 60 : 5400 ))
           echo "auth_duration=${auth_duration}" >> $GITHUB_OUTPUT
 
-      - uses: aptos-labs/aptos-core/.github/actions/docker-setup@main
+      - uses: finalverse/libra2-core/.github/actions/docker-setup@main
         if: ${{ !inputs.SKIP_JOB }}
         id: docker-setup
         with:

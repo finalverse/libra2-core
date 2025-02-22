@@ -47,8 +47,8 @@ proptest = { workspace = true, optional = true }
 proptest-derive = { workspace = true, optional = true }
 rand = { workspace = true, features = ["small_rng"] }
 # Note: we cannot rely on the workspace version of rand. So we use this workaround. See:
-# https://github.com/aptos-labs/aptos-core/blob/main/state-sync/libra2-data-client/Cargo.toml#L41.
-# See also https://github.com/aptos-labs/aptos-core/issues/13031
+# https://github.com/finalverse/libra2-core/blob/main/state-sync/libra2-data-client/Cargo.toml#L41.
+# See also https://github.com/finalverse/libra2-core/issues/13031
 rand_latest = { package = "rand", version = "0.8.5" }
 serde = { workspace = true }
 serde_bytes = { workspace = true }

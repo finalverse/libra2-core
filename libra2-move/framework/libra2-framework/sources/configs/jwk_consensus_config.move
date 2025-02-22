@@ -53,11 +53,11 @@ module libra2_framework::jwk_consensus_config {
     /// Example usage:
     /// ```
     /// use libra2_framework::jwk_consensus_config;
-    /// use libra2_framework::aptos_governance;
+    /// use libra2_framework::libra2_governance;
     /// // ...
     /// let config = jwk_consensus_config::new_v1(vector[]);
     /// jwk_consensus_config::set_for_next_epoch(&framework_signer, config);
-    /// aptos_governance::reconfigure(&framework_signer);
+    /// libra2_governance::reconfigure(&framework_signer);
     /// ```
     public fun set_for_next_epoch(framework: &signer, config: JWKConsensusConfig) {
         system_addresses::assert_libra2_framework(framework);

@@ -25,7 +25,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Set up Rust
-        uses: aptos-labs/aptos-core/.github/actions/rust-setup@main
+        uses: finalverse/libra2-core/.github/actions/rust-setup@main
         with:
           GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
 

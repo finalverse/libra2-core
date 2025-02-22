@@ -6,7 +6,7 @@
   "gas_unit_price": "0",
   "expiration_timestamp_secs": "18446744073709551615",
   "payload": {
-    "function": "0x1::aptos_account::transfer",
+    "function": "0x1::libra2_account::transfer",
     "type_arguments": [],
     "arguments": [
       "0x1",

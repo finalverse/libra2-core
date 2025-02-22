@@ -5,19 +5,19 @@
 
 pub use crate::{
     libra2_framework_sdk_builder::*, libra2_token_objects_sdk_builder as libra2_token_objects_stdlib,
-    libra2_token_sdk_builder as aptos_token_stdlib,
+    libra2_token_sdk_builder as libra2_token_stdlib,
 };
 use libra2_framework::{BuildOptions, BuiltPackage};
 use libra2_package_builder::PackageBuilder;
 use libra2_types::{
     account_address::AccountAddress,
     transaction::{EntryFunction, TransactionPayload},
-    AptosCoinType, CoinType,
+    Libra2CoinType, CoinType,
 };
 use move_core_types::{ident_str, language_storage::ModuleId};
 
-pub fn aptos_coin_transfer(to: AccountAddress, amount: u64) -> TransactionPayload {
-    coin_transfer(AptosCoinType::type_tag(), to, amount)
+pub fn libra2_coin_transfer(to: AccountAddress, amount: u64) -> TransactionPayload {
+    coin_transfer(Libra2CoinType::type_tag(), to, amount)
 }
 
 pub fn publish_module_source(module_name: &str, module_src: &str) -> TransactionPayload {

@@ -228,7 +228,7 @@ where
 
         // TODO: should change WVUF trait to support some kind of multi-threaded share verification,
         //  since in practice that's what we would do on the validators
-        //  i.e., https://github.com/aptos-labs/aptos-core/blob/8ff40c8dd6505dea5e4b2a28cbbe7b97723b0ec2/consensus/src/rand/rand_gen/rand_manager.rs#L221
+        //  i.e., https://github.com/finalverse/libra2-core/blob/8ff40c8dd6505dea5e4b2a28cbbe7b97723b0ec2/consensus/src/rand/rand_gen/rand_manager.rs#L221
         wvuf_verify_share_random::<WT, WVUF, ThreadRng>(
             &wc, &vuf_pp, &asks, &apks, group, &mut rng,
         );

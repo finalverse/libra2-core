@@ -1,4 +1,4 @@
-// Test case to showcase https://github.com/aptos-labs/aptos-core/issues/15339
+// Test case to showcase https://github.com/finalverse/libra2-core/issues/15339
 module 0xc0ffee::m {
     fun one(): u64 {
         1

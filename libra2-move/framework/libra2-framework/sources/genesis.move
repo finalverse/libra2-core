@@ -7,9 +7,9 @@ module libra2_framework::genesis {
 
     use libra2_framework::account;
     use libra2_framework::aggregator_factory;
-    use libra2_framework::aptos_account;
-    use libra2_framework::aptos_coin::{Self, AptosCoin};
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_account;
+    use libra2_framework::libra2_coin::{Self, Libra2Coin};
+    use libra2_framework::libra2_governance;
     use libra2_framework::block;
     use libra2_framework::chain_id;
     use libra2_framework::chain_status;
@@ -95,14 +95,14 @@ module libra2_framework::genesis {
         );
 
         // Give the decentralized on-chain governance control over the core framework account.
-        aptos_governance::store_signer_cap(&libra2_framework_account, @libra2_framework, libra2_framework_signer_cap);
+        libra2_governance::store_signer_cap(&libra2_framework_account, @libra2_framework, libra2_framework_signer_cap);
 
         // put reserved framework reserved accounts under aptos governance
         let framework_reserved_addresses = vector<address>[@0x2, @0x3, @0x4, @0x5, @0x6, @0x7, @0x8, @0x9, @0xa];
         while (!vector::is_empty(&framework_reserved_addresses)) {
             let address = vector::pop_back<address>(&mut framework_reserved_addresses);
             let (_, framework_signer_cap) = account::create_framework_reserved_account(address);
-            aptos_governance::store_signer_cap(&libra2_framework_account, address, framework_signer_cap);
+            libra2_governance::store_signer_cap(&libra2_framework_account, address, framework_signer_cap);
         };
 
         consensus_config::initialize(&libra2_framework_account, consensus_config);
@@ -133,41 +133,41 @@ module libra2_framework::genesis {
     }
 
     /// Genesis step 2: Initialize Aptos coin.
-    fun initialize_aptos_coin(libra2_framework: &signer) {
-        let (burn_cap, mint_cap) = aptos_coin::initialize(libra2_framework);
+    fun initialize_libra2_coin(libra2_framework: &signer) {
+        let (burn_cap, mint_cap) = libra2_coin::initialize(libra2_framework);
 
         coin::create_coin_conversion_map(libra2_framework);
-        coin::create_pairing<AptosCoin>(libra2_framework);
+        coin::create_pairing<Libra2Coin>(libra2_framework);
 
-        // Give stake module MintCapability<AptosCoin> so it can mint rewards.
-        stake::store_aptos_coin_mint_cap(libra2_framework, mint_cap);
-        // Give transaction_fee module BurnCapability<AptosCoin> so it can burn gas.
-        transaction_fee::store_aptos_coin_burn_cap(libra2_framework, burn_cap);
-        // Give transaction_fee module MintCapability<AptosCoin> so it can mint refunds.
-        transaction_fee::store_aptos_coin_mint_cap(libra2_framework, mint_cap);
+        // Give stake module MintCapability<Libra2Coin> so it can mint rewards.
+        stake::store_libra2_coin_mint_cap(libra2_framework, mint_cap);
+        // Give transaction_fee module BurnCapability<Libra2Coin> so it can burn gas.
+        transaction_fee::store_libra2_coin_burn_cap(libra2_framework, burn_cap);
+        // Give transaction_fee module MintCapability<Libra2Coin> so it can mint refunds.
+        transaction_fee::store_libra2_coin_mint_cap(libra2_framework, mint_cap);
     }
 
     /// Only called for testnets and e2e tests.
-    fun initialize_core_resources_and_aptos_coin(
+    fun initialize_core_resources_and_libra2_coin(
         libra2_framework: &signer,
         core_resources_auth_key: vector<u8>,
     ) {
-        let (burn_cap, mint_cap) = aptos_coin::initialize(libra2_framework);
+        let (burn_cap, mint_cap) = libra2_coin::initialize(libra2_framework);
 
         coin::create_coin_conversion_map(libra2_framework);
-        coin::create_pairing<AptosCoin>(libra2_framework);
+        coin::create_pairing<Libra2Coin>(libra2_framework);
 
-        // Give stake module MintCapability<AptosCoin> so it can mint rewards.
-        stake::store_aptos_coin_mint_cap(libra2_framework, mint_cap);
-        // Give transaction_fee module BurnCapability<AptosCoin> so it can burn gas.
-        transaction_fee::store_aptos_coin_burn_cap(libra2_framework, burn_cap);
-        // Give transaction_fee module MintCapability<AptosCoin> so it can mint refunds.
-        transaction_fee::store_aptos_coin_mint_cap(libra2_framework, mint_cap);
+        // Give stake module MintCapability<Libra2Coin> so it can mint rewards.
+        stake::store_libra2_coin_mint_cap(libra2_framework, mint_cap);
+        // Give transaction_fee module BurnCapability<Libra2Coin> so it can burn gas.
+        transaction_fee::store_libra2_coin_burn_cap(libra2_framework, burn_cap);
+        // Give transaction_fee module MintCapability<Libra2Coin> so it can mint refunds.
+        transaction_fee::store_libra2_coin_mint_cap(libra2_framework, mint_cap);
 
         let core_resources = account::create_account(@core_resources);
         account::rotate_authentication_key_internal(&core_resources, core_resources_auth_key);
-        aptos_account::register_apt(&core_resources); // registers APT store
-        aptos_coin::configure_accounts_for_test(libra2_framework, &core_resources, mint_cap);
+        libra2_account::register_apt(&core_resources); // registers APT store
+        libra2_coin::configure_accounts_for_test(libra2_framework, &core_resources, mint_cap);
     }
 
     fun create_accounts(libra2_framework: &signer, accounts: vector<AccountMap>) {
@@ -195,8 +195,8 @@ module libra2_framework::genesis {
             create_signer(account_address)
         } else {
             let account = account::create_account(account_address);
-            coin::register<AptosCoin>(&account);
-            aptos_coin::mint(libra2_framework, account_address, balance);
+            coin::register<Libra2Coin>(&account);
+            libra2_coin::mint(libra2_framework, account_address, balance);
             account
         }
     }
@@ -224,8 +224,8 @@ module libra2_framework::genesis {
                 vector::push_back(&mut unique_accounts, *account);
 
                 let employee = create_signer(*account);
-                let total = coin::balance<AptosCoin>(*account);
-                let coins = coin::withdraw<AptosCoin>(&employee, total);
+                let total = coin::balance<Libra2Coin>(*account);
+                let coins = coin::withdraw<Libra2Coin>(&employee, total);
                 simple_map::add(&mut buy_ins, *account, coins);
 
                 j = j + 1;
@@ -299,7 +299,7 @@ module libra2_framework::genesis {
 
         // Destroy the aptos framework account's ability to mint coins now that we're done with setting up the initial
         // validators.
-        aptos_coin::destroy_mint_cap(libra2_framework);
+        libra2_coin::destroy_mint_cap(libra2_framework);
 
         stake::on_new_epoch();
     }
@@ -432,8 +432,8 @@ module libra2_framework::genesis {
             voting_power_increase_limit
         );
         features::change_feature_flags_for_verification(libra2_framework, vector[1, 2], vector[]);
-        initialize_aptos_coin(libra2_framework);
-        aptos_governance::initialize_for_verification(
+        initialize_libra2_coin(libra2_framework);
+        libra2_governance::initialize_for_verification(
             libra2_framework,
             min_voting_threshold,
             required_proposer_stake,
@@ -482,19 +482,19 @@ module libra2_framework::genesis {
     #[test(libra2_framework = @0x1)]
     fun test_create_account(libra2_framework: &signer) {
         setup();
-        initialize_aptos_coin(libra2_framework);
+        initialize_libra2_coin(libra2_framework);
 
         let addr = @0x121341; // 01 -> 0a are taken
         let test_signer_before = create_account(libra2_framework, addr, 15);
         let test_signer_after = create_account(libra2_framework, addr, 500);
         assert!(test_signer_before == test_signer_after, 0);
-        assert!(coin::balance<AptosCoin>(addr) == 15, 1);
+        assert!(coin::balance<Libra2Coin>(addr) == 15, 1);
     }
 
     #[test(libra2_framework = @0x1)]
     fun test_create_accounts(libra2_framework: &signer) {
         setup();
-        initialize_aptos_coin(libra2_framework);
+        initialize_libra2_coin(libra2_framework);
 
         // 01 -> 0a are taken
         let addr0 = @0x121341;
@@ -512,11 +512,11 @@ module libra2_framework::genesis {
         ];
 
         create_accounts(libra2_framework, accounts);
-        assert!(coin::balance<AptosCoin>(addr0) == 12345, 0);
-        assert!(coin::balance<AptosCoin>(addr1) == 67890, 1);
+        assert!(coin::balance<Libra2Coin>(addr0) == 12345, 0);
+        assert!(coin::balance<Libra2Coin>(addr1) == 67890, 1);
 
         create_account(libra2_framework, addr0, 23456);
-        assert!(coin::balance<AptosCoin>(addr0) == 12345, 2);
+        assert!(coin::balance<Libra2Coin>(addr0) == 12345, 2);
     }
 
     #[test(libra2_framework = @0x1, root = @0xabcd)]
@@ -532,16 +532,16 @@ module libra2_framework::genesis {
 
         aggregator_factory::initialize_aggregator_factory_for_test(libra2_framework);
 
-        let (burn_cap, mint_cap) = aptos_coin::initialize(libra2_framework);
-        aptos_coin::ensure_initialized_with_apt_fa_metadata_for_test();
+        let (burn_cap, mint_cap) = libra2_coin::initialize(libra2_framework);
+        libra2_coin::ensure_initialized_with_apt_fa_metadata_for_test();
 
         let core_resources = account::create_account(@core_resources);
-        aptos_account::register_apt(&core_resources); // registers APT store
+        libra2_account::register_apt(&core_resources); // registers APT store
 
         let apt_metadata = object::address_to_object<Metadata>(@aptos_fungible_asset);
         assert!(primary_fungible_store::primary_store_exists(@core_resources, apt_metadata), 2);
 
-        aptos_coin::configure_accounts_for_test(libra2_framework, &core_resources, mint_cap);
+        libra2_coin::configure_accounts_for_test(libra2_framework, &core_resources, mint_cap);
 
         coin::destroy_burn_cap(burn_cap);
         coin::destroy_mint_cap(mint_cap);

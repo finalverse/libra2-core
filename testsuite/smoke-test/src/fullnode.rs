@@ -75,7 +75,7 @@ async fn test_indexer() {
     wait_for_account(&client, account1.address()).await.unwrap();
 
     let txn = account1.sign_with_transaction_builder(
-        factory.payload(libra2_stdlib::aptos_coin_transfer(account2.address(), 10)),
+        factory.payload(libra2_stdlib::libra2_coin_transfer(account2.address(), 10)),
     );
 
     client.submit_and_wait(&txn).await.unwrap();

@@ -11,7 +11,7 @@
 //! supported over that messaging protocol. On receipt, both ends will determine the highest
 //! intersecting messaging protocol version and use that for the remainder of the session.
 //!
-//! [AptosNet Handshake v1 Specification]: https://github.com/aptos-labs/aptos-core/blob/main/specifications/network/handshake-v1.md
+//! [AptosNet Handshake v1 Specification]: https://github.com/finalverse/libra2-core/blob/main/specifications/network/handshake-v1.md
 
 use crate::counters::{start_serialization_timer, DESERIALIZATION_LABEL, SERIALIZATION_LABEL};
 use anyhow::anyhow;

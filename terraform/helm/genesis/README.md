@@ -8,7 +8,7 @@ Aptos blockchain automated genesis ceremony for testnets
 
 ## Source Code
 
-* <https://github.com/aptos-labs/aptos-core>
+* <https://github.com/finalverse/libra2-core>
 
 ## Values
 

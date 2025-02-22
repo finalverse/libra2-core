@@ -1,7 +1,7 @@
 # Fuzz Test Suite
 
 ## Introduction
-This directory contains tools and scripts essential for fuzz testing on Aptos Core. Fuzz targets run continuously on daily versions of `main` on Google's OSS-Fuzz infrastructure.
+This directory contains tools and scripts essential for fuzz testing on Libra2. Fuzz targets run continuously on daily versions of `main` on Google's OSS-Fuzz infrastructure.
 
 ## `fuzz.sh`
 `fuzz.sh` is the main script to perform common fuzzing-related operations.

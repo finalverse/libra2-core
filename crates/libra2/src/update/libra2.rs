@@ -69,7 +69,7 @@ impl BinaryUpdater for Libra2UpdateTool {
 
         // Find the latest release of the CLI, in which we filter for the CLI tag.
         // If the release isn't in the last 30 items (the default API page size)
-        // this will fail. See https://github.com/aptos-labs/aptos-core/issues/6411.
+        // this will fail. See https://github.com/finalverse/libra2-core/issues/6411.
         let mut releases = releases.into_iter();
         let latest_release = loop {
             let release = match releases.next() {

@@ -13,7 +13,7 @@ use std::{fmt::Display, path::PathBuf};
 /// Represents a standard library.
 pub enum StdLib {
     Libra2TokenObjects,
-    AptosToken,
+    Libra2Token,
     Libra2Framework,
     Libra2Stdlib,
     MoveStdlib,
@@ -56,7 +56,7 @@ impl StdLib {
     /// Returns the name of the standard library.
     pub fn as_str(&self) -> &'static str {
         match self {
-            StdLib::AptosToken => "AptosToken",
+            StdLib::Libra2Token => "Libra2Token",
             StdLib::Libra2TokenObjects => "Libra2TokenObjects",
             StdLib::Libra2Framework => "Libra2Framework",
             StdLib::Libra2Stdlib => "Libra2Stdlib",
@@ -67,7 +67,7 @@ impl StdLib {
     /// Returns the standard library from the given package name, or `None` if the package name is not a standard library.
     pub fn from_package_name(package_name: Symbol) -> Option<StdLib> {
         match package_name.as_str() {
-            "AptosToken" => Some(StdLib::AptosToken),
+            "Libra2Token" => Some(StdLib::Libra2Token),
             "Libra2TokenObjects" => Some(StdLib::Libra2TokenObjects),
             "Libra2Framework" => Some(StdLib::Libra2Framework),
             "Libra2Stdlib" => Some(StdLib::Libra2Stdlib),
@@ -79,7 +79,7 @@ impl StdLib {
     /// Returns the subdirectory of the standard library in the git repository.
     fn sub_dir(&self) -> &'static str {
         match self {
-            StdLib::AptosToken => "aptos-token",
+            StdLib::Libra2Token => "libra2-token",
             StdLib::Libra2TokenObjects => "libra2-token-objects",
             StdLib::Libra2Framework => "libra2-framework",
             StdLib::Libra2Stdlib => "libra2-stdlib",

@@ -19,7 +19,7 @@ The default configuration will create a single node cluster with 4CPU/8GB and a 
 
 2. Clone the aptos-core repo and go to the terraform vultr folder.
 
-         $ git clone https://github.com/aptos-labs/aptos-core.git
+         $ git clone https://github.com/finalverse/libra2-core.git
 
          $ cd aptos-core/terraform/fullnode/vultr
 

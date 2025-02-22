@@ -42,7 +42,7 @@ pub fn generate_consensus_upgrade_proposal(
                 "consensus_config::set_for_next_epoch({}, consensus_blob);",
                 signer_arg
             );
-            emitln!(writer, "aptos_governance::reconfigure({});", signer_arg);
+            emitln!(writer, "libra2_governance::reconfigure({});", signer_arg);
         },
     );
 

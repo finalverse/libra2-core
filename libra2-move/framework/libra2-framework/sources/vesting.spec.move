@@ -37,7 +37,7 @@ spec libra2_framework::vesting {
     /// Implementation: The end of the vesting cliff is stored under VestingContract.vesting_schedule.start_timestamp_secs.
     /// The vest function always checks that timestamp::now_seconds is greater or equal to the end of the vesting cliff
     /// period.
-    /// Enforcement: Audited the check for the end of vesting cliff: [https://github.com/aptos-labs/aptos-core/blob/main/libra2-move/framework/libra2-framework/sources/vesting.move#L566](vest) module.
+    /// Enforcement: Audited the check for the end of vesting cliff: [https://github.com/finalverse/libra2-core/blob/main/libra2-move/framework/libra2-framework/sources/vesting.move#L566](vest) module.
     ///
     /// No.: 5
     /// Requirement: In order to retrieve the total accumulated rewards that have not been distributed, the accumulated
@@ -257,7 +257,7 @@ spec libra2_framework::vesting {
         /// [high-level-req-10]
         aborts_if withdrawal_address == @libra2_framework || withdrawal_address == @vm_reserved;
         aborts_if !exists<account::Account>(withdrawal_address);
-        aborts_if !exists<coin::CoinStore<AptosCoin>>(withdrawal_address);
+        aborts_if !exists<coin::CoinStore<Libra2Coin>>(withdrawal_address);
         aborts_if len(shareholders) == 0;
         // property 2: The vesting pool should not exceed a maximum of 30 shareholders.
         aborts_if simple_map::spec_len(buy_ins) != len(shareholders);
@@ -433,7 +433,7 @@ spec libra2_framework::vesting {
         pragma verify_duration_estimate = 300;
         pragma aborts_if_is_partial;
         aborts_if !account::exists_at(new_beneficiary);
-        aborts_if !coin::spec_is_account_registered<AptosCoin>(new_beneficiary);
+        aborts_if !coin::spec_is_account_registered<Libra2Coin>(new_beneficiary);
         include VerifyAdminAbortsIf;
         let post vesting_contract = global<VestingContract>(contract_address);
         ensures simple_map::spec_contains_key(vesting_contract.beneficiaries,shareholder);
@@ -528,11 +528,11 @@ spec libra2_framework::vesting {
 
         let acc = global<account::Account>(resource_addr);
         let post post_acc = global<account::Account>(resource_addr);
-        aborts_if !exists<coin::CoinStore<AptosCoin>>(resource_addr) && !libra2_std::type_info::spec_is_struct<AptosCoin>();
-        aborts_if !exists<coin::CoinStore<AptosCoin>>(resource_addr) && ea && acc.guid_creation_num + 2 > MAX_U64;
-        aborts_if !exists<coin::CoinStore<AptosCoin>>(resource_addr) && ea && acc.guid_creation_num + 2 >= account::MAX_GUID_CREATION_NUM;
+        aborts_if !exists<coin::CoinStore<Libra2Coin>>(resource_addr) && !libra2_std::type_info::spec_is_struct<Libra2Coin>();
+        aborts_if !exists<coin::CoinStore<Libra2Coin>>(resource_addr) && ea && acc.guid_creation_num + 2 > MAX_U64;
+        aborts_if !exists<coin::CoinStore<Libra2Coin>>(resource_addr) && ea && acc.guid_creation_num + 2 >= account::MAX_GUID_CREATION_NUM;
         ensures exists<account::Account>(resource_addr) && post_acc.authentication_key == account::ZERO_AUTH_KEY &&
-                exists<coin::CoinStore<AptosCoin>>(resource_addr);
+                exists<coin::CoinStore<Libra2Coin>>(resource_addr);
         ensures signer::address_of(result_1) == resource_addr;
         ensures result_2.account == resource_addr;
     }
@@ -575,7 +575,7 @@ spec libra2_framework::vesting {
         include amount != 0 ==> DistributeInternalAbortsIf { staker: acc, operator, staking_contract, distribute_events: store.distribute_events };
     }
 
-    spec withdraw_stake(vesting_contract: &VestingContract, contract_address: address): Coin<AptosCoin> {
+    spec withdraw_stake(vesting_contract: &VestingContract, contract_address: address): Coin<Libra2Coin> {
         // TODO: Calls `staking_contract::distribute` which is not verified.
         pragma verify = false;
         include WithdrawStakeAbortsIf;

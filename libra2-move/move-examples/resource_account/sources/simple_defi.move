@@ -13,7 +13,7 @@
 /// - In init_module(), we do two things: first, we create the new coin; secondly, we store the resource account's signer capability
 /// and the coin's mint and burn capabilities within `ModuleData`. Storing the signer capability allows the module to programmatically
 /// sign transactions without needing a private key
-/// (2) when exchanging coins, we call `exchange_to` to swap `AptosCoin` to `ChloesCoin`, and `exchange_from` to swap `AptosCoin` from `ChloesCoin`
+/// (2) when exchanging coins, we call `exchange_to` to swap `Libra2Coin` to `ChloesCoin`, and `exchange_from` to swap `Libra2Coin` from `ChloesCoin`
 module resource_account::simple_defi {
     use std::signer;
     use std::string;
@@ -21,7 +21,7 @@ module resource_account::simple_defi {
     use libra2_framework::account;
     use libra2_framework::coin::{Self, Coin, MintCapability, BurnCapability};
     use libra2_framework::resource_account;
-    use libra2_framework::aptos_coin::{AptosCoin};
+    use libra2_framework::libra2_coin::{Libra2Coin};
 
     struct ModuleData has key {
         resource_signer_cap: account::SignerCapability,
@@ -30,7 +30,7 @@ module resource_account::simple_defi {
     }
 
     struct ChloesCoin {
-        aptos_coin: AptosCoin
+        libra2_coin: Libra2Coin
     }
 
     /// initialize the module and store the signer cap, mint cap and burn cap within `ModuleData`
@@ -54,32 +54,32 @@ module resource_account::simple_defi {
         coin::destroy_freeze_cap(freeze_cap);
 
         // regsiter the resource account with both coins so it has a CoinStore to store those coins
-        coin::register<AptosCoin>(account);
+        coin::register<Libra2Coin>(account);
         coin::register<ChloesCoin>(account);
     }
 
-    /// Exchange AptosCoin to ChloesCoin
-    public fun exchange_to(a_coin: Coin<AptosCoin>): Coin<ChloesCoin> acquires ModuleData {
+    /// Exchange Libra2Coin to ChloesCoin
+    public fun exchange_to(a_coin: Coin<Libra2Coin>): Coin<ChloesCoin> acquires ModuleData {
         let coin_cap = borrow_global_mut<ModuleData>(@resource_account);
         let amount = coin::value(&a_coin);
         coin::deposit(@resource_account, a_coin);
         coin::mint<ChloesCoin>(amount, &coin_cap.mint_cap)
     }
 
-    /// Exchange ChloesCoin to AptosCoin
-    public fun exchange_from(c_coin: Coin<ChloesCoin>): Coin<AptosCoin> acquires ModuleData {
+    /// Exchange ChloesCoin to Libra2Coin
+    public fun exchange_from(c_coin: Coin<ChloesCoin>): Coin<Libra2Coin> acquires ModuleData {
         let amount = coin::value(&c_coin);
         let coin_cap = borrow_global_mut<ModuleData>(@resource_account);
         coin::burn<ChloesCoin>(c_coin, &coin_cap.burn_cap);
 
         let module_data = borrow_global_mut<ModuleData>(@resource_account);
         let resource_signer = account::create_signer_with_capability(&module_data.resource_signer_cap);
-        coin::withdraw<AptosCoin>(&resource_signer, amount)
+        coin::withdraw<Libra2Coin>(&resource_signer, amount)
     }
 
     /// Entry function version of exchange_to() for e2e tests only
     public entry fun exchange_to_entry(account: &signer, amount: u64) acquires ModuleData {
-        let a_coin = coin::withdraw<AptosCoin>(account, amount);
+        let a_coin = coin::withdraw<Libra2Coin>(account, amount);
         let c_coin = exchange_to(a_coin);
 
         coin::register<ChloesCoin>(account);
@@ -107,27 +107,27 @@ module resource_account::simple_defi {
 
     #[test(origin_account = @0xcafe, resource_account = @0xc3bb8488ab1a5815a9d543d7e41b0e0df46a7396f89b22821f07a4362f75ddc5, framework = @libra2_framework)]
     public entry fun test_exchange_to_and_exchange_from(origin_account: signer, resource_account: signer, framework: signer) acquires ModuleData {
-        use libra2_framework::aptos_coin;
+        use libra2_framework::libra2_coin;
 
-        let (aptos_coin_burn_cap, aptos_coin_mint_cap) = aptos_coin::initialize_for_test(&framework);
+        let (libra2_coin_burn_cap, libra2_coin_mint_cap) = libra2_coin::initialize_for_test(&framework);
         set_up_test(&origin_account, &resource_account);
 
         // exchange from 5 aptos coins to 5 chloe's coins & assert the results are expected
-        let five_a_coins = coin::mint(5, &aptos_coin_mint_cap);
+        let five_a_coins = coin::mint(5, &libra2_coin_mint_cap);
         let c_coins = exchange_to(five_a_coins);
         assert!(coin::value(&c_coins) == 5, 0);
-        assert!(coin::balance<AptosCoin>(signer::address_of(&resource_account)) == 5, 1);
+        assert!(coin::balance<Libra2Coin>(signer::address_of(&resource_account)) == 5, 1);
         assert!(coin::balance<ChloesCoin>(signer::address_of(&resource_account)) == 0, 2);
 
         // exchange from 5 chloe's coins to 5 aptos coins & assert the results are expected
         let a_coins = exchange_from(c_coins);
         assert!(coin::value(&a_coins) == 5, 0);
-        assert!(coin::balance<AptosCoin>(signer::address_of(&resource_account)) == 0, 3);
+        assert!(coin::balance<Libra2Coin>(signer::address_of(&resource_account)) == 0, 3);
         assert!(coin::balance<ChloesCoin>(signer::address_of(&resource_account)) == 0, 4);
 
         // burn the remaining coins & destroy the capabilities since they aren't droppable
-        coin::burn(a_coins, &aptos_coin_burn_cap);
-        coin::destroy_mint_cap<AptosCoin>(aptos_coin_mint_cap);
-        coin::destroy_burn_cap<AptosCoin>(aptos_coin_burn_cap);
+        coin::burn(a_coins, &libra2_coin_burn_cap);
+        coin::destroy_mint_cap<Libra2Coin>(libra2_coin_mint_cap);
+        coin::destroy_burn_cap<Libra2Coin>(libra2_coin_burn_cap);
     }
 }

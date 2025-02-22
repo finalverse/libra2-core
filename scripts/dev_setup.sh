@@ -740,7 +740,7 @@ function welcome_message {
 Welcome to Aptos!
 
 This script will download and install the necessary dependencies needed to
-build, test and inspect Aptos Core.
+build, test and inspect Libra2.
 
 Based on your selection, these tools will be included:
 EOF

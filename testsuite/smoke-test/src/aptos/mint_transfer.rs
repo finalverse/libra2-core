@@ -31,7 +31,7 @@ async fn test_mint_transfer() {
 
     let transfer_txn = account1.sign_with_transaction_builder(
         info.transaction_factory()
-            .payload(libra2_stdlib::aptos_coin_transfer(account2.address(), 40000)),
+            .payload(libra2_stdlib::libra2_coin_transfer(account2.address(), 40000)),
     );
     info.client().submit_and_wait(&transfer_txn).await.unwrap();
     assert_eq!(
@@ -48,7 +48,7 @@ async fn test_mint_transfer() {
     let delegate_txn1 = info
         .root_account()
         .sign_with_transaction_builder(txn_factory.payload(
-            libra2_stdlib::aptos_coin_delegate_mint_capability(account1.address()),
+            libra2_stdlib::libra2_coin_delegate_mint_capability(account1.address()),
         ));
     info.client().submit_and_wait(&delegate_txn1).await.unwrap();
 
@@ -56,16 +56,16 @@ async fn test_mint_transfer() {
     let delegate_txn2 = info
         .root_account()
         .sign_with_transaction_builder(txn_factory.payload(
-            libra2_stdlib::aptos_coin_delegate_mint_capability(account2.address()),
+            libra2_stdlib::libra2_coin_delegate_mint_capability(account2.address()),
         ));
     info.client().submit_and_wait(&delegate_txn2).await.unwrap();
 
     let claim_txn = account1.sign_with_transaction_builder(
-        txn_factory.payload(libra2_stdlib::aptos_coin_claim_mint_capability()),
+        txn_factory.payload(libra2_stdlib::libra2_coin_claim_mint_capability()),
     );
     info.client().submit_and_wait(&claim_txn).await.unwrap();
     let mint_txn = account1.sign_with_transaction_builder(
-        txn_factory.payload(libra2_stdlib::aptos_coin_mint(account1.address(), 10000)),
+        txn_factory.payload(libra2_stdlib::libra2_coin_mint(account1.address(), 10000)),
     );
     info.client().submit_and_wait(&mint_txn).await.unwrap();
 

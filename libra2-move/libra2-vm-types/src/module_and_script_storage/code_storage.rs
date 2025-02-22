@@ -5,6 +5,6 @@ use crate::module_and_script_storage::module_storage::AptosModuleStorage;
 use move_vm_runtime::CodeStorage;
 
 /// Represents code storage used by the Aptos blockchain, capable of caching scripts and modules.
-pub trait AptosCodeStorage: AptosModuleStorage + CodeStorage {}
+pub trait Libra2CodeStorage: AptosModuleStorage + CodeStorage {}
 
-impl<T: AptosModuleStorage + CodeStorage> AptosCodeStorage for T {}
+impl<T: AptosModuleStorage + CodeStorage> Libra2CodeStorage for T {}

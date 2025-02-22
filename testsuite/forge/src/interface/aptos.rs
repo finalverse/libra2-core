@@ -30,16 +30,16 @@ use std::sync::Arc;
 #[async_trait::async_trait]
 pub trait AptosTest: Test {
     /// Executes the test against the given context.
-    async fn run<'t>(&self, ctx: &mut AptosContext<'t>) -> Result<()>;
+    async fn run<'t>(&self, ctx: &mut Libra2Context<'t>) -> Result<()>;
 }
 
-pub struct AptosContext<'t> {
+pub struct Libra2Context<'t> {
     core: CoreContext,
     public_info: AptosPublicInfo,
     pub report: &'t mut TestReport,
 }
 
-impl<'t> AptosContext<'t> {
+impl<'t> Libra2Context<'t> {
     pub fn new(
         core: CoreContext,
         public_info: AptosPublicInfo,
@@ -163,7 +163,7 @@ impl AptosPublicInfo {
         let create_account_txn =
             self.root_account
                 .sign_with_transaction_builder(self.transaction_factory().payload(
-                    libra2_stdlib::aptos_account_create_account(auth_key.account_address()),
+                    libra2_stdlib::libra2_account_create_account(auth_key.account_address()),
                 ));
         self.rest_client
             .submit_and_wait(&create_account_txn)
@@ -179,7 +179,7 @@ impl AptosPublicInfo {
         let create_account_txn =
             self.root_account
                 .sign_with_transaction_builder(self.transaction_factory().payload(
-                    libra2_stdlib::aptos_account_create_account(auth_key.account_address()),
+                    libra2_stdlib::libra2_account_create_account(auth_key.account_address()),
                 ));
         self.rest_client
             .submit_and_wait(&create_account_txn)
@@ -190,7 +190,7 @@ impl AptosPublicInfo {
     pub async fn mint(&mut self, addr: AccountAddress, amount: u64) -> Result<()> {
         let mint_txn = self.root_account.sign_with_transaction_builder(
             self.transaction_factory()
-                .payload(libra2_stdlib::aptos_coin_mint(addr, amount)),
+                .payload(libra2_stdlib::libra2_coin_mint(addr, amount)),
         );
         self.rest_client.submit_and_wait(&mint_txn).await?;
         Ok(())
@@ -203,7 +203,7 @@ impl AptosPublicInfo {
         amount: u64,
     ) -> Result<PendingTransaction> {
         let tx = from_account.sign_with_transaction_builder(self.transaction_factory().payload(
-            libra2_stdlib::aptos_coin_transfer(to_account.address(), amount),
+            libra2_stdlib::libra2_coin_transfer(to_account.address(), amount),
         ));
         let pending_txn = self.rest_client.submit(&tx).await?.into_inner();
         Ok(pending_txn)
@@ -227,7 +227,7 @@ impl AptosPublicInfo {
         TransactionFactory::new(self.chain_id).with_gas_unit_price(unit_price)
     }
 
-    pub async fn get_approved_execution_hash_at_aptos_governance(
+    pub async fn get_approved_execution_hash_at_libra2_governance(
         &self,
         proposal_id: u64,
     ) -> Vec<u8> {
@@ -235,7 +235,7 @@ impl AptosPublicInfo {
             .rest_client
             .get_account_resource_bcs::<SimpleMap<u64, Vec<u8>>>(
                 CORE_CODE_ADDRESS,
-                "0x1::aptos_governance::ApprovedExecutionHashes",
+                "0x1::libra2_governance::ApprovedExecutionHashes",
             )
             .await;
         let hashes = approved_execution_hashes.unwrap().into_inner().data;
@@ -336,7 +336,7 @@ pub async fn reconfig(
         vec![root_account.sign_with_transaction_builder(
             transaction_factory
                 .clone()
-                .payload(libra2_stdlib::aptos_governance_force_end_epoch_test_only()),
+                .payload(libra2_stdlib::libra2_governance_force_end_epoch_test_only()),
         )]
     };
 

@@ -42,7 +42,7 @@ pub fn generate_execution_config_upgrade_proposal(
                 "execution_config::set_for_next_epoch({}, execution_blob);",
                 signer_arg
             );
-            emitln!(writer, "aptos_governance::reconfigure({});", signer_arg);
+            emitln!(writer, "libra2_governance::reconfigure({});", signer_arg);
         },
     );
 

@@ -41,7 +41,7 @@
 //! We limit the number of pending inbound and outbound RPC tasks to ensure that
 //! resource usage is bounded.
 //!
-//! [AptosNet wire protocol v1]: https://github.com/aptos-labs/aptos-core/blob/main/specifications/network/messaging-v1.md
+//! [AptosNet wire protocol v1]: https://github.com/finalverse/libra2-core/blob/main/specifications/network/messaging-v1.md
 //! [`Peer`]: crate::peer::Peer
 
 use crate::{

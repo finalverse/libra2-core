@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-//! Consensus for the Aptos Core blockchain
+//! Consensus for the Libra2 blockchain
 //!
 //! The consensus protocol implemented is AptosBFT (based on
 //! [DiemBFT](https://developers.diem.com/papers/diem-consensus-state-machine-replication-in-the-diem-blockchain/2021-08-17.pdf)).

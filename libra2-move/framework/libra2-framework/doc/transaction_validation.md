@@ -53,14 +53,14 @@
 
 <pre><code><b>use</b> <a href="account.md#0x1_account">0x1::account</a>;
 <b>use</b> <a href="account_abstraction.md#0x1_account_abstraction">0x1::account_abstraction</a>;
-<b>use</b> <a href="aptos_account.md#0x1_aptos_account">0x1::aptos_account</a>;
-<b>use</b> <a href="aptos_coin.md#0x1_aptos_coin">0x1::aptos_coin</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/bcs.md#0x1_bcs">0x1::bcs</a>;
 <b>use</b> <a href="chain_id.md#0x1_chain_id">0x1::chain_id</a>;
 <b>use</b> <a href="coin.md#0x1_coin">0x1::coin</a>;
 <b>use</b> <a href="create_signer.md#0x1_create_signer">0x1::create_signer</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/features.md#0x1_features">0x1::features</a>;
+<b>use</b> <a href="libra2_account.md#0x1_libra2_account">0x1::libra2_account</a>;
+<b>use</b> <a href="libra2_coin.md#0x1_libra2_coin">0x1::libra2_coin</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
 <b>use</b> <a href="permissioned_signer.md#0x1_permissioned_signer">0x1::permissioned_signer</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
@@ -495,12 +495,12 @@ Only called during genesis to initialize system resources for this module.
         );
         <b>if</b> (<a href="../../libra2-stdlib/../move-stdlib/doc/features.md#0x1_features_operations_default_to_fa_apt_store_enabled">features::operations_default_to_fa_apt_store_enabled</a>()) {
             <b>assert</b>!(
-                <a href="aptos_account.md#0x1_aptos_account_is_fungible_balance_at_least">aptos_account::is_fungible_balance_at_least</a>(gas_payer_address, max_transaction_fee),
+                <a href="libra2_account.md#0x1_libra2_account_is_fungible_balance_at_least">libra2_account::is_fungible_balance_at_least</a>(gas_payer_address, max_transaction_fee),
                 <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="transaction_validation.md#0x1_transaction_validation_PROLOGUE_ECANT_PAY_GAS_DEPOSIT">PROLOGUE_ECANT_PAY_GAS_DEPOSIT</a>)
             );
         } <b>else</b> {
             <b>assert</b>!(
-                <a href="coin.md#0x1_coin_is_balance_at_least">coin::is_balance_at_least</a>&lt;AptosCoin&gt;(gas_payer_address, max_transaction_fee),
+                <a href="coin.md#0x1_coin_is_balance_at_least">coin::is_balance_at_least</a>&lt;Libra2Coin&gt;(gas_payer_address, max_transaction_fee),
                 <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="transaction_validation.md#0x1_transaction_validation_PROLOGUE_ECANT_PAY_GAS_DEPOSIT">PROLOGUE_ECANT_PAY_GAS_DEPOSIT</a>)
             );
         }
@@ -1064,12 +1064,12 @@ Called by the Adapter
     <b>if</b> (!<a href="../../libra2-stdlib/../move-stdlib/doc/features.md#0x1_features_transaction_simulation_enhancement_enabled">features::transaction_simulation_enhancement_enabled</a>() || !<a href="transaction_validation.md#0x1_transaction_validation_skip_gas_payment">skip_gas_payment</a>(is_simulation, gas_payer)) {
         <b>if</b> (<a href="../../libra2-stdlib/../move-stdlib/doc/features.md#0x1_features_operations_default_to_fa_apt_store_enabled">features::operations_default_to_fa_apt_store_enabled</a>()) {
             <b>assert</b>!(
-                <a href="aptos_account.md#0x1_aptos_account_is_fungible_balance_at_least">aptos_account::is_fungible_balance_at_least</a>(gas_payer, transaction_fee_amount),
+                <a href="libra2_account.md#0x1_libra2_account_is_fungible_balance_at_least">libra2_account::is_fungible_balance_at_least</a>(gas_payer, transaction_fee_amount),
                 <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_out_of_range">error::out_of_range</a>(<a href="transaction_validation.md#0x1_transaction_validation_PROLOGUE_ECANT_PAY_GAS_DEPOSIT">PROLOGUE_ECANT_PAY_GAS_DEPOSIT</a>),
             );
         } <b>else</b> {
             <b>assert</b>!(
-                <a href="coin.md#0x1_coin_is_balance_at_least">coin::is_balance_at_least</a>&lt;AptosCoin&gt;(gas_payer, transaction_fee_amount),
+                <a href="coin.md#0x1_coin_is_balance_at_least">coin::is_balance_at_least</a>&lt;Libra2Coin&gt;(gas_payer, transaction_fee_amount),
                 <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_out_of_range">error::out_of_range</a>(<a href="transaction_validation.md#0x1_transaction_validation_PROLOGUE_ECANT_PAY_GAS_DEPOSIT">PROLOGUE_ECANT_PAY_GAS_DEPOSIT</a>),
             );
         };
@@ -1296,12 +1296,12 @@ If there is no fee_payer, fee_payer = sender
     )) {
         <b>if</b> (<a href="../../libra2-stdlib/../move-stdlib/doc/features.md#0x1_features_operations_default_to_fa_apt_store_enabled">features::operations_default_to_fa_apt_store_enabled</a>()) {
             <b>assert</b>!(
-                <a href="aptos_account.md#0x1_aptos_account_is_fungible_balance_at_least">aptos_account::is_fungible_balance_at_least</a>(gas_payer_address, transaction_fee_amount),
+                <a href="libra2_account.md#0x1_libra2_account_is_fungible_balance_at_least">libra2_account::is_fungible_balance_at_least</a>(gas_payer_address, transaction_fee_amount),
                 <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_out_of_range">error::out_of_range</a>(<a href="transaction_validation.md#0x1_transaction_validation_PROLOGUE_ECANT_PAY_GAS_DEPOSIT">PROLOGUE_ECANT_PAY_GAS_DEPOSIT</a>),
             );
         } <b>else</b> {
             <b>assert</b>!(
-                <a href="coin.md#0x1_coin_is_balance_at_least">coin::is_balance_at_least</a>&lt;AptosCoin&gt;(gas_payer_address, transaction_fee_amount),
+                <a href="coin.md#0x1_coin_is_balance_at_least">coin::is_balance_at_least</a>&lt;Libra2Coin&gt;(gas_payer_address, transaction_fee_amount),
                 <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_out_of_range">error::out_of_range</a>(<a href="transaction_validation.md#0x1_transaction_validation_PROLOGUE_ECANT_PAY_GAS_DEPOSIT">PROLOGUE_ECANT_PAY_GAS_DEPOSIT</a>),
             );
         };
@@ -1661,7 +1661,7 @@ not equal the number of singers.
 
 
 Abort according to the conditions.
-<code>AptosCoinCapabilities</code> and <code>CoinInfo</code> should exists.
+<code>Libra2CoinCapabilities</code> and <code>CoinInfo</code> should exists.
 Skip transaction_fee::burn_fee verification.
 
 
@@ -1697,7 +1697,7 @@ Skip transaction_fee::burn_fee verification.
 
 
 Abort according to the conditions.
-<code>AptosCoinCapabilities</code> and <code>CoinInfo</code> should exist.
+<code>Libra2CoinCapabilities</code> and <code>CoinInfo</code> should exist.
 Skip transaction_fee::burn_fee verification.
 
 
@@ -1773,33 +1773,33 @@ Skip transaction_fee::burn_fee verification.
     <b>let</b> addr = <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="account.md#0x1_account">account</a>);
     <b>let</b> pre_account = <b>global</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(addr);
     <b>let</b> <b>post</b> <a href="account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(addr);
-    <b>aborts_if</b> !<b>exists</b>&lt;CoinStore&lt;AptosCoin&gt;&gt;(gas_payer);
+    <b>aborts_if</b> !<b>exists</b>&lt;CoinStore&lt;Libra2Coin&gt;&gt;(gas_payer);
     <b>aborts_if</b> !<b>exists</b>&lt;Account&gt;(addr);
     <b>aborts_if</b> !(<b>global</b>&lt;Account&gt;(addr).sequence_number &lt; <a href="transaction_validation.md#0x1_transaction_validation_MAX_U64">MAX_U64</a>);
     <b>ensures</b> <a href="account.md#0x1_account">account</a>.sequence_number == pre_account.sequence_number + 1;
     <b>let</b> amount_to_burn = transaction_fee_amount - storage_fee_refunded;
-    <b>let</b> apt_addr = <a href="../../libra2-stdlib/doc/type_info.md#0x1_type_info_type_of">type_info::type_of</a>&lt;AptosCoin&gt;().account_address;
-    <b>let</b> maybe_apt_supply = <b>global</b>&lt;CoinInfo&lt;AptosCoin&gt;&gt;(apt_addr).supply;
+    <b>let</b> apt_addr = <a href="../../libra2-stdlib/doc/type_info.md#0x1_type_info_type_of">type_info::type_of</a>&lt;Libra2Coin&gt;().account_address;
+    <b>let</b> maybe_apt_supply = <b>global</b>&lt;CoinInfo&lt;Libra2Coin&gt;&gt;(apt_addr).supply;
     <b>let</b> total_supply_enabled = <a href="../../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(maybe_apt_supply);
     <b>let</b> apt_supply = <a href="../../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(maybe_apt_supply);
     <b>let</b> apt_supply_value = <a href="optional_aggregator.md#0x1_optional_aggregator_optional_aggregator_value">optional_aggregator::optional_aggregator_value</a>(apt_supply);
-    <b>let</b> <b>post</b> post_maybe_apt_supply = <b>global</b>&lt;CoinInfo&lt;AptosCoin&gt;&gt;(apt_addr).supply;
+    <b>let</b> <b>post</b> post_maybe_apt_supply = <b>global</b>&lt;CoinInfo&lt;Libra2Coin&gt;&gt;(apt_addr).supply;
     <b>let</b> <b>post</b> post_apt_supply = <a href="../../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(post_maybe_apt_supply);
     <b>let</b> <b>post</b> post_apt_supply_value = <a href="optional_aggregator.md#0x1_optional_aggregator_optional_aggregator_value">optional_aggregator::optional_aggregator_value</a>(post_apt_supply);
-    <b>aborts_if</b> amount_to_burn &gt; 0 && !<b>exists</b>&lt;AptosCoinCapabilities&gt;(@libra2_framework);
-    <b>aborts_if</b> amount_to_burn &gt; 0 && !<b>exists</b>&lt;CoinInfo&lt;AptosCoin&gt;&gt;(apt_addr);
+    <b>aborts_if</b> amount_to_burn &gt; 0 && !<b>exists</b>&lt;Libra2CoinCapabilities&gt;(@libra2_framework);
+    <b>aborts_if</b> amount_to_burn &gt; 0 && !<b>exists</b>&lt;CoinInfo&lt;Libra2Coin&gt;&gt;(apt_addr);
     <b>aborts_if</b> amount_to_burn &gt; 0 && total_supply_enabled && apt_supply_value &lt; amount_to_burn;
     <b>ensures</b> total_supply_enabled ==&gt; apt_supply_value - amount_to_burn == post_apt_supply_value;
     <b>let</b> amount_to_mint = storage_fee_refunded - transaction_fee_amount;
-    <b>let</b> total_supply = <a href="coin.md#0x1_coin_supply">coin::supply</a>&lt;AptosCoin&gt;;
-    <b>let</b> <b>post</b> post_total_supply = <a href="coin.md#0x1_coin_supply">coin::supply</a>&lt;AptosCoin&gt;;
-    <b>aborts_if</b> amount_to_mint &gt; 0 && !<b>exists</b>&lt;CoinStore&lt;AptosCoin&gt;&gt;(addr);
-    <b>aborts_if</b> amount_to_mint &gt; 0 && !<b>exists</b>&lt;AptosCoinMintCapability&gt;(@libra2_framework);
+    <b>let</b> total_supply = <a href="coin.md#0x1_coin_supply">coin::supply</a>&lt;Libra2Coin&gt;;
+    <b>let</b> <b>post</b> post_total_supply = <a href="coin.md#0x1_coin_supply">coin::supply</a>&lt;Libra2Coin&gt;;
+    <b>aborts_if</b> amount_to_mint &gt; 0 && !<b>exists</b>&lt;CoinStore&lt;Libra2Coin&gt;&gt;(addr);
+    <b>aborts_if</b> amount_to_mint &gt; 0 && !<b>exists</b>&lt;Libra2CoinMintCapability&gt;(@libra2_framework);
     <b>aborts_if</b> amount_to_mint &gt; 0 && total_supply + amount_to_mint &gt; MAX_U128;
     <b>ensures</b> amount_to_mint &gt; 0 ==&gt; post_total_supply == total_supply + amount_to_mint;
-    <b>let</b> aptos_addr = <a href="../../libra2-stdlib/doc/type_info.md#0x1_type_info_type_of">type_info::type_of</a>&lt;AptosCoin&gt;().account_address;
-    <b>aborts_if</b> (amount_to_mint != 0) && !<b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinInfo">coin::CoinInfo</a>&lt;AptosCoin&gt;&gt;(aptos_addr);
-    <b>include</b> <a href="coin.md#0x1_coin_CoinAddAbortsIf">coin::CoinAddAbortsIf</a>&lt;AptosCoin&gt; { amount: amount_to_mint };
+    <b>let</b> aptos_addr = <a href="../../libra2-stdlib/doc/type_info.md#0x1_type_info_type_of">type_info::type_of</a>&lt;Libra2Coin&gt;().account_address;
+    <b>aborts_if</b> (amount_to_mint != 0) && !<b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinInfo">coin::CoinInfo</a>&lt;Libra2Coin&gt;&gt;(aptos_addr);
+    <b>include</b> <a href="coin.md#0x1_coin_CoinAddAbortsIf">coin::CoinAddAbortsIf</a>&lt;Libra2Coin&gt; { amount: amount_to_mint };
 }
 </code></pre>
 

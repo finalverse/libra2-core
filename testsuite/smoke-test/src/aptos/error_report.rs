@@ -17,7 +17,7 @@ async fn submit_and_check_err<F: Fn(TransactionBuilder) -> TransactionBuilder>(
 ) {
     let payload = info
         .transaction_factory()
-        .payload(libra2_stdlib::aptos_coin_claim_mint_capability())
+        .payload(libra2_stdlib::libra2_coin_claim_mint_capability())
         .sequence_number(0);
     let txn = local_account.sign_transaction(f(payload).build());
     let err = format!(

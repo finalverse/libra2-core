@@ -5,7 +5,7 @@
 module Alice::hello_world {
     use libra2_framework::signer;
     use libra2_framework::coin;
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use std::string::{Self, String};
 
     struct ModuleData has key, store {
@@ -21,7 +21,7 @@ module Alice::hello_world {
     }
 
     public fun foo(addr: address): u64 {
-        coin::balance<AptosCoin>(addr)
+        coin::balance<Libra2Coin>(addr)
     }
 
     public entry fun hi(sender: &signer, msg: String) acquires ModuleData {

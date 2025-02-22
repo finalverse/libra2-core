@@ -49,11 +49,11 @@
 // exchange()
 module post_mint_reveal_nft::minting {
     use libra2_framework::account::{Self, SignerCapability, create_signer_with_capability};
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::coin;
     use libra2_framework::event;
     use libra2_framework::timestamp;
-    use aptos_token::token::{
+    use libra2_token::token::{
         Self,
         TokenMutabilityConfig,
         create_token_mutability_config,
@@ -199,7 +199,7 @@ module post_mint_reveal_nft::minting {
     public entry fun set_treasury(admin: &signer, new_treasury_address: address) acquires NFTMintConfig {
         assert!(signer::address_of(admin) == @post_mint_reveal_nft, error::permission_denied(ENOT_AUTHORIZED));
         assert!(account::exists_at(new_treasury_address), error::invalid_argument(EACCOUNT_DOES_NOT_EXIST));
-        aptos_account::assert_account_is_registered_for_apt(new_treasury_address);
+        libra2_account::assert_account_is_registered_for_apt(new_treasury_address);
         let nft_mint_config = borrow_global_mut<NFTMintConfig>(@post_mint_reveal_nft);
         nft_mint_config.treasury = new_treasury_address;
     }
@@ -585,7 +585,7 @@ module post_mint_reveal_nft::minting {
             error::permission_denied(ENO_ENOUGH_TOKENS_LEFT));
 
         // pay for the source NFT
-        coin::transfer<AptosCoin>(nft_claimer, nft_mint_config.treasury, price * amount);
+        coin::transfer<Libra2Coin>(nft_claimer, nft_mint_config.treasury, price * amount);
 
         // mint token to the receiver
         let resource_signer = create_signer_with_capability(&nft_mint_config.signer_cap);
@@ -639,7 +639,7 @@ module post_mint_reveal_nft::minting {
     // ======================================================================
     #[test_only]
     use libra2_framework::account::create_account_for_test;
-    use libra2_framework::aptos_account;
+    use libra2_framework::libra2_account;
 
     #[test_only]
     public fun set_up_test(
@@ -662,10 +662,10 @@ module post_mint_reveal_nft::minting {
         create_account_for_test(signer::address_of(public_nft_claimer));
         create_account_for_test(signer::address_of(treasury_account));
 
-        let (burn_cap, mint_cap) = libra2_framework::aptos_coin::initialize_for_test(libra2_framework);
-        coin::register<AptosCoin>(wl_nft_claimer);
-        coin::register<AptosCoin>(public_nft_claimer);
-        coin::register<AptosCoin>(treasury_account);
+        let (burn_cap, mint_cap) = libra2_framework::libra2_coin::initialize_for_test(libra2_framework);
+        coin::register<Libra2Coin>(wl_nft_claimer);
+        coin::register<Libra2Coin>(public_nft_claimer);
+        coin::register<Libra2Coin>(treasury_account);
         coin::deposit(signer::address_of(wl_nft_claimer), coin::mint(100, &mint_cap));
         coin::deposit(signer::address_of(public_nft_claimer), coin::mint(100, &mint_cap));
 
@@ -777,9 +777,9 @@ module post_mint_reveal_nft::minting {
         assert!(token::balance_of(signer::address_of(&wl_nft_claimer), token_id1) == 1, 0);
         assert!(token::balance_of(signer::address_of(&wl_nft_claimer), token_id2) == 1, 1);
         assert!(token::balance_of(signer::address_of(&public_nft_claimer), token_id3) == 1, 2);
-        assert!(coin::balance<AptosCoin>(signer::address_of(&treasury_account)) == 20, 1);
-        assert!(coin::balance<AptosCoin>(signer::address_of(&wl_nft_claimer)) == 90, 2);
-        assert!(coin::balance<AptosCoin>(signer::address_of(&public_nft_claimer)) == 90, 3);
+        assert!(coin::balance<Libra2Coin>(signer::address_of(&treasury_account)) == 20, 1);
+        assert!(coin::balance<Libra2Coin>(signer::address_of(&wl_nft_claimer)) == 90, 2);
+        assert!(coin::balance<Libra2Coin>(signer::address_of(&public_nft_claimer)) == 90, 3);
 
         // Exchange to the destination NFT.
         timestamp::fast_forward_seconds(401);
@@ -1273,7 +1273,7 @@ module post_mint_reveal_nft::minting {
         );
         assert!(token::balance_of(signer::address_of(&wl_nft_claimer), token_id1) == 1, 0);
         assert!(token::balance_of(signer::address_of(&wl_nft_claimer), token_id2) == 1, 1);
-        assert!(coin::balance<AptosCoin>(signer::address_of(&wl_nft_claimer)) == 90, 2);
+        assert!(coin::balance<Libra2Coin>(signer::address_of(&wl_nft_claimer)) == 90, 2);
 
         timestamp::fast_forward_seconds(50);
         mint_source_certificate(&wl_nft_claimer2, 1);
@@ -1284,7 +1284,7 @@ module post_mint_reveal_nft::minting {
             0
         );
         assert!(token::balance_of(signer::address_of(&wl_nft_claimer2), token_id3) == 1, 3);
-        assert!(coin::balance<AptosCoin>(signer::address_of(&wl_nft_claimer2)) == 94, 4);
+        assert!(coin::balance<Libra2Coin>(signer::address_of(&wl_nft_claimer2)) == 94, 4);
     }
 
     #[test (

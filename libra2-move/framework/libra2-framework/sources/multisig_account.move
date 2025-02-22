@@ -37,7 +37,7 @@
 /// and implement the governance voting logic on top.
 module libra2_framework::multisig_account {
     use libra2_framework::account::{Self, SignerCapability, new_event_handle, create_resource_address};
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::chain_id;
     use libra2_framework::create_signer::create_signer;
     use libra2_framework::coin;
@@ -1330,8 +1330,8 @@ module libra2_framework::multisig_account {
             account::create_resource_account(owner, create_multisig_account_seed(to_bytes(&owner_nonce)));
         // Register the account to receive APT as this is not done by default as part of the resource account creation
         // flow.
-        if (!coin::is_account_registered<AptosCoin>(address_of(&multisig_signer))) {
-            coin::register<AptosCoin>(&multisig_signer);
+        if (!coin::is_account_registered<Libra2Coin>(address_of(&multisig_signer))) {
+            coin::register<Libra2Coin>(&multisig_signer);
         };
 
         (multisig_signer, multisig_signer_cap)
@@ -1528,7 +1528,7 @@ module libra2_framework::multisig_account {
     ////////////////////////// Tests ///////////////////////////////
 
     #[test_only]
-    use libra2_framework::aptos_account::create_account;
+    use libra2_framework::libra2_account::create_account;
     #[test_only]
     use libra2_framework::timestamp;
     #[test_only]
@@ -1539,7 +1539,7 @@ module libra2_framework::multisig_account {
     use std::string::utf8;
     use std::features;
     #[test_only]
-    use libra2_framework::aptos_coin;
+    use libra2_framework::libra2_coin;
     #[test_only]
     use libra2_framework::coin::{destroy_mint_cap, destroy_burn_cap};
 
@@ -1568,7 +1568,7 @@ module libra2_framework::multisig_account {
             framework_signer, vector[features::get_multisig_accounts_feature(), features::get_multisig_v2_enhancement_feature(), features::get_abort_if_multisig_payload_mismatch_feature()], vector[]);
         timestamp::set_time_has_started_for_testing(framework_signer);
         chain_id::initialize_for_test(framework_signer, 1);
-        let (burn, mint) = aptos_coin::initialize_for_test(framework_signer);
+        let (burn, mint) = libra2_coin::initialize_for_test(framework_signer);
         destroy_mint_cap(mint);
         destroy_burn_cap(burn);
     }
@@ -1580,7 +1580,7 @@ module libra2_framework::multisig_account {
             framework_signer, vector[], vector[features::get_multisig_accounts_feature()]);
         timestamp::set_time_has_started_for_testing(framework_signer);
         chain_id::initialize_for_test(framework_signer, 1);
-        let (burn, mint) = aptos_coin::initialize_for_test(framework_signer);
+        let (burn, mint) = libra2_coin::initialize_for_test(framework_signer);
         destroy_mint_cap(mint);
         destroy_burn_cap(burn);
     }

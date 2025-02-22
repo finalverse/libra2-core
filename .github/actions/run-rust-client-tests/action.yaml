@@ -20,6 +20,6 @@ runs:
         WITH_INDEXER_API: "false"
 
     # Run the tests.
-    - uses: aptos-labs/aptos-core/.github/actions/rust-setup@main
+    - uses: finalverse/libra2-core/.github/actions/rust-setup@main
     - run: cargo run -p libra2-rest-client --example account -- --api-url 'http://127.0.0.1:8080/v1'
       shell: bash

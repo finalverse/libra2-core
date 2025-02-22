@@ -1,6 +1,6 @@
 # The Libra2 Framework Repo
 
-This repository serves as a mirror for the Libra2 Framework packages, including the Move standard library. The contents are synced from [aptos-core](https://github.com/aptos-labs/aptos-core) on an hourly basis.
+This repository serves as a mirror for the Libra2 Framework packages, including the Move standard library. The contents are synced from [aptos-core](https://github.com/finalverse/libra2-core) on an hourly basis.
 
 By pulling dependencies from this mirror repository, developers can avoid downloading unnecessary data, reducing build time significantly.
 
@@ -19,6 +19,6 @@ Libra2Framework = { git = "https://github.com/aptos-labs/libra2-framework.git", 
 Make sure to replace `subdir` with the appropriate path if you are referencing a different package within the framework.
 
 ## Contributing
-If you want to contribute to the development of the framework, please submit issues and pull requests to the [aptos-core](https://github.com/aptos-labs/aptos-core) repository, where active development happens.
+If you want to contribute to the development of the framework, please submit issues and pull requests to the [aptos-core](https://github.com/finalverse/libra2-core) repository, where active development happens.
 
 Bugs, feature requests, or discussions of enhancements will be tracked in the issue section there as well. This repository is a mirror, and issues will not be tracked here.

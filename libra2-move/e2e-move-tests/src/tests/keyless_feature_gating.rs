@@ -388,7 +388,7 @@ fn spend_keyless_account(
     account: &Account,
     recipient: AccountAddress,
 ) -> SignedTransaction {
-    let payload = libra2_stdlib::aptos_coin_transfer(recipient, 1);
+    let payload = libra2_stdlib::libra2_coin_transfer(recipient, 1);
     //println!("Payload: {:?}", payload);
     let raw_txn = TransactionBuilder::new(account.clone())
         .payload(payload)

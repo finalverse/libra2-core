@@ -33,7 +33,7 @@ gas_schedule::set_storage_gas_config
 13.425
 </text>
 <text x="0" y="163" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::toggle_features
+libra2_governance::toggle_features
 </text>
 <rect x="0" y="175" width="73" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="82" y="177" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -47,7 +47,7 @@ consensus_config::set
 11.952
 </text>
 <text x="0" y="232" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::reconfigure
+libra2_governance::reconfigure
 </text>
 <rect x="0" y="245" width="67" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="76" y="246" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -75,21 +75,21 @@ version::set_version
 9.031
 </text>
 <text x="0" y="372" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::partial_vote
+libra2_governance::partial_vote
 </text>
 <rect x="0" y="385" width="50" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="59" y="386" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
 8.593
 </text>
 <text x="0" y="407" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::vote_internal
+libra2_governance::vote_internal
 </text>
 <rect x="0" y="420" width="43" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="52" y="421" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
 7.506
 </text>
 <text x="0" y="442" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::vote
+libra2_governance::vote
 </text>
 <rect x="0" y="455" width="42" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="51" y="456" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -110,14 +110,14 @@ stake::on_new_epoch
 5.372
 </text>
 <text x="0" y="547" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::create_proposal
+libra2_governance::create_proposal
 </text>
 <rect x="0" y="560" width="28" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="37" y="561" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
 4.945
 </text>
 <text x="0" y="582" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::create_proposal_v2_impl
+libra2_governance::create_proposal_v2_impl
 </text>
 <rect x="0" y="595" width="25" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="34" y="596" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -131,7 +131,7 @@ staking_contract::unlock_rewards
 4.318
 </text>
 <text x="0" y="652" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::create_proposal_v2
+libra2_governance::create_proposal_v2
 </text>
 <rect x="0" y="665" width="23" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="33" y="666" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -208,7 +208,7 @@ stake::calculate_rewards_amount
 3.028
 </text>
 <text x="0" y="1036" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::resolve
+libra2_governance::resolve
 </text>
 <rect x="0" y="1049" width="17" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="26" y="1050" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -250,7 +250,7 @@ voting::create_proposal_v2
 2.748
 </text>
 <text x="0" y="1246" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::transfer_coins
+libra2_account::transfer_coins
 </text>
 <rect x="0" y="1259" width="15" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="24" y="1260" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -278,7 +278,7 @@ voting::create_proposal
 2.616
 </text>
 <text x="0" y="1386" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::deposit_coins
+libra2_account::deposit_coins
 </text>
 <rect x="0" y="1399" width="15" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="24" y="1400" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -306,7 +306,7 @@ resource_account::create_resource_account_and_fund
 2.473
 </text>
 <text x="0" y="1526" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::get_remaining_voting_power
+libra2_governance::get_remaining_voting_power
 </text>
 <rect x="0" y="1538" width="14" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="23" y="1540" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -411,7 +411,7 @@ multisig_account::create_with_existing_account
 2.186
 </text>
 <text x="0" y="2050" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::add_approved_script_hash
+libra2_governance::add_approved_script_hash
 </text>
 <rect x="0" y="2063" width="12" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="21" y="2064" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -439,7 +439,7 @@ stake::join_validator_set
 2.157
 </text>
 <text x="0" y="2190" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::add_approved_script_hash_script
+libra2_governance::add_approved_script_hash_script
 </text>
 <rect x="0" y="2202" width="12" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="21" y="2204" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -453,14 +453,14 @@ stake::reactivate_stake_with_cap
 2.133
 </text>
 <text x="0" y="2260" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::initialize
+libra2_governance::initialize
 </text>
 <rect x="0" y="2272" width="12" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="21" y="2274" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
 2.132
 </text>
 <text x="0" y="2294" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::transfer
+libra2_account::transfer
 </text>
 <rect x="0" y="2307" width="12" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="21" y="2308" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -509,7 +509,7 @@ voting::is_voting_closed
 2.103
 </text>
 <text x="0" y="2539" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::get_voting_power
+libra2_governance::get_voting_power
 </text>
 <rect x="0" y="2552" width="12" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="21" y="2553" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -782,7 +782,7 @@ stake::distribute_rewards
 1.900
 </text>
 <text x="0" y="3902" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::create_account
+libra2_account::create_account
 </text>
 <rect x="0" y="3915" width="11" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="20" y="3916" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -887,7 +887,7 @@ multisig_account::update_metadata
 1.882
 </text>
 <text x="0" y="4426" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_coin::initialize
+libra2_coin::initialize
 </text>
 <rect x="0" y="4439" width="10" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="20" y="4440" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -1188,7 +1188,7 @@ multisig_account::get_transaction
 1.807
 </text>
 <text x="0" y="5929" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::assert_account_is_registered_for_apt
+libra2_account::assert_account_is_registered_for_apt
 </text>
 <rect x="0" y="5942" width="10" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="19" y="5943" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -1328,7 +1328,7 @@ multisig_account::num_signatures_required
 1.786
 </text>
 <text x="0" y="6628" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::assert_account_exists
+libra2_account::assert_account_exists
 </text>
 <rect x="0" y="6641" width="10" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="19" y="6642" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -1370,7 +1370,7 @@ stake::set_operator_with_cap
 1.780
 </text>
 <text x="0" y="6838" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::remove_approved_hash
+libra2_governance::remove_approved_hash
 </text>
 <rect x="0" y="6851" width="10" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="19" y="6852" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -1580,7 +1580,7 @@ coin::destroy_freeze_cap
 1.754
 </text>
 <text x="0" y="7886" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_coin::destroy_mint_cap
+libra2_coin::destroy_mint_cap
 </text>
 <rect x="0" y="7899" width="10" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="19" y="7900" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2007,7 +2007,7 @@ block::emit_writeset_block_event
 1.714
 </text>
 <text x="0" y="10018" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::set_allow_direct_coin_transfers
+libra2_account::set_allow_direct_coin_transfers
 </text>
 <rect x="0" y="10031" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="19" y="10032" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2084,7 +2084,7 @@ optional_aggregator::destroy_optional_integer
 1.702
 </text>
 <text x="0" y="10403" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_coin::find_delegation
+libra2_coin::find_delegation
 </text>
 <rect x="0" y="10415" width="9" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="10417" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2420,7 +2420,7 @@ stake::get_owned_pool_address
 1.647
 </text>
 <text x="0" y="12080" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::store_signer_cap
+libra2_governance::store_signer_cap
 </text>
 <rect x="0" y="12093" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="12094" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2497,7 +2497,7 @@ state_storage::initialize
 1.635
 </text>
 <text x="0" y="12465" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::create_proposal_metadata
+libra2_governance::create_proposal_metadata
 </text>
 <rect x="0" y="12477" width="9" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="12479" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2539,7 +2539,7 @@ reconfiguration::enable_reconfiguration
 1.632
 </text>
 <text x="0" y="12674" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::get_signer
+libra2_governance::get_signer
 </text>
 <rect x="0" y="12687" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="12688" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2581,7 +2581,7 @@ transaction_validation::initialize
 1.629
 </text>
 <text x="0" y="12884" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::assert_voting_initialization
+libra2_governance::assert_voting_initialization
 </text>
 <rect x="0" y="12897" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="12898" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2595,7 +2595,7 @@ optional_aggregator::add_integer
 1.627
 </text>
 <text x="0" y="12954" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-stake::store_aptos_coin_mint_cap
+stake::store_libra2_coin_mint_cap
 </text>
 <rect x="0" y="12967" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="12968" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2630,7 +2630,7 @@ stake::deposit_owner_cap
 1.626
 </text>
 <text x="0" y="13129" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::get_signer_testnet_only
+libra2_governance::get_signer_testnet_only
 </text>
 <rect x="0" y="13141" width="9" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="13143" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2847,14 +2847,14 @@ staking_config::get_allow_validator_set_change
 1.615
 </text>
 <text x="0" y="14212" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::update_governance_config
+libra2_governance::update_governance_config
 </text>
 <rect x="0" y="14225" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="14226" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
 1.615
 </text>
 <text x="0" y="14247" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-transaction_fee::store_aptos_coin_burn_cap
+transaction_fee::store_libra2_coin_burn_cap
 </text>
 <rect x="0" y="14260" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="14261" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2868,7 +2868,7 @@ storage_gas::new_point
 1.614
 </text>
 <text x="0" y="14317" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::initialize_partial_voting
+libra2_governance::initialize_partial_voting
 </text>
 <rect x="0" y="14330" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="14331" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2903,7 +2903,7 @@ object::generate_derive_ref
 1.613
 </text>
 <text x="0" y="14492" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::has_entirely_voted
+libra2_governance::has_entirely_voted
 </text>
 <rect x="0" y="14504" width="9" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="14506" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -2973,7 +2973,7 @@ guid::creation_num
 1.609
 </text>
 <text x="0" y="14841" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::can_receive_direct_coin_transfers
+libra2_account::can_receive_direct_coin_transfers
 </text>
 <rect x="0" y="14854" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="14855" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -3022,7 +3022,7 @@ system_addresses::is_framework_reserved_address
 1.605
 </text>
 <text x="0" y="15086" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_coin::has_mint_capability
+libra2_coin::has_mint_capability
 </text>
 <rect x="0" y="15099" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="15100" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -3239,7 +3239,7 @@ event::destroy_handle
 1.592
 </text>
 <text x="0" y="16169" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::get_voting_duration_secs
+libra2_governance::get_voting_duration_secs
 </text>
 <rect x="0" y="16182" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="16183" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -3295,7 +3295,7 @@ staking_config::get_recurring_lockup_duration
 1.590
 </text>
 <text x="0" y="16449" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::get_required_proposer_stake
+libra2_governance::get_required_proposer_stake
 </text>
 <rect x="0" y="16462" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="16463" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -3344,7 +3344,7 @@ object::object_address
 1.584
 </text>
 <text x="0" y="16693" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::get_min_voting_threshold
+libra2_governance::get_min_voting_threshold
 </text>
 <rect x="0" y="16706" width="9" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="18" y="16707" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -3435,7 +3435,7 @@ staking_contract::switch_operator
 1.090
 </text>
 <text x="0" y="17148" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_coin::mint
+libra2_coin::mint
 </text>
 <rect x="0" y="17161" width="6" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="17162" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -3652,7 +3652,7 @@ aggregator::sub
 1.036
 </text>
 <text x="0" y="18231" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::resolve_multi_step_proposal
+libra2_governance::resolve_multi_step_proposal
 </text>
 <rect x="0" y="18244" width="6" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="18245" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -3743,7 +3743,7 @@ transaction_context::get_txn_hash
 1.034
 </text>
 <text x="0" y="18686" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_governance::initialize_for_verification
+libra2_governance::initialize_for_verification
 </text>
 <rect x="0" y="18698" width="6" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="18700" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -3883,7 +3883,7 @@ primary_fungible_store::may_be_unburn
 1.032
 </text>
 <text x="0" y="19385" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::batch_transfer_coins
+libra2_account::batch_transfer_coins
 </text>
 <rect x="0" y="19397" width="6" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="19399" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -4114,7 +4114,7 @@ staking_contract::staking_contract_amounts
 1.027
 </text>
 <text x="0" y="20538" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-genesis::initialize_core_resources_and_aptos_coin
+genesis::initialize_core_resources_and_libra2_coin
 </text>
 <rect x="0" y="20551" width="5" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="20552" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -4135,14 +4135,14 @@ create_signer::create_signer
 1.026
 </text>
 <text x="0" y="20643" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_coin::claim_mint_capability
+libra2_coin::claim_mint_capability
 </text>
 <rect x="0" y="20656" width="5" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="20657" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
 1.026
 </text>
 <text x="0" y="20678" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_coin::delegate_mint_capability
+libra2_coin::delegate_mint_capability
 </text>
 <rect x="0" y="20690" width="5" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="20692" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -4198,7 +4198,7 @@ staking_contract::request_commission
 1.026
 </text>
 <text x="0" y="20957" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_coin::configure_accounts_for_test
+libra2_coin::configure_accounts_for_test
 </text>
 <rect x="0" y="20970" width="5" height="8" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="20971" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -4289,7 +4289,7 @@ aggregator::destroy
 1.024
 </text>
 <text x="0" y="21412" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-aptos_account::batch_transfer
+libra2_account::batch_transfer
 </text>
 <rect x="0" y="21424" width="5" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="21426" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">
@@ -4688,7 +4688,7 @@ vesting::admin_withdraw
 1.018
 </text>
 <text x="0" y="23404" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="12.096774193548388" opacity="1" fill="#000000">
-genesis::initialize_aptos_coin
+genesis::initialize_libra2_coin
 </text>
 <rect x="0" y="23416" width="5" height="9" opacity="1" fill="#B4B4B4" stroke="none"/>
 <text x="15" y="23418" dy="0.76em" text-anchor="start" font-family="sans-serif" font-size="10.483870967741936" opacity="1" fill="#000000">

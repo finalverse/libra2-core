@@ -10,8 +10,8 @@
 0x1::aggregator_factory                          1687           ok
 0x1::optional_aggregator                         2309           ok
 0x1::coin                                        4092           ok
-0x1::aptos_coin                                  2121           ok
-0x1::aptos_account                               3867           ok
+0x1::libra2_coin                                  2121           ok
+0x1::libra2_account                               3867           ok
 0x1::transaction_context                         1675           ok
 0x1::chain_status                                2146           ok
 0x1::timestamp                                   1988           ok
@@ -23,7 +23,7 @@
 0x1::storage_gas                                 7519           ok
 0x1::reconfiguration                            12628           ok
 0x1::governance_proposal                         1645           ok
-0x1::aptos_governance                           49294           ok
+0x1::libra2_governance                           49294           ok
 0x1::block                                      23769           ok
 0x1::util                                        1595           ok
 0x1::code                                        2343           ok

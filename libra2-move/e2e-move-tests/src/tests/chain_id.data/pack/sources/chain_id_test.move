@@ -1,6 +1,6 @@
 module 0x1::chain_id_test {
     use libra2_std::type_info;
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::chain_id;
     use std::features;
 
@@ -20,7 +20,7 @@ module 0x1::chain_id_test {
         );
 
         features::change_feature_flags_for_next_epoch(sender, vector[features::get_libra2_stdlib_chain_id_feature()], vector[]);
-        aptos_governance::force_end_epoch(sender);
+        libra2_governance::force_end_epoch(sender);
     }
 
     /// Fetches the chain ID (via libra2_framework::chain_id::get()) and stores it in the ChainIdStore resource.

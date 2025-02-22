@@ -167,7 +167,7 @@ pub struct Currency {
 
 #[derive(Clone, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
 pub struct CurrencyMetadata {
-    /// Move coin type e.g. 0x1::aptos_coin::AptosCoin
+    /// Move coin type e.g. 0x1::libra2_coin::Libra2Coin
     #[serde(skip_serializing_if = "Option::is_none")]
     pub move_type: Option<String>,
     /// Fungible Asset Address e.g. 0xA
@@ -2575,7 +2575,7 @@ impl InternalOperation {
     ) -> ApiResult<(libra2_types::transaction::TransactionPayload, AccountAddress)> {
         Ok(match self {
             InternalOperation::CreateAccount(create_account) => (
-                libra2_stdlib::aptos_account_create_account(create_account.new_account),
+                libra2_stdlib::libra2_account_create_account(create_account.new_account),
                 create_account.sender,
             ),
             InternalOperation::Transfer(transfer) => {
@@ -2585,7 +2585,7 @@ impl InternalOperation {
                 // We special case APT, because we don't want the behavior to change
                 if currency == &native_coin() {
                     return Ok((
-                        libra2_stdlib::aptos_account_transfer(transfer.receiver, transfer.amount.0),
+                        libra2_stdlib::libra2_account_transfer(transfer.receiver, transfer.amount.0),
                         transfer.sender,
                     ));
                 }
@@ -2598,7 +2598,7 @@ impl InternalOperation {
                             let coin_type_tag = parse_type_tag(coin_type)
                                 .map_err(|err| ApiError::InvalidInput(Some(err.to_string())))?;
                             (
-                                libra2_stdlib::aptos_account_transfer_coins(
+                                libra2_stdlib::libra2_account_transfer_coins(
                                     coin_type_tag,
                                     transfer.receiver,
                                     transfer.amount.0,

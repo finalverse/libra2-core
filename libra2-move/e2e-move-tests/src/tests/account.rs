@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::MoveHarness;
-use libra2_cached_packages::libra2_stdlib::aptos_account_transfer;
+use libra2_cached_packages::libra2_stdlib::libra2_account_transfer;
 use libra2_language_e2e_tests::account::Account;
 use claims::assert_err_eq;
 use move_core_types::vm_status::StatusCode;
@@ -16,7 +16,7 @@ fn non_existent_sender() {
 
     let txn = sender
         .transaction()
-        .payload(aptos_account_transfer(*receiver.address(), 10))
+        .payload(libra2_account_transfer(*receiver.address(), 10))
         .sequence_number(0)
         .sign();
 

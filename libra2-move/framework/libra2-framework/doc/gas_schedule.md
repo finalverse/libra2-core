@@ -262,7 +262,7 @@ Abort if the version of the given schedule is lower than the current version.
 Example usage:
 ```
 libra2_framework::gas_schedule::set_for_next_epoch(&framework_signer, some_gas_schedule_blob);
-libra2_framework::aptos_governance::reconfigure(&framework_signer);
+libra2_framework::libra2_governance::reconfigure(&framework_signer);
 ```
 
 
@@ -525,7 +525,7 @@ Only used in reconfigurations to apply the pending <code><a href="gas_schedule.m
 
 
 <pre><code><b>pragma</b> verify_duration_estimate = 600;
-<b>requires</b> <b>exists</b>&lt;CoinInfo&lt;AptosCoin&gt;&gt;(@libra2_framework);
+<b>requires</b> <b>exists</b>&lt;CoinInfo&lt;Libra2Coin&gt;&gt;(@libra2_framework);
 <b>requires</b> <a href="chain_status.md#0x1_chain_status_is_genesis">chain_status::is_genesis</a>();
 <b>include</b> <a href="staking_config.md#0x1_staking_config_StakingRewardsConfigRequirement">staking_config::StakingRewardsConfigRequirement</a>;
 // This enforces <a id="high-level-req-2" href="#high-level-req">high-level requirement 2</a>:
@@ -619,7 +619,7 @@ Only used in reconfigurations to apply the pending <code><a href="gas_schedule.m
 
 
 <pre><code><b>pragma</b> verify_duration_estimate = 600;
-<b>requires</b> <b>exists</b>&lt;CoinInfo&lt;AptosCoin&gt;&gt;(@libra2_framework);
+<b>requires</b> <b>exists</b>&lt;CoinInfo&lt;Libra2Coin&gt;&gt;(@libra2_framework);
 <b>include</b> <a href="system_addresses.md#0x1_system_addresses_AbortsIfNotLibra2Framework">system_addresses::AbortsIfNotLibra2Framework</a>{ <a href="account.md#0x1_account">account</a>: libra2_framework };
 <b>include</b> <a href="staking_config.md#0x1_staking_config_StakingRewardsConfigRequirement">staking_config::StakingRewardsConfigRequirement</a>;
 <b>aborts_if</b> !<b>exists</b>&lt;StorageGasConfig&gt;(@libra2_framework);

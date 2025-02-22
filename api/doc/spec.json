@@ -6,7 +6,7 @@
     "version": "1.2.0",
     "contact": {
       "name": "Aptos Labs",
-      "url": "https://github.com/aptos-labs/aptos-core"
+      "url": "https://github.com/finalverse/libra2-core"
     },
     "license": {
       "name": "Apache 2.0",
@@ -14818,7 +14818,7 @@
         "type": "string",
         "format": "hex",
         "description": "A hex encoded 32 byte Aptos account address or a struct tag.\n\nThis is represented in a string as a 64 character hex string, sometimes\nshortened by stripping leading 0s, and adding a 0x or\nFormat: `{address}::{module name}::{struct name}`\n",
-        "example": "0x1::aptos_coin::AptosCoin"
+        "example": "0x1::libra2_coin::Libra2Coin"
       },
       "Block": {
         "type": "object",
@@ -15391,7 +15391,7 @@
       "EntryFunctionId": {
         "type": "string",
         "description": "Entry function id is string representation of a entry function defined on-chain.\n\nFormat: `{address}::{module name}::{function name}`\n\nBoth `module name` and `function name` are case-sensitive.\n",
-        "example": "0x1::aptos_coin::transfer"
+        "example": "0x1::libra2_coin::transfer"
       },
       "EntryFunctionPayload": {
         "type": "object",
@@ -16035,7 +16035,7 @@
       "MoveModuleId": {
         "type": "string",
         "description": "Move module id is a string representation of Move module.\n\nFormat: `{address}::{module name}`\n\n`address` should be hex-encoded 32 byte account address that is prefixed with `0x`.\n\nModule name is case-sensitive.\n",
-        "example": "0x1::aptos_coin"
+        "example": "0x1::libra2_coin"
       },
       "MoveResource": {
         "type": "object",
@@ -16148,13 +16148,13 @@
       },
       "MoveStructTag": {
         "type": "string",
-        "description": "String representation of a MoveStructTag (on-chain Move struct type). This exists so you\ncan specify MoveStructTags as path / query parameters, e.g. for get_events_by_event_handle.\n\nIt is a combination of:\n  1. `move_module_address`, `module_name` and `struct_name`, all joined by `::`\n  2. `struct generic type parameters` joined by `, `\n\nExamples:\n  * `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>`\n  * `0x1::account::Account`\n\nNote:\n  1. Empty chars should be ignored when comparing 2 struct tag ids.\n  2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).\n\nSee [doc](https://aptos.dev/concepts/accounts) for more details.\n",
-        "example": "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+        "description": "String representation of a MoveStructTag (on-chain Move struct type). This exists so you\ncan specify MoveStructTags as path / query parameters, e.g. for get_events_by_event_handle.\n\nIt is a combination of:\n  1. `move_module_address`, `module_name` and `struct_name`, all joined by `::`\n  2. `struct generic type parameters` joined by `, `\n\nExamples:\n  * `0x1::coin::CoinStore<0x1::libra2_coin::Libra2Coin>`\n  * `0x1::account::Account`\n\nNote:\n  1. Empty chars should be ignored when comparing 2 struct tag ids.\n  2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).\n\nSee [doc](https://aptos.dev/concepts/accounts) for more details.\n",
+        "example": "0x1::coin::CoinStore<0x1::libra2_coin::Libra2Coin>",
         "pattern": "^0x[0-9a-zA-Z:_<>]+$"
       },
       "MoveStructValue": {
         "type": "object",
-        "description": "This is a JSON representation of some data within an account resource. More specifically,\nit is a map of strings to arbitrary JSON values / objects, where the keys are top level\nfields within the given resource.\n\nTo clarify, you might query for 0x1::account::Account and see the example data.\n\nMove `bool` type value is serialized into `boolean`.\n\nMove `u8`, `u16` and `u32` type value is serialized into `integer`.\n\nMove `u64`, `u128` and `u256` type value is serialized into `string`.\n\nMove `address` type value (32 byte Aptos account address) is serialized into a HexEncodedBytes string.\nFor example:\n  - `0x1`\n  - `0x1668f6be25668c1a17cd8caf6b8d2f25`\n\nMove `vector` type value is serialized into `array`, except `vector<u8>` which is serialized into a\nHexEncodedBytes string with `0x` prefix.\nFor example:\n  - `vector<u64>{255, 255}` => `[\"255\", \"255\"]`\n  - `vector<u8>{255, 255}` => `0xffff`\n\nMove `struct` type value is serialized into `object` that looks like this (except some Move stdlib types, see the following section):\n  ```json\n  {\n    field1_name: field1_value,\n    field2_name: field2_value,\n    ......\n  }\n  ```\n\nFor example:\n  `{ \"created\": \"0xa550c18\", \"role_id\": \"0\" }`\n\n**Special serialization for Move stdlib types**:\n  - [0x1::string::String](https://github.com/aptos-labs/aptos-core/blob/main/language/move-stdlib/docs/ascii.md)\n    is serialized into `string`. For example, struct value `0x1::string::String{bytes: b\"Hello World!\"}`\n    is serialized as `\"Hello World!\"` in JSON.\n",
+        "description": "This is a JSON representation of some data within an account resource. More specifically,\nit is a map of strings to arbitrary JSON values / objects, where the keys are top level\nfields within the given resource.\n\nTo clarify, you might query for 0x1::account::Account and see the example data.\n\nMove `bool` type value is serialized into `boolean`.\n\nMove `u8`, `u16` and `u32` type value is serialized into `integer`.\n\nMove `u64`, `u128` and `u256` type value is serialized into `string`.\n\nMove `address` type value (32 byte Aptos account address) is serialized into a HexEncodedBytes string.\nFor example:\n  - `0x1`\n  - `0x1668f6be25668c1a17cd8caf6b8d2f25`\n\nMove `vector` type value is serialized into `array`, except `vector<u8>` which is serialized into a\nHexEncodedBytes string with `0x` prefix.\nFor example:\n  - `vector<u64>{255, 255}` => `[\"255\", \"255\"]`\n  - `vector<u8>{255, 255}` => `0xffff`\n\nMove `struct` type value is serialized into `object` that looks like this (except some Move stdlib types, see the following section):\n  ```json\n  {\n    field1_name: field1_value,\n    field2_name: field2_value,\n    ......\n  }\n  ```\n\nFor example:\n  `{ \"created\": \"0xa550c18\", \"role_id\": \"0\" }`\n\n**Special serialization for Move stdlib types**:\n  - [0x1::string::String](https://github.com/finalverse/libra2-core/blob/main/language/move-stdlib/docs/ascii.md)\n    is serialized into `string`. For example, struct value `0x1::string::String{bytes: b\"Hello World!\"}`\n    is serialized as `\"Hello World!\"` in JSON.\n",
         "example": {
           "authentication_key": "0x0000000000000000000000000000000000000000000000000000000000000001",
           "coin_register_events": {
@@ -16172,7 +16172,7 @@
       },
       "MoveType": {
         "type": "string",
-        "description": "String representation of an on-chain Move type tag that is exposed in transaction payload.\n    Values:\n      - bool\n      - u8\n      - u16\n      - u32\n      - u64\n      - u128\n      - u256\n      - address\n      - signer\n      - vector: `vector<{non-reference MoveTypeId}>`\n      - struct: `{address}::{module_name}::{struct_name}::<{generic types}>`\n\n    Vector type value examples:\n      - `vector<u8>`\n      - `vector<vector<u64>>`\n      - `vector<0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>>`\n\n    Struct type value examples:\n      - `0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>\n      - `0x1::account::Account`\n\n    Note:\n      1. Empty chars should be ignored when comparing 2 struct tag ids.\n      2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).\n",
+        "description": "String representation of an on-chain Move type tag that is exposed in transaction payload.\n    Values:\n      - bool\n      - u8\n      - u16\n      - u32\n      - u64\n      - u128\n      - u256\n      - address\n      - signer\n      - vector: `vector<{non-reference MoveTypeId}>`\n      - struct: `{address}::{module_name}::{struct_name}::<{generic types}>`\n\n    Vector type value examples:\n      - `vector<u8>`\n      - `vector<vector<u64>>`\n      - `vector<0x1::coin::CoinStore<0x1::libra2_coin::Libra2Coin>>`\n\n    Struct type value examples:\n      - `0x1::coin::CoinStore<0x1::libra2_coin::Libra2Coin>\n      - `0x1::account::Account`\n\n    Note:\n      1. Empty chars should be ignored when comparing 2 struct tag ids.\n      2. When used in an URL path, should be encoded by url-encoding (AKA percent-encoding).\n",
         "pattern": "^(bool|u8|u64|u128|address|signer|vector<.+>|0x[0-9a-zA-Z:_<, >]+)$"
       },
       "MoveValue": {
@@ -17988,6 +17988,6 @@
     }
   },
   "externalDocs": {
-    "url": "https://github.com/aptos-labs/aptos-core"
+    "url": "https://github.com/finalverse/libra2-core"
   }
 }

@@ -19,7 +19,7 @@ spec libra2_framework::resource_account {
     /// Requirement: The resource account is registered for the Aptos coin.
     /// Criticality: High
     /// Implementation: The create_resource_account_and_fund ensures the newly created resource account is registered to
-    /// receive the AptosCoin.
+    /// receive the Libra2Coin.
     /// Enforcement: Formally verified via [high-level-req-3](create_resource_account_and_fund).
     ///
     /// No.: 4
@@ -81,21 +81,21 @@ spec libra2_framework::resource_account {
         optional_auth_key: vector<u8>,
         fund_amount: u64,
     ) {
-        use libra2_framework::aptos_account;
+        use libra2_framework::libra2_account;
         // TODO(fa_migration)
         pragma verify = false;
         let source_addr = signer::address_of(origin);
         let resource_addr = account::spec_create_resource_address(source_addr, seed);
-        let coin_store_resource = global<coin::CoinStore<AptosCoin>>(resource_addr);
+        let coin_store_resource = global<coin::CoinStore<Libra2Coin>>(resource_addr);
 
-        include aptos_account::WithdrawAbortsIf<AptosCoin>{from: origin, amount: fund_amount};
-        include aptos_account::GuidAbortsIf<AptosCoin>{to: resource_addr};
+        include libra2_account::WithdrawAbortsIf<Libra2Coin>{from: origin, amount: fund_amount};
+        include libra2_account::GuidAbortsIf<Libra2Coin>{to: resource_addr};
         include RotateAccountAuthenticationKeyAndStoreCapabilityAbortsIfWithoutAccountLimit;
 
         //coin property
-        aborts_if coin::spec_is_account_registered<AptosCoin>(resource_addr) && coin_store_resource.frozen;
+        aborts_if coin::spec_is_account_registered<Libra2Coin>(resource_addr) && coin_store_resource.frozen;
         /// [high-level-req-3]
-        ensures exists<libra2_framework::coin::CoinStore<AptosCoin>>(resource_addr);
+        ensures exists<libra2_framework::coin::CoinStore<Libra2Coin>>(resource_addr);
     }
 
     spec create_resource_account_and_publish_package(

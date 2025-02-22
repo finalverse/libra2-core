@@ -1,5 +1,5 @@
 module 0x1::test {
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::randomness;
     use libra2_framework::coin;
 
@@ -27,7 +27,7 @@ module 0x1::test {
     entry fun transfer_lucky_money(sender: &signer, amount: u64, recipient_0: address, recipient_1: address) {
         let part_0 = randomness::u64_range(0, amount + 1);
         let part_1 = amount - part_0;
-        coin::transfer<AptosCoin>(sender, recipient_0, part_0);
-        coin::transfer<AptosCoin>(sender, recipient_1, part_1);
+        coin::transfer<Libra2Coin>(sender, recipient_0, part_0);
+        coin::transfer<Libra2Coin>(sender, recipient_1, part_1);
     }
 }

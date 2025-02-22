@@ -35,7 +35,7 @@ use libra2_types::{
     },
     trusted_state::{TrustedState, TrustedStateChange},
     waypoint::Waypoint,
-    AptosCoinType,
+    Libra2CoinType,
 };
 use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use rand::SeedableRng;
@@ -130,7 +130,7 @@ pub fn test_execution_with_storage_impl_inner(
         account1.sign_with_transaction_builder(txn_factory.transfer(account3.address(), 70 * B));
 
     let reconfig1 = core_resources_account.sign_with_transaction_builder(
-        txn_factory.payload(libra2_stdlib::aptos_governance_force_end_epoch_test_only()),
+        txn_factory.payload(libra2_stdlib::libra2_governance_force_end_epoch_test_only()),
     );
 
     let block1: Vec<_> = into_signature_verified_block(vec![
@@ -158,7 +158,7 @@ pub fn test_execution_with_storage_impl_inner(
         2,
     ));
     let reconfig2 = core_resources_account.sign_with_transaction_builder(
-        txn_factory.payload(libra2_stdlib::aptos_governance_force_end_epoch_test_only()),
+        txn_factory.payload(libra2_stdlib::libra2_governance_force_end_epoch_test_only()),
     );
     let block2 = vec![block2_meta, UserTransaction(reconfig2)];
 
@@ -400,7 +400,7 @@ pub fn create_db_and_executor<P: AsRef<std::path::Path>>(
 }
 
 pub fn get_account_balance(state_view: &dyn StateView, address: &AccountAddress) -> u64 {
-    CoinStoreResource::<AptosCoinType>::fetch_move_resource(state_view, address)
+    CoinStoreResource::<Libra2CoinType>::fetch_move_resource(state_view, address)
         .unwrap()
         .map_or(0, |coin_store| coin_store.coin())
 }

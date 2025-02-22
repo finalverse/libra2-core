@@ -10,7 +10,7 @@ use libra2_vm::{data_cache::AsMoveResolver, Libra2VM};
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_logging::log_schema::AdapterLogSchema;
 use libra2_vm_types::{
-    module_and_script_storage::AsAptosCodeStorage, output::VMOutput, resolver::StateStorageView,
+    module_and_script_storage::AsLibra2CodeStorage, output::VMOutput, resolver::StateStorageView,
 };
 use move_core_types::vm_status::VMStatus;
 use std::{path::Path, time::Instant};

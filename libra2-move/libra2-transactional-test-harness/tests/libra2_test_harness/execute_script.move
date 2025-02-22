@@ -5,11 +5,11 @@
 //# run --script --signers Alice  --args @Bob 100
 script {
     use libra2_framework::coin;
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
 
     fun main(sender: &signer, receiver: address, amount: u64) {
-        coin::transfer<AptosCoin>(sender, receiver, amount);
+        coin::transfer<Libra2Coin>(sender, receiver, amount);
     }
 }
 
-//# view --address Bob  --resource 0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>
+//# view --address Bob  --resource 0x1::coin::CoinStore<0x1::libra2_coin::Libra2Coin>

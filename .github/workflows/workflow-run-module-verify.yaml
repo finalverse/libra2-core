@@ -42,7 +42,7 @@ jobs:
         with:
           ref: ${{ inputs.GIT_SHA }}
 
-      - uses: aptos-labs/aptos-core/.github/actions/rust-setup@main
+      - uses: finalverse/libra2-core/.github/actions/rust-setup@main
         with:
           GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
 

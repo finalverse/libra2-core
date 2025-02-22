@@ -1,7 +1,7 @@
 ---
 id: forge cli
 title: Forge CLI
-custom_edit_url: https://github.com/aptos-labs/aptos-core/edit/main/testsuite/forge-cli/README.md
+custom_edit_url: https://github.com/finalverse/libra2-core/edit/main/testsuite/forge-cli/README.md
 ---
 
 # Forge CLI
@@ -65,7 +65,7 @@ cargo run -p libra2-faucet-cli -- --amount 10 --accounts <account_address> --key
 ```
 
 :::tip Faucet and Aptos CLI
-See more on how the faucet works in the [README](https://github.com/aptos-labs/aptos-core/tree/main/crates/libra2-faucet).
+See more on how the faucet works in the [README](https://github.com/finalverse/libra2-core/tree/main/crates/libra2-faucet).
 
 Also see how to use the [Aptos CLI](../cli-tools/aptos-cli/use-cli/use-aptos-cli.md#account-examples) with an existing faucet.
 :::

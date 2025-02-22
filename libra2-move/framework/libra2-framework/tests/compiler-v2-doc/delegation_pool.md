@@ -238,9 +238,9 @@ transferred to A
 
 
 <pre><code><b>use</b> <a href="account.md#0x1_account">0x1::account</a>;
-<b>use</b> <a href="aptos_account.md#0x1_aptos_account">0x1::aptos_account</a>;
-<b>use</b> <a href="aptos_coin.md#0x1_aptos_coin">0x1::aptos_coin</a>;
-<b>use</b> <a href="aptos_governance.md#0x1_aptos_governance">0x1::aptos_governance</a>;
+<b>use</b> <a href="libra2_account.md#0x1_libra2_account">0x1::libra2_account</a>;
+<b>use</b> <a href="libra2_coin.md#0x1_libra2_coin">0x1::libra2_coin</a>;
+<b>use</b> <a href="libra2_governance.md#0x1_libra2_governance">0x1::libra2_governance</a>;
 <b>use</b> <a href="coin.md#0x1_coin">0x1::coin</a>;
 <b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
 <b>use</b> <a href="event.md#0x1_event">0x1::event</a>;
@@ -2524,7 +2524,7 @@ latest state.
     <a href="delegation_pool.md#0x1_delegation_pool_assert_partial_governance_voting_enabled">assert_partial_governance_voting_enabled</a>(pool_address);
     // If the whole <a href="stake.md#0x1_stake">stake</a> pool <b>has</b> no <a href="voting.md#0x1_voting">voting</a> power(e.g. it <b>has</b> already voted before partial
     // governance <a href="voting.md#0x1_voting">voting</a> flag is enabled), the delegator also <b>has</b> no <a href="voting.md#0x1_voting">voting</a> power.
-    <b>if</b> (<a href="aptos_governance.md#0x1_aptos_governance_get_remaining_voting_power">aptos_governance::get_remaining_voting_power</a>(pool_address, proposal_id) == 0) {
+    <b>if</b> (<a href="libra2_governance.md#0x1_libra2_governance_get_remaining_voting_power">libra2_governance::get_remaining_voting_power</a>(pool_address, proposal_id) == 0) {
         <b>return</b> 0
     };
 
@@ -2791,7 +2791,7 @@ Ownership over setting the operator/voter is granted to <code>owner</code> who h
     <b>let</b> seed = <a href="delegation_pool.md#0x1_delegation_pool_create_resource_account_seed">create_resource_account_seed</a>(delegation_pool_creation_seed);
 
     <b>let</b> (stake_pool_signer, stake_pool_signer_cap) = <a href="account.md#0x1_account_create_resource_account">account::create_resource_account</a>(owner, seed);
-    <a href="coin.md#0x1_coin_register">coin::register</a>&lt;AptosCoin&gt;(&stake_pool_signer);
+    <a href="coin.md#0x1_coin_register">coin::register</a>&lt;Libra2Coin&gt;(&stake_pool_signer);
 
     // stake_pool_signer will be owner of the <a href="stake.md#0x1_stake">stake</a> pool and have its `<a href="stake.md#0x1_stake_OwnerCapability">stake::OwnerCapability</a>`
     <b>let</b> pool_address = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(&stake_pool_signer);
@@ -2964,7 +2964,7 @@ Vote on a proposal with a voter's voting power. To successfully vote, the follow
     *used_voting_power = *used_voting_power + voting_power;
 
     <b>let</b> pool_signer = <a href="delegation_pool.md#0x1_delegation_pool_retrieve_stake_pool_owner">retrieve_stake_pool_owner</a>(<b>borrow_global</b>&lt;<a href="delegation_pool.md#0x1_delegation_pool_DelegationPool">DelegationPool</a>&gt;(pool_address));
-    <a href="aptos_governance.md#0x1_aptos_governance_partial_vote">aptos_governance::partial_vote</a>(&pool_signer, pool_address, proposal_id, voting_power, should_pass);
+    <a href="libra2_governance.md#0x1_libra2_governance_partial_vote">libra2_governance::partial_vote</a>(&pool_signer, pool_address, proposal_id, voting_power, should_pass);
 
     <b>if</b> (<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_module_event_migration_enabled">features::module_event_migration_enabled</a>()) {
         <a href="event.md#0x1_event_emit">event::emit</a>(
@@ -3001,7 +3001,7 @@ Vote on a proposal with a voter's voting power. To successfully vote, the follow
 
 A voter could create a governance proposal by this function. To successfully create a proposal, the voter's
 voting power in THIS delegation pool must be not less than the minimum required voting power specified in
-<code><a href="aptos_governance.md#0x1_aptos_governance">aptos_governance</a>.<b>move</b></code>.
+<code><a href="libra2_governance.md#0x1_libra2_governance">libra2_governance</a>.<b>move</b></code>.
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="delegation_pool.md#0x1_delegation_pool_create_proposal">create_proposal</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, pool_address: <b>address</b>, execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, is_multi_step_proposal: bool)
@@ -3031,10 +3031,10 @@ voting power in THIS delegation pool must be not less than the minimum required 
     <b>let</b> governance_records = <b>borrow_global_mut</b>&lt;<a href="delegation_pool.md#0x1_delegation_pool_GovernanceRecords">GovernanceRecords</a>&gt;(pool_address);
     <b>let</b> total_voting_power = <a href="delegation_pool.md#0x1_delegation_pool_calculate_and_update_delegated_votes">calculate_and_update_delegated_votes</a>(pool, governance_records, voter_addr);
     <b>assert</b>!(
-        total_voting_power &gt;= <a href="aptos_governance.md#0x1_aptos_governance_get_required_proposer_stake">aptos_governance::get_required_proposer_stake</a>(),
+        total_voting_power &gt;= <a href="libra2_governance.md#0x1_libra2_governance_get_required_proposer_stake">libra2_governance::get_required_proposer_stake</a>(),
         <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="delegation_pool.md#0x1_delegation_pool_EINSUFFICIENT_PROPOSER_STAKE">EINSUFFICIENT_PROPOSER_STAKE</a>));
     <b>let</b> pool_signer = <a href="delegation_pool.md#0x1_delegation_pool_retrieve_stake_pool_owner">retrieve_stake_pool_owner</a>(<b>borrow_global</b>&lt;<a href="delegation_pool.md#0x1_delegation_pool_DelegationPool">DelegationPool</a>&gt;(pool_address));
-    <b>let</b> proposal_id = <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2_impl">aptos_governance::create_proposal_v2_impl</a>(
+    <b>let</b> proposal_id = <a href="libra2_governance.md#0x1_libra2_governance_create_proposal_v2_impl">libra2_governance::create_proposal_v2_impl</a>(
         &pool_signer,
         pool_address,
         execution_hash,
@@ -4255,7 +4255,7 @@ Add <code>amount</code> of coins to the delegation pool <code>pool_address</code
     <b>let</b> pool = <b>borrow_global_mut</b>&lt;<a href="delegation_pool.md#0x1_delegation_pool_DelegationPool">DelegationPool</a>&gt;(pool_address);
 
     // <a href="stake.md#0x1_stake">stake</a> the entire amount <b>to</b> the <a href="stake.md#0x1_stake">stake</a> pool
-    <a href="aptos_account.md#0x1_aptos_account_transfer">aptos_account::transfer</a>(delegator, pool_address, amount);
+    <a href="libra2_account.md#0x1_libra2_account_transfer">libra2_account::transfer</a>(delegator, pool_address, amount);
     <a href="stake.md#0x1_stake_add_stake">stake::add_stake</a>(&<a href="delegation_pool.md#0x1_delegation_pool_retrieve_stake_pool_owner">retrieve_stake_pool_owner</a>(pool), amount);
 
     // but buy shares for delegator just for the remaining amount after fee
@@ -4560,7 +4560,7 @@ Withdraw <code>amount</code> of owned inactive stake from the delegation pool at
         // no excess <a href="stake.md#0x1_stake">stake</a> <b>if</b> `<a href="stake.md#0x1_stake_withdraw">stake::withdraw</a>` does not inactivate at all
         <a href="stake.md#0x1_stake_withdraw">stake::withdraw</a>(stake_pool_owner, amount);
     };
-    <a href="aptos_account.md#0x1_aptos_account_transfer">aptos_account::transfer</a>(stake_pool_owner, delegator_address, amount);
+    <a href="libra2_account.md#0x1_libra2_account_transfer">libra2_account::transfer</a>(stake_pool_owner, delegator_address, amount);
 
     // commit withdrawal of possibly inactive <a href="stake.md#0x1_stake">stake</a> <b>to</b> the `total_coins_inactive`
     // known by the delegation pool in order <b>to</b> not mistake it for slashing at next synchronization
@@ -5151,8 +5151,8 @@ shares pools, assign commission to operator and eventually prepare delegation po
 <pre><code>inline <b>fun</b> <a href="delegation_pool.md#0x1_delegation_pool_assert_and_update_proposal_used_voting_power">assert_and_update_proposal_used_voting_power</a>(
     governance_records: &<b>mut</b> <a href="delegation_pool.md#0x1_delegation_pool_GovernanceRecords">GovernanceRecords</a>, pool_address: <b>address</b>, proposal_id: u64, voting_power: u64
 ) {
-    <b>let</b> stake_pool_remaining_voting_power = <a href="aptos_governance.md#0x1_aptos_governance_get_remaining_voting_power">aptos_governance::get_remaining_voting_power</a>(pool_address, proposal_id);
-    <b>let</b> stake_pool_used_voting_power = <a href="aptos_governance.md#0x1_aptos_governance_get_voting_power">aptos_governance::get_voting_power</a>(
+    <b>let</b> stake_pool_remaining_voting_power = <a href="libra2_governance.md#0x1_libra2_governance_get_remaining_voting_power">libra2_governance::get_remaining_voting_power</a>(pool_address, proposal_id);
+    <b>let</b> stake_pool_used_voting_power = <a href="libra2_governance.md#0x1_libra2_governance_get_voting_power">libra2_governance::get_voting_power</a>(
         pool_address
     ) - stake_pool_remaining_voting_power;
     <b>let</b> proposal_used_voting_power = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_borrow_mut_with_default">smart_table::borrow_mut_with_default</a>(

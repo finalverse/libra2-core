@@ -13,7 +13,7 @@ cd $repodir
 (
   echo
   echo "Regenerating protobufs (in `pwd`)"
-  echo "See https://github.com/aptos-labs/aptos-core-private/tree/main/protos/README.md if you're having troubles"
+  echo "See https://github.com/finalverse/libra2-core-private/tree/main/protos/README.md if you're having troubles"
   cd protos/
   ./scripts/build_protos.sh
 )
@@ -39,7 +39,7 @@ cd $repodir
 
 echo
 echo "WARNING: If you are adding a new transaction authenticator..."
-echo " 1. Check out https://github.com/aptos-labs/aptos-core/blob/main/testsuite/generate-format/README.md"
+echo " 1. Check out https://github.com/finalverse/libra2-core/blob/main/testsuite/generate-format/README.md"
 echo "    * In particular, be sure to edit the *.yaml files in testsuite/generate-format/tests/staged"
 echo " 2. ecosystem/indexer-grpc/indexer-grpc-fullnode/src/convert.rs must be manually updated"
 echo

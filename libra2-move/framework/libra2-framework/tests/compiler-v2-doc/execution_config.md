@@ -118,7 +118,7 @@ This can be called by on-chain governance to update on-chain execution configs f
 Example usage:
 ```
 libra2_framework::execution_config::set_for_next_epoch(&framework_signer, some_config_bytes);
-libra2_framework::aptos_governance::reconfigure(&framework_signer);
+libra2_framework::libra2_governance::reconfigure(&framework_signer);
 ```
 
 
@@ -206,7 +206,7 @@ When setting now time must be later than last_reconfiguration_time.
 <b>requires</b> <b>exists</b>&lt;<a href="staking_config.md#0x1_staking_config_StakingRewardsConfig">staking_config::StakingRewardsConfig</a>&gt;(@libra2_framework);
 <b>requires</b> len(config) &gt; 0;
 <b>include</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_periodical_reward_rate_decrease_enabled">features::spec_periodical_reward_rate_decrease_enabled</a>() ==&gt; <a href="staking_config.md#0x1_staking_config_StakingRewardsConfigEnabledRequirement">staking_config::StakingRewardsConfigEnabledRequirement</a>;
-<b>include</b> <a href="aptos_coin.md#0x1_aptos_coin_ExistsAptosCoin">aptos_coin::ExistsAptosCoin</a>;
+<b>include</b> <a href="libra2_coin.md#0x1_libra2_coin_ExistsLibra2Coin">libra2_coin::ExistsLibra2Coin</a>;
 <b>requires</b> <a href="system_addresses.md#0x1_system_addresses_is_libra2_framework_address">system_addresses::is_libra2_framework_address</a>(addr);
 <b>requires</b> <a href="timestamp.md#0x1_timestamp_spec_now_microseconds">timestamp::spec_now_microseconds</a>() &gt;= <a href="reconfiguration.md#0x1_reconfiguration_last_reconfiguration_time">reconfiguration::last_reconfiguration_time</a>();
 <b>ensures</b> <b>exists</b>&lt;<a href="execution_config.md#0x1_execution_config_ExecutionConfig">ExecutionConfig</a>&gt;(@libra2_framework);

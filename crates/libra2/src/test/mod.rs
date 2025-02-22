@@ -333,8 +333,8 @@ impl CliTestFramework {
                 type_arg_vec: TypeArgVec {
                     type_args: vec![MoveType::Struct(MoveStructTag::new(
                         AccountAddress::ONE.into(),
-                        ident_str!("aptos_coin").into(),
-                        ident_str!("AptosCoin").into(),
+                        ident_str!("libra2_coin").into(),
+                        ident_str!("Libra2Coin").into(),
                         vec![],
                     ))],
                 },

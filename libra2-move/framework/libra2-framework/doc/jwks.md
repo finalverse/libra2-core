@@ -1019,7 +1019,7 @@ libra2_framework::jwks::upsert_oidc_provider_for_next_epoch(
 b"https://accounts.google.com",
 b"https://accounts.google.com/.well-known/openid-configuration"
 );
-libra2_framework::aptos_governance::reconfigure(&framework_signer);
+libra2_framework::libra2_governance::reconfigure(&framework_signer);
 ```
 
 
@@ -1094,7 +1094,7 @@ libra2_framework::jwks::remove_oidc_provider_for_next_epoch(
 &framework_signer,
 b"https://accounts.google.com",
 );
-libra2_framework::aptos_governance::reconfigure(&framework_signer);
+libra2_framework::libra2_governance::reconfigure(&framework_signer);
 ```
 
 

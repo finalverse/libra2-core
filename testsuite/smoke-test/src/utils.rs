@@ -147,7 +147,7 @@ pub async fn transfer_coins_non_blocking(
     amount: u64,
 ) -> SignedTransaction {
     let txn = sender.sign_with_transaction_builder(transaction_factory.payload(
-        libra2_stdlib::aptos_coin_transfer(receiver.address(), amount),
+        libra2_stdlib::libra2_coin_transfer(receiver.address(), amount),
     ));
 
     client.submit(&txn).await.unwrap();

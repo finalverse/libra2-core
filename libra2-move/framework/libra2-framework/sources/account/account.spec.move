@@ -126,7 +126,7 @@ spec libra2_framework::account {
         aborts_if !exists<Account>(account_address) && (
             account_address == @vm_reserved
             || account_address == @libra2_framework
-            || account_address == @aptos_token
+            || account_address == @libra2_token
             || !(len(authentication_key) == 32)
         );
         ensures exists<Account>(account_address);
@@ -138,7 +138,7 @@ spec libra2_framework::account {
     /// Limit the new account address is not @vm_reserved / @libra2_framework / @aptos_toke.
     spec create_account(new_address: address): signer {
         include CreateAccountAbortsIf {addr: new_address};
-        aborts_if new_address == @vm_reserved || new_address == @libra2_framework || new_address == @aptos_token;
+        aborts_if new_address == @vm_reserved || new_address == @libra2_framework || new_address == @libra2_token;
         ensures signer::address_of(result) == new_address;
         /// [high-level-req-2]
         ensures exists<Account>(new_address);

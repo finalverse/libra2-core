@@ -4,7 +4,7 @@ version = "0.0.0"
 
 [dependencies]
 Libra2Framework = { local = "../../../../../libra2-move/framework/libra2-framework" }
-AptosToken = { local = "../../../../../libra2-move/framework/aptos-token" }
+Libra2Token = { local = "../../../../../libra2-move/framework/libra2-token" }
 Libra2TokenObjects = { local = "../../../../../libra2-move/framework/libra2-token-objects" }
 
 # testing exchanging of constant address works as well.

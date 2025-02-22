@@ -146,7 +146,7 @@ pub fn generate_gas_upgrade_proposal(
                     );
                 },
             }
-            emitln!(writer, "aptos_governance::reconfigure({});", signer_arg);
+            emitln!(writer, "libra2_governance::reconfigure({});", signer_arg);
         },
     );
 

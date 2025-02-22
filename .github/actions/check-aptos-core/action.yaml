@@ -20,7 +20,7 @@ runs:
       id: determine-repo
       shell: bash
       run: |
-        if [[ "${{ github.repository }}" == "aptos-labs/aptos-core" ]]; then
+        if [[ "${{ github.repository }}" == "finalverse/libra2-core" ]]; then
           echo "is-aptos-core=true" >> $GITHUB_OUTPUT
         else
           echo "is-aptos-core=false" >> $GITHUB_OUTPUT

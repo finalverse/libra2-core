@@ -390,7 +390,7 @@ impl TransactionGenerator {
             let transactions: Vec<_> = chunk
                 .iter()
                 .map(|new_account| {
-                    let payload = libra2_stdlib::aptos_account_transfer(
+                    let payload = libra2_stdlib::libra2_account_transfer(
                         new_account.authentication_key().account_address(),
                         seed_account_balance,
                     );
@@ -448,7 +448,7 @@ impl TransactionGenerator {
                 Arc::new(AtomicUsize::new(0)),
                 |(sender_idx, new_account), account_cache| {
                     let sender = &account_cache.accounts[sender_idx];
-                    let payload = libra2_stdlib::aptos_account_transfer(
+                    let payload = libra2_stdlib::libra2_account_transfer(
                         new_account.authentication_key().account_address(),
                         init_account_balance,
                     );

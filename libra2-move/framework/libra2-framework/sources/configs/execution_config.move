@@ -43,7 +43,7 @@ module libra2_framework::execution_config {
     /// Example usage:
     /// ```
     /// libra2_framework::execution_config::set_for_next_epoch(&framework_signer, some_config_bytes);
-    /// libra2_framework::aptos_governance::reconfigure(&framework_signer);
+    /// libra2_framework::libra2_governance::reconfigure(&framework_signer);
     /// ```
     public fun set_for_next_epoch(account: &signer, config: vector<u8>) {
         system_addresses::assert_libra2_framework(account);

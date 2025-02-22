@@ -17,7 +17,7 @@
 /// easier accounting and tracking of the deposited/withdrawn coins.
 module swap::coin_wrapper {
     use libra2_framework::account::{Self, SignerCapability};
-    use libra2_framework::aptos_account;
+    use libra2_framework::libra2_account;
     use libra2_framework::coin::{Self, Coin};
     use libra2_framework::fungible_asset::{Self, BurnRef, FungibleAsset, Metadata, MintRef};
     use libra2_framework::object::{Self, Object};
@@ -52,7 +52,7 @@ module swap::coin_wrapper {
         // The signer cap used to withdraw deposited coins from the main resource account during unwrapping so the
         // coins can be returned to the end users.
         signer_cap: SignerCapability,
-        // Map from an original coin type (represented as strings such as "0x1::aptos_coin::AptosCoin") to the
+        // Map from an original coin type (represented as strings such as "0x1::libra2_coin::Libra2Coin") to the
         // corresponding fungible asset wrapper.
         coin_to_fungible_asset: SmartTable<String, FungibleAssetData>,
         // Map from a fungible asset wrapper to the original coin type.
@@ -115,7 +115,7 @@ module swap::coin_wrapper {
     #[view]
     /// Return the original CoinType if the given fungible asset is a wrapper fungible asset. Otherwise, return the
     /// given fungible asset itself, which means it's a native fungible asset (not wrapped).
-    /// The return value is a String such as "0x1::aptos_coin::AptosCoin" for an original coin or "0x12345" for a native
+    /// The return value is a String such as "0x1::libra2_coin::Libra2Coin" for an original coin or "0x12345" for a native
     /// fungible asset.
     public fun get_original(fungible_asset: Object<Metadata>): String acquires WrapperAccount {
         if (is_wrapper(fungible_asset)) {
@@ -143,7 +143,7 @@ module swap::coin_wrapper {
 
         // Deposit coins into the main resource account and mint&return the wrapper fungible assets.
         let amount = coin::value(&coins);
-        aptos_account::deposit_coins(wrapper_address(), coins);
+        libra2_account::deposit_coins(wrapper_address(), coins);
         let mint_ref = &fungible_asset_data<CoinType>().mint_ref;
         fungible_asset::mint(mint_ref, amount)
     }

@@ -119,9 +119,9 @@ module libra2_framework::delegation_pool {
     use libra2_std::smart_table::{Self, SmartTable};
 
     use libra2_framework::account;
-    use libra2_framework::aptos_account;
-    use libra2_framework::aptos_coin::AptosCoin;
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_account;
+    use libra2_framework::libra2_coin::Libra2Coin;
+    use libra2_framework::libra2_governance;
     use libra2_framework::coin;
     use libra2_framework::event::{Self, EventHandle, emit};
     use libra2_framework::permissioned_signer;
@@ -752,7 +752,7 @@ module libra2_framework::delegation_pool {
         assert_partial_governance_voting_enabled(pool_address);
         // If the whole stake pool has no voting power(e.g. it has already voted before partial
         // governance voting flag is enabled), the delegator also has no voting power.
-        if (aptos_governance::get_remaining_voting_power(pool_address, proposal_id) == 0) {
+        if (libra2_governance::get_remaining_voting_power(pool_address, proposal_id) == 0) {
             return 0
         };
 
@@ -883,7 +883,7 @@ module libra2_framework::delegation_pool {
         let seed = create_resource_account_seed(delegation_pool_creation_seed);
 
         let (stake_pool_signer, stake_pool_signer_cap) = account::create_resource_account(owner, seed);
-        coin::register<AptosCoin>(&stake_pool_signer);
+        coin::register<Libra2Coin>(&stake_pool_signer);
 
         // stake_pool_signer will be owner of the stake pool and have its `stake::OwnerCapability`
         let pool_address = signer::address_of(&stake_pool_signer);
@@ -988,7 +988,7 @@ module libra2_framework::delegation_pool {
         if (voting_power > remaining_voting_power) {
             voting_power = remaining_voting_power;
         };
-        aptos_governance::assert_proposal_expiration(pool_address, proposal_id);
+        libra2_governance::assert_proposal_expiration(pool_address, proposal_id);
         assert!(voting_power > 0, error::invalid_argument(ENO_VOTING_POWER));
 
         let governance_records = borrow_global_mut<GovernanceRecords>(pool_address);
@@ -998,7 +998,7 @@ module libra2_framework::delegation_pool {
         *used_voting_power = *used_voting_power + voting_power;
 
         let pool_signer = retrieve_stake_pool_owner(borrow_global<DelegationPool>(pool_address));
-        aptos_governance::partial_vote(&pool_signer, pool_address, proposal_id, voting_power, should_pass);
+        libra2_governance::partial_vote(&pool_signer, pool_address, proposal_id, voting_power, should_pass);
 
         if (features::module_event_migration_enabled()) {
             event::emit(
@@ -1026,7 +1026,7 @@ module libra2_framework::delegation_pool {
 
     /// A voter could create a governance proposal by this function. To successfully create a proposal, the voter's
     /// voting power in THIS delegation pool must be not less than the minimum required voting power specified in
-    /// `aptos_governance.move`.
+    /// `libra2_governance.move`.
     public entry fun create_proposal(
         voter: &signer,
         pool_address: address,
@@ -1046,10 +1046,10 @@ module libra2_framework::delegation_pool {
         let governance_records = borrow_global_mut<GovernanceRecords>(pool_address);
         let total_voting_power = calculate_and_update_delegated_votes(pool, governance_records, voter_addr);
         assert!(
-            total_voting_power >= aptos_governance::get_required_proposer_stake(),
+            total_voting_power >= libra2_governance::get_required_proposer_stake(),
             error::invalid_argument(EINSUFFICIENT_PROPOSER_STAKE));
         let pool_signer = retrieve_stake_pool_owner(borrow_global<DelegationPool>(pool_address));
-        let proposal_id = aptos_governance::create_proposal_v2_impl(
+        let proposal_id = libra2_governance::create_proposal_v2_impl(
             &pool_signer,
             pool_address,
             execution_hash,
@@ -1601,7 +1601,7 @@ module libra2_framework::delegation_pool {
         let pool = borrow_global_mut<DelegationPool>(pool_address);
 
         // stake the entire amount to the stake pool
-        aptos_account::transfer(delegator, pool_address, amount);
+        libra2_account::transfer(delegator, pool_address, amount);
         stake::add_stake(&retrieve_stake_pool_owner(pool), amount);
 
         // but buy shares for delegator just for the remaining amount after fee
@@ -1809,7 +1809,7 @@ module libra2_framework::delegation_pool {
             // no excess stake if `stake::withdraw` does not inactivate at all
             stake::withdraw(stake_pool_owner, amount);
         };
-        aptos_account::transfer(stake_pool_owner, delegator_address, amount);
+        libra2_account::transfer(stake_pool_owner, delegator_address, amount);
 
         // commit withdrawal of possibly inactive stake to the `total_coins_inactive`
         // known by the delegation pool in order to not mistake it for slashing at next synchronization
@@ -2160,8 +2160,8 @@ module libra2_framework::delegation_pool {
     inline fun assert_and_update_proposal_used_voting_power(
         governance_records: &mut GovernanceRecords, pool_address: address, proposal_id: u64, voting_power: u64
     ) {
-        let stake_pool_remaining_voting_power = aptos_governance::get_remaining_voting_power(pool_address, proposal_id);
-        let stake_pool_used_voting_power = aptos_governance::get_voting_power(
+        let stake_pool_remaining_voting_power = libra2_governance::get_remaining_voting_power(pool_address, proposal_id);
+        let stake_pool_used_voting_power = libra2_governance::get_voting_power(
             pool_address
         ) - stake_pool_remaining_voting_power;
         let proposal_used_voting_power = smart_table::borrow_mut_with_default(
@@ -2819,11 +2819,11 @@ module libra2_framework::delegation_pool {
 
         // check `add_stake` increases `active` stakes of delegator and stake pool
         stake::mint(validator, 300 * ONE_APT);
-        let balance = coin::balance<AptosCoin>(validator_address);
+        let balance = coin::balance<Libra2Coin>(validator_address);
         add_stake(validator, pool_address, 250 * ONE_APT);
 
         // check added stake have been transferred out of delegator account
-        assert!(coin::balance<AptosCoin>(validator_address) == balance - 250 * ONE_APT, 0);
+        assert!(coin::balance<Libra2Coin>(validator_address) == balance - 250 * ONE_APT, 0);
         // zero `add_stake` fee charged from added stake
         assert_delegation(validator_address, pool_address, 1250 * ONE_APT, 0, 0);
         // zero `add_stake` fee transferred to null shareholder
@@ -3037,11 +3037,11 @@ module libra2_framework::delegation_pool {
 
         // cannot withdraw stake unlocked by others
         withdraw(delegator, pool_address, 50 * ONE_APT);
-        assert!(coin::balance<AptosCoin>(delegator_address) == 0, 0);
+        assert!(coin::balance<Libra2Coin>(delegator_address) == 0, 0);
 
         // withdraw own unlocked stake
         withdraw(validator, pool_address, 15301499997);
-        assert!(coin::balance<AptosCoin>(validator_address) == 15301499997, 0);
+        assert!(coin::balance<Libra2Coin>(validator_address) == 15301499997, 0);
         assert_delegation(validator_address, pool_address, 15403510001, 0, 0);
         // pending withdrawal has been executed and deleted
         assert_pending_withdrawal(validator_address, pool_address, false, 0, false, 0);
@@ -3062,9 +3062,9 @@ module libra2_framework::delegation_pool {
         assert_pending_withdrawal(validator_address, pool_address, true, 1, true, 5457545100);
 
         // unlock when the pending withdrawal exists and gets automatically executed
-        let balance = coin::balance<AptosCoin>(validator_address);
+        let balance = coin::balance<Libra2Coin>(validator_address);
         unlock(validator, pool_address, 10100000000);
-        assert!(coin::balance<AptosCoin>(validator_address) == balance + 5457545100, 0);
+        assert!(coin::balance<Libra2Coin>(validator_address) == balance + 5457545100, 0);
         assert_delegation(validator_address, pool_address, 0, 0, 10100000000);
         // this is the new pending withdrawal replacing the executed one
         assert_pending_withdrawal(validator_address, pool_address, true, 2, false, 10100000000);
@@ -3092,10 +3092,10 @@ module libra2_framework::delegation_pool {
         assert_pending_withdrawal(validator_address, pool_address, true, 2, false, 10303010000);
 
         // validator is inactive and lockup expired => pending_inactive stake is withdrawable
-        balance = coin::balance<AptosCoin>(validator_address);
+        balance = coin::balance<Libra2Coin>(validator_address);
         withdraw(validator, pool_address, 10303010000);
 
-        assert!(coin::balance<AptosCoin>(validator_address) == balance + 10303010000, 0);
+        assert!(coin::balance<Libra2Coin>(validator_address) == balance + 10303010000, 0);
         assert_delegation(validator_address, pool_address, 0, 0, 0);
         assert_pending_withdrawal(validator_address, pool_address, false, 0, false, 0);
         stake::assert_stake_pool(pool_address, 5100500001, 0, 0, 0);
@@ -3110,13 +3110,13 @@ module libra2_framework::delegation_pool {
         // the pending withdrawal should be reported as still pending
         assert_pending_withdrawal(validator_address, pool_address, true, 2, false, 1000000000);
 
-        balance = coin::balance<AptosCoin>(validator_address);
+        balance = coin::balance<Libra2Coin>(validator_address);
         // pending_inactive balance would be under threshold => redeem entire balance
         withdraw(validator, pool_address, 1);
         // pending_inactive balance has been withdrawn and the pending withdrawal executed
         assert_delegation(validator_address, pool_address, 1999999999, 0, 0);
         assert_pending_withdrawal(validator_address, pool_address, false, 0, false, 0);
-        assert!(coin::balance<AptosCoin>(validator_address) == balance + 1000000000, 0);
+        assert!(coin::balance<Libra2Coin>(validator_address) == balance + 1000000000, 0);
     }
 
     #[test(libra2_framework = @libra2_framework, validator = @0x123, delegator1 = @0x010, delegator2 = @0x020)]
@@ -3283,7 +3283,7 @@ module libra2_framework::delegation_pool {
 
         // unlock stake in the new lockup cycle (the pending withdrawal is executed)
         unlock(validator, pool_address, 100 * ONE_APT);
-        assert!(coin::balance<AptosCoin>(validator_address) == 15149999998, 0);
+        assert!(coin::balance<Libra2Coin>(validator_address) == 15149999998, 0);
         assert_delegation(validator_address, pool_address, 10402000002, 0, 9999999999);
         assert_pending_withdrawal(validator_address, pool_address, true, 1, false, 9999999999);
 
@@ -3340,9 +3340,9 @@ module libra2_framework::delegation_pool {
         assert_delegation(validator_address, pool_address, 90900000000, 10100000000, 0);
 
         // withdraw entire owned inactive stake
-        let balance = coin::balance<AptosCoin>(validator_address);
+        let balance = coin::balance<Libra2Coin>(validator_address);
         withdraw(validator, pool_address, MAX_U64);
-        assert!(coin::balance<AptosCoin>(validator_address) == balance + 10100000000, 0);
+        assert!(coin::balance<Libra2Coin>(validator_address) == balance + 10100000000, 0);
         assert_pending_withdrawal(validator_address, pool_address, false, 0, false, 0);
         assert_inactive_shares_pool(pool_address, 0, false, 0);
 
@@ -3639,7 +3639,7 @@ module libra2_framework::delegation_pool {
 
         // unlock 200 coins from delegator `validator` which implicitly executes its pending withdrawal
         unlock(validator, pool_address, 200 * ONE_APT);
-        assert!(coin::balance<AptosCoin>(validator_address) == 20606019996, 0);
+        assert!(coin::balance<Libra2Coin>(validator_address) == 20606019996, 0);
         assert_delegation(validator_address, pool_address, 64288924812, 0, 19999999999);
 
         // lockup cycle is not ended, pending_inactive stake is still earning
@@ -3710,8 +3710,8 @@ module libra2_framework::delegation_pool {
 
         assert_pending_withdrawal(delegator2_address, pool_address, true, 1, true, 10000000001);
         assert_pending_withdrawal(delegator1_address, pool_address, false, 0, false, 0);
-        assert!(coin::balance<AptosCoin>(delegator1_address) == 15149999998, 0);
-        assert!(coin::balance<AptosCoin>(delegator2_address) == 5149999997, 0);
+        assert!(coin::balance<Libra2Coin>(delegator1_address) == 15149999998, 0);
+        assert!(coin::balance<Libra2Coin>(delegator2_address) == 5149999997, 0);
 
         // recreate the pending withdrawal of delegator 1 in lockup cycle 2
         unlock(delegator1, pool_address, 100 * ONE_APT);
@@ -3726,12 +3726,12 @@ module libra2_framework::delegation_pool {
 
         // withdraw inactive stake of delegator 2 left from lockup cycle 1 in cycle 3
         withdraw(delegator2, pool_address, 10000000001);
-        assert!(coin::balance<AptosCoin>(delegator2_address) == 15149999998, 0);
+        assert!(coin::balance<Libra2Coin>(delegator2_address) == 15149999998, 0);
         assert_pending_withdrawal(delegator2_address, pool_address, false, 0, false, 0);
 
         // withdraw inactive stake of delegator 1 left from previous lockup cycle
         withdraw(delegator1, pool_address, 10099999998);
-        assert!(coin::balance<AptosCoin>(delegator1_address) == 15149999998 + 10099999998, 0);
+        assert!(coin::balance<Libra2Coin>(delegator1_address) == 15149999998 + 10099999998, 0);
         assert_pending_withdrawal(delegator1_address, pool_address, false, 0, false, 0);
     }
 
@@ -3874,9 +3874,9 @@ module libra2_framework::delegation_pool {
         assert_pending_withdrawal(validator_address, pool_address, true, 0, true, 25536996);
 
         // distribute in-flight pending_inactive commission, implicitly executing the inactive withdrawal of operator
-        coin::register<AptosCoin>(validator);
+        coin::register<Libra2Coin>(validator);
         synchronize_delegation_pool(pool_address);
-        assert!(coin::balance<AptosCoin>(validator_address) == 25536996, 0);
+        assert!(coin::balance<Libra2Coin>(validator_address) == 25536996, 0);
 
         // in-flight commission has been synced, implicitly used to buy shares for operator
         // expect operator stake to be slightly less than previously reported by `Self::get_stake`
@@ -3963,13 +3963,13 @@ module libra2_framework::delegation_pool {
         initialize_for_test(libra2_framework);
 
         let operator1_address = signer::address_of(operator1);
-        aptos_account::create_account(operator1_address);
+        libra2_account::create_account(operator1_address);
 
         let operator2_address = signer::address_of(operator2);
-        aptos_account::create_account(operator2_address);
+        libra2_account::create_account(operator2_address);
 
         let beneficiary_address = signer::address_of(beneficiary);
-        aptos_account::create_account(beneficiary_address);
+        libra2_account::create_account(beneficiary_address);
 
         // create delegation pool of commission fee 12.65%
         initialize_delegation_pool(operator1, 1265, vector::empty<u8>());
@@ -4000,7 +4000,7 @@ module libra2_framework::delegation_pool {
         end_aptos_epoch();
 
         withdraw(operator1, pool_address, ONE_APT);
-        assert!(coin::balance<AptosCoin>(operator1_address) == ONE_APT - 1, 0);
+        assert!(coin::balance<Libra2Coin>(operator1_address) == ONE_APT - 1, 0);
 
         set_beneficiary_for_operator(operator1, beneficiary_address);
         assert!(beneficiary_for_operator(operator1_address) == beneficiary_address, 0);
@@ -4011,8 +4011,8 @@ module libra2_framework::delegation_pool {
         end_aptos_epoch();
 
         withdraw(beneficiary, pool_address, ONE_APT);
-        assert!(coin::balance<AptosCoin>(beneficiary_address) == ONE_APT - 1, 0);
-        assert!(coin::balance<AptosCoin>(operator1_address) == ONE_APT - 1, 0);
+        assert!(coin::balance<Libra2Coin>(beneficiary_address) == ONE_APT - 1, 0);
+        assert!(coin::balance<Libra2Coin>(operator1_address) == ONE_APT - 1, 0);
 
         // switch operator to operator2. The rewards should go to operator2 not to the beneficiay of operator1.
         set_operator(operator1, operator2_address);
@@ -4022,8 +4022,8 @@ module libra2_framework::delegation_pool {
         end_aptos_epoch();
 
         withdraw(operator2, pool_address, ONE_APT);
-        assert!(coin::balance<AptosCoin>(beneficiary_address) == ONE_APT - 1, 0);
-        assert!(coin::balance<AptosCoin>(operator2_address) == ONE_APT - 1, 0);
+        assert!(coin::balance<Libra2Coin>(beneficiary_address) == ONE_APT - 1, 0);
+        assert!(coin::balance<Libra2Coin>(operator2_address) == ONE_APT - 1, 0);
     }
 
     #[test(libra2_framework = @libra2_framework, operator = @0x123, delegator = @0x010)]
@@ -4255,7 +4255,7 @@ module libra2_framework::delegation_pool {
         // delegator2: &signer,
     ) acquires DelegationPoolOwnership, DelegationPool, GovernanceRecords, BeneficiaryForOperator, NextCommissionPercentage, DelegationPoolAllowlisting {
         initialize_for_test(libra2_framework);
-        aptos_governance::initialize_for_test(
+        libra2_governance::initialize_for_test(
             libra2_framework,
             (10 * ONE_APT as u128),
             100 * ONE_APT,
@@ -4300,7 +4300,7 @@ module libra2_framework::delegation_pool {
         delegator1: &signer,
     ) acquires DelegationPoolOwnership, DelegationPool, GovernanceRecords, BeneficiaryForOperator, NextCommissionPercentage, DelegationPoolAllowlisting {
         initialize_for_test(libra2_framework);
-        aptos_governance::initialize_for_test(
+        libra2_governance::initialize_for_test(
             libra2_framework,
             (10 * ONE_APT as u128),
             100 * ONE_APT,
@@ -4355,7 +4355,7 @@ module libra2_framework::delegation_pool {
         voter2: &signer,
     ) acquires DelegationPoolOwnership, DelegationPool, GovernanceRecords, BeneficiaryForOperator, NextCommissionPercentage, DelegationPoolAllowlisting {
         initialize_for_test_no_reward(libra2_framework);
-        aptos_governance::initialize_for_test(
+        libra2_governance::initialize_for_test(
             libra2_framework,
             (10 * ONE_APT as u128),
             100 * ONE_APT,
@@ -4505,7 +4505,7 @@ module libra2_framework::delegation_pool {
         voter1: &signer,
     ) acquires DelegationPoolOwnership, DelegationPool, GovernanceRecords, BeneficiaryForOperator, NextCommissionPercentage, DelegationPoolAllowlisting {
         initialize_for_test_no_reward(libra2_framework);
-        aptos_governance::initialize_for_test(
+        libra2_governance::initialize_for_test(
             libra2_framework,
             (10 * ONE_APT as u128),
             100 * ONE_APT,
@@ -4592,7 +4592,7 @@ module libra2_framework::delegation_pool {
             100,
             1000000
         );
-        aptos_governance::initialize_for_test(
+        libra2_governance::initialize_for_test(
             libra2_framework,
             (10 * ONE_APT as u128),
             100 * ONE_APT,
@@ -4708,7 +4708,7 @@ module libra2_framework::delegation_pool {
         // Create 2 proposals and vote for proposal1.
         let execution_hash = vector::empty<u8>();
         vector::push_back(&mut execution_hash, 1);
-        let proposal2_id = aptos_governance::create_proposal_v2_impl(
+        let proposal2_id = libra2_governance::create_proposal_v2_impl(
             validator,
             pool_address,
             execution_hash,
@@ -4716,7 +4716,7 @@ module libra2_framework::delegation_pool {
             b"",
             true,
         );
-        aptos_governance::vote(validator, pool_address, proposal1_id, true);
+        libra2_governance::vote(validator, pool_address, proposal1_id, true);
 
         // Enable partial governance voting feature flag.
         features::change_feature_flags_for_testing(
@@ -4798,7 +4798,7 @@ module libra2_framework::delegation_pool {
         add_stake(delegator1, pool_address, 10 * ONE_APT);
         end_aptos_epoch();
 
-        aptos_governance::vote(validator, pool_address, proposal1_id, true);
+        libra2_governance::vote(validator, pool_address, proposal1_id, true);
 
         // Enable partial governance voting feature flag.
         features::change_feature_flags_for_testing(
@@ -4850,7 +4850,7 @@ module libra2_framework::delegation_pool {
         );
 
         // The operator voter votes on the proposal after partial governace voting flag is enabled but before partial voting is enabled on the pool.
-        aptos_governance::vote(validator, pool_address, proposal1_id, true);
+        libra2_governance::vote(validator, pool_address, proposal1_id, true);
 
         // Enable partial governance voting on this delegation pool.
         enable_partial_governance_voting(pool_address);
@@ -4885,7 +4885,7 @@ module libra2_framework::delegation_pool {
     }
 
     #[test(libra2_framework = @libra2_framework, validator1 = @0x123, validator2 = @0x234, delegator1 = @0x010, delegator2 = @0x020)]
-    #[expected_failure(abort_code = 65539, location = libra2_framework::aptos_governance)]
+    #[expected_failure(abort_code = 65539, location = libra2_framework::libra2_governance)]
     public entry fun test_vote_should_failed_due_to_insufficient_stake_lockup (
         libra2_framework: &signer,
         validator1: &signer,
@@ -4920,7 +4920,7 @@ module libra2_framework::delegation_pool {
         stake::mint(delegator2, 110 * ONE_APT);
         add_stake(delegator2, pool2_address, 10 * ONE_APT);
 
-        let proposal_id = aptos_governance::create_proposal_v2_impl(
+        let proposal_id = libra2_governance::create_proposal_v2_impl(
             validator2,
             pool2_address,
             b"0",
@@ -4943,7 +4943,7 @@ module libra2_framework::delegation_pool {
     }
 
     #[test(libra2_framework = @libra2_framework, validator = @0x123, delegator1 = @0x010)]
-    #[expected_failure(abort_code = 65551, location = libra2_framework::aptos_governance)]
+    #[expected_failure(abort_code = 65551, location = libra2_framework::libra2_governance)]
     public entry fun test_vote_should_failed_due_to_proposal_expired(
         libra2_framework: &signer,
         validator: &signer,
@@ -5754,7 +5754,7 @@ module libra2_framework::delegation_pool {
         enable_partial_voting: bool,
     ): u64 acquires DelegationPoolOwnership, DelegationPool, GovernanceRecords, BeneficiaryForOperator, NextCommissionPercentage, DelegationPoolAllowlisting {
         initialize_for_test_no_reward(libra2_framework);
-        aptos_governance::initialize_for_test(
+        libra2_governance::initialize_for_test(
             libra2_framework,
             (10 * ONE_APT as u128),
             100 * ONE_APT,
@@ -5774,7 +5774,7 @@ module libra2_framework::delegation_pool {
         // Create 1 proposals and vote for proposal1.
         let execution_hash = vector::empty<u8>();
         vector::push_back(&mut execution_hash, 1);
-        let proposal_id = aptos_governance::create_proposal_v2_impl(
+        let proposal_id = libra2_governance::create_proposal_v2_impl(
             validator,
             pool_address,
             execution_hash,

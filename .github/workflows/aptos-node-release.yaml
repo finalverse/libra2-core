@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-python@v4
 
       - name: Bump libra2-node version
-        uses: aptos-labs/aptos-core/.github/actions/release-libra2-node@main
+        uses: finalverse/libra2-core/.github/actions/release-libra2-node@main
         with:
           release_tag: ${{ inputs.release_tag }}
           libra2_node_cargo_toml: libra2-node/Cargo.toml

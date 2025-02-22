@@ -37,7 +37,7 @@ use crate::{
                 TokenOwnershipV2,
             },
             v2_token_utils::{
-                AptosCollection, BurnEvent, FixedSupply, ObjectWithMetadata, PropertyMap, TokenV2,
+                Libra2Collection, BurnEvent, FixedSupply, ObjectWithMetadata, PropertyMap, TokenV2,
                 TokenV2AggregatedData, TokenV2AggregatedDataMapping, TokenV2Burned, TransferEvent,
                 UnlimitedSupply,
             },
@@ -1098,7 +1098,7 @@ fn parse_v2_token(
                         token_v2_metadata_helper.insert(
                             standardize_address(&wr.address.to_string()),
                             TokenV2AggregatedData {
-                                aptos_collection: None,
+                                libra2_collection: None,
                                 fixed_supply: None,
                                 object,
                                 unlimited_supply: None,
@@ -1129,10 +1129,10 @@ fn parse_v2_token(
                         {
                             aggregated_data.unlimited_supply = Some(unlimited_supply);
                         }
-                        if let Some(aptos_collection) =
-                            AptosCollection::from_write_resource(wr, txn_version).unwrap()
+                        if let Some(libra2_collection) =
+                            Libra2Collection::from_write_resource(wr, txn_version).unwrap()
                         {
-                            aggregated_data.aptos_collection = Some(aptos_collection);
+                            aggregated_data.libra2_collection = Some(libra2_collection);
                         }
                         if let Some(property_map) =
                             PropertyMap::from_write_resource(wr, txn_version).unwrap()

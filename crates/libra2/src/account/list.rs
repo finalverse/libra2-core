@@ -92,7 +92,7 @@ impl CliCommand<Vec<serde_json::Value>> for ListAccount {
                 client
                     .get_account_resource(
                         account,
-                        "0x1::coin::CoinStore<0x1::aptos_coin::AptosCoin>",
+                        "0x1::coin::CoinStore<0x1::libra2_coin::Libra2Coin>",
                     )
                     .await?
                     .into_inner()

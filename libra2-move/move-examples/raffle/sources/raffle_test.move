@@ -2,7 +2,7 @@ module raffle::raffle_test {
     #[test_only]
     use libra2_framework::account;
     #[test_only]
-    use libra2_framework::aptos_coin::{Self, AptosCoin};
+    use libra2_framework::libra2_coin::{Self, Libra2Coin};
     #[test_only]
     use libra2_framework::coin;
     #[test_only]
@@ -27,12 +27,12 @@ module raffle::raffle_test {
     use libra2_framework::randomness;
 
     #[test_only]
-    fun give_coins(mint_cap: &MintCapability<AptosCoin>, to: &signer) {
+    fun give_coins(mint_cap: &MintCapability<Libra2Coin>, to: &signer) {
         let to_addr = signer::address_of(to);
         if (!account::exists_at(to_addr)) {
             account::create_account_for_test(to_addr);
         };
-        coin::register<AptosCoin>(to);
+        coin::register<Libra2Coin>(to);
 
         let coins = coin::mint(raffle::get_ticket_price(), mint_cap);
         coin::deposit(to_addr, coins);
@@ -56,7 +56,7 @@ module raffle::raffle_test {
         raffle::init_module_for_testing(&deployer);
 
         // Needed to mint coins out of thin air for testing
-        let (burn_cap, mint_cap) = aptos_coin::initialize_for_test(&fx);
+        let (burn_cap, mint_cap) = libra2_coin::initialize_for_test(&fx);
 
         // Create fake coins for users participating in raffle & initialize libra2_framework
         give_coins(&mint_cap, &u1);
@@ -83,17 +83,17 @@ module raffle::raffle_test {
             let player = *vector::borrow(&players, i);
 
             if (player == winner) {
-                assert!(coin::balance<AptosCoin>(player) == raffle::get_ticket_price() * num_players, 1);
+                assert!(coin::balance<Libra2Coin>(player) == raffle::get_ticket_price() * num_players, 1);
             } else {
-                assert!(coin::balance<AptosCoin>(player) == 0, 1);
+                assert!(coin::balance<Libra2Coin>(player) == 0, 1);
             };
 
             i = i + 1;
         };
 
         // Clean up
-        coin::destroy_burn_cap<AptosCoin>(burn_cap);
-        coin::destroy_mint_cap<AptosCoin>(mint_cap);
+        coin::destroy_burn_cap<Libra2Coin>(burn_cap);
+        coin::destroy_mint_cap<Libra2Coin>(mint_cap);
     }
 
     #[test_only]

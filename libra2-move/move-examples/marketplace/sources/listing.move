@@ -16,7 +16,7 @@ module marketplace::listing {
     use libra2_framework::object::{Self, ConstructorRef, DeleteRef, ExtendRef, Object, ObjectCore, TransferRef};
     use libra2_framework::timestamp;
 
-    use aptos_token::token::{Self as tokenv1, Token as TokenV1};
+    use libra2_token::token::{Self as tokenv1, Token as TokenV1};
     use libra2_token_objects::token as tokenv2;
     use libra2_token_objects::royalty;
 

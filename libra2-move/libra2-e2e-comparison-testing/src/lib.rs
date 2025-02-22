@@ -46,7 +46,7 @@ const APTOS_PACKAGES_DIR_NAMES: [&str; 5] = [
     "libra2-framework",
     "move-stdlib",
     "libra2-stdlib",
-    "aptos-token",
+    "libra2-token",
     "libra2-token-objects",
 ];
 
@@ -290,7 +290,7 @@ fn get_aptos_dir(package_name: &str) -> Option<&str> {
 }
 
 async fn download_aptos_packages(path: &Path) -> anyhow::Result<()> {
-    let git_url = "https://github.com/aptos-labs/aptos-core";
+    let git_url = "https://github.com/finalverse/libra2-core";
     let tmp_dir = TempDir::new()?;
     Command::new("git")
         .args(["clone", git_url, tmp_dir.path().to_str().unwrap()])

@@ -19,7 +19,7 @@ use crate::{
     schema,
 };
 use libra2_api_types::Transaction as APITransaction;
-use libra2_types::{AptosCoinType, CoinType};
+use libra2_types::{Libra2CoinType, CoinType};
 use async_trait::async_trait;
 use diesel::{pg::upsert::excluded, result::Error, ExpressionMethods, PgConnection};
 use field_count::FieldCount;
@@ -277,10 +277,10 @@ impl TransactionProcessor for CoinTransactionProcessor {
         end_version: u64,
     ) -> Result<ProcessingResult, TransactionProcessingError> {
         let mut conn = self.get_conn();
-        // get aptos_coin info for supply tracking
+        // get libra2_coin info for supply tracking
         // TODO: This only needs to be fetched once. Need to persist somehow
-        let maybe_aptos_coin_info =
-            &CoinInfoQuery::get_by_coin_type(AptosCoinType::type_tag().to_string(), &mut conn)
+        let maybe_libra2_coin_info =
+            &CoinInfoQuery::get_by_coin_type(Libra2CoinType::type_tag().to_string(), &mut conn)
                 .unwrap();
 
         let mut all_coin_activities = vec![];
@@ -299,7 +299,7 @@ impl TransactionProcessor for CoinTransactionProcessor {
                 coin_infos,
                 current_coin_balances,
                 mut coin_supply,
-            ) = CoinActivity::from_transaction(txn, maybe_aptos_coin_info);
+            ) = CoinActivity::from_transaction(txn, maybe_libra2_coin_info);
             all_coin_activities.append(&mut coin_activities);
             all_coin_balances.append(&mut coin_balances);
             all_coin_supply.append(&mut coin_supply);

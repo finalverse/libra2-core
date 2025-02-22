@@ -206,7 +206,7 @@ Abort if no DKG is in progress.
     framework: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
     <b>requires</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(framework) == @libra2_framework;
     <b>requires</b> <a href="chain_status.md#0x1_chain_status_is_operating">chain_status::is_operating</a>();
-    <b>requires</b> <b>exists</b>&lt;CoinInfo&lt;AptosCoin&gt;&gt;(@libra2_framework);
+    <b>requires</b> <b>exists</b>&lt;CoinInfo&lt;Libra2Coin&gt;&gt;(@libra2_framework);
     <b>include</b> <a href="staking_config.md#0x1_staking_config_StakingRewardsConfigRequirement">staking_config::StakingRewardsConfigRequirement</a>;
     <b>requires</b> <b>exists</b>&lt;<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_Features">features::Features</a>&gt;(@std);
     <b>include</b> <a href="config_buffer.md#0x1_config_buffer_OnNewEpochRequirement">config_buffer::OnNewEpochRequirement</a>&lt;<a href="version.md#0x1_version_Version">version::Version</a>&gt;;

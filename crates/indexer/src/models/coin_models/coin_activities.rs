@@ -19,13 +19,13 @@ use libra2_api_types::{
     Event as APIEvent, Transaction as APITransaction, TransactionInfo as APITransactionInfo,
     TransactionPayload, UserTransactionRequest, WriteSetChange as APIWriteSetChange,
 };
-use libra2_types::{AptosCoinType, CoinType as CoinTypeTrait};
+use libra2_types::{Libra2CoinType, CoinType as CoinTypeTrait};
 use bigdecimal::BigDecimal;
 use field_count::FieldCount;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
-const GAS_FEE_EVENT: &str = "0x1::aptos_coin::GasFeeEvent";
+const GAS_FEE_EVENT: &str = "0x1::libra2_coin::GasFeeEvent";
 // We will never have a negative number on chain so this will avoid collision in postgres
 const BURN_GAS_EVENT_CREATION_NUM: i64 = -1;
 const BURN_GAS_EVENT_INDEX: i64 = -1;
@@ -71,7 +71,7 @@ impl CoinActivity {
     /// Note, we're not currently tracking supply
     pub fn from_transaction(
         transaction: &APITransaction,
-        maybe_aptos_coin_info: &Option<CoinInfoQuery>,
+        maybe_libra2_coin_info: &Option<CoinInfoQuery>,
     ) -> (
         Vec<Self>,
         Vec<CoinBalance>,
@@ -146,7 +146,7 @@ impl CoinActivity {
             let maybe_coin_supply = if let APIWriteSetChange::WriteTableItem(table_item) = &wsc {
                 CoinSupply::from_write_table_item(
                     table_item,
-                    maybe_aptos_coin_info,
+                    maybe_libra2_coin_info,
                     txn_version,
                     txn_timestamp,
                     txn_epoch,
@@ -256,7 +256,7 @@ impl CoinActivity {
         entry_function_id_str: &Option<String>,
         transaction_timestamp: chrono::NaiveDateTime,
     ) -> Self {
-        let aptos_coin_burned =
+        let libra2_coin_burned =
             BigDecimal::from(txn_info.gas_used.0 * user_transaction_request.gas_unit_price.0);
 
         Self {
@@ -267,8 +267,8 @@ impl CoinActivity {
             event_creation_number: BURN_GAS_EVENT_CREATION_NUM,
             event_sequence_number: user_transaction_request.sequence_number.0 as i64,
             owner_address: standardize_address(&user_transaction_request.sender.to_string()),
-            coin_type: AptosCoinType::type_tag().to_string(),
-            amount: aptos_coin_burned,
+            coin_type: Libra2CoinType::type_tag().to_string(),
+            amount: libra2_coin_burned,
             activity_type: GAS_FEE_EVENT.to_string(),
             is_gas_fee: true,
             is_transaction_success: txn_info.success,

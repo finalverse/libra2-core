@@ -25,12 +25,12 @@
 // )
 
 script {
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::consensus_config;
     use std::vector;
 
     fun main(proposal_id: u64) {
-        let framework_signer = aptos_governance::resolve_multi_step_proposal(proposal_id, @0000000000000000000000000000000000000000000000000000000000000001, vector::empty<u8>());
+        let framework_signer = libra2_governance::resolve_multi_step_proposal(proposal_id, @0000000000000000000000000000000000000000000000000000000000000001, vector::empty<u8>());
 
         let consensus_blob: vector<u8> = vector[
             0, 1, 10, 0, 0, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 2, 1,

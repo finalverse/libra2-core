@@ -28,7 +28,7 @@ use libra2_vm::{
 };
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_logging::log_schema::AdapterLogSchema;
-use libra2_vm_types::{module_and_script_storage::AsAptosCodeStorage, output::VMOutput};
+use libra2_vm_types::{module_and_script_storage::AsLibra2CodeStorage, output::VMOutput};
 use itertools::Itertools;
 use std::{path::Path, sync::Arc, time::Instant};
 

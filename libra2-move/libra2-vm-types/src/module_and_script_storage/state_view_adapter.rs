@@ -63,7 +63,7 @@ impl<'s, S: StateView> Deref for StateViewAdapter<'s, S> {
 }
 
 /// A (not thread-safe) implementation of code storage on top of a state view. It is never built
-/// directly by clients - only via [AsAptosCodeStorage] trait. Can be used to resolve both modules
+/// directly by clients - only via [AsLibra2CodeStorage] trait. Can be used to resolve both modules
 /// and cached scripts.
 #[derive(Delegate)]
 #[delegate(
@@ -72,12 +72,12 @@ impl<'s, S: StateView> Deref for StateViewAdapter<'s, S> {
 )]
 #[delegate(ModuleStorage, where = "S: StateView, E: WithRuntimeEnvironment")]
 #[delegate(CodeStorage, where = "S: StateView, E: WithRuntimeEnvironment")]
-pub struct AptosCodeStorageAdapter<'s, S, E> {
+pub struct Libra2CodeStorageAdapter<'s, S, E> {
     storage: UnsyncCodeStorage<UnsyncModuleStorage<'s, StateViewAdapter<'s, S>, E>>,
 }
 
-impl<'s, S: StateView, E: WithRuntimeEnvironment> AptosCodeStorageAdapter<'s, S, E> {
-    /// Creates new instance of [AptosCodeStorageAdapter] built on top of the passed state view and
+impl<'s, S: StateView, E: WithRuntimeEnvironment> Libra2CodeStorageAdapter<'s, S, E> {
+    /// Creates new instance of [Libra2CodeStorageAdapter] built on top of the passed state view and
     /// the provided runtime environment.
     fn from_borrowed(state_view: &'s S, runtime_environment: E) -> Self {
         let adapter = StateViewAdapter {
@@ -87,7 +87,7 @@ impl<'s, S: StateView, E: WithRuntimeEnvironment> AptosCodeStorageAdapter<'s, S,
         Self { storage }
     }
 
-    /// Creates new instance of [AptosCodeStorageAdapter] capturing the passed state view and the
+    /// Creates new instance of [Libra2CodeStorageAdapter] capturing the passed state view and the
     /// provided environment.
     fn from_owned(state_view: S, runtime_environment: E) -> Self {
         let adapter = StateViewAdapter {
@@ -150,7 +150,7 @@ impl<'s, S: StateView, E: WithRuntimeEnvironment> AptosCodeStorageAdapter<'s, S,
 }
 
 impl<'s, S: StateView, E: WithRuntimeEnvironment> AptosModuleStorage
-    for AptosCodeStorageAdapter<'s, S, E>
+    for Libra2CodeStorageAdapter<'s, S, E>
 {
     fn fetch_state_value_metadata(
         &self,
@@ -170,7 +170,7 @@ impl<'s, S: StateView, E: WithRuntimeEnvironment> AptosModuleStorage
 }
 
 impl<'s, S: StateView, E: WithRuntimeEnvironment> BlockSynchronizationKillSwitch
-    for AptosCodeStorageAdapter<'s, S, E>
+    for Libra2CodeStorageAdapter<'s, S, E>
 {
     fn interrupt_requested(&self) -> bool {
         false
@@ -180,19 +180,19 @@ impl<'s, S: StateView, E: WithRuntimeEnvironment> BlockSynchronizationKillSwitch
 /// Allows to treat the state view as a code storage with scripts and modules. The main use case is
 /// when a transaction or a Move function has to be executed outside the long-living environment or
 /// block executor, e.g., for single transaction simulation, in Aptos debugger, etc.
-pub trait AsAptosCodeStorage<'s, S, E> {
+pub trait AsLibra2CodeStorage<'s, S, E> {
     fn as_aptos_code_storage(&'s self, runtime_environment: E)
-        -> AptosCodeStorageAdapter<'s, S, E>;
+        -> Libra2CodeStorageAdapter<'s, S, E>;
 
-    fn into_aptos_code_storage(self, runtime_environment: E) -> AptosCodeStorageAdapter<'s, S, E>;
+    fn into_aptos_code_storage(self, runtime_environment: E) -> Libra2CodeStorageAdapter<'s, S, E>;
 }
 
-impl<'s, S: StateView, E: WithRuntimeEnvironment> AsAptosCodeStorage<'s, S, E> for S {
-    fn as_aptos_code_storage(&'s self, runtime_environment: E) -> AptosCodeStorageAdapter<S, E> {
-        AptosCodeStorageAdapter::from_borrowed(self, runtime_environment)
+impl<'s, S: StateView, E: WithRuntimeEnvironment> AsLibra2CodeStorage<'s, S, E> for S {
+    fn as_aptos_code_storage(&'s self, runtime_environment: E) -> Libra2CodeStorageAdapter<S, E> {
+        Libra2CodeStorageAdapter::from_borrowed(self, runtime_environment)
     }
 
-    fn into_aptos_code_storage(self, runtime_environment: E) -> AptosCodeStorageAdapter<'s, S, E> {
-        AptosCodeStorageAdapter::from_owned(self, runtime_environment)
+    fn into_aptos_code_storage(self, runtime_environment: E) -> Libra2CodeStorageAdapter<'s, S, E> {
+        Libra2CodeStorageAdapter::from_owned(self, runtime_environment)
     }
 }

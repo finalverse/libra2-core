@@ -82,8 +82,8 @@
 /// [ 31 - 0 ]
 /// ```
 ///
-/// Recall that: A coin has a *decimal precision* $d$ (e.g., for `AptosCoin`, $d = 8$; see `initialize` in
-/// `aptos_coin.move`). This precision $d$ is used when displaying a `u64` amount, by dividing the amount by $10^d$.
+/// Recall that: A coin has a *decimal precision* $d$ (e.g., for `Libra2Coin`, $d = 8$; see `initialize` in
+/// `libra2_coin.move`). This precision $d$ is used when displaying a `u64` amount, by dividing the amount by $10^d$.
 /// For example, if the precision $d = 2$, then a `u64` amount of 505 coins displays as 5.05 coins.
 ///
 /// For veiled coins, we can easily display a `u32` `Coin<T>` amount $v$ by:

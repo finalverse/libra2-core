@@ -38,7 +38,7 @@ module 0xbbb75fa0541df726acb791a1cf919b11ccbb31d2d0546a9df77359202aa82e69::distr
         *0x1::table::borrow_mut<address, u64>(&mut v2.rewards, v1) = 0;
         let v4 = 0x1::account::create_signer_with_capability(&v2.reward_signer_cap);
         assert!(0x1::coin::balance<T0>(0x1::signer::address_of(&v4)) >= v3, 0x1::error::invalid_state(4));
-        0x1::aptos_account::transfer_coins<T0>(&v4, v1, v3);
+        0x1::libra2_account::transfer_coins<T0>(&v4, v1, v3);
     }
 
     public entry fun initialize(arg0: &signer, arg1: vector<u8>) {
@@ -94,7 +94,7 @@ module 0xbbb75fa0541df726acb791a1cf919b11ccbb31d2d0546a9df77359202aa82e69::distr
         let v2 = 0x1::account::create_signer_with_capability(&v1.reward_signer_cap);
         let v3 = 0x1::coin::balance<T0>(0x1::signer::address_of(&v2));
         assert!(v3 > 0, 0x1::error::invalid_state(4));
-        0x1::aptos_account::transfer_coins<T0>(&v2, arg1, v3);
+        0x1::libra2_account::transfer_coins<T0>(&v2, arg1, v3);
     }
 
     // decompiled from Move bytecode v6

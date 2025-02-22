@@ -2,9 +2,9 @@ module addr::token_v1 {
     use std::string::{Self, String};
     use std::signer;
     use std::bcs;
-    use aptos_token::token;
-    use aptos_token::property_map;
-    use aptos_token::token_transfers;
+    use libra2_token::token;
+    use libra2_token::property_map;
+    use libra2_token::token_transfers;
 
     /// The ambassador token collection name
     const COLLECTION_NAME: vector<u8> = b"Ambassador Collection Name";

@@ -1,10 +1,10 @@
 script {
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::block;
     use libra2_framework::staking_config;
 
     fun main(proposal_id: u64) {
-        let framework_signer = aptos_governance::resolve(proposal_id, @libra2_framework);
+        let framework_signer = libra2_governance::resolve(proposal_id, @libra2_framework);
         let num_seconds_in_a_year = 365 * 24 * 60 * 60;
         let epoch_duration_secs = block::get_epoch_interval_secs();
         let num_epochs_in_a_year = num_seconds_in_a_year / epoch_duration_secs;

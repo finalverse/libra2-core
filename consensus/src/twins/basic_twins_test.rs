@@ -76,7 +76,7 @@ fn basic_start_test() {
 ///
 /// Run the test:
 /// cargo xtest -p consensus drop_config_test -- --nocapture
-#[ignore] // TODO: https://github.com/aptos-labs/aptos-core/issues/8767
+#[ignore] // TODO: https://github.com/finalverse/libra2-core/issues/8767
 fn drop_config_test() {
     let runtime = consensus_runtime();
     let mut playground = NetworkPlayground::new(runtime.handle().clone());
@@ -258,7 +258,7 @@ fn twins_proposer_test() {
 }
 
 #[test]
-#[ignore] // TODO: https://github.com/aptos-labs/aptos-core/issues/6615
+#[ignore] // TODO: https://github.com/finalverse/libra2-core/issues/6615
 /// This test checks that when a node and its twin are both leaders
 /// for a round, only one of the two proposals gets committed
 ///

@@ -422,7 +422,7 @@ pub async fn upgrade_outbound<T: TSocket>(
 /// protocol). Finally, we negotiate common supported application protocols with
 /// the `Handshake` protocol.
 // TODO(philiphayes): rework Transport trait, possibly include Upgrade trait.
-// ideas in this PR thread: https://github.com/aptos-labs/aptos-core/pull/3478#issuecomment-617385633
+// ideas in this PR thread: https://github.com/finalverse/libra2-core/pull/3478#issuecomment-617385633
 pub struct AptosNetTransport<TTransport> {
     base_transport: TTransport,
     ctxt: Arc<UpgradeContext>,

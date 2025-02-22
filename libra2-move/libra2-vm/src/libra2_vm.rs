@@ -90,7 +90,7 @@ use libra2_vm_types::{
         ChangeSetInterface, VMChangeSet,
     },
     module_and_script_storage::{
-        code_storage::AptosCodeStorage, module_storage::AptosModuleStorage, AsAptosCodeStorage,
+        code_storage::Libra2CodeStorage, module_storage::AptosModuleStorage, AsLibra2CodeStorage,
     },
     module_write_set::ModuleWriteSet,
     output::VMOutput,
@@ -786,7 +786,7 @@ impl Libra2VM {
         &self,
         session: &mut SessionExt,
         serialized_signers: &SerializedSigners,
-        code_storage: &impl AptosCodeStorage,
+        code_storage: &impl Libra2CodeStorage,
         // Note: cannot use Libra2GasMeter because it is not implemented for
         //       UnmeteredGasMeter.
         gas_meter: &mut impl GasMeter,
@@ -963,7 +963,7 @@ impl Libra2VM {
     fn execute_script_or_entry_function<'a, 'r, 'l>(
         &'l self,
         resolver: &'r impl AptosMoveResolver,
-        code_storage: &impl AptosCodeStorage,
+        code_storage: &impl Libra2CodeStorage,
         mut session: UserSession<'r, 'l>,
         serialized_signers: &SerializedSigners,
         gas_meter: &mut impl Libra2GasMeter,
@@ -2049,7 +2049,7 @@ impl Libra2VM {
     fn execute_user_transaction_impl(
         &self,
         resolver: &impl AptosMoveResolver,
-        code_storage: &impl AptosCodeStorage,
+        code_storage: &impl Libra2CodeStorage,
         txn: &SignedTransaction,
         txn_data: TransactionMetadata,
         is_approved_gov_script: bool,
@@ -2207,7 +2207,7 @@ impl Libra2VM {
         make_gas_meter: F,
     ) -> Result<(VMStatus, VMOutput, G), VMStatus>
     where
-        C: AptosCodeStorage + BlockSynchronizationKillSwitch,
+        C: Libra2CodeStorage + BlockSynchronizationKillSwitch,
         G: Libra2GasMeter,
         F: FnOnce(u64, VMGasParameters, StorageGasParameters, bool, Gas, &'a C) -> G,
     {
@@ -2253,7 +2253,7 @@ impl Libra2VM {
     pub fn execute_user_transaction_with_modified_gas_meter<'a, G, F>(
         &self,
         resolver: &'a impl AptosMoveResolver,
-        code_storage: &'a (impl AptosCodeStorage + BlockSynchronizationKillSwitch),
+        code_storage: &'a (impl Libra2CodeStorage + BlockSynchronizationKillSwitch),
         txn: &SignedTransaction,
         log_context: &AdapterLogSchema,
         modify_gas_meter: F,
@@ -2289,7 +2289,7 @@ impl Libra2VM {
     pub fn execute_user_transaction(
         &self,
         resolver: &impl AptosMoveResolver,
-        code_storage: &(impl AptosCodeStorage + BlockSynchronizationKillSwitch),
+        code_storage: &(impl Libra2CodeStorage + BlockSynchronizationKillSwitch),
         txn: &SignedTransaction,
         log_context: &AdapterLogSchema,
     ) -> (VMStatus, VMOutput) {
@@ -2311,7 +2311,7 @@ impl Libra2VM {
     fn execute_write_set(
         &self,
         resolver: &impl AptosMoveResolver,
-        code_storage: &impl AptosCodeStorage,
+        code_storage: &impl Libra2CodeStorage,
         write_set_payload: &WriteSetPayload,
         txn_sender: Option<AccountAddress>,
         session_id: SessionId,
@@ -2443,7 +2443,7 @@ impl Libra2VM {
     pub(crate) fn process_waypoint_change_set(
         &self,
         resolver: &impl AptosMoveResolver,
-        code_storage: &impl AptosCodeStorage,
+        code_storage: &impl Libra2CodeStorage,
         write_set_payload: WriteSetPayload,
         log_context: &AdapterLogSchema,
     ) -> Result<(VMStatus, VMOutput), VMStatus> {
@@ -2809,7 +2809,7 @@ impl Libra2VM {
         &self,
         txn: &SignatureVerifiedTransaction,
         resolver: &impl AptosMoveResolver,
-        code_storage: &(impl AptosCodeStorage + BlockSynchronizationKillSwitch),
+        code_storage: &(impl Libra2CodeStorage + BlockSynchronizationKillSwitch),
         log_context: &AdapterLogSchema,
     ) -> Result<(VMStatus, VMOutput), VMStatus> {
         assert!(!self.is_simulation, "VM has to be created for execution");

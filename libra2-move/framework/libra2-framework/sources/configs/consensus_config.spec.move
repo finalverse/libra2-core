@@ -48,7 +48,7 @@ spec libra2_framework::consensus_config {
         use libra2_framework::timestamp;
         use std::signer;
         use libra2_framework::coin::CoinInfo;
-        use libra2_framework::aptos_coin::AptosCoin;
+        use libra2_framework::libra2_coin::Libra2Coin;
         use libra2_framework::staking_config;
 
         // TODO: set because of timeout (property proved)
@@ -63,7 +63,7 @@ spec libra2_framework::consensus_config {
 
         requires chain_status::is_genesis();
         requires timestamp::spec_now_microseconds() >= reconfiguration::last_reconfiguration_time();
-        requires exists<CoinInfo<AptosCoin>>(@libra2_framework);
+        requires exists<CoinInfo<Libra2Coin>>(@libra2_framework);
         ensures global<ConsensusConfig>(@libra2_framework).config == config;
     }
 

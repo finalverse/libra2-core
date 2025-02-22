@@ -348,7 +348,7 @@ impl Client {
         address: AccountAddress,
         version: u64,
     ) -> AptosResult<Response<u64>> {
-        self.view_account_balance_bcs_impl(address, "0x1::aptos_coin::AptosCoin", Some(version))
+        self.view_account_balance_bcs_impl(address, "0x1::libra2_coin::Libra2Coin", Some(version))
             .await
     }
 
@@ -356,7 +356,7 @@ impl Client {
         &self,
         address: AccountAddress,
     ) -> AptosResult<Response<u64>> {
-        self.view_account_balance_bcs_impl(address, "0x1::aptos_coin::AptosCoin", None)
+        self.view_account_balance_bcs_impl(address, "0x1::libra2_coin::Libra2Coin", None)
             .await
     }
 
@@ -370,7 +370,7 @@ impl Client {
         Ok(response.and_then(|inner| bcs::from_bytes(&inner))?)
     }
 
-    // TODO: Remove this, just use `get_index`: https://github.com/aptos-labs/aptos-core/issues/5597.
+    // TODO: Remove this, just use `get_index`: https://github.com/finalverse/libra2-core/issues/5597.
     pub async fn get_ledger_information(&self) -> AptosResult<Response<State>> {
         let response = self.get_index_bcs().await?.map(|r| State {
             chain_id: r.chain_id,

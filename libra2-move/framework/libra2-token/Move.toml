@@ -1,0 +1,12 @@
+[package]
+name = "Libra2Token"
+version = "1.0.0"
+
+[addresses]
+std = "0x1"
+libra2_framework = "0x1"
+libra2_token = "0x3"
+
+[dependencies]
+MoveStdlib = { local = "../move-stdlib" }
+Libra2Framework = { local = "../libra2-framework"}

@@ -634,7 +634,7 @@ async fn construction_parse(
     })
 }
 
-/// Parses 0x1::aptos_account::create(auth_key: address)
+/// Parses 0x1::libra2_account::create(auth_key: address)
 fn parse_create_account_operation(
     sender: AccountAddress,
     type_args: &[TypeTag],
@@ -717,7 +717,7 @@ fn parse_transfer_operation(
     Ok(operations)
 }
 
-/// Parses 0x1::aptos_account::transfer(receiver: address, amount: u64)
+/// Parses 0x1::libra2_account::transfer(receiver: address, amount: u64)
 fn parse_account_transfer_operation(
     sender: AccountAddress,
     type_args: &[TypeTag],

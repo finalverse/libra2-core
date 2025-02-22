@@ -17,10 +17,10 @@ use rand::{distributions, prelude::ThreadRng, thread_rng, Rng};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, CryptoHasher, BCSCryptoHash, Serialize, Deserialize)]
-pub struct TestAptosCrypto(pub String);
+pub struct TestLibra2Crypto(pub String);
 
-fn random_message(rng: &mut ThreadRng) -> TestAptosCrypto {
-    TestAptosCrypto(
+fn random_message(rng: &mut ThreadRng) -> TestLibra2Crypto {
+    TestLibra2Crypto(
         rng.sample_iter(&distributions::Alphanumeric)
             .take(256)
             .map(char::from)
@@ -121,7 +121,7 @@ fn sig_deserialize<M: Measurement>(g: &mut BenchmarkGroup<M>) {
         b.iter_with_setup(
             || {
                 Ed25519PrivateKey::generate(&mut csprng)
-                    .sign(&TestAptosCrypto("Hello Aptos!".to_string()))
+                    .sign(&TestLibra2Crypto("Hello Aptos!".to_string()))
                     .unwrap()
                     .to_bytes()
             },

@@ -415,11 +415,11 @@
 //     libra2_framework.string_utils.format.per_byte                            : 3
 
 script {
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::gas_schedule;
 
     fun main(core_resources: &signer) {
-        let core_signer = aptos_governance::get_signer_testnet_only(core_resources, @0x1);
+        let core_signer = libra2_governance::get_signer_testnet_only(core_resources, @0x1);
 
         let framework_signer = &core_signer;
 
@@ -1353,6 +1353,6 @@ script {
         ];
 
         gas_schedule::set_for_next_epoch(framework_signer, gas_schedule_blob);
-        aptos_governance::reconfigure(framework_signer);
+        libra2_governance::reconfigure(framework_signer);
     }
 }

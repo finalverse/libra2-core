@@ -7,7 +7,7 @@ use crate::{
     config::ForgeConfig,
     observer::junit::JunitTestObserver,
     result::{TestResult, TestSummary},
-    AdminContext, AdminTest, AptosContext, AptosTest, CoreContext, Factory, NetworkContext,
+    AdminContext, AdminTest, Libra2Context, AptosTest, CoreContext, Factory, NetworkContext,
     NetworkContextSynchronizer, NetworkTest, ShouldFail, Test, TestReport, Version,
     NAMESPACE_CLEANUP_DURATION_BUFFER_SECS,
 };
@@ -293,7 +293,7 @@ impl<'cfg, F: Factory> Forge<'cfg, F> {
 
             // Run AptosTests
             for test in self.filter_tests(&self.tests.aptos_tests) {
-                let mut aptos_ctx = AptosContext::new(
+                let mut aptos_ctx = Libra2Context::new(
                     CoreContext::from_rng(&mut rng),
                     swarm.chain_info().into_aptos_public_info(),
                     &mut report,

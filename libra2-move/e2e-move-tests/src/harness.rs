@@ -32,7 +32,7 @@ use libra2_types::{
         TransactionArgument, TransactionOutput, TransactionPayload, TransactionStatus,
         ViewFunctionOutput,
     },
-    AptosCoinType,
+    Libra2CoinType,
 };
 use claims::assert_ok;
 use move_core_types::{
@@ -790,9 +790,9 @@ impl MoveHarness {
     }
 
     pub fn read_aptos_balance(&self, addr: &AccountAddress) -> u64 {
-        self.read_resource::<CoinStoreResource<AptosCoinType>>(
+        self.read_resource::<CoinStoreResource<Libra2CoinType>>(
             addr,
-            CoinStoreResource::<AptosCoinType>::struct_tag(),
+            CoinStoreResource::<Libra2CoinType>::struct_tag(),
         )
         .map(|c| c.coin())
         .unwrap_or(0)
@@ -866,7 +866,7 @@ impl MoveHarness {
                     .unwrap(),
             ]);
         self.executor
-            .exec("aptos_governance", "force_end_epoch", vec![], vec![
+            .exec("libra2_governance", "force_end_epoch", vec![], vec![
                 core_signer_arg,
             ]);
     }

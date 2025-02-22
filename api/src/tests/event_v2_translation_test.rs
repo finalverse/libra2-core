@@ -52,7 +52,7 @@ async fn test_event_v2_translation_coin_deposit_event() {
 
     // Transfer coins from account1 to account2, emitting V1 events as the feature is disabled
     context
-        .api_execute_aptos_account_transfer(account2, account1.address(), 101)
+        .api_execute_libra2_account_transfer(account2, account1.address(), 101)
         .await;
 
     // Enable the MODULE_EVENT_MIGRATION feature
@@ -62,7 +62,7 @@ async fn test_event_v2_translation_coin_deposit_event() {
     let payload = json!({
         "type": "entry_function_payload",
         "function": "0x1::coin::transfer",
-        "type_arguments": ["0x1::aptos_coin::AptosCoin"],
+        "type_arguments": ["0x1::libra2_coin::Libra2Coin"],
         "arguments": [
             account1.address().to_hex_literal(), "102"
         ]
@@ -82,7 +82,7 @@ async fn test_event_v2_translation_coin_deposit_event() {
 
     // Transfer coins from account2 to account1, emitting V2 events as the feature is enabled
     context
-        .api_execute_aptos_account_transfer(account2, account1.address(), 102)
+        .api_execute_libra2_account_transfer(account2, account1.address(), 102)
         .await;
 
     // Check the event_by_creation_number API outputs the translated V1 event
@@ -95,7 +95,7 @@ async fn test_event_v2_translation_coin_deposit_event() {
     let resp = context
         .gen_events_by_handle(
             &account1.address(),
-            "0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E",
+            "0x1::coin::CoinStore%3C0x1::libra2_coin::Libra2Coin%3E",
             "deposit_events",
         )
         .await;
@@ -164,7 +164,7 @@ async fn test_event_v2_translation_coin_withdraw_event() {
 
     // Transfer coins from account1 to account2, emitting V1 events as the feature is disabled
     context
-        .api_execute_aptos_account_transfer(account2, account1.address(), 101)
+        .api_execute_libra2_account_transfer(account2, account1.address(), 101)
         .await;
 
     // Enable the MODULE_EVENT_MIGRATION feature
@@ -174,7 +174,7 @@ async fn test_event_v2_translation_coin_withdraw_event() {
     let payload = json!({
         "type": "entry_function_payload",
         "function": "0x1::coin::transfer",
-        "type_arguments": ["0x1::aptos_coin::AptosCoin"],
+        "type_arguments": ["0x1::libra2_coin::Libra2Coin"],
         "arguments": [
             account1.address().to_hex_literal(), "102"
         ]
@@ -193,7 +193,7 @@ async fn test_event_v2_translation_coin_withdraw_event() {
 
     // Transfer coins from account2 to account1, emitting V2 events as the feature is enabled
     context
-        .api_execute_aptos_account_transfer(account2, account1.address(), 102)
+        .api_execute_libra2_account_transfer(account2, account1.address(), 102)
         .await;
 
     // Check the event_by_creation_number API outputs the translated V1 event
@@ -206,7 +206,7 @@ async fn test_event_v2_translation_coin_withdraw_event() {
     let resp = context
         .gen_events_by_handle(
             &account2.address(),
-            "0x1::coin::CoinStore%3C0x1::aptos_coin::AptosCoin%3E",
+            "0x1::coin::CoinStore%3C0x1::libra2_coin::Libra2Coin%3E",
             "withdraw_events",
         )
         .await;
@@ -281,12 +281,12 @@ async fn test_event_v2_translation_account_coin_register_event() {
             account2.address(),
             0,
         ) && e["data"]["type_info"]["struct_name"]
-            == format!("0x{}", hex::encode("AptosCoin".to_string().as_bytes()))
+            == format!("0x{}", hex::encode("Libra2Coin".to_string().as_bytes()))
     };
 
     // Transfer coins from account2 to account1, emitting V2 events as the feature is enabled
     context
-        .api_execute_aptos_account_transfer(account1, account2.address(), 102)
+        .api_execute_libra2_account_transfer(account1, account2.address(), 102)
         .await;
 
     // Check the event_by_creation_number API outputs the translated V1 event

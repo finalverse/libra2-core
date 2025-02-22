@@ -52,7 +52,7 @@ pub const APTOS_PACKAGES: [&str; 5] = [
     "Libra2Framework",
     "MoveStdlib",
     "Libra2Stdlib",
-    "AptosToken",
+    "Libra2Token",
     "Libra2TokenObjects",
 ];
 

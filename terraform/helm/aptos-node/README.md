@@ -8,7 +8,7 @@ Aptos blockchain node deployment
 
 ## Source Code
 
-* <https://github.com/aptos-labs/aptos-core>
+* <https://github.com/finalverse/libra2-core>
 
 ## Values
 
@@ -20,7 +20,7 @@ Aptos blockchain node deployment
 | cluster_name | string | `"unknown"` |  |
 | enablePrivilegedMode | bool | `false` | TEST ONLY: Enable running as root for profiling |
 | fullnode.affinity | object | `{}` |  |
-| fullnode.config | object | `{"full_node_networks":[{"network_id":"public"}]}` | Fullnode configuration. See NodeConfig https://github.com/aptos-labs/aptos-core/blob/main/config/src/config/mod.rs |
+| fullnode.config | object | `{"full_node_networks":[{"network_id":"public"}]}` | Fullnode configuration. See NodeConfig https://github.com/finalverse/libra2-core/blob/main/config/src/config/mod.rs |
 | fullnode.force_enable_telemetry | bool | `false` | Flag to force enable telemetry service (useful for forge tests) |
 | fullnode.groups | list | `[{"dns_name":"vfn","name":"fullnode","replicas":1}]` | Specify fullnode groups by `name` and number of `replicas` |
 | fullnode.nodeSelector | object | `{}` |  |
@@ -82,7 +82,7 @@ Aptos blockchain node deployment
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `nil` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
 | validator.affinity | object | `{}` |  |
-| validator.config | object | `{}` | Validator configuration. See NodeConfig https://github.com/aptos-labs/aptos-core/blob/main/config/src/config/mod.rs |
+| validator.config | object | `{}` | Validator configuration. See NodeConfig https://github.com/finalverse/libra2-core/blob/main/config/src/config/mod.rs |
 | validator.enableNetworkPolicy | bool | `false` | Lock down network ingress and egress with Kubernetes NetworkPolicy |
 | validator.force_enable_telemetry | bool | `false` | Flag to force enable telemetry service (useful for forge tests) |
 | validator.image.pullPolicy | string | `"IfNotPresent"` | Image pull policy to use for validator images |

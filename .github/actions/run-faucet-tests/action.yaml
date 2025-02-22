@@ -28,7 +28,7 @@ runs:
 
     # Set up Rust for running the integration tests.
     - name: Set up Rust
-      uses: aptos-labs/aptos-core/.github/actions/rust-setup@main
+      uses: finalverse/libra2-core/.github/actions/rust-setup@main
 
     - uses: ./.github/actions/python-setup
       with:

@@ -105,7 +105,7 @@ pub fn all_natives(
 
     if inject_create_signer_for_gov_sim {
         add_natives_from_module!(
-            "aptos_governance",
+            "libra2_governance",
             builder.make_named_natives([(
                 "create_signer",
                 create_signer::native_create_signer as RawSafeNative

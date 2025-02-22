@@ -1178,7 +1178,7 @@ is returned. This way, the caller of this function can publish additional resour
 
     // NOTE: @core_resources gets created via a `create_account` call, so we do not <b>include</b> it below.
     <b>assert</b>!(
-        new_address != @vm_reserved && new_address != @libra2_framework && new_address != @aptos_token,
+        new_address != @vm_reserved && new_address != @libra2_framework && new_address != @libra2_token,
         <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="account.md#0x1_account_ECANNOT_RESERVED_ADDRESS">ECANNOT_RESERVED_ADDRESS</a>)
     );
 
@@ -2740,7 +2740,7 @@ Ensure that the account exists at the end of the call.
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="account.md#0x1_account_Account">Account</a>&gt;(account_address) && (
     account_address == @vm_reserved
     || account_address == @libra2_framework
-    || account_address == @aptos_token
+    || account_address == @libra2_token
     || !(len(authentication_key) == 32)
 );
 <b>ensures</b> <b>exists</b>&lt;<a href="account.md#0x1_account_Account">Account</a>&gt;(account_address);
@@ -2763,7 +2763,7 @@ Limit the new account address is not @vm_reserved / @libra2_framework / @aptos_t
 
 
 <pre><code><b>include</b> <a href="account.md#0x1_account_CreateAccountAbortsIf">CreateAccountAbortsIf</a> {addr: new_address};
-<b>aborts_if</b> new_address == @vm_reserved || new_address == @libra2_framework || new_address == @aptos_token;
+<b>aborts_if</b> new_address == @vm_reserved || new_address == @libra2_framework || new_address == @libra2_token;
 <b>ensures</b> <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(result) == new_address;
 // This enforces <a id="high-level-req-2" href="#high-level-req">high-level requirement 2</a>:
 <b>ensures</b> <b>exists</b>&lt;<a href="account.md#0x1_account_Account">Account</a>&gt;(new_address);

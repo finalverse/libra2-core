@@ -969,13 +969,13 @@ mod tests {
         // non_fa_features.disable(FeatureFlag::COIN_TO_FUNGIBLE_ASSET_MIGRATION);
 
         test_compare_prod_and_another::<E>(values_match, non_fa_features.clone(), |address| {
-            libra2_stdlib::aptos_account_transfer(address, 1000)
+            libra2_stdlib::libra2_account_transfer(address, 1000)
         });
 
         test_compare_prod_and_another::<E>(
             values_match,
             non_fa_features,
-            libra2_stdlib::aptos_account_create_account,
+            libra2_stdlib::libra2_account_create_account,
         );
 
         let mut fa_features = default_benchmark_features();
@@ -984,17 +984,17 @@ mod tests {
         fa_features.disable(FeatureFlag::CONCURRENT_FUNGIBLE_BALANCE);
 
         test_compare_prod_and_another::<E>(values_match, fa_features.clone(), |address| {
-            libra2_stdlib::aptos_account_fungible_transfer_only(address, 1000)
+            libra2_stdlib::libra2_account_fungible_transfer_only(address, 1000)
         });
 
         test_compare_prod_and_another::<E>(values_match, fa_features.clone(), |address| {
-            libra2_stdlib::aptos_account_transfer(address, 1000)
+            libra2_stdlib::libra2_account_transfer(address, 1000)
         });
 
         test_compare_prod_and_another::<E>(
             values_match,
             fa_features,
-            libra2_stdlib::aptos_account_create_account,
+            libra2_stdlib::libra2_account_create_account,
         );
     }
 

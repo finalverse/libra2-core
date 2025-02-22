@@ -51,14 +51,14 @@ stdin, which triggers a graceful shutdown when received.
 - Determine network from URL to make explorer links better for legacy users
 - Add support for AIP-80 compliant strings when importing using the CLI arguments or manual input.
 - Add option `--print-metadata-only` to `aptos move decompile` and `aptos move disassemble` to print out the metadata attached to the bytecode.
-- Add `--existing-hasura-url` flag to localnet to tell it to use an existing Hasura instance instead of run Hasura itself. See https://github.com/aptos-labs/aptos-core/pull/15313.
+- Add `--existing-hasura-url` flag to localnet to tell it to use an existing Hasura instance instead of run Hasura itself. See https://github.com/finalverse/libra2-core/pull/15313.
 - Add `--skip-metadata-apply` flag to localnet, in which case we won't try to apply the Hasura metadata.
 - Upgrade Hasura image we use from 2.40.2 to 2.44.0.
 
 ## [4.4.0] - 2024/11/06
 - Fix typos in `aptos move compile` help text.
 - Update the default version of `movefmt` to be installed from 1.0.5 to 1.0.6
-- Add `--host-postgres-host` flag: https://github.com/aptos-labs/aptos-core/pull/15216.
+- Add `--host-postgres-host` flag: https://github.com/finalverse/libra2-core/pull/15216.
 
 ## [4.3.0] - 2024/10/30
 - Allow for setting large-packages module for chunking publish mode with `--large-packages-module-address`
@@ -306,4 +306,4 @@ stdin, which triggers a graceful shutdown when received.
 * Move compiler will no longer use an environment variable to communicate between compiler and CLI for the bytecode version
 
 ## [1.0.7]
-* For logs earlier than 1.0.7, please check out the [releases on GitHub](https://github.com/aptos-labs/aptos-core/releases?q="Aptos+CLI+Release")
+* For logs earlier than 1.0.7, please check out the [releases on GitHub](https://github.com/finalverse/libra2-core/releases?q="Aptos+CLI+Release")

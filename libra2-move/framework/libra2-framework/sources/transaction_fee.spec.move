@@ -4,7 +4,7 @@ spec libra2_framework::transaction_fee {
     /// Requirement: Given the blockchain is in an operating state, it guarantees that the Libra2 framework signer may burn
     /// Aptos coins.
     /// Criticality: Critical
-    /// Implementation: The AptosCoinCapabilities structure is defined in this module and it stores burn capability to
+    /// Implementation: The Libra2CoinCapabilities structure is defined in this module and it stores burn capability to
     /// burn the gas fees.
     /// Enforcement: Formally Verified via [high-level-req-1](module).
     ///
@@ -58,7 +58,7 @@ spec libra2_framework::transaction_fee {
         pragma aborts_if_is_strict;
         // property 1: Given the blockchain is in an operating state, it guarantees that the Libra2 framework signer may burn Aptos coins.
         /// [high-level-req-1]
-        invariant [suspendable] chain_status::is_operating() ==> exists<AptosCoinCapabilities>(@libra2_framework) || exists<AptosFABurnCapabilities>(@libra2_framework);
+        invariant [suspendable] chain_status::is_operating() ==> exists<Libra2CoinCapabilities>(@libra2_framework) || exists<AptosFABurnCapabilities>(@libra2_framework);
     }
 
     spec CollectedFeesPerBlock {
@@ -70,7 +70,7 @@ spec libra2_framework::transaction_fee {
     spec initialize_fee_collection_and_distribution(_libra2_framework: &signer, _burn_percentage: u8) {
     }
 
-    /// `AptosCoinCapabilities` should be exists.
+    /// `Libra2CoinCapabilities` should be exists.
     spec burn_fee(account: address, fee: u64) {
         use libra2_std::type_info;
         use libra2_framework::optional_aggregator;
@@ -79,27 +79,27 @@ spec libra2_framework::transaction_fee {
         // TODO(fa_migration)
         pragma verify = false;
 
-        aborts_if !exists<AptosCoinCapabilities>(@libra2_framework);
+        aborts_if !exists<Libra2CoinCapabilities>(@libra2_framework);
 
-        // This function essentially calls `coin::burn_coin`, monophormized for `AptosCoin`.
+        // This function essentially calls `coin::burn_coin`, monophormized for `Libra2Coin`.
         let account_addr = account;
         let amount = fee;
 
-        let aptos_addr = type_info::type_of<AptosCoin>().account_address;
-        let coin_store = global<CoinStore<AptosCoin>>(account_addr);
-        let post post_coin_store = global<CoinStore<AptosCoin>>(account_addr);
+        let aptos_addr = type_info::type_of<Libra2Coin>().account_address;
+        let coin_store = global<CoinStore<Libra2Coin>>(account_addr);
+        let post post_coin_store = global<CoinStore<Libra2Coin>>(account_addr);
 
-        // modifies global<CoinStore<AptosCoin>>(account_addr);
+        // modifies global<CoinStore<Libra2Coin>>(account_addr);
 
-        aborts_if amount != 0 && !(exists<CoinInfo<AptosCoin>>(aptos_addr)
-            && exists<CoinStore<AptosCoin>>(account_addr));
+        aborts_if amount != 0 && !(exists<CoinInfo<Libra2Coin>>(aptos_addr)
+            && exists<CoinStore<Libra2Coin>>(account_addr));
         aborts_if coin_store.coin.value < amount;
 
-        let maybe_supply = global<CoinInfo<AptosCoin>>(aptos_addr).supply;
+        let maybe_supply = global<CoinInfo<Libra2Coin>>(aptos_addr).supply;
         let supply_aggr = option::spec_borrow(maybe_supply);
         let value = optional_aggregator::optional_aggregator_value(supply_aggr);
 
-        let post post_maybe_supply = global<CoinInfo<AptosCoin>>(aptos_addr).supply;
+        let post post_maybe_supply = global<CoinInfo<Libra2Coin>>(aptos_addr).supply;
         let post post_supply = option::spec_borrow(post_maybe_supply);
         let post post_value = optional_aggregator::optional_aggregator_value(post_supply);
 
@@ -111,37 +111,37 @@ spec libra2_framework::transaction_fee {
         } else {
             option::spec_is_none(post_maybe_supply)
         };
-        ensures coin::supply<AptosCoin> == old(coin::supply<AptosCoin>) - amount;
+        ensures coin::supply<Libra2Coin> == old(coin::supply<Libra2Coin>) - amount;
     }
 
     spec mint_and_refund(account: address, refund: u64) {
         use libra2_std::type_info;
-        use libra2_framework::aptos_coin::AptosCoin;
+        use libra2_framework::libra2_coin::Libra2Coin;
         use libra2_framework::coin::{CoinInfo, CoinStore};
         use libra2_framework::coin;
         // TODO(fa_migration)
         pragma verify = false;
         // pragma opaque;
 
-        let aptos_addr = type_info::type_of<AptosCoin>().account_address;
+        let aptos_addr = type_info::type_of<Libra2Coin>().account_address;
 
-        aborts_if (refund != 0) && !exists<CoinInfo<AptosCoin>>(aptos_addr);
-        include coin::CoinAddAbortsIf<AptosCoin> { amount: refund };
+        aborts_if (refund != 0) && !exists<CoinInfo<Libra2Coin>>(aptos_addr);
+        include coin::CoinAddAbortsIf<Libra2Coin> { amount: refund };
 
-        aborts_if !exists<CoinStore<AptosCoin>>(account);
-        // modifies global<CoinStore<AptosCoin>>(account);
+        aborts_if !exists<CoinStore<Libra2Coin>>(account);
+        // modifies global<CoinStore<Libra2Coin>>(account);
 
-        aborts_if !exists<AptosCoinMintCapability>(@libra2_framework);
+        aborts_if !exists<Libra2CoinMintCapability>(@libra2_framework);
 
-        let supply = coin::supply<AptosCoin>;
-        let post post_supply = coin::supply<AptosCoin>;
+        let supply = coin::supply<Libra2Coin>;
+        let post post_supply = coin::supply<Libra2Coin>;
         aborts_if [abstract] supply + refund > MAX_U128;
         ensures post_supply == supply + refund;
     }
 
     /// Ensure caller is admin.
-    /// Aborts if `AptosCoinCapabilities` already exists.
-    spec store_aptos_coin_burn_cap(libra2_framework: &signer, burn_cap: BurnCapability<AptosCoin>) {
+    /// Aborts if `Libra2CoinCapabilities` already exists.
+    spec store_libra2_coin_burn_cap(libra2_framework: &signer, burn_cap: BurnCapability<Libra2Coin>) {
         use std::signer;
 
         // TODO(fa_migration)
@@ -151,19 +151,19 @@ spec libra2_framework::transaction_fee {
         aborts_if !system_addresses::is_libra2_framework_address(addr);
 
         aborts_if exists<AptosFABurnCapabilities>(addr);
-        aborts_if exists<AptosCoinCapabilities>(addr);
+        aborts_if exists<Libra2CoinCapabilities>(addr);
 
-        ensures exists<AptosFABurnCapabilities>(addr) || exists<AptosCoinCapabilities>(addr);
+        ensures exists<AptosFABurnCapabilities>(addr) || exists<Libra2CoinCapabilities>(addr);
     }
 
     /// Ensure caller is admin.
-    /// Aborts if `AptosCoinMintCapability` already exists.
-    spec store_aptos_coin_mint_cap(libra2_framework: &signer, mint_cap: MintCapability<AptosCoin>) {
+    /// Aborts if `Libra2CoinMintCapability` already exists.
+    spec store_libra2_coin_mint_cap(libra2_framework: &signer, mint_cap: MintCapability<Libra2Coin>) {
         use std::signer;
         let addr = signer::address_of(libra2_framework);
         aborts_if !system_addresses::is_libra2_framework_address(addr);
-        aborts_if exists<AptosCoinMintCapability>(addr);
-        ensures exists<AptosCoinMintCapability>(addr);
+        aborts_if exists<Libra2CoinMintCapability>(addr);
+        ensures exists<Libra2CoinMintCapability>(addr);
     }
 
     /// Historical. Aborts.

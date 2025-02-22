@@ -100,7 +100,7 @@ module mint_nft::create_nft_getting_production_ready {
     use libra2_framework::event;
     use libra2_framework::timestamp;
     use libra2_std::ed25519;
-    use aptos_token::token::{Self, TokenDataId};
+    use libra2_token::token::{Self, TokenDataId};
     use libra2_framework::resource_account;
     #[test_only]
     use libra2_framework::account::create_account_for_test;

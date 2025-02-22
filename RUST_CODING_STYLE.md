@@ -1,6 +1,6 @@
-# Coding Guidelines for Aptos Core
+# Coding Guidelines for Libra2
 
-This document describes the coding guidelines for the [Aptos Core](https://github.com/aptos-labs/aptos-core) Rust codebase. For the Move language, see the [Move Coding Conventions](https://aptos.dev/move/book/SUMMARY).
+This document describes the coding guidelines for the [Libra2](https://github.com/finalverse/libra2-core) Rust codebase. For the Move language, see the [Move Coding Conventions](https://aptos.dev/move/book/SUMMARY).
 Secure coding guidance is provided in the [Aptos Rust Secure Coding Guidelines](./RUST_SECURE_CODING.md).
 
 ## Code formatting & Code analysis
@@ -68,7 +68,7 @@ Document the following for each function:
 
 ### README.md for top-level directories and other major components
 
-Each major component of Aptos Core needs to have a `README.md` file. Major components are:
+Each major component of Libra2 needs to have a `README.md` file. Major components are:
 
 - top-level directories (e.g. `aptos-core/network`, `aptos-core/language`)
 - the most important crates in the system (e.g. `vm-runtime`)

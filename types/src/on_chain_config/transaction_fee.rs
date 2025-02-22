@@ -9,5 +9,5 @@ pub struct TransactionFeeBurnCap;
 
 impl OnChainConfig for TransactionFeeBurnCap {
     const MODULE_IDENTIFIER: &'static str = "transaction_fee";
-    const TYPE_IDENTIFIER: &'static str = "AptosCoinCapabilities";
+    const TYPE_IDENTIFIER: &'static str = "Libra2CoinCapabilities";
 }

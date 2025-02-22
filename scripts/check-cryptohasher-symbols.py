@@ -17,7 +17,7 @@ import subprocess
 
 # False positives that needs to be skipped for now.
 whitelisted_symbols = set([
-    'TestAptosCrypto',
+    'TestLibra2Crypto',
 ])
 
 ignored_crates = set([

@@ -45,8 +45,8 @@ module libra2_framework::vesting {
     use libra2_std::simple_map::{Self, SimpleMap};
 
     use libra2_framework::account::{Self, SignerCapability, new_event_handle};
-    use libra2_framework::aptos_account::{Self, assert_account_is_registered_for_apt};
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_account::{Self, assert_account_is_registered_for_apt};
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::coin::{Self, Coin};
     use libra2_framework::event::{EventHandle, emit, emit_event};
     use libra2_framework::stake;
@@ -545,7 +545,7 @@ module libra2_framework::vesting {
     public fun create_vesting_contract(
         admin: &signer,
         shareholders: &vector<address>,
-        buy_ins: SimpleMap<address, Coin<AptosCoin>>,
+        buy_ins: SimpleMap<address, Coin<Libra2Coin>>,
         vesting_schedule: VestingSchedule,
         withdrawal_address: address,
         operator: address,
@@ -567,7 +567,7 @@ module libra2_framework::vesting {
         );
 
         // Create a coins pool to track shareholders and shares of the grant.
-        let grant = coin::zero<AptosCoin>();
+        let grant = coin::zero<Libra2Coin>();
         let grant_amount = 0;
         let grant_pool = pool_u64::create(MAXIMUM_SHAREHOLDERS);
         vector::for_each_ref(shareholders, |shareholder| {
@@ -773,12 +773,12 @@ module libra2_framework::vesting {
             let amount = pool_u64::shares_to_amount_with_total_coins(grant_pool, shares, total_distribution_amount);
             let share_of_coins = coin::extract(&mut coins, amount);
             let recipient_address = get_beneficiary(vesting_contract, shareholder);
-            aptos_account::deposit_coins(recipient_address, share_of_coins);
+            libra2_account::deposit_coins(recipient_address, share_of_coins);
         });
 
         // Send any remaining "dust" (leftover due to rounding error) to the withdrawal address.
         if (coin::value(&coins) > 0) {
-            aptos_account::deposit_coins(vesting_contract.withdrawal_address, coins);
+            libra2_account::deposit_coins(vesting_contract.withdrawal_address, coins);
         } else {
             coin::destroy_zero(coins);
         };
@@ -867,7 +867,7 @@ module libra2_framework::vesting {
             coin::destroy_zero(coins);
             return
         };
-        aptos_account::deposit_coins(vesting_contract.withdrawal_address, coins);
+        libra2_account::deposit_coins(vesting_contract.withdrawal_address, coins);
 
         if (std::features::module_event_migration_enabled()) {
             emit(
@@ -1167,7 +1167,7 @@ module libra2_framework::vesting {
         let (account_signer, signer_cap) = account::create_resource_account(admin, seed);
         // Register the vesting contract account to receive APT as it'll be sent to it when claiming unlocked stake from
         // the underlying staking contract.
-        coin::register<AptosCoin>(&account_signer);
+        coin::register<Libra2Coin>(&account_signer);
 
         (account_signer, signer_cap)
     }
@@ -1192,13 +1192,13 @@ module libra2_framework::vesting {
         staking_contract::unlock_stake(contract_signer, vesting_contract.staking.operator, amount);
     }
 
-    fun withdraw_stake(vesting_contract: &VestingContract, contract_address: address): Coin<AptosCoin> {
+    fun withdraw_stake(vesting_contract: &VestingContract, contract_address: address): Coin<Libra2Coin> {
         // Claim any withdrawable distribution from the staking contract. The withdrawn coins will be sent directly to
         // the vesting contract's account.
         staking_contract::distribute(contract_address, vesting_contract.staking.operator);
-        let withdrawn_coins = coin::balance<AptosCoin>(contract_address);
+        let withdrawn_coins = coin::balance<Libra2Coin>(contract_address);
         let contract_signer = &get_vesting_account_signer_internal(vesting_contract);
-        coin::withdraw<AptosCoin>(contract_signer, withdrawn_coins)
+        coin::withdraw<Libra2Coin>(contract_signer, withdrawn_coins)
     }
 
     fun get_beneficiary(contract: &VestingContract, shareholder: address): address {
@@ -1237,7 +1237,7 @@ module libra2_framework::vesting {
 
     #[test_only]
     public fun setup(libra2_framework: &signer, accounts: &vector<address>) {
-        use libra2_framework::aptos_account::create_account;
+        use libra2_framework::libra2_account::create_account;
 
         stake::initialize_for_test_custom(
             libra2_framework,
@@ -1301,7 +1301,7 @@ module libra2_framework::vesting {
         );
 
         let admin_address = signer::address_of(admin);
-        let buy_ins = simple_map::create<address, Coin<AptosCoin>>();
+        let buy_ins = simple_map::create<address, Coin<Libra2Coin>>();
         vector::enumerate_ref(shares, |i, share| {
             let shareholder = *vector::borrow(shareholders, i);
             simple_map::add(&mut buy_ins, shareholder, stake::mint_coins(*share));
@@ -1382,8 +1382,8 @@ module libra2_framework::vesting {
         stake::fast_forward_to_unlock(stake_pool_address);
         rewards = with_rewards(rewards);
         distribute(contract_address);
-        let shareholder_1_bal = coin::balance<AptosCoin>(shareholder_1_address);
-        let shareholder_2_bal = coin::balance<AptosCoin>(shareholder_2_address);
+        let shareholder_1_bal = coin::balance<Libra2Coin>(shareholder_1_address);
+        let shareholder_2_bal = coin::balance<Libra2Coin>(shareholder_2_address);
         // Distribution goes by the shares of the vesting contract.
         assert!(shareholder_1_bal == rewards / 4, shareholder_1_bal);
         assert!(shareholder_2_bal == rewards * 3 / 4, shareholder_2_bal);
@@ -1429,10 +1429,10 @@ module libra2_framework::vesting {
         pending_distribution = with_rewards(pending_distribution);
         distribute(contract_address);
         stake::assert_stake_pool(stake_pool_address, total_active, 0, 0, 0);
-        assert!(coin::balance<AptosCoin>(shareholder_1_address) == shareholder_1_bal + pending_distribution / 4, 0);
-        assert!(coin::balance<AptosCoin>(shareholder_2_address) == shareholder_2_bal + pending_distribution * 3 / 4, 1);
+        assert!(coin::balance<Libra2Coin>(shareholder_1_address) == shareholder_1_bal + pending_distribution / 4, 0);
+        assert!(coin::balance<Libra2Coin>(shareholder_2_address) == shareholder_2_bal + pending_distribution * 3 / 4, 1);
         // Withdrawal address receives the left-over dust of 1 coin due to rounding error.
-        assert!(coin::balance<AptosCoin>(withdrawal_address) == 1, 0);
+        assert!(coin::balance<Libra2Coin>(withdrawal_address) == 1, 0);
 
         // Admin terminates the vesting contract.
         terminate_vesting_contract(admin, contract_address);
@@ -1441,9 +1441,9 @@ module libra2_framework::vesting {
         stake::fast_forward_to_unlock(stake_pool_address);
         let withdrawn_amount = with_rewards(total_active);
         stake::assert_stake_pool(stake_pool_address, 0, withdrawn_amount, 0, 0);
-        let previous_bal = coin::balance<AptosCoin>(withdrawal_address);
+        let previous_bal = coin::balance<Libra2Coin>(withdrawal_address);
         admin_withdraw(admin, contract_address);
-        assert!(coin::balance<AptosCoin>(withdrawal_address) == previous_bal + withdrawn_amount, 0);
+        assert!(coin::balance<Libra2Coin>(withdrawal_address) == previous_bal + withdrawn_amount, 0);
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123)]
@@ -1480,7 +1480,7 @@ module libra2_framework::vesting {
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123)]
-    #[expected_failure(abort_code = 0x60001, location = libra2_framework::aptos_account)]
+    #[expected_failure(abort_code = 0x60001, location = libra2_framework::libra2_account)]
     public entry fun test_create_vesting_contract_with_invalid_withdrawal_address_should_fail(
         libra2_framework: &signer,
         admin: &signer,
@@ -1491,7 +1491,7 @@ module libra2_framework::vesting {
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123)]
-    #[expected_failure(abort_code = 0x60001, location = libra2_framework::aptos_account)]
+    #[expected_failure(abort_code = 0x60001, location = libra2_framework::libra2_account)]
     public entry fun test_create_vesting_contract_with_missing_withdrawal_account_should_fail(
         libra2_framework: &signer,
         admin: &signer,
@@ -1502,7 +1502,7 @@ module libra2_framework::vesting {
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123)]
-    #[expected_failure(abort_code = 0x60002, location = libra2_framework::aptos_account)]
+    #[expected_failure(abort_code = 0x60002, location = libra2_framework::libra2_account)]
     public entry fun test_create_vesting_contract_with_unregistered_withdrawal_account_should_fail(
         libra2_framework: &signer,
         admin: &signer,
@@ -1646,8 +1646,8 @@ module libra2_framework::vesting {
         commission = with_rewards(commission) + commission_on_staker_rewards;
         distribute(contract_address);
         // Rounding error leads to a dust amount of 1 transferred to the staker.
-        assert!(coin::balance<AptosCoin>(shareholder_address) == staker_rewards + 1, 0);
-        assert!(coin::balance<AptosCoin>(operator_address) == commission - 1, 1);
+        assert!(coin::balance<Libra2Coin>(shareholder_address) == staker_rewards + 1, 0);
+        assert!(coin::balance<Libra2Coin>(operator_address) == commission - 1, 1);
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123, shareholder = @0x234, operator = @0x345)]
@@ -1703,8 +1703,8 @@ module libra2_framework::vesting {
         commission = with_rewards(commission) + commission_on_staker_rewards;
         distribute(contract_address);
         // Rounding error leads to a dust amount of 1 transferred to the staker.
-        assert!(coin::balance<AptosCoin>(shareholder_address) == staker_rewards + 1, 0);
-        assert!(coin::balance<AptosCoin>(operator_address) == commission - 1, 1);
+        assert!(coin::balance<Libra2Coin>(shareholder_address) == staker_rewards + 1, 0);
+        assert!(coin::balance<Libra2Coin>(operator_address) == commission - 1, 1);
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123, operator = @0x345)]
@@ -1785,7 +1785,7 @@ module libra2_framework::vesting {
         distribute(contract_address);
 
         // Assert that the operator receives the expected commission.
-        assert!(coin::balance<AptosCoin>(operator_address) == expected_commission, 1);
+        assert!(coin::balance<Libra2Coin>(operator_address) == expected_commission, 1);
     }
 
     #[test(
@@ -1845,9 +1845,9 @@ module libra2_framework::vesting {
         distribute(contract_address);
 
         // Assert that the beneficiary receives the expected commission.
-        assert!(coin::balance<AptosCoin>(operator_address1) == 0, 1);
-        assert!(coin::balance<AptosCoin>(beneficiary_address) == expected_commission, 1);
-        let old_beneficiay_balance = coin::balance<AptosCoin>(beneficiary_address);
+        assert!(coin::balance<Libra2Coin>(operator_address1) == 0, 1);
+        assert!(coin::balance<Libra2Coin>(beneficiary_address) == expected_commission, 1);
+        let old_beneficiay_balance = coin::balance<Libra2Coin>(beneficiary_address);
 
         // switch operator to operator2. The rewards should go to operator2 not to the beneficiay of operator1.
         update_operator(admin, contract_address, operator_address2, 10);
@@ -1869,8 +1869,8 @@ module libra2_framework::vesting {
         distribute(contract_address);
 
         // Assert that the rewards go to operator2, and the balance of the operator1's beneficiay remains the same.
-        assert!(coin::balance<AptosCoin>(operator_address2) >= expected_commission, 1);
-        assert!(coin::balance<AptosCoin>(beneficiary_address) == old_beneficiay_balance, 1);
+        assert!(coin::balance<Libra2Coin>(operator_address2) >= expected_commission, 1);
+        assert!(coin::balance<Libra2Coin>(beneficiary_address) == old_beneficiay_balance, 1);
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123, shareholder = @0x234)]
@@ -2036,7 +2036,7 @@ module libra2_framework::vesting {
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123)]
-    #[expected_failure(abort_code = 0x60001, location = libra2_framework::aptos_account)]
+    #[expected_failure(abort_code = 0x60001, location = libra2_framework::libra2_account)]
     public entry fun test_set_beneficiary_with_missing_account_should_fail(
         libra2_framework: &signer,
         admin: &signer,
@@ -2049,7 +2049,7 @@ module libra2_framework::vesting {
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123)]
-    #[expected_failure(abort_code = 0x60002, location = libra2_framework::aptos_account)]
+    #[expected_failure(abort_code = 0x60002, location = libra2_framework::libra2_account)]
     public entry fun test_set_beneficiary_with_unregistered_account_should_fail(
         libra2_framework: &signer,
         admin: &signer,
@@ -2083,7 +2083,7 @@ module libra2_framework::vesting {
         // No rewards as validator never joined the validator set.
         let vested_amount = fraction(GRANT_AMOUNT, 3, 48);
         distribute(contract_address);
-        let balance = coin::balance<AptosCoin>(@11);
+        let balance = coin::balance<Libra2Coin>(@11);
         assert!(balance == vested_amount, balance);
     }
 
@@ -2127,8 +2127,8 @@ module libra2_framework::vesting {
         // No rewards as validator never joined the validator set.
         let vested_amount = fraction(GRANT_AMOUNT, 3, 48);
         distribute(contract_address);
-        assert!(coin::balance<AptosCoin>(@11) == vested_amount, 0);
-        assert!(coin::balance<AptosCoin>(@12) == 0, 1);
+        assert!(coin::balance<Libra2Coin>(@11) == vested_amount, 0);
+        assert!(coin::balance<Libra2Coin>(@12) == 0, 1);
     }
 
     #[test(libra2_framework = @0x1, admin = @0x123, resetter = @0x234)]

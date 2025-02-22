@@ -94,7 +94,7 @@ jobs:
             sudo systemctl start docker
           fi          
 
-      - uses: aptos-labs/aptos-core/.github/actions/docker-setup@main
+      - uses: finalverse/libra2-core/.github/actions/docker-setup@main
         with:
           GCP_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           GCP_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}

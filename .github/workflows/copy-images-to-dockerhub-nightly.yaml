@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: aptos-labs/aptos-core/.github/actions/check-aptos-core@main
+      - uses: finalverse/libra2-core/.github/actions/check-aptos-core@main
         with:
           cancel-workflow: ${{ github.event_name == 'schedule' }} # Cancel the workflow if it is scheduled on a fork
 
   copy-images-to-dockerhub:
     needs: check-repo
-    if: github.repository == 'aptos-labs/aptos-core'
+    if: github.repository == 'finalverse/libra2-core'
     uses: ./.github/workflows/copy-images-to-dockerhub.yaml
     with:
       image_tag_prefix: nightly

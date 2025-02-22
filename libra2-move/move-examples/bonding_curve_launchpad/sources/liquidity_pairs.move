@@ -4,8 +4,8 @@ module bonding_curve_launchpad::liquidity_pairs {
     use libra2_std::signer;
     use libra2_std::math128;
     use libra2_framework::coin;
-    use libra2_framework::aptos_account;
-    use libra2_framework::aptos_coin::{AptosCoin};
+    use libra2_framework::libra2_account;
+    use libra2_framework::libra2_coin::{Libra2Coin};
     use libra2_framework::object::{Self, Object, ExtendRef};
     use libra2_framework::event;
     use libra2_framework::fungible_asset;
@@ -243,7 +243,7 @@ module bonding_curve_launchpad::liquidity_pairs {
             fungible_asset::transfer_ref_metadata(transfer_ref)
         );
         fungible_asset::transfer_with_ref(transfer_ref, from_swapper_store, liquidity_pair.fa_store, fa_given);
-        aptos_account::transfer(&liquidity_pair_signer, swapper_address, apt_gained);
+        libra2_account::transfer(&liquidity_pair_signer, swapper_address, apt_gained);
         // Record state changes to the liquidity pair's reserves, and emit changes as events.
         let former_fa_reserves = liquidity_pair.fa_reserves;
         let former_apt_reserves = liquidity_pair.apt_reserves;
@@ -295,7 +295,7 @@ module bonding_curve_launchpad::liquidity_pairs {
             swapper_address,
             fungible_asset::transfer_ref_metadata(transfer_ref)
         );
-        aptos_account::transfer(swapper_account, liquidity_pair_address, apt_given);
+        libra2_account::transfer(swapper_account, liquidity_pair_address, apt_given);
         fungible_asset::transfer_with_ref(transfer_ref, liquidity_pair.fa_store, to_swapper_store, fa_gained);
         // Record state changes to the liquidity pair's reserves, and emit changes as events.
         let former_fa_reserves = liquidity_pair.fa_reserves;
@@ -340,9 +340,9 @@ module bonding_curve_launchpad::liquidity_pairs {
         liquidity_pair.is_enabled = false;
         liquidity_pair.is_frozen = false;
         // Offload onto third party, public DEX.
-        router::create_pool_coin<AptosCoin>(fa_object_metadata, false);
+        router::create_pool_coin<Libra2Coin>(fa_object_metadata, false);
         let liquidity_pair_signer = object::generate_signer_for_extending(&liquidity_pair.extend_ref);
-        add_liquidity_coin_entry_transfer_ref<AptosCoin>(
+        add_liquidity_coin_entry_transfer_ref<Libra2Coin>(
             transfer_ref,
             &liquidity_pair_signer,
             liquidity_pair.fa_store,
@@ -354,7 +354,7 @@ module bonding_curve_launchpad::liquidity_pairs {
             0
         );
         // Send liquidity provider tokens to dead address.
-        let apt_coin_wrapped = coin_wrapper::get_wrapper<AptosCoin>();
+        let apt_coin_wrapped = coin_wrapper::get_wrapper<Libra2Coin>();
         let liquidity_obj = liquidity_pool::liquidity_pool(apt_coin_wrapped, fa_object_metadata, false);
         let liquidity_pair_address = signer::address_of(&liquidity_pair_signer);
         liquidity_pool::transfer(

@@ -8,7 +8,7 @@ use libra2_types::{
     state_store::state_key::StateKey,
     transaction::{ExecutionStatus, TransactionOutput},
     write_set::{WriteOp, WriteSet, TOTAL_SUPPLY_STATE_KEY},
-    AptosCoinType,
+    Libra2CoinType,
 };
 use claims::{assert_ok, assert_some};
 use move_core_types::{
@@ -277,7 +277,7 @@ impl TransactionDiffBuilder {
                     if state_key
                         == StateKey::resource(
                             &fee_payer,
-                            &CoinStoreResource::<AptosCoinType>::struct_tag(),
+                            &CoinStoreResource::<Libra2CoinType>::struct_tag(),
                         )
                         .unwrap()
                     {

@@ -384,9 +384,9 @@ impl TestContext {
         // This function executes the following script as the root account:
         // script {
         //   fun main(root: &signer, feature: u64) {
-        //     let libra2_framework = libra2_framework::aptos_governance::get_signer_testnet_only(root, @0x1);
+        //     let libra2_framework = libra2_framework::libra2_governance::get_signer_testnet_only(root, @0x1);
         //     std::features::change_feature_flags_for_next_epoch(&libra2_framework, vector[feature], vector[]);
-        //     libra2_framework::aptos_governance::reconfigure(&libra2_framework);
+        //     libra2_framework::libra2_governance::reconfigure(&libra2_framework);
         //     std::features::on_new_epoch(&libra2_framework);
         //   }
         // }
@@ -404,9 +404,9 @@ impl TestContext {
         // This function executes the following script as the root account:
         // script {
         //   fun main(root: &signer, feature: u64) {
-        //     let libra2_framework = libra2_framework::aptos_governance::get_signer_testnet_only(root, @0x1);
+        //     let libra2_framework = libra2_framework::libra2_governance::get_signer_testnet_only(root, @0x1);
         //     std::features::change_feature_flags_for_next_epoch(&libra2_framework, vector[], vector[feature]);
-        //     libra2_framework::aptos_governance::reconfigure(&libra2_framework);
+        //     libra2_framework::libra2_governance::reconfigure(&libra2_framework);
         //     std::features::on_new_epoch(&libra2_framework);
         //   }
         // }
@@ -461,12 +461,12 @@ impl TestContext {
     pub async fn api_create_account(&mut self) -> LocalAccount {
         let root = &mut self.root_account().await;
         let account = self.gen_account();
-        self.api_execute_aptos_account_transfer(root, account.address(), TRANSFER_AMOUNT)
+        self.api_execute_libra2_account_transfer(root, account.address(), TRANSFER_AMOUNT)
             .await;
         account
     }
 
-    pub async fn api_execute_aptos_account_transfer(
+    pub async fn api_execute_libra2_account_transfer(
         &mut self,
         sender: &mut LocalAccount,
         receiver: AccountAddress,
@@ -474,7 +474,7 @@ impl TestContext {
     ) {
         self.api_execute_entry_function(
             sender,
-            "0x1::aptos_account::transfer",
+            "0x1::libra2_account::transfer",
             json!([]),
             json!([receiver.to_hex_literal(), amount.to_string()]),
         )
@@ -868,7 +868,7 @@ impl TestContext {
                 account,
                 "0x1",
                 "coin",
-                "CoinStore<0x1::aptos_coin::AptosCoin>",
+                "CoinStore<0x1::libra2_coin::Libra2Coin>",
             )
             .await;
         let coin = coin_balance_option.map(|x| {
@@ -1165,7 +1165,7 @@ impl TestContext {
     }
 
     // Currently we still run our tests with warp.
-    // https://github.com/aptos-labs/aptos-core/issues/2966
+    // https://github.com/finalverse/libra2-core/issues/2966
     pub fn get_routes_with_poem(
         &self,
         poem_address: SocketAddr,

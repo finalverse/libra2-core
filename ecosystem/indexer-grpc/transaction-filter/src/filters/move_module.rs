@@ -12,7 +12,7 @@ use serde::{Deserialize, Serialize};
 ///
 /// let filter = MoveStructTagFilterBuilder::default()
 ///   .address("0x0000000000000000000000000000000000000000000000000000000000000004")
-///   .module("aptos_token")
+///   .module("libra2_token")
 ///   .name("Token")
 ///   .build()
 ///   .unwrap();

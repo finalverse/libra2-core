@@ -258,18 +258,18 @@ async fn verify_randomness(
 fn script_to_enable_main_logic() -> String {
     r#"
 script {
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::randomness_config;
     use libra2_std::fixed_point64;
 
     fun main(core_resources: &signer) {
-        let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0x1);
+        let framework_signer = libra2_governance::get_signer_testnet_only(core_resources, @0x1);
         let config = randomness_config::new_v1(
             fixed_point64::create_from_rational(1, 2),
             fixed_point64::create_from_rational(2, 3)
         );
         randomness_config::set_for_next_epoch(&framework_signer, config);
-        aptos_governance::reconfigure(&framework_signer);
+        libra2_governance::reconfigure(&framework_signer);
     }
 }
 "#
@@ -279,13 +279,13 @@ script {
 fn script_to_disable_main_logic() -> String {
     r#"
 script {
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::randomness_config;
     fun main(core_resources: &signer) {
-        let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0x1);
+        let framework_signer = libra2_governance::get_signer_testnet_only(core_resources, @0x1);
         let config = randomness_config::new_off();
         randomness_config::set_for_next_epoch(&framework_signer, config);
-        aptos_governance::reconfigure(&framework_signer);
+        libra2_governance::reconfigure(&framework_signer);
     }
 }
 "#
@@ -297,14 +297,14 @@ fn script_to_update_consensus_config(config: &OnChainConsensusConfig) -> String 
     format!(
         r#"
 script {{
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::consensus_config;
 
     fun main(core_resources: &signer) {{
-        let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0x1);
+        let framework_signer = libra2_governance::get_signer_testnet_only(core_resources, @0x1);
         let config_bytes = vector{:?};
         consensus_config::set_for_next_epoch(&framework_signer, config_bytes);
-        aptos_governance::reconfigure(&framework_signer);
+        libra2_governance::reconfigure(&framework_signer);
     }}
 }}
     "#,

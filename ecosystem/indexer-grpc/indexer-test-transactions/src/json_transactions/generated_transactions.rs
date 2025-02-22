@@ -127,7 +127,7 @@ pub const IMPORTED_MAINNET_TXNS_152449628_COIN_INFO_WRITE: &[u8] = include_bytes
 pub const IMPORTED_MAINNET_TXNS_602320562_TOKEN_V2_APTOS_TOKEN_MINT: &[u8] =
     include_bytes!(concat!(
         env!("CARGO_MANIFEST_DIR"),
-        "/src/json_transactions/imported_mainnet_txns/602320562_token_v2_aptos_token_mint.json"
+        "/src/json_transactions/imported_mainnet_txns/602320562_token_v2_libra2_token_mint.json"
     ));
 
 pub const IMPORTED_MAINNET_TXNS_1830706009_STAKER_GOVERNANCE_RECORD: &[u8] =

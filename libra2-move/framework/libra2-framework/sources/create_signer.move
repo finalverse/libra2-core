@@ -10,7 +10,7 @@
 /// on account to have access to this.
 module libra2_framework::create_signer {
     friend libra2_framework::account;
-    friend libra2_framework::aptos_account;
+    friend libra2_framework::libra2_account;
     friend libra2_framework::coin;
     friend libra2_framework::fungible_asset;
     friend libra2_framework::genesis;

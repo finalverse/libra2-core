@@ -1,6 +1,6 @@
 module dao_platform::nft_dao_events {
     use libra2_framework::event;
-    use aptos_token::property_map::PropertyMap;
+    use libra2_token::property_map::PropertyMap;
     use std::signer;
     use std::string::String;
     friend dao_platform::nft_dao;

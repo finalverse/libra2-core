@@ -38,7 +38,7 @@ type Bytes = Vec<u8>;
 #[cfg_attr(feature = "fuzzing", proptest(no_params))]
 pub enum EntryFunctionCall {
     /// Create a new collection
-    AptosTokenCreateCollection {
+    Libra2TokenCreateCollection {
         description: Vec<u8>,
         max_supply: u64,
         name: Vec<u8>,
@@ -57,7 +57,7 @@ pub enum EntryFunctionCall {
     },
 
     /// With an existing collection, directly mint a viable token into the creators account.
-    AptosTokenMint {
+    Libra2TokenMint {
         collection: Vec<u8>,
         description: Vec<u8>,
         name: Vec<u8>,
@@ -68,7 +68,7 @@ pub enum EntryFunctionCall {
     },
 
     /// With an existing collection, directly mint a soul bound token into the recipient's account.
-    AptosTokenMintSoulBound {
+    Libra2TokenMintSoulBound {
         collection: Vec<u8>,
         description: Vec<u8>,
         name: Vec<u8>,
@@ -85,7 +85,7 @@ impl EntryFunctionCall {
     pub fn encode(self) -> TransactionPayload {
         use EntryFunctionCall::*;
         match self {
-            AptosTokenCreateCollection {
+            Libra2TokenCreateCollection {
                 description,
                 max_supply,
                 name,
@@ -101,7 +101,7 @@ impl EntryFunctionCall {
                 tokens_freezable_by_creator,
                 royalty_numerator,
                 royalty_denominator,
-            } => aptos_token_create_collection(
+            } => libra2_token_create_collection(
                 description,
                 max_supply,
                 name,
@@ -118,7 +118,7 @@ impl EntryFunctionCall {
                 royalty_numerator,
                 royalty_denominator,
             ),
-            AptosTokenMint {
+            Libra2TokenMint {
                 collection,
                 description,
                 name,
@@ -126,7 +126,7 @@ impl EntryFunctionCall {
                 property_keys,
                 property_types,
                 property_values,
-            } => aptos_token_mint(
+            } => libra2_token_mint(
                 collection,
                 description,
                 name,
@@ -135,7 +135,7 @@ impl EntryFunctionCall {
                 property_types,
                 property_values,
             ),
-            AptosTokenMintSoulBound {
+            Libra2TokenMintSoulBound {
                 collection,
                 description,
                 name,
@@ -144,7 +144,7 @@ impl EntryFunctionCall {
                 property_types,
                 property_values,
                 soul_bound_to,
-            } => aptos_token_mint_soul_bound(
+            } => libra2_token_mint_soul_bound(
                 collection,
                 description,
                 name,
@@ -175,7 +175,7 @@ impl EntryFunctionCall {
 }
 
 /// Create a new collection
-pub fn aptos_token_create_collection(
+pub fn libra2_token_create_collection(
     description: Vec<u8>,
     max_supply: u64,
     name: Vec<u8>,
@@ -198,7 +198,7 @@ pub fn aptos_token_create_collection(
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0, 4,
             ]),
-            ident_str!("aptos_token").to_owned(),
+            ident_str!("libra2_token").to_owned(),
         ),
         ident_str!("create_collection").to_owned(),
         vec![],
@@ -223,7 +223,7 @@ pub fn aptos_token_create_collection(
 }
 
 /// With an existing collection, directly mint a viable token into the creators account.
-pub fn aptos_token_mint(
+pub fn libra2_token_mint(
     collection: Vec<u8>,
     description: Vec<u8>,
     name: Vec<u8>,
@@ -238,7 +238,7 @@ pub fn aptos_token_mint(
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0, 4,
             ]),
-            ident_str!("aptos_token").to_owned(),
+            ident_str!("libra2_token").to_owned(),
         ),
         ident_str!("mint").to_owned(),
         vec![],
@@ -255,7 +255,7 @@ pub fn aptos_token_mint(
 }
 
 /// With an existing collection, directly mint a soul bound token into the recipient's account.
-pub fn aptos_token_mint_soul_bound(
+pub fn libra2_token_mint_soul_bound(
     collection: Vec<u8>,
     description: Vec<u8>,
     name: Vec<u8>,
@@ -271,7 +271,7 @@ pub fn aptos_token_mint_soul_bound(
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0, 4,
             ]),
-            ident_str!("aptos_token").to_owned(),
+            ident_str!("libra2_token").to_owned(),
         ),
         ident_str!("mint_soul_bound").to_owned(),
         vec![],
@@ -289,11 +289,11 @@ pub fn aptos_token_mint_soul_bound(
 }
 mod decoder {
     use super::*;
-    pub fn aptos_token_create_collection(
+    pub fn libra2_token_create_collection(
         payload: &TransactionPayload,
     ) -> Option<EntryFunctionCall> {
         if let TransactionPayload::EntryFunction(script) = payload {
-            Some(EntryFunctionCall::AptosTokenCreateCollection {
+            Some(EntryFunctionCall::Libra2TokenCreateCollection {
                 description: bcs::from_bytes(script.args().get(0)?).ok()?,
                 max_supply: bcs::from_bytes(script.args().get(1)?).ok()?,
                 name: bcs::from_bytes(script.args().get(2)?).ok()?,
@@ -315,9 +315,9 @@ mod decoder {
         }
     }
 
-    pub fn aptos_token_mint(payload: &TransactionPayload) -> Option<EntryFunctionCall> {
+    pub fn libra2_token_mint(payload: &TransactionPayload) -> Option<EntryFunctionCall> {
         if let TransactionPayload::EntryFunction(script) = payload {
-            Some(EntryFunctionCall::AptosTokenMint {
+            Some(EntryFunctionCall::Libra2TokenMint {
                 collection: bcs::from_bytes(script.args().get(0)?).ok()?,
                 description: bcs::from_bytes(script.args().get(1)?).ok()?,
                 name: bcs::from_bytes(script.args().get(2)?).ok()?,
@@ -331,9 +331,9 @@ mod decoder {
         }
     }
 
-    pub fn aptos_token_mint_soul_bound(payload: &TransactionPayload) -> Option<EntryFunctionCall> {
+    pub fn libra2_token_mint_soul_bound(payload: &TransactionPayload) -> Option<EntryFunctionCall> {
         if let TransactionPayload::EntryFunction(script) = payload {
-            Some(EntryFunctionCall::AptosTokenMintSoulBound {
+            Some(EntryFunctionCall::Libra2TokenMintSoulBound {
                 collection: bcs::from_bytes(script.args().get(0)?).ok()?,
                 description: bcs::from_bytes(script.args().get(1)?).ok()?,
                 name: bcs::from_bytes(script.args().get(2)?).ok()?,
@@ -362,16 +362,16 @@ static SCRIPT_FUNCTION_DECODER_MAP: once_cell::sync::Lazy<EntryFunctionDecoderMa
     once_cell::sync::Lazy::new(|| {
         let mut map: EntryFunctionDecoderMap = std::collections::HashMap::new();
         map.insert(
-            "aptos_token_create_collection".to_string(),
-            Box::new(decoder::aptos_token_create_collection),
+            "libra2_token_create_collection".to_string(),
+            Box::new(decoder::libra2_token_create_collection),
         );
         map.insert(
-            "aptos_token_mint".to_string(),
-            Box::new(decoder::aptos_token_mint),
+            "libra2_token_mint".to_string(),
+            Box::new(decoder::libra2_token_mint),
         );
         map.insert(
-            "aptos_token_mint_soul_bound".to_string(),
-            Box::new(decoder::aptos_token_mint_soul_bound),
+            "libra2_token_mint_soul_bound".to_string(),
+            Box::new(decoder::libra2_token_mint_soul_bound),
         );
         map
     });

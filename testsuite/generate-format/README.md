@@ -1,7 +1,7 @@
 ---
 id: generate-format
 title: Generate Format
-custom_edit_url: https://github.com/aptos-labs/aptos-core/edit/main/testsuite/generate-format/README.md
+custom_edit_url: https://github.com/finalverse/libra2-core/edit/main/testsuite/generate-format/README.md
 ---
 
 `generate-format` hosts the Aptos core type checker to ensure compatibility and uses 
@@ -21,7 +21,7 @@ as well as
 
 ## Example
 As an example, we will walk through a real-life example to demonstrate how to make the appropriate changes.
-Feel free to follow along here: https://github.com/aptos-labs/aptos-core/pull/10755/files
+Feel free to follow along here: https://github.com/finalverse/libra2-core/pull/10755/files
 
 Suppose you're adding a new `secp256r1_ecdsa` crypto library with new structs for the following keys and signatures:
 - `PublicKey` 

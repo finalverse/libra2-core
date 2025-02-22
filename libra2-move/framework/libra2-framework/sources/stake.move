@@ -26,7 +26,7 @@ module libra2_framework::stake {
     use libra2_std::bls12381;
     use libra2_std::math64::min;
     use libra2_std::table::Table;
-    use libra2_framework::aptos_coin::AptosCoin;
+    use libra2_framework::libra2_coin::Libra2Coin;
     use libra2_framework::account;
     use libra2_framework::coin::{Self, Coin, MintCapability};
     use libra2_framework::event::{Self, EventHandle};
@@ -92,7 +92,7 @@ module libra2_framework::stake {
     const VALIDATOR_STATUS_INACTIVE: u64 = 4;
 
     /// Limit the maximum size to u16::max, it's the current limit of the bitvec
-    /// https://github.com/aptos-labs/aptos-core/blob/main/crates/libra2-bitvec/src/lib.rs#L20
+    /// https://github.com/finalverse/libra2-core/blob/main/crates/libra2-bitvec/src/lib.rs#L20
     const MAX_VALIDATOR_SET_SIZE: u64 = 65536;
 
     /// Limit the maximum value of `rewards_rate` in order to avoid any arithmetic overflow.
@@ -120,13 +120,13 @@ module libra2_framework::stake {
     /// 3. When the next epoch starts, the validator can be activated if their active stake is more than the minimum.
     struct StakePool has key {
         // active stake
-        active: Coin<AptosCoin>,
+        active: Coin<Libra2Coin>,
         // inactive stake, can be withdrawn
-        inactive: Coin<AptosCoin>,
+        inactive: Coin<Libra2Coin>,
         // pending activation for next epoch
-        pending_active: Coin<AptosCoin>,
+        pending_active: Coin<Libra2Coin>,
         // pending deactivation for next epoch
-        pending_inactive: Coin<AptosCoin>,
+        pending_inactive: Coin<Libra2Coin>,
         locked_until_secs: u64,
         // Track the current operator of the validator node.
         // This allows the operator to be different from the original account and allow for separation of
@@ -188,10 +188,10 @@ module libra2_framework::stake {
         total_joining_power: u128,
     }
 
-    /// AptosCoin capabilities, set during genesis and stored in @CoreResource account.
+    /// Libra2Coin capabilities, set during genesis and stored in @CoreResource account.
     /// This allows the Stake module to mint rewards to stakers.
-    struct AptosCoinCapabilities has key {
-        mint_cap: MintCapability<AptosCoin>,
+    struct Libra2CoinCapabilities has key {
+        mint_cap: MintCapability<Libra2Coin>,
     }
 
     struct IndividualValidatorPerformance has store, drop {
@@ -346,7 +346,7 @@ module libra2_framework::stake {
     #[deprecated]
     /// DEPRECATED
     struct ValidatorFees has key {
-        fees_table: Table<address, Coin<AptosCoin>>,
+        fees_table: Table<address, Coin<Libra2Coin>>,
     }
 
     /// Permissions
@@ -495,11 +495,11 @@ module libra2_framework::stake {
         });
     }
 
-    /// This is only called during Genesis, which is where MintCapability<AptosCoin> can be created.
-    /// Beyond genesis, no one can create AptosCoin mint/burn capabilities.
-    public(friend) fun store_aptos_coin_mint_cap(libra2_framework: &signer, mint_cap: MintCapability<AptosCoin>) {
+    /// This is only called during Genesis, which is where MintCapability<Libra2Coin> can be created.
+    /// Beyond genesis, no one can create Libra2Coin mint/burn capabilities.
+    public(friend) fun store_libra2_coin_mint_cap(libra2_framework: &signer, mint_cap: MintCapability<Libra2Coin>) {
         system_addresses::assert_libra2_framework(libra2_framework);
-        move_to(libra2_framework, AptosCoinCapabilities { mint_cap })
+        move_to(libra2_framework, Libra2CoinCapabilities { mint_cap })
     }
 
     /// Allow on chain governance to remove validators from the validator set.
@@ -608,10 +608,10 @@ module libra2_framework::stake {
         assert!(!stake_pool_exists(owner_address), error::already_exists(EALREADY_REGISTERED));
 
         move_to(owner, StakePool {
-            active: coin::zero<AptosCoin>(),
-            pending_active: coin::zero<AptosCoin>(),
-            pending_inactive: coin::zero<AptosCoin>(),
-            inactive: coin::zero<AptosCoin>(),
+            active: coin::zero<Libra2Coin>(),
+            pending_active: coin::zero<Libra2Coin>(),
+            pending_inactive: coin::zero<Libra2Coin>(),
+            inactive: coin::zero<Libra2Coin>(),
             locked_until_secs: 0,
             operator_address: owner_address,
             delegated_voter: owner_address,
@@ -716,11 +716,11 @@ module libra2_framework::stake {
         let owner_address = signer::address_of(owner);
         assert_owner_cap_exists(owner_address);
         let ownership_cap = borrow_global<OwnerCapability>(owner_address);
-        add_stake_with_cap(ownership_cap, coin::withdraw<AptosCoin>(owner, amount));
+        add_stake_with_cap(ownership_cap, coin::withdraw<Libra2Coin>(owner, amount));
     }
 
     /// Add `coins` into `pool_address`. this requires the corresponding `owner_cap` to be passed in.
-    public fun add_stake_with_cap(owner_cap: &OwnerCapability, coins: Coin<AptosCoin>) acquires StakePool, ValidatorSet {
+    public fun add_stake_with_cap(owner_cap: &OwnerCapability, coins: Coin<Libra2Coin>) acquires StakePool, ValidatorSet {
         assert_reconfig_not_in_progress();
         let pool_address = owner_cap.pool_address;
         assert_stake_pool_exists(pool_address);
@@ -745,9 +745,9 @@ module libra2_framework::stake {
         // Otherwise, the delegation can be added to active directly as the validator is also activated in the epoch.
         let stake_pool = borrow_global_mut<StakePool>(pool_address);
         if (is_current_epoch_validator(pool_address)) {
-            coin::merge<AptosCoin>(&mut stake_pool.pending_active, coins);
+            coin::merge<Libra2Coin>(&mut stake_pool.pending_active, coins);
         } else {
-            coin::merge<AptosCoin>(&mut stake_pool.active, coins);
+            coin::merge<Libra2Coin>(&mut stake_pool.active, coins);
         };
 
         let (_, maximum_stake) = staking_config::get_required_stake(&staking_config::get());
@@ -1039,7 +1039,7 @@ module libra2_framework::stake {
         // Cap amount to unlock by maximum active stake.
         let amount = min(amount, coin::value(&stake_pool.active));
         let unlocked_stake = coin::extract(&mut stake_pool.active, amount);
-        coin::merge<AptosCoin>(&mut stake_pool.pending_inactive, unlocked_stake);
+        coin::merge<Libra2Coin>(&mut stake_pool.pending_inactive, unlocked_stake);
 
         if (std::features::module_event_migration_enabled()) {
             event::emit(
@@ -1069,14 +1069,14 @@ module libra2_framework::stake {
         assert_owner_cap_exists(owner_address);
         let ownership_cap = borrow_global<OwnerCapability>(owner_address);
         let coins = withdraw_with_cap(ownership_cap, withdraw_amount);
-        coin::deposit<AptosCoin>(owner_address, coins);
+        coin::deposit<Libra2Coin>(owner_address, coins);
     }
 
     /// Withdraw from `pool_address`'s inactive stake with the corresponding `owner_cap`.
     public fun withdraw_with_cap(
         owner_cap: &OwnerCapability,
         withdraw_amount: u64
-    ): Coin<AptosCoin> acquires StakePool, ValidatorSet {
+    ): Coin<Libra2Coin> acquires StakePool, ValidatorSet {
         assert_reconfig_not_in_progress();
         let pool_address = owner_cap.pool_address;
         assert_stake_pool_exists(pool_address);
@@ -1092,7 +1092,7 @@ module libra2_framework::stake {
 
         // Cap withdraw amount by total inactive coins.
         withdraw_amount = min(withdraw_amount, coin::value(&stake_pool.inactive));
-        if (withdraw_amount == 0) return coin::zero<AptosCoin>();
+        if (withdraw_amount == 0) return coin::zero<Libra2Coin>();
 
         if (std::features::module_event_migration_enabled()) {
             event::emit(
@@ -1252,7 +1252,7 @@ module libra2_framework::stake {
     /// 4. The validator's voting power in the validator set is updated to be the corresponding staking pool's voting
     /// power.
     public(friend) fun on_new_epoch(
-    ) acquires StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         let validator_set = borrow_global_mut<ValidatorSet>(@libra2_framework);
         let config = staking_config::get();
         let validator_perf = borrow_global_mut<ValidatorPerformance>(@libra2_framework);
@@ -1557,7 +1557,7 @@ module libra2_framework::stake {
         validator_perf: &ValidatorPerformance,
         pool_address: address,
         staking_config: &StakingConfig,
-    ) acquires StakePool, AptosCoinCapabilities, ValidatorConfig {
+    ) acquires StakePool, Libra2CoinCapabilities, ValidatorConfig {
         let stake_pool = borrow_global_mut<StakePool>(pool_address);
         let validator_config = borrow_global<ValidatorConfig>(pool_address);
         let cur_validator_perf = vector::borrow(&validator_perf.validators, validator_config.validator_index);
@@ -1649,12 +1649,12 @@ module libra2_framework::stake {
 
     /// Mint rewards corresponding to current epoch's `stake` and `num_successful_votes`.
     fun distribute_rewards(
-        stake: &mut Coin<AptosCoin>,
+        stake: &mut Coin<Libra2Coin>,
         num_successful_proposals: u64,
         num_total_proposals: u64,
         rewards_rate: u64,
         rewards_rate_denominator: u64,
-    ): u64 acquires AptosCoinCapabilities {
+    ): u64 acquires Libra2CoinCapabilities {
         let stake_amount = coin::value(stake);
         let rewards_amount = if (stake_amount > 0) {
             calculate_rewards_amount(
@@ -1668,7 +1668,7 @@ module libra2_framework::stake {
             0
         };
         if (rewards_amount > 0) {
-            let mint_cap = &borrow_global<AptosCoinCapabilities>(@libra2_framework).mint_cap;
+            let mint_cap = &borrow_global<Libra2CoinCapabilities>(@libra2_framework).mint_cap;
             let rewards = coin::mint(rewards_amount, mint_cap);
             coin::merge(stake, rewards);
         };
@@ -1776,7 +1776,7 @@ module libra2_framework::stake {
     }
 
     #[test_only]
-    use libra2_framework::aptos_coin;
+    use libra2_framework::libra2_coin;
     use libra2_std::bls12381::proof_of_possession_from_bytes;
     use libra2_framework::reconfiguration_state;
     use libra2_framework::validator_consensus_info;
@@ -1805,7 +1805,7 @@ module libra2_framework::stake {
         operator: &signer,
         pool_address: address,
         should_end_epoch: bool,
-    ) acquires AptosCoinCapabilities, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires Libra2CoinCapabilities, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         let pk_bytes = bls12381::public_key_to_bytes(pk);
         let pop_bytes = bls12381::proof_of_possession_to_bytes(pop);
         rotate_consensus_key(operator, pool_address, pk_bytes, pop_bytes);
@@ -1817,7 +1817,7 @@ module libra2_framework::stake {
 
     #[test_only]
     public fun fast_forward_to_unlock(pool_address: address)
-    acquires AptosCoinCapabilities, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    acquires Libra2CoinCapabilities, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         let expiration_time = get_lockup_secs(pool_address);
         timestamp::update_global_time_for_test_secs(expiration_time);
         end_epoch();
@@ -1851,10 +1851,10 @@ module libra2_framework::stake {
             voting_power_increase_limit,
         );
 
-        if (!exists<AptosCoinCapabilities>(@libra2_framework)) {
-            let (burn_cap, mint_cap) = aptos_coin::initialize_for_test(libra2_framework);
-            store_aptos_coin_mint_cap(libra2_framework, mint_cap);
-            coin::destroy_burn_cap<AptosCoin>(burn_cap);
+        if (!exists<Libra2CoinCapabilities>(@libra2_framework)) {
+            let (burn_cap, mint_cap) = libra2_coin::initialize_for_test(libra2_framework);
+            store_libra2_coin_mint_cap(libra2_framework, mint_cap);
+            coin::destroy_burn_cap<Libra2Coin>(burn_cap);
         };
 
         // In the test environment, the periodical_reward_rate_decrease feature is initially turned off.
@@ -1863,20 +1863,20 @@ module libra2_framework::stake {
 
     // This function assumes the stake module already the capability to mint aptos coins.
     #[test_only]
-    public fun mint_coins(amount: u64): Coin<AptosCoin> acquires AptosCoinCapabilities {
-        let mint_cap = &borrow_global<AptosCoinCapabilities>(@libra2_framework).mint_cap;
+    public fun mint_coins(amount: u64): Coin<Libra2Coin> acquires Libra2CoinCapabilities {
+        let mint_cap = &borrow_global<Libra2CoinCapabilities>(@libra2_framework).mint_cap;
         coin::mint(amount, mint_cap)
     }
 
     #[test_only]
-    public fun mint(account: &signer, amount: u64) acquires AptosCoinCapabilities {
-        coin::register<AptosCoin>(account);
+    public fun mint(account: &signer, amount: u64) acquires Libra2CoinCapabilities {
+        coin::register<Libra2Coin>(account);
         coin::deposit(signer::address_of(account), mint_coins(amount));
     }
 
     #[test_only]
     public fun mint_and_add_stake(
-        account: &signer, amount: u64) acquires AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorSet {
+        account: &signer, amount: u64) acquires Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorSet {
         mint(account, amount);
         add_stake(account, amount);
     }
@@ -1889,7 +1889,7 @@ module libra2_framework::stake {
         amount: u64,
         should_join_validator_set: bool,
         should_end_epoch: bool,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         let validator_address = signer::address_of(validator);
         if (!account::exists_at(signer::address_of(validator))) {
             account::create_account_for_test(validator_address);
@@ -1951,8 +1951,8 @@ module libra2_framework::stake {
     #[test_only]
     public fun create_stake_pool(
         account: &signer,
-        active: Coin<AptosCoin>,
-        pending_inactive: Coin<AptosCoin>,
+        active: Coin<Libra2Coin>,
+        pending_inactive: Coin<Libra2Coin>,
         locked_until_secs: u64,
     ) acquires AllowedValidators, OwnerCapability, StakePool, ValidatorSet {
         let account_address = signer::address_of(account);
@@ -1985,7 +1985,7 @@ module libra2_framework::stake {
     public entry fun test_inactive_validator_can_add_stake_if_exceeding_max_allowed(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, false, false);
@@ -2000,7 +2000,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator_1: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 10, 100000);
         // Have one validator join the set to ensure the validator set is not empty when main validator joins.
         let (_sk_1, pk_1, pop_1) = generate_identity();
@@ -2019,7 +2019,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_cannot_add_stake_if_exceeding_max_allowed(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         // Validator joins validator set and waits for epoch end so it's in the validator set.
         let (_sk, pk, pop) = generate_identity();
@@ -2034,7 +2034,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_with_pending_inactive_stake_cannot_add_stake_if_exceeding_max_allowed(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         // Validator joins validator set and waits for epoch end so it's in the validator set.
         let (_sk, pk, pop) = generate_identity();
@@ -2054,7 +2054,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator_1: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk_1, pk_1, pop_1) = generate_identity();
         let (_sk_2, pk_2, pop_2) = generate_identity();
@@ -2072,7 +2072,7 @@ module libra2_framework::stake {
     public entry fun test_end_to_end(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, true, true);
@@ -2085,7 +2085,7 @@ module libra2_framework::stake {
         // The added stake should go to pending_active to wait for activation when next epoch starts.
         mint(validator, 900);
         add_stake(validator, 100);
-        assert!(coin::balance<AptosCoin>(validator_address) == 800, 2);
+        assert!(coin::balance<Libra2Coin>(validator_address) == 800, 2);
         assert_validator_state(validator_address, 100, 0, 100, 0, 0);
 
         // Pending_active stake is activated in the new epoch.
@@ -2112,10 +2112,10 @@ module libra2_framework::stake {
 
         // Validator withdraws from inactive stake multiple times.
         withdraw(validator, 50);
-        assert!(coin::balance<AptosCoin>(validator_address) == 850, 6);
+        assert!(coin::balance<Libra2Coin>(validator_address) == 850, 6);
         assert_validator_state(validator_address, 102, 51, 0, 0, 0);
         withdraw(validator, 51);
-        assert!(coin::balance<AptosCoin>(validator_address) == 901, 7);
+        assert!(coin::balance<Libra2Coin>(validator_address) == 901, 7);
         assert_validator_state(validator_address, 102, 0, 0, 0, 0);
 
         // Enough time has passed again and the validator's lockup is renewed once more. Validator is still active.
@@ -2129,7 +2129,7 @@ module libra2_framework::stake {
     public entry fun test_inactive_validator_with_existing_lockup_join_validator_set(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, false, false);
@@ -2155,7 +2155,7 @@ module libra2_framework::stake {
     public entry fun test_cannot_reduce_lockup(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, false, false);
@@ -2174,7 +2174,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator_1: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         // Only 50% voting power increase is allowed in each epoch.
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 10, 50);
         let (_sk_1, pk_1, pop_1) = generate_identity();
@@ -2196,7 +2196,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator_1: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 10, 10000);
         // Need 1 validator to be in the active validator set so joining limit works.
         let (_sk_1, pk_1, pop_1) = generate_identity();
@@ -2218,7 +2218,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator_1: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         // 100% voting power increase is allowed in each epoch.
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 10, 100);
         // Need 1 validator to be in the active validator set so joining limit works.
@@ -2238,7 +2238,7 @@ module libra2_framework::stake {
     public entry fun test_pending_active_validator_leaves_validator_set(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         // Validator joins but epoch hasn't ended, so the validator is still pending_active.
         let (_sk, pk, pop) = generate_identity();
@@ -2262,7 +2262,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_cannot_add_more_stake_than_limit_in_multiple_epochs(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         // Only 50% voting power increase is allowed in each epoch.
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 10, 50);
         // Add initial stake and join the validator set.
@@ -2284,7 +2284,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_cannot_add_more_stake_than_limit(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         // Only 50% voting power increase is allowed in each epoch.
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 10, 50);
         let (_sk, pk, pop) = generate_identity();
@@ -2298,7 +2298,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_unlock_partial_stake(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         // Reward rate = 10%.
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 10, 100);
         let (_sk, pk, pop) = generate_identity();
@@ -2324,7 +2324,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_can_withdraw_all_stake_and_rewards_at_once(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, true, true);
@@ -2361,7 +2361,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_unlocking_more_than_available_stake_should_cap(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, false, false);
@@ -2375,7 +2375,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_withdraw_should_cap_by_inactive_stake(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         // Initial balance = 900 (idle) + 100 (staked) = 1000.
         let (_sk, pk, pop) = generate_identity();
@@ -2392,7 +2392,7 @@ module libra2_framework::stake {
         withdraw(validator, 200);
         let validator_address = signer::address_of(validator);
         // Receive back all coins with an extra 1 for rewards.
-        assert!(coin::balance<AptosCoin>(validator_address) == 1001, 2);
+        assert!(coin::balance<Libra2Coin>(validator_address) == 1001, 2);
         assert_validator_state(validator_address, 0, 0, 0, 0, 0);
     }
 
@@ -2400,7 +2400,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_can_reactivate_pending_inactive_stake(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, true, true);
@@ -2419,7 +2419,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_reactivate_more_than_available_pending_inactive_stake_should_cap(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, true, true);
@@ -2436,7 +2436,7 @@ module libra2_framework::stake {
     public entry fun test_active_validator_having_insufficient_remaining_stake_after_withdrawal_gets_kicked(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, true, true);
@@ -2464,7 +2464,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk_1, pk_1, pop_1) = generate_identity();
         let (_sk_2, pk_2, pop_2) = generate_identity();
@@ -2508,7 +2508,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk_1, pk_1, pop_1) = generate_identity();
         let (_sk_2, pk_2, pop_2) = generate_identity();
@@ -2539,7 +2539,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator_1: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         // Only 50% voting power increase is allowed in each epoch.
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 10, 50);
         let (_sk_1, pk_1, pop_1) = generate_identity();
@@ -2560,7 +2560,7 @@ module libra2_framework::stake {
         validator_1: &signer,
         validator_2: &signer,
         validator_3: &signer
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         let validator_1_address = signer::address_of(validator_1);
         let validator_2_address = signer::address_of(validator_2);
         let validator_3_address = signer::address_of(validator_3);
@@ -2654,7 +2654,7 @@ module libra2_framework::stake {
     public entry fun test_delegated_staking_with_owner_cap(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test_custom(libra2_framework, 100, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 100, 100);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 0, false, false);
@@ -2697,7 +2697,7 @@ module libra2_framework::stake {
         assert!(validator_config.fullnode_addresses == b"2", 4);
 
         // Cleanups.
-        coin::register<AptosCoin>(validator);
+        coin::register<Libra2Coin>(validator);
         coin::deposit(pool_address, coins);
         deposit_owner_cap(validator, owner_cap);
     }
@@ -2707,7 +2707,7 @@ module libra2_framework::stake {
     public entry fun test_validator_cannot_join_post_genesis(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test_custom(libra2_framework, 100, 10000, LOCKUP_CYCLE_SECONDS, false, 1, 100, 100);
 
         // Joining the validator set should fail as post genesis validator set change is not allowed.
@@ -2720,7 +2720,7 @@ module libra2_framework::stake {
     public entry fun test_invalid_pool_address(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, true, true);
@@ -2732,7 +2732,7 @@ module libra2_framework::stake {
     public entry fun test_validator_cannot_leave_post_genesis(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test_custom(libra2_framework, 100, 10000, LOCKUP_CYCLE_SECONDS, false, 1, 100, 100);
         let (_sk, pk, pop) = generate_identity();
         initialize_test_validator(&pk, &pop, validator, 100, false, false);
@@ -2761,7 +2761,7 @@ module libra2_framework::stake {
         validator_3: &signer,
         validator_4: &signer,
         validator_5: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         let v1_addr = signer::address_of(validator_1);
         let v2_addr = signer::address_of(validator_2);
         let v3_addr = signer::address_of(validator_3);
@@ -2834,7 +2834,7 @@ module libra2_framework::stake {
         validator_3: &signer,
         validator_4: &signer,
         validator_5: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         let v1_addr = signer::address_of(validator_1);
         let v2_addr = signer::address_of(validator_2);
         let v3_addr = signer::address_of(validator_3);
@@ -2897,7 +2897,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator_1: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
 
         let validator_1_address = signer::address_of(validator_1);
@@ -2945,7 +2945,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator_1: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
 
         let genesis_time_in_secs = timestamp::now_seconds();
@@ -3001,7 +3001,7 @@ module libra2_framework::stake {
     public entry fun test_update_performance_statistics_should_not_fail_due_to_out_of_bounds(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
 
         let validator_address = signer::address_of(validator);
@@ -3032,7 +3032,7 @@ module libra2_framework::stake {
     public entry fun test_invalid_config(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorSet {
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 100, 100);
 
         // Call initialize_stake_owner, which only initializes the stake pool but not validator config.
@@ -3050,7 +3050,7 @@ module libra2_framework::stake {
     public entry fun test_valid_config(
         libra2_framework: &signer,
         validator: &signer,
-    ) acquires AllowedValidators, AptosCoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorSet {
+    ) acquires AllowedValidators, Libra2CoinCapabilities, OwnerCapability, StakePool, ValidatorConfig, ValidatorSet {
         initialize_for_test_custom(libra2_framework, 50, 10000, LOCKUP_CYCLE_SECONDS, true, 1, 100, 100);
 
         // Call initialize_stake_owner, which only initializes the stake pool but not validator config.
@@ -3124,7 +3124,7 @@ module libra2_framework::stake {
         libra2_framework: &signer,
         validator_1: &signer,
         validator_2: &signer,
-    ) acquires AllowedValidators, OwnerCapability, StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires AllowedValidators, OwnerCapability, StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         initialize_for_test(libra2_framework);
         let (_sk_1, pk_1, pop_1) = generate_identity();
         let (_sk_2, pk_2, pop_2) = generate_identity();
@@ -3141,7 +3141,7 @@ module libra2_framework::stake {
 
     #[test_only]
     public fun end_epoch(
-    ) acquires StakePool, AptosCoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
+    ) acquires StakePool, Libra2CoinCapabilities, ValidatorConfig, ValidatorPerformance, ValidatorSet {
         // Set the number of blocks to 1, to give out rewards to non-failing validators.
         set_validator_perf_at_least_one_block();
         timestamp::fast_forward_seconds(EPOCH_DURATION);
@@ -3189,11 +3189,11 @@ module libra2_framework::stake {
         validator: &signer,
     ) acquires AllowedValidators, OwnerCapability, StakePool, ValidatorSet {
         let addr = signer::address_of(validator);
-        let (burn, mint) = aptos_coin::initialize_for_test(libra2_framework);
+        let (burn, mint) = libra2_coin::initialize_for_test(libra2_framework);
         configure_allowed_validators(libra2_framework, vector[addr]);
 
         account::create_account_for_test(addr);
-        coin::register<AptosCoin>(validator);
+        coin::register<Libra2Coin>(validator);
         initialize_stake_owner(validator, 0, addr, addr);
         coin::destroy_burn_cap(burn);
         coin::destroy_mint_cap(mint);
@@ -3206,11 +3206,11 @@ module libra2_framework::stake {
         validator: &signer,
     ) acquires AllowedValidators, OwnerCapability, StakePool, ValidatorSet {
         configure_allowed_validators(libra2_framework, vector[]);
-        let (burn, mint) = aptos_coin::initialize_for_test(libra2_framework);
+        let (burn, mint) = libra2_coin::initialize_for_test(libra2_framework);
 
         let addr = signer::address_of(validator);
         account::create_account_for_test(addr);
-        coin::register<AptosCoin>(validator);
+        coin::register<Libra2Coin>(validator);
         initialize_stake_owner(validator, 0, addr, addr);
         coin::destroy_burn_cap(burn);
         coin::destroy_mint_cap(mint);

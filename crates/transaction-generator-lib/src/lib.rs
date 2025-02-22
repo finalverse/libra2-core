@@ -550,9 +550,9 @@ pub fn create_account_transaction(
 ) -> SignedTransaction {
     from.sign_with_transaction_builder(txn_factory.payload(
         if creation_balance > 0 {
-            libra2_stdlib::aptos_account_transfer(to, creation_balance)
+            libra2_stdlib::libra2_account_transfer(to, creation_balance)
         } else {
-            libra2_stdlib::aptos_account_create_account(to)
+            libra2_stdlib::libra2_account_create_account(to)
         },
     ))
 }

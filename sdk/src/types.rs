@@ -48,7 +48,7 @@ use std::{
     time::{Duration, SystemTime, UNIX_EPOCH},
 };
 
-pub const APTOS_COIN_TYPE_STR: &str = "0x1::aptos_coin::AptosCoin";
+pub const APTOS_COIN_TYPE_STR: &str = "0x1::libra2_coin::Libra2Coin";
 lazy_static! {
     pub static ref APT_METADATA_ADDRESS: AccountAddress = {
         let mut addr = [0u8; 32];
@@ -1150,7 +1150,7 @@ mod tests {
     #[test]
     fn test_recover_account_from_derive_path() {
         // Same constants in test cases of TypeScript
-        // https://github.com/aptos-labs/aptos-core/blob/main/ecosystem/typescript/sdk/src/aptos_account.test.ts
+        // https://github.com/finalverse/libra2-core/blob/main/ecosystem/typescript/sdk/src/libra2_account.test.ts
         let derive_path = "m/44'/637'/0'/0'/0'";
         let mnemonic_phrase =
             "shoot island position soft burden budget tooth cruel issue economy destroy above";

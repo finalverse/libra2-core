@@ -18,7 +18,7 @@ Once the APT threshold is met within the liquidity pair, the reserves are moved 
 * Reusing stored signer vars (w/ [objects](https://aptos.dev/move/move-on-aptos/objects/)).
 * External third party dependencies.
 * E2E testing (w/ object deployments, APT creation).
-* Using `rev` to specify feature branches ([Dispatchable FA](https://github.com/aptos-labs/aptos-core/commit/bbf569abd260d94bc30fe96da297d2aecb193644)).
+* Using `rev` to specify feature branches ([Dispatchable FA](https://github.com/finalverse/libra2-core/commit/bbf569abd260d94bc30fe96da297d2aecb193644)).
 * and more.
 
 ## In-depth info

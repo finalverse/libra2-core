@@ -30,13 +30,13 @@ pub fn generate_upgrade_proposals(
         "only multi-step proposals can have a next execution hash"
     );
 
-    const APTOS_GIT_PATH: &str = "https://github.com/aptos-labs/aptos-core.git";
+    const APTOS_GIT_PATH: &str = "https://github.com/finalverse/libra2-core.git";
 
     let mut package_path_list = [
         ("0x1", "libra2-move/framework/move-stdlib"),
         ("0x1", "libra2-move/framework/libra2-stdlib"),
         ("0x1", "libra2-move/framework/libra2-framework"),
-        ("0x3", "libra2-move/framework/aptos-token"),
+        ("0x3", "libra2-move/framework/libra2-token"),
         ("0x4", "libra2-move/framework/libra2-token-objects"),
     ];
 
@@ -93,9 +93,9 @@ pub fn generate_upgrade_proposals(
         // hash of the latest framework file being generated (the hash of result.last()).
         // For example, let's say we are going to generate these files:
         // 0-move-stdlib.move	2-libra2-framework.move	4-gas-schedule.move	6-features.move
-        // 1-libra2-stdlib.move	3-aptos-token.move	5-version.move		7-consensus-config.move
-        // The first framework file being generated is 3-aptos-token.move. It's using the next_execution_hash being passed in (so in this case, the hash of 4-gas-schedule.move being passed in mod.rs).
-        // The second framework file being generated would be 2-libra2-framework.move, and it's using the hash of 3-aptos-token.move (which would be result.last()).
+        // 1-libra2-stdlib.move	3-libra2-token.move	5-version.move		7-consensus-config.move
+        // The first framework file being generated is 3-libra2-token.move. It's using the next_execution_hash being passed in (so in this case, the hash of 4-gas-schedule.move being passed in mod.rs).
+        // The second framework file being generated would be 2-libra2-framework.move, and it's using the hash of 3-libra2-token.move (which would be result.last()).
 
         let options = BuildOptions {
             with_srcs: true,

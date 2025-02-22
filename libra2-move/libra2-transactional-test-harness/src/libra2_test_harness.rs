@@ -24,7 +24,7 @@ use libra2_types::{
         EntryFunction as TransactionEntryFunction, ExecutionStatus, RawTransaction,
         Script as TransactionScript, Transaction, TransactionOutput, TransactionStatus,
     },
-    AptosCoinType,
+    Libra2CoinType,
 };
 use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, VMBlockExecutor};
 use libra2_vm_environment::prod_configs::set_paranoid_type_checks;
@@ -429,13 +429,13 @@ impl<'a> AptosTestAdapter<'a> {
         Ok(bcs::from_bytes(&account_blob).unwrap())
     }
 
-    /// Obtain the AptosCoin amount under address `signer_addr`
+    /// Obtain the Libra2Coin amount under address `signer_addr`
     fn fetch_account_balance(&self, signer_addr: &AccountAddress) -> Result<u64> {
-        let aptos_coin_tag = CoinStoreResource::<AptosCoinType>::struct_tag();
+        let libra2_coin_tag = CoinStoreResource::<Libra2CoinType>::struct_tag();
 
         let balance_blob = self
             .storage
-            .get_state_value_bytes(&StateKey::resource(signer_addr, &aptos_coin_tag)?)
+            .get_state_value_bytes(&StateKey::resource(signer_addr, &libra2_coin_tag)?)
             .unwrap()
             .ok_or_else(|| {
                 format_err!(
@@ -445,7 +445,7 @@ impl<'a> AptosTestAdapter<'a> {
             })?;
 
         let annotated = Libra2ValueAnnotator::new(&self.storage)
-            .view_resource(&aptos_coin_tag, &balance_blob)?;
+            .view_resource(&libra2_coin_tag, &balance_blob)?;
 
         // Filter the Coin resource and return the resouce value
         for (key, val) in annotated.value {
@@ -549,7 +549,7 @@ impl<'a> AptosTestAdapter<'a> {
         let txn = RawTransaction::new(
             aptos_test_root_address(),
             parameters.sequence_number,
-            libra2_cached_packages::libra2_stdlib::aptos_account_create_account(account_addr),
+            libra2_cached_packages::libra2_stdlib::libra2_account_create_account(account_addr),
             parameters.max_gas_amount,
             parameters.gas_unit_price,
             parameters.expiration_timestamp_secs,
@@ -565,7 +565,7 @@ impl<'a> AptosTestAdapter<'a> {
         let txn = RawTransaction::new(
             aptos_test_root_address(),
             parameters.sequence_number + 1,
-            libra2_cached_packages::libra2_stdlib::aptos_coin_mint(account_addr, amount),
+            libra2_cached_packages::libra2_stdlib::libra2_coin_mint(account_addr, amount),
             parameters.max_gas_amount,
             parameters.gas_unit_price,
             parameters.expiration_timestamp_secs,

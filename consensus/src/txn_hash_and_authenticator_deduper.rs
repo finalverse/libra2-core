@@ -168,7 +168,7 @@ mod tests {
         seq_num: u64,
         gas_unit_price: u64,
     ) -> RawTransaction {
-        let payload = libra2_stdlib::aptos_coin_transfer(receiver, 1);
+        let payload = libra2_stdlib::libra2_coin_transfer(receiver, 1);
         raw_txn(payload, sender, seq_num, gas_unit_price)
     }
 

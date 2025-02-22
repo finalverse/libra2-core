@@ -160,7 +160,7 @@ spec libra2_framework::staking_contract {
         pragma aborts_if_is_partial;
         pragma verify_duration_estimate = 120;
         include PreconditionsInCreateContract;
-        include WithdrawAbortsIf<AptosCoin> { account: staker };
+        include WithdrawAbortsIf<Libra2Coin> { account: staker };
         include CreateStakingContractWithCoinsAbortsIfAndEnsures;
     }
 
@@ -171,7 +171,7 @@ spec libra2_framework::staking_contract {
     staker: &signer,
     operator: address,
     voter: address,
-    coins: Coin<AptosCoin>,
+    coins: Coin<Libra2Coin>,
     commission_percentage: u64,
     contract_creation_seed: vector<u8>,
     ): address {
@@ -205,9 +205,9 @@ spec libra2_framework::staking_contract {
         let store = global<Store>(staker_address);
         let staking_contract = simple_map::spec_get(store.staking_contracts, operator);
 
-        include WithdrawAbortsIf<AptosCoin> { account: staker };
-        let balance = global<coin::CoinStore<AptosCoin>>(staker_address).coin.value;
-        let post post_coin = global<coin::CoinStore<AptosCoin>>(staker_address).coin.value;
+        include WithdrawAbortsIf<Libra2Coin> { account: staker };
+        let balance = global<coin::CoinStore<Libra2Coin>>(staker_address).coin.value;
+        let post post_coin = global<coin::CoinStore<Libra2Coin>>(staker_address).coin.value;
         ensures post_coin == balance - amount;
 
         // postconditions stake::add_stake_with_cap()
@@ -594,7 +594,7 @@ spec libra2_framework::staking_contract {
             @libra2_framework
         ) || !std::features::spec_periodical_reward_rate_decrease_enabled();
         requires exists<libra2_framework::timestamp::CurrentTimeMicroseconds>(@libra2_framework);
-        requires exists<stake::AptosCoinCapabilities>(@libra2_framework);
+        requires exists<stake::Libra2CoinCapabilities>(@libra2_framework);
     }
 
     spec schema CreateStakePoolAbortsIf {

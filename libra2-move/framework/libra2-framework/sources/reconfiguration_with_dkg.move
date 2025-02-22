@@ -17,7 +17,7 @@ module libra2_framework::reconfiguration_with_dkg {
     use libra2_framework::stake;
     use libra2_framework::system_addresses;
     friend libra2_framework::block;
-    friend libra2_framework::aptos_governance;
+    friend libra2_framework::libra2_governance;
 
     /// Trigger a reconfiguration with DKG.
     /// Do nothing if one is already in progress.

@@ -88,7 +88,7 @@ pnpm test
 
 ## References
 
-[repo]: https://github.com/aptos-labs/aptos-core
+[repo]: https://github.com/finalverse/libra2-core
 [npm-image-version]: https://img.shields.io/npm/v/aptos.svg
 [npm-image-downloads]: https://img.shields.io/npm/dm/aptos.svg
 [npm-url]: https://npmjs.org/package/libra2-node-checker-client

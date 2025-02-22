@@ -13,7 +13,7 @@ use libra2_types::{
     account_config::{AccountResource, CoinStoreResource},
     state_store::MoveResourceExt,
     transaction::{SignedTransaction, Transaction},
-    AptosCoinType,
+    Libra2CoinType,
 };
 use async_trait::async_trait;
 use std::{
@@ -31,8 +31,8 @@ pub struct DbReliableTransactionSubmitter {
 impl ReliableTransactionSubmitter for DbReliableTransactionSubmitter {
     async fn get_account_balance(&self, account_address: AccountAddress) -> Result<u64> {
         let db_state_view = self.db.reader.latest_state_checkpoint_view().unwrap();
-        let sender_coin_store_key = DbAccessUtil::new().new_state_key_aptos_coin(&account_address);
-        let sender_coin_store = DbAccessUtil::get_value::<CoinStoreResource<AptosCoinType>>(
+        let sender_coin_store_key = DbAccessUtil::new().new_state_key_libra2_coin(&account_address);
+        let sender_coin_store = DbAccessUtil::get_value::<CoinStoreResource<Libra2CoinType>>(
             &sender_coin_store_key,
             &db_state_view,
         )?

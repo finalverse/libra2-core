@@ -49,7 +49,7 @@ async fn simulate_aptos_transfer(
                 "expiration_timestamp_secs": txn.expiration_timestamp_secs().to_string(),
                 "payload": {
                     "type": "entry_function_payload",
-                    "function": "0x1::aptos_account::transfer",
+                    "function": "0x1::libra2_account::transfer",
                     "type_arguments": [],
                     "arguments": [
                         bob.address().to_standard_string(), transfer_amount.to_string(),

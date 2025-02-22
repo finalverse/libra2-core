@@ -36,7 +36,7 @@ use libra2_types::{
         RawTransactionWithData, SignedTransaction, TransactionPayload,
     },
     vm_status::StatusCode,
-    AptosCoinType, CoinType,
+    Libra2CoinType, CoinType,
 };
 use libra2_vm::{AptosSimulationVM, Libra2VM};
 use move_core_types::{ident_str, language_storage::ModuleId, vm_status::VMStatus};
@@ -87,7 +87,7 @@ pub enum SubmitTransactionPost {
 
     // TODO: Since I don't want to impl all the Poem derives on SignedTransaction,
     // find a way to at least indicate in the spec that it expects a SignedTransaction.
-    // TODO: https://github.com/aptos-labs/aptos-core/issues/2275
+    // TODO: https://github.com/finalverse/libra2-core/issues/2275
     #[oai(content_type = "application/x.aptos.signed_transaction+bcs")]
     Bcs(Bcs),
 }
@@ -110,7 +110,7 @@ pub enum SubmitTransactionsBatchPost {
 
     // TODO: Since I don't want to impl all the Poem derives on SignedTransaction,
     // find a way to at least indicate in the spec that it expects a SignedTransaction.
-    // TODO: https://github.com/aptos-labs/aptos-core/issues/2275
+    // TODO: https://github.com/finalverse/libra2-core/issues/2275
     #[oai(content_type = "application/x.aptos.signed_transaction+bcs")]
     Bcs(Bcs),
 }
@@ -567,7 +567,7 @@ impl TransactionsApi {
                     &state_view,
                     ModuleId::new(AccountAddress::ONE, ident_str!("coin").into()),
                     ident_str!("balance").into(),
-                    vec![AptosCoinType::type_tag()],
+                    vec![Libra2CoinType::type_tag()],
                     vec![signed_transaction.sender().to_vec()],
                     context.node_config.api.max_gas_view_function,
                 );

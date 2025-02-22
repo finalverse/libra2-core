@@ -137,7 +137,7 @@ Useful for AptosGovernance to create an empty proposal as proof.
 <td>2</td>
 <td>The governance proposal module should only be accessible to the aptos governance.</td>
 <td>Medium</td>
-<td>Both create_proposal and create_empty_proposal functions are only available to the friend module libra2_framework::aptos_governance.</td>
+<td>Both create_proposal and create_empty_proposal functions are only available to the friend module libra2_framework::libra2_governance.</td>
 <td>Enforced via friend module relationship.</td>
 </tr>
 

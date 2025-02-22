@@ -2,12 +2,12 @@
 // Start to ignore `libra2_framework::jwks::SupportedOIDCProviders`.
 // Start to ignore move feature flag `std::features::JWK_CONSENSUS`.
 script {
-    use libra2_framework::aptos_governance;
+    use libra2_framework::libra2_governance;
     use libra2_framework::jwk_consensus_config;
     use std::string::utf8;
 
     fun main(proposal_id: u64) {
-        let framework = aptos_governance::resolve_multi_step_proposal(
+        let framework = libra2_governance::resolve_multi_step_proposal(
             proposal_id,
             @0x1,
             {{ script_hash }},
@@ -18,6 +18,6 @@ script {
         );
         let config = jwk_consensus_config::new_v1(vector[provider_google]);
         jwk_consensus_config::initialize(&framework, config);
-        aptos_governance::reconfigure(&framework);
+        libra2_governance::reconfigure(&framework);
     }
 }

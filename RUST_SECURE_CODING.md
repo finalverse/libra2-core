@@ -1,4 +1,4 @@
-# Secure Coding for Aptos Core
+# Secure Coding for Libra2
 
 These Rust Secure Coding Guidelines are essential for anyone contributing to Aptos, reflecting our security-first approach. As Aptos is built with a primary focus on security, these guidelines, derived and adapted from ANSSI's Secure Rust Guidelines, are integral to maintaining the high standards of safety and robustness in aptos-core. Aptos contributors are encouraged to thoroughly understand and apply these principles in their work.
 
@@ -10,7 +10,7 @@ Utilize Rustup for managing Rust toolchains. However, keep in mind that, from a 
 
 ### Stable Toolchain
 
-Aptos Core leverages Rust stable toolchain to limit potential compiler, runtime, or tooling bugs, or potential supply chain attacks in nightly releases.
+Libra2 leverages Rust stable toolchain to limit potential compiler, runtime, or tooling bugs, or potential supply chain attacks in nightly releases.
 
 ### Cargo
 
@@ -105,7 +105,7 @@ In the majority of scenarios, manual implementation is unnecessary. In Rust, nea
 ### Comparison Traits
 
 Ensure the implementation of standard comparison traits respects documented invariants.
-In the context of implementing standard comparison traits (like Eq, PartialEq, Ord, PartialOrd in Rust), respecting documented invariants means that the implementation of these traits should adhere to the properties and expectations defined by those invariants. For instance, if an invariant states that an object's identity is determined by certain fields, comparisons (equality, greater than, less than, etc.) must only consider those fields and ignore others. This ensures consistency, predictability, and correctness in how objects are compared, sorted, or considered equal within the Aptos Core.
+In the context of implementing standard comparison traits (like Eq, PartialEq, Ord, PartialOrd in Rust), respecting documented invariants means that the implementation of these traits should adhere to the properties and expectations defined by those invariants. For instance, if an invariant states that an object's identity is determined by certain fields, comparisons (equality, greater than, less than, etc.) must only consider those fields and ignore others. This ensures consistency, predictability, and correctness in how objects are compared, sorted, or considered equal within the Libra2.
 
 The ANSSI resource extensively covers the matter [References](#references).
 

@@ -29,7 +29,7 @@ or if their stake drops below the min required, they would get removed at the en
 -  [Resource `ValidatorConfig`](#0x1_stake_ValidatorConfig)
 -  [Struct `ValidatorInfo`](#0x1_stake_ValidatorInfo)
 -  [Resource `ValidatorSet`](#0x1_stake_ValidatorSet)
--  [Resource `AptosCoinCapabilities`](#0x1_stake_AptosCoinCapabilities)
+-  [Resource `Libra2CoinCapabilities`](#0x1_stake_Libra2CoinCapabilities)
 -  [Struct `IndividualValidatorPerformance`](#0x1_stake_IndividualValidatorPerformance)
 -  [Resource `ValidatorPerformance`](#0x1_stake_ValidatorPerformance)
 -  [Struct `RegisterValidatorCandidateEvent`](#0x1_stake_RegisterValidatorCandidateEvent)
@@ -79,7 +79,7 @@ or if their stake drops below the min required, they would get removed at the en
 -  [Function `get_validator_config`](#0x1_stake_get_validator_config)
 -  [Function `stake_pool_exists`](#0x1_stake_stake_pool_exists)
 -  [Function `initialize`](#0x1_stake_initialize)
--  [Function `store_aptos_coin_mint_cap`](#0x1_stake_store_aptos_coin_mint_cap)
+-  [Function `store_libra2_coin_mint_cap`](#0x1_stake_store_libra2_coin_mint_cap)
 -  [Function `remove_validators`](#0x1_stake_remove_validators)
 -  [Function `initialize_stake_owner`](#0x1_stake_initialize_stake_owner)
 -  [Function `initialize_validator`](#0x1_stake_initialize_validator)
@@ -168,7 +168,6 @@ or if their stake drops below the min required, they would get removed at the en
 
 
 <pre><code><b>use</b> <a href="account.md#0x1_account">0x1::account</a>;
-<b>use</b> <a href="aptos_coin.md#0x1_aptos_coin">0x1::aptos_coin</a>;
 <b>use</b> <a href="../../libra2-stdlib/doc/bls12381.md#0x1_bls12381">0x1::bls12381</a>;
 <b>use</b> <a href="chain_status.md#0x1_chain_status">0x1::chain_status</a>;
 <b>use</b> <a href="coin.md#0x1_coin">0x1::coin</a>;
@@ -176,6 +175,7 @@ or if their stake drops below the min required, they would get removed at the en
 <b>use</b> <a href="event.md#0x1_event">0x1::event</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/features.md#0x1_features">0x1::features</a>;
 <b>use</b> <a href="../../libra2-stdlib/doc/fixed_point64.md#0x1_fixed_point64">0x1::fixed_point64</a>;
+<b>use</b> <a href="libra2_coin.md#0x1_libra2_coin">0x1::libra2_coin</a>;
 <b>use</b> <a href="../../libra2-stdlib/doc/math64.md#0x1_math64">0x1::math64</a>;
 <b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
 <b>use</b> <a href="permissioned_signer.md#0x1_permissioned_signer">0x1::permissioned_signer</a>;
@@ -249,25 +249,25 @@ Changes in stake for an inactive validator:
 
 <dl>
 <dt>
-<code>active: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;</code>
+<code>active: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>inactive: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;</code>
+<code>inactive: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>pending_active: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;</code>
+<code>pending_active: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>pending_inactive: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;</code>
+<code>pending_inactive: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;</code>
 </dt>
 <dd>
 
@@ -514,15 +514,15 @@ Full ValidatorSet, stored in @libra2_framework.
 
 </details>
 
-<a id="0x1_stake_AptosCoinCapabilities"></a>
+<a id="0x1_stake_Libra2CoinCapabilities"></a>
 
-## Resource `AptosCoinCapabilities`
+## Resource `Libra2CoinCapabilities`
 
-AptosCoin capabilities, set during genesis and stored in @CoreResource account.
+Libra2Coin capabilities, set during genesis and stored in @CoreResource account.
 This allows the Stake module to mint rewards to stakers.
 
 
-<pre><code><b>struct</b> <a href="stake.md#0x1_stake_AptosCoinCapabilities">AptosCoinCapabilities</a> <b>has</b> key
+<pre><code><b>struct</b> <a href="stake.md#0x1_stake_Libra2CoinCapabilities">Libra2CoinCapabilities</a> <b>has</b> key
 </code></pre>
 
 
@@ -533,7 +533,7 @@ This allows the Stake module to mint rewards to stakers.
 
 <dl>
 <dt>
-<code>mint_cap: <a href="coin.md#0x1_coin_MintCapability">coin::MintCapability</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;</code>
+<code>mint_cap: <a href="coin.md#0x1_coin_MintCapability">coin::MintCapability</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;</code>
 </dt>
 <dd>
 
@@ -1489,7 +1489,7 @@ DEPRECATED
 
 <dl>
 <dt>
-<code>fees_table: <a href="../../libra2-stdlib/doc/table.md#0x1_table_Table">table::Table</a>&lt;<b>address</b>, <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;&gt;</code>
+<code>fees_table: <a href="../../libra2-stdlib/doc/table.md#0x1_table_Table">table::Table</a>&lt;<b>address</b>, <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;&gt;</code>
 </dt>
 <dd>
 
@@ -1651,22 +1651,22 @@ security of the testnet. This will NOT be enabled in Mainnet.
 
 
 
-<a id="0x1_stake_EALREADY_REGISTERED"></a>
-
-Account is already registered as a validator candidate.
-
-
-<pre><code><b>const</b> <a href="stake.md#0x1_stake_EALREADY_REGISTERED">EALREADY_REGISTERED</a>: u64 = 8;
-</code></pre>
-
-
-
 <a id="0x1_stake_MAX_REWARDS_RATE"></a>
 
 Limit the maximum value of <code>rewards_rate</code> in order to avoid any arithmetic overflow.
 
 
 <pre><code><b>const</b> <a href="stake.md#0x1_stake_MAX_REWARDS_RATE">MAX_REWARDS_RATE</a>: u64 = 1000000;
+</code></pre>
+
+
+
+<a id="0x1_stake_EALREADY_REGISTERED"></a>
+
+Account is already registered as a validator candidate.
+
+
+<pre><code><b>const</b> <a href="stake.md#0x1_stake_EALREADY_REGISTERED">EALREADY_REGISTERED</a>: u64 = 8;
 </code></pre>
 
 
@@ -1874,7 +1874,7 @@ Voting power increase has exceeded the limit for this current epoch.
 <a id="0x1_stake_MAX_VALIDATOR_SET_SIZE"></a>
 
 Limit the maximum size to u16::max, it's the current limit of the bitvec
-https://github.com/aptos-labs/aptos-core/blob/main/crates/libra2-bitvec/src/lib.rs#L20
+https://github.com/finalverse/libra2-core/blob/main/crates/libra2-bitvec/src/lib.rs#L20
 
 
 <pre><code><b>const</b> <a href="stake.md#0x1_stake_MAX_VALIDATOR_SET_SIZE">MAX_VALIDATOR_SET_SIZE</a>: u64 = 65536;
@@ -2365,15 +2365,15 @@ Initialize validator set to the core resource account.
 
 </details>
 
-<a id="0x1_stake_store_aptos_coin_mint_cap"></a>
+<a id="0x1_stake_store_libra2_coin_mint_cap"></a>
 
-## Function `store_aptos_coin_mint_cap`
+## Function `store_libra2_coin_mint_cap`
 
-This is only called during Genesis, which is where MintCapability<AptosCoin> can be created.
-Beyond genesis, no one can create AptosCoin mint/burn capabilities.
+This is only called during Genesis, which is where MintCapability<Libra2Coin> can be created.
+Beyond genesis, no one can create Libra2Coin mint/burn capabilities.
 
 
-<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="stake.md#0x1_stake_store_aptos_coin_mint_cap">store_aptos_coin_mint_cap</a>(libra2_framework: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, mint_cap: <a href="coin.md#0x1_coin_MintCapability">coin::MintCapability</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;)
+<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="stake.md#0x1_stake_store_libra2_coin_mint_cap">store_libra2_coin_mint_cap</a>(libra2_framework: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, mint_cap: <a href="coin.md#0x1_coin_MintCapability">coin::MintCapability</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;)
 </code></pre>
 
 
@@ -2382,9 +2382,9 @@ Beyond genesis, no one can create AptosCoin mint/burn capabilities.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="stake.md#0x1_stake_store_aptos_coin_mint_cap">store_aptos_coin_mint_cap</a>(libra2_framework: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, mint_cap: MintCapability&lt;AptosCoin&gt;) {
+<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="stake.md#0x1_stake_store_libra2_coin_mint_cap">store_libra2_coin_mint_cap</a>(libra2_framework: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, mint_cap: MintCapability&lt;Libra2Coin&gt;) {
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(libra2_framework);
-    <b>move_to</b>(libra2_framework, <a href="stake.md#0x1_stake_AptosCoinCapabilities">AptosCoinCapabilities</a> { mint_cap })
+    <b>move_to</b>(libra2_framework, <a href="stake.md#0x1_stake_Libra2CoinCapabilities">Libra2CoinCapabilities</a> { mint_cap })
 }
 </code></pre>
 
@@ -2573,10 +2573,10 @@ Initialize the validator account and give ownership to the signing account.
     <b>assert</b>!(!<a href="stake.md#0x1_stake_stake_pool_exists">stake_pool_exists</a>(owner_address), <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="stake.md#0x1_stake_EALREADY_REGISTERED">EALREADY_REGISTERED</a>));
 
     <b>move_to</b>(owner, <a href="stake.md#0x1_stake_StakePool">StakePool</a> {
-        active: <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;AptosCoin&gt;(),
-        pending_active: <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;AptosCoin&gt;(),
-        pending_inactive: <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;AptosCoin&gt;(),
-        inactive: <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;AptosCoin&gt;(),
+        active: <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;Libra2Coin&gt;(),
+        pending_active: <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;Libra2Coin&gt;(),
+        pending_inactive: <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;Libra2Coin&gt;(),
+        inactive: <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;Libra2Coin&gt;(),
         locked_until_secs: 0,
         operator_address: owner_address,
         delegated_voter: owner_address,
@@ -2841,7 +2841,7 @@ Add <code>amount</code> of coins from the <code><a href="account.md#0x1_account"
     <b>let</b> owner_address = <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(owner);
     <a href="stake.md#0x1_stake_assert_owner_cap_exists">assert_owner_cap_exists</a>(owner_address);
     <b>let</b> ownership_cap = <b>borrow_global</b>&lt;<a href="stake.md#0x1_stake_OwnerCapability">OwnerCapability</a>&gt;(owner_address);
-    <a href="stake.md#0x1_stake_add_stake_with_cap">add_stake_with_cap</a>(ownership_cap, <a href="coin.md#0x1_coin_withdraw">coin::withdraw</a>&lt;AptosCoin&gt;(owner, amount));
+    <a href="stake.md#0x1_stake_add_stake_with_cap">add_stake_with_cap</a>(ownership_cap, <a href="coin.md#0x1_coin_withdraw">coin::withdraw</a>&lt;Libra2Coin&gt;(owner, amount));
 }
 </code></pre>
 
@@ -2856,7 +2856,7 @@ Add <code>amount</code> of coins from the <code><a href="account.md#0x1_account"
 Add <code>coins</code> into <code>pool_address</code>. this requires the corresponding <code>owner_cap</code> to be passed in.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="stake.md#0x1_stake_add_stake_with_cap">add_stake_with_cap</a>(owner_cap: &<a href="stake.md#0x1_stake_OwnerCapability">stake::OwnerCapability</a>, coins: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="stake.md#0x1_stake_add_stake_with_cap">add_stake_with_cap</a>(owner_cap: &<a href="stake.md#0x1_stake_OwnerCapability">stake::OwnerCapability</a>, coins: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;)
 </code></pre>
 
 
@@ -2865,7 +2865,7 @@ Add <code>coins</code> into <code>pool_address</code>. this requires the corresp
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="stake.md#0x1_stake_add_stake_with_cap">add_stake_with_cap</a>(owner_cap: &<a href="stake.md#0x1_stake_OwnerCapability">OwnerCapability</a>, coins: Coin&lt;AptosCoin&gt;) <b>acquires</b> <a href="stake.md#0x1_stake_StakePool">StakePool</a>, <a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a> {
+<pre><code><b>public</b> <b>fun</b> <a href="stake.md#0x1_stake_add_stake_with_cap">add_stake_with_cap</a>(owner_cap: &<a href="stake.md#0x1_stake_OwnerCapability">OwnerCapability</a>, coins: Coin&lt;Libra2Coin&gt;) <b>acquires</b> <a href="stake.md#0x1_stake_StakePool">StakePool</a>, <a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a> {
     <a href="stake.md#0x1_stake_assert_reconfig_not_in_progress">assert_reconfig_not_in_progress</a>();
     <b>let</b> pool_address = owner_cap.pool_address;
     <a href="stake.md#0x1_stake_assert_stake_pool_exists">assert_stake_pool_exists</a>(pool_address);
@@ -2890,9 +2890,9 @@ Add <code>coins</code> into <code>pool_address</code>. this requires the corresp
     // Otherwise, the delegation can be added <b>to</b> active directly <b>as</b> the validator is also activated in the epoch.
     <b>let</b> stake_pool = <b>borrow_global_mut</b>&lt;<a href="stake.md#0x1_stake_StakePool">StakePool</a>&gt;(pool_address);
     <b>if</b> (<a href="stake.md#0x1_stake_is_current_epoch_validator">is_current_epoch_validator</a>(pool_address)) {
-        <a href="coin.md#0x1_coin_merge">coin::merge</a>&lt;AptosCoin&gt;(&<b>mut</b> stake_pool.pending_active, coins);
+        <a href="coin.md#0x1_coin_merge">coin::merge</a>&lt;Libra2Coin&gt;(&<b>mut</b> stake_pool.pending_active, coins);
     } <b>else</b> {
-        <a href="coin.md#0x1_coin_merge">coin::merge</a>&lt;AptosCoin&gt;(&<b>mut</b> stake_pool.active, coins);
+        <a href="coin.md#0x1_coin_merge">coin::merge</a>&lt;Libra2Coin&gt;(&<b>mut</b> stake_pool.active, coins);
     };
 
     <b>let</b> (_, maximum_stake) = <a href="staking_config.md#0x1_staking_config_get_required_stake">staking_config::get_required_stake</a>(&<a href="staking_config.md#0x1_staking_config_get">staking_config::get</a>());
@@ -3384,7 +3384,7 @@ Unlock <code>amount</code> from the active stake. Only possible if the lockup ha
     // Cap amount <b>to</b> unlock by maximum active <a href="stake.md#0x1_stake">stake</a>.
     <b>let</b> amount = <b>min</b>(amount, <a href="coin.md#0x1_coin_value">coin::value</a>(&stake_pool.active));
     <b>let</b> unlocked_stake = <a href="coin.md#0x1_coin_extract">coin::extract</a>(&<b>mut</b> stake_pool.active, amount);
-    <a href="coin.md#0x1_coin_merge">coin::merge</a>&lt;AptosCoin&gt;(&<b>mut</b> stake_pool.pending_inactive, unlocked_stake);
+    <a href="coin.md#0x1_coin_merge">coin::merge</a>&lt;Libra2Coin&gt;(&<b>mut</b> stake_pool.pending_inactive, unlocked_stake);
 
     <b>if</b> (std::features::module_event_migration_enabled()) {
         <a href="event.md#0x1_event_emit">event::emit</a>(
@@ -3434,7 +3434,7 @@ Withdraw from <code><a href="account.md#0x1_account">account</a></code>'s inacti
     <a href="stake.md#0x1_stake_assert_owner_cap_exists">assert_owner_cap_exists</a>(owner_address);
     <b>let</b> ownership_cap = <b>borrow_global</b>&lt;<a href="stake.md#0x1_stake_OwnerCapability">OwnerCapability</a>&gt;(owner_address);
     <b>let</b> coins = <a href="stake.md#0x1_stake_withdraw_with_cap">withdraw_with_cap</a>(ownership_cap, withdraw_amount);
-    <a href="coin.md#0x1_coin_deposit">coin::deposit</a>&lt;AptosCoin&gt;(owner_address, coins);
+    <a href="coin.md#0x1_coin_deposit">coin::deposit</a>&lt;Libra2Coin&gt;(owner_address, coins);
 }
 </code></pre>
 
@@ -3449,7 +3449,7 @@ Withdraw from <code><a href="account.md#0x1_account">account</a></code>'s inacti
 Withdraw from <code>pool_address</code>'s inactive stake with the corresponding <code>owner_cap</code>.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="stake.md#0x1_stake_withdraw_with_cap">withdraw_with_cap</a>(owner_cap: &<a href="stake.md#0x1_stake_OwnerCapability">stake::OwnerCapability</a>, withdraw_amount: u64): <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="stake.md#0x1_stake_withdraw_with_cap">withdraw_with_cap</a>(owner_cap: &<a href="stake.md#0x1_stake_OwnerCapability">stake::OwnerCapability</a>, withdraw_amount: u64): <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;
 </code></pre>
 
 
@@ -3461,7 +3461,7 @@ Withdraw from <code>pool_address</code>'s inactive stake with the corresponding 
 <pre><code><b>public</b> <b>fun</b> <a href="stake.md#0x1_stake_withdraw_with_cap">withdraw_with_cap</a>(
     owner_cap: &<a href="stake.md#0x1_stake_OwnerCapability">OwnerCapability</a>,
     withdraw_amount: u64
-): Coin&lt;AptosCoin&gt; <b>acquires</b> <a href="stake.md#0x1_stake_StakePool">StakePool</a>, <a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a> {
+): Coin&lt;Libra2Coin&gt; <b>acquires</b> <a href="stake.md#0x1_stake_StakePool">StakePool</a>, <a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a> {
     <a href="stake.md#0x1_stake_assert_reconfig_not_in_progress">assert_reconfig_not_in_progress</a>();
     <b>let</b> pool_address = owner_cap.pool_address;
     <a href="stake.md#0x1_stake_assert_stake_pool_exists">assert_stake_pool_exists</a>(pool_address);
@@ -3477,7 +3477,7 @@ Withdraw from <code>pool_address</code>'s inactive stake with the corresponding 
 
     // Cap withdraw amount by total inactive coins.
     withdraw_amount = <b>min</b>(withdraw_amount, <a href="coin.md#0x1_coin_value">coin::value</a>(&stake_pool.inactive));
-    <b>if</b> (withdraw_amount == 0) <b>return</b> <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;AptosCoin&gt;();
+    <b>if</b> (withdraw_amount == 0) <b>return</b> <a href="coin.md#0x1_coin_zero">coin::zero</a>&lt;Libra2Coin&gt;();
 
     <b>if</b> (std::features::module_event_migration_enabled()) {
         <a href="event.md#0x1_event_emit">event::emit</a>(
@@ -3717,7 +3717,7 @@ power.
 
 
 <pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="stake.md#0x1_stake_on_new_epoch">on_new_epoch</a>(
-) <b>acquires</b> <a href="stake.md#0x1_stake_StakePool">StakePool</a>, <a href="stake.md#0x1_stake_AptosCoinCapabilities">AptosCoinCapabilities</a>, <a href="stake.md#0x1_stake_ValidatorConfig">ValidatorConfig</a>, <a href="stake.md#0x1_stake_ValidatorPerformance">ValidatorPerformance</a>, <a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a> {
+) <b>acquires</b> <a href="stake.md#0x1_stake_StakePool">StakePool</a>, <a href="stake.md#0x1_stake_Libra2CoinCapabilities">Libra2CoinCapabilities</a>, <a href="stake.md#0x1_stake_ValidatorConfig">ValidatorConfig</a>, <a href="stake.md#0x1_stake_ValidatorPerformance">ValidatorPerformance</a>, <a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a> {
     <b>let</b> validator_set = <b>borrow_global_mut</b>&lt;<a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a>&gt;(@libra2_framework);
     <b>let</b> config = <a href="staking_config.md#0x1_staking_config_get">staking_config::get</a>();
     <b>let</b> validator_perf = <b>borrow_global_mut</b>&lt;<a href="stake.md#0x1_stake_ValidatorPerformance">ValidatorPerformance</a>&gt;(@libra2_framework);
@@ -4121,7 +4121,7 @@ This function shouldn't abort.
     validator_perf: &<a href="stake.md#0x1_stake_ValidatorPerformance">ValidatorPerformance</a>,
     pool_address: <b>address</b>,
     <a href="staking_config.md#0x1_staking_config">staking_config</a>: &StakingConfig,
-) <b>acquires</b> <a href="stake.md#0x1_stake_StakePool">StakePool</a>, <a href="stake.md#0x1_stake_AptosCoinCapabilities">AptosCoinCapabilities</a>, <a href="stake.md#0x1_stake_ValidatorConfig">ValidatorConfig</a> {
+) <b>acquires</b> <a href="stake.md#0x1_stake_StakePool">StakePool</a>, <a href="stake.md#0x1_stake_Libra2CoinCapabilities">Libra2CoinCapabilities</a>, <a href="stake.md#0x1_stake_ValidatorConfig">ValidatorConfig</a> {
     <b>let</b> stake_pool = <b>borrow_global_mut</b>&lt;<a href="stake.md#0x1_stake_StakePool">StakePool</a>&gt;(pool_address);
     <b>let</b> validator_config = <b>borrow_global</b>&lt;<a href="stake.md#0x1_stake_ValidatorConfig">ValidatorConfig</a>&gt;(pool_address);
     <b>let</b> cur_validator_perf = <a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&validator_perf.validators, validator_config.validator_index);
@@ -4263,7 +4263,7 @@ Calculate the rewards amount.
 Mint rewards corresponding to current epoch's <code><a href="stake.md#0x1_stake">stake</a></code> and <code>num_successful_votes</code>.
 
 
-<pre><code><b>fun</b> <a href="stake.md#0x1_stake_distribute_rewards">distribute_rewards</a>(<a href="stake.md#0x1_stake">stake</a>: &<b>mut</b> <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;, num_successful_proposals: u64, num_total_proposals: u64, rewards_rate: u64, rewards_rate_denominator: u64): u64
+<pre><code><b>fun</b> <a href="stake.md#0x1_stake_distribute_rewards">distribute_rewards</a>(<a href="stake.md#0x1_stake">stake</a>: &<b>mut</b> <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;, num_successful_proposals: u64, num_total_proposals: u64, rewards_rate: u64, rewards_rate_denominator: u64): u64
 </code></pre>
 
 
@@ -4273,12 +4273,12 @@ Mint rewards corresponding to current epoch's <code><a href="stake.md#0x1_stake"
 
 
 <pre><code><b>fun</b> <a href="stake.md#0x1_stake_distribute_rewards">distribute_rewards</a>(
-    <a href="stake.md#0x1_stake">stake</a>: &<b>mut</b> Coin&lt;AptosCoin&gt;,
+    <a href="stake.md#0x1_stake">stake</a>: &<b>mut</b> Coin&lt;Libra2Coin&gt;,
     num_successful_proposals: u64,
     num_total_proposals: u64,
     rewards_rate: u64,
     rewards_rate_denominator: u64,
-): u64 <b>acquires</b> <a href="stake.md#0x1_stake_AptosCoinCapabilities">AptosCoinCapabilities</a> {
+): u64 <b>acquires</b> <a href="stake.md#0x1_stake_Libra2CoinCapabilities">Libra2CoinCapabilities</a> {
     <b>let</b> stake_amount = <a href="coin.md#0x1_coin_value">coin::value</a>(<a href="stake.md#0x1_stake">stake</a>);
     <b>let</b> rewards_amount = <b>if</b> (stake_amount &gt; 0) {
         <a href="stake.md#0x1_stake_calculate_rewards_amount">calculate_rewards_amount</a>(
@@ -4292,7 +4292,7 @@ Mint rewards corresponding to current epoch's <code><a href="stake.md#0x1_stake"
         0
     };
     <b>if</b> (rewards_amount &gt; 0) {
-        <b>let</b> mint_cap = &<b>borrow_global</b>&lt;<a href="stake.md#0x1_stake_AptosCoinCapabilities">AptosCoinCapabilities</a>&gt;(@libra2_framework).mint_cap;
+        <b>let</b> mint_cap = &<b>borrow_global</b>&lt;<a href="stake.md#0x1_stake_Libra2CoinCapabilities">Libra2CoinCapabilities</a>&gt;(@libra2_framework).mint_cap;
         <b>let</b> rewards = <a href="coin.md#0x1_coin_mint">coin::mint</a>(rewards_amount, mint_cap);
         <a href="coin.md#0x1_coin_merge">coin::merge</a>(<a href="stake.md#0x1_stake">stake</a>, rewards);
     };
@@ -4633,7 +4633,7 @@ Returns validator's next epoch voting power, including pending_active, active, a
 <td>3</td>
 <td>The total staked value in the stake pool should remain constant, excluding operations related to adding and withdrawing.</td>
 <td>Low</td>
-<td>The total staked value (AptosCoin) of a stake pool is grouped by: active, inactive, pending_active, and pending_inactive. The stake value remains constant except during the execution of the add_stake_with_cap or withdraw_with_cap functions or on_new_epoch (which distributes the reward).</td>
+<td>The total staked value (Libra2Coin) of a stake pool is grouped by: active, inactive, pending_active, and pending_inactive. The stake value remains constant except during the execution of the add_stake_with_cap or withdraw_with_cap functions or on_new_epoch (which distributes the reward).</td>
 <td>Formally specified in the schema <a href="#high-level-req-3">StakedValueNoChange</a>.</td>
 </tr>
 
@@ -4658,7 +4658,7 @@ Returns validator's next epoch voting power, including pending_active, active, a
 <pre><code><b>pragma</b> verify = <b>true</b>;
 <b>pragma</b> aborts_if_is_partial;
 <b>invariant</b> [suspendable] <b>exists</b>&lt;<a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a>&gt;(@libra2_framework) ==&gt; <a href="stake.md#0x1_stake_validator_set_is_valid">validator_set_is_valid</a>();
-<b>invariant</b> [suspendable] <a href="chain_status.md#0x1_chain_status_is_operating">chain_status::is_operating</a>() ==&gt; <b>exists</b>&lt;<a href="stake.md#0x1_stake_AptosCoinCapabilities">AptosCoinCapabilities</a>&gt;(@libra2_framework);
+<b>invariant</b> [suspendable] <a href="chain_status.md#0x1_chain_status_is_operating">chain_status::is_operating</a>() ==&gt; <b>exists</b>&lt;<a href="stake.md#0x1_stake_Libra2CoinCapabilities">Libra2CoinCapabilities</a>&gt;(@libra2_framework);
 <b>invariant</b> [suspendable] <a href="chain_status.md#0x1_chain_status_is_operating">chain_status::is_operating</a>() ==&gt; <b>exists</b>&lt;<a href="stake.md#0x1_stake_ValidatorPerformance">ValidatorPerformance</a>&gt;(@libra2_framework);
 <b>invariant</b> [suspendable] <a href="chain_status.md#0x1_chain_status_is_operating">chain_status::is_operating</a>() ==&gt; <b>exists</b>&lt;<a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a>&gt;(@libra2_framework);
 <b>apply</b> <a href="stake.md#0x1_stake_ValidatorOwnerNoChange">ValidatorOwnerNoChange</a> <b>to</b> *;
@@ -4721,7 +4721,7 @@ Returns validator's next epoch voting power, including pending_active, active, a
 
 
 <pre><code><b>schema</b> <a href="stake.md#0x1_stake_ResourceRequirement">ResourceRequirement</a> {
-    <b>requires</b> <b>exists</b>&lt;<a href="stake.md#0x1_stake_AptosCoinCapabilities">AptosCoinCapabilities</a>&gt;(@libra2_framework);
+    <b>requires</b> <b>exists</b>&lt;<a href="stake.md#0x1_stake_Libra2CoinCapabilities">Libra2CoinCapabilities</a>&gt;(@libra2_framework);
     <b>requires</b> <b>exists</b>&lt;<a href="stake.md#0x1_stake_ValidatorPerformance">ValidatorPerformance</a>&gt;(@libra2_framework);
     <b>requires</b> <b>exists</b>&lt;<a href="stake.md#0x1_stake_ValidatorSet">ValidatorSet</a>&gt;(@libra2_framework);
     <b>requires</b> <b>exists</b>&lt;StakingConfig&gt;(@libra2_framework);
@@ -5192,7 +5192,7 @@ Returns validator's next epoch voting power, including pending_active, active, a
 ### Function `add_stake_with_cap`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="stake.md#0x1_stake_add_stake_with_cap">add_stake_with_cap</a>(owner_cap: &<a href="stake.md#0x1_stake_OwnerCapability">stake::OwnerCapability</a>, coins: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="stake.md#0x1_stake_add_stake_with_cap">add_stake_with_cap</a>(owner_cap: &<a href="stake.md#0x1_stake_OwnerCapability">stake::OwnerCapability</a>, coins: <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;)
 </code></pre>
 
 
@@ -5437,15 +5437,15 @@ Returns validator's next epoch voting power, including pending_active, active, a
             new_withdraw_amount_1 &gt; 0 && stake_pool.inactive.value + stake_pool.pending_inactive.value &lt; new_withdraw_amount_1;
 <b>aborts_if</b> !(bool_find_validator && <b>exists</b>&lt;<a href="timestamp.md#0x1_timestamp_CurrentTimeMicroseconds">timestamp::CurrentTimeMicroseconds</a>&gt;(@libra2_framework)) &&
             new_withdraw_amount_2 &gt; 0 && stake_pool.inactive.value &lt; new_withdraw_amount_2;
-<b>aborts_if</b> !<b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;AptosCoin&gt;&gt;(addr);
-<b>include</b> <a href="coin.md#0x1_coin_DepositAbortsIf">coin::DepositAbortsIf</a>&lt;AptosCoin&gt;{account_addr: addr};
-<b>let</b> coin_store = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;AptosCoin&gt;&gt;(addr);
-<b>let</b> <b>post</b> p_coin_store = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;AptosCoin&gt;&gt;(addr);
+<b>aborts_if</b> !<b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;Libra2Coin&gt;&gt;(addr);
+<b>include</b> <a href="coin.md#0x1_coin_DepositAbortsIf">coin::DepositAbortsIf</a>&lt;Libra2Coin&gt;{account_addr: addr};
+<b>let</b> coin_store = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;Libra2Coin&gt;&gt;(addr);
+<b>let</b> <b>post</b> p_coin_store = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;Libra2Coin&gt;&gt;(addr);
 <b>ensures</b> bool_find_validator && <a href="timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &gt; stake_pool.locked_until_secs
-            && <b>exists</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(addr) && <b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;AptosCoin&gt;&gt;(addr) ==&gt;
+            && <b>exists</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(addr) && <b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;Libra2Coin&gt;&gt;(addr) ==&gt;
                 coin_store.<a href="coin.md#0x1_coin">coin</a>.value + new_withdraw_amount_1 == p_coin_store.<a href="coin.md#0x1_coin">coin</a>.value;
 <b>ensures</b> !(bool_find_validator && <b>exists</b>&lt;<a href="timestamp.md#0x1_timestamp_CurrentTimeMicroseconds">timestamp::CurrentTimeMicroseconds</a>&gt;(@libra2_framework))
-            && <b>exists</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(addr) && <b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;AptosCoin&gt;&gt;(addr) ==&gt;
+            && <b>exists</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(addr) && <b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinStore">coin::CoinStore</a>&lt;Libra2Coin&gt;&gt;(addr) ==&gt;
                 coin_store.<a href="coin.md#0x1_coin">coin</a>.value + new_withdraw_amount_2 == p_coin_store.<a href="coin.md#0x1_coin">coin</a>.value;
 </code></pre>
 
@@ -5555,7 +5555,7 @@ Returns validator's next epoch voting power, including pending_active, active, a
 <b>include</b> <a href="stake.md#0x1_stake_ResourceRequirement">ResourceRequirement</a>;
 <b>include</b> <a href="stake.md#0x1_stake_GetReconfigStartTimeRequirement">GetReconfigStartTimeRequirement</a>;
 <b>include</b> <a href="staking_config.md#0x1_staking_config_StakingRewardsConfigRequirement">staking_config::StakingRewardsConfigRequirement</a>;
-<b>include</b> libra2_framework::aptos_coin::ExistsAptosCoin;
+<b>include</b> libra2_framework::libra2_coin::ExistsLibra2Coin;
 // This enforces <a id="high-level-req-4" href="#high-level-req">high-level requirement 4</a>:
 <b>aborts_if</b> <b>false</b>;
 </code></pre>
@@ -5675,7 +5675,7 @@ Returns validator's next epoch voting power, including pending_active, active, a
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="stake.md#0x1_stake_StakePool">StakePool</a>&gt;(pool_address);
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="stake.md#0x1_stake_ValidatorConfig">ValidatorConfig</a>&gt;(pool_address);
     <b>aborts_if</b> <b>global</b>&lt;<a href="stake.md#0x1_stake_ValidatorConfig">ValidatorConfig</a>&gt;(pool_address).validator_index &gt;= len(validator_perf.validators);
-    <b>let</b> aptos_addr = <a href="../../libra2-stdlib/doc/type_info.md#0x1_type_info_type_of">type_info::type_of</a>&lt;AptosCoin&gt;().account_address;
+    <b>let</b> aptos_addr = <a href="../../libra2-stdlib/doc/type_info.md#0x1_type_info_type_of">type_info::type_of</a>&lt;Libra2Coin&gt;().account_address;
     <b>let</b> stake_pool = <b>global</b>&lt;<a href="stake.md#0x1_stake_StakePool">StakePool</a>&gt;(pool_address);
     <b>include</b> <a href="stake.md#0x1_stake_DistributeRewardsAbortsIf">DistributeRewardsAbortsIf</a> {<a href="stake.md#0x1_stake">stake</a>: stake_pool.active};
     <b>include</b> <a href="stake.md#0x1_stake_DistributeRewardsAbortsIf">DistributeRewardsAbortsIf</a> {<a href="stake.md#0x1_stake">stake</a>: stake_pool.pending_inactive};
@@ -5778,7 +5778,7 @@ Returns validator's next epoch voting power, including pending_active, active, a
 ### Function `distribute_rewards`
 
 
-<pre><code><b>fun</b> <a href="stake.md#0x1_stake_distribute_rewards">distribute_rewards</a>(<a href="stake.md#0x1_stake">stake</a>: &<b>mut</b> <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="aptos_coin.md#0x1_aptos_coin_AptosCoin">aptos_coin::AptosCoin</a>&gt;, num_successful_proposals: u64, num_total_proposals: u64, rewards_rate: u64, rewards_rate_denominator: u64): u64
+<pre><code><b>fun</b> <a href="stake.md#0x1_stake_distribute_rewards">distribute_rewards</a>(<a href="stake.md#0x1_stake">stake</a>: &<b>mut</b> <a href="coin.md#0x1_coin_Coin">coin::Coin</a>&lt;<a href="libra2_coin.md#0x1_libra2_coin_Libra2Coin">libra2_coin::Libra2Coin</a>&gt;, num_successful_proposals: u64, num_total_proposals: u64, rewards_rate: u64, rewards_rate_denominator: u64): u64
 </code></pre>
 
 
@@ -5816,7 +5816,7 @@ Returns validator's next epoch voting power, including pending_active, active, a
 
 
 <pre><code><b>schema</b> <a href="stake.md#0x1_stake_DistributeRewardsAbortsIf">DistributeRewardsAbortsIf</a> {
-    <a href="stake.md#0x1_stake">stake</a>: Coin&lt;AptosCoin&gt;;
+    <a href="stake.md#0x1_stake">stake</a>: Coin&lt;Libra2Coin&gt;;
     num_successful_proposals: num;
     num_total_proposals: num;
     rewards_rate: num;
@@ -5828,10 +5828,10 @@ Returns validator's next epoch voting power, including pending_active, active, a
         0
     };
     <b>let</b> amount = rewards_amount;
-    <b>let</b> addr = <a href="../../libra2-stdlib/doc/type_info.md#0x1_type_info_type_of">type_info::type_of</a>&lt;AptosCoin&gt;().account_address;
-    <b>aborts_if</b> (rewards_amount &gt; 0) && !<b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinInfo">coin::CoinInfo</a>&lt;AptosCoin&gt;&gt;(addr);
-    <b>modifies</b> <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinInfo">coin::CoinInfo</a>&lt;AptosCoin&gt;&gt;(addr);
-    <b>include</b> (rewards_amount &gt; 0) ==&gt; <a href="coin.md#0x1_coin_CoinAddAbortsIf">coin::CoinAddAbortsIf</a>&lt;AptosCoin&gt; { amount: amount };
+    <b>let</b> addr = <a href="../../libra2-stdlib/doc/type_info.md#0x1_type_info_type_of">type_info::type_of</a>&lt;Libra2Coin&gt;().account_address;
+    <b>aborts_if</b> (rewards_amount &gt; 0) && !<b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinInfo">coin::CoinInfo</a>&lt;Libra2Coin&gt;&gt;(addr);
+    <b>modifies</b> <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinInfo">coin::CoinInfo</a>&lt;Libra2Coin&gt;&gt;(addr);
+    <b>include</b> (rewards_amount &gt; 0) ==&gt; <a href="coin.md#0x1_coin_CoinAddAbortsIf">coin::CoinAddAbortsIf</a>&lt;Libra2Coin&gt; { amount: amount };
 }
 </code></pre>
 

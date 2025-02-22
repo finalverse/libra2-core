@@ -5,7 +5,7 @@ version = "0.0.0"
 [dependencies]
 MoveStdlib = { local = "../../../../../libra2-move/framework/move-stdlib" }
 Libra2Framework = { local = "../../../../../libra2-move/framework/libra2-framework" }
-AptosToken = { local = "../../../../../libra2-move/framework/aptos-token" }
+Libra2Token = { local = "../../../../../libra2-move/framework/libra2-token" }
 
 [addresses]
 addr = "_"

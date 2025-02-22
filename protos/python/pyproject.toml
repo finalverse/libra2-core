@@ -5,8 +5,8 @@ description = "Code generated from protobuf definitions for the Aptos tech stack
 authors = ["Aptos Labs <opensource@aptoslabs.com>"]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/aptos-labs/aptos-core"
-homepage = "https://github.com/aptos-labs/aptos-core/tree/main/protos/python"
+repository = "https://github.com/finalverse/libra2-core"
+homepage = "https://github.com/finalverse/libra2-core/tree/main/protos/python"
 keywords = ["web3", "aptos", "blockchain", "indexer"]
 packages = [{include = "libra2_protos"}]
 

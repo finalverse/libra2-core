@@ -81,10 +81,10 @@ impl NetworkLoadTest for QuorumStoreOnChainEnableTest {
         let update_consensus_config_script = format!(
             r#"
     script {{
-        use libra2_framework::aptos_governance;
+        use libra2_framework::libra2_governance;
         use libra2_framework::consensus_config;
         fun main(core_resources: &signer) {{
-            let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0000000000000000000000000000000000000000000000000000000000000001);
+            let framework_signer = libra2_governance::get_signer_testnet_only(core_resources, @0000000000000000000000000000000000000000000000000000000000000001);
             let config_bytes = {};
             consensus_config::set(&framework_signer, config_bytes);
         }}
