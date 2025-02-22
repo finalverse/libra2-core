@@ -415,39 +415,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-nft-metadata-crawler"
-version = "0.1.0"
-dependencies = [
- "ahash 0.8.11",
- "anyhow",
- "async-trait",
- "axum 0.7.5",
- "backoff",
- "bytes",
- "chrono",
- "clap 4.5.21",
- "diesel",
- "diesel_migrations",
- "enum_dispatch",
- "field_count",
- "futures",
- "google-cloud-storage",
- "image",
- "libra2-indexer-grpc-server-framework",
- "libra2-metrics-core",
- "once_cell",
- "rayon",
- "regex",
- "reqwest 0.11.23",
- "serde",
- "serde_json",
- "sha256",
- "tokio",
- "tracing",
- "url",
-]
-
-[[package]]
 name = "aptos-profiler"
 version = "0.1.0"
 source = "git+https://github.com/aptos-labs/aptos-core.git?rev=202bdccff2b2d333a385ae86a4fcf23e89da9f62#202bdccff2b2d333a385ae86a4fcf23e89da9f62"
@@ -9070,6 +9037,39 @@ dependencies = [
  "rand 0.7.3",
  "serde_yaml 0.8.26",
  "tokio",
+ "url",
+]
+
+[[package]]
+name = "libra2-nft-metadata-crawler"
+version = "0.1.0"
+dependencies = [
+ "ahash 0.8.11",
+ "anyhow",
+ "async-trait",
+ "axum 0.7.5",
+ "backoff",
+ "bytes",
+ "chrono",
+ "clap 4.5.21",
+ "diesel",
+ "diesel_migrations",
+ "enum_dispatch",
+ "field_count",
+ "futures",
+ "google-cloud-storage",
+ "image",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-metrics-core",
+ "once_cell",
+ "rayon",
+ "regex",
+ "reqwest 0.11.23",
+ "serde",
+ "serde_json",
+ "sha256",
+ "tokio",
+ "tracing",
  "url",
 ]
 

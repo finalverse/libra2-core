@@ -1,5 +1,5 @@
 [package]
-name = "aptos-nft-metadata-crawler"
+name = "libra2-nft-metadata-crawler"
 description = "NFT Metadata Crawler related services."
 version = "0.1.0"
 

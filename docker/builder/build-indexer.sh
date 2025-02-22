@@ -15,7 +15,7 @@ cargo build --locked --profile=$PROFILE \
     -p libra2-indexer-grpc-cache-worker \
     -p libra2-indexer-grpc-file-store \
     -p libra2-indexer-grpc-data-service \
-    -p aptos-nft-metadata-crawler \
+    -p libra2-nft-metadata-crawler \
     -p libra2-indexer-grpc-file-checker \
     "$@"
 
@@ -24,7 +24,7 @@ BINS=(
     libra2-indexer-grpc-cache-worker
     libra2-indexer-grpc-file-store
     libra2-indexer-grpc-data-service
-    aptos-nft-metadata-crawler
+    libra2-nft-metadata-crawler
     libra2-indexer-grpc-file-checker
 )
 

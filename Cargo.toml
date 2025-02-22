@@ -403,7 +403,7 @@ libra2-network-benchmark = { path = "network/benchmark" }
 libra2-network-builder = { path = "network/builder" }
 libra2-network-checker = { path = "crates/libra2-network-checker" }
 libra2-network-discovery = { path = "network/discovery" }
-aptos-nft-metadata-crawler = { path = "ecosystem/nft-metadata-crawler" }
+libra2-nft-metadata-crawler = { path = "ecosystem/nft-metadata-crawler" }
 libra2-node = { path = "libra2-node" }
 libra2-node-checker = { path = "ecosystem/node-checker" }
 libra2-node-identity = { path = "crates/libra2-node-identity" }
