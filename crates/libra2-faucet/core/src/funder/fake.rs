@@ -3,7 +3,7 @@
 
 use super::FunderTrait;
 use crate::endpoints::AptosTapError;
-use aptos_sdk::types::{account_address::AccountAddress, transaction::SignedTransaction};
+use libra2_sdk::types::{account_address::AccountAddress, transaction::SignedTransaction};
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
 

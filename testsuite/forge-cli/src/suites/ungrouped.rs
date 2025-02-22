@@ -27,7 +27,7 @@ use aptos_forge::{
 };
 use libra2_logger::info;
 use libra2_rest_client::Client as RestClient;
-use aptos_sdk::move_types::account_address::AccountAddress;
+use libra2_sdk::move_types::account_address::AccountAddress;
 use aptos_testcases::{
     self,
     consensus_reliability_tests::ChangingWorkingQuorumTest,

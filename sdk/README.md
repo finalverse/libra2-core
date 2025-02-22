@@ -1,8 +1,8 @@
-# aptos-sdk
+# libra2-sdk
 
-[![aptos-sdk on crates.io](https://img.shields.io/crates/v/aptos-sdk)](https://crates.io/crates/aptos-sdk)
-[![Documentation (latest release)](https://docs.rs/aptos-sdk/badge.svg)](https://docs.rs/aptos-sdk/)
-[![Documentation (master)](https://img.shields.io/badge/docs-master-59f)](https://aptos.github.io/aptos/aptos_sdk/)
+[![libra2-sdk on crates.io](https://img.shields.io/crates/v/libra2-sdk)](https://crates.io/crates/libra2-sdk)
+[![Documentation (latest release)](https://docs.rs/libra2-sdk/badge.svg)](https://docs.rs/libra2-sdk/)
+[![Documentation (master)](https://img.shields.io/badge/docs-master-59f)](https://aptos.github.io/aptos/libra2_sdk/)
 [![License](https://img.shields.io/badge/license-Apache-green.svg)](https://github.com/aptos-labs/aptos-core/blob/main/LICENSE)
 
 The official Rust SDK for Libra2.

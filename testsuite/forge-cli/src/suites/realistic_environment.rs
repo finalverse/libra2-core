@@ -19,7 +19,7 @@ use aptos_forge::{
     },
     EmitJobMode, EmitJobRequest, ForgeConfig, NetworkTest, NodeResourceOverride,
 };
-use aptos_sdk::types::on_chain_config::{
+use libra2_sdk::types::on_chain_config::{
     BlockGasLimitType, OnChainConsensusConfig, OnChainExecutionConfig, TransactionShufflerType,
 };
 use aptos_testcases::{

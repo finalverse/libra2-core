@@ -18,7 +18,7 @@ use ::libra2_logger::*;
 use anyhow::{anyhow, bail, format_err};
 use libra2_config::config::{NodeConfig, OverrideNodeConfig};
 use libra2_retrier::fixed_retry_strategy;
-use aptos_sdk::{
+use libra2_sdk::{
     crypto::ed25519::Ed25519PrivateKey,
     move_types::account_address::AccountAddress,
     types::{chain_id::ChainId, AccountKey, LocalAccount, PeerId},
@@ -83,7 +83,7 @@ impl K8sSwarm {
         let client = validators.values().next().unwrap().rest_client();
         let key = load_root_key(root_key);
         let account_key = AccountKey::from_private_key(key);
-        let address = aptos_sdk::types::account_config::aptos_test_root_address();
+        let address = libra2_sdk::types::account_config::aptos_test_root_address();
         let sequence_number = query_sequence_number(&client, address).await.map_err(|e| {
             format_err!(
                 "query_sequence_number on {:?} for dd account failed: {}",

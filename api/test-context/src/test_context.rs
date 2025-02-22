@@ -23,7 +23,7 @@ use libra2_framework::BuiltPackage;
 use libra2_indexer_grpc_table_info::internal_indexer_db_service::MockInternalIndexerDBService;
 use libra2_mempool::mocks::MockSharedMempool;
 use libra2_mempool_notifications::MempoolNotificationSender;
-use aptos_sdk::{
+use libra2_sdk::{
     bcs,
     transaction_builder::TransactionFactory,
     types::{

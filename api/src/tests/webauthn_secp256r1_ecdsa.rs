@@ -15,7 +15,7 @@ mod tests {
         },
         signing_message, HashValue, SigningKey,
     };
-    use aptos_sdk::types::LocalAccount;
+    use libra2_sdk::types::LocalAccount;
     use libra2_types::transaction::{
         authenticator::{
             AccountAuthenticator, AnyPublicKey, AnySignature, AuthenticationKey,

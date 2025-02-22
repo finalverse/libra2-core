@@ -36,7 +36,7 @@ use libra2_jellyfish_merkle::metrics::{
 };
 use libra2_logger::{info, warn};
 use libra2_metrics_core::Histogram;
-use aptos_sdk::types::LocalAccount;
+use libra2_sdk::types::LocalAccount;
 use libra2_storage_interface::{
     state_store::state_view::db_state_view::LatestDbStateCheckpointView, DbReader, DbReaderWriter,
 };
@@ -924,7 +924,7 @@ mod tests {
     use libra2_crypto::HashValue;
     use libra2_executor::block_executor::BlockExecutor;
     use libra2_executor_types::BlockExecutorTrait;
-    use aptos_sdk::{transaction_builder::aptos_stdlib, types::LocalAccount};
+    use libra2_sdk::{transaction_builder::aptos_stdlib, types::LocalAccount};
     use libra2_temppath::TempPath;
     use libra2_transaction_generator_lib::WorkflowProgress;
     use libra2_transaction_workloads_lib::args::TransactionTypeArg;

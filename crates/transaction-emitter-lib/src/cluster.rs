@@ -9,7 +9,7 @@ use libra2_crypto::{
 };
 use libra2_logger::{info, warn};
 use libra2_rest_client::{Client as RestClient, State};
-use aptos_sdk::types::{chain_id::ChainId, AccountKey, LocalAccount};
+use libra2_sdk::types::{chain_id::ChainId, AccountKey, LocalAccount};
 use futures::{stream::FuturesUnordered, StreamExt};
 use rand::seq::SliceRandom;
 use std::convert::TryFrom;
@@ -248,7 +248,7 @@ fn get_chain_id_from_instances(instance_states: Vec<(Instance, State)>) -> Resul
 #[cfg(test)]
 mod test {
     use super::*;
-    use aptos_sdk::types::chain_id::ChainId;
+    use libra2_sdk::types::chain_id::ChainId;
 
     fn create_dummy_rest_api_state(chain_id: u8) -> State {
         State {

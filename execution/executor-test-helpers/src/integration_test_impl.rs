@@ -10,7 +10,7 @@ use libra2_consensus_types::block::Block;
 use libra2_db::Libra2DB;
 use libra2_executor::block_executor::BlockExecutor;
 use libra2_executor_types::BlockExecutorTrait;
-use aptos_sdk::{
+use libra2_sdk::{
     move_types::account_address::AccountAddress,
     transaction_builder::TransactionFactory,
     types::{AccountKey, LocalAccount},

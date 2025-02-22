@@ -5,7 +5,7 @@ use anyhow::{Context, Result};
 use libra2_faucet_core::funder::{
     ApiConnectionConfig, FunderTrait, MintFunder, TransactionSubmissionConfig,
 };
-use aptos_sdk::{
+use libra2_sdk::{
     crypto::ed25519::Ed25519PublicKey,
     types::{
         account_address::AccountAddress, transaction::authenticator::AuthenticationKey,

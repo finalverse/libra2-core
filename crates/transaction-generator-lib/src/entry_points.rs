@@ -8,7 +8,7 @@ use crate::{
     publishing::{entry_point_trait::EntryPointTrait, publish_util::Package},
     ReliableTransactionSubmitter, RootAccountHandle,
 };
-use aptos_sdk::{
+use libra2_sdk::{
     transaction_builder::TransactionFactory,
     types::{transaction::SignedTransaction, LocalAccount},
 };

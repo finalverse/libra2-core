@@ -35,7 +35,7 @@ use libra2_rest_client::{
     error::RestError,
     AptosBaseUrl, Client, Transaction,
 };
-use aptos_sdk::{
+use libra2_sdk::{
     transaction_builder::TransactionFactory,
     types::{HardwareWalletAccount, HardwareWalletType, LocalAccount, TransactionSigner},
 };

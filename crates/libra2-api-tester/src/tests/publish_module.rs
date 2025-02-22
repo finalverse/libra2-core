@@ -24,7 +24,7 @@ use libra2_cached_packages::aptos_stdlib::EntryFunctionCall;
 use libra2_framework::{BuildOptions, BuiltPackage};
 use libra2_logger::error;
 use libra2_rest_client::Client;
-use aptos_sdk::{bcs, types::LocalAccount};
+use libra2_sdk::{bcs, types::LocalAccount};
 use libra2_types::{
     account_address::AccountAddress,
     transaction::{EntryFunction, TransactionPayload},

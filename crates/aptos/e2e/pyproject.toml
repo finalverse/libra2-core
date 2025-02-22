@@ -7,7 +7,7 @@ license = "Apache-2.0"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<=4"
-aptos-sdk = "^0.8.6"
+libra2-sdk = "^0.8.6"
 requests = "^2.31.0"
 
 [tool.poetry.dev-dependencies]

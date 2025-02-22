@@ -10,7 +10,7 @@ use libra2_crypto::{
 use aptos_forge::{AptosPublicInfo, LocalSwarm, NodeExt, Swarm, SwarmExt};
 use libra2_logger::{debug, info};
 use libra2_rest_client::Client;
-use aptos_sdk::types::{
+use libra2_sdk::types::{
     EphemeralKeyPair, EphemeralPrivateKey, FederatedKeylessAccount, KeylessAccount, LocalAccount,
 };
 use libra2_types::{

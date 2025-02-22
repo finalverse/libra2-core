@@ -8,7 +8,7 @@
 
 use libra2_logger::{debug, info};
 use libra2_node_checker_lib::CheckSummary;
-use aptos_sdk::{
+use libra2_sdk::{
     crypto::{x25519, ValidCryptoMaterialStringExt},
     types::account_address::AccountAddress,
 };

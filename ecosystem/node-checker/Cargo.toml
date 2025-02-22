@@ -19,7 +19,7 @@ libra2-crypto = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-network-checker = { workspace = true }
 libra2-rest-client = { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 libra2-transaction-emitter-lib = { workspace = true }
 libra2-transaction-workloads-lib = { workspace = true }
 async-trait = { workspace = true }

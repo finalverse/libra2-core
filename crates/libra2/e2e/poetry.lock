@@ -133,14 +133,14 @@ test = ["anyio[trio]", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypo
 trio = ["trio (>=0.23)"]
 
 [[package]]
-name = "aptos-sdk"
+name = "libra2-sdk"
 version = "0.8.6"
 description = "Aptos SDK"
 optional = false
 python-versions = ">=3.8.1"
 files = [
-    {file = "aptos_sdk-0.8.6-py3-none-any.whl", hash = "sha256:94818c54ac18b5eb631e744edfb5dcf721b8fdf28aa8b471814bcab3c6f6f7a5"},
-    {file = "aptos_sdk-0.8.6.tar.gz", hash = "sha256:57fe71d966903b096933b905c94f0c835e57ca0781c098e38b637bf861c4470c"},
+    {file = "libra2_sdk-0.8.6-py3-none-any.whl", hash = "sha256:94818c54ac18b5eb631e744edfb5dcf721b8fdf28aa8b471814bcab3c6f6f7a5"},
+    {file = "libra2_sdk-0.8.6.tar.gz", hash = "sha256:57fe71d966903b096933b905c94f0c835e57ca0781c098e38b637bf861c4470c"},
 ]
 
 [package.dependencies]

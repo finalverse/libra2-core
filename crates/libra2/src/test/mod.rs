@@ -61,7 +61,7 @@ use libra2_rest_client::{
     aptos_api_types::{MoveStructTag, MoveType},
     Transaction,
 };
-use aptos_sdk::move_types::{account_address::AccountAddress, language_storage::ModuleId};
+use libra2_sdk::move_types::{account_address::AccountAddress, language_storage::ModuleId};
 use libra2_temppath::TempPath;
 use libra2_types::on_chain_config::ValidatorSet;
 use move_core_types::ident_str;

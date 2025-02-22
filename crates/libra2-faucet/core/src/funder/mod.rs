@@ -13,7 +13,7 @@ pub use self::{
 use self::{fake::FakeFunderConfig, transfer::TransferFunderConfig};
 use crate::endpoints::AptosTapError;
 use anyhow::{Context, Result};
-use aptos_sdk::types::{account_address::AccountAddress, transaction::SignedTransaction};
+use libra2_sdk::types::{account_address::AccountAddress, transaction::SignedTransaction};
 use async_trait::async_trait;
 use enum_dispatch::enum_dispatch;
 pub use fake::FakeFunder;

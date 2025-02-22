@@ -5,7 +5,7 @@ import asyncio
 import json
 import logging
 
-from aptos_sdk.account_address import AccountAddress
+from libra2_sdk.account_address import AccountAddress
 from common import TestError
 from test_helpers import RunHelper
 from test_results import test_case

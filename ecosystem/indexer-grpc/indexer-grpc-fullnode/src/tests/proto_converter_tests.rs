@@ -15,7 +15,7 @@ use aptos_protos::extractor::v1::{
     Transaction as TransactionPB,
 };
 
-use aptos_sdk::types::{account_config::aptos_test_root_address, LocalAccount};
+use libra2_sdk::types::{account_config::aptos_test_root_address, LocalAccount};
 
 use move_core_types::{account_address::AccountAddress, value::MoveValue};
 use move_package::BuildConfig;

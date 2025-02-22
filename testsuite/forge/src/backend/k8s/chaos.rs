@@ -7,7 +7,7 @@ use crate::{
 };
 use anyhow::bail;
 use libra2_logger::info;
-use aptos_sdk::{move_types::account_address::AccountAddress, types::PeerId};
+use libra2_sdk::{move_types::account_address::AccountAddress, types::PeerId};
 use std::process::{Command, Stdio};
 use tempfile::TempDir;
 

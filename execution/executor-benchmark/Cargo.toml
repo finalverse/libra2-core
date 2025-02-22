@@ -32,7 +32,7 @@ libra2-metrics-core = { workspace = true }
 libra2-mvhashmap = { workspace = true }
 libra2-node-resource-metrics = { workspace = true }
 libra2-push-metrics =  { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-transaction-generator-lib = { workspace = true }
 libra2-transaction-workloads-lib = { workspace = true }

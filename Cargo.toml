@@ -439,7 +439,7 @@ libra2-safety-rules = { path = "consensus/safety-rules" }
 libra2-schemadb = { path = "storage/schemadb" }
 libra2-scratchpad = { path = "storage/scratchpad" }
 aptos-script-composer = { path = "libra2-move/script-composer" }
-aptos-sdk = { path = "sdk" }
+libra2-sdk = { path = "sdk" }
 libra2-sdk-builder = { path = "libra2-move/libra2-sdk-builder" }
 libra2-secure-net = { path = "secure/net" }
 libra2-secure-storage = { path = "secure/storage" }

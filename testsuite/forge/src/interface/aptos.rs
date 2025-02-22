@@ -7,7 +7,7 @@ use anyhow::anyhow;
 use libra2_cached_packages::aptos_stdlib;
 use libra2_logger::info;
 use libra2_rest_client::{Client as RestClient, PendingTransaction, State, Transaction};
-use aptos_sdk::{
+use libra2_sdk::{
     crypto::ed25519::Ed25519PublicKey,
     move_types::identifier::Identifier,
     transaction_builder::TransactionFactory,

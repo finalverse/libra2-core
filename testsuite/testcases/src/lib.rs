@@ -34,7 +34,7 @@ use aptos_forge::{
 };
 use libra2_logger::info;
 use libra2_rest_client::Client as RestClient;
-use aptos_sdk::{transaction_builder::TransactionFactory, types::PeerId};
+use libra2_sdk::{transaction_builder::TransactionFactory, types::PeerId};
 use async_trait::async_trait;
 use futures::future::join_all;
 use rand::{rngs::StdRng, SeedableRng};

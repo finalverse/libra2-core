@@ -18,7 +18,7 @@ use libra2_config::{
 use libra2_crypto::{encoding_type::EncodingType, x25519, x25519::PrivateKey};
 use aptos_forge::{FullNode, Node, NodeExt, Swarm};
 use libra2_genesis::config::HostAndPort;
-use aptos_sdk::move_types::account_address::AccountAddress;
+use libra2_sdk::move_types::account_address::AccountAddress;
 use libra2_temppath::TempPath;
 use std::{
     collections::HashMap,

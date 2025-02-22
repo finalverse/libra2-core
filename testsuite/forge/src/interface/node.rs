@@ -7,7 +7,7 @@ use anyhow::anyhow;
 use libra2_config::{config::NodeConfig, network_id::NetworkId};
 use libra2_inspection_service::inspection_client::InspectionClient;
 use libra2_rest_client::{AptosBaseUrl, Client as RestClient};
-use aptos_sdk::types::PeerId;
+use libra2_sdk::types::PeerId;
 use std::{
     collections::HashMap,
     time::{Duration, Instant},

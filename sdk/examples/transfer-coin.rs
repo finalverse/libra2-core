@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{Context, Result};
-use aptos_sdk::{
+use libra2_sdk::{
     coin_client::CoinClient,
     rest_client::{Client, FaucetClient},
     types::LocalAccount,

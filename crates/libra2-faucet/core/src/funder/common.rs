@@ -13,7 +13,7 @@ use libra2_logger::{
     prelude::{sample, SampleRate},
     warn,
 };
-use aptos_sdk::{
+use libra2_sdk::{
     crypto::ed25519::Ed25519PrivateKey,
     rest_client::Client,
     types::{
@@ -103,7 +103,7 @@ impl ApiConnectionConfig {
             )
         })?;
         // decode as bcs first, fall back to a file of hex
-        let result = aptos_sdk::bcs::from_bytes(&key_bytes); //.with_context(|| "bad bcs");
+        let result = libra2_sdk::bcs::from_bytes(&key_bytes); //.with_context(|| "bad bcs");
         if let Ok(x) = result {
             return Ok(x);
         }
@@ -408,7 +408,7 @@ pub async fn submit_transaction(
 /// This struct manages gas unit price. When callers get the value through this
 /// struct, it will update the value if it is too old.
 pub struct GasUnitPriceManager {
-    api_client: aptos_sdk::rest_client::Client,
+    api_client: libra2_sdk::rest_client::Client,
     gas_unit_price: AtomicU64,
     last_updated: Arc<RwLock<Option<Instant>>>,
     cache_ttl: Duration,
@@ -417,7 +417,7 @@ pub struct GasUnitPriceManager {
 impl GasUnitPriceManager {
     pub fn new(node_url: Url, cache_ttl: Duration) -> Self {
         Self {
-            api_client: aptos_sdk::rest_client::Client::new(node_url),
+            api_client: libra2_sdk::rest_client::Client::new(node_url),
             gas_unit_price: AtomicU64::new(0),
             last_updated: Arc::new(RwLock::new(None)),
             cache_ttl,

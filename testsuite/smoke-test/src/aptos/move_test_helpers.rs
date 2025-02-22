@@ -6,7 +6,7 @@
 use anyhow::Result;
 use aptos_forge::AptosPublicInfo;
 use libra2_framework::{BuildOptions, BuiltPackage};
-use aptos_sdk::transaction_builder::TransactionFactory;
+use libra2_sdk::transaction_builder::TransactionFactory;
 use std::path::PathBuf;
 
 /// New style publishing via `code::publish_package`

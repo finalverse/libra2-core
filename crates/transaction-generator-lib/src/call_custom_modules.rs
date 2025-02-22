@@ -8,7 +8,7 @@ use crate::{
     RootAccountHandle, TransactionGenerator, TransactionGeneratorCreator,
 };
 use libra2_logger::{error, info};
-use aptos_sdk::{
+use libra2_sdk::{
     transaction_builder::TransactionFactory,
     types::{transaction::SignedTransaction, LocalAccount},
 };

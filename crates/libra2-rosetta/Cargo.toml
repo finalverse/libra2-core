@@ -22,7 +22,7 @@ libra2-logger = { workspace = true }
 libra2-node = { workspace = true }
 libra2-rest-client = { workspace = true }
 libra2-runtimes = { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 libra2-types = { workspace = true }
 libra2-warp-webserver = { workspace = true }
 bcs = { workspace = true }

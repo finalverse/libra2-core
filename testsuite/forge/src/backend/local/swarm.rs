@@ -18,7 +18,7 @@ use libra2_genesis::builder::{
 };
 use libra2_infallible::Mutex;
 use libra2_logger::{info, warn};
-use aptos_sdk::{
+use libra2_sdk::{
     crypto::{ed25519::Ed25519PrivateKey, encoding_type::EncodingType},
     types::{
         chain_id::ChainId, transaction::Transaction, waypoint::Waypoint, AccountKey, LocalAccount,
@@ -241,7 +241,7 @@ impl LocalSwarm {
 
         let root_key = ConfigKey::new(root_key);
         let root_account = LocalAccount::new(
-            aptos_sdk::types::account_config::aptos_test_root_address(),
+            libra2_sdk::types::account_config::aptos_test_root_address(),
             AccountKey::from_private_key(root_key.private_key()),
             0,
         );

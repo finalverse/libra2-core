@@ -29,7 +29,7 @@ libra2-logger = { workspace = true }
 libra2-rest-client = { workspace = true }
 libra2-retrier = { workspace = true }
 libra2-runtimes = { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 libra2-short-hex-str = { workspace = true }
 libra2-state-sync-driver = { workspace = true }
 libra2-transaction-emitter-lib = { workspace = true }

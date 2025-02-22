@@ -4,7 +4,7 @@ use crate::{
     publishing::publish_util::PackageHandler, TransactionGenerator, TransactionGeneratorCreator,
 };
 use libra2_infallible::RwLock;
-use aptos_sdk::{
+use libra2_sdk::{
     transaction_builder::TransactionFactory,
     types::{transaction::SignedTransaction, LocalAccount},
 };

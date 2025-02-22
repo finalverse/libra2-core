@@ -7,7 +7,7 @@ use aptos_indexer::{
     database::{new_db_pool, PgDbPool, PgPoolConnection},
     models::transactions::TransactionQuery,
 };
-use aptos_sdk::types::LocalAccount;
+use libra2_sdk::types::LocalAccount;
 use diesel::RunQueryDsl;
 use std::sync::Arc;
 

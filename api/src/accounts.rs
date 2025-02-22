@@ -18,7 +18,7 @@ use aptos_api_types::{
     AccountData, Address, Libra2ErrorCode, AsConverter, AssetType, LedgerInfo, MoveModuleBytecode,
     MoveModuleId, MoveResource, MoveStructTag, StateKeyWrapper, U64,
 };
-use aptos_sdk::types::{get_paired_fa_metadata_address, get_paired_fa_primary_store_address};
+use libra2_sdk::types::{get_paired_fa_metadata_address, get_paired_fa_primary_store_address};
 use libra2_types::{
     account_config::{
         AccountResource, CoinStoreResourceUntyped, ConcurrentFungibleBalanceResource,

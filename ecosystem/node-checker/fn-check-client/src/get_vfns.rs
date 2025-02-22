@@ -13,7 +13,7 @@ use crate::{
 };
 use anyhow::{Context, Result};
 use libra2_logger::info;
-use aptos_sdk::{
+use libra2_sdk::{
     rest_client::Client as AptosClient,
     types::{
         account_address::AccountAddress, account_config::CORE_CODE_ADDRESS,

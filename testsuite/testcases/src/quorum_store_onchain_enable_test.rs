@@ -6,7 +6,7 @@ use anyhow::Ok;
 use aptos::test::CliTestFramework;
 use aptos_forge::{NetworkContextSynchronizer, NetworkTest, NodeExt, SwarmExt, Test};
 use libra2_logger::info;
-use aptos_sdk::bcs;
+use libra2_sdk::bcs;
 use libra2_types::{
     account_config::CORE_CODE_ADDRESS,
     on_chain_config::{ConsensusConfigV1, OnChainConsensusConfig},

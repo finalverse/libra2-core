@@ -2,7 +2,7 @@ use anyhow::bail;
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 use libra2_crypto::ed25519::Ed25519PrivateKey;
-use aptos_sdk::types::{
+use libra2_sdk::types::{
     AccountKey, EphemeralKeyPair, EphemeralPrivateKey, KeylessAccount, LocalAccount,
 };
 use libra2_transaction_generator_lib::ReliableTransactionSubmitter;

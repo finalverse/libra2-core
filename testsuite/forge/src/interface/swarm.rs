@@ -12,7 +12,7 @@ use libra2_config::{
 };
 use libra2_logger::info;
 use libra2_rest_client::Client as RestClient;
-use aptos_sdk::types::PeerId;
+use libra2_sdk::types::PeerId;
 use futures::future::{join_all, try_join_all};
 use prometheus_http_query::response::{PromqlResult, Sample};
 use std::time::{Duration, Instant};

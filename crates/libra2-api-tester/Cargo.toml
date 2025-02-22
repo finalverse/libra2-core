@@ -20,7 +20,7 @@ libra2-framework = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-push-metrics = { workspace = true }
 libra2-rest-client = { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 libra2-types = { workspace = true }
 futures = { workspace = true }
 move-core-types = { workspace = true }

@@ -21,7 +21,7 @@ libra2-global-constants = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-rest-client = { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 libra2-transaction-generator-lib = { workspace = true }
 libra2-types = { workspace = true }
 async-trait = { workspace = true }

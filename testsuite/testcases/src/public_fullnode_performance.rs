@@ -13,7 +13,7 @@ use aptos_forge::{
     SwarmChaos, SwarmCpuStress, SwarmNetEm, Test,
 };
 use libra2_logger::info;
-use aptos_sdk::move_types::account_address::AccountAddress;
+use libra2_sdk::move_types::account_address::AccountAddress;
 use libra2_types::PeerId;
 use async_trait::async_trait;
 use itertools::{EitherOrBoth, Itertools};

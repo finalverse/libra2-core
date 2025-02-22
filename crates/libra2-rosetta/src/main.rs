@@ -9,7 +9,7 @@ use libra2_config::config::{ApiConfig, DEFAULT_MAX_PAGE_SIZE};
 use libra2_logger::prelude::*;
 use libra2_node::Libra2NodeArgs;
 use libra2_rosetta::{bootstrap, common::native_coin, types::Currency};
-use aptos_sdk::move_types::language_storage::StructTag;
+use libra2_sdk::move_types::language_storage::StructTag;
 use libra2_types::chain_id::ChainId;
 use clap::Parser;
 use std::{

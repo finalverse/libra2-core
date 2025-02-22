@@ -6,7 +6,7 @@
 
 use crate::check::{IncompleteNetworkAddress, NodeInfo, SingleCheck, SingleCheckResult};
 use anyhow::{Context, Result};
-use aptos_sdk::{
+use libra2_sdk::{
     crypto::{x25519, ValidCryptoMaterialStringExt},
     types::account_address::AccountAddress,
 };

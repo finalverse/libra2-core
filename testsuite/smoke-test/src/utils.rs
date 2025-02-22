@@ -9,7 +9,7 @@ use libra2_config::{
 };
 use aptos_forge::{reconfig, LocalSwarm, NodeExt, Swarm, SwarmExt};
 use libra2_rest_client::{Client as RestClient, Client};
-use aptos_sdk::{
+use libra2_sdk::{
     transaction_builder::TransactionFactory,
     types::{transaction::SignedTransaction, LocalAccount},
 };

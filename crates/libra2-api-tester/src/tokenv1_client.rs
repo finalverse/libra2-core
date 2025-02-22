@@ -6,7 +6,7 @@
 use anyhow::{anyhow, Context, Result};
 use aptos_api_types::U64;
 use libra2_cached_packages::aptos_token_sdk_builder::EntryFunctionCall;
-use aptos_sdk::{
+use libra2_sdk::{
     rest_client::{Client as ApiClient, PendingTransaction},
     transaction_builder::TransactionFactory,
     types::LocalAccount,

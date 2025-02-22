@@ -1,6 +1,6 @@
 [package]
-name = "aptos-sdk"
-description = "The Official Aptos SDK"
+name = "libra2-sdk"
+description = "The Official Libra2 SDK"
 version = "0.0.3"
 
 # Workspace inherited keys

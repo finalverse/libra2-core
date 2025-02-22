@@ -40,7 +40,7 @@ libra2-network-checker = { workspace = true }
 libra2-node = { workspace = true }
 aptos-protos = { workspace = true }
 libra2-rest-client = { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-telemetry = { workspace = true }
 libra2-temppath = { workspace = true }

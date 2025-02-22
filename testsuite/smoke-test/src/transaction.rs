@@ -10,7 +10,7 @@ use libra2_rest_client::{
     aptos_api_types::{EntryFunctionPayload, TransactionPayload},
     Transaction,
 };
-use aptos_sdk::{
+use libra2_sdk::{
     crypto::{PrivateKey, SigningKey},
     types::transaction::{authenticator::AuthenticationKey, SignedTransaction},
 };

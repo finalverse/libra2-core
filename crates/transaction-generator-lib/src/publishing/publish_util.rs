@@ -5,7 +5,7 @@ use super::entry_point_trait::PreBuiltPackages;
 use libra2_framework::{
     natives::code::PackageMetadata, KnownAttribute, APTOS_METADATA_KEY, APTOS_METADATA_KEY_V1,
 };
-use aptos_sdk::{
+use libra2_sdk::{
     bcs,
     move_types::{identifier::Identifier, language_storage::ModuleId},
     transaction_builder::aptos_stdlib,

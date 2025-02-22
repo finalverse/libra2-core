@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{ObjectPool, TransactionGenerator, TransactionGeneratorCreator};
-use aptos_sdk::types::{transaction::SignedTransaction, LocalAccount};
+use libra2_sdk::types::{transaction::SignedTransaction, LocalAccount};
 use rand::{rngs::StdRng, SeedableRng};
 use std::sync::Arc;
 

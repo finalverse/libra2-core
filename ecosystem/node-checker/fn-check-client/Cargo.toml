@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 anyhow = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-node-checker = { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 clap = { workspace = true }
 env_logger = { workspace = true }
 futures = { workspace = true }

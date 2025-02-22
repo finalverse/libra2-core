@@ -9,7 +9,7 @@ use aptos_forge::{
     TxnStats, Version,
 };
 use libra2_logger::info;
-use aptos_sdk::types::{LocalAccount, PeerId};
+use libra2_sdk::types::{LocalAccount, PeerId};
 use async_trait::async_trait;
 use rand::SeedableRng;
 use std::{

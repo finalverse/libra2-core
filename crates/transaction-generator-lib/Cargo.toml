@@ -17,7 +17,7 @@ anyhow = { workspace = true }
 libra2-framework = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 async-trait = { workspace = true }
 clap = { workspace = true }
 move-binary-format = { workspace = true }

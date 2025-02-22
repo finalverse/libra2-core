@@ -6,7 +6,7 @@ use crate::{
     TransactionGeneratorCreator, WorkflowProgress,
 };
 use libra2_logger::{info, sample, sample::SampleRate};
-use aptos_sdk::{
+use libra2_sdk::{
     transaction_builder::TransactionFactory,
     types::{transaction::SignedTransaction, LocalAccount},
 };

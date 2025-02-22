@@ -16,7 +16,7 @@ use libra2_config::{
     network_id::NetworkId,
 };
 use libra2_logger::info;
-use aptos_sdk::types::PeerId;
+use libra2_sdk::types::PeerId;
 use libra2_short_hex_str::AsShortHexStr;
 use k8s_openapi::{
     api::{
@@ -515,7 +515,7 @@ mod tests {
     use super::*;
     use crate::MockK8sResourceApi;
     use libra2_config::config::Identity;
-    use aptos_sdk::crypto::{x25519::PrivateKey, Uniform};
+    use libra2_sdk::crypto::{x25519::PrivateKey, Uniform};
     use k8s_openapi::apimachinery::pkg::api::resource::Quantity;
 
     /// Get a dummy validator persistent volume claim that looks like one created by terraform/helm/libra2-node/templates/validator.yaml

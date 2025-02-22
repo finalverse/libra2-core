@@ -22,7 +22,7 @@ whitelisted_symbols = set([
 
 ignored_crates = set([
     'ahash',
-    'aptos_sdk',
+    'libra2_sdk',
     'seahash',
     'siphasher',
 ])

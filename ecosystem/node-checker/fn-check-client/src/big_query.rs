@@ -4,7 +4,7 @@
 use crate::check::SingleCheck;
 use anyhow::{bail, Context, Result};
 use libra2_logger::info;
-use aptos_sdk::types::account_address::AccountAddress;
+use libra2_sdk::types::account_address::AccountAddress;
 use clap::Parser;
 use gcp_bigquery_client::{
     error::BQError,

@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 use crate::{ObjectPool, TransactionGenerator, TransactionGeneratorCreator};
-use aptos_sdk::{
+use libra2_sdk::{
     move_types::account_address::AccountAddress,
     transaction_builder::{aptos_stdlib, TransactionFactory},
     types::{chain_id::ChainId, transaction::SignedTransaction, LocalAccount},

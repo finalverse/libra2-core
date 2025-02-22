@@ -27,7 +27,7 @@ use libra2_rest_client::{
     aptos_api_types::{Address, HexEncodedBytes, U128, U64},
     Client, Transaction,
 };
-use aptos_sdk::move_types::language_storage::CORE_CODE_ADDRESS;
+use libra2_sdk::move_types::language_storage::CORE_CODE_ADDRESS;
 use libra2_types::{
     account_address::AccountAddress,
     account_config::is_aptos_governance_create_proposal_event,

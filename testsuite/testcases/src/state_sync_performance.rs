@@ -9,7 +9,7 @@ use aptos_forge::{
     NetworkContextSynchronizer, NetworkTest, Result, SwarmExt, Test,
 };
 use libra2_logger::info;
-use aptos_sdk::move_types::account_address::AccountAddress;
+use libra2_sdk::move_types::account_address::AccountAddress;
 use async_trait::async_trait;
 use std::{ops::DerefMut, time::Instant};
 use tokio::{runtime::Runtime, time::Duration};

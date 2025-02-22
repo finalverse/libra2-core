@@ -4,7 +4,7 @@
 use anyhow::{anyhow, bail, Context, Result};
 use libra2_crypto::x25519;
 use libra2_rest_client::Client as AptosRestClient;
-use aptos_sdk::types::network_address::NetworkAddress;
+use libra2_sdk::types::network_address::NetworkAddress;
 use reqwest::cookie::Jar;
 use serde::{Deserialize, Serialize};
 use std::{sync::Arc, time::Duration};

@@ -14,7 +14,7 @@ use libra2_crypto::{
     multi_ed25519::{MultiEd25519PrivateKey, MultiEd25519PublicKey},
     PrivateKey, SigningKey, Uniform,
 };
-use aptos_sdk::types::{AccountKey, LocalAccount};
+use libra2_sdk::types::{AccountKey, LocalAccount};
 use libra2_types::{
     account_address::AccountAddress,
     account_config::aptos_test_root_address,

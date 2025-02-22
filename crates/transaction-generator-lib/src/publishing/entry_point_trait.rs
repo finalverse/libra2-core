@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::publish_util::Package;
-use aptos_sdk::{
+use libra2_sdk::{
     move_types::{
         account_address::AccountAddress, identifier::Identifier, language_storage::ModuleId,
     },

@@ -14,7 +14,7 @@ use crate::{
     helpers::{get_current_time_secs, transaction_hashes},
 };
 use libra2_logger::info;
-use aptos_sdk::{
+use libra2_sdk::{
     crypto::{ed25519::Ed25519PublicKey, ValidCryptoMaterialStringExt},
     types::{
         account_address::AccountAddress,
@@ -400,7 +400,7 @@ pub async fn mint(
         })?;
     if return_txns.unwrap_or(false) {
         let txn_bcs =
-            aptos_sdk::bcs::to_bytes(&txns).map_err(|e| poem::Error::from(anyhow::anyhow!(e)))?;
+            libra2_sdk::bcs::to_bytes(&txns).map_err(|e| poem::Error::from(anyhow::anyhow!(e)))?;
         let txn_bcs_hex = hex::encode(txn_bcs);
         Ok(MintResponse::SubmittedTxns(PlainText(txn_bcs_hex)))
     } else {

@@ -19,7 +19,7 @@ use anyhow::anyhow;
 use aptos_api_types::{ViewRequest, U64};
 use libra2_logger::error;
 use libra2_rest_client::Client;
-use aptos_sdk::types::LocalAccount;
+use libra2_sdk::types::LocalAccount;
 use libra2_types::account_address::AccountAddress;
 
 /// Tests view function use. Checks that:

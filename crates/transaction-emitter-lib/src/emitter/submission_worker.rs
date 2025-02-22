@@ -10,7 +10,7 @@ use crate::{
 };
 use libra2_logger::{debug, error, info, sample, sample::SampleRate, warn};
 use libra2_rest_client::Client as RestClient;
-use aptos_sdk::{
+use libra2_sdk::{
     move_types::account_address::AccountAddress,
     types::{transaction::SignedTransaction, vm_status::StatusCode, LocalAccount},
 };

@@ -38,7 +38,7 @@ libra2-release-builder = { workspace = true }
 libra2-rest-client = { workspace = true }
 libra2-rosetta = { workspace = true }
 libra2-schemadb = { workspace = true }
-aptos-sdk = { workspace = true }
+libra2-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }

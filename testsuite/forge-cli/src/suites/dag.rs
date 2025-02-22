@@ -10,7 +10,7 @@ use aptos_forge::{
     success_criteria::{LatencyType, StateProgressThreshold, SuccessCriteria},
     EmitJobMode, EmitJobRequest, ForgeConfig,
 };
-use aptos_sdk::types::on_chain_config::{
+use libra2_sdk::types::on_chain_config::{
     BlockGasLimitType, ConsensusAlgorithmConfig, DagConsensusConfigV1, OnChainConsensusConfig,
     OnChainExecutionConfig, TransactionShufflerType, ValidatorTxnConfig, DEFAULT_WINDOW_SIZE,
 };

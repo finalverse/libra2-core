@@ -7,7 +7,7 @@ use crate::{
     provider::{api_index::ApiIndexProvider, Provider, ProviderCollection},
 };
 use anyhow::{Context, Result};
-use aptos_sdk::types::chain_id::ChainId;
+use libra2_sdk::types::chain_id::ChainId;
 use libra2_transaction_emitter_lib::{
     emit_transactions_with_cluster, Cluster, ClusterArgs, CoinSourceArgs, EmitArgs,
 };

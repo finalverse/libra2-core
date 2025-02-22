@@ -20,7 +20,7 @@ use anyhow::{anyhow, Result};
 use aptos_api_types::U64;
 use libra2_logger::error;
 use libra2_rest_client::Client;
-use aptos_sdk::{coin_client::CoinClient, types::LocalAccount};
+use libra2_sdk::{coin_client::CoinClient, types::LocalAccount};
 use libra2_types::account_address::AccountAddress;
 
 const TRANSFER_AMOUNT: u64 = 1_000;

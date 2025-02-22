@@ -10,7 +10,7 @@ use aptos_forge::{
 use libra2_keygen::KeyGen;
 use libra2_logger::info;
 use libra2_release_builder::ReleaseConfig;
-use aptos_sdk::crypto::{ed25519::Ed25519PrivateKey, PrivateKey};
+use libra2_sdk::crypto::{ed25519::Ed25519PrivateKey, PrivateKey};
 use libra2_temppath::TempPath;
 use libra2_types::transaction::authenticator::AuthenticationKey;
 use async_trait::async_trait;

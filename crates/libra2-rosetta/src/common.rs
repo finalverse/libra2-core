@@ -12,7 +12,7 @@ use crate::{
 use libra2_crypto::{ValidCryptoMaterial, ValidCryptoMaterialStringExt};
 use libra2_logger::debug;
 use libra2_rest_client::{Account, Response};
-use aptos_sdk::move_types::{
+use libra2_sdk::move_types::{
     ident_str,
     language_storage::{StructTag, TypeTag},
 };

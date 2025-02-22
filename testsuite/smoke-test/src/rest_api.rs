@@ -15,7 +15,7 @@ use libra2_rest_client::{
     aptos_api_types::{MoveModuleId, TransactionData, ViewFunction, ViewRequest},
     Client,
 };
-use aptos_sdk::move_types::language_storage::StructTag;
+use libra2_sdk::move_types::language_storage::StructTag;
 use libra2_types::{
     account_address::AccountAddress,
     account_config::{AccountResource, CORE_CODE_ADDRESS},

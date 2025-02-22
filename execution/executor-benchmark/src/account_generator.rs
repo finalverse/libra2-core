@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::transaction_generator::get_progress_bar;
-use aptos_sdk::types::LocalAccount;
+use libra2_sdk::types::LocalAccount;
 use rand::{rngs::StdRng, RngCore, SeedableRng};
 use std::{collections::VecDeque, sync::mpsc};
 
