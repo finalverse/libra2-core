@@ -27,7 +27,7 @@ use aptos::{
 };
 use libra2_crypto::HashValue;
 use libra2_gas_profiling::GasProfiler;
-use libra2_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
+use libra2_gas_schedule::{Libra2GasParameters, FromOnChainGasSchedule};
 use libra2_language_e2e_tests::account::AccountData;
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_rest_client::Client;
@@ -578,7 +578,7 @@ pub async fn simulate_multistep_proposal(
         let gas_schedule =
             GasScheduleV2::fetch_config(&state_view).context("failed to fetch gas schedule v2")?;
         let gas_feature_version = gas_schedule.feature_version;
-        let gas_params = AptosGasParameters::from_on_chain_gas_schedule(
+        let gas_params = Libra2GasParameters::from_on_chain_gas_schedule(
             &gas_schedule.into_btree_map(),
             gas_feature_version,
         )

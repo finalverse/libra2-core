@@ -8,7 +8,7 @@ use libra2_gas_schedule::{
         STORAGE_IO_PER_STATE_BYTE_WRITE, STORAGE_IO_PER_STATE_SLOT_READ,
         STORAGE_IO_PER_STATE_SLOT_WRITE, STORAGE_IO_PER_TRANSACTION_BYTE_WRITE,
     },
-    AptosGasParameters, VMGasParameters,
+    Libra2GasParameters, VMGasParameters,
 };
 use libra2_types::{
     contract_event::ContractEvent,
@@ -33,7 +33,7 @@ pub struct IoPricingV1 {
 }
 
 impl IoPricingV1 {
-    fn new(gas_params: &AptosGasParameters) -> Self {
+    fn new(gas_params: &Libra2GasParameters) -> Self {
         Self {
             write_data_per_op: gas_params.vm.txn.storage_io_per_state_slot_write,
             write_data_per_new_item: gas_params.vm.txn.legacy_write_data_per_new_item,
@@ -95,7 +95,7 @@ impl IoPricingV2 {
     pub fn new_with_storage_curves(
         feature_version: u64,
         storage_gas_schedule: &StorageGasSchedule,
-        gas_params: &AptosGasParameters,
+        gas_params: &Libra2GasParameters,
     ) -> Self {
         Self {
             feature_version,
@@ -111,7 +111,7 @@ impl IoPricingV2 {
 
     fn get_free_write_bytes_quota(
         feature_version: u64,
-        gas_params: &AptosGasParameters,
+        gas_params: &Libra2GasParameters,
     ) -> NumBytes {
         match feature_version {
             0 => unreachable!("PricingV2 not applicable for feature version 0"),
@@ -241,7 +241,7 @@ pub enum IoPricing {
 impl IoPricing {
     pub fn new(
         feature_version: u64,
-        gas_params: &AptosGasParameters,
+        gas_params: &Libra2GasParameters,
         config_storage: &impl ConfigStorage,
     ) -> IoPricing {
         use libra2_types::on_chain_config::OnChainConfig;

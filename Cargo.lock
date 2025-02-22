@@ -396,7 +396,6 @@ dependencies = [
  "anyhow",
  "aptos-api-test-context",
  "aptos-api-types",
- "aptos-gas-meter",
  "aptos-sdk",
  "bcs 0.1.4",
  "bytes",
@@ -410,6 +409,7 @@ dependencies = [
  "libra2-config",
  "libra2-crypto",
  "libra2-framework",
+ "libra2-gas-meter",
  "libra2-gas-schedule",
  "libra2-global-constants",
  "libra2-logger",
@@ -591,42 +591,6 @@ dependencies = [
  "sugars",
  "tokio",
  "url",
-]
-
-[[package]]
-name = "aptos-gas-calibration"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "bcs 0.1.4",
- "clap 4.5.21",
- "float-cmp",
- "libra2-abstract-gas-usage",
- "libra2-cached-packages",
- "libra2-framework",
- "libra2-gas-algebra",
- "libra2-gas-schedule",
- "libra2-language-e2e-tests",
- "libra2-types",
- "move-binary-format",
- "move-core-types",
- "move-ir-compiler",
- "nalgebra",
- "walkdir",
-]
-
-[[package]]
-name = "aptos-gas-meter"
-version = "0.1.0"
-dependencies = [
- "libra2-gas-algebra",
- "libra2-gas-schedule",
- "libra2-logger",
- "libra2-types",
- "libra2-vm-types",
- "move-binary-format",
- "move-core-types",
- "move-vm-types",
 ]
 
 [[package]]
@@ -6720,8 +6684,8 @@ name = "libra2-abstract-gas-usage"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-gas-meter",
  "libra2-gas-algebra",
+ "libra2-gas-meter",
  "libra2-gas-schedule",
  "libra2-vm-types",
  "move-binary-format",
@@ -8000,7 +7964,6 @@ name = "libra2-framework"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-gas-meter",
  "ark-bls12-381",
  "ark-bn254",
  "ark-ec",
@@ -8023,6 +7986,7 @@ dependencies = [
  "libra2-aggregator",
  "libra2-crypto",
  "libra2-gas-algebra",
+ "libra2-gas-meter",
  "libra2-gas-schedule",
  "libra2-move-stdlib",
  "libra2-native-interface",
@@ -8078,14 +8042,50 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-gas-calibration"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "bcs 0.1.4",
+ "clap 4.5.21",
+ "float-cmp",
+ "libra2-abstract-gas-usage",
+ "libra2-cached-packages",
+ "libra2-framework",
+ "libra2-gas-algebra",
+ "libra2-gas-schedule",
+ "libra2-language-e2e-tests",
+ "libra2-types",
+ "move-binary-format",
+ "move-core-types",
+ "move-ir-compiler",
+ "nalgebra",
+ "walkdir",
+]
+
+[[package]]
+name = "libra2-gas-meter"
+version = "0.1.0"
+dependencies = [
+ "libra2-gas-algebra",
+ "libra2-gas-schedule",
+ "libra2-logger",
+ "libra2-types",
+ "libra2-vm-types",
+ "move-binary-format",
+ "move-core-types",
+ "move-vm-types",
+]
+
+[[package]]
 name = "libra2-gas-profiling"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-gas-meter",
  "handlebars",
  "inferno",
  "libra2-gas-algebra",
+ "libra2-gas-meter",
  "libra2-types",
  "libra2-vm-types",
  "move-binary-format",
@@ -8737,7 +8737,6 @@ name = "libra2-language-e2e-tests"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-gas-meter",
  "bcs 0.1.4",
  "bytes",
  "claims",
@@ -8749,6 +8748,7 @@ dependencies = [
  "libra2-crypto",
  "libra2-framework",
  "libra2-gas-algebra",
+ "libra2-gas-meter",
  "libra2-gas-profiling",
  "libra2-gas-schedule",
  "libra2-keygen",
@@ -8850,8 +8850,8 @@ dependencies = [
 name = "libra2-memory-usage-tracker"
 version = "0.1.0"
 dependencies = [
- "aptos-gas-meter",
  "libra2-gas-algebra",
+ "libra2-gas-meter",
  "libra2-types",
  "move-binary-format",
  "move-core-types",
@@ -10439,7 +10439,6 @@ name = "libra2-vm"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-gas-meter",
  "ark-bn254",
  "ark-groth16",
  "bcs 0.1.4",
@@ -10459,6 +10458,7 @@ dependencies = [
  "libra2-experimental-runtimes",
  "libra2-framework",
  "libra2-gas-algebra",
+ "libra2-gas-meter",
  "libra2-gas-schedule",
  "libra2-infallible",
  "libra2-language-e2e-tests",

@@ -36,12 +36,12 @@ pub mod gas_params {
 /// Gas parameters for everything that is needed to run the Aptos blockchain, including
 /// instructions, transactions and native functions from various packages.
 #[derive(Debug, Clone)]
-pub struct AptosGasParameters {
+pub struct Libra2GasParameters {
     pub vm: VMGasParameters,
     pub natives: NativeGasParameters,
 }
 
-impl FromOnChainGasSchedule for AptosGasParameters {
+impl FromOnChainGasSchedule for Libra2GasParameters {
     fn from_on_chain_gas_schedule(
         gas_schedule: &BTreeMap<String, u64>,
         feature_version: u64,
@@ -56,7 +56,7 @@ impl FromOnChainGasSchedule for AptosGasParameters {
     }
 }
 
-impl ToOnChainGasSchedule for AptosGasParameters {
+impl ToOnChainGasSchedule for Libra2GasParameters {
     fn to_on_chain_gas_schedule(&self, feature_version: u64) -> Vec<(String, u64)> {
         let mut entries = self.vm.to_on_chain_gas_schedule(feature_version);
         entries.extend(self.natives.to_on_chain_gas_schedule(feature_version));
@@ -64,7 +64,7 @@ impl ToOnChainGasSchedule for AptosGasParameters {
     }
 }
 
-impl AptosGasParameters {
+impl Libra2GasParameters {
     pub fn zeros() -> Self {
         Self {
             vm: VMGasParameters::zeros(),
@@ -73,7 +73,7 @@ impl AptosGasParameters {
     }
 }
 
-impl InitialGasSchedule for AptosGasParameters {
+impl InitialGasSchedule for Libra2GasParameters {
     fn initial() -> Self {
         Self {
             vm: InitialGasSchedule::initial(),

@@ -21,7 +21,7 @@ libra2-cached-packages ={ workspace = true }
 libra2-crypto = { workspace = true, features = ["fuzzing"] }
 libra2-framework = { workspace = true }
 libra2-gas-algebra = { workspace = true }
-aptos-gas-meter = { workspace = true }
+libra2-gas-meter = { workspace = true }
 libra2-gas-profiling = { workspace = true }
 libra2-gas-schedule = { workspace = true }
 libra2-keygen = { workspace = true }

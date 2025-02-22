@@ -88,7 +88,7 @@ macro_rules! define_gas_parameters {
             use super::*;
             use libra2_gas_algebra::{GasExpression, GasExpressionVisitor, GasMul, GasAdd};
             use $crate::{
-                gas_schedule::AptosGasParameters,
+                gas_schedule::Libra2GasParameters,
             };
             use std::ops::{Add, Mul};
             use move_core_types::gas_algebra::{GasQuantity, GasQuantityGetUnit};

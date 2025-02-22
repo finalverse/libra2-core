@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
+use libra2_gas_schedule::{Libra2GasParameters, FromOnChainGasSchedule};
 use libra2_types::{
     on_chain_config::{Features, GasSchedule, GasScheduleV2, OnChainConfig},
     state_store::StateView,
@@ -23,14 +23,14 @@ pub fn get_gas_feature_version(state_view: &impl StateView) -> u64 {
 fn get_gas_config_from_storage(
     sha3_256: &mut Sha3_256,
     state_view: &impl StateView,
-) -> (Result<AptosGasParameters, String>, u64) {
+) -> (Result<Libra2GasParameters, String>, u64) {
     match GasScheduleV2::fetch_config_and_bytes(state_view) {
         Some((gas_schedule, bytes)) => {
             sha3_256.update(&bytes);
             let feature_version = gas_schedule.feature_version;
             let map = gas_schedule.into_btree_map();
             (
-                AptosGasParameters::from_on_chain_gas_schedule(&map, feature_version),
+                Libra2GasParameters::from_on_chain_gas_schedule(&map, feature_version),
                 feature_version,
             )
         },
@@ -38,7 +38,7 @@ fn get_gas_config_from_storage(
             Some((gas_schedule, bytes)) => {
                 sha3_256.update(&bytes);
                 let map = gas_schedule.into_btree_map();
-                (AptosGasParameters::from_on_chain_gas_schedule(&map, 0), 0)
+                (Libra2GasParameters::from_on_chain_gas_schedule(&map, 0), 0)
             },
             None => (Err("Neither gas schedule v2 nor v1 exists.".to_string()), 0),
         },
@@ -52,7 +52,7 @@ pub(crate) fn get_gas_parameters(
     features: &Features,
     state_view: &impl StateView,
 ) -> (
-    Result<AptosGasParameters, String>,
+    Result<Libra2GasParameters, String>,
     Result<StorageGasParameters, String>,
     u64,
 ) {

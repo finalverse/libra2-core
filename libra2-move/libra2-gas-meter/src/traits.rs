@@ -92,7 +92,7 @@ pub trait GasAlgebra {
 ///
 /// It extends Move VM's `GasMeter` trait with a few Aptos-specific callbacks, along with
 /// some primitives that would allow gas meters to be composable.
-pub trait AptosGasMeter: MoveGasMeter {
+pub trait Libra2GasMeter: MoveGasMeter {
     type Algebra: GasAlgebra;
 
     /// Returns a reference to the underlying algebra object.

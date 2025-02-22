@@ -15,7 +15,7 @@ use libra2_crypto::{
     HashValue, PrivateKey,
 };
 use aptos_forge::{AptosPublicInfo, LocalSwarm, Node, NodeExt, Swarm};
-use libra2_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
+use libra2_gas_schedule::{Libra2GasParameters, FromOnChainGasSchedule};
 use libra2_genesis::builder::InitConfigFn;
 use libra2_global_constants::GAS_UNIT_PRICE;
 use libra2_rest_client::{
@@ -718,7 +718,7 @@ async fn test_block() {
         .unwrap()
         .into_inner();
     let feature_version = gas_schedule.feature_version;
-    let gas_params = AptosGasParameters::from_on_chain_gas_schedule(
+    let gas_params = Libra2GasParameters::from_on_chain_gas_schedule(
         &gas_schedule.into_btree_map(),
         feature_version,
     )

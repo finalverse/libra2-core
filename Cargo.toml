@@ -11,8 +11,8 @@ members = [
     "libra2-move/libra2-debugger",
     "libra2-move/libra2-e2e-comparison-testing",
     "libra2-move/libra2-gas-algebra",
-    "libra2-move/aptos-gas-calibration",
-    "libra2-move/aptos-gas-meter",
+    "libra2-move/libra2-gas-calibration",
+    "libra2-move/libra2-gas-meter",
     "libra2-move/libra2-gas-profiling",
     "libra2-move/libra2-gas-schedule",
     "libra2-move/libra2-gas-schedule-updator",
@@ -354,9 +354,9 @@ aptos-forge = { path = "testsuite/forge" }
 libra2-framework = { path = "libra2-move/framework" }
 fuzzer = { path = "testsuite/fuzzer" }
 libra2-abstract-gas-usage = { path = "libra2-move/libra2-abstract-gas-usage" }
-aptos-gas-meter = { path = "libra2-move/aptos-gas-meter" }
+libra2-gas-meter = { path = "libra2-move/libra2-gas-meter" }
 libra2-gas-algebra = { path = "libra2-move/libra2-gas-algebra" }
-aptos-gas-calibration = { path = "libra2-move/aptos-gas-calibration" }
+libra2-gas-calibration = { path = "libra2-move/libra2-gas-calibration" }
 libra2-gas-profiling = { path = "libra2-move/libra2-gas-profiling" }
 libra2-gas-schedule = { path = "libra2-move/libra2-gas-schedule" }
 libra2-gas-schedule-updator = { path = "libra2-move/libra2-gas-schedule-updator" }

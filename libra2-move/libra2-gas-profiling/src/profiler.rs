@@ -6,7 +6,7 @@ use crate::log::{
     FrameName, StorageFees, TransactionGasLog, WriteOpType, WriteStorage, WriteTransient,
 };
 use libra2_gas_algebra::{Fee, FeePerGasUnit, InternalGas, NumArgs, NumBytes, NumTypeNodes};
-use aptos_gas_meter::{AptosGasMeter, GasAlgebra};
+use libra2_gas_meter::{Libra2GasMeter, GasAlgebra};
 use libra2_types::{
     contract_event::ContractEvent, state_store::state_key::StateKey, write_set::WriteOpSize,
 };
@@ -125,7 +125,7 @@ impl<G> GasProfiler<G> {
 
 impl<G> GasProfiler<G>
 where
-    G: AptosGasMeter,
+    G: Libra2GasMeter,
 {
     fn active_event_stream(&mut self) -> &mut Vec<ExecutionGasEvent> {
         &mut self.frames.last_mut().unwrap().events
@@ -159,7 +159,7 @@ where
 
 impl<G> GasMeter for GasProfiler<G>
 where
-    G: AptosGasMeter,
+    G: Libra2GasMeter,
 {
     delegate_mut! {
         // Note: we only use this callback for memory tracking, not for charging gas.
@@ -516,9 +516,9 @@ fn write_op_type(op: &WriteOpSize) -> WriteOpType {
     }
 }
 
-impl<G> AptosGasMeter for GasProfiler<G>
+impl<G> Libra2GasMeter for GasProfiler<G>
 where
-    G: AptosGasMeter,
+    G: Libra2GasMeter,
 {
     type Algebra = G::Algebra;
 
@@ -667,7 +667,7 @@ where
 
 impl<G> GasProfiler<G>
 where
-    G: AptosGasMeter,
+    G: Libra2GasMeter,
 {
     pub fn finish(mut self) -> TransactionGasLog {
         while self.frames.len() > 1 {

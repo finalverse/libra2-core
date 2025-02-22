@@ -12,7 +12,7 @@ use libra2_crypto::{
     test_utils::KeyPair,
 };
 use libra2_gas_algebra::{FeePerGasUnit, Gas, GasExpression};
-use libra2_gas_schedule::{AptosGasParameters, InitialGasSchedule, LATEST_GAS_FEATURE_VERSION};
+use libra2_gas_schedule::{Libra2GasParameters, InitialGasSchedule, LATEST_GAS_FEATURE_VERSION};
 use libra2_proptest_helpers::Index;
 use libra2_types::{
     transaction::{Script, SignedTransaction, TransactionStatus},
@@ -88,7 +88,7 @@ impl AUTransactionGen for InsufficientBalanceGen {
         );
 
         // TODO: Move such config to AccountUniverse
-        let gas_params = AptosGasParameters::initial();
+        let gas_params = Libra2GasParameters::initial();
         let txn_gas_params = &gas_params.vm.txn;
         let raw_bytes_len = txn.raw_txn_bytes_len() as u64;
         let min_cost: Gas = txn_gas_params

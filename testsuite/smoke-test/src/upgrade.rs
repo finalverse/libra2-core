@@ -8,7 +8,7 @@ use crate::{
 use libra2_crypto::ValidCryptoMaterialStringExt;
 use aptos_forge::Swarm;
 use libra2_gas_algebra::GasQuantity;
-use libra2_gas_schedule::{AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule};
+use libra2_gas_schedule::{Libra2GasParameters, InitialGasSchedule, ToOnChainGasSchedule};
 use libra2_release_builder::{
     components::{
         feature_flags::{FeatureFlag, Features},
@@ -50,7 +50,7 @@ async fn test_upgrade_flow() {
 
     // Bump the limit in gas schedule
     // TODO: Replace this logic with aptos-gas
-    let mut gas_parameters = AptosGasParameters::initial();
+    let mut gas_parameters = Libra2GasParameters::initial();
     gas_parameters.vm.txn.max_transaction_size_in_bytes = GasQuantity::new(100_000_000);
 
     let gas_schedule = libra2_types::on_chain_config::GasScheduleV2 {

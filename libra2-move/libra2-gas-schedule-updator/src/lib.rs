@@ -9,7 +9,7 @@
 
 use anyhow::Result;
 use libra2_gas_schedule::{
-    AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule, LATEST_GAS_FEATURE_VERSION,
+    Libra2GasParameters, InitialGasSchedule, ToOnChainGasSchedule, LATEST_GAS_FEATURE_VERSION,
 };
 use libra2_package_builder::PackageBuilder;
 use libra2_types::on_chain_config::GasScheduleV2;
@@ -116,7 +116,7 @@ pub struct GenArgs {
 pub fn current_gas_schedule(feature_version: u64) -> GasScheduleV2 {
     GasScheduleV2 {
         feature_version,
-        entries: AptosGasParameters::initial().to_on_chain_gas_schedule(feature_version),
+        entries: Libra2GasParameters::initial().to_on_chain_gas_schedule(feature_version),
     }
 }
 

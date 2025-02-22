@@ -18,7 +18,7 @@ use aptos_api_types::{
 };
 use libra2_config::config::{GasEstimationConfig, NodeConfig, RoleType};
 use libra2_crypto::HashValue;
-use libra2_gas_schedule::{AptosGasParameters, FromOnChainGasSchedule};
+use libra2_gas_schedule::{Libra2GasParameters, FromOnChainGasSchedule};
 use libra2_logger::{error, info, Schema};
 use libra2_mempool::{MempoolClientRequest, MempoolClientSender, SubmissionStatus};
 use libra2_storage_interface::{
@@ -1396,7 +1396,7 @@ impl Context {
     pub fn get_gas_schedule<E: InternalError>(
         &self,
         ledger_info: &LedgerInfo,
-    ) -> Result<(u64, AptosGasParameters), E> {
+    ) -> Result<(u64, Libra2GasParameters), E> {
         // If it's the same epoch, used the cached results
         {
             let cache = self.gas_schedule_cache.read().unwrap();
@@ -1440,7 +1440,7 @@ impl Context {
                     GasScheduleV2::fetch_config(&state_view).and_then(|gas_schedule| {
                         let feature_version = gas_schedule.feature_version;
                         let gas_schedule = gas_schedule.into_btree_map();
-                        AptosGasParameters::from_on_chain_gas_schedule(
+                        Libra2GasParameters::from_on_chain_gas_schedule(
                             &gas_schedule,
                             feature_version,
                         )
@@ -1451,7 +1451,7 @@ impl Context {
                     None => GasSchedule::fetch_config(&state_view)
                         .and_then(|gas_schedule| {
                             let gas_schedule = gas_schedule.into_btree_map();
-                            AptosGasParameters::from_on_chain_gas_schedule(&gas_schedule, 0).ok()
+                            Libra2GasParameters::from_on_chain_gas_schedule(&gas_schedule, 0).ok()
                         })
                         .ok_or_else(|| {
                             E::internal_with_code(
@@ -1558,7 +1558,7 @@ impl Context {
 
 pub struct GasScheduleCache {
     last_updated_epoch: Option<u64>,
-    gas_schedule_params: Option<AptosGasParameters>,
+    gas_schedule_params: Option<Libra2GasParameters>,
 }
 
 pub struct GasEstimationCache {

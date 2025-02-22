@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use crate::traits::{AptosGasMeter, GasAlgebra};
+use crate::traits::{Libra2GasMeter, GasAlgebra};
 use libra2_gas_algebra::{Fee, FeePerGasUnit, NumTypeNodes};
 use libra2_gas_schedule::{
     gas_feature_versions::*,
@@ -506,7 +506,7 @@ where
     }
 }
 
-impl<A> AptosGasMeter for StandardGasMeter<A>
+impl<A> Libra2GasMeter for StandardGasMeter<A>
 where
     A: GasAlgebra,
 {

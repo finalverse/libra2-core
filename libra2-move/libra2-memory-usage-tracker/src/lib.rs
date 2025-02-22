@@ -4,7 +4,7 @@
 use libra2_gas_algebra::{
     AbstractValueSize, Fee, FeePerGasUnit, InternalGas, NumArgs, NumBytes, NumTypeNodes,
 };
-use aptos_gas_meter::AptosGasMeter;
+use libra2_gas_meter::Libra2GasMeter;
 use libra2_types::{
     account_config::CORE_CODE_ADDRESS, contract_event::ContractEvent,
     state_store::state_key::StateKey, write_set::WriteOpSize,
@@ -35,7 +35,7 @@ pub struct MemoryTrackedGasMeter<G> {
 
 impl<G> MemoryTrackedGasMeter<G>
 where
-    G: AptosGasMeter,
+    G: Libra2GasMeter,
 {
     pub fn new(base: G) -> Self {
         let memory_quota = base.vm_gas_params().txn.memory_quota;
@@ -96,7 +96,7 @@ macro_rules! delegate_mut {
 
 impl<G> MoveGasMeter for MemoryTrackedGasMeter<G>
 where
-    G: AptosGasMeter,
+    G: Libra2GasMeter,
 {
     delegate_mut! {
         fn charge_simple_instr(&mut self, instr: SimpleInstruction) -> PartialVMResult<()>;
@@ -463,9 +463,9 @@ where
     }
 }
 
-impl<G> AptosGasMeter for MemoryTrackedGasMeter<G>
+impl<G> Libra2GasMeter for MemoryTrackedGasMeter<G>
 where
-    G: AptosGasMeter,
+    G: Libra2GasMeter,
 {
     type Algebra = G::Algebra;
 

@@ -6,7 +6,7 @@ use libra2_cached_packages::aptos_stdlib;
 use libra2_framework::{natives::code::PackageMetadata, BuildOptions, BuiltPackage};
 use libra2_gas_profiling::TransactionGasLog;
 use libra2_gas_schedule::{
-    AptosGasParameters, FromOnChainGasSchedule, InitialGasSchedule, ToOnChainGasSchedule,
+    Libra2GasParameters, FromOnChainGasSchedule, InitialGasSchedule, ToOnChainGasSchedule,
 };
 use libra2_language_e2e_tests::{
     account::{Account, TransactionBuilder},
@@ -835,10 +835,10 @@ impl MoveHarness {
     }
 
     fn override_one_gas_param(&mut self, param: &str, param_value: u64) {
-        // TODO: The AptosGasParameters::zeros() schedule doesn't do what we want, so
+        // TODO: The Libra2GasParameters::zeros() schedule doesn't do what we want, so
         // explicitly manipulating gas entries. Wasn't obvious from the gas code how to
         // do this differently then below, so perhaps improve this...
-        let entries = AptosGasParameters::initial()
+        let entries = Libra2GasParameters::initial()
             .to_on_chain_gas_schedule(libra2_gas_schedule::LATEST_GAS_FEATURE_VERSION);
         let entries = entries
             .into_iter()
@@ -906,7 +906,7 @@ impl MoveHarness {
         )
     }
 
-    pub fn modify_gas_schedule(&mut self, modify: impl FnOnce(&mut AptosGasParameters)) {
+    pub fn modify_gas_schedule(&mut self, modify: impl FnOnce(&mut Libra2GasParameters)) {
         let (feature_version, mut gas_params) = self.get_gas_params();
         modify(&mut gas_params);
         self.set_resource(
@@ -919,10 +919,10 @@ impl MoveHarness {
         );
     }
 
-    pub fn get_gas_params(&self) -> (u64, AptosGasParameters) {
+    pub fn get_gas_params(&self) -> (u64, Libra2GasParameters) {
         let gas_schedule: GasScheduleV2 = self.get_gas_schedule();
         let feature_version = gas_schedule.feature_version;
-        let params = AptosGasParameters::from_on_chain_gas_schedule(
+        let params = Libra2GasParameters::from_on_chain_gas_schedule(
             &gas_schedule.into_btree_map(),
             feature_version,
         )

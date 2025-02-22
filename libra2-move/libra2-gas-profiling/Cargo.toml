@@ -20,7 +20,7 @@ serde_json = { workspace = true }
 smallvec = { workspace = true }
 
 libra2-gas-algebra = { workspace = true }
-aptos-gas-meter = { workspace = true }
+libra2-gas-meter = { workspace = true }
 libra2-types = { workspace = true }
 libra2-vm-types = { workspace = true }
 

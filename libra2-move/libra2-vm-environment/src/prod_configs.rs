@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_gas_schedule::{gas_feature_versions::RELEASE_V1_15, AptosGasParameters};
+use libra2_gas_schedule::{gas_feature_versions::RELEASE_V1_15, Libra2GasParameters};
 use libra2_types::{
     on_chain_config::{
         randomness_api_v0_config::{AllowCustomMaxGasFlag, RequiredGasDeposit},
@@ -42,7 +42,7 @@ pub fn get_timed_feature_override() -> Option<TimedFeatureOverride> {
 /// Returns [TypeBuilder] used by the Aptos blockchain in production.
 pub fn aptos_prod_ty_builder(
     gas_feature_version: u64,
-    gas_params: &AptosGasParameters,
+    gas_params: &Libra2GasParameters,
 ) -> TypeBuilder {
     if gas_feature_version >= RELEASE_V1_15 {
         let max_ty_size = gas_params.vm.txn.max_ty_size;

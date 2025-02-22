@@ -1,5 +1,5 @@
 [package]
-name = "aptos-gas-calibration"
+name = "libra2-gas-calibration"
 version = "0.1.0"
 edition = "2021"
 license = { workspace = true }

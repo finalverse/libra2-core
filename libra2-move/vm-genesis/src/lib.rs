@@ -14,7 +14,7 @@ use libra2_crypto::{
 };
 use libra2_framework::{ReleaseBundle, ReleasePackage};
 use libra2_gas_schedule::{
-    AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule, LATEST_GAS_FEATURE_VERSION,
+    Libra2GasParameters, InitialGasSchedule, ToOnChainGasSchedule, LATEST_GAS_FEATURE_VERSION,
 };
 use libra2_types::{
     account_config::{self, aptos_test_root_address, events::NewEpochEvent, CORE_CODE_ADDRESS},
@@ -124,7 +124,7 @@ pub static GENESIS_KEYPAIR: Lazy<(Ed25519PrivateKey, Ed25519PublicKey)> = Lazy::
 pub fn default_gas_schedule() -> GasScheduleV2 {
     GasScheduleV2 {
         feature_version: LATEST_GAS_FEATURE_VERSION,
-        entries: AptosGasParameters::initial().to_on_chain_gas_schedule(LATEST_GAS_FEATURE_VERSION),
+        entries: Libra2GasParameters::initial().to_on_chain_gas_schedule(LATEST_GAS_FEATURE_VERSION),
     }
 }
 

@@ -38,10 +38,10 @@ use libra2_framework::{
     RuntimeModuleMetadataV1,
 };
 use libra2_gas_algebra::{Gas, GasQuantity, NumBytes, Octa};
-use aptos_gas_meter::{AptosGasMeter, GasAlgebra};
+use libra2_gas_meter::{Libra2GasMeter, GasAlgebra};
 use libra2_gas_schedule::{
     gas_feature_versions::{RELEASE_V1_10, RELEASE_V1_27},
-    AptosGasParameters, VMGasParameters,
+    Libra2GasParameters, VMGasParameters,
 };
 use libra2_logger::{enabled, prelude::*, Level};
 use libra2_metrics_core::TimerHelper;
@@ -332,7 +332,7 @@ impl Libra2VM {
     pub(crate) fn gas_params(
         &self,
         log_context: &AdapterLogSchema,
-    ) -> Result<&AptosGasParameters, VMStatus> {
+    ) -> Result<&Libra2GasParameters, VMStatus> {
         get_or_vm_startup_failure(self.move_vm.env.gas_params(), log_context)
     }
 
@@ -432,7 +432,7 @@ impl Libra2VM {
 
     /// Returns the internal gas schedule if it has been loaded, or an error if it hasn't.
     #[cfg(any(test, feature = "testing"))]
-    pub fn gas_params_for_test(&self) -> Result<&AptosGasParameters, VMStatus> {
+    pub fn gas_params_for_test(&self) -> Result<&Libra2GasParameters, VMStatus> {
         let log_context = AdapterLogSchema::new(StateViewId::Miscellaneous, 0);
         self.gas_params(&log_context)
     }
@@ -463,7 +463,7 @@ impl Libra2VM {
 
     fn fee_statement_from_gas_meter(
         txn_data: &TransactionMetadata,
-        gas_meter: &impl AptosGasMeter,
+        gas_meter: &impl Libra2GasMeter,
         storage_fee_refund: u64,
     ) -> FeeStatement {
         let gas_used = Self::gas_used(txn_data.max_gas_amount(), gas_meter);
@@ -480,7 +480,7 @@ impl Libra2VM {
         &self,
         prologue_session_change_set: SystemSessionChangeSet,
         error_vm_status: VMStatus,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         txn_data: &TransactionMetadata,
         resolver: &impl AptosMoveResolver,
         module_storage: &impl AptosModuleStorage,
@@ -576,7 +576,7 @@ impl Libra2VM {
     fn finish_aborted_transaction(
         &self,
         prologue_session_change_set: SystemSessionChangeSet,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         txn_data: &TransactionMetadata,
         resolver: &impl AptosMoveResolver,
         module_storage: &impl AptosModuleStorage,
@@ -721,7 +721,7 @@ impl Libra2VM {
         mut epilogue_session: EpilogueSession,
         module_storage: &impl AptosModuleStorage,
         serialized_signers: &SerializedSigners,
-        gas_meter: &impl AptosGasMeter,
+        gas_meter: &impl Libra2GasMeter,
         txn_data: &TransactionMetadata,
         log_context: &AdapterLogSchema,
         change_set_configs: &ChangeSetConfigs,
@@ -787,7 +787,7 @@ impl Libra2VM {
         session: &mut SessionExt,
         serialized_signers: &SerializedSigners,
         code_storage: &impl AptosCodeStorage,
-        // Note: cannot use AptosGasMeter because it is not implemented for
+        // Note: cannot use Libra2GasMeter because it is not implemented for
         //       UnmeteredGasMeter.
         gas_meter: &mut impl GasMeter,
         traversal_context: &mut TraversalContext<'a>,
@@ -879,7 +879,7 @@ impl Libra2VM {
         module_storage: &impl AptosModuleStorage,
         session: &mut SessionExt,
         serialized_signers: &SerializedSigners,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         traversal_context: &mut TraversalContext,
         entry_fn: &EntryFunction,
     ) -> Result<(), VMStatus> {
@@ -966,7 +966,7 @@ impl Libra2VM {
         code_storage: &impl AptosCodeStorage,
         mut session: UserSession<'r, 'l>,
         serialized_signers: &SerializedSigners,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         traversal_context: &mut TraversalContext<'a>,
         txn_data: &TransactionMetadata,
         payload: &'a TransactionPayload,
@@ -1057,7 +1057,7 @@ impl Libra2VM {
     fn charge_change_set(
         &self,
         change_set: &mut impl ChangeSetInterface,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         txn_data: &TransactionMetadata,
         resolver: &impl AptosMoveResolver,
         module_storage: &impl AptosModuleStorage,
@@ -1089,7 +1089,7 @@ impl Libra2VM {
         mut user_session_change_set: UserSessionChangeSet,
         resolver: &'r impl AptosMoveResolver,
         module_storage: &impl AptosModuleStorage,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         txn_data: &'l TransactionMetadata,
     ) -> Result<EpilogueSession<'r, 'l>, VMStatus> {
         let storage_refund = self.charge_change_set(
@@ -1116,7 +1116,7 @@ impl Libra2VM {
         module_storage: &impl AptosModuleStorage,
         session: UserSession<'r, 'l>,
         serialized_signers: &SerializedSigners,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         traversal_context: &mut TraversalContext<'a>,
         txn_data: &TransactionMetadata,
         payload: &'a Multisig,
@@ -1188,7 +1188,7 @@ impl Libra2VM {
         mut session: UserSession<'r, 'l>,
         serialized_signers: &SerializedSigners,
         prologue_session_change_set: &SystemSessionChangeSet,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         traversal_context: &mut TraversalContext,
         txn_data: &TransactionMetadata,
         txn_payload: &Multisig,
@@ -1371,7 +1371,7 @@ impl Libra2VM {
         session: UserSession<'r, 'l>,
         serialized_signers: &SerializedSigners,
         prologue_session_change_set: &SystemSessionChangeSet,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         traversal_context: &mut TraversalContext<'a>,
         txn_data: &TransactionMetadata,
         payload: &'a Multisig,
@@ -1422,7 +1422,7 @@ impl Libra2VM {
         resolver: &impl AptosMoveResolver,
         module_storage: &impl AptosModuleStorage,
         mut session: UserSession<'_, '_>,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         traversal_context: &mut TraversalContext,
         multisig_address: AccountAddress,
         payload: &EntryFunction,
@@ -1502,7 +1502,7 @@ impl Libra2VM {
     fn execute_module_initialization(
         &self,
         session: &mut SessionExt,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         module_storage: &impl AptosModuleStorage,
         modules: &[CompiledModule],
         exists: BTreeSet<ModuleId>,
@@ -1571,7 +1571,7 @@ impl Libra2VM {
         mut session: UserSession<'_, '_>,
         resolver: &impl AptosMoveResolver,
         module_storage: &impl AptosModuleStorage,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         traversal_context: &mut TraversalContext,
         new_published_modules_loaded: &mut bool,
         change_set_configs: &ChangeSetConfigs,
@@ -1895,7 +1895,7 @@ impl Libra2VM {
         log_context: &AdapterLogSchema,
         is_approved_gov_script: bool,
         traversal_context: &mut TraversalContext,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
     ) -> Result<SerializedSigners, VMStatus> {
         // Check transaction format.
         if transaction.contains_duplicate_signers() {
@@ -2017,7 +2017,7 @@ impl Libra2VM {
         serialized_signers: &SerializedSigners,
         txn_data: &TransactionMetadata,
         log_context: &AdapterLogSchema,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         change_set_configs: &ChangeSetConfigs,
         new_published_modules_loaded: bool,
         traversal_context: &mut TraversalContext,
@@ -2054,7 +2054,7 @@ impl Libra2VM {
         txn_data: TransactionMetadata,
         is_approved_gov_script: bool,
         log_context: &AdapterLogSchema,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
     ) -> (VMStatus, VMOutput) {
         let _timer = VM_TIMER.timer_with_label("Libra2VM::execute_user_transaction_impl");
 
@@ -2208,7 +2208,7 @@ impl Libra2VM {
     ) -> Result<(VMStatus, VMOutput, G), VMStatus>
     where
         C: AptosCodeStorage + BlockSynchronizationKillSwitch,
-        G: AptosGasMeter,
+        G: Libra2GasMeter,
         F: FnOnce(u64, VMGasParameters, StorageGasParameters, bool, Gas, &'a C) -> G,
     {
         let txn_metadata = TransactionMetadata::new(txn);
@@ -2260,7 +2260,7 @@ impl Libra2VM {
     ) -> Result<(VMStatus, VMOutput, G), VMStatus>
     where
         F: FnOnce(ProdGasMeter<'a, NoopBlockSynchronizationKillSwitch>) -> G,
-        G: AptosGasMeter,
+        G: Libra2GasMeter,
     {
         self.execute_user_transaction_with_custom_gas_meter(
             resolver,
@@ -2674,7 +2674,7 @@ impl Libra2VM {
         }
     }
 
-    fn gas_used(max_gas_amount: Gas, gas_meter: &impl AptosGasMeter) -> u64 {
+    fn gas_used(max_gas_amount: Gas, gas_meter: &impl Libra2GasMeter) -> u64 {
         max_gas_amount
             .checked_sub(gas_meter.balance())
             .expect("Balance should always be less than or equal to max gas amount")
@@ -2688,7 +2688,7 @@ impl Libra2VM {
         func_name: Identifier,
         type_args: Vec<TypeTag>,
         arguments: Vec<Vec<u8>>,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         module_storage: &impl AptosModuleStorage,
     ) -> anyhow::Result<Vec<Vec<u8>>> {
         let func = session.load_function(module_storage, &module_id, &func_name, &type_args)?;

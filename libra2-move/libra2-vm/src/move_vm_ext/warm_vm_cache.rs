@@ -5,7 +5,7 @@
 
 use crate::{counters::TIMER, move_vm_ext::AptosMoveResolver};
 use libra2_framework::natives::code::PackageRegistry;
-use libra2_gas_schedule::AptosGasParameters;
+use libra2_gas_schedule::Libra2GasParameters;
 use libra2_infallible::RwLock;
 use libra2_metrics_core::TimerHelper;
 use libra2_native_interface::SafeNativeBuilder;
@@ -107,11 +107,11 @@ impl WarmVmId {
         let natives = {
             // Create native builder just in case, even though the environment has more info now.
             let _timer = TIMER.timer_with(&["serialize_native_builder"]);
-            let AptosGasParameters { natives, vm } = env
+            let Libra2GasParameters { natives, vm } = env
                 .gas_params()
                 .as_ref()
                 .cloned()
-                .unwrap_or(AptosGasParameters::zeros());
+                .unwrap_or(Libra2GasParameters::zeros());
             SafeNativeBuilder::new(
                 env.gas_feature_version(),
                 natives,

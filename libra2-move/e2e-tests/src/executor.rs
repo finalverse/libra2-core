@@ -21,7 +21,7 @@ use libra2_block_executor::{
 use libra2_crypto::HashValue;
 use libra2_framework::ReleaseBundle;
 use libra2_gas_algebra::DynamicExpression;
-use aptos_gas_meter::{AptosGasMeter, GasAlgebra, StandardGasAlgebra, StandardGasMeter};
+use libra2_gas_meter::{Libra2GasMeter, GasAlgebra, StandardGasAlgebra, StandardGasMeter};
 use libra2_gas_profiling::{GasProfiler, TransactionGasLog};
 use libra2_keygen::KeyGen;
 use libra2_types::{

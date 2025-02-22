@@ -52,7 +52,7 @@ tokio = { workspace = true }
 aptos-api-test-context = { workspace = true }
 libra2-cached-packages = { workspace = true }
 libra2-framework = { workspace = true }
-aptos-gas-meter = { workspace = true }
+libra2-gas-meter = { workspace = true }
 libra2-gas-schedule = { workspace = true, features = ["testing"] }
 libra2-move-stdlib = { workspace = true }
 libra2-proptest-helpers = { workspace = true }

@@ -13,7 +13,7 @@ use crate::{
     transaction_metadata::TransactionMetadata,
     verifier, Libra2VM,
 };
-use aptos_gas_meter::AptosGasMeter;
+use libra2_gas_meter::Libra2GasMeter;
 use libra2_types::{on_chain_config::Features, transaction::ModuleBundle};
 use libra2_vm_types::{
     change_set::VMChangeSet, module_and_script_storage::module_storage::AptosModuleStorage,
@@ -76,7 +76,7 @@ impl<'r, 'l> UserSession<'r, 'l> {
         mut self,
         resolver: &impl AptosMoveResolver,
         module_storage: &impl AptosModuleStorage,
-        gas_meter: &mut impl AptosGasMeter,
+        gas_meter: &mut impl Libra2GasMeter,
         traversal_context: &mut TraversalContext,
         features: &Features,
         change_set_configs: &ChangeSetConfigs,

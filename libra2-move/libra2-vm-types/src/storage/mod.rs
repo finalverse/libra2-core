@@ -4,7 +4,7 @@
 use crate::storage::{
     change_set_configs::ChangeSetConfigs, io_pricing::IoPricing, space_pricing::DiskSpacePricing,
 };
-use libra2_gas_schedule::{AptosGasParameters, InitialGasSchedule, LATEST_GAS_FEATURE_VERSION};
+use libra2_gas_schedule::{Libra2GasParameters, InitialGasSchedule, LATEST_GAS_FEATURE_VERSION};
 use libra2_types::{
     on_chain_config::{ConfigStorage, Features},
     state_store::state_key::StateKey,
@@ -27,7 +27,7 @@ impl StorageGasParameters {
     pub fn new(
         gas_feature_version: u64,
         features: &Features,
-        gas_params: &AptosGasParameters,
+        gas_params: &Libra2GasParameters,
         config_storage: &impl ConfigStorage,
     ) -> Self {
         Self::new_impl(
@@ -43,7 +43,7 @@ impl StorageGasParameters {
         Self::new_impl(
             LATEST_GAS_FEATURE_VERSION,
             &Features::default(),
-            &AptosGasParameters::zeros(), // free of charge
+            &Libra2GasParameters::zeros(), // free of charge
             &DummyConfigStorage,
             ChangeSetConfigs::unlimited_at_gas_feature_version(LATEST_GAS_FEATURE_VERSION), // no limits
         )
@@ -53,7 +53,7 @@ impl StorageGasParameters {
         Self::new(
             LATEST_GAS_FEATURE_VERSION,
             &Features::default(),
-            &AptosGasParameters::initial(),
+            &Libra2GasParameters::initial(),
             &DummyConfigStorage,
         )
     }
@@ -61,7 +61,7 @@ impl StorageGasParameters {
     fn new_impl(
         gas_feature_version: u64,
         features: &Features,
-        gas_params: &AptosGasParameters,
+        gas_params: &Libra2GasParameters,
         config_storage: &impl ConfigStorage,
         change_set_configs: ChangeSetConfigs,
     ) -> Self {

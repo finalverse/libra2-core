@@ -3,9 +3,9 @@
 
 use crate::{move_vm_ext::AptosMoveResolver, transaction_metadata::TransactionMetadata};
 use libra2_gas_algebra::{Gas, GasExpression, InternalGas};
-use aptos_gas_meter::{StandardGasAlgebra, StandardGasMeter};
+use libra2_gas_meter::{StandardGasAlgebra, StandardGasMeter};
 use libra2_gas_schedule::{
-    gas_feature_versions::RELEASE_V1_13, gas_params::txn::KEYLESS_BASE_COST, AptosGasParameters,
+    gas_feature_versions::RELEASE_V1_13, gas_params::txn::KEYLESS_BASE_COST, Libra2GasParameters,
     VMGasParameters,
 };
 use libra2_logger::{enabled, Level};
@@ -47,7 +47,7 @@ pub fn make_prod_gas_meter<T: BlockSynchronizationKillSwitch>(
 }
 
 pub(crate) fn check_gas(
-    gas_params: &AptosGasParameters,
+    gas_params: &Libra2GasParameters,
     gas_feature_version: u64,
     resolver: &impl AptosMoveResolver,
     module_storage: &impl ModuleStorage,

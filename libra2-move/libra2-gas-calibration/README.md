@@ -1,5 +1,5 @@
 ---
-id: aptos-gas-calibration
+id: libra2-gas-calibration
 title: Aptos Automated Gas Calibration
 ---
 
@@ -77,7 +77,7 @@ Note: These are still valid Calibration Functions that will still run, but would
 cargo run --release -- --help 
 Automated Gas Calibration to calibrate Move bytecode and Native Functions
 
-Usage: aptos-gas-calibration [OPTIONS]
+Usage: libra2-gas-calibration [OPTIONS]
 
 Options:
   -p, --pattern <PATTERN>                         Specific tests to run that match a pattern [default: ""]

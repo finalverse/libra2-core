@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::change_set::ChangeSetInterface;
-use libra2_gas_schedule::AptosGasParameters;
+use libra2_gas_schedule::Libra2GasParameters;
 use move_binary_format::errors::{Location, PartialVMError};
 use move_core_types::vm_status::{StatusCode, VMStatus};
 
@@ -28,7 +28,7 @@ impl ChangeSetConfigs {
         )
     }
 
-    pub fn new(feature_version: u64, gas_params: &AptosGasParameters) -> Self {
+    pub fn new(feature_version: u64, gas_params: &Libra2GasParameters) -> Self {
         if feature_version >= 5 {
             Self::from_gas_params(feature_version, gas_params)
         } else if feature_version >= 3 {
@@ -71,7 +71,7 @@ impl ChangeSetConfigs {
         Self::new_impl(3, MB, u64::MAX, MB, 10 * MB, u64::MAX)
     }
 
-    fn from_gas_params(gas_feature_version: u64, gas_params: &AptosGasParameters) -> Self {
+    fn from_gas_params(gas_feature_version: u64, gas_params: &Libra2GasParameters) -> Self {
         let params = &gas_params.vm.txn;
         Self::new_impl(
             gas_feature_version,

@@ -10,7 +10,7 @@ use crate::{
     },
 };
 use libra2_gas_algebra::DynamicExpression;
-use libra2_gas_schedule::{AptosGasParameters, MiscGasParameters, NativeGasParameters};
+use libra2_gas_schedule::{Libra2GasParameters, MiscGasParameters, NativeGasParameters};
 use libra2_native_interface::SafeNativeBuilder;
 use libra2_types::{
     chain_id::ChainId,
@@ -96,7 +96,7 @@ impl Libra2Environment {
     /// Returns the gas parameters used by this environment, and an error if they were not found
     /// on-chain.
     #[inline]
-    pub fn gas_params(&self) -> &Result<AptosGasParameters, String> {
+    pub fn gas_params(&self) -> &Result<Libra2GasParameters, String> {
         &self.0.gas_params
     }
 
@@ -150,7 +150,7 @@ struct Environment {
     gas_feature_version: u64,
     /// Gas parameters used in this environment. Error is stored if gas parameters were not found
     /// on-chain.
-    gas_params: Result<AptosGasParameters, String>,
+    gas_params: Result<Libra2GasParameters, String>,
     /// Storage gas parameters used in this environment. Error is stored if gas parameters were not
     /// found on-chain.
     storage_gas_params: Result<StorageGasParameters, String>,

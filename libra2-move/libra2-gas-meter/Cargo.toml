@@ -1,6 +1,6 @@
 [package]
-name = "aptos-gas-meter"
-description = "Gas meter implementation for the Aptos blockchain"
+name = "libra2-gas-meter"
+description = "Gas meter implementation for the Libra2 blockchain"
 version = "0.1.0"
 
 # Workspace inherited keys
