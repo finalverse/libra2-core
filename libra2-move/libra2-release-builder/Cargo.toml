@@ -20,7 +20,7 @@ libra2-crypto = { workspace = true }
 libra2-framework = { workspace = true }
 aptos-gas-profiling = { workspace = true }
 aptos-gas-schedule = { workspace = true }
-aptos-gas-schedule-updator = { workspace = true }
+libra2-gas-schedule-updator = { workspace = true }
 libra2-genesis = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-keygen = { workspace = true }

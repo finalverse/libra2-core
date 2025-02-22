@@ -207,7 +207,7 @@ impl GasScheduleLocator {
                 let gas_schedule: GasScheduleV2 = response.json().await?;
                 Ok(gas_schedule)
             },
-            GasScheduleLocator::Current => Ok(aptos_gas_schedule_updator::current_gas_schedule(
+            GasScheduleLocator::Current => Ok(libra2_gas_schedule_updator::current_gas_schedule(
                 LATEST_GAS_FEATURE_VERSION,
             )),
         }

@@ -682,22 +682,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-gas-schedule-updator"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-gas-schedule",
- "aptos-package-builder",
- "bcs 0.1.4",
- "clap 4.5.21",
- "libra2-framework",
- "libra2-types",
- "move-core-types",
- "move-model",
- "tempfile",
-]
-
-[[package]]
 name = "aptos-indexer"
 version = "0.0.1"
 dependencies = [
@@ -8166,6 +8150,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-gas-schedule-updator"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-gas-schedule",
+ "aptos-package-builder",
+ "bcs 0.1.4",
+ "clap 4.5.21",
+ "libra2-framework",
+ "libra2-types",
+ "move-core-types",
+ "move-model",
+ "tempfile",
+]
+
+[[package]]
 name = "libra2-genesis"
 version = "0.1.0"
 dependencies = [
@@ -9536,7 +9536,6 @@ dependencies = [
  "aptos",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
- "aptos-gas-schedule-updator",
  "bcs 0.1.4",
  "clap 4.5.21",
  "futures",
@@ -9546,6 +9545,7 @@ dependencies = [
  "libra2-build-info",
  "libra2-crypto",
  "libra2-framework",
+ "libra2-gas-schedule-updator",
  "libra2-genesis",
  "libra2-infallible",
  "libra2-keygen",

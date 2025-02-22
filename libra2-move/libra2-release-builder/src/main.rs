@@ -316,7 +316,7 @@ async fn main() -> anyhow::Result<()> {
             let output_path =
                 output_path.unwrap_or_else(|| PathBuf::from_str("gas_schedule.json").unwrap());
 
-            let gas_schedule = aptos_gas_schedule_updator::current_gas_schedule(version);
+            let gas_schedule = libra2_gas_schedule_updator::current_gas_schedule(version);
             let json = serde_json::to_string_pretty(&gas_schedule)?;
 
             std::fs::write(&output_path, json)?;
