@@ -22,7 +22,7 @@ libra2-crypto = { workspace = true, features = ["fuzzing"] }
 libra2-framework = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-meter = { workspace = true }
-aptos-gas-profiling = { workspace = true }
+libra2-gas-profiling = { workspace = true }
 libra2-gas-schedule = { workspace = true }
 libra2-keygen = { workspace = true }
 libra2-proptest-helpers = { workspace = true }

@@ -4,7 +4,7 @@
 use crate::{assert_success, build_package, AptosPackageHooks};
 use libra2_cached_packages::aptos_stdlib;
 use libra2_framework::{natives::code::PackageMetadata, BuildOptions, BuiltPackage};
-use aptos_gas_profiling::TransactionGasLog;
+use libra2_gas_profiling::TransactionGasLog;
 use libra2_gas_schedule::{
     AptosGasParameters, FromOnChainGasSchedule, InitialGasSchedule, ToOnChainGasSchedule,
 };

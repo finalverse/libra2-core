@@ -14,7 +14,7 @@ use crate::{
 use libra2_cached_packages::{aptos_stdlib, aptos_token_sdk_builder};
 use libra2_crypto::{bls12381, PrivateKey, Uniform};
 use libra2_gas_algebra::GasQuantity;
-use aptos_gas_profiling::TransactionGasLog;
+use libra2_gas_profiling::TransactionGasLog;
 use libra2_language_e2e_tests::account::Account;
 use libra2_transaction_generator_lib::{
     entry_point_trait::{EntryPointTrait, MultiSigConfig},

@@ -24,7 +24,7 @@ libra2-config = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-faucet-core = { workspace = true }
 libra2-framework = { workspace = true }
-aptos-gas-profiling = { workspace = true }
+libra2-gas-profiling = { workspace = true }
 libra2-gas-schedule = { workspace = true }
 libra2-genesis = { workspace = true }
 libra2-github-client = { workspace = true }

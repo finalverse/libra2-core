@@ -3,7 +3,7 @@
 
 use crate::common::types::{CliError, CliTypedResult};
 use libra2_crypto::HashValue;
-use aptos_gas_profiling::FrameName;
+use libra2_gas_profiling::FrameName;
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_types::transaction::SignedTransaction;
 use libra2_vm::{data_cache::AsMoveResolver, Libra2VM};

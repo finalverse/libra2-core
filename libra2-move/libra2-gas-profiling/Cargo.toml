@@ -1,5 +1,5 @@
 [package]
-name = "aptos-gas-profiling"
+name = "libra2-gas-profiling"
 version = "0.1.0"
 
 # Workspace inherited keys

@@ -18,7 +18,7 @@ aptos = { workspace = true, features = [ "no-upload-proposal" ] }
 libra2-build-info = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-framework = { workspace = true }
-aptos-gas-profiling = { workspace = true }
+libra2-gas-profiling = { workspace = true }
 libra2-gas-schedule = { workspace = true }
 libra2-gas-schedule-updator = { workspace = true }
 libra2-genesis = { workspace = true }
