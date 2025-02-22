@@ -135,7 +135,7 @@ impl NetworkLoadTest for ChangingWorkingQuorumTest {
 
                 validator
                     .set_failpoint(
-                        "aptos_vm::execution::block_metadata".to_string(),
+                        "libra2_vm::execution::block_metadata".to_string(),
                         format!("sleep({})", sleep_time),
                     )
                     .await
@@ -294,7 +294,7 @@ impl NetworkLoadTest for ChangingWorkingQuorumTest {
 
                 validator
                     .set_failpoint(
-                        "aptos_vm::execution::block_metadata".to_string(),
+                        "libra2_vm::execution::block_metadata".to_string(),
                         "off".to_string(),
                     )
                     .await

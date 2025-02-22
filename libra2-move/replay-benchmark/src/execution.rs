@@ -10,12 +10,12 @@ use libra2_types::{
     state_store::StateView,
     transaction::TransactionOutput,
 };
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 
 /// Runs a block of transactions from the workload on top of the specified state (sequentially or
 /// in parallel). Block execution should never fail.
 pub(crate) fn execute_workload(
-    executor: &AptosVMBlockExecutor,
+    executor: &Libra2VMBlockExecutor,
     workload: &Workload,
     state_view: &(impl StateView + Sync),
     concurrency_level: usize,

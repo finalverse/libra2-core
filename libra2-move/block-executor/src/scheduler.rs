@@ -4,7 +4,7 @@
 
 use crate::explicit_sync_wrapper::ExplicitSyncWrapper;
 use libra2_infallible::Mutex;
-use aptos_mvhashmap::types::{Incarnation, TxnIndex};
+use libra2_mvhashmap::types::{Incarnation, TxnIndex};
 use libra2_types::error::{code_invariant_error, PanicError};
 use concurrent_queue::{ConcurrentQueue, PopError};
 use crossbeam::utils::CachePadded;

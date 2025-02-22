@@ -6,7 +6,7 @@ use crate::types::InputOutputKey;
 use libra2_aggregator::{
     delayed_change::DelayedChange, delta_change_set::DeltaOp, resolver::TAggregatorV1View,
 };
-use aptos_mvhashmap::types::TxnIndex;
+use libra2_mvhashmap::types::TxnIndex;
 use libra2_types::{
     error::PanicError,
     fee_statement::FeeStatement,

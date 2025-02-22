@@ -12,7 +12,7 @@ use crate::{
 use libra2_framework::{
     get_metadata_from_compiled_module, get_metadata_from_compiled_script, RuntimeModuleMetadataV1,
 };
-use aptos_vm::determine_is_view;
+use libra2_vm::determine_is_view;
 use move_binary_format::{
     access::{ModuleAccess, ScriptAccess},
     file_format::{

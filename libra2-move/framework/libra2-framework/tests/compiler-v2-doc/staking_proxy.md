@@ -310,7 +310,7 @@
 <td>Staking Contract's operators should be unique inside a store.</td>
 <td>Medium</td>
 <td>Duplicates among operators could result in incorrectly updating the operator or voter associated with the incorrect StakingContract.</td>
-<td>Enforced via <a href="https://github.com/aptos-labs/aptos-core/blob/main/aptos-move/framework/libra2-framework/sources/staking_contract.move#L87">SimpleMap</a>.</td>
+<td>Enforced via <a href="https://github.com/aptos-labs/aptos-core/blob/main/libra2-move/framework/libra2-framework/sources/staking_contract.move#L87">SimpleMap</a>.</td>
 </tr>
 
 </table>

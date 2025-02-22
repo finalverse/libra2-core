@@ -3,7 +3,7 @@
 use crate::{RemoteKVRequest, RemoteKVResponse};
 use libra2_secure_net::network_controller::{Message, NetworkController};
 use libra2_types::state_store::state_key::StateKey;
-use aptos_vm::sharded_block_executor::remote_state_value::RemoteStateValue;
+use libra2_vm::sharded_block_executor::remote_state_value::RemoteStateValue;
 use crossbeam_channel::{Receiver, Sender};
 use std::{
     net::SocketAddr,

@@ -38,7 +38,7 @@ use libra2_types::{
     transaction::{Transaction, TransactionInfo, TransactionListWithProof, Version},
     write_set::WriteSet,
 };
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, AptosVM};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, Libra2VM};
 use clap::Parser;
 use futures::{
     future,
@@ -289,7 +289,7 @@ impl TransactionRestoreBatchController {
                 self.output_transaction_analysis.is_none(),
                 "Bug: requested to output transaction output sizing info in restore mode.",
             );
-            AptosVM::set_concurrency_level_once(self.global_opt.replay_concurrency_level);
+            Libra2VM::set_concurrency_level_once(self.global_opt.replay_concurrency_level);
 
             let kv_only = self.replay_from_version.map_or(false, |(_, k)| k);
             let txns_to_execute_stream = self
@@ -594,7 +594,7 @@ impl TransactionRestoreBatchController {
         restore_handler.reset_state_store();
         let replay_start = Instant::now();
         let db = DbReaderWriter::from_arc(Arc::clone(&restore_handler.Libra2DB));
-        let chunk_replayer = Arc::new(ChunkExecutor::<AptosVMBlockExecutor>::new(db));
+        let chunk_replayer = Arc::new(ChunkExecutor::<Libra2VMBlockExecutor>::new(db));
         let ledger_update_stream = txns_to_execute_stream
             .try_chunks(BATCH_SIZE)
             .err_into::<anyhow::Error>()

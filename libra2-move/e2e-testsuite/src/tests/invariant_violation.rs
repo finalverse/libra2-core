@@ -13,7 +13,7 @@ use move_core_types::{value::MoveValue, vm_status::StatusCode};
 #[test]
 fn invariant_violation_error() {
     let _scenario = fail::FailScenario::setup();
-    fail::cfg("aptos_vm::execute_script_or_entry_function", "100%return").unwrap();
+    fail::cfg("libra2_vm::execute_script_or_entry_function", "100%return").unwrap();
 
     ::libra2_logger::Logger::init_for_testing();
 

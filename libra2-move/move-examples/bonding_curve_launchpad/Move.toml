@@ -23,4 +23,4 @@ subdir = "libra2-framework"
 [dependencies.swap]
 git = "https://github.com/aptos-labs/libra2-framework.git"
 rev = "bbf569abd260d94bc30fe96da297d2aecb193644"
-subdir = "aptos-move/move-examples/swap"
+subdir = "libra2-move/move-examples/swap"

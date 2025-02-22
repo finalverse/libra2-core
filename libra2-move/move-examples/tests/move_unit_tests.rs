@@ -7,7 +7,7 @@ use libra2_types::{
     account_address::{create_resource_address, AccountAddress},
     on_chain_config::{aptos_test_feature_flags_genesis, Features, TimedFeaturesBuilder},
 };
-use aptos_vm::natives;
+use libra2_vm::natives;
 use move_cli::base::test::{run_move_unit_tests, UnitTestResult};
 use move_package::{source_package::std_lib::StdVersion, CompilerConfig};
 use move_unit_test::UnitTestingConfig;

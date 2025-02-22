@@ -7,7 +7,7 @@ use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEAT
 use libra2_types::on_chain_config::{
     aptos_test_feature_flags_genesis, Features, TimedFeaturesBuilder,
 };
-use aptos_vm::natives;
+use libra2_vm::natives;
 use move_cli::base::test::{run_move_unit_tests, UnitTestResult};
 use move_package::CompilerConfig;
 use move_unit_test::UnitTestingConfig;

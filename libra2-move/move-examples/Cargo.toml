@@ -1,5 +1,5 @@
 [package]
-name = "aptos-move-examples"
+name = "libra2-move-examples"
 description = "Move examples"
 version = "0.1.0"
 
@@ -16,7 +16,7 @@ rust-version = { workspace = true }
 libra2-framework = { workspace = true }
 aptos-gas-schedule = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm ={ workspace = true, features = ["testing"] }
+libra2-vm ={ workspace = true, features = ["testing"] }
 clap = { workspace = true }
 move-cli = { workspace = true }
 move-model = { workspace = true }

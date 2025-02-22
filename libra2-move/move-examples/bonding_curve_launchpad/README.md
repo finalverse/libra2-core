@@ -72,7 +72,7 @@ One style could encompass sublinear functions to reward early adopters more heav
 ### `test_bonding_curve_launchpad.move`
 * E2E tests.
 ### `move-examples/swap`
-* Fungible Asset DEX example from the `aptos-move` examples.
+* Fungible Asset DEX example from the `libra2-move` examples.
 
 
 ### Lifecycle of launched FA
@@ -93,7 +93,7 @@ One style could encompass sublinear functions to reward early adopters more heav
 #### Graduating from `liquidity_pairs` to a public FA DEX
 1. After each swap from APT to FA, when the APT reserves are increasing, a threshold is checked for whether the liquidity pair can **graduate** or not. The threshold is a pre-defined minimum amount of APT that must exist in the reserves. Once this threshold is met during a swap, **graduation** begins.
    1. The associated liquidity pair on the `liquidity_pairs` module is disabled by toggling `is_enabled`, preventing any more swaps against the pair. Additionally, the liquidity pair's `is_frozen` is disabled to allow owners to transfer freely. 
-   2. The reserves from the liquidity pair, both APT and FA, are moved to an external, public third-party DEX as a new liquidity pair. In this case, the `aptos-move` FA DEX example, called swap. 
+   2. The reserves from the liquidity pair, both APT and FA, are moved to an external, public third-party DEX as a new liquidity pair. In this case, the `libra2-move` FA DEX example, called swap. 
    3. To prevent any wrongdoing from the `bonding_curve_launchpad` owner, any liquidity tokens received during the creation of the new liquidity pair on the third-party DEX will be sent to a dead address. Otherwise, the tokens could be used to drain the liquidity pair, at any time.
 
 

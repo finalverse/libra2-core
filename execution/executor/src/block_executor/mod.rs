@@ -40,7 +40,7 @@ use libra2_types::{
     ledger_info::LedgerInfoWithSignatures,
     state_store::StateViewId,
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use block_tree::BlockTree;
 use fail::fail_point;
 use std::sync::Arc;

@@ -11,7 +11,7 @@ use crate::{
 use anyhow::{anyhow, bail};
 use libra2_logger::Level;
 use libra2_types::transaction::TransactionOutput;
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, move_vm_ext::flush_warm_vm_cache, VMBlockExecutor};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, move_vm_ext::flush_warm_vm_cache, VMBlockExecutor};
 use clap::Parser;
 use std::path::PathBuf;
 use tokio::fs;
@@ -155,7 +155,7 @@ impl DiffCommand {
         inputs: &[ReadSet],
     ) -> Vec<Vec<TransactionOutput>> {
         flush_warm_vm_cache();
-        let executor = AptosVMBlockExecutor::new();
+        let executor = Libra2VMBlockExecutor::new();
         workloads
             .iter()
             .zip(inputs)

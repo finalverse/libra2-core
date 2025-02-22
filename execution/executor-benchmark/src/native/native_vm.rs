@@ -22,7 +22,7 @@ use libra2_block_executor::{
     txn_provider::default::DefaultTxnProvider,
 };
 use libra2_logger::error;
-use aptos_mvhashmap::types::TxnIndex;
+use libra2_mvhashmap::types::TxnIndex;
 use libra2_types::{
     account_address::AccountAddress,
     account_config::{
@@ -46,7 +46,7 @@ use libra2_types::{
     write_set::WriteOp,
     AptosCoinType,
 };
-use aptos_vm::{
+use libra2_vm::{
     block_executor::{AptosBlockExecutorWrapper, AptosTransactionOutput},
     VMBlockExecutor,
 };

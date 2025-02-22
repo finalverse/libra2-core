@@ -22,7 +22,7 @@ use libra2_types::{
     },
     write_set::WriteSet,
 };
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, AptosVM, VMBlockExecutor};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, Libra2VM, VMBlockExecutor};
 use clap::Parser;
 use itertools::multizip;
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
@@ -169,7 +169,7 @@ impl Verifier {
 
     // Split the replay to multiple reply tasks running in parallel
     pub fn run(self) -> Result<Vec<Error>> {
-        AptosVM::set_concurrency_level_once(self.replay_concurrency_level);
+        Libra2VM::set_concurrency_level_once(self.replay_concurrency_level);
         let task_size = self.limit / self.concurrent_replay as u64;
         let ranges: Vec<(u64, u64)> = (0..self.concurrent_replay)
             .map(|i| {
@@ -301,7 +301,7 @@ impl Verifier {
             .map(|txn| SignatureVerifiedTransaction::from(txn.clone()))
             .collect::<Vec<_>>();
         let txns_provider = DefaultTxnProvider::new(txns);
-        let executed_outputs = AptosVMBlockExecutor::new().execute_block_no_limit(
+        let executed_outputs = Libra2VMBlockExecutor::new().execute_block_no_limit(
             &txns_provider,
             &self
                 .arc_db

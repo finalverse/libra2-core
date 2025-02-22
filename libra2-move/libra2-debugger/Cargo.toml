@@ -22,7 +22,7 @@ libra2-logger = { workspace = true }
 libra2-rest-client = { workspace = true }
 libra2-types = { workspace = true }
 libra2-validator-interface = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 libra2-vm-environment = { workspace = true }
 libra2-vm-logging = { workspace = true }
 libra2-vm-types = { workspace = true }

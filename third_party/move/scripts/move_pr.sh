@@ -128,7 +128,7 @@ MOVE_CRATES_V2_ENV_DEPENDENT="\
   -p move-stdlib\
   -p move-table-extension\
   -p move-vm-integration-tests\
-  -p aptos-move-examples\
+  -p libra2-move-examples\
   -p e2e-move-tests\
   -p libra2-framework\
 "

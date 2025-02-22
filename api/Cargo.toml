@@ -28,7 +28,7 @@ libra2-runtimes = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 bcs = { workspace = true }
 bytes = { workspace = true }
 fail = { workspace = true }

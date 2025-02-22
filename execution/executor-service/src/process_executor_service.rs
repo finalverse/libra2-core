@@ -5,7 +5,7 @@ use crate::remote_executor_service::ExecutorService;
 use libra2_logger::info;
 use libra2_push_metrics::MetricsPusher;
 use libra2_types::block_executor::partitioner::ShardId;
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use std::net::SocketAddr;
 
 /// An implementation of the remote executor service that runs in a standalone process.
@@ -31,7 +31,7 @@ impl ProcessExecutorService {
             &("remote-executor-service-".to_owned() + &shard_id.to_string()),
         );
 
-        AptosVM::set_concurrency_level_once(num_threads);
+        Libra2VM::set_concurrency_level_once(num_threads);
         let mut executor_service = ExecutorService::new(
             shard_id,
             num_shards,

@@ -10,7 +10,7 @@ use crate::{
 use libra2_logger::error;
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_types::transaction::Version;
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, data_cache::AsMoveResolver, VMBlockExecutor};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, data_cache::AsMoveResolver, VMBlockExecutor};
 use libra2_vm_environment::environment::Libra2Environment;
 use move_core_types::{
     ident_str,
@@ -86,7 +86,7 @@ impl InputOutputDiffGenerator {
 
         // First, we execute transactions without overrides.
         let onchain_outputs =
-            execute_workload(&AptosVMBlockExecutor::new(), &workload, &state_view, 1);
+            execute_workload(&Libra2VMBlockExecutor::new(), &workload, &state_view, 1);
 
         // Check on-chain outputs do not modify the state we override. If so, benchmarking results
         // may not be correct.
@@ -121,7 +121,7 @@ impl InputOutputDiffGenerator {
         }
 
         execute_workload(
-            &AptosVMBlockExecutor::new(),
+            &Libra2VMBlockExecutor::new(),
             &workload,
             &state_view_with_override,
             1,

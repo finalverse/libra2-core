@@ -35,10 +35,10 @@ COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-transact
 COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-api-tester /usr/local/bin/libra2-api-tester
 
 # Copy the example module to publish for api-tester
-COPY --link --from=tools-builder /aptos/aptos-move/framework/libra2-framework /aptos-move/framework/libra2-framework
-COPY --link --from=tools-builder /aptos/aptos-move/framework/aptos-stdlib /aptos-move/framework/aptos-stdlib
-COPY --link --from=tools-builder /aptos/aptos-move/framework/move-stdlib /aptos-move/framework/move-stdlib
-COPY --link --from=tools-builder /aptos/aptos-move/move-examples/hello_blockchain /aptos-move/move-examples/hello_blockchain
+COPY --link --from=tools-builder /aptos/libra2-move/framework/libra2-framework /libra2-move/framework/libra2-framework
+COPY --link --from=tools-builder /aptos/libra2-move/framework/aptos-stdlib /libra2-move/framework/aptos-stdlib
+COPY --link --from=tools-builder /aptos/libra2-move/framework/move-stdlib /libra2-move/framework/move-stdlib
+COPY --link --from=tools-builder /aptos/libra2-move/move-examples/hello_blockchain /libra2-move/move-examples/hello_blockchain
 
 ### Get Aptos Move releases for genesis ceremony
 RUN mkdir -p /libra2-framework/move

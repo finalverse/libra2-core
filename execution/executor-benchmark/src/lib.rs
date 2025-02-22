@@ -45,7 +45,7 @@ use libra2_transaction_generator_lib::{
     TransactionType::{self, CoinTransfer},
 };
 use libra2_types::on_chain_config::{FeatureFlag, Features};
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, AptosVM, VMBlockExecutor};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, Libra2VM, VMBlockExecutor};
 use db_generator::create_db_with_accounts;
 use db_reliable_submitter::DbReliableTransactionSubmitter;
 use metrics::TIMER;
@@ -202,7 +202,7 @@ pub fn run_benchmark<V>(
             let (main_signer_accounts, burner_accounts) =
                 accounts_cache.split(num_main_signer_accounts);
 
-            let (transaction_generator_creator, phase) = init_workload::<AptosVMBlockExecutor>(
+            let (transaction_generator_creator, phase) = init_workload::<Libra2VMBlockExecutor>(
                 transaction_mix,
                 root_account.clone(),
                 main_signer_accounts,
@@ -819,9 +819,9 @@ pub fn run_single_with_default_params(
 ) {
     libra2_logger::Logger::new().init();
 
-    AptosVM::set_num_shards_once(1);
-    AptosVM::set_concurrency_level_once(concurrency_level);
-    AptosVM::set_processed_transactions_detailed_counters();
+    Libra2VM::set_num_shards_once(1);
+    Libra2VM::set_concurrency_level_once(concurrency_level);
+    Libra2VM::set_processed_transactions_detailed_counters();
 
     rayon::ThreadPoolBuilder::new()
         .thread_name(|index| format!("rayon-global-{}", index))
@@ -862,7 +862,7 @@ pub fn run_single_with_default_params(
         ..Default::default()
     };
 
-    create_db_with_accounts::<AptosVMBlockExecutor>(
+    create_db_with_accounts::<Libra2VMBlockExecutor>(
         num_accounts,   /* num_accounts */
         10_000_000_000, /* init_account_balance */
         10000,          /* block_size */
@@ -883,7 +883,7 @@ pub fn run_single_with_default_params(
         ..Default::default()
     };
 
-    run_benchmark::<AptosVMBlockExecutor>(
+    run_benchmark::<Libra2VMBlockExecutor>(
         benchmark_block_size, /* block_size */
         30,                   /* num_blocks */
         BenchmarkWorkload::TransactionMix(vec![(transaction_type, 1)]),
@@ -907,7 +907,7 @@ mod tests {
         db_generator::bootstrap_with_genesis,
         default_benchmark_features, init_db,
         native::{
-            aptos_vm_uncoordinated::AptosVMParallelUncoordinatedBlockExecutor,
+            libra2_vm_uncoordinated::Libra2VMParallelUncoordinatedBlockExecutor,
             native_config::NativeConfig,
             native_vm::NativeVMBlockExecutor,
             parallel_uncoordinated_block_executor::{
@@ -935,7 +935,7 @@ mod tests {
         state_store::state_key::inner::StateKeyInner,
         transaction::{Transaction, TransactionPayload},
     };
-    use aptos_vm::{aptos_vm::AptosVMBlockExecutor, AptosVM, VMBlockExecutor};
+    use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, Libra2VM, VMBlockExecutor};
     use itertools::Itertools;
     use move_core_types::language_storage::StructTag;
     use rand::thread_rng;
@@ -946,7 +946,7 @@ mod tests {
 
     #[test]
     fn test_compare_vm_and_vm_uncoordinated() {
-        test_compare_prod_and_another_all_types::<AptosVMParallelUncoordinatedBlockExecutor>(true);
+        test_compare_prod_and_another_all_types::<Libra2VMParallelUncoordinatedBlockExecutor>(true);
     }
 
     #[test]
@@ -1019,7 +1019,7 @@ mod tests {
 
         let (txn, vm_result) = {
             let vm_db = init_db(&config);
-            let vm_executor = BlockExecutor::<AptosVMBlockExecutor>::new(vm_db.clone());
+            let vm_executor = BlockExecutor::<Libra2VMBlockExecutor>::new(vm_db.clone());
 
             let root_account = TransactionGenerator::read_root_account(genesis_key, &vm_db);
             let dst = LocalAccount::generate(&mut thread_rng());
@@ -1168,7 +1168,7 @@ mod tests {
         features.enable(FeatureFlag::NEW_ACCOUNTS_DEFAULT_TO_FA_APT_STORE);
         features.enable(FeatureFlag::OPERATIONS_DEFAULT_TO_FA_APT_STORE);
 
-        crate::db_generator::create_db_with_accounts::<AptosVMBlockExecutor>(
+        crate::db_generator::create_db_with_accounts::<Libra2VMBlockExecutor>(
             100, /* num_accounts */
             // TODO(Gas): double check if this is correct
             100_000_000_000, /* init_account_balance */
@@ -1216,15 +1216,15 @@ mod tests {
 
     #[test]
     fn test_benchmark_default() {
-        test_generic_benchmark::<AptosVMBlockExecutor>(None, true);
+        test_generic_benchmark::<Libra2VMBlockExecutor>(None, true);
     }
 
     #[test]
     fn test_publish_transaction() {
-        AptosVM::set_num_shards_once(1);
-        AptosVM::set_concurrency_level_once(4);
-        AptosVM::set_processed_transactions_detailed_counters();
-        test_generic_benchmark::<AptosVMBlockExecutor>(
+        Libra2VM::set_num_shards_once(1);
+        Libra2VM::set_concurrency_level_once(4);
+        Libra2VM::set_processed_transactions_detailed_counters();
+        test_generic_benchmark::<Libra2VMBlockExecutor>(
             Some(TransactionTypeArg::RepublishAndCall),
             true,
         );
@@ -1232,11 +1232,11 @@ mod tests {
 
     #[test]
     fn test_benchmark_transaction() {
-        AptosVM::set_num_shards_once(4);
-        AptosVM::set_concurrency_level_once(4);
-        AptosVM::set_processed_transactions_detailed_counters();
+        Libra2VM::set_num_shards_once(4);
+        Libra2VM::set_concurrency_level_once(4);
+        Libra2VM::set_processed_transactions_detailed_counters();
         NativeConfig::set_concurrency_level_once(4);
-        test_generic_benchmark::<AptosVMBlockExecutor>(
+        test_generic_benchmark::<Libra2VMBlockExecutor>(
             Some(TransactionTypeArg::ModifyGlobalMilestoneAggV2),
             true,
         );

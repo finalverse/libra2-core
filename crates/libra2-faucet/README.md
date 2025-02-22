@@ -52,7 +52,7 @@ You can find many examples of different config files in [configs/](configs/).
 ## Developing
 Certain components of the faucet, e.g. the MinterFunder, rely on a Move script to operate. If you change it, compile the Move script like this (from the root of the repo):
 ```
-cd aptos-move/move-examples/scripts/minter
+cd libra2-move/move-examples/scripts/minter
 aptos move compile
 ```
 

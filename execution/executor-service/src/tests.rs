@@ -8,7 +8,7 @@ use crate::{
 use libra2_config::utils;
 use libra2_language_e2e_tests::data_store::FakeDataStore;
 use libra2_secure_net::network_controller::NetworkController;
-use aptos_vm::sharded_block_executor::ShardedBlockExecutor;
+use libra2_vm::sharded_block_executor::ShardedBlockExecutor;
 use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
 pub fn create_thread_remote_executor_shards(

@@ -30,7 +30,7 @@ use libra2_types::{
     vm_status::{StatusCode, VMStatus},
     write_set::{WriteOp, WriteSet, WriteSetMut},
 };
-use aptos_vm::{
+use libra2_vm::{
     sharded_block_executor::{executor_client::ExecutorClient, ShardedBlockExecutor},
     VMBlockExecutor,
 };

@@ -19,7 +19,7 @@ use libra2_types::{
     },
     transaction::{Transaction, TransactionOutput, Version},
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use once_cell::sync::Lazy;
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator};
 use std::sync::Arc;

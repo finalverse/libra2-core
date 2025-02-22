@@ -122,7 +122,7 @@ def main():
             else:
                 return line.split(", ")
 
-        output_file_name = "aptos-move/e2e-benchmark/data/calibration_values.tsv"
+        output_file_name = "libra2-move/e2e-benchmark/data/calibration_values.tsv"
 
     else:
         prefix = (

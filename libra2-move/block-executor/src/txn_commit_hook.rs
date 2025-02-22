@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::task::TransactionOutput;
-use aptos_mvhashmap::types::TxnIndex;
+use libra2_mvhashmap::types::TxnIndex;
 
 /// An interface for listening to transaction commit events. The listener is called only once
 /// for each transaction commit.

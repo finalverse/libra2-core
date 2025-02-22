@@ -23,7 +23,7 @@ libra2-metrics-core = { workspace = true }
 libra2-node-resource-metrics = { workspace = true }
 libra2-push-metrics =  { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 libra2-vm-logging = { workspace = true }
 clap = { workspace = true }
 criterion = { workspace = true, features = ["html_reports"] }

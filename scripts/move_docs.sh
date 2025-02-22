@@ -10,7 +10,7 @@
 current_path=$PWD
 
 root_path="$(dirname $0)/.."
-move_path="$root_path/aptos-move/framework"
+move_path="$root_path/libra2-move/framework"
 
 cd $move_path
 cargo run

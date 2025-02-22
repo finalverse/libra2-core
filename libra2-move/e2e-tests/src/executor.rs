@@ -53,12 +53,12 @@ use libra2_types::{
     write_set::{WriteOp, WriteSet, WriteSetMut},
     AptosCoinType, CoinType,
 };
-use aptos_vm::{
-    block_executor::{AptosTransactionOutput, AptosVMBlockExecutorWrapper},
+use libra2_vm::{
+    block_executor::{AptosTransactionOutput, Libra2VMBlockExecutorWrapper},
     data_cache::AsMoveResolver,
     gas::make_prod_gas_meter,
     move_vm_ext::{MoveVmExt, SessionExt, SessionId},
-    AptosVM, VMValidator,
+    Libra2VM, VMValidator,
 };
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_genesis::{generate_genesis_change_set_for_testing_with_count, GenesisOptions};
@@ -680,7 +680,7 @@ impl FakeExecutor {
             onchain: onchain_config,
         };
         let txn_provider = DefaultTxnProvider::new(txn_block);
-        AptosVMBlockExecutorWrapper::execute_block_on_thread_pool::<
+        Libra2VMBlockExecutorWrapper::execute_block_on_thread_pool::<
             _,
             NoOpTransactionCommitHook<AptosTransactionOutput, VMStatus>,
             _,
@@ -824,7 +824,7 @@ impl FakeExecutor {
 
         // TODO(Gas): revisit this.
         let env = Libra2Environment::new(&self.data_store);
-        let vm = AptosVM::new(env.clone(), self.get_state_view());
+        let vm = Libra2VM::new(env.clone(), self.get_state_view());
 
         let resolver = self.data_store.as_move_resolver();
         let code_storage = self.get_state_view().as_aptos_code_storage(env.clone());
@@ -897,7 +897,7 @@ impl FakeExecutor {
     /// Validates the given transaction by running it through the VM validator.
     pub fn validate_transaction(&self, txn: SignedTransaction) -> VMValidatorResult {
         let env = Libra2Environment::new(&self.data_store);
-        let vm = AptosVM::new(env.clone(), self.get_state_view());
+        let vm = Libra2VM::new(env.clone(), self.get_state_view());
         vm.validate_transaction(
             txn,
             &self.data_store,
@@ -1299,7 +1299,7 @@ impl FakeExecutor {
         arguments: Vec<Vec<u8>>,
     ) -> ViewFunctionOutput {
         let max_gas_amount = u64::MAX;
-        AptosVM::execute_view_function(
+        Libra2VM::execute_view_function(
             self.get_state_view(),
             fun.module_id,
             fun.member_id,
@@ -1311,7 +1311,7 @@ impl FakeExecutor {
 }
 
 /// Finishes the session, and asserts there has been no modules published (publishing is the
-/// responsibility of the adapter, i.e., [AptosVM]).
+/// responsibility of the adapter, i.e., [Libra2VM]).
 fn finish_session_assert_no_modules(
     session: SessionExt,
     module_storage: &impl AptosModuleStorage,

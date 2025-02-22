@@ -6,7 +6,7 @@ use libra2_metrics_core::{
     register_int_counter, register_int_counter_vec, register_int_gauge, Histogram, HistogramVec,
     IntCounter, IntCounterVec, IntGauge,
 };
-use aptos_mvhashmap::BlockStateStats;
+use libra2_mvhashmap::BlockStateStats;
 use libra2_types::fee_statement::FeeStatement;
 use once_cell::sync::Lazy;
 

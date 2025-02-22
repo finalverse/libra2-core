@@ -33,7 +33,7 @@ async fn add_execution_delay(
         );
         validator
             .set_failpoint(
-                "aptos_vm::execution::user_transaction".to_string(),
+                "libra2_vm::execution::user_transaction".to_string(),
                 format!(
                     "{}%delay({})",
                     sleep_percentage, config.inject_delay_per_transaction_ms
@@ -59,7 +59,7 @@ async fn remove_execution_delay(
     for (name, validator) in validators {
         validator
             .set_failpoint(
-                "aptos_vm::execution::block_metadata".to_string(),
+                "libra2_vm::execution::block_metadata".to_string(),
                 "off".to_string(),
             )
             .await

@@ -22,7 +22,7 @@ use libra2_types::{
     },
     on_chain_config::Features,
 };
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, VMBlockExecutor};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, VMBlockExecutor};
 use std::{fs, path::Path, sync::Arc};
 
 pub fn create_db_with_accounts<V>(
@@ -105,8 +105,8 @@ pub(crate) fn bootstrap_with_genesis(
 
     // Bootstrap db with genesis
     let waypoint =
-        generate_waypoint::<AptosVMBlockExecutor>(&db_rw, get_genesis_txn(&config).unwrap())
+        generate_waypoint::<Libra2VMBlockExecutor>(&db_rw, get_genesis_txn(&config).unwrap())
             .unwrap();
-    maybe_bootstrap::<AptosVMBlockExecutor>(&db_rw, get_genesis_txn(&config).unwrap(), waypoint)
+    maybe_bootstrap::<Libra2VMBlockExecutor>(&db_rw, get_genesis_txn(&config).unwrap(), waypoint)
         .unwrap();
 }

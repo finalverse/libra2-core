@@ -25,7 +25,7 @@ aptos-package-builder = { workspace = true }
 libra2-transaction-generator-lib = { workspace = true }
 libra2-transaction-workloads-lib = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true, features = ["testing"] }
+libra2-vm = { workspace = true, features = ["testing"] }
 libra2-vm-environment = { workspace = true }
 bcs = { workspace = true }
 claims = { workspace = true }

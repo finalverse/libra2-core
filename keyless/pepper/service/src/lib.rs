@@ -200,7 +200,7 @@ impl HandlerTrait<VerifyRequest, VerifyResponse> for V0VerifyHandler {
                 // (Run `cargo bench -- ed25519/pk_deserialize` in `crates/libra2-crypto`.)
                 Some(bytes) => Some(EphemeralPublicKey::ed25519(
                     Ed25519PublicKey::try_from(bytes.as_slice()).map_err(|_| {
-                        // println!("[aptos-vm][groth16] On chain TW PK is invalid");
+                        // println!("[libra2-vm][groth16] On chain TW PK is invalid");
                         invalid_signature!("The training wheels PK set on chain is not a valid PK")
                     })?,
                 )),
@@ -208,14 +208,14 @@ impl HandlerTrait<VerifyRequest, VerifyResponse> for V0VerifyHandler {
             match cert {
                 EphemeralCertificate::ZeroKnowledgeSig(zksig) => {
                     if zksig.exp_horizon_secs > config.max_exp_horizon_secs {
-                        // println!("[aptos-vm][groth16] Expiration horizon is too long");
+                        // println!("[libra2-vm][groth16] Expiration horizon is too long");
                         return Err(invalid_signature!("The expiration horizon is too long"));
                     }
                     if zksig.override_aud_val.is_some() {
                         config
                             .is_allowed_override_aud(zksig.override_aud_val.as_ref().unwrap())
                             .map_err(|_| {
-                                // println!("[aptos-vm][groth16] PIH computation failed");
+                                // println!("[libra2-vm][groth16] PIH computation failed");
                                 invalid_signature!("Could not compute public inputs hash")
                             })?;
                     }
@@ -225,7 +225,7 @@ impl HandlerTrait<VerifyRequest, VerifyResponse> for V0VerifyHandler {
                             let public_inputs_hash =
                                 get_public_inputs_hash(signature, public_key, &jwk, &config)
                                     .map_err(|_| {
-                                        // println!("[aptos-vm][groth16] PIH computation failed");
+                                        // println!("[libra2-vm][groth16] PIH computation failed");
                                         invalid_signature!("Could not compute public inputs hash")
                                     })?;
                             // println!("Public inputs hash time: {:?}", start.elapsed());
@@ -243,14 +243,14 @@ impl HandlerTrait<VerifyRequest, VerifyResponse> for V0VerifyHandler {
                                                 training_wheels_pk.as_ref().unwrap(),
                                             )
                                             .map_err(|_| {
-                                                // println!("[aptos-vm][groth16] TW sig verification failed");
+                                                // println!("[libra2-vm][groth16] TW sig verification failed");
                                                 invalid_signature!(
                                                     "Could not verify training wheels signature"
                                                 )
                                             })?;
                                     },
                                     None => {
-                                        // println!("[aptos-vm][groth16] Expected TW sig to be set");
+                                        // println!("[libra2-vm][groth16] Expected TW sig to be set");
                                         return Err(invalid_signature!(
                                             "Training wheels signature expected but it is missing"
                                         ));
@@ -268,15 +268,15 @@ impl HandlerTrait<VerifyRequest, VerifyResponse> for V0VerifyHandler {
                             let result =
                                 zksig.verify_groth16_proof(public_inputs_hash, &ark_groth16_pvk);
                             result.map_err(|_| {
-                                // println!("[aptos-vm][groth16] ZKP verification failed");
-                                // println!("[aptos-vm][groth16] PIH: {}", public_inputs_hash);
+                                // println!("[libra2-vm][groth16] ZKP verification failed");
+                                // println!("[libra2-vm][groth16] PIH: {}", public_inputs_hash);
                                 // match zksig.proof {
                                 //     ZKP::Groth16(proof) => {
-                                //         println!("[aptos-vm][groth16] ZKP: {}", proof.hash());
+                                //         println!("[libra2-vm][groth16] ZKP: {}", proof.hash());
                                 //     },
                                 // }
                                 // println!(
-                                //     "[aptos-vm][groth16] PVK: {}",
+                                //     "[libra2-vm][groth16] PVK: {}",
                                 //     Groth16VerificationKey::from(pvk).hash()
                                 // );
                                 invalid_signature!("Proof verification failed")

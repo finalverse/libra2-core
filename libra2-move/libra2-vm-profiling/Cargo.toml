@@ -25,7 +25,7 @@ libra2-move-stdlib = { workspace = true }
 libra2-native-interface = { workspace = true }
 libra2-table-natives = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 
 move-binary-format = { workspace = true }
 move-core-types = { workspace = true }

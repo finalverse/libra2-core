@@ -34,7 +34,7 @@ use libra2_types::{
     transaction::{Transaction, WriteSetPayload},
     waypoint::Waypoint,
 };
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use claims::{assert_err, assert_none};
 use futures::{channel::mpsc::UnboundedSender, FutureExt, SinkExt, StreamExt};
 use ntest::timeout;
@@ -340,7 +340,7 @@ async fn create_driver_for_tests(
     // Bootstrap the genesis transaction
     let (genesis, _) = libra2_vm_genesis::test_genesis_change_set_and_validators(Some(1));
     let genesis_txn = Transaction::GenesisTransaction(WriteSetPayload::Direct(genesis));
-    bootstrap_genesis::<AptosVMBlockExecutor>(&db_rw, &genesis_txn).unwrap();
+    bootstrap_genesis::<Libra2VMBlockExecutor>(&db_rw, &genesis_txn).unwrap();
 
     // Create the event subscription service and subscribe to events and reconfigurations
     let mut event_subscription_service =
@@ -365,7 +365,7 @@ async fn create_driver_for_tests(
         libra2_storage_service_notifications::new_storage_service_notifier_listener_pair();
 
     // Create the chunk executor
-    let chunk_executor = Arc::new(ChunkExecutor::<AptosVMBlockExecutor>::new(db_rw.clone()));
+    let chunk_executor = Arc::new(ChunkExecutor::<Libra2VMBlockExecutor>::new(db_rw.clone()));
 
     // Create a streaming service client
     let (streaming_service_client, _) = new_streaming_service_client_listener_pair();

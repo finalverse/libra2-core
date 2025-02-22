@@ -30,7 +30,7 @@ use libra2_types::{
     },
     write_set::WriteSet,
 };
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use libfuzzer_sys::{fuzz_target, Corpus};
 use move_core_types::{
     account_address::AccountAddress,
@@ -65,7 +65,7 @@ static TP: Lazy<Arc<rayon::ThreadPool>> = Lazy::new(|| {
 fn run_case(input: TransactionState) -> Result<(), Corpus> {
     tdbg!(&input);
 
-    AptosVM::set_concurrency_level_once(FUZZER_CONCURRENCY_LEVEL);
+    Libra2VM::set_concurrency_level_once(FUZZER_CONCURRENCY_LEVEL);
     let mut vm = FakeExecutor::from_genesis_with_existing_thread_pool(
         &VM,
         ChainId::mainnet(),

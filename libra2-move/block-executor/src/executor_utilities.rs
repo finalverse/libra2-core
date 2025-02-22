@@ -3,7 +3,7 @@
 
 use crate::{errors::*, view::LatestView};
 use libra2_logger::error;
-use aptos_mvhashmap::types::ValueWithLayout;
+use libra2_mvhashmap::types::ValueWithLayout;
 use libra2_types::{
     contract_event::TransactionEvent,
     error::{code_invariant_error, PanicError},

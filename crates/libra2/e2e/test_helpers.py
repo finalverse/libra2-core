@@ -158,7 +158,7 @@ class RunHelper:
     # Move any Move files into the working directory.
     def prepare_move(self):
         shutil.copytree(
-            "../../../aptos-move/move-examples/cli-e2e-tests",
+            "../../../libra2-move/move-examples/cli-e2e-tests",
             os.path.join(self.host_working_directory, "move/cli-e2e-tests"),
             ignore=shutil.ignore_patterns("build"),
         )

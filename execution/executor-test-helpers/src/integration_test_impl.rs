@@ -37,7 +37,7 @@ use libra2_types::{
     waypoint::Waypoint,
     AptosCoinType,
 };
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use rand::SeedableRng;
 use std::{path::Path, sync::Arc};
 
@@ -382,7 +382,7 @@ pub fn create_db_and_executor<P: AsRef<std::path::Path>>(
 ) -> (
     Arc<Libra2DB>,
     DbReaderWriter,
-    BlockExecutor<AptosVMBlockExecutor>,
+    BlockExecutor<Libra2VMBlockExecutor>,
     Waypoint,
 ) {
     let (db, dbrw) = force_sharding
@@ -393,7 +393,7 @@ pub fn create_db_and_executor<P: AsRef<std::path::Path>>(
             ))
         })
         .unwrap_or_else(|| DbReaderWriter::wrap(Libra2DB::new_for_test(&path)));
-    let waypoint = bootstrap_genesis::<AptosVMBlockExecutor>(&dbrw, genesis).unwrap();
+    let waypoint = bootstrap_genesis::<Libra2VMBlockExecutor>(&dbrw, genesis).unwrap();
     let executor = BlockExecutor::new(dbrw.clone());
 
     (db, dbrw, executor, waypoint)

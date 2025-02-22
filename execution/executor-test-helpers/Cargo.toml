@@ -25,6 +25,6 @@ aptos-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 libra2-vm-genesis = { workspace = true }
 rand = { workspace = true }

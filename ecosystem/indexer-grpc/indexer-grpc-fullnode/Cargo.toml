@@ -64,5 +64,5 @@ libra2-proptest-helpers = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-secure-storage = { workspace = true }
 libra2-temppath = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 libra2-vm-validator = { workspace = true }

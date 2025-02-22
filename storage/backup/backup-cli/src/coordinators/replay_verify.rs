@@ -18,7 +18,7 @@ use libra2_executor_types::VerifyExecutionMode;
 use libra2_logger::prelude::*;
 use libra2_storage_interface::Libra2DbError;
 use libra2_types::{on_chain_config::TimedFeatureOverride, transaction::Version};
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use libra2_vm_environment::prod_configs::set_timed_feature_override;
 use std::sync::Arc;
 use thiserror::Error;
@@ -99,7 +99,7 @@ impl ReplayVerifyCoordinator {
     }
 
     async fn run_impl(self) -> Result<(), ReplayError> {
-        AptosVM::set_concurrency_level_once(self.replay_concurrency_level);
+        Libra2VM::set_concurrency_level_once(self.replay_concurrency_level);
         set_timed_feature_override(TimedFeatureOverride::Replay);
 
         let metadata_view = metadata::cache::sync_and_load(

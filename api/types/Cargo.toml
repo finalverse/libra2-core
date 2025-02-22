@@ -22,7 +22,7 @@ libra2-openapi = { workspace = true }
 libra2-resource-viewer = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 async-trait = { workspace = true }
 bcs = { workspace = true }
 bytes = { workspace = true }

@@ -18,7 +18,7 @@ use aptos_api_types::{
     U64,
 };
 use libra2_bcs_utils::serialize_uleb128;
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use itertools::Itertools;
 use move_core_types::language_storage::TypeTag;
 use poem_openapi::{param::Query, payload::Json, ApiRequest, OpenApi};
@@ -132,7 +132,7 @@ fn view_request(
         ));
     }
 
-    let output = AptosVM::execute_view_function(
+    let output = Libra2VM::execute_view_function(
         &state_view,
         view_function.module.clone(),
         view_function.function.clone(),

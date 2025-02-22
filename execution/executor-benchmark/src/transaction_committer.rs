@@ -19,7 +19,7 @@ use libra2_types::{
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},
     transaction::Version,
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use std::{
     sync::{mpsc, Arc},
     time::{Duration, Instant},

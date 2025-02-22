@@ -27,7 +27,7 @@ set -x
 unset SKIP_FRAMEWORK_BUILD
 cargo build -p libra2-cached-packages
 if [ -n "$CHECK_ARG" ]; then
-    if [ -n "$(git status --porcelain -uno aptos-move)" ]; then
+    if [ -n "$(git status --porcelain -uno libra2-move)" ]; then
       git diff
       echo "There are unstaged changes after running 'cargo build -p libra2-cached-packages'! Are you sure libra2-cached-packages is up-to-date?"
       exit 1

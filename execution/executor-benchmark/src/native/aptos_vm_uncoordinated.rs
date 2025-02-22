@@ -17,15 +17,15 @@ use libra2_types::{
     },
     vm_status::VMStatus,
 };
-use aptos_vm::{AptosVM, VMBlockExecutor};
+use libra2_vm::{Libra2VM, VMBlockExecutor};
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_logging::log_schema::AdapterLogSchema;
 use libra2_vm_types::module_and_script_storage::AsAptosCodeStorage;
 use rayon::iter::{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator};
 
-pub struct AptosVMParallelUncoordinatedBlockExecutor;
+pub struct Libra2VMParallelUncoordinatedBlockExecutor;
 
-impl VMBlockExecutor for AptosVMParallelUncoordinatedBlockExecutor {
+impl VMBlockExecutor for Libra2VMParallelUncoordinatedBlockExecutor {
     fn new() -> Self {
         Self
     }
@@ -42,7 +42,7 @@ impl VMBlockExecutor for AptosVMParallelUncoordinatedBlockExecutor {
         // let features = Features::fetch_config(&state_view).unwrap_or_default();
 
         let env = Libra2Environment::new(state_view);
-        let vm = AptosVM::new(env.clone(), state_view);
+        let vm = Libra2VM::new(env.clone(), state_view);
 
         let transaction_outputs = NATIVE_EXECUTOR_POOL.install(|| {
             txn_provider

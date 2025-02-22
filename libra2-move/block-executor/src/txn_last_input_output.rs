@@ -9,7 +9,7 @@ use crate::{
     types::{InputOutputKey, ReadWriteSummary},
 };
 use libra2_logger::error;
-use aptos_mvhashmap::types::TxnIndex;
+use libra2_mvhashmap::types::TxnIndex;
 use libra2_types::{
     error::{code_invariant_error, PanicError},
     fee_statement::FeeStatement,

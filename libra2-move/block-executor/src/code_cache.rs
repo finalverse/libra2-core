@@ -7,7 +7,7 @@ use crate::{
     view::{LatestView, ViewState},
 };
 use ambassador::delegate_to_methods;
-use aptos_mvhashmap::types::TxnIndex;
+use libra2_mvhashmap::types::TxnIndex;
 use libra2_types::{
     executable::ModulePath,
     state_store::{state_value::StateValueMetadata, TStateView},

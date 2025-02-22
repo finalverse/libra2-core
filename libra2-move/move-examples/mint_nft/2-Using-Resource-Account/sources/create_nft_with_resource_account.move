@@ -11,7 +11,7 @@
 ///
 /// 2. Publish the module under a resource account.
 /// - 2.a Make sure you're in the right directory.
-/// Run the following command in directory `aptos-core/aptos-move/move-examples/mint_nft/2-Using-Resource-Account`
+/// Run the following command in directory `aptos-core/libra2-move/move-examples/mint_nft/2-Using-Resource-Account`
 /// - 2.b Run the following CLI command to publish the module under a resource account.
 /// aptos move create-resource-account-and-publish-package --seed [seed] --address-name mint_nft --profile default --named-addresses source_addr=[default account's address]
 ///

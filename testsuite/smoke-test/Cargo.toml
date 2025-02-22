@@ -42,7 +42,7 @@ aptos-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 bcs = { workspace = true }
 diesel = { workspace = true, features = [
     "chrono",

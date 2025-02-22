@@ -29,7 +29,7 @@ libra2-genesis = { workspace = true, features = ["testing"] }
 libra2-jellyfish-merkle = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-mvhashmap = { workspace = true }
+libra2-mvhashmap = { workspace = true }
 libra2-node-resource-metrics = { workspace = true }
 libra2-push-metrics =  { workspace = true }
 aptos-sdk = { workspace = true }
@@ -37,7 +37,7 @@ libra2-storage-interface = { workspace = true }
 libra2-transaction-generator-lib = { workspace = true }
 libra2-transaction-workloads-lib = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 libra2-vm-environment = { workspace = true }
 libra2-vm-logging = { workspace = true }
 libra2-vm-types = { workspace = true }

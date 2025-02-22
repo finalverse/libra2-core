@@ -1149,10 +1149,10 @@ impl AnySignature {
     ) -> Result<()> {
         // Verifies the ephemeral signature on (TXN [+ ZKP]). The rest of the verification,
         // i.e., [ZKPoK of] OpenID signature verification is done in
-        // `AptosVM::run_prologue`.
+        // `Libra2VM::run_prologue`.
         //
         // This is because the JWK, under which the [ZKPoK of an] OpenID signature verifies,
-        // can only be fetched from on chain inside the `AptosVM`.
+        // can only be fetched from on chain inside the `Libra2VM`.
         //
         // This deferred verification is what actually ensures the `signature.ephemeral_pubkey`
         // used below is the right pubkey signed by the OIDC provider.

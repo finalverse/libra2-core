@@ -3,4 +3,4 @@ name = 'add-numbers'
 version = '1.0.0'
 [dependencies.Libra2Framework]
 local = '../../../..'
-subdir = 'aptos-move/framework/libra2-framework'
+subdir = 'libra2-move/framework/libra2-framework'

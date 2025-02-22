@@ -176,7 +176,7 @@ to allow any signer to call.
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_create_aggregator">create_aggregator</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, limit: u128): Aggregator <b>acquires</b> <a href="aggregator_factory.md#0x1_aggregator_factory_AggregatorFactory">AggregatorFactory</a> {
-    // deprecated. Currently used only in aptos-<b>move</b>/e2e-<b>move</b>-tests/src/tests/<a href="aggregator.md#0x1_aggregator">aggregator</a>.data/pack/sources/aggregator_test.<b>move</b>
+    // deprecated. Currently used only in libra2-<b>move</b>/e2e-<b>move</b>-tests/src/tests/<a href="aggregator.md#0x1_aggregator">aggregator</a>.data/pack/sources/aggregator_test.<b>move</b>
 
     // Only Libra2 Framework (0x1) <a href="account.md#0x1_account">account</a> can call this for now.
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(<a href="account.md#0x1_account">account</a>);

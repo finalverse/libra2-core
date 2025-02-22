@@ -30,7 +30,7 @@ use libra2_types::{
     transaction::Transaction,
     waypoint::Waypoint,
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use std::sync::Arc;
 
 pub fn generate_waypoint<V: VMBlockExecutor>(

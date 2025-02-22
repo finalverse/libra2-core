@@ -11,6 +11,6 @@ named_addr = "0xFED"
 [dependencies.Libra2Framework]
 git = "https://github.com/aptos-labs/aptos-core.git"
 rev = "mainnet"
-subdir = "aptos-move/framework/libra2-framework"
+subdir = "libra2-move/framework/libra2-framework"
 
 [dev-dependencies]

@@ -11,7 +11,7 @@ A = "0x42"
 [dependencies.Libra2Framework]
 git = "https://github.com/aptos-labs/aptos-core.git"
 rev = "devnet"
-subdir = "aptos-move/framework/libra2-framework"
+subdir = "libra2-move/framework/libra2-framework"
 
 [dependencies.B]
 local = "./deps_only"

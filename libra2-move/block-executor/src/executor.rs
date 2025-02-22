@@ -28,7 +28,7 @@ use libra2_aggregator::{
 };
 use libra2_drop_helper::DEFAULT_DROPPER;
 use libra2_logger::{debug, error, info};
-use aptos_mvhashmap::{
+use libra2_mvhashmap::{
     types::{Incarnation, MVDelayedFieldsError, TxnIndex, ValueWithLayout},
     unsync_map::UnsyncMap,
     versioned_delayed_fields::CommitError,

@@ -29,8 +29,8 @@ use libra2_types::{
         ExecutionStatus, Transaction, TransactionOutput, TransactionStatus,
     },
 };
-use aptos_vm::{
-    aptos_vm::AptosVMBlockExecutor,
+use libra2_vm::{
+    libra2_vm::Libra2VMBlockExecutor,
     data_cache::AsMoveResolver,
     sharded_block_executor::{
         local_executor_shard::{LocalExecutorClient, LocalExecutorService},
@@ -214,7 +214,7 @@ where
         let block_size = txn_provider.num_txns();
         let timer = Instant::now();
 
-        let executor = AptosVMBlockExecutor::new();
+        let executor = Libra2VMBlockExecutor::new();
         let output = executor
             .execute_block_with_config(
                 txn_provider,
@@ -263,7 +263,7 @@ where
         let block_size = txn_provider.num_txns();
         let timer = Instant::now();
 
-        let executor = AptosVMBlockExecutor::new();
+        let executor = Libra2VMBlockExecutor::new();
         let output = executor
             .execute_block_with_config(
                 txn_provider,

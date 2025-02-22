@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{execution::execute_workload, state_view::ReadSet, workload::Workload};
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, VMBlockExecutor};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, VMBlockExecutor};
 use std::time::Instant;
 
 /// Represents a block for benchmarking: a workload consisting of a block of transactions with the
@@ -16,7 +16,7 @@ pub struct ReplayBlock {
 
 impl ReplayBlock {
     /// Executes the workload using the specified concurrency level.
-    pub(crate) fn run(&self, executor: &AptosVMBlockExecutor, concurrency_level: usize) {
+    pub(crate) fn run(&self, executor: &Libra2VMBlockExecutor, concurrency_level: usize) {
         execute_workload(executor, &self.workload, &self.inputs, concurrency_level);
     }
 }
@@ -62,7 +62,7 @@ impl BenchmarkRunner {
             .collect::<Vec<_>>();
 
         for _ in 0..self.num_repeats {
-            let executor = AptosVMBlockExecutor::new();
+            let executor = Libra2VMBlockExecutor::new();
             for (idx, block) in blocks.iter().enumerate() {
                 let start_time = Instant::now();
                 block.run(&executor, concurrency_level);
@@ -92,7 +92,7 @@ impl BenchmarkRunner {
     fn measure_overall_execution_time(&self, blocks: &[ReplayBlock], concurrency_level: usize) {
         let mut times = Vec::with_capacity(self.num_repeats);
         for _ in 0..self.num_repeats {
-            let executor = AptosVMBlockExecutor::new();
+            let executor = Libra2VMBlockExecutor::new();
 
             // Warm-up.
             for block in &blocks[..self.num_blocks_to_skip] {

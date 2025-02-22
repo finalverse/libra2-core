@@ -22,7 +22,7 @@ libra2-move-debugger = { workspace = true }
 libra2-push-metrics = { workspace = true }
 libra2-rest-client = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 libra2-vm-environment = { workspace = true }
 bcs = { workspace = true }
 claims = { workspace = true }

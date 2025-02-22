@@ -37,7 +37,7 @@ use libra2_types::{
     write_set::{WriteOp, WriteSetMut},
     AptosCoinType,
 };
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use move_core_types::{language_storage::TypeTag, move_resource::MoveStructType};
 use rand::SeedableRng;
 use std::sync::Arc;
@@ -57,8 +57,8 @@ fn test_empty_db() {
 
     // Bootstrap empty DB.
     let waypoint =
-        generate_waypoint::<AptosVMBlockExecutor>(&db_rw, &genesis_txn).expect("Should not fail.");
-    maybe_bootstrap::<AptosVMBlockExecutor>(&db_rw, &genesis_txn, waypoint).unwrap();
+        generate_waypoint::<Libra2VMBlockExecutor>(&db_rw, &genesis_txn).expect("Should not fail.");
+    maybe_bootstrap::<Libra2VMBlockExecutor>(&db_rw, &genesis_txn, waypoint).unwrap();
     let ledger_info = db_rw.reader.get_latest_ledger_info().unwrap();
     assert_eq!(
         Waypoint::new_epoch_boundary(ledger_info.ledger_info()).unwrap(),
@@ -75,7 +75,7 @@ fn test_empty_db() {
 
     // `maybe_bootstrap()` does nothing on non-empty DB.
     assert!(
-        maybe_bootstrap::<AptosVMBlockExecutor>(&db_rw, &genesis_txn, waypoint)
+        maybe_bootstrap::<Libra2VMBlockExecutor>(&db_rw, &genesis_txn, waypoint)
             .unwrap()
             .is_none()
     );
@@ -87,7 +87,7 @@ fn execute_and_commit(txns: Vec<Transaction>, db: &DbReaderWriter, signer: &Vali
     let version = li.ledger_info().version();
     let epoch = li.ledger_info().next_block_epoch();
     let target_version = version + txns.len() as u64 + 1; // Due to StateCheckpoint txn
-    let executor = BlockExecutor::<AptosVMBlockExecutor>::new(db.clone());
+    let executor = BlockExecutor::<Libra2VMBlockExecutor>::new(db.clone());
     let output = executor
         .execute_block(
             (block_id, block(txns)).into(),
@@ -194,7 +194,7 @@ fn test_new_genesis() {
     // Create bootstrapped DB.
     let tmp_dir = TempPath::new();
     let db = DbReaderWriter::new(Libra2DB::new_for_test(&tmp_dir));
-    let waypoint = bootstrap_genesis::<AptosVMBlockExecutor>(&db, &genesis_txn).unwrap();
+    let waypoint = bootstrap_genesis::<Libra2VMBlockExecutor>(&db, &genesis_txn).unwrap();
     let signer = ValidatorSigner::new(
         genesis.1[0].data.owner_address,
         Arc::new(genesis.1[0].consensus_key.clone()),
@@ -261,9 +261,9 @@ fn test_new_genesis() {
     )));
 
     // Bootstrap DB into new genesis.
-    let waypoint = generate_waypoint::<AptosVMBlockExecutor>(&db, &genesis_txn).unwrap();
+    let waypoint = generate_waypoint::<Libra2VMBlockExecutor>(&db, &genesis_txn).unwrap();
     assert!(
-        maybe_bootstrap::<AptosVMBlockExecutor>(&db, &genesis_txn, waypoint)
+        maybe_bootstrap::<Libra2VMBlockExecutor>(&db, &genesis_txn, waypoint)
             .unwrap()
             .is_some()
     );

@@ -34,7 +34,7 @@ module libra2_framework::timestamp {
         proposer: address,
         timestamp: u64
     ) acquires CurrentTimeMicroseconds {
-        // Can only be invoked by AptosVM signer.
+        // Can only be invoked by Libra2VM signer.
         system_addresses::assert_vm(account);
 
         let global_timer = borrow_global_mut<CurrentTimeMicroseconds>(@libra2_framework);

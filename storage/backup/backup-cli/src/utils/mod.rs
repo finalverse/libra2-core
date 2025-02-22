@@ -391,7 +391,7 @@ pub struct ConcurrentDataRequestsOpt {}
 
 #[derive(Clone, Copy, Default, Parser)]
 pub struct ReplayConcurrencyLevelOpt {
-    /// AptosVM::set_concurrency_level_once() is called with this
+    /// Libra2VM::set_concurrency_level_once() is called with this
     #[clap(
         long,
         help = "concurrency_level used by the transaction executor, applicable when replaying transactions \

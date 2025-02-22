@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APTOS_STD="../../../../../../aptos-move/framework/aptos-stdlib/sources"
+APTOS_STD="../../../../../../libra2-move/framework/aptos-stdlib/sources"
 
 # Check if the first argument is either "new" or "current"
 if [[ "$1" != "new" && "$1" != "current" ]]; then

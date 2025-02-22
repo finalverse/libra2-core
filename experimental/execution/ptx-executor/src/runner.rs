@@ -19,7 +19,7 @@ use libra2_types::{
     transaction::signature_verified_transaction::SignatureVerifiedTransaction,
     write_set::TransactionWrite,
 };
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_logging::log_schema::AdapterLogSchema;
 use libra2_vm_types::module_and_script_storage::AsAptosCodeStorage;
@@ -238,7 +238,7 @@ impl<'scope, 'view: 'scope, BaseView: StateView + Sync> Worker<'view, BaseView> 
         let env = Libra2Environment::new(&self.base_view);
         let vm = {
             let _timer = PER_WORKER_TIMER.timer_with(&[&idx, "vm_init"]);
-            AptosVM::new(env.clone(), &self.base_view)
+            Libra2VM::new(env.clone(), &self.base_view)
         };
 
         loop {

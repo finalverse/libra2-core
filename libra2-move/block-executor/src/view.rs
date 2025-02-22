@@ -21,7 +21,7 @@ use libra2_aggregator::{
     types::{DelayedFieldValue, DelayedFieldsSpeculativeError, ReadPosition},
 };
 use libra2_logger::error;
-use aptos_mvhashmap::{
+use libra2_mvhashmap::{
     types::{
         GroupReadResult, MVDataError, MVDataOutput, MVDelayedFieldsError, MVGroupError,
         MVModulesError, MVModulesOutput, StorageVersion, TxnIndex, UnknownOrLayout,
@@ -1837,7 +1837,7 @@ mod test {
         delta_math::DeltaHistory,
         types::{DelayedFieldValue, DelayedFieldsSpeculativeError, ReadPosition},
     };
-    use aptos_mvhashmap::{
+    use libra2_mvhashmap::{
         types::{MVDelayedFieldsError, TxnIndex},
         unsync_map::UnsyncMap,
         versioned_delayed_fields::TVersionedDelayedFieldView,

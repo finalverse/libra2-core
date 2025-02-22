@@ -138,7 +138,7 @@ Updates the wall clock time by consensus. Requires VM privilege and will be invo
     proposer: <b>address</b>,
     <a href="timestamp.md#0x1_timestamp">timestamp</a>: u64
 ) <b>acquires</b> <a href="timestamp.md#0x1_timestamp_CurrentTimeMicroseconds">CurrentTimeMicroseconds</a> {
-    // Can only be invoked by AptosVM <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>.
+    // Can only be invoked by Libra2VM <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>.
     <a href="system_addresses.md#0x1_system_addresses_assert_vm">system_addresses::assert_vm</a>(<a href="account.md#0x1_account">account</a>);
 
     <b>let</b> global_timer = <b>borrow_global_mut</b>&lt;<a href="timestamp.md#0x1_timestamp_CurrentTimeMicroseconds">CurrentTimeMicroseconds</a>&gt;(@libra2_framework);

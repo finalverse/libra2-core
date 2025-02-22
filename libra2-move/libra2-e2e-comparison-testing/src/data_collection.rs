@@ -18,7 +18,7 @@ use libra2_types::{
     write_set::TOTAL_SUPPLY_STATE_KEY,
 };
 use libra2_validator_interface::{Libra2ValidatorInterface, FilterCondition, RestDebuggerInterface};
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, VMBlockExecutor};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, VMBlockExecutor};
 use move_core_types::account_address::AccountAddress;
 use std::{
     collections::HashMap,
@@ -94,7 +94,7 @@ impl DataCollection {
         let val = debugger_state_view.get_state_value(TOTAL_SUPPLY_STATE_KEY.deref());
         assert!(val.is_ok() && val.unwrap().is_some());
         let txn_provider = DefaultTxnProvider::new(sig_verified_txns);
-        AptosVMBlockExecutor::new()
+        Libra2VMBlockExecutor::new()
             .execute_block_no_limit(&txn_provider, debugger_state_view)
             .map_err(|err| format_err!("Unexpected VM Error: {:?}", err))
     }

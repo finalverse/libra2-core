@@ -20,7 +20,7 @@ libra2-drop-helper = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-mvhashmap = { workspace = true }
+libra2-mvhashmap = { workspace = true }
 libra2-types = { workspace = true }
 libra2-vm-environment = { workspace = true }
 libra2-vm-logging = { workspace = true }

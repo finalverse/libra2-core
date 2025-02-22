@@ -17,7 +17,7 @@ use libra2_types::{
     transaction::{Script, TransactionPayload},
     vm_status::StatusCode,
 };
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use move_core_types::{account_address::AccountAddress, gas_algebra::GasQuantity};
 use rand::SeedableRng;
 
@@ -33,7 +33,7 @@ impl TestValidator {
         let _db_path = libra2_temppath::TempPath::new();
         _db_path.create_as_dir().unwrap();
         let (db, db_rw) = DbReaderWriter::wrap(Libra2DB::new_for_test(_db_path.path()));
-        libra2_executor_test_helpers::bootstrap_genesis::<AptosVMBlockExecutor>(
+        libra2_executor_test_helpers::bootstrap_genesis::<Libra2VMBlockExecutor>(
             &db_rw,
             &libra2_vm_genesis::test_genesis_transaction(),
         )

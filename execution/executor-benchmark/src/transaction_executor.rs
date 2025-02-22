@@ -10,7 +10,7 @@ use libra2_logger::info;
 use libra2_types::block_executor::{
     config::BlockExecutorConfigFromOnchain, partitioner::ExecutableBlock,
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use std::{
     sync::{mpsc, Arc},
     time::{Duration, Instant},

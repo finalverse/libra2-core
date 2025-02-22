@@ -5,7 +5,7 @@ use anyhow::{bail, Result};
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_rest_client::Client;
 use libra2_types::transaction::Transaction;
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use clap::{Parser, Subcommand};
 use std::path::{Path, PathBuf};
 use url::Url;
@@ -35,7 +35,7 @@ async fn main() -> Result<()> {
 
     // Initialize the debugger
     libra2_logger::Logger::new().init();
-    AptosVM::set_concurrency_level_once(1);
+    Libra2VM::set_concurrency_level_once(1);
 
     let debugger = match args.target {
         Target::Rest { endpoint } => {

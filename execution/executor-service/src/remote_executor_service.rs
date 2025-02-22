@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_secure_net::network_controller::NetworkController;
 use libra2_types::block_executor::partitioner::ShardId;
-use aptos_vm::sharded_block_executor::sharded_executor_service::ShardedExecutorService;
+use libra2_vm::sharded_block_executor::sharded_executor_service::ShardedExecutorService;
 use std::{net::SocketAddr, sync::Arc, thread};
 
 /// A service that provides support for remote execution. Essentially, it reads a request from

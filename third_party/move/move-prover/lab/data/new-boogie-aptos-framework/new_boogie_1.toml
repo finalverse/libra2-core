@@ -10,7 +10,7 @@ move_named_address_values = [
     "aptos_fungible_asset=0xA"
 ]
 move_deps = [
-    "../../../../../../aptos-move/framework/move-stdlib/sources",
-    "../../../../../../aptos-move/framework/aptos-stdlib/sources",
-    "../../../../../../aptos-move/framework/libra2-framework/sources",
+    "../../../../../../libra2-move/framework/move-stdlib/sources",
+    "../../../../../../libra2-move/framework/aptos-stdlib/sources",
+    "../../../../../../libra2-move/framework/libra2-framework/sources",
 ]

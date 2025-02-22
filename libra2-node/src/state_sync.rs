@@ -33,7 +33,7 @@ use libra2_storage_service_server::{
 use libra2_storage_service_types::StorageServiceMessage;
 use libra2_time_service::TimeService;
 use libra2_types::waypoint::Waypoint;
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use std::sync::Arc;
 use tokio::runtime::Runtime;
 
@@ -152,7 +152,7 @@ pub fn start_state_sync_and_get_notification_handles(
         setup_data_streaming_service(state_sync_config, libra2_data_client.clone())?;
 
     // Create the chunk executor and persistent storage
-    let chunk_executor = Arc::new(ChunkExecutor::<AptosVMBlockExecutor>::new(db_rw.clone()));
+    let chunk_executor = Arc::new(ChunkExecutor::<Libra2VMBlockExecutor>::new(db_rw.clone()));
     let metadata_storage = PersistentMetadataStorage::new(&node_config.storage.dir());
 
     // Create notification senders and listeners for mempool, consensus and the storage service

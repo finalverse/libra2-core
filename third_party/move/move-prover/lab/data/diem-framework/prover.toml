@@ -7,7 +7,7 @@ move_named_address_values = [
     "VMReserved=0x0",
 ]
 move_deps = [
-    "../../../../../../aptos-move/framework/move-stdlib/sources",
-    "../../../../../../aptos-move/framework/aptos-stdlib/sources",
-    "../../../../../../aptos-move/framework/libra2-framework/sources",
+    "../../../../../../libra2-move/framework/move-stdlib/sources",
+    "../../../../../../libra2-move/framework/aptos-stdlib/sources",
+    "../../../../../../libra2-move/framework/libra2-framework/sources",
 ]

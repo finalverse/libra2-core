@@ -26,7 +26,7 @@ use libra2_aggregator::{
     delta_change_set::{delta_add, delta_sub, DeltaOp},
     delta_math::DeltaHistory,
 };
-use aptos_mvhashmap::types::TxnIndex;
+use libra2_mvhashmap::types::TxnIndex;
 use libra2_types::{
     block_executor::config::BlockExecutorConfig, contract_event::TransactionEvent,
     executable::ModulePath, state_store::state_value::StateValueMetadata, write_set::WriteOpKind,

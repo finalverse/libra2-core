@@ -38,7 +38,7 @@ SPEEDUPS_NOISE_ABOVE = 2
 
 THREADS = [8, 16, 32]
 BLOCK_SIZES = ["1k", "10k", "50k"]
-target_directory = "aptos-move/libra2-transaction-benchmarks/src/"
+target_directory = "libra2-move/libra2-transaction-benchmarks/src/"
 
 tps_set = {}
 speedups_set = {}

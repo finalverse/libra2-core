@@ -446,7 +446,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
           "editorMode": "code",
-          "expr": "rate(aptos_vm_txn_gas_usage_sum{kubernetes_pod_name=~\".*\", role=~\"validator\", chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\"}[1h]) / rate(aptos_vm_txn_gas_usage_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\".*\", role=~\"validator\"}[1h])",
+          "expr": "rate(libra2_vm_txn_gas_usage_sum{kubernetes_pod_name=~\".*\", role=~\"validator\", chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\"}[1h]) / rate(libra2_vm_txn_gas_usage_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\".*\", role=~\"validator\"}[1h])",
           "format": "table",
           "instant": true,
           "intervalFactor": 1,

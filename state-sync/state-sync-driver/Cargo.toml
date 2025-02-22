@@ -53,7 +53,7 @@ libra2-storage-service-client = { workspace = true }
 libra2-storage-service-types = { workspace = true }
 libra2-temppath = { workspace = true }
 libra2-time-service = { workspace = true, features = ["async", "testing"] }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 libra2-vm-genesis = { workspace = true }
 async-trait = { workspace = true }
 bcs = { workspace = true }

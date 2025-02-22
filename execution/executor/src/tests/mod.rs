@@ -37,7 +37,7 @@ use libra2_types::{
     },
     write_set::{WriteOp, WriteSet, WriteSetMut},
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use itertools::Itertools;
 use mock_vm::{
     encode_mint_transaction, encode_reconfiguration_transaction, encode_transfer_transaction,

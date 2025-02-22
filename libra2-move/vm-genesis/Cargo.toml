@@ -18,7 +18,7 @@ libra2-crypto = { workspace = true }
 libra2-framework =  { workspace = true }
 aptos-gas-schedule = { workspace = true } 
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 libra2-vm-types = { workspace = true }
 bcs = { workspace = true }
 bytes = { workspace = true }

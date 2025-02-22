@@ -13,7 +13,7 @@ static ALLOC: jemallocator::Jemalloc = jemallocator::Jemalloc;
 
 fn main() {
     // Check that we are not including any Move test natives
-    aptos_vm::natives::assert_no_test_natives(ERROR_MSG_BAD_FEATURE_FLAGS);
+    libra2_vm::natives::assert_no_test_natives(ERROR_MSG_BAD_FEATURE_FLAGS);
 
     // Start the node
     Libra2NodeArgs::parse().run()

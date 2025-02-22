@@ -16,7 +16,7 @@ use libra2_types::{
     transaction::TransactionOutput,
     vm_status::VMStatus,
 };
-use aptos_vm::sharded_block_executor::{
+use libra2_vm::sharded_block_executor::{
     executor_client::{ExecutorClient, ShardedExecutionOutput},
     ShardedBlockExecutor,
 };

@@ -36,7 +36,7 @@ use libra2_network::application::interface::{NetworkClient, NetworkServiceEvents
 use libra2_storage_interface::DbReaderWriter;
 use libra2_time_service::TimeService;
 use libra2_validator_transaction_pool::VTxnPoolState;
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use futures::channel::mpsc;
 use move_core_types::account_address::AccountAddress;
 use std::{collections::HashMap, sync::Arc};
@@ -65,7 +65,7 @@ pub fn start_consensus(
     ));
 
     let execution_proxy = ExecutionProxy::new(
-        Arc::new(BlockExecutor::<AptosVMBlockExecutor>::new(libra2_db)),
+        Arc::new(BlockExecutor::<Libra2VMBlockExecutor>::new(libra2_db)),
         txn_notifier,
         state_sync_notifier,
         runtime.handle(),
@@ -158,7 +158,7 @@ pub fn start_consensus_observer(
             node_config.consensus.mempool_executed_txn_timeout_ms,
         ));
         let execution_proxy = ExecutionProxy::new(
-            Arc::new(BlockExecutor::<AptosVMBlockExecutor>::new(libra2_db.clone())),
+            Arc::new(BlockExecutor::<Libra2VMBlockExecutor>::new(libra2_db.clone())),
             txn_notifier,
             state_sync_notifier,
             consensus_observer_runtime.handle(),

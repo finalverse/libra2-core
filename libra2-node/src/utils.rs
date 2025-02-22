@@ -11,7 +11,7 @@ use libra2_storage_interface::{
 use libra2_types::{
     account_config::ChainIdResource, chain_id::ChainId, on_chain_config::OnChainConfig,
 };
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use libra2_vm_environment::prod_configs::set_paranoid_type_checks;
 use std::cmp::min;
 
@@ -49,7 +49,7 @@ pub fn fetch_chain_id(db: &DbReaderWriter) -> anyhow::Result<ChainId> {
 }
 
 /// Sets the Libra2 VM configuration based on the node configurations
-pub fn set_aptos_vm_configurations(node_config: &NodeConfig) {
+pub fn set_libra2_vm_configurations(node_config: &NodeConfig) {
     set_paranoid_type_checks(node_config.execution.paranoid_type_verification);
     let effective_concurrency_level = if node_config.execution.concurrency_level == 0 {
         min(
@@ -59,9 +59,9 @@ pub fn set_aptos_vm_configurations(node_config: &NodeConfig) {
     } else {
         node_config.execution.concurrency_level
     };
-    AptosVM::set_concurrency_level_once(effective_concurrency_level as usize);
-    AptosVM::set_discard_failed_blocks(node_config.execution.discard_failed_blocks);
-    AptosVM::set_num_proof_reading_threads_once(
+    Libra2VM::set_concurrency_level_once(effective_concurrency_level as usize);
+    Libra2VM::set_discard_failed_blocks(node_config.execution.discard_failed_blocks);
+    Libra2VM::set_num_proof_reading_threads_once(
         node_config.execution.num_proof_reading_threads as usize,
     );
 
@@ -69,7 +69,7 @@ pub fn set_aptos_vm_configurations(node_config: &NodeConfig) {
         .execution
         .processed_transactions_detailed_counters
     {
-        AptosVM::set_processed_transactions_detailed_counters();
+        Libra2VM::set_processed_transactions_detailed_counters();
     }
 }
 

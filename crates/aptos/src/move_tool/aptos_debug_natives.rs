@@ -4,7 +4,7 @@
 use libra2_framework::extended_checks;
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEATURE_VERSION};
 use libra2_types::on_chain_config::{Features, TimedFeaturesBuilder};
-use aptos_vm::natives;
+use libra2_vm::natives;
 use move_vm_runtime::native_functions::NativeFunctionTable;
 
 // move_stdlib has the testing feature enabled to include debug native functions

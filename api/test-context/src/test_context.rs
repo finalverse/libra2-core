@@ -50,7 +50,7 @@ use libra2_types::{
         TransactionPayload, TransactionStatus, Version,
     },
 };
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use libra2_vm_validator::vm_validator::PooledVMValidator;
 use bytes::Bytes;
 use hyper::{HeaderMap, Response};
@@ -177,7 +177,7 @@ pub fn new_test_context_inner(
         }
         DbReaderWriter::wrap(libra2_db)
     };
-    let ret = db_bootstrapper::maybe_bootstrap::<AptosVMBlockExecutor>(
+    let ret = db_bootstrapper::maybe_bootstrap::<Libra2VMBlockExecutor>(
         &db_rw,
         &genesis,
         genesis_waypoint,
@@ -217,7 +217,7 @@ pub fn new_test_context_inner(
         rng,
         root_key,
         validator_owner,
-        Box::new(BlockExecutor::<AptosVMBlockExecutor>::new(db_rw)),
+        Box::new(BlockExecutor::<Libra2VMBlockExecutor>::new(db_rw)),
         mempool,
         db,
         test_name,

@@ -35,7 +35,7 @@ use libra2_types::{
     write_set::{WriteOp, WriteSetMut},
     AptosCoinType,
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use dashmap::{
     mapref::one::{Ref, RefMut},
     DashMap,

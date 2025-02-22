@@ -42,7 +42,7 @@ pub fn run_prover_for_pkg(
     if no_tools {
         panic!(
             "Prover tools are not configured, \
-        See https://github.com/aptos-labs/aptos-core/blob/main/aptos-move/framework/FRAMEWORK-PROVER-GUIDE.md \
+        See https://github.com/aptos-labs/aptos-core/blob/main/libra2-move/framework/FRAMEWORK-PROVER-GUIDE.md \
         for instructions, or \
         use \"-- --skip prover\" to filter out the prover tests"
         );

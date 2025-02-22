@@ -1,4 +1,4 @@
-/// Copied from aptos-move/move-examples/swap/sources/liquidity_pool.move
+/// Copied from libra2-move/move-examples/swap/sources/liquidity_pool.move
 ///
 /// For volatile pairs, the price and reserves can be computed using the constant product formula k = x * y.
 /// For stable pairs, the price is computed using k = x^3 * y + x * y^3.

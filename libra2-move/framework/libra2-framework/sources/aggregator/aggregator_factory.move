@@ -52,7 +52,7 @@ module libra2_framework::aggregator_factory {
     /// This is currently a function closed for public. This can be updated in the future by on-chain governance
     /// to allow any signer to call.
     public fun create_aggregator(account: &signer, limit: u128): Aggregator acquires AggregatorFactory {
-        // deprecated. Currently used only in aptos-move/e2e-move-tests/src/tests/aggregator.data/pack/sources/aggregator_test.move
+        // deprecated. Currently used only in libra2-move/e2e-move-tests/src/tests/aggregator.data/pack/sources/aggregator_test.move
 
         // Only Libra2 Framework (0x1) account can call this for now.
         system_addresses::assert_libra2_framework(account);

@@ -631,7 +631,7 @@ pub fn setup_environment_and_start_node(
     admin_service.set_libra2_db(db_rw.clone().into());
 
     // Set the Aptos VM configurations
-    utils::set_aptos_vm_configurations(&node_config);
+    utils::set_libra2_vm_configurations(&node_config);
 
     // Obtain the chain_id from the DB
     let chain_id = utils::fetch_chain_id(&db_rw)?;

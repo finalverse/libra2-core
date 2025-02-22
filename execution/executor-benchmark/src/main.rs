@@ -16,7 +16,7 @@ use libra2_config::config::{
 use libra2_executor_benchmark::{
     default_benchmark_features,
     native::{
-        aptos_vm_uncoordinated::AptosVMParallelUncoordinatedBlockExecutor,
+        libra2_vm_uncoordinated::Libra2VMParallelUncoordinatedBlockExecutor,
         native_config::NativeConfig,
         native_vm::NativeVMBlockExecutor,
         parallel_uncoordinated_block_executor::{
@@ -37,7 +37,7 @@ use libra2_push_metrics::MetricsPusher;
 use libra2_transaction_generator_lib::WorkflowProgress;
 use libra2_transaction_workloads_lib::args::TransactionTypeArg;
 use libra2_types::on_chain_config::{FeatureFlag, Features};
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, AptosVM, VMBlockExecutor};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, Libra2VM, VMBlockExecutor};
 use libra2_vm_environment::prod_configs::set_paranoid_type_checks;
 use clap::{Parser, Subcommand, ValueEnum};
 use once_cell::sync::Lazy;
@@ -240,19 +240,19 @@ struct ProfilerOpt {
 
 #[derive(Parser, Debug, ValueEnum, Clone, Default)]
 enum BlockExecutorTypeOpt {
-    /// Transaction execution: AptosVM
+    /// Transaction execution: Libra2VM
     /// Executing conflicts: in the input order, via BlockSTM,
     /// State: BlockSTM-provided MVHashMap-based view with caching
     #[default]
-    AptosVMWithBlockSTM,
+    Libra2VMWithBlockSTM,
     /// Transaction execution: NativeVM - a simplified rust implemtation to create VMChangeSet,
     /// Executing conflicts: in the input order, via BlockSTM
     /// State: BlockSTM-provided MVHashMap-based view with caching
     NativeVMWithBlockSTM,
-    /// Transaction execution: AptosVM
+    /// Transaction execution: Libra2VM
     /// Executing conflicts: All transactions execute on the state at the beginning of the block
     /// State: Raw CachedStateView
-    AptosVMParallelUncoordinated,
+    Libra2VMParallelUncoordinated,
     /// Transaction execution: Native rust code producing WriteSet
     /// Executing conflicts: All transactions execute on the state at the beginning of the block
     /// State: Raw CachedStateView
@@ -623,10 +623,10 @@ fn main() {
     if opt.skip_paranoid_checks {
         set_paranoid_type_checks(false);
     }
-    AptosVM::set_num_shards_once(execution_shards);
-    AptosVM::set_concurrency_level_once(execution_threads_per_shard);
+    Libra2VM::set_num_shards_once(execution_shards);
+    Libra2VM::set_concurrency_level_once(execution_threads_per_shard);
     NativeConfig::set_concurrency_level_once(execution_threads_per_shard);
-    AptosVM::set_processed_transactions_detailed_counters();
+    Libra2VM::set_processed_transactions_detailed_counters();
 
     let config = ProfilerConfig::new_with_defaults();
     let handler = ProfilerHandler::new(config);
@@ -645,14 +645,14 @@ fn main() {
     }
 
     match opt.block_executor_type {
-        BlockExecutorTypeOpt::AptosVMWithBlockSTM => {
-            run::<AptosVMBlockExecutor>(opt);
+        BlockExecutorTypeOpt::Libra2VMWithBlockSTM => {
+            run::<Libra2VMBlockExecutor>(opt);
         },
         BlockExecutorTypeOpt::NativeVMWithBlockSTM => {
             run::<NativeVMBlockExecutor>(opt);
         },
-        BlockExecutorTypeOpt::AptosVMParallelUncoordinated => {
-            run::<AptosVMParallelUncoordinatedBlockExecutor>(opt);
+        BlockExecutorTypeOpt::Libra2VMParallelUncoordinated => {
+            run::<Libra2VMParallelUncoordinatedBlockExecutor>(opt);
         },
         BlockExecutorTypeOpt::NativeParallelUncoordinated => {
             run::<NativeParallelUncoordinatedBlockExecutor<NativeRawTransactionExecutor>>(opt);

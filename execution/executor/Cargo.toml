@@ -28,7 +28,7 @@ libra2-metrics-core = { workspace = true }
 aptos-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 bcs = { workspace = true }
 bytes = { workspace = true }
 fail = { workspace = true }
@@ -56,7 +56,7 @@ rand = { workspace = true }
 [features]
 default = []
 fuzzing = ["libra2-consensus-types/fuzzing", "libra2-crypto/fuzzing", "libra2-types/fuzzing", "libra2-storage-interface/fuzzing"]
-failpoints = ["fail/failpoints", "aptos-vm/failpoints"]
+failpoints = ["fail/failpoints", "libra2-vm/failpoints"]
 consensus-only-perf-test = []
 
 [[bench]]

@@ -9,7 +9,7 @@ use libra2_types::{
     block_executor::partitioner::ShardId, state_store::state_key::StateKey,
     transaction::TransactionOutput, vm_status::VMStatus,
 };
-use aptos_vm::sharded_block_executor::{
+use libra2_vm::sharded_block_executor::{
     coordinator_client::CoordinatorClient, ExecutorShardCommand,
 };
 use crossbeam_channel::{Receiver, Sender};

@@ -45,8 +45,8 @@ fn test_mutual_authentication_validators() {
 
 #[cfg(feature = "check-vm-features")]
 #[test]
-fn test_aptos_vm_does_not_have_test_natives() {
-    aptos_vm::natives::assert_no_test_natives(crate::utils::ERROR_MSG_BAD_FEATURE_FLAGS)
+fn test_libra2_vm_does_not_have_test_natives() {
+    libra2_vm::natives::assert_no_test_natives(crate::utils::ERROR_MSG_BAD_FEATURE_FLAGS)
 }
 
 // This test confirms that the overriding behavior works as intended.

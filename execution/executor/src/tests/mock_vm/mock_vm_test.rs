@@ -11,7 +11,7 @@ use libra2_types::{
     transaction::signature_verified_transaction::into_signature_verified_block,
     write_set::WriteOp,
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use std::collections::BTreeMap;
 
 fn gen_address(index: u8) -> AccountAddress {

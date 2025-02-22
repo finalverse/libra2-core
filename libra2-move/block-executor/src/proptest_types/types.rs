@@ -8,7 +8,7 @@ use libra2_aggregator::{
     delta_change_set::{delta_add, delta_sub, serialize, DeltaOp},
     resolver::TAggregatorV1View,
 };
-use aptos_mvhashmap::types::TxnIndex;
+use libra2_mvhashmap::types::TxnIndex;
 use libra2_types::{
     account_address::AccountAddress,
     contract_event::TransactionEvent,

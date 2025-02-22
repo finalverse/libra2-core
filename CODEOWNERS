@@ -6,28 +6,28 @@
 # Owners for the `/api` directory and all its subdirectories.
 /api/ @banool @gregnazario @0xmaayan
 
-# Owners for the `/aptos-move` directory and its subdirectories:`aptos-gas`, `aptos-vm`, `framework` and `framework/aptos-stdlib/sources/cryptography`.
-/aptos-move/libra2-aggregator/ @georgemitenkov @gelash @zekun000
-/aptos-move/aptos-gas/ @vgao1996
-/aptos-move/aptos-vm/ @davidiw @wrwg @zekun000 @vgao1996 @georgemitenkov
-/aptos-move/aptos-vm/src/keyless_validation.rs @alinush @heliuchuan
-/aptos-move/libra2-vm-types/ @georgemitenkov @gelash @vgao1996
-/aptos-move/framework/ @davidiw @movekevin @wrwg
-/aptos-move/framework/libra2-framework/sources/account.move @alinush
-/aptos-move/framework/libra2-framework/sources/jwks.move @zjma
-/aptos-move/framework/libra2-framework/sources/keyless_account.move @alinush
-/aptos-move/framework/aptos-stdlib/sources/cryptography/ @alinush @zjma @mstraka100
-/aptos-move/framework/**/*.spec.move @junkil-park
-/aptos-move/framework/aptos-stdlib/sources/hash.move @alinush
+# Owners for the `/libra2-move` directory and its subdirectories:`aptos-gas`, `libra2-vm`, `framework` and `framework/aptos-stdlib/sources/cryptography`.
+/libra2-move/libra2-aggregator/ @georgemitenkov @gelash @zekun000
+/libra2-move/aptos-gas/ @vgao1996
+/libra2-move/libra2-vm/ @davidiw @wrwg @zekun000 @vgao1996 @georgemitenkov
+/libra2-move/libra2-vm/src/keyless_validation.rs @alinush @heliuchuan
+/libra2-move/libra2-vm-types/ @georgemitenkov @gelash @vgao1996
+/libra2-move/framework/ @davidiw @movekevin @wrwg
+/libra2-move/framework/libra2-framework/sources/account.move @alinush
+/libra2-move/framework/libra2-framework/sources/jwks.move @zjma
+/libra2-move/framework/libra2-framework/sources/keyless_account.move @alinush
+/libra2-move/framework/aptos-stdlib/sources/cryptography/ @alinush @zjma @mstraka100
+/libra2-move/framework/**/*.spec.move @junkil-park
+/libra2-move/framework/aptos-stdlib/sources/hash.move @alinush
 
 # Owner for aptos-token, cryptography natives, parallel-executor and vm-genesis.
-/aptos-move/framework/aptos-token @areshand
-/aptos-move/framework/src/natives/cryptography/ @alinush @zjma @mstraka100
-/aptos-move/framework/src/natives/aggregator_natives/ @georgemitenkov @gelash @zekun000
-/aptos-move/block-executor/ @gelash @zekun000 @sasha8 @danielxiangzl
-/aptos-move/sharded_block-executor/ @sitalkedia
-/aptos-move/mvhashmap/ @gelash @runtian-zhou @sasha8 @danielxiangzl
-/aptos-move/vm-genesis/ @davidiw @movekevin
+/libra2-move/framework/aptos-token @areshand
+/libra2-move/framework/src/natives/cryptography/ @alinush @zjma @mstraka100
+/libra2-move/framework/src/natives/aggregator_natives/ @georgemitenkov @gelash @zekun000
+/libra2-move/block-executor/ @gelash @zekun000 @sasha8 @danielxiangzl
+/libra2-move/sharded_block-executor/ @sitalkedia
+/libra2-move/mvhashmap/ @gelash @runtian-zhou @sasha8 @danielxiangzl
+/libra2-move/vm-genesis/ @davidiw @movekevin
 
 # Owner for aptos node (to prevent things from becoming out of hand :D)
 /libra2-node/ @joshlind

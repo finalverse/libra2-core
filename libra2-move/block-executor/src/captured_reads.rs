@@ -7,7 +7,7 @@ use libra2_aggregator::{
     delta_math::DeltaHistory,
     types::{DelayedFieldValue, DelayedFieldsSpeculativeError, ReadPosition},
 };
-use aptos_mvhashmap::{
+use libra2_mvhashmap::{
     types::{
         MVDataError, MVDataOutput, MVDelayedFieldsError, MVGroupError, StorageVersion, TxnIndex,
         ValueWithLayout, Version,
@@ -875,7 +875,7 @@ mod test {
         code_cache_global::GlobalModuleCache,
         proptest_types::types::{raw_metadata, KeyType, MockEvent, ValueType},
     };
-    use aptos_mvhashmap::{types::StorageVersion, MVHashMap};
+    use libra2_mvhashmap::{types::StorageVersion, MVHashMap};
     use claims::{
         assert_err, assert_gt, assert_matches, assert_none, assert_ok, assert_ok_eq, assert_some_eq,
     };

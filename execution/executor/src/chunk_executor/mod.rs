@@ -45,7 +45,7 @@ use libra2_types::{
     },
     write_set::WriteSet,
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use chunk_commit_queue::{ChunkCommitQueue, ChunkToUpdateLedger};
 use chunk_result_verifier::{ChunkResultVerifier, ReplayChunkVerifier, StateSyncChunkVerifier};
 use fail::fail_point;

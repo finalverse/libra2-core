@@ -53,7 +53,7 @@ use libra2_types::{
     on_chain_config::aptos_test_feature_flags_genesis,
     transaction::{Transaction, TransactionArgument, TransactionPayload, TransactionStatus},
 };
-use aptos_vm::data_cache::AsMoveResolver;
+use libra2_vm::data_cache::AsMoveResolver;
 use async_trait::async_trait;
 use clap::{Parser, Subcommand, ValueEnum};
 use colored::Colorize;

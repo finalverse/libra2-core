@@ -4,7 +4,7 @@
 mod blocking_txns_provider;
 pub mod default;
 
-use aptos_mvhashmap::types::TxnIndex;
+use libra2_mvhashmap::types::TxnIndex;
 use libra2_types::transaction::BlockExecutableTransaction as Transaction;
 
 pub trait TxnProvider<T: Transaction> {

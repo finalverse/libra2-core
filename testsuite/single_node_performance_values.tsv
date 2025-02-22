@@ -46,5 +46,5 @@ vector-trim-append-len3000-size1	1	VM	10	0.982	1.057	616.2
 vector-remove-insert-len3000-size1	1	VM	10	0.934	1.033	671.4
 no_commit_apt-fa-transfer	1	VM	10	0.992	1.010	23541.0
 no_commit_apt-fa-transfer	1	NativeVM	10	0.993	1.006	48441.8
-no_commit_apt-fa-transfer	1	AptosVMSpeculative	10	0.988	1.008	1165.1
+no_commit_apt-fa-transfer	1	Libra2VMSpeculative	10	0.988	1.008	1165.1
 no_commit_apt-fa-transfer	1	NativeSpeculative	10	0.977	1.005	96539.7

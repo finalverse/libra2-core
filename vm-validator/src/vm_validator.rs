@@ -18,7 +18,7 @@ use libra2_types::{
     transaction::{SignedTransaction, VMValidatorResult},
     vm::modules::AptosModuleExtension,
 };
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_logging::log_schema::AdapterLogSchema;
 use fail::fail_point;
@@ -40,7 +40,7 @@ use std::sync::{Arc, Mutex};
 mod vm_validator_test;
 
 pub trait TransactionValidation: Send + Sync + Clone {
-    type ValidationInstance: aptos_vm::VMValidator;
+    type ValidationInstance: libra2_vm::VMValidator;
 
     /// Validate a txn from client
     fn validate_transaction(&self, _txn: SignedTransaction) -> Result<VMValidatorResult>;
@@ -53,13 +53,13 @@ pub trait TransactionValidation: Send + Sync + Clone {
 }
 
 /// Returns a new VM for validation, with configs initialized based on the provided state.
-fn new_vm_for_validation(state_view: &impl StateView) -> AptosVM {
+fn new_vm_for_validation(state_view: &impl StateView) -> Libra2VM {
     info!(
         AdapterLogSchema::new(state_view.id(), 0),
-        "AptosVM created for Validation"
+        "Libra2VM created for Validation"
     );
     let env = Libra2Environment::new(state_view);
-    AptosVM::new(env, state_view)
+    Libra2VM::new(env, state_view)
 }
 
 /// Represents the state used for validation. Stores raw data, module cache and the execution
@@ -72,7 +72,7 @@ struct ValidationState<S> {
     /// when the version of the code is no longer up-to-date (a newer version has been committed to
     /// the state view) and update the cache accordingly.
     module_cache: UnsyncModuleCache<ModuleId, CompiledModule, Module, AptosModuleExtension, usize>,
-    vm: AptosVM,
+    vm: Libra2VM,
 }
 
 impl<S: StateView> ValidationState<S> {
@@ -318,7 +318,7 @@ impl PooledVMValidator {
 }
 
 impl TransactionValidation for PooledVMValidator {
-    type ValidationInstance = AptosVM;
+    type ValidationInstance = Libra2VM;
 
     fn validate_transaction(&self, txn: SignedTransaction) -> Result<VMValidatorResult> {
         let vm_validator = self.get_next_vm();
@@ -331,7 +331,7 @@ impl TransactionValidation for PooledVMValidator {
 
         let vm_validator_locked = vm_validator.lock().unwrap();
 
-        use aptos_vm::VMValidator;
+        use libra2_vm::VMValidator;
         Ok(vm_validator_locked.state.vm.validate_transaction(
             txn,
             &vm_validator_locked.state.state_view,

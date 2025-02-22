@@ -37,7 +37,7 @@ async fn fallback_test() {
 
     client
         .set_failpoint(
-            "aptos_vm::vm_wrapper::execute_transaction".to_string(),
+            "libra2_vm::vm_wrapper::execute_transaction".to_string(),
             "100%return".to_string(),
         )
         .await

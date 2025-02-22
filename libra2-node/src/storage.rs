@@ -13,7 +13,7 @@ use libra2_storage_interface::{DbReader, DbReaderWriter};
 use libra2_types::{
     ledger_info::LedgerInfoWithSignatures, transaction::Version, waypoint::Waypoint,
 };
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use either::Either;
 use std::{fs, path::Path, sync::Arc, time::Instant};
 use tokio::{
@@ -33,7 +33,7 @@ pub(crate) fn maybe_apply_genesis(
         .genesis_waypoint();
     if let Some(genesis) = get_genesis_txn(node_config) {
         let ledger_info_opt =
-            maybe_bootstrap::<AptosVMBlockExecutor>(db_rw, genesis, genesis_waypoint)
+            maybe_bootstrap::<Libra2VMBlockExecutor>(db_rw, genesis, genesis_waypoint)
                 .map_err(|err| anyhow!("DB failed to bootstrap {}", err))?;
         Ok(ledger_info_opt)
     } else {

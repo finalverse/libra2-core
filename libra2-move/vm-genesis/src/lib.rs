@@ -40,7 +40,7 @@ use libra2_types::{
     transaction::{authenticator::AuthenticationKey, ChangeSet, Transaction, WriteSetPayload},
     write_set::{TransactionWrite, WriteOp, WriteSet},
 };
-use aptos_vm::{
+use libra2_vm::{
     data_cache::AsMoveResolver,
     move_vm_ext::{
         convert_modules_into_write_ops, GenesisMoveVM, GenesisRuntimeBuilder, SessionExt,

@@ -1175,7 +1175,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(aptos_vm_txn_total_seconds_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval]) / rate(aptos_vm_txn_total_seconds_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])",
+          "expr": "rate(libra2_vm_txn_total_seconds_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval]) / rate(libra2_vm_txn_total_seconds_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
@@ -1238,7 +1238,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(aptos_vm_txn_validation_seconds_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])/rate(aptos_vm_txn_validation_seconds_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])",
+          "expr": "rate(libra2_vm_txn_validation_seconds_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])/rate(libra2_vm_txn_validation_seconds_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
@@ -1301,7 +1301,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(aptos_vm_txn_total_seconds_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])/rate(aptos_vm_txn_total_seconds_count{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])/(rate(aptos_vm_txn_gas_usage_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])/rate(aptos_vm_txn_gas_usage_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval]))",
+          "expr": "rate(libra2_vm_txn_total_seconds_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])/rate(libra2_vm_txn_total_seconds_count{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])/(rate(libra2_vm_txn_gas_usage_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])/rate(libra2_vm_txn_gas_usage_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval]))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
@@ -1374,7 +1374,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "x3cW-NV4k" },
           "editorMode": "code",
-          "expr": "sum by (role) (rate(aptos_vm_txn_gas_usage_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])) / sum by (role) (rate(aptos_vm_txn_gas_usage_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval]))",
+          "expr": "sum by (role) (rate(libra2_vm_txn_gas_usage_sum{kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval])) / sum by (role) (rate(libra2_vm_txn_gas_usage_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", kubernetes_pod_name=~\"$kubernetes_pod_name\", role=~\"$role\"}[$interval]))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",

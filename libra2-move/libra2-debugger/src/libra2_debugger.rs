@@ -23,8 +23,8 @@ use libra2_types::{
 use libra2_validator_interface::{
     Libra2ValidatorInterface, DBDebuggerInterface, DebuggerStateView, RestDebuggerInterface,
 };
-use aptos_vm::{
-    aptos_vm::AptosVMBlockExecutor, data_cache::AsMoveResolver, AptosVM, VMBlockExecutor,
+use libra2_vm::{
+    libra2_vm::Libra2VMBlockExecutor, data_cache::AsMoveResolver, Libra2VM, VMBlockExecutor,
 };
 use libra2_vm_environment::environment::Libra2Environment;
 use libra2_vm_logging::log_schema::AdapterLogSchema;
@@ -129,7 +129,7 @@ impl Libra2Debugger {
         }
 
         let env = Libra2Environment::new(&state_view);
-        let vm = AptosVM::new(env.clone(), &state_view);
+        let vm = Libra2VM::new(env.clone(), &state_view);
         let resolver = state_view.as_move_resolver();
         let code_storage = state_view.as_aptos_code_storage(env);
 
@@ -433,7 +433,7 @@ fn execute_block_no_limit(
     state_view: &DebuggerStateView,
     concurrency_level: usize,
 ) -> Result<Vec<TransactionOutput>, VMStatus> {
-    let executor = AptosVMBlockExecutor::new();
+    let executor = Libra2VMBlockExecutor::new();
     executor
         .execute_block_with_config(
             txn_provider,

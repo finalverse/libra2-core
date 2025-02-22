@@ -24,7 +24,7 @@ use libra2_types::{
     },
     vm_status::VMStatus,
 };
-use aptos_vm::{
+use libra2_vm::{
     sharded_block_executor::{executor_client::ExecutorClient, ShardedBlockExecutor},
     VMBlockExecutor,
 };

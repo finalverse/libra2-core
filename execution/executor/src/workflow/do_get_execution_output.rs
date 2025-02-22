@@ -47,7 +47,7 @@ use libra2_types::{
     },
     write_set::{TransactionWrite, WriteSet},
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use itertools::Itertools;
 use std::sync::Arc;
 

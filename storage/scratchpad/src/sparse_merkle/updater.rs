@@ -16,13 +16,13 @@ use libra2_crypto::{
 };
 use libra2_drop_helper::ArcAsyncDrop;
 use libra2_types::proof::{definition::NodeInProof, SparseMerkleLeafNode, SparseMerkleProofExt};
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use once_cell::sync::Lazy;
 use std::cmp::Ordering;
 
 static POOL: Lazy<rayon::ThreadPool> = Lazy::new(|| {
     rayon::ThreadPoolBuilder::new()
-        .num_threads(AptosVM::get_num_proof_reading_threads())
+        .num_threads(Libra2VM::get_num_proof_reading_threads())
         .thread_name(|index| format!("smt_update_{}", index))
         .build()
         .unwrap()

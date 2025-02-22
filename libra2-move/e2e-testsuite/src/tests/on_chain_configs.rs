@@ -9,7 +9,7 @@ use libra2_types::{
     on_chain_config::{AptosVersion, OnChainConfig},
     transaction::TransactionStatus,
 };
-use aptos_vm::data_cache::AsMoveResolver;
+use libra2_vm::data_cache::AsMoveResolver;
 
 #[test]
 fn initial_aptos_version() {

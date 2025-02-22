@@ -24,7 +24,7 @@ use libra2_storage_interface::DbReaderWriter;
 use libra2_storage_service_client::StorageServiceClient;
 use libra2_temppath::TempPath;
 use libra2_time_service::TimeService;
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use futures::{FutureExt, StreamExt};
 use std::{collections::HashMap, sync::Arc};
 
@@ -47,7 +47,7 @@ fn test_new_initialized_configs() {
 
     // Bootstrap the database
     let (node_config, _) = test_config();
-    bootstrap_genesis::<AptosVMBlockExecutor>(&db_rw, get_genesis_txn(&node_config).unwrap())
+    bootstrap_genesis::<Libra2VMBlockExecutor>(&db_rw, get_genesis_txn(&node_config).unwrap())
         .unwrap();
 
     // Create mempool and consensus notifiers
@@ -85,7 +85,7 @@ fn test_new_initialized_configs() {
     );
 
     // Create the state sync driver factory
-    let chunk_executor = Arc::new(ChunkExecutor::<AptosVMBlockExecutor>::new(db_rw.clone()));
+    let chunk_executor = Arc::new(ChunkExecutor::<Libra2VMBlockExecutor>::new(db_rw.clone()));
     let metadata_storage = PersistentMetadataStorage::new(tmp_dir.path());
     let _ = DriverFactory::create_and_spawn_driver(
         true,

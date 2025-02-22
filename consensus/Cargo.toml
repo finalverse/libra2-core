@@ -47,7 +47,7 @@ libra2-temppath = { workspace = true }
 libra2-time-service = { workspace = true }
 libra2-types = { workspace = true }
 libra2-validator-transaction-pool = { workspace = true }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 async-trait = { workspace = true }
 bcs = { workspace = true }
 byteorder = { workspace = true }
@@ -95,7 +95,7 @@ libra2-mempool = { workspace = true, features = ["fuzzing"] }
 libra2-netcore = { workspace = true }
 libra2-network = { workspace = true, features = ["fuzzing"] }
 libra2-safety-rules = { workspace = true, features = ["testing"] }
-aptos-vm = { workspace = true, features = ["fuzzing"] }
+libra2-vm = { workspace = true, features = ["fuzzing"] }
 libra2-vm-validator = { workspace = true }
 claims = { workspace = true }
 mockall = { workspace = true }

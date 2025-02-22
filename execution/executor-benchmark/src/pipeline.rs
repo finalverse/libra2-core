@@ -16,7 +16,7 @@ use libra2_types::{
     block_executor::partitioner::ExecutableBlock,
     transaction::{Transaction, Version},
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use derivative::Derivative;
 use std::{
     marker::PhantomData,

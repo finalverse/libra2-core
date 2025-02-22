@@ -6,7 +6,7 @@ use libra2_aggregator::{
     resolver::TDelayedFieldView,
     types::{DelayedFieldValue, ReadPosition},
 };
-use aptos_mvhashmap::{types::TxnIndex, versioned_delayed_fields::TVersionedDelayedFieldView};
+use libra2_mvhashmap::{types::TxnIndex, versioned_delayed_fields::TVersionedDelayedFieldView};
 use libra2_types::{
     error::{code_invariant_error, PanicError},
     state_store::{state_value::StateValueMetadata, TStateView},

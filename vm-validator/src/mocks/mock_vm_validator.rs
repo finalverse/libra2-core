@@ -10,7 +10,7 @@ use libra2_types::{
     transaction::{SignedTransaction, VMValidatorResult},
     vm_status::StatusCode,
 };
-use aptos_vm::VMValidator;
+use libra2_vm::VMValidator;
 use move_vm_runtime::ModuleStorage;
 
 pub const ACCOUNT_DNE_TEST_ADD: AccountAddress =

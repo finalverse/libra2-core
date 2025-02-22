@@ -26,7 +26,7 @@ use libra2_types::{
     },
     AptosCoinType,
 };
-use aptos_vm::{aptos_vm::AptosVMBlockExecutor, VMBlockExecutor};
+use libra2_vm::{libra2_vm::Libra2VMBlockExecutor, VMBlockExecutor};
 use libra2_vm_environment::prod_configs::set_paranoid_type_checks;
 use libra2_vm_genesis::GENESIS_KEYPAIR;
 use clap::Parser;
@@ -79,7 +79,7 @@ use tempfile::NamedTempFile;
 /// This differs from the SimpleVMTestAdapter in a few ways to ensure that our tests mimics
 /// production settings:
 ///   - It uses a StateView as its storage backend
-///   - It executes transactions through AptosVM, instead of MoveVM directly
+///   - It executes transactions through Libra2VM, instead of MoveVM directly
 struct AptosTestAdapter<'a> {
     compiled_state: CompiledState<'a>,
     storage: FakeDataStore,
@@ -515,7 +515,7 @@ impl<'a> AptosTestAdapter<'a> {
         let txn_block = vec![txn];
         let sig_verified_block = into_signature_verified_block(txn_block);
         let txn_provider = DefaultTxnProvider::new(sig_verified_block);
-        let mut outputs = AptosVMBlockExecutor::new()
+        let mut outputs = Libra2VMBlockExecutor::new()
             .execute_block_no_limit(&txn_provider, &self.storage.clone())?;
 
         assert_eq!(outputs.len(), 1);

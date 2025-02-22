@@ -11,7 +11,7 @@ use libra2_db::Libra2DB;
 use libra2_executor::db_bootstrapper::calculate_genesis;
 use libra2_storage_interface::DbReaderWriter;
 use libra2_types::{transaction::Transaction, waypoint::Waypoint};
-use aptos_vm::aptos_vm::AptosVMBlockExecutor;
+use libra2_vm::libra2_vm::Libra2VMBlockExecutor;
 use clap::Parser;
 use std::{
     fs::File,
@@ -77,7 +77,7 @@ impl Command {
         }
 
         let committer =
-            calculate_genesis::<AptosVMBlockExecutor>(&db, ledger_summary, &genesis_txn)
+            calculate_genesis::<Libra2VMBlockExecutor>(&db, ledger_summary, &genesis_txn)
                 .with_context(|| format_err!("Failed to calculate genesis."))?;
         println!(
             "Successfully calculated genesis. Got waypoint: {}",

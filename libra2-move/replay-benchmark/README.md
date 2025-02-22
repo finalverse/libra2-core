@@ -61,11 +61,11 @@ some cryptic errors show up, e.g.:
 ```text
 ...
 Failed to fetch state value for StateKey::AccessPath { address: 0x1, path: "Code(0000000000000000000000000000000000000000000000000000000000000001::randomness)" }: Other("HTTP error 429 Too Many Requests: error decoding response body: expected value at line 1 column 1")
-2025-01-21T12:01:51.931988Z [tokio-runtime-worker] ERROR aptos-move/block-executor/src/view.rs:1088 [VM, StateView] Error getting data from storage for StateKey::AccessPath { address: 0x1, path: "Resource(0x1::transaction_fee::AptosFABurnCapabilities)" } {"name":"execution","txn_idx":1}
-2025-01-21T12:01:51.933342Z [tokio-runtime-worker] ERROR aptos-move/block-executor/src/view.rs:1088 [VM, StateView] Error getting data from storage for StateKey::TableItem { handle: d1321c17eebcaceee2d54d5f6ea0f78dae846689935ef53d1f0c3cff9e2d6c49, key: 209d4294bbcd1174d6f2003ec365831e64cc31d9f6f15a2b85399db8d5000960f6 } {"name":"execution","txn_idx":10}
-thread 'tokio-runtime-worker' panicked at aptos-move/replay-benchmark/src/state_view.rs:67:17:
+2025-01-21T12:01:51.931988Z [tokio-runtime-worker] ERROR libra2-move/block-executor/src/view.rs:1088 [VM, StateView] Error getting data from storage for StateKey::AccessPath { address: 0x1, path: "Resource(0x1::transaction_fee::AptosFABurnCapabilities)" } {"name":"execution","txn_idx":1}
+2025-01-21T12:01:51.933342Z [tokio-runtime-worker] ERROR libra2-move/block-executor/src/view.rs:1088 [VM, StateView] Error getting data from storage for StateKey::TableItem { handle: d1321c17eebcaceee2d54d5f6ea0f78dae846689935ef53d1f0c3cff9e2d6c49, key: 209d4294bbcd1174d6f2003ec365831e64cc31d9f6f15a2b85399db8d5000960f6 } {"name":"execution","txn_idx":10}
+thread 'tokio-runtime-worker' panicked at libra2-move/replay-benchmark/src/state_view.rs:67:17:
 Failed to fetch state value for StateKey::AccessPath { address: 0x1, path: "Code(0000000000000000000000000000000000000000000000000000000000000001::string)" }: Other("receiving on a closed channel")
-2025-01-21T12:01:51.934526Z [tokio-runtime-worker] ERROR aptos-move/aptos-vm/src/aptos_vm.rs:2885 [aptos_vm] Transaction breaking invariant violation.
+2025-01-21T12:01:51.934526Z [tokio-runtime-worker] ERROR libra2-move/libra2-vm/src/libra2_vm.rs:2885 [libra2_vm] Transaction breaking invariant violation.
 ...
 ```
 

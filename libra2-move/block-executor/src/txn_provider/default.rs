@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::txn_provider::TxnProvider;
-use aptos_mvhashmap::types::TxnIndex;
+use libra2_mvhashmap::types::TxnIndex;
 use libra2_types::transaction::BlockExecutableTransaction as Transaction;
 
 pub struct DefaultTxnProvider<T: Transaction> {

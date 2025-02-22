@@ -20,7 +20,7 @@ use libra2_types::{
     ledger_info::{LedgerInfo, LedgerInfoWithSignatures},
     transaction::{Transaction, TransactionStatus},
 };
-use aptos_vm::AptosVM;
+use libra2_vm::Libra2VM;
 use Libra2DB::Libra2DB;
 use executor::{block_executor::BlockExecutor, db_bootstrapper};
 use executor_types::BlockExecutorTrait;
@@ -61,7 +61,7 @@ pub fn new_test_context(test_name: &str, fake_start_time_usecs: u64) -> TestCont
 
     let (db, db_rw) = DbReaderWriter::wrap(Libra2DB::new_for_test_with_indexer(&tmp_dir));
     let ret =
-        db_bootstrapper::maybe_bootstrap::<AptosVM>(&db_rw, &genesis, genesis_waypoint).unwrap();
+        db_bootstrapper::maybe_bootstrap::<Libra2VM>(&db_rw, &genesis, genesis_waypoint).unwrap();
     assert!(ret);
 
     let mempool = MockSharedMempool::new_in_runtime(&db_rw, VMValidator::new(db.clone()));
@@ -76,7 +76,7 @@ pub fn new_test_context(test_name: &str, fake_start_time_usecs: u64) -> TestCont
         rng,
         root_key,
         validator_owner,
-        Box::new(BlockExecutor::<AptosVM>::new(db_rw)),
+        Box::new(BlockExecutor::<Libra2VM>::new(db_rw)),
         mempool,
         db,
         test_name.to_string(),

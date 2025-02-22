@@ -21,7 +21,7 @@ use libra2_types::{
     validator_signer::ValidatorSigner,
     waypoint::Waypoint,
 };
-use aptos_vm::VMBlockExecutor;
+use libra2_vm::VMBlockExecutor;
 use std::sync::Arc;
 
 /// Helper function for test to blindly bootstrap without waypoint.

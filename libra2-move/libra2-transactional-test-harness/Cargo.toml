@@ -24,7 +24,7 @@ libra2-language-e2e-tests = { workspace = true }
 libra2-resource-viewer = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true, features = ["fuzzing"] }
-aptos-vm = { workspace = true }
+libra2-vm = { workspace = true }
 libra2-vm-environment = { workspace = true }
 libra2-vm-genesis = { workspace = true }
 bcs = { workspace = true }

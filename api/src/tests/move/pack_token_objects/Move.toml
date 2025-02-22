@@ -3,8 +3,8 @@ name = "pack_token_objects"
 version = "0.0.0"
 
 [dependencies]
-Libra2Framework = { local = "../../../../../aptos-move/framework/libra2-framework" }
-AptosTokenObjects = { local = "../../../../../aptos-move/framework/aptos-token-objects" }
+Libra2Framework = { local = "../../../../../libra2-move/framework/libra2-framework" }
+AptosTokenObjects = { local = "../../../../../libra2-move/framework/aptos-token-objects" }
 
 [addresses]
 addr = "_"

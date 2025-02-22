@@ -24,7 +24,7 @@ members = [
     "libra2-move/libra2-transaction-benchmarks",
     "libra2-move/libra2-transactional-test-harness",
     "libra2-move/libra2-validator-interface",
-    "libra2-move/aptos-vm",
+    "libra2-move/libra2-vm",
     "libra2-move/libra2-vm-benchmarks",
     "libra2-move/libra2-vm-environment",
     "libra2-move/libra2-vm-logging",
@@ -396,9 +396,9 @@ libra2-mempool-notifications = { path = "state-sync/inter-component/mempool-noti
 libra2-memsocket = { path = "network/memsocket" }
 libra2-metrics-core = { path = "crates/libra2-metrics-core" }
 libra2-move-debugger = { path = "libra2-move/libra2-debugger" }
-aptos-move-examples = { path = "libra2-move/move-examples" }
+libra2-move-examples = { path = "libra2-move/move-examples" }
 libra2-move-e2e-benchmark = { path = "libra2-move/e2e-benchmark" }
-aptos-mvhashmap = { path = "libra2-move/mvhashmap" }
+libra2-mvhashmap = { path = "libra2-move/mvhashmap" }
 libra2-native-interface = { path = "libra2-move/libra2-native-interface" }
 libra2-netcore = { path = "network/netcore" }
 libra2-network = { path = "network/framework" }
@@ -469,7 +469,7 @@ libra2-utils = { path = "libra2-utils" }
 libra2-validator-interface = { path = "libra2-move/libra2-validator-interface" }
 libra2-validator-transaction-pool = { path = "crates/validator-transaction-pool" }
 libra2-vault-client = { path = "secure/storage/vault" }
-aptos-vm = { path = "libra2-move/aptos-vm" }
+libra2-vm = { path = "libra2-move/libra2-vm" }
 libra2-vm-environment = { path = "libra2-move/libra2-vm-environment" }
 libra2-vm-logging = { path = "libra2-move/libra2-vm-logging" }
 libra2-vm-genesis = { path = "libra2-move/vm-genesis" }

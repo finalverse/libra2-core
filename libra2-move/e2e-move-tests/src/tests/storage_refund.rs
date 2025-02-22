@@ -8,7 +8,7 @@ use libra2_types::{
     transaction::{ExecutionStatus, TransactionStatus},
     write_set::WriteOp,
 };
-use aptos_vm::testing::{testing_only::inject_error_once, InjectedError};
+use libra2_vm::testing::{testing_only::inject_error_once, InjectedError};
 use move_core_types::account_address::AccountAddress;
 use serde::Serialize;
 
