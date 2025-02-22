@@ -398,7 +398,6 @@ dependencies = [
  "aptos-api-types",
  "aptos-gas-meter",
  "aptos-gas-schedule",
- "aptos-move-stdlib",
  "aptos-sdk",
  "aptos-vm",
  "bcs 0.1.4",
@@ -417,6 +416,7 @@ dependencies = [
  "libra2-logger",
  "libra2-mempool",
  "libra2-metrics-core",
+ "libra2-move-stdlib",
  "libra2-proptest-helpers",
  "libra2-runtimes",
  "libra2-storage-interface",
@@ -773,28 +773,6 @@ dependencies = [
  "move-prover",
  "move-unit-test",
  "move-vm-runtime",
- "tempfile",
-]
-
-[[package]]
-name = "aptos-move-stdlib"
-version = "0.1.1"
-dependencies = [
- "aptos-gas-schedule",
- "bcs 0.1.4",
- "dir-diff",
- "file_diff",
- "libra2-native-interface",
- "libra2-types",
- "move-cli",
- "move-core-types",
- "move-package",
- "move-unit-test",
- "move-vm-runtime",
- "move-vm-types",
- "sha2 0.9.9",
- "sha3 0.9.1",
- "smallvec",
  "tempfile",
 ]
 
@@ -8288,7 +8266,6 @@ dependencies = [
  "anyhow",
  "aptos-gas-meter",
  "aptos-gas-schedule",
- "aptos-move-stdlib",
  "aptos-vm",
  "ark-bls12-381",
  "ark-bn254",
@@ -8312,6 +8289,7 @@ dependencies = [
  "libra2-aggregator",
  "libra2-crypto",
  "libra2-gas-algebra",
+ "libra2-move-stdlib",
  "libra2-native-interface",
  "libra2-sdk-builder",
  "libra2-types",
@@ -9198,6 +9176,28 @@ dependencies = [
  "libra2-types",
  "rand 0.7.3",
  "serde_json",
+]
+
+[[package]]
+name = "libra2-move-stdlib"
+version = "0.1.1"
+dependencies = [
+ "aptos-gas-schedule",
+ "bcs 0.1.4",
+ "dir-diff",
+ "file_diff",
+ "libra2-native-interface",
+ "libra2-types",
+ "move-cli",
+ "move-core-types",
+ "move-package",
+ "move-unit-test",
+ "move-vm-runtime",
+ "move-vm-types",
+ "sha2 0.9.9",
+ "sha3 0.9.1",
+ "smallvec",
+ "tempfile",
 ]
 
 [[package]]
@@ -10508,11 +10508,11 @@ name = "libra2-vm-environment"
 version = "0.0.1"
 dependencies = [
  "aptos-gas-schedule",
- "aptos-move-stdlib",
  "aptos-table-natives",
  "bcs 0.1.4",
  "libra2-framework",
  "libra2-gas-algebra",
+ "libra2-move-stdlib",
  "libra2-native-interface",
  "libra2-types",
  "libra2-vm-types",
@@ -10572,7 +10572,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-gas-schedule",
- "aptos-move-stdlib",
  "aptos-table-natives",
  "aptos-vm",
  "bcs 0.1.4",
@@ -10581,6 +10580,7 @@ dependencies = [
  "libra2-block-executor",
  "libra2-cached-packages",
  "libra2-language-e2e-tests",
+ "libra2-move-stdlib",
  "libra2-native-interface",
  "libra2-types",
  "move-binary-format",

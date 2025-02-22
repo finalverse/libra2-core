@@ -18,7 +18,7 @@ libra2-aggregator = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-gas-algebra = { workspace = true }
 aptos-gas-schedule = { workspace = true }
-aptos-move-stdlib = { workspace = true }
+libra2-move-stdlib = { workspace = true }
 libra2-native-interface = { workspace = true }
 libra2-sdk-builder = { workspace = true }
 libra2-types = { workspace = true }
@@ -94,10 +94,10 @@ move-unit-test = { workspace = true }
 [features]
 default = []
 fuzzing = ["libra2-types/fuzzing"]
-testing = ["aptos-move-stdlib/testing", "libra2-crypto/fuzzing"]
+testing = ["libra2-move-stdlib/testing", "libra2-crypto/fuzzing"]
 
 [lib]
 doctest = false
 
 [package.metadata.cargo-machete]
-ignored = ["aptos-move-stdlib", "serde_bytes"]
+ignored = ["libra2-move-stdlib", "serde_bytes"]

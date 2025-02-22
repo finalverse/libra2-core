@@ -54,7 +54,7 @@ libra2-cached-packages = { workspace = true }
 libra2-framework = { workspace = true }
 aptos-gas-meter = { workspace = true }
 aptos-gas-schedule = { workspace = true, features = ["testing"] }
-aptos-move-stdlib = { workspace = true }
+libra2-move-stdlib = { workspace = true }
 libra2-proptest-helpers = { workspace = true }
 move-package = { workspace = true }
 passkey-types = { workspace = true }

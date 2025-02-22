@@ -122,7 +122,7 @@ MOVE_CRATES_V2_ENV_DEPENDENT="\
   -p move-transactional-test-runner \
   -p move-unit-test \
   -p move-vm-transactional-tests \
-  -p aptos-move-stdlib\
+  -p libra2-move-stdlib\
   -p move-abigen\
   -p move-docgen\
   -p move-stdlib\

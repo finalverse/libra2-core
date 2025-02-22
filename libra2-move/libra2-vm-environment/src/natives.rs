@@ -23,7 +23,7 @@ pub fn aptos_natives_with_builder(
     ]);
 
     #[allow(unreachable_code)]
-    aptos_move_stdlib::natives::all_natives(CORE_CODE_ADDRESS, builder)
+    libra2_move_stdlib::natives::all_natives(CORE_CODE_ADDRESS, builder)
         .into_iter()
         .filter(|(_, name, func_name, _)|
             if name.as_str() == "vector" && vector_bytecode_instruction_methods.contains(func_name.as_str()) {
