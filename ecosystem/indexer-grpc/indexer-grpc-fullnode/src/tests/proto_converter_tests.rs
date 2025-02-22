@@ -6,7 +6,7 @@ use crate::{
     tests::{new_test_context, TestContext},
 };
 
-use aptos_api_test_context::current_function_name;
+use libra2_api_test_context::current_function_name;
 use libra2_framework::extended_checks;
 use aptos_protos::extractor::v1::{
     transaction::{TransactionType, TxnData},

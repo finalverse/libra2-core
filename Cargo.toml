@@ -300,7 +300,7 @@ libra2-accumulator = { path = "storage/accumulator" }
 libra2-admin-service = { path = "crates/libra2-admin-service" }
 libra2-aggregator = { path = "libra2-move/libra2-aggregator" }
 aptos-api = { path = "api" }
-aptos-api-test-context = { path = "api/test-context" }
+libra2-api-test-context = { path = "api/test-context" }
 libra2-api-types = { path = "api/types" }
 libra2-backup-cli = { path = "storage/backup/backup-cli" }
 libra2-backup-service = { path = "storage/backup/backup-service" }
@@ -435,7 +435,7 @@ libra2-runtimes = { path = "crates/libra2-runtimes" }
 libra2-safety-rules = { path = "consensus/safety-rules" }
 libra2-schemadb = { path = "storage/schemadb" }
 libra2-scratchpad = { path = "storage/scratchpad" }
-aptos-script-composer = { path = "libra2-move/script-composer" }
+libra2-script-composer = { path = "libra2-move/script-composer" }
 libra2-sdk = { path = "sdk" }
 libra2-sdk-builder = { path = "libra2-move/libra2-sdk-builder" }
 libra2-secure-net = { path = "secure/net" }

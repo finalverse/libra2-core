@@ -16,7 +16,7 @@
  **************************************************************************************/
 
 use super::new_test_context;
-use aptos_api_test_context::current_function_name;
+use libra2_api_test_context::current_function_name;
 use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     SigningKey, Uniform,

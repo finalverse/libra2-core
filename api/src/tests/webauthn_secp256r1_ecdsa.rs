@@ -7,7 +7,7 @@ use super::new_test_context;
 #[cfg(test)]
 mod tests {
     use super::new_test_context;
-    use aptos_api_test_context::current_function_name;
+    use libra2_api_test_context::current_function_name;
     use libra2_crypto::{
         ed25519::Ed25519PrivateKey,
         secp256r1_ecdsa::{

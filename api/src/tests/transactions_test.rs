@@ -7,7 +7,7 @@ use crate::tests::{
     new_test_context_with_config, new_test_context_with_db_sharding_and_internal_indexer,
     new_test_context_with_sharding_and_delayed_internal_indexer,
 };
-use aptos_api_test_context::{assert_json, current_function_name, pretty, TestContext};
+use libra2_api_test_context::{assert_json, current_function_name, pretty, TestContext};
 use libra2_config::config::{GasEstimationStaticOverride, NodeConfig};
 use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519Signature},

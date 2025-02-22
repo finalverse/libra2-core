@@ -4,7 +4,7 @@
 
 use super::new_test_context;
 use crate::tests::new_test_context_with_db_sharding_and_internal_indexer;
-use aptos_api_test_context::{current_function_name, TestContext};
+use libra2_api_test_context::{current_function_name, TestContext};
 use percent_encoding::{utf8_percent_encode, NON_ALPHANUMERIC};
 use serde_json::json;
 use std::path::PathBuf;

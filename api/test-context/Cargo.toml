@@ -1,6 +1,6 @@
 [package]
-name = "aptos-api-test-context"
-description = "Aptos API test context"
+name = "libra2-api-test-context"
+description = "Libra2 API test context"
 version = "0.2.0"
 
 # Workspace inherited keys

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::{new_test_context, new_test_context_with_db_sharding_and_internal_indexer};
-use aptos_api_test_context::{current_function_name, TestContext};
+use libra2_api_test_context::{current_function_name, TestContext};
 use libra2_crypto::{ed25519::Ed25519PrivateKey, SigningKey, ValidCryptoMaterial};
 use libra2_sdk::types::LocalAccount;
 use libra2_types::account_config::RotationProofChallenge;

@@ -299,7 +299,7 @@ fn get_max_runtime_workers(api_config: &ApiConfig) -> usize {
 mod tests {
     use super::bootstrap;
     use crate::runtime::get_max_runtime_workers;
-    use aptos_api_test_context::{new_test_context, TestContext};
+    use libra2_api_test_context::{new_test_context, TestContext};
     use libra2_config::config::{ApiConfig, NodeConfig};
     use libra2_types::chain_id::ChainId;
     use std::time::Duration;

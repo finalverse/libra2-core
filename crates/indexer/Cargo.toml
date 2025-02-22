@@ -46,4 +46,4 @@ sha2 = { workspace = true }
 tokio = { workspace = true }
 
 [dev-dependencies]
-aptos-api-test-context = { workspace = true }
+libra2-api-test-context = { workspace = true }

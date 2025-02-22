@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::new_test_context;
-use aptos_api_test_context::{current_function_name, pretty, TestContext};
+use libra2_api_test_context::{current_function_name, pretty, TestContext};
 use libra2_crypto::ed25519::Ed25519Signature;
 use libra2_types::{
     account_address::AccountAddress,
