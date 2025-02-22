@@ -84,8 +84,8 @@ impl BooleanTransactionFilter {
     /// # Example
     ///
     /// ```
-    /// use aptos_transaction_filter::BooleanTransactionFilter;
-    /// use aptos_transaction_filter::filters::{EventFilterBuilder, MoveStructTagFilterBuilder, UserTransactionFilterBuilder};
+    /// use libra2_transaction_filter::BooleanTransactionFilter;
+    /// use libra2_transaction_filter::filters::{EventFilterBuilder, MoveStructTagFilterBuilder, UserTransactionFilterBuilder};
     ///
     /// fn example() -> Result<BooleanTransactionFilter, anyhow::Error> {
     ///   // Create a filter for user transactions where the sender is "0x1"
@@ -114,8 +114,8 @@ impl BooleanTransactionFilter {
     /// # Example
     ///
     /// ```
-    /// use aptos_transaction_filter::BooleanTransactionFilter;
-    /// use aptos_transaction_filter::filters::{EventFilterBuilder, MoveStructTagFilterBuilder, UserTransactionFilterBuilder};
+    /// use libra2_transaction_filter::BooleanTransactionFilter;
+    /// use libra2_transaction_filter::filters::{EventFilterBuilder, MoveStructTagFilterBuilder, UserTransactionFilterBuilder};
     ///
     /// fn example() -> Result<BooleanTransactionFilter, anyhow::Error> {
     ///   // Create a filter for user transactions where the sender is "0x1"
@@ -144,8 +144,8 @@ impl BooleanTransactionFilter {
     /// # Example
     ///
     /// ```
-    /// use aptos_transaction_filter::BooleanTransactionFilter;
-    /// use aptos_transaction_filter::filters::{EventFilterBuilder, MoveStructTagFilterBuilder, UserTransactionFilterBuilder};
+    /// use libra2_transaction_filter::BooleanTransactionFilter;
+    /// use libra2_transaction_filter::filters::{EventFilterBuilder, MoveStructTagFilterBuilder, UserTransactionFilterBuilder};
     ///
     /// fn example() -> Result<BooleanTransactionFilter, anyhow::Error> {
     ///   // Create a filter for user transactions where the sender is "0x1"

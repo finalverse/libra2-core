@@ -27,12 +27,12 @@ COPY --link docker/tools/boto.cfg /etc/boto.cfg
 RUN wget https://storage.googleapis.com/pub/gsutil.tar.gz -O- | tar --gzip --directory /opt --extract && ln -s /opt/gsutil/gsutil /usr/local/bin
 RUN cd /usr/local/bin && wget "https://storage.googleapis.com/kubernetes-release/release/v1.18.6/bin/linux/amd64/kubectl" -O kubectl && chmod +x kubectl
 
-COPY --link --from=tools-builder /aptos/dist/libra2-debugger /usr/local/bin/libra2-debugger
-COPY --link --from=tools-builder /aptos/dist/aptos /usr/local/bin/aptos
-COPY --link --from=tools-builder /aptos/dist/libra2-openapi-spec-generator /usr/local/bin/libra2-openapi-spec-generator
-COPY --link --from=tools-builder /aptos/dist/libra2-fn-check-client /usr/local/bin/libra2-fn-check-client
-COPY --link --from=tools-builder /aptos/dist/libra2-transaction-emitter /usr/local/bin/libra2-transaction-emitter
-COPY --link --from=tools-builder /aptos/dist/libra2-api-tester /usr/local/bin/libra2-api-tester
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-debugger /usr/local/bin/libra2-debugger
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workeraptos /usr/local/bin/aptos
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-openapi-spec-generator /usr/local/bin/libra2-openapi-spec-generator
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-fn-check-client /usr/local/bin/libra2-fn-check-client
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-transaction-emitter /usr/local/bin/libra2-transaction-emitter
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-api-tester /usr/local/bin/libra2-api-tester
 
 # Copy the example module to publish for api-tester
 COPY --link --from=tools-builder /aptos/aptos-move/framework/libra2-framework /aptos-move/framework/libra2-framework
@@ -42,7 +42,7 @@ COPY --link --from=tools-builder /aptos/aptos-move/move-examples/hello_blockchai
 
 ### Get Aptos Move releases for genesis ceremony
 RUN mkdir -p /libra2-framework/move
-COPY --link --from=tools-builder /aptos/dist/head.mrb /libra2-framework/move/head.mrb
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerhead.mrb /libra2-framework/move/head.mrb
 
 # add build info
 ARG BUILD_DATE

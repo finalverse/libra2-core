@@ -3,7 +3,7 @@
 
 use crate::{config::CacheConfig, metadata_manager::MetadataManager};
 use anyhow::{bail, ensure, Result};
-use aptos_indexer_grpc_utils::{
+use libra2_indexer_grpc_utils::{
     config::IndexerGrpcFileStoreConfig, file_store_operator_v2::file_store_reader::FileStoreReader,
 };
 use aptos_protos::{

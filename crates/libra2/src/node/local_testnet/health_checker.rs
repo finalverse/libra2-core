@@ -56,7 +56,7 @@ impl HealthChecker {
                 Ok(())
             },
             HealthChecker::DataServiceGrpc(url) => {
-                let mut client = aptos_indexer_grpc_utils::create_data_service_grpc_client(
+                let mut client = libra2_indexer_grpc_utils::create_data_service_grpc_client(
                     url.clone(),
                     Some(Duration::from_secs(5)),
                 )

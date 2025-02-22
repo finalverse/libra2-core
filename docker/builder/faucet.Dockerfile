@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 
 RUN mkdir -p /aptos/client/data/wallet/
 
-COPY --link --from=tools-builder /aptos/dist/libra2-faucet-service /usr/local/bin/libra2-faucet-service
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-faucet-service /usr/local/bin/libra2-faucet-service
 
 # Mint proxy listening address
 EXPOSE 8000

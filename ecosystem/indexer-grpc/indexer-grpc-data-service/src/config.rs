@@ -3,8 +3,8 @@
 
 use crate::service::RawDataServerWrapper;
 use anyhow::{bail, Result};
-use aptos_indexer_grpc_server_framework::RunnableConfig;
-use aptos_indexer_grpc_utils::{
+use libra2_indexer_grpc_server_framework::RunnableConfig;
+use libra2_indexer_grpc_utils::{
     compression_util::StorageFormat, config::IndexerGrpcFileStoreConfig,
     in_memory_cache::InMemoryCacheConfig, types::RedisUrl,
 };
@@ -13,7 +13,7 @@ use aptos_protos::{
     transaction::v1::FILE_DESCRIPTOR_SET as TRANSACTION_V1_TESTING_FILE_DESCRIPTOR_SET,
     util::timestamp::FILE_DESCRIPTOR_SET as UTIL_TIMESTAMP_FILE_DESCRIPTOR_SET,
 };
-use aptos_transaction_filter::BooleanTransactionFilter;
+use libra2_transaction_filter::BooleanTransactionFilter;
 use serde::{Deserialize, Serialize};
 use std::{net::SocketAddr, sync::Arc};
 use tonic::{codec::CompressionEncoding, transport::Server};
@@ -169,7 +169,7 @@ impl RunnableConfig for IndexerGrpcDataServiceConfig {
         println!(">>>> Redis connection established");
         // InMemoryCache.
         let in_memory_cache =
-            aptos_indexer_grpc_utils::in_memory_cache::InMemoryCache::new_with_redis_connection(
+            libra2_indexer_grpc_utils::in_memory_cache::InMemoryCache::new_with_redis_connection(
                 self.in_memory_cache_config.clone(),
                 redis_conn,
                 cache_storage_format,

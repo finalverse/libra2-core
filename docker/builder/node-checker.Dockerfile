@@ -2,7 +2,7 @@
 
 FROM debian-base AS node-checker
 
-COPY  --link --from=tools-builder /aptos/dist/libra2-node-checker /usr/local/bin/libra2-node-checker
+COPY  --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-node-checker /usr/local/bin/libra2-node-checker
 
 ENV RUST_LOG_FORMAT=json
 

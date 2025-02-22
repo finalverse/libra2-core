@@ -8,7 +8,7 @@ use serde::{Deserialize, Serialize};
 
 /// Example:
 /// ```
-/// use aptos_transaction_filter::MoveStructTagFilterBuilder;
+/// use libra2_transaction_filter::MoveStructTagFilterBuilder;
 ///
 /// let filter = MoveStructTagFilterBuilder::default()
 ///   .address("0x0000000000000000000000000000000000000000000000000000000000000004")

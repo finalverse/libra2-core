@@ -8,8 +8,8 @@ use crate::{
     service::{DataServiceWrapper, DataServiceWrapperWrapper},
 };
 use anyhow::Result;
-use aptos_indexer_grpc_server_framework::RunnableConfig;
-use aptos_indexer_grpc_utils::config::IndexerGrpcFileStoreConfig;
+use libra2_indexer_grpc_server_framework::RunnableConfig;
+use libra2_indexer_grpc_utils::config::IndexerGrpcFileStoreConfig;
 use aptos_protos::{
     indexer::v1::FILE_DESCRIPTOR_SET as INDEXER_V1_FILE_DESCRIPTOR_SET,
     transaction::v1::FILE_DESCRIPTOR_SET as TRANSACTION_V1_TESTING_FILE_DESCRIPTOR_SET,

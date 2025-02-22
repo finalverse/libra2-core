@@ -35,8 +35,8 @@ libra2-executor = { workspace = true }
 libra2-framework = { workspace = true }
 libra2-genesis = { workspace = true }
 aptos-indexer = { workspace = true, optional = true }
-aptos-indexer-grpc-fullnode = { workspace = true }
-aptos-indexer-grpc-table-info = { workspace = true }
+libra2-indexer-grpc-fullnode = { workspace = true }
+libra2-indexer-grpc-table-info = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-inspection-service = { workspace = true }
 libra2-jwk-consensus = { workspace = true }

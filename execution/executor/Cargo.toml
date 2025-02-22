@@ -21,7 +21,7 @@ libra2-drop-helper = { workspace = true }
 libra2-executor-service = { workspace = true }
 libra2-executor-types = { workspace = true }
 libra2-experimental-runtimes = { workspace = true }
-aptos-indexer-grpc-table-info = { workspace = true }
+libra2-indexer-grpc-table-info = { workspace = true }
 libra2-infallible = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }

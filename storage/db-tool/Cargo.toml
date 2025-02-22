@@ -36,4 +36,4 @@ tokio = { workspace = true }
 libra2-backup-cli = { workspace = true, features = ["testing"] }
 libra2-backup-service = { workspace = true }
 libra2-executor-test-helpers = { workspace = true }
-aptos-indexer-grpc-table-info = { workspace = true }
+libra2-indexer-grpc-table-info = { workspace = true }

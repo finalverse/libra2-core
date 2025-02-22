@@ -1,6 +1,6 @@
 FROM debian-base AS keyless-pepper-service
 
-COPY --link --from=tools-builder /aptos/dist/libra2-keyless-pepper-service /usr/local/bin/libra2-keyless-pepper-service
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-keyless-pepper-service /usr/local/bin/libra2-keyless-pepper-service
 
 EXPOSE 8000
 ENV RUST_LOG_FORMAT=json

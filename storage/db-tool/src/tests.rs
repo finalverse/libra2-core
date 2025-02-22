@@ -293,7 +293,7 @@ mod dbtool_tests {
         };
         use libra2_db::utils::iterators::PrefixedStateValueIterator;
         use libra2_db_indexer::utils::PrefixedStateValueIterator as IndexerPrefixedStateValueIterator;
-        use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
+        use libra2_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
         use itertools::zip_eq;
         let db = test_execution_with_storage_impl_inner(false, old_db_dir.as_path());
         let (rt, port) = start_local_backup_service(Arc::clone(&db));

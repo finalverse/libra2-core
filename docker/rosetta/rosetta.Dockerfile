@@ -26,7 +26,7 @@ FROM ubuntu-base AS rosetta
 
 RUN apt-get update && apt-get install -y libssl-dev ca-certificates && apt-get clean && rm -r /var/lib/apt/lists/*
 
-COPY --from=builder /aptos/dist/libra2-rosetta /usr/local/bin/libra2-rosetta
+COPY --from=builder libra2-indexer-grpc-cache-workerlibra2-rosetta /usr/local/bin/libra2-rosetta
 
 # Rosetta API
 EXPOSE 8082

@@ -11,7 +11,7 @@ use serde::{Deserialize, Serialize};
 
 /// Example:
 /// ```
-/// use aptos_transaction_filter::{EventFilterBuilder, MoveStructTagFilterBuilder};
+/// use libra2_transaction_filter::{EventFilterBuilder, MoveStructTagFilterBuilder};
 ///
 /// let move_struct_tag_filter = MoveStructTagFilterBuilder::default()
 ///   .address("0x0077")

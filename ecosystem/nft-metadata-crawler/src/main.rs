@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_indexer_grpc_server_framework::ServerArgs;
+use libra2_indexer_grpc_server_framework::ServerArgs;
 use aptos_nft_metadata_crawler::config::NFTMetadataCrawlerConfig;
 
 #[tokio::main]

@@ -23,7 +23,7 @@ RUN cd /usr/local/bin && wget "https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.g
 ENV PATH "$PATH:/root/bin"
 
 WORKDIR /aptos
-COPY --link --from=node-builder /aptos/dist/forge /usr/local/bin/forge
+COPY --link --from=node-builder libra2-indexer-grpc-cache-workerforge /usr/local/bin/forge
 
 ### Get Libra2 Framework Release for forge framework upgrade testing
 COPY --link --from=tools-builder /aptos/aptos-move/framework/ /aptos/aptos-move/framework/

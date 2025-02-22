@@ -13,7 +13,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos-indexer-grpc-utils = { workspace = true }
+libra2-indexer-grpc-utils = { workspace = true }
 bollard = { workspace = true }
 dirs = { workspace = true }
 futures = { workspace = true }

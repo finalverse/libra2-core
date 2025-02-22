@@ -297,8 +297,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
- "aptos-indexer-grpc-server-framework",
- "aptos-indexer-grpc-utils",
  "aptos-protos 1.3.1",
  "aptos-sdk",
  "aptos-vm",
@@ -330,6 +328,8 @@ dependencies = [
  "libra2-genesis",
  "libra2-github-client",
  "libra2-global-constants",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-indexer-grpc-utils",
  "libra2-keygen",
  "libra2-ledger",
  "libra2-localnet",
@@ -449,7 +449,6 @@ dependencies = [
  "aptos-api",
  "aptos-api-types",
  "aptos-cached-packages",
- "aptos-indexer-grpc-table-info",
  "aptos-sdk",
  "aptos-vm",
  "bcs 0.1.4",
@@ -463,6 +462,7 @@ dependencies = [
  "libra2-executor-types",
  "libra2-framework",
  "libra2-genesis",
+ "libra2-indexer-grpc-table-info",
  "libra2-mempool",
  "libra2-mempool-notifications",
  "libra2-storage-interface",
@@ -762,367 +762,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-indexer-grpc-cache-worker"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-indexer-grpc-server-framework",
- "aptos-indexer-grpc-utils",
- "aptos-moving-average",
- "aptos-protos 1.3.1",
- "async-trait",
- "clap 4.5.21",
- "futures",
- "futures-core",
- "jemallocator",
- "libra2-config",
- "libra2-metrics-core",
- "once_cell",
- "prost 0.13.4",
- "redis",
- "reqwest 0.11.23",
- "serde",
- "tempfile",
- "tokio",
- "tonic 0.12.3",
- "tracing",
- "url",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-data-service"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-indexer-grpc-server-framework",
- "aptos-indexer-grpc-utils",
- "aptos-moving-average",
- "aptos-protos 1.3.1",
- "aptos-transaction-filter",
- "async-trait",
- "clap 4.5.21",
- "futures",
- "jemallocator",
- "libra2-metrics-core",
- "once_cell",
- "prost 0.13.4",
- "redis",
- "serde",
- "serde_json",
- "tokio",
- "tokio-stream",
- "tonic 0.12.3",
- "tonic-reflection",
- "tracing",
- "uuid",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-data-service-v2"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-indexer-grpc-server-framework",
- "aptos-indexer-grpc-utils",
- "aptos-protos 1.3.1",
- "aptos-transaction-filter",
- "async-trait",
- "build_html",
- "clap 4.5.21",
- "dashmap",
- "futures",
- "jemallocator",
- "once_cell",
- "prost 0.13.4",
- "rand 0.7.3",
- "serde",
- "tokio",
- "tokio-scoped",
- "tokio-stream",
- "tonic 0.12.3",
- "tonic-reflection",
- "tracing",
- "uuid",
- "warp",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-file-checker"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-indexer-grpc-server-framework",
- "aptos-indexer-grpc-utils",
- "async-trait",
- "clap 4.5.21",
- "cloud-storage",
- "jemallocator",
- "libra2-metrics-core",
- "once_cell",
- "serde",
- "serde_json",
- "tokio",
- "tracing",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-file-store"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-indexer-grpc-server-framework",
- "aptos-indexer-grpc-utils",
- "aptos-moving-average",
- "async-trait",
- "clap 4.5.21",
- "futures",
- "jemallocator",
- "libra2-metrics-core",
- "once_cell",
- "redis",
- "serde",
- "tokio",
- "tracing",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-file-store-backfiller"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-indexer-grpc-server-framework",
- "aptos-indexer-grpc-utils",
- "aptos-protos 1.3.1",
- "async-trait",
- "clap 4.5.21",
- "futures",
- "jemallocator",
- "serde",
- "serde_json",
- "tokio",
- "tonic 0.12.3",
- "tracing",
- "url",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-fullnode"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-api",
- "aptos-api-test-context",
- "aptos-api-types",
- "aptos-indexer-grpc-utils",
- "aptos-moving-average",
- "aptos-protos 1.3.1",
- "aptos-sdk",
- "aptos-vm",
- "bcs 0.1.4",
- "bytes",
- "chrono",
- "futures",
- "goldenfile",
- "hex",
- "hyper 0.14.28",
- "itertools 0.13.0",
- "libra2-bitvec",
- "libra2-config",
- "libra2-crypto",
- "libra2-db",
- "libra2-executor",
- "libra2-executor-types",
- "libra2-framework",
- "libra2-genesis",
- "libra2-global-constants",
- "libra2-logger",
- "libra2-mempool",
- "libra2-mempool-notifications",
- "libra2-metrics-core",
- "libra2-proptest-helpers",
- "libra2-runtimes",
- "libra2-secure-storage",
- "libra2-storage-interface",
- "libra2-temppath",
- "libra2-types",
- "libra2-vm-validator",
- "move-core-types",
- "once_cell",
- "rand 0.7.3",
- "regex",
- "serde",
- "serde_json",
- "tokio",
- "tokio-stream",
- "tonic 0.12.3",
- "tonic-reflection",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-in-memory-cache-benchmark"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-indexer-grpc-utils",
- "aptos-protos 1.3.1",
- "futures",
- "jemallocator",
- "lazy_static",
- "once_cell",
- "redis",
- "redis-test",
- "tokio",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-manager"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-indexer-grpc-server-framework",
- "aptos-indexer-grpc-utils",
- "aptos-protos 1.3.1",
- "async-trait",
- "build_html",
- "clap 4.5.21",
- "dashmap",
- "futures",
- "jemallocator",
- "libra2-config",
- "prost 0.13.4",
- "rand 0.7.3",
- "serde",
- "serde_json",
- "tokio",
- "tokio-scoped",
- "tonic 0.12.3",
- "tracing",
- "warp",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-server-framework"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "async-trait",
- "backtrace",
- "clap 4.5.21",
- "libra2-metrics-core",
- "libra2-system-utils",
- "prometheus",
- "serde",
- "serde_yaml 0.8.26",
- "tempfile",
- "tokio",
- "toml 0.7.8",
- "tracing",
- "tracing-subscriber 0.3.18",
- "warp",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-table-info"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-api",
- "aptos-api-types",
- "aptos-indexer-grpc-fullnode",
- "aptos-indexer-grpc-utils",
- "flate2",
- "futures",
- "google-cloud-storage",
- "hyper 0.14.28",
- "itertools 0.13.0",
- "libra2-config",
- "libra2-db-indexer",
- "libra2-logger",
- "libra2-mempool",
- "libra2-metrics-core",
- "libra2-runtimes",
- "libra2-storage-interface",
- "libra2-types",
- "once_cell",
- "rocksdb",
- "serde",
- "serde_json",
- "tar",
- "tempfile",
- "tokio",
- "tokio-stream",
- "tokio-util 0.7.10",
-]
-
-[[package]]
-name = "aptos-indexer-grpc-utils"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos-protos 1.3.1",
- "aptos-transaction-filter",
- "async-trait",
- "backoff",
- "base64 0.13.1",
- "build_html",
- "bytesize",
- "chrono",
- "cloud-storage",
- "dashmap",
- "futures",
- "itertools 0.13.0",
- "libra2-metrics-core",
- "lz4",
- "once_cell",
- "prometheus",
- "prost 0.13.4",
- "redis",
- "redis-test",
- "ripemd",
- "serde",
- "serde_json",
- "tokio",
- "tokio-util 0.7.10",
- "tonic 0.12.3",
- "tracing",
- "url",
- "warp",
-]
-
-[[package]]
-name = "aptos-indexer-test-transactions"
-version = "1.0.0"
-dependencies = [
- "aptos-protos 1.3.1",
- "serde_json",
-]
-
-[[package]]
-name = "aptos-indexer-transaction-generator"
-version = "1.0.0"
-dependencies = [
- "anyhow",
- "aptos",
- "aptos-indexer-grpc-utils",
- "aptos-protos 1.3.1",
- "clap 4.5.21",
- "futures",
- "itertools 0.13.0",
- "libra2-config",
- "libra2-faucet-core",
- "rand 0.7.3",
- "serde",
- "serde_json",
- "serde_yaml 0.8.26",
- "tempfile",
- "tokio",
- "tokio-stream",
- "toml 0.7.8",
- "tonic 0.12.3",
- "url",
-]
-
-[[package]]
 name = "aptos-memory-usage-tracker"
 version = "0.1.0"
 dependencies = [
@@ -1212,7 +851,6 @@ version = "0.1.0"
 dependencies = [
  "ahash 0.8.11",
  "anyhow",
- "aptos-indexer-grpc-server-framework",
  "async-trait",
  "axum 0.7.5",
  "backoff",
@@ -1226,6 +864,7 @@ dependencies = [
  "futures",
  "google-cloud-storage",
  "image",
+ "libra2-indexer-grpc-server-framework",
  "libra2-metrics-core",
  "once_cell",
  "rayon",
@@ -1457,24 +1096,6 @@ dependencies = [
  "reqwest 0.11.23",
  "tokio",
  "tokio-scoped",
-]
-
-[[package]]
-name = "aptos-transaction-filter"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-protos 1.3.1",
- "derivative",
- "derive_builder",
- "lz4",
- "memchr",
- "once_cell",
- "prost 0.13.4",
- "serde",
- "serde_json",
- "serde_yaml 0.8.26",
- "thiserror",
 ]
 
 [[package]]
@@ -7341,8 +6962,6 @@ dependencies = [
  "aptos-cached-packages",
  "aptos-gas-profiling",
  "aptos-gas-schedule",
- "aptos-indexer-grpc-server-framework",
- "aptos-indexer-grpc-utils",
  "aptos-protos 1.3.1",
  "aptos-sdk",
  "aptos-vm",
@@ -7374,6 +6993,8 @@ dependencies = [
  "libra2-genesis",
  "libra2-github-client",
  "libra2-global-constants",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-indexer-grpc-utils",
  "libra2-keygen",
  "libra2-ledger",
  "libra2-localnet",
@@ -7523,7 +7144,6 @@ name = "libra2-backup-cli"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-indexer-grpc-table-info",
  "aptos-vm",
  "async-trait",
  "bcs 0.1.4",
@@ -7540,6 +7160,7 @@ dependencies = [
  "libra2-executor",
  "libra2-executor-test-helpers",
  "libra2-executor-types",
+ "libra2-indexer-grpc-table-info",
  "libra2-infallible",
  "libra2-jellyfish-merkle",
  "libra2-logger",
@@ -8169,7 +7790,6 @@ name = "libra2-db-tool"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-indexer-grpc-table-info",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
@@ -8183,6 +7803,7 @@ dependencies = [
  "libra2-executor",
  "libra2-executor-test-helpers",
  "libra2-executor-types",
+ "libra2-indexer-grpc-table-info",
  "libra2-logger",
  "libra2-storage-interface",
  "libra2-temppath",
@@ -8329,7 +7950,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-cached-packages",
- "aptos-indexer-grpc-table-info",
  "aptos-sdk",
  "aptos-vm",
  "arr_macro",
@@ -8349,6 +7969,7 @@ dependencies = [
  "libra2-executor-test-helpers",
  "libra2-executor-types",
  "libra2-experimental-runtimes",
+ "libra2-indexer-grpc-table-info",
  "libra2-infallible",
  "libra2-logger",
  "libra2-metrics-core",
@@ -8787,6 +8408,367 @@ name = "libra2-id-generator"
 version = "0.1.0"
 
 [[package]]
+name = "libra2-indexer-grpc-cache-worker"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-moving-average",
+ "aptos-protos 1.3.1",
+ "async-trait",
+ "clap 4.5.21",
+ "futures",
+ "futures-core",
+ "jemallocator",
+ "libra2-config",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-indexer-grpc-utils",
+ "libra2-metrics-core",
+ "once_cell",
+ "prost 0.13.4",
+ "redis",
+ "reqwest 0.11.23",
+ "serde",
+ "tempfile",
+ "tokio",
+ "tonic 0.12.3",
+ "tracing",
+ "url",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-data-service"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-moving-average",
+ "aptos-protos 1.3.1",
+ "async-trait",
+ "clap 4.5.21",
+ "futures",
+ "jemallocator",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-indexer-grpc-utils",
+ "libra2-metrics-core",
+ "libra2-transaction-filter",
+ "once_cell",
+ "prost 0.13.4",
+ "redis",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tokio-stream",
+ "tonic 0.12.3",
+ "tonic-reflection",
+ "tracing",
+ "uuid",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-data-service-v2"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-protos 1.3.1",
+ "async-trait",
+ "build_html",
+ "clap 4.5.21",
+ "dashmap",
+ "futures",
+ "jemallocator",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-indexer-grpc-utils",
+ "libra2-transaction-filter",
+ "once_cell",
+ "prost 0.13.4",
+ "rand 0.7.3",
+ "serde",
+ "tokio",
+ "tokio-scoped",
+ "tokio-stream",
+ "tonic 0.12.3",
+ "tonic-reflection",
+ "tracing",
+ "uuid",
+ "warp",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-file-checker"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "clap 4.5.21",
+ "cloud-storage",
+ "jemallocator",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-indexer-grpc-utils",
+ "libra2-metrics-core",
+ "once_cell",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-file-store"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-moving-average",
+ "async-trait",
+ "clap 4.5.21",
+ "futures",
+ "jemallocator",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-indexer-grpc-utils",
+ "libra2-metrics-core",
+ "once_cell",
+ "redis",
+ "serde",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-file-store-backfiller"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-protos 1.3.1",
+ "async-trait",
+ "clap 4.5.21",
+ "futures",
+ "jemallocator",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-indexer-grpc-utils",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tonic 0.12.3",
+ "tracing",
+ "url",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-fullnode"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-api",
+ "aptos-api-test-context",
+ "aptos-api-types",
+ "aptos-moving-average",
+ "aptos-protos 1.3.1",
+ "aptos-sdk",
+ "aptos-vm",
+ "bcs 0.1.4",
+ "bytes",
+ "chrono",
+ "futures",
+ "goldenfile",
+ "hex",
+ "hyper 0.14.28",
+ "itertools 0.13.0",
+ "libra2-bitvec",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-db",
+ "libra2-executor",
+ "libra2-executor-types",
+ "libra2-framework",
+ "libra2-genesis",
+ "libra2-global-constants",
+ "libra2-indexer-grpc-utils",
+ "libra2-logger",
+ "libra2-mempool",
+ "libra2-mempool-notifications",
+ "libra2-metrics-core",
+ "libra2-proptest-helpers",
+ "libra2-runtimes",
+ "libra2-secure-storage",
+ "libra2-storage-interface",
+ "libra2-temppath",
+ "libra2-types",
+ "libra2-vm-validator",
+ "move-core-types",
+ "once_cell",
+ "rand 0.7.3",
+ "regex",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tokio-stream",
+ "tonic 0.12.3",
+ "tonic-reflection",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-in-memory-cache-benchmark"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-protos 1.3.1",
+ "futures",
+ "jemallocator",
+ "lazy_static",
+ "libra2-indexer-grpc-utils",
+ "once_cell",
+ "redis",
+ "redis-test",
+ "tokio",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-manager"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-protos 1.3.1",
+ "async-trait",
+ "build_html",
+ "clap 4.5.21",
+ "dashmap",
+ "futures",
+ "jemallocator",
+ "libra2-config",
+ "libra2-indexer-grpc-server-framework",
+ "libra2-indexer-grpc-utils",
+ "prost 0.13.4",
+ "rand 0.7.3",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tokio-scoped",
+ "tonic 0.12.3",
+ "tracing",
+ "warp",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-server-framework"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "backtrace",
+ "clap 4.5.21",
+ "libra2-metrics-core",
+ "libra2-system-utils",
+ "prometheus",
+ "serde",
+ "serde_yaml 0.8.26",
+ "tempfile",
+ "tokio",
+ "toml 0.7.8",
+ "tracing",
+ "tracing-subscriber 0.3.18",
+ "warp",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-table-info"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-api",
+ "aptos-api-types",
+ "flate2",
+ "futures",
+ "google-cloud-storage",
+ "hyper 0.14.28",
+ "itertools 0.13.0",
+ "libra2-config",
+ "libra2-db-indexer",
+ "libra2-indexer-grpc-fullnode",
+ "libra2-indexer-grpc-utils",
+ "libra2-logger",
+ "libra2-mempool",
+ "libra2-metrics-core",
+ "libra2-runtimes",
+ "libra2-storage-interface",
+ "libra2-types",
+ "once_cell",
+ "rocksdb",
+ "serde",
+ "serde_json",
+ "tar",
+ "tempfile",
+ "tokio",
+ "tokio-stream",
+ "tokio-util 0.7.10",
+]
+
+[[package]]
+name = "libra2-indexer-grpc-utils"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos-protos 1.3.1",
+ "async-trait",
+ "backoff",
+ "base64 0.13.1",
+ "build_html",
+ "bytesize",
+ "chrono",
+ "cloud-storage",
+ "dashmap",
+ "futures",
+ "itertools 0.13.0",
+ "libra2-metrics-core",
+ "libra2-transaction-filter",
+ "lz4",
+ "once_cell",
+ "prometheus",
+ "prost 0.13.4",
+ "redis",
+ "redis-test",
+ "ripemd",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tokio-util 0.7.10",
+ "tonic 0.12.3",
+ "tracing",
+ "url",
+ "warp",
+]
+
+[[package]]
+name = "libra2-indexer-test-transactions"
+version = "1.0.0"
+dependencies = [
+ "aptos-protos 1.3.1",
+ "serde_json",
+]
+
+[[package]]
+name = "libra2-indexer-transaction-generator"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "aptos",
+ "aptos-protos 1.3.1",
+ "clap 4.5.21",
+ "futures",
+ "itertools 0.13.0",
+ "libra2-config",
+ "libra2-faucet-core",
+ "libra2-indexer-grpc-utils",
+ "rand 0.7.3",
+ "serde",
+ "serde_json",
+ "serde_yaml 0.8.26",
+ "tempfile",
+ "tokio",
+ "tokio-stream",
+ "toml 0.7.8",
+ "tonic 0.12.3",
+ "url",
+]
+
+[[package]]
 name = "libra2-infallible"
 version = "0.1.0"
 
@@ -9051,13 +9033,13 @@ name = "libra2-localnet"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-indexer-grpc-utils",
  "aptos-protos 1.3.1",
  "bollard",
  "diesel",
  "diesel-async",
  "dirs 5.0.1",
  "futures",
+ "libra2-indexer-grpc-utils",
  "libra2-rest-client",
  "processor",
  "reqwest 0.11.23",
@@ -9391,8 +9373,6 @@ dependencies = [
  "aptos-api",
  "aptos-cached-packages",
  "aptos-indexer",
- "aptos-indexer-grpc-fullnode",
- "aptos-indexer-grpc-table-info",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
@@ -9419,6 +9399,8 @@ dependencies = [
  "libra2-executor",
  "libra2-framework",
  "libra2-genesis",
+ "libra2-indexer-grpc-fullnode",
+ "libra2-indexer-grpc-table-info",
  "libra2-infallible",
  "libra2-inspection-service",
  "libra2-jwk-consensus",
@@ -10290,6 +10272,24 @@ dependencies = [
  "serde_json",
  "tokio",
  "url",
+]
+
+[[package]]
+name = "libra2-transaction-filter"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-protos 1.3.1",
+ "derivative",
+ "derive_builder",
+ "lz4",
+ "memchr",
+ "once_cell",
+ "prost 0.13.4",
+ "serde",
+ "serde_json",
+ "serde_yaml 0.8.26",
+ "thiserror",
 ]
 
 [[package]]
@@ -15966,7 +15966,6 @@ dependencies = [
  "aptos-forge",
  "aptos-gas-schedule",
  "aptos-indexer",
- "aptos-indexer-grpc-table-info",
  "aptos-release-builder",
  "aptos-sdk",
  "aptos-vm",
@@ -15992,6 +15991,7 @@ dependencies = [
  "libra2-gas-algebra",
  "libra2-genesis",
  "libra2-global-constants",
+ "libra2-indexer-grpc-table-info",
  "libra2-infallible",
  "libra2-inspection-service",
  "libra2-keygen",

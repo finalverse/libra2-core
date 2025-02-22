@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::Result;
-use aptos_indexer_grpc_manager::config::IndexerGrpcManagerConfig;
-use aptos_indexer_grpc_server_framework::ServerArgs;
+use libra2_indexer_grpc_manager::config::IndexerGrpcManagerConfig;
+use libra2_indexer_grpc_server_framework::ServerArgs;
 use clap::Parser;
 
 #[cfg(unix)]

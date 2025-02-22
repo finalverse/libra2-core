@@ -1,5 +1,5 @@
 [package]
-name = "aptos-indexer-test-transactions"
+name = "libra2-indexer-test-transactions"
 description = "Indexer integration testing framework."
 version = "1.0.0"
 

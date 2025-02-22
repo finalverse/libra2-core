@@ -3,7 +3,7 @@
 
 use crate::config::TransactionImporterPerNetworkConfig;
 use anyhow::Context;
-use aptos_indexer_grpc_utils::create_data_service_grpc_client;
+use libra2_indexer_grpc_utils::create_data_service_grpc_client;
 use aptos_protos::indexer::v1::GetTransactionsRequest;
 use std::{path::Path, time::Duration};
 

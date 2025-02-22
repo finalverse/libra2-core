@@ -37,7 +37,7 @@ use crate::{
     },
 };
 use anyhow::{Context, Result};
-use aptos_indexer_grpc_server_framework::setup_logging;
+use libra2_indexer_grpc_server_framework::setup_logging;
 use async_trait::async_trait;
 use clap::Parser;
 pub use health_checker::HealthChecker;

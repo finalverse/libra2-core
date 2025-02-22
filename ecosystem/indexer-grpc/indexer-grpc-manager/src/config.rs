@@ -3,8 +3,8 @@
 
 use crate::grpc_manager::GrpcManager;
 use anyhow::Result;
-use aptos_indexer_grpc_server_framework::RunnableConfig;
-use aptos_indexer_grpc_utils::config::IndexerGrpcFileStoreConfig;
+use libra2_indexer_grpc_server_framework::RunnableConfig;
+use libra2_indexer_grpc_utils::config::IndexerGrpcFileStoreConfig;
 use serde::{Deserialize, Serialize};
 use std::net::SocketAddr;
 use tokio::sync::OnceCell;

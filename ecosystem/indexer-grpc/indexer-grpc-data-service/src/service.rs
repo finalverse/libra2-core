@@ -8,7 +8,7 @@ use crate::metrics::{
     PROCESSED_VERSIONS_COUNT_PER_PROCESSOR, SHORT_CONNECTION_COUNT,
 };
 use anyhow::{Context, Result};
-use aptos_indexer_grpc_utils::{
+use libra2_indexer_grpc_utils::{
     cache_operator::{CacheBatchGetStatus, CacheCoverageStatus, CacheOperator},
     chunk_transactions,
     compression_util::{CacheEntry, StorageFormat},
@@ -29,7 +29,7 @@ use aptos_protos::{
     indexer::v1::{raw_data_server::RawData, GetTransactionsRequest, TransactionsResponse},
     transaction::v1::{transaction::TxnData, Transaction},
 };
-use aptos_transaction_filter::{BooleanTransactionFilter, Filterable};
+use libra2_transaction_filter::{BooleanTransactionFilter, Filterable};
 use futures::Stream;
 use prost::Message;
 use redis::Client;
@@ -1015,7 +1015,7 @@ mod tests {
         Event, MoveModuleId, Signature, Transaction, TransactionInfo, TransactionPayload,
         UserTransaction, UserTransactionRequest, WriteSetChange,
     };
-    use aptos_transaction_filter::{
+    use libra2_transaction_filter::{
         boolean_transaction_filter::APIFilter, filters::UserTransactionFilterBuilder,
         EntryFunctionFilterBuilder, UserTransactionPayloadFilterBuilder,
     };

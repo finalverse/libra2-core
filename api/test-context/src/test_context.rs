@@ -20,7 +20,7 @@ use libra2_db::Libra2DB;
 use libra2_executor::{block_executor::BlockExecutor, db_bootstrapper};
 use libra2_executor_types::BlockExecutorTrait;
 use libra2_framework::BuiltPackage;
-use aptos_indexer_grpc_table_info::internal_indexer_db_service::MockInternalIndexerDBService;
+use libra2_indexer_grpc_table_info::internal_indexer_db_service::MockInternalIndexerDBService;
 use libra2_mempool::mocks::MockSharedMempool;
 use libra2_mempool_notifications::MempoolNotificationSender;
 use aptos_sdk::{

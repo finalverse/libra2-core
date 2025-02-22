@@ -15,7 +15,7 @@ use libra2_db_indexer_schemas::{
     schema::{indexer_metadata::InternalIndexerMetadataSchema, state_keys::StateKeysSchema},
 };
 use aptos_forge::{NodeExt, Result, Swarm, SwarmExt};
-use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
+use libra2_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
 use libra2_rest_client::Client as RestClient;
 use libra2_schemadb::DB;
 use libra2_types::{account_address::AccountAddress, state_store::state_key::StateKey};

@@ -1,6 +1,6 @@
 FROM debian-base AS telemetry-service
 
-COPY --link --from=tools-builder /aptos/dist/libra2-telemetry-service /usr/local/bin/libra2-telemetry-service
+COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-telemetry-service /usr/local/bin/libra2-telemetry-service
 
 EXPOSE 8000
 ENV RUST_LOG_FORMAT=json

@@ -9,7 +9,7 @@ use libra2_db_indexer::{
     db_ops::open_internal_indexer_db,
     indexer_reader::IndexerReaders,
 };
-use aptos_indexer_grpc_utils::counters::{log_grpc_step, IndexerGrpcStep};
+use libra2_indexer_grpc_utils::counters::{log_grpc_step, IndexerGrpcStep};
 use libra2_storage_interface::DbReader;
 use libra2_types::{indexer::indexer_db_reader::IndexerReader, transaction::Version};
 use std::{

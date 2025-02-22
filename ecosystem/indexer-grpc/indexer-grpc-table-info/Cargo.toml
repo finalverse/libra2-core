@@ -1,5 +1,5 @@
 [package]
-name = "aptos-indexer-grpc-table-info"
+name = "libra2-indexer-grpc-table-info"
 version = "1.0.0"
 
 # Workspace inherited keys
@@ -17,8 +17,8 @@ aptos-api = { workspace = true }
 aptos-api-types = { workspace = true }
 libra2-config = { workspace = true }
 libra2-db-indexer  = { workspace = true }
-aptos-indexer-grpc-fullnode = { workspace = true }
-aptos-indexer-grpc-utils = { workspace = true }
+libra2-indexer-grpc-fullnode = { workspace = true }
+libra2-indexer-grpc-utils = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }

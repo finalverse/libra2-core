@@ -5,7 +5,7 @@ use crate::{
     config::{HISTORICAL_DATA_SERVICE, LIVE_DATA_SERVICE},
     connection_manager::ConnectionManager,
 };
-use aptos_indexer_grpc_utils::status_page::{get_throughput_from_samples, render_status_page, Tab};
+use libra2_indexer_grpc_utils::status_page::{get_throughput_from_samples, render_status_page, Tab};
 use build_html::{
     Container, ContainerType, HtmlContainer, HtmlElement, HtmlTag, Table, TableCell, TableCellType,
     TableRow,

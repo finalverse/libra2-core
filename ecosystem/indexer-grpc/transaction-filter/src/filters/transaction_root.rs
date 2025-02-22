@@ -8,7 +8,7 @@ use serde::{Deserialize, Serialize};
 
 /// Example:
 /// ```
-/// use aptos_transaction_filter::TransactionRootFilterBuilder;
+/// use libra2_transaction_filter::TransactionRootFilterBuilder;
 ///
 /// let filter = TransactionRootFilterBuilder::default()
 ///   .success(true)

@@ -3,7 +3,7 @@
 
 use crate::data_manager::DataManager;
 use anyhow::Result;
-use aptos_indexer_grpc_utils::{
+use libra2_indexer_grpc_utils::{
     compression_util::{FileEntry, StorageFormat},
     config::IndexerGrpcFileStoreConfig,
     file_store_operator_v2::{

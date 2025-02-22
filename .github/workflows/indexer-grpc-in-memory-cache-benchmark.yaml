@@ -18,5 +18,5 @@ jobs:
       - name: build and run the benchmark
         run: |
           set -ex
-          cargo build --release --bin aptos-indexer-grpc-in-memory-cache-benchmark
+          cargo build --release --bin libra2-indexer-grpc-in-memory-cache-benchmark
           ./target/release/indexer-grpc-in-memory-cache-benchmark

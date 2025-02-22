@@ -7,7 +7,7 @@ use libra2_config::{config::NodeConfig, utils::get_genesis_txn};
 use libra2_db::{fast_sync_storage_wrapper::FastSyncStorageWrapper, Libra2DB};
 use libra2_db_indexer::db_indexer::InternalIndexerDB;
 use libra2_executor::db_bootstrapper::maybe_bootstrap;
-use aptos_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
+use libra2_indexer_grpc_table_info::internal_indexer_db_service::InternalIndexerDBService;
 use libra2_logger::{debug, info};
 use libra2_storage_interface::{DbReader, DbReaderWriter};
 use libra2_types::{

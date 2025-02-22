@@ -55,7 +55,7 @@ FROM tools-builder
 
 4. In your new Dockerfile, use the COPY command to copy the output of the `libra2-node-builder`, `indexer-builder`, `tools-builder` target into the image. For example, to copy the `libra2-node` binary into the `validator` image, use the following command:
    ```
-   COPY --link --from=node-builder /aptos/dist/libra2-node /usr/local/bin/
+   COPY --link --from=node-builder libra2-indexer-grpc-cache-workerlibra2-node /usr/local/bin/
    ```
 5. Add a new target definition in [docker-bake-rust-all.hcl](docker-bake-rust-all.hcl) file by copying another target (e.g. `validator`). The target definition should have the following fields:
 

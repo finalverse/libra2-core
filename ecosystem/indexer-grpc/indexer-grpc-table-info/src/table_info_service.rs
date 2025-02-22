@@ -8,10 +8,10 @@ use anyhow::{Context, Error};
 use aptos_api::context::Context as ApiContext;
 use aptos_api_types::TransactionOnChainData;
 use libra2_db_indexer::db_v2::IndexerAsyncV2;
-use aptos_indexer_grpc_fullnode::stream_coordinator::{
+use libra2_indexer_grpc_fullnode::stream_coordinator::{
     IndexerStreamCoordinator, TransactionBatchInfo,
 };
-use aptos_indexer_grpc_utils::counters::{log_grpc_step, IndexerGrpcStep};
+use libra2_indexer_grpc_utils::counters::{log_grpc_step, IndexerGrpcStep};
 use libra2_logger::{debug, error, info, sample, sample::SampleRate};
 use libra2_types::write_set::WriteSet;
 use itertools::Itertools;

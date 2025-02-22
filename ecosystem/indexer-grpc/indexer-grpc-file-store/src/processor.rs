@@ -3,7 +3,7 @@
 
 use crate::metrics::{METADATA_UPLOAD_FAILURE_COUNT, PROCESSED_VERSIONS_COUNT};
 use anyhow::{ensure, Context, Result};
-use aptos_indexer_grpc_utils::{
+use libra2_indexer_grpc_utils::{
     cache_operator::CacheOperator,
     compression_util::{FileStoreMetadata, StorageFormat, FILE_ENTRY_TRANSACTION_COUNT},
     config::IndexerGrpcFileStoreConfig,

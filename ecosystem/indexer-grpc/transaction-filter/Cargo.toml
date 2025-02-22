@@ -1,5 +1,5 @@
 [package]
-name = "aptos-transaction-filter"
+name = "libra2-transaction-filter"
 version = "0.1.0"
 
 # Workspace inherited keys

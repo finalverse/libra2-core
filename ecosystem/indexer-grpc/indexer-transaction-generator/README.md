@@ -7,7 +7,7 @@ This tool is to generate transactions for testing purposes.
 Under the root folder, i.e., `aptos-core`, run
 
 ```bash
-cargo run -p aptos-indexer-transaction-generator -- \
+cargo run -p libra2-indexer-transaction-generator -- \
   --testing-folder ecosystem/indexer-grpc/indexer-transaction-generator/imported_transactions \ 
   --output-folder ecosystem/indexer-grpc/indexer-test-transactions/src
 ```
@@ -15,7 +15,7 @@ cargo run -p aptos-indexer-transaction-generator -- \
 **You can also use absolute path, run (using binary as an example)**
 
 ```bash
-./aptos-indexer-transaction-generator \
+./libra2-indexer-transaction-generator \
   --testing-folder /your/aptos-core/ecosystem/indexer-grpc/indexer-transaction-generator/imported_transactions \ 
   --output-folder /tmp/ttt
 ```
@@ -67,7 +67,7 @@ the actual account address will be allocated by the account manager.
 
 The accounts in `testing_accounts.yaml` will be used to run scripted transactions. 
 They are persisted in the config so each scripted transaction's generated output stays consistent between 
-`aptos-indexer-transaction-generator` runs. You can generate more testing accounts using 
+`libra2-indexer-transaction-generator` runs. You can generate more testing accounts using 
 Aptos CLI by running `aptos init --profile local`. 
 
 TODO: account manager handles address as script argument.

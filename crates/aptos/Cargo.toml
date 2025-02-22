@@ -29,8 +29,8 @@ aptos-gas-schedule = { workspace = true }
 libra2-genesis = { workspace = true }
 libra2-github-client = { workspace = true }
 libra2-global-constants = { workspace = true }
-aptos-indexer-grpc-server-framework = { workspace = true }
-aptos-indexer-grpc-utils = { workspace = true }
+libra2-indexer-grpc-server-framework = { workspace = true }
+libra2-indexer-grpc-utils = { workspace = true }
 libra2-keygen = { workspace = true }
 libra2-ledger = { workspace = true }
 libra2-localnet = { workspace = true }

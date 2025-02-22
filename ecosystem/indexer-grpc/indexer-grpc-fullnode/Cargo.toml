@@ -1,6 +1,6 @@
 [package]
-name = "aptos-indexer-grpc-fullnode"
-description = "Aptos Indexer GRPC runtime on fullnode."
+name = "libra2-indexer-grpc-fullnode"
+description = "Libra2 Indexer GRPC runtime on fullnode."
 version = "1.0.0"
 
 # Workspace inherited keys
@@ -33,7 +33,7 @@ aptos-api = { workspace = true }
 aptos-api-types = { workspace = true }
 libra2-bitvec = { workspace = true }
 libra2-config = { workspace = true }
-aptos-indexer-grpc-utils = { workspace = true }
+libra2-indexer-grpc-utils = { workspace = true }
 libra2-logger = { workspace = true }
 libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }

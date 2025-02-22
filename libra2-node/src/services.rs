@@ -14,8 +14,8 @@ use libra2_consensus_notifications::ConsensusNotifier;
 use libra2_data_client::client::Libra2DataClient;
 use libra2_db_indexer::{db_indexer::InternalIndexerDB, indexer_reader::IndexerReaders};
 use libra2_event_notifications::{DbBackedOnChainConfig, ReconfigNotificationListener};
-use aptos_indexer_grpc_fullnode::runtime::bootstrap as bootstrap_indexer_grpc;
-use aptos_indexer_grpc_table_info::runtime::{
+use libra2_indexer_grpc_fullnode::runtime::bootstrap as bootstrap_indexer_grpc;
+use libra2_indexer_grpc_table_info::runtime::{
     bootstrap as bootstrap_indexer_table_info, bootstrap_internal_indexer_db,
 };
 use libra2_logger::{debug, telemetry_log_writer::TelemetryLog, LoggerFilterUpdater};

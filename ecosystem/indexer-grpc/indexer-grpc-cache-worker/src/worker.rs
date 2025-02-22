@@ -3,7 +3,7 @@
 
 use crate::metrics::{ERROR_COUNT, WAIT_FOR_FILE_STORE_COUNTER};
 use anyhow::{bail, Context, Result};
-use aptos_indexer_grpc_utils::{
+use libra2_indexer_grpc_utils::{
     cache_operator::CacheOperator,
     compression_util::{FileStoreMetadata, StorageFormat},
     config::IndexerGrpcFileStoreConfig,

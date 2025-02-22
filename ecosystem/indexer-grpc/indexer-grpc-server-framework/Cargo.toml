@@ -1,5 +1,5 @@
 [package]
-name = "aptos-indexer-grpc-server-framework"
+name = "libra2-indexer-grpc-server-framework"
 description = "Indexer gRPC server framework library."
 version = "1.0.0"
 
