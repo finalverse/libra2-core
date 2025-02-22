@@ -3,7 +3,7 @@
 
 use crate::transactions;
 use libra2_bitvec::BitVec;
-use aptos_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvider};
+use libra2_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvider};
 use libra2_block_partitioner::{
     v2::config::PartitionerV2Config, BlockPartitioner, PartitionerConfig,
 };

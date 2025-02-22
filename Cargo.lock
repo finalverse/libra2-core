@@ -508,50 +508,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-block-executor"
-version = "0.1.0"
-dependencies = [
- "ambassador",
- "anyhow",
- "aptos-mvhashmap",
- "arc-swap",
- "bcs 0.1.4",
- "bytes",
- "claims",
- "concurrent-queue",
- "criterion",
- "crossbeam",
- "dashmap",
- "derivative",
- "fail",
- "hashbrown 0.14.3",
- "itertools 0.13.0",
- "libra2-aggregator",
- "libra2-drop-helper",
- "libra2-infallible",
- "libra2-language-e2e-tests",
- "libra2-logger",
- "libra2-metrics-core",
- "libra2-types",
- "libra2-vm-environment",
- "libra2-vm-logging",
- "libra2-vm-types",
- "move-binary-format",
- "move-core-types",
- "move-vm-runtime",
- "move-vm-types",
- "num_cpus",
- "once_cell",
- "parking_lot 0.12.1",
- "proptest",
- "proptest-derive",
- "rand 0.7.3",
- "rayon",
- "scopeguard",
- "test-case",
-]
-
-[[package]]
 name = "aptos-cached-packages"
 version = "0.1.0"
 dependencies = [
@@ -1384,13 +1340,13 @@ name = "aptos-replay-benchmark"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-block-executor",
  "aptos-gas-schedule",
  "aptos-vm",
  "bcs 0.1.4",
  "claims",
  "clap 4.5.21",
  "colored",
+ "libra2-block-executor",
  "libra2-crypto",
  "libra2-framework",
  "libra2-logger",
@@ -1526,7 +1482,6 @@ name = "aptos-vm"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-block-executor",
  "aptos-gas-meter",
  "aptos-gas-schedule",
  "aptos-memory-usage-tracker",
@@ -1544,6 +1499,7 @@ dependencies = [
  "hex",
  "itertools 0.13.0",
  "libra2-aggregator",
+ "libra2-block-executor",
  "libra2-block-partitioner",
  "libra2-crypto",
  "libra2-crypto-derive",
@@ -7659,6 +7615,50 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-block-executor"
+version = "0.1.0"
+dependencies = [
+ "ambassador",
+ "anyhow",
+ "aptos-mvhashmap",
+ "arc-swap",
+ "bcs 0.1.4",
+ "bytes",
+ "claims",
+ "concurrent-queue",
+ "criterion",
+ "crossbeam",
+ "dashmap",
+ "derivative",
+ "fail",
+ "hashbrown 0.14.3",
+ "itertools 0.13.0",
+ "libra2-aggregator",
+ "libra2-drop-helper",
+ "libra2-infallible",
+ "libra2-language-e2e-tests",
+ "libra2-logger",
+ "libra2-metrics-core",
+ "libra2-types",
+ "libra2-vm-environment",
+ "libra2-vm-logging",
+ "libra2-vm-types",
+ "move-binary-format",
+ "move-core-types",
+ "move-vm-runtime",
+ "move-vm-types",
+ "num_cpus",
+ "once_cell",
+ "parking_lot 0.12.1",
+ "proptest",
+ "proptest-derive",
+ "rand 0.7.3",
+ "rayon",
+ "scopeguard",
+ "test-case",
+]
+
+[[package]]
 name = "libra2-block-partitioner"
 version = "0.1.0"
 dependencies = [
@@ -7725,12 +7725,12 @@ name = "libra2-comparison-testing"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-block-executor",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
  "futures",
  "itertools 0.13.0",
+ "libra2-block-executor",
  "libra2-framework",
  "libra2-language-e2e-tests",
  "libra2-rest-client",
@@ -8169,7 +8169,6 @@ name = "libra2-db-tool"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-block-executor",
  "aptos-indexer-grpc-table-info",
  "aptos-vm",
  "bcs 0.1.4",
@@ -8177,6 +8176,7 @@ dependencies = [
  "itertools 0.13.0",
  "libra2-backup-cli",
  "libra2-backup-service",
+ "libra2-block-executor",
  "libra2-config",
  "libra2-db",
  "libra2-db-indexer",
@@ -8328,7 +8328,6 @@ name = "libra2-executor"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-block-executor",
  "aptos-cached-packages",
  "aptos-indexer-grpc-table-info",
  "aptos-sdk",
@@ -8339,6 +8338,7 @@ dependencies = [
  "criterion",
  "fail",
  "itertools 0.13.0",
+ "libra2-block-executor",
  "libra2-config",
  "libra2-consensus-types",
  "libra2-crypto",
@@ -8369,7 +8369,6 @@ name = "libra2-executor-benchmark"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-block-executor",
  "aptos-mvhashmap",
  "aptos-sdk",
  "aptos-vm",
@@ -8384,6 +8383,7 @@ dependencies = [
  "itertools 0.13.0",
  "jemallocator",
  "libra2-aggregator",
+ "libra2-block-executor",
  "libra2-block-partitioner",
  "libra2-config",
  "libra2-crypto",
@@ -8424,7 +8424,6 @@ dependencies = [
 name = "libra2-executor-service"
 version = "0.1.0"
 dependencies = [
- "aptos-block-executor",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
@@ -8432,6 +8431,7 @@ dependencies = [
  "ctrlc",
  "dashmap",
  "itertools 0.13.0",
+ "libra2-block-executor",
  "libra2-block-partitioner",
  "libra2-config",
  "libra2-infallible",
@@ -8538,9 +8538,9 @@ dependencies = [
 name = "libra2-experimental-ptx-executor"
 version = "0.1.0"
 dependencies = [
- "aptos-block-executor",
  "aptos-vm",
  "hashbrown 0.14.3",
+ "libra2-block-executor",
  "libra2-experimental-runtimes",
  "libra2-infallible",
  "libra2-logger",
@@ -8994,7 +8994,6 @@ name = "libra2-language-e2e-tests"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-block-executor",
  "aptos-cached-packages",
  "aptos-gas-meter",
  "aptos-gas-profiling",
@@ -9006,6 +9005,7 @@ dependencies = [
  "goldenfile",
  "libra2-abstract-gas-usage",
  "libra2-bitvec",
+ "libra2-block-executor",
  "libra2-crypto",
  "libra2-framework",
  "libra2-gas-algebra",
@@ -9184,12 +9184,12 @@ name = "libra2-move-debugger"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-block-executor",
  "aptos-gas-profiling",
  "aptos-vm",
  "bcs 0.1.4",
  "clap 4.5.21",
  "itertools 0.13.0",
+ "libra2-block-executor",
  "libra2-consensus",
  "libra2-crypto",
  "libra2-logger",
@@ -10226,12 +10226,12 @@ dependencies = [
 name = "libra2-transaction-benchmarks"
 version = "0.1.0"
 dependencies = [
- "aptos-block-executor",
  "aptos-vm",
  "clap 4.5.21",
  "criterion",
  "criterion-cpu-time",
  "libra2-bitvec",
+ "libra2-block-executor",
  "libra2-block-partitioner",
  "libra2-crypto",
  "libra2-language-e2e-tests",
@@ -10331,7 +10331,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "aptos-api-types",
- "aptos-block-executor",
  "aptos-cached-packages",
  "aptos-gas-schedule",
  "aptos-vm",
@@ -10340,6 +10339,7 @@ dependencies = [
  "codespan-reporting",
  "datatest-stable",
  "hex",
+ "libra2-block-executor",
  "libra2-crypto",
  "libra2-framework",
  "libra2-language-e2e-tests",
@@ -10571,7 +10571,6 @@ name = "libra2-vm-profiling"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-block-executor",
  "aptos-cached-packages",
  "aptos-gas-schedule",
  "aptos-move-stdlib",
@@ -10580,6 +10579,7 @@ dependencies = [
  "bcs 0.1.4",
  "clap 4.5.21",
  "glob",
+ "libra2-block-executor",
  "libra2-language-e2e-tests",
  "libra2-native-interface",
  "libra2-types",

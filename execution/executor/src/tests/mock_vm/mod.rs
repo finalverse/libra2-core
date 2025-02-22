@@ -6,7 +6,7 @@
 mod mock_vm_test;
 
 use anyhow::Result;
-use aptos_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvider};
+use libra2_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvider};
 use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, Uniform};
 use libra2_types::{
     account_address::AccountAddress,

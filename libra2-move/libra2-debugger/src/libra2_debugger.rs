@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use anyhow::{bail, format_err};
-use aptos_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvider};
+use libra2_block_executor::txn_provider::{default::DefaultTxnProvider, TxnProvider};
 use aptos_gas_profiling::{GasProfiler, TransactionGasLog};
 use libra2_rest_client::Client;
 use libra2_types::{

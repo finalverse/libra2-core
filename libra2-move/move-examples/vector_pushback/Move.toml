@@ -1,0 +1,13 @@
+[package]
+name = "vector_pushback"
+version = "1.0.0"
+authors = []
+
+[addresses]
+
+[dev-addresses]
+
+[dependencies.Libra2Framework]
+local = "../../framework/libra2-framework/"
+
+[dev-dependencies]

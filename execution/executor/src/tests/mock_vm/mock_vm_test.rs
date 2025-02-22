@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::{balance_ap, encode_mint_transaction, encode_transfer_transaction, seqnum_ap, MockVM};
-use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
+use libra2_block_executor::txn_provider::default::DefaultTxnProvider;
 use libra2_types::{
     account_address::AccountAddress,
     bytes::NumToBytes,

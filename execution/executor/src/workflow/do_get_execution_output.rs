@@ -6,9 +6,9 @@ use crate::{
     metrics::{EXECUTOR_ERRORS, OTHER_TIMERS},
 };
 use anyhow::{anyhow, Result};
-use aptos_block_executor::txn_provider::default::DefaultTxnProvider;
+use libra2_block_executor::txn_provider::default::DefaultTxnProvider;
 #[cfg(feature = "consensus-only-perf-test")]
-use aptos_block_executor::txn_provider::TxnProvider;
+use libra2_block_executor::txn_provider::TxnProvider;
 use libra2_crypto::HashValue;
 use libra2_executor_service::{
     local_executor_helper::SHARDED_BLOCK_EXECUTOR,

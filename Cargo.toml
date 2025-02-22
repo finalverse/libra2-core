@@ -309,7 +309,7 @@ libra2-backup-cli = { path = "storage/backup/backup-cli" }
 libra2-backup-service = { path = "storage/backup/backup-service" }
 libra2-bcs-utils = { path = "crates/libra2-bcs-utils" }
 libra2-bounded-executor = { path = "crates/bounded-executor" }
-aptos-block-executor = { path = "libra2-move/block-executor" }
+libra2-block-executor = { path = "libra2-move/block-executor" }
 libra2-bitvec = { path = "crates/libra2-bitvec" }
 libra2-build-info = { path = "crates/libra2-build-info" }
 aptos-cached-packages = { path = "libra2-move/framework/cached-packages" }

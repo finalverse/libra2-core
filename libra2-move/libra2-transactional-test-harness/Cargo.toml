@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 aptos-api-types = { workspace = true }
-aptos-block-executor = { workspace = true }
+libra2-block-executor = { workspace = true }
 aptos-cached-packages = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-framework = { workspace = true }

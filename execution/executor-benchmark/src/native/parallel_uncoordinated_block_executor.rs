@@ -8,7 +8,7 @@ use crate::{
     native::{native_config::NATIVE_EXECUTOR_POOL, native_transaction::NativeTransaction},
 };
 use anyhow::{bail, Result};
-use aptos_block_executor::{
+use libra2_block_executor::{
     counters::BLOCK_EXECUTOR_INNER_EXECUTE_BLOCK, txn_provider::default::DefaultTxnProvider,
 };
 use libra2_types::{

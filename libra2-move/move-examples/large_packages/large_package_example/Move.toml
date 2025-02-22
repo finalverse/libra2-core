@@ -1,0 +1,10 @@
+[package]
+name = "LargePackageExample"
+version = "1.0.0"
+upgrade_policy = "compatible"
+
+[dependencies]
+Libra2Framework = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "libra2-framework", rev = "mainnet" }
+
+[addresses]
+large_package_example = "_"

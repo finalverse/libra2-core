@@ -8,7 +8,7 @@ use crate::counters::{BLOCK_EXECUTOR_CONCURRENCY, BLOCK_EXECUTOR_EXECUTE_BLOCK_S
 use libra2_aggregator::{
     delayed_change::DelayedChange, delta_change_set::DeltaOp, resolver::TAggregatorV1View,
 };
-use aptos_block_executor::{
+use libra2_block_executor::{
     code_cache_global_manager::AptosModuleCacheManager,
     errors::BlockExecutionError,
     executor::BlockExecutor,

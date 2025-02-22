@@ -9,7 +9,7 @@ use once_cell::sync::Lazy;
 pub static BLOCK_PARTITIONING_SECONDS: Lazy<Histogram> = Lazy::new(|| {
     register_histogram!(
         // metric name
-        "aptos_block_partitioning_seconds",
+        "libra2_block_partitioning_seconds",
         // metric description
         "The total time spent in seconds of block partitioning in the sharded block partitioner.",
         exponential_buckets(/*start=*/ 1e-3, /*factor=*/ 2.0, /*count=*/ 20).unwrap(),

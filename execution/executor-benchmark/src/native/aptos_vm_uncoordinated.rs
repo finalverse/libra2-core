@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::native_config::NATIVE_EXECUTOR_POOL;
-use aptos_block_executor::{
+use libra2_block_executor::{
     counters::BLOCK_EXECUTOR_INNER_EXECUTE_BLOCK, txn_provider::default::DefaultTxnProvider,
 };
 use libra2_types::{

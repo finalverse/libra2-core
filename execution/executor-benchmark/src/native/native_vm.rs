@@ -15,7 +15,7 @@ use libra2_aggregator::{
     delta_change_set::{DeltaOp, DeltaWithMax},
     delta_math::DeltaHistory,
 };
-use aptos_block_executor::{
+use libra2_block_executor::{
     code_cache_global_manager::AptosModuleCacheManager,
     task::{ExecutionStatus, ExecutorTask},
     txn_commit_hook::NoOpTransactionCommitHook,
