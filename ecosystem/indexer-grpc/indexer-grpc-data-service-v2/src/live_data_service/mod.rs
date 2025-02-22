@@ -10,7 +10,7 @@ use crate::{
     config::LiveDataServiceConfig, connection_manager::ConnectionManager,
     live_data_service::in_memory_cache::InMemoryCache,
 };
-use aptos_protos::indexer::v1::{GetTransactionsRequest, TransactionsResponse};
+use libra2_protos::indexer::v1::{GetTransactionsRequest, TransactionsResponse};
 use libra2_transaction_filter::BooleanTransactionFilter;
 use std::{sync::Arc, time::Duration};
 use tokio::sync::mpsc::{Receiver, Sender};

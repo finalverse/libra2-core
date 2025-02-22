@@ -5,7 +5,7 @@ use crate::compression_util::{
     FileEntry, FileStoreMetadata, StorageFormat, FILE_ENTRY_TRANSACTION_COUNT,
 };
 use anyhow::{Context, Result};
-use aptos_protos::transaction::v1::Transaction;
+use libra2_protos::transaction::v1::Transaction;
 
 pub mod gcs;
 pub use gcs::*;

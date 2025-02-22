@@ -7,7 +7,7 @@ const GRPC_ADDR = __ENV.GRPC_ADDR || "127.0.0.1:50052";
 const GRPC_METHOD = "aptos.indexer.v1.RawData/GetTransactions";
 
 // relative path from this directory to the proto files
-const GRPC_IMPORT_PATHS = ["../../../crates/aptos-protos/proto"];
+const GRPC_IMPORT_PATHS = ["../../../crates/libra2-protos/proto"];
 const GRPC_PROTOS = ["aptos/indexer/v1/raw_data.proto"];
 
 const client = new grpc.Client();

@@ -9,7 +9,7 @@ use crate::{
     service::GrpcManagerService,
 };
 use anyhow::Result;
-use aptos_protos::indexer::v1::grpc_manager_server::GrpcManagerServer;
+use libra2_protos::indexer::v1::grpc_manager_server::GrpcManagerServer;
 use std::{sync::Arc, time::Duration};
 use tokio::sync::Mutex;
 use tonic::{codec::CompressionEncoding, transport::Server};

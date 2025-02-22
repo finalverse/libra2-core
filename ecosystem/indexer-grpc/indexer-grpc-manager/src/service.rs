@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{data_manager::DataManager, metadata_manager::MetadataManager};
-use aptos_protos::indexer::v1::{
+use libra2_protos::indexer::v1::{
     grpc_manager_server::GrpcManager, service_info::Info, GetDataServiceForRequestRequest,
     GetDataServiceForRequestResponse, GetTransactionsRequest, HeartbeatRequest, HeartbeatResponse,
     TransactionsResponse,

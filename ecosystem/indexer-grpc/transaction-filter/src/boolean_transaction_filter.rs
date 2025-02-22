@@ -7,7 +7,7 @@ use crate::{
     traits::Filterable,
 };
 use anyhow::{anyhow, ensure, Result};
-use aptos_protos::transaction::v1::{transaction::TxnData, Transaction};
+use libra2_protos::transaction::v1::{transaction::TxnData, Transaction};
 use prost::Message;
 use serde::{Deserialize, Serialize};
 use std::fmt::Debug;
@@ -48,7 +48,7 @@ impl From<EventFilter> for BooleanTransactionFilter {
 
 impl BooleanTransactionFilter {
     pub fn new_from_proto(
-        proto_filter: aptos_protos::indexer::v1::BooleanTransactionFilter,
+        proto_filter: libra2_protos::indexer::v1::BooleanTransactionFilter,
         max_filter_size: Option<usize>,
     ) -> Result<Self> {
         if let Some(max_filter_size) = max_filter_size {
@@ -62,16 +62,16 @@ impl BooleanTransactionFilter {
                 .filter
                 .ok_or(anyhow!("Oneof is not set in BooleanTransactionFilter."))?
             {
-                aptos_protos::indexer::v1::boolean_transaction_filter::Filter::ApiFilter(
+                libra2_protos::indexer::v1::boolean_transaction_filter::Filter::ApiFilter(
                     api_filter,
                 ) => TryInto::<APIFilter>::try_into(api_filter)?.into(),
-                aptos_protos::indexer::v1::boolean_transaction_filter::Filter::LogicalAnd(
+                libra2_protos::indexer::v1::boolean_transaction_filter::Filter::LogicalAnd(
                     logical_and,
                 ) => BooleanTransactionFilter::And(logical_and.try_into()?),
-                aptos_protos::indexer::v1::boolean_transaction_filter::Filter::LogicalOr(
+                libra2_protos::indexer::v1::boolean_transaction_filter::Filter::LogicalOr(
                     logical_or,
                 ) => BooleanTransactionFilter::Or(logical_or.try_into()?),
-                aptos_protos::indexer::v1::boolean_transaction_filter::Filter::LogicalNot(
+                libra2_protos::indexer::v1::boolean_transaction_filter::Filter::LogicalNot(
                     logical_not,
                 ) => BooleanTransactionFilter::Not(logical_not.try_into()?),
             },
@@ -210,10 +210,10 @@ pub struct LogicalAnd {
     and: Vec<BooleanTransactionFilter>,
 }
 
-impl TryFrom<aptos_protos::indexer::v1::LogicalAndFilters> for LogicalAnd {
+impl TryFrom<libra2_protos::indexer::v1::LogicalAndFilters> for LogicalAnd {
     type Error = anyhow::Error;
 
-    fn try_from(proto_filter: aptos_protos::indexer::v1::LogicalAndFilters) -> Result<Self> {
+    fn try_from(proto_filter: libra2_protos::indexer::v1::LogicalAndFilters) -> Result<Self> {
         Ok(Self {
             and: proto_filter
                 .filters
@@ -242,10 +242,10 @@ pub struct LogicalOr {
     or: Vec<BooleanTransactionFilter>,
 }
 
-impl TryFrom<aptos_protos::indexer::v1::LogicalOrFilters> for LogicalOr {
+impl TryFrom<libra2_protos::indexer::v1::LogicalOrFilters> for LogicalOr {
     type Error = anyhow::Error;
 
-    fn try_from(proto_filter: aptos_protos::indexer::v1::LogicalOrFilters) -> Result<Self> {
+    fn try_from(proto_filter: libra2_protos::indexer::v1::LogicalOrFilters) -> Result<Self> {
         Ok(Self {
             or: proto_filter
                 .filters
@@ -274,11 +274,11 @@ pub struct LogicalNot {
     not: Box<BooleanTransactionFilter>,
 }
 
-impl TryFrom<Box<aptos_protos::indexer::v1::BooleanTransactionFilter>> for LogicalNot {
+impl TryFrom<Box<libra2_protos::indexer::v1::BooleanTransactionFilter>> for LogicalNot {
     type Error = anyhow::Error;
 
     fn try_from(
-        proto_filter: Box<aptos_protos::indexer::v1::BooleanTransactionFilter>,
+        proto_filter: Box<libra2_protos::indexer::v1::BooleanTransactionFilter>,
     ) -> Result<Self> {
         Ok(Self {
             not: Box::new(BooleanTransactionFilter::new_from_proto(
@@ -309,22 +309,22 @@ pub enum APIFilter {
     EventFilter(EventFilter),
 }
 
-impl TryFrom<aptos_protos::indexer::v1::ApiFilter> for APIFilter {
+impl TryFrom<libra2_protos::indexer::v1::ApiFilter> for APIFilter {
     type Error = anyhow::Error;
 
-    fn try_from(proto_filter: aptos_protos::indexer::v1::ApiFilter) -> Result<Self> {
+    fn try_from(proto_filter: libra2_protos::indexer::v1::ApiFilter) -> Result<Self> {
         Ok(
             match proto_filter
                 .filter
                 .ok_or(anyhow!("Oneof is not set in ApiFilter."))?
             {
-                aptos_protos::indexer::v1::api_filter::Filter::TransactionRootFilter(
+                libra2_protos::indexer::v1::api_filter::Filter::TransactionRootFilter(
                     transaction_root_filter,
                 ) => Into::<TransactionRootFilter>::into(transaction_root_filter).into(),
-                aptos_protos::indexer::v1::api_filter::Filter::UserTransactionFilter(
+                libra2_protos::indexer::v1::api_filter::Filter::UserTransactionFilter(
                     user_transaction_filter,
                 ) => Into::<UserTransactionFilter>::into(user_transaction_filter).into(),
-                aptos_protos::indexer::v1::api_filter::Filter::EventFilter(event_filter) => {
+                libra2_protos::indexer::v1::api_filter::Filter::EventFilter(event_filter) => {
                     Into::<EventFilter>::into(event_filter).into()
                 },
             },
@@ -398,7 +398,7 @@ mod test {
     pub fn test_query_parsing() {
         let trf = TransactionRootFilter {
             success: Some(true),
-            txn_type: Some(aptos_protos::transaction::v1::transaction::TransactionType::User),
+            txn_type: Some(libra2_protos::transaction::v1::transaction::TransactionType::User),
         };
 
         let utf = UserTransactionFilterBuilder::default()

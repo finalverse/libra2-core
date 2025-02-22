@@ -3,7 +3,7 @@
 
 use crate::{errors::FilterError, traits::Filterable};
 use anyhow::Error;
-use aptos_protos::transaction::v1::{transaction::TransactionType, Transaction};
+use libra2_protos::transaction::v1::{transaction::TransactionType, Transaction};
 use serde::{Deserialize, Serialize};
 
 /// Example:
@@ -26,8 +26,8 @@ pub struct TransactionRootFilter {
     pub txn_type: Option<TransactionType>,
 }
 
-impl From<aptos_protos::indexer::v1::TransactionRootFilter> for TransactionRootFilter {
-    fn from(proto_filter: aptos_protos::indexer::v1::TransactionRootFilter) -> Self {
+impl From<libra2_protos::indexer::v1::TransactionRootFilter> for TransactionRootFilter {
+    fn from(proto_filter: libra2_protos::indexer::v1::TransactionRootFilter) -> Self {
         Self {
             success: proto_filter.success,
             txn_type: proto_filter

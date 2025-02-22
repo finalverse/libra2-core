@@ -3,7 +3,7 @@
 
 use crate::{stream_coordinator::IndexerStreamCoordinator, ServiceContext};
 use libra2_logger::{error, info};
-use aptos_protos::{
+use libra2_protos::{
     indexer::v1::{raw_data_server::RawData, GetTransactionsRequest, TransactionsResponse},
     internal::fullnode::v1::transactions_from_node_response,
 };

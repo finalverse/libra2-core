@@ -13,5 +13,5 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-aptos-protos ={ workspace = true }
+libra2-protos ={ workspace = true }
 serde_json = { workspace = true }

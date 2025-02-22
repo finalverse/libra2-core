@@ -6,7 +6,7 @@ use crate::{
     counters::{log_grpc_step, IndexerGrpcStep},
 };
 use anyhow::{ensure, Context};
-use aptos_protos::transaction::v1::Transaction;
+use libra2_protos::transaction::v1::Transaction;
 use redis::{AsyncCommands, RedisResult};
 
 // Configurations for cache.
@@ -408,7 +408,7 @@ impl<T: redis::aio::ConnectionLike + Send + Clone> CacheOperator<T> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aptos_protos::util::timestamp::Timestamp;
+    use libra2_protos::util::timestamp::Timestamp;
     use prost::Message;
     use redis_test::{MockCmd, MockRedisConnection};
 

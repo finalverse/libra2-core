@@ -13,7 +13,7 @@ pub mod status_page;
 pub mod types;
 
 use anyhow::{Context, Result};
-use aptos_protos::{
+use libra2_protos::{
     indexer::v1::raw_data_client::RawDataClient,
     internal::fullnode::v1::fullnode_data_client::FullnodeDataClient, transaction::v1::Transaction,
     util::timestamp::Timestamp,

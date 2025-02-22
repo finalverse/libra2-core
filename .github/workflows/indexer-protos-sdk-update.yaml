@@ -97,7 +97,7 @@ jobs:
           . scripts/indexer_proto_update_status_poll.sh
         env:
           PAT_TOKEN: ${{ steps.secrets.outputs.token }}
-          TARGET_BRANCH: ${{ steps.commit_hash.outputs.branch_name }}-update-aptos-protos-update-sdk
+          TARGET_BRANCH: ${{ steps.commit_hash.outputs.branch_name }}-update-libra2-protos-update-sdk
       # TOOD: enable this once the forge test is stable.
       # - name: Run Forge Tests
       #   uses: ./.github/workflows/workflow-run-forge

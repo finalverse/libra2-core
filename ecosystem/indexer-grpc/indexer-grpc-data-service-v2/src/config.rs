@@ -10,7 +10,7 @@ use crate::{
 use anyhow::Result;
 use libra2_indexer_grpc_server_framework::RunnableConfig;
 use libra2_indexer_grpc_utils::config::IndexerGrpcFileStoreConfig;
-use aptos_protos::{
+use libra2_protos::{
     indexer::v1::FILE_DESCRIPTOR_SET as INDEXER_V1_FILE_DESCRIPTOR_SET,
     transaction::v1::FILE_DESCRIPTOR_SET as TRANSACTION_V1_TESTING_FILE_DESCRIPTOR_SET,
     util::timestamp::FILE_DESCRIPTOR_SET as UTIL_TIMESTAMP_FILE_DESCRIPTOR_SET,
@@ -209,14 +209,14 @@ impl RunnableConfig for IndexerGrpcDataServiceConfig {
             historical_data_service,
         ));
         let wrapper_service_raw =
-            aptos_protos::indexer::v1::raw_data_server::RawDataServer::from_arc(wrapper.clone())
+            libra2_protos::indexer::v1::raw_data_server::RawDataServer::from_arc(wrapper.clone())
                 .send_compressed(CompressionEncoding::Zstd)
                 .accept_compressed(CompressionEncoding::Zstd)
                 .accept_compressed(CompressionEncoding::Gzip)
                 .max_decoding_message_size(MAX_MESSAGE_SIZE)
                 .max_encoding_message_size(MAX_MESSAGE_SIZE);
         let wrapper_service =
-            aptos_protos::indexer::v1::data_service_server::DataServiceServer::from_arc(wrapper)
+            libra2_protos::indexer::v1::data_service_server::DataServiceServer::from_arc(wrapper)
                 .send_compressed(CompressionEncoding::Zstd)
                 .accept_compressed(CompressionEncoding::Zstd)
                 .accept_compressed(CompressionEncoding::Gzip)

@@ -14,7 +14,7 @@ use libra2_indexer_grpc_utils::{
     counters::{log_grpc_step_fullnode, IndexerGrpcStep},
 };
 use libra2_logger::{error, info, sample, sample::SampleRate};
-use aptos_protos::{
+use libra2_protos::{
     internal::fullnode::v1::{
         transactions_from_node_response, TransactionsFromNodeResponse, TransactionsOutput,
     },

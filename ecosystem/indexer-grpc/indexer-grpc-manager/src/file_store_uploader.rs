@@ -12,7 +12,7 @@ use libra2_indexer_grpc_utils::{
         file_store_reader::FileStoreReader,
     },
 };
-use aptos_protos::transaction::v1::Transaction;
+use libra2_protos::transaction::v1::Transaction;
 use std::{path::PathBuf, sync::Arc, time::Duration};
 use tokio::{sync::mpsc::channel, time::Instant};
 use tracing::info;

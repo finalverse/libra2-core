@@ -3,7 +3,7 @@
 
 use crate::config::{LIVE_DATA_SERVICE, MAX_MESSAGE_SIZE};
 use libra2_indexer_grpc_utils::{system_time_to_proto, timestamp_now_proto};
-use aptos_protos::indexer::v1::{
+use libra2_protos::indexer::v1::{
     grpc_manager_client::GrpcManagerClient, service_info::Info, ActiveStream, HeartbeatRequest,
     HistoricalDataServiceInfo, LiveDataServiceInfo, ServiceInfo, StreamInfo, StreamProgress,
     StreamProgressSampleProto,

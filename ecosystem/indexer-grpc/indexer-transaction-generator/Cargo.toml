@@ -19,7 +19,7 @@ libra2 = { workspace = true }
 libra2-config = { workspace = true }
 libra2-faucet-core = { workspace = true }
 libra2-indexer-grpc-utils = { workspace = true }
-aptos-protos ={ workspace = true }
+libra2-protos ={ workspace = true }
 clap = { workspace = true }
 futures = { workspace = true }
 rand = { workspace = true }

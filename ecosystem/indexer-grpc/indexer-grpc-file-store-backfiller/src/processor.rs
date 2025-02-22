@@ -6,7 +6,7 @@ use libra2_indexer_grpc_utils::{
     compression_util::StorageFormat, config::IndexerGrpcFileStoreConfig, create_grpc_client,
     file_store_operator::FileStoreOperator,
 };
-use aptos_protos::{
+use libra2_protos::{
     internal::fullnode::v1::{
         stream_status::StatusType, transactions_from_node_response::Response,
         GetTransactionsFromNodeRequest, TransactionsFromNodeResponse,

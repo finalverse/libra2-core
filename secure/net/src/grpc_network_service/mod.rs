@@ -3,7 +3,7 @@
 
 use crate::network_controller::{metrics::NETWORK_HANDLER_TIMER, Message, MessageType};
 use libra2_logger::{error, info};
-use aptos_protos::remote_executor::v1::{
+use libra2_protos::remote_executor::v1::{
     network_message_service_client::NetworkMessageServiceClient,
     network_message_service_server::{NetworkMessageService, NetworkMessageServiceServer},
     Empty, NetworkMessage, FILE_DESCRIPTOR_SET,

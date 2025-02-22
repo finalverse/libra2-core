@@ -3,7 +3,7 @@
 
 use crate::{config::HistoricalDataServiceConfig, connection_manager::ConnectionManager};
 use libra2_indexer_grpc_utils::file_store_operator_v2::file_store_reader::FileStoreReader;
-use aptos_protos::indexer::v1::{GetTransactionsRequest, TransactionsResponse};
+use libra2_protos::indexer::v1::{GetTransactionsRequest, TransactionsResponse};
 use libra2_transaction_filter::BooleanTransactionFilter;
 use futures::executor::block_on;
 use std::{

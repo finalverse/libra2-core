@@ -3,7 +3,7 @@
 
 use crate::{constants::IndexerGrpcRequestMetadata, timestamp_to_iso, timestamp_to_unixtime};
 use libra2_metrics_core::{register_gauge_vec, register_int_gauge_vec, GaugeVec, IntGaugeVec};
-use aptos_protos::util::timestamp::Timestamp;
+use libra2_protos::util::timestamp::Timestamp;
 use once_cell::sync::Lazy;
 use prometheus::{register_int_counter_vec, IntCounterVec};
 

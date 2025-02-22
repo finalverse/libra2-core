@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_protos::indexer::v1::TransactionsInStorage;
+use libra2_protos::indexer::v1::TransactionsInStorage;
 use prost::Message;
 use std::io::Read;
 

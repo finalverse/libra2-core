@@ -3,7 +3,7 @@
 
 use super::indexer_api::confirm_metadata_applied;
 use anyhow::{anyhow, Context, Result};
-use aptos_protos::indexer::v1::GetTransactionsRequest;
+use libra2_protos::indexer::v1::GetTransactionsRequest;
 use diesel::{ExpressionMethods, OptionalExtension, QueryDsl};
 use diesel_async::{pg::AsyncPgConnection, AsyncConnection, RunQueryDsl};
 use futures::StreamExt;

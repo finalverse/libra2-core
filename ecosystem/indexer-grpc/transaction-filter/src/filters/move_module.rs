@@ -3,7 +3,7 @@
 
 use crate::{errors::FilterError, traits::Filterable};
 use anyhow::anyhow;
-use aptos_protos::transaction::v1::MoveStructTag;
+use libra2_protos::transaction::v1::MoveStructTag;
 use serde::{Deserialize, Serialize};
 
 /// Example:
@@ -30,8 +30,8 @@ pub struct MoveStructTagFilter {
     pub name: Option<String>,
 }
 
-impl From<aptos_protos::indexer::v1::MoveStructTagFilter> for MoveStructTagFilter {
-    fn from(proto_filter: aptos_protos::indexer::v1::MoveStructTagFilter) -> Self {
+impl From<libra2_protos::indexer::v1::MoveStructTagFilter> for MoveStructTagFilter {
+    fn from(proto_filter: libra2_protos::indexer::v1::MoveStructTagFilter) -> Self {
         Self {
             address: proto_filter.address,
             module: proto_filter.module,

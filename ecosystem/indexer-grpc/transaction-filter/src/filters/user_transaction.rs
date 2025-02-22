@@ -3,7 +3,7 @@
 
 use crate::{errors::FilterError, traits::Filterable};
 use anyhow::{anyhow, Error};
-use aptos_protos::transaction::v1::{
+use libra2_protos::transaction::v1::{
     multisig_transaction_payload, transaction::TxnData, transaction_payload, EntryFunctionId,
     EntryFunctionPayload, Transaction, TransactionPayload,
 };
@@ -31,8 +31,8 @@ pub struct UserTransactionFilter {
     pub payload: Option<UserTransactionPayloadFilter>,
 }
 
-impl From<aptos_protos::indexer::v1::UserTransactionFilter> for UserTransactionFilter {
-    fn from(proto_filter: aptos_protos::indexer::v1::UserTransactionFilter) -> Self {
+impl From<libra2_protos::indexer::v1::UserTransactionFilter> for UserTransactionFilter {
+    fn from(proto_filter: libra2_protos::indexer::v1::UserTransactionFilter) -> Self {
         Self {
             sender: proto_filter.sender,
             payload: proto_filter.payload_filter.map(|f| f.into()),
@@ -110,8 +110,8 @@ pub struct EntryFunctionFilter {
     pub function: Option<String>,
 }
 
-impl From<aptos_protos::indexer::v1::EntryFunctionFilter> for EntryFunctionFilter {
-    fn from(proto_filter: aptos_protos::indexer::v1::EntryFunctionFilter) -> Self {
+impl From<libra2_protos::indexer::v1::EntryFunctionFilter> for EntryFunctionFilter {
+    fn from(proto_filter: libra2_protos::indexer::v1::EntryFunctionFilter) -> Self {
         Self {
             address: proto_filter.address,
             module: proto_filter.module_name,
@@ -173,10 +173,10 @@ pub struct UserTransactionPayloadFilter {
     pub function: Option<EntryFunctionFilter>,
 }
 
-impl From<aptos_protos::indexer::v1::UserTransactionPayloadFilter>
+impl From<libra2_protos::indexer::v1::UserTransactionPayloadFilter>
     for UserTransactionPayloadFilter
 {
-    fn from(proto_filter: aptos_protos::indexer::v1::UserTransactionPayloadFilter) -> Self {
+    fn from(proto_filter: libra2_protos::indexer::v1::UserTransactionPayloadFilter) -> Self {
         Self {
             function: proto_filter.entry_function_filter.map(|f| f.into()),
         }

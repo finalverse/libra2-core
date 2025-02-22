@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_protos::transaction::v1::Transaction;
+use libra2_protos::transaction::v1::Transaction;
 use prost::Message;
 use tracing::trace;
 

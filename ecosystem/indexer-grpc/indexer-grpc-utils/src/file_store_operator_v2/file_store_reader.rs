@@ -8,7 +8,7 @@ use crate::{
     },
 };
 use anyhow::Result;
-use aptos_protos::{transaction::v1::Transaction, util::timestamp::Timestamp};
+use libra2_protos::{transaction::v1::Transaction, util::timestamp::Timestamp};
 use libra2_transaction_filter::{BooleanTransactionFilter, Filterable};
 use prost::Message;
 use std::{

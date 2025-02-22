@@ -25,7 +25,7 @@ use libra2_indexer_grpc_utils::{
     types::RedisUrl,
 };
 use aptos_moving_average::MovingAverage;
-use aptos_protos::{
+use libra2_protos::{
     indexer::v1::{raw_data_server::RawData, GetTransactionsRequest, TransactionsResponse},
     transaction::v1::{transaction::TxnData, Transaction},
 };
@@ -1010,7 +1010,7 @@ fn strip_transactions(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aptos_protos::transaction::v1::{
+    use libra2_protos::transaction::v1::{
         transaction::TxnData, transaction_payload::Payload, EntryFunctionId, EntryFunctionPayload,
         Event, MoveModuleId, Signature, Transaction, TransactionInfo, TransactionPayload,
         UserTransaction, UserTransactionRequest, WriteSetChange,

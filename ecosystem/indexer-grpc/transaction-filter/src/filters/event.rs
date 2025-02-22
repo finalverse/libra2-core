@@ -3,7 +3,7 @@
 
 use crate::{errors::FilterError, filters::MoveStructTagFilter, traits::Filterable};
 use anyhow::Error;
-use aptos_protos::transaction::v1::{move_type::Content, Event};
+use libra2_protos::transaction::v1::{move_type::Content, Event};
 use derivative::Derivative;
 use memchr::memmem::Finder;
 use once_cell::sync::OnceCell;
@@ -41,8 +41,8 @@ pub struct EventFilter {
     data_substring_finder: OnceCell<Finder<'static>>,
 }
 
-impl From<aptos_protos::indexer::v1::EventFilter> for EventFilter {
-    fn from(proto_filter: aptos_protos::indexer::v1::EventFilter) -> Self {
+impl From<libra2_protos::indexer::v1::EventFilter> for EventFilter {
+    fn from(proto_filter: libra2_protos::indexer::v1::EventFilter) -> Self {
         Self {
             data_substring_filter: proto_filter.data_substring_filter,
             struct_type: proto_filter.struct_type.map(|f| f.into()),

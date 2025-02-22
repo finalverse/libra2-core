@@ -38,7 +38,7 @@ libra2-logger = { workspace = true }
 libra2-move-debugger = { workspace = true }
 libra2-network-checker = { workspace = true }
 libra2-node = { workspace = true }
-aptos-protos = { workspace = true }
+libra2-protos = { workspace = true }
 libra2-rest-client = { workspace = true }
 libra2-sdk = { workspace = true }
 libra2-storage-interface = { workspace = true }

@@ -8,7 +8,7 @@ use libra2_indexer_grpc_utils::{
     compression_util::StorageFormat, config::IndexerGrpcFileStoreConfig,
     in_memory_cache::InMemoryCacheConfig, types::RedisUrl,
 };
-use aptos_protos::{
+use libra2_protos::{
     indexer::v1::FILE_DESCRIPTOR_SET as INDEXER_V1_FILE_DESCRIPTOR_SET,
     transaction::v1::FILE_DESCRIPTOR_SET as TRANSACTION_V1_TESTING_FILE_DESCRIPTOR_SET,
     util::timestamp::FILE_DESCRIPTOR_SET as UTIL_TIMESTAMP_FILE_DESCRIPTOR_SET,
@@ -185,7 +185,7 @@ impl RunnableConfig for IndexerGrpcDataServiceConfig {
             cache_storage_format,
             Arc::new(in_memory_cache),
         )?;
-        let svc = aptos_protos::indexer::v1::raw_data_server::RawDataServer::new(server)
+        let svc = libra2_protos::indexer::v1::raw_data_server::RawDataServer::new(server)
             .send_compressed(CompressionEncoding::Zstd)
             .accept_compressed(CompressionEncoding::Zstd)
             .accept_compressed(CompressionEncoding::Gzip);

@@ -13,7 +13,7 @@ use libra2_indexer_grpc_utils::{
     types::RedisUrl,
 };
 use aptos_moving_average::MovingAverage;
-use aptos_protos::internal::fullnode::v1::{
+use libra2_protos::internal::fullnode::v1::{
     stream_status::StatusType, transactions_from_node_response::Response,
     GetTransactionsFromNodeRequest, TransactionsFromNodeResponse,
 };

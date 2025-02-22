@@ -414,12 +414,12 @@ libra2-package-builder = { path = "libra2-move/package-builder" }
 libra2-peer-monitoring-service-client = { path = "peer-monitoring-service/client" }
 libra2-peer-monitoring-service-server = { path = "peer-monitoring-service/server" }
 libra2-peer-monitoring-service-types = { path = "peer-monitoring-service/types" }
-aptos-keyless-common = { path = "keyless/common" }
+# aptos-keyless-common = { path = "keyless/common" }
 libra2-keyless-pepper-common = { path = "keyless/pepper/common" }
 libra2-keyless-pepper-service = { path = "keyless/pepper/service" }
 libra2-profiler = { path = "crates/libra2-profiler" }
 libra2-proptest-helpers = { path = "crates/libra2-proptest-helpers" }
-aptos-protos = { path = "protos/rust" }
+libra2-protos = { path = "protos/rust" }
 libra2-proxy = { path = "crates/proxy" }
 libra2-push-metrics = { path = "crates/libra2-push-metrics" }
 libra2-rate-limiter = { path = "crates/libra2-rate-limiter" }

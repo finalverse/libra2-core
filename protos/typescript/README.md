@@ -5,7 +5,7 @@ This repository contains the protobuf definitions for the Aptos tech stack.
 ## Usage
 Import the generated code like this:
 ```typescript
-import { aptos } from "@aptos-labs/aptos-protos";
+import { aptos } from "@aptos-labs/libra2-protos";
 ```
 
 Then use it like this:

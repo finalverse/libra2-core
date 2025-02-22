@@ -8,7 +8,7 @@ use libra2_indexer_grpc_utils::{
 };
 use libra2_logger::{error, info};
 use aptos_moving_average::MovingAverage;
-use aptos_protos::{
+use libra2_protos::{
     indexer::v1::FullnodeInfo,
     internal::fullnode::v1::{
         fullnode_data_server::FullnodeData, stream_status::StatusType,

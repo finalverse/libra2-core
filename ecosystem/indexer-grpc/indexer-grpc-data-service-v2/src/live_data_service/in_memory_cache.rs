@@ -5,7 +5,7 @@ use crate::{
     connection_manager::ConnectionManager,
     live_data_service::{data_manager::DataManager, fetch_manager::FetchManager},
 };
-use aptos_protos::transaction::v1::Transaction;
+use libra2_protos::transaction::v1::Transaction;
 use libra2_transaction_filter::{BooleanTransactionFilter, Filterable};
 use prost::Message;
 use std::sync::Arc;

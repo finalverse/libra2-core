@@ -38,7 +38,7 @@ libra2-logger = { workspace = true }
 libra2-mempool = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-moving-average = { workspace = true }
-aptos-protos = { workspace = true }
+libra2-protos = { workspace = true }
 libra2-runtimes = { workspace = true }
 libra2-storage-interface = { workspace = true }
 libra2-types = { workspace = true }

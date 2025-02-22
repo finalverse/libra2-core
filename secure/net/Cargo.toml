@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 libra2-logger = { workspace = true }
 libra2-metrics-core = { workspace = true }
-aptos-protos = { workspace = true }
+libra2-protos = { workspace = true }
 bcs = { workspace = true }
 crossbeam-channel = { workspace = true }
 once_cell = { workspace = true }

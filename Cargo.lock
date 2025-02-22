@@ -430,16 +430,6 @@ dependencies = [
 [[package]]
 name = "aptos-protos"
 version = "1.3.1"
-dependencies = [
- "pbjson",
- "prost 0.13.4",
- "serde",
- "tonic 0.12.3",
-]
-
-[[package]]
-name = "aptos-protos"
-version = "1.3.1"
 source = "git+https://github.com/aptos-labs/aptos-core.git?rev=1d8460a995503574ec4e9699d3442d0150d7f3b9#1d8460a995503574ec4e9699d3442d0150d7f3b9"
 dependencies = [
  "pbjson",
@@ -6303,7 +6293,6 @@ name = "libra2"
 version = "6.1.1"
 dependencies = [
  "anyhow",
- "aptos-protos 1.3.1",
  "async-trait",
  "base64 0.13.1",
  "bcs 0.1.4",
@@ -6345,6 +6334,7 @@ dependencies = [
  "libra2-move-debugger",
  "libra2-network-checker",
  "libra2-node",
+ "libra2-protos",
  "libra2-rest-client",
  "libra2-sdk",
  "libra2-storage-interface",
@@ -8012,7 +8002,6 @@ version = "1.0.0"
 dependencies = [
  "anyhow",
  "aptos-moving-average",
- "aptos-protos 1.3.1",
  "async-trait",
  "clap 4.5.21",
  "futures",
@@ -8022,6 +8011,7 @@ dependencies = [
  "libra2-indexer-grpc-server-framework",
  "libra2-indexer-grpc-utils",
  "libra2-metrics-core",
+ "libra2-protos",
  "once_cell",
  "prost 0.13.4",
  "redis",
@@ -8040,7 +8030,6 @@ version = "1.0.0"
 dependencies = [
  "anyhow",
  "aptos-moving-average",
- "aptos-protos 1.3.1",
  "async-trait",
  "clap 4.5.21",
  "futures",
@@ -8048,6 +8037,7 @@ dependencies = [
  "libra2-indexer-grpc-server-framework",
  "libra2-indexer-grpc-utils",
  "libra2-metrics-core",
+ "libra2-protos",
  "libra2-transaction-filter",
  "once_cell",
  "prost 0.13.4",
@@ -8067,7 +8057,6 @@ name = "libra2-indexer-grpc-data-service-v2"
 version = "1.0.0"
 dependencies = [
  "anyhow",
- "aptos-protos 1.3.1",
  "async-trait",
  "build_html",
  "clap 4.5.21",
@@ -8076,6 +8065,7 @@ dependencies = [
  "jemallocator",
  "libra2-indexer-grpc-server-framework",
  "libra2-indexer-grpc-utils",
+ "libra2-protos",
  "libra2-transaction-filter",
  "once_cell",
  "prost 0.13.4",
@@ -8135,13 +8125,13 @@ name = "libra2-indexer-grpc-file-store-backfiller"
 version = "1.0.0"
 dependencies = [
  "anyhow",
- "aptos-protos 1.3.1",
  "async-trait",
  "clap 4.5.21",
  "futures",
  "jemallocator",
  "libra2-indexer-grpc-server-framework",
  "libra2-indexer-grpc-utils",
+ "libra2-protos",
  "serde",
  "serde_json",
  "tokio",
@@ -8156,7 +8146,6 @@ version = "1.0.0"
 dependencies = [
  "anyhow",
  "aptos-moving-average",
- "aptos-protos 1.3.1",
  "bcs 0.1.4",
  "bytes",
  "chrono",
@@ -8183,6 +8172,7 @@ dependencies = [
  "libra2-mempool-notifications",
  "libra2-metrics-core",
  "libra2-proptest-helpers",
+ "libra2-protos",
  "libra2-runtimes",
  "libra2-sdk",
  "libra2-secure-storage",
@@ -8208,11 +8198,11 @@ name = "libra2-indexer-grpc-in-memory-cache-benchmark"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-protos 1.3.1",
  "futures",
  "jemallocator",
  "lazy_static",
  "libra2-indexer-grpc-utils",
+ "libra2-protos",
  "once_cell",
  "redis",
  "redis-test",
@@ -8224,7 +8214,6 @@ name = "libra2-indexer-grpc-manager"
 version = "1.0.0"
 dependencies = [
  "anyhow",
- "aptos-protos 1.3.1",
  "async-trait",
  "build_html",
  "clap 4.5.21",
@@ -8234,6 +8223,7 @@ dependencies = [
  "libra2-config",
  "libra2-indexer-grpc-server-framework",
  "libra2-indexer-grpc-utils",
+ "libra2-protos",
  "prost 0.13.4",
  "rand 0.7.3",
  "serde",
@@ -8304,7 +8294,6 @@ name = "libra2-indexer-grpc-utils"
 version = "1.0.0"
 dependencies = [
  "anyhow",
- "aptos-protos 1.3.1",
  "async-trait",
  "backoff",
  "base64 0.13.1",
@@ -8316,6 +8305,7 @@ dependencies = [
  "futures",
  "itertools 0.13.0",
  "libra2-metrics-core",
+ "libra2-protos",
  "libra2-transaction-filter",
  "lz4",
  "once_cell",
@@ -8338,7 +8328,7 @@ dependencies = [
 name = "libra2-indexer-test-transactions"
 version = "1.0.0"
 dependencies = [
- "aptos-protos 1.3.1",
+ "libra2-protos",
  "serde_json",
 ]
 
@@ -8347,7 +8337,6 @@ name = "libra2-indexer-transaction-generator"
 version = "1.0.0"
 dependencies = [
  "anyhow",
- "aptos-protos 1.3.1",
  "clap 4.5.21",
  "futures",
  "itertools 0.13.0",
@@ -8355,6 +8344,7 @@ dependencies = [
  "libra2-config",
  "libra2-faucet-core",
  "libra2-indexer-grpc-utils",
+ "libra2-protos",
  "rand 0.7.3",
  "serde",
  "serde_json",
@@ -8632,13 +8622,13 @@ name = "libra2-localnet"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-protos 1.3.1",
  "bollard",
  "diesel",
  "diesel-async",
  "dirs 5.0.1",
  "futures",
  "libra2-indexer-grpc-utils",
+ "libra2-protos",
  "libra2-rest-client",
  "processor",
  "reqwest 0.11.23",
@@ -9340,6 +9330,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "libra2-protos"
+version = "1.3.1"
+dependencies = [
+ "pbjson",
+ "prost 0.13.4",
+ "serde",
+ "tonic 0.12.3",
+]
+
+[[package]]
 name = "libra2-proxy"
 version = "0.1.0"
 dependencies = [
@@ -9699,12 +9699,12 @@ dependencies = [
 name = "libra2-secure-net"
 version = "0.1.0"
 dependencies = [
- "aptos-protos 1.3.1",
  "bcs 0.1.4",
  "crossbeam-channel",
  "libra2-config",
  "libra2-logger",
  "libra2-metrics-core",
+ "libra2-protos",
  "once_cell",
  "serde",
  "thiserror",
@@ -10123,9 +10123,9 @@ name = "libra2-transaction-filter"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-protos 1.3.1",
  "derivative",
  "derive_builder",
+ "libra2-protos",
  "lz4",
  "memchr",
  "once_cell",
@@ -13723,7 +13723,7 @@ dependencies = [
  "allocative_derive",
  "anyhow",
  "aptos-moving-average",
- "aptos-protos 1.3.1 (git+https://github.com/aptos-labs/aptos-core.git?rev=1d8460a995503574ec4e9699d3442d0150d7f3b9)",
+ "aptos-protos",
  "async-trait",
  "bcs 0.1.4",
  "bigdecimal",

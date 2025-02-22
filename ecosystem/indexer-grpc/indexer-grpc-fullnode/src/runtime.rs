@@ -9,7 +9,7 @@ use libra2_api::context::Context;
 use libra2_config::config::NodeConfig;
 use libra2_logger::info;
 use libra2_mempool::MempoolClientSender;
-use aptos_protos::{
+use libra2_protos::{
     indexer::v1::{
         raw_data_server::RawDataServer, FILE_DESCRIPTOR_SET as INDEXER_V1_FILE_DESCRIPTOR_SET,
     },

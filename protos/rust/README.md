@@ -5,7 +5,7 @@ This repository contains the protobuf definitions for Aptos.
 ## Usage
 Import generated structs like this:
 ```rust
-use aptos_protos::transaction::v1::Transaction;
+use libra2_protos::transaction::v1::Transaction;
 ```
 
 Then use them like this:

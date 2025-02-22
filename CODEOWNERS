@@ -56,8 +56,8 @@
 
 /crates/aptos-open-api @banool @gregnazario
 
-# Owners for the aptos-protos crate
-/crates/aptos-protos @banool @bowenyang007 @jillxuu @larry-aptos @rtso  @aptos-labs/ecosystem-infra
+# Owners for the libra2-protos crate
+/crates/libra2-protos @banool @bowenyang007 @jillxuu @larry-aptos @rtso  @aptos-labs/ecosystem-infra
 
 /crates/libra2-rest-client @banool @gregnazario
 

@@ -6,7 +6,7 @@ use anyhow::{bail, ensure, Result};
 use libra2_indexer_grpc_utils::{
     config::IndexerGrpcFileStoreConfig, file_store_operator_v2::file_store_reader::FileStoreReader,
 };
-use aptos_protos::{
+use libra2_protos::{
     internal::fullnode::v1::{
         transactions_from_node_response::Response, GetTransactionsFromNodeRequest,
     },

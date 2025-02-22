@@ -13,7 +13,7 @@ use libra2_api_types::{
 };
 use libra2_bitvec::BitVec;
 use libra2_logger::warn;
-use aptos_protos::{
+use libra2_protos::{
     transaction::v1::{
         self as transaction, any_signature, validator_transaction,
         validator_transaction::observed_jwk_update::exported_provider_jw_ks::{
@@ -948,7 +948,7 @@ fn convert_validator_transaction(
                                             }).collect(),
                                         }
                                     ),
-                                    multi_sig: Some(aptos_protos::transaction::v1::validator_transaction::observed_jwk_update::ExportedAggregateSignature {
+                                    multi_sig: Some(libra2_protos::transaction::v1::validator_transaction::observed_jwk_update::ExportedAggregateSignature {
                                         signer_indices: observed_jwk_update.quorum_certified_update.multi_sig.signer_indices.clone().into_iter().map(|i| i as u64).collect(),
                                         sig: match &observed_jwk_update.quorum_certified_update.multi_sig.sig {
                                             Some(sig) =>  sig.0.clone(),

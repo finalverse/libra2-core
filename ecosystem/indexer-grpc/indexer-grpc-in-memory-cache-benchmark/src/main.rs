@@ -12,7 +12,7 @@ use libra2_indexer_grpc_utils::{
     compression_util::{CacheEntry, StorageFormat},
     in_memory_cache::{InMemoryCache, InMemoryCacheConfig, MAX_REDIS_FETCH_BATCH_SIZE},
 };
-use aptos_protos::transaction::v1::{Transaction, TransactionInfo};
+use libra2_protos::transaction::v1::{Transaction, TransactionInfo};
 use lazy_static::lazy_static;
 use once_cell::sync::OnceCell;
 use redis_test::{MockCmd, MockRedisConnection};
