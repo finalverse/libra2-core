@@ -3,15 +3,15 @@
 
 #![forbid(unsafe_code)]
 
-use aptos_cargo_cli::AptosCargoCli;
+use libra2_cargo_cli::Libra2CargoCli;
 use clap::Parser;
 use log::error;
 use std::process::exit;
 
 fn main() {
-    let cli = AptosCargoCli::parse();
+    let cli = Libra2CargoCli::parse();
     env_logger::Builder::new()
-        .filter_module("aptos_cargo_cli", cli.verbose.log_level_filter())
+        .filter_module("libra2_cargo_cli", cli.verbose.log_level_filter())
         .init();
     let result = cli.execute();
 

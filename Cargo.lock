@@ -508,23 +508,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-cargo-cli"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "camino",
- "chrono",
- "clap 4.5.21",
- "clap-verbosity-flag",
- "determinator",
- "env_logger",
- "guppy",
- "log",
- "reqwest 0.11.23",
- "url",
-]
-
-[[package]]
 name = "aptos-dynamic-transaction-composer"
 version = "0.1.1"
 dependencies = [
@@ -7178,6 +7161,23 @@ dependencies = [
  "once_cell",
  "proptest",
  "proptest-derive",
+]
+
+[[package]]
+name = "libra2-cargo-cli"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "camino",
+ "chrono",
+ "clap 4.5.21",
+ "clap-verbosity-flag",
+ "determinator",
+ "env_logger",
+ "guppy",
+ "log",
+ "reqwest 0.11.23",
+ "url",
 ]
 
 [[package]]

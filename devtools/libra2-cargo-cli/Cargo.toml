@@ -1,5 +1,5 @@
 [package]
-name = "aptos-cargo-cli"
+name = "libra2-cargo-cli"
 description = "A target-determinator-based Cargo CLI"
 version = "0.1.0"
 

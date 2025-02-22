@@ -118,7 +118,7 @@ members = [
     "crates/transaction-generator-lib",
     "crates/transaction-workloads-lib",
     "crates/validator-transaction-pool",
-    "devtools/aptos-cargo-cli",
+    "devtools/libra2-cargo-cli",
     "dkg",
     "ecosystem/indexer-grpc/indexer-grpc-cache-worker",
     "ecosystem/indexer-grpc/indexer-grpc-data-service",
@@ -477,7 +477,7 @@ libra2-vm-types = { path = "libra2-move/libra2-vm-types" }
 libra2-vm-validator = { path = "vm-validator" }
 libra2-workspace-server = { path = "libra2-move/libra2-workspace-server" }
 libra2-warp-webserver = { path = "crates/libra2-warp-webserver" }
-aptos-cargo-cli = { path = "devtools/aptos-cargo-cli" }
+libra2-cargo-cli = { path = "devtools/libra2-cargo-cli" }
 
 # External crate dependencies.
 # Please do not add any test features here: they should be declared by the individual crate.
