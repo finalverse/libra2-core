@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_language_e2e_tests::{account::Account, executor::FakeExecutor};
 use libra2_types::transaction::{ExecutionStatus, TransactionStatus};
 
@@ -22,7 +22,7 @@ fn mint_to_new_account() {
     let mint_amount = 1_000_000;
     let txn = root
         .transaction()
-        .payload(aptos_stdlib::aptos_coin_mint(
+        .payload(libra2_stdlib::aptos_coin_mint(
             *new_account.address(),
             mint_amount,
         ))

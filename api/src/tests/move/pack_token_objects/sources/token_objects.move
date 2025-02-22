@@ -9,7 +9,7 @@ module addr::token_objects {
     use libra2_token_objects::token;
     use libra2_token_objects::property_map;
     use libra2_framework::event;
-    use aptos_std::string_utils::{to_string};
+    use libra2_std::string_utils::{to_string};
 
     /// The token does not exist
     const ETOKEN_DOES_NOT_EXIST: u64 = 1;

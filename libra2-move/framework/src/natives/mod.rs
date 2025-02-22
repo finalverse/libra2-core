@@ -62,7 +62,7 @@ pub fn all_natives(
     add_natives_from_module!("multi_ed25519", multi_ed25519::make_all(builder));
     add_natives_from_module!("bls12381", cryptography::bls12381::make_all(builder));
     add_natives_from_module!("secp256k1", cryptography::secp256k1::make_all(builder));
-    add_natives_from_module!("aptos_hash", hash::make_all(builder));
+    add_natives_from_module!("libra2_hash", hash::make_all(builder));
     add_natives_from_module!(
         "ristretto255",
         cryptography::ristretto255::make_all(builder)

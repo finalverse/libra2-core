@@ -340,7 +340,7 @@ spec libra2_framework::stake {
         aborts_if amount != 0 && !exists<StakePool>(pool_address);
         modifies global<StakePool>(pool_address);
         include StakedValueNochange;
-        let min_amount = aptos_std::math64::min(amount,pre_stake_pool.active.value);
+        let min_amount = libra2_std::math64::min(amount,pre_stake_pool.active.value);
 
         ensures stake_pool.active.value == pre_stake_pool.active.value - min_amount;
         ensures stake_pool.pending_inactive.value == pre_stake_pool.pending_inactive.value + min_amount;
@@ -409,7 +409,7 @@ spec libra2_framework::stake {
         let pre_stake_pool = global<StakePool>(pool_address);
         let post stake_pool = global<StakePool>(pool_address);
         modifies global<StakePool>(pool_address);
-        let min_amount = aptos_std::math64::min(amount, pre_stake_pool.pending_inactive.value);
+        let min_amount = libra2_std::math64::min(amount, pre_stake_pool.pending_inactive.value);
 
         ensures stake_pool.pending_inactive.value == pre_stake_pool.pending_inactive.value - min_amount;
         ensures stake_pool.active.value == pre_stake_pool.active.value + min_amount;
@@ -537,7 +537,7 @@ spec libra2_framework::stake {
     }
 
     spec schema UpdateStakePoolAbortsIf {
-        use aptos_std::type_info;
+        use libra2_std::type_info;
 
         pool_address: address;
         validator_perf: ValidatorPerformance;
@@ -583,7 +583,7 @@ spec libra2_framework::stake {
     }
 
     spec schema DistributeRewardsAbortsIf {
-        use aptos_std::type_info;
+        use libra2_std::type_info;
 
         stake: Coin<AptosCoin>;
         num_successful_proposals: num;
@@ -948,13 +948,13 @@ spec libra2_framework::stake {
             if (epoch_rewards_rate.value == 0) {
                 0
             } else {
-                let denominator_0 = aptos_std::fixed_point64::spec_divide_u128(staking_config::MAX_REWARDS_RATE, epoch_rewards_rate);
+                let denominator_0 = libra2_std::fixed_point64::spec_divide_u128(staking_config::MAX_REWARDS_RATE, epoch_rewards_rate);
                 let denominator = if (denominator_0 > MAX_U64) {
                     MAX_U64
                 } else {
                     denominator_0
                 };
-                let nominator = aptos_std::fixed_point64::spec_multiply_u128(denominator, epoch_rewards_rate);
+                let nominator = libra2_std::fixed_point64::spec_multiply_u128(denominator, epoch_rewards_rate);
                 nominator
             }
         } else {
@@ -968,7 +968,7 @@ spec libra2_framework::stake {
             if (epoch_rewards_rate.value == 0) {
                 1
             } else {
-                let denominator_0 = aptos_std::fixed_point64::spec_divide_u128(staking_config::MAX_REWARDS_RATE, epoch_rewards_rate);
+                let denominator_0 = libra2_std::fixed_point64::spec_divide_u128(staking_config::MAX_REWARDS_RATE, epoch_rewards_rate);
                 let denominator = if (denominator_0 > MAX_U64) {
                     MAX_U64
                 } else {

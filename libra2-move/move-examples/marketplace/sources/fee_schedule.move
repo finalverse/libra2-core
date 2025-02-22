@@ -6,9 +6,9 @@ module marketplace::fee_schedule {
     use std::error;
     use std::signer;
     use std::string::{Self, String};
-    use aptos_std::math64;
+    use libra2_std::math64;
 
-    use aptos_std::type_info;
+    use libra2_std::type_info;
 
     use libra2_framework::event;
     use libra2_framework::object::{Self, ConstructorRef, ExtendRef, Object};

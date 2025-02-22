@@ -20,7 +20,7 @@ module drand::lottery_test {
     #[test_only]
     use std::debug;
     #[test_only]
-    use aptos_std::crypto_algebra::enable_cryptography_algebra_natives;
+    use libra2_std::crypto_algebra::enable_cryptography_algebra_natives;
 
     #[test_only]
     fun give_coins(mint_cap: &MintCapability<AptosCoin>, to: &signer) {

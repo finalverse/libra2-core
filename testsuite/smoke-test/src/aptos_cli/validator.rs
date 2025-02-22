@@ -15,7 +15,7 @@ use aptos::{
     test::{CliTestFramework, ValidatorPerformance},
 };
 use libra2_bitvec::BitVec;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{bls12381, ed25519::Ed25519PrivateKey, x25519, ValidCryptoMaterialStringExt};
 use aptos_forge::{reconfig, wait_for_all_nodes_to_catchup, LocalSwarm, NodeExt, Swarm, SwarmExt};
 use libra2_genesis::config::HostAndPort;
@@ -458,7 +458,7 @@ async fn assert_reordering(swarm: &mut dyn Swarm, expected_reordering: bool) {
 
         for _ in 0..5 {
             let txn = account.sign_with_transaction_builder(
-                transaction_factory.payload(aptos_stdlib::aptos_coin_transfer(dst.address(), 10)),
+                transaction_factory.payload(libra2_stdlib::aptos_coin_transfer(dst.address(), 10)),
             );
             txns.push(txn);
         }

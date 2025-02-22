@@ -108,8 +108,8 @@ fn move_token_prover_tests() {
 }
 
 #[test]
-fn move_aptos_stdlib_prover_tests() {
-    run_prover_for_pkg("aptos-stdlib", 1, None);
+fn move_libra2_stdlib_prover_tests() {
+    run_prover_for_pkg("libra2-stdlib", 1, None);
 }
 
 #[test]

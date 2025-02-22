@@ -7,7 +7,7 @@ use libra2_api_types::{
     mime_types, HexEncodedBytes, TransactionOnChainData, X_APTOS_CHAIN_ID,
     X_APTOS_LEDGER_TIMESTAMP, X_APTOS_LEDGER_VERSION,
 };
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_config::{
     config::{
         NodeConfig, RocksdbConfigs, StorageDirPaths, BUFFERED_STATE_TARGET_ITEMS_FOR_TEST,
@@ -765,7 +765,7 @@ impl TestContext {
         let code = package.extract_code();
         let metadata = package.extract_metadata().unwrap();
 
-        aptos_stdlib::code_publish_package_txn(bcs::to_bytes(&metadata).unwrap(), code)
+        libra2_stdlib::code_publish_package_txn(bcs::to_bytes(&metadata).unwrap(), code)
     }
 
     pub async fn publish_package(

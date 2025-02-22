@@ -28,15 +28,15 @@
 
 <pre><code><b>use</b> <a href="auth_data.md#0x1_auth_data">0x1::auth_data</a>;
 <b>use</b> <a href="create_signer.md#0x1_create_signer">0x1::create_signer</a>;
-<b>use</b> <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
 <b>use</b> <a href="event.md#0x1_event">0x1::event</a>;
 <b>use</b> <a href="function_info.md#0x1_function_info">0x1::function_info</a>;
 <b>use</b> <a href="object.md#0x1_object">0x1::object</a>;
-<b>use</b> <a href="../../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
+<b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
 <b>use</b> <a href="ordered_map.md#0x1_ordered_map">0x1::ordered_map</a>;
 <b>use</b> <a href="permissioned_signer.md#0x1_permissioned_signer">0x1::permissioned_signer</a>;
-<b>use</b> <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
-<b>use</b> <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string">0x1::string</a>;
+<b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
+<b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string">0x1::string</a>;
 </code></pre>
 
 
@@ -65,7 +65,7 @@
 
 </dd>
 <dt>
-<code><b>update</b>: <a href="../../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
+<code><b>update</b>: <a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
 </dt>
 <dd>
 
@@ -227,7 +227,7 @@ Add dispatchable authentication function that enables account abstraction via th
 Note: it is a private entry function that can only be called directly from transaction.
 
 
-<pre><code>entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_add_authentication_function">add_authentication_function</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, module_address: <b>address</b>, module_name: <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, function_name: <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code>entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_add_authentication_function">add_authentication_function</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, module_address: <b>address</b>, module_name: <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, function_name: <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -237,12 +237,12 @@ Note: it is a private entry function that can only be called directly from trans
 
 
 <pre><code>entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_add_authentication_function">add_authentication_function</a>(
-    <a href="account.md#0x1_account">account</a>: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="account.md#0x1_account">account</a>: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     module_address: <b>address</b>,
     module_name: String,
     function_name: String,
 ) <b>acquires</b> <a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a> {
-    <b>assert</b>!(!is_permissioned_signer(<a href="account.md#0x1_account">account</a>), <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="account_abstraction.md#0x1_account_abstraction_ENOT_MASTER_SIGNER">ENOT_MASTER_SIGNER</a>));
+    <b>assert</b>!(!is_permissioned_signer(<a href="account.md#0x1_account">account</a>), <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="account_abstraction.md#0x1_account_abstraction_ENOT_MASTER_SIGNER">ENOT_MASTER_SIGNER</a>));
     <a href="account_abstraction.md#0x1_account_abstraction_update_dispatchable_authenticator_impl">update_dispatchable_authenticator_impl</a>(
         <a href="account.md#0x1_account">account</a>,
         <a href="function_info.md#0x1_function_info_new_function_info_from_address">function_info::new_function_info_from_address</a>(module_address, module_name, function_name),
@@ -263,7 +263,7 @@ Remove dispatchable authentication function that enables account abstraction via
 Note: it is a private entry function that can only be called directly from transaction.
 
 
-<pre><code>entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_authentication_function">remove_authentication_function</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, module_address: <b>address</b>, module_name: <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, function_name: <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code>entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_authentication_function">remove_authentication_function</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, module_address: <b>address</b>, module_name: <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, function_name: <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -273,12 +273,12 @@ Note: it is a private entry function that can only be called directly from trans
 
 
 <pre><code>entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_authentication_function">remove_authentication_function</a>(
-    <a href="account.md#0x1_account">account</a>: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="account.md#0x1_account">account</a>: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     module_address: <b>address</b>,
     module_name: String,
     function_name: String,
 ) <b>acquires</b> <a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a> {
-    <b>assert</b>!(!is_permissioned_signer(<a href="account.md#0x1_account">account</a>), <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="account_abstraction.md#0x1_account_abstraction_ENOT_MASTER_SIGNER">ENOT_MASTER_SIGNER</a>));
+    <b>assert</b>!(!is_permissioned_signer(<a href="account.md#0x1_account">account</a>), <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="account_abstraction.md#0x1_account_abstraction_ENOT_MASTER_SIGNER">ENOT_MASTER_SIGNER</a>));
     <a href="account_abstraction.md#0x1_account_abstraction_update_dispatchable_authenticator_impl">update_dispatchable_authenticator_impl</a>(
         <a href="account.md#0x1_account">account</a>,
         <a href="function_info.md#0x1_function_info_new_function_info_from_address">function_info::new_function_info_from_address</a>(module_address, module_name, function_name),
@@ -300,7 +300,7 @@ After calling this function, the account is not abstracted at all.
 Note: it is a private entry function that can only be called directly from transaction.
 
 
-<pre><code>entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_authenticator">remove_authenticator</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
+<pre><code>entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_authenticator">remove_authenticator</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -310,10 +310,10 @@ Note: it is a private entry function that can only be called directly from trans
 
 
 <pre><code>entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_authenticator">remove_authenticator</a>(
-    <a href="account.md#0x1_account">account</a>: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="account.md#0x1_account">account</a>: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
 ) <b>acquires</b> <a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a> {
-    <b>assert</b>!(!is_permissioned_signer(<a href="account.md#0x1_account">account</a>), <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="account_abstraction.md#0x1_account_abstraction_ENOT_MASTER_SIGNER">ENOT_MASTER_SIGNER</a>));
-    <b>let</b> addr = <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="account.md#0x1_account">account</a>);
+    <b>assert</b>!(!is_permissioned_signer(<a href="account.md#0x1_account">account</a>), <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="account_abstraction.md#0x1_account_abstraction_ENOT_MASTER_SIGNER">ENOT_MASTER_SIGNER</a>));
+    <b>let</b> addr = <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="account.md#0x1_account">account</a>);
     <b>let</b> resource_addr = <a href="account_abstraction.md#0x1_account_abstraction_resource_addr">resource_addr</a>(addr);
     <b>if</b> (<b>exists</b>&lt;<a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a>&gt;(resource_addr)) {
         <b>move_from</b>&lt;<a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a>&gt;(resource_addr);
@@ -358,7 +358,7 @@ Note: it is a private entry function that can only be called directly from trans
 
 
 
-<pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_update_dispatchable_authenticator_impl">update_dispatchable_authenticator_impl</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, auth_function: <a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>, is_add: bool)
+<pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_update_dispatchable_authenticator_impl">update_dispatchable_authenticator_impl</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, auth_function: <a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>, is_add: bool)
 </code></pre>
 
 
@@ -368,20 +368,20 @@ Note: it is a private entry function that can only be called directly from trans
 
 
 <pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_update_dispatchable_authenticator_impl">update_dispatchable_authenticator_impl</a>(
-    <a href="account.md#0x1_account">account</a>: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="account.md#0x1_account">account</a>: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     auth_function: FunctionInfo,
     is_add: bool,
 ) <b>acquires</b> <a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a> {
-    <b>let</b> addr = <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="account.md#0x1_account">account</a>);
+    <b>let</b> addr = <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="account.md#0x1_account">account</a>);
     <b>let</b> resource_addr = <a href="account_abstraction.md#0x1_account_abstraction_resource_addr">resource_addr</a>(addr);
     <b>let</b> dispatcher_auth_function_info = <a href="function_info.md#0x1_function_info_new_function_info_from_address">function_info::new_function_info_from_address</a>(
         @libra2_framework,
-        <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(b"<a href="account_abstraction.md#0x1_account_abstraction">account_abstraction</a>"),
-        <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(b"dispatchable_authenticate"),
+        <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(b"<a href="account_abstraction.md#0x1_account_abstraction">account_abstraction</a>"),
+        <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(b"dispatchable_authenticate"),
     );
     <b>assert</b>!(
         <a href="function_info.md#0x1_function_info_check_dispatch_type_compatibility">function_info::check_dispatch_type_compatibility</a>(&dispatcher_auth_function_info, &auth_function),
-        <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="account_abstraction.md#0x1_account_abstraction_EAUTH_FUNCTION_SIGNATURE_MISMATCH">EAUTH_FUNCTION_SIGNATURE_MISMATCH</a>)
+        <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="account_abstraction.md#0x1_account_abstraction_EAUTH_FUNCTION_SIGNATURE_MISMATCH">EAUTH_FUNCTION_SIGNATURE_MISMATCH</a>)
     );
     <b>if</b> (is_add && !<b>exists</b>&lt;<a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a>&gt;(resource_addr)) {
         <b>move_to</b>(
@@ -389,18 +389,18 @@ Note: it is a private entry function that can only be called directly from trans
             DispatchableAuthenticator::V1 { auth_functions: <a href="ordered_map.md#0x1_ordered_map_new">ordered_map::new</a>() }
         );
     };
-    <b>assert</b>!(<b>exists</b>&lt;<a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a>&gt;(resource_addr), <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="account_abstraction.md#0x1_account_abstraction_EFUNCTION_INFO_EXISTENCE">EFUNCTION_INFO_EXISTENCE</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a>&gt;(resource_addr), <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="account_abstraction.md#0x1_account_abstraction_EFUNCTION_INFO_EXISTENCE">EFUNCTION_INFO_EXISTENCE</a>));
     <b>let</b> current_map = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a>&gt;(resource_addr).auth_functions;
     <b>if</b> (is_add) {
         <b>assert</b>!(
             !<a href="ordered_map.md#0x1_ordered_map_contains">ordered_map::contains</a>(current_map, &auth_function),
-            <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="account_abstraction.md#0x1_account_abstraction_EFUNCTION_INFO_EXISTENCE">EFUNCTION_INFO_EXISTENCE</a>)
+            <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="account_abstraction.md#0x1_account_abstraction_EFUNCTION_INFO_EXISTENCE">EFUNCTION_INFO_EXISTENCE</a>)
         );
         <a href="ordered_map.md#0x1_ordered_map_add">ordered_map::add</a>(current_map, auth_function, <b>true</b>);
     } <b>else</b> {
         <b>assert</b>!(
             <a href="ordered_map.md#0x1_ordered_map_contains">ordered_map::contains</a>(current_map, &auth_function),
-            <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="account_abstraction.md#0x1_account_abstraction_EFUNCTION_INFO_EXISTENCE">EFUNCTION_INFO_EXISTENCE</a>)
+            <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="account_abstraction.md#0x1_account_abstraction_EFUNCTION_INFO_EXISTENCE">EFUNCTION_INFO_EXISTENCE</a>)
         );
         <a href="ordered_map.md#0x1_ordered_map_remove">ordered_map::remove</a>(current_map, &auth_function);
     };
@@ -455,7 +455,7 @@ Return the current dispatchable authenticator move function info. <code>None</co
 
 
 <pre><code>#[view]
-<b>public</b> <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticator">dispatchable_authenticator</a>(addr: <b>address</b>): <a href="../../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="../../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>&gt;&gt;
+<b>public</b> <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticator">dispatchable_authenticator</a>(addr: <b>address</b>): <a href="../../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>&gt;&gt;
 </code></pre>
 
 
@@ -464,13 +464,13 @@ Return the current dispatchable authenticator move function info. <code>None</co
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticator">dispatchable_authenticator</a>(addr: <b>address</b>): Option&lt;<a href="../../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;FunctionInfo&gt;&gt; <b>acquires</b> <a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a> {
+<pre><code><b>public</b> <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticator">dispatchable_authenticator</a>(addr: <b>address</b>): Option&lt;<a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;FunctionInfo&gt;&gt; <b>acquires</b> <a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a> {
     <b>let</b> resource_addr = <a href="account_abstraction.md#0x1_account_abstraction_resource_addr">resource_addr</a>(addr);
     <b>if</b> (<b>exists</b>&lt;<a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a>&gt;(resource_addr)) {
-        <a href="../../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(
+        <a href="../../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(
             <a href="ordered_map.md#0x1_ordered_map_keys">ordered_map::keys</a>(&<b>borrow_global</b>&lt;<a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a>&gt;(resource_addr).auth_functions)
         )
-    } <b>else</b> { <a href="../../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>() }
+    } <b>else</b> { <a href="../../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>() }
 }
 </code></pre>
 
@@ -494,7 +494,7 @@ Return the current dispatchable authenticator move function info. <code>None</co
 
 
 <pre><code>inline <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticator_internal">dispatchable_authenticator_internal</a>(addr: <b>address</b>): &OrderedMap&lt;FunctionInfo, bool&gt; {
-    <b>assert</b>!(<a href="account_abstraction.md#0x1_account_abstraction_using_dispatchable_authenticator">using_dispatchable_authenticator</a>(addr), <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="account_abstraction.md#0x1_account_abstraction_EDISPATCHABLE_AUTHENTICATOR_IS_NOT_USED">EDISPATCHABLE_AUTHENTICATOR_IS_NOT_USED</a>));
+    <b>assert</b>!(<a href="account_abstraction.md#0x1_account_abstraction_using_dispatchable_authenticator">using_dispatchable_authenticator</a>(addr), <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="account_abstraction.md#0x1_account_abstraction_EDISPATCHABLE_AUTHENTICATOR_IS_NOT_USED">EDISPATCHABLE_AUTHENTICATOR_IS_NOT_USED</a>));
     &<b>borrow_global</b>&lt;<a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a>&gt;(<a href="account_abstraction.md#0x1_account_abstraction_resource_addr">resource_addr</a>(addr)).auth_functions
 }
 </code></pre>
@@ -509,7 +509,7 @@ Return the current dispatchable authenticator move function info. <code>None</co
 
 
 
-<pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_authenticate">authenticate</a>(<a href="account.md#0x1_account">account</a>: <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, func_info: <a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>, signing_data: <a href="auth_data.md#0x1_auth_data_AbstractionAuthData">auth_data::AbstractionAuthData</a>): <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_authenticate">authenticate</a>(<a href="account.md#0x1_account">account</a>: <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, func_info: <a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>, signing_data: <a href="auth_data.md#0x1_auth_data_AbstractionAuthData">auth_data::AbstractionAuthData</a>): <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -519,19 +519,19 @@ Return the current dispatchable authenticator move function info. <code>None</co
 
 
 <pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_authenticate">authenticate</a>(
-    <a href="account.md#0x1_account">account</a>: <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="account.md#0x1_account">account</a>: <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     func_info: FunctionInfo,
     signing_data: AbstractionAuthData,
-): <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a> {
-    <b>let</b> master_signer_addr = <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(&<a href="account.md#0x1_account">account</a>);
+): <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="account_abstraction.md#0x1_account_abstraction_DispatchableAuthenticator">DispatchableAuthenticator</a> {
+    <b>let</b> master_signer_addr = <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(&<a href="account.md#0x1_account">account</a>);
     <b>let</b> func_infos = <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticator_internal">dispatchable_authenticator_internal</a>(master_signer_addr);
-    <b>assert</b>!(<a href="ordered_map.md#0x1_ordered_map_contains">ordered_map::contains</a>(func_infos, &func_info), <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="account_abstraction.md#0x1_account_abstraction_EFUNCTION_INFO_EXISTENCE">EFUNCTION_INFO_EXISTENCE</a>));
+    <b>assert</b>!(<a href="ordered_map.md#0x1_ordered_map_contains">ordered_map::contains</a>(func_infos, &func_info), <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="account_abstraction.md#0x1_account_abstraction_EFUNCTION_INFO_EXISTENCE">EFUNCTION_INFO_EXISTENCE</a>));
     <a href="function_info.md#0x1_function_info_load_module_from_function">function_info::load_module_from_function</a>(&func_info);
     <b>let</b> returned_signer = <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticate">dispatchable_authenticate</a>(<a href="account.md#0x1_account">account</a>, signing_data, &func_info);
-    // Returned <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a> MUST represent the same <a href="account.md#0x1_account">account</a> <b>address</b>. Otherwise, it may <b>break</b> the <b>invariant</b> of Aptos blockchain!
+    // Returned <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a> MUST represent the same <a href="account.md#0x1_account">account</a> <b>address</b>. Otherwise, it may <b>break</b> the <b>invariant</b> of Aptos blockchain!
     <b>assert</b>!(
-        master_signer_addr == <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(&returned_signer),
-        <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="account_abstraction.md#0x1_account_abstraction_EINCONSISTENT_SIGNER_ADDRESS">EINCONSISTENT_SIGNER_ADDRESS</a>)
+        master_signer_addr == <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(&returned_signer),
+        <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="account_abstraction.md#0x1_account_abstraction_EINCONSISTENT_SIGNER_ADDRESS">EINCONSISTENT_SIGNER_ADDRESS</a>)
     );
     returned_signer
 }
@@ -548,7 +548,7 @@ Return the current dispatchable authenticator move function info. <code>None</co
 The native function to dispatch customized move authentication function.
 
 
-<pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticate">dispatchable_authenticate</a>(<a href="account.md#0x1_account">account</a>: <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, signing_data: <a href="auth_data.md#0x1_auth_data_AbstractionAuthData">auth_data::AbstractionAuthData</a>, function: &<a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>): <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticate">dispatchable_authenticate</a>(<a href="account.md#0x1_account">account</a>: <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, signing_data: <a href="auth_data.md#0x1_auth_data_AbstractionAuthData">auth_data::AbstractionAuthData</a>, function: &<a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>): <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -558,10 +558,10 @@ The native function to dispatch customized move authentication function.
 
 
 <pre><code><b>native</b> <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticate">dispatchable_authenticate</a>(
-    <a href="account.md#0x1_account">account</a>: <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="account.md#0x1_account">account</a>: <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     signing_data: AbstractionAuthData,
     function: &FunctionInfo
-): <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
+): <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
 </code></pre>
 
 
@@ -575,7 +575,7 @@ The native function to dispatch customized move authentication function.
 
 
 <pre><code>#[deprecated]
-<b>public</b> entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_add_dispatchable_authentication_function">add_dispatchable_authentication_function</a>(_account: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _module_address: <b>address</b>, _module_name: <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, _function_name: <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<b>public</b> entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_add_dispatchable_authentication_function">add_dispatchable_authentication_function</a>(_account: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _module_address: <b>address</b>, _module_name: <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, _function_name: <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -585,7 +585,7 @@ The native function to dispatch customized move authentication function.
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_add_dispatchable_authentication_function">add_dispatchable_authentication_function</a>(
-    _account: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    _account: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     _module_address: <b>address</b>,
     _module_name: String,
     _function_name: String,
@@ -605,7 +605,7 @@ The native function to dispatch customized move authentication function.
 
 
 <pre><code>#[deprecated]
-<b>public</b> entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_dispatchable_authentication_function">remove_dispatchable_authentication_function</a>(_account: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _module_address: <b>address</b>, _module_name: <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, _function_name: <a href="../../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<b>public</b> entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_dispatchable_authentication_function">remove_dispatchable_authentication_function</a>(_account: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _module_address: <b>address</b>, _module_name: <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, _function_name: <a href="../../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -615,7 +615,7 @@ The native function to dispatch customized move authentication function.
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_dispatchable_authentication_function">remove_dispatchable_authentication_function</a>(
-    _account: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    _account: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     _module_address: <b>address</b>,
     _module_name: String,
     _function_name: String,
@@ -635,7 +635,7 @@ The native function to dispatch customized move authentication function.
 
 
 <pre><code>#[deprecated]
-<b>public</b> entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_dispatchable_authenticator">remove_dispatchable_authenticator</a>(_account: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
+<b>public</b> entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_dispatchable_authenticator">remove_dispatchable_authenticator</a>(_account: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -645,7 +645,7 @@ The native function to dispatch customized move authentication function.
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_remove_dispatchable_authenticator">remove_dispatchable_authenticator</a>(
-    _account: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    _account: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
 ) {
     <b>abort</b> std::error::unavailable(<a href="account_abstraction.md#0x1_account_abstraction_EDEPRECATED_FUNCTION">EDEPRECATED_FUNCTION</a>)
 }
@@ -671,10 +671,10 @@ The native function to dispatch customized move authentication function.
 
 
 <pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_spec_dispatchable_authenticate">spec_dispatchable_authenticate</a>(
-   <a href="account.md#0x1_account">account</a>: <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+   <a href="account.md#0x1_account">account</a>: <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
    signing_data: AbstractionAuthData,
    function: &FunctionInfo
-): <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
+): <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
 </code></pre>
 
 
@@ -684,7 +684,7 @@ The native function to dispatch customized move authentication function.
 ### Function `dispatchable_authenticate`
 
 
-<pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticate">dispatchable_authenticate</a>(<a href="account.md#0x1_account">account</a>: <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, signing_data: <a href="auth_data.md#0x1_auth_data_AbstractionAuthData">auth_data::AbstractionAuthData</a>, function: &<a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>): <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>fun</b> <a href="account_abstraction.md#0x1_account_abstraction_dispatchable_authenticate">dispatchable_authenticate</a>(<a href="account.md#0x1_account">account</a>: <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, signing_data: <a href="auth_data.md#0x1_auth_data_AbstractionAuthData">auth_data::AbstractionAuthData</a>, function: &<a href="function_info.md#0x1_function_info_FunctionInfo">function_info::FunctionInfo</a>): <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 

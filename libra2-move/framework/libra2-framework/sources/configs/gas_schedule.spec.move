@@ -100,7 +100,7 @@ spec libra2_framework::gas_schedule {
     }
 
     spec set_for_next_epoch_check_hash(libra2_framework: &signer, old_gas_schedule_hash: vector<u8>, new_gas_schedule_blob: vector<u8>) {
-        use aptos_std::aptos_hash;
+        use libra2_std::libra2_hash;
         use std::bcs;
         use std::features;
         use libra2_framework::util;
@@ -113,7 +113,7 @@ spec libra2_framework::gas_schedule {
         let new_gas_schedule = util::spec_from_bytes<GasScheduleV2>(new_gas_schedule_blob);
         let cur_gas_schedule = global<GasScheduleV2>(@libra2_framework);
         aborts_if exists<GasScheduleV2>(@libra2_framework) && new_gas_schedule.feature_version < cur_gas_schedule.feature_version;
-        aborts_if exists<GasScheduleV2>(@libra2_framework) && (!features::spec_sha_512_and_ripemd_160_enabled() || aptos_hash::spec_sha3_512_internal(bcs::serialize(cur_gas_schedule)) != old_gas_schedule_hash);
+        aborts_if exists<GasScheduleV2>(@libra2_framework) && (!features::spec_sha_512_and_ripemd_160_enabled() || libra2_hash::spec_sha3_512_internal(bcs::serialize(cur_gas_schedule)) != old_gas_schedule_hash);
     }
 
     spec on_new_epoch(framework: &signer) {

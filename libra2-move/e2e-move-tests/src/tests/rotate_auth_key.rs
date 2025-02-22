@@ -6,7 +6,7 @@ use crate::{
     tests::offer_rotation_capability::{offer_rotation_capability_v2, revoke_rotation_capability},
     MoveHarness,
 };
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     multi_ed25519::{MultiEd25519PrivateKey, MultiEd25519PublicKey},
@@ -164,7 +164,7 @@ fn run_rotate_auth_key_with_rotation_capability(
 
     harness.run_transaction_payload(
         delegate_account,
-        aptos_stdlib::account_rotate_authentication_key_with_rotation_capability(
+        libra2_stdlib::account_rotate_authentication_key_with_rotation_capability(
             *offerer_account.address(),
             0,
             new_public_key.to_bytes().to_vec(),
@@ -205,7 +205,7 @@ pub fn assert_successful_key_rotation_transaction<S: SigningKey + ValidCryptoMat
 
     assert_success!(harness.run_transaction_payload(
         &current_account,
-        aptos_stdlib::account_rotate_authentication_key(
+        libra2_stdlib::account_rotate_authentication_key(
             from_scheme,
             current_account.pubkey.to_bytes(),
             to_scheme,

@@ -22,8 +22,8 @@
 /// They are waiting for Move improvement that will allow references to be part of the struct,
 /// allowing cleaner iterator APIs.
 ///
-module aptos_std::ordered_map {
-    friend aptos_std::big_ordered_map;
+module libra2_std::ordered_map {
+    friend libra2_std::big_ordered_map;
 
     use std::vector;
 
@@ -623,7 +623,7 @@ module aptos_std::ordered_map {
 
     #[test_only]
     fun print_map<K, V>(self: &OrderedMap<K, V>) {
-        aptos_std::debug::print(&self.entries);
+        libra2_std::debug::print(&self.entries);
     }
 
     #[test_only]

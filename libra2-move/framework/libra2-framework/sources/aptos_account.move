@@ -119,7 +119,7 @@ module libra2_framework::aptos_account {
             create_account(to);
             spec {
                 assert coin::spec_is_account_registered<AptosCoin>(to);
-                assume aptos_std::type_info::type_of<CoinType>() == aptos_std::type_info::type_of<AptosCoin>() ==>
+                assume libra2_std::type_info::type_of<CoinType>() == libra2_std::type_info::type_of<AptosCoin>() ==>
                     coin::spec_is_account_registered<CoinType>(to);
             };
         };
@@ -288,7 +288,7 @@ module libra2_framework::aptos_account {
     // tests
 
     #[test_only]
-    use aptos_std::from_bcs;
+    use libra2_std::from_bcs;
     #[test_only]
     use std::string::utf8;
     #[test_only]

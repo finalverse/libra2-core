@@ -45,7 +45,7 @@ pub use online_execution::*;
 const APTOS_PACKAGES_DIR_NAMES: [&str; 5] = [
     "libra2-framework",
     "move-stdlib",
-    "aptos-stdlib",
+    "libra2-stdlib",
     "aptos-token",
     "libra2-token-objects",
 ];

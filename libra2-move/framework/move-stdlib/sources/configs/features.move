@@ -64,15 +64,15 @@ module std::features {
         is_enabled(SHA_512_AND_RIPEMD_160_NATIVES)
     }
 
-    /// Whether the new `aptos_stdlib::type_info::chain_id()` native for fetching the chain ID is enabled.
+    /// Whether the new `libra2_stdlib::type_info::chain_id()` native for fetching the chain ID is enabled.
     /// This is needed because of the introduction of a new native function.
     /// Lifetime: transient
-    const APTOS_STD_CHAIN_ID_NATIVES: u64 = 4;
+    const LIBRA2_STD_CHAIN_ID_NATIVES: u64 = 4;
 
-    public fun get_aptos_stdlib_chain_id_feature(): u64 { APTOS_STD_CHAIN_ID_NATIVES }
+    public fun get_libra2_stdlib_chain_id_feature(): u64 { LIBRA2_STD_CHAIN_ID_NATIVES }
 
-    public fun aptos_stdlib_chain_id_enabled(): bool acquires Features {
-        is_enabled(APTOS_STD_CHAIN_ID_NATIVES)
+    public fun libra2_stdlib_chain_id_enabled(): bool acquires Features {
+        is_enabled(LIBRA2_STD_CHAIN_ID_NATIVES)
     }
 
     /// Whether to allow the use of binary format version v6.
@@ -99,7 +99,7 @@ module std::features {
         false
     }
 
-    /// Whether the new `aptos_stdlib::multi_ed25519::public_key_validate_internal_v2()` native is enabled.
+    /// Whether the new `libra2_stdlib::multi_ed25519::public_key_validate_internal_v2()` native is enabled.
     /// This is needed because of the introduction of a new native function.
     /// Lifetime: transient
     const MULTI_ED25519_PK_VALIDATE_V2_NATIVES: u64 = 7;

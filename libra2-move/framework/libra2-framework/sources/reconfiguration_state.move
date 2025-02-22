@@ -4,8 +4,8 @@
 module libra2_framework::reconfiguration_state {
     use std::error;
     use std::string;
-    use aptos_std::copyable_any;
-    use aptos_std::copyable_any::Any;
+    use libra2_std::copyable_any;
+    use libra2_std::copyable_any::Any;
     use libra2_framework::system_addresses;
     use libra2_framework::timestamp;
 

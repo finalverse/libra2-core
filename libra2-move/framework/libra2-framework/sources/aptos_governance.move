@@ -17,10 +17,10 @@ module libra2_framework::aptos_governance {
     use std::vector;
     use std::features;
 
-    use aptos_std::math64::min;
-    use aptos_std::simple_map::{Self, SimpleMap};
-    use aptos_std::smart_table::{Self, SmartTable};
-    use aptos_std::table::{Self, Table};
+    use libra2_std::math64::min;
+    use libra2_std::simple_map::{Self, SimpleMap};
+    use libra2_std::smart_table::{Self, SmartTable};
+    use libra2_std::table::{Self, Table};
 
     use libra2_framework::account::{Self, SignerCapability, create_signer_with_capability};
     use libra2_framework::coin;

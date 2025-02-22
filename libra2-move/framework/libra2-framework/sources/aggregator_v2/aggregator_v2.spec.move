@@ -78,7 +78,7 @@ spec libra2_framework::aggregator_v2 {
     }
 
     spec schema AbortsIfIntElement<IntElement> {
-        use aptos_std::type_info;
+        use libra2_std::type_info;
         aborts_if [abstract] type_info::type_name<IntElement>().bytes != b"u64" && type_info::type_name<IntElement>().bytes != b"u128";
     }
 

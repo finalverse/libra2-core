@@ -1,4 +1,4 @@
-module aptos_std::M {
+module libra2_std::M {
     fun foo() {}
 
     #[testonly]

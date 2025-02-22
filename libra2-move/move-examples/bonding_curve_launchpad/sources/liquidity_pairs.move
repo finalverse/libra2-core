@@ -1,8 +1,8 @@
 module bonding_curve_launchpad::liquidity_pairs {
     use std::string::{Self, String};
     use std::vector;
-    use aptos_std::signer;
-    use aptos_std::math128;
+    use libra2_std::signer;
+    use libra2_std::math128;
     use libra2_framework::coin;
     use libra2_framework::aptos_account;
     use libra2_framework::aptos_coin::{AptosCoin};

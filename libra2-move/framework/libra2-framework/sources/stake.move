@@ -23,9 +23,9 @@ module libra2_framework::stake {
     use std::option::{Self, Option};
     use std::signer;
     use std::vector;
-    use aptos_std::bls12381;
-    use aptos_std::math64::min;
-    use aptos_std::table::Table;
+    use libra2_std::bls12381;
+    use libra2_std::math64::min;
+    use libra2_std::table::Table;
     use libra2_framework::aptos_coin::AptosCoin;
     use libra2_framework::account;
     use libra2_framework::coin::{Self, Coin, MintCapability};
@@ -1777,12 +1777,12 @@ module libra2_framework::stake {
 
     #[test_only]
     use libra2_framework::aptos_coin;
-    use aptos_std::bls12381::proof_of_possession_from_bytes;
+    use libra2_std::bls12381::proof_of_possession_from_bytes;
     use libra2_framework::reconfiguration_state;
     use libra2_framework::validator_consensus_info;
     use libra2_framework::validator_consensus_info::ValidatorConsensusInfo;
     #[test_only]
-    use aptos_std::fixed_point64;
+    use libra2_std::fixed_point64;
 
     #[test_only]
     const EPOCH_DURATION: u64 = 60;

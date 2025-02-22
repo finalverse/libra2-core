@@ -3,5 +3,5 @@ name = "test"
 version = "0.0.0"
 
 [dependencies]
-AptosStdlib = { local = "../../../../../framework/aptos-stdlib" }
+Libra2Stdlib = { local = "../../../../../framework/libra2-stdlib" }
 MoveStdlib = { local = "../../../../../framework/move-stdlib" }

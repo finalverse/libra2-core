@@ -36,7 +36,7 @@ COPY --link --from=tools-builder libra2-indexer-grpc-cache-workerlibra2-api-test
 
 # Copy the example module to publish for api-tester
 COPY --link --from=tools-builder /aptos/libra2-move/framework/libra2-framework /libra2-move/framework/libra2-framework
-COPY --link --from=tools-builder /aptos/libra2-move/framework/aptos-stdlib /libra2-move/framework/aptos-stdlib
+COPY --link --from=tools-builder /aptos/libra2-move/framework/libra2-stdlib /libra2-move/framework/libra2-stdlib
 COPY --link --from=tools-builder /aptos/libra2-move/framework/move-stdlib /libra2-move/framework/move-stdlib
 COPY --link --from=tools-builder /aptos/libra2-move/move-examples/hello_blockchain /libra2-move/move-examples/hello_blockchain
 

@@ -32,7 +32,7 @@ const WARN_DEPRECATION_PATH: &str = "/deprecated/";
 
 fn default_testing_addresses() -> BTreeMap<String, NumericalAddress> {
     let mapping = [
-        ("aptos_std", "0x1"),
+        ("libra2_std", "0x1"),
         ("std", "0x1"),
         ("M", "0x1"),
         ("A", "0x42"),

@@ -4,7 +4,7 @@
 
 #![forbid(unsafe_code)]
 
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{ed25519::Ed25519PrivateKey, HashValue, PrivateKey, Uniform};
 use libra2_db::Libra2DB;
 use libra2_executor::{
@@ -137,7 +137,7 @@ fn get_aptos_coin_mint_transaction(
         /* sequence_number = */ aptos_root_seq_num,
         aptos_root_key.clone(),
         aptos_root_key.public_key(),
-        Some(aptos_stdlib::aptos_coin_mint(*account, amount)),
+        Some(libra2_stdlib::aptos_coin_mint(*account, amount)),
     )
 }
 
@@ -152,7 +152,7 @@ fn get_account_transaction(
         /* sequence_number = */ aptos_root_seq_num,
         aptos_root_key.clone(),
         aptos_root_key.public_key(),
-        Some(aptos_stdlib::aptos_account_create_account(*account)),
+        Some(libra2_stdlib::aptos_account_create_account(*account)),
     )
 }
 
@@ -168,7 +168,7 @@ fn get_aptos_coin_transfer_transaction(
         sender_seq_number,
         sender_key.clone(),
         sender_key.public_key(),
-        Some(aptos_stdlib::aptos_coin_transfer(recipient, amount)),
+        Some(libra2_stdlib::aptos_coin_transfer(recipient, amount)),
     )
 }
 

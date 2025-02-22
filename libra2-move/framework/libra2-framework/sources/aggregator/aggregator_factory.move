@@ -8,7 +8,7 @@ module libra2_framework::aggregator_factory {
 
     use libra2_framework::system_addresses;
     use libra2_framework::aggregator::Aggregator;
-    use aptos_std::table::{Self, Table};
+    use libra2_std::table::{Self, Table};
 
     friend libra2_framework::genesis;
     friend libra2_framework::optional_aggregator;

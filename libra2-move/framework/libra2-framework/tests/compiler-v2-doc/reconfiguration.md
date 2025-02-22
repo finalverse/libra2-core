@@ -35,11 +35,11 @@ to synchronize configuration changes for the validators.
 
 <pre><code><b>use</b> <a href="account.md#0x1_account">0x1::account</a>;
 <b>use</b> <a href="chain_status.md#0x1_chain_status">0x1::chain_status</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
 <b>use</b> <a href="event.md#0x1_event">0x1::event</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features">0x1::features</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features">0x1::features</a>;
 <b>use</b> <a href="reconfiguration_state.md#0x1_reconfiguration_state">0x1::reconfiguration_state</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">0x1::signer</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">0x1::signer</a>;
 <b>use</b> <a href="stake.md#0x1_stake">0x1::stake</a>;
 <b>use</b> <a href="storage_gas.md#0x1_storage_gas">0x1::storage_gas</a>;
 <b>use</b> <a href="system_addresses.md#0x1_system_addresses">0x1::system_addresses</a>;
@@ -242,7 +242,7 @@ Only called during genesis.
 Publishes <code><a href="reconfiguration.md#0x1_reconfiguration_Configuration">Configuration</a></code> resource. Can only be invoked by aptos framework account, and only a single time in Genesis.
 
 
-<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_initialize">initialize</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_initialize">initialize</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -251,11 +251,11 @@ Publishes <code><a href="reconfiguration.md#0x1_reconfiguration_Configuration">C
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_initialize">initialize</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
+<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_initialize">initialize</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(libra2_framework);
 
     // <b>assert</b> it matches `new_epoch_event_key()`, otherwise the <a href="event.md#0x1_event">event</a> can't be recognized
-    <b>assert</b>!(<a href="account.md#0x1_account_get_guid_next_creation_num">account::get_guid_next_creation_num</a>(<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework)) == 2, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_EINVALID_GUID_FOR_EVENT">EINVALID_GUID_FOR_EVENT</a>));
+    <b>assert</b>!(<a href="account.md#0x1_account_get_guid_next_creation_num">account::get_guid_next_creation_num</a>(<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework)) == 2, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_EINVALID_GUID_FOR_EVENT">EINVALID_GUID_FOR_EVENT</a>));
     <b>move_to</b>&lt;<a href="reconfiguration.md#0x1_reconfiguration_Configuration">Configuration</a>&gt;(
         libra2_framework,
         <a href="reconfiguration.md#0x1_reconfiguration_Configuration">Configuration</a> {
@@ -279,7 +279,7 @@ Private function to temporarily halt reconfiguration.
 This function should only be used for offline WriteSet generation purpose and should never be invoked on chain.
 
 
-<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_disable_reconfiguration">disable_reconfiguration</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_disable_reconfiguration">disable_reconfiguration</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -288,9 +288,9 @@ This function should only be used for offline WriteSet generation purpose and sh
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_disable_reconfiguration">disable_reconfiguration</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
+<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_disable_reconfiguration">disable_reconfiguration</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(libra2_framework);
-    <b>assert</b>!(<a href="reconfiguration.md#0x1_reconfiguration_reconfiguration_enabled">reconfiguration_enabled</a>(), <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_ECONFIGURATION">ECONFIGURATION</a>));
+    <b>assert</b>!(<a href="reconfiguration.md#0x1_reconfiguration_reconfiguration_enabled">reconfiguration_enabled</a>(), <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_ECONFIGURATION">ECONFIGURATION</a>));
     <b>move_to</b>(libra2_framework, <a href="reconfiguration.md#0x1_reconfiguration_DisableReconfiguration">DisableReconfiguration</a> {})
 }
 </code></pre>
@@ -307,7 +307,7 @@ Private function to resume reconfiguration.
 This function should only be used for offline WriteSet generation purpose and should never be invoked on chain.
 
 
-<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_enable_reconfiguration">enable_reconfiguration</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_enable_reconfiguration">enable_reconfiguration</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -316,11 +316,11 @@ This function should only be used for offline WriteSet generation purpose and sh
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_enable_reconfiguration">enable_reconfiguration</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) <b>acquires</b> <a href="reconfiguration.md#0x1_reconfiguration_DisableReconfiguration">DisableReconfiguration</a> {
+<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_enable_reconfiguration">enable_reconfiguration</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) <b>acquires</b> <a href="reconfiguration.md#0x1_reconfiguration_DisableReconfiguration">DisableReconfiguration</a> {
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(libra2_framework);
 
-    <b>assert</b>!(!<a href="reconfiguration.md#0x1_reconfiguration_reconfiguration_enabled">reconfiguration_enabled</a>(), <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_ECONFIGURATION">ECONFIGURATION</a>));
-    <a href="reconfiguration.md#0x1_reconfiguration_DisableReconfiguration">DisableReconfiguration</a> {} = <b>move_from</b>&lt;<a href="reconfiguration.md#0x1_reconfiguration_DisableReconfiguration">DisableReconfiguration</a>&gt;(<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework));
+    <b>assert</b>!(!<a href="reconfiguration.md#0x1_reconfiguration_reconfiguration_enabled">reconfiguration_enabled</a>(), <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_ECONFIGURATION">ECONFIGURATION</a>));
+    <a href="reconfiguration.md#0x1_reconfiguration_DisableReconfiguration">DisableReconfiguration</a> {} = <b>move_from</b>&lt;<a href="reconfiguration.md#0x1_reconfiguration_DisableReconfiguration">DisableReconfiguration</a>&gt;(<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework));
 }
 </code></pre>
 
@@ -399,7 +399,7 @@ Signal validators to start using new configuration. Must be called from friend c
     <a href="stake.md#0x1_stake_on_new_epoch">stake::on_new_epoch</a>();
     <a href="storage_gas.md#0x1_storage_gas_on_reconfig">storage_gas::on_reconfig</a>();
 
-    <b>assert</b>!(current_time &gt; config_ref.last_reconfiguration_time, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_EINVALID_BLOCK_TIME">EINVALID_BLOCK_TIME</a>));
+    <b>assert</b>!(current_time &gt; config_ref.last_reconfiguration_time, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_EINVALID_BLOCK_TIME">EINVALID_BLOCK_TIME</a>));
     config_ref.last_reconfiguration_time = current_time;
     <b>spec</b> {
         <b>assume</b> config_ref.epoch + 1 &lt;= MAX_U64;
@@ -495,7 +495,7 @@ reconfiguration event.
 
 <pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_emit_genesis_reconfiguration_event">emit_genesis_reconfiguration_event</a>() <b>acquires</b> <a href="reconfiguration.md#0x1_reconfiguration_Configuration">Configuration</a> {
     <b>let</b> config_ref = <b>borrow_global_mut</b>&lt;<a href="reconfiguration.md#0x1_reconfiguration_Configuration">Configuration</a>&gt;(@libra2_framework);
-    <b>assert</b>!(config_ref.epoch == 0 && config_ref.last_reconfiguration_time == 0, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_ECONFIGURATION">ECONFIGURATION</a>));
+    <b>assert</b>!(config_ref.epoch == 0 && config_ref.last_reconfiguration_time == 0, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="reconfiguration.md#0x1_reconfiguration_ECONFIGURATION">ECONFIGURATION</a>));
     config_ref.epoch = 1;
 
     <b>if</b> (std::features::module_event_migration_enabled()) {
@@ -599,8 +599,8 @@ Make sure the signer address is @libra2_framework.
 
 
 <pre><code><b>schema</b> <a href="reconfiguration.md#0x1_reconfiguration_AbortsIfNotLibra2Framework">AbortsIfNotLibra2Framework</a> {
-    libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
-    <b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
+    libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
+    <b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
     <b>aborts_if</b> !<a href="system_addresses.md#0x1_system_addresses_is_libra2_framework_address">system_addresses::is_libra2_framework_address</a>(addr);
 }
 </code></pre>
@@ -612,7 +612,7 @@ Make sure the signer address is @libra2_framework.
 ### Function `initialize`
 
 
-<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_initialize">initialize</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_initialize">initialize</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -622,7 +622,7 @@ Guid_creation_num should be 2 according to logic.
 
 
 <pre><code><b>include</b> <a href="reconfiguration.md#0x1_reconfiguration_AbortsIfNotLibra2Framework">AbortsIfNotLibra2Framework</a>;
-<b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
+<b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
 <b>let</b> <b>post</b> config = <b>global</b>&lt;<a href="reconfiguration.md#0x1_reconfiguration_Configuration">Configuration</a>&gt;(@libra2_framework);
 <b>requires</b> <b>exists</b>&lt;Account&gt;(addr);
 <b>aborts_if</b> !(<b>global</b>&lt;Account&gt;(addr).guid_creation_num == 2);
@@ -648,7 +648,7 @@ Guid_creation_num should be 2 according to logic.
 ### Function `disable_reconfiguration`
 
 
-<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_disable_reconfiguration">disable_reconfiguration</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_disable_reconfiguration">disable_reconfiguration</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -666,7 +666,7 @@ Guid_creation_num should be 2 according to logic.
 ### Function `enable_reconfiguration`
 
 
-<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_enable_reconfiguration">enable_reconfiguration</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>fun</b> <a href="reconfiguration.md#0x1_reconfiguration_enable_reconfiguration">enable_reconfiguration</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -713,7 +713,7 @@ Make sure the caller is admin and check the resource DisableReconfiguration.
 <b>pragma</b> verify_duration_estimate = 600;
 <b>let</b> success = !(<a href="chain_status.md#0x1_chain_status_is_genesis">chain_status::is_genesis</a>() || <a href="timestamp.md#0x1_timestamp_spec_now_microseconds">timestamp::spec_now_microseconds</a>() == 0 || !<a href="reconfiguration.md#0x1_reconfiguration_reconfiguration_enabled">reconfiguration_enabled</a>())
     && <a href="timestamp.md#0x1_timestamp_spec_now_microseconds">timestamp::spec_now_microseconds</a>() != <b>global</b>&lt;<a href="reconfiguration.md#0x1_reconfiguration_Configuration">Configuration</a>&gt;(@libra2_framework).last_reconfiguration_time;
-<b>include</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_periodical_reward_rate_decrease_enabled">features::spec_periodical_reward_rate_decrease_enabled</a>() ==&gt; <a href="staking_config.md#0x1_staking_config_StakingRewardsConfigEnabledRequirement">staking_config::StakingRewardsConfigEnabledRequirement</a>;
+<b>include</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_periodical_reward_rate_decrease_enabled">features::spec_periodical_reward_rate_decrease_enabled</a>() ==&gt; <a href="staking_config.md#0x1_staking_config_StakingRewardsConfigEnabledRequirement">staking_config::StakingRewardsConfigEnabledRequirement</a>;
 <b>include</b> success ==&gt; <a href="aptos_coin.md#0x1_aptos_coin_ExistsAptosCoin">aptos_coin::ExistsAptosCoin</a>;
 <b>aborts_if</b> <b>false</b>;
 <b>ensures</b> success ==&gt; <b>global</b>&lt;<a href="reconfiguration.md#0x1_reconfiguration_Configuration">Configuration</a>&gt;(@libra2_framework).epoch == <b>old</b>(<b>global</b>&lt;<a href="reconfiguration.md#0x1_reconfiguration_Configuration">Configuration</a>&gt;(@libra2_framework).epoch) + 1;

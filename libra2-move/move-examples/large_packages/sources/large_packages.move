@@ -12,7 +12,7 @@ module large_packages::large_packages {
     use std::error;
     use std::signer;
     use std::vector;
-    use aptos_std::smart_table::{Self, SmartTable};
+    use libra2_std::smart_table::{Self, SmartTable};
 
     use libra2_framework::code::{Self, PackageRegistry};
     use libra2_framework::object::{Object};

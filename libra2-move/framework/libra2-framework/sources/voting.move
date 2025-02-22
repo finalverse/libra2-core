@@ -27,17 +27,17 @@ module libra2_framework::voting {
     use std::string::{String, utf8};
     use std::vector;
 
-    use aptos_std::from_bcs::to_u64;
-    use aptos_std::simple_map::{Self, SimpleMap};
-    use aptos_std::table::{Self, Table};
-    use aptos_std::type_info::{Self, TypeInfo};
+    use libra2_std::from_bcs::to_u64;
+    use libra2_std::simple_map::{Self, SimpleMap};
+    use libra2_std::table::{Self, Table};
+    use libra2_std::type_info::{Self, TypeInfo};
 
     use libra2_framework::account;
     use libra2_framework::event::{Self, EventHandle};
     use libra2_framework::permissioned_signer;
     use libra2_framework::timestamp;
     use libra2_framework::transaction_context;
-    use aptos_std::from_bcs;
+    use libra2_std::from_bcs;
 
     /// Current script's execution hash does not match the specified proposal's
     const EPROPOSAL_EXECUTION_HASH_NOT_MATCHING: u64 = 1;

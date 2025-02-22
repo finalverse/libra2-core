@@ -11,10 +11,10 @@
 -  [Function `public_amount_to_veiled_balance`](#0x1337_helpers_public_amount_to_veiled_balance)
 
 
-<pre><code><b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255.md#0x1_ristretto255">0x1::ristretto255</a>;
+<pre><code><b>use</b> <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="../../../framework/libra2-stdlib/doc/ristretto255.md#0x1_ristretto255">0x1::ristretto255</a>;
 <b>use</b> <a href="">0x1::ristretto255_elgamal</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">0x1::vector</a>;
+<b>use</b> <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">0x1::vector</a>;
 </code></pre>
 
 
@@ -42,7 +42,7 @@ Given a vector <code>vec</code>, removes the last <code>cut_len</code> elements 
 exists because we did not like the interface of <code>std::vector::trim</code>.)
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="helpers.md#0x1337_helpers_cut_vector">cut_vector</a>&lt;T&gt;(vec: &<b>mut</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;T&gt;, cut_len: u64): <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;T&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="helpers.md#0x1337_helpers_cut_vector">cut_vector</a>&lt;T&gt;(vec: &<b>mut</b> <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;T&gt;, cut_len: u64): <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;T&gt;
 </code></pre>
 
 

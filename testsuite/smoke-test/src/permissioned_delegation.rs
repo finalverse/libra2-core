@@ -3,7 +3,7 @@
 
 use crate::smoke_test_environment::SwarmBuilder;
 use aptos::move_tool::MemberId;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::SigningKey;
 use aptos_forge::Swarm;
 use libra2_types::function_info::FunctionInfo;
@@ -53,7 +53,7 @@ async fn test_permissioned_delegation() {
     let script = format!(
         r#"
     script {{
-    use aptos_std::ed25519;
+    use libra2_std::ed25519;
     use libra2_framework::coin;
     use libra2_framework::permissioned_delegation;
     use libra2_framework::primary_fungible_store;
@@ -104,7 +104,7 @@ async fn test_permissioned_delegation() {
         vec![],
         None,
         info.transaction_factory()
-            .payload(aptos_stdlib::aptos_account_fungible_transfer_only(
+            .payload(libra2_stdlib::aptos_account_fungible_transfer_only(
                 account2.address(),
                 100000000,
             )),
@@ -116,7 +116,7 @@ async fn test_permissioned_delegation() {
         vec![],
         None,
         info.transaction_factory()
-            .payload(aptos_stdlib::aptos_account_fungible_transfer_only(
+            .payload(libra2_stdlib::aptos_account_fungible_transfer_only(
                 account2.address(),
                 200000000,
             )),
@@ -128,7 +128,7 @@ async fn test_permissioned_delegation() {
         vec![],
         None,
         info.transaction_factory()
-            .payload(aptos_stdlib::aptos_account_fungible_transfer_only(
+            .payload(libra2_stdlib::aptos_account_fungible_transfer_only(
                 account2.address(),
                 200000000,
             ))
@@ -140,7 +140,7 @@ async fn test_permissioned_delegation() {
         vec![],
         None,
         info.transaction_factory()
-            .payload(aptos_stdlib::aptos_account_fungible_transfer_only(
+            .payload(libra2_stdlib::aptos_account_fungible_transfer_only(
                 account2.address(),
                 700000001,
             ))
@@ -152,7 +152,7 @@ async fn test_permissioned_delegation() {
         vec![],
         None,
         info.transaction_factory()
-            .payload(aptos_stdlib::aptos_account_fungible_transfer_only(
+            .payload(libra2_stdlib::aptos_account_fungible_transfer_only(
                 account2.address(),
                 700000000,
             ))

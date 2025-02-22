@@ -6,5 +6,5 @@ version = "0.0.0"
 aggregator_examples = "0xCAFE"
 
 [dependencies]
-AptosStdlib = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "aptos-stdlib", rev = "mainnet" }
+Libra2Stdlib = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "libra2-stdlib", rev = "mainnet" }
 Libra2Framework = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "libra2-framework", rev = "mainnet" }

@@ -3,7 +3,7 @@
 
 use super::{new_test_context, new_test_context_with_config};
 use libra2_api_test_context::{current_function_name, TestContext};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_config::config::{NodeConfig, ViewFilter, ViewFunctionId};
 use libra2_types::account_address::AccountAddress;
 use serde_json::{json, Value};
@@ -197,7 +197,7 @@ async fn test_versioned_simple_view() {
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
 async fn test_view_tuple() {
     let mut context = new_test_context(current_function_name!());
-    let payload = aptos_stdlib::publish_module_source(
+    let payload = libra2_stdlib::publish_module_source(
         "test_module",
         r#"
         module 0xa550c18::test_module {

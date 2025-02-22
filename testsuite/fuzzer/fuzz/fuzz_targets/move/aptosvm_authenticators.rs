@@ -3,7 +3,7 @@
 #![no_main]
 #![allow(unused_imports)]
 
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey},
     PrivateKey, SigningKey, Uniform,
@@ -87,7 +87,7 @@ fn run_case(input: TransactionState) -> Result<(), Corpus> {
     // build tx
     let tx = sender_acc
         .transaction()
-        .payload(aptos_stdlib::aptos_coin_transfer(*receiver.address(), 1))
+        .payload(libra2_stdlib::aptos_coin_transfer(*receiver.address(), 1))
         .sequence_number(0)
         .gas_unit_price(100)
         .max_gas_amount(1000);

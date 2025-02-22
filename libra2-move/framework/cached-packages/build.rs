@@ -59,11 +59,11 @@ fn main() -> Result<()> {
         );
         println!(
             "cargo:rerun-if-changed={}",
-            prev_dir.join("aptos-stdlib").join("sources").display()
+            prev_dir.join("libra2-stdlib").join("sources").display()
         );
         println!(
             "cargo:rerun-if-changed={}",
-            prev_dir.join("aptos-stdlib").join("Move.toml").display()
+            prev_dir.join("libra2-stdlib").join("Move.toml").display()
         );
         println!(
             "cargo:rerun-if-changed={}",

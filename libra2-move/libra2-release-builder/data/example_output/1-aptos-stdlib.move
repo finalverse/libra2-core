@@ -1,7 +1,7 @@
 // Script hash: 034204de
 // Framework commit hash: 7bc3f195928488963bb947dc0e300f26527f2675
 // Builder commit hash: 7bc3f195928488963bb947dc0e300f26527f2675
-// Upgrade proposal for package `AptosStdlib`
+// Upgrade proposal for package `Libra2Stdlib`
 
 // source digest: 1D4ED5929F42A72E62C7E3DF754A7EBB336DC734C24C5DFCC72E00B54CE886A0
 script {

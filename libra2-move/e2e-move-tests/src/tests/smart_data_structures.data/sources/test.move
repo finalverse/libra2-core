@@ -1,7 +1,7 @@
 module 0xcafe::test {
-    use aptos_std::smart_vector::{Self, SmartVector};
-    use aptos_std::smart_table::{Self, SmartTable};
-    use aptos_std::table::{Self, Table};
+    use libra2_std::smart_vector::{Self, SmartVector};
+    use libra2_std::smart_table::{Self, SmartTable};
+    use libra2_std::table::{Self, Table};
     use std::vector;
     use std::signer;
 

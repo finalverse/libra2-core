@@ -34,7 +34,7 @@ proposals:
             - code_dependency_check
             - treat_friend_as_private
             - sha512_and_ripe_md160_natives
-            - aptos_std_chain_id_natives
+            - libra2_std_chain_id_natives
             - v_m_binary_format_v6
             - multi_ed25519_pk_validate_v2_natives
             - blake2b256_native

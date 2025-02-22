@@ -71,7 +71,7 @@ impl CliCommand<ProposalSubmissionSummary> for SubmitProposal {
         let txn: Transaction = self
             .args
             .txn_options
-            .submit_transaction(aptos_stdlib::delegation_pool_create_proposal(
+            .submit_transaction(libra2_stdlib::delegation_pool_create_proposal(
                 self.delegation_pool_address,
                 script_hash.to_vec(),
                 self.args.metadata_url.to_string().as_bytes().to_vec(),
@@ -155,7 +155,7 @@ impl CliCommand<Vec<TransactionSummary>> for SubmitVote {
         summaries.push(
             self.args
                 .txn_options
-                .submit_transaction(aptos_stdlib::delegation_pool_vote(
+                .submit_transaction(libra2_stdlib::delegation_pool_vote(
                     self.delegation_pool_address,
                     self.args.proposal_id,
                     voting_power,
@@ -196,7 +196,7 @@ async fn delegation_pool_governance_precheck(
                  pool_address);
         let txn_summary = txn_options
             .submit_transaction(
-                aptos_stdlib::delegation_pool_enable_partial_governance_voting(pool_address),
+                libra2_stdlib::delegation_pool_enable_partial_governance_voting(pool_address),
             )
             .await
             .map(TransactionSummary::from)?;

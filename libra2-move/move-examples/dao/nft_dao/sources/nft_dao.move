@@ -29,8 +29,8 @@ module dao_platform::nft_dao {
     use libra2_framework::aptos_coin::AptosCoin;
     use libra2_framework::coin;
     use libra2_framework::timestamp;
-    use aptos_std::table::Table;
-    use aptos_std::table;
+    use libra2_std::table::Table;
+    use libra2_std::table;
     use aptos_token::property_map::PropertyMap;
     use aptos_token::property_map;
     use aptos_token::token::{Self, TokenId, create_token_id_raw};

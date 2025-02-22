@@ -19,7 +19,7 @@ module libra2_framework::permissioned_signer {
     use std::error;
     use std::vector;
     use std::option::{Option, Self};
-    use aptos_std::copyable_any::{Self, Any};
+    use libra2_std::copyable_any::{Self, Any};
     use libra2_framework::big_ordered_map::{Self, BigOrderedMap};
     use libra2_framework::create_signer::create_signer;
     use libra2_framework::transaction_context::generate_auid_address;
@@ -677,10 +677,10 @@ module libra2_framework::permissioned_signer {
     }
 
     #[test_only]
-    use aptos_std::bcs;
+    use libra2_std::bcs;
 
     #[test(creator = @0xcafe)]
-    #[expected_failure(abort_code = 0x1C5, location = aptos_std::bcs)]
+    #[expected_failure(abort_code = 0x1C5, location = libra2_std::bcs)]
     fun signer_serialization(
         creator: &signer
     ) acquires PermissionStorage {

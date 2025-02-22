@@ -8,6 +8,6 @@ move_named_address_values = [
 ]
 move_deps = [
     "../../../../../../libra2-move/framework/move-stdlib/sources",
-    "../../../../../../libra2-move/framework/aptos-stdlib/sources",
+    "../../../../../../libra2-move/framework/libra2-stdlib/sources",
     "../../../../../../libra2-move/framework/libra2-framework/sources",
 ]

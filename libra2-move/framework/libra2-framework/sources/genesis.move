@@ -3,7 +3,7 @@ module libra2_framework::genesis {
     use std::fixed_point32;
     use std::vector;
 
-    use aptos_std::simple_map;
+    use libra2_std::simple_map;
 
     use libra2_framework::account;
     use libra2_framework::aggregator_factory;

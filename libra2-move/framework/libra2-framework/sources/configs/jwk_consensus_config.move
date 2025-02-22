@@ -4,9 +4,9 @@ module libra2_framework::jwk_consensus_config {
     use std::option;
     use std::string::String;
     use std::vector;
-    use aptos_std::copyable_any;
-    use aptos_std::copyable_any::Any;
-    use aptos_std::simple_map;
+    use libra2_std::copyable_any;
+    use libra2_std::copyable_any::Any;
+    use libra2_std::simple_map;
     use libra2_framework::config_buffer;
     use libra2_framework::system_addresses;
     #[test_only]

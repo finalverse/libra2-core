@@ -71,8 +71,8 @@ fn move_framework_unit_tests() {
 }
 
 #[test]
-fn move_aptos_stdlib_unit_tests() {
-    run_tests_for_pkg("aptos-stdlib");
+fn move_libra2_stdlib_unit_tests() {
+    run_tests_for_pkg("libra2-stdlib");
 }
 
 #[test]

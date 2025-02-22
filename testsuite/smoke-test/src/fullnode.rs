@@ -8,7 +8,7 @@ use crate::{
     utils::{create_test_accounts, execute_transactions, MAX_HEALTHY_WAIT_SECS},
 };
 use anyhow::bail;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_config::config::{BootstrappingMode, NodeConfig, OverrideNodeConfig};
 use libra2_db_indexer_schemas::{
     metadata::MetadataKey,
@@ -75,7 +75,7 @@ async fn test_indexer() {
     wait_for_account(&client, account1.address()).await.unwrap();
 
     let txn = account1.sign_with_transaction_builder(
-        factory.payload(aptos_stdlib::aptos_coin_transfer(account2.address(), 10)),
+        factory.payload(libra2_stdlib::aptos_coin_transfer(account2.address(), 10)),
     );
 
     client.submit_and_wait(&txn).await.unwrap();

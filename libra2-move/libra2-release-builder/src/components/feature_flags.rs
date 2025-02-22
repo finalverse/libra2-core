@@ -228,7 +228,7 @@ impl From<FeatureFlag> for AptosFeatureFlag {
             FeatureFlag::Sha512AndRipeMd160Natives => {
                 AptosFeatureFlag::SHA_512_AND_RIPEMD_160_NATIVES
             },
-            FeatureFlag::AptosStdChainIdNatives => AptosFeatureFlag::APTOS_STD_CHAIN_ID_NATIVES,
+            FeatureFlag::AptosStdChainIdNatives => AptosFeatureFlag::LIBRA2_STD_CHAIN_ID_NATIVES,
             FeatureFlag::VMBinaryFormatV6 => AptosFeatureFlag::VM_BINARY_FORMAT_V6,
             FeatureFlag::VMBinaryFormatV7 => AptosFeatureFlag::VM_BINARY_FORMAT_V7,
             FeatureFlag::VMBinaryFormatV8 => AptosFeatureFlag::VM_BINARY_FORMAT_V8,
@@ -385,7 +385,7 @@ impl From<AptosFeatureFlag> for FeatureFlag {
             AptosFeatureFlag::SHA_512_AND_RIPEMD_160_NATIVES => {
                 FeatureFlag::Sha512AndRipeMd160Natives
             },
-            AptosFeatureFlag::APTOS_STD_CHAIN_ID_NATIVES => FeatureFlag::AptosStdChainIdNatives,
+            AptosFeatureFlag::LIBRA2_STD_CHAIN_ID_NATIVES => FeatureFlag::AptosStdChainIdNatives,
             AptosFeatureFlag::VM_BINARY_FORMAT_V6 => FeatureFlag::VMBinaryFormatV6,
             AptosFeatureFlag::VM_BINARY_FORMAT_V7 => FeatureFlag::VMBinaryFormatV7,
             AptosFeatureFlag::VM_BINARY_FORMAT_V8 => FeatureFlag::VMBinaryFormatV8,

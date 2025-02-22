@@ -10,7 +10,7 @@ module swap::router {
     use libra2_framework::fungible_asset::{Self, FungibleAsset, Metadata};
     use libra2_framework::object::{Self, Object};
     use libra2_framework::primary_fungible_store;
-    use aptos_std::math128;
+    use libra2_std::math128;
 
     use swap::coin_wrapper;
     use swap::liquidity_pool::{Self, LiquidityPool};

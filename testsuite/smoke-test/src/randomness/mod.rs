@@ -260,7 +260,7 @@ fn script_to_enable_main_logic() -> String {
 script {
     use libra2_framework::aptos_governance;
     use libra2_framework::randomness_config;
-    use aptos_std::fixed_point64;
+    use libra2_std::fixed_point64;
 
     fun main(core_resources: &signer) {
         let framework_signer = aptos_governance::get_signer_testnet_only(core_resources, @0x1);

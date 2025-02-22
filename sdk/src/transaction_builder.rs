@@ -9,7 +9,7 @@ use crate::{
         transaction::{authenticator::AuthenticationKey, RawTransaction, TransactionPayload},
     },
 };
-pub use libra2_cached_packages::aptos_stdlib;
+pub use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{ed25519::Ed25519PublicKey, HashValue};
 use libra2_global_constants::{GAS_UNIT_PRICE, MAX_GAS_AMOUNT};
 use libra2_types::{
@@ -153,7 +153,7 @@ impl TransactionFactory {
     }
 
     pub fn create_user_account(&self, public_key: &Ed25519PublicKey) -> TransactionBuilder {
-        self.payload(aptos_stdlib::aptos_account_create_account(
+        self.payload(libra2_stdlib::aptos_account_create_account(
             AuthenticationKey::ed25519(public_key).account_address(),
         ))
     }
@@ -163,7 +163,7 @@ impl TransactionFactory {
         function_info: FunctionInfo,
     ) -> TransactionBuilder {
         self.payload(
-            aptos_stdlib::account_abstraction_add_authentication_function(
+            libra2_stdlib::account_abstraction_add_authentication_function(
                 function_info.module_address,
                 function_info.module_name.into_bytes(),
                 function_info.function_name.into_bytes(),
@@ -176,18 +176,18 @@ impl TransactionFactory {
         public_key: &Ed25519PublicKey,
         amount: u64,
     ) -> TransactionBuilder {
-        self.payload(aptos_stdlib::aptos_account_transfer(
+        self.payload(libra2_stdlib::aptos_account_transfer(
             AuthenticationKey::ed25519(public_key).account_address(),
             amount,
         ))
     }
 
     pub fn transfer(&self, to: AccountAddress, amount: u64) -> TransactionBuilder {
-        self.payload(aptos_stdlib::aptos_coin_transfer(to, amount))
+        self.payload(libra2_stdlib::aptos_coin_transfer(to, amount))
     }
 
     pub fn account_transfer(&self, to: AccountAddress, amount: u64) -> TransactionBuilder {
-        self.payload(aptos_stdlib::aptos_account_transfer(to, amount))
+        self.payload(libra2_stdlib::aptos_account_transfer(to, amount))
     }
 
     pub fn create_multisig_account(
@@ -195,7 +195,7 @@ impl TransactionFactory {
         additional_owners: Vec<AccountAddress>,
         signatures_required: u64,
     ) -> TransactionBuilder {
-        self.payload(aptos_stdlib::multisig_account_create_with_owners(
+        self.payload(libra2_stdlib::multisig_account_create_with_owners(
             additional_owners,
             signatures_required,
             vec![],
@@ -209,7 +209,7 @@ impl TransactionFactory {
         signatures_required: u64,
     ) -> TransactionBuilder {
         self.payload(
-            aptos_stdlib::multisig_account_create_with_existing_account_call(
+            libra2_stdlib::multisig_account_create_with_existing_account_call(
                 owners,
                 signatures_required,
                 vec![],
@@ -224,7 +224,7 @@ impl TransactionFactory {
         signatures_required: u64,
     ) -> TransactionBuilder {
         self.payload(
-            aptos_stdlib::multisig_account_create_with_existing_account_and_revoke_auth_key_call(
+            libra2_stdlib::multisig_account_create_with_existing_account_and_revoke_auth_key_call(
                 owners,
                 signatures_required,
                 vec![],
@@ -238,7 +238,7 @@ impl TransactionFactory {
         multisig_account: AccountAddress,
         payload: Vec<u8>,
     ) -> TransactionBuilder {
-        self.payload(aptos_stdlib::multisig_account_create_transaction(
+        self.payload(libra2_stdlib::multisig_account_create_transaction(
             multisig_account,
             payload,
         ))
@@ -249,7 +249,7 @@ impl TransactionFactory {
         multisig_account: AccountAddress,
         transaction_id: u64,
     ) -> TransactionBuilder {
-        self.payload(aptos_stdlib::multisig_account_approve_transaction(
+        self.payload(libra2_stdlib::multisig_account_approve_transaction(
             multisig_account,
             transaction_id,
         ))
@@ -260,7 +260,7 @@ impl TransactionFactory {
         multisig_account: AccountAddress,
         transaction_id: u64,
     ) -> TransactionBuilder {
-        self.payload(aptos_stdlib::multisig_account_reject_transaction(
+        self.payload(libra2_stdlib::multisig_account_reject_transaction(
             multisig_account,
             transaction_id,
         ))
@@ -271,14 +271,14 @@ impl TransactionFactory {
         multisig_account: AccountAddress,
         payload: Vec<u8>,
     ) -> TransactionBuilder {
-        self.payload(aptos_stdlib::multisig_account_create_transaction_with_hash(
+        self.payload(libra2_stdlib::multisig_account_create_transaction_with_hash(
             multisig_account,
             HashValue::sha3_256_of(&payload).to_vec(),
         ))
     }
 
     pub fn mint(&self, to: AccountAddress, amount: u64) -> TransactionBuilder {
-        self.payload(aptos_stdlib::aptos_coin_mint(to, amount))
+        self.payload(libra2_stdlib::aptos_coin_mint(to, amount))
     }
 
     //

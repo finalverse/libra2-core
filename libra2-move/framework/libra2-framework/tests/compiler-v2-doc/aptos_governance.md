@@ -101,24 +101,24 @@ on a proposal multiple times as long as the total voting power of these votes do
 <b>use</b> <a href="aptos_coin.md#0x1_aptos_coin">0x1::aptos_coin</a>;
 <b>use</b> <a href="coin.md#0x1_coin">0x1::coin</a>;
 <b>use</b> <a href="consensus_config.md#0x1_consensus_config">0x1::consensus_config</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
 <b>use</b> <a href="event.md#0x1_event">0x1::event</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features">0x1::features</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features">0x1::features</a>;
 <b>use</b> <a href="governance_proposal.md#0x1_governance_proposal">0x1::governance_proposal</a>;
-<b>use</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/math64.md#0x1_math64">0x1::math64</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option">0x1::option</a>;
+<b>use</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/math64.md#0x1_math64">0x1::math64</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option">0x1::option</a>;
 <b>use</b> <a href="randomness_config.md#0x1_randomness_config">0x1::randomness_config</a>;
 <b>use</b> <a href="reconfiguration_with_dkg.md#0x1_reconfiguration_with_dkg">0x1::reconfiguration_with_dkg</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">0x1::signer</a>;
-<b>use</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map">0x1::simple_map</a>;
-<b>use</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table">0x1::smart_table</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">0x1::signer</a>;
+<b>use</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map">0x1::simple_map</a>;
+<b>use</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table">0x1::smart_table</a>;
 <b>use</b> <a href="stake.md#0x1_stake">0x1::stake</a>;
 <b>use</b> <a href="staking_config.md#0x1_staking_config">0x1::staking_config</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string">0x1::string</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string">0x1::string</a>;
 <b>use</b> <a href="system_addresses.md#0x1_system_addresses">0x1::system_addresses</a>;
-<b>use</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table">0x1::table</a>;
+<b>use</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table">0x1::table</a>;
 <b>use</b> <a href="timestamp.md#0x1_timestamp">0x1::timestamp</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">0x1::vector</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">0x1::vector</a>;
 <b>use</b> <a href="voting.md#0x1_voting">0x1::voting</a>;
 </code></pre>
 
@@ -142,7 +142,7 @@ Store the SignerCapabilities of accounts under the on-chain governance's control
 
 <dl>
 <dt>
-<code>signer_caps: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<b>address</b>, <a href="account.md#0x1_account_SignerCapability">account::SignerCapability</a>&gt;</code>
+<code>signer_caps: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<b>address</b>, <a href="account.md#0x1_account_SignerCapability">account::SignerCapability</a>&gt;</code>
 </dt>
 <dd>
 
@@ -244,7 +244,7 @@ Records to track the proposals each stake pool has been used to vote on.
 
 <dl>
 <dt>
-<code>votes: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_Table">table::Table</a>&lt;<a href="aptos_governance.md#0x1_aptos_governance_RecordKey">aptos_governance::RecordKey</a>, bool&gt;</code>
+<code>votes: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_Table">table::Table</a>&lt;<a href="aptos_governance.md#0x1_aptos_governance_RecordKey">aptos_governance::RecordKey</a>, bool&gt;</code>
 </dt>
 <dd>
 
@@ -272,7 +272,7 @@ Records to track the voting power usage of each stake pool on each proposal.
 
 <dl>
 <dt>
-<code>votes: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_SmartTable">smart_table::SmartTable</a>&lt;<a href="aptos_governance.md#0x1_aptos_governance_RecordKey">aptos_governance::RecordKey</a>, u64&gt;</code>
+<code>votes: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_SmartTable">smart_table::SmartTable</a>&lt;<a href="aptos_governance.md#0x1_aptos_governance_RecordKey">aptos_governance::RecordKey</a>, u64&gt;</code>
 </dt>
 <dd>
 
@@ -301,7 +301,7 @@ This is required to bypass cases where the execution scripts exceed the size lim
 
 <dl>
 <dt>
-<code>hashes: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;u64, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
+<code>hashes: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;u64, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
 </dt>
 <dd>
 
@@ -387,13 +387,13 @@ Event emitted when a proposal is created.
 
 </dd>
 <dt>
-<code>execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
+<code>execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>proposal_metadata: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_String">string::String</a>, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
+<code>proposal_metadata: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_String">string::String</a>, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
 </dt>
 <dd>
 
@@ -532,13 +532,13 @@ Event emitted when a proposal is created.
 
 </dd>
 <dt>
-<code>execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
+<code>execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>proposal_metadata: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_String">string::String</a>, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
+<code>proposal_metadata: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_String">string::String</a>, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
 </dt>
 <dd>
 
@@ -800,7 +800,7 @@ The stake pool is using voting power more than it has.
 
 
 
-<pre><code><b>const</b> <a href="aptos_governance.md#0x1_aptos_governance_METADATA_HASH_KEY">METADATA_HASH_KEY</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [109, 101, 116, 97, 100, 97, 116, 97, 95, 104, 97, 115, 104];
+<pre><code><b>const</b> <a href="aptos_governance.md#0x1_aptos_governance_METADATA_HASH_KEY">METADATA_HASH_KEY</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [109, 101, 116, 97, 100, 97, 116, 97, 95, 104, 97, 115, 104];
 </code></pre>
 
 
@@ -810,7 +810,7 @@ The stake pool is using voting power more than it has.
 Proposal metadata attribute keys.
 
 
-<pre><code><b>const</b> <a href="aptos_governance.md#0x1_aptos_governance_METADATA_LOCATION_KEY">METADATA_LOCATION_KEY</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [109, 101, 116, 97, 100, 97, 116, 97, 95, 108, 111, 99, 97, 116, 105, 111, 110];
+<pre><code><b>const</b> <a href="aptos_governance.md#0x1_aptos_governance_METADATA_LOCATION_KEY">METADATA_LOCATION_KEY</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [109, 101, 116, 97, 100, 97, 116, 97, 95, 108, 111, 99, 97, 116, 105, 111, 110];
 </code></pre>
 
 
@@ -823,7 +823,7 @@ Can be called during genesis or by the governance itself.
 Stores the signer capability for a given address.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_store_signer_cap">store_signer_cap</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>, signer_cap: <a href="account.md#0x1_account_SignerCapability">account::SignerCapability</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_store_signer_cap">store_signer_cap</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>, signer_cap: <a href="account.md#0x1_account_SignerCapability">account::SignerCapability</a>)
 </code></pre>
 
 
@@ -833,7 +833,7 @@ Stores the signer capability for a given address.
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_store_signer_cap">store_signer_cap</a>(
-    libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     signer_address: <b>address</b>,
     signer_cap: SignerCapability,
 ) <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> {
@@ -843,12 +843,12 @@ Stores the signer capability for a given address.
     <b>if</b> (!<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework)) {
         <b>move_to</b>(
             libra2_framework,
-            <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> { signer_caps: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_create">simple_map::create</a>&lt;<b>address</b>, SignerCapability&gt;() }
+            <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> { signer_caps: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_create">simple_map::create</a>&lt;<b>address</b>, SignerCapability&gt;() }
         );
     };
 
     <b>let</b> signer_caps = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework).signer_caps;
-    <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(signer_caps, signer_address, signer_cap);
+    <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(signer_caps, signer_address, signer_cap);
 }
 </code></pre>
 
@@ -865,7 +865,7 @@ for the libra2_framework (0x1) account.
 This function is private because it's called directly from the vm.
 
 
-<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize">initialize</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, min_voting_threshold: u128, required_proposer_stake: u64, voting_duration_secs: u64)
+<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize">initialize</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, min_voting_threshold: u128, required_proposer_stake: u64, voting_duration_secs: u64)
 </code></pre>
 
 
@@ -875,7 +875,7 @@ This function is private because it's called directly from the vm.
 
 
 <pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize">initialize</a>(
-    libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     min_voting_threshold: u128,
     required_proposer_stake: u64,
     voting_duration_secs: u64,
@@ -895,10 +895,10 @@ This function is private because it's called directly from the vm.
         vote_events: <a href="account.md#0x1_account_new_event_handle">account::new_event_handle</a>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VoteEvent">VoteEvent</a>&gt;(libra2_framework),
     });
     <b>move_to</b>(libra2_framework, <a href="aptos_governance.md#0x1_aptos_governance_VotingRecords">VotingRecords</a> {
-        votes: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_new">table::new</a>(),
+        votes: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_new">table::new</a>(),
     });
     <b>move_to</b>(libra2_framework, <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> {
-        hashes: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_create">simple_map::create</a>&lt;u64, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;(),
+        hashes: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_create">simple_map::create</a>&lt;u64, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;(),
     })
 }
 </code></pre>
@@ -915,7 +915,7 @@ Update the governance configurations. This can only be called as part of resolvi
 AptosGovernance.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_update_governance_config">update_governance_config</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, min_voting_threshold: u128, required_proposer_stake: u64, voting_duration_secs: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_update_governance_config">update_governance_config</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, min_voting_threshold: u128, required_proposer_stake: u64, voting_duration_secs: u64)
 </code></pre>
 
 
@@ -925,7 +925,7 @@ AptosGovernance.
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_update_governance_config">update_governance_config</a>(
-    libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     min_voting_threshold: u128,
     required_proposer_stake: u64,
     voting_duration_secs: u64,
@@ -971,7 +971,7 @@ Initializes the state for Aptos Governance partial voting. Can only be called th
 proposals with a signer for the libra2_framework (0x1) account.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize_partial_voting">initialize_partial_voting</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize_partial_voting">initialize_partial_voting</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -981,12 +981,12 @@ proposals with a signer for the libra2_framework (0x1) account.
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize_partial_voting">initialize_partial_voting</a>(
-    libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
 ) {
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(libra2_framework);
 
     <b>move_to</b>(libra2_framework, <a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a> {
-        votes: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_new">smart_table::new</a>(),
+        votes: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_new">smart_table::new</a>(),
     });
 }
 </code></pre>
@@ -1095,7 +1095,7 @@ Return true if a stake pool has already voted on a proposal before partial gover
     // If a <a href="stake.md#0x1_stake">stake</a> pool <b>has</b> already voted on a proposal before partial governance <a href="voting.md#0x1_voting">voting</a> is enabled,
     // there is a record in <a href="aptos_governance.md#0x1_aptos_governance_VotingRecords">VotingRecords</a>.
     <b>let</b> voting_records = <b>borrow_global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecords">VotingRecords</a>&gt;(@libra2_framework);
-    <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_contains">table::contains</a>(&voting_records.votes, record_key)
+    <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_contains">table::contains</a>(&voting_records.votes, record_key)
 }
 </code></pre>
 
@@ -1148,9 +1148,9 @@ Note: a stake pool's voting power on a proposal could increase over time(e.g. re
         proposal_id,
     };
     <b>let</b> used_voting_power = 0u64;
-    <b>if</b> (<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_partial_governance_voting_enabled">features::partial_governance_voting_enabled</a>()) {
+    <b>if</b> (<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_partial_governance_voting_enabled">features::partial_governance_voting_enabled</a>()) {
         <b>let</b> voting_records_v2 = <b>borrow_global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
-        used_voting_power = *<a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_borrow_with_default">smart_table::borrow_with_default</a>(&voting_records_v2.votes, record_key, &0);
+        used_voting_power = *<a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_borrow_with_default">smart_table::borrow_with_default</a>(&voting_records_v2.votes, record_key, &0);
     };
     <a href="aptos_governance.md#0x1_aptos_governance_get_voting_power">get_voting_power</a>(stake_pool) - used_voting_power
 }
@@ -1169,7 +1169,7 @@ Create a single-step proposal with the backing <code>stake_pool</code>.
 only the exact script with matching hash can be successfully executed.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal">create_proposal</a>(proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal">create_proposal</a>(proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
 </code></pre>
 
 
@@ -1179,11 +1179,11 @@ only the exact script with matching hash can be successfully executed.
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal">create_proposal</a>(
-    proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     stake_pool: <b>address</b>,
-    execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
-    metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
-    metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
 ) <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceConfig">GovernanceConfig</a>, <a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a> {
     <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2">create_proposal_v2</a>(proposer, stake_pool, execution_hash, metadata_location, metadata_hash, <b>false</b>);
 }
@@ -1202,7 +1202,7 @@ Create a single-step or multi-step proposal with the backing <code>stake_pool</c
 only the exact script with matching hash can be successfully executed.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2">create_proposal_v2</a>(proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, is_multi_step_proposal: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2">create_proposal_v2</a>(proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, is_multi_step_proposal: bool)
 </code></pre>
 
 
@@ -1212,11 +1212,11 @@ only the exact script with matching hash can be successfully executed.
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2">create_proposal_v2</a>(
-    proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     stake_pool: <b>address</b>,
-    execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
-    metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
-    metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
     is_multi_step_proposal: bool,
 ) <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceConfig">GovernanceConfig</a>, <a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a> {
     <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2_impl">create_proposal_v2_impl</a>(
@@ -1244,7 +1244,7 @@ only the exact script with matching hash can be successfully executed.
 Return proposal_id when a proposal is successfully created.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2_impl">create_proposal_v2_impl</a>(proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, is_multi_step_proposal: bool): u64
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2_impl">create_proposal_v2_impl</a>(proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, is_multi_step_proposal: bool): u64
 </code></pre>
 
 
@@ -1254,17 +1254,17 @@ Return proposal_id when a proposal is successfully created.
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2_impl">create_proposal_v2_impl</a>(
-    proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     stake_pool: <b>address</b>,
-    execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
-    metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
-    metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
     is_multi_step_proposal: bool,
 ): u64 <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceConfig">GovernanceConfig</a>, <a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a> {
-    <b>let</b> proposer_address = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(proposer);
+    <b>let</b> proposer_address = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(proposer);
     <b>assert</b>!(
         <a href="stake.md#0x1_stake_get_delegated_voter">stake::get_delegated_voter</a>(stake_pool) == proposer_address,
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_ENOT_DELEGATED_VOTER">ENOT_DELEGATED_VOTER</a>)
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_ENOT_DELEGATED_VOTER">ENOT_DELEGATED_VOTER</a>)
     );
 
     // The proposer's <a href="stake.md#0x1_stake">stake</a> needs <b>to</b> be at least the required bond amount.
@@ -1272,7 +1272,7 @@ Return proposal_id when a proposal is successfully created.
     <b>let</b> stake_balance = <a href="aptos_governance.md#0x1_aptos_governance_get_voting_power">get_voting_power</a>(stake_pool);
     <b>assert</b>!(
         stake_balance &gt;= governance_config.required_proposer_stake,
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EINSUFFICIENT_PROPOSER_STAKE">EINSUFFICIENT_PROPOSER_STAKE</a>),
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EINSUFFICIENT_PROPOSER_STAKE">EINSUFFICIENT_PROPOSER_STAKE</a>),
     );
 
     // The proposer's <a href="stake.md#0x1_stake">stake</a> needs <b>to</b> be locked up at least <b>as</b> long <b>as</b> the proposal's <a href="voting.md#0x1_voting">voting</a> period.
@@ -1280,7 +1280,7 @@ Return proposal_id when a proposal is successfully created.
     <b>let</b> proposal_expiration = current_time + governance_config.voting_duration_secs;
     <b>assert</b>!(
         <a href="stake.md#0x1_stake_get_lockup_secs">stake::get_lockup_secs</a>(stake_pool) &gt;= proposal_expiration,
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EINSUFFICIENT_STAKE_LOCKUP">EINSUFFICIENT_STAKE_LOCKUP</a>),
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EINSUFFICIENT_STAKE_LOCKUP">EINSUFFICIENT_STAKE_LOCKUP</a>),
     );
 
     // Create and validate proposal metadata.
@@ -1291,11 +1291,11 @@ Return proposal_id when a proposal is successfully created.
     // are burnt after every transaction), but inflation/delation is very unlikely <b>to</b> have a major impact on total
     // supply during the <a href="voting.md#0x1_voting">voting</a> period.
     <b>let</b> total_voting_token_supply = <a href="coin.md#0x1_coin_supply">coin::supply</a>&lt;AptosCoin&gt;();
-    <b>let</b> early_resolution_vote_threshold = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_none">option::none</a>&lt;u128&gt;();
-    <b>if</b> (<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_is_some">option::is_some</a>(&total_voting_token_supply)) {
-        <b>let</b> total_supply = *<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_borrow">option::borrow</a>(&total_voting_token_supply);
+    <b>let</b> early_resolution_vote_threshold = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_none">option::none</a>&lt;u128&gt;();
+    <b>if</b> (<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_is_some">option::is_some</a>(&total_voting_token_supply)) {
+        <b>let</b> total_supply = *<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_borrow">option::borrow</a>(&total_voting_token_supply);
         // 50% + 1 <b>to</b> avoid rounding errors.
-        early_resolution_vote_threshold = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_some">option::some</a>(total_supply / 2 + 1);
+        early_resolution_vote_threshold = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_some">option::some</a>(total_supply / 2 + 1);
     };
 
     <b>let</b> proposal_id = <a href="voting.md#0x1_voting_create_proposal_v2">voting::create_proposal_v2</a>(
@@ -1348,7 +1348,7 @@ Return proposal_id when a proposal is successfully created.
 Vote on proposal with proposal_id and all voting power from multiple stake_pools.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_vote">batch_vote</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pools: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;, proposal_id: u64, should_pass: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_vote">batch_vote</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pools: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;, proposal_id: u64, should_pass: bool)
 </code></pre>
 
 
@@ -1358,12 +1358,12 @@ Vote on proposal with proposal_id and all voting power from multiple stake_pools
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_vote">batch_vote</a>(
-    voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
-    stake_pools: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;,
+    voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    stake_pools: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;,
     proposal_id: u64,
     should_pass: bool,
 ) <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>, <a href="aptos_governance.md#0x1_aptos_governance_VotingRecords">VotingRecords</a>, <a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>, <a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a> {
-    <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each">vector::for_each</a>(stake_pools, |stake_pool| {
+    <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each">vector::for_each</a>(stake_pools, |stake_pool| {
         <a href="aptos_governance.md#0x1_aptos_governance_vote_internal">vote_internal</a>(voter, stake_pool, proposal_id, <a href="aptos_governance.md#0x1_aptos_governance_MAX_U64">MAX_U64</a>, should_pass);
     });
 }
@@ -1380,7 +1380,7 @@ Vote on proposal with proposal_id and all voting power from multiple stake_pools
 Batch vote on proposal with proposal_id and specified voting power from multiple stake_pools.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_partial_vote">batch_partial_vote</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pools: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;, proposal_id: u64, voting_power: u64, should_pass: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_partial_vote">batch_partial_vote</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pools: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;, proposal_id: u64, voting_power: u64, should_pass: bool)
 </code></pre>
 
 
@@ -1390,13 +1390,13 @@ Batch vote on proposal with proposal_id and specified voting power from multiple
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_partial_vote">batch_partial_vote</a>(
-    voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
-    stake_pools: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;,
+    voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    stake_pools: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;,
     proposal_id: u64,
     voting_power: u64,
     should_pass: bool,
 ) <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>, <a href="aptos_governance.md#0x1_aptos_governance_VotingRecords">VotingRecords</a>, <a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>, <a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a> {
-    <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each">vector::for_each</a>(stake_pools, |stake_pool| {
+    <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each">vector::for_each</a>(stake_pools, |stake_pool| {
         <a href="aptos_governance.md#0x1_aptos_governance_vote_internal">vote_internal</a>(voter, stake_pool, proposal_id, voting_power, should_pass);
     });
 }
@@ -1413,7 +1413,7 @@ Batch vote on proposal with proposal_id and specified voting power from multiple
 Vote on proposal with <code>proposal_id</code> and all voting power from <code>stake_pool</code>.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote">vote</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, should_pass: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote">vote</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, should_pass: bool)
 </code></pre>
 
 
@@ -1423,7 +1423,7 @@ Vote on proposal with <code>proposal_id</code> and all voting power from <code>s
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote">vote</a>(
-    voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     stake_pool: <b>address</b>,
     proposal_id: u64,
     should_pass: bool,
@@ -1443,7 +1443,7 @@ Vote on proposal with <code>proposal_id</code> and all voting power from <code>s
 Vote on proposal with <code>proposal_id</code> and specified voting power from <code>stake_pool</code>.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_partial_vote">partial_vote</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, voting_power: u64, should_pass: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_partial_vote">partial_vote</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, voting_power: u64, should_pass: bool)
 </code></pre>
 
 
@@ -1453,7 +1453,7 @@ Vote on proposal with <code>proposal_id</code> and specified voting power from <
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_partial_vote">partial_vote</a>(
-    voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     stake_pool: <b>address</b>,
     proposal_id: u64,
     voting_power: u64,
@@ -1477,7 +1477,7 @@ If a stake pool has already voted on a proposal before partial governance voting
 cannot vote on the proposal even after partial governance voting is enabled.
 
 
-<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote_internal">vote_internal</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, voting_power: u64, should_pass: bool)
+<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote_internal">vote_internal</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, voting_power: u64, should_pass: bool)
 </code></pre>
 
 
@@ -1487,14 +1487,14 @@ cannot vote on the proposal even after partial governance voting is enabled.
 
 
 <pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote_internal">vote_internal</a>(
-    voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     stake_pool: <b>address</b>,
     proposal_id: u64,
     voting_power: u64,
     should_pass: bool,
 ) <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>, <a href="aptos_governance.md#0x1_aptos_governance_VotingRecords">VotingRecords</a>, <a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>, <a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a> {
-    <b>let</b> voter_address = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(voter);
-    <b>assert</b>!(<a href="stake.md#0x1_stake_get_delegated_voter">stake::get_delegated_voter</a>(stake_pool) == voter_address, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_ENOT_DELEGATED_VOTER">ENOT_DELEGATED_VOTER</a>));
+    <b>let</b> voter_address = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(voter);
+    <b>assert</b>!(<a href="stake.md#0x1_stake_get_delegated_voter">stake::get_delegated_voter</a>(stake_pool) == voter_address, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_ENOT_DELEGATED_VOTER">ENOT_DELEGATED_VOTER</a>));
 
     // The voter's <a href="stake.md#0x1_stake">stake</a> needs <b>to</b> be locked up at least <b>as</b> long <b>as</b> the proposal's expiration.
     <b>let</b> proposal_expiration = <a href="voting.md#0x1_voting_get_proposal_expiration_secs">voting::get_proposal_expiration_secs</a>&lt;GovernanceProposal&gt;(
@@ -1503,7 +1503,7 @@ cannot vote on the proposal even after partial governance voting is enabled.
     );
     <b>assert</b>!(
         <a href="stake.md#0x1_stake_get_lockup_secs">stake::get_lockup_secs</a>(stake_pool) &gt;= proposal_expiration,
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EINSUFFICIENT_STAKE_LOCKUP">EINSUFFICIENT_STAKE_LOCKUP</a>),
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EINSUFFICIENT_STAKE_LOCKUP">EINSUFFICIENT_STAKE_LOCKUP</a>),
     );
 
     // If a <a href="stake.md#0x1_stake">stake</a> pool <b>has</b> already voted on a proposal before partial governance <a href="voting.md#0x1_voting">voting</a> is enabled,
@@ -1512,7 +1512,7 @@ cannot vote on the proposal even after partial governance voting is enabled.
     voting_power = <b>min</b>(voting_power, staking_pool_voting_power);
 
     // Short-circuit <b>if</b> the voter <b>has</b> no <a href="voting.md#0x1_voting">voting</a> power.
-    <b>assert</b>!(voting_power &gt; 0, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_ENO_VOTING_POWER">ENO_VOTING_POWER</a>));
+    <b>assert</b>!(voting_power &gt; 0, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_ENO_VOTING_POWER">ENO_VOTING_POWER</a>));
 
     <a href="voting.md#0x1_voting_vote">voting::vote</a>&lt;GovernanceProposal&gt;(
         &<a href="governance_proposal.md#0x1_governance_proposal_create_empty_proposal">governance_proposal::create_empty_proposal</a>(),
@@ -1526,17 +1526,17 @@ cannot vote on the proposal even after partial governance voting is enabled.
         stake_pool,
         proposal_id,
     };
-    <b>if</b> (<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_partial_governance_voting_enabled">features::partial_governance_voting_enabled</a>()) {
+    <b>if</b> (<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_partial_governance_voting_enabled">features::partial_governance_voting_enabled</a>()) {
         <b>let</b> voting_records_v2 = <b>borrow_global_mut</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
-        <b>let</b> used_voting_power = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_borrow_mut_with_default">smart_table::borrow_mut_with_default</a>(&<b>mut</b> voting_records_v2.votes, record_key, 0);
+        <b>let</b> used_voting_power = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_borrow_mut_with_default">smart_table::borrow_mut_with_default</a>(&<b>mut</b> voting_records_v2.votes, record_key, 0);
         // This calculation should never overflow because the used <a href="voting.md#0x1_voting">voting</a> cannot exceed the total <a href="voting.md#0x1_voting">voting</a> power of this <a href="stake.md#0x1_stake">stake</a> pool.
         *used_voting_power = *used_voting_power + voting_power;
     } <b>else</b> {
         <b>let</b> voting_records = <b>borrow_global_mut</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecords">VotingRecords</a>&gt;(@libra2_framework);
         <b>assert</b>!(
-            !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_contains">table::contains</a>(&voting_records.votes, record_key),
-            <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EALREADY_VOTED">EALREADY_VOTED</a>));
-        <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_add">table::add</a>(&<b>mut</b> voting_records.votes, record_key, <b>true</b>);
+            !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_contains">table::contains</a>(&voting_records.votes, record_key),
+            <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EALREADY_VOTED">EALREADY_VOTED</a>));
+        <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_add">table::add</a>(&<b>mut</b> voting_records.votes, record_key, <b>true</b>);
     };
 
     <b>if</b> (std::features::module_event_migration_enabled()) {
@@ -1621,17 +1621,17 @@ are too large (e.g. module upgrades).
 
     // Ensure the proposal can be resolved.
     <b>let</b> proposal_state = <a href="voting.md#0x1_voting_get_proposal_state">voting::get_proposal_state</a>&lt;GovernanceProposal&gt;(@libra2_framework, proposal_id);
-    <b>assert</b>!(proposal_state == <a href="aptos_governance.md#0x1_aptos_governance_PROPOSAL_STATE_SUCCEEDED">PROPOSAL_STATE_SUCCEEDED</a>, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EPROPOSAL_NOT_RESOLVABLE_YET">EPROPOSAL_NOT_RESOLVABLE_YET</a>));
+    <b>assert</b>!(proposal_state == <a href="aptos_governance.md#0x1_aptos_governance_PROPOSAL_STATE_SUCCEEDED">PROPOSAL_STATE_SUCCEEDED</a>, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EPROPOSAL_NOT_RESOLVABLE_YET">EPROPOSAL_NOT_RESOLVABLE_YET</a>));
 
     <b>let</b> execution_hash = <a href="voting.md#0x1_voting_get_execution_hash">voting::get_execution_hash</a>&lt;GovernanceProposal&gt;(@libra2_framework, proposal_id);
 
     // If this is a multi-step proposal, the proposal id will already exist in the <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> map.
-    // We will <b>update</b> execution <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/hash.md#0x1_hash">hash</a> in <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> <b>to</b> be the next_execution_hash.
-    <b>if</b> (<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_contains_key">simple_map::contains_key</a>(&approved_hashes.hashes, &proposal_id)) {
-        <b>let</b> current_execution_hash = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_borrow_mut">simple_map::borrow_mut</a>(&<b>mut</b> approved_hashes.hashes, &proposal_id);
+    // We will <b>update</b> execution <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/hash.md#0x1_hash">hash</a> in <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> <b>to</b> be the next_execution_hash.
+    <b>if</b> (<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_contains_key">simple_map::contains_key</a>(&approved_hashes.hashes, &proposal_id)) {
+        <b>let</b> current_execution_hash = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_borrow_mut">simple_map::borrow_mut</a>(&<b>mut</b> approved_hashes.hashes, &proposal_id);
         *current_execution_hash = execution_hash;
     } <b>else</b> {
-        <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(&<b>mut</b> approved_hashes.hashes, proposal_id, execution_hash);
+        <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(&<b>mut</b> approved_hashes.hashes, proposal_id, execution_hash);
     }
 }
 </code></pre>
@@ -1648,7 +1648,7 @@ Resolve a successful single-step proposal. This would fail if the proposal is no
 than yes).
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve">resolve</a>(proposal_id: u64, signer_address: <b>address</b>): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve">resolve</a>(proposal_id: u64, signer_address: <b>address</b>): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -1660,7 +1660,7 @@ than yes).
 <pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve">resolve</a>(
     proposal_id: u64,
     signer_address: <b>address</b>
-): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>, <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> {
+): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>, <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> {
     <a href="voting.md#0x1_voting_resolve">voting::resolve</a>&lt;GovernanceProposal&gt;(@libra2_framework, proposal_id);
     <a href="aptos_governance.md#0x1_aptos_governance_remove_approved_hash">remove_approved_hash</a>(proposal_id);
     <a href="aptos_governance.md#0x1_aptos_governance_get_signer">get_signer</a>(signer_address)
@@ -1678,7 +1678,7 @@ than yes).
 Resolve a successful multi-step proposal. This would fail if the proposal is not successful.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve_multi_step_proposal">resolve_multi_step_proposal</a>(proposal_id: u64, signer_address: <b>address</b>, next_execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve_multi_step_proposal">resolve_multi_step_proposal</a>(proposal_id: u64, signer_address: <b>address</b>, next_execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -1690,16 +1690,16 @@ Resolve a successful multi-step proposal. This would fail if the proposal is not
 <pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve_multi_step_proposal">resolve_multi_step_proposal</a>(
     proposal_id: u64,
     signer_address: <b>address</b>,
-    next_execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
-): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>, <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> {
+    next_execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
+): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>, <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> {
     <a href="voting.md#0x1_voting_resolve_proposal_v2">voting::resolve_proposal_v2</a>&lt;GovernanceProposal&gt;(@libra2_framework, proposal_id, next_execution_hash);
     // If the current step is the last step of this multi-step proposal,
-    // we will remove the execution <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/hash.md#0x1_hash">hash</a> from the <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> map.
-    <b>if</b> (<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_length">vector::length</a>(&next_execution_hash) == 0) {
+    // we will remove the execution <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/hash.md#0x1_hash">hash</a> from the <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> map.
+    <b>if</b> (<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_length">vector::length</a>(&next_execution_hash) == 0) {
         <a href="aptos_governance.md#0x1_aptos_governance_remove_approved_hash">remove_approved_hash</a>(proposal_id);
     } <b>else</b> {
         // If the current step is not the last step of this proposal,
-        // we replace the current execution <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/hash.md#0x1_hash">hash</a> <b>with</b> the next execution <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/hash.md#0x1_hash">hash</a>
+        // we replace the current execution <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/hash.md#0x1_hash">hash</a> <b>with</b> the next execution <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/hash.md#0x1_hash">hash</a>
         // in the <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> map.
         <a href="aptos_governance.md#0x1_aptos_governance_add_approved_script_hash">add_approved_script_hash</a>(proposal_id)
     };
@@ -1730,12 +1730,12 @@ Remove an approved proposal's execution script hash.
 <pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_remove_approved_hash">remove_approved_hash</a>(proposal_id: u64) <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a> {
     <b>assert</b>!(
         <a href="voting.md#0x1_voting_is_resolved">voting::is_resolved</a>&lt;GovernanceProposal&gt;(@libra2_framework, proposal_id),
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EPROPOSAL_NOT_RESOLVED_YET">EPROPOSAL_NOT_RESOLVED_YET</a>),
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EPROPOSAL_NOT_RESOLVED_YET">EPROPOSAL_NOT_RESOLVED_YET</a>),
     );
 
     <b>let</b> approved_hashes = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework).hashes;
-    <b>if</b> (<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_contains_key">simple_map::contains_key</a>(approved_hashes, &proposal_id)) {
-        <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_remove">simple_map::remove</a>(approved_hashes, &proposal_id);
+    <b>if</b> (<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_contains_key">simple_map::contains_key</a>(approved_hashes, &proposal_id)) {
+        <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_remove">simple_map::remove</a>(approved_hashes, &proposal_id);
     };
 }
 </code></pre>
@@ -1759,7 +1759,7 @@ This behavior affects when an update of an on-chain config (e.g. <code>Consensus
 since such updates are applied whenever we enter an new epoch.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_reconfigure">reconfigure</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_reconfigure">reconfigure</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -1768,7 +1768,7 @@ since such updates are applied whenever we enter an new epoch.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_reconfigure">reconfigure</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_reconfigure">reconfigure</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(libra2_framework);
     <b>if</b> (<a href="consensus_config.md#0x1_consensus_config_validator_txn_enabled">consensus_config::validator_txn_enabled</a>() && <a href="randomness_config.md#0x1_randomness_config_enabled">randomness_config::enabled</a>()) {
         <a href="reconfiguration_with_dkg.md#0x1_reconfiguration_with_dkg_try_start">reconfiguration_with_dkg::try_start</a>();
@@ -1794,7 +1794,7 @@ WARNING: currently only used by tests. In most cases you should use <code><a hre
 TODO: migrate these tests to be aware of async reconfiguration.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch">force_end_epoch</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch">force_end_epoch</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -1803,7 +1803,7 @@ TODO: migrate these tests to be aware of async reconfiguration.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch">force_end_epoch</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch">force_end_epoch</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(libra2_framework);
     <a href="reconfiguration_with_dkg.md#0x1_reconfiguration_with_dkg_finish">reconfiguration_with_dkg::finish</a>(libra2_framework);
 }
@@ -1821,7 +1821,7 @@ TODO: migrate these tests to be aware of async reconfiguration.
 where the core resources account exists and has been granted power to mint Aptos coins.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch_test_only">force_end_epoch_test_only</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch_test_only">force_end_epoch_test_only</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -1830,7 +1830,7 @@ where the core resources account exists and has been granted power to mint Aptos
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch_test_only">force_end_epoch_test_only</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> {
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch_test_only">force_end_epoch_test_only</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> {
     <b>let</b> core_signer = <a href="aptos_governance.md#0x1_aptos_governance_get_signer_testnet_only">get_signer_testnet_only</a>(libra2_framework, @0x1);
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(&core_signer);
     <a href="reconfiguration_with_dkg.md#0x1_reconfiguration_with_dkg_finish">reconfiguration_with_dkg::finish</a>(&core_signer);
@@ -1848,7 +1848,7 @@ where the core resources account exists and has been granted power to mint Aptos
 Update feature flags and also trigger reconfiguration.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_toggle_features">toggle_features</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, enable: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;, disable: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_toggle_features">toggle_features</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, enable: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;, disable: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;)
 </code></pre>
 
 
@@ -1857,9 +1857,9 @@ Update feature flags and also trigger reconfiguration.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_toggle_features">toggle_features</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, enable: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;, disable: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;) {
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_toggle_features">toggle_features</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, enable: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;, disable: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;) {
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(libra2_framework);
-    <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_change_feature_flags_for_next_epoch">features::change_feature_flags_for_next_epoch</a>(libra2_framework, enable, disable);
+    <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_change_feature_flags_for_next_epoch">features::change_feature_flags_for_next_epoch</a>(libra2_framework, enable, disable);
     <a href="aptos_governance.md#0x1_aptos_governance_reconfigure">reconfigure</a>(libra2_framework);
 }
 </code></pre>
@@ -1875,7 +1875,7 @@ Update feature flags and also trigger reconfiguration.
 Only called in testnet where the core resources account exists and has been granted power to mint Aptos coins.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer_testnet_only">get_signer_testnet_only</a>(core_resources: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer_testnet_only">get_signer_testnet_only</a>(core_resources: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -1885,10 +1885,10 @@ Only called in testnet where the core resources account exists and has been gran
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer_testnet_only">get_signer_testnet_only</a>(
-    core_resources: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> {
+    core_resources: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> {
     <a href="system_addresses.md#0x1_system_addresses_assert_core_resource">system_addresses::assert_core_resource</a>(core_resources);
-    // Core resources <a href="account.md#0x1_account">account</a> only <b>has</b> mint <a href="../../../aptos-stdlib/tests/compiler-v2-doc/capability.md#0x1_capability">capability</a> in tests/testnets.
-    <b>assert</b>!(<a href="aptos_coin.md#0x1_aptos_coin_has_mint_capability">aptos_coin::has_mint_capability</a>(core_resources), <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_unauthenticated">error::unauthenticated</a>(<a href="aptos_governance.md#0x1_aptos_governance_EUNAUTHORIZED">EUNAUTHORIZED</a>));
+    // Core resources <a href="account.md#0x1_account">account</a> only <b>has</b> mint <a href="../../../libra2-stdlib/tests/compiler-v2-doc/capability.md#0x1_capability">capability</a> in tests/testnets.
+    <b>assert</b>!(<a href="aptos_coin.md#0x1_aptos_coin_has_mint_capability">aptos_coin::has_mint_capability</a>(core_resources), <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_unauthenticated">error::unauthenticated</a>(<a href="aptos_governance.md#0x1_aptos_governance_EUNAUTHORIZED">EUNAUTHORIZED</a>));
     <a href="aptos_governance.md#0x1_aptos_governance_get_signer">get_signer</a>(signer_address)
 }
 </code></pre>
@@ -1939,7 +1939,7 @@ Return the voting power a stake pool has with respect to governance proposals.
 Return a signer for making changes to 0x1 as part of on-chain governance proposal process.
 
 
-<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer">get_signer</a>(signer_address: <b>address</b>): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer">get_signer</a>(signer_address: <b>address</b>): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -1948,9 +1948,9 @@ Return a signer for making changes to 0x1 as part of on-chain governance proposa
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer">get_signer</a>(signer_address: <b>address</b>): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> {
+<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer">get_signer</a>(signer_address: <b>address</b>): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> <b>acquires</b> <a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a> {
     <b>let</b> governance_responsibility = <b>borrow_global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework);
-    <b>let</b> signer_cap = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_borrow">simple_map::borrow</a>(&governance_responsibility.signer_caps, &signer_address);
+    <b>let</b> signer_cap = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_borrow">simple_map::borrow</a>(&governance_responsibility.signer_caps, &signer_address);
     create_signer_with_capability(signer_cap)
 }
 </code></pre>
@@ -1965,7 +1965,7 @@ Return a signer for making changes to 0x1 as part of on-chain governance proposa
 
 
 
-<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_metadata">create_proposal_metadata</a>(metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_String">string::String</a>, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;
+<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_metadata">create_proposal_metadata</a>(metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_String">string::String</a>, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;
 </code></pre>
 
 
@@ -1975,15 +1975,15 @@ Return a signer for making changes to 0x1 as part of on-chain governance proposa
 
 
 <pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_metadata">create_proposal_metadata</a>(
-    metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
-    metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
-): SimpleMap&lt;String, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt; {
-    <b>assert</b>!(<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_length">string::length</a>(&utf8(metadata_location)) &lt;= 256, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EMETADATA_LOCATION_TOO_LONG">EMETADATA_LOCATION_TOO_LONG</a>));
-    <b>assert</b>!(<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_length">string::length</a>(&utf8(metadata_hash)) &lt;= 256, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EMETADATA_HASH_TOO_LONG">EMETADATA_HASH_TOO_LONG</a>));
+    metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
+): SimpleMap&lt;String, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt; {
+    <b>assert</b>!(<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_length">string::length</a>(&utf8(metadata_location)) &lt;= 256, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EMETADATA_LOCATION_TOO_LONG">EMETADATA_LOCATION_TOO_LONG</a>));
+    <b>assert</b>!(<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_length">string::length</a>(&utf8(metadata_hash)) &lt;= 256, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aptos_governance.md#0x1_aptos_governance_EMETADATA_HASH_TOO_LONG">EMETADATA_HASH_TOO_LONG</a>));
 
-    <b>let</b> metadata = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_create">simple_map::create</a>&lt;String, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;();
-    <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(&<b>mut</b> metadata, utf8(<a href="aptos_governance.md#0x1_aptos_governance_METADATA_LOCATION_KEY">METADATA_LOCATION_KEY</a>), metadata_location);
-    <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(&<b>mut</b> metadata, utf8(<a href="aptos_governance.md#0x1_aptos_governance_METADATA_HASH_KEY">METADATA_HASH_KEY</a>), metadata_hash);
+    <b>let</b> metadata = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_create">simple_map::create</a>&lt;String, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;();
+    <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(&<b>mut</b> metadata, utf8(<a href="aptos_governance.md#0x1_aptos_governance_METADATA_LOCATION_KEY">METADATA_LOCATION_KEY</a>), metadata_location);
+    <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(&<b>mut</b> metadata, utf8(<a href="aptos_governance.md#0x1_aptos_governance_METADATA_HASH_KEY">METADATA_HASH_KEY</a>), metadata_hash);
     metadata
 }
 </code></pre>
@@ -2008,8 +2008,8 @@ Return a signer for making changes to 0x1 as part of on-chain governance proposa
 
 
 <pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_assert_voting_initialization">assert_voting_initialization</a>() {
-    <b>if</b> (<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_partial_governance_voting_enabled">features::partial_governance_voting_enabled</a>()) {
-        <b>assert</b>!(<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework), <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="aptos_governance.md#0x1_aptos_governance_EPARTIAL_VOTING_NOT_INITIALIZED">EPARTIAL_VOTING_NOT_INITIALIZED</a>));
+    <b>if</b> (<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_partial_governance_voting_enabled">features::partial_governance_voting_enabled</a>()) {
+        <b>assert</b>!(<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework), <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="aptos_governance.md#0x1_aptos_governance_EPARTIAL_VOTING_NOT_INITIALIZED">EPARTIAL_VOTING_NOT_INITIALIZED</a>));
     };
 }
 </code></pre>
@@ -2087,20 +2087,20 @@ Return a signer for making changes to 0x1 as part of on-chain governance proposa
 ### Function `store_signer_cap`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_store_signer_cap">store_signer_cap</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>, signer_cap: <a href="account.md#0x1_account_SignerCapability">account::SignerCapability</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_store_signer_cap">store_signer_cap</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>, signer_cap: <a href="account.md#0x1_account_SignerCapability">account::SignerCapability</a>)
 </code></pre>
 
 
 
 
-<pre><code><b>aborts_if</b> !<a href="system_addresses.md#0x1_system_addresses_is_libra2_framework_address">system_addresses::is_libra2_framework_address</a>(<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework));
+<pre><code><b>aborts_if</b> !<a href="system_addresses.md#0x1_system_addresses_is_libra2_framework_address">system_addresses::is_libra2_framework_address</a>(<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework));
 <b>aborts_if</b> !<a href="system_addresses.md#0x1_system_addresses_is_framework_reserved_address">system_addresses::is_framework_reserved_address</a>(signer_address);
 <b>let</b> signer_caps = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework).signer_caps;
 <b>aborts_if</b> <b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework) &&
-    <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(signer_caps, signer_address);
+    <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(signer_caps, signer_address);
 <b>ensures</b> <b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework);
 <b>let</b> <b>post</b> post_signer_caps = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework).signer_caps;
-<b>ensures</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_signer_caps, signer_address);
+<b>ensures</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_signer_caps, signer_address);
 </code></pre>
 
 
@@ -2110,7 +2110,7 @@ Return a signer for making changes to 0x1 as part of on-chain governance proposa
 ### Function `initialize`
 
 
-<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize">initialize</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, min_voting_threshold: u128, required_proposer_stake: u64, voting_duration_secs: u64)
+<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize">initialize</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, min_voting_threshold: u128, required_proposer_stake: u64, voting_duration_secs: u64)
 </code></pre>
 
 
@@ -2120,13 +2120,13 @@ The signer must have an Account.
 Limit addition overflow.
 
 
-<pre><code><b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
+<pre><code><b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
 <b>let</b> register_account = <b>global</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>aborts_if</b> <b>exists</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(addr);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>aborts_if</b> register_account.guid_creation_num + 7 &gt; <a href="aptos_governance.md#0x1_aptos_governance_MAX_U64">MAX_U64</a>;
 <b>aborts_if</b> register_account.guid_creation_num + 7 &gt;= <a href="account.md#0x1_account_MAX_GUID_CREATION_NUM">account::MAX_GUID_CREATION_NUM</a>;
-<b>aborts_if</b> !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/type_info.md#0x1_type_info_spec_is_struct">type_info::spec_is_struct</a>&lt;GovernanceProposal&gt;();
+<b>aborts_if</b> !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/type_info.md#0x1_type_info_spec_is_struct">type_info::spec_is_struct</a>&lt;GovernanceProposal&gt;();
 <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_InitializeAbortIf">InitializeAbortIf</a>;
 <b>ensures</b> <b>exists</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;<a href="governance_proposal.md#0x1_governance_proposal_GovernanceProposal">governance_proposal::GovernanceProposal</a>&gt;&gt;(addr);
 <b>ensures</b> <b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceConfig">GovernanceConfig</a>&gt;(addr);
@@ -2143,7 +2143,7 @@ Limit addition overflow.
 ### Function `update_governance_config`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_update_governance_config">update_governance_config</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, min_voting_threshold: u128, required_proposer_stake: u64, voting_duration_secs: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_update_governance_config">update_governance_config</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, min_voting_threshold: u128, required_proposer_stake: u64, voting_duration_secs: u64)
 </code></pre>
 
 
@@ -2151,12 +2151,12 @@ Signer address must be @libra2_framework.
 Address @libra2_framework must exist GovernanceConfig and GovernanceEvents.
 
 
-<pre><code><b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
+<pre><code><b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
 <b>let</b> governance_config = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceConfig">GovernanceConfig</a>&gt;(@libra2_framework);
 <b>let</b> <b>post</b> new_governance_config = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceConfig">GovernanceConfig</a>&gt;(@libra2_framework);
 <b>aborts_if</b> addr != @libra2_framework;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceConfig">GovernanceConfig</a>&gt;(@libra2_framework);
-<b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_is_enabled">features::spec_is_enabled</a>(<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_MODULE_EVENT_MIGRATION">features::MODULE_EVENT_MIGRATION</a>) && !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a>&gt;(
+<b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_is_enabled">features::spec_is_enabled</a>(<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_MODULE_EVENT_MIGRATION">features::MODULE_EVENT_MIGRATION</a>) && !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a>&gt;(
     @libra2_framework
 );
 <b>modifies</b> <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceConfig">GovernanceConfig</a>&gt;(addr);
@@ -2172,7 +2172,7 @@ Address @libra2_framework must exist GovernanceConfig and GovernanceEvents.
 ### Function `initialize_partial_voting`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize_partial_voting">initialize_partial_voting</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_initialize_partial_voting">initialize_partial_voting</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -2180,7 +2180,7 @@ Signer address must be @libra2_framework.
 Abort if structs have already been created.
 
 
-<pre><code><b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
+<pre><code><b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
 <b>aborts_if</b> addr != @libra2_framework;
 <b>aborts_if</b> <b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
 <b>ensures</b> <b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
@@ -2193,11 +2193,11 @@ Abort if structs have already been created.
 
 
 <pre><code><b>schema</b> <a href="aptos_governance.md#0x1_aptos_governance_InitializeAbortIf">InitializeAbortIf</a> {
-    libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
+    libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
     min_voting_threshold: u128;
     required_proposer_stake: u64;
     voting_duration_secs: u64;
-    <b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
+    <b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
     <b>let</b> <a href="account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(addr);
     <b>aborts_if</b> addr != @libra2_framework;
     <b>aborts_if</b> <b>exists</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;<a href="governance_proposal.md#0x1_governance_proposal_GovernanceProposal">governance_proposal::GovernanceProposal</a>&gt;&gt;(addr);
@@ -2303,7 +2303,7 @@ Abort if structs have already been created.
 
 
 
-<pre><code><b>aborts_if</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
+<pre><code><b>aborts_if</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
 <b>include</b> <a href="voting.md#0x1_voting_AbortsIfNotContainProposalID">voting::AbortsIfNotContainProposalID</a>&lt;GovernanceProposal&gt; {
     voting_forum_address: @libra2_framework
 };
@@ -2325,12 +2325,12 @@ Abort if structs have already been created.
 <b>let</b> <a href="staking_config.md#0x1_staking_config">staking_config</a> = <b>global</b>&lt;<a href="staking_config.md#0x1_staking_config_StakingConfig">staking_config::StakingConfig</a>&gt;(@libra2_framework);
 <b>let</b> voting_power = <a href="aptos_governance.md#0x1_aptos_governance_spec_get_voting_power">spec_get_voting_power</a>(stake_pool, <a href="staking_config.md#0x1_staking_config">staking_config</a>);
 <b>let</b> voting_records_v2 = <b>borrow_global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
-<b>let</b> used_voting_power = <b>if</b> (<a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_contains">smart_table::spec_contains</a>(voting_records_v2.votes, record_key)) {
-    <a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_get">smart_table::spec_get</a>(voting_records_v2.votes, record_key)
+<b>let</b> used_voting_power = <b>if</b> (<a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_contains">smart_table::spec_contains</a>(voting_records_v2.votes, record_key)) {
+    <a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_get">smart_table::spec_get</a>(voting_records_v2.votes, record_key)
 } <b>else</b> {
     0
 };
-<b>aborts_if</b> !remain_zero_1_cond && !entirely_voted && <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() &&
+<b>aborts_if</b> !remain_zero_1_cond && !entirely_voted && <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() &&
     used_voting_power &gt; 0 && voting_power &lt; used_voting_power;
 <b>ensures</b> result == <a href="aptos_governance.md#0x1_aptos_governance_spec_get_remaining_voting_power">spec_get_remaining_voting_power</a>(stake_pool, proposal_id);
 </code></pre>
@@ -2353,8 +2353,8 @@ Abort if structs have already been created.
    };
    <b>let</b> entirely_voted = <a href="aptos_governance.md#0x1_aptos_governance_spec_has_entirely_voted">spec_has_entirely_voted</a>(stake_pool, proposal_id, record_key);
    <b>let</b> voting_power = <a href="aptos_governance.md#0x1_aptos_governance_spec_get_voting_power">spec_get_voting_power</a>(stake_pool, <a href="staking_config.md#0x1_staking_config">staking_config</a>);
-   <b>let</b> used_voting_power = <b>if</b> (<a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_contains">smart_table::spec_contains</a>(voting_records_v2.votes, record_key)) {
-       <a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_get">smart_table::spec_get</a>(voting_records_v2.votes, record_key)
+   <b>let</b> used_voting_power = <b>if</b> (<a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_contains">smart_table::spec_contains</a>(voting_records_v2.votes, record_key)) {
+       <a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_get">smart_table::spec_get</a>(voting_records_v2.votes, record_key)
    } <b>else</b> {
        0
    };
@@ -2362,7 +2362,7 @@ Abort if structs have already been created.
        0
    } <b>else</b> <b>if</b> (entirely_voted) {
        0
-   } <b>else</b> <b>if</b> (!<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>()) {
+   } <b>else</b> <b>if</b> (!<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>()) {
        voting_power
    } <b>else</b> {
        voting_power - used_voting_power
@@ -2378,7 +2378,7 @@ Abort if structs have already been created.
 
 <pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_spec_has_entirely_voted">spec_has_entirely_voted</a>(stake_pool: <b>address</b>, proposal_id: u64, record_key: <a href="aptos_governance.md#0x1_aptos_governance_RecordKey">RecordKey</a>): bool {
    <b>let</b> voting_records = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecords">VotingRecords</a>&gt;(@libra2_framework);
-   <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_records.votes, record_key)
+   <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_records.votes, record_key)
 }
 </code></pre>
 
@@ -2408,7 +2408,7 @@ Abort if structs have already been created.
 ### Function `create_proposal`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal">create_proposal</a>(proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal">create_proposal</a>(proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
 </code></pre>
 
 
@@ -2427,7 +2427,7 @@ The same as spec of <code><a href="aptos_governance.md#0x1_aptos_governance_crea
 ### Function `create_proposal_v2`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2">create_proposal_v2</a>(proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, is_multi_step_proposal: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2">create_proposal_v2</a>(proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, is_multi_step_proposal: bool)
 </code></pre>
 
 
@@ -2445,7 +2445,7 @@ The same as spec of <code><a href="aptos_governance.md#0x1_aptos_governance_crea
 ### Function `create_proposal_v2_impl`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2_impl">create_proposal_v2_impl</a>(proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, is_multi_step_proposal: bool): u64
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_v2_impl">create_proposal_v2_impl</a>(proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, is_multi_step_proposal: bool): u64
 </code></pre>
 
 
@@ -2466,11 +2466,11 @@ Address @libra2_framework must exist GovernanceEvents.
 
 
 <pre><code><b>schema</b> <a href="aptos_governance.md#0x1_aptos_governance_CreateProposalAbortsIf">CreateProposalAbortsIf</a> {
-    proposer: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
+    proposer: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
     stake_pool: <b>address</b>;
-    execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
-    metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
-    metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
+    execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
+    metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
+    metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
     <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_VotingGetDelegatedVoterAbortsIf">VotingGetDelegatedVoterAbortsIf</a> { sign: proposer };
     <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_AbortsIfNotGovernanceConfig">AbortsIfNotGovernanceConfig</a>;
     <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_GetVotingPowerAbortsIf">GetVotingPowerAbortsIf</a> { pool_address: stake_pool };
@@ -2491,13 +2491,13 @@ Address @libra2_framework must exist GovernanceEvents.
     <b>let</b> proposal_expiration = current_time + governance_config.voting_duration_secs;
     <b>aborts_if</b> stake_pool_res.locked_until_secs &lt; proposal_expiration;
     <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_CreateProposalMetadataAbortsIf">CreateProposalMetadataAbortsIf</a>;
-    <b>let</b> addr = aptos_std::type_info::type_of&lt;AptosCoin&gt;().account_address;
+    <b>let</b> addr = libra2_std::type_info::type_of&lt;AptosCoin&gt;().account_address;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="coin.md#0x1_coin_CoinInfo">coin::CoinInfo</a>&lt;AptosCoin&gt;&gt;(addr);
     <b>let</b> maybe_supply = <b>global</b>&lt;<a href="coin.md#0x1_coin_CoinInfo">coin::CoinInfo</a>&lt;AptosCoin&gt;&gt;(addr).supply;
-    <b>let</b> supply = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(maybe_supply);
+    <b>let</b> supply = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(maybe_supply);
     <b>let</b> total_supply = libra2_framework::optional_aggregator::optional_aggregator_value(supply);
     <b>let</b> early_resolution_vote_threshold_value = total_supply / 2 + 1;
-    <b>aborts_if</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(maybe_supply) && governance_config.min_voting_threshold &gt; early_resolution_vote_threshold_value;
+    <b>aborts_if</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(maybe_supply) && governance_config.min_voting_threshold &gt; early_resolution_vote_threshold_value;
     <b>aborts_if</b> len(execution_hash) == 0;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
     <b>let</b> voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
@@ -2506,10 +2506,10 @@ Address @libra2_framework must exist GovernanceEvents.
     <b>let</b> <b>post</b> post_voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
     <b>let</b> <b>post</b> post_next_proposal_id = post_voting_forum.next_proposal_id;
     <b>ensures</b> post_next_proposal_id == proposal_id + 1;
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_KEY">voting::IS_MULTI_STEP_PROPOSAL_KEY</a>);
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY">voting::IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY</a>);
-    <b>aborts_if</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals,proposal_id);
-    <b>ensures</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(post_voting_forum.proposals, proposal_id);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_KEY">voting::IS_MULTI_STEP_PROPOSAL_KEY</a>);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY">voting::IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY</a>);
+    <b>aborts_if</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals,proposal_id);
+    <b>ensures</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(post_voting_forum.proposals, proposal_id);
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a>&gt;(@libra2_framework);
 }
 </code></pre>
@@ -2522,8 +2522,8 @@ Address @libra2_framework must exist GovernanceEvents.
 
 <pre><code><b>schema</b> <a href="aptos_governance.md#0x1_aptos_governance_VotingGetDelegatedVoterAbortsIf">VotingGetDelegatedVoterAbortsIf</a> {
     stake_pool: <b>address</b>;
-    sign: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
-    <b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(sign);
+    sign: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
+    <b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(sign);
     <b>let</b> stake_pool_res = <b>global</b>&lt;<a href="stake.md#0x1_stake_StakePool">stake::StakePool</a>&gt;(stake_pool);
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="stake.md#0x1_stake_StakePool">stake::StakePool</a>&gt;(stake_pool);
     <b>aborts_if</b> stake_pool_res.delegated_voter != addr;
@@ -2537,7 +2537,7 @@ Address @libra2_framework must exist GovernanceEvents.
 ### Function `batch_vote`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_vote">batch_vote</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pools: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;, proposal_id: u64, should_pass: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_vote">batch_vote</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pools: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;, proposal_id: u64, should_pass: bool)
 </code></pre>
 
 
@@ -2553,7 +2553,7 @@ Address @libra2_framework must exist GovernanceEvents.
 ### Function `batch_partial_vote`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_partial_vote">batch_partial_vote</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pools: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;, proposal_id: u64, voting_power: u64, should_pass: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_batch_partial_vote">batch_partial_vote</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pools: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;, proposal_id: u64, voting_power: u64, should_pass: bool)
 </code></pre>
 
 
@@ -2569,7 +2569,7 @@ Address @libra2_framework must exist GovernanceEvents.
 ### Function `vote`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote">vote</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, should_pass: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote">vote</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, should_pass: bool)
 </code></pre>
 
 
@@ -2592,7 +2592,7 @@ Address @libra2_framework must exist VotingRecords and GovernanceProposal.
 ### Function `partial_vote`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_partial_vote">partial_vote</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, voting_power: u64, should_pass: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_partial_vote">partial_vote</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, voting_power: u64, should_pass: bool)
 </code></pre>
 
 
@@ -2614,7 +2614,7 @@ Address @libra2_framework must exist VotingRecordsV2 if partial_governance_votin
 ### Function `vote_internal`
 
 
-<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote_internal">vote_internal</a>(voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, voting_power: u64, should_pass: bool)
+<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_vote_internal">vote_internal</a>(voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, stake_pool: <b>address</b>, proposal_id: u64, voting_power: u64, should_pass: bool)
 </code></pre>
 
 
@@ -2636,7 +2636,7 @@ Address @libra2_framework must exist VotingRecordsV2 if partial_governance_votin
 
 
 <pre><code><b>schema</b> <a href="aptos_governance.md#0x1_aptos_governance_VoteAbortIf">VoteAbortIf</a> {
-    voter: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
+    voter: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>;
     stake_pool: <b>address</b>;
     proposal_id: u64;
     should_pass: bool;
@@ -2658,12 +2658,12 @@ Address @libra2_framework must exist VotingRecordsV2 if partial_governance_votin
     <b>let</b> <a href="staking_config.md#0x1_staking_config">staking_config</a> = <b>global</b>&lt;<a href="staking_config.md#0x1_staking_config_StakingConfig">staking_config::StakingConfig</a>&gt;(@libra2_framework);
     <b>let</b> spec_voting_power = <a href="aptos_governance.md#0x1_aptos_governance_spec_get_voting_power">spec_get_voting_power</a>(stake_pool, <a href="staking_config.md#0x1_staking_config">staking_config</a>);
     <b>let</b> voting_records_v2 = <b>borrow_global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
-    <b>let</b> used_voting_power = <b>if</b> (<a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_contains">smart_table::spec_contains</a>(voting_records_v2.votes, record_key)) {
-        <a href="../../../aptos-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_get">smart_table::spec_get</a>(voting_records_v2.votes, record_key)
+    <b>let</b> used_voting_power = <b>if</b> (<a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_contains">smart_table::spec_contains</a>(voting_records_v2.votes, record_key)) {
+        <a href="../../../libra2-stdlib/tests/compiler-v2-doc/smart_table.md#0x1_smart_table_spec_get">smart_table::spec_get</a>(voting_records_v2.votes, record_key)
     } <b>else</b> {
         0
     };
-    <b>aborts_if</b> !remain_zero_1_cond && !entirely_voted && <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() &&
+    <b>aborts_if</b> !remain_zero_1_cond && !entirely_voted && <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() &&
         used_voting_power &gt; 0 && spec_voting_power &lt; used_voting_power;
     <b>let</b> remaining_power = <a href="aptos_governance.md#0x1_aptos_governance_spec_get_remaining_voting_power">spec_get_remaining_voting_power</a>(stake_pool, proposal_id);
     <b>let</b> real_voting_power =  <b>min</b>(voting_power, remaining_power);
@@ -2674,59 +2674,59 @@ Address @libra2_framework must exist VotingRecordsV2 if partial_governance_votin
     <b>let</b> stake_pool_res = <b>global</b>&lt;<a href="stake.md#0x1_stake_StakePool">stake::StakePool</a>&gt;(stake_pool);
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
     <b>let</b> voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-    <b>let</b> proposal = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals, proposal_id);
+    <b>let</b> proposal = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals, proposal_id);
     <b>let</b> proposal_expiration = proposal.expiration_secs;
     <b>let</b> locked_until_secs = <b>global</b>&lt;<a href="stake.md#0x1_stake_StakePool">stake::StakePool</a>&gt;(stake_pool).locked_until_secs;
     <b>aborts_if</b> proposal_expiration &gt; locked_until_secs;
     <b>aborts_if</b> <a href="timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &gt; proposal_expiration;
     <b>aborts_if</b> proposal.is_resolved;
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY">voting::IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY</a>);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY">voting::IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY</a>);
     <b>let</b> execution_key = utf8(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY">voting::IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY</a>);
-    <b>aborts_if</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, execution_key) &&
-              <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, execution_key) != std::bcs::to_bytes(<b>false</b>);
+    <b>aborts_if</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, execution_key) &&
+              <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, execution_key) != std::bcs::to_bytes(<b>false</b>);
     <b>aborts_if</b>
         <b>if</b> (should_pass) { proposal.yes_votes + real_voting_power &gt; MAX_U128 } <b>else</b> { proposal.no_votes + real_voting_power &gt; MAX_U128 };
     <b>let</b> <b>post</b> post_voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-    <b>let</b> <b>post</b> post_proposal = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(post_voting_forum.proposals, proposal_id);
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>);
+    <b>let</b> <b>post</b> post_proposal = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(post_voting_forum.proposals, proposal_id);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>);
     <b>let</b> key = utf8(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>);
-    <b>ensures</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_proposal.metadata, key);
-    <b>ensures</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_proposal.metadata, key) == std::bcs::to_bytes(<a href="timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>());
-    <b>aborts_if</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && used_voting_power + real_voting_power &gt; <a href="aptos_governance.md#0x1_aptos_governance_MAX_U64">MAX_U64</a>;
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_records.votes, record_key);
+    <b>ensures</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_proposal.metadata, key);
+    <b>ensures</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_proposal.metadata, key) == std::bcs::to_bytes(<a href="timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>());
+    <b>aborts_if</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && used_voting_power + real_voting_power &gt; <a href="aptos_governance.md#0x1_aptos_governance_MAX_U64">MAX_U64</a>;
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_records.votes, record_key);
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceEvents">GovernanceEvents</a>&gt;(@libra2_framework);
-    <b>let</b> early_resolution_threshold = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(proposal.early_resolution_vote_threshold);
+    <b>let</b> early_resolution_threshold = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(proposal.early_resolution_vote_threshold);
     <b>let</b> is_voting_period_over = <a href="timestamp.md#0x1_timestamp_spec_now_seconds">timestamp::spec_now_seconds</a>() &gt; proposal_expiration;
     <b>let</b> new_proposal_yes_votes_0 = proposal.yes_votes + real_voting_power;
-    <b>let</b> can_be_resolved_early_0 = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
+    <b>let</b> can_be_resolved_early_0 = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
                                 (new_proposal_yes_votes_0 &gt;= early_resolution_threshold ||
                                  proposal.no_votes &gt;= early_resolution_threshold);
     <b>let</b> is_voting_closed_0 = is_voting_period_over || can_be_resolved_early_0;
     <b>let</b> proposal_state_successed_0 = is_voting_closed_0 && new_proposal_yes_votes_0 &gt; proposal.no_votes &&
                                      new_proposal_yes_votes_0 + proposal.no_votes &gt;= proposal.min_vote_threshold;
     <b>let</b> new_proposal_no_votes_0 = proposal.no_votes + real_voting_power;
-    <b>let</b> can_be_resolved_early_1 = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
+    <b>let</b> can_be_resolved_early_1 = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
                                 (proposal.yes_votes &gt;= early_resolution_threshold ||
                                  new_proposal_no_votes_0 &gt;= early_resolution_threshold);
     <b>let</b> is_voting_closed_1 = is_voting_period_over || can_be_resolved_early_1;
     <b>let</b> proposal_state_successed_1 = is_voting_closed_1 && proposal.yes_votes &gt; new_proposal_no_votes_0 &&
                                      proposal.yes_votes + new_proposal_no_votes_0 &gt;= proposal.min_vote_threshold;
     <b>let</b> new_proposal_yes_votes_1 = proposal.yes_votes + real_voting_power;
-    <b>let</b> can_be_resolved_early_2 = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
+    <b>let</b> can_be_resolved_early_2 = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
                                 (new_proposal_yes_votes_1 &gt;= early_resolution_threshold ||
                                  proposal.no_votes &gt;= early_resolution_threshold);
     <b>let</b> is_voting_closed_2 = is_voting_period_over || can_be_resolved_early_2;
     <b>let</b> proposal_state_successed_2 = is_voting_closed_2 && new_proposal_yes_votes_1 &gt; proposal.no_votes &&
                                      new_proposal_yes_votes_1 + proposal.no_votes &gt;= proposal.min_vote_threshold;
     <b>let</b> new_proposal_no_votes_1 = proposal.no_votes + real_voting_power;
-    <b>let</b> can_be_resolved_early_3 = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
+    <b>let</b> can_be_resolved_early_3 = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
                                 (proposal.yes_votes &gt;= early_resolution_threshold ||
                                  new_proposal_no_votes_1 &gt;= early_resolution_threshold);
     <b>let</b> is_voting_closed_3 = is_voting_period_over || can_be_resolved_early_3;
     <b>let</b> proposal_state_successed_3 = is_voting_closed_3 && proposal.yes_votes &gt; new_proposal_no_votes_1 &&
                                      proposal.yes_votes + new_proposal_no_votes_1 &gt;= proposal.min_vote_threshold;
-    <b>let</b> <b>post</b> can_be_resolved_early = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
+    <b>let</b> <b>post</b> can_be_resolved_early = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
                                 (post_proposal.yes_votes &gt;= early_resolution_threshold ||
                                  post_proposal.no_votes &gt;= early_resolution_threshold);
     <b>let</b> <b>post</b> is_voting_closed = is_voting_period_over || can_be_resolved_early;
@@ -2747,9 +2747,9 @@ Address @libra2_framework must exist VotingRecordsV2 if partial_governance_votin
         } <b>else</b> {
             proposal_state_successed_3 && !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework)
         };
-    <b>ensures</b> proposal_state_successed ==&gt; <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_approved_hashes.hashes, proposal_id) &&
-                                         <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_approved_hashes.hashes, proposal_id) == execution_hash;
-    <b>aborts_if</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
+    <b>ensures</b> proposal_state_successed ==&gt; <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_approved_hashes.hashes, proposal_id) &&
+                                         <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_approved_hashes.hashes, proposal_id) == execution_hash;
+    <b>aborts_if</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
 }
 </code></pre>
 
@@ -2781,20 +2781,20 @@ Address @libra2_framework must exist VotingRecordsV2 if partial_governance_votin
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework);
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
     <b>let</b> voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-    <b>let</b> proposal = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals, proposal_id);
-    <b>let</b> early_resolution_threshold = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(proposal.early_resolution_vote_threshold);
+    <b>let</b> proposal = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals, proposal_id);
+    <b>let</b> early_resolution_threshold = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(proposal.early_resolution_vote_threshold);
     <b>aborts_if</b> <a href="timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &lt;= proposal.expiration_secs &&
-        (<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_none">option::spec_is_none</a>(proposal.early_resolution_vote_threshold) ||
+        (<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_none">option::spec_is_none</a>(proposal.early_resolution_vote_threshold) ||
         proposal.yes_votes &lt; early_resolution_threshold && proposal.no_votes &lt; early_resolution_threshold);
     <b>aborts_if</b> (<a href="timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &gt; proposal.expiration_secs ||
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) && (proposal.yes_votes &gt;= early_resolution_threshold ||
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) && (proposal.yes_votes &gt;= early_resolution_threshold ||
                                                                            proposal.no_votes &gt;= early_resolution_threshold)) &&
         (proposal.yes_votes &lt;= proposal.no_votes || proposal.yes_votes + proposal.no_votes &lt; proposal.min_vote_threshold);
     <b>let</b> <b>post</b> post_approved_hashes = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework);
     // This enforces <a id="high-level-req-4" href="#high-level-req">high-level requirement 4</a>:
-    <b>ensures</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_approved_hashes.hashes, proposal_id) &&
-        <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_approved_hashes.hashes, proposal_id) == proposal.execution_hash;
+    <b>ensures</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_approved_hashes.hashes, proposal_id) &&
+        <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_approved_hashes.hashes, proposal_id) == proposal.execution_hash;
 }
 </code></pre>
 
@@ -2822,7 +2822,7 @@ Address @libra2_framework must exist VotingRecordsV2 if partial_governance_votin
 ### Function `resolve`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve">resolve</a>(proposal_id: u64, signer_address: <b>address</b>): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve">resolve</a>(proposal_id: u64, signer_address: <b>address</b>): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -2832,25 +2832,25 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
 <pre><code><b>requires</b> <a href="chain_status.md#0x1_chain_status_is_operating">chain_status::is_operating</a>();
 <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_VotingIsProposalResolvableAbortsif">VotingIsProposalResolvableAbortsif</a>;
 <b>let</b> voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-<b>let</b> proposal = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
+<b>let</b> proposal = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
 <b>let</b> multi_step_key = utf8(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_KEY">voting::IS_MULTI_STEP_PROPOSAL_KEY</a>);
-<b>let</b> has_multi_step_key = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_key);
-<b>let</b> is_multi_step_proposal = aptos_std::from_bcs::deserialize&lt;bool&gt;(<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, multi_step_key));
-<b>aborts_if</b> has_multi_step_key && !aptos_std::from_bcs::deserializable&lt;bool&gt;(<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, multi_step_key));
-<b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_KEY">voting::IS_MULTI_STEP_PROPOSAL_KEY</a>);
+<b>let</b> has_multi_step_key = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_key);
+<b>let</b> is_multi_step_proposal = libra2_std::from_bcs::deserialize&lt;bool&gt;(<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, multi_step_key));
+<b>aborts_if</b> has_multi_step_key && !libra2_std::from_bcs::deserializable&lt;bool&gt;(<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, multi_step_key));
+<b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_KEY">voting::IS_MULTI_STEP_PROPOSAL_KEY</a>);
 <b>aborts_if</b> has_multi_step_key && is_multi_step_proposal;
 <b>let</b> <b>post</b> post_voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-<b>let</b> <b>post</b> post_proposal = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(post_voting_forum.proposals, proposal_id);
+<b>let</b> <b>post</b> post_proposal = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(post_voting_forum.proposals, proposal_id);
 <b>ensures</b> post_proposal.is_resolved == <b>true</b> && post_proposal.resolution_time_secs == <a href="timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>();
-<b>aborts_if</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_none">option::spec_is_none</a>(proposal.execution_content);
+<b>aborts_if</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_none">option::spec_is_none</a>(proposal.execution_content);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework);
 <b>let</b> <b>post</b> post_approved_hashes = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework).hashes;
-<b>ensures</b> !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_approved_hashes, proposal_id);
+<b>ensures</b> !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_approved_hashes, proposal_id);
 <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_GetSignerAbortsIf">GetSignerAbortsIf</a>;
 <b>let</b> governance_responsibility = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework);
-<b>let</b> signer_cap = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(governance_responsibility.signer_caps, signer_address);
+<b>let</b> signer_cap = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(governance_responsibility.signer_caps, signer_address);
 <b>let</b> addr = signer_cap.<a href="account.md#0x1_account">account</a>;
-<b>ensures</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(result) == addr;
+<b>ensures</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(result) == addr;
 </code></pre>
 
 
@@ -2860,7 +2860,7 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
 ### Function `resolve_multi_step_proposal`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve_multi_step_proposal">resolve_multi_step_proposal</a>(proposal_id: u64, signer_address: <b>address</b>, next_execution_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_resolve_multi_step_proposal">resolve_multi_step_proposal</a>(proposal_id: u64, signer_address: <b>address</b>, next_execution_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -2870,39 +2870,39 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
 <b>pragma</b> verify_duration_estimate = 120;
 <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_VotingIsProposalResolvableAbortsif">VotingIsProposalResolvableAbortsif</a>;
 <b>let</b> voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-<b>let</b> proposal = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
+<b>let</b> proposal = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
 <b>let</b> <b>post</b> post_voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-<b>let</b> <b>post</b> post_proposal = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(post_voting_forum.proposals, proposal_id);
-<b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY">voting::IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY</a>);
+<b>let</b> <b>post</b> post_proposal = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(post_voting_forum.proposals, proposal_id);
+<b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY">voting::IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY</a>);
 <b>let</b> multi_step_in_execution_key = utf8(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY">voting::IS_MULTI_STEP_PROPOSAL_IN_EXECUTION_KEY</a>);
-<b>let</b> <b>post</b> is_multi_step_proposal_in_execution_value = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_proposal.metadata, multi_step_in_execution_key);
-<b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_KEY">voting::IS_MULTI_STEP_PROPOSAL_KEY</a>);
+<b>let</b> <b>post</b> is_multi_step_proposal_in_execution_value = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_proposal.metadata, multi_step_in_execution_key);
+<b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_KEY">voting::IS_MULTI_STEP_PROPOSAL_KEY</a>);
 <b>let</b> multi_step_key = utf8(<a href="voting.md#0x1_voting_IS_MULTI_STEP_PROPOSAL_KEY">voting::IS_MULTI_STEP_PROPOSAL_KEY</a>);
-<b>aborts_if</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_key) &&
-    !aptos_std::from_bcs::deserializable&lt;bool&gt;(<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, multi_step_key));
-<b>let</b> is_multi_step = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_key) &&
-                    aptos_std::from_bcs::deserialize&lt;bool&gt;(<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, multi_step_key));
+<b>aborts_if</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_key) &&
+    !libra2_std::from_bcs::deserializable&lt;bool&gt;(<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, multi_step_key));
+<b>let</b> is_multi_step = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_key) &&
+                    libra2_std::from_bcs::deserialize&lt;bool&gt;(<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, multi_step_key));
 <b>let</b> next_execution_hash_is_empty = len(next_execution_hash) == 0;
 <b>aborts_if</b> !is_multi_step && !next_execution_hash_is_empty;
-<b>aborts_if</b> next_execution_hash_is_empty && is_multi_step && !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_in_execution_key);
+<b>aborts_if</b> next_execution_hash_is_empty && is_multi_step && !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_in_execution_key);
 <b>ensures</b> next_execution_hash_is_empty ==&gt; post_proposal.is_resolved == <b>true</b> && post_proposal.resolution_time_secs == <a href="timestamp.md#0x1_timestamp_spec_now_seconds">timestamp::spec_now_seconds</a>() &&
     <b>if</b> (is_multi_step) {
         is_multi_step_proposal_in_execution_value == std::bcs::serialize(<b>false</b>)
     } <b>else</b> {
-        <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_in_execution_key) ==&gt;
+        <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, multi_step_in_execution_key) ==&gt;
             is_multi_step_proposal_in_execution_value == std::bcs::serialize(<b>true</b>)
     };
 <b>ensures</b> !next_execution_hash_is_empty ==&gt; post_proposal.execution_hash == next_execution_hash;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework);
 <b>let</b> <b>post</b> post_approved_hashes = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework).hashes;
-<b>ensures</b> next_execution_hash_is_empty ==&gt; !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_approved_hashes, proposal_id);
+<b>ensures</b> next_execution_hash_is_empty ==&gt; !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(post_approved_hashes, proposal_id);
 <b>ensures</b> !next_execution_hash_is_empty ==&gt;
-    <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_approved_hashes, proposal_id) == next_execution_hash;
+    <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(post_approved_hashes, proposal_id) == next_execution_hash;
 <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_GetSignerAbortsIf">GetSignerAbortsIf</a>;
 <b>let</b> governance_responsibility = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework);
-<b>let</b> signer_cap = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(governance_responsibility.signer_caps, signer_address);
+<b>let</b> signer_cap = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(governance_responsibility.signer_caps, signer_address);
 <b>let</b> addr = signer_cap.<a href="account.md#0x1_account">account</a>;
-<b>ensures</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(result) == addr;
+<b>ensures</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(result) == addr;
 </code></pre>
 
 
@@ -2915,21 +2915,21 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
     proposal_id: u64;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
     <b>let</b> voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-    <b>let</b> proposal = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals, proposal_id);
-    <b>let</b> early_resolution_threshold = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(proposal.early_resolution_vote_threshold);
+    <b>let</b> proposal = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals, proposal_id);
+    <b>let</b> early_resolution_threshold = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_borrow">option::spec_borrow</a>(proposal.early_resolution_vote_threshold);
     <b>let</b> voting_period_over = <a href="timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &gt; proposal.expiration_secs;
-    <b>let</b> be_resolved_early = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
+    <b>let</b> be_resolved_early = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/option.md#0x1_option_spec_is_some">option::spec_is_some</a>(proposal.early_resolution_vote_threshold) &&
                                 (proposal.yes_votes &gt;= early_resolution_threshold ||
                                  proposal.no_votes &gt;= early_resolution_threshold);
     <b>let</b> voting_closed = voting_period_over || be_resolved_early;
     <b>aborts_if</b> voting_closed && (proposal.yes_votes &lt;= proposal.no_votes || proposal.yes_votes + proposal.no_votes &lt; proposal.min_vote_threshold);
     <b>aborts_if</b> !voting_closed;
     <b>aborts_if</b> proposal.is_resolved;
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>);
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, utf8(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>));
-    <b>let</b> resolvable_time = aptos_std::from_bcs::deserialize&lt;u64&gt;(<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, utf8(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>)));
-    <b>aborts_if</b> !aptos_std::from_bcs::deserializable&lt;u64&gt;(<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, utf8(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>)));
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(proposal.metadata, utf8(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>));
+    <b>let</b> resolvable_time = libra2_std::from_bcs::deserialize&lt;u64&gt;(<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, utf8(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>)));
+    <b>aborts_if</b> !libra2_std::from_bcs::deserializable&lt;u64&gt;(<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_get">simple_map::spec_get</a>(proposal.metadata, utf8(<a href="voting.md#0x1_voting_RESOLVABLE_TIME_METADATA_KEY">voting::RESOLVABLE_TIME_METADATA_KEY</a>)));
     <b>aborts_if</b> <a href="timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &lt;= resolvable_time;
     <b>aborts_if</b> libra2_framework::transaction_context::spec_get_script_hash() != proposal.execution_hash;
 }
@@ -2952,12 +2952,12 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
 <pre><code><b>aborts_if</b> !<b>exists</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework);
 <b>let</b> voting_forum = <b>global</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-<b>aborts_if</b> !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals, proposal_id);
+<b>aborts_if</b> !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(voting_forum.proposals, proposal_id);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="voting.md#0x1_voting_VotingForum">voting::VotingForum</a>&lt;GovernanceProposal&gt;&gt;(@libra2_framework);
-<b>let</b> proposal = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
+<b>let</b> proposal = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_spec_get">table::spec_get</a>(voting_forum.proposals, proposal_id);
 <b>aborts_if</b> !proposal.is_resolved;
 <b>let</b> <b>post</b> approved_hashes = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_ApprovedExecutionHashes">ApprovedExecutionHashes</a>&gt;(@libra2_framework).hashes;
-<b>ensures</b> !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(approved_hashes, proposal_id);
+<b>ensures</b> !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(approved_hashes, proposal_id);
 </code></pre>
 
 
@@ -2967,14 +2967,14 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
 ### Function `reconfigure`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_reconfigure">reconfigure</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_reconfigure">reconfigure</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
 
 
 <pre><code><b>pragma</b> verify = <b>false</b>;
-<b>aborts_if</b> !<a href="system_addresses.md#0x1_system_addresses_is_libra2_framework_address">system_addresses::is_libra2_framework_address</a>(<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework));
+<b>aborts_if</b> !<a href="system_addresses.md#0x1_system_addresses_is_libra2_framework_address">system_addresses::is_libra2_framework_address</a>(<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework));
 <b>include</b> <a href="reconfiguration_with_dkg.md#0x1_reconfiguration_with_dkg_FinishRequirement">reconfiguration_with_dkg::FinishRequirement</a> {
     framework: libra2_framework
 };
@@ -2992,14 +2992,14 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
 ### Function `force_end_epoch`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch">force_end_epoch</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch">force_end_epoch</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
 
 
 <pre><code><b>pragma</b> verify = <b>false</b>;
-<b>let</b> <b>address</b> = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
+<b>let</b> <b>address</b> = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
 <b>include</b> <a href="reconfiguration_with_dkg.md#0x1_reconfiguration_with_dkg_FinishRequirement">reconfiguration_with_dkg::FinishRequirement</a> {
     framework: libra2_framework
 };
@@ -3012,7 +3012,7 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
 
 
 <pre><code><b>schema</b> <a href="aptos_governance.md#0x1_aptos_governance_VotingInitializationAbortIfs">VotingInitializationAbortIfs</a> {
-    <b>aborts_if</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
+    <b>aborts_if</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/features.md#0x1_features_spec_partial_governance_voting_enabled">features::spec_partial_governance_voting_enabled</a>() && !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_VotingRecordsV2">VotingRecordsV2</a>&gt;(@libra2_framework);
 }
 </code></pre>
 
@@ -3023,7 +3023,7 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
 ### Function `force_end_epoch_test_only`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch_test_only">force_end_epoch_test_only</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> entry <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_force_end_epoch_test_only">force_end_epoch_test_only</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -3039,7 +3039,7 @@ Address @libra2_framework must exist ApprovedExecutionHashes and GovernancePropo
 ### Function `toggle_features`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_toggle_features">toggle_features</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, enable: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;, disable: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_toggle_features">toggle_features</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, enable: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;, disable: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;)
 </code></pre>
 
 
@@ -3048,7 +3048,7 @@ Address @libra2_framework must exist GovernanceConfig and GovernanceEvents.
 
 
 <pre><code><b>pragma</b> verify = <b>false</b>;
-<b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
+<b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
 <b>aborts_if</b> addr != @libra2_framework;
 <b>include</b> <a href="reconfiguration_with_dkg.md#0x1_reconfiguration_with_dkg_FinishRequirement">reconfiguration_with_dkg::FinishRequirement</a> {
     framework: libra2_framework
@@ -3067,7 +3067,7 @@ Address @libra2_framework must exist GovernanceConfig and GovernanceEvents.
 ### Function `get_signer_testnet_only`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer_testnet_only">get_signer_testnet_only</a>(core_resources: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>public</b> <b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer_testnet_only">get_signer_testnet_only</a>(core_resources: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, signer_address: <b>address</b>): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -3076,8 +3076,8 @@ signer must exist in MintCapStore.
 Address @libra2_framework must exist GovernanceResponsbility.
 
 
-<pre><code><b>aborts_if</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(core_resources) != @core_resources;
-<b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_coin.md#0x1_aptos_coin_MintCapStore">aptos_coin::MintCapStore</a>&gt;(<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(core_resources));
+<pre><code><b>aborts_if</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(core_resources) != @core_resources;
+<b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_coin.md#0x1_aptos_coin_MintCapStore">aptos_coin::MintCapStore</a>&gt;(<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(core_resources));
 <b>include</b> <a href="aptos_governance.md#0x1_aptos_governance_GetSignerAbortsIf">GetSignerAbortsIf</a>;
 </code></pre>
 
@@ -3137,7 +3137,7 @@ pool_address must exist in StakePool.
 ### Function `get_signer`
 
 
-<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer">get_signer</a>(signer_address: <b>address</b>): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_get_signer">get_signer</a>(signer_address: <b>address</b>): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -3156,7 +3156,7 @@ pool_address must exist in StakePool.
     signer_address: <b>address</b>;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework);
     <b>let</b> cap_map = <b>global</b>&lt;<a href="aptos_governance.md#0x1_aptos_governance_GovernanceResponsbility">GovernanceResponsbility</a>&gt;(@libra2_framework).signer_caps;
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(cap_map, signer_address);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(cap_map, signer_address);
 }
 </code></pre>
 
@@ -3167,7 +3167,7 @@ pool_address must exist in StakePool.
 ### Function `create_proposal_metadata`
 
 
-<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_metadata">create_proposal_metadata</a>(metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_String">string::String</a>, <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;
+<pre><code><b>fun</b> <a href="aptos_governance.md#0x1_aptos_governance_create_proposal_metadata">create_proposal_metadata</a>(metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_SimpleMap">simple_map::SimpleMap</a>&lt;<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_String">string::String</a>, <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;
 </code></pre>
 
 
@@ -3183,14 +3183,14 @@ pool_address must exist in StakePool.
 
 
 <pre><code><b>schema</b> <a href="aptos_governance.md#0x1_aptos_governance_CreateProposalMetadataAbortsIf">CreateProposalMetadataAbortsIf</a> {
-    metadata_location: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
-    metadata_hash: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
-    <b>aborts_if</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_length">string::length</a>(utf8(metadata_location)) &gt; 256;
-    <b>aborts_if</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_length">string::length</a>(utf8(metadata_hash)) &gt; 256;
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(metadata_location);
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(metadata_hash);
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="aptos_governance.md#0x1_aptos_governance_METADATA_LOCATION_KEY">METADATA_LOCATION_KEY</a>);
-    <b>aborts_if</b> !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="aptos_governance.md#0x1_aptos_governance_METADATA_HASH_KEY">METADATA_HASH_KEY</a>);
+    metadata_location: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
+    metadata_hash: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
+    <b>aborts_if</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_length">string::length</a>(utf8(metadata_location)) &gt; 256;
+    <b>aborts_if</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_length">string::length</a>(utf8(metadata_hash)) &gt; 256;
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(metadata_location);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(metadata_hash);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="aptos_governance.md#0x1_aptos_governance_METADATA_LOCATION_KEY">METADATA_LOCATION_KEY</a>);
+    <b>aborts_if</b> !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="aptos_governance.md#0x1_aptos_governance_METADATA_HASH_KEY">METADATA_HASH_KEY</a>);
 }
 </code></pre>
 

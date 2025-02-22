@@ -328,7 +328,7 @@ module libra2_framework::aggregator_v2 {
         (x, y)
     }
     spec verify_aggregator_generic <IntElement1: copy + drop, IntElement2: copy+drop>(): (Aggregator<IntElement1>,  Aggregator<IntElement2>) {
-        use aptos_std::type_info;
+        use libra2_std::type_info;
         aborts_if type_info::type_name<IntElement1>().bytes != b"u64" && type_info::type_name<IntElement1>().bytes != b"u128";
         aborts_if type_info::type_name<IntElement2>().bytes != b"u64" && type_info::type_name<IntElement2>().bytes != b"u128";
     }
@@ -342,7 +342,7 @@ module libra2_framework::aggregator_v2 {
         add(aggregator, value);
     }
     spec verify_aggregator_generic_add<IntElement: copy + drop>(aggregator: &mut Aggregator<IntElement>, value: IntElement) {
-        use aptos_std::type_info;
+        use libra2_std::type_info;
         aborts_if type_info::type_name<IntElement>().bytes != b"u64" && type_info::type_name<IntElement>().bytes != b"u128";
     }
 
@@ -354,7 +354,7 @@ module libra2_framework::aggregator_v2 {
         sub(aggregator, value);
     }
     spec verify_aggregator_generic_sub<IntElement: copy + drop>(aggregator: &mut Aggregator<IntElement>, value: IntElement) {
-        use aptos_std::type_info;
+        use libra2_std::type_info;
         aborts_if type_info::type_name<IntElement>().bytes != b"u64" && type_info::type_name<IntElement>().bytes != b"u128";
     }
 

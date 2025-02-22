@@ -11,15 +11,15 @@ module veiled_coin::veiled_coin_tests {
     use std::string::utf8;
 
     #[test_only]
-    use aptos_std::ristretto255_bulletproofs as bulletproofs;
+    use libra2_std::ristretto255_bulletproofs as bulletproofs;
     #[test_only]
-    use aptos_std::debug::print;
+    use libra2_std::debug::print;
     #[test_only]
-    use aptos_std::ristretto255_elgamal as elgamal;
+    use libra2_std::ristretto255_elgamal as elgamal;
     #[test_only]
-    use aptos_std::ristretto255;
+    use libra2_std::ristretto255;
     #[test_only]
-    use aptos_std::ristretto255_pedersen as pedersen;
+    use libra2_std::ristretto255_pedersen as pedersen;
 
     #[test_only]
     use libra2_framework::account;

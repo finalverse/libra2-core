@@ -22,7 +22,7 @@ use crate::{
     ApiError, RosettaContext,
 };
 use anyhow::anyhow;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{ed25519::Ed25519PublicKey, ValidCryptoMaterialStringExt};
 use libra2_logger::warn;
 use libra2_rest_client::libra2_api_types::{ResourceGroup, TransactionOnChainData, U64};
@@ -2575,7 +2575,7 @@ impl InternalOperation {
     ) -> ApiResult<(libra2_types::transaction::TransactionPayload, AccountAddress)> {
         Ok(match self {
             InternalOperation::CreateAccount(create_account) => (
-                aptos_stdlib::aptos_account_create_account(create_account.new_account),
+                libra2_stdlib::aptos_account_create_account(create_account.new_account),
                 create_account.sender,
             ),
             InternalOperation::Transfer(transfer) => {
@@ -2585,7 +2585,7 @@ impl InternalOperation {
                 // We special case APT, because we don't want the behavior to change
                 if currency == &native_coin() {
                     return Ok((
-                        aptos_stdlib::aptos_account_transfer(transfer.receiver, transfer.amount.0),
+                        libra2_stdlib::aptos_account_transfer(transfer.receiver, transfer.amount.0),
                         transfer.sender,
                     ));
                 }
@@ -2598,7 +2598,7 @@ impl InternalOperation {
                             let coin_type_tag = parse_type_tag(coin_type)
                                 .map_err(|err| ApiError::InvalidInput(Some(err.to_string())))?;
                             (
-                                aptos_stdlib::aptos_account_transfer_coins(
+                                libra2_stdlib::aptos_account_transfer_coins(
                                     coin_type_tag,
                                     transfer.receiver,
                                     transfer.amount.0,
@@ -2654,7 +2654,7 @@ impl InternalOperation {
                     )));
                 }
                 (
-                    aptos_stdlib::staking_contract_switch_operator_with_same_commission(
+                    libra2_stdlib::staking_contract_switch_operator_with_same_commission(
                         set_operator.old_operator.unwrap(),
                         set_operator.new_operator,
                     ),
@@ -2668,7 +2668,7 @@ impl InternalOperation {
                     )));
                 }
                 (
-                    aptos_stdlib::staking_contract_update_voter(
+                    libra2_stdlib::staking_contract_update_voter(
                         set_voter.operator.unwrap(),
                         set_voter.new_voter,
                     ),
@@ -2676,7 +2676,7 @@ impl InternalOperation {
                 )
             },
             InternalOperation::InitializeStakePool(init_stake_pool) => (
-                aptos_stdlib::staking_contract_create_staking_contract(
+                libra2_stdlib::staking_contract_create_staking_contract(
                     init_stake_pool.operator,
                     init_stake_pool.voter,
                     init_stake_pool.amount,
@@ -2686,46 +2686,46 @@ impl InternalOperation {
                 init_stake_pool.owner,
             ),
             InternalOperation::ResetLockup(reset_lockup) => (
-                aptos_stdlib::staking_contract_reset_lockup(reset_lockup.operator),
+                libra2_stdlib::staking_contract_reset_lockup(reset_lockup.operator),
                 reset_lockup.owner,
             ),
             InternalOperation::UnlockStake(unlock_stake) => (
-                aptos_stdlib::staking_contract_unlock_stake(
+                libra2_stdlib::staking_contract_unlock_stake(
                     unlock_stake.operator,
                     unlock_stake.amount,
                 ),
                 unlock_stake.owner,
             ),
             InternalOperation::UpdateCommission(update_commision) => (
-                aptos_stdlib::staking_contract_update_commision(
+                libra2_stdlib::staking_contract_update_commision(
                     update_commision.operator,
                     update_commision.new_commission_percentage,
                 ),
                 update_commision.owner,
             ),
             InternalOperation::DistributeStakingRewards(distribute_staking_rewards) => (
-                aptos_stdlib::staking_contract_distribute(
+                libra2_stdlib::staking_contract_distribute(
                     distribute_staking_rewards.staker,
                     distribute_staking_rewards.operator,
                 ),
                 distribute_staking_rewards.sender,
             ),
             InternalOperation::AddDelegatedStake(add_delegated_stake) => (
-                aptos_stdlib::delegation_pool_add_stake(
+                libra2_stdlib::delegation_pool_add_stake(
                     add_delegated_stake.pool_address,
                     add_delegated_stake.amount,
                 ),
                 add_delegated_stake.delegator,
             ),
             InternalOperation::UnlockDelegatedStake(unlock_delegated_stake) => (
-                aptos_stdlib::delegation_pool_unlock(
+                libra2_stdlib::delegation_pool_unlock(
                     unlock_delegated_stake.pool_address,
                     unlock_delegated_stake.amount,
                 ),
                 unlock_delegated_stake.delegator,
             ),
             InternalOperation::WithdrawUndelegated(withdraw_undelegated) => (
-                aptos_stdlib::delegation_pool_withdraw(
+                libra2_stdlib::delegation_pool_withdraw(
                     withdraw_undelegated.pool_address,
                     withdraw_undelegated.amount_withdrawn,
                 ),

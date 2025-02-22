@@ -189,13 +189,13 @@ Checkout our developer doc on our token standard https://aptos.dev/standards
 
 
 <pre><code><b>use</b> <a href="../../libra2-framework/doc/account.md#0x1_account">0x1::account</a>;
-<b>use</b> <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
 <b>use</b> <a href="../../libra2-framework/doc/event.md#0x1_event">0x1::event</a>;
-<b>use</b> <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/features.md#0x1_features">0x1::features</a>;
-<b>use</b> <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
-<b>use</b> <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
-<b>use</b> <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string">0x1::string</a>;
-<b>use</b> <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table">0x1::table</a>;
+<b>use</b> <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/features.md#0x1_features">0x1::features</a>;
+<b>use</b> <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
+<b>use</b> <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
+<b>use</b> <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string">0x1::string</a>;
+<b>use</b> <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table">0x1::table</a>;
 <b>use</b> <a href="../../libra2-framework/doc/timestamp.md#0x1_timestamp">0x1::timestamp</a>;
 <b>use</b> <a href="property_map.md#0x3_property_map">0x3::property_map</a>;
 <b>use</b> <a href="token_event_store.md#0x3_token_event_store">0x3::token_event_store</a>;
@@ -302,13 +302,13 @@ globally unique identifier of tokendata
  The address of the creator, eg: 0xcafe
 </dd>
 <dt>
-<code>collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
  The name of collection; this is unique under the same account, eg: "Aptos Animal Collection"
 </dd>
 <dt>
-<code>name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
  The name of the token; this is the same as the name field of TokenData
@@ -354,7 +354,7 @@ The shared TokenData by tokens with different property_version
  The number of tokens with this TokenData. Supply is only tracked for the limited token whose maximum is not 0
 </dd>
 <dt>
-<code>uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
  The Uniform Resource Identifier (uri) pointing to the JSON file stored in off-chain storage; the URL length should be less than 512 characters, eg: https://arweave.net/Fmmn4ul-7Mv6vzm7JwE69O-I-vd6Bz2QriJO1niwCh4
@@ -366,13 +366,13 @@ The shared TokenData by tokens with different property_version
  The denominator and numerator for calculating the royalty fee; it also contains payee account address for depositing the Royalty
 </dd>
 <dt>
-<code>name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
  The name of the token, which should be unique within the collection; the length of name should be smaller than 128, characters, eg: "Aptos Animal #1234"
 </dd>
 <dt>
-<code>description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
  Describes this Token
@@ -505,7 +505,7 @@ Represents token resources owned by token owner
 
 <dl>
 <dt>
-<code>tokens: <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_Table">table::Table</a>&lt;<a href="token.md#0x3_token_TokenId">token::TokenId</a>, <a href="token.md#0x3_token_Token">token::Token</a>&gt;</code>
+<code>tokens: <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_Table">table::Table</a>&lt;<a href="token.md#0x3_token_TokenId">token::TokenId</a>, <a href="token.md#0x3_token_Token">token::Token</a>&gt;</code>
 </dt>
 <dd>
  the tokens owned by a token owner
@@ -603,13 +603,13 @@ Represent collection and token metadata for a creator
 
 <dl>
 <dt>
-<code>collection_data: <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_Table">table::Table</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, <a href="token.md#0x3_token_CollectionData">token::CollectionData</a>&gt;</code>
+<code>collection_data: <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_Table">table::Table</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, <a href="token.md#0x3_token_CollectionData">token::CollectionData</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>token_data: <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_Table">table::Table</a>&lt;<a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, <a href="token.md#0x3_token_TokenData">token::TokenData</a>&gt;</code>
+<code>token_data: <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_Table">table::Table</a>&lt;<a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, <a href="token.md#0x3_token_TokenData">token::TokenData</a>&gt;</code>
 </dt>
 <dd>
 
@@ -655,19 +655,19 @@ Represent the collection metadata
 
 <dl>
 <dt>
-<code>description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
  A description for the token collection Eg: "Aptos Toad Overload"
 </dd>
 <dt>
-<code>name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
  The collection name, which should be unique among all collections by the creator; the name should also be smaller than 128 characters, eg: "Animal Collection"
 </dd>
 <dt>
-<code>uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
  The URI for the collection; its length should be smaller than 512 characters
@@ -988,7 +988,7 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1000,7 +1000,7 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1024,7 +1024,7 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1036,19 +1036,19 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>property_keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>property_keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>property_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
+<code>property_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>property_types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>property_types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
@@ -1083,7 +1083,7 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1095,7 +1095,7 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1119,7 +1119,7 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1131,19 +1131,19 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>property_keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>property_keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>property_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
+<code>property_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>property_types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>property_types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
@@ -1183,7 +1183,7 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1195,7 +1195,7 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1219,7 +1219,7 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1231,19 +1231,19 @@ token creation event id of token created
 
 </dd>
 <dt>
-<code>property_keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>property_keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>property_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
+<code>property_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>property_types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>property_types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
@@ -1499,19 +1499,19 @@ mint token event. This event triggered when creator adds more supply to existing
 
 </dd>
 <dt>
-<code>keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
+<code>values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
@@ -1552,19 +1552,19 @@ mint token event. This event triggered when creator adds more supply to existing
 
 </dd>
 <dt>
-<code>keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
+<code>values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
@@ -1610,19 +1610,19 @@ mint token event. This event triggered when creator adds more supply to existing
 
 </dd>
 <dt>
-<code>keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
+<code>values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
+<code>types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;</code>
 </dt>
 <dd>
 
@@ -1656,19 +1656,19 @@ create collection event with creator address and collection name
 
 </dd>
 <dt>
-<code>collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1708,19 +1708,19 @@ create collection event with creator address and collection name
 
 </dd>
 <dt>
-<code>collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
+<code>description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a></code>
 </dt>
 <dd>
 
@@ -1774,7 +1774,7 @@ The URI is too long
 
 
 
-<pre><code><b>const</b> <a href="token.md#0x3_token_BURNABLE_BY_CREATOR">BURNABLE_BY_CREATOR</a>: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [84, 79, 75, 69, 78, 95, 66, 85, 82, 78, 65, 66, 76, 69, 95, 66, 89, 95, 67, 82, 69, 65, 84, 79, 82];
+<pre><code><b>const</b> <a href="token.md#0x3_token_BURNABLE_BY_CREATOR">BURNABLE_BY_CREATOR</a>: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [84, 79, 75, 69, 78, 95, 66, 85, 82, 78, 65, 66, 76, 69, 95, 66, 89, 95, 67, 82, 69, 65, 84, 79, 82];
 </code></pre>
 
 
@@ -1783,7 +1783,7 @@ The URI is too long
 
 
 
-<pre><code><b>const</b> <a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [84, 79, 75, 69, 78, 95, 66, 85, 82, 78, 65, 66, 76, 69, 95, 66, 89, 95, 79, 87, 78, 69, 82];
+<pre><code><b>const</b> <a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [84, 79, 75, 69, 78, 95, 66, 85, 82, 78, 65, 66, 76, 69, 95, 66, 89, 95, 79, 87, 78, 69, 82];
 </code></pre>
 
 
@@ -2196,7 +2196,7 @@ Cannot withdraw 0 token
 
 
 
-<pre><code><b>const</b> <a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE">TOKEN_PROPERTY_MUTABLE</a>: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [84, 79, 75, 69, 78, 95, 80, 82, 79, 80, 69, 82, 84, 89, 95, 77, 85, 84, 65, 84, 66, 76, 69];
+<pre><code><b>const</b> <a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE">TOKEN_PROPERTY_MUTABLE</a>: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [84, 79, 75, 69, 78, 95, 80, 82, 79, 80, 69, 82, 84, 89, 95, 77, 85, 84, 65, 84, 66, 76, 69];
 </code></pre>
 
 
@@ -2244,7 +2244,7 @@ Cannot withdraw 0 token
 create a empty token collection with parameters
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_collection_script">create_collection_script</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_collection_script">create_collection_script</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;)
 </code></pre>
 
 
@@ -2254,12 +2254,12 @@ create a empty token collection with parameters
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_collection_script">create_collection_script</a>(
-    creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     name: String,
     description: String,
     uri: String,
     maximum: u64,
-    mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;,
+    mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;,
 ) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <a href="token.md#0x3_token_create_collection">create_collection</a>(
         creator,
@@ -2283,7 +2283,7 @@ create a empty token collection with parameters
 create token with raw inputs
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_token_script">create_token_script</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, balance: u64, maximum: u64, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, royalty_payee_address: <b>address</b>, royalty_points_denominator: u64, royalty_points_numerator: u64, mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;, property_keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, property_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, property_types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_token_script">create_token_script</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, balance: u64, maximum: u64, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, royalty_payee_address: <b>address</b>, royalty_points_denominator: u64, royalty_points_numerator: u64, mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;, property_keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, property_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, property_types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -2293,7 +2293,7 @@ create token with raw inputs
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_token_script">create_token_script</a>(
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     collection: String,
     name: String,
     description: String,
@@ -2303,10 +2303,10 @@ create token with raw inputs
     royalty_payee_address: <b>address</b>,
     royalty_points_denominator: u64,
     royalty_points_numerator: u64,
-    mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;,
-    property_keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
-    property_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
-    property_types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;
+    mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;,
+    property_keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    property_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
+    property_types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;
 ) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a>, <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
     <b>let</b> token_mut_config = <a href="token.md#0x3_token_create_token_mutability_config">create_token_mutability_config</a>(&mutate_setting);
     <b>let</b> tokendata_id = <a href="token.md#0x3_token_create_tokendata">create_tokendata</a>(
@@ -2344,7 +2344,7 @@ create token with raw inputs
 Mint more token from an existing token_data. Mint only adds more token to property_version 0
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mint_script">mint_script</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_address: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mint_script">mint_script</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_address: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, amount: u64)
 </code></pre>
 
 
@@ -2354,7 +2354,7 @@ Mint more token from an existing token_data. Mint only adds more token to proper
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mint_script">mint_script</a>(
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     token_data_address: <b>address</b>,
     collection: String,
     name: String,
@@ -2366,7 +2366,7 @@ Mint more token from an existing token_data. Mint only adds more token to proper
         name,
     );
     // only creator of the tokendata can mint more tokens for now
-    <b>assert</b>!(token_data_id.creator == <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MINT_CAPABILITY">ENO_MINT_CAPABILITY</a>));
+    <b>assert</b>!(token_data_id.creator == <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MINT_CAPABILITY">ENO_MINT_CAPABILITY</a>));
     <a href="token.md#0x3_token_mint_token">mint_token</a>(
         <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>,
         token_data_id,
@@ -2388,7 +2388,7 @@ if the token property_version is 0, we will create a new property_version per to
 if the token property_version is not 0, we will just update the propertyMap and use the existing token_id (property_version)
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mutate_token_properties">mutate_token_properties</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_owner: <b>address</b>, creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_property_version: u64, amount: u64, keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mutate_token_properties">mutate_token_properties</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_owner: <b>address</b>, creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_property_version: u64, amount: u64, keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -2398,18 +2398,18 @@ if the token property_version is not 0, we will just update the propertyMap and 
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mutate_token_properties">mutate_token_properties</a>(
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     token_owner: <b>address</b>,
     creator: <b>address</b>,
     collection_name: String,
     token_name: String,
     token_property_version: u64,
     amount: u64,
-    keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
-    values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
-    types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
+    types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
 ) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a>, <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>) == creator, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ENO_MUTATE_CAPABILITY">ENO_MUTATE_CAPABILITY</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>) == creator, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ENO_MUTATE_CAPABILITY">ENO_MUTATE_CAPABILITY</a>));
     <b>let</b> i = 0;
     <b>let</b> token_id = <a href="token.md#0x3_token_create_token_id_raw">create_token_id_raw</a>(
         creator,
@@ -2435,7 +2435,7 @@ if the token property_version is not 0, we will just update the propertyMap and 
 
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_direct_transfer_script">direct_transfer_script</a>(sender: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creators_address: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_direct_transfer_script">direct_transfer_script</a>(sender: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creators_address: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
 </code></pre>
 
 
@@ -2445,8 +2445,8 @@ if the token property_version is not 0, we will just update the propertyMap and 
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_direct_transfer_script">direct_transfer_script</a>(
-    sender: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
-    receiver: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    sender: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    receiver: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     creators_address: <b>address</b>,
     collection: String,
     name: String,
@@ -2468,7 +2468,7 @@ if the token property_version is not 0, we will just update the propertyMap and 
 
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_opt_in_direct_transfer">opt_in_direct_transfer</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, opt_in: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_opt_in_direct_transfer">opt_in_direct_transfer</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, opt_in: bool)
 </code></pre>
 
 
@@ -2477,8 +2477,8 @@ if the token property_version is not 0, we will just update the propertyMap and 
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_opt_in_direct_transfer">opt_in_direct_transfer</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, opt_in: bool) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_opt_in_direct_transfer">opt_in_direct_transfer</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, opt_in: bool) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
+    <b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
     <a href="token.md#0x3_token_initialize_token_store">initialize_token_store</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
     <b>let</b> opt_in_flag = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(addr).direct_transfer;
     *opt_in_flag = opt_in;
@@ -2498,7 +2498,7 @@ Transfers <code>amount</code> of tokens from <code>from</code> to <code><b>to</b
 The receiver <code><b>to</b></code> has to opt-in direct transfer first
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_transfer_with_opt_in">transfer_with_opt_in</a>(from: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_property_version: u64, <b>to</b>: <b>address</b>, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_transfer_with_opt_in">transfer_with_opt_in</a>(from: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_property_version: u64, <b>to</b>: <b>address</b>, amount: u64)
 </code></pre>
 
 
@@ -2508,7 +2508,7 @@ The receiver <code><b>to</b></code> has to opt-in direct transfer first
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_transfer_with_opt_in">transfer_with_opt_in</a>(
-    from: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    from: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     creator: <b>address</b>,
     collection_name: String,
     token_name: String,
@@ -2533,7 +2533,7 @@ Burn a token by creator when the token's BURNABLE_BY_CREATOR is true
 The token is owned at address owner
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn_by_creator">burn_by_creator</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, owner: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn_by_creator">burn_by_creator</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, owner: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
 </code></pre>
 
 
@@ -2543,41 +2543,41 @@ The token is owned at address owner
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn_by_creator">burn_by_creator</a>(
-    creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     owner: <b>address</b>,
     collection: String,
     name: String,
     property_version: u64,
     amount: u64,
 ) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a>, <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>let</b> creator_address = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
-    <b>assert</b>!(amount &gt; 0, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ENO_BURN_TOKEN_WITH_ZERO_AMOUNT">ENO_BURN_TOKEN_WITH_ZERO_AMOUNT</a>));
+    <b>let</b> creator_address = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+    <b>assert</b>!(amount &gt; 0, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ENO_BURN_TOKEN_WITH_ZERO_AMOUNT">ENO_BURN_TOKEN_WITH_ZERO_AMOUNT</a>));
     <b>let</b> token_id = <a href="token.md#0x3_token_create_token_id_raw">create_token_id_raw</a>(creator_address, collection, name, property_version);
     <b>let</b> creator_addr = token_id.token_data_id.creator;
     <b>assert</b>!(
         <b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
     );
 
     <b>let</b> collections = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address);
     <b>assert</b>!(
-        <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&collections.token_data, token_id.token_data_id),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&collections.token_data, token_id.token_data_id),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>),
     );
 
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
         &<b>mut</b> collections.token_data,
         token_id.token_data_id,
     );
 
     // The property should be explicitly set in the <a href="property_map.md#0x3_property_map">property_map</a> for creator <b>to</b> burn the <a href="token.md#0x3_token">token</a>
     <b>assert</b>!(
-        <a href="property_map.md#0x3_property_map_contains_key">property_map::contains_key</a>(&token_data.default_properties, &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_CREATOR">BURNABLE_BY_CREATOR</a>)),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ECREATOR_CANNOT_BURN_TOKEN">ECREATOR_CANNOT_BURN_TOKEN</a>)
+        <a href="property_map.md#0x3_property_map_contains_key">property_map::contains_key</a>(&token_data.default_properties, &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_CREATOR">BURNABLE_BY_CREATOR</a>)),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ECREATOR_CANNOT_BURN_TOKEN">ECREATOR_CANNOT_BURN_TOKEN</a>)
     );
 
-    <b>let</b> burn_by_creator_flag = <a href="property_map.md#0x3_property_map_read_bool">property_map::read_bool</a>(&token_data.default_properties, &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_CREATOR">BURNABLE_BY_CREATOR</a>));
-    <b>assert</b>!(burn_by_creator_flag, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ECREATOR_CANNOT_BURN_TOKEN">ECREATOR_CANNOT_BURN_TOKEN</a>));
+    <b>let</b> burn_by_creator_flag = <a href="property_map.md#0x3_property_map_read_bool">property_map::read_bool</a>(&token_data.default_properties, &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_CREATOR">BURNABLE_BY_CREATOR</a>));
+    <b>assert</b>!(burn_by_creator_flag, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ECREATOR_CANNOT_BURN_TOKEN">ECREATOR_CANNOT_BURN_TOKEN</a>));
 
     // <a href="token.md#0x3_token_Burn">Burn</a> the tokens.
     <b>let</b> <a href="token.md#0x3_token_Token">Token</a> { id: _, amount: burned_amount, token_properties: _ } = <a href="token.md#0x3_token_withdraw_with_event_internal">withdraw_with_event_internal</a>(owner, token_id, amount);
@@ -2596,10 +2596,10 @@ The token is owned at address owner
 
         // Delete the token_data <b>if</b> supply drops <b>to</b> 0.
         <b>if</b> (token_data.supply == 0) {
-            <a href="token.md#0x3_token_destroy_token_data">destroy_token_data</a>(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(&<b>mut</b> collections.token_data, token_id.token_data_id));
+            <a href="token.md#0x3_token_destroy_token_data">destroy_token_data</a>(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(&<b>mut</b> collections.token_data, token_id.token_data_id));
 
             // <b>update</b> the collection supply
-            <b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
+            <b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
                 &<b>mut</b> collections.collection_data,
                 token_id.token_data_id.collection
             );
@@ -2607,7 +2607,7 @@ The token is owned at address owner
                 collection_data.supply = collection_data.supply - 1;
                 // delete the collection data <b>if</b> the collection supply equals 0
                 <b>if</b> (collection_data.supply == 0) {
-                    <a href="token.md#0x3_token_destroy_collection_data">destroy_collection_data</a>(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(&<b>mut</b> collections.collection_data, collection_data.name));
+                    <a href="token.md#0x3_token_destroy_collection_data">destroy_collection_data</a>(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(&<b>mut</b> collections.collection_data, collection_data.name));
                 };
             };
         };
@@ -2626,7 +2626,7 @@ The token is owned at address owner
 Burn a token by the token owner
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn">burn</a>(owner: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creators_address: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn">burn</a>(owner: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creators_address: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
 </code></pre>
 
 
@@ -2636,44 +2636,44 @@ Burn a token by the token owner
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn">burn</a>(
-    owner: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    owner: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     creators_address: <b>address</b>,
     collection: String,
     name: String,
     property_version: u64,
     amount: u64
 ) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a>, <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>assert</b>!(amount &gt; 0, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ENO_BURN_TOKEN_WITH_ZERO_AMOUNT">ENO_BURN_TOKEN_WITH_ZERO_AMOUNT</a>));
+    <b>assert</b>!(amount &gt; 0, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ENO_BURN_TOKEN_WITH_ZERO_AMOUNT">ENO_BURN_TOKEN_WITH_ZERO_AMOUNT</a>));
     <b>let</b> token_id = <a href="token.md#0x3_token_create_token_id_raw">create_token_id_raw</a>(creators_address, collection, name, property_version);
     <b>let</b> creator_addr = token_id.token_data_id.creator;
     <b>assert</b>!(
         <b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
     );
 
     <b>let</b> collections = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
     <b>assert</b>!(
-        <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&collections.token_data, token_id.token_data_id),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&collections.token_data, token_id.token_data_id),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>),
     );
 
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
         &<b>mut</b> collections.token_data,
         token_id.token_data_id,
     );
 
     <b>assert</b>!(
-        <a href="property_map.md#0x3_property_map_contains_key">property_map::contains_key</a>(&token_data.default_properties, &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>)),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EOWNER_CANNOT_BURN_TOKEN">EOWNER_CANNOT_BURN_TOKEN</a>)
+        <a href="property_map.md#0x3_property_map_contains_key">property_map::contains_key</a>(&token_data.default_properties, &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>)),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EOWNER_CANNOT_BURN_TOKEN">EOWNER_CANNOT_BURN_TOKEN</a>)
     );
-    <b>let</b> burn_by_owner_flag = <a href="property_map.md#0x3_property_map_read_bool">property_map::read_bool</a>(&token_data.default_properties, &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>));
-    <b>assert</b>!(burn_by_owner_flag, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EOWNER_CANNOT_BURN_TOKEN">EOWNER_CANNOT_BURN_TOKEN</a>));
+    <b>let</b> burn_by_owner_flag = <a href="property_map.md#0x3_property_map_read_bool">property_map::read_bool</a>(&token_data.default_properties, &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>));
+    <b>assert</b>!(burn_by_owner_flag, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EOWNER_CANNOT_BURN_TOKEN">EOWNER_CANNOT_BURN_TOKEN</a>));
 
     // <a href="token.md#0x3_token_Burn">Burn</a> the tokens.
     <b>let</b> <a href="token.md#0x3_token_Token">Token</a> { id: _, amount: burned_amount, token_properties: _ } = <a href="token.md#0x3_token_withdraw_token">withdraw_token</a>(owner, token_id, amount);
-    <b>let</b> token_store = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(owner));
+    <b>let</b> token_store = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(owner));
     <b>if</b> (std::features::module_event_migration_enabled()) {
-        <a href="../../libra2-framework/doc/event.md#0x1_event_emit">event::emit</a>(<a href="token.md#0x3_token_Burn">Burn</a> { <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(owner), id: token_id, amount: burned_amount });
+        <a href="../../libra2-framework/doc/event.md#0x1_event_emit">event::emit</a>(<a href="token.md#0x3_token_Burn">Burn</a> { <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(owner), id: token_id, amount: burned_amount });
     } <b>else</b> {
         <a href="../../libra2-framework/doc/event.md#0x1_event_emit_event">event::emit_event</a>&lt;<a href="token.md#0x3_token_BurnTokenEvent">BurnTokenEvent</a>&gt;(
             &<b>mut</b> token_store.burn_events,
@@ -2682,7 +2682,7 @@ Burn a token by the token owner
     };
 
     // Decrease the supply correspondingly by the amount of tokens burned.
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
         &<b>mut</b> collections.token_data,
         token_id.token_data_id,
     );
@@ -2694,10 +2694,10 @@ Burn a token by the token owner
 
         // Delete the token_data <b>if</b> supply drops <b>to</b> 0.
         <b>if</b> (token_data.supply == 0) {
-            <a href="token.md#0x3_token_destroy_token_data">destroy_token_data</a>(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(&<b>mut</b> collections.token_data, token_id.token_data_id));
+            <a href="token.md#0x3_token_destroy_token_data">destroy_token_data</a>(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(&<b>mut</b> collections.token_data, token_id.token_data_id));
 
             // <b>update</b> the collection supply
-            <b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
+            <b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(
                 &<b>mut</b> collections.collection_data,
                 token_id.token_data_id.collection
             );
@@ -2707,7 +2707,7 @@ Burn a token by the token owner
                 collection_data.supply = collection_data.supply - 1;
                 // delete the collection data <b>if</b> the collection supply equals 0
                 <b>if</b> (collection_data.supply == 0) {
-                    <a href="token.md#0x3_token_destroy_collection_data">destroy_collection_data</a>(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(&<b>mut</b> collections.collection_data, collection_data.name));
+                    <a href="token.md#0x3_token_destroy_collection_data">destroy_collection_data</a>(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(&<b>mut</b> collections.collection_data, collection_data.name));
                 };
             };
         };
@@ -2725,7 +2725,7 @@ Burn a token by the token owner
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_description">mutate_collection_description</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_description">mutate_collection_description</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -2734,11 +2734,11 @@ Burn a token by the token owner
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_description">mutate_collection_description</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: String, description: String) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>let</b> creator_address = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_description">mutate_collection_description</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: String, description: String) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
+    <b>let</b> creator_address = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
     <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address, collection_name);
-    <b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
-    <b>assert</b>!(collection_data.mutability_config.description, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
+    <b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
+    <b>assert</b>!(collection_data.mutability_config.description, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
     <a href="token_event_store.md#0x3_token_event_store_emit_collection_description_mutate_event">token_event_store::emit_collection_description_mutate_event</a>(creator, collection_name, collection_data.description, description);
     collection_data.description = description;
 }
@@ -2754,7 +2754,7 @@ Burn a token by the token owner
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_uri">mutate_collection_uri</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_uri">mutate_collection_uri</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -2763,12 +2763,12 @@ Burn a token by the token owner
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_uri">mutate_collection_uri</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: String, uri: String) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&uri) &lt;= <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EURI_TOO_LONG">EURI_TOO_LONG</a>));
-    <b>let</b> creator_address = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_uri">mutate_collection_uri</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: String, uri: String) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&uri) &lt;= <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EURI_TOO_LONG">EURI_TOO_LONG</a>));
+    <b>let</b> creator_address = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
     <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address, collection_name);
-    <b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
-    <b>assert</b>!(collection_data.mutability_config.uri, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
+    <b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
+    <b>assert</b>!(collection_data.mutability_config.uri, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
     <a href="token_event_store.md#0x3_token_event_store_emit_collection_uri_mutate_event">token_event_store::emit_collection_uri_mutate_event</a>(creator, collection_name, collection_data.uri , uri);
     collection_data.uri = uri;
 }
@@ -2784,7 +2784,7 @@ Burn a token by the token owner
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_maximum">mutate_collection_maximum</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_maximum">mutate_collection_maximum</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64)
 </code></pre>
 
 
@@ -2793,14 +2793,14 @@ Burn a token by the token owner
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_maximum">mutate_collection_maximum</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: String, maximum: u64) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>let</b> creator_address = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_maximum">mutate_collection_maximum</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: String, maximum: u64) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
+    <b>let</b> creator_address = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
     <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address, collection_name);
-    <b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
+    <b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
     // cannot change maximum from 0 and cannot change maximum <b>to</b> 0
-    <b>assert</b>!(collection_data.maximum != 0 && maximum != 0, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_MAXIMUM">EINVALID_MAXIMUM</a>));
-    <b>assert</b>!(maximum &gt;= collection_data.supply, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_MAXIMUM">EINVALID_MAXIMUM</a>));
-    <b>assert</b>!(collection_data.mutability_config.maximum, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
+    <b>assert</b>!(collection_data.maximum != 0 && maximum != 0, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_MAXIMUM">EINVALID_MAXIMUM</a>));
+    <b>assert</b>!(maximum &gt;= collection_data.supply, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_MAXIMUM">EINVALID_MAXIMUM</a>));
+    <b>assert</b>!(collection_data.mutability_config.maximum, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
     <a href="token_event_store.md#0x3_token_event_store_emit_collection_maximum_mutate_event">token_event_store::emit_collection_maximum_mutate_event</a>(creator, collection_name, collection_data.maximum, maximum);
     collection_data.maximum = maximum;
 }
@@ -2816,7 +2816,7 @@ Burn a token by the token owner
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_maximum">mutate_tokendata_maximum</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, maximum: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_maximum">mutate_tokendata_maximum</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, maximum: u64)
 </code></pre>
 
 
@@ -2825,14 +2825,14 @@ Burn a token by the token owner
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_maximum">mutate_tokendata_maximum</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>, maximum: u64) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_maximum">mutate_tokendata_maximum</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>, maximum: u64) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator, token_data_id);
     <b>let</b> all_token_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
     // cannot change maximum from 0 and cannot change maximum <b>to</b> 0
-    <b>assert</b>!(token_data.maximum != 0 && maximum != 0, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_MAXIMUM">EINVALID_MAXIMUM</a>));
-    <b>assert</b>!(maximum &gt;= token_data.supply, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_MAXIMUM">EINVALID_MAXIMUM</a>));
-    <b>assert</b>!(token_data.mutability_config.maximum, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
+    <b>assert</b>!(token_data.maximum != 0 && maximum != 0, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_MAXIMUM">EINVALID_MAXIMUM</a>));
+    <b>assert</b>!(maximum &gt;= token_data.supply, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_MAXIMUM">EINVALID_MAXIMUM</a>));
+    <b>assert</b>!(token_data.mutability_config.maximum, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
     <a href="token_event_store.md#0x3_token_event_store_emit_token_maximum_mutate_event">token_event_store::emit_token_maximum_mutate_event</a>(creator, token_data_id.collection, token_data_id.name, token_data.maximum, maximum);
     token_data.maximum = maximum;
 }
@@ -2848,7 +2848,7 @@ Burn a token by the token owner
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_uri">mutate_tokendata_uri</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_uri">mutate_tokendata_uri</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -2858,16 +2858,16 @@ Burn a token by the token owner
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_uri">mutate_tokendata_uri</a>(
-    creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>,
     uri: String
 ) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&uri) &lt;= <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EURI_TOO_LONG">EURI_TOO_LONG</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&uri) &lt;= <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EURI_TOO_LONG">EURI_TOO_LONG</a>));
     <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator, token_data_id);
 
     <b>let</b> all_token_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
-    <b>assert</b>!(token_data.mutability_config.uri, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
+    <b>assert</b>!(token_data.mutability_config.uri, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
     <a href="token_event_store.md#0x3_token_event_store_emit_token_uri_mutate_event">token_event_store::emit_token_uri_mutate_event</a>(creator, token_data_id.collection, token_data_id.name, token_data.uri ,uri);
     token_data.uri = uri;
 }
@@ -2883,7 +2883,7 @@ Burn a token by the token owner
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_royalty">mutate_tokendata_royalty</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, royalty: <a href="token.md#0x3_token_Royalty">token::Royalty</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_royalty">mutate_tokendata_royalty</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, royalty: <a href="token.md#0x3_token_Royalty">token::Royalty</a>)
 </code></pre>
 
 
@@ -2892,12 +2892,12 @@ Burn a token by the token owner
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_royalty">mutate_tokendata_royalty</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>, royalty: <a href="token.md#0x3_token_Royalty">Royalty</a>) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_royalty">mutate_tokendata_royalty</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>, royalty: <a href="token.md#0x3_token_Royalty">Royalty</a>) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator, token_data_id);
 
     <b>let</b> all_token_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
-    <b>assert</b>!(token_data.mutability_config.royalty, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
+    <b>assert</b>!(token_data.mutability_config.royalty, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
 
     <a href="token_event_store.md#0x3_token_event_store_emit_token_royalty_mutate_event">token_event_store::emit_token_royalty_mutate_event</a>(
         creator,
@@ -2924,7 +2924,7 @@ Burn a token by the token owner
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_description">mutate_tokendata_description</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_description">mutate_tokendata_description</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -2933,12 +2933,12 @@ Burn a token by the token owner
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_description">mutate_tokendata_description</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>, description: String) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_description">mutate_tokendata_description</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>, description: String) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator, token_data_id);
 
     <b>let</b> all_token_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
-    <b>assert</b>!(token_data.mutability_config.description, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
+    <b>assert</b>!(token_data.mutability_config.description, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
     <a href="token_event_store.md#0x3_token_event_store_emit_token_descrition_mutate_event">token_event_store::emit_token_descrition_mutate_event</a>(creator, token_data_id.collection, token_data_id.name, token_data.description, description);
     token_data.description = description;
 }
@@ -2955,7 +2955,7 @@ Burn a token by the token owner
 Allow creator to mutate the default properties in TokenData
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_property">mutate_tokendata_property</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_property">mutate_tokendata_property</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -2965,37 +2965,37 @@ Allow creator to mutate the default properties in TokenData
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_property">mutate_tokendata_property</a>(
-    creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>,
-    keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
-    values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
-    types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
+    types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
 ) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator, token_data_id);
-    <b>let</b> key_len = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_length">vector::length</a>(&keys);
-    <b>let</b> val_len = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_length">vector::length</a>(&values);
-    <b>let</b> typ_len = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_length">vector::length</a>(&types);
-    <b>assert</b>!(key_len == val_len, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="token.md#0x3_token_ETOKEN_PROPERTIES_COUNT_NOT_MATCH">ETOKEN_PROPERTIES_COUNT_NOT_MATCH</a>));
-    <b>assert</b>!(key_len == typ_len, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="token.md#0x3_token_ETOKEN_PROPERTIES_COUNT_NOT_MATCH">ETOKEN_PROPERTIES_COUNT_NOT_MATCH</a>));
+    <b>let</b> key_len = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_length">vector::length</a>(&keys);
+    <b>let</b> val_len = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_length">vector::length</a>(&values);
+    <b>let</b> typ_len = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_length">vector::length</a>(&types);
+    <b>assert</b>!(key_len == val_len, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="token.md#0x3_token_ETOKEN_PROPERTIES_COUNT_NOT_MATCH">ETOKEN_PROPERTIES_COUNT_NOT_MATCH</a>));
+    <b>assert</b>!(key_len == typ_len, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="token.md#0x3_token_ETOKEN_PROPERTIES_COUNT_NOT_MATCH">ETOKEN_PROPERTIES_COUNT_NOT_MATCH</a>));
 
     <b>let</b> all_token_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
-    <b>assert</b>!(token_data.mutability_config.properties, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
+    <b>assert</b>!(token_data.mutability_config.properties, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
     <b>let</b> i: u64 = 0;
-    <b>let</b> old_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;Option&lt;PropertyValue&gt;&gt; = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_empty">vector::empty</a>();
-    <b>let</b> new_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;PropertyValue&gt; = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_empty">vector::empty</a>();
+    <b>let</b> old_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;Option&lt;PropertyValue&gt;&gt; = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_empty">vector::empty</a>();
+    <b>let</b> new_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;PropertyValue&gt; = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_empty">vector::empty</a>();
     <a href="token.md#0x3_token_assert_non_standard_reserved_property">assert_non_standard_reserved_property</a>(&keys);
-    <b>while</b> (i &lt; <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_length">vector::length</a>(&keys)){
-        <b>let</b> key = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&keys, i);
+    <b>while</b> (i &lt; <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_length">vector::length</a>(&keys)){
+        <b>let</b> key = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&keys, i);
         <b>let</b> old_pv = <b>if</b> (<a href="property_map.md#0x3_property_map_contains_key">property_map::contains_key</a>(&token_data.default_properties, key)) {
-            <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(*<a href="property_map.md#0x3_property_map_borrow">property_map::borrow</a>(&token_data.default_properties, key))
+            <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(*<a href="property_map.md#0x3_property_map_borrow">property_map::borrow</a>(&token_data.default_properties, key))
         } <b>else</b> {
-            <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>&lt;PropertyValue&gt;()
+            <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>&lt;PropertyValue&gt;()
         };
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> old_values, old_pv);
-        <b>let</b> new_pv = <a href="property_map.md#0x3_property_map_create_property_value_raw">property_map::create_property_value_raw</a>(*<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&values, i), *<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&types, i));
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> new_values, new_pv);
-        <b>if</b> (<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_is_some">option::is_some</a>(&old_pv)) {
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> old_values, old_pv);
+        <b>let</b> new_pv = <a href="property_map.md#0x3_property_map_create_property_value_raw">property_map::create_property_value_raw</a>(*<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&values, i), *<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&types, i));
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> new_values, new_pv);
+        <b>if</b> (<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_is_some">option::is_some</a>(&old_pv)) {
             <a href="property_map.md#0x3_property_map_update_property_value">property_map::update_property_value</a>(&<b>mut</b> token_data.default_properties, key, new_pv);
         } <b>else</b> {
             <a href="property_map.md#0x3_property_map_add">property_map::add</a>(&<b>mut</b> token_data.default_properties, *key, new_pv);
@@ -3017,7 +3017,7 @@ Allow creator to mutate the default properties in TokenData
 Mutate the token_properties of one token.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_one_token">mutate_one_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_owner: <b>address</b>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_one_token">mutate_one_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_owner: <b>address</b>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
 </code></pre>
 
 
@@ -3027,34 +3027,34 @@ Mutate the token_properties of one token.
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_one_token">mutate_one_token</a>(
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     token_owner: <b>address</b>,
     token_id: <a href="token.md#0x3_token_TokenId">TokenId</a>,
-    keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
-    values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
-    types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
+    types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
 ): <a href="token.md#0x3_token_TokenId">TokenId</a> <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a>, <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
     <b>let</b> creator = token_id.token_data_id.creator;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>) == creator, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MUTATE_CAPABILITY">ENO_MUTATE_CAPABILITY</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>) == creator, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MUTATE_CAPABILITY">ENO_MUTATE_CAPABILITY</a>));
     // validate <b>if</b> the properties is mutable
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_token_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(
         creator
     ).token_data;
 
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_id.token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_id.token_data_id);
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_id.token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_id.token_data_id);
 
     // <b>if</b> default property is mutatable, <a href="token.md#0x3_token">token</a> property is alwasy mutable
     // we only need <b>to</b> check <a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE">TOKEN_PROPERTY_MUTABLE</a> when default property is immutable
     <b>if</b> (!token_data.mutability_config.properties) {
         <b>assert</b>!(
-            <a href="property_map.md#0x3_property_map_contains_key">property_map::contains_key</a>(&token_data.default_properties, &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE">TOKEN_PROPERTY_MUTABLE</a>)),
-            <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>)
+            <a href="property_map.md#0x3_property_map_contains_key">property_map::contains_key</a>(&token_data.default_properties, &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE">TOKEN_PROPERTY_MUTABLE</a>)),
+            <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>)
         );
 
-        <b>let</b> token_prop_mutable = <a href="property_map.md#0x3_property_map_read_bool">property_map::read_bool</a>(&token_data.default_properties, &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE">TOKEN_PROPERTY_MUTABLE</a>));
-        <b>assert</b>!(token_prop_mutable, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
+        <b>let</b> token_prop_mutable = <a href="property_map.md#0x3_property_map_read_bool">property_map::read_bool</a>(&token_data.default_properties, &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(<a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE">TOKEN_PROPERTY_MUTABLE</a>));
+        <b>assert</b>!(token_prop_mutable, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EFIELD_NOT_MUTABLE">EFIELD_NOT_MUTABLE</a>));
     };
 
     // check <b>if</b> the property_version is 0 <b>to</b> determine <b>if</b> we need <b>to</b> <b>update</b> the property_version
@@ -3145,8 +3145,8 @@ Mutate the token_properties of one token.
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_royalty">create_royalty</a>(royalty_points_numerator: u64, royalty_points_denominator: u64, payee_address: <b>address</b>): <a href="token.md#0x3_token_Royalty">Royalty</a> {
-    <b>assert</b>!(royalty_points_numerator &lt;= royalty_points_denominator, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_ROYALTY_NUMERATOR_DENOMINATOR">EINVALID_ROYALTY_NUMERATOR_DENOMINATOR</a>));
-    <b>assert</b>!(<a href="../../libra2-framework/doc/account.md#0x1_account_exists_at">account::exists_at</a>(payee_address), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EROYALTY_PAYEE_ACCOUNT_DOES_NOT_EXIST">EROYALTY_PAYEE_ACCOUNT_DOES_NOT_EXIST</a>));
+    <b>assert</b>!(royalty_points_numerator &lt;= royalty_points_denominator, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_ROYALTY_NUMERATOR_DENOMINATOR">EINVALID_ROYALTY_NUMERATOR_DENOMINATOR</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/doc/account.md#0x1_account_exists_at">account::exists_at</a>(payee_address), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EROYALTY_PAYEE_ACCOUNT_DOES_NOT_EXIST">EROYALTY_PAYEE_ACCOUNT_DOES_NOT_EXIST</a>));
     <a href="token.md#0x3_token_Royalty">Royalty</a> {
         royalty_points_numerator,
         royalty_points_denominator,
@@ -3166,7 +3166,7 @@ Mutate the token_properties of one token.
 Deposit the token balance into the owner's account and emit an event.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_deposit_token">deposit_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, <a href="token.md#0x3_token">token</a>: <a href="token.md#0x3_token_Token">token::Token</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_deposit_token">deposit_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, <a href="token.md#0x3_token">token</a>: <a href="token.md#0x3_token_Token">token::Token</a>)
 </code></pre>
 
 
@@ -3175,8 +3175,8 @@ Deposit the token balance into the owner's account and emit an event.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_deposit_token">deposit_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, <a href="token.md#0x3_token">token</a>: <a href="token.md#0x3_token_Token">Token</a>) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>let</b> account_addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_deposit_token">deposit_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, <a href="token.md#0x3_token">token</a>: <a href="token.md#0x3_token_Token">Token</a>) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
+    <b>let</b> account_addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
     <a href="token.md#0x3_token_initialize_token_store">initialize_token_store</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
     <a href="token.md#0x3_token_direct_deposit">direct_deposit</a>(account_addr, <a href="token.md#0x3_token">token</a>)
 }
@@ -3204,7 +3204,7 @@ direct deposit if user opt in direct transfer
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_direct_deposit_with_opt_in">direct_deposit_with_opt_in</a>(account_addr: <b>address</b>, <a href="token.md#0x3_token">token</a>: <a href="token.md#0x3_token_Token">Token</a>) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
     <b>let</b> opt_in_transfer = <b>borrow_global</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr).direct_transfer;
-    <b>assert</b>!(opt_in_transfer, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EUSER_NOT_OPT_IN_DIRECT_TRANSFER">EUSER_NOT_OPT_IN_DIRECT_TRANSFER</a>));
+    <b>assert</b>!(opt_in_transfer, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EUSER_NOT_OPT_IN_DIRECT_TRANSFER">EUSER_NOT_OPT_IN_DIRECT_TRANSFER</a>));
     <a href="token.md#0x3_token_direct_deposit">direct_deposit</a>(account_addr, <a href="token.md#0x3_token">token</a>);
 }
 </code></pre>
@@ -3219,7 +3219,7 @@ direct deposit if user opt in direct transfer
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_direct_transfer">direct_transfer</a>(sender: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_direct_transfer">direct_transfer</a>(sender: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64)
 </code></pre>
 
 
@@ -3229,8 +3229,8 @@ direct deposit if user opt in direct transfer
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_direct_transfer">direct_transfer</a>(
-    sender: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
-    receiver: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    sender: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    receiver: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     token_id: <a href="token.md#0x3_token_TokenId">TokenId</a>,
     amount: u64,
 ) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
@@ -3249,7 +3249,7 @@ direct deposit if user opt in direct transfer
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token_store">initialize_token_store</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token_store">initialize_token_store</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -3258,12 +3258,12 @@ direct deposit if user opt in direct transfer
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token_store">initialize_token_store</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>) {
-    <b>if</b> (!<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>))) {
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token_store">initialize_token_store</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>) {
+    <b>if</b> (!<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>))) {
         <b>move_to</b>(
             <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>,
             <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-                tokens: <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_new">table::new</a>(),
+                tokens: <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_new">table::new</a>(),
                 direct_transfer: <b>false</b>,
                 deposit_events: <a href="../../libra2-framework/doc/account.md#0x1_account_new_event_handle">account::new_event_handle</a>&lt;<a href="token.md#0x3_token_DepositEvent">DepositEvent</a>&gt;(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>),
                 withdraw_events: <a href="../../libra2-framework/doc/account.md#0x1_account_new_event_handle">account::new_event_handle</a>&lt;<a href="token.md#0x3_token_WithdrawEvent">WithdrawEvent</a>&gt;(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>),
@@ -3295,7 +3295,7 @@ direct deposit if user opt in direct transfer
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_merge">merge</a>(dst_token: &<b>mut</b> <a href="token.md#0x3_token_Token">Token</a>, source_token: <a href="token.md#0x3_token_Token">Token</a>) {
-    <b>assert</b>!(&dst_token.id == &source_token.id, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_TOKEN_MERGE">EINVALID_TOKEN_MERGE</a>));
+    <b>assert</b>!(&dst_token.id == &source_token.id, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_TOKEN_MERGE">EINVALID_TOKEN_MERGE</a>));
     dst_token.amount = dst_token.amount + source_token.amount;
     <b>let</b> <a href="token.md#0x3_token_Token">Token</a> { id: _, amount: _, token_properties: _ } = source_token;
 }
@@ -3321,9 +3321,9 @@ direct deposit if user opt in direct transfer
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_split">split</a>(dst_token: &<b>mut</b> <a href="token.md#0x3_token_Token">Token</a>, amount: u64): <a href="token.md#0x3_token_Token">Token</a> {
-    <b>assert</b>!(dst_token.id.property_version == 0, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="token.md#0x3_token_ENFT_NOT_SPLITABLE">ENFT_NOT_SPLITABLE</a>));
-    <b>assert</b>!(dst_token.amount &gt; amount, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ETOKEN_SPLIT_AMOUNT_LARGER_OR_EQUAL_TO_TOKEN_AMOUNT">ETOKEN_SPLIT_AMOUNT_LARGER_OR_EQUAL_TO_TOKEN_AMOUNT</a>));
-    <b>assert</b>!(amount &gt; 0, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ETOKEN_CANNOT_HAVE_ZERO_AMOUNT">ETOKEN_CANNOT_HAVE_ZERO_AMOUNT</a>));
+    <b>assert</b>!(dst_token.id.property_version == 0, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_state">error::invalid_state</a>(<a href="token.md#0x3_token_ENFT_NOT_SPLITABLE">ENFT_NOT_SPLITABLE</a>));
+    <b>assert</b>!(dst_token.amount &gt; amount, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ETOKEN_SPLIT_AMOUNT_LARGER_OR_EQUAL_TO_TOKEN_AMOUNT">ETOKEN_SPLIT_AMOUNT_LARGER_OR_EQUAL_TO_TOKEN_AMOUNT</a>));
+    <b>assert</b>!(amount &gt; 0, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ETOKEN_CANNOT_HAVE_ZERO_AMOUNT">ETOKEN_CANNOT_HAVE_ZERO_AMOUNT</a>));
     dst_token.amount = dst_token.amount - amount;
     <a href="token.md#0x3_token_Token">Token</a> {
         id: dst_token.id,
@@ -3368,7 +3368,7 @@ direct deposit if user opt in direct transfer
 Transfers <code>amount</code> of tokens from <code>from</code> to <code><b>to</b></code>.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_transfer">transfer</a>(from: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, <b>to</b>: <b>address</b>, amount: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_transfer">transfer</a>(from: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, <b>to</b>: <b>address</b>, amount: u64)
 </code></pre>
 
 
@@ -3378,13 +3378,13 @@ Transfers <code>amount</code> of tokens from <code>from</code> to <code><b>to</b
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_transfer">transfer</a>(
-    from: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    from: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     id: <a href="token.md#0x3_token_TokenId">TokenId</a>,
     <b>to</b>: <b>address</b>,
     amount: u64,
 ) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
     <b>let</b> opt_in_transfer = <b>borrow_global</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(<b>to</b>).direct_transfer;
-    <b>assert</b>!(opt_in_transfer, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EUSER_NOT_OPT_IN_DIRECT_TRANSFER">EUSER_NOT_OPT_IN_DIRECT_TRANSFER</a>));
+    <b>assert</b>!(opt_in_transfer, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EUSER_NOT_OPT_IN_DIRECT_TRANSFER">EUSER_NOT_OPT_IN_DIRECT_TRANSFER</a>));
     <b>let</b> <a href="token.md#0x3_token">token</a> = <a href="token.md#0x3_token_withdraw_token">withdraw_token</a>(from, id, amount);
     <a href="token.md#0x3_token_direct_deposit">direct_deposit</a>(<b>to</b>, <a href="token.md#0x3_token">token</a>);
 }
@@ -3401,7 +3401,7 @@ Transfers <code>amount</code> of tokens from <code>from</code> to <code><b>to</b
 Token owner can create this one-time withdraw capability with an expiration time
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_withdraw_capability">create_withdraw_capability</a>(owner: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64, expiration_sec: u64): <a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_withdraw_capability">create_withdraw_capability</a>(owner: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64, expiration_sec: u64): <a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>
 </code></pre>
 
 
@@ -3411,13 +3411,13 @@ Token owner can create this one-time withdraw capability with an expiration time
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_withdraw_capability">create_withdraw_capability</a>(
-    owner: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    owner: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     token_id: <a href="token.md#0x3_token_TokenId">TokenId</a>,
     amount: u64,
     expiration_sec: u64,
 ): <a href="token.md#0x3_token_WithdrawCapability">WithdrawCapability</a> {
     <a href="token.md#0x3_token_WithdrawCapability">WithdrawCapability</a> {
-        token_owner: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(owner),
+        token_owner: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(owner),
         token_id,
         amount,
         expiration_sec,
@@ -3449,7 +3449,7 @@ Withdraw the token with a capability
     withdraw_proof: <a href="token.md#0x3_token_WithdrawCapability">WithdrawCapability</a>,
 ): <a href="token.md#0x3_token_Token">Token</a> <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
     // verify the delegation hasn't expired yet
-    <b>assert</b>!(<a href="../../libra2-framework/doc/timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &lt;= withdraw_proof.expiration_sec, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EWITHDRAW_PROOF_EXPIRES">EWITHDRAW_PROOF_EXPIRES</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/doc/timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &lt;= withdraw_proof.expiration_sec, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EWITHDRAW_PROOF_EXPIRES">EWITHDRAW_PROOF_EXPIRES</a>));
 
     <a href="token.md#0x3_token_withdraw_with_event_internal">withdraw_with_event_internal</a>(
         withdraw_proof.token_owner,
@@ -3470,7 +3470,7 @@ Withdraw the token with a capability
 Withdraw the token with a capability.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_partial_withdraw_with_capability">partial_withdraw_with_capability</a>(withdraw_proof: <a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>, withdraw_amount: u64): (<a href="token.md#0x3_token_Token">token::Token</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_partial_withdraw_with_capability">partial_withdraw_with_capability</a>(withdraw_proof: <a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>, withdraw_amount: u64): (<a href="token.md#0x3_token_Token">token::Token</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>&gt;)
 </code></pre>
 
 
@@ -3484,14 +3484,14 @@ Withdraw the token with a capability.
     withdraw_amount: u64,
 ): (<a href="token.md#0x3_token_Token">Token</a>, Option&lt;<a href="token.md#0x3_token_WithdrawCapability">WithdrawCapability</a>&gt;) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
     // verify the delegation hasn't expired yet
-    <b>assert</b>!(<a href="../../libra2-framework/doc/timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &lt;= withdraw_proof.expiration_sec, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EWITHDRAW_PROOF_EXPIRES">EWITHDRAW_PROOF_EXPIRES</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/doc/timestamp.md#0x1_timestamp_now_seconds">timestamp::now_seconds</a>() &lt;= withdraw_proof.expiration_sec, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EWITHDRAW_PROOF_EXPIRES">EWITHDRAW_PROOF_EXPIRES</a>));
 
-    <b>assert</b>!(withdraw_amount &lt;= withdraw_proof.amount, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINSUFFICIENT_WITHDRAW_CAPABILITY_AMOUNT">EINSUFFICIENT_WITHDRAW_CAPABILITY_AMOUNT</a>));
+    <b>assert</b>!(withdraw_amount &lt;= withdraw_proof.amount, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINSUFFICIENT_WITHDRAW_CAPABILITY_AMOUNT">EINSUFFICIENT_WITHDRAW_CAPABILITY_AMOUNT</a>));
 
     <b>let</b> res: Option&lt;<a href="token.md#0x3_token_WithdrawCapability">WithdrawCapability</a>&gt; = <b>if</b> (withdraw_amount == withdraw_proof.amount) {
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>&lt;<a href="token.md#0x3_token_WithdrawCapability">WithdrawCapability</a>&gt;()
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>&lt;<a href="token.md#0x3_token_WithdrawCapability">WithdrawCapability</a>&gt;()
     } <b>else</b> {
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(
             <a href="token.md#0x3_token_WithdrawCapability">WithdrawCapability</a> {
                 token_owner: withdraw_proof.token_owner,
                 token_id: withdraw_proof.token_id,
@@ -3523,7 +3523,7 @@ Withdraw the token with a capability.
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_withdraw_token">withdraw_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64): <a href="token.md#0x3_token_Token">token::Token</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_withdraw_token">withdraw_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64): <a href="token.md#0x3_token_Token">token::Token</a>
 </code></pre>
 
 
@@ -3533,11 +3533,11 @@ Withdraw the token with a capability.
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_withdraw_token">withdraw_token</a>(
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     id: <a href="token.md#0x3_token_TokenId">TokenId</a>,
     amount: u64,
 ): <a href="token.md#0x3_token_Token">Token</a> <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>let</b> account_addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+    <b>let</b> account_addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
     <a href="token.md#0x3_token_withdraw_with_event_internal">withdraw_with_event_internal</a>(account_addr, id, amount)
 }
 </code></pre>
@@ -3553,7 +3553,7 @@ Withdraw the token with a capability.
 Create a new collection to hold tokens
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection">create_collection</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection">create_collection</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;)
 </code></pre>
 
 
@@ -3563,22 +3563,22 @@ Create a new collection to hold tokens
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection">create_collection</a>(
-    creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     name: String,
     description: String,
     uri: String,
     maximum: u64,
-    mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;
+    mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;
 ) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&name) &lt;= <a href="token.md#0x3_token_MAX_COLLECTION_NAME_LENGTH">MAX_COLLECTION_NAME_LENGTH</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ECOLLECTION_NAME_TOO_LONG">ECOLLECTION_NAME_TOO_LONG</a>));
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&uri) &lt;= <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EURI_TOO_LONG">EURI_TOO_LONG</a>));
-    <b>let</b> account_addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&name) &lt;= <a href="token.md#0x3_token_MAX_COLLECTION_NAME_LENGTH">MAX_COLLECTION_NAME_LENGTH</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ECOLLECTION_NAME_TOO_LONG">ECOLLECTION_NAME_TOO_LONG</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&uri) &lt;= <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EURI_TOO_LONG">EURI_TOO_LONG</a>));
+    <b>let</b> account_addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
     <b>if</b> (!<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(account_addr)) {
         <b>move_to</b>(
             creator,
             <a href="token.md#0x3_token_Collections">Collections</a> {
-                collection_data: <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_new">table::new</a>(),
-                token_data: <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_new">table::new</a>(),
+                collection_data: <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_new">table::new</a>(),
+                token_data: <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_new">table::new</a>(),
                 create_collection_events: <a href="../../libra2-framework/doc/account.md#0x1_account_new_event_handle">account::new_event_handle</a>&lt;<a href="token.md#0x3_token_CreateCollectionEvent">CreateCollectionEvent</a>&gt;(creator),
                 create_token_data_events: <a href="../../libra2-framework/doc/account.md#0x1_account_new_event_handle">account::new_event_handle</a>&lt;<a href="token.md#0x3_token_CreateTokenDataEvent">CreateTokenDataEvent</a>&gt;(creator),
                 mint_token_events: <a href="../../libra2-framework/doc/account.md#0x1_account_new_event_handle">account::new_event_handle</a>&lt;<a href="token.md#0x3_token_MintTokenEvent">MintTokenEvent</a>&gt;(creator),
@@ -3589,8 +3589,8 @@ Create a new collection to hold tokens
     <b>let</b> collection_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(account_addr).collection_data;
 
     <b>assert</b>!(
-        !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(collection_data, name),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="token.md#0x3_token_ECOLLECTION_ALREADY_EXISTS">ECOLLECTION_ALREADY_EXISTS</a>),
+        !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(collection_data, name),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="token.md#0x3_token_ECOLLECTION_ALREADY_EXISTS">ECOLLECTION_ALREADY_EXISTS</a>),
     );
 
     <b>let</b> mutability_config = <a href="token.md#0x3_token_create_collection_mutability_config">create_collection_mutability_config</a>(&mutate_setting);
@@ -3603,7 +3603,7 @@ Create a new collection to hold tokens
         mutability_config
     };
 
-    <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_add">table::add</a>(collection_data, name, collection);
+    <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_add">table::add</a>(collection_data, name, collection);
     <b>let</b> collection_handle = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(account_addr);
     <b>if</b> (std::features::module_event_migration_enabled()) {
         <a href="../../libra2-framework/doc/event.md#0x1_event_emit">event::emit</a>(
@@ -3640,7 +3640,7 @@ Create a new collection to hold tokens
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_collection_exists">check_collection_exists</a>(creator: <b>address</b>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): bool
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_collection_exists">check_collection_exists</a>(creator: <b>address</b>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): bool
 </code></pre>
 
 
@@ -3652,11 +3652,11 @@ Create a new collection to hold tokens
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_collection_exists">check_collection_exists</a>(creator: <b>address</b>, name: String): bool <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <b>assert</b>!(
         <b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
     );
 
     <b>let</b> collection_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator).collection_data;
-    <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(collection_data, name)
+    <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(collection_data, name)
 }
 </code></pre>
 
@@ -3670,7 +3670,7 @@ Create a new collection to hold tokens
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_tokendata_exists">check_tokendata_exists</a>(creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): bool
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_tokendata_exists">check_tokendata_exists</a>(creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): bool
 </code></pre>
 
 
@@ -3682,12 +3682,12 @@ Create a new collection to hold tokens
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_tokendata_exists">check_tokendata_exists</a>(creator: <b>address</b>, collection_name: String, token_name: String): bool <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <b>assert</b>!(
         <b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
     );
 
     <b>let</b> token_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator).token_data;
     <b>let</b> token_data_id = <a href="token.md#0x3_token_create_token_data_id">create_token_data_id</a>(creator, collection_name, token_name);
-    <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(token_data, token_data_id)
+    <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(token_data, token_data_id)
 }
 </code></pre>
 
@@ -3701,7 +3701,7 @@ Create a new collection to hold tokens
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_tokendata">create_tokendata</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, royalty_payee_address: <b>address</b>, royalty_points_denominator: u64, royalty_points_numerator: u64, token_mutate_config: <a href="token.md#0x3_token_TokenMutabilityConfig">token::TokenMutabilityConfig</a>, property_keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, property_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, property_types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;): <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_tokendata">create_tokendata</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, royalty_payee_address: <b>address</b>, royalty_points_denominator: u64, royalty_points_numerator: u64, token_mutate_config: <a href="token.md#0x3_token_TokenMutabilityConfig">token::TokenMutabilityConfig</a>, property_keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, property_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, property_types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;): <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>
 </code></pre>
 
 
@@ -3711,7 +3711,7 @@ Create a new collection to hold tokens
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_tokendata">create_tokendata</a>(
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     collection: String,
     name: String,
     description: String,
@@ -3721,34 +3721,34 @@ Create a new collection to hold tokens
     royalty_points_denominator: u64,
     royalty_points_numerator: u64,
     token_mutate_config: <a href="token.md#0x3_token_TokenMutabilityConfig">TokenMutabilityConfig</a>,
-    property_keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
-    property_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
-    property_types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;
+    property_keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    property_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
+    property_types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;
 ): <a href="token.md#0x3_token_TokenDataId">TokenDataId</a> <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&name) &lt;= <a href="token.md#0x3_token_MAX_NFT_NAME_LENGTH">MAX_NFT_NAME_LENGTH</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ENFT_NAME_TOO_LONG">ENFT_NAME_TOO_LONG</a>));
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&collection) &lt;= <a href="token.md#0x3_token_MAX_COLLECTION_NAME_LENGTH">MAX_COLLECTION_NAME_LENGTH</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ECOLLECTION_NAME_TOO_LONG">ECOLLECTION_NAME_TOO_LONG</a>));
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&uri) &lt;= <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EURI_TOO_LONG">EURI_TOO_LONG</a>));
-    <b>assert</b>!(royalty_points_numerator &lt;= royalty_points_denominator, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_ROYALTY_NUMERATOR_DENOMINATOR">EINVALID_ROYALTY_NUMERATOR_DENOMINATOR</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&name) &lt;= <a href="token.md#0x3_token_MAX_NFT_NAME_LENGTH">MAX_NFT_NAME_LENGTH</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ENFT_NAME_TOO_LONG">ENFT_NAME_TOO_LONG</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&collection) &lt;= <a href="token.md#0x3_token_MAX_COLLECTION_NAME_LENGTH">MAX_COLLECTION_NAME_LENGTH</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ECOLLECTION_NAME_TOO_LONG">ECOLLECTION_NAME_TOO_LONG</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&uri) &lt;= <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EURI_TOO_LONG">EURI_TOO_LONG</a>));
+    <b>assert</b>!(royalty_points_numerator &lt;= royalty_points_denominator, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINVALID_ROYALTY_NUMERATOR_DENOMINATOR">EINVALID_ROYALTY_NUMERATOR_DENOMINATOR</a>));
 
-    <b>let</b> account_addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+    <b>let</b> account_addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
     <b>assert</b>!(
         <b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(account_addr),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>),
     );
     <b>let</b> collections = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(account_addr);
 
     <b>let</b> token_data_id = <a href="token.md#0x3_token_create_token_data_id">create_token_data_id</a>(account_addr, collection, name);
 
     <b>assert</b>!(
-        <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&collections.collection_data, token_data_id.collection),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTION_NOT_PUBLISHED">ECOLLECTION_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&collections.collection_data, token_data_id.collection),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTION_NOT_PUBLISHED">ECOLLECTION_NOT_PUBLISHED</a>),
     );
     <b>assert</b>!(
-        !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&collections.token_data, token_data_id),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="token.md#0x3_token_ETOKEN_DATA_ALREADY_EXISTS">ETOKEN_DATA_ALREADY_EXISTS</a>),
+        !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&collections.token_data, token_data_id),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="token.md#0x3_token_ETOKEN_DATA_ALREADY_EXISTS">ETOKEN_DATA_ALREADY_EXISTS</a>),
     );
 
-    <b>let</b> collection = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> collections.collection_data, token_data_id.collection);
+    <b>let</b> collection = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> collections.collection_data, token_data_id.collection);
 
     // <b>if</b> collection maximum == 0, user don't want <b>to</b> enforce supply constraint.
     // we don't track supply <b>to</b> make <a href="token.md#0x3_token">token</a> creation parallelizable
@@ -3756,7 +3756,7 @@ Create a new collection to hold tokens
         collection.supply = collection.supply + 1;
         <b>assert</b>!(
             collection.maximum &gt;= collection.supply,
-            <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ECREATE_WOULD_EXCEED_COLLECTION_MAXIMUM">ECREATE_WOULD_EXCEED_COLLECTION_MAXIMUM</a>),
+            <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ECREATE_WOULD_EXCEED_COLLECTION_MAXIMUM">ECREATE_WOULD_EXCEED_COLLECTION_MAXIMUM</a>),
         );
     };
 
@@ -3772,7 +3772,7 @@ Create a new collection to hold tokens
         mutability_config: token_mutate_config,
     };
 
-    <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_add">table::add</a>(&<b>mut</b> collections.token_data, token_data_id, token_data);
+    <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_add">table::add</a>(&<b>mut</b> collections.token_data, token_data_id, token_data);
     <b>if</b> (std::features::module_event_migration_enabled()) {
         <a href="../../libra2-framework/doc/event.md#0x1_event_emit">event::emit</a>(
             <a href="token.md#0x3_token_TokenDataCreation">TokenDataCreation</a> {
@@ -3826,7 +3826,7 @@ Create a new collection to hold tokens
 return the number of distinct token_data_id created under this collection
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_supply">get_collection_supply</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;u64&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_supply">get_collection_supply</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;u64&gt;
 </code></pre>
 
 
@@ -3837,12 +3837,12 @@ return the number of distinct token_data_id created under this collection
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_supply">get_collection_supply</a>(creator_address: <b>address</b>, collection_name: String): Option&lt;u64&gt; <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address, collection_name);
-    <b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
+    <b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
 
     <b>if</b> (collection_data.maximum &gt; 0) {
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(collection_data.supply)
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(collection_data.supply)
     } <b>else</b> {
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>()
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>()
     }
 }
 </code></pre>
@@ -3857,7 +3857,7 @@ return the number of distinct token_data_id created under this collection
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_description">get_collection_description</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_description">get_collection_description</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
 </code></pre>
 
 
@@ -3868,7 +3868,7 @@ return the number of distinct token_data_id created under this collection
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_description">get_collection_description</a>(creator_address: <b>address</b>, collection_name: String): String <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address, collection_name);
-    <b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
+    <b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
     collection_data.description
 }
 </code></pre>
@@ -3883,7 +3883,7 @@ return the number of distinct token_data_id created under this collection
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_uri">get_collection_uri</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_uri">get_collection_uri</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
 </code></pre>
 
 
@@ -3894,7 +3894,7 @@ return the number of distinct token_data_id created under this collection
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_uri">get_collection_uri</a>(creator_address: <b>address</b>, collection_name: String): String <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address, collection_name);
-    <b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
+    <b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
     collection_data.uri
 }
 </code></pre>
@@ -3909,7 +3909,7 @@ return the number of distinct token_data_id created under this collection
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_maximum">get_collection_maximum</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): u64
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_maximum">get_collection_maximum</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): u64
 </code></pre>
 
 
@@ -3920,7 +3920,7 @@ return the number of distinct token_data_id created under this collection
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_maximum">get_collection_maximum</a>(creator_address: <b>address</b>, collection_name: String): u64 <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address, collection_name);
-    <b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
+    <b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data, collection_name);
     collection_data.maximum
 }
 </code></pre>
@@ -3936,7 +3936,7 @@ return the number of distinct token_data_id created under this collection
 return the number of distinct token_id created under this TokenData
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_token_supply">get_token_supply</a>(creator_address: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;u64&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_token_supply">get_token_supply</a>(creator_address: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;u64&gt;
 </code></pre>
 
 
@@ -3946,15 +3946,15 @@ return the number of distinct token_id created under this TokenData
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_token_supply">get_token_supply</a>(creator_address: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>): Option&lt;u64&gt; <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_token_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
 
     <b>if</b> (token_data.maximum &gt; 0) {
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(token_data.supply)
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_some">option::some</a>(token_data.supply)
     } <b>else</b> {
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>&lt;u64&gt;()
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_none">option::none</a>&lt;u64&gt;()
     }
 }
 </code></pre>
@@ -3980,10 +3980,10 @@ return the largest_property_version of this TokenData
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_largest_property_version">get_tokendata_largest_property_version</a>(creator_address: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>): u64 <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_token_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
-    <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id).largest_property_version
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id).largest_property_version
 }
 </code></pre>
 
@@ -4050,7 +4050,7 @@ return the TokenId for a given Token
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_mutability_config">create_token_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_TokenMutabilityConfig">token::TokenMutabilityConfig</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_mutability_config">create_token_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_TokenMutabilityConfig">token::TokenMutabilityConfig</a>
 </code></pre>
 
 
@@ -4059,13 +4059,13 @@ return the TokenId for a given Token
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_mutability_config">create_token_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_TokenMutabilityConfig">TokenMutabilityConfig</a> {
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_mutability_config">create_token_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_TokenMutabilityConfig">TokenMutabilityConfig</a> {
     <a href="token.md#0x3_token_TokenMutabilityConfig">TokenMutabilityConfig</a> {
-        maximum: *<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_MAX_MUTABLE_IND">TOKEN_MAX_MUTABLE_IND</a>),
-        uri: *<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_URI_MUTABLE_IND">TOKEN_URI_MUTABLE_IND</a>),
-        royalty: *<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_ROYALTY_MUTABLE_IND">TOKEN_ROYALTY_MUTABLE_IND</a>),
-        description: *<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_DESCRIPTION_MUTABLE_IND">TOKEN_DESCRIPTION_MUTABLE_IND</a>),
-        properties: *<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE_IND">TOKEN_PROPERTY_MUTABLE_IND</a>),
+        maximum: *<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_MAX_MUTABLE_IND">TOKEN_MAX_MUTABLE_IND</a>),
+        uri: *<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_URI_MUTABLE_IND">TOKEN_URI_MUTABLE_IND</a>),
+        royalty: *<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_ROYALTY_MUTABLE_IND">TOKEN_ROYALTY_MUTABLE_IND</a>),
+        description: *<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_DESCRIPTION_MUTABLE_IND">TOKEN_DESCRIPTION_MUTABLE_IND</a>),
+        properties: *<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE_IND">TOKEN_PROPERTY_MUTABLE_IND</a>),
     }
 }
 </code></pre>
@@ -4080,7 +4080,7 @@ return the TokenId for a given Token
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection_mutability_config">create_collection_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_CollectionMutabilityConfig">token::CollectionMutabilityConfig</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection_mutability_config">create_collection_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_CollectionMutabilityConfig">token::CollectionMutabilityConfig</a>
 </code></pre>
 
 
@@ -4089,11 +4089,11 @@ return the TokenId for a given Token
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection_mutability_config">create_collection_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_CollectionMutabilityConfig">CollectionMutabilityConfig</a> {
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection_mutability_config">create_collection_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_CollectionMutabilityConfig">CollectionMutabilityConfig</a> {
     <a href="token.md#0x3_token_CollectionMutabilityConfig">CollectionMutabilityConfig</a> {
-        description: *<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_COLLECTION_DESCRIPTION_MUTABLE_IND">COLLECTION_DESCRIPTION_MUTABLE_IND</a>),
-        uri: *<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_COLLECTION_URI_MUTABLE_IND">COLLECTION_URI_MUTABLE_IND</a>),
-        maximum: *<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_COLLECTION_MAX_MUTABLE_IND">COLLECTION_MAX_MUTABLE_IND</a>),
+        description: *<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_COLLECTION_DESCRIPTION_MUTABLE_IND">COLLECTION_DESCRIPTION_MUTABLE_IND</a>),
+        uri: *<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_COLLECTION_URI_MUTABLE_IND">COLLECTION_URI_MUTABLE_IND</a>),
+        maximum: *<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_borrow">vector::borrow</a>(mutate_setting, <a href="token.md#0x3_token_COLLECTION_MAX_MUTABLE_IND">COLLECTION_MAX_MUTABLE_IND</a>),
     }
 }
 </code></pre>
@@ -4108,7 +4108,7 @@ return the TokenId for a given Token
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token">mint_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, amount: u64): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token">mint_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, amount: u64): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
 </code></pre>
 
 
@@ -4118,18 +4118,18 @@ return the TokenId for a given Token
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token">mint_token</a>(
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>,
     amount: u64,
 ): <a href="token.md#0x3_token_TokenId">TokenId</a> <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a>, <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>assert</b>!(token_data_id.creator == <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MINT_CAPABILITY">ENO_MINT_CAPABILITY</a>));
+    <b>assert</b>!(token_data_id.creator == <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MINT_CAPABILITY">ENO_MINT_CAPABILITY</a>));
     <b>let</b> creator_addr = token_data_id.creator;
     <b>let</b> all_token_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
 
     <b>if</b> (token_data.maximum &gt; 0) {
-        <b>assert</b>!(token_data.supply + amount &lt;= token_data.maximum, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EMINT_WOULD_EXCEED_TOKEN_MAXIMUM">EMINT_WOULD_EXCEED_TOKEN_MAXIMUM</a>));
+        <b>assert</b>!(token_data.supply + amount &lt;= token_data.maximum, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EMINT_WOULD_EXCEED_TOKEN_MAXIMUM">EMINT_WOULD_EXCEED_TOKEN_MAXIMUM</a>));
         token_data.supply = token_data.supply + amount;
     };
 
@@ -4170,7 +4170,7 @@ return the TokenId for a given Token
 create tokens and directly deposite to receiver's address. The receiver should opt-in direct transfer
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token_to">mint_token_to</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, amount: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token_to">mint_token_to</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, amount: u64)
 </code></pre>
 
 
@@ -4180,23 +4180,23 @@ create tokens and directly deposite to receiver's address. The receiver should o
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token_to">mint_token_to</a>(
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     receiver: <b>address</b>,
     token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>,
     amount: u64,
 ) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a>, <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(receiver), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_STORE_NOT_PUBLISHED">ETOKEN_STORE_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(receiver), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_STORE_NOT_PUBLISHED">ETOKEN_STORE_NOT_PUBLISHED</a>));
     <b>let</b> opt_in_transfer = <b>borrow_global</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(receiver).direct_transfer;
-    <b>assert</b>!(opt_in_transfer, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EUSER_NOT_OPT_IN_DIRECT_TRANSFER">EUSER_NOT_OPT_IN_DIRECT_TRANSFER</a>));
+    <b>assert</b>!(opt_in_transfer, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EUSER_NOT_OPT_IN_DIRECT_TRANSFER">EUSER_NOT_OPT_IN_DIRECT_TRANSFER</a>));
 
-    <b>assert</b>!(token_data_id.creator == <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MINT_CAPABILITY">ENO_MINT_CAPABILITY</a>));
+    <b>assert</b>!(token_data_id.creator == <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MINT_CAPABILITY">ENO_MINT_CAPABILITY</a>));
     <b>let</b> creator_addr = token_data_id.creator;
     <b>let</b> all_token_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(all_token_data, token_data_id);
 
     <b>if</b> (token_data.maximum &gt; 0) {
-        <b>assert</b>!(token_data.supply + amount &lt;= token_data.maximum, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EMINT_WOULD_EXCEED_TOKEN_MAXIMUM">EMINT_WOULD_EXCEED_TOKEN_MAXIMUM</a>));
+        <b>assert</b>!(token_data.supply + amount &lt;= token_data.maximum, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EMINT_WOULD_EXCEED_TOKEN_MAXIMUM">EMINT_WOULD_EXCEED_TOKEN_MAXIMUM</a>));
         token_data.supply = token_data.supply + amount;
     };
 
@@ -4262,7 +4262,7 @@ create tokens and directly deposite to receiver's address. The receiver should o
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_data_id">create_token_data_id</a>(creator: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_data_id">create_token_data_id</a>(creator: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>
 </code></pre>
 
 
@@ -4276,8 +4276,8 @@ create tokens and directly deposite to receiver's address. The receiver should o
     collection: String,
     name: String,
 ): <a href="token.md#0x3_token_TokenDataId">TokenDataId</a> {
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&collection) &lt;= <a href="token.md#0x3_token_MAX_COLLECTION_NAME_LENGTH">MAX_COLLECTION_NAME_LENGTH</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ECOLLECTION_NAME_TOO_LONG">ECOLLECTION_NAME_TOO_LONG</a>));
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&name) &lt;= <a href="token.md#0x3_token_MAX_NFT_NAME_LENGTH">MAX_NFT_NAME_LENGTH</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ENFT_NAME_TOO_LONG">ENFT_NAME_TOO_LONG</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&collection) &lt;= <a href="token.md#0x3_token_MAX_COLLECTION_NAME_LENGTH">MAX_COLLECTION_NAME_LENGTH</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ECOLLECTION_NAME_TOO_LONG">ECOLLECTION_NAME_TOO_LONG</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(&name) &lt;= <a href="token.md#0x3_token_MAX_NFT_NAME_LENGTH">MAX_NFT_NAME_LENGTH</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ENFT_NAME_TOO_LONG">ENFT_NAME_TOO_LONG</a>));
     <a href="token.md#0x3_token_TokenDataId">TokenDataId</a> { creator, collection, name }
 }
 </code></pre>
@@ -4292,7 +4292,7 @@ create tokens and directly deposite to receiver's address. The receiver should o
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_id_raw">create_token_id_raw</a>(creator: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_id_raw">create_token_id_raw</a>(creator: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
 </code></pre>
 
 
@@ -4338,8 +4338,8 @@ create tokens and directly deposite to receiver's address. The receiver should o
         <b>return</b> 0
     };
     <b>let</b> token_store = <b>borrow_global</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(owner);
-    <b>if</b> (<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&token_store.tokens, id)) {
-        <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(&token_store.tokens, id).amount
+    <b>if</b> (<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&token_store.tokens, id)) {
+        <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(&token_store.tokens, id).amount
     } <b>else</b> {
         0
     }
@@ -4502,7 +4502,7 @@ create tokens and directly deposite to receiver's address. The receiver should o
 return the creator address, collection name, token name and property_version
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_token_id_fields">get_token_id_fields</a>(token_id: &<a href="token.md#0x3_token_TokenId">token::TokenId</a>): (<b>address</b>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_token_id_fields">get_token_id_fields</a>(token_id: &<a href="token.md#0x3_token_TokenId">token::TokenId</a>): (<b>address</b>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, u64)
 </code></pre>
 
 
@@ -4531,7 +4531,7 @@ return the creator address, collection name, token name and property_version
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_token_data_id_fields">get_token_data_id_fields</a>(token_data_id: &<a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): (<b>address</b>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_token_data_id_fields">get_token_data_id_fields</a>(token_data_id: &<a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): (<b>address</b>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -4572,17 +4572,17 @@ if property_version > 0, return the property value stored at owner's token store
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_property_map">get_property_map</a>(owner: <b>address</b>, token_id: <a href="token.md#0x3_token_TokenId">TokenId</a>): PropertyMap <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a>, <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>assert</b>!(<a href="token.md#0x3_token_balance_of">balance_of</a>(owner, token_id) &gt; 0, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_EINSUFFICIENT_BALANCE">EINSUFFICIENT_BALANCE</a>));
+    <b>assert</b>!(<a href="token.md#0x3_token_balance_of">balance_of</a>(owner, token_id) &gt; 0, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_EINSUFFICIENT_BALANCE">EINSUFFICIENT_BALANCE</a>));
     // <b>if</b> property_version = 0, <b>return</b> default property map
     <b>if</b> (token_id.property_version == 0) {
         <b>let</b> creator_addr = token_id.token_data_id.creator;
         <b>let</b> all_token_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-        <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_id.token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
-        <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_id.token_data_id);
+        <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_id.token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+        <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_id.token_data_id);
         token_data.default_properties
     } <b>else</b> {
         <b>let</b> tokens = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(owner).tokens;
-        <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(tokens, token_id).token_properties
+        <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(tokens, token_id).token_properties
     }
 }
 </code></pre>
@@ -4608,11 +4608,11 @@ if property_version > 0, return the property value stored at owner's token store
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_maximum">get_tokendata_maximum</a>(token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>): u64 <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <b>let</b> creator_address = token_data_id.creator;
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_token_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
 
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
     token_data.maximum
 }
 </code></pre>
@@ -4627,7 +4627,7 @@ if property_version > 0, return the property value stored at owner's token store
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_uri">get_tokendata_uri</a>(creator: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_uri">get_tokendata_uri</a>(creator: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
 </code></pre>
 
 
@@ -4637,11 +4637,11 @@ if property_version > 0, return the property value stored at owner's token store
 
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_uri">get_tokendata_uri</a>(creator: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>): String <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_token_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
 
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
     token_data.uri
 }
 </code></pre>
@@ -4656,7 +4656,7 @@ if property_version > 0, return the property value stored at owner's token store
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_description">get_tokendata_description</a>(token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_description">get_tokendata_description</a>(token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
 </code></pre>
 
 
@@ -4667,11 +4667,11 @@ if property_version > 0, return the property value stored at owner's token store
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_description">get_tokendata_description</a>(token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>): String <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <b>let</b> creator_address = token_data_id.creator;
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_token_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
 
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
     token_data.description
 }
 </code></pre>
@@ -4697,11 +4697,11 @@ if property_version > 0, return the property value stored at owner's token store
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_royalty">get_tokendata_royalty</a>(token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>): <a href="token.md#0x3_token_Royalty">Royalty</a> <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <b>let</b> creator_address = token_data_id.creator;
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_token_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
 
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id);
     token_data.royalty
 }
 </code></pre>
@@ -4753,10 +4753,10 @@ return the mutation setting of the token
 
 <pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_mutability_config">get_tokendata_mutability_config</a>(token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>): <a href="token.md#0x3_token_TokenMutabilityConfig">TokenMutabilityConfig</a> <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <b>let</b> creator_addr = token_data_id.creator;
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_token_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
-    <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id).mutability_config
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_token_data, token_data_id).mutability_config
 }
 </code></pre>
 
@@ -4897,7 +4897,7 @@ return the collection mutation setting
 
 
 <pre><code>#[view]
-<b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_mutability_config">get_collection_mutability_config</a>(creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="token.md#0x3_token_CollectionMutabilityConfig">token::CollectionMutabilityConfig</a>
+<b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_mutability_config">get_collection_mutability_config</a>(creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="token.md#0x3_token_CollectionMutabilityConfig">token::CollectionMutabilityConfig</a>
 </code></pre>
 
 
@@ -4910,10 +4910,10 @@ return the collection mutation setting
     creator: <b>address</b>,
     collection_name: String
 ): <a href="token.md#0x3_token_CollectionMutabilityConfig">CollectionMutabilityConfig</a> <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_collection_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator).collection_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_collection_data, collection_name), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTION_NOT_PUBLISHED">ECOLLECTION_NOT_PUBLISHED</a>));
-    <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_collection_data, collection_name).mutability_config
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_collection_data, collection_name), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTION_NOT_PUBLISHED">ECOLLECTION_NOT_PUBLISHED</a>));
+    <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow">table::borrow</a>(all_collection_data, collection_name).mutability_config
 }
 </code></pre>
 
@@ -5082,13 +5082,13 @@ return if the collection maximum is mutable with collection mutability config
     amount: u64,
 ): <a href="token.md#0x3_token_Token">Token</a> <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
     // It does not make sense <b>to</b> withdraw 0 tokens.
-    <b>assert</b>!(amount &gt; 0, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EWITHDRAW_ZERO">EWITHDRAW_ZERO</a>));
+    <b>assert</b>!(amount &gt; 0, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EWITHDRAW_ZERO">EWITHDRAW_ZERO</a>));
     // Make sure the <a href="../../libra2-framework/doc/account.md#0x1_account">account</a> <b>has</b> sufficient tokens <b>to</b> withdraw.
-    <b>assert</b>!(<a href="token.md#0x3_token_balance_of">balance_of</a>(account_addr, id) &gt;= amount, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINSUFFICIENT_BALANCE">EINSUFFICIENT_BALANCE</a>));
+    <b>assert</b>!(<a href="token.md#0x3_token_balance_of">balance_of</a>(account_addr, id) &gt;= amount, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_EINSUFFICIENT_BALANCE">EINSUFFICIENT_BALANCE</a>));
 
     <b>assert</b>!(
         <b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_STORE_NOT_PUBLISHED">ETOKEN_STORE_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_STORE_NOT_PUBLISHED">ETOKEN_STORE_NOT_PUBLISHED</a>),
     );
 
     <b>let</b> token_store = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr);
@@ -5103,16 +5103,16 @@ return if the collection maximum is mutable with collection mutability config
 
     <b>let</b> tokens = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr).tokens;
     <b>assert</b>!(
-        <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(tokens, id),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ENO_TOKEN_IN_TOKEN_STORE">ENO_TOKEN_IN_TOKEN_STORE</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(tokens, id),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ENO_TOKEN_IN_TOKEN_STORE">ENO_TOKEN_IN_TOKEN_STORE</a>),
     );
     // balance &gt; amount and amount &gt; 0 indirectly asserted that balance &gt; 0.
-    <b>let</b> balance = &<b>mut</b> <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(tokens, id).amount;
+    <b>let</b> balance = &<b>mut</b> <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(tokens, id).amount;
     <b>if</b> (*balance &gt; amount) {
         *balance = *balance - amount;
         <a href="token.md#0x3_token_Token">Token</a> { id, amount, token_properties: <a href="property_map.md#0x3_property_map_empty">property_map::empty</a>() }
     } <b>else</b> {
-        <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(tokens, id)
+        <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_remove">table::remove</a>(tokens, id)
     }
 }
 </code></pre>
@@ -5127,7 +5127,7 @@ return if the collection maximum is mutable with collection mutability config
 
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_update_token_property_internal">update_token_property_internal</a>(token_owner: <b>address</b>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>fun</b> <a href="token.md#0x3_token_update_token_property_internal">update_token_property_internal</a>(token_owner: <b>address</b>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -5139,14 +5139,14 @@ return if the collection maximum is mutable with collection mutability config
 <pre><code><b>fun</b> <a href="token.md#0x3_token_update_token_property_internal">update_token_property_internal</a>(
     token_owner: <b>address</b>,
     token_id: <a href="token.md#0x3_token_TokenId">TokenId</a>,
-    keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
-    values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
-    types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
+    values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;,
+    types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;,
 ) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
     <b>let</b> tokens = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(token_owner).tokens;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(tokens, token_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ENO_TOKEN_IN_TOKEN_STORE">ENO_TOKEN_IN_TOKEN_STORE</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(tokens, token_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ENO_TOKEN_IN_TOKEN_STORE">ENO_TOKEN_IN_TOKEN_STORE</a>));
 
-    <b>let</b> value = &<b>mut</b> <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(tokens, token_id).token_properties;
+    <b>let</b> value = &<b>mut</b> <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(tokens, token_id).token_properties;
     <a href="token.md#0x3_token_assert_non_standard_reserved_property">assert_non_standard_reserved_property</a>(&keys);
     <a href="property_map.md#0x3_property_map_update_property_map">property_map::update_property_map</a>(value, keys, values, types);
 }
@@ -5173,7 +5173,7 @@ Deposit the token balance into the recipients account and emit an event.
 
 
 <pre><code><b>fun</b> <a href="token.md#0x3_token_direct_deposit">direct_deposit</a>(account_addr: <b>address</b>, <a href="token.md#0x3_token">token</a>: <a href="token.md#0x3_token_Token">Token</a>) <b>acquires</b> <a href="token.md#0x3_token_TokenStore">TokenStore</a> {
-    <b>assert</b>!(<a href="token.md#0x3_token">token</a>.amount &gt; 0, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ETOKEN_CANNOT_HAVE_ZERO_AMOUNT">ETOKEN_CANNOT_HAVE_ZERO_AMOUNT</a>));
+    <b>assert</b>!(<a href="token.md#0x3_token">token</a>.amount &gt; 0, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="token.md#0x3_token_ETOKEN_CANNOT_HAVE_ZERO_AMOUNT">ETOKEN_CANNOT_HAVE_ZERO_AMOUNT</a>));
     <b>let</b> token_store = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr);
 
     <b>if</b> (std::features::module_event_migration_enabled()) {
@@ -5187,13 +5187,13 @@ Deposit the token balance into the recipients account and emit an event.
 
     <b>assert</b>!(
         <b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr),
-        <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_STORE_NOT_PUBLISHED">ETOKEN_STORE_NOT_PUBLISHED</a>),
+        <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_STORE_NOT_PUBLISHED">ETOKEN_STORE_NOT_PUBLISHED</a>),
     );
 
-    <b>if</b> (!<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&token_store.tokens, <a href="token.md#0x3_token">token</a>.id)) {
-        <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_add">table::add</a>(&<b>mut</b> token_store.tokens, <a href="token.md#0x3_token">token</a>.id, <a href="token.md#0x3_token">token</a>);
+    <b>if</b> (!<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(&token_store.tokens, <a href="token.md#0x3_token">token</a>.id)) {
+        <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_add">table::add</a>(&<b>mut</b> token_store.tokens, <a href="token.md#0x3_token">token</a>.id, <a href="token.md#0x3_token">token</a>);
     } <b>else</b> {
-        <b>let</b> recipient_token = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> token_store.tokens, <a href="token.md#0x3_token">token</a>.id);
+        <b>let</b> recipient_token = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_borrow_mut">table::borrow_mut</a>(&<b>mut</b> token_store.tokens, <a href="token.md#0x3_token">token</a>.id);
         <a href="token.md#0x3_token_merge">merge</a>(recipient_token, <a href="token.md#0x3_token">token</a>);
     };
 }
@@ -5209,7 +5209,7 @@ Deposit the token balance into the recipients account and emit an event.
 
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -5219,9 +5219,9 @@ Deposit the token balance into the recipients account and emit an event.
 
 
 <pre><code><b>fun</b> <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address: <b>address</b>, collection_name: String) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_collection_data = &<b>borrow_global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_collection_data, collection_name), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTION_NOT_PUBLISHED">ECOLLECTION_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_collection_data, collection_name), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTION_NOT_PUBLISHED">ECOLLECTION_NOT_PUBLISHED</a>));
 }
 </code></pre>
 
@@ -5235,7 +5235,7 @@ Deposit the token balance into the recipients account and emit an event.
 
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>)
+<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>)
 </code></pre>
 
 
@@ -5244,12 +5244,12 @@ Deposit the token balance into the recipients account and emit an event.
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
+<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>) <b>acquires</b> <a href="token.md#0x3_token_Collections">Collections</a> {
     <b>let</b> creator_addr = token_data_id.creator;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator) == creator_addr, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MUTATE_CAPABILITY">ENO_MUTATE_CAPABILITY</a>));
-    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator) == creator_addr, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_ENO_MUTATE_CAPABILITY">ENO_MUTATE_CAPABILITY</a>));
+    <b>assert</b>!(<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ECOLLECTIONS_NOT_PUBLISHED">ECOLLECTIONS_NOT_PUBLISHED</a>));
     <b>let</b> all_token_data = &<b>mut</b> <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-    <b>assert</b>!(<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
+    <b>assert</b>!(<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_contains">table::contains</a>(all_token_data, token_data_id), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="token.md#0x3_token_ETOKEN_DATA_NOT_PUBLISHED">ETOKEN_DATA_NOT_PUBLISHED</a>));
 }
 </code></pre>
 
@@ -5263,7 +5263,7 @@ Deposit the token balance into the recipients account and emit an event.
 
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_non_standard_reserved_property">assert_non_standard_reserved_property</a>(keys: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_non_standard_reserved_property">assert_non_standard_reserved_property</a>(keys: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -5272,13 +5272,13 @@ Deposit the token balance into the recipients account and emit an event.
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_non_standard_reserved_property">assert_non_standard_reserved_property</a>(keys: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;) {
-    <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_for_each_ref">vector::for_each_ref</a>(keys, |key| {
+<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_non_standard_reserved_property">assert_non_standard_reserved_property</a>(keys: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;String&gt;) {
+    <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_for_each_ref">vector::for_each_ref</a>(keys, |key| {
         <b>let</b> key: &String = key;
-        <b>let</b> length = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(key);
+        <b>let</b> length = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_length">string::length</a>(key);
         <b>if</b> (length &gt;= 6) {
-            <b>let</b> prefix = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_sub_string">string::sub_string</a>(&*key, 0, 6);
-            <b>assert</b>!(prefix != <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(b"TOKEN_"), <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EPROPERTY_RESERVED_BY_STANDARD">EPROPERTY_RESERVED_BY_STANDARD</a>));
+            <b>let</b> prefix = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_sub_string">string::sub_string</a>(&*key, 0, 6);
+            <b>assert</b>!(prefix != <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_utf8">string::utf8</a>(b"TOKEN_"), <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error_permission_denied">error::permission_denied</a>(<a href="token.md#0x3_token_EPROPERTY_RESERVED_BY_STANDARD">EPROPERTY_RESERVED_BY_STANDARD</a>));
         };
     });
 }
@@ -5294,7 +5294,7 @@ Deposit the token balance into the recipients account and emit an event.
 
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_initialize_token_script">initialize_token_script</a>(_account: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_initialize_token_script">initialize_token_script</a>(_account: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -5303,7 +5303,7 @@ Deposit the token balance into the recipients account and emit an event.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_initialize_token_script">initialize_token_script</a>(_account: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>) {
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_initialize_token_script">initialize_token_script</a>(_account: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>) {
     <b>abort</b> 0
 }
 </code></pre>
@@ -5318,7 +5318,7 @@ Deposit the token balance into the recipients account and emit an event.
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token">initialize_token</a>(_account: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token">initialize_token</a>(_account: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>)
 </code></pre>
 
 
@@ -5327,7 +5327,7 @@ Deposit the token balance into the recipients account and emit an event.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token">initialize_token</a>(_account: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _token_id: <a href="token.md#0x3_token_TokenId">TokenId</a>) {
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token">initialize_token</a>(_account: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _token_id: <a href="token.md#0x3_token_TokenId">TokenId</a>) {
     <b>abort</b> 0
 }
 </code></pre>
@@ -5353,7 +5353,7 @@ Deposit the token balance into the recipients account and emit an event.
 ### Function `create_collection_script`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_collection_script">create_collection_script</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_collection_script">create_collection_script</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;)
 </code></pre>
 
 
@@ -5372,7 +5372,7 @@ The length of the uri is up to MAX_URI_LENGTH;
 ### Function `create_token_script`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_token_script">create_token_script</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, balance: u64, maximum: u64, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, royalty_payee_address: <b>address</b>, royalty_points_denominator: u64, royalty_points_numerator: u64, mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;, property_keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, property_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, property_types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_create_token_script">create_token_script</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, balance: u64, maximum: u64, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, royalty_payee_address: <b>address</b>, royalty_points_denominator: u64, royalty_points_numerator: u64, mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;, property_keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, property_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, property_types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -5383,11 +5383,11 @@ The sum of supply and mint Token is less than maximum.
 
 
 <pre><code><b>pragma</b> aborts_if_is_partial;
-<b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>let</b> token_data_id = <a href="token.md#0x3_token_spec_create_tokendata">spec_create_tokendata</a>(addr, collection, name);
 <b>let</b> creator_addr = token_data_id.creator;
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
 <b>aborts_if</b> token_data_id.creator != addr;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
 <b>aborts_if</b> balance &lt;= 0;
@@ -5416,7 +5416,7 @@ The sum of supply and mint Token is less than maximum.
 ### Function `mint_script`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mint_script">mint_script</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_address: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mint_script">mint_script</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_address: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, amount: u64)
 </code></pre>
 
 
@@ -5429,11 +5429,11 @@ only creator of the tokendata can mint tokens
     collection,
     name,
 );
-<b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>let</b> creator_addr = token_data_id.creator;
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
-<b>aborts_if</b> token_data_id.creator != <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
+<b>aborts_if</b> token_data_id.creator != <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>include</b> <a href="token.md#0x3_token_CreateTokenDataIdAbortsIf">CreateTokenDataIdAbortsIf</a>{
 creator: token_data_address,
 collection: collection,
@@ -5451,7 +5451,7 @@ token_data_id: token_data_id
 ### Function `mutate_token_properties`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mutate_token_properties">mutate_token_properties</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_owner: <b>address</b>, creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_property_version: u64, amount: u64, keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_mutate_token_properties">mutate_token_properties</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_owner: <b>address</b>, creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_property_version: u64, amount: u64, keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -5459,7 +5459,7 @@ The signer is creator.
 
 
 <pre><code><b>pragma</b> aborts_if_is_partial;
-<b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>aborts_if</b> addr != creator;
 <b>include</b> <a href="token.md#0x3_token_CreateTokenDataIdAbortsIf">CreateTokenDataIdAbortsIf</a> {
     creator: creator,
@@ -5475,7 +5475,7 @@ The signer is creator.
 ### Function `direct_transfer_script`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_direct_transfer_script">direct_transfer_script</a>(sender: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creators_address: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_direct_transfer_script">direct_transfer_script</a>(sender: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creators_address: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
 </code></pre>
 
 
@@ -5496,14 +5496,14 @@ The signer is creator.
 ### Function `opt_in_direct_transfer`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_opt_in_direct_transfer">opt_in_direct_transfer</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, opt_in: bool)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_opt_in_direct_transfer">opt_in_direct_transfer</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, opt_in: bool)
 </code></pre>
 
 
 
 
 <pre><code><b>pragma</b> aborts_if_is_partial;
-<b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>let</b> account_addr = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(addr) && !<b>exists</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(addr) && account_addr.guid_creation_num + 4 &gt;= <a href="../../libra2-framework/doc/account.md#0x1_account_MAX_GUID_CREATION_NUM">account::MAX_GUID_CREATION_NUM</a>;
@@ -5520,7 +5520,7 @@ The signer is creator.
 ### Function `transfer_with_opt_in`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_transfer_with_opt_in">transfer_with_opt_in</a>(from: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_property_version: u64, <b>to</b>: <b>address</b>, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_transfer_with_opt_in">transfer_with_opt_in</a>(from: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_property_version: u64, <b>to</b>: <b>address</b>, amount: u64)
 </code></pre>
 
 
@@ -5541,25 +5541,25 @@ The signer is creator.
 ### Function `burn_by_creator`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn_by_creator">burn_by_creator</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, owner: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn_by_creator">burn_by_creator</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, owner: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
 </code></pre>
 
 
 
 
 <pre><code><b>pragma</b> aborts_if_is_partial;
-<b>let</b> creator_address = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<b>let</b> creator_address = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
 <b>let</b> token_id = <a href="token.md#0x3_token_spec_create_token_id_raw">spec_create_token_id_raw</a>(creator_address, collection, name, property_version);
 <b>let</b> creator_addr = token_id.token_data_id.creator;
 <b>let</b> collections = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address);
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(
     collections.token_data,
     token_id.token_data_id,
 );
 <b>aborts_if</b> amount &lt;= 0;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(collections.token_data, token_id.token_data_id);
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(token_data.default_properties.map, std::string::spec_utf8(<a href="token.md#0x3_token_BURNABLE_BY_CREATOR">BURNABLE_BY_CREATOR</a>));
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(collections.token_data, token_id.token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(token_data.default_properties.map, std::string::spec_utf8(<a href="token.md#0x3_token_BURNABLE_BY_CREATOR">BURNABLE_BY_CREATOR</a>));
 </code></pre>
 
 
@@ -5569,7 +5569,7 @@ The signer is creator.
 ### Function `burn`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn">burn</a>(owner: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creators_address: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_burn">burn</a>(owner: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, creators_address: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64, amount: u64)
 </code></pre>
 
 
@@ -5580,7 +5580,7 @@ The token_data_id should exist in token_data.
 <b>let</b> token_id = <a href="token.md#0x3_token_spec_create_token_id_raw">spec_create_token_id_raw</a>(creators_address, collection, name, property_version);
 <b>let</b> creator_addr = token_id.token_data_id.creator;
 <b>let</b> collections = <b>borrow_global_mut</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(
     collections.token_data,
     token_id.token_data_id,
 );
@@ -5589,9 +5589,9 @@ creator: creators_address
 };
 <b>aborts_if</b> amount &lt;= 0;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(collections.token_data, token_id.token_data_id);
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(token_data.default_properties.map, std::string::spec_utf8(<a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>));
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(collections.token_data, token_id.token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(token_data.default_properties.map, std::string::spec_utf8(<a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>));
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_spec_internal_check_utf8">string::spec_internal_check_utf8</a>(<a href="token.md#0x3_token_BURNABLE_BY_OWNER">BURNABLE_BY_OWNER</a>);
 </code></pre>
 
 
@@ -5621,16 +5621,16 @@ creator: creators_address
 ### Function `mutate_collection_description`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_description">mutate_collection_description</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_description">mutate_collection_description</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
 The description of Collection is mutable.
 
 
-<pre><code><b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<pre><code><b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
 <b>let</b> <a href="../../libra2-framework/doc/account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
-<b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(<b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(addr).collection_data, collection_name);
+<b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(<b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(addr).collection_data, collection_name);
 <b>include</b> <a href="token.md#0x3_token_AssertCollectionExistsAbortsIf">AssertCollectionExistsAbortsIf</a> {
     creator_address: addr,
     collection_name: collection_name
@@ -5648,16 +5648,16 @@ The description of Collection is mutable.
 ### Function `mutate_collection_uri`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_uri">mutate_collection_uri</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_uri">mutate_collection_uri</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
 The uri of Collection is mutable.
 
 
-<pre><code><b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<pre><code><b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
 <b>let</b> <a href="../../libra2-framework/doc/account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
-<b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(<b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(addr).collection_data, collection_name);
+<b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(<b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(addr).collection_data, collection_name);
 <b>aborts_if</b> len(uri.bytes) &gt; <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>;
 <b>include</b> <a href="token.md#0x3_token_AssertCollectionExistsAbortsIf">AssertCollectionExistsAbortsIf</a> {
     creator_address: addr,
@@ -5676,7 +5676,7 @@ The uri of Collection is mutable.
 ### Function `mutate_collection_maximum`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_maximum">mutate_collection_maximum</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_collection_maximum">mutate_collection_maximum</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64)
 </code></pre>
 
 
@@ -5685,9 +5685,9 @@ The maximum should more than suply.
 The maxium of Collection is mutable.
 
 
-<pre><code><b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<pre><code><b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
 <b>let</b> <a href="../../libra2-framework/doc/account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
-<b>let</b> collection_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(<b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(addr).collection_data, collection_name);
+<b>let</b> collection_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(<b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(addr).collection_data, collection_name);
 <b>include</b> <a href="token.md#0x3_token_AssertCollectionExistsAbortsIf">AssertCollectionExistsAbortsIf</a> {
     creator_address: addr,
     collection_name: collection_name
@@ -5707,7 +5707,7 @@ The maxium of Collection is mutable.
 ### Function `mutate_tokendata_maximum`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_maximum">mutate_tokendata_maximum</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, maximum: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_maximum">mutate_tokendata_maximum</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, maximum: u64)
 </code></pre>
 
 
@@ -5716,10 +5716,10 @@ The maximum should more than suply.
 The token maximum is mutable
 
 
-<pre><code><b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<pre><code><b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
 <b>let</b> <a href="../../libra2-framework/doc/account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
 <b>include</b> <a href="token.md#0x3_token_AssertTokendataExistsAbortsIf">AssertTokendataExistsAbortsIf</a>;
 <b>aborts_if</b> token_data.maximum == 0 || maximum == 0;
 <b>aborts_if</b> maximum &lt; token_data.supply;
@@ -5736,7 +5736,7 @@ The token maximum is mutable
 ### Function `mutate_tokendata_uri`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_uri">mutate_tokendata_uri</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_uri">mutate_tokendata_uri</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -5745,10 +5745,10 @@ The  creator of token_data_id should exist in Collections.
 The token uri is mutable
 
 
-<pre><code><b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<pre><code><b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
 <b>let</b> <a href="../../libra2-framework/doc/account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
 <b>include</b> <a href="token.md#0x3_token_AssertTokendataExistsAbortsIf">AssertTokendataExistsAbortsIf</a>;
 <b>aborts_if</b> len(uri.bytes) &gt; <a href="token.md#0x3_token_MAX_URI_LENGTH">MAX_URI_LENGTH</a>;
 <b>aborts_if</b> !token_data.mutability_config.uri;
@@ -5764,7 +5764,7 @@ The token uri is mutable
 ### Function `mutate_tokendata_royalty`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_royalty">mutate_tokendata_royalty</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, royalty: <a href="token.md#0x3_token_Royalty">token::Royalty</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_royalty">mutate_tokendata_royalty</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, royalty: <a href="token.md#0x3_token_Royalty">token::Royalty</a>)
 </code></pre>
 
 
@@ -5772,10 +5772,10 @@ The token royalty is mutable
 
 
 <pre><code><b>include</b> <a href="token.md#0x3_token_AssertTokendataExistsAbortsIf">AssertTokendataExistsAbortsIf</a>;
-<b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
 <b>let</b> <a href="../../libra2-framework/doc/account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
 <b>aborts_if</b> !token_data.mutability_config.royalty;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token_event_store.md#0x3_token_event_store_TokenEventStoreV1">token_event_store::TokenEventStoreV1</a>&gt;(addr) && !<b>exists</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token_event_store.md#0x3_token_event_store_TokenEventStoreV1">token_event_store::TokenEventStoreV1</a>&gt;(addr) && <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>.guid_creation_num + 9 &gt;= <a href="../../libra2-framework/doc/account.md#0x1_account_MAX_GUID_CREATION_NUM">account::MAX_GUID_CREATION_NUM</a>;
@@ -5789,7 +5789,7 @@ The token royalty is mutable
 ### Function `mutate_tokendata_description`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_description">mutate_tokendata_description</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_description">mutate_tokendata_description</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -5797,10 +5797,10 @@ The token description is mutable
 
 
 <pre><code><b>include</b> <a href="token.md#0x3_token_AssertTokendataExistsAbortsIf">AssertTokendataExistsAbortsIf</a>;
-<b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
 <b>let</b> <a href="../../libra2-framework/doc/account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
 <b>aborts_if</b> !token_data.mutability_config.description;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token_event_store.md#0x3_token_event_store_TokenEventStoreV1">token_event_store::TokenEventStoreV1</a>&gt;(addr) && !<b>exists</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token_event_store.md#0x3_token_event_store_TokenEventStoreV1">token_event_store::TokenEventStoreV1</a>&gt;(addr) && <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>.guid_creation_num + 9 &gt;= <a href="../../libra2-framework/doc/account.md#0x1_account_MAX_GUID_CREATION_NUM">account::MAX_GUID_CREATION_NUM</a>;
@@ -5814,7 +5814,7 @@ The token description is mutable
 ### Function `mutate_tokendata_property`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_property">mutate_tokendata_property</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_tokendata_property">mutate_tokendata_property</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -5823,7 +5823,7 @@ The property map is mutable
 
 <pre><code><b>pragma</b> aborts_if_is_partial;
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(token_data_id.creator).token_data;
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
 <b>include</b> <a href="token.md#0x3_token_AssertTokendataExistsAbortsIf">AssertTokendataExistsAbortsIf</a>;
 <b>aborts_if</b> len(keys) != len(values);
 <b>aborts_if</b> len(keys) != len(types);
@@ -5837,7 +5837,7 @@ The property map is mutable
 ### Function `mutate_one_token`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_one_token">mutate_one_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_owner: <b>address</b>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mutate_one_token">mutate_one_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_owner: <b>address</b>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
 </code></pre>
 
 
@@ -5848,13 +5848,13 @@ The property map is mutable.
 
 <pre><code><b>pragma</b> aborts_if_is_partial;
 <b>let</b> creator = token_id.token_data_id.creator;
-<b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator).token_data;
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_id.token_data_id);
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_id.token_data_id);
 <b>aborts_if</b> addr != creator;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator);
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_id.token_data_id);
-<b>aborts_if</b> !token_data.mutability_config.properties && !<a href="../../libra2-framework/../aptos-stdlib/doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(token_data.default_properties.map, std::string::spec_utf8(<a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE">TOKEN_PROPERTY_MUTABLE</a>));
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_id.token_data_id);
+<b>aborts_if</b> !token_data.mutability_config.properties && !<a href="../../libra2-framework/../libra2-stdlib/doc/simple_map.md#0x1_simple_map_spec_contains_key">simple_map::spec_contains_key</a>(token_data.default_properties.map, std::string::spec_utf8(<a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE">TOKEN_PROPERTY_MUTABLE</a>));
 </code></pre>
 
 
@@ -5896,7 +5896,7 @@ The royalty_points_numerator should less than royalty_points_denominator.
 ### Function `deposit_token`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_deposit_token">deposit_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, <a href="token.md#0x3_token">token</a>: <a href="token.md#0x3_token_Token">token::Token</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_deposit_token">deposit_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, <a href="token.md#0x3_token">token</a>: <a href="token.md#0x3_token_Token">token::Token</a>)
 </code></pre>
 
 
@@ -5904,7 +5904,7 @@ The royalty_points_numerator should less than royalty_points_denominator.
 
 <pre><code><b>pragma</b> verify = <b>false</b>;
 <b>pragma</b> aborts_if_is_partial;
-<b>let</b> account_addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<b>let</b> account_addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>include</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr) ==&gt; <a href="token.md#0x3_token_InitializeTokenStore">InitializeTokenStore</a>;
 <b>let</b> token_id = <a href="token.md#0x3_token">token</a>.id;
 <b>let</b> token_amount = <a href="token.md#0x3_token">token</a>.amount;
@@ -5940,7 +5940,7 @@ The token can direct_transfer.
 ### Function `direct_transfer`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_direct_transfer">direct_transfer</a>(sender: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_direct_transfer">direct_transfer</a>(sender: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64)
 </code></pre>
 
 
@@ -5958,7 +5958,7 @@ Make sure the account has sufficient tokens to withdraw.
 ### Function `initialize_token_store`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token_store">initialize_token_store</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token_store">initialize_token_store</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -5974,8 +5974,8 @@ Make sure the account has sufficient tokens to withdraw.
 
 
 <pre><code><b>schema</b> <a href="token.md#0x3_token_InitializeTokenStore">InitializeTokenStore</a> {
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
-    <b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
+    <b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
     <b>let</b> account_addr = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(addr) && !<b>exists</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(addr) && account_addr.guid_creation_num + 4 &gt;= <a href="../../libra2-framework/doc/account.md#0x1_account_MAX_GUID_CREATION_NUM">account::MAX_GUID_CREATION_NUM</a>;
@@ -6025,14 +6025,14 @@ Make sure the account has sufficient tokens to withdraw.
 ### Function `transfer`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_transfer">transfer</a>(from: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, <b>to</b>: <b>address</b>, amount: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_transfer">transfer</a>(from: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, <b>to</b>: <b>address</b>, amount: u64)
 </code></pre>
 
 
 
 
 <pre><code><b>let</b> opt_in_transfer = <b>global</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(<b>to</b>).direct_transfer;
-<b>let</b> account_addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(from);
+<b>let</b> account_addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(from);
 <b>aborts_if</b> !opt_in_transfer;
 <b>pragma</b> aborts_if_is_partial;
 <b>include</b> <a href="token.md#0x3_token_WithdrawWithEventInternalAbortsIf">WithdrawWithEventInternalAbortsIf</a>;
@@ -6067,7 +6067,7 @@ amount: withdraw_proof.amount};
 ### Function `partial_withdraw_with_capability`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_partial_withdraw_with_capability">partial_withdraw_with_capability</a>(withdraw_proof: <a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>, withdraw_amount: u64): (<a href="token.md#0x3_token_Token">token::Token</a>, <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_partial_withdraw_with_capability">partial_withdraw_with_capability</a>(withdraw_proof: <a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>, withdraw_amount: u64): (<a href="token.md#0x3_token_Token">token::Token</a>, <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="token.md#0x3_token_WithdrawCapability">token::WithdrawCapability</a>&gt;)
 </code></pre>
 
 
@@ -6091,7 +6091,7 @@ amount: withdraw_proof.amount};
 ### Function `withdraw_token`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_withdraw_token">withdraw_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64): <a href="token.md#0x3_token_Token">token::Token</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_withdraw_token">withdraw_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, amount: u64): <a href="token.md#0x3_token_Token">token::Token</a>
 </code></pre>
 
 
@@ -6099,7 +6099,7 @@ Cannot withdraw 0 tokens.
 Make sure the account has sufficient tokens to withdraw.
 
 
-<pre><code><b>let</b> account_addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<pre><code><b>let</b> account_addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>include</b> <a href="token.md#0x3_token_WithdrawWithEventInternalAbortsIf">WithdrawWithEventInternalAbortsIf</a>;
 </code></pre>
 
@@ -6110,7 +6110,7 @@ Make sure the account has sufficient tokens to withdraw.
 ### Function `create_collection`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection">create_collection</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection">create_collection</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;)
 </code></pre>
 
 
@@ -6120,7 +6120,7 @@ The collection_data should not exist before you create it.
 
 
 <pre><code><b>pragma</b> aborts_if_is_partial;
-<b>let</b> account_addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+<b>let</b> account_addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
 <b>aborts_if</b> len(name.bytes) &gt; 128;
 <b>aborts_if</b> len(uri.bytes) &gt; 512;
 <b>include</b> <a href="token.md#0x3_token_CreateCollectionAbortsIf">CreateCollectionAbortsIf</a>;
@@ -6133,13 +6133,13 @@ The collection_data should not exist before you create it.
 
 
 <pre><code><b>schema</b> <a href="token.md#0x3_token_CreateCollectionAbortsIf">CreateCollectionAbortsIf</a> {
-    creator: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
+    creator: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
     name: String;
     description: String;
     uri: String;
     maximum: u64;
-    mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;;
-    <b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+    mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;;
+    <b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
     <b>let</b> <a href="../../libra2-framework/doc/account.md#0x1_account">account</a> = <b>global</b>&lt;<a href="../../libra2-framework/doc/account.md#0x1_account_Account">account::Account</a>&gt;(addr);
     <b>let</b> collection = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(addr);
     <b>let</b> b = !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(addr);
@@ -6160,7 +6160,7 @@ The collection_data should not exist before you create it.
 ### Function `check_collection_exists`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_collection_exists">check_collection_exists</a>(creator: <b>address</b>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): bool
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_collection_exists">check_collection_exists</a>(creator: <b>address</b>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): bool
 </code></pre>
 
 
@@ -6176,7 +6176,7 @@ The collection_data should not exist before you create it.
 ### Function `check_tokendata_exists`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_tokendata_exists">check_tokendata_exists</a>(creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): bool
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_check_tokendata_exists">check_tokendata_exists</a>(creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, token_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): bool
 </code></pre>
 
 
@@ -6199,7 +6199,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `create_tokendata`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_tokendata">create_tokendata</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, uri: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, royalty_payee_address: <b>address</b>, royalty_points_denominator: u64, royalty_points_numerator: u64, token_mutate_config: <a href="token.md#0x3_token_TokenMutabilityConfig">token::TokenMutabilityConfig</a>, property_keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, property_values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, property_types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;): <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_tokendata">create_tokendata</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, description: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, maximum: u64, uri: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, royalty_payee_address: <b>address</b>, royalty_points_denominator: u64, royalty_points_numerator: u64, token_mutate_config: <a href="token.md#0x3_token_TokenMutabilityConfig">token::TokenMutabilityConfig</a>, property_keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, property_values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, property_types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;): <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>
 </code></pre>
 
 
@@ -6209,10 +6209,10 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 
 <pre><code><b>pragma</b> verify = <b>false</b>;
 <b>pragma</b> aborts_if_is_partial;
-<b>let</b> account_addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<b>let</b> account_addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>let</b> collections = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(account_addr);
 <b>let</b> token_data_id = <a href="token.md#0x3_token_spec_create_token_data_id">spec_create_token_data_id</a>(account_addr, collection, name);
-<b>let</b> Collection = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(collections.collection_data, token_data_id.collection);
+<b>let</b> Collection = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(collections.collection_data, token_data_id.collection);
 <b>let</b> length = len(property_keys);
 <b>aborts_if</b> len(name.bytes) &gt; <a href="token.md#0x3_token_MAX_NFT_NAME_LENGTH">MAX_NFT_NAME_LENGTH</a>;
 <b>aborts_if</b> len(collection.bytes) &gt; <a href="token.md#0x3_token_MAX_COLLECTION_NAME_LENGTH">MAX_COLLECTION_NAME_LENGTH</a>;
@@ -6224,8 +6224,8 @@ The length of name should less than MAX_NFT_NAME_LENGTH
     collection: collection,
     name: name
 };
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(collections.collection_data, collection);
-<b>aborts_if</b> <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(collections.token_data, token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(collections.collection_data, collection);
+<b>aborts_if</b> <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(collections.token_data, token_data_id);
 <b>aborts_if</b> Collection.maximum &gt; 0 && Collection.supply + 1 &gt; MAX_U64;
 <b>aborts_if</b> Collection.maximum &gt; 0 && Collection.maximum &lt; Collection.supply + 1;
 <b>include</b> <a href="token.md#0x3_token_CreateRoyaltyAbortsIf">CreateRoyaltyAbortsIf</a> {
@@ -6258,7 +6258,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `get_collection_supply`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_supply">get_collection_supply</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;u64&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_supply">get_collection_supply</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;u64&gt;
 </code></pre>
 
 
@@ -6274,7 +6274,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `get_collection_description`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_description">get_collection_description</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_description">get_collection_description</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
 </code></pre>
 
 
@@ -6290,7 +6290,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `get_collection_uri`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_uri">get_collection_uri</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_uri">get_collection_uri</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
 </code></pre>
 
 
@@ -6306,7 +6306,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `get_collection_maximum`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_maximum">get_collection_maximum</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): u64
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_maximum">get_collection_maximum</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): u64
 </code></pre>
 
 
@@ -6322,7 +6322,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `get_token_supply`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_token_supply">get_token_supply</a>(creator_address: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;u64&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_token_supply">get_token_supply</a>(creator_address: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;u64&gt;
 </code></pre>
 
 
@@ -6330,7 +6330,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 
 <pre><code><b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
 </code></pre>
 
 
@@ -6348,7 +6348,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 
 <pre><code><b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
 </code></pre>
 
 
@@ -6358,7 +6358,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `create_token_mutability_config`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_mutability_config">create_token_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_TokenMutabilityConfig">token::TokenMutabilityConfig</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_mutability_config">create_token_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_TokenMutabilityConfig">token::TokenMutabilityConfig</a>
 </code></pre>
 
 
@@ -6376,13 +6376,13 @@ The mutate_setting shuold have a value.
 
 
 <pre><code><b>schema</b> <a href="token.md#0x3_token_CreateTokenMutabilityConfigAbortsIf">CreateTokenMutabilityConfigAbortsIf</a> {
-    mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;;
+    mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;;
     <b>aborts_if</b> len(mutate_setting) &lt; 5;
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_MAX_MUTABLE_IND">TOKEN_MAX_MUTABLE_IND</a>]);
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_URI_MUTABLE_IND">TOKEN_URI_MUTABLE_IND</a>]);
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_ROYALTY_MUTABLE_IND">TOKEN_ROYALTY_MUTABLE_IND</a>]);
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_DESCRIPTION_MUTABLE_IND">TOKEN_DESCRIPTION_MUTABLE_IND</a>]);
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE_IND">TOKEN_PROPERTY_MUTABLE_IND</a>]);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_MAX_MUTABLE_IND">TOKEN_MAX_MUTABLE_IND</a>]);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_URI_MUTABLE_IND">TOKEN_URI_MUTABLE_IND</a>]);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_ROYALTY_MUTABLE_IND">TOKEN_ROYALTY_MUTABLE_IND</a>]);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_DESCRIPTION_MUTABLE_IND">TOKEN_DESCRIPTION_MUTABLE_IND</a>]);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_TOKEN_PROPERTY_MUTABLE_IND">TOKEN_PROPERTY_MUTABLE_IND</a>]);
 }
 </code></pre>
 
@@ -6393,7 +6393,7 @@ The mutate_setting shuold have a value.
 ### Function `create_collection_mutability_config`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection_mutability_config">create_collection_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_CollectionMutabilityConfig">token::CollectionMutabilityConfig</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_collection_mutability_config">create_collection_mutability_config</a>(mutate_setting: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;): <a href="token.md#0x3_token_CollectionMutabilityConfig">token::CollectionMutabilityConfig</a>
 </code></pre>
 
 
@@ -6409,11 +6409,11 @@ The mutate_setting shuold have a value.
 
 
 <pre><code><b>schema</b> <a href="token.md#0x3_token_CreateCollectionMutabilityConfigAbortsIf">CreateCollectionMutabilityConfigAbortsIf</a> {
-    mutate_setting: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;;
+    mutate_setting: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;bool&gt;;
     <b>aborts_if</b> len(mutate_setting) &lt; 3;
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_COLLECTION_DESCRIPTION_MUTABLE_IND">COLLECTION_DESCRIPTION_MUTABLE_IND</a>]);
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_COLLECTION_URI_MUTABLE_IND">COLLECTION_URI_MUTABLE_IND</a>]);
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_COLLECTION_MAX_MUTABLE_IND">COLLECTION_MAX_MUTABLE_IND</a>]);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_COLLECTION_DESCRIPTION_MUTABLE_IND">COLLECTION_DESCRIPTION_MUTABLE_IND</a>]);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_COLLECTION_URI_MUTABLE_IND">COLLECTION_URI_MUTABLE_IND</a>]);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector_spec_contains">vector::spec_contains</a>(mutate_setting, mutate_setting[<a href="token.md#0x3_token_COLLECTION_MAX_MUTABLE_IND">COLLECTION_MAX_MUTABLE_IND</a>]);
 }
 </code></pre>
 
@@ -6424,7 +6424,7 @@ The mutate_setting shuold have a value.
 ### Function `mint_token`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token">mint_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, amount: u64): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token">mint_token</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, amount: u64): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
 </code></pre>
 
 
@@ -6443,15 +6443,15 @@ The sum of supply and the amount of mint Token is less than maximum.
 
 
 <pre><code><b>schema</b> <a href="token.md#0x3_token_MintTokenAbortsIf">MintTokenAbortsIf</a> {
-    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
+    <a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
     token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>;
     amount: u64;
-    <b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+    <b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
     <b>let</b> creator_addr = token_data_id.creator;
     <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-    <b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
+    <b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
     <b>aborts_if</b> token_data_id.creator != addr;
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
     <b>aborts_if</b> token_data.maximum &gt; 0 && token_data.supply + amount &gt; token_data.maximum;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
     <b>aborts_if</b> amount &lt;= 0;
@@ -6467,21 +6467,21 @@ The sum of supply and the amount of mint Token is less than maximum.
 ### Function `mint_token_to`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token_to">mint_token_to</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, amount: u64)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_mint_token_to">mint_token_to</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, receiver: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>, amount: u64)
 </code></pre>
 
 
 
 
-<pre><code><b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
+<pre><code><b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="../../libra2-framework/doc/account.md#0x1_account">account</a>);
 <b>let</b> opt_in_transfer = <b>global</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(receiver).direct_transfer;
 <b>let</b> creator_addr = token_data_id.creator;
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-<b>let</b> token_data = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
+<b>let</b> token_data = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(all_token_data, token_data_id);
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(receiver);
 <b>aborts_if</b> !opt_in_transfer;
 <b>aborts_if</b> token_data_id.creator != addr;
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
 <b>aborts_if</b> token_data.maximum &gt; 0 && token_data.supply + amount &gt; token_data.maximum;
 <b>aborts_if</b> amount &lt;= 0;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
@@ -6500,7 +6500,7 @@ The sum of supply and the amount of mint Token is less than maximum.
 ### Function `create_token_data_id`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_data_id">create_token_data_id</a>(creator: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_data_id">create_token_data_id</a>(creator: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>
 </code></pre>
 
 
@@ -6533,7 +6533,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `create_token_id_raw`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_id_raw">create_token_id_raw</a>(creator: <b>address</b>, collection: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_create_token_id_raw">create_token_id_raw</a>(creator: <b>address</b>, collection: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>, property_version: u64): <a href="token.md#0x3_token_TokenId">token::TokenId</a>
 </code></pre>
 
 
@@ -6555,8 +6555,8 @@ The length of name should less than MAX_NFT_NAME_LENGTH
    <b>if</b> (!<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(owner)) {
        0
    }
-   <b>else</b> <b>if</b> (<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(token_store.tokens, id)) {
-       <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(token_store.tokens, id).amount
+   <b>else</b> <b>if</b> (<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(token_store.tokens, id)) {
+       <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(token_store.tokens, id).amount
    } <b>else</b> {
        0
    }
@@ -6597,7 +6597,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 <pre><code><b>let</b> creator_addr = token_id.token_data_id.creator;
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
 <b>aborts_if</b> <a href="token.md#0x3_token_spec_balance_of">spec_balance_of</a>(owner, token_id) &lt;= 0;
-<b>aborts_if</b> token_id.property_version == 0 && !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_id.token_data_id);
+<b>aborts_if</b> token_id.property_version == 0 && !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_id.token_data_id);
 <b>aborts_if</b> token_id.property_version == 0 && !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
 </code></pre>
 
@@ -6617,7 +6617,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 <pre><code><b>let</b> creator_address = token_data_id.creator;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
 </code></pre>
 
 
@@ -6627,7 +6627,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `get_tokendata_uri`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_uri">get_tokendata_uri</a>(creator: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_uri">get_tokendata_uri</a>(creator: <b>address</b>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
 </code></pre>
 
 
@@ -6635,7 +6635,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 
 <pre><code><b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator).token_data;
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
 </code></pre>
 
 
@@ -6645,7 +6645,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `get_tokendata_description`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_description">get_tokendata_description</a>(token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_tokendata_description">get_tokendata_description</a>(token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>): <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>
 </code></pre>
 
 
@@ -6654,7 +6654,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 <pre><code><b>let</b> creator_address = token_data_id.creator;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address);
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
 </code></pre>
 
 
@@ -6684,7 +6684,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
     <b>let</b> creator_address = token_data_id.creator;
     <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).token_data;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address);
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
 }
 </code></pre>
 
@@ -6704,7 +6704,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 <pre><code><b>let</b> creator_addr = token_data_id.creator;
 <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
 </code></pre>
 
 
@@ -6715,7 +6715,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 
 
 <pre><code>#[view]
-<b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_mutability_config">get_collection_mutability_config</a>(creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="token.md#0x3_token_CollectionMutabilityConfig">token::CollectionMutabilityConfig</a>
+<b>public</b> <b>fun</b> <a href="token.md#0x3_token_get_collection_mutability_config">get_collection_mutability_config</a>(creator: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>): <a href="token.md#0x3_token_CollectionMutabilityConfig">token::CollectionMutabilityConfig</a>
 </code></pre>
 
 
@@ -6723,7 +6723,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 
 <pre><code><b>let</b> all_collection_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator).collection_data;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator);
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_collection_data, collection_name);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_collection_data, collection_name);
 </code></pre>
 
 
@@ -6756,7 +6756,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
     <b>aborts_if</b> amount &lt;= 0;
     <b>aborts_if</b> <a href="token.md#0x3_token_spec_balance_of">spec_balance_of</a>(account_addr, id) &lt; amount;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr);
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(tokens, id);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(tokens, id);
 }
 </code></pre>
 
@@ -6767,7 +6767,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `update_token_property_internal`
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_update_token_property_internal">update_token_property_internal</a>(token_owner: <b>address</b>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, keys: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>fun</b> <a href="token.md#0x3_token_update_token_property_internal">update_token_property_internal</a>(token_owner: <b>address</b>, token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>, keys: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;, values: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;&gt;, types: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -6776,7 +6776,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 <pre><code><b>pragma</b> aborts_if_is_partial;
 <b>let</b> tokens = <b>global</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(token_owner).tokens;
 <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(token_owner);
-<b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(tokens, token_id);
+<b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(tokens, token_id);
 </code></pre>
 
 
@@ -6808,8 +6808,8 @@ The length of name should less than MAX_NFT_NAME_LENGTH
     token_id: <a href="token.md#0x3_token_TokenId">TokenId</a>;
     token_amount: u64;
     <b>let</b> token_store = <b>global</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr);
-    <b>let</b> recipient_token = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(token_store.tokens, token_id);
-    <b>let</b> b = <a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(token_store.tokens, token_id);
+    <b>let</b> recipient_token = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_get">table::spec_get</a>(token_store.tokens, token_id);
+    <b>let</b> b = <a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(token_store.tokens, token_id);
     <b>aborts_if</b> token_amount &lt;= 0;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_TokenStore">TokenStore</a>&gt;(account_addr);
     <b>aborts_if</b> b && recipient_token.id != token_id;
@@ -6824,7 +6824,7 @@ The length of name should less than MAX_NFT_NAME_LENGTH
 ### Function `assert_collection_exists`
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
+<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_collection_exists">assert_collection_exists</a>(creator_address: <b>address</b>, collection_name: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>)
 </code></pre>
 
 
@@ -6845,7 +6845,7 @@ The collection_name should exist in collection_data of the creator_address's Col
     collection_name: String;
     <b>let</b> all_collection_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address).collection_data;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_address);
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_collection_data, collection_name);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_collection_data, collection_name);
 }
 </code></pre>
 
@@ -6856,7 +6856,7 @@ The collection_name should exist in collection_data of the creator_address's Col
 ### Function `assert_tokendata_exists`
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>)
+<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_tokendata_exists">assert_tokendata_exists</a>(creator: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, token_data_id: <a href="token.md#0x3_token_TokenDataId">token::TokenDataId</a>)
 </code></pre>
 
 
@@ -6875,14 +6875,14 @@ The token_data_id is in the all_token_data.
 
 
 <pre><code><b>schema</b> <a href="token.md#0x3_token_AssertTokendataExistsAbortsIf">AssertTokendataExistsAbortsIf</a> {
-    creator: <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
+    creator: <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>;
     token_data_id: <a href="token.md#0x3_token_TokenDataId">TokenDataId</a>;
     <b>let</b> creator_addr = token_data_id.creator;
-    <b>let</b> addr = <a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
+    <b>let</b> addr = <a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(creator);
     <b>aborts_if</b> addr != creator_addr;
     <b>aborts_if</b> !<b>exists</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr);
     <b>let</b> all_token_data = <b>global</b>&lt;<a href="token.md#0x3_token_Collections">Collections</a>&gt;(creator_addr).token_data;
-    <b>aborts_if</b> !<a href="../../libra2-framework/../aptos-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
+    <b>aborts_if</b> !<a href="../../libra2-framework/../libra2-stdlib/doc/table.md#0x1_table_spec_contains">table::spec_contains</a>(all_token_data, token_data_id);
 }
 </code></pre>
 
@@ -6893,7 +6893,7 @@ The token_data_id is in the all_token_data.
 ### Function `assert_non_standard_reserved_property`
 
 
-<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_non_standard_reserved_property">assert_non_standard_reserved_property</a>(keys: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
+<pre><code><b>fun</b> <a href="token.md#0x3_token_assert_non_standard_reserved_property">assert_non_standard_reserved_property</a>(keys: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/string.md#0x1_string_String">string::String</a>&gt;)
 </code></pre>
 
 
@@ -6909,7 +6909,7 @@ The token_data_id is in the all_token_data.
 ### Function `initialize_token_script`
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_initialize_token_script">initialize_token_script</a>(_account: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b> entry <b>fun</b> <a href="token.md#0x3_token_initialize_token_script">initialize_token_script</a>(_account: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -6926,7 +6926,7 @@ Deprecated function
 ### Function `initialize_token`
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token">initialize_token</a>(_account: &<a href="../../libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="token.md#0x3_token_initialize_token">initialize_token</a>(_account: &<a href="../../libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, _token_id: <a href="token.md#0x3_token_TokenId">token::TokenId</a>)
 </code></pre>
 
 

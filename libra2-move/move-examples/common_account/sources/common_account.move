@@ -7,7 +7,7 @@ module common_account::common_account {
     use std::error;
     use std::signer;
 
-    use aptos_std::simple_map::{Self, SimpleMap};
+    use libra2_std::simple_map::{Self, SimpleMap};
 
     use libra2_framework::account::{Self, SignerCapability};
 

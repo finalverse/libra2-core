@@ -11,7 +11,7 @@ use crate::{
     },
     MoveHarness,
 };
-use libra2_cached_packages::{aptos_stdlib, aptos_token_sdk_builder};
+use libra2_cached_packages::{libra2_stdlib, libra2_token_sdk_builder};
 use libra2_crypto::{bls12381, PrivateKey, Uniform};
 use libra2_gas_algebra::GasQuantity;
 use libra2_gas_profiling::TransactionGasLog;
@@ -202,19 +202,19 @@ fn test_gas() {
     runner.run(
         "Transfer",
         account_1,
-        aptos_stdlib::aptos_coin_transfer(account_2_address, 1000),
+        libra2_stdlib::aptos_coin_transfer(account_2_address, 1000),
     );
 
     runner.run(
         "2ndTransfer",
         account_1,
-        aptos_stdlib::aptos_coin_transfer(account_2_address, 1000),
+        libra2_stdlib::aptos_coin_transfer(account_2_address, 1000),
     );
 
     runner.run(
         "CreateAccount",
         account_1,
-        aptos_stdlib::aptos_account_create_account(
+        libra2_stdlib::aptos_account_create_account(
             AccountAddress::from_hex_literal("0xcafe1").unwrap(),
         ),
     );
@@ -222,7 +222,7 @@ fn test_gas() {
     runner.run(
         "CreateTransfer",
         account_1,
-        aptos_stdlib::aptos_account_transfer(
+        libra2_stdlib::aptos_account_transfer(
             AccountAddress::from_hex_literal("0xcafe2").unwrap(),
             1000,
         ),
@@ -254,7 +254,7 @@ fn test_gas() {
     runner.run(
         "CreateStakePool",
         account_1,
-        aptos_stdlib::staking_contract_create_staking_contract(
+        libra2_stdlib::staking_contract_create_staking_contract(
             account_2_address,
             account_3_address,
             25_000_000,
@@ -271,7 +271,7 @@ fn test_gas() {
     runner.run(
         "RotateConsensusKey",
         account_2,
-        aptos_stdlib::stake_rotate_consensus_key(
+        libra2_stdlib::stake_rotate_consensus_key(
             pool_address,
             consensus_pubkey,
             proof_of_possession,
@@ -280,36 +280,36 @@ fn test_gas() {
     runner.run(
         "JoinValidator100",
         account_2,
-        aptos_stdlib::stake_join_validator_set(pool_address),
+        libra2_stdlib::stake_join_validator_set(pool_address),
     );
     runner.run(
         "AddStake",
         account_1,
-        aptos_stdlib::staking_contract_add_stake(account_2_address, 1000),
+        libra2_stdlib::staking_contract_add_stake(account_2_address, 1000),
     );
     runner.run(
         "UnlockStake",
         account_1,
-        aptos_stdlib::staking_contract_unlock_stake(account_2_address, 1000),
+        libra2_stdlib::staking_contract_unlock_stake(account_2_address, 1000),
     );
     runner.harness.fast_forward(7200);
     runner.harness.new_epoch();
     runner.run(
         "WithdrawStake",
         account_1,
-        aptos_stdlib::staking_contract_distribute(account_1_address, account_2_address),
+        libra2_stdlib::staking_contract_distribute(account_1_address, account_2_address),
     );
     runner.run(
         "LeaveValidatorSet100",
         account_2,
-        aptos_stdlib::stake_leave_validator_set(pool_address),
+        libra2_stdlib::stake_leave_validator_set(pool_address),
     );
     let collection_name = "collection name".to_owned().into_bytes();
     let token_name = "token name".to_owned().into_bytes();
     runner.run(
         "CreateCollection",
         account_1,
-        aptos_token_sdk_builder::token_create_collection_script(
+        libra2_token_sdk_builder::token_create_collection_script(
             collection_name.clone(),
             "description".to_owned().into_bytes(),
             "uri".to_owned().into_bytes(),
@@ -320,7 +320,7 @@ fn test_gas() {
     runner.run(
         "CreateTokenFirstTime",
         account_1,
-        aptos_token_sdk_builder::token_create_token_script(
+        libra2_token_sdk_builder::token_create_token_script(
             collection_name.clone(),
             token_name.clone(),
             "collection description".to_owned().into_bytes(),
@@ -339,7 +339,7 @@ fn test_gas() {
     runner.run(
         "MintTokenV1",
         account_1,
-        aptos_token_sdk_builder::token_mint_script(
+        libra2_token_sdk_builder::token_mint_script(
             account_1_address,
             collection_name.clone(),
             token_name.clone(),
@@ -349,7 +349,7 @@ fn test_gas() {
     runner.run(
         "MutateTokenV1",
         account_1,
-        aptos_token_sdk_builder::token_mutate_token_properties(
+        libra2_token_sdk_builder::token_mutate_token_properties(
             account_1_address,
             account_1_address,
             collection_name.clone(),
@@ -364,7 +364,7 @@ fn test_gas() {
     runner.run(
         "MutateToken2ndTime",
         account_1,
-        aptos_token_sdk_builder::token_mutate_token_properties(
+        libra2_token_sdk_builder::token_mutate_token_properties(
             account_1_address,
             account_1_address,
             collection_name.clone(),
@@ -388,7 +388,7 @@ fn test_gas() {
     runner.run(
         "MutateTokenAdd10NewProperties",
         account_1,
-        aptos_token_sdk_builder::token_mutate_token_properties(
+        libra2_token_sdk_builder::token_mutate_token_properties(
             account_1_address,
             account_1_address,
             collection_name.clone(),
@@ -403,7 +403,7 @@ fn test_gas() {
     runner.run(
         "MutateTokenMutate10ExistingProperties",
         account_1,
-        aptos_token_sdk_builder::token_mutate_token_properties(
+        libra2_token_sdk_builder::token_mutate_token_properties(
             account_1_address,
             account_1_address,
             collection_name,
@@ -718,14 +718,14 @@ fn test_txn_generator_workloads_calibrate_gas() {
     runner.run_with_tps_estimate(
         "Transfer",
         account_1,
-        aptos_stdlib::aptos_coin_transfer(account_2_address, 1000),
+        libra2_stdlib::aptos_coin_transfer(account_2_address, 1000),
         if use_large_db_numbers { 2032. } else { 2791. },
     );
 
     runner.run_with_tps_estimate(
         "CreateAccount",
         account_1,
-        aptos_stdlib::aptos_account_create_account(
+        libra2_stdlib::aptos_account_create_account(
             AccountAddress::from_hex_literal("0xcafe1").unwrap(),
         ),
         if use_large_db_numbers { 1583.0 } else { 2215. },

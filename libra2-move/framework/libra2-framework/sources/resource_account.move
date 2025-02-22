@@ -67,7 +67,7 @@ module libra2_framework::resource_account {
     use libra2_framework::account;
     use libra2_framework::aptos_coin::AptosCoin;
     use libra2_framework::coin;
-    use aptos_std::simple_map::{Self, SimpleMap};
+    use libra2_std::simple_map::{Self, SimpleMap};
 
     /// Container resource not found in account
     const ECONTAINER_NOT_PUBLISHED: u64 = 1;
@@ -208,7 +208,7 @@ module libra2_framework::resource_account {
     }
 
     #[test(user = @0x1111)]
-    #[expected_failure(abort_code = 0x10002, location = aptos_std::simple_map)]
+    #[expected_failure(abort_code = 0x10002, location = libra2_std::simple_map)]
     public entry fun test_create_account_and_retrieve_cap_resource_address_does_not_exist(
         user: signer
     ) acquires Container {

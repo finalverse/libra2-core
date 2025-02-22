@@ -5,7 +5,7 @@
 module Alice::game {
 
     // #[test_only]
-    use aptos_std::debug;
+    use libra2_std::debug;
     // #[test_only]
     use std::signer;
     // #[test_only]

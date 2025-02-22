@@ -5,7 +5,7 @@
 //! Support for encoding transactions for common situations.
 
 use crate::account::Account;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_types::transaction::{Script, SignedTransaction};
 use move_ir_compiler::Compiler;
 use once_cell::sync::Lazy;
@@ -47,7 +47,7 @@ pub fn create_account_txn(
 ) -> SignedTransaction {
     sender
         .transaction()
-        .payload(aptos_stdlib::aptos_account_create_account(
+        .payload(libra2_stdlib::aptos_account_create_account(
             *new_account.address(),
         ))
         .sequence_number(seq_num)
@@ -68,7 +68,7 @@ pub fn peer_to_peer_txn(
     // get a SignedTransaction
     sender
         .transaction()
-        .payload(aptos_stdlib::aptos_coin_transfer(
+        .payload(libra2_stdlib::aptos_coin_transfer(
             *receiver.address(),
             transfer_amount,
         ))

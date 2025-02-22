@@ -6,7 +6,7 @@ proportionally to their stake and provided the same stake-management API as the 
 The main accounting logic in the delegation pool contract handles the following:
 1. Tracks how much stake each delegator owns, privately deposited as well as earned.
 Accounting individual delegator stakes is achieved through the shares-based pool defined at
-<code>aptos_std::pool_u64</code>, hence delegators own shares rather than absolute stakes into the delegation pool.
+<code>libra2_std::pool_u64</code>, hence delegators own shares rather than absolute stakes into the delegation pool.
 2. Tracks rewards earned by the stake pool, implicitly by the delegation one, in the meantime
 and distribute them accordingly.
 3. Tracks lockup cycles on the stake pool in order to separate inactive stake (not earning rewards)
@@ -113,10 +113,10 @@ module libra2_framework::delegation_pool {
     use std::signer;
     use std::vector;
 
-    use aptos_std::math64;
-    use aptos_std::pool_u64_unbound::{Self as pool_u64, total_coins};
-    use aptos_std::table::{Self, Table};
-    use aptos_std::smart_table::{Self, SmartTable};
+    use libra2_std::math64;
+    use libra2_std::pool_u64_unbound::{Self as pool_u64, total_coins};
+    use libra2_std::table::{Self, Table};
+    use libra2_std::smart_table::{Self, SmartTable};
 
     use libra2_framework::account;
     use libra2_framework::aptos_account;
@@ -2265,7 +2265,7 @@ module libra2_framework::delegation_pool {
     #[test_only]
     use libra2_framework::reconfiguration;
     #[test_only]
-    use aptos_std::fixed_point64;
+    use libra2_std::fixed_point64;
     #[test_only]
     use libra2_framework::stake::fast_forward_to_unlock;
     #[test_only]

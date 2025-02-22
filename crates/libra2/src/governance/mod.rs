@@ -19,7 +19,7 @@ use crate::{
     CliCommand, CliResult,
 };
 use libra2_api_types::ViewFunction;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::HashValue;
 use libra2_framework::{BuildOptions, BuiltPackage, ReleasePackage};
 use libra2_logger::warn;
@@ -389,7 +389,7 @@ impl CliCommand<ProposalSubmissionSummary> for SubmitProposal {
         let txn: Transaction = if self.args.is_multi_step {
             self.args
                 .txn_options
-                .submit_transaction(aptos_stdlib::aptos_governance_create_proposal_v2(
+                .submit_transaction(libra2_stdlib::aptos_governance_create_proposal_v2(
                     self.pool_address_args.pool_address,
                     script_hash.to_vec(),
                     self.args.metadata_url.to_string().as_bytes().to_vec(),
@@ -400,7 +400,7 @@ impl CliCommand<ProposalSubmissionSummary> for SubmitProposal {
         } else {
             self.args
                 .txn_options
-                .submit_transaction(aptos_stdlib::aptos_governance_create_proposal(
+                .submit_transaction(libra2_stdlib::aptos_governance_create_proposal(
                     self.pool_address_args.pool_address,
                     script_hash.to_vec(),
                     self.args.metadata_url.to_string().as_bytes().to_vec(),
@@ -587,7 +587,7 @@ impl SubmitVote {
             summaries.push(
                 self.args
                     .txn_options
-                    .submit_transaction(aptos_stdlib::aptos_governance_vote(
+                    .submit_transaction(libra2_stdlib::aptos_governance_vote(
                         *pool_address,
                         proposal_id,
                         vote,
@@ -682,7 +682,7 @@ impl SubmitVote {
             summaries.push(
                 self.args
                     .txn_options
-                    .submit_transaction(aptos_stdlib::aptos_governance_partial_vote(
+                    .submit_transaction(libra2_stdlib::aptos_governance_partial_vote(
                         *pool_address,
                         proposal_id,
                         voting_power,
@@ -744,7 +744,7 @@ impl CliCommand<TransactionSummary> for ApproveExecutionHash {
         Ok(self
             .txn_options
             .submit_transaction(
-                aptos_stdlib::aptos_governance_add_approved_script_hash_script(self.proposal_id),
+                libra2_stdlib::aptos_governance_add_approved_script_hash_script(self.proposal_id),
             )
             .await
             .map(TransactionSummary::from)?)

@@ -58,14 +58,14 @@ impl ReleaseTarget {
     pub fn packages(self) -> Vec<(&'static str, Option<&'static str>)> {
         let result = vec![
             ("move-stdlib", None),
-            ("aptos-stdlib", None),
+            ("libra2-stdlib", None),
             (
                 "libra2-framework",
                 Some("cached-packages/src/libra2_framework_sdk_builder.rs"),
             ),
             (
                 "aptos-token",
-                Some("cached-packages/src/aptos_token_sdk_builder.rs"),
+                Some("cached-packages/src/libra2_token_sdk_builder"),
             ),
             (
                 "libra2-token-objects",
@@ -174,7 +174,7 @@ static NAMED_ADDRESSES: Lazy<BTreeMap<String, NumericalAddress>> = Lazy::new(|| 
     let ten = NumericalAddress::parse_str("0xA").unwrap();
     let resources = NumericalAddress::parse_str("0xA550C18").unwrap();
     result.insert("std".to_owned(), one);
-    result.insert("aptos_std".to_owned(), one);
+    result.insert("libra2_std".to_owned(), one);
     result.insert("libra2_framework".to_owned(), one);
     result.insert("aptos_token".to_owned(), three);
     result.insert("libra2_token_objects".to_owned(), four);

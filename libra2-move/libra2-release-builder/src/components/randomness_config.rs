@@ -63,7 +63,7 @@ pub fn generate_randomness_config_update_proposal(
         is_multi_step,
         &[
             "libra2_framework::randomness_config",
-            "aptos_std::fixed_point64",
+            "libra2_std::fixed_point64",
         ],
         |writer| {
             match config {

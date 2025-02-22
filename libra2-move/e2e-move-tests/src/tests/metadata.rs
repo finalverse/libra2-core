@@ -5,7 +5,7 @@ use crate::{
     assert_success, assert_vm_status, build_package, build_package_with_compiler_version,
     MoveHarness,
 };
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_framework::{
     BuildOptions, RuntimeModuleMetadata, RuntimeModuleMetadataV1, APTOS_METADATA_KEY,
     APTOS_METADATA_KEY_V1,
@@ -136,7 +136,7 @@ fn test_metadata_with_changes(f: impl Fn() -> Vec<Metadata>) -> TransactionStatu
         .expect("extracting package metadata must succeed");
     h.run_transaction_payload(
         &account,
-        aptos_stdlib::code_publish_package_txn(
+        libra2_stdlib::code_publish_package_txn(
             bcs::to_bytes(&package_metadata).expect("PackageMetadata has BCS"),
             vec![invalid_code],
         ),
@@ -198,7 +198,7 @@ fn test_compilation_metadata_with_changes(
         .expect("extracting package metadata must succeed");
     h.run_transaction_payload(
         &account,
-        aptos_stdlib::code_publish_package_txn(
+        libra2_stdlib::code_publish_package_txn(
             bcs::to_bytes(&package_metadata).expect("PackageMetadata has BCS"),
             vec![invalid_code],
         ),
@@ -253,7 +253,7 @@ fn test_compilation_metadata_internal(
         );
         h.run_transaction_payload_mainnet(
             &account,
-            aptos_stdlib::code_publish_package_txn(
+            libra2_stdlib::code_publish_package_txn(
                 bcs::to_bytes(&package_metadata).expect("PackageMetadata has BCS"),
                 package.extract_code(),
             ),
@@ -261,7 +261,7 @@ fn test_compilation_metadata_internal(
     } else {
         h.run_transaction_payload(
             &account,
-            aptos_stdlib::code_publish_package_txn(
+            libra2_stdlib::code_publish_package_txn(
                 bcs::to_bytes(&package_metadata).expect("PackageMetadata has BCS"),
                 package.extract_code(),
             ),

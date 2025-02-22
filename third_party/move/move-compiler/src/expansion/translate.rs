@@ -456,8 +456,8 @@ fn set_sender_address(
 // This will be removed after library attributes are cleaned up.
 // (See https://github.com/aptos-labs/aptos-core/issues/9410)
 fn module_is_in_aptos_libs(module_address: Option<Spanned<Address>>) -> bool {
-    const APTOS_STDLIB_NAME: &str = "aptos_std";
-    static APTOS_STDLIB_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
+    const LIBRA2_STDLIB_NAME: &str = "libra2_std";
+    static LIBRA2_STDLIB_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
         Lazy::new(|| NumericalAddress::parse_str("0x1").unwrap());
     const APTOS_FRAMEWORK_NAME: &str = "libra2_framework";
     static APTOS_FRAMEWORK_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
@@ -475,8 +475,8 @@ fn module_is_in_aptos_libs(module_address: Option<Spanned<Address>>) -> bool {
                 Address::Numerical(optional_name, spanned_numerical_address) => match optional_name
                 {
                     Some(spanned_symbol) => {
-                        ((&spanned_symbol.value as &str) == APTOS_STDLIB_NAME
-                            && (spanned_numerical_address.value == *APTOS_STDLIB_NUMERICAL_ADDRESS))
+                        ((&spanned_symbol.value as &str) == LIBRA2_STDLIB_NAME
+                            && (spanned_numerical_address.value == *LIBRA2_STDLIB_NUMERICAL_ADDRESS))
                             || ((&spanned_symbol.value as &str) == APTOS_FRAMEWORK_NAME
                                 && (spanned_numerical_address.value
                                     == *APTOS_FRAMEWORK_NUMERICAL_ADDRESS))

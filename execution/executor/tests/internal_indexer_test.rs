@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_db::Libra2DB;
 use libra2_db_indexer::db_indexer::DBIndexer;
 use libra2_executor_test_helpers::{
@@ -104,7 +104,7 @@ pub fn create_test_db() -> (Arc<Libra2DB>, LocalAccount) {
         account1.sign_with_transaction_builder(txn_factory.transfer(account3.address(), 70 * B));
 
     let reconfig1 = core_resources_account.sign_with_transaction_builder(
-        txn_factory.payload(aptos_stdlib::aptos_governance_force_end_epoch_test_only()),
+        txn_factory.payload(libra2_stdlib::aptos_governance_force_end_epoch_test_only()),
     );
 
     let block1: Vec<_> = into_signature_verified_block(vec![
@@ -243,7 +243,7 @@ fn test_db_indexer_data() {
         ident_str!("type_info"),
         ident_str!("aggregator"),
         ident_str!("aptos_coin"),
-        ident_str!("aptos_hash"),
+        ident_str!("libra2_hash"),
         ident_str!("bcs_stream"),
         ident_str!("big_vector"),
         ident_str!("bit_vector"),

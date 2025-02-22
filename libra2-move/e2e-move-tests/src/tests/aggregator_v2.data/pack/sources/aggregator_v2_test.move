@@ -1,7 +1,7 @@
 module 0x1::aggregator_v2_test {
     use libra2_framework::aggregator_v2::{Self, Aggregator, AggregatorSnapshot, DerivedStringSnapshot};
-    use aptos_std::debug;
-    use aptos_std::table::{Self, Table};
+    use libra2_std::debug;
+    use libra2_std::table::{Self, Table};
     use std::vector;
     use std::string::String;
     use std::option::{Self, Option};

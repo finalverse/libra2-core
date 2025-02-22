@@ -30,7 +30,7 @@
     1-Create-NFT % aptos move publish --named-addresses mint_nft=a911e7374107ad434bbc5369289cf5855c3b1a2938a6bfce0776c1d296271cde
     Compiling, may take a little while to download git dependencies...
     INCLUDING DEPENDENCY Libra2Framework
-    INCLUDING DEPENDENCY AptosStdlib
+    INCLUDING DEPENDENCY Libra2Stdlib
     INCLUDING DEPENDENCY AptosToken
     INCLUDING DEPENDENCY MoveStdlib
     BUILDING Examples

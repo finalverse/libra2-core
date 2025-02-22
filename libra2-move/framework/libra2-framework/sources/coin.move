@@ -5,7 +5,7 @@ module libra2_framework::coin {
     use std::option::{Self, Option};
     use std::signer;
     use std::string::{Self, String};
-    use aptos_std::table::{Self, Table};
+    use libra2_std::table::{Self, Table};
 
     use libra2_framework::account;
     use libra2_framework::aggregator_factory;
@@ -19,7 +19,7 @@ module libra2_framework::coin {
     use libra2_framework::fungible_asset::{Self, FungibleAsset, Metadata, MintRef, TransferRef, BurnRef};
     use libra2_framework::object::{Self, Object, object_address};
     use libra2_framework::primary_fungible_store;
-    use aptos_std::type_info::{Self, TypeInfo, type_name};
+    use libra2_std::type_info::{Self, TypeInfo, type_name};
     use libra2_framework::create_signer;
 
     friend libra2_framework::aptos_coin;

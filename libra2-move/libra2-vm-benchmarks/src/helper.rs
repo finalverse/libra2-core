@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_framework::BuiltPackage;
 use libra2_language_e2e_tests::{
     account::Account,
@@ -24,7 +24,7 @@ pub fn generate_module_payload(package: &BuiltPackage) -> TransactionPayload {
         .expect("extracting package metadata must succeed");
 
     // publish package similar to create_publish_package in harness.rs
-    aptos_stdlib::code_publish_package_txn(
+    libra2_stdlib::code_publish_package_txn(
         bcs::to_bytes(&metadata).expect("PackageMetadata has BCS"),
         code,
     )

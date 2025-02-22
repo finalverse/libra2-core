@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, build_package, tests::common, MoveHarness};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{hash::CryptoHash, SigningKey};
 use libra2_language_e2e_tests::account::{Account, AccountPublicKey, TransactionBuilder};
 use libra2_types::{
@@ -388,7 +388,7 @@ fn spend_keyless_account(
     account: &Account,
     recipient: AccountAddress,
 ) -> SignedTransaction {
-    let payload = aptos_stdlib::aptos_coin_transfer(recipient, 1);
+    let payload = libra2_stdlib::aptos_coin_transfer(recipient, 1);
     //println!("Payload: {:?}", payload);
     let raw_txn = TransactionBuilder::new(account.clone())
         .payload(payload)

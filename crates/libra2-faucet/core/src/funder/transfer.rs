@@ -17,7 +17,7 @@ use libra2_logger::info;
 use libra2_sdk::{
     crypto::{ed25519::Ed25519PrivateKey, PrivateKey},
     rest_client::Client,
-    transaction_builder::{aptos_stdlib, TransactionFactory},
+    transaction_builder::{libra2_stdlib, TransactionFactory},
     types::{
         account_address::AccountAddress,
         chain_id::ChainId,
@@ -280,7 +280,7 @@ impl FunderTrait for TransferFunder {
             let txn = self
                 .execute_transaction(
                     &client,
-                    aptos_stdlib::aptos_account_transfer(receiver_address, amount),
+                    libra2_stdlib::aptos_account_transfer(receiver_address, amount),
                     &receiver_address,
                 )
                 .await?;

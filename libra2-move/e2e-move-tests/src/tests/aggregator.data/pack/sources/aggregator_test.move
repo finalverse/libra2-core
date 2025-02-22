@@ -3,7 +3,7 @@ module 0x1::aggregator_test {
 
     use libra2_framework::aggregator::{Self, Aggregator};
     use libra2_framework::aggregator_factory;
-    use aptos_std::table::{Self, Table};
+    use libra2_std::table::{Self, Table};
 
     /// When checking the value of aggregator fails.
     const ENOT_EQUAL: u64 = 17;

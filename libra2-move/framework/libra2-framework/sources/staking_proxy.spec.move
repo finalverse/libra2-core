@@ -83,7 +83,7 @@ spec libra2_framework::staking_proxy {
     }
 
     spec schema SetStakingContractOperator {
-        use aptos_std::simple_map;
+        use libra2_std::simple_map;
         use libra2_framework::staking_contract::{Store};
         use libra2_framework::coin;
 
@@ -162,7 +162,7 @@ spec libra2_framework::staking_proxy {
     /// Make sure staking_contract_exists first
     /// Then abort if the resource is not exist
     spec schema SetStakingContractVoter {
-        use aptos_std::simple_map;
+        use libra2_std::simple_map;
         use libra2_framework::staking_contract::{Store};
 
         owner: &signer;

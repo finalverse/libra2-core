@@ -13,7 +13,7 @@ use super::{
     },
 };
 use anyhow::Result;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_config::config::{ConsensusConfig, MempoolConfig, NodeConfig};
 use aptos_forge::{
     args::TransactionTypeArg,
@@ -994,7 +994,7 @@ impl AptosTest for TransferCoins {
 
         let transfer_txn = payer.sign_with_transaction_builder(
             ctx.aptos_transaction_factory()
-                .payload(aptos_stdlib::aptos_coin_transfer(payee.address(), 10)),
+                .payload(libra2_stdlib::aptos_coin_transfer(payee.address(), 10)),
         );
         client.submit_and_wait(&transfer_txn).await?;
         check_account_balance(&client, payee.address(), 10).await?;

@@ -27,8 +27,8 @@ module drand::drand {
     use std::option::{Self, Option, extract};
     use std::vector;
     use std::error;
-    use aptos_std::crypto_algebra::{eq, pairing, one, deserialize, hash_to, from_u64, serialize};
-    use aptos_std::bls12381_algebra::{G1, G2, Gt, FormatG2Compr, FormatG1Compr, HashG1XmdSha256SswuRo, Fr, FormatFrMsb};
+    use libra2_std::crypto_algebra::{eq, pairing, one, deserialize, hash_to, from_u64, serialize};
+    use libra2_std::bls12381_algebra::{G1, G2, Gt, FormatG2Compr, FormatG1Compr, HashG1XmdSha256SswuRo, Fr, FormatFrMsb};
 
     /// The `bls-unchained-on-g1` drand beacon produces an output every 3 seconds.
     /// (Or goes into catchup mode, if nodes fall behind.)

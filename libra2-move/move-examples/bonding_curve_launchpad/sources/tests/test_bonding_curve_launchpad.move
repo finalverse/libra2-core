@@ -1,8 +1,8 @@
 #[test_only]
 module bonding_curve_launchpad::test_bonding_curve_launchpad {
-    use aptos_std::string;
-    use aptos_std::signer;
-    use aptos_std::math64;
+    use libra2_std::string;
+    use libra2_std::signer;
+    use libra2_std::math64;
     use libra2_framework::account;
     use libra2_framework::coin;
     use libra2_framework::aptos_coin::{Self, AptosCoin};

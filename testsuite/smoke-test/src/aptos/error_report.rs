@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::smoke_test_environment::new_local_swarm_with_aptos;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use aptos_forge::{AptosPublicInfo, Swarm};
 use libra2_sdk::{transaction_builder::TransactionBuilder, types::LocalAccount};
 use libra2_types::{
@@ -17,7 +17,7 @@ async fn submit_and_check_err<F: Fn(TransactionBuilder) -> TransactionBuilder>(
 ) {
     let payload = info
         .transaction_factory()
-        .payload(aptos_stdlib::aptos_coin_claim_mint_capability())
+        .payload(libra2_stdlib::aptos_coin_claim_mint_capability())
         .sequence_number(0);
     let txn = local_account.sign_transaction(f(payload).build());
     let err = format!(

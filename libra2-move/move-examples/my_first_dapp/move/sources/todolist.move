@@ -4,7 +4,7 @@ module todolist_addr::todolist {
     use std::signer;
     use libra2_framework::event;
     use std::string::String;
-    use aptos_std::table::{Self, Table};
+    use libra2_std::table::{Self, Table};
     #[test_only]
     use std::string;
 

@@ -47,8 +47,8 @@ publicly into someone <b>else</b>'s <b>public</b> balance via </code>unveil_to<c
 
 1. *Veiled <a href="../../../framework/libra2-framework/doc/coin.md#0x1_coin">coin</a>*: a <a href="../../../framework/libra2-framework/doc/coin.md#0x1_coin">coin</a> whose value is secret; i.e., it is encrypted under the owner's <b>public</b> key.
 
-2. *Veiled amount*: <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/any.md#0x1_any">any</a> amount that is secret because it was encrypted under some <b>public</b> key.
-3. *Committed amount*: <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/any.md#0x1_any">any</a> amount that is secret because it was committed <b>to</b> (rather than encrypted).
+2. *Veiled amount*: <a href="../../../framework/libra2-framework/../libra2-stdlib/doc/any.md#0x1_any">any</a> amount that is secret because it was encrypted under some <b>public</b> key.
+3. *Committed amount*: <a href="../../../framework/libra2-framework/../libra2-stdlib/doc/any.md#0x1_any">any</a> amount that is secret because it was committed <b>to</b> (rather than encrypted).
 
 4. *Veiled transaction*: a transaction that hides its amount transferred; i.e., a transaction whose amount is veiled.
 
@@ -123,7 +123,7 @@ resource account.
 
 Later on, when someone wants to convert their <code><a href="veiled_coin.md#0x1337_veiled_coin_VeiledCoin">VeiledCoin</a>&lt;T&gt;</code> into a normal <code><a href="../../../framework/libra2-framework/doc/coin.md#0x1_coin_Coin">coin::Coin</a>&lt;T&gt;</code>,
 the resource account can be used to transfer out the normal from its coin store. Transferring out a coin like this
-requires a <code><a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a></code> for the resource account, which the <code><a href="veiled_coin.md#0x1337_veiled_coin">veiled_coin</a></code> module can obtain via a <code>SignerCapability</code>.
+requires a <code><a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a></code> for the resource account, which the <code><a href="veiled_coin.md#0x1337_veiled_coin">veiled_coin</a></code> module can obtain via a <code>SignerCapability</code>.
 
 
 <a name="@References_5"></a>
@@ -175,14 +175,14 @@ Mahdi and Boneh, Dan; in Financial Cryptography and Data Security; 2020
 <b>use</b> <a href="sigma_protos.md#0x1337_sigma_protos">0x1337::sigma_protos</a>;
 <b>use</b> <a href="../../../framework/libra2-framework/doc/account.md#0x1_account">0x1::account</a>;
 <b>use</b> <a href="../../../framework/libra2-framework/doc/coin.md#0x1_coin">0x1::coin</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
 <b>use</b> <a href="../../../framework/libra2-framework/doc/event.md#0x1_event">0x1::event</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255.md#0x1_ristretto255">0x1::ristretto255</a>;
+<b>use</b> <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
+<b>use</b> <a href="../../../framework/libra2-framework/../libra2-stdlib/doc/ristretto255.md#0x1_ristretto255">0x1::ristretto255</a>;
 <b>use</b> <a href="">0x1::ristretto255_bulletproofs</a>;
 <b>use</b> <a href="">0x1::ristretto255_elgamal</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen">0x1::ristretto255_pedersen</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
+<b>use</b> <a href="../../../framework/libra2-framework/../libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen">0x1::ristretto255_pedersen</a>;
+<b>use</b> <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
 </code></pre>
 
 
@@ -408,7 +408,7 @@ See <code><a href="veiled_coin.md#0x1337_veiled_coin_NUM_LEAST_SIGNIFICANT_BITS_
 The domain separation tag (DST) used for the Bulletproofs prover.
 
 
-<pre><code><b>const</b> <a href="veiled_coin.md#0x1337_veiled_coin_VEILED_COIN_BULLETPROOFS_DST">VEILED_COIN_BULLETPROOFS_DST</a>: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [65, 112, 116, 111, 115, 86, 101, 105, 108, 101, 100, 67, 111, 105, 110, 47, 66, 117, 108, 108, 101, 116, 112, 114, 111, 111, 102, 82, 97, 110, 103, 101, 80, 114, 111, 111, 102];
+<pre><code><b>const</b> <a href="veiled_coin.md#0x1337_veiled_coin_VEILED_COIN_BULLETPROOFS_DST">VEILED_COIN_BULLETPROOFS_DST</a>: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [65, 112, 116, 111, 115, 86, 101, 105, 108, 101, 100, 67, 111, 105, 110, 47, 66, 117, 108, 108, 101, 116, 112, 114, 111, 111, 102, 82, 97, 110, 103, 101, 80, 114, 111, 111, 102];
 </code></pre>
 
 
@@ -421,7 +421,7 @@ Initializes a veiled account for the specified <code>user</code> such that their
 Importantly, the user's wallet must retain their corresponding secret key.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_register">register</a>&lt;CoinType&gt;(user: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, pk: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_register">register</a>&lt;CoinType&gt;(user: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, pk: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
 </code></pre>
 
 
@@ -435,7 +435,7 @@ Sends a *public* <code>amount</code> of normal coins from <code>sender</code> to
 **WARNING:** This function *leaks* the transferred <code>amount</code>, since it is given as a public input.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_veil_to">veil_to</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, amount: u32)
+<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_veil_to">veil_to</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, amount: u32)
 </code></pre>
 
 
@@ -451,7 +451,7 @@ This function can be used by the <code>owner</code> to initialize his veiled bal
 **WARNING:** The initialized balance is *leaked*, since its initialized <code>amount</code> is public here.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_veil">veil</a>&lt;CoinType&gt;(owner: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, amount: u32)
+<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_veil">veil</a>&lt;CoinType&gt;(owner: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, amount: u32)
 </code></pre>
 
 
@@ -469,7 +469,7 @@ No ZK range proof is necessary for the <code>amount</code>, which is given as a 
 **WARNING:** This *leaks* the transferred <code>amount</code>, since it is a public <code>u32</code> argument.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_unveil_to">unveil_to</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, amount: u32, comm_new_balance: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, zkrp_new_balance: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, withdraw_subproof: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_unveil_to">unveil_to</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, amount: u32, comm_new_balance: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, zkrp_new_balance: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, withdraw_subproof: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
 </code></pre>
 
 
@@ -481,7 +481,7 @@ No ZK range proof is necessary for the <code>amount</code>, which is given as a 
 Like <code>unveil_to</code>, except the <code>sender</code> is also the recipient.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_unveil">unveil</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, amount: u32, comm_new_balance: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, zkrp_new_balance: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, withdraw_subproof: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_unveil">unveil</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, amount: u32, comm_new_balance: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, zkrp_new_balance: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, withdraw_subproof: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
 </code></pre>
 
 
@@ -507,7 +507,7 @@ coins out of thin air.
 as in 'deposit_ct' (with the same randomness) and as in <code>comm_amount</code>.
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_fully_veiled_transfer">fully_veiled_transfer</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, withdraw_ct: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, deposit_ct: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, comm_new_balance: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, comm_amount: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, zkrp_new_balance: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, zkrp_amount: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, transfer_subproof: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
+<pre><code><b>public</b> entry <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_fully_veiled_transfer">fully_veiled_transfer</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, withdraw_ct: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, deposit_ct: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, comm_new_balance: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, comm_amount: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, zkrp_new_balance: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, zkrp_amount: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, transfer_subproof: <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
 </code></pre>
 
 
@@ -605,7 +605,7 @@ Returns the total supply of veiled coins
 Returns the domain separation tag (DST) for constructing Bulletproof-based range proofs in this module.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_get_veiled_coin_bulletproofs_dst">get_veiled_coin_bulletproofs_dst</a>(): <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_get_veiled_coin_bulletproofs_dst">get_veiled_coin_bulletproofs_dst</a>(): <a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
 </code></pre>
 
 
@@ -631,7 +631,7 @@ Like <code>register</code>, but the public key has been parsed in a type-safe st
 TODO: Do we want to require a PoK of the SK here?
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_register_internal">register_internal</a>&lt;CoinType&gt;(user: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, pk: <a href="_CompressedPubkey">ristretto255_elgamal::CompressedPubkey</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_register_internal">register_internal</a>&lt;CoinType&gt;(user: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, pk: <a href="_CompressedPubkey">ristretto255_elgamal::CompressedPubkey</a>)
 </code></pre>
 
 
@@ -655,7 +655,7 @@ Deposits a veiled <code><a href="../../../framework/libra2-framework/doc/coin.md
 Like <code>unveil_to</code>, except the proofs have been deserialized into type-safe structs.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_unveil_to_internal">unveil_to_internal</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, amount: u32, comm_new_balance: <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, withdrawal_proof: <a href="veiled_coin.md#0x1337_veiled_coin_WithdrawalProof">veiled_coin::WithdrawalProof</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_unveil_to_internal">unveil_to_internal</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, amount: u32, comm_new_balance: <a href="../../../framework/libra2-framework/../libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, withdrawal_proof: <a href="veiled_coin.md#0x1337_veiled_coin_WithdrawalProof">veiled_coin::WithdrawalProof</a>)
 </code></pre>
 
 
@@ -667,7 +667,7 @@ Like <code>unveil_to</code>, except the proofs have been deserialized into type-
 Like <code>fully_veiled_transfer</code>, except the ciphertext and proofs have been deserialized into type-safe structs.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_fully_veiled_transfer_internal">fully_veiled_transfer_internal</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient_addr: <b>address</b>, veiled_withdraw_amount: <a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, veiled_deposit_amount: <a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, comm_new_balance: <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, comm_amount: <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, transfer_proof: &<a href="veiled_coin.md#0x1337_veiled_coin_TransferProof">veiled_coin::TransferProof</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_fully_veiled_transfer_internal">fully_veiled_transfer_internal</a>&lt;CoinType&gt;(sender: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient_addr: <b>address</b>, veiled_withdraw_amount: <a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, veiled_deposit_amount: <a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, comm_new_balance: <a href="../../../framework/libra2-framework/../libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, comm_amount: <a href="../../../framework/libra2-framework/../libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, transfer_proof: &<a href="veiled_coin.md#0x1337_veiled_coin_TransferProof">veiled_coin::TransferProof</a>)
 </code></pre>
 
 
@@ -680,5 +680,5 @@ Verifies range proofs on the remaining balance of an account committed in <code>
 the transferred amount committed inside <code>comm_amount</code>.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_verify_range_proofs">verify_range_proofs</a>(comm_new_balance: &<a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, zkrp_new_balance: &<a href="_RangeProof">ristretto255_bulletproofs::RangeProof</a>, comm_amount: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>&gt;, zkrp_amount: &<a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="_RangeProof">ristretto255_bulletproofs::RangeProof</a>&gt;)
+<pre><code><b>public</b> <b>fun</b> <a href="veiled_coin.md#0x1337_veiled_coin_verify_range_proofs">verify_range_proofs</a>(comm_new_balance: &<a href="../../../framework/libra2-framework/../libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, zkrp_new_balance: &<a href="_RangeProof">ristretto255_bulletproofs::RangeProof</a>, comm_amount: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="../../../framework/libra2-framework/../libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>&gt;, zkrp_amount: &<a href="../../../framework/libra2-framework/../libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="_RangeProof">ristretto255_bulletproofs::RangeProof</a>&gt;)
 </code></pre>

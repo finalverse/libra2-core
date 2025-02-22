@@ -99,12 +99,12 @@ module mint_nft::create_nft_getting_production_ready {
     use libra2_framework::account;
     use libra2_framework::event;
     use libra2_framework::timestamp;
-    use aptos_std::ed25519;
+    use libra2_std::ed25519;
     use aptos_token::token::{Self, TokenDataId};
     use libra2_framework::resource_account;
     #[test_only]
     use libra2_framework::account::create_account_for_test;
-    use aptos_std::ed25519::ValidatedPublicKey;
+    use libra2_std::ed25519::ValidatedPublicKey;
 
     #[event]
     // This struct stores the token receiver's address and token_data_id in the event of token minting

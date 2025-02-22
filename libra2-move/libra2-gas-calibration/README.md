@@ -97,16 +97,16 @@ public fun calibrate_blake2b_256_impl(num_iterations: u64) {
     let msg = b"abcdefghijkl"
     while i < num_iterations {
         // This is what I want to calibrate:
-        aptos_hash::blake2b_256(msg);
-        aptos_hash::blake2b_256(msg);
-        aptos_hash::blake2b_256(msg);
-        aptos_hash::blake2b_256(msg);
-        aptos_hash::blake2b_256(msg);
-        aptos_hash::blake2b_256(msg);
-        aptos_hash::blake2b_256(msg);
-        aptos_hash::blake2b_256(msg);
-        aptos_hash::blake2b_256(msg);
-        aptos_hash::blake2b_256(msg);        
+        libra2_hash::blake2b_256(msg);
+        libra2_hash::blake2b_256(msg);
+        libra2_hash::blake2b_256(msg);
+        libra2_hash::blake2b_256(msg);
+        libra2_hash::blake2b_256(msg);
+        libra2_hash::blake2b_256(msg);
+        libra2_hash::blake2b_256(msg);
+        libra2_hash::blake2b_256(msg);
+        libra2_hash::blake2b_256(msg);
+        libra2_hash::blake2b_256(msg);        
         i += 1;
     }
 }

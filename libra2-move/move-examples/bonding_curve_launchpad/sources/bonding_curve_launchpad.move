@@ -8,7 +8,7 @@ module bonding_curve_launchpad::bonding_curve_launchpad {
     use libra2_framework::event;
     use libra2_framework::function_info::{Self, FunctionInfo};
     use libra2_framework::dispatchable_fungible_asset;
-    use aptos_std::math128;
+    use libra2_std::math128;
     use bonding_curve_launchpad::liquidity_pairs;
 
     /// FA's name and symbol already exist on the launchpad.

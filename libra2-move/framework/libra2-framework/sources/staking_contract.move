@@ -31,8 +31,8 @@ module libra2_framework::staking_contract {
     use std::signer;
     use std::vector;
 
-    use aptos_std::pool_u64::{Self, Pool};
-    use aptos_std::simple_map::{Self, SimpleMap};
+    use libra2_std::pool_u64::{Self, Pool};
+    use libra2_std::simple_map::{Self, SimpleMap};
 
     use libra2_framework::account::{Self, SignerCapability};
     use libra2_framework::aptos_account;

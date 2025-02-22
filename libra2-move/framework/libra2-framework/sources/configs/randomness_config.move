@@ -1,9 +1,9 @@
 /// Structs and functions for on-chain randomness configurations.
 module libra2_framework::randomness_config {
     use std::string;
-    use aptos_std::copyable_any;
-    use aptos_std::copyable_any::Any;
-    use aptos_std::fixed_point64::FixedPoint64;
+    use libra2_std::copyable_any;
+    use libra2_std::copyable_any::Any;
+    use libra2_std::fixed_point64::FixedPoint64;
     use libra2_framework::config_buffer;
     use libra2_framework::system_addresses;
 
@@ -124,7 +124,7 @@ module libra2_framework::randomness_config {
     }
 
     #[test_only]
-    use aptos_std::fixed_point64;
+    use libra2_std::fixed_point64;
 
     #[test_only]
     fun initialize_for_testing(framework: &signer) {

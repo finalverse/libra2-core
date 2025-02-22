@@ -5,7 +5,7 @@
 //! Logic for account universes. This is not in the parent module to enforce privacy.
 
 use crate::{account::AccountData, executor::FakeExecutor};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_framework::{BuildOptions, BuiltPackage};
 use libra2_gas_algebra::GasQuantity;
 use libra2_proptest_helpers::Index;
@@ -291,7 +291,7 @@ impl DependencyGraph {
             .account()
             .transaction()
             .sequence_number(node.account_data.sequence_number())
-            .payload(aptos_stdlib::code_publish_package_txn(
+            .payload(libra2_stdlib::code_publish_package_txn(
                 bcs::to_bytes(&metadata).expect("PackageMetadata has BCS"),
                 code,
             ))

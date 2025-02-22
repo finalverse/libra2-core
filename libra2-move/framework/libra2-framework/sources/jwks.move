@@ -13,9 +13,9 @@ module libra2_framework::jwks {
     use std::string;
     use std::string::{String, utf8};
     use std::vector;
-    use aptos_std::comparator::{compare_u8_vector, is_greater_than, is_equal};
-    use aptos_std::copyable_any;
-    use aptos_std::copyable_any::Any;
+    use libra2_std::comparator::{compare_u8_vector, is_greater_than, is_equal};
+    use libra2_std::copyable_any;
+    use libra2_std::copyable_any::Any;
     use libra2_framework::chain_status;
     use libra2_framework::config_buffer;
     use libra2_framework::event::emit;

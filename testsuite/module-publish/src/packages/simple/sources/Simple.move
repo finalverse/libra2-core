@@ -16,7 +16,7 @@ module 0xABCD::simple {
     use libra2_framework::event::{Self, EventHandle};
     use libra2_framework::account;
     use libra2_framework::code;
-    use aptos_std::table::{Self, Table};
+    use libra2_std::table::{Self, Table};
 
     // Through the constant pool it will be possible to change this
     // constant to be as big or as small as desired.

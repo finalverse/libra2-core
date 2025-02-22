@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, MoveHarness};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::SigningKey;
 use libra2_language_e2e_tests::account::Account;
 use libra2_types::{
@@ -56,7 +56,7 @@ pub fn offer_rotation_capability_v2(
 
     assert_success!(harness.run_transaction_payload(
         offerer_account,
-        aptos_stdlib::account_offer_rotation_capability(
+        libra2_stdlib::account_offer_rotation_capability(
             rotation_proof_signed.to_bytes().to_vec(),
             0,
             offerer_account.pubkey.to_bytes(),
@@ -82,7 +82,7 @@ pub fn revoke_rotation_capability(
 ) {
     assert_success!(harness.run_transaction_payload(
         offerer_account,
-        aptos_stdlib::account_revoke_rotation_capability(delegate_address,)
+        libra2_stdlib::account_revoke_rotation_capability(delegate_address,)
     ));
     let account_resource = parse_struct_tag("0x1::account::Account").unwrap();
     assert_eq!(

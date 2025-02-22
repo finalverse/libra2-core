@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::harness::MoveHarness;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_language_e2e_tests::account::Account;
 use libra2_types::{
     account_address::AccountAddress, move_utils::MemberId, state_store::table::TableHandle,
@@ -38,7 +38,7 @@ pub fn create_proposal_v2(
 ) -> TransactionStatus {
     harness.run_transaction_payload(
         account,
-        aptos_stdlib::aptos_governance_create_proposal_v2(
+        libra2_stdlib::aptos_governance_create_proposal_v2(
             stake_pool,
             execution_hash,
             metadata_location,
@@ -58,7 +58,7 @@ pub fn partial_vote(
 ) -> TransactionStatus {
     harness.run_transaction_payload(
         account,
-        aptos_stdlib::aptos_governance_partial_vote(
+        libra2_stdlib::aptos_governance_partial_vote(
             stake_pool,
             proposal_id,
             voting_power,

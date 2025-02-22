@@ -18,9 +18,9 @@ module rewards_pool::rewards_pool {
     use libra2_framework::fungible_asset::{Self, FungibleAsset, FungibleStore, Metadata};
     use libra2_framework::primary_fungible_store;
     use libra2_framework::object::{Self, Object, ExtendRef};
-    use aptos_std::pool_u64_unbound::{Self as pool_u64, Pool};
-    use aptos_std::simple_map::{Self, SimpleMap};
-    use aptos_std::smart_table::{Self, SmartTable};
+    use libra2_std::pool_u64_unbound::{Self as pool_u64, Pool};
+    use libra2_std::simple_map::{Self, SimpleMap};
+    use libra2_std::smart_table::{Self, SmartTable};
 
     use rewards_pool::epoch;
 

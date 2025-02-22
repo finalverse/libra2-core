@@ -21,7 +21,7 @@ module libra2_framework::object {
     use std::signer;
     use std::vector;
 
-    use aptos_std::from_bcs;
+    use libra2_std::from_bcs;
 
     use libra2_framework::account;
     use libra2_framework::transaction_context;

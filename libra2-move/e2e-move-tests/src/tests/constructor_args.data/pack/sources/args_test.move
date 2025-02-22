@@ -3,8 +3,8 @@ module 0xCAFE::test {
     use std::string::String;
     use std::option::Option;
     use std::fixed_point32::FixedPoint32;
-    use aptos_std::fixed_point64::FixedPoint64;
-    use aptos_std::object::Object;
+    use libra2_std::fixed_point64::FixedPoint64;
+    use libra2_std::object::Object;
     use libra2_framework::object::{create_object_from_account, generate_signer};
     use libra2_framework::object;
 
@@ -23,7 +23,7 @@ module 0xCAFE::test {
     }
 
     public entry fun object_arg(msg: String, o: Object<ModuleData>) acquires ModuleData {
-        let addr = aptos_std::object::object_address(&o);
+        let addr = libra2_std::object::object_address(&o);
         // guaranteed to exist
         borrow_global_mut<ModuleData>(addr).state = msg;
     }
@@ -34,7 +34,7 @@ module 0xCAFE::test {
 
     public entry fun pass_optional_fixedpoint32(o: Object<ModuleData>, x: Option<FixedPoint32>) acquires ModuleData {
         let y = std::option::map(x, |e| std::fixed_point32::get_raw_value(e));
-        let addr = aptos_std::object::object_address(&o);
+        let addr = libra2_std::object::object_address(&o);
         let s;
         if (std::option::is_none(&y)) {
             s = std::string::utf8(b"none");
@@ -46,13 +46,13 @@ module 0xCAFE::test {
     }
 
     public entry fun pass_optional_vector_fixedpoint64(o: Object<ModuleData>, x: Option<vector<FixedPoint64>>, i: u64) acquires ModuleData {
-        let addr = aptos_std::object::object_address(&o);
+        let addr = libra2_std::object::object_address(&o);
         let s;
         if (std::option::is_none(&x)) {
             s = std::string::utf8(b"none");
         } else {
             let x = std::option::extract(&mut x);
-            s = convert(aptos_std::fixed_point64::get_raw_value(*std::vector::borrow(&x, i)));
+            s = convert(libra2_std::fixed_point64::get_raw_value(*std::vector::borrow(&x, i)));
         };
 
         // guaranteed to exist
@@ -60,7 +60,7 @@ module 0xCAFE::test {
     }
 
     public entry fun pass_optional_vector_optional_string(o: Object<ModuleData>, x: Option<vector<Option<String>>>, i: u64) acquires ModuleData {
-        let addr = aptos_std::object::object_address(&o);
+        let addr = libra2_std::object::object_address(&o);
         let s;
         if (std::option::is_none(&x)) {
             s = std::string::utf8(b"empty top option");
@@ -84,7 +84,7 @@ module 0xCAFE::test {
             return
         } else {
             let o = std::option::extract(o);
-            let addr = aptos_std::object::object_address(&o);
+            let addr = libra2_std::object::object_address(&o);
             // guaranteed to exist
             borrow_global_mut<ModuleData>(addr).state = s;
         };
@@ -104,7 +104,7 @@ module 0xCAFE::test {
     }
 
     public entry fun ensure_vector_vector_u8(o: Object<ModuleData>, _: vector<vector<u8>>) acquires ModuleData {
-        let addr = aptos_std::object::object_address(&o);
+        let addr = libra2_std::object::object_address(&o);
         // guaranteed to exist
         borrow_global_mut<ModuleData>(addr).state = std::string::utf8(b"vector<vector<u8>>");
     }
@@ -127,7 +127,7 @@ module 0xCAFE::test {
 
     #[view]
     public fun get_state<T: key>(o: Object<T>): String acquires ModuleData {
-        let addr = aptos_std::object::object_address(&o);
+        let addr = libra2_std::object::object_address(&o);
         borrow_global<ModuleData>(addr).state
     }
 }

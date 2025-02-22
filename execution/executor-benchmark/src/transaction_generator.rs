@@ -9,7 +9,7 @@ use crate::{
 use libra2_crypto::ed25519::Ed25519PrivateKey;
 use libra2_logger::info;
 use libra2_sdk::{
-    transaction_builder::{aptos_stdlib, TransactionFactory},
+    transaction_builder::{libra2_stdlib, TransactionFactory},
     types::LocalAccount,
 };
 use libra2_storage_interface::{
@@ -390,7 +390,7 @@ impl TransactionGenerator {
             let transactions: Vec<_> = chunk
                 .iter()
                 .map(|new_account| {
-                    let payload = aptos_stdlib::aptos_account_transfer(
+                    let payload = libra2_stdlib::aptos_account_transfer(
                         new_account.authentication_key().account_address(),
                         seed_account_balance,
                     );
@@ -448,7 +448,7 @@ impl TransactionGenerator {
                 Arc::new(AtomicUsize::new(0)),
                 |(sender_idx, new_account), account_cache| {
                     let sender = &account_cache.accounts[sender_idx];
-                    let payload = aptos_stdlib::aptos_account_transfer(
+                    let payload = libra2_stdlib::aptos_account_transfer(
                         new_account.authentication_key().account_address(),
                         init_account_balance,
                     );

@@ -4,5 +4,5 @@ version = "0.0.0"
 
 [dependencies]
 MoveStdlib = { local = "../../../../../framework/move-stdlib" }
-AptosStdlib = { local = "../../../../../framework/aptos-stdlib" }
+Libra2Stdlib = { local = "../../../../../framework/libra2-stdlib" }
 

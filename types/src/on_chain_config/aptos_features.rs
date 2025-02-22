@@ -20,7 +20,7 @@ pub enum FeatureFlag {
     CODE_DEPENDENCY_CHECK = 1,
     TREAT_FRIEND_AS_PRIVATE = 2,
     SHA_512_AND_RIPEMD_160_NATIVES = 3,
-    APTOS_STD_CHAIN_ID_NATIVES = 4,
+    LIBRA2_STD_CHAIN_ID_NATIVES = 4,
     VM_BINARY_FORMAT_V6 = 5,
     _DEPRECATED_COLLECT_AND_DISTRIBUTE_GAS_FEES = 6,
     MULTI_ED25519_PK_VALIDATE_V2_NATIVES = 7,
@@ -129,7 +129,7 @@ impl FeatureFlag {
             FeatureFlag::CODE_DEPENDENCY_CHECK,
             FeatureFlag::TREAT_FRIEND_AS_PRIVATE,
             FeatureFlag::SHA_512_AND_RIPEMD_160_NATIVES,
-            FeatureFlag::APTOS_STD_CHAIN_ID_NATIVES,
+            FeatureFlag::LIBRA2_STD_CHAIN_ID_NATIVES,
             // Feature flag V6 is used to enable metadata v1 format and needs to stay on, even
             // if we enable a higher version.
             FeatureFlag::VM_BINARY_FORMAT_V6,

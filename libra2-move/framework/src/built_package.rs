@@ -51,7 +51,7 @@ pub const UPGRADE_POLICY_CUSTOM_FIELD: &str = "upgrade_policy";
 pub const APTOS_PACKAGES: [&str; 5] = [
     "Libra2Framework",
     "MoveStdlib",
-    "AptosStdlib",
+    "Libra2Stdlib",
     "AptosToken",
     "Libra2TokenObjects",
 ];

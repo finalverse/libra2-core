@@ -6,7 +6,7 @@ use super::new_test_context;
 use crate::tests::new_test_context_with_db_sharding_and_internal_indexer;
 use libra2_api_test_context::{current_function_name, find_value, TestContext};
 use libra2_api_types::{MoveModuleBytecode, MoveResource, MoveStructTag, StateKeyWrapper};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_sdk::types::APTOS_COIN_TYPE_STR;
 use libra2_types::{
     account_config::{primary_apt_store, ObjectCoreResource},
@@ -202,7 +202,7 @@ async fn test_get_account_balance() {
         ))
         .await;
     let txn = root_account.sign_with_transaction_builder(context.transaction_factory().payload(
-        aptos_stdlib::coin_migrate_to_fungible_store(AptosCoinType::type_tag()),
+        libra2_stdlib::coin_migrate_to_fungible_store(AptosCoinType::type_tag()),
     ));
     context.commit_block(&vec![txn.clone()]).await;
     let coin_balance_after = context
@@ -243,7 +243,7 @@ async fn test_get_account_balance() {
 
 async fn test_get_account_modules_by_ledger_version_with_context(mut context: TestContext) {
     let payload =
-        aptos_stdlib::publish_module_source("test_module", "module 0xa550c18::test_module {}");
+        libra2_stdlib::publish_module_source("test_module", "module 0xa550c18::test_module {}");
 
     let root_account = context.root_account().await;
     let txn =

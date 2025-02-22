@@ -5,8 +5,8 @@
 module post_mint_reveal_nft::bucket_table {
     use std::error;
     use std::vector;
-    use aptos_std::aptos_hash::sip_hash_from_value;
-    use aptos_std::table_with_length::{Self, TableWithLength};
+    use libra2_std::libra2_hash::sip_hash_from_value;
+    use libra2_std::table_with_length::{Self, TableWithLength};
 
     const TARGET_LOAD_PER_BUCKET: u64 = 10;
     const SPLIT_THRESHOLD: u64 = 75;

@@ -9,7 +9,7 @@ use crate::common::{
     utils::view_json_option_str,
 };
 use libra2_api_types::ViewFunction;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::HashValue;
 use libra2_rest_client::{
     libra2_api_types::{HexEncodedBytes, WriteResource, WriteSetChange},
@@ -89,7 +89,7 @@ impl CliCommand<CreateSummary> for Create {
 
     async fn execute(self) -> CliTypedResult<CreateSummary> {
         self.txn_options
-            .submit_transaction(aptos_stdlib::multisig_account_create_with_owners(
+            .submit_transaction(libra2_stdlib::multisig_account_create_with_owners(
                 self.additional_owners,
                 self.num_signatures_required,
                 // TODO: Support passing in custom metadata.
@@ -129,12 +129,12 @@ impl CliCommand<TransactionSummary> for CreateTransaction {
         let multisig_transaction_payload_bytes =
             to_bytes::<MultisigTransactionPayload>(&self.entry_function_args.try_into()?)?;
         let transaction_payload = if self.store_hash_only {
-            aptos_stdlib::multisig_account_create_transaction_with_hash(
+            libra2_stdlib::multisig_account_create_transaction_with_hash(
                 self.multisig_account.multisig_address,
                 HashValue::sha3_256_of(&multisig_transaction_payload_bytes).to_vec(),
             )
         } else {
-            aptos_stdlib::multisig_account_create_transaction(
+            libra2_stdlib::multisig_account_create_transaction(
                 self.multisig_account.multisig_address,
                 multisig_transaction_payload_bytes,
             )
@@ -244,7 +244,7 @@ impl CliCommand<TransactionSummary> for Approve {
 
     async fn execute(self) -> CliTypedResult<TransactionSummary> {
         self.txn_options
-            .submit_transaction(aptos_stdlib::multisig_account_approve_transaction(
+            .submit_transaction(libra2_stdlib::multisig_account_approve_transaction(
                 self.multisig_account_with_sequence_number
                     .multisig_account
                     .multisig_address,
@@ -276,7 +276,7 @@ impl CliCommand<TransactionSummary> for Reject {
 
     async fn execute(self) -> CliTypedResult<TransactionSummary> {
         self.txn_options
-            .submit_transaction(aptos_stdlib::multisig_account_reject_transaction(
+            .submit_transaction(libra2_stdlib::multisig_account_reject_transaction(
                 self.multisig_account_with_sequence_number
                     .multisig_account
                     .multisig_address,
@@ -360,7 +360,7 @@ impl CliCommand<TransactionSummary> for ExecuteReject {
 
     async fn execute(self) -> CliTypedResult<TransactionSummary> {
         self.txn_options
-            .submit_transaction(aptos_stdlib::multisig_account_execute_rejected_transaction(
+            .submit_transaction(libra2_stdlib::multisig_account_execute_rejected_transaction(
                 self.multisig_account.multisig_address,
             ))
             .await

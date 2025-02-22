@@ -19,15 +19,15 @@
 /// backward incompatible way. Type is also named IteratorPtr, so that Iterator is free to use later.
 /// They are waiting for Move improvement that will allow references to be part of the struct,
 /// allowing cleaner iterator APIs.
-module aptos_std::big_ordered_map {
+module libra2_std::big_ordered_map {
     use std::error;
     use std::vector;
     use std::option::{Self as option, Option};
     use std::bcs;
-    use aptos_std::ordered_map::{Self, OrderedMap};
-    use aptos_std::cmp;
-    use aptos_std::storage_slots_allocator::{Self, StorageSlotsAllocator, StoredSlot};
-    use aptos_std::math64::{max, min};
+    use libra2_std::ordered_map::{Self, OrderedMap};
+    use libra2_std::cmp;
+    use libra2_std::storage_slots_allocator::{Self, StorageSlotsAllocator, StoredSlot};
+    use libra2_std::math64::{max, min};
 
     // Error constants shared with ordered_map (so try using same values)
 
@@ -1250,8 +1250,8 @@ module aptos_std::big_ordered_map {
     #[test_only]
     fun print_map<K: store, V: store>(self: &BigOrderedMap<K, V>) {
         // uncomment to debug:
-        // aptos_std::debug::print(&std::string::utf8(b"print map"));
-        // aptos_std::debug::print(self);
+        // libra2_std::debug::print(&std::string::utf8(b"print map"));
+        // libra2_std::debug::print(self);
         // self.print_map_for_node(ROOT_INDEX, 0);
     }
 
@@ -1259,9 +1259,9 @@ module aptos_std::big_ordered_map {
     fun print_map_for_node<K: store, V: store>(self: &BigOrderedMap<K, V>, node_index: u64, level: u64) {
         let node = self.borrow_node(node_index);
 
-        aptos_std::debug::print(&level);
-        aptos_std::debug::print(&node_index);
-        aptos_std::debug::print(node);
+        libra2_std::debug::print(&level);
+        libra2_std::debug::print(&node_index);
+        libra2_std::debug::print(node);
 
         if (!node.is_leaf) {
             node.children.for_each_ref(|_key, node| {
@@ -1669,7 +1669,7 @@ module aptos_std::big_ordered_map {
     }
 
     #[test]
-    #[expected_failure(abort_code = 0x10002, location = aptos_std::ordered_map)] /// EKEY_NOT_FOUND
+    #[expected_failure(abort_code = 0x10002, location = libra2_std::ordered_map)] /// EKEY_NOT_FOUND
     fun test_abort_remove_missing_value() {
         let map = new_from(vector[1], vector[1]);
         map.remove(&2);
@@ -1677,7 +1677,7 @@ module aptos_std::big_ordered_map {
     }
 
     #[test]
-    #[expected_failure(abort_code = 0x10002, location = aptos_std::ordered_map)] /// EKEY_NOT_FOUND
+    #[expected_failure(abort_code = 0x10002, location = libra2_std::ordered_map)] /// EKEY_NOT_FOUND
     fun test_abort_remove_missing_value_to_non_leaf() {
         let map = new_with_config(4, 4, false);
         map.add_all(vector_range(1, 10), vector_range(1, 10));
@@ -1911,14 +1911,14 @@ module aptos_std::big_ordered_map {
             assert!(!it.iter_is_end(&map), i);
             assert!(it.iter_borrow_key() == element, i);
 
-            // aptos_std::debug::print(&it);
+            // libra2_std::debug::print(&it);
 
             let it_next = it.iter_next(&map);
             let it_after = map.lower_bound(&(*element + 1));
 
-            // aptos_std::debug::print(&it_next);
-            // aptos_std::debug::print(&it_after);
-            // aptos_std::debug::print(&std::string::utf8(b"bla"));
+            // libra2_std::debug::print(&it_next);
+            // libra2_std::debug::print(&it_after);
+            // libra2_std::debug::print(&std::string::utf8(b"bla"));
 
             assert!(it_next == it_after, i);
         };

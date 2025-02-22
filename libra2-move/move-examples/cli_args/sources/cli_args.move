@@ -1,7 +1,7 @@
 // :!:>resource
 module test_account::cli_args {
     use std::signer;
-    use aptos_std::type_info::{Self, TypeInfo};
+    use libra2_std::type_info::{Self, TypeInfo};
     use std::string::String;
 
     struct Holder has key, drop {

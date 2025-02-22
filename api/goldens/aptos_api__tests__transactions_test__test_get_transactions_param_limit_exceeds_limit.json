@@ -7677,7 +7677,7 @@
           "bytecode": "0xa11ceb0b0500000007010004030416041a02051c0d07293f0868200c88011900000001000200000000030001000004020101000105020001000303010a02010301060900010900000a6170746f735f6861736803626373096b656363616b323536087369705f68617368137369705f686173685f66726f6d5f76616c756508746f5f6279746573000000000000000000000000000000000000000000000000000000000000000100010200010102000201000000060b0038000c010b0111010200",
           "abi": {
             "address": "0x1",
-            "name": "aptos_hash",
+            "name": "libra2_hash",
             "friends": [],
             "exposed_functions": [
               {
@@ -24578,7 +24578,7 @@
               "bytecode": "0xa11ceb0b0500000007010004030416041a02051c0d07293f0868200c88011900000001000200000000030001000004020101000105020001000303010a02010301060900010900000a6170746f735f6861736803626373096b656363616b323536087369705f68617368137369705f686173685f66726f6d5f76616c756508746f5f6279746573000000000000000000000000000000000000000000000000000000000000000100010200010102000201000000060b0038000c010b0111010200",
               "abi": {
                 "address": "0x1",
-                "name": "aptos_hash",
+                "name": "libra2_hash",
                 "friends": [],
                 "exposed_functions": [
                   {
@@ -29516,7 +29516,7 @@
                         "extension": {
                           "vec": []
                         },
-                        "name": "aptos_hash",
+                        "name": "libra2_hash",
                         "source": "0x1f8b08000000000002ff7d536b6f9b3014fd9e5f719749136c79f00c84b495baed43d769d9b456d3a4aa4a8d6d8a55c0081b9a68ea7f9f0d79f7612161dfcbb9f79cc3f5783c862fd5aa94fcbe4265ca30a448a45444bdb1ca0ce13bc5183d0c1d7f1281a01452294b118dc70f6d7c2429ca37fb54e69946b5c86f0520429864bc18c0d5c5b9a34b002a883eb8dda1a2801ac432146714580177429228d2fdef4630e792824c91dc019800040daa182a24f064cd2d022655aaed3aff79ad301404ca556db1c77eb46536e7c5106f143f177cc5ca0b15881457ad60587189241d2e7905c6f9efbf26c448500209ca59b6d22c4a416bc22b258de790d405d69a05e08a2a1c817805971415c35f29cb58595238af7324042f5a33bea282d10c2e47f09956859054d9a01ec7b29d5ece49ad8c418aa958b4d6745bcd17fef540ad5a28ad3a136331ebb5a10249d65028eb3853da141f10ac6c3146bc924a2734144b5e9dd4e19919413df1d6c017108ba4e2f9a241594d4f7ef086fed1bb33a389e0c3f6d8d558f3d12ba312da4e700a8a561449be68cf4663ae5be975c8ca6ce34f5d5afda8ee05f34eccd6d54dfa15a5dd20aabffda2d4dd6176dce79a0ac98afb83f2ef6f540979dbee0f8a2f74dc308f24b3a2aca5d6dcb5b9d926f58afbb2ebd01f1cc5f702b77beee88abc966f945cf6fdc49e241e0e12db9b22ec2553dfb6c81427214edcd0b3dc1011d70b6337c6045bf6d4f6d51784da0e49a6c48e2de788cbb28f7de27813cb0e2749e0b82e9e3a010d48ec108c03cbc516f52d2b9ef82e46a1e3046e1cc40922a1e5f924f49117586f68614a8535db861ed565a0603038e9c6b7131845192dee656a7ce8cc34f73d3ef05955fb78008c7955f1c70d7000cc9c3d43b6134d97a582a87bf95a85b5ebaf9750c8dd9cb5fdf6c75a2f75bd6925df19470d4f5bf800ece3efb5390c3e81bd6bf8345b5f88a7de7f96dba073a2050000",
                         "source_map": "0x"
                       },
@@ -29617,7 +29617,7 @@
                         "source_map": "0x"
                       }
                     ],
-                    "name": "AptosStdlib",
+                    "name": "Libra2Stdlib",
                     "source_digest": "7007BAD4C72C48617CF8C91A058B69271477CB8409C62BBCF736924C6E1F742A",
                     "upgrade_number": "0",
                     "upgrade_policy": {
@@ -29628,7 +29628,7 @@
                     "deps": [
                       {
                         "account": "0x1",
-                        "package_name": "AptosStdlib"
+                        "package_name": "Libra2Stdlib"
                       },
                       {
                         "account": "0x1",
@@ -33735,7 +33735,7 @@
                       },
                       {
                         "account": "0x1",
-                        "package_name": "AptosStdlib"
+                        "package_name": "Libra2Stdlib"
                       },
                       {
                         "account": "0x1",

@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_cached_packages::aptos_stdlib::aptos_token_stdlib;
+use libra2_cached_packages::libra2_stdlib::aptos_token_stdlib;
 use aptos_forge::{AptosPublicInfo, Result, Swarm};
 use aptos_indexer::{
     database::{new_db_pool, PgDbPool, PgPoolConnection},

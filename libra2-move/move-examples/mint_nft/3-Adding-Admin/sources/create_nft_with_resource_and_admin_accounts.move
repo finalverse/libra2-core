@@ -27,7 +27,7 @@
 
     Compiling, may take a little while to download git dependencies...
     INCLUDING DEPENDENCY Libra2Framework
-    INCLUDING DEPENDENCY AptosStdlib
+    INCLUDING DEPENDENCY Libra2Stdlib
     INCLUDING DEPENDENCY AptosToken
     INCLUDING DEPENDENCY MoveStdlib
     BUILDING Examples

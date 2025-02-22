@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, MoveHarness};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::SigningKey;
 use libra2_types::{
     account_address::AccountAddress,
@@ -46,7 +46,7 @@ fn offer_signer_capability_v2() {
 
     assert_success!(harness.run_transaction_payload(
         &account_alice,
-        aptos_stdlib::account_offer_signer_capability(
+        libra2_stdlib::account_offer_signer_capability(
             signature.to_bytes().to_vec(),
             0,
             account_alice.pubkey.to_bytes(),

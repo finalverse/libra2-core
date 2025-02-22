@@ -65,7 +65,7 @@ spec libra2_framework::aptos_governance {
         required_proposer_stake: u64,
         voting_duration_secs: u64,
     ) {
-        use aptos_std::type_info::Self;
+        use libra2_std::type_info::Self;
 
         let addr = signer::address_of(libra2_framework);
         let register_account = global<account::Account>(addr);
@@ -265,7 +265,7 @@ spec libra2_framework::aptos_governance {
         // verify create_proposal_metadata
         include CreateProposalMetadataAbortsIf;
 
-        let addr = aptos_std::type_info::type_of<AptosCoin>().account_address;
+        let addr = libra2_std::type_info::type_of<AptosCoin>().account_address;
         aborts_if !exists<coin::CoinInfo<AptosCoin>>(addr);
         let maybe_supply = global<coin::CoinInfo<AptosCoin>>(addr).supply;
         let supply = option::spec_borrow(maybe_supply);
@@ -547,8 +547,8 @@ spec libra2_framework::aptos_governance {
 
         let multi_step_key = utf8(voting::IS_MULTI_STEP_PROPOSAL_KEY);
         let has_multi_step_key = simple_map::spec_contains_key(proposal.metadata, multi_step_key);
-        let is_multi_step_proposal = aptos_std::from_bcs::deserialize<bool>(simple_map::spec_get(proposal.metadata, multi_step_key));
-        aborts_if has_multi_step_key && !aptos_std::from_bcs::deserializable<bool>(simple_map::spec_get(proposal.metadata, multi_step_key));
+        let is_multi_step_proposal = libra2_std::from_bcs::deserialize<bool>(simple_map::spec_get(proposal.metadata, multi_step_key));
+        aborts_if has_multi_step_key && !libra2_std::from_bcs::deserializable<bool>(simple_map::spec_get(proposal.metadata, multi_step_key));
         aborts_if !string::spec_internal_check_utf8(voting::IS_MULTI_STEP_PROPOSAL_KEY);
         aborts_if has_multi_step_key && is_multi_step_proposal;
 
@@ -779,9 +779,9 @@ spec libra2_framework::aptos_governance {
         aborts_if !string::spec_internal_check_utf8(voting::IS_MULTI_STEP_PROPOSAL_KEY);
         let multi_step_key = utf8(voting::IS_MULTI_STEP_PROPOSAL_KEY);
         aborts_if simple_map::spec_contains_key(proposal.metadata, multi_step_key) &&
-            !aptos_std::from_bcs::deserializable<bool>(simple_map::spec_get(proposal.metadata, multi_step_key));
+            !libra2_std::from_bcs::deserializable<bool>(simple_map::spec_get(proposal.metadata, multi_step_key));
         let is_multi_step = simple_map::spec_contains_key(proposal.metadata, multi_step_key) &&
-                            aptos_std::from_bcs::deserialize<bool>(simple_map::spec_get(proposal.metadata, multi_step_key));
+                            libra2_std::from_bcs::deserialize<bool>(simple_map::spec_get(proposal.metadata, multi_step_key));
         let next_execution_hash_is_empty = len(next_execution_hash) == 0;
         aborts_if !is_multi_step && !next_execution_hash_is_empty;
         aborts_if next_execution_hash_is_empty && is_multi_step && !simple_map::spec_contains_key(proposal.metadata, multi_step_in_execution_key); // ?
@@ -830,8 +830,8 @@ spec libra2_framework::aptos_governance {
         aborts_if proposal.is_resolved;
         aborts_if !string::spec_internal_check_utf8(voting::RESOLVABLE_TIME_METADATA_KEY);
         aborts_if !simple_map::spec_contains_key(proposal.metadata, utf8(voting::RESOLVABLE_TIME_METADATA_KEY));
-        let resolvable_time = aptos_std::from_bcs::deserialize<u64>(simple_map::spec_get(proposal.metadata, utf8(voting::RESOLVABLE_TIME_METADATA_KEY)));
-        aborts_if !aptos_std::from_bcs::deserializable<u64>(simple_map::spec_get(proposal.metadata, utf8(voting::RESOLVABLE_TIME_METADATA_KEY)));
+        let resolvable_time = libra2_std::from_bcs::deserialize<u64>(simple_map::spec_get(proposal.metadata, utf8(voting::RESOLVABLE_TIME_METADATA_KEY)));
+        aborts_if !libra2_std::from_bcs::deserializable<u64>(simple_map::spec_get(proposal.metadata, utf8(voting::RESOLVABLE_TIME_METADATA_KEY)));
         aborts_if timestamp::now_seconds() <= resolvable_time;
         aborts_if libra2_framework::transaction_context::spec_get_script_hash() != proposal.execution_hash;
     }

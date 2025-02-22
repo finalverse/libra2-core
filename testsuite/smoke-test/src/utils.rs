@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_config::{
     config::{NodeConfig, Peer, PeerRole, HANDSHAKE_VERSION},
     network_id::NetworkId,
@@ -147,7 +147,7 @@ pub async fn transfer_coins_non_blocking(
     amount: u64,
 ) -> SignedTransaction {
     let txn = sender.sign_with_transaction_builder(transaction_factory.payload(
-        aptos_stdlib::aptos_coin_transfer(receiver.address(), amount),
+        libra2_stdlib::aptos_coin_transfer(receiver.address(), amount),
     ));
 
     client.submit(&txn).await.unwrap();

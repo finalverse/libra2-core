@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, build_package, tests::common, MoveHarness};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_framework::BuildOptions;
 use libra2_language_e2e_tests::account::Account;
 use libra2_types::{
@@ -51,7 +51,7 @@ fn exchange_e2e_test() {
     // create the resource account and publish the code under the resource account's address
     let result = h.run_transaction_payload(
         &origin_account,
-        aptos_stdlib::resource_account_create_resource_account_and_publish_package(
+        libra2_stdlib::resource_account_create_resource_account_and_publish_package(
             vec![],
             bcs::to_bytes(&metadata).expect("PackageMetadata has BCS"),
             code,

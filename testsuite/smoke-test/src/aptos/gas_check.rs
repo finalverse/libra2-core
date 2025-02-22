@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::smoke_test_environment::new_local_swarm_with_aptos;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use aptos_forge::Swarm;
 use std::time::Duration;
 
@@ -26,7 +26,7 @@ async fn test_gas_check() {
 
     let transfer_txn = account1.sign_with_transaction_builder(
         info.transaction_factory()
-            .payload(aptos_stdlib::aptos_coin_transfer(account2.address(), 100)),
+            .payload(libra2_stdlib::aptos_coin_transfer(account2.address(), 100)),
     );
     // fail due to not enough gas
     let err = info
@@ -43,7 +43,7 @@ async fn test_gas_check() {
     let transfer_too_much = account2.sign_with_transaction_builder(
         // TODO(Gas): double check this
         info.transaction_factory()
-            .payload(aptos_stdlib::aptos_coin_transfer(account1.address(), 1_000)),
+            .payload(libra2_stdlib::aptos_coin_transfer(account1.address(), 1_000)),
     );
 
     let err = info
@@ -66,19 +66,19 @@ async fn test_gas_check() {
     let txn_factory = info.transaction_factory();
 
     // This is disabled as set_gas_schedule is no longer an entry function and thus not accessible
-    // via aptos_stdlib.
+    // via libra2_stdlib.
 
     let update_txn = info
         .root_account()
         .sign_with_transaction_builder(txn_factory.payload(
-            aptos_stdlib::gas_schedule_set_gas_schedule(gas_schedule_blob),
+            libra2_stdlib::gas_schedule_set_gas_schedule(gas_schedule_blob),
         ));
     info.client().submit_and_wait(&update_txn).await.unwrap();
     */
 
     let zero_gas_txn = account1.sign_with_transaction_builder(
         info.transaction_factory()
-            .payload(aptos_stdlib::aptos_coin_transfer(account2.address(), 100))
+            .payload(libra2_stdlib::aptos_coin_transfer(account2.address(), 100))
             .gas_unit_price(0),
     );
     while info

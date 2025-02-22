@@ -5,9 +5,9 @@ use libra2_framework::ReleaseBundle;
 use once_cell::sync::Lazy;
 
 pub mod libra2_framework_sdk_builder;
-pub mod aptos_stdlib;
+pub mod libra2_stdlib;
 pub mod libra2_token_objects_sdk_builder;
-pub mod aptos_token_sdk_builder;
+pub mod libra2_token_sdk_builder;
 
 #[cfg(unix)]
 const HEAD_RELEASE_BUNDLE_BYTES: &[u8] = include_bytes!(concat!(env!("OUT_DIR"), "/head.mrb"));

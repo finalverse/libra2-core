@@ -14,9 +14,9 @@ module libra2_framework::randomness {
     use libra2_framework::system_addresses;
     use libra2_framework::transaction_context;
     #[test_only]
-    use aptos_std::debug;
+    use libra2_std::debug;
     #[test_only]
-    use aptos_std::table_with_length;
+    use libra2_std::table_with_length;
 
     friend libra2_framework::block;
 

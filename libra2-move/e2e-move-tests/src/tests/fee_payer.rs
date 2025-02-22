@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_abort, assert_success, tests::common, MoveHarness};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_language_e2e_tests::{
     account::{Account, TransactionBuilder},
     transaction_status_eq,
@@ -47,7 +47,7 @@ fn test_existing_account_with_fee_payer() {
     let alice_start = h.read_aptos_balance(alice.address());
     let bob_start = h.read_aptos_balance(bob.address());
 
-    let payload = aptos_stdlib::aptos_coin_transfer(*alice.address(), 0);
+    let payload = libra2_stdlib::aptos_coin_transfer(*alice.address(), 0);
     let transaction = TransactionBuilder::new(alice.clone())
         .fee_payer(bob.clone())
         .payload(payload)
@@ -82,7 +82,7 @@ fn test_existing_account_with_fee_payer_aborts() {
     let alice_start = h.read_aptos_balance(alice.address());
     let bob_start = h.read_aptos_balance(bob.address());
 
-    let payload = aptos_stdlib::aptos_coin_transfer(*alice.address(), 1);
+    let payload = libra2_stdlib::aptos_coin_transfer(*alice.address(), 1);
     let transaction = TransactionBuilder::new(alice.clone())
         .fee_payer(bob.clone())
         .payload(payload)
@@ -122,7 +122,7 @@ fn test_account_not_exist_with_fee_payer() {
     assert!(alice_start.is_none());
     let bob_start = h.read_aptos_balance(bob.address());
 
-    let payload = aptos_stdlib::aptos_account_set_allow_direct_coin_transfers(true);
+    let payload = libra2_stdlib::aptos_account_set_allow_direct_coin_transfers(true);
     let transaction = TransactionBuilder::new(alice.clone())
         .fee_payer(bob.clone())
         .payload(payload)
@@ -164,7 +164,7 @@ fn test_account_not_exist_with_fee_payer_insufficient_gas() {
     assert!(alice_start.is_none());
     let bob_start = h.read_aptos_balance(bob.address());
 
-    let payload = aptos_stdlib::aptos_coin_transfer(*alice.address(), 1);
+    let payload = libra2_stdlib::aptos_coin_transfer(*alice.address(), 1);
     let transaction = TransactionBuilder::new(alice.clone())
         .fee_payer(bob.clone())
         .payload(payload)
@@ -354,7 +354,7 @@ fn test_account_not_exist_with_fee_payer_without_create_account() {
     );
     assert!(alice_start.is_none());
 
-    let payload = aptos_stdlib::aptos_account_set_allow_direct_coin_transfers(true);
+    let payload = libra2_stdlib::aptos_account_set_allow_direct_coin_transfers(true);
     let transaction = TransactionBuilder::new(alice.clone())
         .fee_payer(bob.clone())
         .payload(payload)
@@ -383,7 +383,7 @@ fn test_normal_tx_with_fee_payer_insufficient_funds() {
     let alice = h.new_account_at(AccountAddress::from_hex_literal("0xa11ce").unwrap());
     let bob = h.new_account_with_balance_and_sequence_number(1, 0);
 
-    let payload = aptos_stdlib::aptos_account_set_allow_direct_coin_transfers(true);
+    let payload = libra2_stdlib::aptos_account_set_allow_direct_coin_transfers(true);
     let transaction = TransactionBuilder::new(alice.clone())
         .fee_payer(bob.clone())
         .payload(payload)

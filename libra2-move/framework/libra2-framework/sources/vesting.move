@@ -41,8 +41,8 @@ module libra2_framework::vesting {
     use std::string::{utf8, String};
     use std::vector;
 
-    use aptos_std::pool_u64::{Self, Pool};
-    use aptos_std::simple_map::{Self, SimpleMap};
+    use libra2_std::pool_u64::{Self, Pool};
+    use libra2_std::simple_map::{Self, SimpleMap};
 
     use libra2_framework::account::{Self, SignerCapability, new_event_handle};
     use libra2_framework::aptos_account::{Self, assert_account_is_registered_for_apt};
@@ -1214,7 +1214,7 @@ module libra2_framework::vesting {
 
     #[test_only]
     use libra2_framework::account::create_account_for_test;
-    use aptos_std::math64::min;
+    use libra2_std::math64::min;
 
     #[test_only]
     const MIN_STAKE: u64 = 100000000000000; // 1M APT coins with 8 decimals.

@@ -4,7 +4,7 @@
 
 use crate::{bootstrap_genesis, gen_block_id, gen_ledger_info_with_sigs};
 use anyhow::{ensure, Result};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_config::config::DEFAULT_MAX_NUM_NODES_PER_LRU_CACHE_SHARD;
 use libra2_consensus_types::block::Block;
 use libra2_db::Libra2DB;
@@ -130,7 +130,7 @@ pub fn test_execution_with_storage_impl_inner(
         account1.sign_with_transaction_builder(txn_factory.transfer(account3.address(), 70 * B));
 
     let reconfig1 = core_resources_account.sign_with_transaction_builder(
-        txn_factory.payload(aptos_stdlib::aptos_governance_force_end_epoch_test_only()),
+        txn_factory.payload(libra2_stdlib::aptos_governance_force_end_epoch_test_only()),
     );
 
     let block1: Vec<_> = into_signature_verified_block(vec![
@@ -158,7 +158,7 @@ pub fn test_execution_with_storage_impl_inner(
         2,
     ));
     let reconfig2 = core_resources_account.sign_with_transaction_builder(
-        txn_factory.payload(aptos_stdlib::aptos_governance_force_end_epoch_test_only()),
+        txn_factory.payload(libra2_stdlib::aptos_governance_force_end_epoch_test_only()),
     );
     let block2 = vec![block2_meta, UserTransaction(reconfig2)];
 

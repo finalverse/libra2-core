@@ -4,7 +4,7 @@
 module 0x1::runtime_checks {
     use std::bcs;
     use std::string;
-    use aptos_std::string_utils;
+    use libra2_std::string_utils;
     use libra2_framework::aggregator_v2::{Self, Aggregator, AggregatorSnapshot, DerivedStringSnapshot};
 
     //

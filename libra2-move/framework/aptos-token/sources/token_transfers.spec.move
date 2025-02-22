@@ -74,7 +74,7 @@ spec aptos_token::token_transfers {
         amount: u64
     ): u64 {
         use aptos_token::token::{TokenStore};
-        use aptos_std::table::{Self};
+        use libra2_std::table::{Self};
         let tokens = global<TokenStore>(account_addr).tokens;
         let balance = table::spec_get(tokens, id).amount;
         if (balance > amount) {

@@ -6,7 +6,7 @@ use crate::{
     join_validator_set, leave_validator_set, rotate_consensus_key, setup_staking, tests::common,
     unlock_stake, withdraw_stake, MoveHarness,
 };
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_types::account_address::{default_stake_pool_address, AccountAddress};
 use once_cell::sync::Lazy;
 use std::collections::BTreeMap;
@@ -348,7 +348,7 @@ fn test_staking_contract() {
     let operator_2_address = *operator_2.address();
     assert_success!(harness.run_transaction_payload(
         &staker,
-        aptos_stdlib::staking_contract_create_staking_contract(
+        libra2_stdlib::staking_contract_create_staking_contract(
             operator_1_address,
             operator_1_address,
             amount,
@@ -358,7 +358,7 @@ fn test_staking_contract() {
     ));
     assert_success!(harness.run_transaction_payload(
         &staker,
-        aptos_stdlib::staking_contract_add_stake(operator_1_address, amount)
+        libra2_stdlib::staking_contract_add_stake(operator_1_address, amount)
     ));
 
     // Join validator set.
@@ -381,7 +381,7 @@ fn test_staking_contract() {
     harness.new_epoch();
     assert_success!(harness.run_transaction_payload(
         &staker,
-        aptos_stdlib::staking_contract_request_commission(staker_address, operator_1_address)
+        libra2_stdlib::staking_contract_request_commission(staker_address, operator_1_address)
     ));
 
     // Wait until stake is unlocked.
@@ -389,7 +389,7 @@ fn test_staking_contract() {
     harness.new_epoch();
     assert_success!(harness.run_transaction_payload(
         &staker,
-        aptos_stdlib::staking_contract_distribute(staker_address, operator_1_address)
+        libra2_stdlib::staking_contract_distribute(staker_address, operator_1_address)
     ));
 
     // Staker unlocks some stake.
@@ -397,7 +397,7 @@ fn test_staking_contract() {
     harness.new_epoch();
     assert_success!(harness.run_transaction_payload(
         &staker,
-        aptos_stdlib::staking_contract_unlock_stake(operator_1_address, amount)
+        libra2_stdlib::staking_contract_unlock_stake(operator_1_address, amount)
     ));
 
     // Wait until stake is unlocked.
@@ -405,13 +405,13 @@ fn test_staking_contract() {
     harness.new_epoch();
     assert_success!(harness.run_transaction_payload(
         &staker,
-        aptos_stdlib::staking_contract_distribute(staker_address, operator_1_address)
+        libra2_stdlib::staking_contract_distribute(staker_address, operator_1_address)
     ));
 
     // Switch operators.
     assert_success!(harness.run_transaction_payload(
         &staker,
-        aptos_stdlib::staking_contract_switch_operator_with_same_commission(
+        libra2_stdlib::staking_contract_switch_operator_with_same_commission(
             operator_1_address,
             operator_2_address,
         )

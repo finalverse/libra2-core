@@ -26,9 +26,9 @@ can be enabled for the public.
 
 
 <pre><code><b>use</b> <a href="aggregator.md#0x1_aggregator">0x1::aggregator</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
 <b>use</b> <a href="system_addresses.md#0x1_system_addresses">0x1::system_addresses</a>;
-<b>use</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table">0x1::table</a>;
+<b>use</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table">0x1::table</a>;
 </code></pre>
 
 
@@ -53,7 +53,7 @@ account can.
 
 <dl>
 <dt>
-<code>phantom_table: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_Table">table::Table</a>&lt;<b>address</b>, u128&gt;</code>
+<code>phantom_table: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_Table">table::Table</a>&lt;<b>address</b>, u128&gt;</code>
 </dt>
 <dd>
 
@@ -104,7 +104,7 @@ Aggregator V1 only supports limit == MAX_U128.
 Creates a new factory for aggregators. Can only be called during genesis.
 
 
-<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_initialize_aggregator_factory">initialize_aggregator_factory</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_initialize_aggregator_factory">initialize_aggregator_factory</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -113,10 +113,10 @@ Creates a new factory for aggregators. Can only be called during genesis.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_initialize_aggregator_factory">initialize_aggregator_factory</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
+<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_initialize_aggregator_factory">initialize_aggregator_factory</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(libra2_framework);
     <b>let</b> <a href="aggregator_factory.md#0x1_aggregator_factory">aggregator_factory</a> = <a href="aggregator_factory.md#0x1_aggregator_factory_AggregatorFactory">AggregatorFactory</a> {
-        phantom_table: <a href="../../../aptos-stdlib/tests/compiler-v2-doc/table.md#0x1_table_new">table::new</a>()
+        phantom_table: <a href="../../../libra2-stdlib/tests/compiler-v2-doc/table.md#0x1_table_new">table::new</a>()
     };
     <b>move_to</b>(libra2_framework, <a href="aggregator_factory.md#0x1_aggregator_factory">aggregator_factory</a>);
 }
@@ -145,7 +145,7 @@ Creates a new aggregator instance which overflows on exceeding a <code>limit</co
 <pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_create_aggregator_internal">create_aggregator_internal</a>(): Aggregator <b>acquires</b> <a href="aggregator_factory.md#0x1_aggregator_factory_AggregatorFactory">AggregatorFactory</a> {
     <b>assert</b>!(
         <b>exists</b>&lt;<a href="aggregator_factory.md#0x1_aggregator_factory_AggregatorFactory">AggregatorFactory</a>&gt;(@libra2_framework),
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="aggregator_factory.md#0x1_aggregator_factory_EAGGREGATOR_FACTORY_NOT_FOUND">EAGGREGATOR_FACTORY_NOT_FOUND</a>)
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="aggregator_factory.md#0x1_aggregator_factory_EAGGREGATOR_FACTORY_NOT_FOUND">EAGGREGATOR_FACTORY_NOT_FOUND</a>)
     );
 
     <b>let</b> <a href="aggregator_factory.md#0x1_aggregator_factory">aggregator_factory</a> = <b>borrow_global_mut</b>&lt;<a href="aggregator_factory.md#0x1_aggregator_factory_AggregatorFactory">AggregatorFactory</a>&gt;(@libra2_framework);
@@ -166,7 +166,7 @@ to allow any signer to call.
 
 
 <pre><code>#[deprecated]
-<b>public</b> <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_create_aggregator">create_aggregator</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, limit: u128): <a href="aggregator.md#0x1_aggregator_Aggregator">aggregator::Aggregator</a>
+<b>public</b> <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_create_aggregator">create_aggregator</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, limit: u128): <a href="aggregator.md#0x1_aggregator_Aggregator">aggregator::Aggregator</a>
 </code></pre>
 
 
@@ -175,14 +175,14 @@ to allow any signer to call.
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_create_aggregator">create_aggregator</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, limit: u128): Aggregator <b>acquires</b> <a href="aggregator_factory.md#0x1_aggregator_factory_AggregatorFactory">AggregatorFactory</a> {
+<pre><code><b>public</b> <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_create_aggregator">create_aggregator</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, limit: u128): Aggregator <b>acquires</b> <a href="aggregator_factory.md#0x1_aggregator_factory_AggregatorFactory">AggregatorFactory</a> {
     // deprecated. Currently used only in aptos-<b>move</b>/e2e-<b>move</b>-tests/src/tests/<a href="aggregator.md#0x1_aggregator">aggregator</a>.data/pack/sources/aggregator_test.<b>move</b>
 
     // Only Libra2 Framework (0x1) <a href="account.md#0x1_account">account</a> can call this for now.
     <a href="system_addresses.md#0x1_system_addresses_assert_libra2_framework">system_addresses::assert_libra2_framework</a>(<a href="account.md#0x1_account">account</a>);
     <b>assert</b>!(
         limit == <a href="aggregator_factory.md#0x1_aggregator_factory_MAX_U128">MAX_U128</a>,
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aggregator_factory.md#0x1_aggregator_factory_EAGG_V1_LIMIT_DEPRECATED">EAGG_V1_LIMIT_DEPRECATED</a>)
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_invalid_argument">error::invalid_argument</a>(<a href="aggregator_factory.md#0x1_aggregator_factory_EAGG_V1_LIMIT_DEPRECATED">EAGG_V1_LIMIT_DEPRECATED</a>)
     );
     <a href="aggregator_factory.md#0x1_aggregator_factory_create_aggregator_internal">create_aggregator_internal</a>()
 }
@@ -283,7 +283,7 @@ Returns a new aggregator.
 ### Function `initialize_aggregator_factory`
 
 
-<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_initialize_aggregator_factory">initialize_aggregator_factory</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_initialize_aggregator_factory">initialize_aggregator_factory</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -291,7 +291,7 @@ Make sure the caller is @libra2_framework.
 AggregatorFactory is not under the caller before creating the resource.
 
 
-<pre><code><b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
+<pre><code><b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(libra2_framework);
 <b>aborts_if</b> addr != @libra2_framework;
 <b>aborts_if</b> <b>exists</b>&lt;<a href="aggregator_factory.md#0x1_aggregator_factory_AggregatorFactory">AggregatorFactory</a>&gt;(addr);
 // This enforces <a id="high-level-req-1" href="#high-level-req">high-level requirement 1</a>:
@@ -336,7 +336,7 @@ AggregatorFactory is not under the caller before creating the resource.
 
 
 <pre><code>#[deprecated]
-<b>public</b> <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_create_aggregator">create_aggregator</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, limit: u128): <a href="aggregator.md#0x1_aggregator_Aggregator">aggregator::Aggregator</a>
+<b>public</b> <b>fun</b> <a href="aggregator_factory.md#0x1_aggregator_factory_create_aggregator">create_aggregator</a>(<a href="account.md#0x1_account">account</a>: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, limit: u128): <a href="aggregator.md#0x1_aggregator_Aggregator">aggregator::Aggregator</a>
 </code></pre>
 
 
@@ -344,7 +344,7 @@ Make sure the caller is @libra2_framework.
 AggregatorFactory existed under the @libra2_framework when Creating a new aggregator.
 
 
-<pre><code><b>let</b> addr = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="account.md#0x1_account">account</a>);
+<pre><code><b>let</b> addr = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer_address_of">signer::address_of</a>(<a href="account.md#0x1_account">account</a>);
 // This enforces <a id="high-level-req-3" href="#high-level-req">high-level requirement 3</a>:
 <b>aborts_if</b> addr != @libra2_framework;
 <b>aborts_if</b> limit != <a href="aggregator_factory.md#0x1_aggregator_factory_MAX_U128">MAX_U128</a>;

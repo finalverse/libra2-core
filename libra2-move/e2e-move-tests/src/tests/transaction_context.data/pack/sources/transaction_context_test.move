@@ -3,8 +3,8 @@ module admin::transaction_context_test {
     use std::signer;
     use std::string::{Self, String};
     use std::vector;
-    use aptos_std::from_bcs;
-    use aptos_std::type_info;
+    use libra2_std::from_bcs;
+    use libra2_std::type_info;
     use libra2_framework::transaction_context;
     use libra2_framework::multisig_account;
 

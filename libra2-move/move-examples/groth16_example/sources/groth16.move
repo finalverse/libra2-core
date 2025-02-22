@@ -4,7 +4,7 @@
 ///
 /// **WARNING:** This code has NOT been audited. If using it in a production system, proceed at your own risk.
 module groth16_example::groth16 {
-    use aptos_std::crypto_algebra::{Element, from_u64, multi_scalar_mul, eq, multi_pairing, upcast, pairing, add, zero};
+    use libra2_std::crypto_algebra::{Element, from_u64, multi_scalar_mul, eq, multi_pairing, upcast, pairing, add, zero};
 
     /// Proof verification as specified in the original paper,
     /// with the following input (in the original paper notations).
@@ -79,11 +79,11 @@ module groth16_example::groth16 {
     }
 
     #[test_only]
-    use aptos_std::crypto_algebra::{deserialize, enable_cryptography_algebra_natives};
+    use libra2_std::crypto_algebra::{deserialize, enable_cryptography_algebra_natives};
     #[test_only]
-    use aptos_std::bls12381_algebra::{Fr, FormatFrLsb, FormatG1Compr, FormatG2Compr, FormatFq12LscLsb, G1, G2, Gt, Fq12, FormatGt};
+    use libra2_std::bls12381_algebra::{Fr, FormatFrLsb, FormatG1Compr, FormatG2Compr, FormatFq12LscLsb, G1, G2, Gt, Fq12, FormatGt};
     #[test_only]
-    use aptos_std::bn254_algebra;
+    use libra2_std::bn254_algebra;
     #[test_only]
     use std::bcs;
     #[test_only]
@@ -91,7 +91,7 @@ module groth16_example::groth16 {
 
     // This test gives an example of how to take a proof, verification key, and public input in the decimal string format
     // output by snarkjs and verify the proof.
-    // Documentation for the serialization formats used can be found in `aptos-core/libra2-move/framework/aptos-stdlib/sources/cryptography/X.move`,
+    // Documentation for the serialization formats used can be found in `aptos-core/libra2-move/framework/libra2-stdlib/sources/cryptography/X.move`,
     // where X is bn254_algebra for BN254 and bls12381_algebra for BLS12_381
     // The names are preserved from the snarkjs proof and verifier key JSON file format, with the
     // exception of "IC", which has been renamed to `vk_gamma_abc`

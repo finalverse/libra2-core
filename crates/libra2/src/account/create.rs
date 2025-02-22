@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::common::types::{CliCommand, CliTypedResult, TransactionOptions, TransactionSummary};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_types::account_address::AccountAddress;
 use async_trait::async_trait;
 use clap::Parser;
@@ -34,7 +34,7 @@ impl CliCommand<TransactionSummary> for CreateAccount {
     async fn execute(self) -> CliTypedResult<TransactionSummary> {
         let address = self.account;
         self.txn_options
-            .submit_transaction(aptos_stdlib::aptos_account_create_account(address))
+            .submit_transaction(libra2_stdlib::aptos_account_create_account(address))
             .await
             .map(TransactionSummary::from)
     }

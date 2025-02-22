@@ -72,7 +72,7 @@ spec libra2_framework::transaction_fee {
 
     /// `AptosCoinCapabilities` should be exists.
     spec burn_fee(account: address, fee: u64) {
-        use aptos_std::type_info;
+        use libra2_std::type_info;
         use libra2_framework::optional_aggregator;
         use libra2_framework::coin;
         use libra2_framework::coin::{CoinInfo, CoinStore};
@@ -115,7 +115,7 @@ spec libra2_framework::transaction_fee {
     }
 
     spec mint_and_refund(account: address, refund: u64) {
-        use aptos_std::type_info;
+        use libra2_std::type_info;
         use libra2_framework::aptos_coin::AptosCoin;
         use libra2_framework::coin::{CoinInfo, CoinStore};
         use libra2_framework::coin;

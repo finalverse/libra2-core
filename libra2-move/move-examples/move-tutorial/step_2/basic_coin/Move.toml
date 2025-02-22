@@ -2,7 +2,7 @@
 name = "basic_coin"
 version = "0.0.0"
 
-[dependencies.AptosStdlib]
+[dependencies.Libra2Stdlib]
 git = 'https://github.com/aptos-labs/libra2-framework.git'
 rev = 'main'
-subdir = 'aptos-stdlib'
+subdir = 'libra2-stdlib'

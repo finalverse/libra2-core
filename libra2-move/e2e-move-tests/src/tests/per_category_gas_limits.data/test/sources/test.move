@@ -1,7 +1,7 @@
 module 0xbeef::test {
     use std::signer::address_of;
     use std::vector;
-    use aptos_std::table::{Self, Table};
+    use libra2_std::table::{Self, Table};
 
     struct Foo has key {}
 

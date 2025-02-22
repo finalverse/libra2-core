@@ -1,10 +1,10 @@
 module 0xCAFE::test {
     use std::signer;
     use std::signer::address_of;
-    use aptos_std::smart_table;
-    use aptos_std::smart_table::SmartTable;
-    use aptos_std::table_with_length;
-    use aptos_std::table_with_length::TableWithLength;
+    use libra2_std::smart_table;
+    use libra2_std::smart_table::SmartTable;
+    use libra2_std::table_with_length;
+    use libra2_std::table_with_length::TableWithLength;
 
     struct Resource has key, store {}
 

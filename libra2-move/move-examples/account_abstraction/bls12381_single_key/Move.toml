@@ -7,4 +7,4 @@ aa = "_"
 
 [dependencies]
 Libra2Framework = { local = "../../../framework/libra2-framework" }
-AptosStdlib = { local = "../../../framework/aptos-stdlib" }
+Libra2Stdlib = { local = "../../../framework/libra2-stdlib" }

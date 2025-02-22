@@ -8,7 +8,7 @@ use libra2_framework::{
 use libra2_sdk::{
     bcs,
     move_types::{identifier::Identifier, language_storage::ModuleId},
-    transaction_builder::aptos_stdlib,
+    transaction_builder::libra2_stdlib,
     types::{
         account_address::AccountAddress,
         transaction::{Script, TransactionPayload},
@@ -202,7 +202,7 @@ impl Package {
     // Return a transaction payload to publish the current package
     pub fn publish_transaction_payload(&self) -> TransactionPayload {
         let (metadata_serialized, code) = self.get_publish_args();
-        aptos_stdlib::code_publish_package_txn(metadata_serialized, code)
+        libra2_stdlib::code_publish_package_txn(metadata_serialized, code)
     }
 
     pub fn get_module_id(&self, module_name: &str) -> ModuleId {

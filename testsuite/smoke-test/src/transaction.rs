@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::smoke_test_environment::new_local_swarm_with_aptos;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use aptos_forge::Swarm;
 use libra2_keygen::KeyGen;
 use libra2_rest_client::{
@@ -57,7 +57,7 @@ async fn test_external_transaction_signer() {
 
     let unsigned_txn = info
         .transaction_factory()
-        .payload(aptos_stdlib::aptos_coin_transfer(
+        .payload(libra2_stdlib::aptos_coin_transfer(
             receiver.address(),
             amount,
         ))

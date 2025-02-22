@@ -106,7 +106,7 @@ mod tests {
         transaction_deduper::TransactionDeduper,
         txn_hash_and_authenticator_deduper::TxnHashAndAuthenticatorDeduper,
     };
-    use libra2_cached_packages::aptos_stdlib;
+    use libra2_cached_packages::libra2_stdlib;
     use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
     use libra2_keygen::KeyGen;
     use libra2_types::{
@@ -168,7 +168,7 @@ mod tests {
         seq_num: u64,
         gas_unit_price: u64,
     ) -> RawTransaction {
-        let payload = aptos_stdlib::aptos_coin_transfer(receiver, 1);
+        let payload = libra2_stdlib::aptos_coin_transfer(receiver, 1);
         raw_txn(payload, sender, seq_num, gas_unit_price)
     }
 

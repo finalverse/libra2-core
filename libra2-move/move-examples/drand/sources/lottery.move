@@ -22,7 +22,7 @@ module drand::lottery {
     use libra2_framework::timestamp;
     use libra2_framework::aptos_coin::AptosCoin;
     use drand::drand;
-    //use aptos_std::debug;
+    //use libra2_std::debug;
 
     /// Error code code when someone tries to start a very "short" lottery where users might not have enough time
     /// to buy tickets.

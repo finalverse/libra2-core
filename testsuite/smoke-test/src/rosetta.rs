@@ -8,7 +8,7 @@ use aptos::{
     common::types::GasOptions,
     test::{CliTestFramework, INVALID_ACCOUNT},
 };
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_config::{config::ApiConfig, utils::get_available_port};
 use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519Signature},
@@ -477,7 +477,7 @@ async fn create_staking_contract(
 ) -> Response<Transaction> {
     let staking_contract_creation = info
         .transaction_factory()
-        .payload(aptos_stdlib::staking_contract_create_staking_contract(
+        .payload(libra2_stdlib::staking_contract_create_staking_contract(
             operator,
             voter,
             amount,
@@ -499,7 +499,7 @@ async fn unlock_stake(
 ) -> Response<Transaction> {
     let unlock_stake = info
         .transaction_factory()
-        .payload(aptos_stdlib::staking_contract_unlock_stake(
+        .payload(libra2_stdlib::staking_contract_unlock_stake(
             operator, amount,
         ))
         .sequence_number(sequence_number);
@@ -516,7 +516,7 @@ async fn create_delegation_pool(
 ) -> Response<Transaction> {
     let delegation_pool_creation = info
         .transaction_factory()
-        .payload(aptos_stdlib::delegation_pool_initialize_delegation_pool(
+        .payload(libra2_stdlib::delegation_pool_initialize_delegation_pool(
             commission_percentage,
             vec![],
         ))
@@ -623,7 +623,7 @@ async fn test_transfer() {
         // config/global-constants/src/lib.rs
         .with_gas_unit_price(GAS_UNIT_PRICE)
         .with_max_gas_amount(1000);
-    let txn_payload = aptos_stdlib::aptos_account_transfer(receiver, 100);
+    let txn_payload = libra2_stdlib::aptos_account_transfer(receiver, 100);
     let unsigned_transaction = transaction_factory
         .payload(txn_payload)
         .sender(sender)

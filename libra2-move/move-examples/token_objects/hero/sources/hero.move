@@ -8,7 +8,7 @@ module hero::hero {
 
     use libra2_token_objects::collection;
     use libra2_token_objects::token;
-    use aptos_std::string_utils;
+    use libra2_std::string_utils;
 
     const ENOT_A_HERO: u64 = 1;
     const ENOT_A_WEAPON: u64 = 2;

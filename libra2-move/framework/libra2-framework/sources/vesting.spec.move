@@ -528,7 +528,7 @@ spec libra2_framework::vesting {
 
         let acc = global<account::Account>(resource_addr);
         let post post_acc = global<account::Account>(resource_addr);
-        aborts_if !exists<coin::CoinStore<AptosCoin>>(resource_addr) && !aptos_std::type_info::spec_is_struct<AptosCoin>();
+        aborts_if !exists<coin::CoinStore<AptosCoin>>(resource_addr) && !libra2_std::type_info::spec_is_struct<AptosCoin>();
         aborts_if !exists<coin::CoinStore<AptosCoin>>(resource_addr) && ea && acc.guid_creation_num + 2 > MAX_U64;
         aborts_if !exists<coin::CoinStore<AptosCoin>>(resource_addr) && ea && acc.guid_creation_num + 2 >= account::MAX_GUID_CREATION_NUM;
         ensures exists<account::Account>(resource_addr) && post_acc.authentication_key == account::ZERO_AUTH_KEY &&

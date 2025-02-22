@@ -39,13 +39,13 @@
 
 <dl>
 <dt>
-<code>digest: <a href="../../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
+<code>digest: <a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>authenticator: <a href="../../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
+<code>authenticator: <a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
 </dt>
 <dd>
 
@@ -65,7 +65,7 @@
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="signing_data.md#0x1_signing_data_digest">digest</a>(<a href="signing_data.md#0x1_signing_data">signing_data</a>: &<a href="signing_data.md#0x1_signing_data_SigningData">signing_data::SigningData</a>): &<a href="../../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="signing_data.md#0x1_signing_data_digest">digest</a>(<a href="signing_data.md#0x1_signing_data">signing_data</a>: &<a href="signing_data.md#0x1_signing_data_SigningData">signing_data::SigningData</a>): &<a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
 </code></pre>
 
 
@@ -74,7 +74,7 @@
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="signing_data.md#0x1_signing_data_digest">digest</a>(<a href="signing_data.md#0x1_signing_data">signing_data</a>: &<a href="signing_data.md#0x1_signing_data_SigningData">SigningData</a>): &<a href="../../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; {
+<pre><code><b>public</b> <b>fun</b> <a href="signing_data.md#0x1_signing_data_digest">digest</a>(<a href="signing_data.md#0x1_signing_data">signing_data</a>: &<a href="signing_data.md#0x1_signing_data_SigningData">SigningData</a>): &<a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; {
     &<a href="signing_data.md#0x1_signing_data">signing_data</a>.digest
 }
 </code></pre>
@@ -89,7 +89,7 @@
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="signing_data.md#0x1_signing_data_authenticator">authenticator</a>(<a href="signing_data.md#0x1_signing_data">signing_data</a>: &<a href="signing_data.md#0x1_signing_data_SigningData">signing_data::SigningData</a>): &<a href="../../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="signing_data.md#0x1_signing_data_authenticator">authenticator</a>(<a href="signing_data.md#0x1_signing_data">signing_data</a>: &<a href="signing_data.md#0x1_signing_data_SigningData">signing_data::SigningData</a>): &<a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;
 </code></pre>
 
 
@@ -98,7 +98,7 @@
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="signing_data.md#0x1_signing_data_authenticator">authenticator</a>(<a href="signing_data.md#0x1_signing_data">signing_data</a>: &<a href="signing_data.md#0x1_signing_data_SigningData">SigningData</a>): &<a href="../../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; {
+<pre><code><b>public</b> <b>fun</b> <a href="signing_data.md#0x1_signing_data_authenticator">authenticator</a>(<a href="signing_data.md#0x1_signing_data">signing_data</a>: &<a href="signing_data.md#0x1_signing_data_SigningData">SigningData</a>): &<a href="../../libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; {
     &<a href="signing_data.md#0x1_signing_data">signing_data</a>.authenticator
 }
 </code></pre>

@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, assert_vm_status, build_package, MoveHarness};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_framework::BuildOptions;
 use libra2_package_builder::PackageBuilder;
 use libra2_types::{account_address::AccountAddress, on_chain_config::FeatureFlag};
@@ -183,7 +183,7 @@ fn test_bad_fun_attribute_in_compiled_module() {
         .expect("extracting package metadata must succeed");
     let result = h.run_transaction_payload(
         &account,
-        aptos_stdlib::code_publish_package_txn(
+        libra2_stdlib::code_publish_package_txn(
             bcs::to_bytes(&metadata).expect("PackageMetadata has BCS"),
             vec![code],
         ),
@@ -209,7 +209,7 @@ fn test_bad_view_attribute_in_compiled_module() {
         build_package_and_insert_attribute(source, None, Some(("view", fake_attribute)));
     let result = h.run_transaction_payload(
         &account,
-        aptos_stdlib::code_publish_package_txn(metadata, code),
+        libra2_stdlib::code_publish_package_txn(metadata, code),
     );
 
     assert_vm_status!(result, StatusCode::CONSTRAINT_NOT_SATISFIED);
@@ -235,7 +235,7 @@ fn verify_resource_group_member_fails_when_not_enabled() {
     );
     let result = h.run_transaction_payload(
         &account,
-        aptos_stdlib::code_publish_package_txn(metadata, code),
+        libra2_stdlib::code_publish_package_txn(metadata, code),
     );
 
     assert_vm_status!(result, StatusCode::CONSTRAINT_NOT_SATISFIED);
@@ -258,7 +258,7 @@ fn verify_resource_groups_fail_when_not_enabled() {
         build_package_and_insert_attribute(source, Some(("ResourceGroup", fake_attribute)), None);
     let result = h.run_transaction_payload(
         &account,
-        aptos_stdlib::code_publish_package_txn(metadata, code),
+        libra2_stdlib::code_publish_package_txn(metadata, code),
     );
 
     assert_vm_status!(result, StatusCode::CONSTRAINT_NOT_SATISFIED);
@@ -281,7 +281,7 @@ fn verify_module_events_fail_when_not_enabled() {
         build_package_and_insert_attribute(source, Some(("Event", fake_attribute)), None);
     let result = h.run_transaction_payload(
         &account,
-        aptos_stdlib::code_publish_package_txn(metadata, code),
+        libra2_stdlib::code_publish_package_txn(metadata, code),
     );
 
     assert_vm_status!(result, StatusCode::CONSTRAINT_NOT_SATISFIED);

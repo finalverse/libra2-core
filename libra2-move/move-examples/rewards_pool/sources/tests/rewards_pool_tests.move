@@ -3,7 +3,7 @@ module rewards_pool::rewards_pool_tests {
     use libra2_framework::fungible_asset::{Self, FungibleAsset};
     use libra2_framework::object::Object;
     use libra2_framework::primary_fungible_store;
-    use aptos_std::simple_map;
+    use libra2_std::simple_map;
     use rewards_pool::rewards_pool::{Self, RewardsPool};
     use rewards_pool::test_helpers;
     use rewards_pool::epoch;

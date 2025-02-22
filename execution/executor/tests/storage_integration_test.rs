@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{hash::CryptoHash, PrivateKey};
 use libra2_executor_test_helpers::{
     gen_block_id, gen_ledger_info_with_sigs, get_test_signed_transaction,
@@ -111,7 +111,7 @@ fn test_reconfiguration() {
         /* sequence_number = */ 0,
         genesis_key.clone(),
         genesis_key.public_key(),
-        Some(aptos_stdlib::aptos_coin_mint(validator_account, 1_000_000)),
+        Some(libra2_stdlib::aptos_coin_mint(validator_account, 1_000_000)),
     );
     // txn2 = a dummy block prologue to bump the timer.
     let txn2 = Transaction::BlockMetadata(BlockMetadata::new(
@@ -130,7 +130,7 @@ fn test_reconfiguration() {
         /* sequence_number = */ 1,
         genesis_key.clone(),
         genesis_key.public_key(),
-        Some(aptos_stdlib::version_set_for_next_epoch(42)),
+        Some(libra2_stdlib::version_set_for_next_epoch(42)),
     );
 
     let txn4 = get_test_signed_transaction(
@@ -138,7 +138,7 @@ fn test_reconfiguration() {
         2,
         genesis_key.clone(),
         genesis_key.public_key(),
-        Some(aptos_stdlib::aptos_governance_force_end_epoch_test_only()),
+        Some(libra2_stdlib::aptos_governance_force_end_epoch_test_only()),
     );
 
     let txn_block = into_signature_verified_block(vec![txn1, txn2, txn3, txn4]);

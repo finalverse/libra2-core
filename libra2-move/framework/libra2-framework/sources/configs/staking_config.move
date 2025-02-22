@@ -6,8 +6,8 @@ module libra2_framework::staking_config {
     use libra2_framework::system_addresses;
     use libra2_framework::timestamp;
 
-    use aptos_std::fixed_point64::{Self, FixedPoint64, less_or_equal};
-    use aptos_std::math_fixed64;
+    use libra2_std::fixed_point64::{Self, FixedPoint64, less_or_equal};
+    use libra2_std::math_fixed64;
 
     friend libra2_framework::genesis;
     friend libra2_framework::stake;
@@ -402,7 +402,7 @@ module libra2_framework::staking_config {
     }
 
     #[test_only]
-    use aptos_std::fixed_point64::{equal, create_from_rational};
+    use libra2_std::fixed_point64::{equal, create_from_rational};
 
     #[test(libra2_framework = @libra2_framework)]
     public entry fun test_change_staking_configs(libra2_framework: signer) acquires StakingConfig {

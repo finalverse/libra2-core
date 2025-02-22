@@ -11,11 +11,11 @@ module libra2_framework::account {
     use libra2_framework::guid;
     use libra2_framework::permissioned_signer;
     use libra2_framework::system_addresses;
-    use aptos_std::ed25519;
-    use aptos_std::from_bcs;
-    use aptos_std::multi_ed25519;
-    use aptos_std::table::{Self, Table};
-    use aptos_std::type_info::{Self, TypeInfo};
+    use libra2_std::ed25519;
+    use libra2_std::from_bcs;
+    use libra2_std::multi_ed25519;
+    use libra2_std::table::{Self, Table};
+    use libra2_std::type_info::{Self, TypeInfo};
 
     friend libra2_framework::aptos_account;
     friend libra2_framework::coin;

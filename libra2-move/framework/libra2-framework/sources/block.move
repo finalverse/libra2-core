@@ -3,7 +3,7 @@ module libra2_framework::block {
     use std::error;
     use std::vector;
     use std::option;
-    use aptos_std::table_with_length::{Self, TableWithLength};
+    use libra2_std::table_with_length::{Self, TableWithLength};
     use std::option::Option;
     use libra2_framework::randomness;
 

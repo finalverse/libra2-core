@@ -8,8 +8,8 @@ module libra2_framework::keyless_account {
     use std::signer;
     use std::string::String;
     use std::vector;
-    use aptos_std::crypto_algebra;
-    use aptos_std::ed25519;
+    use libra2_std::crypto_algebra;
+    use libra2_std::ed25519;
     use libra2_framework::chain_status;
     use libra2_framework::system_addresses;
 

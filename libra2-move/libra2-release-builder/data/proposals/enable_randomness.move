@@ -2,7 +2,7 @@
 script {
     use libra2_framework::aptos_governance;
     use libra2_framework::randomness_config;
-    use aptos_std::fixed_point64;
+    use libra2_std::fixed_point64;
 
     fun main(proposal_id: u64) {
         let framework = aptos_governance::resolve_multi_step_proposal(

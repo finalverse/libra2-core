@@ -15,7 +15,7 @@
 <pre><code><b>use</b> <a href="fungible_asset.md#0x1_fungible_asset">0x1::fungible_asset</a>;
 <b>use</b> <a href="object.md#0x1_object">0x1::object</a>;
 <b>use</b> <a href="primary_fungible_store.md#0x1_primary_fungible_store">0x1::primary_fungible_store</a>;
-<b>use</b> <a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
+<b>use</b> <a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">0x1::signer</a>;
 </code></pre>
 
 
@@ -89,7 +89,7 @@
     <a href="account.md#0x1_account">account</a>: <b>address</b>,
     amount: u64,
 ) {
-    // Skip burning <b>if</b> amount is zero. This shouldn't <a href="../../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error">error</a> out <b>as</b> it's called <b>as</b> part of transaction fee burning.
+    // Skip burning <b>if</b> amount is zero. This shouldn't <a href="../../libra2-stdlib/../move-stdlib/doc/error.md#0x1_error">error</a> out <b>as</b> it's called <b>as</b> part of transaction fee burning.
     <b>if</b> (amount != 0) {
         <b>let</b> store_addr = <a href="apt_primary_fungible_store.md#0x1_aptos_primary_fungible_store_store_address">store_address</a>(<a href="account.md#0x1_account">account</a>);
         <a href="fungible_asset.md#0x1_fungible_asset_address_burn_from">fungible_asset::address_burn_from</a>(ref, store_addr, amount);
@@ -136,7 +136,7 @@
 
 
 
-<pre><code><b>public</b> entry <b>fun</b> <a href="apt_primary_fungible_store.md#0x1_aptos_primary_fungible_store_transfer">transfer</a>(sender: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, amount: u64)
+<pre><code><b>public</b> entry <b>fun</b> <a href="apt_primary_fungible_store.md#0x1_aptos_primary_fungible_store_transfer">transfer</a>(sender: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>, recipient: <b>address</b>, amount: u64)
 </code></pre>
 
 
@@ -146,11 +146,11 @@
 
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="apt_primary_fungible_store.md#0x1_aptos_primary_fungible_store_transfer">transfer</a>(
-    sender: &<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
+    sender: &<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer">signer</a>,
     recipient: <b>address</b>,
     amount: u64,
 ) {
-    <b>let</b> sender_store = <a href="apt_primary_fungible_store.md#0x1_aptos_primary_fungible_store_ensure_primary_store_exists">ensure_primary_store_exists</a>(<a href="../../aptos-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(sender));
+    <b>let</b> sender_store = <a href="apt_primary_fungible_store.md#0x1_aptos_primary_fungible_store_ensure_primary_store_exists">ensure_primary_store_exists</a>(<a href="../../libra2-stdlib/../move-stdlib/doc/signer.md#0x1_signer_address_of">signer::address_of</a>(sender));
     <b>let</b> recipient_store = <a href="apt_primary_fungible_store.md#0x1_aptos_primary_fungible_store_ensure_primary_store_exists">ensure_primary_store_exists</a>(recipient);
 
     // <b>use</b> <b>internal</b> APIs, <b>as</b> they skip:

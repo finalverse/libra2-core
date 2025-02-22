@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::harness::MoveHarness;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{bls12381, PrivateKey, Uniform};
 use libra2_language_e2e_tests::account::Account;
 use libra2_types::{
@@ -32,7 +32,7 @@ pub fn initialize_staking(
 ) -> TransactionStatus {
     harness.run_transaction_payload(
         account,
-        aptos_stdlib::stake_initialize_stake_owner(
+        libra2_stdlib::stake_initialize_stake_owner(
             initial_stake_amount,
             operator_address,
             voter_address,
@@ -41,7 +41,7 @@ pub fn initialize_staking(
 }
 
 pub fn add_stake(harness: &mut MoveHarness, account: &Account, amount: u64) -> TransactionStatus {
-    harness.run_transaction_payload(account, aptos_stdlib::stake_add_stake(amount))
+    harness.run_transaction_payload(account, libra2_stdlib::stake_add_stake(amount))
 }
 
 pub fn unlock_stake(
@@ -49,7 +49,7 @@ pub fn unlock_stake(
     account: &Account,
     amount: u64,
 ) -> TransactionStatus {
-    harness.run_transaction_payload(account, aptos_stdlib::stake_unlock(amount))
+    harness.run_transaction_payload(account, libra2_stdlib::stake_unlock(amount))
 }
 
 pub fn withdraw_stake(
@@ -57,7 +57,7 @@ pub fn withdraw_stake(
     account: &Account,
     amount: u64,
 ) -> TransactionStatus {
-    harness.run_transaction_payload(account, aptos_stdlib::stake_withdraw(amount))
+    harness.run_transaction_payload(account, libra2_stdlib::stake_withdraw(amount))
 }
 
 pub fn join_validator_set(
@@ -67,7 +67,7 @@ pub fn join_validator_set(
 ) -> TransactionStatus {
     harness.run_transaction_payload(
         account,
-        aptos_stdlib::stake_join_validator_set(pool_address),
+        libra2_stdlib::stake_join_validator_set(pool_address),
     )
 }
 
@@ -83,7 +83,7 @@ pub fn rotate_consensus_key(
         .to_vec();
     harness.run_transaction_payload(
         account,
-        aptos_stdlib::stake_rotate_consensus_key(
+        libra2_stdlib::stake_rotate_consensus_key(
             pool_address,
             consensus_pubkey,
             proof_of_possession,
@@ -98,12 +98,12 @@ pub fn leave_validator_set(
 ) -> TransactionStatus {
     harness.run_transaction_payload(
         account,
-        aptos_stdlib::stake_leave_validator_set(pool_address),
+        libra2_stdlib::stake_leave_validator_set(pool_address),
     )
 }
 
 pub fn increase_lockup(harness: &mut MoveHarness, account: &Account) -> TransactionStatus {
-    harness.run_transaction_payload(account, aptos_stdlib::stake_increase_lockup())
+    harness.run_transaction_payload(account, libra2_stdlib::stake_increase_lockup())
 }
 
 pub fn get_stake_pool(harness: &MoveHarness, pool_address: &AccountAddress) -> StakePool {

@@ -11,11 +11,11 @@
 /// NOTE: on-chain config `0x1::state::ValidatorSet` implemented its own buffer.
 module libra2_framework::config_buffer {
     use std::string::String;
-    use aptos_std::any;
-    use aptos_std::any::Any;
-    use aptos_std::simple_map;
-    use aptos_std::simple_map::SimpleMap;
-    use aptos_std::type_info;
+    use libra2_std::any;
+    use libra2_std::any::Any;
+    use libra2_std::simple_map;
+    use libra2_std::simple_map::SimpleMap;
+    use libra2_std::type_info;
     use libra2_framework::system_addresses;
 
     friend libra2_framework::consensus_config;

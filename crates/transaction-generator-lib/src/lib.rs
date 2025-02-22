@@ -8,7 +8,7 @@ use libra2_infallible::{RwLock, RwLockWriteGuard};
 use libra2_logger::{info, sample, sample::SampleRate, warn};
 use libra2_sdk::{
     move_types::account_address::AccountAddress,
-    transaction_builder::{aptos_stdlib, TransactionFactory},
+    transaction_builder::{libra2_stdlib, TransactionFactory},
     types::{transaction::SignedTransaction, LocalAccount},
 };
 use async_trait::async_trait;
@@ -550,9 +550,9 @@ pub fn create_account_transaction(
 ) -> SignedTransaction {
     from.sign_with_transaction_builder(txn_factory.payload(
         if creation_balance > 0 {
-            aptos_stdlib::aptos_account_transfer(to, creation_balance)
+            libra2_stdlib::aptos_account_transfer(to, creation_balance)
         } else {
-            aptos_stdlib::aptos_account_create_account(to)
+            libra2_stdlib::aptos_account_create_account(to)
         },
     ))
 }

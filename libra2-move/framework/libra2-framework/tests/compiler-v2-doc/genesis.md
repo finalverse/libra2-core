@@ -43,12 +43,12 @@
 <b>use</b> <a href="coin.md#0x1_coin">0x1::coin</a>;
 <b>use</b> <a href="consensus_config.md#0x1_consensus_config">0x1::consensus_config</a>;
 <b>use</b> <a href="create_signer.md#0x1_create_signer">0x1::create_signer</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error">0x1::error</a>;
 <b>use</b> <a href="execution_config.md#0x1_execution_config">0x1::execution_config</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/fixed_point32.md#0x1_fixed_point32">0x1::fixed_point32</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/fixed_point32.md#0x1_fixed_point32">0x1::fixed_point32</a>;
 <b>use</b> <a href="gas_schedule.md#0x1_gas_schedule">0x1::gas_schedule</a>;
 <b>use</b> <a href="reconfiguration.md#0x1_reconfiguration">0x1::reconfiguration</a>;
-<b>use</b> <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map">0x1::simple_map</a>;
+<b>use</b> <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map">0x1::simple_map</a>;
 <b>use</b> <a href="stake.md#0x1_stake">0x1::stake</a>;
 <b>use</b> <a href="staking_config.md#0x1_staking_config">0x1::staking_config</a>;
 <b>use</b> <a href="staking_contract.md#0x1_staking_contract">0x1::staking_contract</a>;
@@ -57,7 +57,7 @@
 <b>use</b> <a href="timestamp.md#0x1_timestamp">0x1::timestamp</a>;
 <b>use</b> <a href="transaction_fee.md#0x1_transaction_fee">0x1::transaction_fee</a>;
 <b>use</b> <a href="transaction_validation.md#0x1_transaction_validation">0x1::transaction_validation</a>;
-<b>use</b> <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">0x1::vector</a>;
+<b>use</b> <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">0x1::vector</a>;
 <b>use</b> <a href="version.md#0x1_version">0x1::version</a>;
 <b>use</b> <a href="vesting.md#0x1_vesting">0x1::vesting</a>;
 </code></pre>
@@ -114,7 +114,7 @@
 
 <dl>
 <dt>
-<code>accounts: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;</code>
+<code>accounts: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;</code>
 </dt>
 <dd>
 
@@ -126,7 +126,7 @@
 
 </dd>
 <dt>
-<code>vesting_schedule_numerator: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;</code>
+<code>vesting_schedule_numerator: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u64&gt;</code>
 </dt>
 <dd>
 
@@ -189,25 +189,25 @@
 
 </dd>
 <dt>
-<code>consensus_pubkey: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
+<code>consensus_pubkey: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>proof_of_possession: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
+<code>proof_of_possession: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>network_addresses: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
+<code>network_addresses: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
 </dt>
 <dd>
 
 </dd>
 <dt>
-<code>full_node_network_addresses: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
+<code>full_node_network_addresses: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;</code>
 </dt>
 <dd>
 
@@ -286,7 +286,7 @@
 Genesis step 1: Initialize aptos framework account and core modules on chain.
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize">initialize</a>(<a href="gas_schedule.md#0x1_gas_schedule">gas_schedule</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, <a href="chain_id.md#0x1_chain_id">chain_id</a>: u8, initial_version: u64, <a href="consensus_config.md#0x1_consensus_config">consensus_config</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, <a href="execution_config.md#0x1_execution_config">execution_config</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, epoch_interval_microsecs: u64, minimum_stake: u64, maximum_stake: u64, recurring_lockup_duration_secs: u64, allow_validator_set_change: bool, rewards_rate: u64, rewards_rate_denominator: u64, voting_power_increase_limit: u64)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize">initialize</a>(<a href="gas_schedule.md#0x1_gas_schedule">gas_schedule</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, <a href="chain_id.md#0x1_chain_id">chain_id</a>: u8, initial_version: u64, <a href="consensus_config.md#0x1_consensus_config">consensus_config</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, <a href="execution_config.md#0x1_execution_config">execution_config</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, epoch_interval_microsecs: u64, minimum_stake: u64, maximum_stake: u64, recurring_lockup_duration_secs: u64, allow_validator_set_change: bool, rewards_rate: u64, rewards_rate_denominator: u64, voting_power_increase_limit: u64)
 </code></pre>
 
 
@@ -296,11 +296,11 @@ Genesis step 1: Initialize aptos framework account and core modules on chain.
 
 
 <pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize">initialize</a>(
-    <a href="gas_schedule.md#0x1_gas_schedule">gas_schedule</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    <a href="gas_schedule.md#0x1_gas_schedule">gas_schedule</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
     <a href="chain_id.md#0x1_chain_id">chain_id</a>: u8,
     initial_version: u64,
-    <a href="consensus_config.md#0x1_consensus_config">consensus_config</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
-    <a href="execution_config.md#0x1_execution_config">execution_config</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    <a href="consensus_config.md#0x1_consensus_config">consensus_config</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    <a href="execution_config.md#0x1_execution_config">execution_config</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
     epoch_interval_microsecs: u64,
     minimum_stake: u64,
     maximum_stake: u64,
@@ -329,9 +329,9 @@ Genesis step 1: Initialize aptos framework account and core modules on chain.
     <a href="aptos_governance.md#0x1_aptos_governance_store_signer_cap">aptos_governance::store_signer_cap</a>(&libra2_framework_account, @libra2_framework, libra2_framework_signer_cap);
 
     // put reserved framework reserved accounts under aptos governance
-    <b>let</b> framework_reserved_addresses = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;[@0x2, @0x3, @0x4, @0x5, @0x6, @0x7, @0x8, @0x9, @0xa];
-    <b>while</b> (!<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_is_empty">vector::is_empty</a>(&framework_reserved_addresses)) {
-        <b>let</b> <b>address</b> = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_pop_back">vector::pop_back</a>&lt;<b>address</b>&gt;(&<b>mut</b> framework_reserved_addresses);
+    <b>let</b> framework_reserved_addresses = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<b>address</b>&gt;[@0x2, @0x3, @0x4, @0x5, @0x6, @0x7, @0x8, @0x9, @0xa];
+    <b>while</b> (!<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_is_empty">vector::is_empty</a>(&framework_reserved_addresses)) {
+        <b>let</b> <b>address</b> = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_pop_back">vector::pop_back</a>&lt;<b>address</b>&gt;(&<b>mut</b> framework_reserved_addresses);
         <b>let</b> (_, framework_signer_cap) = <a href="account.md#0x1_account_create_framework_reserved_account">account::create_framework_reserved_account</a>(<b>address</b>);
         <a href="aptos_governance.md#0x1_aptos_governance_store_signer_cap">aptos_governance::store_signer_cap</a>(&libra2_framework_account, <b>address</b>, framework_signer_cap);
     };
@@ -375,7 +375,7 @@ Genesis step 1: Initialize aptos framework account and core modules on chain.
 Genesis step 2: Initialize Aptos coin.
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize_aptos_coin">initialize_aptos_coin</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize_aptos_coin">initialize_aptos_coin</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -384,7 +384,7 @@ Genesis step 2: Initialize Aptos coin.
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize_aptos_coin">initialize_aptos_coin</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize_aptos_coin">initialize_aptos_coin</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
     <b>let</b> (burn_cap, mint_cap) = <a href="aptos_coin.md#0x1_aptos_coin_initialize">aptos_coin::initialize</a>(libra2_framework);
 
     <a href="coin.md#0x1_coin_create_coin_conversion_map">coin::create_coin_conversion_map</a>(libra2_framework);
@@ -410,7 +410,7 @@ Genesis step 2: Initialize Aptos coin.
 Only called for testnets and e2e tests.
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize_core_resources_and_aptos_coin">initialize_core_resources_and_aptos_coin</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, core_resources_auth_key: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize_core_resources_and_aptos_coin">initialize_core_resources_and_aptos_coin</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, core_resources_auth_key: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;)
 </code></pre>
 
 
@@ -420,8 +420,8 @@ Only called for testnets and e2e tests.
 
 
 <pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize_core_resources_and_aptos_coin">initialize_core_resources_and_aptos_coin</a>(
-    libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
-    core_resources_auth_key: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
+    libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    core_resources_auth_key: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;,
 ) {
     <b>let</b> (burn_cap, mint_cap) = <a href="aptos_coin.md#0x1_aptos_coin_initialize">aptos_coin::initialize</a>(libra2_framework);
 
@@ -452,7 +452,7 @@ Only called for testnets and e2e tests.
 
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_accounts">create_accounts</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, accounts: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_AccountMap">genesis::AccountMap</a>&gt;)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_accounts">create_accounts</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, accounts: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_AccountMap">genesis::AccountMap</a>&gt;)
 </code></pre>
 
 
@@ -461,15 +461,15 @@ Only called for testnets and e2e tests.
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_accounts">create_accounts</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, accounts: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_AccountMap">AccountMap</a>&gt;) {
-    <b>let</b> unique_accounts = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_empty">vector::empty</a>();
-    <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each_ref">vector::for_each_ref</a>(&accounts, |account_map| {
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_accounts">create_accounts</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, accounts: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_AccountMap">AccountMap</a>&gt;) {
+    <b>let</b> unique_accounts = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_empty">vector::empty</a>();
+    <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each_ref">vector::for_each_ref</a>(&accounts, |account_map| {
         <b>let</b> account_map: &<a href="genesis.md#0x1_genesis_AccountMap">AccountMap</a> = account_map;
         <b>assert</b>!(
-            !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_contains">vector::contains</a>(&unique_accounts, &account_map.account_address),
-            <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="genesis.md#0x1_genesis_EDUPLICATE_ACCOUNT">EDUPLICATE_ACCOUNT</a>),
+            !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_contains">vector::contains</a>(&unique_accounts, &account_map.account_address),
+            <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="genesis.md#0x1_genesis_EDUPLICATE_ACCOUNT">EDUPLICATE_ACCOUNT</a>),
         );
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> unique_accounts, account_map.account_address);
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> unique_accounts, account_map.account_address);
 
         <a href="genesis.md#0x1_genesis_create_account">create_account</a>(
             libra2_framework,
@@ -492,7 +492,7 @@ This creates an funds an account if it doesn't exist.
 If it exists, it just returns the signer.
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_account">create_account</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, account_address: <b>address</b>, balance: u64): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_account">create_account</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, account_address: <b>address</b>, balance: u64): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>
 </code></pre>
 
 
@@ -501,7 +501,7 @@ If it exists, it just returns the signer.
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_account">create_account</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, account_address: <b>address</b>, balance: u64): <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> {
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_account">create_account</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, account_address: <b>address</b>, balance: u64): <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a> {
     <b>if</b> (<a href="account.md#0x1_account_exists_at">account::exists_at</a>(account_address)) {
         <a href="create_signer.md#0x1_create_signer">create_signer</a>(account_address)
     } <b>else</b> {
@@ -523,7 +523,7 @@ If it exists, it just returns the signer.
 
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_employee_validators">create_employee_validators</a>(employee_vesting_start: u64, employee_vesting_period_duration: u64, employees: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_EmployeeAccountMap">genesis::EmployeeAccountMap</a>&gt;)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_employee_validators">create_employee_validators</a>(employee_vesting_start: u64, employee_vesting_period_duration: u64, employees: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_EmployeeAccountMap">genesis::EmployeeAccountMap</a>&gt;)
 </code></pre>
 
 
@@ -535,41 +535,41 @@ If it exists, it just returns the signer.
 <pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_employee_validators">create_employee_validators</a>(
     employee_vesting_start: u64,
     employee_vesting_period_duration: u64,
-    employees: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_EmployeeAccountMap">EmployeeAccountMap</a>&gt;,
+    employees: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_EmployeeAccountMap">EmployeeAccountMap</a>&gt;,
 ) {
-    <b>let</b> unique_accounts = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_empty">vector::empty</a>();
+    <b>let</b> unique_accounts = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_empty">vector::empty</a>();
 
-    <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each_ref">vector::for_each_ref</a>(&employees, |employee_group| {
+    <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each_ref">vector::for_each_ref</a>(&employees, |employee_group| {
         <b>let</b> j = 0;
         <b>let</b> employee_group: &<a href="genesis.md#0x1_genesis_EmployeeAccountMap">EmployeeAccountMap</a> = employee_group;
-        <b>let</b> num_employees_in_group = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_length">vector::length</a>(&employee_group.accounts);
+        <b>let</b> num_employees_in_group = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_length">vector::length</a>(&employee_group.accounts);
 
-        <b>let</b> buy_ins = <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_create">simple_map::create</a>();
+        <b>let</b> buy_ins = <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_create">simple_map::create</a>();
 
         <b>while</b> (j &lt; num_employees_in_group) {
-            <b>let</b> <a href="account.md#0x1_account">account</a> = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&employee_group.accounts, j);
+            <b>let</b> <a href="account.md#0x1_account">account</a> = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&employee_group.accounts, j);
             <b>assert</b>!(
-                !<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_contains">vector::contains</a>(&unique_accounts, <a href="account.md#0x1_account">account</a>),
-                <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="genesis.md#0x1_genesis_EDUPLICATE_ACCOUNT">EDUPLICATE_ACCOUNT</a>),
+                !<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_contains">vector::contains</a>(&unique_accounts, <a href="account.md#0x1_account">account</a>),
+                <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_already_exists">error::already_exists</a>(<a href="genesis.md#0x1_genesis_EDUPLICATE_ACCOUNT">EDUPLICATE_ACCOUNT</a>),
             );
-            <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> unique_accounts, *<a href="account.md#0x1_account">account</a>);
+            <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> unique_accounts, *<a href="account.md#0x1_account">account</a>);
 
             <b>let</b> employee = <a href="create_signer.md#0x1_create_signer">create_signer</a>(*<a href="account.md#0x1_account">account</a>);
             <b>let</b> total = <a href="coin.md#0x1_coin_balance">coin::balance</a>&lt;AptosCoin&gt;(*<a href="account.md#0x1_account">account</a>);
             <b>let</b> coins = <a href="coin.md#0x1_coin_withdraw">coin::withdraw</a>&lt;AptosCoin&gt;(&employee, total);
-            <a href="../../../aptos-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(&<b>mut</b> buy_ins, *<a href="account.md#0x1_account">account</a>, coins);
+            <a href="../../../libra2-stdlib/tests/compiler-v2-doc/simple_map.md#0x1_simple_map_add">simple_map::add</a>(&<b>mut</b> buy_ins, *<a href="account.md#0x1_account">account</a>, coins);
 
             j = j + 1;
         };
 
         <b>let</b> j = 0;
-        <b>let</b> num_vesting_events = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_length">vector::length</a>(&employee_group.vesting_schedule_numerator);
-        <b>let</b> schedule = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_empty">vector::empty</a>();
+        <b>let</b> num_vesting_events = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_length">vector::length</a>(&employee_group.vesting_schedule_numerator);
+        <b>let</b> schedule = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_empty">vector::empty</a>();
 
         <b>while</b> (j &lt; num_vesting_events) {
-            <b>let</b> numerator = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&employee_group.vesting_schedule_numerator, j);
-            <b>let</b> <a href="event.md#0x1_event">event</a> = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/fixed_point32.md#0x1_fixed_point32_create_from_rational">fixed_point32::create_from_rational</a>(*numerator, employee_group.vesting_schedule_denominator);
-            <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> schedule, <a href="event.md#0x1_event">event</a>);
+            <b>let</b> numerator = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_borrow">vector::borrow</a>(&employee_group.vesting_schedule_numerator, j);
+            <b>let</b> <a href="event.md#0x1_event">event</a> = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/fixed_point32.md#0x1_fixed_point32_create_from_rational">fixed_point32::create_from_rational</a>(*numerator, employee_group.vesting_schedule_denominator);
+            <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> schedule, <a href="event.md#0x1_event">event</a>);
 
             j = j + 1;
         };
@@ -602,15 +602,15 @@ If it exists, it just returns the signer.
         <b>let</b> validator = &employee_group.validator.validator_config;
         <b>assert</b>!(
             <a href="account.md#0x1_account_exists_at">account::exists_at</a>(validator.owner_address),
-            <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="genesis.md#0x1_genesis_EACCOUNT_DOES_NOT_EXIST">EACCOUNT_DOES_NOT_EXIST</a>),
+            <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="genesis.md#0x1_genesis_EACCOUNT_DOES_NOT_EXIST">EACCOUNT_DOES_NOT_EXIST</a>),
         );
         <b>assert</b>!(
             <a href="account.md#0x1_account_exists_at">account::exists_at</a>(validator.operator_address),
-            <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="genesis.md#0x1_genesis_EACCOUNT_DOES_NOT_EXIST">EACCOUNT_DOES_NOT_EXIST</a>),
+            <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="genesis.md#0x1_genesis_EACCOUNT_DOES_NOT_EXIST">EACCOUNT_DOES_NOT_EXIST</a>),
         );
         <b>assert</b>!(
             <a href="account.md#0x1_account_exists_at">account::exists_at</a>(validator.voter_address),
-            <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="genesis.md#0x1_genesis_EACCOUNT_DOES_NOT_EXIST">EACCOUNT_DOES_NOT_EXIST</a>),
+            <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/error.md#0x1_error_not_found">error::not_found</a>(<a href="genesis.md#0x1_genesis_EACCOUNT_DOES_NOT_EXIST">EACCOUNT_DOES_NOT_EXIST</a>),
         );
         <b>if</b> (employee_group.validator.join_during_genesis) {
             <a href="genesis.md#0x1_genesis_initialize_validator">initialize_validator</a>(pool_address, validator);
@@ -629,7 +629,7 @@ If it exists, it just returns the signer.
 
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators_with_commission">create_initialize_validators_with_commission</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, use_staking_contract: bool, validators: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">genesis::ValidatorConfigurationWithCommission</a>&gt;)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators_with_commission">create_initialize_validators_with_commission</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, use_staking_contract: bool, validators: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">genesis::ValidatorConfigurationWithCommission</a>&gt;)
 </code></pre>
 
 
@@ -639,11 +639,11 @@ If it exists, it just returns the signer.
 
 
 <pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators_with_commission">create_initialize_validators_with_commission</a>(
-    libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     use_staking_contract: bool,
-    validators: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">ValidatorConfigurationWithCommission</a>&gt;,
+    validators: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">ValidatorConfigurationWithCommission</a>&gt;,
 ) {
-    <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each_ref">vector::for_each_ref</a>(&validators, |validator| {
+    <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each_ref">vector::for_each_ref</a>(&validators, |validator| {
         <b>let</b> validator: &<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">ValidatorConfigurationWithCommission</a> = validator;
         <a href="genesis.md#0x1_genesis_create_initialize_validator">create_initialize_validator</a>(libra2_framework, validator, use_staking_contract);
     });
@@ -676,7 +676,7 @@ Network address fields are a vector per account, where each entry is a vector of
 encoded in a single BCS byte array.
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators">create_initialize_validators</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, validators: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfiguration">genesis::ValidatorConfiguration</a>&gt;)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators">create_initialize_validators</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, validators: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfiguration">genesis::ValidatorConfiguration</a>&gt;)
 </code></pre>
 
 
@@ -685,15 +685,15 @@ encoded in a single BCS byte array.
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators">create_initialize_validators</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, validators: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfiguration">ValidatorConfiguration</a>&gt;) {
-    <b>let</b> validators_with_commission = <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_empty">vector::empty</a>();
-    <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each_reverse">vector::for_each_reverse</a>(validators, |validator| {
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators">create_initialize_validators</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, validators: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfiguration">ValidatorConfiguration</a>&gt;) {
+    <b>let</b> validators_with_commission = <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_empty">vector::empty</a>();
+    <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_for_each_reverse">vector::for_each_reverse</a>(validators, |validator| {
         <b>let</b> validator_with_commission = <a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">ValidatorConfigurationWithCommission</a> {
             validator_config: validator,
             commission_percentage: 0,
             join_during_genesis: <b>true</b>,
         };
-        <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> validators_with_commission, validator_with_commission);
+        <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector_push_back">vector::push_back</a>(&<b>mut</b> validators_with_commission, validator_with_commission);
     });
 
     <a href="genesis.md#0x1_genesis_create_initialize_validators_with_commission">create_initialize_validators_with_commission</a>(libra2_framework, <b>false</b>, validators_with_commission);
@@ -710,7 +710,7 @@ encoded in a single BCS byte array.
 
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validator">create_initialize_validator</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, commission_config: &<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">genesis::ValidatorConfigurationWithCommission</a>, use_staking_contract: bool)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validator">create_initialize_validator</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, commission_config: &<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">genesis::ValidatorConfigurationWithCommission</a>, use_staking_contract: bool)
 </code></pre>
 
 
@@ -720,7 +720,7 @@ encoded in a single BCS byte array.
 
 
 <pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validator">create_initialize_validator</a>(
-    libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
+    libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>,
     commission_config: &<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">ValidatorConfigurationWithCommission</a>,
     use_staking_contract: bool,
 ) {
@@ -806,7 +806,7 @@ encoded in a single BCS byte array.
 The last step of genesis.
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_set_genesis_end">set_genesis_end</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_set_genesis_end">set_genesis_end</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -815,7 +815,7 @@ The last step of genesis.
 <summary>Implementation</summary>
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_set_genesis_end">set_genesis_end</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_set_genesis_end">set_genesis_end</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>) {
     <a href="chain_status.md#0x1_chain_status_set_genesis_end">chain_status::set_genesis_end</a>(libra2_framework);
 }
 </code></pre>
@@ -899,7 +899,7 @@ The last step of genesis.
 ### Function `initialize`
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize">initialize</a>(<a href="gas_schedule.md#0x1_gas_schedule">gas_schedule</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, <a href="chain_id.md#0x1_chain_id">chain_id</a>: u8, initial_version: u64, <a href="consensus_config.md#0x1_consensus_config">consensus_config</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, <a href="execution_config.md#0x1_execution_config">execution_config</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, epoch_interval_microsecs: u64, minimum_stake: u64, maximum_stake: u64, recurring_lockup_duration_secs: u64, allow_validator_set_change: bool, rewards_rate: u64, rewards_rate_denominator: u64, voting_power_increase_limit: u64)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize">initialize</a>(<a href="gas_schedule.md#0x1_gas_schedule">gas_schedule</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, <a href="chain_id.md#0x1_chain_id">chain_id</a>: u8, initial_version: u64, <a href="consensus_config.md#0x1_consensus_config">consensus_config</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, <a href="execution_config.md#0x1_execution_config">execution_config</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;, epoch_interval_microsecs: u64, minimum_stake: u64, maximum_stake: u64, recurring_lockup_duration_secs: u64, allow_validator_set_change: bool, rewards_rate: u64, rewards_rate_denominator: u64, voting_power_increase_limit: u64)
 </code></pre>
 
 
@@ -957,7 +957,7 @@ The last step of genesis.
 ### Function `initialize_aptos_coin`
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize_aptos_coin">initialize_aptos_coin</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_initialize_aptos_coin">initialize_aptos_coin</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -977,7 +977,7 @@ The last step of genesis.
 ### Function `create_initialize_validators_with_commission`
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators_with_commission">create_initialize_validators_with_commission</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, use_staking_contract: bool, validators: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">genesis::ValidatorConfigurationWithCommission</a>&gt;)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators_with_commission">create_initialize_validators_with_commission</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, use_staking_contract: bool, validators: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">genesis::ValidatorConfigurationWithCommission</a>&gt;)
 </code></pre>
 
 
@@ -997,7 +997,7 @@ The last step of genesis.
 ### Function `create_initialize_validators`
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators">create_initialize_validators</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, validators: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfiguration">genesis::ValidatorConfiguration</a>&gt;)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validators">create_initialize_validators</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, validators: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;<a href="genesis.md#0x1_genesis_ValidatorConfiguration">genesis::ValidatorConfiguration</a>&gt;)
 </code></pre>
 
 
@@ -1017,7 +1017,7 @@ The last step of genesis.
 ### Function `create_initialize_validator`
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validator">create_initialize_validator</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, commission_config: &<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">genesis::ValidatorConfigurationWithCommission</a>, use_staking_contract: bool)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_create_initialize_validator">create_initialize_validator</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>, commission_config: &<a href="genesis.md#0x1_genesis_ValidatorConfigurationWithCommission">genesis::ValidatorConfigurationWithCommission</a>, use_staking_contract: bool)
 </code></pre>
 
 
@@ -1033,7 +1033,7 @@ The last step of genesis.
 ### Function `set_genesis_end`
 
 
-<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_set_genesis_end">set_genesis_end</a>(libra2_framework: &<a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
+<pre><code><b>fun</b> <a href="genesis.md#0x1_genesis_set_genesis_end">set_genesis_end</a>(libra2_framework: &<a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/signer.md#0x1_signer">signer</a>)
 </code></pre>
 
 
@@ -1056,7 +1056,7 @@ The last step of genesis.
 
 
 <pre><code><b>schema</b> <a href="genesis.md#0x1_genesis_InitalizeRequires">InitalizeRequires</a> {
-    <a href="execution_config.md#0x1_execution_config">execution_config</a>: <a href="../../../aptos-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
+    <a href="execution_config.md#0x1_execution_config">execution_config</a>: <a href="../../../libra2-stdlib/../move-stdlib/tests/compiler-v2-doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;;
     <b>requires</b> !<b>exists</b>&lt;<a href="account.md#0x1_account_Account">account::Account</a>&gt;(@libra2_framework);
     <b>requires</b> <a href="chain_status.md#0x1_chain_status_is_operating">chain_status::is_operating</a>();
     <b>requires</b> len(<a href="execution_config.md#0x1_execution_config">execution_config</a>) &gt; 0;

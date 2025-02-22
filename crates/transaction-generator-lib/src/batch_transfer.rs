@@ -4,7 +4,7 @@
 use crate::{ObjectPool, TransactionGenerator, TransactionGeneratorCreator};
 use libra2_sdk::{
     move_types::account_address::AccountAddress,
-    transaction_builder::{aptos_stdlib, TransactionFactory},
+    transaction_builder::{libra2_stdlib, TransactionFactory},
     types::{transaction::SignedTransaction, LocalAccount},
 };
 use rand::{rngs::StdRng, SeedableRng};
@@ -49,7 +49,7 @@ impl TransactionGenerator for BatchTransferTransactionGenerator {
                 .clone_from_pool(self.batch_size, &mut self.rng);
             requests.push(
                 account.sign_with_transaction_builder(self.txn_factory.payload(
-                    aptos_stdlib::aptos_account_batch_transfer(receivers, vec![
+                    libra2_stdlib::aptos_account_batch_transfer(receivers, vec![
                         self.send_amount;
                         self.batch_size
                     ]),

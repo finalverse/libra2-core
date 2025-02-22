@@ -36,8 +36,8 @@ return true.
 -  [Function `treat_friend_as_private`](#0x1_features_treat_friend_as_private)
 -  [Function `get_sha_512_and_ripemd_160_feature`](#0x1_features_get_sha_512_and_ripemd_160_feature)
 -  [Function `sha_512_and_ripemd_160_enabled`](#0x1_features_sha_512_and_ripemd_160_enabled)
--  [Function `get_aptos_stdlib_chain_id_feature`](#0x1_features_get_aptos_stdlib_chain_id_feature)
--  [Function `aptos_stdlib_chain_id_enabled`](#0x1_features_aptos_stdlib_chain_id_enabled)
+-  [Function `get_libra2_stdlib_chain_id_feature`](#0x1_features_get_libra2_stdlib_chain_id_feature)
+-  [Function `libra2_stdlib_chain_id_enabled`](#0x1_features_libra2_stdlib_chain_id_enabled)
 -  [Function `get_vm_binary_format_v6`](#0x1_features_get_vm_binary_format_v6)
 -  [Function `allow_vm_binary_format_v6`](#0x1_features_allow_vm_binary_format_v6)
 -  [Function `get_collect_and_distribute_gas_fees_feature`](#0x1_features_get_collect_and_distribute_gas_fees_feature)
@@ -265,18 +265,6 @@ Lifetime: transient
 
 
 <pre><code><b>const</b> <a href="features.md#0x1_features_AGGREGATOR_V2_IS_AT_LEAST_API">AGGREGATOR_V2_IS_AT_LEAST_API</a>: u64 = 66;
-</code></pre>
-
-
-
-<a id="0x1_features_APTOS_STD_CHAIN_ID_NATIVES"></a>
-
-Whether the new <code>aptos_stdlib::type_info::chain_id()</code> native for fetching the chain ID is enabled.
-This is needed because of the introduction of a new native function.
-Lifetime: transient
-
-
-<pre><code><b>const</b> <a href="features.md#0x1_features_APTOS_STD_CHAIN_ID_NATIVES">APTOS_STD_CHAIN_ID_NATIVES</a>: u64 = 4;
 </code></pre>
 
 
@@ -624,6 +612,18 @@ Lifetime: transient
 
 
 
+<a id="0x1_features_LIBRA2_STD_CHAIN_ID_NATIVES"></a>
+
+Whether the new <code>libra2_stdlib::type_info::chain_id()</code> native for fetching the chain ID is enabled.
+This is needed because of the introduction of a new native function.
+Lifetime: transient
+
+
+<pre><code><b>const</b> <a href="features.md#0x1_features_LIBRA2_STD_CHAIN_ID_NATIVES">LIBRA2_STD_CHAIN_ID_NATIVES</a>: u64 = 4;
+</code></pre>
+
+
+
 <a id="0x1_features_LIMIT_MAX_IDENTIFIER_LENGTH"></a>
 
 
@@ -691,7 +691,7 @@ Lifetime: transient
 
 <a id="0x1_features_MULTI_ED25519_PK_VALIDATE_V2_NATIVES"></a>
 
-Whether the new <code>aptos_stdlib::multi_ed25519::public_key_validate_internal_v2()</code> native is enabled.
+Whether the new <code>libra2_stdlib::multi_ed25519::public_key_validate_internal_v2()</code> native is enabled.
 This is needed because of the introduction of a new native function.
 Lifetime: transient
 
@@ -1068,13 +1068,13 @@ Lifetime: transient
 
 </details>
 
-<a id="0x1_features_get_aptos_stdlib_chain_id_feature"></a>
+<a id="0x1_features_get_libra2_stdlib_chain_id_feature"></a>
 
-## Function `get_aptos_stdlib_chain_id_feature`
+## Function `get_libra2_stdlib_chain_id_feature`
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="features.md#0x1_features_get_aptos_stdlib_chain_id_feature">get_aptos_stdlib_chain_id_feature</a>(): u64
+<pre><code><b>public</b> <b>fun</b> <a href="features.md#0x1_features_get_libra2_stdlib_chain_id_feature">get_libra2_stdlib_chain_id_feature</a>(): u64
 </code></pre>
 
 
@@ -1083,20 +1083,20 @@ Lifetime: transient
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="features.md#0x1_features_get_aptos_stdlib_chain_id_feature">get_aptos_stdlib_chain_id_feature</a>(): u64 { <a href="features.md#0x1_features_APTOS_STD_CHAIN_ID_NATIVES">APTOS_STD_CHAIN_ID_NATIVES</a> }
+<pre><code><b>public</b> <b>fun</b> <a href="features.md#0x1_features_get_libra2_stdlib_chain_id_feature">get_libra2_stdlib_chain_id_feature</a>(): u64 { <a href="features.md#0x1_features_LIBRA2_STD_CHAIN_ID_NATIVES">LIBRA2_STD_CHAIN_ID_NATIVES</a> }
 </code></pre>
 
 
 
 </details>
 
-<a id="0x1_features_aptos_stdlib_chain_id_enabled"></a>
+<a id="0x1_features_libra2_stdlib_chain_id_enabled"></a>
 
-## Function `aptos_stdlib_chain_id_enabled`
+## Function `libra2_stdlib_chain_id_enabled`
 
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="features.md#0x1_features_aptos_stdlib_chain_id_enabled">aptos_stdlib_chain_id_enabled</a>(): bool
+<pre><code><b>public</b> <b>fun</b> <a href="features.md#0x1_features_libra2_stdlib_chain_id_enabled">libra2_stdlib_chain_id_enabled</a>(): bool
 </code></pre>
 
 
@@ -1105,8 +1105,8 @@ Lifetime: transient
 <summary>Implementation</summary>
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="features.md#0x1_features_aptos_stdlib_chain_id_enabled">aptos_stdlib_chain_id_enabled</a>(): bool <b>acquires</b> <a href="features.md#0x1_features_Features">Features</a> {
-    <a href="features.md#0x1_features_is_enabled">is_enabled</a>(<a href="features.md#0x1_features_APTOS_STD_CHAIN_ID_NATIVES">APTOS_STD_CHAIN_ID_NATIVES</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="features.md#0x1_features_libra2_stdlib_chain_id_enabled">libra2_stdlib_chain_id_enabled</a>(): bool <b>acquires</b> <a href="features.md#0x1_features_Features">Features</a> {
+    <a href="features.md#0x1_features_is_enabled">is_enabled</a>(<a href="features.md#0x1_features_LIBRA2_STD_CHAIN_ID_NATIVES">LIBRA2_STD_CHAIN_ID_NATIVES</a>)
 }
 </code></pre>
 
@@ -3801,17 +3801,6 @@ Helper to check whether a feature flag is enabled.
 ## Specification
 
 
-
-<a id="0x1_features_spec_sha_512_and_ripemd_160_enabled"></a>
-
-
-<pre><code><b>fun</b> <a href="features.md#0x1_features_spec_sha_512_and_ripemd_160_enabled">spec_sha_512_and_ripemd_160_enabled</a>(): bool {
-   <a href="features.md#0x1_features_spec_is_enabled">spec_is_enabled</a>(<a href="features.md#0x1_features_SHA_512_AND_RIPEMD_160_NATIVES">SHA_512_AND_RIPEMD_160_NATIVES</a>)
-}
-</code></pre>
-
-
-
 <a id="@Specification_1_Features"></a>
 
 ### Resource `Features`
@@ -4045,6 +4034,17 @@ Helper to check whether a feature flag is enabled.
 <b>let</b> <b>post</b> features_std = <b>global</b>&lt;<a href="features.md#0x1_features_Features">Features</a>&gt;(@std).<a href="features.md#0x1_features">features</a>;
 <b>ensures</b> <b>exists</b>&lt;<a href="features.md#0x1_features_PendingFeatures">PendingFeatures</a>&gt;(@std) ==&gt; features_std == features_pending;
 <b>aborts_if</b> <b>false</b>;
+</code></pre>
+
+
+
+
+<a id="0x1_features_spec_sha_512_and_ripemd_160_enabled"></a>
+
+
+<pre><code><b>fun</b> <a href="features.md#0x1_features_spec_sha_512_and_ripemd_160_enabled">spec_sha_512_and_ripemd_160_enabled</a>(): bool {
+   <a href="features.md#0x1_features_spec_is_enabled">spec_is_enabled</a>(<a href="features.md#0x1_features_SHA_512_AND_RIPEMD_160_NATIVES">SHA_512_AND_RIPEMD_160_NATIVES</a>)
+}
 </code></pre>
 
 

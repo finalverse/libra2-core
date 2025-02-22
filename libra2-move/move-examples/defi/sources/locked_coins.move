@@ -17,7 +17,7 @@ module defi::locked_coins {
     use libra2_framework::coin::{Self, Coin};
     use libra2_framework::event;
     use libra2_framework::timestamp;
-    use aptos_std::table::{Self, Table};
+    use libra2_std::table::{Self, Table};
     use std::error;
     use std::signer;
     use std::vector;

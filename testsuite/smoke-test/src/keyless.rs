@@ -3,7 +3,7 @@
 
 use crate::{smoke_test_environment::SwarmBuilder, utils::get_on_chain_resource};
 use aptos::{common::types::GasOptions, test::CliTestFramework};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_crypto::{
     ed25519::Ed25519PrivateKey, poseidon_bn254::keyless::fr_to_bytes_le, PrivateKey, SigningKey,
 };
@@ -377,7 +377,7 @@ script {{
 
     let txn_builder = info
         .transaction_factory()
-        .payload(aptos_stdlib::aptos_coin_transfer(
+        .payload(libra2_stdlib::aptos_coin_transfer(
             recipient.address(),
             1_000_000,
         ));
@@ -484,7 +484,7 @@ async fn test_keyless_groth16_verifies_using_rust_sdk() {
 
     let builder = info
         .transaction_factory()
-        .payload(aptos_stdlib::aptos_coin_transfer(recipient.address(), 100));
+        .payload(libra2_stdlib::aptos_coin_transfer(recipient.address(), 100));
     let signed_txn = account.sign_with_transaction_builder(builder);
 
     remove_training_wheels(&mut cli, &mut info, root_idx).await;
@@ -549,7 +549,7 @@ async fn test_keyless_groth16_verifies_using_rust_sdk_from_jwt() {
 
     let builder = info
         .transaction_factory()
-        .payload(aptos_stdlib::aptos_coin_transfer(recipient.address(), 100));
+        .payload(libra2_stdlib::aptos_coin_transfer(recipient.address(), 100));
     let signed_txn = account.sign_with_transaction_builder(builder);
 
     remove_training_wheels(&mut cli, &mut info, root_idx).await;
@@ -666,7 +666,7 @@ async fn sign_transaction_any_keyless_pk<'a>(
 
     let raw_txn = info
         .transaction_factory()
-        .payload(aptos_stdlib::aptos_coin_transfer(
+        .payload(libra2_stdlib::aptos_coin_transfer(
             recipient.address(),
             1_000_000,
         ))

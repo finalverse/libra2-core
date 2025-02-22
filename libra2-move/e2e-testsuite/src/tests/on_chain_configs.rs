@@ -2,7 +2,7 @@
 // Parts of the project are originally copyright © Meta Platforms, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_language_e2e_tests::{common_transactions::peer_to_peer_txn, executor::FakeExecutor};
 use libra2_types::{
     account_config::CORE_CODE_ADDRESS,
@@ -21,12 +21,12 @@ fn initial_aptos_version() {
     let account = executor.new_account_at(CORE_CODE_ADDRESS);
     let txn_0 = account
         .transaction()
-        .payload(aptos_stdlib::version_set_for_next_epoch(version.major + 1))
+        .payload(libra2_stdlib::version_set_for_next_epoch(version.major + 1))
         .sequence_number(0)
         .sign();
     let txn_1 = account
         .transaction()
-        .payload(aptos_stdlib::aptos_governance_force_end_epoch())
+        .payload(libra2_stdlib::aptos_governance_force_end_epoch())
         .sequence_number(1)
         .sign();
     executor.new_block();
@@ -53,7 +53,7 @@ fn drop_txn_after_reconfiguration() {
     let txn = executor
         .new_account_at(CORE_CODE_ADDRESS)
         .transaction()
-        .payload(aptos_stdlib::aptos_governance_force_end_epoch())
+        .payload(libra2_stdlib::aptos_governance_force_end_epoch())
         .sequence_number(0)
         .sign();
     executor.new_block();

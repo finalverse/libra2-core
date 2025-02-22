@@ -4,7 +4,7 @@
 use super::Test;
 use crate::{CoreContext, Result, TestReport};
 use anyhow::anyhow;
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_logger::info;
 use libra2_rest_client::{Client as RestClient, PendingTransaction, State, Transaction};
 use libra2_sdk::{
@@ -163,7 +163,7 @@ impl AptosPublicInfo {
         let create_account_txn =
             self.root_account
                 .sign_with_transaction_builder(self.transaction_factory().payload(
-                    aptos_stdlib::aptos_account_create_account(auth_key.account_address()),
+                    libra2_stdlib::aptos_account_create_account(auth_key.account_address()),
                 ));
         self.rest_client
             .submit_and_wait(&create_account_txn)
@@ -179,7 +179,7 @@ impl AptosPublicInfo {
         let create_account_txn =
             self.root_account
                 .sign_with_transaction_builder(self.transaction_factory().payload(
-                    aptos_stdlib::aptos_account_create_account(auth_key.account_address()),
+                    libra2_stdlib::aptos_account_create_account(auth_key.account_address()),
                 ));
         self.rest_client
             .submit_and_wait(&create_account_txn)
@@ -190,7 +190,7 @@ impl AptosPublicInfo {
     pub async fn mint(&mut self, addr: AccountAddress, amount: u64) -> Result<()> {
         let mint_txn = self.root_account.sign_with_transaction_builder(
             self.transaction_factory()
-                .payload(aptos_stdlib::aptos_coin_mint(addr, amount)),
+                .payload(libra2_stdlib::aptos_coin_mint(addr, amount)),
         );
         self.rest_client.submit_and_wait(&mint_txn).await?;
         Ok(())
@@ -203,7 +203,7 @@ impl AptosPublicInfo {
         amount: u64,
     ) -> Result<PendingTransaction> {
         let tx = from_account.sign_with_transaction_builder(self.transaction_factory().payload(
-            aptos_stdlib::aptos_coin_transfer(to_account.address(), amount),
+            libra2_stdlib::aptos_coin_transfer(to_account.address(), amount),
         ));
         let pending_txn = self.rest_client.submit(&tx).await?.into_inner();
         Ok(pending_txn)
@@ -336,7 +336,7 @@ pub async fn reconfig(
         vec![root_account.sign_with_transaction_builder(
             transaction_factory
                 .clone()
-                .payload(aptos_stdlib::aptos_governance_force_end_epoch_test_only()),
+                .payload(libra2_stdlib::aptos_governance_force_end_epoch_test_only()),
         )]
     };
 

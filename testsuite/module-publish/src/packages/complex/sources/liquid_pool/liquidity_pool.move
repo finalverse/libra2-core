@@ -10,11 +10,11 @@ module publisher_address::liquidity_pool {
     };
     use libra2_framework::object::{Self, ConstructorRef, Object};
     use libra2_framework::primary_fungible_store;
-    // use aptos_std::comparator;
-    use aptos_std::math128;
-    use aptos_std::math64;
-    use aptos_std::smart_table::{Self, SmartTable};
-    use aptos_std::smart_vector::{Self, SmartVector};
+    // use libra2_std::comparator;
+    use libra2_std::math128;
+    use libra2_std::math64;
+    use libra2_std::smart_table::{Self, SmartTable};
+    use libra2_std::smart_vector::{Self, SmartVector};
 
     use std::bcs;
     use std::option;

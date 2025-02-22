@@ -126,12 +126,12 @@ $\Sigma$-bullets modification of Bulletproofs.
 
 
 <pre><code><b>use</b> <a href="helpers.md#0x1337_helpers">0x1337::helpers</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255.md#0x1_ristretto255">0x1::ristretto255</a>;
+<b>use</b> <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/error.md#0x1_error">0x1::error</a>;
+<b>use</b> <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/option.md#0x1_option">0x1::option</a>;
+<b>use</b> <a href="../../../framework/libra2-stdlib/doc/ristretto255.md#0x1_ristretto255">0x1::ristretto255</a>;
 <b>use</b> <a href="">0x1::ristretto255_elgamal</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen">0x1::ristretto255_pedersen</a>;
-<b>use</b> <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">0x1::vector</a>;
+<b>use</b> <a href="../../../framework/libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen">0x1::ristretto255_pedersen</a>;
+<b>use</b> <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">0x1::vector</a>;
 </code></pre>
 
 
@@ -182,7 +182,7 @@ The $\Sigma$-protocol proof for withdrawals did not verify.
 The domain separation tag (DST) used in the Fiat-Shamir transform of our $\Sigma$-protocol.
 
 
-<pre><code><b>const</b> <a href="sigma_protos.md#0x1337_sigma_protos_FIAT_SHAMIR_SIGMA_DST">FIAT_SHAMIR_SIGMA_DST</a>: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [65, 112, 116, 111, 115, 86, 101, 105, 108, 101, 100, 67, 111, 105, 110, 47, 87, 105, 116, 104, 100, 114, 97, 119, 97, 108, 83, 117, 98, 112, 114, 111, 111, 102, 70, 105, 97, 116, 83, 104, 97, 109, 105, 114];
+<pre><code><b>const</b> <a href="sigma_protos.md#0x1337_sigma_protos_FIAT_SHAMIR_SIGMA_DST">FIAT_SHAMIR_SIGMA_DST</a>: <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt; = [65, 112, 116, 111, 115, 86, 101, 105, 108, 101, 100, 67, 111, 105, 110, 47, 87, 105, 116, 104, 100, 114, 97, 119, 97, 108, 83, 117, 98, 112, 114, 111, 111, 102, 70, 105, 97, 116, 83, 104, 97, 109, 105, 114];
 </code></pre>
 
 
@@ -201,7 +201,7 @@ In addition, it argues that the sender's new balance $b$ committed to by sender_
 as the value encrypted by the ciphertext obtained by subtracting withdraw_ct from sender_curr_balance_ct
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="sigma_protos.md#0x1337_sigma_protos_verify_transfer_subproof">verify_transfer_subproof</a>(sender_pk: &<a href="_CompressedPubkey">ristretto255_elgamal::CompressedPubkey</a>, recipient_pk: &<a href="_CompressedPubkey">ristretto255_elgamal::CompressedPubkey</a>, withdraw_ct: &<a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, deposit_ct: &<a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, comm_amount: &<a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, sender_new_balance_comm: &<a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, sender_curr_balance_ct: &<a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, proof: &<a href="sigma_protos.md#0x1337_sigma_protos_TransferSubproof">sigma_protos::TransferSubproof</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="sigma_protos.md#0x1337_sigma_protos_verify_transfer_subproof">verify_transfer_subproof</a>(sender_pk: &<a href="_CompressedPubkey">ristretto255_elgamal::CompressedPubkey</a>, recipient_pk: &<a href="_CompressedPubkey">ristretto255_elgamal::CompressedPubkey</a>, withdraw_ct: &<a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, deposit_ct: &<a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, comm_amount: &<a href="../../../framework/libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, sender_new_balance_comm: &<a href="../../../framework/libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, sender_curr_balance_ct: &<a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, proof: &<a href="sigma_protos.md#0x1337_sigma_protos_TransferSubproof">sigma_protos::TransferSubproof</a>)
 </code></pre>
 
 
@@ -216,7 +216,7 @@ Specifically, the proof argues that the same amount $v$ is Pedersen-committed in
 ElGamal-encrypted in the ciphertext obtained by subtracting the ciphertext (vG, 0G) from sender_curr_balance_ct
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="sigma_protos.md#0x1337_sigma_protos_verify_withdrawal_subproof">verify_withdrawal_subproof</a>(sender_pk: &<a href="_CompressedPubkey">ristretto255_elgamal::CompressedPubkey</a>, sender_curr_balance_ct: &<a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, sender_new_balance_comm: &<a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, amount: &<a href="../../../framework/libra2-framework/../aptos-stdlib/doc/ristretto255.md#0x1_ristretto255_Scalar">ristretto255::Scalar</a>, proof: &<a href="sigma_protos.md#0x1337_sigma_protos_WithdrawalSubproof">sigma_protos::WithdrawalSubproof</a>)
+<pre><code><b>public</b> <b>fun</b> <a href="sigma_protos.md#0x1337_sigma_protos_verify_withdrawal_subproof">verify_withdrawal_subproof</a>(sender_pk: &<a href="_CompressedPubkey">ristretto255_elgamal::CompressedPubkey</a>, sender_curr_balance_ct: &<a href="_Ciphertext">ristretto255_elgamal::Ciphertext</a>, sender_new_balance_comm: &<a href="../../../framework/libra2-stdlib/doc/ristretto255_pedersen.md#0x1_ristretto255_pedersen_Commitment">ristretto255_pedersen::Commitment</a>, amount: &<a href="../../../framework/libra2-stdlib/doc/ristretto255.md#0x1_ristretto255_Scalar">ristretto255::Scalar</a>, proof: &<a href="sigma_protos.md#0x1337_sigma_protos_WithdrawalSubproof">sigma_protos::WithdrawalSubproof</a>)
 </code></pre>
 
 
@@ -228,7 +228,7 @@ ElGamal-encrypted in the ciphertext obtained by subtracting the ciphertext (vG, 
 Deserializes and returns an <code><a href="sigma_protos.md#0x1337_sigma_protos_WithdrawalSubproof">WithdrawalSubproof</a></code> given its byte representation.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="sigma_protos.md#0x1337_sigma_protos_deserialize_withdrawal_subproof">deserialize_withdrawal_subproof</a>(proof_bytes: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="sigma_protos.md#0x1337_sigma_protos_WithdrawalSubproof">sigma_protos::WithdrawalSubproof</a>&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="sigma_protos.md#0x1337_sigma_protos_deserialize_withdrawal_subproof">deserialize_withdrawal_subproof</a>(proof_bytes: <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="sigma_protos.md#0x1337_sigma_protos_WithdrawalSubproof">sigma_protos::WithdrawalSubproof</a>&gt;
 </code></pre>
 
 
@@ -240,5 +240,5 @@ Deserializes and returns an <code><a href="sigma_protos.md#0x1337_sigma_protos_W
 Deserializes and returns a <code><a href="sigma_protos.md#0x1337_sigma_protos_TransferSubproof">TransferSubproof</a></code> given its byte representation.
 
 
-<pre><code><b>public</b> <b>fun</b> <a href="sigma_protos.md#0x1337_sigma_protos_deserialize_transfer_subproof">deserialize_transfer_subproof</a>(proof_bytes: <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../framework/libra2-framework/../aptos-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="sigma_protos.md#0x1337_sigma_protos_TransferSubproof">sigma_protos::TransferSubproof</a>&gt;
+<pre><code><b>public</b> <b>fun</b> <a href="sigma_protos.md#0x1337_sigma_protos_deserialize_transfer_subproof">deserialize_transfer_subproof</a>(proof_bytes: <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/vector.md#0x1_vector">vector</a>&lt;u8&gt;): <a href="../../../framework/libra2-stdlib/../move-stdlib/doc/option.md#0x1_option_Option">option::Option</a>&lt;<a href="sigma_protos.md#0x1337_sigma_protos_TransferSubproof">sigma_protos::TransferSubproof</a>&gt;
 </code></pre>

@@ -3,9 +3,9 @@ module libra2_framework::delegation_pool_integration_tests {
     use std::features;
     use std::signer;
 
-    use aptos_std::bls12381;
-    use aptos_std::stake;
-    use aptos_std::vector;
+    use libra2_std::bls12381;
+    use libra2_std::stake;
+    use libra2_std::vector;
 
     use libra2_framework::account;
     use libra2_framework::aptos_coin::AptosCoin;

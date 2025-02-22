@@ -456,8 +456,8 @@ move-compiler/tests/move_check/parser/address_too_long_decimal.exp   move-compil
 move-compiler/tests/move_check/parser/address_too_long_decimal_exp.exp   move-compiler-v2/tests/more-v1/parser/address_too_long_decimal_exp.exp
 move-compiler/tests/move_check/parser/address_too_long_exp.exp   move-compiler-v2/tests/more-v1/parser/address_too_long_exp.exp
 move-compiler/tests/move_check/parser/anonymous_field_fail.exp   move-compiler-v2/tests/checking-lang-v1/anonymous_field_fail.exp
-move-compiler/tests/move_check/parser/aptos_stdlib_attributes.exp   move-compiler-v2/tests/checking/attributes/aptos_stdlib_attributes.exp
-move-compiler/tests/move_check/parser/aptos_stdlib_attributes2.exp   move-compiler-v2/tests/checking/attributes/aptos_stdlib_attributes2.exp
+move-compiler/tests/move_check/parser/libra2_stdlib_attributes.exp   move-compiler-v2/tests/checking/attributes/libra2_stdlib_attributes.exp
+move-compiler/tests/move_check/parser/libra2_stdlib_attributes2.exp   move-compiler-v2/tests/checking/attributes/libra2_stdlib_attributes2.exp
 move-compiler/tests/move_check/parser/attribute_no_closing_bracket.exp   move-compiler-v2/tests/checking/attributes/attribute_no_closing_bracket.exp
 move-compiler/tests/move_check/parser/attribute_num_sign_no_bracket.exp   move-compiler-v2/tests/checking/attributes/attribute_num_sign_no_bracket.exp
 move-compiler/tests/move_check/parser/attribute_placement.exp   move-compiler-v2/tests/checking/attributes/attribute_placement.exp
@@ -660,8 +660,8 @@ move-compiler/tests/move_check/translated_ir_tests/move/signer/write_ref.exp   m
 move-compiler/tests/move_check/simplifier/moved_var_not_simplified.exp   move-compiler-v2/tests/simplifier/moved_var_not_simplified.exp
 move-compiler/tests/move_check/simplifier/moved_var_not_simplified2.exp   move-compiler-v2/tests/simplifier/moved_var_not_simplified2.exp
 move-compiler/tests/move_check/simplifier/moved_var_not_simplified3.exp   move-compiler-v2/tests/more-v1/simplifier/moved_var_not_simplified3.exp
-move-compiler/tests/move_check/skip_attribute_checks/aptos_stdlib_attributes.exp   move-compiler-v2/tests/skip_attribute_checks/aptos_stdlib_attributes.exp
-move-compiler/tests/move_check/skip_attribute_checks/aptos_stdlib_attributes2.exp   move-compiler-v2/tests/skip_attribute_checks/aptos_stdlib_attributes2.exp
+move-compiler/tests/move_check/skip_attribute_checks/libra2_stdlib_attributes.exp   move-compiler-v2/tests/skip_attribute_checks/libra2_stdlib_attributes.exp
+move-compiler/tests/move_check/skip_attribute_checks/libra2_stdlib_attributes2.exp   move-compiler-v2/tests/skip_attribute_checks/libra2_stdlib_attributes2.exp
 move-compiler/tests/move_check/skip_attribute_checks/attribute_no_closing_bracket.exp   move-compiler-v2/tests/skip_attribute_checks/attribute_no_closing_bracket.exp
 move-compiler/tests/move_check/skip_attribute_checks/attribute_placement.exp   move-compiler-v2/tests/skip_attribute_checks/attribute_placement.exp
 move-compiler/tests/move_check/skip_attribute_checks/attribute_variants.exp   move-compiler-v2/tests/skip_attribute_checks/attribute_variants.exp

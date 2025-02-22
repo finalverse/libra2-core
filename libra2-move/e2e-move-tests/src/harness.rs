@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::{assert_success, build_package, AptosPackageHooks};
-use libra2_cached_packages::aptos_stdlib;
+use libra2_cached_packages::libra2_stdlib;
 use libra2_framework::{natives::code::PackageMetadata, BuildOptions, BuiltPackage};
 use libra2_gas_profiling::TransactionGasLog;
 use libra2_gas_schedule::{
@@ -445,7 +445,7 @@ impl MoveHarness {
         patch_metadata(&mut metadata);
         self.create_transaction_payload(
             account,
-            aptos_stdlib::code_publish_package_txn(
+            libra2_stdlib::code_publish_package_txn(
                 bcs::to_bytes(&metadata).expect("PackageMetadata has BCS"),
                 code,
             ),
@@ -469,7 +469,7 @@ impl MoveHarness {
         patch_metadata(&mut metadata);
         self.create_transaction_payload(
             account,
-            aptos_stdlib::object_code_deployment_publish(
+            libra2_stdlib::object_code_deployment_publish(
                 bcs::to_bytes(&metadata).expect("PackageMetadata has BCS"),
                 code,
             ),
@@ -494,7 +494,7 @@ impl MoveHarness {
         patch_metadata(&mut metadata);
         self.create_transaction_payload(
             account,
-            aptos_stdlib::object_code_deployment_upgrade(
+            libra2_stdlib::object_code_deployment_upgrade(
                 bcs::to_bytes(&metadata).expect("PackageMetadata has BCS"),
                 code,
                 code_object,
@@ -619,7 +619,7 @@ impl MoveHarness {
     ) -> TransactionStatus {
         let txn = self.create_transaction_payload(
             account,
-            aptos_stdlib::object_code_deployment_freeze_code_object(code_object),
+            libra2_stdlib::object_code_deployment_freeze_code_object(code_object),
         );
         self.run(txn)
     }

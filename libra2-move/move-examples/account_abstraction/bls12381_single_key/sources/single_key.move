@@ -1,7 +1,7 @@
 module aa::single_key {
     use std::option;
     use std::signer;
-    use aptos_std::bls12381::{Self, PublicKey};
+    use libra2_std::bls12381::{Self, PublicKey};
     use libra2_framework::auth_data::{Self, AbstractionAuthData};
 
     /// Only fungible asset metadata owner can make changes.

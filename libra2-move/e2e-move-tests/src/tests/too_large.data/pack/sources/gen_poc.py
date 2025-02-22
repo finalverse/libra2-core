@@ -16,7 +16,7 @@ for _ in range(DEPTH):
 generics = ','.join(f'phantom T{i}' for i in range(FANOUT))
 module_code = f"""
 module poc::{module_name} {{
-    use aptos_std::from_bcs::to_address;
+    use libra2_std::from_bcs::to_address;
     use std::bcs::to_bytes;
     struct {huge_type_name}<{generics}> has key, store, drop, copy {{
         x: u8

@@ -1,8 +1,8 @@
 
 module 0xABCD::maps_example {
-    use aptos_std::big_ordered_map;
-    use aptos_std::ordered_map;
-    use aptos_std::simple_map;
+    use libra2_std::big_ordered_map;
+    use libra2_std::ordered_map;
+    use libra2_std::simple_map;
 
     const OFFSET: u64 = 270001;
     const MOD: u64 = 1000000;

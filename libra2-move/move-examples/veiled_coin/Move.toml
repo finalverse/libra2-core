@@ -7,6 +7,6 @@ Libra2Framework = { git = "https://github.com/aptos-labs/libra2-framework.git", 
 
 [addresses]
 std = "0x1"
-aptos_std = "0x1"
+libra2_std = "0x1"
 libra2_framework = "0x1"
 veiled_coin = "_"
