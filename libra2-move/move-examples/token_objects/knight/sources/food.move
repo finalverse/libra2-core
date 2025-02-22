@@ -4,9 +4,9 @@ module knight::food {
     use libra2_framework::fungible_asset::{Self, Metadata};
     use libra2_framework::object::{Self, Object};
     use libra2_framework::primary_fungible_store;
-    use aptos_token_objects::collection;
-    use aptos_token_objects::property_map;
-    use aptos_token_objects::token;
+    use libra2_token_objects::collection;
+    use libra2_token_objects::property_map;
+    use libra2_token_objects::token;
     use std::error;
     use std::option;
     use std::signer;

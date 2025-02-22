@@ -465,8 +465,8 @@ fn module_is_in_aptos_libs(module_address: Option<Spanned<Address>>) -> bool {
     const APTOS_TOKEN_NAME: &str = "aptos_token";
     static APTOS_TOKEN_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
         Lazy::new(|| NumericalAddress::parse_str("0x3").unwrap());
-    const APTOS_TOKEN_OBJECTS_NAME: &str = "aptos_token_objects";
-    static APTOS_TOKEN_OBJECTS_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
+    const LIBRA2_TOKEN_OBJECTS_NAME: &str = "libra2_token_objects";
+    static LIBRA2_TOKEN_OBJECTS_NUMERICAL_ADDRESS: Lazy<NumericalAddress> =
         Lazy::new(|| NumericalAddress::parse_str("0x4").unwrap());
     match &module_address {
         Some(spanned_address) => {
@@ -483,9 +483,9 @@ fn module_is_in_aptos_libs(module_address: Option<Spanned<Address>>) -> bool {
                             || ((&spanned_symbol.value as &str) == APTOS_TOKEN_NAME
                                 && (spanned_numerical_address.value
                                     == *APTOS_TOKEN_NUMERICAL_ADDRESS))
-                            || ((&spanned_symbol.value as &str) == APTOS_TOKEN_OBJECTS_NAME
+                            || ((&spanned_symbol.value as &str) == LIBRA2_TOKEN_OBJECTS_NAME
                                 && (spanned_numerical_address.value
-                                    == *APTOS_TOKEN_OBJECTS_NUMERICAL_ADDRESS))
+                                    == *LIBRA2_TOKEN_OBJECTS_NUMERICAL_ADDRESS))
                     },
                     None => false,
                 },

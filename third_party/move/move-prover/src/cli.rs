@@ -180,10 +180,10 @@ impl Options {
                     .help("prints the effective toml configuration, then exits")
             )
             .arg(
-                Arg::new("aptos")
-                    .long("aptos")
+                Arg::new("libra2")
+                    .long("libra2")
                     .action(SetTrue)
-                    .help("configures the prover to use Aptos natives")
+                    .help("configures the prover to use Libra2 natives")
             )
             .arg(
                 Arg::new("compiler-v2")
@@ -803,10 +803,10 @@ impl Options {
             options.prover.ban_int_2_bv = true;
         }
 
-        if matches.get_flag("aptos") {
+        if matches.get_flag("libra2") {
             options.backend.custom_natives = Some(CustomNativeOptions {
                 template_bytes: include_bytes!(
-                    "../../../../libra2-move/framework/src/aptos-natives.bpl"
+                    "../../../../libra2-move/framework/src/libra2-natives.bpl"
                 )
                 .to_vec(),
                 module_instance_names: options::custom_native_options(),

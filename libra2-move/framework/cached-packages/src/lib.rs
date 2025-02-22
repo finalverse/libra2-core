@@ -6,7 +6,7 @@ use once_cell::sync::Lazy;
 
 pub mod libra2_framework_sdk_builder;
 pub mod aptos_stdlib;
-pub mod aptos_token_objects_sdk_builder;
+pub mod libra2_token_objects_sdk_builder;
 pub mod aptos_token_sdk_builder;
 
 #[cfg(unix)]

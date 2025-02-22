@@ -3,7 +3,7 @@ module token_lockup::unit_tests {
    use libra2_framework::object;
    use libra2_framework::account;
    use libra2_framework::timestamp;
-   use aptos_token_objects::token::{Token};
+   use libra2_token_objects::token::{Token};
    use std::signer;
    use std::string::{Self};
    use token_lockup::token_lockup;

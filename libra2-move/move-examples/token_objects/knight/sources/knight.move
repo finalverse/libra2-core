@@ -4,9 +4,9 @@
 module knight::knight {
     use libra2_framework::event;
     use libra2_framework::object::{Self, Object};
-    use aptos_token_objects::collection;
-    use aptos_token_objects::property_map;
-    use aptos_token_objects::token;
+    use libra2_token_objects::collection;
+    use libra2_token_objects::property_map;
+    use libra2_token_objects::token;
     use std::option;
     use std::signer;
     use std::string::{Self, String};

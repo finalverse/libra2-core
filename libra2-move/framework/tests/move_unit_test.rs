@@ -56,7 +56,7 @@ pub fn aptos_test_natives() -> NativeFunctionTable {
     natives::configure_for_unit_test();
     extended_checks::configure_extended_checks_for_unit_test();
     // move_stdlib has the testing feature enabled to include debug native functions
-    natives::aptos_natives(
+    natives::libra2_natives(
         LATEST_GAS_FEATURE_VERSION,
         NativeGasParameters::zeros(),
         MiscGasParameters::zeros(),
@@ -87,5 +87,5 @@ fn move_token_unit_tests() {
 
 #[test]
 fn move_token_objects_unit_tests() {
-    run_tests_for_pkg("aptos-token-objects");
+    run_tests_for_pkg("libra2-token-objects");
 }

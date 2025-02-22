@@ -4,7 +4,7 @@
 /// * Explicit data model for token metadata via adjacent resources
 /// * Extensible framework for tokens
 ///
-module aptos_token_objects::token {
+module libra2_token_objects::token {
     use std::error;
     use std::features;
     use std::option::{Self, Option};
@@ -14,8 +14,8 @@ module aptos_token_objects::token {
     use libra2_framework::aggregator_v2::{Self, AggregatorSnapshot, DerivedStringSnapshot};
     use libra2_framework::event;
     use libra2_framework::object::{Self, ConstructorRef, Object};
-    use aptos_token_objects::collection::{Self, Collection};
-    use aptos_token_objects::royalty::{Self, Royalty};
+    use libra2_token_objects::collection::{Self, Collection};
+    use libra2_token_objects::royalty::{Self, Royalty};
 
     #[test_only]
     use libra2_framework::object::ExtendRef;
@@ -897,7 +897,7 @@ module aptos_token_objects::token {
     }
 
     #[test(creator = @0x123, trader = @0x456)]
-    #[expected_failure(abort_code = 0x40002, location = aptos_token_objects::token)]
+    #[expected_failure(abort_code = 0x40002, location = libra2_token_objects::token)]
     fun test_create_token_non_creator(creator: &signer, trader: &signer) {
         let constructor_ref = &create_fixed_collection(creator, string::utf8(b"collection name"), 5);
         let collection = get_collection_from_ref(&object::generate_extend_ref(constructor_ref));
@@ -908,7 +908,7 @@ module aptos_token_objects::token {
     }
 
     #[test(creator = @0x123, trader = @0x456, libra2_framework = @libra2_framework)]
-    #[expected_failure(abort_code = 0x40008, location = aptos_token_objects::token)]
+    #[expected_failure(abort_code = 0x40008, location = libra2_token_objects::token)]
     fun test_create_token_non_collection_owner(creator: &signer, trader: &signer, libra2_framework: &signer) {
         features::change_feature_flags_for_testing(libra2_framework, vector[features::get_collection_owner_feature()], vector[]);
         let constructor_ref = &create_fixed_collection_as_collection_owner(creator, string::utf8(b"collection name"), 5);
@@ -920,7 +920,7 @@ module aptos_token_objects::token {
     }
 
     #[test(creator = @0x123, trader = @0x456)]
-    #[expected_failure(abort_code = 0x40002, location = aptos_token_objects::token)]
+    #[expected_failure(abort_code = 0x40002, location = libra2_token_objects::token)]
     fun test_create_named_token_non_creator(creator: &signer, trader: &signer) {
         let constructor_ref = &create_fixed_collection(creator, string::utf8(b"collection name"), 5);
         let collection = get_collection_from_ref(&object::generate_extend_ref(constructor_ref));
@@ -928,7 +928,7 @@ module aptos_token_objects::token {
     }
 
     #[test(creator = @0x123, trader = @0x456, libra2_framework = @libra2_framework)]
-    #[expected_failure(abort_code = 0x40008, location = aptos_token_objects::token)]
+    #[expected_failure(abort_code = 0x40008, location = libra2_token_objects::token)]
     fun test_create_named_token_non_collection_owner(creator: &signer, trader: &signer, libra2_framework: &signer) {
         features::change_feature_flags_for_testing(libra2_framework, vector[features::get_collection_owner_feature()], vector[]);
         let constructor_ref = &create_fixed_collection_as_collection_owner(creator, string::utf8(b"collection name"), 5);
@@ -937,7 +937,7 @@ module aptos_token_objects::token {
     }
 
     #[test(creator = @0x123, trader = @0x456)]
-    #[expected_failure(abort_code = 0x40002, location = aptos_token_objects::token)]
+    #[expected_failure(abort_code = 0x40002, location = libra2_token_objects::token)]
     fun test_create_named_token_object_non_creator(creator: &signer, trader: &signer) {
         let constructor_ref = &create_fixed_collection(creator, string::utf8(b"collection name"), 5);
         let collection = get_collection_from_ref(&object::generate_extend_ref(constructor_ref));
@@ -948,7 +948,7 @@ module aptos_token_objects::token {
     }
 
     #[test(creator = @0x123, trader = @0x456)]
-    #[expected_failure(abort_code = 0x40002, location = aptos_token_objects::token)]
+    #[expected_failure(abort_code = 0x40002, location = libra2_token_objects::token)]
     fun test_create_named_token_from_seed_non_creator(creator: &signer, trader: &signer) {
         let constructor_ref = &create_fixed_collection(creator, string::utf8(b"collection name"), 5);
         let collection = get_collection_from_ref(&object::generate_extend_ref(constructor_ref));
@@ -959,7 +959,7 @@ module aptos_token_objects::token {
     }
 
     #[test(creator = @0x123, trader = @0x456, libra2_framework = @libra2_framework)]
-    #[expected_failure(abort_code = 0x40008, location = aptos_token_objects::token)]
+    #[expected_failure(abort_code = 0x40008, location = libra2_token_objects::token)]
     fun test_create_named_token_from_seed_non_collection_owner(creator: &signer, trader: &signer, libra2_framework: &signer) {
         features::change_feature_flags_for_testing(libra2_framework, vector[features::get_collection_owner_feature()], vector[]);
         let constructor_ref = &create_fixed_collection_as_collection_owner(creator, string::utf8(b"collection name"), 5);
@@ -993,7 +993,7 @@ module aptos_token_objects::token {
     }
 
     #[test(creator = @0x123, trader = @0x456, libra2_framework = @libra2_framework)]
-    #[expected_failure(abort_code = 0x40008, location = aptos_token_objects::token)]
+    #[expected_failure(abort_code = 0x40008, location = libra2_token_objects::token)]
     fun test_create_token_after_transferring_collection(creator: &signer, trader: &signer, libra2_framework: &signer) {
         features::change_feature_flags_for_testing(libra2_framework, vector[features::get_collection_owner_feature()], vector[]);
         let constructor_ref = &create_fixed_collection_as_collection_owner(creator, string::utf8(b"collection name"), 5);
@@ -1091,7 +1091,7 @@ module aptos_token_objects::token {
     }
 
     #[test(creator = @0x123)]
-    #[expected_failure(abort_code = 0x20002, location = aptos_token_objects::collection)]
+    #[expected_failure(abort_code = 0x20002, location = libra2_token_objects::collection)]
     fun test_too_many_tokens(creator: &signer) {
         let collection_name = string::utf8(b"collection name");
         let token_name = string::utf8(b"token name");

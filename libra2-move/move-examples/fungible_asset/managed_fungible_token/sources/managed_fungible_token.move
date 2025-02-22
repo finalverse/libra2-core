@@ -5,8 +5,8 @@ module example_addr::managed_fungible_token {
     use libra2_framework::object::{Self, Object};
     use std::string::{utf8, String};
     use std::option;
-    use aptos_token_objects::token::{create_named_token, create_token_seed};
-    use aptos_token_objects::collection::create_fixed_collection;
+    use libra2_token_objects::token::{create_named_token, create_token_seed};
+    use libra2_token_objects::collection::create_fixed_collection;
     use example_addr::managed_fungible_asset;
 
     const ASSET_SYMBOL: vector<u8> = b"YOLO";

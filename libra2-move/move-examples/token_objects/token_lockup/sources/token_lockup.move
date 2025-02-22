@@ -5,9 +5,9 @@ module token_lockup::token_lockup {
    use std::string::{Self, String};
    use std::object::{Self, Object, TransferRef, ConstructorRef};
    use std::timestamp;
-   use aptos_token_objects::royalty::{Royalty};
-   use aptos_token_objects::token::{Self, Token};
-   use aptos_token_objects::collection;
+   use libra2_token_objects::royalty::{Royalty};
+   use libra2_token_objects::token::{Self, Token};
+   use libra2_token_objects::collection;
 
    #[resource_group_member(group = libra2_framework::object::ObjectGroup)]
    struct LockupConfig has key {

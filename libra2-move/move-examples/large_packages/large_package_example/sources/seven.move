@@ -200,7 +200,7 @@
 /// ### Fungible Token
 ///
 /// - For TokenV1 (aptos_token::token), a **fungible token** is a token that is interchangeable with other identical tokens (i.e., tokens that share the same `TokenId`). This means the tokens have the same `creator address`, `collection name`, `token name`, and `property version`.
-/// - For TokenV2 (aptos_token_objects::token), a **fungible token** is a fungible asset with metadata object includes a TokenV2 resource.
+/// - For TokenV2 (libra2_token_objects::token), a **fungible token** is a fungible asset with metadata object includes a TokenV2 resource.
 ///
 /// ### Fungible Unit
 ///

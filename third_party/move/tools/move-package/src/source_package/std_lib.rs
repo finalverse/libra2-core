@@ -12,7 +12,7 @@ use std::{fmt::Display, path::PathBuf};
 
 /// Represents a standard library.
 pub enum StdLib {
-    AptosTokenObjects,
+    Libra2TokenObjects,
     AptosToken,
     Libra2Framework,
     AptosStdlib,
@@ -57,7 +57,7 @@ impl StdLib {
     pub fn as_str(&self) -> &'static str {
         match self {
             StdLib::AptosToken => "AptosToken",
-            StdLib::AptosTokenObjects => "AptosTokenObjects",
+            StdLib::Libra2TokenObjects => "Libra2TokenObjects",
             StdLib::Libra2Framework => "Libra2Framework",
             StdLib::AptosStdlib => "AptosStdlib",
             StdLib::MoveStdlib => "MoveStdlib",
@@ -68,7 +68,7 @@ impl StdLib {
     pub fn from_package_name(package_name: Symbol) -> Option<StdLib> {
         match package_name.as_str() {
             "AptosToken" => Some(StdLib::AptosToken),
-            "AptosTokenObjects" => Some(StdLib::AptosTokenObjects),
+            "Libra2TokenObjects" => Some(StdLib::Libra2TokenObjects),
             "Libra2Framework" => Some(StdLib::Libra2Framework),
             "AptosStdlib" => Some(StdLib::AptosStdlib),
             "MoveStdlib" => Some(StdLib::MoveStdlib),
@@ -80,7 +80,7 @@ impl StdLib {
     fn sub_dir(&self) -> &'static str {
         match self {
             StdLib::AptosToken => "aptos-token",
-            StdLib::AptosTokenObjects => "aptos-token-objects",
+            StdLib::Libra2TokenObjects => "libra2-token-objects",
             StdLib::Libra2Framework => "libra2-framework",
             StdLib::AptosStdlib => "aptos-stdlib",
             StdLib::MoveStdlib => "move-stdlib",

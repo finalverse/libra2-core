@@ -3,7 +3,7 @@
 
 use crate::{
     gas::get_gas_parameters,
-    natives::aptos_natives_with_builder,
+    natives::libra2_natives_with_builder,
     prod_configs::{
         aptos_default_ty_builder, aptos_prod_ty_builder, aptos_prod_vm_config,
         get_timed_feature_override,
@@ -231,7 +231,7 @@ impl Environment {
             features.clone(),
             gas_hook,
         );
-        let natives = aptos_natives_with_builder(&mut builder, inject_create_signer_for_gov_sim);
+        let natives = libra2_natives_with_builder(&mut builder, inject_create_signer_for_gov_sim);
         let vm_config = aptos_prod_vm_config(&features, &timed_features, ty_builder);
         let runtime_environment = RuntimeEnvironment::new_with_config(natives, vm_config);
 

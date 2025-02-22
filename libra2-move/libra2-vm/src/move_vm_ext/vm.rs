@@ -12,7 +12,7 @@ use libra2_types::{
 };
 use libra2_vm_environment::{
     environment::Libra2Environment,
-    natives::aptos_natives_with_builder,
+    natives::libra2_natives_with_builder,
     prod_configs::{aptos_default_ty_builder, aptos_prod_vm_config},
 };
 use libra2_vm_types::storage::change_set_configs::ChangeSetConfigs;
@@ -46,7 +46,7 @@ impl GenesisRuntimeBuilder {
             features.clone(),
             None,
         );
-        let natives = aptos_natives_with_builder(&mut native_builder, false);
+        let natives = libra2_natives_with_builder(&mut native_builder, false);
         let runtime_environment = RuntimeEnvironment::new_with_config(natives, vm_config);
         Self {
             chain_id,

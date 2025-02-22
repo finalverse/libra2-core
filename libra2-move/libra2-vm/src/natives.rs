@@ -26,7 +26,7 @@ use libra2_types::{
         state_value::{StateValue, StateValueMetadata},
     },
 };
-use libra2_vm_environment::natives::aptos_natives_with_builder;
+use libra2_vm_environment::natives::libra2_natives_with_builder;
 #[cfg(feature = "testing")]
 use bytes::Bytes;
 #[cfg(feature = "testing")]
@@ -141,7 +141,7 @@ impl TableResolver for AptosBlankStorage {
 #[allow(clippy::redundant_closure)]
 static DUMMY_RESOLVER: Lazy<AptosBlankStorage> = Lazy::new(|| AptosBlankStorage::new());
 
-pub fn aptos_natives(
+pub fn libra2_natives(
     gas_feature_version: u64,
     native_gas_params: NativeGasParameters,
     misc_gas_params: MiscGasParameters,
@@ -157,12 +157,12 @@ pub fn aptos_natives(
         None,
     );
 
-    aptos_natives_with_builder(&mut builder, false)
+    libra2_natives_with_builder(&mut builder, false)
 }
 
 pub fn assert_no_test_natives(err_msg: &str) {
     assert!(
-        aptos_natives(
+        libra2_natives(
             LATEST_GAS_FEATURE_VERSION,
             NativeGasParameters::zeros(),
             MiscGasParameters::zeros(),

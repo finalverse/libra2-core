@@ -47,7 +47,7 @@ const APTOS_PACKAGES_DIR_NAMES: [&str; 5] = [
     "move-stdlib",
     "aptos-stdlib",
     "aptos-token",
-    "aptos-token-objects",
+    "libra2-token-objects",
 ];
 
 const STATE_DATA: &str = "state_data";

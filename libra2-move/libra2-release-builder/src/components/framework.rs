@@ -37,7 +37,7 @@ pub fn generate_upgrade_proposals(
         ("0x1", "libra2-move/framework/aptos-stdlib"),
         ("0x1", "libra2-move/framework/libra2-framework"),
         ("0x3", "libra2-move/framework/aptos-token"),
-        ("0x4", "libra2-move/framework/aptos-token-objects"),
+        ("0x4", "libra2-move/framework/libra2-token-objects"),
     ];
 
     let mut result: Vec<(String, String)> = vec![];

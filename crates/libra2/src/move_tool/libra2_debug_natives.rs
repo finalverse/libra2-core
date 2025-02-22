@@ -17,7 +17,7 @@ pub fn libra2_debug_natives(
     extended_checks::configure_extended_checks_for_unit_test();
     // Return all natives -- build with the 'testing' feature, therefore containing
     // debug related functions.
-    natives::aptos_natives(
+    natives::libra2_natives(
         LATEST_GAS_FEATURE_VERSION,
         native_gas_parameters,
         misc_gas_params,

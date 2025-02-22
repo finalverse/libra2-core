@@ -6,8 +6,8 @@ module addr::cli_e2e_tests {
 
     use libra2_framework::object::{Self, ConstructorRef, Object};
 
-    use aptos_token_objects::collection;
-    use aptos_token_objects::token;
+    use libra2_token_objects::collection;
+    use libra2_token_objects::token;
     use aptos_std::string_utils;
 
     const ENOT_A_HERO: u64 = 1;

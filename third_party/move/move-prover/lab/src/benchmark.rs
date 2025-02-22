@@ -64,12 +64,12 @@ pub fn benchmark(args: &[String]) {
                 .help("whether benchmarking should happen per function; default is per module"),
         )
         .arg(
-            Arg::new("aptos-natives")
+            Arg::new("libra2-natives")
                 .short('a')
-                .long("aptos")
+                .long("libra2")
                 .num_args(0)
                 .action(Set)
-                .help("whether the aptos-natives should be included."),
+                .help("whether the libra2-natives should be included."),
         )
         .arg(
             Arg::new("dependencies")
@@ -102,7 +102,7 @@ pub fn benchmark(args: &[String]) {
         vec![None]
     };
     let per_function = matches.contains_id("function");
-    let use_aptos_natives = matches.contains_id("aptos-natives");
+    let use_libra2_natives = matches.contains_id("libra2-natives");
 
     for config_spec in configs {
         let (config, out) = if let Some(config_file) = &config_spec {
@@ -121,7 +121,7 @@ pub fn benchmark(args: &[String]) {
             &sources,
             &deps,
             per_function,
-            use_aptos_natives,
+            use_libra2_natives,
         ) {
             println!("ERROR: execution failed: {}", s);
         } else {
@@ -136,7 +136,7 @@ fn run_benchmark(
     modules: &[String],
     dep_dirs: &[String],
     per_function: bool,
-    use_aptos_natives: bool,
+    use_libra2_natives: bool,
 ) -> anyhow::Result<()> {
     let mut options = if let Some(config_file) = config_file_opt {
         Options::create_from_toml_file(config_file)?
@@ -147,11 +147,11 @@ fn run_benchmark(
     options.move_deps.append(&mut dep_dirs.to_vec());
     options.skip_attribute_checks = true;
 
-    if use_aptos_natives {
+    if use_libra2_natives {
         options.backend.custom_natives =
             Some(move_prover_boogie_backend::options::CustomNativeOptions {
                 template_bytes: include_bytes!(
-                    "../../../../../libra2-move/framework/src/aptos-natives.bpl"
+                    "../../../../../libra2-move/framework/src/libra2-natives.bpl"
                 )
                 .to_vec(),
                 module_instance_names: move_prover_boogie_backend::options::custom_native_options(),

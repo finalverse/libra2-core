@@ -11,9 +11,9 @@ module marketplace::test_utils {
     use libra2_framework::timestamp;
 
     use aptos_token::token as tokenv1;
-    use aptos_token_objects::token::Token;
-    use aptos_token_objects::aptos_token;
-    use aptos_token_objects::collection::Collection;
+    use libra2_token_objects::token::Token;
+    use libra2_token_objects::aptos_token;
+    use libra2_token_objects::collection::Collection;
 
     use marketplace::fee_schedule::{Self, FeeSchedule};
 

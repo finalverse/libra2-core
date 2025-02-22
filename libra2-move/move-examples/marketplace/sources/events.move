@@ -7,8 +7,8 @@ module marketplace::events {
     use libra2_framework::object::{Self, Object};
 
     use aptos_token::token as tokenv1;
-    use aptos_token_objects::collection as collectionv2;
-    use aptos_token_objects::token as tokenv2;
+    use libra2_token_objects::collection as collectionv2;
+    use libra2_token_objects::token as tokenv2;
 
     friend marketplace::coin_listing;
     friend marketplace::collection_offer;

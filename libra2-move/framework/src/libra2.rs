@@ -68,8 +68,8 @@ impl ReleaseTarget {
                 Some("cached-packages/src/aptos_token_sdk_builder.rs"),
             ),
             (
-                "aptos-token-objects",
-                Some("cached-packages/src/aptos_token_objects_sdk_builder.rs"),
+                "libra2-token-objects",
+                Some("cached-packages/src/libra2_token_objects_sdk_builder.rs"),
             ),
         ];
         // Currently we don't have experimental packages only included in particular targets.
@@ -177,7 +177,7 @@ static NAMED_ADDRESSES: Lazy<BTreeMap<String, NumericalAddress>> = Lazy::new(|| 
     result.insert("aptos_std".to_owned(), one);
     result.insert("libra2_framework".to_owned(), one);
     result.insert("aptos_token".to_owned(), three);
-    result.insert("aptos_token_objects".to_owned(), four);
+    result.insert("libra2_token_objects".to_owned(), four);
     result.insert("aptos_fungible_asset".to_owned(), ten);
     result.insert("core_resources".to_owned(), resources);
     result.insert("vm".to_owned(), zero);

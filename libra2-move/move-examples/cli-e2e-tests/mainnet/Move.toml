@@ -13,7 +13,7 @@ git = "https://github.com/aptos-labs/libra2-framework.git"
 rev = "mainnet"
 subdir = "libra2-framework"
 
-[dependencies.AptosTokenObjects]
+[dependencies.Libra2TokenObjects]
 git = "https://github.com/aptos-labs/libra2-framework.git"
 rev = "mainnet"
-subdir = "aptos-token-objects"
+subdir = "libra2-token-objects"

@@ -629,7 +629,7 @@ module listing_tests {
 
     use aptos_token::token as tokenv1;
 
-    use aptos_token_objects::token::Token;
+    use libra2_token_objects::token::Token;
     use marketplace::test_utils::{mint_tokenv2_with_collection_royalty, mint_tokenv1_additional_royalty, mint_tokenv1};
 
     use marketplace::coin_listing;

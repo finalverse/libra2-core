@@ -4,7 +4,7 @@
 #![allow(unused_imports)]
 
 pub use crate::{
-    libra2_framework_sdk_builder::*, aptos_token_objects_sdk_builder as aptos_token_objects_stdlib,
+    libra2_framework_sdk_builder::*, libra2_token_objects_sdk_builder as libra2_token_objects_stdlib,
     aptos_token_sdk_builder as aptos_token_stdlib,
 };
 use libra2_framework::{BuildOptions, BuiltPackage};

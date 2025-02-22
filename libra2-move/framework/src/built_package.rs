@@ -53,7 +53,7 @@ pub const APTOS_PACKAGES: [&str; 5] = [
     "MoveStdlib",
     "AptosStdlib",
     "AptosToken",
-    "AptosTokenObjects",
+    "Libra2TokenObjects",
 ];
 
 /// Represents a set of options for building artifacts from Move.

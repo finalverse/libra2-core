@@ -7,7 +7,7 @@ use move_vm_runtime::native_functions::NativeFunctionTable;
 use std::collections::HashSet;
 
 /// Builds and returns all Aptos native functions.
-pub fn aptos_natives_with_builder(
+pub fn libra2_natives_with_builder(
     builder: &mut SafeNativeBuilder,
     inject_create_signer_for_gov_sim: bool,
 ) -> NativeFunctionTable {

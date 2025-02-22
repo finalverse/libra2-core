@@ -1,12 +1,12 @@
 [package]
-name = "AptosTokenObjects"
+name = "Libra2TokenObjects"
 version = "1.0.0"
 
 [addresses]
 std = "0x1"
 aptos_std = "0x1"
 libra2_framework = "0x1"
-aptos_token_objects = "0x4"
+libra2_token_objects = "0x4"
 
 [dependencies]
 MoveStdlib = { local = "../move-stdlib" }

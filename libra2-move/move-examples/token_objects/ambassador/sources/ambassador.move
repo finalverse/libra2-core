@@ -17,9 +17,9 @@ module ambassador::ambassador {
     use std::signer;
 
     use libra2_framework::object::{Self, Object};
-    use aptos_token_objects::collection;
-    use aptos_token_objects::token;
-    use aptos_token_objects::property_map;
+    use libra2_token_objects::collection;
+    use libra2_token_objects::token;
+    use libra2_token_objects::property_map;
     use libra2_framework::event;
     use aptos_std::string_utils::{to_string};
 

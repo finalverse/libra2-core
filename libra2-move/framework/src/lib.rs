@@ -4,9 +4,9 @@
 
 #![forbid(unsafe_code)]
 
-mod aptos;
+mod libra2;
 
-pub use aptos::*;
+pub use libra2::*;
 use std::io::{Read, Write};
 
 mod built_package;

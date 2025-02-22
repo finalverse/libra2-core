@@ -19,9 +19,9 @@ module collection_offer {
 
     use aptos_token::token as tokenv1;
 
-    use aptos_token_objects::collection::Collection;
-    use aptos_token_objects::royalty;
-    use aptos_token_objects::token::{Self as tokenv2, Token as TokenV2};
+    use libra2_token_objects::collection::Collection;
+    use libra2_token_objects::royalty;
+    use libra2_token_objects::token::{Self as tokenv2, Token as TokenV2};
 
     use marketplace::events;
     use marketplace::fee_schedule::{Self, FeeSchedule};
@@ -530,7 +530,7 @@ module collection_offer_tests {
 
     use aptos_token::token as tokenv1;
 
-    use aptos_token_objects::collection as collectionv2;
+    use libra2_token_objects::collection as collectionv2;
 
     use marketplace::collection_offer;
     use marketplace::listing;

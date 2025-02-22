@@ -16,14 +16,14 @@ fn main() -> Result<()> {
         println!(
             "cargo:rerun-if-changed={}",
             prev_dir
-                .join("aptos-token-objects")
+                .join("libra2-token-objects")
                 .join("Move.toml")
                 .display()
         );
         println!(
             "cargo:rerun-if-changed={}",
             prev_dir
-                .join("aptos-token-objects")
+                .join("libra2-token-objects")
                 .join("sources")
                 .display()
         );
@@ -38,14 +38,14 @@ fn main() -> Result<()> {
         println!(
             "cargo:rerun-if-changed={}",
             prev_dir
-                .join("aptos-token-objects")
+                .join("libra2-token-objects")
                 .join("sources")
                 .display()
         );
         println!(
             "cargo:rerun-if-changed={}",
             prev_dir
-                .join("aptos-token-objects")
+                .join("libra2-token-objects")
                 .join("Move.toml")
                 .display()
         );

@@ -6,16 +6,16 @@
 /// * Creator-based freezing of tokens
 /// * Standard object-based transfer and events
 /// * Metadata property type
-module aptos_token_objects::aptos_token {
+module libra2_token_objects::aptos_token {
     use std::error;
     use std::option::{Self, Option};
     use std::string::String;
     use std::signer;
     use libra2_framework::object::{Self, ConstructorRef, Object};
-    use aptos_token_objects::collection;
-    use aptos_token_objects::property_map;
-    use aptos_token_objects::royalty;
-    use aptos_token_objects::token;
+    use libra2_token_objects::collection;
+    use libra2_token_objects::property_map;
+    use libra2_token_objects::royalty;
+    use libra2_token_objects::token;
 
     /// The collection does not exist
     const ECOLLECTION_DOES_NOT_EXIST: u64 = 1;

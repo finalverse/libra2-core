@@ -7,4 +7,4 @@ guild = "_"
 
 [dependencies]
 Libra2Framework = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "libra2-framework", rev = "mainnet" }
-AptosTokenObjects = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "aptos-token-objects", rev = "mainnet" }
+Libra2TokenObjects = { git = "https://github.com/aptos-labs/libra2-framework.git", subdir = "libra2-token-objects", rev = "mainnet" }
