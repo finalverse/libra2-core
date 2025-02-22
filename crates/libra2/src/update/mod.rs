@@ -4,7 +4,7 @@
 // Note: We make use of the self_update crate, but as you can see in the case of
 // Revela, this can also be used to install / update other binaries.
 
-mod aptos;
+mod libra2;
 mod helpers;
 mod movefmt;
 mod prover_dependencies;

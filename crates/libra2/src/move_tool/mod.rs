@@ -78,7 +78,7 @@ pub use stored_package::*;
 use tokio::task;
 use url::Url;
 
-pub mod aptos_debug_natives;
+pub mod libra2_debug_natives;
 mod bytecode;
 pub mod coverage;
 mod fmt;
@@ -610,7 +610,7 @@ impl CliCommand<&'static str> for TestPackage {
                 ..UnitTestingConfig::default()
             },
             // TODO(Gas): we may want to switch to non-zero costs in the future
-            aptos_debug_natives::aptos_debug_natives(
+            libra2_debug_natives::libra2_debug_natives(
                 NativeGasParameters::zeros(),
                 MiscGasParameters::zeros(),
             ),

@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos = { workspace = true, features = [ "no-upload-proposal" ] }
+libra2 = { workspace = true, features = [ "no-upload-proposal" ] }
 libra2-build-info = { workspace = true }
 libra2-crypto = { workspace = true }
 libra2-framework = { workspace = true }

@@ -30,7 +30,7 @@ use std::process::Command;
 /// This can be used to update the CLI to the latest version. This is useful if you
 /// installed the CLI via the install script / by downloading the binary directly.
 #[derive(Debug, Parser)]
-pub struct AptosUpdateTool {
+pub struct Libra2UpdateTool {
     /// The owner of the repo to download the binary from.
     #[clap(long, default_value = "aptos-labs")]
     repo_owner: String,
@@ -44,7 +44,7 @@ pub struct AptosUpdateTool {
     check: bool,
 }
 
-impl BinaryUpdater for AptosUpdateTool {
+impl BinaryUpdater for Libra2UpdateTool {
     fn check(&self) -> bool {
         self.check
     }
@@ -192,7 +192,7 @@ impl InstallationMethod {
 }
 
 #[async_trait]
-impl CliCommand<String> for AptosUpdateTool {
+impl CliCommand<String> for Libra2UpdateTool {
     fn command_name(&self) -> &'static str {
         "UpdateAptos"
     }

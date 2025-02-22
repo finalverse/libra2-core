@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos = { workspace = true, features = ["fuzzing"] }
+libra2 = { workspace = true, features = ["fuzzing"] }
 libra2-config = { workspace = true }
 aptos-forge = { workspace = true }
 libra2-global-constants = { workspace = true }

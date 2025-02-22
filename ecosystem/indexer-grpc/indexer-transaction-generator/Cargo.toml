@@ -15,7 +15,7 @@ rust-version = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 # used for localnode.
-aptos = { workspace = true }
+libra2 = { workspace = true }
 libra2-config = { workspace = true }
 libra2-faucet-core = { workspace = true }
 libra2-indexer-grpc-utils = { workspace = true }

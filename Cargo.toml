@@ -52,7 +52,6 @@ members = [
     "consensus",
     "consensus/consensus-types",
     "consensus/safety-rules",
-    "crates/aptos",
     "crates/libra2",
     "crates/libra2-admin-service",
     "crates/libra2-api-tester",
@@ -270,7 +269,6 @@ members = [
 default-members = [
     "libra2-node",
     "consensus/safety-rules",
-    "crates/aptos",
     "crates/libra2",
     "crates/libra2-debugger",
     "crates/libra2-faucet/service",
@@ -298,7 +296,6 @@ rust-version = "1.78.0"
 # Internal crate dependencies.
 # Please do not add any test features here: they should be declared by the individual crate.
 libra2 = { path = "crates/libra2" }
-aptos = { path = "crates/aptos" }
 libra2-accumulator = { path = "storage/accumulator" }
 libra2-admin-service = { path = "crates/libra2-admin-service" }
 libra2-aggregator = { path = "libra2-move/libra2-aggregator" }

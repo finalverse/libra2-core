@@ -14,7 +14,7 @@ rust-version = { workspace = true }
 
 [dependencies]
 anyhow = { workspace = true }
-aptos = { workspace = true, features = ["fuzzing"] }
+libra2 = { workspace = true, features = ["fuzzing"] }
 libra2-bitvec = { path = "../../crates/libra2-bitvec" }
 libra2-cached-packages = { workspace = true }
 libra2-config = { workspace = true, features = ["smoke-test"] }
