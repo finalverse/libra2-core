@@ -29,7 +29,7 @@ query endpoint using `--rest-endpoint E` flag. Examples of endpoints are:
 #### Example
 
 ```shell
-aptos-replay-benchmark download \
+libra2-replay-benchmark download \
   --begin-version 2232125001 \
   --end-version 2232125093 \
   --rest-endpoint https://api.mainnet.aptoslabs.com/v1 \
@@ -77,7 +77,7 @@ using the tool the key can be specified using `--api-key K` flag.
 #### Example
 
 ```shell
-aptos-replay-benchmark initialize \
+libra2-replay-benchmark initialize \
   --rest-endpoint https://api.mainnet.aptoslabs.com/v1 \
   --transactions-file transactions.file \
   --inputs-file baseline-state.file
@@ -112,7 +112,7 @@ on historical workloads.
 #### Example
 
 ```commandline
-aptos-replay-benchmark initialize \
+libra2-replay-benchmark initialize \
   --rest-endpoint https://api.mainnet.aptoslabs.com/v1 \
   --transactions-file transactions.file
   --enable-features ENABLE_CALL_TREE_AND_INSTRUCTION_VM_CACHE \
@@ -142,7 +142,7 @@ differences related to gas will be left out of comparison.
 #### Example
 
 ```shell
-aptos-replay-benchmark diff \
+libra2-replay-benchmark diff \
   --transactions-file transactions.file \
   --inputs-file baseline.state \
   --other-inputs-file experiment-state.file \
@@ -222,7 +222,7 @@ runtime type checks, possible making execution faster.
 
 Benchmarking on-chain transactions (`ENABLE_CALL_TREE_AND_INSTRUCTION_VM_CACHE` is disabled):
 ```shell
-aptos-replay-benchmark benchmark \
+libra2-replay-benchmark benchmark \
   --transactions-file transactions.file \
   --inputs-file baseline-state.file \
   --num-blocks-to-skip 2 \
@@ -246,7 +246,7 @@ concurrency level, block, median (us), mean (us), min (us), max (us)
 
 Benchmarking with `ENABLE_CALL_TREE_AND_INSTRUCTION_VM_CACHE` feature enabled:
 ```shell
-aptos-replay-benchmark benchmark \
+libra2-replay-benchmark benchmark \
   --transactions-file transactions.file \
   --inputs-file experiment-state.file \
   --num-blocks-to-skip 2 \

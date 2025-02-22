@@ -1,5 +1,5 @@
 [package]
-name = "aptos-replay-benchmark"
+name = "libra2-replay-benchmark"
 version = "0.1.0"
 description = "A tool to replay and locally benchmark on-chain transactions."
 

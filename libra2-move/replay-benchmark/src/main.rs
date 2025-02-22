@@ -1,7 +1,7 @@
 // Copyright (c) Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_replay_benchmark::commands::{
+use libra2_replay_benchmark::commands::{
     BenchmarkCommand, DiffCommand, DownloadCommand, InitializeCommand,
 };
 use clap::Parser;

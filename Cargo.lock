@@ -789,35 +789,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "aptos-replay-benchmark"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "aptos-gas-schedule",
- "bcs 0.1.4",
- "claims",
- "clap 4.5.21",
- "colored",
- "libra2-block-executor",
- "libra2-crypto",
- "libra2-framework",
- "libra2-logger",
- "libra2-move-debugger",
- "libra2-push-metrics",
- "libra2-rest-client",
- "libra2-types",
- "libra2-vm",
- "libra2-vm-environment",
- "move-core-types",
- "move-vm-runtime",
- "parking_lot 0.12.1",
- "rand 0.7.3",
- "serde",
- "tokio",
- "url",
-]
-
-[[package]]
 name = "aptos-sdk"
 version = "0.0.3"
 dependencies = [
@@ -9597,6 +9568,35 @@ dependencies = [
  "libra2-types",
  "tokio",
  "tokio-retry",
+]
+
+[[package]]
+name = "libra2-replay-benchmark"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "aptos-gas-schedule",
+ "bcs 0.1.4",
+ "claims",
+ "clap 4.5.21",
+ "colored",
+ "libra2-block-executor",
+ "libra2-crypto",
+ "libra2-framework",
+ "libra2-logger",
+ "libra2-move-debugger",
+ "libra2-push-metrics",
+ "libra2-rest-client",
+ "libra2-types",
+ "libra2-vm",
+ "libra2-vm-environment",
+ "move-core-types",
+ "move-vm-runtime",
+ "parking_lot 0.12.1",
+ "rand 0.7.3",
+ "serde",
+ "tokio",
+ "url",
 ]
 
 [[package]]

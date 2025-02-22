@@ -428,7 +428,7 @@ libra2-push-metrics = { path = "crates/libra2-push-metrics" }
 libra2-rate-limiter = { path = "crates/libra2-rate-limiter" }
 libra2-release-builder = { path = "libra2-move/libra2-release-builder" }
 libra2-reliable-broadcast = { path = "crates/reliable-broadcast" }
-aptos-replay-benchmark = { path = "libra2-move/replay-benchmark" }
+libra2-replay-benchmark = { path = "libra2-move/replay-benchmark" }
 libra2-resource-viewer = { path = "libra2-move/libra2-resource-viewer" }
 libra2-rest-client = { path = "crates/libra2-rest-client" }
 libra2-retrier = { path = "crates/libra2-retrier" }
