@@ -31,7 +31,7 @@ When developing your own, ensure each `TransactionProcessor` is idempotent, and 
       `DATABASE_URL=postgres://postgres@localhost:5432/indexer_v2 diesel database reset`
 
 ### Installing fullnode
-Please follow standard fullnode installation guide on aptos.dev (https://aptos.dev/nodes/full-node/fullnode-source-code-or-docker)
+Please follow standard fullnode installation guide on dev.libra2.org (https://dev.libra2.org/nodes/full-node/fullnode-source-code-or-docker)
 
 ### Running indexer
 ```bash

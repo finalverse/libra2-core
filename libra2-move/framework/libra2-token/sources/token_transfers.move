@@ -301,7 +301,7 @@ module libra2_token::token_transfers {
             creator,
             collection_name,
             string::utf8(b"Collection: Hello, World"),
-            string::utf8(b"https://aptos.dev"),
+            string::utf8(b"https://dev.libra2.org"),
             1,
             collection_mutation_setting,
         );
@@ -317,7 +317,7 @@ module libra2_token::token_transfers {
             string::utf8(b"Hello, Token"),
             amount,
             amount,
-            string::utf8(b"https://aptos.dev"),
+            string::utf8(b"https://dev.libra2.org"),
             signer::address_of(creator),
             100,
             0,

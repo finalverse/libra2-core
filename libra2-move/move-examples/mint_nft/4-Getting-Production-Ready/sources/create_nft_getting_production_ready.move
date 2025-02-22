@@ -20,11 +20,11 @@
 /// Events are emitted during the execution of a transaction. Each Move module can define its own events and choose when
 /// to emit the events upon execution of the module. In this module, we are adding a custom `TokenMintingEvent` to keep track
 /// of the minted token_data_id and the token receiver's address.
-/// For more information about events, see: https://aptos.dev/concepts/events/.
+/// For more information about events, see: https://dev.libra2.org/concepts/events/.
 ///
 /// Move unit tests
 /// We added a few unit tests to make sure that our code is working as expected. For more information on how to write
-/// Move unit tests, see: https://aptos.dev/move/book/unit-testing
+/// Move unit tests, see: https://dev.libra2.org/move/book/unit-testing
 ///
 /// - How to interact with this module
 /// 1. Configure the admin account name address in Move.toml file.

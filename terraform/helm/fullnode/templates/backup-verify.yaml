@@ -22,7 +22,7 @@ spec:
             {{- end}}
           annotations:
             {{- if $.Values.metrics.destination }}
-            aptos.dev/metrics-destination: {{ $.Values.metrics.destination }}
+            dev.libra2.org/metrics-destination: {{ $.Values.metrics.destination }}
             {{- end}}
         spec:
           restartPolicy: Never

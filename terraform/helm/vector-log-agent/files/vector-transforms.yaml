@@ -35,7 +35,7 @@ transforms:
       #   del(.k8s.annotations)
       # }
 
-      .min_log_level_to_retain = .k8s.annotations."aptos.dev/min-log-level-to-retain"
+      .min_log_level_to_retain = .k8s.annotations."dev.libra2.org/min-log-level-to-retain"
 
       del(.k8s.annotations)
 
@@ -87,7 +87,7 @@ transforms:
 
   # This stage filters forge logs based off of node index and log level.
   # It retains all logs for nodes 0-4 and only error logs for nodes 5+.
-  # The `aptos.dev/min-log-level-to-retain` pod annotation overrides the default behavior.
+  # The `dev.libra2.org/min-log-level-to-retain` pod annotation overrides the default behavior.
   filter_forge_logs:
     type: filter
     inputs:

@@ -3850,4 +3850,4 @@ Ensure a known <code><a href="fungible_asset.md#0x1_fungible_asset_FungibleStore
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

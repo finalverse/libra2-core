@@ -8,7 +8,7 @@ use bollard::API_DEFAULT_VERSION;
 use tracing::{info, warn};
 use version_compare::Version;
 
-const ERROR_MESSAGE: &str = "Docker is not available, confirm it is installed and running. See https://aptos.dev/guides/local-development-network#faq for assistance.";
+const ERROR_MESSAGE: &str = "Docker is not available, confirm it is installed and running. See https://dev.libra2.org/guides/local-development-network#faq for assistance.";
 
 /// This function returns a Docker client. Before returning, it confirms that it can
 /// actually query the API and checks that the API version is sufficient. It first

@@ -994,4 +994,4 @@ The integer exists and the aggregator does not exist when destroy the integer.
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

@@ -589,7 +589,7 @@ mod tests {
         let user_entity = PublicKeyCredentialUserEntity {
             id: random_vec(32).into(),
             display_name: "Aptos Passkey".into(),
-            name: "aptos@aptos.dev".into(),
+            name: "aptos@dev.libra2.org".into(),
         };
         let origin = Url::parse("http://localhost:4000")?;
         // First create an Authenticator for the Client to use.

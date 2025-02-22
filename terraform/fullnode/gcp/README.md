@@ -51,7 +51,7 @@ These instructions assume that you have a functioning GCP project.  If you do no
 
         $ terraform workspace new $WORKSPACE
 
-8. Copy `terraform.tfvars` to `~/$WORKSPACE/terraform.tfvars` and edit to set your region, zone and project name.  If you are having trouble connecting to the devnet and need to add upstream seed peers, uncomment the "fullnode_helm_values" JSON stanza.  For more detail on upstream seed peers, see the documention: https://aptos.dev/tutorials/run-a-fullnode/#add-upstream-seed-peers
+8. Copy `terraform.tfvars` to `~/$WORKSPACE/terraform.tfvars` and edit to set your region, zone and project name.  If you are having trouble connecting to the devnet and need to add upstream seed peers, uncomment the "fullnode_helm_values" JSON stanza.  For more detail on upstream seed peers, see the documention: https://dev.libra2.org/tutorials/run-a-fullnode/#add-upstream-seed-peers
 
        $ cp terraform.tfvars ~/$WORKSPACE/terraform.tfvars
        $ vi ~/$WORKSPACE/terraform.tfvars
@@ -78,7 +78,7 @@ These instructions assume that you have a functioning GCP project.  If you do no
 
         $ curl http://<IP>
 
-14. To verify the correctness of your FullNode, as outlined in the documentation (https://aptos.dev/tutorials/run-a-fullnode/#verify-the-correctness-of-your-fullnode), you will need to set up a port-forwarding mechanism directly to the aptos pod in one ssh terminal and test it in another ssh terminal
+14. To verify the correctness of your FullNode, as outlined in the documentation (https://dev.libra2.org/tutorials/run-a-fullnode/#verify-the-correctness-of-your-fullnode), you will need to set up a port-forwarding mechanism directly to the aptos pod in one ssh terminal and test it in another ssh terminal
 
    * Set up the port-forwarding to the aptos-fullnode pod.  Use `kubectl get pods -n aptos` to get the name of the pod
 

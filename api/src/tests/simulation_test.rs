@@ -16,7 +16,7 @@ use serde_json::json;
 use std::path::PathBuf;
 const ACCOUNT_ABSTRACTION: u64 = 85;
 
-async fn simulate_aptos_transfer(
+async fn simulate_libra2_transfer(
     context: &mut TestContext,
     use_valid_signature: bool,
     transfer_amount: u64,
@@ -66,7 +66,7 @@ async fn simulate_aptos_transfer(
         if assert_gas_used {
             assert!(
                 resp.headers()
-                    .get("X-Aptos-Gas-Used")
+                    .get("X-Libra2-Gas-Used")
                     .unwrap()
                     .to_str()
                     .unwrap()
@@ -87,21 +87,21 @@ const LARGE_TRANSFER_AMOUNT: u64 = 1_000_000_000;
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
 async fn test_simulate_transaction_with_valid_signature() {
     let mut context = new_test_context(current_function_name!());
-    let resp = simulate_aptos_transfer(&mut context, true, SMALL_TRANSFER_AMOUNT, 400, false).await;
+    let resp = simulate_libra2_transfer(&mut context, true, SMALL_TRANSFER_AMOUNT, 400, false).await;
     context.check_golden_output(resp);
 }
 
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
 async fn test_simulate_transaction_with_not_valid_signature() {
     let mut context = new_test_context(current_function_name!());
-    let resp = simulate_aptos_transfer(&mut context, false, SMALL_TRANSFER_AMOUNT, 200, true).await;
+    let resp = simulate_libra2_transfer(&mut context, false, SMALL_TRANSFER_AMOUNT, 200, true).await;
     assert!(resp[0]["success"].as_bool().is_some_and(|v| v));
 }
 
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
 async fn test_simulate_transaction_with_insufficient_balance() {
     let mut context = new_test_context(current_function_name!());
-    let resp = simulate_aptos_transfer(&mut context, false, LARGE_TRANSFER_AMOUNT, 200, true).await;
+    let resp = simulate_libra2_transfer(&mut context, false, LARGE_TRANSFER_AMOUNT, 200, true).await;
     assert!(!resp[0]["success"].as_bool().is_some_and(|v| v));
 }
 

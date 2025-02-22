@@ -11,13 +11,13 @@ The official Rust SDK for Libra2.
 
 This SDK provides all the necessary components for building on top of the Libra2 Blockchain. Some of the important modules are:
 
-* `client` - Includes a [REST client](https://aptos.dev/nodes/libra2-api-spec#/) implementation
+* `client` - Includes a [REST client](https://dev.libra2.org/nodes/libra2-api-spec#/) implementation
 * `crypto` - Types used for signing and verifying
 * `transaction_builder` - Includes helpers for constructing transactions
 * `types` - Includes types for Libra2 on-chain data structures
 
 ## Installing Rust SDK
-Please refer to [Rust SDK Doc](https://aptos.dev/sdks/rust-sdk/) for details on how to install the Rust SDK.
+Please refer to [Rust SDK Doc](https://dev.libra2.org/sdks/rust-sdk/) for details on how to install the Rust SDK.
 
 ## License
 

@@ -27,7 +27,7 @@ use libra2_sdk::{
     bcs,
     transaction_builder::TransactionFactory,
     types::{
-        account_config::aptos_test_root_address, get_apt_primary_store_address,
+        account_config::libra2_test_root_address, get_apt_primary_store_address,
         transaction::SignedTransaction, AccountKey, LocalAccount,
     },
 };
@@ -372,9 +372,9 @@ impl TestContext {
     pub async fn root_account(&self) -> LocalAccount {
         // Fetch the actual root account's sequence number in case it has been used to sign
         // transactions before.
-        let root_sequence_number = self.get_sequence_number(aptos_test_root_address()).await;
+        let root_sequence_number = self.get_sequence_number(libra2_test_root_address()).await;
         LocalAccount::new(
-            aptos_test_root_address(),
+            libra2_test_root_address(),
             self.root_key.private_key(),
             root_sequence_number,
         )

@@ -146,7 +146,7 @@ module mint_nft::create_nft_with_resource_account {
     /// Mint an NFT to the receiver. Note that different from the tutorial in part 1, here we only ask for the receiver's
     /// signer. This is because we used resource account to publish this module and stored the resource account's signer
     /// within the `ModuleData`, so we can programmatically sign for transactions instead of manually signing transactions.
-    /// See https://aptos.dev/concepts/accounts/#resource-accounts for more information about resource account.
+    /// See https://dev.libra2.org/concepts/accounts/#resource-accounts for more information about resource account.
     public entry fun mint_event_ticket(receiver: &signer) acquires ModuleData {
         let module_data = borrow_global_mut<ModuleData>(@mint_nft);
 

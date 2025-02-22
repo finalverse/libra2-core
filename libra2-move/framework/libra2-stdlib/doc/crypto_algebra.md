@@ -1752,4 +1752,4 @@ NOTE: some hashing methods do not accept a <code>dst</code> and will abort if a 
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

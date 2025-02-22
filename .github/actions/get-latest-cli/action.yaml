@@ -14,7 +14,7 @@ runs:
     - name: Get installation script
       shell: bash
       run: |
-        curl -fsSL "https://aptos.dev/scripts/install_cli.py" > install_cli.py
+        curl -fsSL "https://dev.libra2.org/scripts/install_cli.py" > install_cli.py
     - name: Run installation script
       shell: bash
       run: |

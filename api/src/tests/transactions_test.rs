@@ -17,7 +17,7 @@ use libra2_crypto::{
 use libra2_sdk::types::{AccountKey, LocalAccount};
 use libra2_types::{
     account_address::AccountAddress,
-    account_config::aptos_test_root_address,
+    account_config::libra2_test_root_address,
     transaction::{
         authenticator::{AuthenticationKey, TransactionAuthenticator},
         EntryFunction, Script, SignedTransaction,
@@ -1691,7 +1691,7 @@ async fn test_simulation_filter_allow_sender() {
 
     // Allow the root sender only.
     let mut filter = node_config.api.simulation_filter.clone();
-    filter = filter.add_allow_sender(aptos_test_root_address());
+    filter = filter.add_allow_sender(libra2_test_root_address());
     filter = filter.add_deny_all();
     node_config.api.simulation_filter = filter;
 

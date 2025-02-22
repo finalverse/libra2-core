@@ -202,4 +202,4 @@ Get <code><a href="validator_consensus_info.md#0x1_validator_consensus_info_Vali
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

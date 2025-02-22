@@ -20,7 +20,7 @@ use std::time::Duration;
 
 const REQUEST_SOURCE_CLIENT_UNKNOWN: &str = "unknown";
 static REQUEST_SOURCE_CLIENT_REGEX: Lazy<Regex> =
-    Lazy::new(|| Regex::new(r"aptos-[a-zA-Z\-]+/[0-9A-Za-z\.\-]+").unwrap());
+    Lazy::new(|| Regex::new(r"libra2-[a-zA-Z\-]+/[0-9A-Za-z\.\-]+").unwrap());
 
 /// Logs information about the request and response if the response status code
 /// is >= 500, to help us debug since this will be an error on our side.
@@ -112,7 +112,7 @@ pub async fn middleware_log<E: Endpoint>(next: E, request: Request) -> Result<Re
 
 // Each of our clients includes a header value called X_APTOS_CLIENT that identifies
 // that client. This string follows a particular format: <identifier>/<version>,
-// where <identifier> always starts with `aptos-`. This function ensure this string
+// where <identifier> always starts with `libra2-`. This function ensure this string
 // matches the specified format and returns it if it does. You can see more specifics
 // about how we extract info from the string by looking at the regex we match on.
 fn determine_request_source_client(libra2_client: &Option<String>) -> &str {

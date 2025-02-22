@@ -374,4 +374,4 @@ Construct an <code><a href="jwk_consensus_config.md#0x1_jwk_consensus_config_OID
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

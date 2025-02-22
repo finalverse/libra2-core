@@ -1882,4 +1882,4 @@ Maintains the sorted-by-issuer invariant in <code><a href="jwks.md#0x1_jwks_AllP
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

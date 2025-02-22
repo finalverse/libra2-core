@@ -94,7 +94,7 @@ impl MinimumPeersChecker {
                 50,
                 format!("{} {}", explanation, additional_info),
             )
-            .links(vec!["https://aptos.dev/issues-and-workarounds/".to_string()])
+            .links(vec!["https://dev.libra2.org/issues-and-workarounds/".to_string()])
         }
     }
 }

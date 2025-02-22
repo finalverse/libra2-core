@@ -1,7 +1,7 @@
 Scripts that help generate/evaluate gas parameters for generic algebra move module.
 
 ## Quickstart guide
-Ensure you are on a machine with the [required spec](https://aptos.dev/nodes/validator-node/operator/node-requirements/).
+Ensure you are on a machine with the [required spec](https://dev.libra2.org/nodes/validator-node/operator/node-requirements/).
 
 Ensure you have python3 and the following dependencies.
 ```

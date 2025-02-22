@@ -1,8 +1,8 @@
-# Aptos Node API Changelog
+# Libra2 Node API Changelog
 
-All notable changes to the Aptos Node API will be captured in this file. This changelog is written by hand for now. It adheres to the format set out by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+All notable changes to the Libra2 Node API will be captured in this file. This changelog is written by hand for now. It adheres to the format set out by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-**Note**: The Aptos Node API does not follow semantic version while we are in active development. Instead, breaking changes will be announced with each devnet cut. Once we launch our mainnet, the API will follow semantic versioning closely.
+**Note**: The Libra2 Node API does not follow semantic version while we are in active development. Instead, breaking changes will be announced with each devnet cut. Once we launch our mainnet, the API will follow semantic versioning closely.
 
 ## Unreleased
 - OpenAPI layout changed slightly in some enum cases, see [#13929](https://github.com/finalverse/libra2-core/pull/13929) for more information.
@@ -20,12 +20,12 @@ All notable changes to the Aptos Node API will be captured in this file. This ch
 
 Example A (deprecated endpoint):
 ```
-$ curl https://fullnode.devnet.aptoslabs.com/v1/events/0x02000000000000000000000000000000000000000000000000000000000000000000000000000001
+$ curl https://fullnode.devnet.libra2.org/v1/events/0x02000000000000000000000000000000000000000000000000000000000000000000000000000001
 ```
 
 Example B (new endpoint):
 ```
-$ curl https://fullnode.devnet.aptoslabs.com/v1/accounts/0x1/events/2
+$ curl https://fullnode.devnet.libra2.org/v1/accounts/0x1/events/2
 ```
 
 Output A (prior to this release):
@@ -65,7 +65,7 @@ Output B (after this release):
 
 ## 1.0.0 (2022-08-04)
 
-This is the first major release of v1 of the Aptos Node API. This first changelog is therefore dedicated to changes between v0 and v1. These changes should only be generally relevant to client / SDK developers, if you are a dapp developer, you likely interact with the API via an SDK, in which case the changelog of that SDK will be more useful to you.
+This is the first major release of v1 of the Libra2 Node API. This first changelog is therefore dedicated to changes between v0 and v1. These changes should only be generally relevant to client / SDK developers, if you are a dapp developer, you likely interact with the API via an SDK, in which case the changelog of that SDK will be more useful to you.
 
 Future changelogs will follow the format laid out by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
@@ -125,4 +125,4 @@ This section is dedicated to the finer details of the API change, but we include
 - This PR adds a standalone binary for spec generation: https://github.com/finalverse/libra2-core/pull/2317
 
 ## Deprecation notes
-- Currently Aptos nodes host both the v0 and v1 APIs. We will remove the v0 API by 2022-09-01. If you're a dapp developer, you should only need to update to a newer version of the SDK you use. If you're an SDK / client developer, please update your SDK / client. Reach out to the Aptos team via [Discord](https://discord.gg/aptosnetwork) for assistance with this, we will be happy to help.
+- Currently Libra2 nodes host both the v0 and v1 APIs. We will remove the v0 API by 2022-09-01. If you're a dapp developer, you should only need to update to a newer version of the SDK you use. If you're an SDK / client developer, please update your SDK / client. Reach out to the Libra2 team via [Discord](https://discord.gg/XXUf99QJ) for assistance with this, we will be happy to help.

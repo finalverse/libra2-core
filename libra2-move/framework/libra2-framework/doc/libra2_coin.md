@@ -657,4 +657,4 @@ Claim the delegated mint capability and destroy the delegated token.
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

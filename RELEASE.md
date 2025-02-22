@@ -20,7 +20,7 @@
 All current development occurs on the `main` branch. All new feature developments have a feature flag to gate it off during development. Feature flags are turned on *after* the development is complete and passes Governance.
 
 ### devnet branch
-The `devnet` branch is created on the `main` branch every week. It is used to deploy devnet and allows the Aptos Community to explore the most recent changes to the Aptos node binary and Libra2 framework. Follow along in our [#devnet-release](https://discord.com/channels/945856774056083548/956692649430093904) channel on [Discord](https://discord.gg/aptosnetwork).
+The `devnet` branch is created on the `main` branch every week. It is used to deploy devnet and allows the Aptos Community to explore the most recent changes to the Aptos node binary and Libra2 framework. Follow along in our [#devnet-release](https://discord.com/channels/945856774056083548/956692649430093904) channel on [Discord](https://discord.gg/XXUf99QJ).
 
 ### aptos-release-v*X.Y* release branches
 These are release branches based on Aptos release planning timeline. They are created off
@@ -33,7 +33,7 @@ The aptos node release tags are created for validator/fullnode deployment of the
 The aptos framework release tags are created to facilitate the on-chain framework upgrade of the given release branch. The minor number *Z* will increment when a new hot-fix release or a new  framework update is required on this release branch.
 
 ### aptos-cli-v*X.Y.Z* release tag
-The aptos cli release tags are created to track the CLI versions for community to use when developing on the Aptos network. It's always recommended to upgrade your CLI when a new version is released, for the best user experience. Learn how to update to the [latest CLI version](https://aptos.dev/tools/aptos-cli/install-cli/install-from-brew/#upgrading-the-cli).
+The aptos cli release tags are created to track the CLI versions for community to use when developing on the Aptos network. It's always recommended to upgrade your CLI when a new version is released, for the best user experience. Learn how to update to the [latest CLI version](https://dev.libra2.org/tools/aptos-cli/install-cli/install-from-brew/#upgrading-the-cli).
 
 ## Aptos Release Lifecycle
 (The time length here is a rough estimate, it varies depends on each release.)
@@ -48,7 +48,7 @@ The aptos cli release tags are created to track the CLI versions for community t
 * [day 24] Proposals executed on-chain if passed voting.
 
 ## Release Announcement
-* Each of the network release will be announced on Aptos Network [Discord](https://discord.gg/aptosnetwork). Follow mainnet-release, testnet-release, devnet-release channel to get updates.
+* Each of the network release will be announced on Libra2 Network [Discord](https://discord.gg/XXUf99QJ). Follow mainnet-release, testnet-release, devnet-release channel to get updates.
 * When a release is ready to deploy, a [Github release page](https://github.com/finalverse/libra2-core/releases) will be created in this repo as well. You can search for the most recent release version titled with "[Mainnet]" for production usage.
 
 ## How we test each release at Aptos

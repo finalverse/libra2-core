@@ -440,4 +440,4 @@ When setting now time must be later than last_reconfiguration_time.
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

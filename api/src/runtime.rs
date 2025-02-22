@@ -152,12 +152,12 @@ pub fn get_api_service(
     let license =
         LicenseObject::new("Apache 2.0").url("https://www.apache.org/licenses/LICENSE-2.0.html");
     let contact = ContactObject::new()
-        .name("Aptos Labs")
+        .name("Libra2")
         .url("https://github.com/finalverse/libra2-core");
 
-    OpenApiService::new(apis, "Aptos Node API", version.trim())
+    OpenApiService::new(apis, "Libra2 Node API", version.trim())
         .server("/v1")
-        .description("The Aptos Node API is a RESTful API for client applications to interact with the Aptos blockchain.")
+        .description("The Libra2 Node API is a RESTful API for client applications to interact with the Libra2 blockchain.")
         .license(license)
         .contact(contact)
         .external_document("https://github.com/finalverse/libra2-core")
@@ -272,7 +272,7 @@ pub fn attach_poem_to_runtime(
 async fn root_handler() -> Html<&'static str> {
     let response = "<html>
 <head>
-    <title>Aptos Node API</title>
+    <title>Libra2 Node API</title>
 </head>
 <body>
     <p>

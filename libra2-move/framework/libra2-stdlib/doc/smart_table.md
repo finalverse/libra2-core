@@ -1788,4 +1788,4 @@ map_spec_has_key = spec_contains;
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

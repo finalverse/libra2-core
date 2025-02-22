@@ -62,7 +62,7 @@ The default configuration will create a single node cluster with 4CPU/8GB and a 
 
         $ curl http://<IP>
 
-11. To verify the correctness of your FullNode, as outlined in the documentation (https://aptos.dev/tutorials/run-a-fullnode/#verify-the-correctness-of-your-fullnode), you will need to set up a port-forwarding mechanism directly to the aptos pod in one ssh terminal and test it in another ssh terminal
+11. To verify the correctness of your FullNode, as outlined in the documentation (https://dev.libra2.org/tutorials/run-a-fullnode/#verify-the-correctness-of-your-fullnode), you will need to set up a port-forwarding mechanism directly to the aptos pod in one ssh terminal and test it in another ssh terminal
 
    * Set up the port-forwarding to the aptos-fullnode pod.  Use `kubectl get pods -n aptos` to get the name of the pod
 

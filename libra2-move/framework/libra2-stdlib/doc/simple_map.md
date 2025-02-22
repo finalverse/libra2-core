@@ -1037,4 +1037,4 @@ Remove a key/value pair from the map. The key must exist.
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

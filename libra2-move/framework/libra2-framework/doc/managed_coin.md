@@ -529,4 +529,4 @@ Updating <code>Account.guid_creation_num</code> will not overflow.
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

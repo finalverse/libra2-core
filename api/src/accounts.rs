@@ -81,7 +81,7 @@ impl AccountsApi {
     /// Retrieves all account resources for a given account and a specific ledger version.  If the
     /// ledger version is not specified in the request, the latest ledger version is used.
     ///
-    /// The Aptos nodes prune account state history, via a configurable time window.
+    /// The Libra2 nodes prune account state history, via a configurable time window.
     /// If the requested ledger version has been pruned, the server responds with a 410.
     #[oai(
         path = "/accounts/:address/resources",
@@ -102,7 +102,7 @@ impl AccountsApi {
         ///
         /// This cursor cannot be derived manually client-side. Instead, you must
         /// call this endpoint once without this query parameter specified, and
-        /// then use the cursor returned in the X-Aptos-Cursor header in the
+        /// then use the cursor returned in the X-Libra2-Cursor header in the
         /// response.
         start: Query<Option<StateKeyWrapper>>,
         /// Max number of account resources to retrieve
@@ -133,7 +133,7 @@ impl AccountsApi {
     /// Retrieves all account resources for a given account and a specific ledger version.  If the
     /// ledger version is not specified in the request, the latest ledger version is used.
     ///
-    /// The Aptos nodes prune account state history, via a configurable time window.
+    /// The Libra2 nodes prune account state history, via a configurable time window.
     /// If the requested ledger version has been pruned, the server responds with a 410.
     #[oai(
         path = "/accounts/:address/balance/:asset_type",
@@ -169,7 +169,7 @@ impl AccountsApi {
     /// Retrieves all account modules' bytecode for a given account at a specific ledger version.
     /// If the ledger version is not specified in the request, the latest ledger version is used.
     ///
-    /// The Aptos nodes prune account state history, via a configurable time window.
+    /// The Libra2 nodes prune account state history, via a configurable time window.
     /// If the requested ledger version has been pruned, the server responds with a 410.
     #[oai(
         path = "/accounts/:address/modules",
@@ -190,7 +190,7 @@ impl AccountsApi {
         ///
         /// This cursor cannot be derived manually client-side. Instead, you must
         /// call this endpoint once without this query parameter specified, and
-        /// then use the cursor returned in the X-Aptos-Cursor header in the
+        /// then use the cursor returned in the X-Libra2-Cursor header in the
         /// response.
         start: Query<Option<StateKeyWrapper>>,
         /// Max number of account modules to retrieve

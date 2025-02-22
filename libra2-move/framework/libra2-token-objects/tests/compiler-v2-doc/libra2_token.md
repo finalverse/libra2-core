@@ -1700,4 +1700,4 @@ With an existing collection, directly mint a soul bound token into the recipient
 </details>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

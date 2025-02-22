@@ -5,19 +5,19 @@ title: Contributing to Libra2
 
 # Contributing
 
-Our goal is to make contributing to Libra2 easy and transparent. See [Aptos Community](https://aptos.dev/community) for full details. This page describes [our development process](#our-development-process).
+Our goal is to make contributing to Libra2 easy and transparent. See [Aptos Community](https://dev.libra2.org/community) for full details. This page describes [our development process](#our-development-process).
 
 ## Libra2
 
 To contribute to the Libra2 implementation, first start with the proper development copy.
 You may want to use the GitHub interface to fork [aptos-core](https://github.com/finalverse/libra2-core) and check out your fork.
-For development environment setup and first build, see [Building Aptos From Source](https://aptos.dev/guides/building-from-source)
+For development environment setup and first build, see [Building Aptos From Source](https://dev.libra2.org/guides/building-from-source)
 
 ## Our Development Process
 
 ### Code Style, Hints, and Testing
 
-Refer to our Coding Guidelines for the [Move](https://aptos.dev/move/book/coding-conventions/) and [Rust](./RUST_CODING_STYLE.md) programming languages for detailed guidance about how to contribute to the project.
+Refer to our Coding Guidelines for the [Move](https://dev.libra2.org/move/book/coding-conventions/) and [Rust](./RUST_CODING_STYLE.md) programming languages for detailed guidance about how to contribute to the project.
 
 Also, please ensure you follow our [Secure Coding Guidelines](./RUST_SECURE_CODING.md) to contribute to Aptos securely. 
 

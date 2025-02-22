@@ -88,7 +88,7 @@ pub enum SubmitTransactionPost {
     // TODO: Since I don't want to impl all the Poem derives on SignedTransaction,
     // find a way to at least indicate in the spec that it expects a SignedTransaction.
     // TODO: https://github.com/finalverse/libra2-core/issues/2275
-    #[oai(content_type = "application/x.aptos.signed_transaction+bcs")]
+    #[oai(content_type = "application/x.libra2.signed_transaction+bcs")]
     Bcs(Bcs),
 }
 
@@ -111,7 +111,7 @@ pub enum SubmitTransactionsBatchPost {
     // TODO: Since I don't want to impl all the Poem derives on SignedTransaction,
     // find a way to at least indicate in the spec that it expects a SignedTransaction.
     // TODO: https://github.com/finalverse/libra2-core/issues/2275
-    #[oai(content_type = "application/x.aptos.signed_transaction+bcs")]
+    #[oai(content_type = "application/x.libra2.signed_transaction+bcs")]
     Bcs(Bcs),
 }
 
@@ -186,7 +186,7 @@ impl TransactionsApi {
     /// looks the transaction up by hash in the mempool (pending, not yet committed).
     ///
     /// To create a transaction hash by yourself, do the following:
-    ///   1. Hash message bytes: "RawTransaction" bytes + BCS bytes of [Transaction](https://aptos-labs.github.io/aptos-core/libra2_types/transaction/enum.Transaction.html).
+    ///   1. Hash message bytes: "RawTransaction" bytes + BCS bytes of [Transaction](https://github.com/finalverse/libra2-core/libra2_types/transaction/enum.Transaction.html).
     ///   2. Apply hash algorithm `SHA3-256` to the hash message bytes.
     ///   3. Hex-encode the hash bytes with `0x` prefix.
     // TODO: Include a link to an example of how to do this ^
@@ -360,7 +360,7 @@ impl TransactionsApi {
     ///
     /// To submit a transaction as BCS, you must submit a SignedTransaction
     /// encoded as BCS. See SignedTransaction in types/src/transaction/mod.rs.
-    /// Make sure to use the `application/x.aptos.signed_transaction+bcs` Content-Type.
+    /// Make sure to use the `application/x.libra2.signed_transaction+bcs` Content-Type.
     // TODO: Point to examples of both of these flows, in multiple languages.
     #[oai(
         path = "/transactions",
@@ -414,7 +414,7 @@ impl TransactionsApi {
     ///
     /// To submit a transaction as BCS, you must submit a SignedTransaction
     /// encoded as BCS. See SignedTransaction in types/src/transaction/mod.rs.
-    /// Make sure to use the `application/x.aptos.signed_transaction+bcs` Content-Type.
+    /// Make sure to use the `application/x.libra2.signed_transaction+bcs` Content-Type.
     #[oai(
         path = "/transactions/batch",
         method = "post",
@@ -1308,20 +1308,20 @@ impl TransactionsApi {
             },
             Err(error) => match error.error_code {
                 Libra2ErrorCode::InternalError => Err(
-                    SubmitTransactionError::internal_from_aptos_error(error, ledger_info),
+                    SubmitTransactionError::internal_from_libra2_error(error, ledger_info),
                 ),
                 Libra2ErrorCode::VmError
                 | Libra2ErrorCode::SequenceNumberTooOld
                 | Libra2ErrorCode::InvalidTransactionUpdate => Err(
-                    SubmitTransactionError::bad_request_from_aptos_error(error, ledger_info),
+                    SubmitTransactionError::bad_request_from_libra2_error(error, ledger_info),
                 ),
                 Libra2ErrorCode::MempoolIsFull => Err(
-                    SubmitTransactionError::insufficient_storage_from_aptos_error(
+                    SubmitTransactionError::insufficient_storage_from_libra2_error(
                         error,
                         ledger_info,
                     ),
                 ),
-                _ => Err(SubmitTransactionError::internal_from_aptos_error(
+                _ => Err(SubmitTransactionError::internal_from_libra2_error(
                     error,
                     ledger_info,
                 )),

@@ -17,7 +17,7 @@ module 0xABCD::token_v1 {
     const COLLECTION_NAME: vector<u8> = b"An NFT Collection Name";
     const COLLECTION_DESCRIPTION: vector<u8> = b"An NFT Collection Description";
     const COLLECTION_URL: vector<u8> = b"";
-    const TOKEN_URI: vector<u8> = b"https://aptos.dev";
+    const TOKEN_URI: vector<u8> = b"https://dev.libra2.org";
     const TOKEN_DESCRIPTION: vector<u8> = b"";
     const TOKEN_NAME: vector<u8> = b"NFT Collectible";
 

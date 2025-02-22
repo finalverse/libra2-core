@@ -19,4 +19,4 @@ This is the reference documentation of the Aptos Token framework.
 -  [`0x3::token_transfers`](token_transfers.md#0x3_token_transfers)
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

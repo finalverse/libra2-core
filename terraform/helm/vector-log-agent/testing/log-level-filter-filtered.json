@@ -2,7 +2,7 @@
   "@timestamp.nanos": 163018,
   "kubernetes": {
     "annotations": {
-      "aptos.dev/min-log-level-to-retain": "warn"
+      "dev.libra2.org/min-log-level-to-retain": "warn"
     },
     "cluster": "forge-0",
     "container_image": "12355.dkr.ecr.asia-central-2.amazonaws.com/aptos/validator:fd60a8b334afa0eecae0824f6671ae763ca57664",

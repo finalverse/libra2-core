@@ -382,4 +382,4 @@ Requires the <code>publisher</code> to be the owner of the <code>code_object</co
 </details>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

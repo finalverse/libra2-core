@@ -628,4 +628,4 @@ Full specification is defined in https://datatracker.ietf.org/doc/html/draft-irt
 </details>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

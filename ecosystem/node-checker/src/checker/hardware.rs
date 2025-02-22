@@ -19,7 +19,7 @@ const CPU_COUNT_KEY: &str = "cpu_count";
 const MEMORY_TOTAL_KEY: &str = "memory_total";
 
 const NODE_REQUIREMENTS_DOC_LINK: &str =
-    "https://aptos.dev/nodes/validator-node/operator/node-requirements";
+    "https://dev.libra2.org/nodes/validator-node/operator/node-requirements";
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]

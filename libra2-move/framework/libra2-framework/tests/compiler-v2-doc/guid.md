@@ -519,4 +519,4 @@ Return true if the GUID's ID is <code>id</code>
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

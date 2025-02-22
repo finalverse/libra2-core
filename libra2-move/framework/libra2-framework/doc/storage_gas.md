@@ -1633,4 +1633,4 @@ Address @libra2_framework must exist StorageGasConfig and StorageGas and StateSt
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

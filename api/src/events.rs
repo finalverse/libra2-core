@@ -48,7 +48,7 @@ impl EventsApi {
     async fn get_events_by_creation_number(
         &self,
         accept_type: AcceptType,
-        /// Hex-encoded 32 byte Aptos account, with or without a `0x` prefix, for
+        /// Hex-encoded 32 byte Libra2 account, with or without a `0x` prefix, for
         /// which events are queried. This refers to the account that events were
         /// emitted to, not the account hosting the move module that emits that
         /// event type.
@@ -103,7 +103,7 @@ impl EventsApi {
     async fn get_events_by_event_handle(
         &self,
         accept_type: AcceptType,
-        /// Hex-encoded 32 byte Aptos account, with or without a `0x` prefix, for
+        /// Hex-encoded 32 byte Libra2 account, with or without a `0x` prefix, for
         /// which events are queried. This refers to the account that events were
         /// emitted to, not the account hosting the move module that emits that
         /// event type.

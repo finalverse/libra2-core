@@ -62,7 +62,7 @@ async fn test_view_gas_used_header() {
     // Confirm the gas used header is present.
     assert!(
         resp.headers()
-            .get("X-Aptos-Gas-Used")
+            .get("X-Libra2-Gas-Used")
             .unwrap()
             .to_str()
             .unwrap()

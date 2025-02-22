@@ -3746,4 +3746,4 @@ The guid_creation_num of the Account is up to MAX_U64.
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

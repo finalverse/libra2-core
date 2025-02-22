@@ -1390,4 +1390,4 @@ Check if the Libra2Coin under the address existed.
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

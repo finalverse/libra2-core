@@ -10,7 +10,7 @@ schema so that the changes can surface up.
 
 ## Prerequisite
 
-* A running archival fullnode with `index` enabled. You can check more from [here](https://aptos.dev/en/network/nodes/configure/state-sync#archival-pfns) and [fullnode config](https://github.com/finalverse/libra2-core/tree/main/ecosystem/indexer-grpc/indexer-grpc-fullnode).
+* A running archival fullnode with `index` enabled. You can check more from [here](https://dev.libra2.org/en/network/nodes/configure/state-sync#archival-pfns) and [fullnode config](https://github.com/finalverse/libra2-core/tree/main/ecosystem/indexer-grpc/indexer-grpc-fullnode).
 
 
 ## How to run it.

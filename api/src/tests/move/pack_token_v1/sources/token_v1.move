@@ -39,7 +39,7 @@ module addr::token_v1 {
             string::utf8(b"Hello, Token"),
             amount,
             token_max,
-            string::utf8(b"https://aptos.dev"),
+            string::utf8(b"https://dev.libra2.org"),
             signer::address_of(creator),
             100,
             0,

@@ -1742,4 +1742,4 @@ Apply the function to a mutable reference of each key-value pair in the table.
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

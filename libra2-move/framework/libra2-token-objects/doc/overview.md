@@ -19,4 +19,4 @@ This is the reference documentation of the Aptos Token Objects framework.
 -  [`0x4::token`](token.md#0x4_token)
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

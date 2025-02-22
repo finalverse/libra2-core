@@ -105,4 +105,4 @@ Return true only if <code>a</code> is a transaction signer address. This is a sp
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

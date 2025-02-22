@@ -491,4 +491,4 @@ Aborts with <code><a href="../../move-stdlib/doc/error.md#0x1_error_invalid_argu
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

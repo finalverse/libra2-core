@@ -4,7 +4,7 @@
 # Module `0x3::token`
 
 This module provides the foundation for Tokens.
-Checkout our developer doc on our token standard https://aptos.dev/standards
+Checkout our developer doc on our token standard https://dev.libra2.org/standards
 
 
 -  [Struct `Token`](#0x3_token_Token)
@@ -6937,4 +6937,4 @@ Deprecated function
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

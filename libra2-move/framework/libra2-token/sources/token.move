@@ -1,5 +1,5 @@
 /// This module provides the foundation for Tokens.
-/// Checkout our developer doc on our token standard https://aptos.dev/standards
+/// Checkout our developer doc on our token standard https://dev.libra2.org/standards
 module libra2_token::token {
     use std::error;
     use std::option::{Self, Option};
@@ -1952,7 +1952,7 @@ module libra2_token::token {
             string::utf8(b"Hello, Token"),
             100,
             2,
-            string::utf8(b"https://aptos.dev"),
+            string::utf8(b"https://dev.libra2.org"),
             signer::address_of(&creator),
             100,
             0,
@@ -2020,7 +2020,7 @@ module libra2_token::token {
             creator,
             get_collection_name(),
             string::utf8(b"Collection: Hello, World"),
-            string::utf8(b"https://aptos.dev"),
+            string::utf8(b"https://dev.libra2.org"),
             collection_max,
             mutate_setting
         );
@@ -2036,7 +2036,7 @@ module libra2_token::token {
             string::utf8(b"Hello, Token"),
             amount,
             token_max,
-            string::utf8(b"https://aptos.dev"),
+            string::utf8(b"https://dev.libra2.org"),
             signer::address_of(creator),
             100,
             0,

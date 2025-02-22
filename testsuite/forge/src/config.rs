@@ -225,9 +225,9 @@ impl ForgeConfig {
             }
 
             if retain_debug_logs {
-                helm_values["validator"]["podAnnotations"]["aptos.dev/min-log-level-to-retain"] =
+                helm_values["validator"]["podAnnotations"]["dev.libra2.org/min-log-level-to-retain"] =
                     serde_yaml::Value::String("debug".to_owned());
-                helm_values["fullnode"]["podAnnotations"]["aptos.dev/min-log-level-to-retain"] =
+                helm_values["fullnode"]["podAnnotations"]["dev.libra2.org/min-log-level-to-retain"] =
                     serde_yaml::Value::String("debug".to_owned());
                 helm_values["validator"]["rust_log"] = "debug,hyper=off".into();
                 helm_values["fullnode"]["rust_log"] = "debug,hyper=off".into();

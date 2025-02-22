@@ -100,8 +100,8 @@ macro_rules! generate_error_traits {
             ) -> Self where Self: Sized;
 
             #[allow(unused)]
-            fn [<$trait_name:snake _from_aptos_error>](
-                aptos_error: libra2_api_types::Libra2Error,
+            fn [<$trait_name:snake _from_libra2_error>](
+                libra2_error: libra2_api_types::Libra2Error,
                 ledger_info: &libra2_api_types::LedgerInfo
             ) -> Self where Self: Sized;
         }
@@ -134,21 +134,21 @@ macro_rules! generate_error_response {
                 // We use just regular u64 here instead of U64 since all header
                 // values are implicitly strings anyway.
                 /// Chain ID of the current chain
-                #[oai(header = "X-Aptos-Chain-Id")] Option<u8>,
+                #[oai(header = "X-Libra2-Chain-Id")] Option<u8>,
                 /// Current ledger version of the chain
-                #[oai(header = "X-Aptos-Ledger-Version")] Option<u64>,
+                #[oai(header = "X-Libra2-Ledger-Version")] Option<u64>,
                 /// Oldest non-pruned ledger version of the chain
-                #[oai(header = "X-Aptos-Ledger-Oldest-Version")] Option<u64>,
+                #[oai(header = "X-Libra2-Ledger-Oldest-Version")] Option<u64>,
                 /// Current timestamp of the chain
-                #[oai(header = "X-Aptos-Ledger-TimestampUsec")] Option<u64>,
+                #[oai(header = "X-Libra2-Ledger-TimestampUsec")] Option<u64>,
                 /// Current epoch of the chain
-                #[oai(header = "X-Aptos-Epoch")] Option<u64>,
+                #[oai(header = "X-Libra2-Epoch")] Option<u64>,
                 /// Current block height of the chain
-                #[oai(header = "X-Aptos-Block-Height")] Option<u64>,
+                #[oai(header = "X-Libra2-Block-Height")] Option<u64>,
                 /// Oldest non-pruned block height of the chain
-                #[oai(header = "X-Aptos-Oldest-Block-Height")] Option<u64>,
+                #[oai(header = "X-Libra2-Oldest-Block-Height")] Option<u64>,
                 /// The cost of the call in terms of gas
-                #[oai(header = "X-Aptos-Gas-Used")] Option<u64>,
+                #[oai(header = "X-Libra2-Gas-Used")] Option<u64>,
             ),
             )*
         }
@@ -221,11 +221,11 @@ macro_rules! generate_error_response {
                 ))
             }
 
-            fn [<$name:snake _from_aptos_error>](
-                aptos_error: libra2_api_types::Libra2Error,
+            fn [<$name:snake _from_libra2_error>](
+                libra2_error: libra2_api_types::Libra2Error,
                 ledger_info: &libra2_api_types::LedgerInfo
             ) -> Self where Self: Sized {
-                let payload = poem_openapi::payload::Json(Box::new(aptos_error));
+                let payload = poem_openapi::payload::Json(Box::new(libra2_error));
                 Self::from($enum_name::$name(
                     payload,
                     Some(ledger_info.chain_id),
@@ -295,25 +295,25 @@ macro_rules! generate_success_response {
                 // values are implicitly strings anyway.
                 $crate::response::AptosResponseContent<T>,
                 /// Chain ID of the current chain
-                #[oai(header = "X-Aptos-Chain-Id")] u8,
+                #[oai(header = "X-Libra2-Chain-Id")] u8,
                 /// Current ledger version of the chain
-                #[oai(header = "X-Aptos-Ledger-Version")] u64,
+                #[oai(header = "X-Libra2-Ledger-Version")] u64,
                 /// Oldest non-pruned ledger version of the chain
-                #[oai(header = "X-Aptos-Ledger-Oldest-Version")] u64,
+                #[oai(header = "X-Libra2-Ledger-Oldest-Version")] u64,
                 /// Current timestamp of the chain
-                #[oai(header = "X-Aptos-Ledger-TimestampUsec")] u64,
+                #[oai(header = "X-Libra2-Ledger-TimestampUsec")] u64,
                 /// Current epoch of the chain
-                #[oai(header = "X-Aptos-Epoch")] u64,
+                #[oai(header = "X-Libra2-Epoch")] u64,
                 /// Current block height of the chain
-                #[oai(header = "X-Aptos-Block-Height")] u64,
+                #[oai(header = "X-Libra2-Block-Height")] u64,
                 /// Oldest non-pruned block height of the chain
-                #[oai(header = "X-Aptos-Oldest-Block-Height")] u64,
+                #[oai(header = "X-Libra2-Oldest-Block-Height")] u64,
                 /// The cost of the call in terms of gas
-                #[oai(header = "X-Aptos-Gas-Used")] Option<u64>,
+                #[oai(header = "X-Libra2-Gas-Used")] Option<u64>,
                 /// Cursor to be used for endpoints that support cursor-based
                 /// pagination. Pass this to the `start` field of the endpoint
                 /// on the next call to get the next page of results.
-                #[oai(header = "X-Aptos-Cursor")] Option<String>,
+                #[oai(header = "X-Libra2-Cursor")] Option<String>,
             ),
             )*
         }

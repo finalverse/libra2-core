@@ -2824,4 +2824,4 @@ Given a path to node (excluding the node itself), which is currently stored unde
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

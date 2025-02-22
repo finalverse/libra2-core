@@ -2,7 +2,7 @@ This guide gives some hints to troubleshoot issues when using the prover for spe
 
 ## Installation
 
-Please refer to the [doc](https://aptos.dev/tools/aptos-cli/install-cli/install-move-prover/).
+Please refer to the [doc](https://dev.libra2.org/tools/aptos-cli/install-cli/install-move-prover/).
 
 ## Timeout
 
@@ -37,5 +37,5 @@ you could use the command `cargo test --release -p libra2-framework -- --skip pr
 
 ## Specification guide
 
-Please refer to the [Move Prover Book](https://aptos.dev/guides/prover-guides/move-prover)
+Please refer to the [Move Prover Book](https://dev.libra2.org/guides/prover-guides/move-prover)
 for detailed introduction on how to write specifications and use Move Prover.

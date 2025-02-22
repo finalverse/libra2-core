@@ -73,4 +73,4 @@ This is the reference documentation of the Libra2 framework.
 -  [`0x1::voting`](voting.md#0x1_voting)
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

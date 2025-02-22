@@ -309,7 +309,7 @@ async fn test_get_account_resources_with_pagination() {
         .path(&format!("/v1{}", account_resources(address)));
     let resp = context.reply(req).await;
     assert_eq!(resp.status(), 200);
-    assert!(!resp.headers().contains_key("X-Aptos-Cursor"));
+    assert!(!resp.headers().contains_key("X-Libra2-Cursor"));
     let all_resources: Vec<MoveResource> = serde_json::from_slice(resp.body()).unwrap();
     // We assert there are at least 10 resources. If there aren't, the rest of the
     // test will be wrong.
@@ -326,7 +326,7 @@ async fn test_get_account_resources_with_pagination() {
     assert_eq!(resp.status(), 200);
     let cursor_header = resp
         .headers()
-        .get("X-Aptos-Cursor")
+        .get("X-Libra2-Cursor")
         .expect("Cursor header was missing");
     let cursor_header = StateKeyWrapper::from_str(cursor_header.to_str().unwrap()).unwrap();
     let resources: Vec<MoveResource> = serde_json::from_slice(resp.body()).unwrap();
@@ -351,7 +351,7 @@ async fn test_get_account_resources_with_pagination() {
     assert_eq!(resp.status(), 200);
     let cursor_header = resp
         .headers()
-        .get("X-Aptos-Cursor")
+        .get("X-Libra2-Cursor")
         .expect("Cursor header was missing");
     let cursor_header = StateKeyWrapper::from_str(cursor_header.to_str().unwrap()).unwrap();
     let resources: Vec<MoveResource> = serde_json::from_slice(resp.body()).unwrap();
@@ -366,7 +366,7 @@ async fn test_get_account_resources_with_pagination() {
     ));
     let resp = context.reply(req).await;
     assert_eq!(resp.status(), 200);
-    assert!(!resp.headers().contains_key("X-Aptos-Cursor"));
+    assert!(!resp.headers().contains_key("X-Libra2-Cursor"));
     let resources: Vec<MoveResource> = serde_json::from_slice(resp.body()).unwrap();
     assert_eq!(resources.len(), all_resources.len() - 9);
     assert_eq!(resources, all_resources[9..].to_vec());
@@ -389,7 +389,7 @@ async fn test_get_account_modules_with_pagination() {
         .path(&format!("/v1{}", account_modules(address)));
     let resp = context.reply(req).await;
     assert_eq!(resp.status(), 200);
-    assert!(!resp.headers().contains_key("X-Aptos-Cursor"));
+    assert!(!resp.headers().contains_key("X-Libra2-Cursor"));
     let all_modules: Vec<MoveModuleBytecode> = serde_json::from_slice(resp.body()).unwrap();
     // We assert there are at least 10 modules. If there aren't, the rest of the
     // test will be wrong.
@@ -405,7 +405,7 @@ async fn test_get_account_modules_with_pagination() {
     assert_eq!(resp.status(), 200);
     let cursor_header = resp
         .headers()
-        .get("X-Aptos-Cursor")
+        .get("X-Libra2-Cursor")
         .expect("Cursor header was missing");
     let cursor_header = StateKeyWrapper::from_str(cursor_header.to_str().unwrap()).unwrap();
     let modules: Vec<MoveModuleBytecode> = serde_json::from_slice(resp.body()).unwrap();
@@ -422,7 +422,7 @@ async fn test_get_account_modules_with_pagination() {
     assert_eq!(resp.status(), 200);
     let cursor_header = resp
         .headers()
-        .get("X-Aptos-Cursor")
+        .get("X-Libra2-Cursor")
         .expect("Cursor header was missing");
     let cursor_header = StateKeyWrapper::from_str(cursor_header.to_str().unwrap()).unwrap();
     let modules: Vec<MoveModuleBytecode> = serde_json::from_slice(resp.body()).unwrap();
@@ -437,7 +437,7 @@ async fn test_get_account_modules_with_pagination() {
     ));
     let resp = context.reply(req).await;
     assert_eq!(resp.status(), 200);
-    assert!(!resp.headers().contains_key("X-Aptos-Cursor"));
+    assert!(!resp.headers().contains_key("X-Libra2-Cursor"));
     let modules: Vec<MoveModuleBytecode> = serde_json::from_slice(resp.body()).unwrap();
     assert_eq!(modules.len(), all_modules.len() - 10);
     assert_eq!(modules, all_modules[10..].to_vec());

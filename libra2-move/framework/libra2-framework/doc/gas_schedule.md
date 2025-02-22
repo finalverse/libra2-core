@@ -651,4 +651,4 @@ Only used in reconfigurations to apply the pending <code><a href="gas_schedule.m
 </code></pre>
 
 
-[move-book]: https://aptos.dev/move/book/SUMMARY
+[move-book]: https://dev.libra2.org/move/book/SUMMARY

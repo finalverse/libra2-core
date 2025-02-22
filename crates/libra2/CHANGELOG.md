@@ -38,7 +38,7 @@ stdin, which triggers a graceful shutdown when received.
 - Downgrade bytecode version to v6 before calling the Revela decompiler, if possible, i.e. no enum types are used. This allows to continue to use Revela until the new decompiler is ready.
 
 ## [5.0.0] - 2024/12/11
-- [**Breaking Change**] `aptos init` and `aptos account fund-with-faucet` no longer work directly with testnet, you must now use the minting page at the [Aptos dev docs](https://aptos.dev/network/faucet).
+- [**Breaking Change**] `aptos init` and `aptos account fund-with-faucet` no longer work directly with testnet, you must now use the minting page at the [Aptos dev docs](https://dev.libra2.org/network/faucet).
 ## [4.7.0] - 2024/12/10
 - [`Fix`] CLI config should not always require a private key field to be present.
 
@@ -71,7 +71,7 @@ stdin, which triggers a graceful shutdown when received.
 - Bump to resolve issue with release version inconsistency.
 
 ## [4.2.4] - 2024/10/21
-- Releasing Move 2.1, which adds compound assignments (`x += 1`) and loop labels to the language. See [Move 2 Release Notes](https://aptos.dev/en/build/smart-contracts/book/move-2).
+- Releasing Move 2.1, which adds compound assignments (`x += 1`) and loop labels to the language. See [Move 2 Release Notes](https://dev.libra2.org/en/build/smart-contracts/book/move-2).
 - multiple bug fixes in the Move 2 compilation chain.
 - `aptos move fmt` formats move files inside the `tests` and `examples` directory of a package.
 - Added `aptos update prover-dependencies`, which installs the dependency of Move prover, boogie, z3 and cvc5.
@@ -132,7 +132,7 @@ stdin, which triggers a graceful shutdown when received.
 
 ## [3.3.0] - 2024/05/03
 - **Breaking Change** Update View functions to use BCS for submission.  Allows for all arguments to be supported in view functions.  Note some input arguments that were previously inputted as strings may be handled differently.
-- [Early beta release of the Move compiler v2](https://aptos.dev/move/compiler_v2/) is now accessible through the CLI. We now allow specifying the Move compiler version and the Move language version via the CLI.
+- [Early beta release of the Move compiler v2](https://dev.libra2.org/move/compiler_v2/) is now accessible through the CLI. We now allow specifying the Move compiler version and the Move language version via the CLI.
 
 ## [3.2.0] - 2024/03/29
 - Renamed `run-local-testnet` to `run-localnet`. `run-local-testnet` is still supported for backwards compatibility.
@@ -166,7 +166,7 @@ stdin, which triggers a graceful shutdown when received.
 - Updated CLI source compilation to use rust toolchain version 1.74.1 (from 1.72.1).
 - Added `for` loop.
   - Syntax: `for (iter in lower_bound..upper_bound) { loop_body }` with integer bounds.
-  - Documentation: https://aptos.dev/move/book/loops
+  - Documentation: https://dev.libra2.org/move/book/loops
 - Upgraded indexer processors for localnet from 2d5cb211a89a8705674e9e1e741c841dd899c558 to 4801acae7aea30d7e96bbfbe5ec5b04056dfa4cf. Upgraded Hasura metadata accordingly.
 - Upgraded Hasura GraphQL engine image from 2.35.0 to 2.36.1.
 
@@ -200,7 +200,7 @@ stdin, which triggers a graceful shutdown when received.
 
 ## [2.2.0] - 2023/10/11
 ### Added
-- Added `--with-indexer-api` to `aptos node run-local-testnet`. With this flag you can run a full processor + indexer API stack as part of your localnet. You must have Docker installed to use this feature. For more information, see https://aptos.dev/nodes/local-testnet/local-testnet-index.
+- Added `--with-indexer-api` to `aptos node run-local-testnet`. With this flag you can run a full processor + indexer API stack as part of your localnet. You must have Docker installed to use this feature. For more information, see https://dev.libra2.org/nodes/local-testnet/local-testnet-index.
 ### Updated
 - Updated CLI source compilation to use rust toolchain version 1.72.1 (from 1.71.1).
 
@@ -210,7 +210,7 @@ stdin, which triggers a graceful shutdown when received.
   - Example: `aptos move download  --account 0x1 --package Libra2Framework --url https://mainnet.aptoslabs.com/v1 --print-metadata`
 ### Updated
 - The `--with-faucet` flag has been removed from `aptos node run-local-testnet`, we now run a faucet by default. To disable the faucet use the `--no-faucet` flag.
-- **Breaking change**: When using `aptos node run-local-testnet` we now expose a transaction stream. Learn more about the transaction stream service here: https://aptos.dev/indexer/txn-stream/. Opt out of this with `--no-txn-stream`. This is marked as a breaking change since the CLI now uses a port (50051 by default) that it didn't used to. If you need this port, you can tell the CLI to use a different port with `--txn-stream-port`.
+- **Breaking change**: When using `aptos node run-local-testnet` we now expose a transaction stream. Learn more about the transaction stream service here: https://dev.libra2.org/indexer/txn-stream/. Opt out of this with `--no-txn-stream`. This is marked as a breaking change since the CLI now uses a port (50051 by default) that it didn't used to. If you need this port, you can tell the CLI to use a different port with `--txn-stream-port`.
 
 ## [2.1.0] - 2023/08/24
 ### Updated

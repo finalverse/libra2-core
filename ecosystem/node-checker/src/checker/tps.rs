@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 use thiserror::Error as ThisError;
 
 const NODE_REQUIREMENTS_LINK: &str =
-    "https://aptos.dev/nodes/validator-node/operator/node-requirements";
+    "https://dev.libra2.org/nodes/validator-node/operator/node-requirements";
 
 #[derive(Debug, ThisError)]
 pub enum TpsCheckerError {

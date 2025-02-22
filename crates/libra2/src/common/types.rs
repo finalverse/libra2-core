@@ -2435,5 +2435,5 @@ pub fn get_mint_site_url(address: Option<AccountAddress>) -> String {
         Some(address) => format!("?address={}", address.to_standard_string()),
         None => "".to_string(),
     };
-    format!("https://aptos.dev/network/faucet{}", params)
+    format!("https://dev.libra2.org/network/faucet{}", params)
 }
