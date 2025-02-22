@@ -23,7 +23,7 @@ aptos-gas-schedule = { workspace = true }
 libra2-language-e2e-tests = { workspace = true }
 libra2-move-stdlib = { workspace = true }
 libra2-native-interface = { workspace = true }
-aptos-table-natives = { workspace = true }
+libra2-table-natives = { workspace = true }
 libra2-types = { workspace = true }
 aptos-vm = { workspace = true }
 

@@ -12,7 +12,7 @@ use libra2_aggregator::{
     resolver::{TAggregatorV1View, TDelayedFieldView},
     types::{DelayedFieldValue, DelayedFieldsSpeculativeError},
 };
-use aptos_table_natives::{TableHandle, TableResolver};
+use libra2_table_natives::{TableHandle, TableResolver};
 use libra2_types::{
     error::{PanicError, PanicOr},
     on_chain_config::{ConfigStorage, Features, OnChainConfig},

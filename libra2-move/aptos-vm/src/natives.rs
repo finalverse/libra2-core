@@ -15,7 +15,7 @@ use libra2_framework::natives::{cryptography::algebra::AlgebraContext, event::Na
 use aptos_gas_schedule::{MiscGasParameters, NativeGasParameters, LATEST_GAS_FEATURE_VERSION};
 use libra2_native_interface::SafeNativeBuilder;
 #[cfg(feature = "testing")]
-use aptos_table_natives::{TableHandle, TableResolver};
+use libra2_table_natives::{TableHandle, TableResolver};
 use libra2_types::on_chain_config::{Features, TimedFeatures, TimedFeaturesBuilder};
 #[cfg(feature = "testing")]
 use libra2_types::{
@@ -200,7 +200,7 @@ pub fn configure_for_unit_test() {
 #[cfg(feature = "testing")]
 fn unit_test_extensions_hook(exts: &mut NativeContextExtensions) {
     use libra2_framework::natives::object::NativeObjectContext;
-    use aptos_table_natives::NativeTableContext;
+    use libra2_table_natives::NativeTableContext;
 
     exts.add(NativeTableContext::new([0u8; 32], &*DUMMY_RESOLVER));
     exts.add(NativeCodeContext::new());

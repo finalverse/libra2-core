@@ -30,7 +30,7 @@ aptos-memory-usage-tracker = { workspace = true }
 libra2-metrics-core = { workspace = true }
 aptos-mvhashmap = { workspace = true }
 libra2-native-interface = { workspace = true }
-aptos-table-natives = { workspace = true }
+libra2-table-natives = { workspace = true }
 libra2-types = { workspace = true }
 libra2-utils = { workspace = true }
 libra2-vm-environment = { workspace = true }

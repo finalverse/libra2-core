@@ -38,7 +38,7 @@ pub fn aptos_natives_with_builder(
             builder,
             inject_create_signer_for_gov_sim,
         ))
-        .chain(aptos_table_natives::table_natives(
+        .chain(libra2_table_natives::table_natives(
             CORE_CODE_ADDRESS,
             builder,
         ))

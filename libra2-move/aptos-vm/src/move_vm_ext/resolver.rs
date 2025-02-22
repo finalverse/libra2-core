@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use libra2_aggregator::resolver::{AggregatorV1Resolver, DelayedFieldResolver};
-use aptos_table_natives::TableResolver;
+use libra2_table_natives::TableResolver;
 use libra2_types::{on_chain_config::ConfigStorage, state_store::state_key::StateKey};
 use libra2_vm_types::resolver::{
     ExecutorView, ResourceGroupSize, ResourceGroupView, StateStorageView,

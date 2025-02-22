@@ -17,7 +17,7 @@ use libra2_framework::natives::{
     state_storage::NativeStateStorageContext,
     transaction_context::NativeTransactionContext,
 };
-use aptos_table_natives::{NativeTableContext, TableChangeSet};
+use libra2_table_natives::{NativeTableContext, TableChangeSet};
 use libra2_types::{
     chain_id::ChainId, contract_event::ContractEvent, on_chain_config::Features,
     state_store::state_key::StateKey,
