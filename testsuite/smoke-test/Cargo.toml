@@ -34,7 +34,7 @@ libra2-indexer-grpc-table-info = { workspace = true }
 libra2-inspection-service = { workspace = true }
 libra2-keygen = { workspace = true }
 libra2-move-debugger = { workspace = true }
-aptos-release-builder = { workspace = true }
+libra2-release-builder = { workspace = true }
 libra2-rest-client = { workspace = true }
 libra2-rosetta = { workspace = true }
 libra2-schemadb = { workspace = true }

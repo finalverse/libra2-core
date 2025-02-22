@@ -5,7 +5,7 @@ use anyhow::{bail, Context};
 use libra2_crypto::{ed25519::Ed25519PrivateKey, ValidCryptoMaterialStringExt};
 use libra2_framework::natives::code::PackageRegistry;
 use aptos_gas_schedule::LATEST_GAS_FEATURE_VERSION;
-use aptos_release_builder::{
+use libra2_release_builder::{
     components::fetch_config,
     initialize_aptos_core_path,
     simulate::simulate_all_proposals,
@@ -199,7 +199,7 @@ async fn main() -> anyhow::Result<()> {
             simulate,
             profile_gas,
         } => {
-            aptos_release_builder::ReleaseConfig::load_config(release_config.as_path())
+            libra2_release_builder::ReleaseConfig::load_config(release_config.as_path())
                 .with_context(|| "Failed to load release config".to_string())?
                 .generate_release_proposal_scripts(output_dir.as_path())
                 .await
@@ -230,7 +230,7 @@ async fn main() -> anyhow::Result<()> {
             Ok(())
         },
         Commands::WriteDefault { output_path } => {
-            aptos_release_builder::ReleaseConfig::default().save_config(output_path.as_path())
+            libra2_release_builder::ReleaseConfig::default().save_config(output_path.as_path())
         },
         Commands::ValidateProposals {
             release_config,
@@ -241,14 +241,14 @@ async fn main() -> anyhow::Result<()> {
             output_dir,
         } => {
             let config =
-                aptos_release_builder::ReleaseConfig::load_config(release_config.as_path())?;
+                libra2_release_builder::ReleaseConfig::load_config(release_config.as_path())?;
 
             let root_key_path = libra2_temppath::TempPath::new();
             root_key_path.create_as_file()?;
 
             let mut network_config = match input_option {
                 InputOptions::FromDirectory { test_dir } => {
-                    aptos_release_builder::validate::NetworkConfig::new_from_dir(
+                    libra2_release_builder::validate::NetworkConfig::new_from_dir(
                         endpoint.clone(),
                         test_dir.as_path(),
                     )?
@@ -267,7 +267,7 @@ async fn main() -> anyhow::Result<()> {
 
                     std::fs::write(root_key_path.as_path(), bcs::to_bytes(&root_key)?)?;
 
-                    aptos_release_builder::validate::NetworkConfig {
+                    libra2_release_builder::validate::NetworkConfig {
                         root_key_path,
                         validator_account,
                         validator_key,
@@ -296,7 +296,7 @@ async fn main() -> anyhow::Result<()> {
             network_config
                 .set_fast_resolve(FAST_RESOLUTION_TIME)
                 .await?;
-            aptos_release_builder::validate::validate_config_and_generate_release(
+            libra2_release_builder::validate::validate_config_and_generate_release(
                 config,
                 network_config.clone(),
                 output_dir,
@@ -352,7 +352,7 @@ async fn main() -> anyhow::Result<()> {
             println!(
                 "Features\n{}",
                 serde_yaml::to_string(
-                    &aptos_release_builder::components::feature_flags::Features::from(&features)
+                    &libra2_release_builder::components::feature_flags::Features::from(&features)
                 )?
             );
 

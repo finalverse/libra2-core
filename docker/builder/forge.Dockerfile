@@ -27,7 +27,7 @@ COPY --link --from=node-builder libra2-indexer-grpc-cache-workerforge /usr/local
 
 ### Get Libra2 Framework Release for forge framework upgrade testing
 COPY --link --from=tools-builder /aptos/libra2-move/framework/ /aptos/libra2-move/framework/
-COPY --link --from=tools-builder /aptos/libra2-move/aptos-release-builder/ /aptos/libra2-move/aptos-release-builder/
+COPY --link --from=tools-builder /aptos/libra2-move/libra2-release-builder/ /aptos/libra2-move/libra2-release-builder/
 
 ENV RUST_LOG_FORMAT=json
 

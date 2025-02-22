@@ -9,7 +9,7 @@ use libra2_crypto::ValidCryptoMaterialStringExt;
 use aptos_forge::Swarm;
 use libra2_gas_algebra::GasQuantity;
 use aptos_gas_schedule::{AptosGasParameters, InitialGasSchedule, ToOnChainGasSchedule};
-use aptos_release_builder::{
+use libra2_release_builder::{
     components::{
         feature_flags::{FeatureFlag, Features},
         framework::FrameworkReleaseConfig,
@@ -105,7 +105,7 @@ async fn test_upgrade_flow() {
     let upgrade_scripts_folder = TempPath::new();
     upgrade_scripts_folder.create_as_dir().unwrap();
 
-    let config = aptos_release_builder::ReleaseConfig {
+    let config = libra2_release_builder::ReleaseConfig {
         name: "Default".to_string(),
         remote_endpoint: None,
         proposals: vec![
@@ -234,7 +234,7 @@ async fn test_release_validate_tool_multi_step() {
         }))
         .build_with_cli(2)
         .await;
-    let config = aptos_release_builder::ReleaseConfig::default();
+    let config = libra2_release_builder::ReleaseConfig::default();
 
     let root_key = TempPath::new();
     root_key.create_as_file().unwrap();
@@ -247,7 +247,7 @@ async fn test_release_validate_tool_multi_step() {
     )
     .unwrap();
 
-    let network_config = aptos_release_builder::validate::NetworkConfig {
+    let network_config = libra2_release_builder::validate::NetworkConfig {
         endpoint: url::Url::parse(&env.chain_info().rest_api_url).unwrap(),
         root_key_path,
         validator_account: env.validators().last().unwrap().peer_id(),
@@ -264,7 +264,7 @@ async fn test_release_validate_tool_multi_step() {
 
     network_config.mint_to_validator().await.unwrap();
 
-    aptos_release_builder::validate::validate_config(config, network_config)
+    libra2_release_builder::validate::validate_config(config, network_config)
         .await
         .unwrap();
 

@@ -18,7 +18,7 @@ members = [
     "libra2-move/aptos-gas-schedule-updator",
     "libra2-move/aptos-memory-usage-tracker",
     "libra2-move/libra2-native-interface",
-    "libra2-move/aptos-release-builder",
+    "libra2-move/libra2-release-builder",
     "libra2-move/libra2-resource-viewer",
     "libra2-move/libra2-sdk-builder",
     "libra2-move/libra2-transaction-benchmarks",
@@ -426,7 +426,7 @@ aptos-protos = { path = "protos/rust" }
 libra2-proxy = { path = "crates/proxy" }
 libra2-push-metrics = { path = "crates/libra2-push-metrics" }
 libra2-rate-limiter = { path = "crates/libra2-rate-limiter" }
-aptos-release-builder = { path = "libra2-move/aptos-release-builder" }
+libra2-release-builder = { path = "libra2-move/libra2-release-builder" }
 libra2-reliable-broadcast = { path = "crates/reliable-broadcast" }
 aptos-replay-benchmark = { path = "libra2-move/replay-benchmark" }
 libra2-resource-viewer = { path = "libra2-move/libra2-resource-viewer" }

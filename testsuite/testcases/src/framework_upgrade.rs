@@ -9,7 +9,7 @@ use aptos_forge::{
 };
 use libra2_keygen::KeyGen;
 use libra2_logger::info;
-use aptos_release_builder::ReleaseConfig;
+use libra2_release_builder::ReleaseConfig;
 use aptos_sdk::crypto::{ed25519::Ed25519PrivateKey, PrivateKey};
 use libra2_temppath::TempPath;
 use libra2_types::transaction::authenticator::AuthenticationKey;
@@ -29,7 +29,7 @@ impl Test for FrameworkUpgrade {
     }
 }
 
-const RELEASE_YAML_PATH: &str = "libra2-move/aptos-release-builder/data";
+const RELEASE_YAML_PATH: &str = "libra2-move/libra2-release-builder/data";
 const IGNORED_YAMLS: [&str; 2] = ["release.yaml", "example.yaml"];
 
 fn is_release_yaml(path: &Path) -> bool {
@@ -118,7 +118,7 @@ impl NetworkTest for FrameworkUpgrade {
         let validator_account =
             AuthenticationKey::ed25519(&validator_key.public_key()).account_address();
 
-        let network_info = aptos_release_builder::validate::NetworkConfig {
+        let network_info = libra2_release_builder::validate::NetworkConfig {
             endpoint: ctx
                 .swarm
                 .read()
@@ -135,9 +135,9 @@ impl NetworkTest for FrameworkUpgrade {
 
         network_info.mint_to_validator().await?;
 
-        let release_config = aptos_release_builder::current_release_config();
+        let release_config = libra2_release_builder::current_release_config();
 
-        aptos_release_builder::validate::validate_config(
+        libra2_release_builder::validate::validate_config(
             release_config.clone(),
             network_info.clone(),
         )
@@ -150,7 +150,7 @@ impl NetworkTest for FrameworkUpgrade {
             if is_release_yaml(&path) {
                 let release_config = ReleaseConfig::parse(&fs::read_to_string(&path).await?)?;
                 info!("Executing release yaml: {}", path.to_string_lossy());
-                aptos_release_builder::validate::validate_config(
+                libra2_release_builder::validate::validate_config(
                     release_config.clone(),
                     network_info.clone(),
                 )

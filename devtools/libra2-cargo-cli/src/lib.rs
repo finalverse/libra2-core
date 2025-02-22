@@ -48,7 +48,7 @@ const RELEVANT_FILE_PATHS_FOR_EXECUTION_PERFORMANCE_TESTS: [&str; 5] = [
 const RELEVANT_FILE_PATHS_FOR_FRAMEWORK_UPGRADE_TESTS: [&str; 4] = [
     ".github",
     "testsuite",
-    "libra2-move/aptos-release-builder",
+    "libra2-move/libra2-release-builder",
     "libra2-move/framework",
 ];
 
@@ -57,7 +57,7 @@ const RELEVANT_PACKAGES_FOR_COMPILER_V2: [&str; 2] = ["libra2-framework", "e2e-m
 const RELEVANT_PACKAGES_FOR_EXECUTION_PERFORMANCE_TESTS: [&str; 2] =
     ["libra2-executor-benchmark", "libra2-move-e2e-benchmark"];
 const RELEVANT_PACKAGES_FOR_FRAMEWORK_UPGRADE_TESTS: [&str; 2] =
-    ["libra2-framework", "aptos-release-builder"];
+    ["libra2-framework", "libra2-release-builder"];
 
 // The targeted unit test packages to ignore (these will be run separately, by other jobs)
 const TARGETED_UNIT_TEST_PACKAGES_TO_IGNORE: [&str; 3] =
