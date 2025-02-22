@@ -20,7 +20,7 @@ use crate::{
     ApiTags,
 };
 use anyhow::Context as AnyhowContext;
-use aptos_api_types::{
+use libra2_api_types::{
     verify_function_identifier, verify_module_identifier, Address, Libra2Error, Libra2ErrorCode,
     AsConverter, EncodeSubmissionRequest, GasEstimation, GasEstimationBcs, HashValue,
     HexEncodedBytes, LedgerInfo, MoveType, PendingTransaction, SubmitTransactionRequest,
@@ -1215,7 +1215,7 @@ impl TransactionsApi {
             .await
             .context("Mempool failed to initially evaluate submitted transaction")
             .map_err(|err| {
-                aptos_api_types::Libra2Error::new_with_error_code(err, Libra2ErrorCode::InternalError)
+                libra2_api_types::Libra2Error::new_with_error_code(err, Libra2ErrorCode::InternalError)
             })?;
         match mempool_status.code {
             MempoolStatusCode::Accepted => Ok(()),

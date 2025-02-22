@@ -19,7 +19,7 @@ use crate::{
     move_tool::{ArgWithType, FunctionArgType, MemberId},
 };
 use anyhow::{bail, Context};
-use aptos_api_types::ViewFunction;
+use libra2_api_types::ViewFunction;
 use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519PublicKey, Ed25519Signature},
     encoding_type::{EncodingError, EncodingType},
@@ -31,7 +31,7 @@ use libra2_keygen::KeyGen;
 use libra2_logger::Level;
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_rest_client::{
-    aptos_api_types::{EntryFunctionId, HashValue, MoveType, ViewRequest},
+    libra2_api_types::{EntryFunctionId, HashValue, MoveType, ViewRequest},
     error::RestError,
     AptosBaseUrl, Client, Transaction,
 };
@@ -1066,7 +1066,7 @@ impl RestOptions {
     pub fn client(&self, profile: &ProfileOptions) -> CliTypedResult<Client> {
         let mut client = Client::builder(AptosBaseUrl::Custom(self.url(profile)?))
             .timeout(Duration::from_secs(self.connection_timeout_secs))
-            .header(aptos_api_types::X_APTOS_CLIENT, X_APTOS_CLIENT_VALUE)?;
+            .header(libra2_api_types::X_APTOS_CLIENT, X_APTOS_CLIENT_VALUE)?;
         if let Some(node_api_key) = &self.node_api_key {
             client = client.api_key(node_api_key)?;
         }

@@ -12,7 +12,7 @@ use libra2_crypto::ed25519::Ed25519Signature;
 use aptos_forge::{LocalSwarm, NodeExt, Swarm, TransactionType};
 use libra2_global_constants::{DEFAULT_BUCKETS, GAS_UNIT_PRICE};
 use libra2_rest_client::{
-    aptos_api_types::{MoveModuleId, TransactionData, ViewFunction, ViewRequest},
+    libra2_api_types::{MoveModuleId, TransactionData, ViewFunction, ViewRequest},
     Client,
 };
 use libra2_sdk::move_types::language_storage::StructTag;

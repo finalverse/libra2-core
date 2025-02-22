@@ -253,7 +253,7 @@ stdin, which triggers a graceful shutdown when received.
 - JSON input file support
 - Builder Pattern support for RestClient
   - NOTE: Methods **new_with_timeout** and **new_with_timeout_and_user_agent** are no longer available.
-- Added custom header *x-aptos-client* for analytic purpose
+- Added custom header *x-libra2-client* for analytic purpose
 
 ## [1.0.14] - 2023/05/26
 - Updated DB bootstrap command with new DB restore features

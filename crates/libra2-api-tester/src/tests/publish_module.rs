@@ -19,7 +19,7 @@ use crate::{
     },
 };
 use anyhow::{anyhow, Result};
-use aptos_api_types::{HexEncodedBytes, U64};
+use libra2_api_types::{HexEncodedBytes, U64};
 use libra2_cached_packages::aptos_stdlib::EntryFunctionCall;
 use libra2_framework::{BuildOptions, BuiltPackage};
 use libra2_logger::error;

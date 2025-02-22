@@ -46,7 +46,7 @@ use crate::{
     schema,
     util::{parse_timestamp, standardize_address, truncate_str},
 };
-use aptos_api_types::{Transaction, TransactionPayload, WriteSetChange};
+use libra2_api_types::{Transaction, TransactionPayload, WriteSetChange};
 use async_trait::async_trait;
 use diesel::{pg::upsert::excluded, result::Error, ExpressionMethods, PgConnection};
 use field_count::FieldCount;

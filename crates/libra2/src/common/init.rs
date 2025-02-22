@@ -20,7 +20,7 @@ use crate::{
 use libra2_crypto::{ed25519::Ed25519PrivateKey, PrivateKey, ValidCryptoMaterialStringExt};
 use libra2_ledger;
 use libra2_rest_client::{
-    aptos_api_types::{Libra2Error, Libra2ErrorCode},
+    libra2_api_types::{Libra2Error, Libra2ErrorCode},
     error::{Libra2ErrorResponse, RestError},
 };
 use async_trait::async_trait;

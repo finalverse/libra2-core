@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use libra2_rest_client::{aptos_api_types, AptosBaseUrl, Client as RestClient};
+use libra2_rest_client::{libra2_api_types, AptosBaseUrl, Client as RestClient};
 use reqwest::Url;
 use std::fmt;
 
@@ -45,7 +45,7 @@ impl Instance {
 
     pub fn rest_client(&self) -> RestClient {
         let client = RestClient::builder(AptosBaseUrl::Custom(self.api_url()))
-            .header(aptos_api_types::X_APTOS_CLIENT, X_APTOS_CLIENT_VALUE)
+            .header(libra2_api_types::X_APTOS_CLIENT, X_APTOS_CLIENT_VALUE)
             .expect("Failed to initialize REST Client instance");
 
         // add the API key if it is provided

@@ -3,7 +3,7 @@
 
 use crate::{Libra2ValidatorInterface, FilterCondition};
 use anyhow::{anyhow, Result};
-use aptos_api_types::{Libra2Error, Libra2ErrorCode};
+use libra2_api_types::{Libra2Error, Libra2ErrorCode};
 use libra2_framework::{
     natives::code::{PackageMetadata, PackageRegistry},
     APTOS_PACKAGES,

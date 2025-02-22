@@ -382,7 +382,7 @@ pub struct BlockIdentifier {
 
 impl BlockIdentifier {
     pub fn from_block(
-        block: &libra2_rest_client::aptos_api_types::BcsBlock,
+        block: &libra2_rest_client::libra2_api_types::BcsBlock,
         chain_id: ChainId,
     ) -> BlockIdentifier {
         BlockIdentifier {

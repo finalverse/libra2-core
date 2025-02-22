@@ -12,7 +12,7 @@ use crate::{
     util::standardize_address,
 };
 use anyhow::Context;
-use aptos_api_types::{
+use libra2_api_types::{
     DeleteTableItem as APIDeleteTableItem, Transaction as APITransaction,
     WriteResource as APIWriteResource, WriteSetChange as APIWriteSetChange,
     WriteTableItem as APIWriteTableItem,

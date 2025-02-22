@@ -12,7 +12,7 @@ use crate::{
     schema::account_transactions,
     util::standardize_address,
 };
-use aptos_api_types::{DeleteResource, Event, Transaction, WriteResource, WriteSetChange};
+use libra2_api_types::{DeleteResource, Event, Transaction, WriteResource, WriteSetChange};
 use field_count::FieldCount;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;

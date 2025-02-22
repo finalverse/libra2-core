@@ -29,7 +29,7 @@ use storage_interface::DbReaderWriter;
 
 use crate::tests::{golden_output::GoldenOutputs, pretty};
 use aptos_api::{context::Context, index};
-use aptos_api_types::HexEncodedBytes;
+use libra2_api_types::HexEncodedBytes;
 use libra2_config::keys::ConfigKey;
 use libra2_crypto::ed25519::Ed25519PrivateKey;
 use libra2_types::aggregated_signature::AggregatedSignature;

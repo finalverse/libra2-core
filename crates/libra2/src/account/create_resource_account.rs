@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_cached_packages::aptos_stdlib::resource_account_create_resource_account;
 use libra2_rest_client::{
-    aptos_api_types::{WriteResource, WriteSetChange},
+    libra2_api_types::{WriteResource, WriteSetChange},
     Transaction,
 };
 use libra2_types::{account_address::AccountAddress, transaction::authenticator::AuthenticationKey};

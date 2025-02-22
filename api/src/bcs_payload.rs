@@ -7,7 +7,7 @@
 // Previously the Bcs payload type took a T, not Vec<u8>. For more information
 // about that effort, see https://github.com/aptos-labs/aptos-core/issues/2277.
 
-use aptos_api_types::mime_types::BCS;
+use libra2_api_types::mime_types::BCS;
 use poem::{http::header, FromRequest, IntoResponse, Request, RequestBody, Response, Result};
 use poem_openapi::{
     impl_apirequest_for_payload,

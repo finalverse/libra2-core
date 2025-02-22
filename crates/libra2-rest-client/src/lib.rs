@@ -18,10 +18,10 @@ pub mod types;
 pub use crate::client_builder::{AptosBaseUrl, ClientBuilder};
 use crate::{libra2::AptosVersion, error::RestError};
 use anyhow::{anyhow, Result};
-pub use aptos_api_types::{
+pub use libra2_api_types::{
     self, IndexResponseBcs, MoveModuleBytecode, PendingTransaction, Transaction,
 };
-use aptos_api_types::{
+use libra2_api_types::{
     deserialize_from_string,
     mime_types::{BCS, BCS_SIGNED_TRANSACTION, BCS_VIEW_FUNCTION, JSON},
     Libra2Error, Libra2ErrorCode, BcsBlock, Block, GasEstimation, HexEncodedBytes, IndexResponse,

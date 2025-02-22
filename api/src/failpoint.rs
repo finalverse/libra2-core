@@ -6,7 +6,7 @@
 
 use crate::response::InternalError;
 use anyhow::{format_err, Result};
-use aptos_api_types::Libra2ErrorCode;
+use libra2_api_types::Libra2ErrorCode;
 use poem_openapi::payload::Json;
 
 /// Build a failpoint to intentionally crash an API for testing

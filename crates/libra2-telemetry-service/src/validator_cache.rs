@@ -183,7 +183,7 @@ mod tests {
         Uniform,
     };
     use libra2_infallible::RwLock;
-    use libra2_rest_client::aptos_api_types::*;
+    use libra2_rest_client::libra2_api_types::*;
     use libra2_types::{
         chain_id::ChainId, network_address::NetworkAddress, on_chain_config::ValidatorSet,
         validator_config::ValidatorConfig, validator_info::ValidatorInfo, PeerId,

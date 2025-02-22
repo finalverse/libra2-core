@@ -12,7 +12,7 @@ use crate::{
     },
 };
 use anyhow::{anyhow, bail, ensure, format_err, Context as AnyhowContext, Result};
-use aptos_api_types::{
+use libra2_api_types::{
     Libra2ErrorCode, AsConverter, BcsBlock, GasEstimation, LedgerInfo, ResourceGroup,
     TransactionOnChainData,
 };
@@ -731,14 +731,14 @@ impl Context {
         ledger_info: &LedgerInfo,
         data: Vec<TransactionOnChainData>,
         mut timestamp: u64,
-    ) -> Result<Vec<aptos_api_types::Transaction>, E> {
+    ) -> Result<Vec<libra2_api_types::Transaction>, E> {
         if data.is_empty() {
             return Ok(vec![]);
         }
 
         let state_view = self.latest_state_view_poem(ledger_info)?;
         let converter = state_view.as_converter(self.db.clone(), self.indexer_reader.clone());
-        let txns: Vec<aptos_api_types::Transaction> = data
+        let txns: Vec<libra2_api_types::Transaction> = data
             .into_iter()
             .map(|t| {
                 // Update the timestamp if the next block occurs
@@ -763,14 +763,14 @@ impl Context {
         &self,
         ledger_info: &LedgerInfo,
         data: Vec<TransactionOnChainData>,
-    ) -> Result<Vec<aptos_api_types::Transaction>, E> {
+    ) -> Result<Vec<libra2_api_types::Transaction>, E> {
         if data.is_empty() {
             return Ok(vec![]);
         }
 
         let state_view = self.latest_state_view_poem(ledger_info)?;
         let converter = state_view.as_converter(self.db.clone(), self.indexer_reader.clone());
-        let txns: Vec<aptos_api_types::Transaction> = data
+        let txns: Vec<libra2_api_types::Transaction> = data
             .into_iter()
             .map(|t| {
                 let timestamp = self.db.get_block_timestamp(t.version)?;

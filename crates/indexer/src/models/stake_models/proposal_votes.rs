@@ -9,7 +9,7 @@ use crate::{
     schema::proposal_votes,
     util::{parse_timestamp, standardize_address},
 };
-use aptos_api_types::Transaction as APITransaction;
+use libra2_api_types::Transaction as APITransaction;
 use bigdecimal::BigDecimal;
 use field_count::FieldCount;
 use serde::{Deserialize, Serialize};

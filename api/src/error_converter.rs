@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_api_types::{mime_types::JSON, Libra2Error, Libra2ErrorCode};
+use libra2_api_types::{mime_types::JSON, Libra2Error, Libra2ErrorCode};
 use poem::{
     http::header::{HeaderValue, CONTENT_TYPE},
     IntoResponse, Response,

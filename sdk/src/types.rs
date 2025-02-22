@@ -18,7 +18,7 @@ use crate::{
 use anyhow::{Context, Result};
 use libra2_crypto::{ed25519::Ed25519Signature, secp256r1_ecdsa, HashValue, PrivateKey, SigningKey};
 use libra2_ledger::Libra2LedgerError;
-use libra2_rest_client::{aptos_api_types::MoveStructTag, Client, PepperRequest, ProverRequest};
+use libra2_rest_client::{libra2_api_types::MoveStructTag, Client, PepperRequest, ProverRequest};
 pub use libra2_types::*;
 use libra2_types::{
     event::EventKey,

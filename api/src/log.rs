@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::metrics::{HISTOGRAM, POST_BODY_BYTES, REQUEST_SOURCE_CLIENT, RESPONSE_STATUS};
-use aptos_api_types::X_APTOS_CLIENT;
+use libra2_api_types::X_APTOS_CLIENT;
 use libra2_logger::{
     debug, info,
     prelude::{sample, SampleRate},
@@ -41,7 +41,7 @@ pub async fn middleware_log<E: Endpoint>(next: E, request: Request) -> Result<Re
             .headers()
             .get(header::USER_AGENT)
             .and_then(|v| v.to_str().ok().map(|v| v.to_string())),
-        aptos_client: request
+        libra2_client: request
             .headers()
             .get(X_APTOS_CLIENT)
             .and_then(|v| v.to_str().ok().map(|v| v.to_string())),
@@ -93,7 +93,7 @@ pub async fn middleware_log<E: Endpoint>(next: E, request: Request) -> Result<Re
     // Push a counter based on the request source, sliced up by endpoint + method.
     REQUEST_SOURCE_CLIENT
         .with_label_values(&[
-            determine_request_source_client(&log.aptos_client),
+            determine_request_source_client(&log.libra2_client),
             operation_id,
             log.status.to_string().as_str(),
         ])
@@ -115,17 +115,17 @@ pub async fn middleware_log<E: Endpoint>(next: E, request: Request) -> Result<Re
 // where <identifier> always starts with `aptos-`. This function ensure this string
 // matches the specified format and returns it if it does. You can see more specifics
 // about how we extract info from the string by looking at the regex we match on.
-fn determine_request_source_client(aptos_client: &Option<String>) -> &str {
+fn determine_request_source_client(libra2_client: &Option<String>) -> &str {
     // If the header is not set we can't determine the request source.
-    let aptos_client = match aptos_client {
-        Some(aptos_client) => aptos_client,
+    let libra2_client = match libra2_client {
+        Some(libra2_client) => libra2_client,
         None => return REQUEST_SOURCE_CLIENT_UNKNOWN,
     };
 
     // If there were no matches, we can't determine the request source. If there are
     // multiple matches for some reason, instead of logging nothing, we use whatever
     // value we matched on last.
-    match REQUEST_SOURCE_CLIENT_REGEX.find_iter(aptos_client).last() {
+    match REQUEST_SOURCE_CLIENT_REGEX.find_iter(libra2_client).last() {
         Some(capture) => capture.as_str(),
         None => REQUEST_SOURCE_CLIENT_UNKNOWN,
     }
@@ -144,7 +144,7 @@ pub struct HttpRequestLog {
     pub status: u16,
     referer: Option<String>,
     user_agent: Option<String>,
-    aptos_client: Option<String>,
+    libra2_client: Option<String>,
     #[schema(debug)]
     pub elapsed: std::time::Duration,
     forwarded: Option<String>,

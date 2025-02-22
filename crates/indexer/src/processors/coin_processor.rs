@@ -18,7 +18,7 @@ use crate::{
     },
     schema,
 };
-use aptos_api_types::Transaction as APITransaction;
+use libra2_api_types::Transaction as APITransaction;
 use libra2_types::{AptosCoinType, CoinType};
 use async_trait::async_trait;
 use diesel::{pg::upsert::excluded, result::Error, ExpressionMethods, PgConnection};

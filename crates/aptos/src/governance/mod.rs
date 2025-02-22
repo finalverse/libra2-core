@@ -18,13 +18,13 @@ use crate::{
     move_tool::{FrameworkPackageArgs, IncludedArtifacts},
     CliCommand, CliResult,
 };
-use aptos_api_types::ViewFunction;
+use libra2_api_types::ViewFunction;
 use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::HashValue;
 use libra2_framework::{BuildOptions, BuiltPackage, ReleasePackage};
 use libra2_logger::warn;
 use libra2_rest_client::{
-    aptos_api_types::{Address, HexEncodedBytes, U128, U64},
+    libra2_api_types::{Address, HexEncodedBytes, U128, U64},
     Client, Transaction,
 };
 use libra2_sdk::move_types::language_storage::CORE_CODE_ADDRESS;
@@ -1241,7 +1241,7 @@ impl From<JsonProposal> for Proposal {
 struct JsonProposal {
     creation_time_secs: U64,
     early_resolution_vote_threshold: JsonEarlyResolutionThreshold,
-    execution_hash: libra2_rest_client::aptos_api_types::HashValue,
+    execution_hash: libra2_rest_client::libra2_api_types::HashValue,
     expiration_secs: U64,
     is_resolved: bool,
     min_vote_threshold: U128,

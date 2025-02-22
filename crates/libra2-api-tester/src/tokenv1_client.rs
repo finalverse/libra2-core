@@ -4,7 +4,7 @@
 // TODO: this should be part of the SDK
 
 use anyhow::{anyhow, Context, Result};
-use aptos_api_types::U64;
+use libra2_api_types::U64;
 use libra2_cached_packages::aptos_token_sdk_builder::EntryFunctionCall;
 use libra2_sdk::{
     rest_client::{Client as ApiClient, PendingTransaction},

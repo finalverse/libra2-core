@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use super::{aptos::AptosUpdateTool, revela::RevelaUpdateTool};
+use super::{libra2::AptosUpdateTool, revela::RevelaUpdateTool};
 use crate::{
     common::types::{CliCommand, CliResult},
     update::{movefmt::FormatterUpdateTool, prover_dependencies::ProverDependencyInstaller},

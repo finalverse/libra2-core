@@ -3,7 +3,7 @@
 
 use anyhow::{anyhow, Result};
 use libra2_rest_client::{
-    aptos_api_types::{IdentifierWrapper, MoveResource, WriteSetChange},
+    libra2_api_types::{IdentifierWrapper, MoveResource, WriteSetChange},
     Client as RestClient, Transaction, VersionedNewBlockEvent,
 };
 use libra2_types::account_address::AccountAddress;

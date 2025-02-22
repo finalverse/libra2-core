@@ -14,7 +14,7 @@ use crate::{
     schema::{collection_datas, current_collection_datas},
     util::standardize_address,
 };
-use aptos_api_types::WriteTableItem as APIWriteTableItem;
+use libra2_api_types::WriteTableItem as APIWriteTableItem;
 use bigdecimal::BigDecimal;
 use diesel::{prelude::*, ExpressionMethods};
 use field_count::FieldCount;

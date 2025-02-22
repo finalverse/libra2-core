@@ -19,7 +19,7 @@ use libra2_gas_schedule::{Libra2GasParameters, FromOnChainGasSchedule};
 use libra2_genesis::builder::InitConfigFn;
 use libra2_global_constants::GAS_UNIT_PRICE;
 use libra2_rest_client::{
-    aptos_api_types::{TransactionOnChainData, UserTransaction},
+    libra2_api_types::{TransactionOnChainData, UserTransaction},
     Response, Transaction,
 };
 use libra2_rosetta::{

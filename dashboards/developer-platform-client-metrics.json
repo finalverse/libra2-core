@@ -103,7 +103,7 @@
           "type": "math"
         }
       ],
-      "title": "Percentage of node API requests the with x-aptos-client header set",
+      "title": "Percentage of node API requests the with x-libra2-client header set",
       "type": "stat"
     },
     {
@@ -218,7 +218,7 @@
       "targets": [
         {
           "datasource": { "type": "grafana-falconlogscale-datasource", "uid": "b4f0e2cd-2eea-4ada-a4c0-261e41369ed5" },
-          "lsql": "| #resource.type=cloud_run_revision\n| resource.labels.service_name=indexer-$chain_name \n| jsonPayload.method=* logName=*stdout\n| case {jsonPayload.aptos_client!=* | jsonPayload.aptos_client:=\"unknown\"; *}\n| top(jsonPayload.aptos_client)",
+          "lsql": "| #resource.type=cloud_run_revision\n| resource.labels.service_name=indexer-$chain_name \n| jsonPayload.method=* logName=*stdout\n| case {jsonPayload.libra2_client!=* | jsonPayload.libra2_client:=\"unknown\"; *}\n| top(jsonPayload.libra2_client)",
           "refId": "A",
           "repository": "gcp"
         }

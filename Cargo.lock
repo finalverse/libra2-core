@@ -293,7 +293,6 @@ name = "aptos"
 version = "6.1.1"
 dependencies = [
  "anyhow",
- "aptos-api-types",
  "aptos-protos 1.3.1",
  "async-trait",
  "base64 0.13.1",
@@ -312,6 +311,7 @@ dependencies = [
  "indoc",
  "itertools 0.13.0",
  "jemallocator",
+ "libra2-api-types",
  "libra2-backup-cli",
  "libra2-bitvec",
  "libra2-build-info",
@@ -395,13 +395,13 @@ version = "0.2.0"
 dependencies = [
  "anyhow",
  "aptos-api-test-context",
- "aptos-api-types",
  "bcs 0.1.4",
  "bytes",
  "fail",
  "futures",
  "hex",
  "itertools 0.13.0",
+ "libra2-api-types",
  "libra2-bcs-utils",
  "libra2-build-info",
  "libra2-cached-packages",
@@ -447,11 +447,11 @@ name = "aptos-api-test-context"
 version = "0.2.0"
 dependencies = [
  "aptos-api",
- "aptos-api-types",
  "bcs 0.1.4",
  "bytes",
  "goldenfile",
  "hyper 0.14.28",
+ "libra2-api-types",
  "libra2-cached-packages",
  "libra2-config",
  "libra2-crypto",
@@ -476,35 +476,6 @@ dependencies = [
  "tokio",
  "warp",
  "warp-reverse-proxy",
-]
-
-[[package]]
-name = "aptos-api-types"
-version = "0.0.1"
-dependencies = [
- "anyhow",
- "async-trait",
- "bcs 0.1.4",
- "bytes",
- "hex",
- "indoc",
- "libra2-config",
- "libra2-crypto",
- "libra2-framework",
- "libra2-logger",
- "libra2-openapi",
- "libra2-resource-viewer",
- "libra2-storage-interface",
- "libra2-types",
- "libra2-vm",
- "move-binary-format",
- "move-core-types",
- "once_cell",
- "poem",
- "poem-openapi",
- "poem-openapi-derive",
- "serde",
- "serde_json",
 ]
 
 [[package]]
@@ -600,7 +571,6 @@ dependencies = [
  "anyhow",
  "aptos-api",
  "aptos-api-test-context",
- "aptos-api-types",
  "async-trait",
  "bcs 0.1.4",
  "bigdecimal",
@@ -610,6 +580,7 @@ dependencies = [
  "field_count",
  "futures",
  "hex",
+ "libra2-api-types",
  "libra2-bitvec",
  "libra2-config",
  "libra2-logger",
@@ -4705,9 +4676,9 @@ dependencies = [
 name = "generate-format"
 version = "0.1.0"
 dependencies = [
- "aptos-api-types",
  "bcs 0.1.4",
  "clap 4.5.21",
+ "libra2-api-types",
  "libra2-config",
  "libra2-consensus",
  "libra2-consensus-types",
@@ -6555,7 +6526,6 @@ name = "libra2"
 version = "6.1.1"
 dependencies = [
  "anyhow",
- "aptos-api-types",
  "aptos-protos 1.3.1",
  "async-trait",
  "base64 0.13.1",
@@ -6574,6 +6544,7 @@ dependencies = [
  "indoc",
  "itertools 0.13.0",
  "jemallocator",
+ "libra2-api-types",
  "libra2-backup-cli",
  "libra2-bitvec",
  "libra2-build-info",
@@ -6717,8 +6688,8 @@ name = "libra2-api-tester"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-api-types",
  "futures",
+ "libra2-api-types",
  "libra2-cached-packages",
  "libra2-framework",
  "libra2-logger",
@@ -6734,6 +6705,35 @@ dependencies = [
  "serde_json",
  "tokio",
  "url",
+]
+
+[[package]]
+name = "libra2-api-types"
+version = "0.0.1"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "bcs 0.1.4",
+ "bytes",
+ "hex",
+ "indoc",
+ "libra2-config",
+ "libra2-crypto",
+ "libra2-framework",
+ "libra2-logger",
+ "libra2-openapi",
+ "libra2-resource-viewer",
+ "libra2-storage-interface",
+ "libra2-types",
+ "libra2-vm",
+ "move-binary-format",
+ "move-core-types",
+ "once_cell",
+ "poem",
+ "poem-openapi",
+ "poem-openapi-derive",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
@@ -8291,7 +8291,6 @@ dependencies = [
  "anyhow",
  "aptos-api",
  "aptos-api-test-context",
- "aptos-api-types",
  "aptos-moving-average",
  "aptos-protos 1.3.1",
  "bcs 0.1.4",
@@ -8302,6 +8301,7 @@ dependencies = [
  "hex",
  "hyper 0.14.28",
  "itertools 0.13.0",
+ "libra2-api-types",
  "libra2-bitvec",
  "libra2-config",
  "libra2-crypto",
@@ -8406,12 +8406,12 @@ version = "1.0.0"
 dependencies = [
  "anyhow",
  "aptos-api",
- "aptos-api-types",
  "flate2",
  "futures",
  "google-cloud-storage",
  "hyper 0.14.28",
  "itertools 0.13.0",
+ "libra2-api-types",
  "libra2-config",
  "libra2-db-indexer",
  "libra2-indexer-grpc-fullnode",
@@ -9590,11 +9590,11 @@ name = "libra2-rest-client"
 version = "0.0.0"
 dependencies = [
  "anyhow",
- "aptos-api-types",
  "bcs 0.1.4",
  "bytes",
  "clap 4.5.21",
  "hex",
+ "libra2-api-types",
  "libra2-crypto",
  "libra2-infallible",
  "libra2-logger",
@@ -10275,12 +10275,12 @@ name = "libra2-transactional-test-harness"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-api-types",
  "bcs 0.1.4",
  "clap 4.5.21",
  "codespan-reporting",
  "datatest-stable",
  "hex",
+ "libra2-api-types",
  "libra2-block-executor",
  "libra2-cached-packages",
  "libra2-crypto",
@@ -10389,10 +10389,10 @@ name = "libra2-validator-interface"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-api-types",
  "async-recursion",
  "async-trait",
  "bcs 0.1.4",
+ "libra2-api-types",
  "libra2-config",
  "libra2-db",
  "libra2-framework",
@@ -10649,9 +10649,9 @@ name = "libra2-warp-webserver"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "aptos-api-types",
  "bcs 0.1.4",
  "hyper 0.14.28",
+ "libra2-api-types",
  "libra2-config",
  "libra2-logger",
  "serde",

@@ -3,7 +3,7 @@
 
 use crate::counters::{FETCHED_TRANSACTION, UNABLE_TO_FETCH_TRANSACTION};
 use aptos_api::Context;
-use aptos_api_types::{AsConverter, LedgerInfo, Transaction, TransactionOnChainData};
+use libra2_api_types::{AsConverter, LedgerInfo, Transaction, TransactionOnChainData};
 use libra2_logger::prelude::*;
 use futures::{channel::mpsc, SinkExt};
 use std::{sync::Arc, time::Duration};
@@ -237,9 +237,9 @@ async fn fetch_nexts(
         });
     let mut timestamp = block_event.proposed_time();
     let mut epoch = block_event.epoch();
-    let mut epoch_bcs = aptos_api_types::U64::from(epoch);
+    let mut epoch_bcs = libra2_api_types::U64::from(epoch);
     let mut block_height = block_event.height();
-    let mut block_height_bcs = aptos_api_types::U64::from(block_height);
+    let mut block_height_bcs = libra2_api_types::U64::from(block_height);
 
     let state_view = context.latest_state_view().unwrap();
     let converter = state_view.as_converter(context.db.clone(), context.indexer_reader.clone());
@@ -253,15 +253,15 @@ async fn fetch_nexts(
             if let Some(txn) = raw_txn.transaction.try_as_block_metadata_ext() {
                 timestamp = txn.timestamp_usecs();
                 epoch = txn.epoch();
-                epoch_bcs = aptos_api_types::U64::from(epoch);
+                epoch_bcs = libra2_api_types::U64::from(epoch);
                 block_height += 1;
-                block_height_bcs = aptos_api_types::U64::from(block_height);
+                block_height_bcs = libra2_api_types::U64::from(block_height);
             } else if let Some(txn) = raw_txn.transaction.try_as_block_metadata() {
                 timestamp = txn.timestamp_usecs();
                 epoch = txn.epoch();
-                epoch_bcs = aptos_api_types::U64::from(epoch);
+                epoch_bcs = libra2_api_types::U64::from(epoch);
                 block_height += 1;
-                block_height_bcs = aptos_api_types::U64::from(block_height);
+                block_height_bcs = libra2_api_types::U64::from(block_height);
             }
         }
         let res = converter

@@ -30,7 +30,7 @@ tonic = { workspace = true }
 tonic-reflection = { workspace = true }
 
 aptos-api = { workspace = true }
-aptos-api-types = { workspace = true }
+libra2-api-types = { workspace = true }
 libra2-bitvec = { workspace = true }
 libra2-config = { workspace = true }
 libra2-indexer-grpc-utils = { workspace = true }

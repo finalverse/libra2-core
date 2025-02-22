@@ -14,7 +14,7 @@ use crate::{
     models::move_resources::MoveResource,
     schema::{current_objects, objects},
 };
-use aptos_api_types::{DeleteResource, WriteResource};
+use libra2_api_types::{DeleteResource, WriteResource};
 use bigdecimal::BigDecimal;
 use diesel::prelude::*;
 use field_count::FieldCount;

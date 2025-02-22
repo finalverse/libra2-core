@@ -16,7 +16,7 @@ use libra2_build_info::build_information;
 use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
 use libra2_keygen::KeyGen;
 use libra2_logger::{debug, Level};
-use libra2_rest_client::{aptos_api_types::HashValue, Account, Client, FaucetClient, State};
+use libra2_rest_client::{libra2_api_types::HashValue, Account, Client, FaucetClient, State};
 use libra2_telemetry::service::telemetry_is_disabled;
 use libra2_types::{
     account_address::create_multisig_account_address,

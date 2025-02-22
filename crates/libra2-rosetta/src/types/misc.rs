@@ -7,7 +7,7 @@ use crate::{
     types::{AccountIdentifier, Amount},
     AccountAddress, ApiResult,
 };
-use libra2_rest_client::aptos_api_types::{EntryFunctionId, ViewRequest};
+use libra2_rest_client::libra2_api_types::{EntryFunctionId, ViewRequest};
 use libra2_types::stake_pool::StakePool;
 use once_cell::sync::Lazy;
 use serde::{Deserialize, Serialize};

@@ -25,7 +25,7 @@ use anyhow::anyhow;
 use libra2_cached_packages::aptos_stdlib;
 use libra2_crypto::{ed25519::Ed25519PublicKey, ValidCryptoMaterialStringExt};
 use libra2_logger::warn;
-use libra2_rest_client::aptos_api_types::{ResourceGroup, TransactionOnChainData, U64};
+use libra2_rest_client::libra2_api_types::{ResourceGroup, TransactionOnChainData, U64};
 use libra2_types::{
     access_path::Path,
     account_address::AccountAddress,

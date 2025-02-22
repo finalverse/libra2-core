@@ -1,6 +1,6 @@
 [package]
-name = "aptos-api-types"
-description = "Aptos API Types"
+name = "libra2-api-types"
+description = "Libra2 API Types"
 version = "0.0.1"
 
 # Workspace inherited keys

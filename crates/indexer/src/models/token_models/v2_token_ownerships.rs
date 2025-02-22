@@ -23,7 +23,7 @@ use crate::{
     util::{ensure_not_negative, standardize_address},
 };
 use anyhow::Context;
-use aptos_api_types::{
+use libra2_api_types::{
     DeleteResource, DeleteTableItem as APIDeleteTableItem, WriteResource,
     WriteTableItem as APIWriteTableItem,
 };

@@ -21,4 +21,4 @@ pub const X_APTOS_CURSOR: &str = "X-Aptos-Cursor";
 /// function execution in the VM, e.g. view functions, txn simulation.
 pub const X_APTOS_GAS_USED: &str = "X-Aptos-Gas-Used";
 /// Provided by the client to identify what client it is.
-pub const X_APTOS_CLIENT: &str = "x-aptos-client";
+pub const X_APTOS_CLIENT: &str = "x-libra2-client";

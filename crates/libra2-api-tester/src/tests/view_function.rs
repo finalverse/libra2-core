@@ -16,7 +16,7 @@ use crate::{
     },
 };
 use anyhow::anyhow;
-use aptos_api_types::{ViewRequest, U64};
+use libra2_api_types::{ViewRequest, U64};
 use libra2_logger::error;
 use libra2_rest_client::Client;
 use libra2_sdk::types::LocalAccount;

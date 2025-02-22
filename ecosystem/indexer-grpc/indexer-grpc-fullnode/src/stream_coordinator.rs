@@ -7,7 +7,7 @@ use crate::{
     runtime::{DEFAULT_NUM_RETRIES, RETRY_TIME_MILLIS},
 };
 use aptos_api::context::Context;
-use aptos_api_types::{AsConverter, Transaction as APITransaction, TransactionOnChainData};
+use libra2_api_types::{AsConverter, Transaction as APITransaction, TransactionOnChainData};
 use libra2_indexer_grpc_utils::{
     chunk_transactions,
     constants::MESSAGE_SIZE_LIMIT,
@@ -353,9 +353,9 @@ impl IndexerStreamCoordinator {
             });
         let mut timestamp = block_event.proposed_time();
         let mut epoch = block_event.epoch();
-        let mut epoch_bcs = aptos_api_types::U64::from(epoch);
+        let mut epoch_bcs = libra2_api_types::U64::from(epoch);
         let mut block_height = block_event.height();
-        let mut block_height_bcs = aptos_api_types::U64::from(block_height);
+        let mut block_height_bcs = libra2_api_types::U64::from(block_height);
 
         let mut transactions = vec![];
         for (ind, raw_txn) in raw_txns.into_iter().enumerate() {
@@ -366,15 +366,15 @@ impl IndexerStreamCoordinator {
                 if let Some(txn) = raw_txn.transaction.try_as_block_metadata_ext() {
                     timestamp = txn.timestamp_usecs();
                     epoch = txn.epoch();
-                    epoch_bcs = aptos_api_types::U64::from(epoch);
+                    epoch_bcs = libra2_api_types::U64::from(epoch);
                     block_height += 1;
-                    block_height_bcs = aptos_api_types::U64::from(block_height);
+                    block_height_bcs = libra2_api_types::U64::from(block_height);
                 } else if let Some(txn) = raw_txn.transaction.try_as_block_metadata() {
                     timestamp = txn.timestamp_usecs();
                     epoch = txn.epoch();
-                    epoch_bcs = aptos_api_types::U64::from(epoch);
+                    epoch_bcs = libra2_api_types::U64::from(epoch);
                     block_height += 1;
-                    block_height_bcs = aptos_api_types::U64::from(block_height);
+                    block_height_bcs = libra2_api_types::U64::from(block_height);
                 }
             }
             let size_info = Self::get_size_info(&raw_txn);

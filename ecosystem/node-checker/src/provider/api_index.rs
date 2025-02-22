@@ -7,7 +7,7 @@ use super::{
     CommonProviderConfig,
 };
 use anyhow::Result;
-use libra2_rest_client::{aptos_api_types::IndexResponse, Client};
+use libra2_rest_client::{libra2_api_types::IndexResponse, Client};
 use async_trait::async_trait;
 use futures::TryFutureExt;
 use serde::{Deserialize, Serialize};

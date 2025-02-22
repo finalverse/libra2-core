@@ -7,7 +7,7 @@ use libra2_cached_packages::aptos_stdlib;
 use aptos_forge::Swarm;
 use libra2_keygen::KeyGen;
 use libra2_rest_client::{
-    aptos_api_types::{EntryFunctionPayload, TransactionPayload},
+    libra2_api_types::{EntryFunctionPayload, TransactionPayload},
     Transaction,
 };
 use libra2_sdk::{

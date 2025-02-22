@@ -27,7 +27,7 @@ use crate::{
     },
     CliCommand, CliResult,
 };
-use aptos_api_types::Libra2ErrorCode;
+use libra2_api_types::Libra2ErrorCode;
 use libra2_crypto::HashValue;
 use libra2_framework::{
     chunked_publish::{
@@ -43,7 +43,7 @@ use libra2_framework::{
 use libra2_gas_schedule::{MiscGasParameters, NativeGasParameters};
 use libra2_move_debugger::libra2_debugger::Libra2Debugger;
 use libra2_rest_client::{
-    aptos_api_types::{EntryFunctionId, HexEncodedBytes, IdentifierWrapper, MoveModuleId},
+    libra2_api_types::{EntryFunctionId, HexEncodedBytes, IdentifierWrapper, MoveModuleId},
     error::RestError,
     AptosBaseUrl, Client,
 };

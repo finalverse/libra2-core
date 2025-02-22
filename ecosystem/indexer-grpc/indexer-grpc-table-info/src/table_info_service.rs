@@ -6,7 +6,7 @@ use crate::{
 };
 use anyhow::{Context, Error};
 use aptos_api::context::Context as ApiContext;
-use aptos_api_types::TransactionOnChainData;
+use libra2_api_types::TransactionOnChainData;
 use libra2_db_indexer::db_v2::IndexerAsyncV2;
 use libra2_indexer_grpc_fullnode::stream_coordinator::{
     IndexerStreamCoordinator, TransactionBatchInfo,

@@ -7,7 +7,7 @@ use crate::{
 };
 use libra2_crypto::{x25519, Uniform};
 use libra2_infallible::RwLock;
-use libra2_rest_client::aptos_api_types::mime_types;
+use libra2_rest_client::libra2_api_types::mime_types;
 use rand::SeedableRng;
 use reqwest::header::AUTHORIZATION;
 use serde_json::Value;

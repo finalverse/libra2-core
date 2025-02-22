@@ -12,7 +12,7 @@ use crate::{
     util::{standardize_address, truncate_str},
 };
 use anyhow::Context;
-use aptos_api_types::WriteResource;
+use libra2_api_types::WriteResource;
 use field_count::FieldCount;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;

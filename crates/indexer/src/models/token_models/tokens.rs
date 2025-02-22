@@ -18,7 +18,7 @@ use crate::{
     schema::tokens,
     util::{ensure_not_negative, parse_timestamp, standardize_address},
 };
-use aptos_api_types::{
+use libra2_api_types::{
     DeleteTableItem as APIDeleteTableItem, Transaction as APITransaction,
     WriteResource as APIWriteResource, WriteSetChange as APIWriteSetChange,
     WriteTableItem as APIWriteTableItem,

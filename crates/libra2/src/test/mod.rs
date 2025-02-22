@@ -58,7 +58,7 @@ use libra2_genesis::config::HostAndPort;
 use libra2_keygen::KeyGen;
 use libra2_logger::warn;
 use libra2_rest_client::{
-    aptos_api_types::{MoveStructTag, MoveType},
+    libra2_api_types::{MoveStructTag, MoveType},
     Transaction,
 };
 use libra2_sdk::move_types::{account_address::AccountAddress, language_storage::ModuleId};

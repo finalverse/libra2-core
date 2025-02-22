@@ -8,7 +8,7 @@ use crate::{
     response::{BasicResponse, BasicResponseStatus, BasicResult},
     ApiTags,
 };
-use aptos_api_types::{IndexResponse, IndexResponseBcs};
+use libra2_api_types::{IndexResponse, IndexResponseBcs};
 use poem_openapi::OpenApi;
 use std::sync::Arc;
 

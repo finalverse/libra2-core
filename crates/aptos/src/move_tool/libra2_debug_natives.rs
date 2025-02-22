@@ -8,7 +8,7 @@ use libra2_vm::natives;
 use move_vm_runtime::native_functions::NativeFunctionTable;
 
 // move_stdlib has the testing feature enabled to include debug native functions
-pub fn aptos_debug_natives(
+pub fn libra2_debug_natives(
     native_gas_parameters: NativeGasParameters,
     misc_gas_params: MiscGasParameters,
 ) -> NativeFunctionTable {

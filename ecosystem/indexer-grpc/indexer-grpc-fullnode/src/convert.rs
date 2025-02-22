@@ -1,7 +1,7 @@
 // Copyright © Aptos Foundation
 // SPDX-License-Identifier: Apache-2.0
 
-use aptos_api_types::{
+use libra2_api_types::{
     transaction::ValidatorTransaction as ApiValidatorTransactionEnum, AccountSignature,
     DeleteModule, DeleteResource, Ed25519Signature, EntryFunctionId, EntryFunctionPayload, Event,
     GenesisPayload, MoveAbility, MoveFunction, MoveFunctionGenericTypeParam,
@@ -888,7 +888,7 @@ pub fn convert_transaction(
 }
 
 fn convert_validator_transaction(
-    api_validator_txn: &aptos_api_types::transaction::ValidatorTransaction,
+    api_validator_txn: &libra2_api_types::transaction::ValidatorTransaction,
 ) -> transaction::transaction::TxnData {
     transaction::transaction::TxnData::Validator(transaction::ValidatorTransaction {
         validator_transaction_type: match api_validator_txn {

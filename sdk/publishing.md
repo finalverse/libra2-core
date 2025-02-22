@@ -14,6 +14,6 @@ Here is the set of currently published packages that make up the libra2-sdk:
 * libra2-crypto-derive
 * libra2-crypto
 * libra2-types
-* aptos-json-rpc-types
-* aptos-client
+* libra2-json-rpc-types
+* libra2-client
 * libra2-sdk

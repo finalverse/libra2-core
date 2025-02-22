@@ -18,7 +18,7 @@ use crate::{
     },
 };
 use anyhow::{Context, Result};
-use aptos_api_types::{deserialize_from_string, Event, WriteResource};
+use libra2_api_types::{deserialize_from_string, Event, WriteResource};
 use bigdecimal::BigDecimal;
 use serde::{Deserialize, Serialize};
 use std::{

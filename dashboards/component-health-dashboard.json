@@ -2128,7 +2128,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "sum by (kubernetes_pod_name, role, type) (rate(aptos_client_service_rpc_requests_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", type=~\"$requesttype\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[$AggInterval]))",
+          "expr": "sum by (kubernetes_pod_name, role, type) (rate(libra2_client_service_rpc_requests_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", type=~\"$requesttype\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[$AggInterval]))",
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}-{{type}}",
           "refId": "A"
         }
@@ -2207,7 +2207,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "sum by (kubernetes_pod_name, role, method, errorcode) (rate(aptos_client_service_internal_error_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", type=~\"$requesttype\", method=~\"$method\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[$AggInterval]))",
+          "expr": "sum by (kubernetes_pod_name, role, method, errorcode) (rate(libra2_client_service_internal_error_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", type=~\"$requesttype\", method=~\"$method\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[$AggInterval]))",
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}-{{method}} {{errortype}}",
           "refId": "A"
         }
@@ -2286,7 +2286,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "sum by (kubernetes_pod_name, role, method, errortype) (rate(aptos_client_service_invalid_requests_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", type=~\"$requesttype\", method=~\"$method\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[$AggInterval]))",
+          "expr": "sum by (kubernetes_pod_name, role, method, errortype) (rate(libra2_client_service_invalid_requests_count{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", type=~\"$requesttype\", method=~\"$method\", kubernetes_pod_name=~\"$kubernetes_pod_name\"}[$AggInterval]))",
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}-{{method}} {{errortype}}",
           "refId": "A"
         }
@@ -2365,7 +2365,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "histogram_quantile(0.50, sum  by (kubernetes_pod_name, role, le)(rate(aptos_client_service_rpc_request_latency_seconds_bucket{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", kubernetes_pod_name=~\"$kubernetes_pod_name\",type=~\"$requesttype\"}[$AggInterval])))",
+          "expr": "histogram_quantile(0.50, sum  by (kubernetes_pod_name, role, le)(rate(libra2_client_service_rpc_request_latency_seconds_bucket{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", kubernetes_pod_name=~\"$kubernetes_pod_name\",type=~\"$requesttype\"}[$AggInterval])))",
           "format": "time_series",
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
           "refId": "A"
@@ -2445,7 +2445,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "histogram_quantile(0.90, sum  by (kubernetes_pod_name, role, le)(rate(aptos_client_service_rpc_request_latency_seconds_bucket{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", kubernetes_pod_name=~\"$kubernetes_pod_name\",type=~\"$requesttype\"}[$AggInterval])))",
+          "expr": "histogram_quantile(0.90, sum  by (kubernetes_pod_name, role, le)(rate(libra2_client_service_rpc_request_latency_seconds_bucket{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", kubernetes_pod_name=~\"$kubernetes_pod_name\",type=~\"$requesttype\"}[$AggInterval])))",
           "format": "time_series",
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
           "refId": "A"
@@ -2525,7 +2525,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${Datasource}" },
-          "expr": "histogram_quantile(0.99, sum  by (kubernetes_pod_name, role, le)(rate(aptos_client_service_rpc_request_latency_seconds_bucket{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", kubernetes_pod_name=~\"$kubernetes_pod_name\",type=~\"$requesttype\"}[$AggInterval])))",
+          "expr": "histogram_quantile(0.99, sum  by (kubernetes_pod_name, role, le)(rate(libra2_client_service_rpc_request_latency_seconds_bucket{chain_name=~\"$chain_name\", cluster=~\"$cluster\", metrics_source=~\"$metrics_source\", namespace=~\"$namespace\", role=~\"$role\", kubernetes_pod_name=~\"$kubernetes_pod_name\",type=~\"$requesttype\"}[$AggInterval])))",
           "format": "time_series",
           "legendFormat": "{{kubernetes_pod_name}}-{{role}}",
           "refId": "A"

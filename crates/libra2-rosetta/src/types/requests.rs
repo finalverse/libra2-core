@@ -9,7 +9,7 @@ use crate::{
     },
     AccountAddress, ApiError,
 };
-use libra2_rest_client::aptos_api_types::U64;
+use libra2_rest_client::libra2_api_types::U64;
 use libra2_types::{
     chain_id::ChainId,
     transaction::{RawTransaction, SignedTransaction},

@@ -11,7 +11,7 @@ use crate::{
     time_fn,
 };
 use anyhow::{anyhow, Error, Result};
-use aptos_api_types::U64;
+use libra2_api_types::U64;
 use libra2_logger::{error, info};
 use libra2_rest_client::{error::RestError, Client, FaucetClient};
 use libra2_sdk::types::LocalAccount;

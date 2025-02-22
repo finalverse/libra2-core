@@ -4,7 +4,7 @@
 use crate::common::types::{
     CliCommand, CliConfig, CliError, CliTypedResult, ConfigSearchMode, ProfileOptions, RestOptions,
 };
-use aptos_api_types::ViewFunction;
+use libra2_api_types::ViewFunction;
 use libra2_types::{account_address::AccountAddress, AptosCoinType, CoinType};
 use async_trait::async_trait;
 use clap::Parser;

@@ -40,7 +40,7 @@ async fn test_deserialize_genesis_transaction() {
     let resp = context.get("/transactions/by_version/0").await;
     // TODO: serde_json::from_value doesn't work here, either make it work
     // or remove the ability to do that.
-    aptos_api_types::Transaction::parse_from_json(Some(resp)).unwrap();
+    libra2_api_types::Transaction::parse_from_json(Some(resp)).unwrap();
 }
 
 // Unstable due to framework changes

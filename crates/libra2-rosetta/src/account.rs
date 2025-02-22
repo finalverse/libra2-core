@@ -16,7 +16,7 @@ use crate::{
 };
 use libra2_logger::{debug, trace, warn};
 use libra2_rest_client::{
-    aptos_api_types::{Libra2Error, Libra2ErrorCode, ViewFunction},
+    libra2_api_types::{Libra2Error, Libra2ErrorCode, ViewFunction},
     error::{Libra2ErrorResponse, RestError},
     Client,
 };
@@ -87,7 +87,7 @@ async fn account_balance(
         metadata: AccountBalanceMetadata {
             sequence_number: sequence_number.into(),
             operators,
-            lockup_expiration_time_utc: libra2_rest_client::aptos_api_types::U64(lockup_expiration),
+            lockup_expiration_time_utc: libra2_rest_client::libra2_api_types::U64(lockup_expiration),
         },
     })
 }

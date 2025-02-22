@@ -77,7 +77,7 @@ async fn block(request: BlockRequest, server_context: RosettaContext) -> ApiResu
 async fn build_block(
     server_context: &RosettaContext,
     parent_block_identifier: BlockIdentifier,
-    block: libra2_rest_client::aptos_api_types::BcsBlock,
+    block: libra2_rest_client::libra2_api_types::BcsBlock,
     chain_id: ChainId,
     keep_empty_transactions: bool,
 ) -> ApiResult<Block> {
@@ -119,7 +119,7 @@ async fn get_block_by_index(
     chain_id: ChainId,
 ) -> ApiResult<(
     BlockIdentifier,
-    libra2_rest_client::aptos_api_types::BcsBlock,
+    libra2_rest_client::libra2_api_types::BcsBlock,
 )> {
     let block = block_cache.get_block_by_height(block_height, true).await?;
 
@@ -153,7 +153,7 @@ pub struct BlockInfo {
 
 impl BlockInfo {
     pub fn from_block(
-        block: &libra2_rest_client::aptos_api_types::BcsBlock,
+        block: &libra2_rest_client::libra2_api_types::BcsBlock,
         chain_id: ChainId,
     ) -> BlockInfo {
         BlockInfo {
@@ -206,7 +206,7 @@ impl BlockRetriever {
         &self,
         height: u64,
         with_transactions: bool,
-    ) -> ApiResult<libra2_rest_client::aptos_api_types::BcsBlock> {
+    ) -> ApiResult<libra2_rest_client::libra2_api_types::BcsBlock> {
         // If we request transactions, we have to provide the page size, it ideally is bigger than
         // the maximum block size.  If not, transactions will be missed.
         if with_transactions {

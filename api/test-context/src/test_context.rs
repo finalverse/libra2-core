@@ -3,7 +3,7 @@
 
 use super::{golden_output::GoldenOutputs, pretty};
 use aptos_api::{attach_poem_to_runtime, BasicError, Context};
-use aptos_api_types::{
+use libra2_api_types::{
     mime_types, HexEncodedBytes, TransactionOnChainData, X_APTOS_CHAIN_ID,
     X_APTOS_LEDGER_TIMESTAMP, X_APTOS_LEDGER_VERSION,
 };
@@ -726,11 +726,11 @@ impl TestContext {
             .into_inner()
     }
 
-    pub fn get_latest_ledger_info(&self) -> aptos_api_types::LedgerInfo {
+    pub fn get_latest_ledger_info(&self) -> libra2_api_types::LedgerInfo {
         self.context.get_latest_ledger_info::<BasicError>().unwrap()
     }
 
-    pub fn get_latest_storage_ledger_info(&self) -> aptos_api_types::LedgerInfo {
+    pub fn get_latest_storage_ledger_info(&self) -> libra2_api_types::LedgerInfo {
         self.context
             .get_latest_storage_ledger_info::<BasicError>()
             .unwrap()

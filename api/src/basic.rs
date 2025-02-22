@@ -9,7 +9,7 @@ use crate::{
     ApiTags,
 };
 use anyhow::Context as AnyhowContext;
-use aptos_api_types::Libra2ErrorCode;
+use libra2_api_types::Libra2ErrorCode;
 use poem_openapi::{
     param::Query,
     payload::{Html, Json},

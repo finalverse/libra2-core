@@ -8,7 +8,7 @@
 use super::coin_infos::CoinInfoQuery;
 use crate::schema::coin_supply;
 use anyhow::Context;
-use aptos_api_types::WriteTableItem as APIWriteTableItem;
+use libra2_api_types::WriteTableItem as APIWriteTableItem;
 use bigdecimal::BigDecimal;
 use field_count::FieldCount;
 use serde::{Deserialize, Serialize};

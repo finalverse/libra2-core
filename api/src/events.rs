@@ -15,7 +15,7 @@ use crate::{
     ApiTags,
 };
 use anyhow::Context as AnyhowContext;
-use aptos_api_types::{
+use libra2_api_types::{
     verify_field_identifier, Address, Libra2ErrorCode, AsConverter, IdentifierWrapper, LedgerInfo,
     MoveStructTag, VerifyInputWithRecursion, VersionedEvent, U64,
 };

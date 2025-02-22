@@ -304,7 +304,7 @@ libra2-admin-service = { path = "crates/libra2-admin-service" }
 libra2-aggregator = { path = "libra2-move/libra2-aggregator" }
 aptos-api = { path = "api" }
 aptos-api-test-context = { path = "api/test-context" }
-aptos-api-types = { path = "api/types" }
+libra2-api-types = { path = "api/types" }
 libra2-backup-cli = { path = "storage/backup/backup-cli" }
 libra2-backup-service = { path = "storage/backup/backup-service" }
 libra2-bcs-utils = { path = "crates/libra2-bcs-utils" }

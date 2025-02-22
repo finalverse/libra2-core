@@ -13,7 +13,7 @@ use libra2_crypto::{
     ed25519::{Ed25519PrivateKey, Ed25519Signature},
     HashValue, PrivateKey, Uniform,
 };
-use libra2_rest_client::aptos_api_types::{ResourceGroup, TransactionOnChainData};
+use libra2_rest_client::libra2_api_types::{ResourceGroup, TransactionOnChainData};
 use libra2_types::{
     account_config::{
         fungible_store::FungibleStoreResource, DepositFAEvent, ObjectCoreResource, WithdrawFAEvent,
