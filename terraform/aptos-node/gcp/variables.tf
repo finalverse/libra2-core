@@ -29,13 +29,13 @@ variable "era" {
 }
 
 variable "chain_id" {
-  description = "Aptos chain ID"
+  description = "Libra2 chain ID"
   type        = string
   default     = "TESTING"
 }
 
 variable "chain_name" {
-  description = "Aptos chain name"
+  description = "Libra2 chain name"
   type        = string
   default     = "testnet"
 }

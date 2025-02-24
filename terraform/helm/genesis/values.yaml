@@ -5,7 +5,7 @@ chain:
   name: testnet
   # -- Internal: Bump this number to wipe the underlying storage
   era: 1
-  # -- Aptos Chain ID
+  # -- Libra2 Chain ID
   chain_id: 4
   # -- If true, genesis will create a resources account that can mint coins.
   is_test: true

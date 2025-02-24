@@ -73,7 +73,7 @@ variable "k8s_admins" {
 ### Testnet config
 
 variable "chain_id" {
-  description = "Aptos chain ID. If var.enable_forge set, defaults to 4"
+  description = "Libra2 chain ID. If var.enable_forge set, defaults to 4"
   type        = number
   default     = 4
 }
@@ -85,7 +85,7 @@ variable "era" {
 }
 
 variable "chain_name" {
-  description = "Aptos chain name. If unset, defaults to using the workspace name"
+  description = "Libra2 chain name. If unset, defaults to using the workspace name"
   type        = string
   default     = ""
 }

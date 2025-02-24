@@ -9,7 +9,7 @@ genesis:
   username_prefix: libra2-node
   # -- Number of validators deployed in this testnet
   numValidators:
-  # -- Aptos Chain ID
+  # -- Libra2 Chain ID
   chain_id:
 
 waypoint:

@@ -15,7 +15,7 @@ Aptos blockchain automated genesis ceremony for testnets
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | chain.allow_new_validators | bool | `false` | Allow new validators to join after genesis |
-| chain.chain_id | int | `4` | Aptos Chain ID |
+| chain.chain_id | int | `4` | Libra2 Chain ID |
 | chain.epoch_duration_secs | int | `7200` | Length of each epoch in seconds. Defaults to 2 hours |
 | chain.era | int | `1` | Internal: Bump this number to wipe the underlying storage |
 | chain.is_test | bool | `true` | If true, genesis will create a resources account that can mint coins. |
