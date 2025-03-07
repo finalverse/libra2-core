@@ -85,7 +85,7 @@ toml = { workspace = true }
 libra2-aggregator = { workspace = true, features = ["testing"] }
 libra2-crypto = { workspace = true, features = ["fuzzing"] }
 libra2-gas-meter = { workspace = true }
-libra2-vm = { workspace = true, features = ["testing"] }
+libra2-vm = { workspace = true, default-features = false, features = ["testing"] }
 claims = { workspace = true }
 move-cli = { workspace = true }
 move-prover = { workspace = true }

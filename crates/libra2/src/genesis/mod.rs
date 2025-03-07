@@ -18,6 +18,11 @@ use crate::{
     },
     CliCommand, CliResult,
 };
+
+use crate::genesis::{
+    keys::{GenerateKeys, GenerateLayoutTemplate},
+};
+
 use libra2_crypto::{
     bls12381, ed25519::ED25519_PUBLIC_KEY_LENGTH, x25519, ValidCryptoMaterial,
     ValidCryptoMaterialStringExt,
@@ -55,26 +60,21 @@ const GENESIS_FILE: &str = "genesis.blob";
 /// accounts to build a genesis transaction for a new chain.
 #[derive(Parser)]
 pub enum GenesisTool {
-    GenerateAdminWriteSet(keys::GenerateAdminWriteSet),
     GenerateGenesis(GenerateGenesis),
     GetPoolAddresses(tools::PoolAddresses),
     GenerateKeys(keys::GenerateKeys),
     GenerateLayoutTemplate(keys::GenerateLayoutTemplate),
     SetupGit(git::SetupGit),
-    SetValidatorConfiguration(keys::SetValidatorConfiguration),
 }
 
 impl GenesisTool {
     pub async fn execute(self) -> CliResult {
         match self {
-            GenesisTool::GenerateAdminWriteSet(tool) => tool.execute_serialized_success().await,
             GenesisTool::GenerateGenesis(tool) => tool.execute_serialized().await,
             GenesisTool::GetPoolAddresses(tool) => tool.execute_serialized().await,
             GenesisTool::GenerateKeys(tool) => tool.execute_serialized().await,
             GenesisTool::GenerateLayoutTemplate(tool) => tool.execute_serialized_success().await,
-            GenesisTool::SetupGit(tool) => tool.execute_serialized_success().await,
-            GenesisTool::SetValidatorConfiguration(tool) => tool.execute_serialized_success().await,
-        }
+            GenesisTool::SetupGit(tool) => tool.execute_serialized_success().await,}
     }
 }
 

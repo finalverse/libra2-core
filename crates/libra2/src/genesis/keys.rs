@@ -4,10 +4,7 @@
 use crate::{
     common::{
         types::{CliError, CliTypedResult, OptionalPoolAddressArgs, PromptOptions, RngArgs},
-        utils::{
-            check_if_file_exists, create_dir_if_not_exist, current_dir, dir_default_to_current,
-            read_from_file, write_to_user_only_file,
-        },
+        utils::{check_if_file_exists, create_dir_if_not_exist, dir_default_to_current, read_from_file, write_to_user_only_file},
     },
     genesis::git::{from_yaml, to_yaml, GitOptions, LAYOUT_FILE, OPERATOR_FILE, OWNER_FILE},
     governance::CompileScriptFunction,
@@ -17,29 +14,132 @@ use libra2_genesis::{
     config::{HostAndPort, Layout, OperatorConfiguration, OwnerConfiguration},
     keys::{generate_key_objects, PublicIdentity},
 };
-use libra2_types::{
-    account_address::AccountAddress,
-    transaction::{Script, Transaction, WriteSetPayload},
-};
+use libra2_keygen::KeyGen;
+use libra2_types::{account_address::AccountAddress, transaction::authenticator::AuthenticationKey};
 use async_trait::async_trait;
 use clap::Parser;
+use serde_yaml;
+use serde_yaml::Value;
+use anyhow::Result;
+use std::fs;
 use std::path::{Path, PathBuf};
+use libra2_crypto::ed25519::{Ed25519PrivateKey, Ed25519PublicKey};
 
 const PRIVATE_KEYS_FILE: &str = "private-keys.yaml";
-pub const PUBLIC_KEYS_FILE: &str = "public-keys.yaml";
+const PUBLIC_KEYS_FILE: &str = "public-keys.yaml";
 const VALIDATOR_FILE: &str = "validator-identity.yaml";
 const VFN_FILE: &str = "validator-full-node-identity.yaml";
+const VALIDATOR_DIR: &str = "my-validator";
+
+/// Generates and saves keys for a validator.
+pub fn generate_and_save_keys(output_dir: &str) -> Result<()> {
+    let mut keygen = KeyGen::from_seed([0; 32]);
+
+    // Generate keys
+    let private_key = keygen.generate_ed25519_private_key();
+    let public_key = Ed25519PublicKey::from(&private_key);
+    let account_address = AuthenticationKey::ed25519(&public_key).account_address();
+
+    let private_identity = format!(
+        "account_address: {}\naccount_private_key: {}",
+        account_address, private_key
+    );
+    let public_identity = format!(
+        "account_address: {}\npublic_key: {}",
+        account_address, public_key
+    );
+
+    // Ensure validator directory exists
+    let validator_path = PathBuf::from(output_dir).join(VALIDATOR_DIR);
+    fs::create_dir_all(&validator_path).expect("Failed to create validator directory");
+
+    // Define file paths
+    let private_keys_file = validator_path.join(PRIVATE_KEYS_FILE);
+    let public_keys_file = validator_path.join(PUBLIC_KEYS_FILE);
+    let validator_identity_file = validator_path.join(VALIDATOR_FILE);
+    let vfn_identity_file = validator_path.join(VFN_FILE);
+
+    // Save private keys
+    fs::write(&private_keys_file, private_identity).expect("Failed to write private-keys.yaml");
+
+    // Save public keys
+    fs::write(&public_keys_file, public_identity).expect("Failed to write public-keys.yaml");
+
+    // Save dummy validator identity (to be updated later)
+    let validator_identity = format!(
+        "validator_account: {}\nvalidator_key: {}",
+        account_address, public_key
+    );
+    fs::write(&validator_identity_file, validator_identity)
+        .expect("Failed to write validator-identity.yaml");
+
+    // Save dummy full-node identity (to be updated later)
+    let vfn_identity = format!(
+        "full_node_account: {}\nfull_node_key: {}",
+        account_address, public_key
+    );
+    fs::write(&vfn_identity_file, vfn_identity)
+        .expect("Failed to write validator-full-node-identity.yaml");
+
+    println!("✅ Keys successfully generated and saved in {}", validator_path.display());
+
+    Ok(())
+}
+
+/// Reads the root public key from `public-keys.yaml`
+fn get_root_key_from_public_keys(output_dir: &str) -> String {
+    let public_keys_file = format!("{}/my-validator/public-keys.yaml", output_dir);
+
+    let public_keys_content = fs::read_to_string(&public_keys_file)
+        .expect(&format!("Failed to read {}", public_keys_file));
+
+    let public_keys_yaml: serde_yaml::Value = serde_yaml::from_str(&public_keys_content)
+        .expect("Failed to parse public-keys.yaml");
+
+    public_keys_yaml["public_key"]
+        .as_str()
+        .expect("Missing public_key field")
+        .to_string()
+}
+
+
+/// Generates `layout.yaml` with the correct `root_key`
+pub fn generate_layout_yaml(output_dir: &str) {
+    let root_key = get_root_key_from_public_keys(output_dir);
+
+    let layout_yaml = format!(
+        r#"chain_id: 4
+epoch_duration_secs: 600
+min_stake: 1000000
+max_stake: 100000000
+recurring_lockup_duration_secs: 86400
+allow_new_validators: true
+min_voting_threshold: 500000
+rewards_apy_percentage: 10
+voting_duration_secs: 432000
+voting_power_increase_limit: 1000000
+required_proposer_stake: 1000000
+root_key: "{}"
+default_validator_operator: "my-validator"
+validators:
+  - my-validator
+users:
+  - my-validator
+"#,
+        root_key
+    );
+
+    let layout_path = format!("{}/layout.yaml", output_dir);
+    fs::write(&layout_path, layout_yaml).expect("Failed to write layout.yaml");
+
+    println!("✅ layout.yaml successfully created with root_key");
+}
 
 /// Generate keys for a new validator
-///
-/// Generates account key, consensus key, and network key for a validator
-/// These keys are used for running a validator or operator in a network
 #[derive(Parser)]
 pub struct GenerateKeys {
-    /// Output directory for the key files
     #[clap(long, value_parser)]
     pub(crate) output_dir: Option<PathBuf>,
-
     #[clap(flatten)]
     pub(crate) pool_address_args: OptionalPoolAddressArgs,
     #[clap(flatten)]
@@ -49,233 +149,30 @@ pub struct GenerateKeys {
 }
 
 #[async_trait]
-impl CliCommand<Vec<PathBuf>> for GenerateKeys {
+impl CliCommand<()> for GenerateKeys {
     fn command_name(&self) -> &'static str {
         "GenerateKeys"
     }
 
-    async fn execute(self) -> CliTypedResult<Vec<PathBuf>> {
+    async fn execute(self) -> CliTypedResult<()> {
         let output_dir = dir_default_to_current(self.output_dir.clone())?;
 
-        let private_keys_file = output_dir.join(PRIVATE_KEYS_FILE);
-        let public_keys_file = output_dir.join(PUBLIC_KEYS_FILE);
-        let validator_file = output_dir.join(VALIDATOR_FILE);
-        let vfn_file = output_dir.join(VFN_FILE);
-        check_if_file_exists(private_keys_file.as_path(), self.prompt_options)?;
-        check_if_file_exists(public_keys_file.as_path(), self.prompt_options)?;
-        check_if_file_exists(validator_file.as_path(), self.prompt_options)?;
-        check_if_file_exists(vfn_file.as_path(), self.prompt_options)?;
+        // Step 1: Generate keys first
+        generate_and_save_keys(output_dir.to_str().unwrap())?;
 
-        let mut key_generator = self.rng_args.key_generator()?;
-        let (mut validator_blob, mut vfn_blob, private_identity, public_identity) =
-            generate_key_objects(&mut key_generator)?;
+        // Step 2: Now ensure owner.yaml is created using correct keys
+        let username = "my-validator";  // This should be dynamically fetched if multiple validators exist
+        ensure_owner_file_exists(output_dir.to_str().unwrap(), username);
 
-        // Allow for the owner to be different than the operator
-        if let Some(pool_address) = self.pool_address_args.pool_address {
-            validator_blob.account_address = Some(pool_address);
-            vfn_blob.account_address = Some(pool_address);
-        }
-
-        // Create the directory if it doesn't exist
-        create_dir_if_not_exist(output_dir.as_path())?;
-
-        write_to_user_only_file(
-            private_keys_file.as_path(),
-            PRIVATE_KEYS_FILE,
-            to_yaml(&private_identity)?.as_bytes(),
-        )?;
-        write_to_user_only_file(
-            public_keys_file.as_path(),
-            PUBLIC_KEYS_FILE,
-            to_yaml(&public_identity)?.as_bytes(),
-        )?;
-        write_to_user_only_file(
-            validator_file.as_path(),
-            VALIDATOR_FILE,
-            to_yaml(&validator_blob)?.as_bytes(),
-        )?;
-        write_to_user_only_file(vfn_file.as_path(), VFN_FILE, to_yaml(&vfn_blob)?.as_bytes())?;
-        Ok(vec![
-            public_keys_file,
-            private_keys_file,
-            validator_file,
-            vfn_file,
-        ])
+        Ok(())
     }
-}
-
-/// Set validator configuration for a single validator
-///
-/// This will set the validator configuration for a single validator in the git repository.
-/// It will have to be run for each validator expected at genesis.
-#[derive(Parser)]
-pub struct SetValidatorConfiguration {
-    /// Name of the validator
-    #[clap(long)]
-    pub(crate) username: String,
-
-    /// Host and port pair for the validator e.g. 127.0.0.1:6180 or libra2.org:6180
-    #[clap(long)]
-    pub(crate) validator_host: HostAndPort,
-
-    /// Host and port pair for the fullnode e.g. 127.0.0.1:6180 or libra2.org:6180
-    #[clap(long)]
-    pub(crate) full_node_host: Option<HostAndPort>,
-
-    /// Stake amount for stake distribution
-    #[clap(long, default_value_t = 1)]
-    pub(crate) stake_amount: u64,
-
-    /// Commission rate to pay operator
-    ///
-    /// This is a percentage between 0% and 100%
-    #[clap(long, default_value_t = 0)]
-    pub(crate) commission_percentage: u64,
-
-    /// Whether the validator will be joining the genesis validator set
-    ///
-    /// If set this validator will already be in the validator set at genesis
-    #[clap(long)]
-    pub(crate) join_during_genesis: bool,
-
-    /// Path to private identity generated from GenerateKeys
-    #[clap(long, value_parser)]
-    pub(crate) owner_public_identity_file: Option<PathBuf>,
-
-    /// Path to operator public identity, defaults to owner identity
-    #[clap(long, value_parser)]
-    pub(crate) operator_public_identity_file: Option<PathBuf>,
-
-    /// Path to voter public identity, defaults to owner identity
-    #[clap(long, value_parser)]
-    pub(crate) voter_public_identity_file: Option<PathBuf>,
-
-    #[clap(flatten)]
-    pub(crate) git_options: GitOptions,
-}
-
-#[async_trait]
-impl CliCommand<()> for SetValidatorConfiguration {
-    fn command_name(&self) -> &'static str {
-        "SetValidatorConfiguration"
-    }
-
-    async fn execute(self) -> CliTypedResult<()> {
-        // Load owner
-        let owner_keys_file = if let Some(owner_keys_file) = self.owner_public_identity_file {
-            owner_keys_file
-        } else {
-            current_dir()?.join(PUBLIC_KEYS_FILE)
-        };
-        let owner_identity = read_public_identity_file(owner_keys_file.as_path())?;
-
-        // Load voter
-        let voter_identity = if let Some(voter_keys_file) = self.voter_public_identity_file {
-            read_public_identity_file(voter_keys_file.as_path())?
-        } else {
-            owner_identity.clone()
-        };
-
-        // Load operator
-        let (operator_identity, operator_keys_file) =
-            if let Some(operator_keys_file) = self.operator_public_identity_file {
-                (
-                    read_public_identity_file(operator_keys_file.as_path())?,
-                    operator_keys_file,
-                )
-            } else {
-                (owner_identity.clone(), owner_keys_file)
-            };
-
-        // Extract the possible optional fields
-        let consensus_public_key =
-            if let Some(consensus_public_key) = operator_identity.consensus_public_key {
-                consensus_public_key
-            } else {
-                return Err(CliError::CommandArgumentError(format!(
-                    "Failed to read consensus public key from public identity file {}",
-                    operator_keys_file.display()
-                )));
-            };
-
-        let validator_network_public_key = if let Some(validator_network_public_key) =
-            operator_identity.validator_network_public_key
-        {
-            validator_network_public_key
-        } else {
-            return Err(CliError::CommandArgumentError(format!(
-                "Failed to read validator network public key from public identity file {}",
-                operator_keys_file.display()
-            )));
-        };
-
-        let consensus_proof_of_possession = if let Some(consensus_proof_of_possession) =
-            operator_identity.consensus_proof_of_possession
-        {
-            consensus_proof_of_possession
-        } else {
-            return Err(CliError::CommandArgumentError(format!(
-                "Failed to read consensus proof of possession from public identity file {}",
-                operator_keys_file.display()
-            )));
-        };
-
-        // Only add the public key if there is a full node
-        let full_node_network_public_key = if self.full_node_host.is_some() {
-            operator_identity.full_node_network_public_key
-        } else {
-            None
-        };
-
-        // Build operator configuration file
-        let operator_config = OperatorConfiguration {
-            operator_account_address: operator_identity.account_address.into(),
-            operator_account_public_key: operator_identity.account_public_key.clone(),
-            consensus_public_key,
-            consensus_proof_of_possession,
-            validator_network_public_key,
-            validator_host: self.validator_host,
-            full_node_network_public_key,
-            full_node_host: self.full_node_host,
-        };
-
-        let owner_config = OwnerConfiguration {
-            owner_account_address: owner_identity.account_address.into(),
-            owner_account_public_key: owner_identity.account_public_key,
-            voter_account_address: voter_identity.account_address.into(),
-            voter_account_public_key: voter_identity.account_public_key,
-            operator_account_address: operator_identity.account_address.into(),
-            operator_account_public_key: operator_identity.account_public_key,
-            stake_amount: self.stake_amount,
-            commission_percentage: self.commission_percentage,
-            join_during_genesis: self.join_during_genesis,
-        };
-
-        let directory = PathBuf::from(&self.username);
-        let operator_file = directory.join(OPERATOR_FILE);
-        let owner_file = directory.join(OWNER_FILE);
-
-        let git_client = self.git_options.get_client()?;
-        git_client.put(operator_file.as_path(), &operator_config)?;
-        git_client.put(owner_file.as_path(), &owner_config)
-    }
-}
-
-pub fn read_public_identity_file(public_identity_file: &Path) -> CliTypedResult<PublicIdentity> {
-    let bytes = read_from_file(public_identity_file)?;
-    from_yaml(&String::from_utf8(bytes).map_err(CliError::from)?)
 }
 
 /// Generate a Layout template file
-///
-/// This will generate a layout template file for genesis with some default values.  To start a
-/// new chain, these defaults should be carefully thought through and chosen.
 #[derive(Parser)]
 pub struct GenerateLayoutTemplate {
-    /// Path of the output layout template
     #[clap(long, value_parser, default_value = LAYOUT_FILE)]
     pub(crate) output_file: PathBuf,
-
     #[clap(flatten)]
     pub(crate) prompt_options: PromptOptions,
 }
@@ -287,58 +184,66 @@ impl CliCommand<()> for GenerateLayoutTemplate {
     }
 
     async fn execute(self) -> CliTypedResult<()> {
-        check_if_file_exists(self.output_file.as_path(), self.prompt_options)?;
-        let layout = Layout::default();
+        //let output_dir = dir_default_to_current(Some(self.output_file.clone()))?;
+        let output_dir = Path::new(self.output_file.as_path())  // ✅ Extract the directory from output_file
+            .parent()
+            .expect("Failed to extract directory")
+            .to_str()
+            .unwrap();
 
-        write_to_user_only_file(
-            self.output_file.as_path(),
-            &self.output_file.display().to_string(),
-            to_yaml(&layout)?.as_bytes(),
-        )
+        //generate_layout_yaml(output_dir.to_str().unwrap());
+        generate_layout_yaml(output_dir);
+
+        Ok(())
     }
 }
 
-/// Generate a WriteSet genesis
-///
-/// This will compile a Move script and generate a writeset from that script.
-#[derive(Parser)]
-pub struct GenerateAdminWriteSet {
-    /// Path of the output genesis file
-    #[clap(long, value_parser)]
-    pub(crate) output_file: PathBuf,
-
-    /// Address of the account which execute this script.
-    #[clap(long, value_parser = crate::common::types::load_account_arg)]
-    pub(crate) execute_as: AccountAddress,
-
-    #[clap(flatten)]
-    pub(crate) compile_proposal_args: CompileScriptFunction,
-
-    #[clap(flatten)]
-    pub(crate) prompt_options: PromptOptions,
+fn generate_validator_keys(output_dir: &str) {
+    generate_and_save_keys(output_dir).expect("Key generation failed");
 }
 
-#[async_trait]
-impl CliCommand<()> for GenerateAdminWriteSet {
-    fn command_name(&self) -> &'static str {
-        "GenerateAdminWriteSet"
-    }
+fn ensure_owner_file_exists(local_repository_dir: &str, username: &str) {
+    let user_dir = PathBuf::from(local_repository_dir).join(username);
+    let owner_file = user_dir.join("owner.yaml");
 
-    async fn execute(self) -> CliTypedResult<()> {
-        check_if_file_exists(self.output_file.as_path(), self.prompt_options)?;
-        let (bytecode, _script_hash) = self
-            .compile_proposal_args
-            .compile("GenerateAdminWriteSet", self.prompt_options)?;
+    // Read actual values from public-keys.yaml
+    let public_keys_file = user_dir.join("public-keys.yaml");
+    let public_keys_content = fs::read_to_string(&public_keys_file)
+        .expect("Failed to read public-keys.yaml");
 
-        let txn = Transaction::GenesisTransaction(WriteSetPayload::Script {
-            execute_as: self.execute_as,
-            script: Script::new(bytecode, vec![], vec![]),
-        });
+    let public_keys_yaml: Value = serde_yaml::from_str(&public_keys_content)
+        .expect("Failed to parse public-keys.yaml");
 
-        write_to_user_only_file(
-            self.output_file.as_path(),
-            &self.output_file.display().to_string(),
-            &bcs::to_bytes(&txn).map_err(CliError::from)?,
-        )
+    let owner_account_address = public_keys_yaml["account_address"]
+        .as_str()
+        .expect("Missing account_address in public-keys.yaml");
+
+    let owner_account_public_key = public_keys_yaml["public_key"]
+        .as_str()
+        .expect("Missing public_key in public-keys.yaml");
+
+    let operator_account_address = owner_account_address; // ❗ Assuming operator is the same as owner
+    let operator_account_public_key = owner_account_public_key; // ❗ Assuming the same public key
+
+    if !owner_file.exists() {
+        println!("Creating default owner.yaml...");
+
+        let default_owner_config = format!(
+            r#"
+        owner_account_address: "{}"
+        owner_account_public_key: "{}"
+        operator_account_address: "{}"
+        operator_account_public_key: "{}"
+        stake_amount: 1000000
+        join_during_genesis: true
+        "#,
+            owner_account_address,
+            owner_account_public_key,
+            operator_account_address,
+            operator_account_public_key
+        );
+
+        fs::create_dir_all(&user_dir).expect("Failed to create validator directory");
+        fs::write(&owner_file, default_owner_config).expect("Failed to write owner.yaml");
     }
 }
